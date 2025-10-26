@@ -40,24 +40,24 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2">
-      <label className="block text-sm font-semibold text-slate-700" htmlFor="note">
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <label className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500" htmlFor="note">
         Add note
       </label>
       <textarea
         id="note"
         name="note"
-        className="h-24 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+        className="h-28 w-full rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
         placeholder="Capture extraction decisions or follow-ups..."
         value={body}
         onChange={(event) => setBody(event.target.value)}
         disabled={isPending}
       />
-      {error ? <p className="text-xs text-rose-600">{error}</p> : null}
+      {error ? <p className="text-xs font-medium text-rose-500">{error}</p> : null}
       <div className="flex justify-end">
         <button
           type="submit"
-          className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-50"
+          className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
           disabled={isPending}
         >
           Save note

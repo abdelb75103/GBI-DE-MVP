@@ -44,12 +44,12 @@ export function StatusSelect({ paperId, status }: StatusSelectProps) {
   };
 
   return (
-    <div className="space-y-1">
-      <label className="block text-xs font-semibold uppercase tracking-wide text-slate-600">
+    <div className="space-y-2">
+      <label className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
         Status
       </label>
       <select
-        className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+        className="w-full rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-2.5 text-sm text-slate-900 shadow-sm transition focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
         value={value}
         disabled={isPending}
         onChange={(event) => handleChange(event.target.value as PaperStatus)}
@@ -60,7 +60,7 @@ export function StatusSelect({ paperId, status }: StatusSelectProps) {
           </option>
         ))}
       </select>
-      {error ? <p className="text-xs text-rose-600">{error}</p> : null}
+      {error ? <p className="text-xs font-medium text-rose-500">{error}</p> : null}
     </div>
   );
 }

@@ -61,17 +61,17 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
     <div className="flex flex-col items-start gap-1">
       <button
         type="button"
-        className={`rounded border px-3 py-1 text-sm font-medium transition ${
+        className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
           isFlagged
-            ? 'border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100'
-            : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100'
+            ? 'border-rose-200/80 bg-rose-50/80 text-rose-600 hover:bg-rose-100'
+            : 'border-slate-200/70 bg-white/70 text-slate-600 hover:border-slate-300 hover:text-slate-900'
         }`}
         onClick={handleClick}
         disabled={isPending}
       >
         {isFlagged ? 'Clear Flag' : 'Flag'}
       </button>
-      {error ? <span className="text-xs text-rose-600">{error}</span> : null}
+      {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
     </div>
   );
 }
