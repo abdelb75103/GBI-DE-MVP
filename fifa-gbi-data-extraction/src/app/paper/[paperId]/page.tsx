@@ -81,15 +81,15 @@ export default async function PaperWorkspace({
       </section>
 
       <div className="grid gap-8 lg:grid-cols-[1.85fr,1fr]">
-        <section className="space-y-6">
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <section className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
+          <div className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:flex lg:h-full lg:flex-col">
             <div className="border-b border-slate-200/70 px-6 py-5">
               <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
               <p className="text-xs text-slate-500">
                 We&apos;ll add pagination, search, and text selection in the next iteration.
               </p>
             </div>
-            <div className="h-[600px] w-full overflow-hidden rounded-b-3xl border-t border-slate-200/60 bg-slate-100/80">
+            <div className="h-[600px] w-full overflow-hidden rounded-b-3xl border-t border-slate-200/60 bg-slate-100/80 lg:flex-1">
               {viewerDataUrl ? (
                 <iframe title="PDF preview" src={viewerDataUrl} className="h-full w-full border-0" />
               ) : (
