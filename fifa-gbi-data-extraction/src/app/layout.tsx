@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-100 text-slate-900 antialiased">
         <div className="flex min-h-screen flex-col">
           <header className="sticky top-0 z-40 border-b border-white/60 bg-white/80 shadow-sm backdrop-blur">
-            <div className="mx-auto flex w-full max-w-6xl items-center gap-6 px-6 py-5">
+            <div className="mx-auto flex w-full max-w-[calc(100vw-3rem)] items-center gap-6 px-6 py-5">
               <div className="flex justify-start">
                 <span className="sr-only">University College Dublin</span>
                 <div className="flex h-14 w-14 items-center justify-center">
@@ -71,7 +71,9 @@ export default function RootLayout({
               </div>
             </div>
           </header>
-          <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 py-10">{children}</main>
+          <main className="mx-auto flex w-full max-w-[calc(100vw-3rem)] flex-1 flex-col px-6 py-10">
+            {children}
+          </main>
         </div>
       </body>
     </html>

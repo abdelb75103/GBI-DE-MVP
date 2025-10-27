@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import crypto from 'node:crypto';
 
 import type {
@@ -25,6 +27,7 @@ type CreateFileInput = {
   size: number;
   mimeType: string;
   dataBase64?: string;
+  publicPath?: string;
 };
 
 type CreateNoteInput = {
@@ -32,6 +35,9 @@ type CreateNoteInput = {
   author: string;
   body: string;
 };
+
+const samplePdfFilename = '2016Hgglundetal.BJSMInjuryrecurrencesplayinglevels.pdf';
+const samplePdfPublicPath = `/${samplePdfFilename}`;
 
 const bootstrap = (): MockDatabase => ({
   papers: [],
@@ -104,6 +110,7 @@ export const mockDb = {
       mimeType: input.mimeType,
       uploadedAt: now(),
       dataBase64: input.dataBase64,
+      publicPath: input.publicPath,
     };
 
     db.files.push(file);
@@ -210,9 +217,10 @@ export const seedIfEmpty = () => {
 
   mockDb.attachFile({
     paperId: seeded.id,
-    name: 'injury-patterns.pdf',
-    size: 1_024_000,
+    name: samplePdfFilename,
+    size: getSamplePdfSize(),
     mimeType: 'application/pdf',
+    publicPath: samplePdfPublicPath,
   });
 
   mockDb.addNote({
@@ -221,3 +229,24 @@ export const seedIfEmpty = () => {
     body: 'Initial data seeded for demo purposes.',
   });
 };
+
+function getSamplePdfSize() {
+  const candidateRoots = [
+    process.cwd(),
+    path.join(process.cwd(), 'fifa-gbi-data-extraction'),
+  ];
+
+  for (const root of candidateRoots) {
+    try {
+      const absolutePath = path.join(root, 'public', samplePdfFilename);
+      if (!fs.existsSync(absolutePath)) {
+        continue;
+      }
+      return fs.statSync(absolutePath).size;
+    } catch {
+      // continue to the next candidate root
+    }
+  }
+
+  return 0;
+}

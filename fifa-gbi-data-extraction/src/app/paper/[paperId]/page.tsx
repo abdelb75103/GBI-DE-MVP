@@ -36,7 +36,11 @@ export default async function PaperWorkspace({
 
   const file = paper.fileId ? mockDb.getFile(paper.fileId) : undefined;
   const notes = mockDb.listNotes(paper.id);
-  const viewerDataUrl = file?.dataBase64 ? `data:${file.mimeType};base64,${file.dataBase64}` : null;
+  const viewerUrl = file?.publicPath
+    ? file.publicPath
+    : file?.dataBase64
+      ? `data:${file.mimeType};base64,${file.dataBase64}`
+      : null;
 
   return (
     <div className="space-y-10">
@@ -66,9 +70,9 @@ export default async function PaperWorkspace({
             >
               Back to dashboard
             </Link>
-            {viewerDataUrl ? (
+            {viewerUrl ? (
               <a
-                href={viewerDataUrl}
+                href={viewerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
@@ -80,27 +84,49 @@ export default async function PaperWorkspace({
         </div>
       </section>
 
-      <div className="grid gap-8 lg:grid-cols-[1.85fr,1fr]">
-        <section className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:flex lg:h-full lg:flex-col">
-            <div className="border-b border-slate-200/70 px-6 py-5">
-              <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
-              <p className="text-xs text-slate-500">
-                We&apos;ll add pagination, search, and text selection in the next iteration.
-              </p>
-            </div>
-            <div className="h-[600px] w-full overflow-hidden rounded-b-3xl border-t border-slate-200/60 bg-slate-100/80 lg:flex-1">
-              {viewerDataUrl ? (
-                <iframe title="PDF preview" src={viewerDataUrl} className="h-full w-full border-0" />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
-                  PDF preview coming soon.
-                </div>
-              )}
-            </div>
+      <div className="flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,2.1fr)_minmax(0,1.1fr)] xl:items-start">
+        <section className="flex flex-col rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+          <div className="border-b border-slate-200/70 px-6 py-5">
+            <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
+            <p className="text-xs text-slate-500">
+              Review the paper on the left while validating the extracted fields on the right.
+            </p>
           </div>
+          <div className="relative h-full min-h-[65vh] w-full overflow-hidden rounded-b-3xl border-t border-slate-200/60 bg-slate-100/80 lg:min-h-[75vh]">
+            {viewerUrl ? (
+              <object
+                data={viewerUrl}
+                type="application/pdf"
+                className="absolute inset-0 h-full w-full"
+                width="100%"
+                height="100%"
+                aria-label="PDF document preview"
+              >
+                <iframe
+                  title="PDF preview"
+                  src={viewerUrl}
+                  className="h-full w-full border-0"
+                  style={{ minHeight: '100%' }}
+                  allow="fullscreen"
+                />
+                <div className="flex h-full w-full items-center justify-center bg-white p-6 text-center text-sm text-slate-600">
+                  Your browser does not support inline PDF preview.{' '}
+                  <a href={viewerUrl} target="_blank" rel="noopener noreferrer" className="ml-1 underline">
+                    Open the document in a new tab
+                  </a>
+                  .
+                </div>
+              </object>
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
+                PDF preview coming soon.
+              </div>
+            )}
+          </div>
+        </section>
 
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <aside className="flex flex-col gap-6">
+          <div className="rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-5">
               <div>
                 <h2 className="text-lg font-semibold text-slate-900">Study details</h2>
@@ -124,9 +150,7 @@ export default async function PaperWorkspace({
               ))}
             </div>
           </div>
-        </section>
 
-        <aside className="space-y-6">
           <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
             <div className="space-y-5">
               <StatusSelect paperId={paper.id} status={paper.status} />
