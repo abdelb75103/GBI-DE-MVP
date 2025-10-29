@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
 import { ExportControls } from '@/components/export-controls';
-import { FlagToggleButton } from '@/components/flag-toggle-button';
-import { StatusPill } from '@/components/status-pill';
+import { PapersTable } from '@/components/papers-table';
 import { mockDb, seedIfEmpty } from '@/lib/mock-db';
 
 export const dynamic = 'force-dynamic';
@@ -115,63 +114,7 @@ export default function DashboardPage() {
               Add new PDF
             </Link>
           </div>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-slate-200/70 text-left text-sm text-slate-700">
-              <thead className="bg-slate-900/5 text-xs uppercase tracking-[0.22em] text-slate-500">
-                <tr>
-                  <th className="px-6 py-3 font-semibold">Title</th>
-                  <th className="px-6 py-3 font-semibold">Status</th>
-                  <th className="px-6 py-3 font-semibold">Uploaded</th>
-                  <th className="px-6 py-3 font-semibold">Notes</th>
-                  <th className="px-6 py-3 font-semibold">Flag</th>
-                  <th className="px-6 py-3 font-semibold">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100/70 bg-white/80">
-                {papers.length === 0 ? (
-                  <tr>
-                    <td className="px-6 py-12 text-center text-sm text-slate-500" colSpan={6}>
-                      No uploads yet. Start by adding a PDF.
-                    </td>
-                  </tr>
-                ) : (
-                  papers.map((paper) => (
-                    <tr key={paper.id} className="transition hover:bg-indigo-50/40">
-                      <td className="px-6 py-4">
-                        <div className="flex flex-col gap-1">
-                          <span className="font-semibold text-slate-900">{paper.title}</span>
-                          <span className="text-xs text-slate-500">
-                            {paper.leadAuthor ? `${paper.leadAuthor} · ` : ''}
-                            {paper.year ?? 'Year N/A'}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <StatusPill status={paper.status} />
-                      </td>
-                      <td className="px-6 py-4 text-sm text-slate-500">
-                        <time dateTime={paper.createdAt}>{new Date(paper.createdAt).toLocaleString()}</time>
-                      </td>
-                      <td className="px-6 py-4 text-sm font-medium text-slate-600">{paper.noteIds.length}</td>
-                      <td className="px-6 py-4">
-                        <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagId)} />
-                      </td>
-                      <td className="px-6 py-4">
-                        <div className="flex flex-wrap gap-2">
-                          <Link
-                            href={`/paper/${paper.id}`}
-                            className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700"
-                          >
-                            Open workspace
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
-          </div>
+          <PapersTable papers={papers} />
         </section>
 
         <aside className="space-y-6">
@@ -204,9 +147,20 @@ export default function DashboardPage() {
                       </div>
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
                         <time dateTime={job.createdAt}>{new Date(job.createdAt).toLocaleString()}</time>
-                        {job.downloadUrl ? (
-                          <span className="font-mono text-slate-400">checksum {job.checksumSha256}</span>
-                        ) : null}
+                        <div className="flex items-center gap-2">
+                          {job.downloadUrl ? (
+                            <a
+                              href={job.downloadUrl}
+                              download
+                              className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700"
+                            >
+                              Download {job.kind.toUpperCase()}
+                            </a>
+                          ) : null}
+                          {job.checksumSha256 ? (
+                            <span className="font-mono text-slate-400">checksum {job.checksumSha256}</span>
+                          ) : null}
+                        </div>
                       </div>
                     </li>
                   ))}
