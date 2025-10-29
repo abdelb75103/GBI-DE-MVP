@@ -17,7 +17,8 @@ export default function UploadPage() {
             <div className="space-y-2">
               <h1 className="text-3xl font-semibold text-slate-900">Stage a new study PDF</h1>
               <p className="text-sm leading-relaxed text-slate-600">
-                Provide the core metadata now—our pipeline will enrich the workspace with extraction-ready context.
+                Drop in the source document—title, DOI, and other metadata will be auto-extracted once processing kicks
+                off.
               </p>
             </div>
           </div>

@@ -74,14 +74,6 @@ export function UploadForm() {
         <p className="mt-2 text-xs text-slate-500">Max 20 MB. Duplicates will be handled manually later.</p>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        <Field label="Title" name="title" placeholder="Study title" disabled={isPending} />
-        <Field label="Lead Author" name="leadAuthor" placeholder="Last name, Initial" disabled={isPending} />
-        <Field label="Year" name="year" placeholder="2024" disabled={isPending} />
-        <Field label="Journal" name="journal" placeholder="Journal name" disabled={isPending} />
-        <Field label="DOI" name="doi" placeholder="10.1234/example" disabled={isPending} className="md:col-span-2" />
-      </div>
-
       {error ? <p className="text-sm font-medium text-rose-500">{error}</p> : null}
 
       <div className="flex items-center justify-end gap-3">
@@ -94,30 +86,5 @@ export function UploadForm() {
         </button>
       </div>
     </form>
-  );
-}
-
-type FieldProps = {
-  label: string;
-  name: string;
-  placeholder?: string;
-  className?: string;
-  disabled?: boolean;
-};
-
-function Field({ label, name, placeholder, className, disabled }: FieldProps) {
-  return (
-    <div className={className}>
-      <label htmlFor={name} className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        placeholder={placeholder}
-        disabled={disabled}
-        className="mt-3 w-full rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-2.5 text-sm text-slate-900 shadow-sm transition focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-      />
-    </div>
   );
 }

@@ -10,6 +10,52 @@ export interface StoredFile {
   dataBase64?: string;
 }
 
+export type ExtractionTab =
+  | 'studyDetails'
+  | 'participantCharacteristics'
+  | 'definitions'
+  | 'exposure'
+  | 'injuryOutcome'
+  | 'illnessOutcome'
+  | 'mentalHealthOutcomes'
+  | 'injuryTissueType'
+  | 'injuryLocation'
+  | 'illnessRegion'
+  | 'illnessEtiology'
+  | 'mentalHealthSymptoms';
+
+export type ExtractionFieldMetric =
+  | 'prevalence'
+  | 'incidence'
+  | 'burden'
+  | 'severityMeanDays'
+  | 'severityTotalDays';
+
+export type ExtractionFieldStatus = 'reported' | 'not_reported' | 'uncertain';
+
+export interface ExtractionFieldResult {
+  fieldId: string;
+  value: string | null;
+  confidence: number | null;
+  sourceQuote?: string;
+  pageHint?: string;
+  metric?: ExtractionFieldMetric;
+  status: ExtractionFieldStatus;
+  updatedAt: string;
+  updatedBy: 'ai' | 'human';
+}
+
+export interface ExtractionResult {
+  id: string;
+  paperId: string;
+  tab: ExtractionTab;
+  model: string;
+  fields: ExtractionFieldResult[];
+  createdAt: string;
+  updatedAt: string;
+  notes?: string;
+}
+
 export interface Flag {
   id: string;
   paperId: string;
@@ -56,4 +102,5 @@ export interface MockDatabase {
   flags: Flag[];
   notes: Note[];
   exports: ExportJob[];
+  extractions: ExtractionResult[];
 }

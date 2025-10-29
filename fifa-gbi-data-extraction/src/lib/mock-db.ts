@@ -4,6 +4,10 @@ import crypto from 'node:crypto';
 
 import type {
   ExportJob,
+  ExtractionFieldMetric,
+  ExtractionFieldResult,
+  ExtractionResult,
+  ExtractionTab,
   Flag,
   MockDatabase,
   Note,
@@ -45,6 +49,7 @@ const bootstrap = (): MockDatabase => ({
   flags: [],
   notes: [],
   exports: [],
+  extractions: [],
 });
 
 const globalForDb = globalThis as unknown as { __mockDb?: MockDatabase };
@@ -200,6 +205,125 @@ export const mockDb = {
 
     return job;
   },
+
+  listExtractions(paperId: string): ExtractionResult[] {
+    return db.extractions.filter((extraction) => extraction.paperId === paperId);
+  },
+
+  getExtraction(paperId: string, tab: ExtractionTab): ExtractionResult | undefined {
+    return db.extractions
+      .filter((extraction) => extraction.paperId === paperId && extraction.tab === tab)
+      .toSorted((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
+  },
+
+  upsertExtraction(input: Omit<ExtractionResult, 'id' | 'createdAt' | 'updatedAt'> & { id?: string }): ExtractionResult {
+    const existingIndex = input.id
+      ? db.extractions.findIndex((extraction) => extraction.id === input.id)
+      : db.extractions.findIndex(
+          (extraction) => extraction.paperId === input.paperId && extraction.tab === input.tab,
+        );
+
+    const extraction: ExtractionResult = {
+      id: input.id ?? crypto.randomUUID(),
+      paperId: input.paperId,
+      tab: input.tab,
+      model: input.model,
+      fields: input.fields,
+      notes: input.notes,
+      createdAt: existingIndex >= 0 ? db.extractions[existingIndex].createdAt : now(),
+      updatedAt: now(),
+    };
+
+    if (existingIndex >= 0) {
+      db.extractions.splice(existingIndex, 1, extraction);
+    } else {
+      db.extractions.push(extraction);
+    }
+
+    const paper = this.getPaper(input.paperId);
+    if (paper && paper.status !== 'extracted') {
+      paper.status = 'extracted';
+      paper.updatedAt = now();
+    }
+
+    return extraction;
+  },
+
+  updateExtractionField(
+    paperId: string,
+    tab: ExtractionTab,
+    fieldId: string,
+    updates: Partial<Omit<ExtractionFieldResult, 'fieldId' | 'updatedAt' | 'updatedBy'>> & {
+      status?: ExtractionFieldResult['status'];
+      updatedBy?: ExtractionFieldResult['updatedBy'];
+      model?: string;
+      metric?: ExtractionFieldMetric;
+    },
+  ): ExtractionResult {
+    const extraction = this.getExtraction(paperId, tab);
+    if (!extraction) {
+      const newExtraction: ExtractionResult = {
+        id: crypto.randomUUID(),
+        paperId,
+        tab,
+        model: updates.model ?? 'human-input',
+        fields: [],
+        createdAt: now(),
+        updatedAt: now(),
+      };
+      db.extractions.push(newExtraction);
+      return this.updateExtractionField(paperId, tab, fieldId, updates);
+    }
+
+    const field =
+      extraction.fields.find((item) => item.fieldId === fieldId) ??
+      (() => {
+        const emptyField: ExtractionFieldResult = {
+          fieldId,
+          value: null,
+          confidence: null,
+          sourceQuote: undefined,
+          pageHint: undefined,
+          metric: undefined,
+          status: 'not_reported',
+          updatedAt: now(),
+          updatedBy: 'human',
+        };
+        extraction.fields.push(emptyField);
+        return emptyField;
+      })();
+
+    const { status, updatedBy, model, metric, ...rest } = updates;
+
+    if ('value' in rest) {
+      field.value = rest.value ?? null;
+    }
+    if ('confidence' in rest) {
+      field.confidence = rest.confidence ?? null;
+    }
+    if ('sourceQuote' in rest) {
+      field.sourceQuote = rest.sourceQuote;
+    }
+    if ('pageHint' in rest) {
+      field.pageHint = rest.pageHint;
+    }
+    if (metric !== undefined) {
+      field.metric = metric;
+    }
+
+    const trimmedValue = typeof field.value === 'string' ? field.value.trim() : '';
+    field.value = trimmedValue.length > 0 ? trimmedValue : null;
+
+    const computedStatus = status ?? (field.value ? 'reported' : 'not_reported');
+    field.status = computedStatus;
+    field.updatedAt = now();
+    field.updatedBy = updatedBy ?? 'human';
+
+    extraction.updatedAt = now();
+    extraction.model = model ?? (field.updatedBy === 'ai' ? 'ai-generated' : 'human-edited');
+
+    return extraction;
+  },
 };
 
 export const seedIfEmpty = () => {
@@ -227,6 +351,84 @@ export const seedIfEmpty = () => {
     paperId: seeded.id,
     author: 'dev-user',
     body: 'Initial data seeded for demo purposes.',
+  });
+
+  mockDb.upsertExtraction({
+    paperId: seeded.id,
+    tab: 'studyDetails',
+    model: 'seed-data',
+    fields: [
+      {
+        fieldId: 'studyId',
+        value: 'SEED-001',
+        confidence: 0.95,
+        status: 'reported',
+        updatedAt: now(),
+        pageHint: 'p. 1',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+      {
+        fieldId: 'leadAuthor',
+        value: 'Doe, J.',
+        confidence: 0.9,
+        status: 'reported',
+        updatedAt: now(),
+        pageHint: 'p. 1',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+      {
+        fieldId: 'title',
+        value: 'Injury patterns among professional footballers',
+        confidence: 0.98,
+        status: 'reported',
+        updatedAt: now(),
+        pageHint: 'p. 1',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+      {
+        fieldId: 'yearOfPublication',
+        value: '2023',
+        confidence: 0.9,
+        status: 'reported',
+        updatedAt: now(),
+        pageHint: 'p. 1',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+      {
+        fieldId: 'journal',
+        value: 'Sports Medicine Journal',
+        confidence: 0.85,
+        status: 'reported',
+        updatedAt: now(),
+        pageHint: 'p. 1',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+      {
+        fieldId: 'doi',
+        value: '10.1234/seed-doi',
+        confidence: 0.6,
+        status: 'uncertain',
+        updatedAt: now(),
+        pageHint: 'p. 2',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+      {
+        fieldId: 'studyDesign',
+        value: 'Prospective cohort',
+        confidence: 0.8,
+        status: 'reported',
+        updatedAt: now(),
+        pageHint: 'p. 2',
+        sourceQuote: 'Example seed data',
+        updatedBy: 'ai',
+      },
+    ],
   });
 };
 

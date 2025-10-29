@@ -6,19 +6,11 @@ import { NoteComposer } from '@/components/note-composer';
 import { NoteList } from '@/components/note-list';
 import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
+import { ExtractionTabsPanel } from '@/components/extraction-tabs-panel';
+import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
 import { mockDb, seedIfEmpty } from '@/lib/mock-db';
 
 export const dynamic = 'force-dynamic';
-
-const studyDetailPlaceholders = [
-  'Study ID',
-  'Lead Author',
-  'Title',
-  'Year of Publication',
-  'Journal',
-  'DOI',
-  'Study Design',
-];
 
 export default async function PaperWorkspace({
   params,
@@ -36,6 +28,14 @@ export default async function PaperWorkspace({
 
   const file = paper.fileId ? mockDb.getFile(paper.fileId) : undefined;
   const notes = mockDb.listNotes(paper.id);
+  const extractions = mockDb.listExtractions(paper.id);
+  const extractionMap = new Map(extractions.map((extraction) => [extraction.tab, extraction] as const));
+  const tabPayload = extractionTabs.map((tab) => ({
+    tab,
+    label: extractionTabMeta[tab].title,
+    fields: extractionFieldDefinitions.filter((field) => field.tab === tab),
+    results: extractionMap.get(tab)?.fields ?? [],
+  }));
   const viewerUrl = file?.publicPath
     ? file.publicPath
     : file?.dataBase64
@@ -84,13 +84,14 @@ export default async function PaperWorkspace({
         </div>
       </section>
 
-      <div className="flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,2.1fr)_minmax(0,1.1fr)] xl:items-start">
-        <section className="flex flex-col rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-          <div className="border-b border-slate-200/70 px-6 py-5">
-            <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
-            <p className="text-xs text-slate-500">
-              Review the paper on the left while validating the extracted fields on the right.
-            </p>
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1.35fr)] xl:items-start xl:auto-rows-fr">
+          <section className="flex flex-col rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+            <div className="border-b border-slate-200/70 px-6 py-5">
+              <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
+              <p className="text-xs text-slate-500">
+                Review the paper on the left while validating the extracted fields on the right.
+              </p>
           </div>
           <div className="relative h-full min-h-[65vh] w-full overflow-hidden rounded-b-3xl border-t border-slate-200/60 bg-slate-100/80 lg:min-h-[75vh]">
             {viewerUrl ? (
@@ -123,34 +124,12 @@ export default async function PaperWorkspace({
               </div>
             )}
           </div>
-        </section>
+          </section>
 
-        <aside className="flex flex-col gap-6">
-          <div className="rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-5">
-              <div>
-                <h2 className="text-lg font-semibold text-slate-900">Study details</h2>
-                <p className="text-xs text-slate-500">
-                  Auto-extracted values will appear here once the AI pipeline is connected.
-                </p>
-              </div>
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                Placeholder
-              </span>
-            </div>
-            <div className="grid gap-4 px-6 py-6 md:grid-cols-2">
-              {studyDetailPlaceholders.map((field) => (
-                <div
-                  key={field}
-                  className="rounded-2xl border border-dashed border-slate-200/80 bg-white/60 p-4 text-sm text-slate-600"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">{field}</p>
-                  <p className="mt-2 text-sm text-slate-600">Pending AI extraction</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ExtractionTabsPanel paperId={paper.id} tabs={tabPayload} />
+        </div>
 
+        <div className="grid gap-6 xl:grid-cols-2">
           <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
             <div className="space-y-5">
               <StatusSelect paperId={paper.id} status={paper.status} />
@@ -202,7 +181,7 @@ export default async function PaperWorkspace({
               <NoteList initialNotes={notes} />
             </div>
           </div>
-        </aside>
+        </div>
       </div>
     </div>
   );

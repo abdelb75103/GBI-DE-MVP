@@ -1,0 +1,924 @@
+import { z } from 'zod';
+
+import type {
+  ExtractionFieldMetric,
+  ExtractionFieldResult,
+  ExtractionTab,
+} from '@/lib/types';
+
+export type ExtractionFieldDefinition = {
+  id: string;
+  label: string;
+  description: string;
+  tab: ExtractionTab;
+  metric?: ExtractionFieldMetric;
+  groupId?: string;
+  groupLabel?: string;
+};
+
+// ---------------------------------------------------------------------------
+// AI-assisted tabs (Tabs 1–4)
+// ---------------------------------------------------------------------------
+const aiFieldDefinitions: ExtractionFieldDefinition[] = [
+  // Tab 1 – Study Details
+  {
+    id: 'studyId',
+    label: 'Study ID',
+    description: 'Use the canonical Study ID if present; otherwise mark as not reported.',
+    tab: 'studyDetails',
+  },
+  {
+    id: 'leadAuthor',
+    label: 'Lead Author',
+    description: 'Primary author surname and initials as reported.',
+    tab: 'studyDetails',
+  },
+  {
+    id: 'title',
+    label: 'Title',
+    description: 'Full study title exactly as published.',
+    tab: 'studyDetails',
+  },
+  {
+    id: 'yearOfPublication',
+    label: 'Year of Publication',
+    description: 'Publication year (numeric, four digits).',
+    tab: 'studyDetails',
+  },
+  {
+    id: 'journal',
+    label: 'Journal',
+    description: 'Journal name as printed in the source.',
+    tab: 'studyDetails',
+  },
+  {
+    id: 'doi',
+    label: 'DOI',
+    description: 'Digital Object Identifier if available.',
+    tab: 'studyDetails',
+  },
+  {
+    id: 'studyDesign',
+    label: 'Study Design',
+    description: 'Study design or methodology classification stated by authors.',
+    tab: 'studyDetails',
+  },
+  // Tab 2 – Participant Characteristics
+  {
+    id: 'fifaDiscipline',
+    label: 'FIFA Discipline',
+    description: 'Football discipline (e.g., 11-a-side, futsal).',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'country',
+    label: 'Country',
+    description: 'Country or region represented in the study.',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'levelOfPlay',
+    label: 'Level of Play',
+    description: 'Competitive level (professional, amateur, youth).',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'sex',
+    label: 'Sex',
+    description: 'Sex of participants (male, female, mixed).',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'ageCategory',
+    label: 'Age Category',
+    description: 'Age group or category.',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'meanAge',
+    label: 'Mean age (±SD) or range',
+    description: 'Mean age ± SD or reported range.',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'sampleSizePlayers',
+    label: 'Sample Size (players)',
+    description: 'Number of players included in the study.',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'numberOfTeams',
+    label: 'Number of teams/clubs',
+    description: 'Teams or clubs participating.',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'studyPeriodYears',
+    label: 'Study period (years)',
+    description: 'Total duration of study follow-up in years.',
+    tab: 'participantCharacteristics',
+  },
+  {
+    id: 'observationDuration',
+    label: 'Observation duration',
+    description: 'Observation window as reported.',
+    tab: 'participantCharacteristics',
+  },
+  // Tab 3 – Definition & Data Collection
+  {
+    id: 'injuryDefinition',
+    label: 'Injury Definition',
+    description: 'Definition used for injury.',
+    tab: 'definitions',
+  },
+  {
+    id: 'illnessDefinition',
+    label: 'Illness Definition',
+    description: 'Definition used for illness.',
+    tab: 'definitions',
+  },
+  {
+    id: 'mentalHealthDefinition',
+    label: 'Mental Health Problem Definition',
+    description: 'Definition of mental health issues if described.',
+    tab: 'definitions',
+  },
+  {
+    id: 'incidenceDefinition',
+    label: 'Incidence Definition',
+    description: 'How incidence was defined.',
+    tab: 'definitions',
+  },
+  {
+    id: 'burdenDefinition',
+    label: 'Burden Definition',
+    description: 'Definition for burden metrics.',
+    tab: 'definitions',
+  },
+  {
+    id: 'severityDefinition',
+    label: 'Severity Definition',
+    description: 'Definition for injury severity categories.',
+    tab: 'definitions',
+  },
+  {
+    id: 'recurrenceDefinition',
+    label: 'Recurrence Definition',
+    description: 'Definition for recurrent injuries.',
+    tab: 'definitions',
+  },
+  {
+    id: 'mechanismReporting',
+    label: 'Mechanism of Injury Reporting',
+    description: 'How mechanism of injury was described/reporting approach.',
+    tab: 'definitions',
+  },
+  // Tab 4 – Exposure Data
+  {
+    id: 'seasonLength',
+    label: 'Length of season/tournament (weeks)',
+    description: 'Duration of season or competition in weeks.',
+    tab: 'exposure',
+  },
+  {
+    id: 'numberOfSeasons',
+    label: 'Number of seasons',
+    description: 'Total number of seasons covered.',
+    tab: 'exposure',
+  },
+  {
+    id: 'exposureMeasurementUnit',
+    label: 'Exposure Measurement (unit)',
+    description: 'Unit used for exposure reporting.',
+    tab: 'exposure',
+  },
+  {
+    id: 'totalExposure',
+    label: 'Total Exposure',
+    description: 'Total exposure value reported.',
+    tab: 'exposure',
+  },
+  {
+    id: 'matchExposure',
+    label: 'Match Exposure',
+    description: 'Match exposure value.',
+    tab: 'exposure',
+  },
+  {
+    id: 'trainingExposure',
+    label: 'Training Exposure',
+    description: 'Training exposure value.',
+    tab: 'exposure',
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Manual tabs (Tabs 5–7)
+// ---------------------------------------------------------------------------
+const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
+  {
+    id: 'injuryTotalCount',
+    label: 'Total number of injuries',
+    description: 'Total count of injuries recorded in the study.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryMatchCount',
+    label: 'Number of match injuries',
+    description: 'Injuries that occurred during matches.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTrainingCount',
+    label: 'Number of training injuries',
+    description: 'Injuries that occurred during training.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceOverall',
+    label: 'Injury incidence (overall)',
+    description: 'Overall injury incidence rate as reported.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceMatch',
+    label: 'Match injury incidence',
+    description: 'Injury incidence during matches.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceTraining',
+    label: 'Training injury incidence',
+    description: 'Injury incidence during training.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceCi95',
+    label: 'Injury incidence 95% CI',
+    description: 'Reported 95% confidence interval for injury incidence.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceAdjusted',
+    label: 'Adjusted injury incidence (overall)',
+    description: 'Adjusted injury incidence rate if provided.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryConfounders',
+    label: 'Confounders',
+    description: 'Confounders considered in injury analysis.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTimeLossTotal',
+    label: 'Total time-loss due to injury',
+    description: 'Total time-loss due to injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTimeLossMedian',
+    label: 'Median time-loss',
+    description: 'Median time-loss reported for injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTimeLossMean',
+    label: 'Mean time-loss',
+    description: 'Mean time-loss reported for injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryBurden',
+    label: 'Injury burden',
+    description: 'Reported injury burden metric.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryBurdenCi95',
+    label: 'Injury burden 95% CI',
+    description: '95% confidence interval for injury burden.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryMostCommonType',
+    label: 'Most common injury type',
+    description: 'Most common type of injury reported.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryMostCommonLocation',
+    label: 'Most common injury location',
+    description: 'Most common anatomical location for injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryMostCommonSeverity',
+    label: 'Most common injury severity class',
+    description: 'Most common injury severity classification.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryModeRepetitiveGradual',
+    label: 'Mode of onset – Repetitive gradual',
+    description: 'Proportion or notes for repetitive gradual onset injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryModeRepetitiveSudden',
+    label: 'Mode of onset – Repetitive sudden',
+    description: 'Proportion or notes for repetitive sudden onset injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryModeAcuteSudden',
+    label: 'Mode of onset – Acute sudden',
+    description: 'Proportion or notes for acute sudden onset injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryContact',
+    label: 'Contact',
+    description: 'Notes on contact-related injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryNonContact',
+    label: 'Non-contact',
+    description: 'Notes on non-contact injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryCumulativeRepetitive',
+    label: 'Cumulative (repetitive)',
+    description: 'Cumulative repetitive injury data.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryDurationMedian',
+    label: 'Median injury duration',
+    description: 'Median duration of injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryDurationMean',
+    label: 'Mean injury duration (±SD)',
+    description: 'Mean duration of injuries with SD.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryRecurrentTotal',
+    label: 'Total recurrent injuries',
+    description: 'Count of recurrent injuries.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryRecurrenceRate',
+    label: 'Recurrence rate (%)',
+    description: 'Injury recurrence rate percentage.',
+    tab: 'injuryOutcome',
+  },
+];
+
+const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
+  {
+    id: 'illnessTotalCount',
+    label: 'Total number of illnesses',
+    description: 'Total count of illnesses recorded.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessMatchCount',
+    label: 'Number of match illnesses',
+    description: 'Illnesses that occurred around matches.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessTrainingCount',
+    label: 'Number of training illnesses',
+    description: 'Illnesses that occurred during training.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessIncidenceOverall',
+    label: 'Illness incidence (overall)',
+    description: 'Overall illness incidence rate.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessIncidenceMatch',
+    label: 'Match illnesses incidence',
+    description: 'Illness incidence during matches.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessIncidenceTraining',
+    label: 'Training illnesses incidence',
+    description: 'Illness incidence during training.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessIncidenceCi95',
+    label: 'Illness incidence 95% CI',
+    description: 'Reported 95% confidence interval for illness incidence.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessTimeLossTotal',
+    label: 'Total time-loss due to illnesses',
+    description: 'Total time-loss due to illnesses.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessTimeLossMedian',
+    label: 'Median time-loss',
+    description: 'Median illness time-loss.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessTimeLossMean',
+    label: 'Mean time-loss',
+    description: 'Mean illness time-loss.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessBurden',
+    label: 'Illness burden',
+    description: 'Reported illness burden metric.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessBurdenCi95',
+    label: 'Illness burden 95% CI',
+    description: '95% confidence interval for illness burden.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessMostCommonSystem',
+    label: 'Most common organ system/region',
+    description: 'Most affected organ system or region.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessMostCommonEtiology',
+    label: 'Most common etiology',
+    description: 'Most common illness etiology.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessMostCommonSeverity',
+    label: 'Most common illness severity class',
+    description: 'Most common illness severity classification.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessModeGradual',
+    label: 'Mode of onset – Gradual',
+    description: 'Gradual onset illnesses.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessModeSudden',
+    label: 'Mode of onset – Sudden',
+    description: 'Sudden onset illnesses.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessDurationMedian',
+    label: 'Median illness duration',
+    description: 'Median illness duration.',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessDurationMean',
+    label: 'Mean illness duration (±SD)',
+    description: 'Mean illness duration with SD.',
+    tab: 'illnessOutcome',
+  },
+];
+
+const mentalHealthOutcomeDefinitions: ExtractionFieldDefinition[] = [
+  {
+    id: 'mhProblemTotal',
+    label: 'Total number of mental health problems',
+    description: 'Total count of mental health problems reported.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhIncidenceOverall',
+    label: 'Mental health problems incidence (overall)',
+    description: 'Overall incidence for mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhReportingMethod',
+    label: 'Method of reporting mental health problems',
+    description: 'How mental health problems were reported.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhTimeLossTotal',
+    label: 'Total time-loss due to mental health problems',
+    description: 'Total time-loss due to mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhTimeLossMedian',
+    label: 'Median time-loss',
+    description: 'Median time-loss for mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhTimeLossMean',
+    label: 'Mean time-loss',
+    description: 'Mean time-loss for mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhBurden',
+    label: 'Mental health burden',
+    description: 'Burden metric for mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhMostCommonSymptoms',
+    label: 'Most common mental health symptoms',
+    description: 'Most common mental health symptoms reported.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhMostCommonDisorder',
+    label: 'Most common mental health disorder',
+    description: 'Most common mental health disorder reported.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhMostCommonSeverity',
+    label: 'Most common mental health severity class',
+    description: 'Most common severity classification for mental health.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhModeGradual',
+    label: 'Mode of onset – Gradual',
+    description: 'Gradual onset mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhModeAcute',
+    label: 'Mode of onset – Acute',
+    description: 'Acute onset mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhModeMixed',
+    label: 'Mode of onset – Mixed',
+    description: 'Mixed onset mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhModeUnknown',
+    label: 'Mode of onset – Unknown',
+    description: 'Unknown onset mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhDurationMedian',
+    label: 'Median mental health duration',
+    description: 'Median duration for mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhDurationMean',
+    label: 'Mean mental health duration (±SD)',
+    description: 'Mean duration for mental health problems with SD.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhRecurrentTotal',
+    label: 'Total recurrent mental health problems',
+    description: 'Total count of recurrent mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+  {
+    id: 'mhRecurrenceRate',
+    label: 'Recurrence rate (%)',
+    description: 'Recurrence rate for mental health problems.',
+    tab: 'mentalHealthOutcomes',
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Metric-based manual tabs (Tabs 8–11)
+// ---------------------------------------------------------------------------
+export const extractionMetrics: Array<{ metric: ExtractionFieldMetric; label: string }> = [
+  { metric: 'prevalence', label: 'Prevalence' },
+  { metric: 'incidence', label: 'Incidence' },
+  { metric: 'burden', label: 'Burden' },
+  { metric: 'severityMeanDays', label: 'Severity (mean days out)' },
+  { metric: 'severityTotalDays', label: 'Severity (total days out)' },
+];
+
+type MetricGroup = {
+  id: string;
+  label: string;
+};
+
+type MetricDescription = {
+  metric: ExtractionFieldMetric;
+  labelSuffix: string;
+};
+
+const metricDescriptions: MetricDescription[] = [
+  { metric: 'prevalence', labelSuffix: 'Prevalence' },
+  { metric: 'incidence', labelSuffix: 'Incidence' },
+  { metric: 'burden', labelSuffix: 'Burden' },
+  { metric: 'severityMeanDays', labelSuffix: 'Severity (mean days out)' },
+  { metric: 'severityTotalDays', labelSuffix: 'Severity (total days out)' },
+];
+
+const injuryTissueTypeGroups: MetricGroup[] = [
+  { id: 'muscle_tendon', label: 'Muscle/tendon' },
+  { id: 'muscle_injury', label: 'Muscle injury' },
+  { id: 'muscle_contusion', label: 'Muscle contusion' },
+  { id: 'muscle_compartment', label: 'Muscle compartment syndrome' },
+  { id: 'tendinopathy', label: 'Tendinopathy' },
+  { id: 'tendon_rupture', label: 'Tendon rupture' },
+  { id: 'nervous', label: 'Nervous' },
+  { id: 'brain_spinal', label: 'Brain/spinal cord injury' },
+  { id: 'peripheral_nerve', label: 'Peripheral nerve injury' },
+  { id: 'bone', label: 'Bone' },
+  { id: 'bone_fracture', label: 'Bone fracture' },
+  { id: 'bone_stress', label: 'Bone stress injury' },
+  { id: 'bone_contusion', label: 'Bone contusion' },
+  { id: 'avascular_necrosis', label: 'Avascular necrosis' },
+  { id: 'physis', label: 'Physis injury' },
+  { id: 'cartilage_injury', label: 'Cartilage injury' },
+  { id: 'arthritis', label: 'Arthritis' },
+  { id: 'synovitis_capsulitis', label: 'Synovitis/capsulitis' },
+  { id: 'bursitis', label: 'Bursitis' },
+  { id: 'ligament_joint_capsule', label: 'Ligament/joint capsule' },
+  { id: 'joint_sprain', label: 'Joint sprain' },
+  { id: 'chronic_instability', label: 'Chronic instability' },
+  { id: 'superficial_contusion', label: 'Contusion (superficial)' },
+  { id: 'laceration', label: 'Laceration' },
+  { id: 'abrasion', label: 'Abrasion' },
+  { id: 'vessels', label: 'Vessels' },
+  { id: 'stump', label: 'Stump' },
+  { id: 'internal_organs', label: 'Internal organs' },
+];
+
+const injuryLocationGroups: MetricGroup[] = [
+  { id: 'head', label: 'Head' },
+  { id: 'neck', label: 'Neck' },
+  { id: 'shoulder', label: 'Shoulder' },
+  { id: 'upper_arm', label: 'Upper arm' },
+  { id: 'elbow', label: 'Elbow' },
+  { id: 'forearm', label: 'Forearm' },
+  { id: 'wrist', label: 'Wrist' },
+  { id: 'hand', label: 'Hand' },
+  { id: 'chest', label: 'Chest' },
+  { id: 'thoracic_spine', label: 'Thoracic spine' },
+  { id: 'lumbosacral', label: 'Lumbosacral' },
+  { id: 'abdomen', label: 'Abdomen' },
+  { id: 'hip', label: 'Hip' },
+  { id: 'groin', label: 'Groin' },
+  { id: 'thigh', label: 'Thigh' },
+  { id: 'knee', label: 'Knee' },
+  { id: 'lower_leg', label: 'Lower leg' },
+  { id: 'ankle', label: 'Ankle' },
+  { id: 'foot', label: 'Foot' },
+  { id: 'unspecified', label: 'Unspecified' },
+  { id: 'multiple', label: 'Multiple' },
+  { id: 'side_left', label: 'Side – Left' },
+  { id: 'side_right', label: 'Side – Right' },
+  { id: 'side_centre', label: 'Side – Centre' },
+  { id: 'side_bilateral', label: 'Side – Bilateral' },
+  { id: 'position_goalkeeper', label: 'Position – Goalkeeper' },
+  { id: 'position_defender', label: 'Position – Defender' },
+  { id: 'position_midfielder', label: 'Position – Midfielder' },
+  { id: 'position_attacker', label: 'Position – Attacker' },
+];
+
+const illnessRegionGroups: MetricGroup[] = [
+  { id: 'cardiovascular', label: 'Cardiovascular' },
+  { id: 'dermatological', label: 'Dermatological' },
+  { id: 'dental', label: 'Dental' },
+  { id: 'endocrinological', label: 'Endocrinological' },
+  { id: 'gastrointestinal', label: 'Gastrointestinal' },
+  { id: 'genitourinary', label: 'Genitourinary' },
+  { id: 'hematological', label: 'Hematological' },
+  { id: 'musculoskeletal', label: 'Musculoskeletal' },
+  { id: 'neurological', label: 'Neurological' },
+  { id: 'ophthalmological', label: 'Ophthalmological' },
+  { id: 'otological', label: 'Otological' },
+  { id: 'psychiatric', label: 'Psychiatric/psychological' },
+  { id: 'respiratory', label: 'Respiratory' },
+  { id: 'thermoregulatory', label: 'Thermoregulatory' },
+  { id: 'multiple', label: 'Multiple systems' },
+  { id: 'unknown', label: 'Unknown or not specified' },
+];
+
+const illnessEtiologyGroups: MetricGroup[] = [
+  { id: 'allergic', label: 'Allergic' },
+  { id: 'environmental_exercise', label: 'Environmental (exercise related)' },
+  { id: 'environmental_nonexercise', label: 'Environmental (nonexercise)' },
+  { id: 'immunological', label: 'Immunological/inflammatory' },
+  { id: 'infection', label: 'Infection' },
+  { id: 'neoplasm', label: 'Neoplasm' },
+  { id: 'metabolic', label: 'Metabolic/nutritional' },
+  { id: 'thrombotic', label: 'Thrombotic/hemorrhagic' },
+  { id: 'degenerative', label: 'Degenerative or chronic condition' },
+  { id: 'developmental', label: 'Developmental anomaly' },
+  { id: 'drug_related', label: 'Drug-related/poisoning' },
+  { id: 'multiple', label: 'Multiple' },
+  { id: 'unknown', label: 'Unknown or not specified' },
+];
+
+function generateMetricFields(tab: ExtractionTab, groups: MetricGroup[]): ExtractionFieldDefinition[] {
+  return groups.flatMap((group) =>
+    metricDescriptions.map((metric) => {
+      const id = `${tab}_${group.id}_${metric.metric}`;
+      const label = `${group.label} – ${metric.labelSuffix}`;
+      const description = `${metric.labelSuffix} for ${group.label.toLowerCase()}.`;
+      return {
+        id,
+        label,
+        description,
+        tab,
+        metric: metric.metric,
+        groupId: `${tab}:${group.id}`,
+        groupLabel: group.label,
+      } satisfies ExtractionFieldDefinition;
+    }),
+  );
+}
+
+const mentalHealthSymptomsDefinitions: ExtractionFieldDefinition[] = [
+  { id: 'mhSymptomGeneral', label: 'Symptoms', description: 'General mental health symptoms reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhDistress', label: 'Distress', description: 'Distress-related symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhAnxietySymptoms', label: 'Anxiety', description: 'Anxiety symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhDepressionSymptoms', label: 'Depression', description: 'Depression symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhSleepDisturbance', label: 'Sleep disturbance', description: 'Sleep disturbance symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhDisorderedEating', label: 'Disordered eating', description: 'Disordered eating symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhAlcoholMisuseSymptoms', label: 'Alcohol misuse', description: 'Alcohol misuse symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhDrugMisuseSymptoms', label: 'Drug misuse', description: 'Drug misuse symptoms.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhDepressiveDisorders', label: 'Depressive disorders', description: 'Depressive disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhAnxietyDisorders', label: 'Anxiety disorders', description: 'Anxiety disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhSpecificPhobias', label: 'Specific phobias', description: 'Specific phobias reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhPanicDisorder', label: 'Panic disorder', description: 'Panic disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhSomatisation', label: 'Somatisation', description: 'Somatisation disorders.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhEatingDisorders', label: 'Eating disorders', description: 'Eating disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhSleepDisorders', label: 'Sleep disorders', description: 'Sleep disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhGambling', label: 'Gambling or betting disorder', description: 'Gambling or betting disorders.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhOcd', label: 'Obsessive–compulsive disorders', description: 'Obsessive–compulsive disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhBipolar', label: 'Bipolar disorders', description: 'Bipolar disorders reported.', tab: 'mentalHealthSymptoms' },
+  { id: 'mhAlcoholSubstanceDisorders', label: 'Alcohol and other substance misuse', description: 'Alcohol and other substance misuse disorders.', tab: 'mentalHealthSymptoms' },
+];
+
+const metricFieldDefinitions: ExtractionFieldDefinition[] = [
+  ...generateMetricFields('injuryTissueType', injuryTissueTypeGroups),
+  ...generateMetricFields('injuryLocation', injuryLocationGroups),
+  ...generateMetricFields('illnessRegion', illnessRegionGroups),
+  ...generateMetricFields('illnessEtiology', illnessEtiologyGroups),
+];
+
+// ---------------------------------------------------------------------------
+// Aggregate export
+// ---------------------------------------------------------------------------
+export const extractionFieldDefinitions: ExtractionFieldDefinition[] = [
+  ...aiFieldDefinitions,
+  ...injuryOutcomeDefinitions,
+  ...illnessOutcomeDefinitions,
+  ...mentalHealthOutcomeDefinitions,
+  ...mentalHealthSymptomsDefinitions,
+  ...metricFieldDefinitions,
+];
+
+export const extractionTabs: ExtractionTab[] = [
+  'studyDetails',
+  'participantCharacteristics',
+  'definitions',
+  'exposure',
+  'injuryOutcome',
+  'illnessOutcome',
+  'mentalHealthOutcomes',
+  'injuryTissueType',
+  'injuryLocation',
+  'illnessRegion',
+  'illnessEtiology',
+  'mentalHealthSymptoms',
+];
+
+export const aiExtractionTabs = new Set<ExtractionTab>([
+  'studyDetails',
+  'participantCharacteristics',
+  'definitions',
+  'exposure',
+]);
+
+export const humanExtractionTabs = extractionTabs.filter((tab) => !aiExtractionTabs.has(tab));
+
+export const extractionTabMeta: Record<ExtractionTab, { title: string; description: string }> = {
+  studyDetails: {
+    title: 'Study details',
+    description: 'Bibliographic information, identifiers, and design details captured from the study header or abstract.',
+  },
+  participantCharacteristics: {
+    title: 'Participant characteristics',
+    description: 'Demographics and cohort composition describing who took part in the study.',
+  },
+  definitions: {
+    title: 'Definitions & data collection',
+    description: 'Operational definitions and data collection conventions used by the authors.',
+  },
+  exposure: {
+    title: 'Exposure data',
+    description: 'Season length and exposure measurements for match and training activities.',
+  },
+  injuryOutcome: {
+    title: 'Injury outcome',
+    description: 'Manual entry for injury counts, incidences, burdens, and recurrence metrics.',
+  },
+  illnessOutcome: {
+    title: 'Illness outcome',
+    description: 'Manual entry for illness incidence, burden, and duration metrics.',
+  },
+  mentalHealthOutcomes: {
+    title: 'Mental health outcomes',
+    description: 'Manual entry for mental health problem metrics and onset information.',
+  },
+  injuryTissueType: {
+    title: 'Injury tissue & type',
+    description: 'Manual entry capturing prevalence, incidence, burden, and severity by tissue/tissue type.',
+  },
+  injuryLocation: {
+    title: 'Injury location',
+    description: 'Manual entry capturing prevalence, incidence, burden, and severity by anatomical location.',
+  },
+  illnessRegion: {
+    title: 'Illness region',
+    description: 'Manual entry capturing prevalence, incidence, burden, and severity by organ system.',
+  },
+  illnessEtiology: {
+    title: 'Illness etiology',
+    description: 'Manual entry capturing prevalence, incidence, burden, and severity by illness cause.',
+  },
+  mentalHealthSymptoms: {
+    title: 'Mental health symptoms & disorders',
+    description: 'Manual entry for specific mental health symptoms and disorders reported.',
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Helpers used by the extraction service/UI
+// ---------------------------------------------------------------------------
+
+export function createEmptyFieldResult(fieldId: string): ExtractionFieldResult {
+  return {
+    fieldId,
+    value: null,
+    confidence: null,
+    status: 'not_reported',
+    updatedAt: new Date().toISOString(),
+    updatedBy: 'human',
+  };
+}
+
+export function createEmptyTabResult(tab: ExtractionTab): ExtractionFieldResult[] {
+  return extractionFieldDefinitions
+    .filter((definition) => definition.tab === tab)
+    .map((definition) => ({
+      ...createEmptyFieldResult(definition.id),
+      metric: definition.metric,
+    }));
+}
+
+const schemaCache: Partial<Record<ExtractionTab, z.ZodObject<Record<string, z.ZodTypeAny>>>> = {};
+
+function buildTabSchema(tab: ExtractionTab) {
+  if (schemaCache[tab]) {
+    return schemaCache[tab]!;
+  }
+
+  const definitions = extractionFieldDefinitions.filter((definition) => definition.tab === tab);
+  const shape: Record<string, z.ZodTypeAny> = {};
+
+  for (const definition of definitions) {
+    shape[definition.id] = z.object({
+      value: z.union([z.string(), z.null()]).optional(),
+      confidence: z.union([z.number(), z.null()]).optional(),
+      status: z.enum(['reported', 'not_reported', 'uncertain']).optional(),
+      sourceQuote: z.string().optional(),
+      pageHint: z.string().optional(),
+    });
+  }
+
+  const schema = z.object(shape);
+  schemaCache[tab] = schema;
+  return schema;
+}
+
+export function buildTabValidationSchema(tab: ExtractionTab) {
+  return buildTabSchema(tab);
+}
