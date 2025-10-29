@@ -190,20 +190,30 @@ export const mockDb = {
     return db.exports.toSorted((a, b) => b.createdAt.localeCompare(a.createdAt));
   },
 
-  createExport(kind: ExportJob['kind'], paperIds: string[], downloadUrl: string): ExportJob {
+  createExport(kind: ExportJob['kind'], paperIds: string[]): ExportJob {
+    const id = crypto.randomUUID();
+    const createdAt = now();
+    const downloadUrl = `/api/exports/${id}/download`;
     const job: ExportJob = {
-      id: crypto.randomUUID(),
+      id,
       kind,
       paperIds,
       status: 'ready',
-      createdAt: now(),
+      createdAt,
       downloadUrl,
-      checksumSha256: crypto.createHash('sha256').update(downloadUrl).digest('hex'),
+      checksumSha256: crypto
+        .createHash('sha256')
+        .update(JSON.stringify({ id, kind, paperIds, createdAt }))
+        .digest('hex'),
     };
 
     db.exports.push(job);
 
     return job;
+  },
+
+  getExport(id: string): ExportJob | undefined {
+    return db.exports.find((job) => job.id === id);
   },
 
   listExtractions(paperId: string): ExtractionResult[] {

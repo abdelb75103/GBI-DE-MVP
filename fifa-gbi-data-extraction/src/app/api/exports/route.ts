@@ -20,8 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'kind and paperIds are required' }, { status: 400 });
   }
 
-  const downloadUrl = `/mock-exports/${kind}-${Date.now()}`;
-  const job = mockDb.createExport(kind, paperIds, downloadUrl);
+  const job = mockDb.createExport(kind, paperIds);
 
   return NextResponse.json({ export: job }, { status: 201 });
 }
