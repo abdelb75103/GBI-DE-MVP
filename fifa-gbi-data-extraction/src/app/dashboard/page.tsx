@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ExportControls } from '@/components/export-controls';
 import { PapersTable } from '@/components/papers-table';
 import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { formatDateTimeUTC } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
 
@@ -146,7 +147,7 @@ export default function DashboardPage() {
                         </span>
                       </div>
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
-                        <time dateTime={job.createdAt}>{new Date(job.createdAt).toLocaleString()}</time>
+                        <time dateTime={job.createdAt}>{formatDateTimeUTC(job.createdAt)}</time>
                         <div className="flex items-center gap-2">
                           {job.downloadUrl ? (
                             <a

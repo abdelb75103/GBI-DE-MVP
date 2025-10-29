@@ -9,6 +9,7 @@ import { StatusSelect } from '@/components/status-select';
 import { ExtractionTabsPanel } from '@/components/extraction-tabs-panel';
 import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
 import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { formatDateTimeUTC } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
 
@@ -145,9 +146,7 @@ export default async function PaperWorkspace({
                     </li>
                     <li>
                       <span className="font-medium text-slate-700">Uploaded:</span>{' '}
-                      <time dateTime={file.uploadedAt}>
-                        {new Date(file.uploadedAt).toLocaleString()}
-                      </time>
+                      <time dateTime={file.uploadedAt}>{formatDateTimeUTC(file.uploadedAt)}</time>
                     </li>
                   </ul>
                 ) : (

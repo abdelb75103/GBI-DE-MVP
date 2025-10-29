@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { StatusPill } from '@/components/status-pill';
+import { formatDateTimeUTC } from '@/lib/format';
 import type { Paper } from '@/lib/types';
 
 type PapersTableProps = {
@@ -176,7 +177,7 @@ export function PapersTable({ papers }: PapersTableProps) {
                   <StatusPill status={paper.status} />
                 </td>
                 <td className="px-6 py-4 text-sm text-slate-500">
-                  <time dateTime={paper.createdAt}>{new Date(paper.createdAt).toLocaleString()}</time>
+                  <time dateTime={paper.createdAt}>{formatDateTimeUTC(paper.createdAt)}</time>
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-slate-600">{paper.noteIds.length}</td>
                 <td className="px-6 py-4">
@@ -214,4 +215,3 @@ export function PapersTable({ papers }: PapersTableProps) {
     </div>
   );
 }
-

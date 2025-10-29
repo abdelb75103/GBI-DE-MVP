@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { formatDateTimeUTC } from '@/lib/format';
 
 import type { Note } from '@/lib/types';
 
@@ -28,7 +29,7 @@ export function NoteList({ initialNotes }: NoteListProps) {
         >
           <div className="flex items-center justify-between text-[11px] font-medium uppercase tracking-wide text-slate-400">
             <span>{note.author}</span>
-            <time dateTime={note.createdAt}>{new Date(note.createdAt).toLocaleString()}</time>
+            <time dateTime={note.createdAt}>{formatDateTimeUTC(note.createdAt)}</time>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-slate-700">{note.body}</p>
         </li>
