@@ -8,7 +8,9 @@ import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
 import { ExtractionTabsPanel } from '@/components/extraction-tabs-panel';
 import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
+import { definitionCategories } from '@/lib/definitions';
 import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { formatDateTimeUTC } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
@@ -185,6 +187,8 @@ export default async function PaperWorkspace({
           </div>
         </div>
       </div>
+
+      <DefinitionsDrawer categories={definitionCategories} />
     </div>
   );
 }
