@@ -256,6 +256,15 @@ export const mockDb = {
       paper.updatedAt = now();
     }
 
+    if (paper) {
+      const titleField = extraction.fields.find((field) => field.fieldId === 'title');
+      const newTitle = typeof titleField?.value === 'string' ? titleField.value.trim() : '';
+      if (newTitle) {
+        paper.title = newTitle;
+        paper.updatedAt = now();
+      }
+    }
+
     return extraction;
   },
 
@@ -331,6 +340,17 @@ export const mockDb = {
 
     extraction.updatedAt = now();
     extraction.model = model ?? (field.updatedBy === 'ai' ? 'ai-generated' : 'human-edited');
+
+    if (fieldId === 'title') {
+      const newTitle = typeof field.value === 'string' ? field.value.trim() : '';
+      if (newTitle) {
+        const paperRef = this.getPaper(paperId);
+        if (paperRef) {
+          paperRef.title = newTitle;
+          paperRef.updatedAt = now();
+        }
+      }
+    }
 
     return extraction;
   },
