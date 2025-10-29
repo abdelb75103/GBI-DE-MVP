@@ -74,11 +74,22 @@ const generateAssignedStudyId = (): string => {
     return sequence > max ? sequence : max;
   }, 0);
   const nextSequence = maxSequence + 1;
-  return `S${String(nextSequence).padStart(2, '0')}`;
+  return `S${String(nextSequence).padStart(3, '0')}`;
+};
+
+const ensureAssignedStudyId = (paper: Paper | undefined) => {
+  if (!paper) {
+    return;
+  }
+  if (!paper.assignedStudyId) {
+    paper.assignedStudyId = generateAssignedStudyId();
+    paper.updatedAt = now();
+  }
 };
 
 export const mockDb = {
   listPapers(): Paper[] {
+    db.papers.forEach((paper) => ensureAssignedStudyId(paper));
     return db.papers.toSorted((a, b) => b.createdAt.localeCompare(a.createdAt));
   },
 
@@ -87,7 +98,9 @@ export const mockDb = {
   },
 
   getPaper(id: string): Paper | undefined {
-    return db.papers.find((paper) => paper.id === id);
+    const paper = db.papers.find((item) => item.id === id);
+    ensureAssignedStudyId(paper);
+    return paper;
   },
 
   createPaper(input: CreatePaperInput): Paper {
@@ -111,7 +124,7 @@ export const mockDb = {
     return paper;
   },
 
-  updatePaper(id: string, updates: Partial<Omit<Paper, 'id' | 'createdAt'>>): Paper | undefined {
+  updatePaper(id: string, updates: Partial<Omit<Paper, 'id' | 'createdAt' | 'assignedStudyId'>>): Paper | undefined {
     const paper = this.getPaper(id);
     if (!paper) {
       return undefined;

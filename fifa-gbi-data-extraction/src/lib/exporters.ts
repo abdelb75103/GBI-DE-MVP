@@ -124,7 +124,7 @@ export function buildCsvExport(paperIds: string[]): string {
 
   const headerLine = headers.map(escapeCsv).join(',');
   const rowLines = lines.map((row) => row.join(','));
-  return [headerLine, ...rowLines].join('\n');
+  return `\uFEFF${[headerLine, ...rowLines].join('\r\n')}`;
 }
 
 export function buildPaperCsv(paperId: string): string {
