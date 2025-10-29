@@ -19,14 +19,9 @@ const valueColumns = extractionFieldDefinitions.map((definition) => ({
 }));
 
 const baseColumns = [
-  { header: 'Paper ID', access: (paper: Paper) => paper.id },
+  { header: 'Paper ID', access: (paper: Paper) => paper.assignedStudyId ?? paper.id },
   { header: 'Paper Title', access: (paper: Paper) => paper.title ?? '' },
   { header: 'Status', access: (paper: Paper) => paper.status },
-  { header: 'Lead Author', access: (paper: Paper) => paper.leadAuthor ?? '' },
-  { header: 'Year', access: (paper: Paper) => paper.year ?? '' },
-  { header: 'Journal', access: (paper: Paper) => paper.journal ?? '' },
-  { header: 'DOI', access: (paper: Paper) => paper.doi ?? '' },
-  { header: 'Flagged', access: (paper: Paper) => (paper.flagId ? 'True' : 'False') },
 ] as const;
 
 type ExportExtractionField = ExtractionFieldResult & {

@@ -55,6 +55,9 @@ export default async function PaperWorkspace({
             </span>
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
+                  {paper.assignedStudyId}
+                </span>
                 <h1 className="text-3xl font-semibold text-slate-900">{paper.title}</h1>
                 <StatusPill status={paper.status} />
               </div>

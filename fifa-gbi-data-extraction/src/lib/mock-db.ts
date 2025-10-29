@@ -62,6 +62,21 @@ if (!globalForDb.__mockDb) {
 
 const now = () => new Date().toISOString();
 
+const extractStudySequence = (assignedId: string | undefined): number => {
+  if (!assignedId) return 0;
+  const match = /^S(\d+)$/i.exec(assignedId.trim());
+  return match ? Number.parseInt(match[1], 10) : 0;
+};
+
+const generateAssignedStudyId = (): string => {
+  const maxSequence = db.papers.reduce((max, paper) => {
+    const sequence = extractStudySequence(paper.assignedStudyId);
+    return sequence > max ? sequence : max;
+  }, 0);
+  const nextSequence = maxSequence + 1;
+  return `S${String(nextSequence).padStart(2, '0')}`;
+};
+
 export const mockDb = {
   listPapers(): Paper[] {
     return db.papers.toSorted((a, b) => b.createdAt.localeCompare(a.createdAt));
@@ -78,6 +93,7 @@ export const mockDb = {
   createPaper(input: CreatePaperInput): Paper {
     const paper: Paper = {
       id: crypto.randomUUID(),
+      assignedStudyId: generateAssignedStudyId(),
       title: input.title,
       leadAuthor: input.leadAuthor,
       year: input.year,

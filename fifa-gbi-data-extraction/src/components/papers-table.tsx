@@ -166,11 +166,18 @@ export function PapersTable({ papers }: PapersTableProps) {
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-slate-900">{paper.title}</span>
-                    <span className="text-xs text-slate-500">
-                      {paper.leadAuthor ? `${paper.leadAuthor} · ` : ''}
-                      {paper.year ?? 'Year N/A'}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="inline-flex min-w-[3rem] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
+                        {paper.assignedStudyId}
+                      </span>
+                      <span className="font-semibold text-slate-900">{paper.title}</span>
+                    </div>
+                    {paper.leadAuthor || paper.year ? (
+                      <span className="text-xs text-slate-500">
+                        {paper.leadAuthor ? `${paper.leadAuthor} · ` : ''}
+                        {paper.year ?? 'Year N/A'}
+                      </span>
+                    ) : null}
                   </div>
                 </td>
                 <td className="px-6 py-4">

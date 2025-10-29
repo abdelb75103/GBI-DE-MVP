@@ -73,6 +73,7 @@ export interface Note {
 
 export interface Paper {
   id: string;
+  assignedStudyId: string;
   title: string;
   status: PaperStatus;
   leadAuthor?: string;
