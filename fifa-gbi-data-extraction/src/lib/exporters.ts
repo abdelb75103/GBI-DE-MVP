@@ -1,6 +1,6 @@
 import { extractionFieldDefinitions, extractionTabMeta } from '@/lib/extraction/schema';
 import { mockDb } from '@/lib/mock-db';
-import type { ExtractionFieldResult, ExtractionResult, Paper } from '@/lib/types';
+import type { ExtractionResult, Paper } from '@/lib/types';
 
 const escapeCsv = (value: string) => `"${value.replace(/"/g, '""')}"`;
 
@@ -24,13 +24,18 @@ const baseColumns = [
   { header: 'Status', access: (paper: Paper) => paper.status },
 ] as const;
 
-type ExportExtractionField = ExtractionFieldResult & {
+type ExportExtractionField = {
+  fieldId: string;
+  value: string | null;
   label: string;
-  tabLabel: string;
+  tab: string;
 };
 
-type ExportExtraction = ExtractionResult & {
+type ExportExtraction = {
+  tab: ExtractionResult['tab'];
   tabLabel: string;
+  model: ExtractionResult['model'];
+  updatedAt: string;
   fields: ExportExtractionField[];
 };
 
@@ -57,15 +62,18 @@ export function buildJsonExport(paperIds: string[]) {
         : undefined,
       notes,
       extractions: extractions.map<ExportExtraction>((extraction) => ({
-        ...extraction,
+        tab: extraction.tab,
         tabLabel: extractionTabMeta[extraction.tab]?.title ?? extraction.tab,
-        fields: extraction.fields.map<ExportExtractionField>((field) => {
+        model: extraction.model,
+        updatedAt: extraction.updatedAt,
+        fields: extraction.fields.map((field) => {
           const rawLabel =
             extractionFieldDefinitions.find((definition) => definition.id === field.fieldId)?.label ?? field.fieldId;
           return {
-            ...field,
+            fieldId: field.fieldId,
+            value: field.value ?? null,
             label: toTitleCase(rawLabel),
-            tabLabel: extractionTabMeta[extraction.tab]?.title ?? extraction.tab,
+            tab: extractionTabMeta[extraction.tab]?.title ?? extraction.tab,
           };
         }),
       })),
