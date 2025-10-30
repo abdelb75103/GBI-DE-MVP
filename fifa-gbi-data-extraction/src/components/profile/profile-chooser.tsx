@@ -12,11 +12,14 @@ type ProfileOption = {
   role: UserRole;
 };
 
-const ROLE_DESCRIPTION: Record<UserRole, string> = {
-  admin: 'Uploads PDFs, oversees assignments, runs bulk exports.',
-  extractor: 'Claims papers, extracts data, exports individual papers.',
-  observer: 'Monitors progress and can trigger exports.',
-};
+const GRADIENTS = [
+  'from-indigo-600/25 via-sky-500/20 to-indigo-400/25',
+  'from-emerald-500/25 via-teal-400/20 to-lime-400/20',
+  'from-rose-500/25 via-orange-400/20 to-amber-400/20',
+  'from-sky-500/25 via-cyan-400/20 to-violet-400/20',
+  'from-fuchsia-500/25 via-purple-400/20 to-pink-400/20',
+  'from-amber-500/25 via-orange-400/20 to-rose-400/20',
+];
 
 export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
   const router = useRouter();
@@ -34,24 +37,23 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {sortedProfiles.map((profile) => (
-        <button
-          key={profile.id}
-          type="button"
-          onClick={() => handleSelect(profile)}
-          className="group flex flex-col rounded-3xl border border-slate-200/70 bg-white/80 p-5 text-left shadow-md transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg"
-        >
-          <span className="text-lg font-semibold text-slate-900 group-hover:text-indigo-700">
-            {profile.fullName}
-          </span>
-          <span className="mt-2 inline-flex w-fit items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-            {profile.role}
-          </span>
-          <span className="mt-3 text-sm text-slate-600">
-            {ROLE_DESCRIPTION[profile.role]}
-          </span>
-        </button>
-      ))}
+      {sortedProfiles.map((profile, index) => {
+        const gradient = GRADIENTS[index % GRADIENTS.length];
+
+        return (
+          <button
+            key={profile.id}
+            type="button"
+            onClick={() => handleSelect(profile)}
+            className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-5 text-left shadow-md ring-1 ring-slate-200/60 backdrop-blur transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white"
+          >
+            <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${gradient} opacity-80 transition-opacity group-hover:opacity-100`} aria-hidden />
+            <span className="relative z-10 text-lg font-semibold text-slate-900 transition group-hover:text-indigo-700">
+              {profile.fullName}
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }
