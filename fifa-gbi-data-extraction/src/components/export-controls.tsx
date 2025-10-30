@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 
+import { useActiveProfile } from '@/components/providers/active-profile-provider';
+
 type ExportControlsProps = {
   paperIds: string[];
 };
@@ -12,6 +14,21 @@ export function ExportControls({ paperIds }: ExportControlsProps) {
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const { profile } = useActiveProfile();
+  const isAdmin = profile?.role === 'admin';
+
+  if (!isAdmin) {
+    return (
+      <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <div className="space-y-3">
+          <p className="text-sm font-semibold text-slate-900">Exports</p>
+          <p className="text-xs text-slate-500">
+            Bulk exports are limited to administrators. Open an individual paper to download its extracted data.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const triggerExport = (kind: 'csv' | 'json') => {
     if (paperIds.length === 0) {

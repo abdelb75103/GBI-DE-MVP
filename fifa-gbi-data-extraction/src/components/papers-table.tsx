@@ -11,9 +11,10 @@ import type { Paper } from '@/lib/types';
 
 type PapersTableProps = {
   papers: Paper[];
+  canBulkExport?: boolean;
 };
 
-export function PapersTable({ papers }: PapersTableProps) {
+export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -87,55 +88,65 @@ export function PapersTable({ papers }: PapersTableProps) {
   return (
     <div className="overflow-x-auto">
       {/* Selection toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-3">
-        <div className="text-xs text-slate-500">
-          {selected.size === 0 ? 'No papers selected' : `${selected.size} selected`}
-        </div>
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => exportSelected('csv')}
-            disabled={isPending || selected.size === 0}
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
-          >
-            Export selected CSV
-          </button>
-          <button
-            type="button"
-            onClick={() => exportSelected('json')}
-            disabled={isPending || selected.size === 0}
-            className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-          >
-            Export selected JSON
-          </button>
-          {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
-          {downloadUrl ? (
-            <a
-              href={downloadUrl}
-              download
-              className="text-xs font-semibold text-indigo-600 underline underline-offset-2"
+      {canBulkExport ? (
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-3">
+          <div className="text-xs text-slate-500">
+            {selected.size === 0 ? 'No papers selected' : `${selected.size} selected`}
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => exportSelected('csv')}
+              disabled={isPending || selected.size === 0}
+              className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
             >
-              Download {downloadKind?.toUpperCase()}
-            </a>
-          ) : null}
+              Export selected CSV
+            </button>
+            <button
+              type="button"
+              onClick={() => exportSelected('json')}
+              disabled={isPending || selected.size === 0}
+              className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
+            >
+              Export selected JSON
+            </button>
+            {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
+            {downloadUrl ? (
+              <a
+                href={downloadUrl}
+                download
+                className="text-xs font-semibold text-indigo-600 underline underline-offset-2"
+              >
+                Download {downloadKind?.toUpperCase()}
+              </a>
+            ) : null}
+            {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-3">
+          <div className="text-xs text-slate-500">Bulk export restricted to admins.</div>
+          {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
           {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
         </div>
-      </div>
+      )}
 
       <table className="min-w-full divide-y divide-slate-200/70 text-left text-sm text-slate-700">
         <thead className="bg-slate-900/5 text-xs uppercase tracking-[0.22em] text-slate-500">
           <tr>
             <th className="px-6 py-3">
-              <input
-                type="checkbox"
-                aria-label="Select all papers"
-                checked={allSelected}
-                ref={(el) => {
-                  if (el) el.indeterminate = someSelected;
-                }}
-                onChange={toggleAll}
-                className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-              />
+              {canBulkExport ? (
+                <input
+                  type="checkbox"
+                  aria-label="Select all papers"
+                  checked={allSelected}
+                  ref={(el) => {
+                    if (el) el.indeterminate = someSelected;
+                  }}
+                  onChange={toggleAll}
+                  className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                />
+              ) : null}
             </th>
             <th className="px-6 py-3 font-semibold">Title</th>
             <th className="px-6 py-3 font-semibold">Status</th>
@@ -156,13 +167,15 @@ export function PapersTable({ papers }: PapersTableProps) {
             papers.map((paper) => (
               <tr key={paper.id} className="transition hover:bg-indigo-50/40">
                 <td className="px-6 py-4">
-                  <input
-                    type="checkbox"
-                    aria-label={`Select ${paper.title}`}
-                    checked={selected.has(paper.id)}
-                    onChange={() => toggleOne(paper.id)}
-                    className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-                  />
+                  {canBulkExport ? (
+                    <input
+                      type="checkbox"
+                      aria-label={`Select ${paper.title}`}
+                      checked={selected.has(paper.id)}
+                      onChange={() => toggleOne(paper.id)}
+                      className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                  ) : null}
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex flex-col gap-1">

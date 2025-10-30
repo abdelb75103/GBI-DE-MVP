@@ -2,8 +2,9 @@ import Link from 'next/link';
 
 import { ExportControls } from '@/components/export-controls';
 import { PapersTable } from '@/components/papers-table';
-import { mockDb, seedIfEmpty } from '@/lib/mock-db';
 import { formatDateTimeUTC } from '@/lib/format';
+import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { readActiveProfileSession } from '@/lib/session';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,6 +17,20 @@ export default function DashboardPage() {
   const flaggedCount = papers.filter((paper) => Boolean(paper.flagId)).length;
   const extractedCount = papers.filter((paper) => paper.status === 'extracted').length;
   const inProgressCount = papers.filter((paper) => paper.status === 'processing' || paper.status === 'uploaded').length;
+  const activeProfile = readActiveProfileSession();
+  const isAdmin = activeProfile?.role === 'admin';
+
+  const personalStats = isAdmin
+    ? [
+      { label: 'Papers in workspace', value: papers.length },
+      { label: 'Ready for review', value: extractedCount },
+      { label: 'Flagged items', value: flaggedCount },
+    ]
+    : [
+      { label: 'Papers ready to claim', value: inProgressCount },
+      { label: 'Team extractions completed', value: extractedCount },
+      { label: 'Items awaiting review', value: flaggedCount },
+    ];
 
   return (
     <div className="space-y-10">
@@ -35,12 +50,14 @@ export default function DashboardPage() {
                 Monitor every paper in the pipeline, flag issues for reviewers, and export structured data the moment it&apos;s ready.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/upload"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
-                >
-                  Upload a PDF
-                </Link>
+                {isAdmin ? (
+                  <Link
+                    href="/upload"
+                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
+                  >
+                    Upload a PDF
+                  </Link>
+                ) : null}
                 <Link
                   href="#uploads"
                   className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
@@ -99,6 +116,28 @@ export default function DashboardPage() {
             ))}
           </div>
         </div>
+        <div className="grid gap-3 rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-lg ring-1 ring-slate-200/60 backdrop-blur">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Your dashboard</p>
+              <p className="text-sm font-semibold text-slate-900">{activeProfile?.fullName ?? 'Select a profile'}</p>
+            </div>
+            <span className="rounded-full bg-indigo-100/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-indigo-600">
+              {isAdmin ? 'Admin' : activeProfile?.role ?? '—'}
+            </span>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {personalStats.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-sm ring-1 ring-slate-200/60"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">{item.label}</p>
+                <p className="mt-2 text-2xl font-semibold text-slate-900">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <div className="grid gap-8 lg:grid-cols-[1.85fr,1fr]" id="uploads">
@@ -108,14 +147,16 @@ export default function DashboardPage() {
               <h2 className="text-lg font-semibold text-slate-900">Uploaded PDFs</h2>
               <p className="text-xs text-slate-500">Keep track of status, notes, and flags per paper.</p>
             </div>
-            <Link
-              href="/upload"
-              className="hidden rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700 sm:inline-flex"
-            >
-              Add new PDF
-            </Link>
+            {isAdmin ? (
+              <Link
+                href="/upload"
+                className="hidden rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700 sm:inline-flex"
+              >
+                Add new PDF
+              </Link>
+            ) : null}
           </div>
-          <PapersTable papers={papers} />
+          <PapersTable papers={papers} canBulkExport={isAdmin} />
         </section>
 
         <aside className="space-y-6">
