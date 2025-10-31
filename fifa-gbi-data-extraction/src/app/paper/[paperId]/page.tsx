@@ -91,8 +91,8 @@ export default async function PaperWorkspace({
       </section>
 
       <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1.35fr)] xl:items-start xl:auto-rows-fr">
-          <section className="flex flex-col rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <div className="flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,1.25fr)_minmax(0,1.6fr)] xl:items-start xl:auto-rows-fr xl:gap-10">
+          <section className="flex flex-col rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur xl:sticky xl:top-24 xl:self-start">
             <div className="border-b border-slate-200/70 px-6 py-5">
               <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
               <p className="text-xs text-slate-500">

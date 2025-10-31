@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useTransition } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import type { MutableRefObject } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { ExtractionFieldEditor } from '@/components/extraction-field-editor';
@@ -33,7 +34,10 @@ type FeedbackTone = 'info' | 'success' | 'error';
 type FeedbackState = {
   message: string;
   tone: FeedbackTone;
+  tab?: ExtractionTab;
 };
+
+type LayoutMode = 'accordion' | 'tabbed';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
 
@@ -44,8 +48,11 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
   const aiTabs = tabs.filter((tab) => aiExtractionTabs.has(tab.tab));
   const manualTabs = tabs.filter((tab) => humanExtractionTabs.includes(tab.tab));
 
-  const [openAiTab, setOpenAiTab] = useState<ExtractionTab | null>(aiTabs[0]?.tab ?? null);
-  const [openManualTab, setOpenManualTab] = useState<ExtractionTab | null>(manualTabs[0]?.tab ?? null);
+  const [openAiTab, setOpenAiTab] = useState<ExtractionTab | null>(null);
+  const [openManualTab, setOpenManualTab] = useState<ExtractionTab | null>(null);
+  const [layout, setLayout] = useState<LayoutMode>('accordion');
+  const orderedTabs = useMemo(() => [...aiTabs, ...manualTabs], [aiTabs, manualTabs]);
+  const [activeTab, setActiveTab] = useState<ExtractionTab | null>(orderedTabs[0]?.tab ?? null);
   const [selectedMap, setSelectedMap] = useState<Map<ExtractionTab, Set<string>>>(
     () =>
       new Map(
@@ -54,6 +61,68 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
   );
   const [feedback, setFeedback] = useState<FeedbackState | null>(null);
   const [isPending, startTransition] = useTransition();
+  const aiAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
+  const manualAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
+
+  const layoutOptions: { id: LayoutMode; label: string; helper: string }[] = useMemo(
+    () => [
+      { id: 'accordion', label: 'Accordion', helper: 'Expand sections while keeping everything visible.' },
+      { id: 'tabbed', label: 'Focus', helper: 'Work one tab at a time without visual clutter.' },
+    ],
+    [],
+  );
+
+  const getLayoutHelper = () => layoutOptions.find((option) => option.id === layout)?.helper ?? '';
+
+  const scrollToAccordion = useCallback(
+    (tab: ExtractionTab | null, refs: MutableRefObject<Map<ExtractionTab, HTMLDivElement>>) => {
+      if (layout !== 'accordion' || !tab) {
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        const element = refs.current.get(tab);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    },
+    [layout],
+  );
+
+  useEffect(() => {
+    if (!feedback || feedback.tone === 'info') {
+      return;
+    }
+
+    const timer = setTimeout(() => setFeedback(null), 2000);
+    return () => clearTimeout(timer);
+  }, [feedback]);
+
+  useEffect(() => {
+    if (!orderedTabs.length) {
+      setActiveTab(null);
+      return;
+    }
+
+    if (!activeTab || !orderedTabs.some((item) => item.tab === activeTab)) {
+      setActiveTab(orderedTabs[0].tab);
+    }
+  }, [orderedTabs, activeTab]);
+
+  useEffect(() => {
+    if (layout === 'tabbed' && !activeTab && orderedTabs.length) {
+      setActiveTab(orderedTabs[0].tab);
+    }
+  }, [layout, orderedTabs, activeTab]);
+
+  useEffect(() => {
+    scrollToAccordion(openAiTab, aiAccordionRefs);
+  }, [openAiTab, scrollToAccordion]);
+
+  useEffect(() => {
+    scrollToAccordion(openManualTab, manualAccordionRefs);
+  }, [openManualTab, scrollToAccordion]);
 
   const groupFieldsById = (fields: ExtractionFieldDefinition[]) => {
     const groups = new Map<string, { label: string; fields: ExtractionFieldDefinition[] }>();
@@ -71,22 +140,26 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
 
   const handleExtraction = (tab: ExtractionTab) => {
     if (!aiExtractionTabs.has(tab)) {
-      setFeedback({ message: 'AI extraction is only available for the first four tabs.', tone: 'error' });
+      setFeedback({ message: 'AI extraction is only available for the first four tabs.', tone: 'error', tab });
       return;
     }
 
     if (!isLoaded || !apiKey) {
-      setFeedback({ message: 'Enter your Gemini API key in API settings before running extraction.', tone: 'error' });
+      setFeedback({
+        message: 'Enter your Gemini API key in API settings before running extraction.',
+        tone: 'error',
+        tab,
+      });
       return;
     }
 
     const selected = Array.from(selectedMap.get(tab) ?? []);
     if (!selected.length) {
-      setFeedback({ message: 'Select at least one data point before running extraction.', tone: 'error' });
+      setFeedback({ message: 'Select at least one data point before running extraction.', tone: 'error', tab });
       return;
     }
 
-    setFeedback({ message: 'Running extraction…', tone: 'info' });
+    setFeedback({ message: 'Running extraction…', tone: 'info', tab });
     startTransition(async () => {
       try {
         const response = await fetch('/api/extract', {
@@ -100,12 +173,13 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
           throw new Error(payload.error ?? 'Extraction failed');
         }
 
-        setFeedback({ message: 'Extraction complete.', tone: 'success' });
+        setFeedback({ message: 'Extraction complete.', tone: 'success', tab });
         router.refresh();
       } catch (error) {
         setFeedback({
           message: `Extraction failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
           tone: 'error',
+          tab,
         });
       }
     });
@@ -119,50 +193,186 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
     setOpenManualTab((current) => (current === tab ? null : tab));
   };
 
-  const renderHeader = (title: string, description: string, actions?: React.ReactNode) => (
-    <div className="flex flex-col gap-1">
-      <div className="flex items-center justify-between gap-3">
-        <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
-        {actions}
-      </div>
-      <p className="text-xs text-slate-500">{description}</p>
-    </div>
-  );
+  const renderFeedbackToast = () => {
+    if (!feedback) {
+      return null;
+    }
 
-  const renderFeedback = () =>
-    feedback ? (
-      <p
-        className={`text-xs ${
-          feedback.tone === 'error'
-            ? 'text-rose-600'
-            : feedback.tone === 'success'
-            ? 'text-emerald-600'
-            : 'text-slate-500'
-        }`}
-      >
-        {feedback.message}
-      </p>
-    ) : null;
+    const toneStyles: Record<FeedbackTone, { container: string; accent: string; text: string }> = {
+      info: {
+        container: 'border-indigo-200/80 bg-indigo-50/90 shadow-indigo-200/70',
+        accent: 'bg-indigo-500',
+        text: 'text-indigo-800',
+      },
+      success: {
+        container: 'border-emerald-200/80 bg-emerald-50/90 shadow-emerald-200/70',
+        accent: 'bg-emerald-500',
+        text: 'text-emerald-800',
+      },
+      error: {
+        container: 'border-rose-200/80 bg-rose-50/90 shadow-rose-200/70',
+        accent: 'bg-rose-500',
+        text: 'text-rose-800',
+      },
+    };
 
-  return (
-    <div className="space-y-8">
-      <section className="space-y-4">
-        {renderHeader('AI extraction', 'Let Gemini draft the first four tabs for you.', (
-          <Link
-            href="/settings/api"
-            className="text-xs font-semibold uppercase tracking-wide text-indigo-600 underline"
+    const styles = toneStyles[feedback.tone];
+    const tabLabel = feedback.tab ? extractionTabMeta[feedback.tab].title : null;
+
+    return (
+      <div className="pointer-events-none fixed bottom-6 right-6 z-50 flex max-w-sm justify-end">
+        <div
+          className={`pointer-events-auto flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-sm shadow-lg ${styles.container} ${styles.text}`}
+        >
+          <span className={`mt-1 inline-flex h-2 w-2 flex-none rounded-full ${styles.accent}`} aria-hidden />
+          <div className="flex-1 space-y-1">
+            {tabLabel ? <p className="text-xs font-semibold uppercase tracking-[0.22em]">{tabLabel}</p> : null}
+            <p className="text-sm leading-5">{feedback.message}</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setFeedback(null)}
+            className="ml-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-white/80 text-xs font-semibold text-slate-500 shadow-sm transition hover:bg-white hover:text-slate-700"
+            aria-label="Dismiss notification"
           >
-            API settings
-          </Link>
-        ))}
+            ×
+          </button>
+        </div>
+      </div>
+    );
+  };
 
+  const renderAiCard = (item: TabPayload, currentLayout: LayoutMode, showTitle = true) => {
+    const selectedSet = selectedMap.get(item.tab) ?? new Set<string>();
+    const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
+    const gridClassName =
+      currentLayout === 'tabbed' ? 'grid gap-4 sm:grid-cols-2' : 'grid gap-4 md:grid-cols-2';
+
+    return (
+      <div className="space-y-4">
+        {showTitle ? (
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
+            <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+          </div>
+        ) : (
+          <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+        )}
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => handleExtraction(item.tab)}
+            disabled={isPending}
+            className="inline-flex items-center justify-center rounded-full border border-indigo-200/70 bg-indigo-50/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-600 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 disabled:opacity-60"
+          >
+            {isPending ? 'Extracting…' : 'Auto-extract selected data'}
+          </button>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-400">Gemini assist</span>
+        </div>
+        <div className={gridClassName}>
+          {item.fields.map((field) => (
+            <ExtractionFieldEditor
+              key={field.id}
+              paperId={paperId}
+              tab={item.tab}
+              definition={field}
+              result={resultMap.get(field.id)}
+              supportsAi
+              selected={selectedSet.has(field.id)}
+              onSelectedChange={(checked) =>
+                setSelectedMap((prev) => {
+                  const next = new Map(prev);
+                  const current = new Set(next.get(item.tab) ?? []);
+                  if (checked) {
+                    current.add(field.id);
+                  } else {
+                    current.delete(field.id);
+                  }
+                  next.set(item.tab, current);
+                  return next;
+                })
+              }
+            />
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderManualCard = (item: TabPayload, currentLayout: LayoutMode, showTitle = true) => {
+    const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
+    const groups = groupFieldsById(item.fields);
+    const hasGroups = groups.size > 0;
+    const gridClassName =
+      currentLayout === 'tabbed' ? 'grid gap-4 sm:grid-cols-2' : 'grid gap-4 md:grid-cols-2';
+
+    return (
+      <div className="space-y-4">
+        {showTitle ? (
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
+            <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+          </div>
+        ) : (
+          <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+        )}
+        {hasGroups ? (
+          <div className="space-y-5">
+            {Array.from(groups.values()).map((group) => (
+              <ManualGroupEditor
+                key={group.label}
+                paperId={paperId}
+                tab={item.tab}
+                groupLabel={group.label}
+                fields={group.fields.sort((a, b) => {
+                  const orderA = a.metric ? metricOrder.indexOf(a.metric) : Number.MAX_SAFE_INTEGER;
+                  const orderB = b.metric ? metricOrder.indexOf(b.metric) : Number.MAX_SAFE_INTEGER;
+                  return orderA - orderB;
+                })}
+                results={resultMap}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className={gridClassName}>
+            {item.fields.map((field) => (
+              <ExtractionFieldEditor
+                key={field.id}
+                paperId={paperId}
+                tab={item.tab}
+                definition={field}
+                result={resultMap.get(field.id)}
+                supportsAi={false}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderAccordion = () => (
+    <div className="space-y-8">
+      <div className="space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">AI extraction</h2>
+          <p className="text-xs text-slate-500">Let Gemini draft the first four tabs for you.</p>
+        </div>
         <div className="space-y-3">
           {aiTabs.map((item) => {
             const isOpen = openAiTab === item.tab;
-            const selectedSet = selectedMap.get(item.tab) ?? new Set<string>();
-            const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
             return (
-              <div key={item.tab} className="rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm">
+              <div
+                key={item.tab}
+                ref={(element) => {
+                  if (element) {
+                    aiAccordionRefs.current.set(item.tab, element);
+                  } else {
+                    aiAccordionRefs.current.delete(item.tab);
+                  }
+                }}
+                className="scroll-mt-32 rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm"
+              >
                 <button
                   type="button"
                   onClick={() => toggleAiTab(item.tab)}
@@ -173,61 +383,36 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
                 </button>
                 {isOpen ? (
                   <div className="space-y-4 border-t border-slate-200/60 px-6 py-5">
-                    <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
-                    <button
-                      type="button"
-                      onClick={() => handleExtraction(item.tab)}
-                      disabled={isPending}
-                      className="inline-flex items-center justify-center rounded-full border border-indigo-200/70 bg-indigo-50/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-600 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 disabled:opacity-60"
-                    >
-                      {isPending ? 'Extracting…' : 'Auto-extract selected data'}
-                    </button>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      {item.fields.map((field) => (
-                        <ExtractionFieldEditor
-                          key={field.id}
-                          paperId={paperId}
-                          tab={item.tab}
-                          definition={field}
-                          result={resultMap.get(field.id)}
-                          supportsAi
-                          selected={selectedSet.has(field.id)}
-                          onSelectedChange={(checked) =>
-                            setSelectedMap((prev) => {
-                              const next = new Map(prev);
-                              const current = new Set(next.get(item.tab) ?? []);
-                              if (checked) {
-                                current.add(field.id);
-                              } else {
-                                current.delete(field.id);
-                              }
-                              next.set(item.tab, current);
-                              return next;
-                            })
-                          }
-                        />
-                      ))}
-                    </div>
+                    {renderAiCard(item, 'accordion', false)}
                   </div>
                 ) : null}
               </div>
             );
           })}
         </div>
-        {renderFeedback()}
-      </section>
+      </div>
 
-      <section className="space-y-4">
-        {renderHeader('Manual entry', 'Complete the remaining tabs after reviewing the AI draft.')}
+      <div className="space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Manual entry</h2>
+          <p className="text-xs text-slate-500">Complete the remaining tabs after reviewing the AI draft.</p>
+        </div>
         <div className="space-y-3">
           {manualTabs.map((item) => {
             const isOpen = openManualTab === item.tab;
-            const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
-            const groups = groupFieldsById(item.fields);
-            const hasGroups = groups.size > 0;
 
             return (
-              <div key={item.tab} className="rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm">
+              <div
+                key={item.tab}
+                ref={(element) => {
+                  if (element) {
+                    manualAccordionRefs.current.set(item.tab, element);
+                  } else {
+                    manualAccordionRefs.current.delete(item.tab);
+                  }
+                }}
+                className="scroll-mt-32 rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm"
+              >
                 <button
                   type="button"
                   onClick={() => toggleManualTab(item.tab)}
@@ -238,43 +423,95 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
                 </button>
                 {isOpen ? (
                   <div className="space-y-4 border-t border-slate-200/60 px-6 py-5">
-                    <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
-                    {hasGroups ? (
-                      Array.from(groups.values()).map((group) => (
-                        <ManualGroupEditor
-                          key={group.label}
-                          paperId={paperId}
-                          tab={item.tab}
-                          groupLabel={group.label}
-                          fields={group.fields.sort((a, b) => {
-                            const orderA = a.metric ? metricOrder.indexOf(a.metric) : Number.MAX_SAFE_INTEGER;
-                            const orderB = b.metric ? metricOrder.indexOf(b.metric) : Number.MAX_SAFE_INTEGER;
-                            return orderA - orderB;
-                          })}
-                          results={resultMap}
-                        />
-                      ))
-                    ) : (
-                      <div className="grid gap-4 md:grid-cols-2">
-                        {item.fields.map((field) => (
-                          <ExtractionFieldEditor
-                            key={field.id}
-                            paperId={paperId}
-                            tab={item.tab}
-                            definition={field}
-                            result={resultMap.get(field.id)}
-                            supportsAi={false}
-                          />
-                        ))}
-                      </div>
-                    )}
+                    {renderManualCard(item, 'accordion', false)}
                   </div>
                 ) : null}
               </div>
             );
           })}
         </div>
-      </section>
+      </div>
     </div>
+  );
+
+  const renderTabbed = () => {
+    const active = orderedTabs.find((item) => item.tab === activeTab) ?? orderedTabs[0];
+    const isActiveAi = active ? aiExtractionTabs.has(active.tab) : false;
+
+    return (
+      <div className="space-y-4">
+        <div className="rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm">
+          <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,220px)_minmax(0,1fr)]">
+            <nav className="flex gap-2 overflow-x-auto border-b border-slate-200/60 px-4 py-3 text-sm text-slate-600 lg:flex-col lg:border-b-0 lg:border-r lg:px-5 lg:py-6">
+              {orderedTabs.map((item) => {
+                const isActive = item.tab === active?.tab;
+                const tabLabel = extractionTabMeta[item.tab].title;
+                return (
+                  <button
+                    key={item.tab}
+                    type="button"
+                    onClick={() => setActiveTab(item.tab)}
+                    className={`flex-1 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition lg:flex-none lg:rounded-xl lg:px-4 lg:py-2 ${
+                      isActive ? 'bg-indigo-100/70 text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {tabLabel}
+                  </button>
+                );
+              })}
+            </nav>
+            <div className="space-y-4 px-4 py-5 lg:px-6 lg:py-6">
+              {active ? (
+                isActiveAi ? renderAiCard(active, 'tabbed') : renderManualCard(active, 'tabbed')
+              ) : (
+                <p className="text-sm text-slate-500">No extraction tabs available.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <>
+      {renderFeedbackToast()}
+      <div className="space-y-6">
+        <section className="space-y-4">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="space-y-1">
+              <h2 className="text-lg font-semibold text-slate-900">Extraction workspace</h2>
+              <p className="text-xs text-slate-500">{getLayoutHelper()}</p>
+            </div>
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <div className="inline-flex rounded-full bg-slate-100/60 p-1 text-xs font-semibold text-slate-600 shadow-inner">
+                {layoutOptions.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setLayout(option.id)}
+                    className={`rounded-full px-3 py-1.5 transition ${
+                      layout === option.id
+                        ? 'bg-white text-slate-900 shadow'
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+              <Link
+                href="/settings/api"
+                className="text-xs font-semibold uppercase tracking-wide text-indigo-600 underline"
+              >
+                API settings
+              </Link>
+            </div>
+          </div>
+          {layout === 'accordion' ? renderAccordion() : null}
+          {layout === 'tabbed' ? renderTabbed() : null}
+        </section>
+      </div>
+    </>
   );
 }

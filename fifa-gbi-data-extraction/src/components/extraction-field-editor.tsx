@@ -90,8 +90,20 @@ export function ExtractionFieldEditor({
   };
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-slate-200/80 bg-white/60 p-4 text-sm text-slate-600">
-      <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+    <div
+      className={`flex flex-col gap-3 rounded-2xl border p-4 text-sm shadow-sm ${
+        supportsAi
+          ? isSelected
+            ? 'border-indigo-200/80 bg-indigo-50/70 text-indigo-800'
+            : 'border-slate-200/70 bg-slate-50/60 text-slate-500'
+          : 'border-emerald-200/80 bg-emerald-50/70 text-emerald-800'
+      }`}
+    >
+      <div
+        className={`flex items-center gap-2 text-sm font-semibold ${
+          supportsAi ? 'text-indigo-900' : 'text-emerald-900'
+        }`}
+      >
         {supportsAi && onSelectedChange ? (
           <input
             type="checkbox"
@@ -115,8 +127,12 @@ export function ExtractionFieldEditor({
         }}
         onBlur={handleBlur}
         rows={3}
-        placeholder="Not reported"
-        className="rounded-xl border border-slate-200/80 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+        placeholder=""
+        className={`rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 ${
+          supportsAi
+            ? 'border-indigo-200/80 focus:border-indigo-300 focus:ring-indigo-200/70'
+            : 'border-emerald-200/80 focus:border-emerald-300 focus:ring-emerald-200/70'
+        }`}
       />
       {isPending ? <p className="text-[11px] text-slate-500">Saving…</p> : null}
     </div>
