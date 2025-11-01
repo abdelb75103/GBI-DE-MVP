@@ -78,13 +78,13 @@ export default function DashboardPage() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl space-y-4">
               <span className="inline-flex w-fit items-center rounded-full bg-indigo-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600">
-                Overall workspace
+                Workspace
               </span>
               <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-                Confident, calm oversight for GBI extractions
+                Workspace overview
               </h1>
               <p className="text-sm leading-relaxed text-slate-600">
-                Monitor every paper in the pipeline, flag issues for reviewers, and export structured data the moment it&apos;s ready.
+                Track pipeline health, pick up new studies, and export data when it’s ready to share.
               </p>
               <div className="flex flex-wrap gap-3">
                 {isAdmin ? (

@@ -39,14 +39,14 @@ export default function RootLayout({
                     />
                   </div>
                 </div>
-                <div className="relative flex flex-1 items-center justify-center">
+                <div className="flex flex-1 items-center justify-between gap-4">
                   <Link
                     href="/dashboard"
                     className="text-2xl font-semibold text-slate-900 transition hover:text-indigo-700"
                   >
                     FIFA GBI Data Extraction Assistant
                   </Link>
-                  <nav className="absolute right-0 flex items-center gap-3 text-sm font-medium text-slate-600">
+                  <nav className="flex items-center gap-3 text-sm font-medium text-slate-600">
                     <PrimaryNavLinks />
                     <ActiveProfileIndicator />
                   </nav>

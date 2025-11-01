@@ -10,6 +10,7 @@ type ProfileOption = {
   id: string;
   fullName: string;
   role: UserRole;
+  displayRole?: string;
 };
 
 const GRADIENTS = [
@@ -42,7 +43,7 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
   };
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {sortedProfiles.map((profile, index) => {
         const gradient = GRADIENTS[index % GRADIENTS.length];
 
@@ -60,7 +61,7 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
             />
             <div className="relative z-10 flex h-full flex-col gap-4">
               <span className="inline-flex w-fit items-center gap-1 rounded-full border border-white/60 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-600 shadow-sm transition group-hover:border-indigo-200 group-hover:text-indigo-700">
-                {ROLE_LABELS[profile.role]}
+                {profile.displayRole ?? ROLE_LABELS[profile.role]}
               </span>
               <span className="text-xl font-semibold text-slate-900 transition group-hover:text-indigo-700">
                 {profile.fullName}
