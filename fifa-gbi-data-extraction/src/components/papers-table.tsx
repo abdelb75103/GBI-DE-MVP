@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState, useTransition } from 'react';
+import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { FlagToggleButton } from '@/components/flag-toggle-button';
@@ -22,6 +22,8 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
   const [message, setMessage] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [downloadKind, setDownloadKind] = useState<'csv' | 'json' | null>(null);
+  const [menuOpenFor, setMenuOpenFor] = useState<string | null>(null);
+  const menuRefs = useRef(new Map<string, HTMLDivElement>());
 
   const allIds = useMemo(() => papers.map((p) => p.id), [papers]);
   const allSelected = selected.size > 0 && allIds.every((id) => selected.has(id));
@@ -85,6 +87,20 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
     });
   };
 
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      if (!menuOpenFor) {
+        return;
+      }
+      const menuNode = menuRefs.current.get(menuOpenFor);
+      if (menuNode && !menuNode.contains(event.target as Node)) {
+        setMenuOpenFor(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [menuOpenFor]);
+
   return (
     <div className="overflow-x-auto">
       {/* Selection toolbar */}
@@ -123,13 +139,7 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
             {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
           </div>
         </div>
-      ) : (
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-3">
-          <div className="text-xs text-slate-500">Bulk export restricted to admins.</div>
-          {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
-          {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
-        </div>
-      )}
+      ) : null}
 
       <table className="min-w-full divide-y divide-slate-200/70 text-left text-sm text-slate-700">
         <thead className="bg-slate-900/5 text-xs uppercase tracking-[0.22em] text-slate-500">
@@ -149,11 +159,11 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
               ) : null}
             </th>
             <th className="px-6 py-3 font-semibold">Title</th>
-            <th className="px-6 py-3 font-semibold">Status</th>
-            <th className="px-6 py-3 font-semibold">Uploaded</th>
-            <th className="px-6 py-3 font-semibold">Notes</th>
-            <th className="px-6 py-3 font-semibold">Flag</th>
-            <th className="px-6 py-3 font-semibold">Actions</th>
+            <th className="px-6 py-3 text-center font-semibold">Status</th>
+            <th className="px-6 py-3 text-center font-semibold">Uploaded</th>
+            <th className="px-6 py-3 text-center font-semibold">Notes</th>
+            <th className="px-6 py-3 text-center font-semibold">Flag</th>
+            <th className="px-6 py-3 text-center font-semibold">Actions</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100/70 bg-white/80">
@@ -183,7 +193,12 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
                       <span className="inline-flex min-w-[3rem] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
                         {paper.assignedStudyId}
                       </span>
-                      <span className="font-semibold text-slate-900">{paper.title}</span>
+                      <Link
+                        href={`/paper/${paper.id}`}
+                        className="font-semibold text-slate-900 transition hover:text-indigo-700"
+                      >
+                        {paper.title}
+                      </Link>
                     </div>
                     {paper.leadAuthor || paper.year ? (
                       <span className="text-xs text-slate-500">
@@ -193,38 +208,82 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
                     ) : null}
                   </div>
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 text-center">
                   <StatusPill status={paper.status} />
                 </td>
-                <td className="px-6 py-4 text-sm text-slate-500">
+                <td className="px-6 py-4 text-center text-sm text-slate-500">
                   <time dateTime={paper.createdAt}>{formatDateTimeUTC(paper.createdAt)}</time>
                 </td>
-                <td className="px-6 py-4 text-sm font-medium text-slate-600">{paper.noteIds.length}</td>
-                <td className="px-6 py-4">
-                  <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagId)} />
+                <td className="px-6 py-4 text-center text-sm font-medium text-slate-600">
+                  {paper.noteIds.length}
                 </td>
-                <td className="px-6 py-4">
-                  <div className="flex flex-wrap gap-2">
-                    <Link
-                      href={`/paper/${paper.id}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700"
+                <td className="px-6 py-4 text-center">
+                  <div className="flex justify-center">
+                    <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagId)} />
+                  </div>
+                </td>
+                <td className="px-6 py-4 text-center">
+                  <div className="relative inline-flex">
+                    <button
+                      type="button"
+                      aria-haspopup="menu"
+                      aria-expanded={menuOpenFor === paper.id}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        setMenuOpenFor((current) => (current === paper.id ? null : paper.id));
+                      }}
+                      className="inline-flex items-center justify-center text-slate-600 transition hover:text-indigo-700"
                     >
-                      Open workspace
-                    </Link>
-                    <a
-                      href={`/api/papers/${paper.id}/export?format=json`}
-                      download
-                      className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900"
-                    >
-                      Download JSON
-                    </a>
-                    <a
-                      href={`/api/papers/${paper.id}/export?format=csv`}
-                      download
-                      className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900"
-                    >
-                      Download CSV
-                    </a>
+                      <span className="sr-only">Paper actions</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="h-5 w-5"
+                        aria-hidden
+                      >
+                        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM18 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </button>
+                    {menuOpenFor === paper.id ? (
+                      <div
+                        ref={(node) => {
+                          if (node) {
+                            menuRefs.current.set(paper.id, node);
+                          } else {
+                            menuRefs.current.delete(paper.id);
+                          }
+                        }}
+                        role="menu"
+                        className="absolute right-0 top-0 z-20 w-44 rounded-xl border border-slate-200/80 bg-white/95 p-2 text-sm shadow-lg backdrop-blur transition"
+                        style={{ transform: 'translateY(calc(-100% - 0.5rem))' }}
+                      >
+                        <Link
+                          href={`/paper/${paper.id}`}
+                          onClick={() => setMenuOpenFor(null)}
+                          className="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                        >
+                          Open workspace
+                          <span aria-hidden>↗</span>
+                        </Link>
+                        <a
+                          href={`/api/papers/${paper.id}/export?format=json`}
+                          download
+                          onClick={() => setMenuOpenFor(null)}
+                          className="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                        >
+                          Download JSON
+                        </a>
+                        <a
+                          href={`/api/papers/${paper.id}/export?format=csv`}
+                          download
+                          onClick={() => setMenuOpenFor(null)}
+                          className="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                        >
+                          Download CSV
+                        </a>
+                      </div>
+                    ) : null}
                   </div>
                 </td>
               </tr>

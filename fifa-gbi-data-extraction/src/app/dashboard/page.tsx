@@ -95,20 +95,6 @@ export default function DashboardPage() {
                     Upload a PDF
                   </Link>
                 ) : null}
-                <Link
-                  href="#uploads"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-                >
-                  Review uploads
-                </Link>
-              </div>
-            </div>
-            <div className="w-full max-w-xs rounded-2xl border border-white/60 bg-white/80 p-5 shadow-lg ring-1 ring-white/60 backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500">Exports</p>
-              <p className="mt-3 text-3xl font-semibold text-slate-900">{exportJobs.length}</p>
-              <p className="mt-1 text-xs text-slate-500">Exports generated in the last 7 days</p>
-              <div className="mt-4 text-xs text-slate-500">
-                Trigger new exports anytime to sync structured data to downstream tools.
               </div>
             </div>
           </div>
