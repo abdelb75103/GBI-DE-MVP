@@ -51,7 +51,6 @@ export function UploadForm() {
     }
 
     startTransition(async () => {
-      setError(null);
       setSummary(null);
       setProgress({ current: 0, total: files.length });
       const failures: UploadFailure[] = [];
@@ -131,14 +130,20 @@ export function UploadForm() {
       }
 
       if (successfulPaperIds.length === 1 && failures.length === 0) {
+        setError(null);
         router.push(`/paper/${successfulPaperIds[0]}`);
       } else {
+        if (failures.length === 0) {
+          setError(null);
+        }
         router.push('/dashboard');
       }
 
       router.refresh();
     });
   };
+
+  const dismissError = () => setError(null);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8" encType="multipart/form-data">
@@ -164,7 +169,18 @@ export function UploadForm() {
         </p>
       </div>
 
-      {error ? <p className="text-sm font-medium text-rose-500">{error}</p> : null}
+      {error ? (
+        <div className="flex items-start justify-between gap-3 rounded-2xl border border-rose-200/80 bg-rose-50/90 p-4 text-sm text-rose-700 shadow-inner">
+          <p className="font-medium">{error}</p>
+          <button
+            type="button"
+            onClick={dismissError}
+            className="rounded-full border border-rose-200 bg-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-600 transition hover:bg-white/90"
+          >
+            Dismiss
+          </button>
+        </div>
+      ) : null}
 
       {progress ? (
         <p className="text-sm text-slate-600">

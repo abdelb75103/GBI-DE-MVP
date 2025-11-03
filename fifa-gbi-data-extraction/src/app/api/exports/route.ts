@@ -5,7 +5,7 @@ import { mockDb } from '@/lib/mock-db';
 export const runtime = 'nodejs';
 
 export async function GET() {
-  const exports = mockDb.listExports();
+  const exports = await mockDb.listExports();
 
   return NextResponse.json({ exports });
 }
@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'kind and paperIds are required' }, { status: 400 });
   }
 
-  const job = mockDb.createExport(kind, paperIds);
+  const job = await mockDb.createExport(kind, paperIds);
 
   return NextResponse.json({ export: job }, { status: 201 });
 }

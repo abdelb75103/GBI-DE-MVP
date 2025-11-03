@@ -10,6 +10,8 @@ const options: { value: PaperStatus; label: string }[] = [
   { value: 'processing', label: 'Processing' },
   { value: 'extracted', label: 'Extracted' },
   { value: 'flagged', label: 'Flagged' },
+  { value: 'qa_review', label: 'QA Review' },
+  { value: 'archived', label: 'Archived' },
 ];
 
 type StatusSelectProps = {

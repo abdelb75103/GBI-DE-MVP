@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { formatDateTimeUTC } from '@/lib/format';
-
-import type { Note } from '@/lib/types';
+import type { PaperNote } from '@/lib/types';
 
 type NoteListProps = {
-  initialNotes: Note[];
+  initialNotes: PaperNote[];
 };
 
 export function NoteList({ initialNotes }: NoteListProps) {
-  const [notes, setNotes] = useState<Note[]>(initialNotes);
+  const [notes, setNotes] = useState<PaperNote[]>(initialNotes);
 
   useEffect(() => {
     setNotes(initialNotes);

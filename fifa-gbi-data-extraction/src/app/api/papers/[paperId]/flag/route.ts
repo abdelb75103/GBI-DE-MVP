@@ -6,17 +6,21 @@ export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   const paperId = request.nextUrl.pathname.split('/').slice(-2, -1)[0] ?? '';
-  const { reason } = (await request.json()) as { reason?: string };
+  const body = (await request.json().catch(() => ({}))) as { reason?: string | null };
+  const paper = await mockDb.getPaper(paperId);
 
-  if (!reason) {
+  if (!paper) {
+    return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
+  }
+
+  const wantsToFlag = !paper.flagReason;
+  const reason = body.reason ?? null;
+
+  if (wantsToFlag && (!reason || reason.trim().length === 0)) {
     return NextResponse.json({ error: 'Reason is required to flag a paper' }, { status: 400 });
   }
 
-  const flag = mockDb.toggleFlag(paperId, reason);
+  await mockDb.toggleFlag(paperId, reason);
 
-  if (flag) {
-    return NextResponse.json({ flag });
-  }
-
-  return NextResponse.json({ message: 'Flag cleared' });
+  return NextResponse.json({ flagReason: reason });
 }

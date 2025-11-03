@@ -24,7 +24,7 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'studyId',
     label: 'Study ID',
-    description: 'Use the canonical Study ID if present; otherwise mark as not reported.',
+    description: 'Study IDs are assigned automatically by the system; leave blank unless manually overriding.',
     tab: 'studyDetails',
   },
   {
@@ -85,43 +85,50 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'sex',
     label: 'Sex',
-    description: 'Sex of participants (male, female, mixed).',
+    description:
+      'Sex of participants (male, female, mixed). Enter one population per line (e.g., "U19 — male") so rows stay aligned.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'ageCategory',
     label: 'Age Category',
-    description: 'Age group or category.',
+    description:
+      'Age group or category. List one population per line (e.g., "U19", "U21") to anchor the rest of the population-specific rows.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'meanAge',
     label: 'Mean age (±SD) or range',
-    description: 'Mean age ± SD or reported range.',
+    description:
+      'Mean age ± SD or range. Match one line per population (e.g., "U19 — 16.8 ± 0.9") so downstream exports can link values automatically.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'sampleSizePlayers',
     label: 'Sample Size (players)',
-    description: 'Number of players included in the study.',
+    description:
+      'Number of players included. Keep one population per line (e.g., "U19 — 62") and align the order with Age Category.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'numberOfTeams',
     label: 'Number of teams/clubs',
-    description: 'Teams or clubs participating.',
+    description:
+      'Teams or clubs participating. Use one line per population; commas stay within the line for additional detail.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'studyPeriodYears',
     label: 'Study period (years)',
-    description: 'Total duration of study follow-up in years.',
+    description:
+      'Total duration of study follow-up in years. If multiple populations are reported, keep one line per population.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'observationDuration',
     label: 'Observation duration',
-    description: 'Observation window as reported.',
+    description:
+      'Observation window as reported. Maintain one line per population (e.g., "U19 — 4 seasons") for consistent parsing.',
     tab: 'participantCharacteristics',
   },
   // Tab 3 – Definition & Data Collection
@@ -177,13 +184,15 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'seasonLength',
     label: 'Length of season/tournament (weeks)',
-    description: 'Duration of season or competition in weeks.',
+    description:
+      'Duration of season or competition in weeks. Use one line per population/tournament when multiple groups are reported.',
     tab: 'exposure',
   },
   {
     id: 'numberOfSeasons',
     label: 'Number of seasons',
-    description: 'Total number of seasons covered.',
+    description:
+      'Total number of seasons covered. Keep populations on separate lines (e.g., "U19 — 4") for cleaner exports.',
     tab: 'exposure',
   },
   {
@@ -201,13 +210,13 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'matchExposure',
     label: 'Match Exposure',
-    description: 'Match exposure value.',
+    description: 'Match exposure value. If splits exist, keep one line per population/year/tournament.',
     tab: 'exposure',
   },
   {
     id: 'trainingExposure',
     label: 'Training Exposure',
-    description: 'Training exposure value.',
+    description: 'Training exposure value. Match the line order used for other population-specific fields.',
     tab: 'exposure',
   },
 ];

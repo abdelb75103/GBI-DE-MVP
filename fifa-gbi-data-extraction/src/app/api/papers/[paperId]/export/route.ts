@@ -15,7 +15,7 @@ const sanitizeForFilename = (value: string) => value.replace(/[^a-zA-Z0-9-_]/g, 
 
 export async function GET(request: NextRequest) {
   const paperId = getPaperId(request);
-  const paper = mockDb.getPaper(paperId);
+  const paper = await mockDb.getPaper(paperId);
   if (!paper) {
     return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
   }
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
   const base = sanitizeForFilename(`${paper.title ?? 'paper'}-${paper.id}`.toLowerCase());
 
   if (format === 'csv') {
-    const csv = buildPaperCsv(paperId);
+    const csv = await buildPaperCsv(paperId);
     const headers = new Headers({
       'Content-Type': 'text/csv; charset=utf-8',
       'Content-Disposition': `attachment; filename="${base}.csv"`,
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
     return new Response(csv, { status: 200, headers });
   }
 
-  const payload = buildJsonExport([paperId]);
+  const payload = await buildJsonExport([paperId]);
   const record = payload.papers[0];
   const body = JSON.stringify({ generatedAt: payload.generatedAt, paper: record }, null, 2);
   const headers = new Headers({
@@ -43,4 +43,3 @@ export async function GET(request: NextRequest) {
   });
   return new Response(body, { status: 200, headers });
 }
-

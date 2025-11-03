@@ -1,26 +1,24 @@
 import { NextResponse } from 'next/server';
 
-import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { mockDb } from '@/lib/mock-db';
 import type { Paper } from '@/lib/types';
 
 export const runtime = 'nodejs';
 
-seedIfEmpty();
-
 export async function GET() {
-  const papers = mockDb.listPapers();
+  const papers = await mockDb.listPapers();
 
   return NextResponse.json({ papers });
 }
 
 export async function POST(request: Request) {
-  const body = (await request.json()) as Partial<Paper> & { title?: string };
+  const body = (await request.json()) as Partial<Omit<Paper, 'id' | 'createdAt' | 'noteCount'>> & { title?: string };
 
   if (!body.title) {
     return NextResponse.json({ error: 'Title is required' }, { status: 400 });
   }
 
-  const paper = mockDb.createPaper({
+  const paper = await mockDb.createPaper({
     title: body.title,
     leadAuthor: body.leadAuthor,
     year: body.year,

@@ -61,10 +61,16 @@ export function ExtractionTabsPanel({
   const layout = layoutMode ?? internalLayout;
   const orderedTabs = useMemo(() => [...aiTabs, ...manualTabs], [aiTabs, manualTabs]);
   const [activeTab, setActiveTab] = useState<ExtractionTab | null>(orderedTabs[0]?.tab ?? null);
+  const autoExtractableIds = (fields: ExtractionFieldDefinition[]) =>
+    fields.filter((field) => field.id !== 'studyId').map((field) => field.id);
+
   const [selectedMap, setSelectedMap] = useState<Map<ExtractionTab, Set<string>>>(
     () =>
       new Map(
-        aiTabs.map((item) => [item.tab, new Set(item.fields.map((field) => field.id))]) as [ExtractionTab, Set<string>][],
+        aiTabs.map((item) => [item.tab, new Set(autoExtractableIds(item.fields))]) as [
+          ExtractionTab,
+          Set<string>,
+        ][],
       ),
   );
   const [feedback, setFeedback] = useState<FeedbackState | null>(null);
@@ -83,11 +89,64 @@ export function ExtractionTabsPanel({
 
   const getLayoutHelper = () => layoutOptions.find((option) => option.id === layout)?.helper ?? '';
 
+useEffect(() => {
+  if (layoutMode && layoutMode !== internalLayout) {
+    setInternalLayout(layoutMode);
+  }
+}, [layoutMode, internalLayout]);
+
   useEffect(() => {
-    if (layoutMode && layoutMode !== internalLayout) {
-      setInternalLayout(layoutMode);
-    }
-  }, [layoutMode, internalLayout]);
+    setSelectedMap((prev) => {
+      let changed = false;
+      const next = new Map<ExtractionTab, Set<string>>();
+
+      const allowedByTab = new Map(
+        aiTabs.map((item) => [item.tab, new Set(autoExtractableIds(item.fields))] as const),
+      );
+
+      // Remove tabs that no longer exist
+      prev.forEach((value, tab) => {
+        if (!allowedByTab.has(tab)) {
+          changed = true;
+        }
+      });
+
+      allowedByTab.forEach((allowedSet, tab) => {
+        const current = prev.get(tab);
+        if (!current) {
+          changed = true;
+          next.set(tab, new Set(allowedSet));
+          return;
+        }
+
+        const filtered = new Set<string>();
+        current.forEach((id) => {
+          if (allowedSet.has(id)) {
+            filtered.add(id);
+          } else {
+            changed = true;
+          }
+        });
+
+        // Ensure we never include studyId even if it slipped in
+        if (filtered.delete('studyId')) {
+          changed = true;
+        }
+
+        const identical = filtered.size === current.size && [...current].every((id) => filtered.has(id));
+        next.set(tab, identical ? current : filtered);
+        if (!identical) {
+          changed = true;
+        }
+      });
+
+      if (!changed && prev.size === next.size) {
+        return prev;
+      }
+
+      return next;
+    });
+  }, [aiTabs]);
 
   const handleLayoutChange = (next: LayoutMode) => {
     if (!layoutMode) {
@@ -112,14 +171,14 @@ export function ExtractionTabsPanel({
     [layout],
   );
 
-  useEffect(() => {
-    if (!feedback || feedback.tone === 'info') {
-      return;
-    }
+useEffect(() => {
+  if (!feedback || feedback.tone !== 'success') {
+    return;
+  }
 
-    const timer = setTimeout(() => setFeedback(null), 2000);
-    return () => clearTimeout(timer);
-  }, [feedback]);
+  const timer = setTimeout(() => setFeedback(null), 2000);
+  return () => clearTimeout(timer);
+}, [feedback]);
 
   useEffect(() => {
     if (!orderedTabs.length) {
@@ -296,30 +355,36 @@ export function ExtractionTabsPanel({
           <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-400">Gemini assist</span>
         </div>
         <div className={gridClassName}>
-          {item.fields.map((field) => (
-            <ExtractionFieldEditor
-              key={field.id}
-              paperId={paperId}
-              tab={item.tab}
-              definition={field}
-              result={resultMap.get(field.id)}
-              supportsAi
-              selected={selectedSet.has(field.id)}
-              onSelectedChange={(checked) =>
-                setSelectedMap((prev) => {
-                  const next = new Map(prev);
-                  const current = new Set(next.get(item.tab) ?? []);
-                  if (checked) {
-                    current.add(field.id);
-                  } else {
-                    current.delete(field.id);
-                  }
-                  next.set(item.tab, current);
-                  return next;
-                })
-              }
-            />
-          ))}
+          {item.fields.map((field) => {
+            const isAutoExtractable = field.id !== 'studyId';
+            return (
+              <ExtractionFieldEditor
+                key={field.id}
+                paperId={paperId}
+                tab={item.tab}
+                definition={field}
+                result={resultMap.get(field.id)}
+                supportsAi={isAutoExtractable}
+                selected={selectedSet.has(field.id)}
+                onSelectedChange={(checked) =>
+                  setSelectedMap((prev) => {
+                    if (!isAutoExtractable) {
+                      return prev;
+                    }
+                    const next = new Map(prev);
+                    const current = new Set(next.get(item.tab) ?? []);
+                    if (checked) {
+                      current.add(field.id);
+                    } else {
+                      current.delete(field.id);
+                    }
+                    next.set(item.tab, current);
+                    return next;
+                  })
+                }
+              />
+            );
+          })}
         </div>
       </div>
     );

@@ -9,7 +9,7 @@ const getPaperId = (request: NextRequest) => request.nextUrl.pathname.split('/')
 
 export async function GET(request: NextRequest) {
   const paperId = getPaperId(request);
-  const paper = mockDb.getPaper(paperId);
+  const paper = await mockDb.getPaper(paperId);
 
   if (!paper) {
     return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
@@ -20,9 +20,9 @@ export async function GET(request: NextRequest) {
 
 export async function PATCH(request: NextRequest) {
   const paperId = getPaperId(request);
-  const updates = (await request.json()) as Partial<Omit<Paper, 'id' | 'createdAt'>>;
+  const updates = (await request.json()) as Partial<Omit<Paper, 'id' | 'createdAt' | 'noteCount'>>;
 
-  const paper = mockDb.updatePaper(paperId, updates);
+  const paper = await mockDb.updatePaper(paperId, updates);
 
   if (!paper) {
     return NextResponse.json({ error: 'Paper not found' }, { status: 404 });

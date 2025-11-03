@@ -3,20 +3,20 @@ import Link from 'next/link';
 import { ExportControls } from '@/components/export-controls';
 import { PapersTable } from '@/components/papers-table';
 import { formatDateTimeUTC } from '@/lib/format';
-import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
 
 export const dynamic = 'force-dynamic';
 
-export default function DashboardPage() {
-  seedIfEmpty();
-
-  const papers = mockDb.listPapers();
-  const exportJobs = mockDb.listExports();
+export default async function DashboardPage() {
+  const papers = await mockDb.listPapers();
+  const exportJobs = await mockDb.listExports();
   const activePaperIds = papers.map((paper) => paper.id);
-  const flaggedCount = papers.filter((paper) => Boolean(paper.flagId)).length;
+  const flaggedCount = papers.filter((paper) => Boolean(paper.flagReason)).length;
   const extractedCount = papers.filter((paper) => paper.status === 'extracted').length;
-  const inProgressCount = papers.filter((paper) => paper.status === 'processing' || paper.status === 'uploaded').length;
+  const inProgressCount = papers.filter(
+    (paper) => paper.status === 'processing' || paper.status === 'uploaded',
+  ).length;
   const activeProfile = readActiveProfileSession();
   const isAdmin = activeProfile?.role === 'admin';
 

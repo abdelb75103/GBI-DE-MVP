@@ -1,14 +1,4 @@
-export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged';
-
-export interface StoredFile {
-  id: string;
-  paperId: string;
-  name: string;
-  size: number;
-  mimeType: string;
-  uploadedAt: string;
-  dataBase64?: string;
-}
+export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived';
 
 export type ExtractionTab =
   | 'studyDetails'
@@ -33,16 +23,58 @@ export type ExtractionFieldMetric =
 
 export type ExtractionFieldStatus = 'reported' | 'not_reported' | 'uncertain';
 
+export type ExtractionUpdatedBy = string | null;
+
+export interface Paper {
+  id: string;
+  assignedStudyId: string;
+  title: string;
+  status: PaperStatus;
+  leadAuthor: string | null;
+  journal: string | null;
+  year: string | null;
+  doi: string | null;
+  createdAt: string;
+  updatedAt: string;
+  storageBucket: string | null;
+  storageObjectPath: string | null;
+  primaryFileId: string | null;
+  flagReason: string | null;
+  metadata?: Record<string, unknown>;
+  noteCount: number;
+}
+
+export interface StoredFile {
+  id: string;
+  paperId: string;
+  name: string;
+  size: number;
+  mimeType: string;
+  uploadedAt: string;
+  storageBucket: string | null;
+  storageObjectPath: string | null;
+  publicUrl: string | null;
+  dataBase64?: string | null;
+}
+
+export interface PaperNote {
+  id: string;
+  paperId: string;
+  author: string;
+  body: string;
+  createdAt: string;
+}
+
 export interface ExtractionFieldResult {
   fieldId: string;
   value: string | null;
   confidence: number | null;
-  sourceQuote?: string;
-  pageHint?: string;
-  metric?: ExtractionFieldMetric;
+  sourceQuote?: string | null;
+  pageHint?: string | null;
+  metric?: ExtractionFieldMetric | null;
   status: ExtractionFieldStatus;
   updatedAt: string;
-  updatedBy: 'ai' | 'human';
+  updatedBy: ExtractionUpdatedBy;
 }
 
 export interface ExtractionResult {
@@ -53,55 +85,38 @@ export interface ExtractionResult {
   fields: ExtractionFieldResult[];
   createdAt: string;
   updatedAt: string;
-  notes?: string;
+  notes?: string | null;
 }
 
-export interface Flag {
+export interface PopulationGroup {
   id: string;
   paperId: string;
-  reason: string;
-  createdAt: string;
-}
-
-export interface Note {
-  id: string;
-  paperId: string;
-  author: string;
-  body: string;
-  createdAt: string;
-}
-
-export interface Paper {
-  id: string;
-  assignedStudyId: string;
-  title: string;
-  status: PaperStatus;
-  leadAuthor?: string;
-  year?: string;
-  journal?: string;
-  doi?: string;
+  tab: ExtractionTab;
+  label: string;
+  position: number;
   createdAt: string;
   updatedAt: string;
-  fileId: string;
-  flagId?: string;
-  noteIds: string[];
+}
+
+export interface PopulationValue {
+  id: string;
+  populationGroupId: string;
+  paperId: string;
+  fieldId: string;
+  value: string | null;
+  metric: ExtractionFieldMetric | null;
+  unit: string | null;
+  sourceFieldId: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface ExportJob {
   id: string;
   kind: 'csv' | 'json';
   paperIds: string[];
-  status: 'pending' | 'ready';
+  status: 'pending' | 'ready' | 'failed';
   createdAt: string;
-  downloadUrl?: string;
-  checksumSha256?: string;
-}
-
-export interface MockDatabase {
-  papers: Paper[];
-  files: StoredFile[];
-  flags: Flag[];
-  notes: Note[];
-  exports: ExportJob[];
-  extractions: ExtractionResult[];
+  downloadUrl?: string | null;
+  checksumSha256?: string | null;
 }

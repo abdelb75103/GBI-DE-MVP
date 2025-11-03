@@ -1,28 +1,49 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import crypto from 'node:crypto';
 
+import {
+  getAdminServiceClient,
+  type Database,
+  type ExtractionTab,
+  type ExtractionMetric as SupabaseExtractionMetric,
+  type ExtractionFieldStatus as SupabaseFieldStatus,
+  type ExportKind as SupabaseExportKind,
+} from '@/lib/supabase';
 import type {
   ExportJob,
   ExtractionFieldMetric,
   ExtractionFieldResult,
   ExtractionResult,
-  ExtractionTab,
-  Flag,
-  MockDatabase,
-  Note,
   Paper,
+  PaperNote,
   PaperStatus,
+  PopulationGroup,
+  PopulationValue,
   StoredFile,
 } from '@/lib/types';
+import { derivePopulationGroups, type ParsedPopulationGroup } from '@/lib/extraction/populations';
+
+type PaperRow = Database['public']['Tables']['papers']['Row'];
+type PaperInsert = Database['public']['Tables']['papers']['Insert'];
+type PaperUpdate = Database['public']['Tables']['papers']['Update'];
+type FileRow = Database['public']['Tables']['paper_files']['Row'];
+type FileInsert = Database['public']['Tables']['paper_files']['Insert'];
+type NoteRow = Database['public']['Tables']['paper_notes']['Row'];
+type NoteInsert = Database['public']['Tables']['paper_notes']['Insert'];
+type ExtractionRow = Database['public']['Tables']['extractions']['Row'];
+type ExtractionFieldRow = Database['public']['Tables']['extraction_fields']['Row'];
+type ExtractionFieldInsert = Database['public']['Tables']['extraction_fields']['Insert'];
+type ExportJobRow = Database['public']['Tables']['export_jobs']['Row'];
+type PopulationGroupRow = Database['public']['Tables']['population_groups']['Row'];
+type PopulationValueRow = Database['public']['Tables']['population_values']['Row'];
 
 type CreatePaperInput = {
   title: string;
-  leadAuthor?: string;
-  year?: string;
-  journal?: string;
-  doi?: string;
+  leadAuthor?: string | null;
+  year?: string | null;
+  journal?: string | null;
+  doi?: string | null;
   status?: PaperStatus;
+  metadata?: Record<string, unknown>;
 };
 
 type CreateFileInput = {
@@ -30,8 +51,10 @@ type CreateFileInput = {
   name: string;
   size: number;
   mimeType: string;
-  dataBase64?: string;
-  publicPath?: string;
+  dataBase64?: string | null;
+  storageBucket?: string | null;
+  storageObjectPath?: string | null;
+  publicUrl?: string | null;
 };
 
 type CreateNoteInput = {
@@ -40,474 +63,671 @@ type CreateNoteInput = {
   body: string;
 };
 
-const samplePdfFilename = '2016Hgglundetal.BJSMInjuryrecurrencesplayinglevels.pdf';
-const samplePdfPublicPath = `/${samplePdfFilename}`;
+type UpdateExtractionFieldOptions = {
+  value?: string | null;
+  status?: SupabaseFieldStatus;
+  confidence?: number | null;
+  sourceQuote?: string | null;
+  pageHint?: string | null;
+  metric?: SupabaseExtractionMetric | null;
+};
 
-const bootstrap = (): MockDatabase => ({
-  papers: [],
-  files: [],
-  flags: [],
-  notes: [],
-  exports: [],
-  extractions: [],
+const ensureSupabaseConfigured = () => {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error('Supabase credentials are not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.');
+  }
+};
+
+const supabaseClient = () => {
+  ensureSupabaseConfigured();
+  return getAdminServiceClient();
+};
+
+const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => ({
+  id: row.id,
+  assignedStudyId: row.assigned_study_id ?? '',
+  title: row.title,
+  status: row.status,
+  leadAuthor: row.lead_author,
+  journal: row.journal,
+  year: row.year,
+  doi: row.doi,
+  createdAt: row.uploaded_at,
+  updatedAt: row.updated_at,
+  storageBucket: row.storage_bucket ?? null,
+  storageObjectPath: row.storage_object_path ?? null,
+  primaryFileId: row.primary_file_id ?? null,
+  flagReason: row.flag_reason ?? null,
+  metadata: row.metadata ?? undefined,
+  noteCount,
 });
 
-const globalForDb = globalThis as unknown as { __mockDb?: MockDatabase };
+const mapFileRow = (row: FileRow): StoredFile => ({
+  id: row.id,
+  paperId: row.paper_id,
+  name: row.name,
+  size: row.size,
+  mimeType: row.mime_type,
+  uploadedAt: row.uploaded_at,
+  storageBucket: row.storage_bucket ?? null,
+  storageObjectPath: row.storage_object_path ?? null,
+  publicUrl: row.public_url ?? null,
+  dataBase64: row.data_base64 ?? null,
+});
 
-const db: MockDatabase = globalForDb.__mockDb ?? bootstrap();
+const mapNoteRow = (row: NoteRow): PaperNote => ({
+  id: row.id,
+  paperId: row.paper_id,
+  author: row.author,
+  body: row.body,
+  createdAt: row.created_at,
+});
 
-if (!globalForDb.__mockDb) {
-  globalForDb.__mockDb = db;
-}
+const mapExportRow = (row: ExportJobRow): ExportJob => ({
+  id: row.id,
+  kind: row.kind,
+  paperIds: row.paper_ids ?? [],
+  status: row.status,
+  createdAt: row.created_at,
+  downloadUrl: row.download_path ?? null,
+  checksumSha256: row.checksum_sha256 ?? null,
+});
 
-const now = () => new Date().toISOString();
+const mapPopulationGroupRow = (row: PopulationGroupRow): PopulationGroup => ({
+  id: row.id,
+  paperId: row.paper_id,
+  tab: row.tab,
+  label: row.label,
+  position: row.position,
+  createdAt: row.created_at,
+  updatedAt: row.updated_at,
+});
 
-const extractStudySequence = (assignedId: string | undefined): number => {
-  if (!assignedId) return 0;
-  const match = /^S(\d+)$/i.exec(assignedId.trim());
+const mapPopulationValueRow = (row: PopulationValueRow): PopulationValue => ({
+  id: row.id,
+  populationGroupId: row.population_group_id,
+  paperId: row.paper_id,
+  fieldId: row.field_id,
+  value: row.value ?? null,
+  metric: row.metric ?? null,
+  unit: row.unit ?? null,
+  sourceFieldId: row.source_field_id,
+  createdAt: row.created_at,
+  updatedAt: row.updated_at,
+});
+
+const mapExtractionFieldRow = (row: ExtractionFieldRow): ExtractionFieldResult => ({
+  fieldId: row.field_id,
+  value: row.value ?? null,
+  confidence: row.confidence !== null && row.confidence !== undefined ? Number(row.confidence) : null,
+  sourceQuote: row.source_quote ?? null,
+  pageHint: row.page_hint ?? null,
+  metric: (row.metric ?? undefined) as ExtractionFieldMetric | undefined,
+  status: row.status,
+  updatedAt: row.updated_at,
+  updatedBy: (row as { updated_by?: string | null }).updated_by ?? null,
+});
+
+const mapExtractionRow = (
+  row: ExtractionRow & { extraction_fields?: ExtractionFieldRow[] | null },
+): ExtractionResult => ({
+  id: row.id,
+  paperId: row.paper_id,
+  tab: row.tab,
+  model: row.model,
+  createdAt: row.created_at,
+  updatedAt: row.updated_at,
+  fields: (row.extraction_fields ?? []).map(mapExtractionFieldRow),
+  notes: null,
+});
+
+const parseStudySequence = (value: string | null | undefined): number => {
+  if (!value) {
+    return 0;
+  }
+  const match = /^S(\d+)$/i.exec(value.trim());
   return match ? Number.parseInt(match[1], 10) : 0;
 };
 
-const generateAssignedStudyId = (): string => {
-  const maxSequence = db.papers.reduce((max, paper) => {
-    const sequence = extractStudySequence(paper.assignedStudyId);
-    return sequence > max ? sequence : max;
+const generateAssignedStudyId = async (): Promise<string> => {
+  const supabase = supabaseClient();
+  const { data, error } = await supabase
+    .from('papers')
+    .select('assigned_study_id')
+    .order('assigned_study_id', { ascending: false })
+    .limit(1000);
+
+  if (error) {
+    throw new Error(`Failed to compute next Study ID: ${error.message}`);
+  }
+
+  const maxSequence = (data ?? []).reduce((max, row) => {
+    const seq = parseStudySequence(row.assigned_study_id);
+    return seq > max ? seq : max;
   }, 0);
-  const nextSequence = maxSequence + 1;
-  return `S${String(nextSequence).padStart(3, '0')}`;
+
+  return `S${String(maxSequence + 1).padStart(3, '0')}`;
 };
 
-const ensureAssignedStudyId = (paper: Paper | undefined) => {
-  if (!paper) {
-    return;
+const upsertExtractionFieldRow = async (
+  extractionId: string,
+  fieldId: string,
+  updates: UpdateExtractionFieldOptions,
+): Promise<ExtractionFieldRow> => {
+  const supabase = supabaseClient();
+  const payload: ExtractionFieldInsert = {
+    id: crypto.randomUUID(),
+    extraction_id: extractionId,
+    field_id: fieldId,
+    value: updates.value ?? null,
+    confidence: updates.confidence ?? null,
+    source_quote: updates.sourceQuote ?? null,
+    page_hint: updates.pageHint ?? null,
+    metric: (updates.metric ?? null) as SupabaseExtractionMetric | null,
+    status: updates.status ?? 'not_reported',
+    updated_at: new Date().toISOString(),
+  };
+
+  const { data, error } = await supabase
+    .from('extraction_fields')
+    .upsert(payload, { onConflict: 'extraction_id,field_id' })
+    .select('*')
+    .maybeSingle();
+
+  if (error || !data) {
+    throw new Error(`Failed to persist extraction field ${fieldId}: ${error?.message ?? 'Unknown error'}`);
   }
-  if (!paper.assignedStudyId) {
-    paper.assignedStudyId = generateAssignedStudyId();
-    paper.updatedAt = now();
+
+  return data;
+};
+
+const ensureExtractionRow = async (
+  paperId: string,
+  tab: ExtractionTab,
+  model?: string,
+): Promise<ExtractionRow> => {
+  const supabase = supabaseClient();
+  const { data: existing, error: lookupError } = await supabase
+    .from('extractions')
+    .select('*')
+    .eq('paper_id', paperId)
+    .eq('tab', tab)
+    .maybeSingle();
+
+  if (lookupError && lookupError.code !== 'PGRST116') {
+    throw new Error(`Failed to load extraction: ${lookupError.message}`);
+  }
+
+  if (existing) {
+    return existing;
+  }
+
+  const insertPayload: Database['public']['Tables']['extractions']['Insert'] = {
+    paper_id: paperId,
+    tab,
+    model: model ?? 'human-input',
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+
+  const { data: created, error: insertError } = await supabase
+    .from('extractions')
+    .insert(insertPayload)
+    .select('*')
+    .single();
+
+  if (insertError || !created) {
+    throw new Error(`Failed to create extraction: ${insertError?.message ?? 'Unknown error'}`);
+  }
+
+  return created;
+};
+
+const fetchExtractionById = async (id: string): Promise<ExtractionResult> => {
+  const supabase = supabaseClient();
+  const { data, error } = await supabase
+    .from('extractions')
+    .select('*, extraction_fields(*)')
+    .eq('id', id)
+    .single();
+
+  if (error || !data) {
+    throw new Error(`Extraction not found: ${error?.message ?? 'Unknown error'}`);
+  }
+
+  return mapExtractionRow(data as ExtractionRow & { extraction_fields: ExtractionFieldRow[] });
+};
+
+const syncPopulationSlices = async (paperId: string) => {
+  try {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('extractions')
+      .select('id, paper_id, tab, model, created_at, updated_at, extraction_fields(*)')
+      .eq('paper_id', paperId)
+      .eq('tab', 'participantCharacteristics')
+      .maybeSingle();
+
+    if (error && error.code !== 'PGRST116') {
+      throw error;
+    }
+
+    const extraction =
+      data != null
+        ? mapExtractionRow(data as ExtractionRow & { extraction_fields: ExtractionFieldRow[] })
+        : null;
+
+    const groups: ParsedPopulationGroup[] = derivePopulationGroups(extraction?.fields ?? []);
+
+    await supabase.from('population_values').delete().eq('paper_id', paperId);
+    await supabase.from('population_groups').delete().eq('paper_id', paperId);
+
+    if (groups.length === 0) {
+      return;
+    }
+
+    const groupRows: PopulationGroupRow[] = groups.map((group, index) => ({
+      id: crypto.randomUUID(),
+      paper_id: paperId,
+      tab: 'participantCharacteristics',
+      label: group.label,
+      position: index,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }));
+
+    const { data: insertedGroups, error: insertGroupError } = await supabase
+      .from('population_groups')
+      .insert(groupRows)
+      .select('*');
+
+    if (insertGroupError) {
+      throw insertGroupError;
+    }
+
+    const valueRows: PopulationValueRow[] = [];
+
+    insertedGroups?.forEach((groupRow) => {
+      const parsed = groups.find((candidate) => candidate.position === groupRow.position);
+      if (!parsed) {
+        return;
+      }
+      Object.entries(parsed.values).forEach(([fieldId, value]) => {
+        valueRows.push({
+          id: crypto.randomUUID(),
+          population_group_id: groupRow.id,
+          paper_id: paperId,
+          field_id: fieldId,
+          source_field_id: fieldId,
+          value: value ?? null,
+          metric: null,
+          unit: null,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        });
+      });
+    });
+
+    if (valueRows.length > 0) {
+      const { error: insertValuesError } = await supabase.from('population_values').insert(valueRows);
+      if (insertValuesError) {
+        throw insertValuesError;
+      }
+    }
+  } catch (error) {
+    console.error('[mockDb] Failed to sync population slices', error);
   }
 };
 
 export const mockDb = {
-  listPapers(): Paper[] {
-    db.papers.forEach((paper) => ensureAssignedStudyId(paper));
-    return db.papers.toSorted((a, b) => b.createdAt.localeCompare(a.createdAt));
+  async listPapers(): Promise<Paper[]> {
+    const supabase = supabaseClient();
+    const { data: paperRows, error } = await supabase.from('papers').select('*').order('uploaded_at', { ascending: false });
+
+    if (error) {
+      throw new Error(`Failed to list papers: ${error.message}`);
+    }
+
+    const ids = (paperRows ?? []).map((row) => row.id);
+    const noteCounts = new Map<string, number>();
+
+    if (ids.length > 0) {
+      const { data: noteRows, error: notesError } = await supabase
+        .from('paper_notes')
+        .select('paper_id')
+        .in('paper_id', ids);
+
+      if (notesError) {
+        throw new Error(`Failed to load note counts: ${notesError.message}`);
+      }
+
+      (noteRows ?? []).forEach((row) => {
+        const current = noteCounts.get(row.paper_id) ?? 0;
+        noteCounts.set(row.paper_id, current + 1);
+      });
+    }
+
+    return (paperRows ?? []).map((row) => mapPaperRow(row as PaperRow, noteCounts.get(row.id) ?? 0));
   },
 
-  getFile(id: string): StoredFile | undefined {
-    return db.files.find((file) => file.id === id);
-  },
+  async getPaper(id: string): Promise<Paper | undefined> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase.from('papers').select('*').eq('id', id).maybeSingle();
 
-  getPaper(id: string): Paper | undefined {
-    const paper = db.papers.find((item) => item.id === id);
-    ensureAssignedStudyId(paper);
-    return paper;
-  },
+    if (error) {
+      throw new Error(`Failed to load paper ${id}: ${error.message}`);
+    }
 
-  createPaper(input: CreatePaperInput): Paper {
-    const paper: Paper = {
-      id: crypto.randomUUID(),
-      assignedStudyId: generateAssignedStudyId(),
-      title: input.title,
-      leadAuthor: input.leadAuthor,
-      year: input.year,
-      journal: input.journal,
-      doi: input.doi,
-      status: input.status ?? 'uploaded',
-      createdAt: now(),
-      updatedAt: now(),
-      fileId: '',
-      noteIds: [],
-    };
-
-    db.papers.push(paper);
-
-    return paper;
-  },
-
-  updatePaper(id: string, updates: Partial<Omit<Paper, 'id' | 'createdAt' | 'assignedStudyId'>>): Paper | undefined {
-    const paper = this.getPaper(id);
-    if (!paper) {
+    if (!data) {
       return undefined;
     }
 
-    Object.assign(paper, updates, { updatedAt: now() });
+    const { data: noteRows } = await supabase.from('paper_notes').select('paper_id').eq('paper_id', id);
+    const noteCount = noteRows?.length ?? 0;
 
-    return paper;
+    return mapPaperRow(data, noteCount);
   },
 
-  attachFile(input: CreateFileInput): StoredFile {
-    const file: StoredFile = {
+  async createPaper(input: CreatePaperInput): Promise<Paper> {
+    const supabase = supabaseClient();
+    const assignedId = await generateAssignedStudyId();
+    const payload: PaperInsert = {
       id: crypto.randomUUID(),
-      paperId: input.paperId,
+      assigned_study_id: assignedId,
+      title: input.title,
+      lead_author: input.leadAuthor ?? null,
+      journal: input.journal ?? null,
+      year: input.year ?? null,
+      doi: input.doi ?? null,
+      status: input.status ?? 'uploaded',
+      storage_bucket: 'papers',
+      uploaded_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      metadata: input.metadata ?? {},
+    };
+
+    const { data, error } = await supabase.from('papers').insert(payload).select('*').single();
+
+    if (error || !data) {
+      throw new Error(`Failed to create paper: ${error?.message ?? 'Unknown error'}`);
+    }
+
+    return mapPaperRow(data);
+  },
+
+  async updatePaper(
+    id: string,
+    updates: Partial<Omit<Paper, 'id' | 'assignedStudyId' | 'createdAt'>>,
+  ): Promise<Paper | undefined> {
+    const supabase = supabaseClient();
+    const payload: PaperUpdate = {
+      title: updates.title,
+      lead_author: updates.leadAuthor,
+      journal: updates.journal,
+      year: updates.year,
+      doi: updates.doi,
+      status: updates.status as PaperStatus | undefined,
+      storage_bucket: updates.storageBucket,
+      storage_object_path: updates.storageObjectPath,
+      primary_file_id: updates.primaryFileId,
+      flag_reason: updates.flagReason,
+      metadata: updates.metadata,
+      updated_at: new Date().toISOString(),
+    };
+
+    const { error } = await supabase.from('papers').update(payload).eq('id', id);
+
+    if (error) {
+      throw new Error(`Failed to update paper: ${error.message}`);
+    }
+
+    return this.getPaper(id);
+  },
+
+  async getFile(id: string): Promise<StoredFile | undefined> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase.from('paper_files').select('*').eq('id', id).maybeSingle();
+
+    if (error) {
+      throw new Error(`Failed to load file ${id}: ${error.message}`);
+    }
+
+    return data ? mapFileRow(data) : undefined;
+  },
+
+  async attachFile(input: CreateFileInput): Promise<StoredFile> {
+    const supabase = supabaseClient();
+    const payload: FileInsert = {
+      id: crypto.randomUUID(),
+      paper_id: input.paperId,
       name: input.name,
       size: input.size,
-      mimeType: input.mimeType,
-      uploadedAt: now(),
-      dataBase64: input.dataBase64,
-      publicPath: input.publicPath,
+      mime_type: input.mimeType,
+      uploaded_at: new Date().toISOString(),
+      data_base64: input.dataBase64 ?? null,
+      storage_bucket: input.storageBucket ?? 'papers',
+      storage_object_path: input.storageObjectPath ?? null,
+      public_url: input.publicUrl ?? null,
     };
 
-    db.files.push(file);
+    const { data, error } = await supabase.from('paper_files').insert(payload).select('*').single();
 
-    const paper = this.getPaper(input.paperId);
-    if (paper) {
-      paper.fileId = file.id;
-      paper.updatedAt = now();
+    if (error || !data) {
+      throw new Error(`Failed to attach file: ${error?.message ?? 'Unknown error'}`);
     }
 
-    return file;
+    await supabase
+      .from('papers')
+      .update({ primary_file_id: data.id, updated_at: new Date().toISOString() })
+      .eq('id', input.paperId);
+
+    return mapFileRow(data);
   },
 
-  toggleFlag(paperId: string, reason: string): Flag | undefined {
-    const existing = db.flags.find((flag) => flag.paperId === paperId);
-
-    if (existing) {
-      db.flags = db.flags.filter((flag) => flag.id !== existing.id);
-      const paper = this.getPaper(paperId);
-      if (paper) {
-        delete paper.flagId;
-        paper.status = 'uploaded';
-        paper.updatedAt = now();
-      }
-      return undefined;
+  async toggleFlag(paperId: string, reason: string | null) {
+    const paper = await this.getPaper(paperId);
+    if (!paper) {
+      throw new Error(`Paper ${paperId} not found`);
     }
 
-    const flag: Flag = {
+    const nextReason = paper.flagReason ? null : reason;
+    const nextStatus: PaperStatus = nextReason ? 'flagged' : 'uploaded';
+
+    await this.updatePaper(paperId, { flagReason: nextReason, status: nextStatus });
+  },
+
+  async listNotes(paperId: string): Promise<PaperNote[]> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('paper_notes')
+      .select('*')
+      .eq('paper_id', paperId)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      throw new Error(`Failed to list notes: ${error.message}`);
+    }
+
+    return (data ?? []).map(mapNoteRow);
+  },
+
+  async addNote(input: CreateNoteInput): Promise<PaperNote> {
+    const supabase = supabaseClient();
+    const payload: NoteInsert = {
       id: crypto.randomUUID(),
-      paperId,
-      reason,
-      createdAt: now(),
-    };
-
-    db.flags.push(flag);
-
-    const paper = this.getPaper(paperId);
-    if (paper) {
-      paper.flagId = flag.id;
-      paper.status = 'flagged';
-      paper.updatedAt = now();
-    }
-
-    return flag;
-  },
-
-  listNotes(paperId: string): Note[] {
-    return db.notes.filter((note) => note.paperId === paperId);
-  },
-
-  addNote(input: CreateNoteInput): Note {
-    const note: Note = {
-      id: crypto.randomUUID(),
-      paperId: input.paperId,
+      paper_id: input.paperId,
       author: input.author,
       body: input.body,
-      createdAt: now(),
+      created_at: new Date().toISOString(),
     };
 
-    db.notes.push(note);
+    const { data, error } = await supabase.from('paper_notes').insert(payload).select('*').single();
 
-    const paper = this.getPaper(input.paperId);
-    if (paper) {
-      paper.noteIds.push(note.id);
-      paper.updatedAt = now();
+    if (error || !data) {
+      throw new Error(`Failed to create note: ${error?.message ?? 'Unknown error'}`);
     }
 
-    return note;
+    return mapNoteRow(data);
   },
 
-  listExports(): ExportJob[] {
-    return db.exports.toSorted((a, b) => b.createdAt.localeCompare(a.createdAt));
+  async listExports(): Promise<ExportJob[]> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('export_jobs')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      throw new Error(`Failed to list export jobs: ${error.message}`);
+    }
+
+    return (data ?? []).map(mapExportRow);
   },
 
-  createExport(kind: ExportJob['kind'], paperIds: string[]): ExportJob {
+  async createExport(kind: SupabaseExportKind, paperIds: string[]): Promise<ExportJob> {
+    const supabase = supabaseClient();
+    const createdAt = new Date().toISOString();
     const id = crypto.randomUUID();
-    const createdAt = now();
-    const downloadUrl = `/api/exports/${id}/download`;
-    const job: ExportJob = {
+    const payload: Database['public']['Tables']['export_jobs']['Insert'] = {
       id,
       kind,
-      paperIds,
+      paper_ids: paperIds,
       status: 'ready',
-      createdAt,
-      downloadUrl,
-      checksumSha256: crypto
-        .createHash('sha256')
-        .update(JSON.stringify({ id, kind, paperIds, createdAt }))
-        .digest('hex'),
+      created_at: createdAt,
+      checksum_sha256: crypto.createHash('sha256').update(JSON.stringify({ kind, paperIds, createdAt })).digest('hex'),
+      download_path: `/api/exports/${id}/download`,
     };
 
-    db.exports.push(job);
+    const { data, error } = await supabase.from('export_jobs').insert(payload).select('*').single();
 
-    return job;
-  },
-
-  getExport(id: string): ExportJob | undefined {
-    return db.exports.find((job) => job.id === id);
-  },
-
-  listExtractions(paperId: string): ExtractionResult[] {
-    return db.extractions.filter((extraction) => extraction.paperId === paperId);
-  },
-
-  getExtraction(paperId: string, tab: ExtractionTab): ExtractionResult | undefined {
-    return db.extractions
-      .filter((extraction) => extraction.paperId === paperId && extraction.tab === tab)
-      .toSorted((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
-  },
-
-  upsertExtraction(input: Omit<ExtractionResult, 'id' | 'createdAt' | 'updatedAt'> & { id?: string }): ExtractionResult {
-    const existingIndex = input.id
-      ? db.extractions.findIndex((extraction) => extraction.id === input.id)
-      : db.extractions.findIndex(
-          (extraction) => extraction.paperId === input.paperId && extraction.tab === input.tab,
-        );
-
-    const extraction: ExtractionResult = {
-      id: input.id ?? crypto.randomUUID(),
-      paperId: input.paperId,
-      tab: input.tab,
-      model: input.model,
-      fields: input.fields,
-      notes: input.notes,
-      createdAt: existingIndex >= 0 ? db.extractions[existingIndex].createdAt : now(),
-      updatedAt: now(),
-    };
-
-    if (existingIndex >= 0) {
-      db.extractions.splice(existingIndex, 1, extraction);
-    } else {
-      db.extractions.push(extraction);
+    if (error || !data) {
+      throw new Error(`Failed to create export job: ${error?.message ?? 'Unknown error'}`);
     }
 
-    const paper = this.getPaper(input.paperId);
-    if (paper && paper.status !== 'extracted') {
-      paper.status = 'extracted';
-      paper.updatedAt = now();
-    }
-
-    if (paper) {
-      const titleField = extraction.fields.find((field) => field.fieldId === 'title');
-      const newTitle = typeof titleField?.value === 'string' ? titleField.value.trim() : '';
-      if (newTitle) {
-        paper.title = newTitle;
-        paper.updatedAt = now();
-      }
-    }
-
-    return extraction;
+    return mapExportRow(data);
   },
 
-  updateExtractionField(
+  async getExport(id: string): Promise<ExportJob | undefined> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase.from('export_jobs').select('*').eq('id', id).maybeSingle();
+
+    if (error) {
+      throw new Error(`Failed to load export job ${id}: ${error.message}`);
+    }
+
+    return data ? mapExportRow(data) : undefined;
+  },
+
+  async listExtractions(paperId: string): Promise<ExtractionResult[]> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('extractions')
+      .select('*, extraction_fields(*)')
+      .eq('paper_id', paperId)
+      .order('updated_at', { ascending: false });
+
+    if (error) {
+      throw new Error(`Failed to list extractions: ${error.message}`);
+    }
+
+    return (data ?? []).map((row) => mapExtractionRow(row as ExtractionRow & { extraction_fields: ExtractionFieldRow[] }));
+  },
+
+  async getExtraction(paperId: string, tab: ExtractionTab): Promise<ExtractionResult | undefined> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('extractions')
+      .select('*, extraction_fields(*)')
+      .eq('paper_id', paperId)
+      .eq('tab', tab)
+      .order('updated_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (error && error.code !== 'PGRST116') {
+      throw new Error(`Failed to load extraction: ${error.message}`);
+    }
+
+    return data
+      ? mapExtractionRow(data as ExtractionRow & { extraction_fields: ExtractionFieldRow[] })
+      : undefined;
+  },
+
+  async updateExtractionField(
     paperId: string,
     tab: ExtractionTab,
     fieldId: string,
-    updates: Partial<Omit<ExtractionFieldResult, 'fieldId' | 'updatedAt' | 'updatedBy'>> & {
+    updates: {
+      value?: string | null;
       status?: ExtractionFieldResult['status'];
-      updatedBy?: ExtractionFieldResult['updatedBy'];
+      confidence?: number | null;
+      sourceQuote?: string | null;
+      pageHint?: string | null;
+      metric?: ExtractionFieldMetric | null;
       model?: string;
-      metric?: ExtractionFieldMetric;
     },
-  ): ExtractionResult {
-    const extraction = this.getExtraction(paperId, tab);
-    if (!extraction) {
-      const newExtraction: ExtractionResult = {
-        id: crypto.randomUUID(),
-        paperId,
-        tab,
-        model: updates.model ?? 'human-input',
-        fields: [],
-        createdAt: now(),
-        updatedAt: now(),
-      };
-      db.extractions.push(newExtraction);
-      return this.updateExtractionField(paperId, tab, fieldId, updates);
+  ): Promise<ExtractionResult> {
+    const status = updates.status ?? (updates.value ? 'reported' : 'not_reported');
+    const normalizedConfidence =
+      typeof updates.confidence === 'number' && !Number.isNaN(updates.confidence)
+        ? Math.min(Math.max(updates.confidence, 0), 1)
+        : null;
+
+    const extractionRow = await ensureExtractionRow(paperId, tab, updates.model);
+    await supabaseClient()
+      .from('extractions')
+      .update({
+        model: updates.model ?? extractionRow.model ?? 'human-input',
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', extractionRow.id);
+
+    await upsertExtractionFieldRow(extractionRow.id, fieldId, {
+      value: updates.value ?? null,
+      status,
+      confidence: normalizedConfidence,
+      sourceQuote: updates.sourceQuote ?? null,
+      pageHint: updates.pageHint ?? null,
+      metric: (updates.metric ?? null) as SupabaseExtractionMetric | null,
+    });
+
+    if (fieldId === 'title' && updates.value) {
+      await this.updatePaper(paperId, { title: updates.value });
     }
 
-    const field =
-      extraction.fields.find((item) => item.fieldId === fieldId) ??
-      (() => {
-        const emptyField: ExtractionFieldResult = {
-          fieldId,
-          value: null,
-          confidence: null,
-          sourceQuote: undefined,
-          pageHint: undefined,
-          metric: undefined,
-          status: 'not_reported',
-          updatedAt: now(),
-          updatedBy: 'human',
-        };
-        extraction.fields.push(emptyField);
-        return emptyField;
-      })();
-
-    const { status, updatedBy, model, metric, ...rest } = updates;
-
-    if ('value' in rest) {
-      field.value = rest.value ?? null;
-    }
-    if ('confidence' in rest) {
-      field.confidence = rest.confidence ?? null;
-    }
-    if ('sourceQuote' in rest) {
-      field.sourceQuote = rest.sourceQuote;
-    }
-    if ('pageHint' in rest) {
-      field.pageHint = rest.pageHint;
-    }
-    if (metric !== undefined) {
-      field.metric = metric;
+    if (tab === 'participantCharacteristics') {
+      await syncPopulationSlices(paperId);
     }
 
-    const trimmedValue = typeof field.value === 'string' ? field.value.trim() : '';
-    field.value = trimmedValue.length > 0 ? trimmedValue : null;
+    return fetchExtractionById(extractionRow.id);
+  },
 
-    const computedStatus = status ?? (field.value ? 'reported' : 'not_reported');
-    field.status = computedStatus;
-    field.updatedAt = now();
-    field.updatedBy = updatedBy ?? 'human';
+  async listPopulationGroups(paperId: string): Promise<PopulationGroup[]> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('population_groups')
+      .select('*')
+      .eq('paper_id', paperId)
+      .order('position', { ascending: true });
 
-    extraction.updatedAt = now();
-    extraction.model = model ?? (field.updatedBy === 'ai' ? 'ai-generated' : 'human-edited');
-
-    if (fieldId === 'title') {
-      const newTitle = typeof field.value === 'string' ? field.value.trim() : '';
-      if (newTitle) {
-        const paperRef = this.getPaper(paperId);
-        if (paperRef) {
-          paperRef.title = newTitle;
-          paperRef.updatedAt = now();
-        }
-      }
+    if (error) {
+      throw new Error(`Failed to list population groups: ${error.message}`);
     }
 
-    return extraction;
+    return (data ?? []).map(mapPopulationGroupRow);
+  },
+
+  async listPopulationValues(paperId: string): Promise<PopulationValue[]> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('population_values')
+      .select('*')
+      .eq('paper_id', paperId);
+
+    if (error) {
+      throw new Error(`Failed to list population values: ${error.message}`);
+    }
+
+    return (data ?? []).map(mapPopulationValueRow);
   },
 };
-
-export const seedIfEmpty = () => {
-  if (db.papers.length > 0) {
-    return;
-  }
-
-  const seeded = mockDb.createPaper({
-    title: 'Injury patterns among professional footballers',
-    leadAuthor: 'Doe, J.',
-    year: '2023',
-    journal: 'Sports Medicine Journal',
-    status: 'extracted',
-  });
-
-  mockDb.attachFile({
-    paperId: seeded.id,
-    name: samplePdfFilename,
-    size: getSamplePdfSize(),
-    mimeType: 'application/pdf',
-    publicPath: samplePdfPublicPath,
-  });
-
-  mockDb.addNote({
-    paperId: seeded.id,
-    author: 'dev-user',
-    body: 'Initial data seeded for demo purposes.',
-  });
-
-  mockDb.upsertExtraction({
-    paperId: seeded.id,
-    tab: 'studyDetails',
-    model: 'seed-data',
-    fields: [
-      {
-        fieldId: 'studyId',
-        value: 'SEED-001',
-        confidence: 0.95,
-        status: 'reported',
-        updatedAt: now(),
-        pageHint: 'p. 1',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-      {
-        fieldId: 'leadAuthor',
-        value: 'Doe, J.',
-        confidence: 0.9,
-        status: 'reported',
-        updatedAt: now(),
-        pageHint: 'p. 1',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-      {
-        fieldId: 'title',
-        value: 'Injury patterns among professional footballers',
-        confidence: 0.98,
-        status: 'reported',
-        updatedAt: now(),
-        pageHint: 'p. 1',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-      {
-        fieldId: 'yearOfPublication',
-        value: '2023',
-        confidence: 0.9,
-        status: 'reported',
-        updatedAt: now(),
-        pageHint: 'p. 1',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-      {
-        fieldId: 'journal',
-        value: 'Sports Medicine Journal',
-        confidence: 0.85,
-        status: 'reported',
-        updatedAt: now(),
-        pageHint: 'p. 1',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-      {
-        fieldId: 'doi',
-        value: '10.1234/seed-doi',
-        confidence: 0.6,
-        status: 'uncertain',
-        updatedAt: now(),
-        pageHint: 'p. 2',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-      {
-        fieldId: 'studyDesign',
-        value: 'Prospective cohort',
-        confidence: 0.8,
-        status: 'reported',
-        updatedAt: now(),
-        pageHint: 'p. 2',
-        sourceQuote: 'Example seed data',
-        updatedBy: 'ai',
-      },
-    ],
-  });
-};
-
-function getSamplePdfSize() {
-  const candidateRoots = [
-    process.cwd(),
-    path.join(process.cwd(), 'fifa-gbi-data-extraction'),
-  ];
-
-  for (const root of candidateRoots) {
-    try {
-      const absolutePath = path.join(root, 'public', samplePdfFilename);
-      if (!fs.existsSync(absolutePath)) {
-        continue;
-      }
-      return fs.statSync(absolutePath).size;
-    } catch {
-      // continue to the next candidate root
-    }
-  }
-
-  return 0;
-}

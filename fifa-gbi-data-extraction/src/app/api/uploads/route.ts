@@ -28,7 +28,7 @@ export async function POST(request: Request) {
   const arrayBuffer = await file.arrayBuffer();
   const base64 = Buffer.from(arrayBuffer).toString('base64');
 
-  const paper = mockDb.createPaper({
+  const paper = await mockDb.createPaper({
     title: title ?? file.name,
     leadAuthor,
     year,
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     doi,
   });
 
-  const storedFile = mockDb.attachFile({
+  const storedFile = await mockDb.attachFile({
     paperId: paper.id,
     name: file.name,
     size: file.size,
@@ -44,5 +44,11 @@ export async function POST(request: Request) {
     dataBase64: base64,
   });
 
-  return NextResponse.json({ paper: { ...paper, fileId: storedFile.id } }, { status: 201 });
+  const updatedPaper = await mockDb.updatePaper(paper.id, {
+    primaryFileId: storedFile.id,
+    storageBucket: storedFile.storageBucket,
+    storageObjectPath: storedFile.storageObjectPath,
+  });
+
+  return NextResponse.json({ paper: updatedPaper ?? paper, file: storedFile }, { status: 201 });
 }

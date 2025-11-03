@@ -20,7 +20,7 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
         const response = await fetch(`/api/papers/${paperId}/flag`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ reason: 'Cleared by dev user' }),
+          body: JSON.stringify({ reason: null }),
         });
 
         if (!response.ok) {

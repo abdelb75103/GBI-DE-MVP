@@ -6,6 +6,20 @@ import { useRouter } from 'next/navigation';
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
 
+const MULTILINE_PLACEHOLDERS: Record<string, string> = {
+  ageCategory: 'U19\nU21',
+  sex: 'U19 — male\nU21 — female',
+  meanAge: 'U19 — 16.8 ± 0.9\nU21 — 20.1 ± 0.3',
+  sampleSizePlayers: 'U19 — 62\nU21 — 60',
+  numberOfTeams: 'U19 — 4 clubs\nU21 — 5 clubs',
+  studyPeriodYears: 'U19 — 4 seasons\nU21 — 3 seasons',
+  observationDuration: 'U19 — 4 seasons\nU21 — 3 seasons',
+  numberOfSeasons: 'U19 — 4\nU21 — 3',
+  seasonLength: 'Tournament A — 4 weeks\nTournament B — 2 weeks',
+  matchExposure: 'U19 — 250 h\nU21 — 210 h',
+  trainingExposure: 'U19 — 420 h\nU21 — 390 h',
+};
+
 type ExtractionFieldEditorProps = {
   paperId: string;
   tab: ExtractionTab;
@@ -29,6 +43,7 @@ export function ExtractionFieldEditor({
   const [draftValue, setDraftValue] = useState(result?.value ?? '');
   const [isPending, startTransition] = useTransition();
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
+  const placeholder = MULTILINE_PLACEHOLDERS[definition.id] ?? '';
 
   useEffect(() => {
     setDraftValue(result?.value ?? '');
@@ -127,7 +142,7 @@ export function ExtractionFieldEditor({
         }}
         onBlur={handleBlur}
         rows={3}
-        placeholder=""
+        placeholder={placeholder}
         className={`rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 ${
           supportsAi
             ? 'border-indigo-200/80 focus:border-indigo-300 focus:ring-indigo-200/70'

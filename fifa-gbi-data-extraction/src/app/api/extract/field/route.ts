@@ -32,7 +32,7 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: message }, { status: 400 });
   }
 
-  const paper = mockDb.getPaper(parsed.paperId);
+  const paper = await mockDb.getPaper(parsed.paperId);
   if (!paper) {
     return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
   }
@@ -43,14 +43,13 @@ export async function PUT(request: Request) {
   const normalizedConfidence =
     typeof parsed.confidence === 'number' ? Math.min(Math.max(parsed.confidence / 100, 0), 1) : null;
 
-  const extraction = mockDb.updateExtractionField(parsed.paperId, parsed.tab, parsed.fieldId, {
+  const extraction = await mockDb.updateExtractionField(parsed.paperId, parsed.tab, parsed.fieldId, {
     value: normalizedValue,
     status: normalizedStatus,
     confidence: normalizedConfidence,
     sourceQuote: parsed.sourceQuote?.trim() || undefined,
     pageHint: parsed.pageHint?.trim() || undefined,
     metric: (parsed.metric ?? undefined) as ExtractionFieldMetric | undefined,
-    updatedBy: 'human',
   });
 
   const field = extraction.fields.find((item) => item.fieldId === parsed.fieldId);

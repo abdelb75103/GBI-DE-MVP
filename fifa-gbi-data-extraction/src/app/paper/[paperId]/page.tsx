@@ -8,7 +8,7 @@ import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
 import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
 import { definitionCategories } from '@/lib/definitions';
-import { mockDb, seedIfEmpty } from '@/lib/mock-db';
+import { mockDb } from '@/lib/mock-db';
 import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { formatDateTimeUTC } from '@/lib/format';
 import { PaperWorkspaceShell } from '@/components/paper-workspace-shell';
@@ -20,18 +20,16 @@ export default async function PaperWorkspace({
 }: {
   params: Promise<{ paperId: string }>;
 }) {
-  seedIfEmpty();
-
   const { paperId } = await params;
-  const paper = mockDb.getPaper(paperId);
+  const paper = await mockDb.getPaper(paperId);
 
   if (!paper) {
     notFound();
   }
 
-  const file = paper.fileId ? mockDb.getFile(paper.fileId) : undefined;
-  const notes = mockDb.listNotes(paper.id);
-  const extractions = mockDb.listExtractions(paper.id);
+  const file = paper.primaryFileId ? await mockDb.getFile(paper.primaryFileId) : undefined;
+  const notes = await mockDb.listNotes(paper.id);
+  const extractions = await mockDb.listExtractions(paper.id);
   const extractionMap = new Map(extractions.map((extraction) => [extraction.tab, extraction] as const));
   const tabPayload = extractionTabs.map((tab) => ({
     tab,
@@ -39,8 +37,8 @@ export default async function PaperWorkspace({
     fields: extractionFieldDefinitions.filter((field) => field.tab === tab),
     results: extractionMap.get(tab)?.fields ?? [],
   }));
-  const viewerUrl = file?.publicPath
-    ? file.publicPath
+  const viewerUrl = file?.publicUrl
+    ? file.publicUrl
     : file?.dataBase64
       ? `data:${file.mimeType};base64,${file.dataBase64}`
       : null;
@@ -122,7 +120,7 @@ export default async function PaperWorkspace({
                   Use flags to mark issues that need reviewer attention.
                 </p>
                 <div className="mt-4">
-                  <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagId)} />
+                  <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
                 </div>
               </div>
             </div>

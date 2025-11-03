@@ -32,18 +32,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'AI extraction is only available for study details, participant characteristics, definitions, and exposure.' }, { status: 400 });
   }
 
-  const paper = mockDb.getPaper(paperId);
+  const paper = await mockDb.getPaper(paperId);
   if (!paper) {
     return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
   }
 
-  const file = paper.fileId ? mockDb.getFile(paper.fileId) : undefined;
+  const file = paper.primaryFileId ? await mockDb.getFile(paper.primaryFileId) : undefined;
   if (!file) {
     return NextResponse.json({ error: 'Paper does not have an attached file' }, { status: 400 });
   }
 
   const previousStatus = paper.status;
-  mockDb.updatePaper(paper.id, { status: 'processing' });
+  await mockDb.updatePaper(paper.id, { status: 'processing' });
 
   try {
     const buffer = await loadFileBuffer(file);
@@ -61,20 +61,19 @@ export async function POST(request: Request) {
 
     const fieldMap = new Map(response.fields.map((field) => [field.fieldId, field]));
 
-    fields.forEach((fieldId) => {
+    for (const fieldId of fields) {
       const field = fieldMap.get(fieldId);
-      mockDb.updateExtractionField(paper.id, tab, fieldId, {
+      await mockDb.updateExtractionField(paper.id, tab, fieldId, {
         value: field?.value ?? null,
         confidence: field?.confidence ?? null,
         sourceQuote: field?.sourceQuote,
         pageHint: field?.pageHint,
         metric: field?.metric,
-        updatedBy: 'ai',
         model: response.model,
       });
-    });
+    }
 
-    mockDb.updatePaper(paper.id, { status: 'extracted' });
+    await mockDb.updatePaper(paper.id, { status: 'extracted' });
 
     return NextResponse.json({
       paperId: paper.id,
@@ -83,7 +82,7 @@ export async function POST(request: Request) {
       fields: response.fields,
     });
   } catch (error) {
-    mockDb.updatePaper(paper.id, { status: previousStatus });
+    await mockDb.updatePaper(paper.id, { status: previousStatus });
     const message = error instanceof Error ? error.message : 'Extraction failed';
     console.error('[extract] Extraction error:', message);
     return NextResponse.json({ error: message }, { status: 500 });
@@ -95,9 +94,28 @@ async function loadFileBuffer(file: StoredFile) {
     return Buffer.from(file.dataBase64, 'base64');
   }
 
-  if (file.publicPath) {
-    const absolutePath = path.join(process.cwd(), 'public', path.basename(file.publicPath));
-    return fs.readFile(absolutePath);
+  if (file.publicUrl) {
+    if (file.publicUrl.startsWith('data:')) {
+      const base64Part = file.publicUrl.split(',')[1];
+      if (!base64Part) {
+        throw new Error('Invalid data URL for file');
+      }
+      return Buffer.from(base64Part, 'base64');
+    }
+
+    if (file.publicUrl.startsWith('/')) {
+      const absolutePath = path.join(process.cwd(), 'public', path.basename(file.publicUrl));
+      return fs.readFile(absolutePath);
+    }
+
+    if (file.publicUrl.startsWith('http')) {
+      const response = await fetch(file.publicUrl);
+      if (!response.ok) {
+        throw new Error(`Failed to load file from storage: ${response.statusText}`);
+      }
+      const arrayBuffer = await response.arrayBuffer();
+      return Buffer.from(arrayBuffer);
+    }
   }
 
   throw new Error('No file data available for extraction');

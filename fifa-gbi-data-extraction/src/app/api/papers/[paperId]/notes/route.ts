@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 const paperIdFromRequest = (request: NextRequest) => request.nextUrl.pathname.split('/').slice(-2, -1)[0] ?? '';
 
 export async function GET(request: NextRequest) {
-  const notes = mockDb.listNotes(paperIdFromRequest(request));
+  const notes = await mockDb.listNotes(paperIdFromRequest(request));
 
   return NextResponse.json({ notes });
 }
@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Author and body are required' }, { status: 400 });
   }
 
-  const note = mockDb.addNote({ paperId: paperIdFromRequest(request), author, body });
+  const note = await mockDb.addNote({ paperId: paperIdFromRequest(request), author, body });
 
   return NextResponse.json({ note }, { status: 201 });
 }

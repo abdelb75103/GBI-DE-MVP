@@ -215,11 +215,11 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
                   <time dateTime={paper.createdAt}>{formatDateTimeUTC(paper.createdAt)}</time>
                 </td>
                 <td className="px-6 py-4 text-center text-sm font-medium text-slate-600">
-                  {paper.noteIds.length}
+                  {paper.noteCount ?? 0}
                 </td>
                 <td className="px-6 py-4 text-center">
                   <div className="flex justify-center">
-                    <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagId)} />
+                    <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
                   </div>
                 </td>
                 <td className="px-6 py-4 text-center">
