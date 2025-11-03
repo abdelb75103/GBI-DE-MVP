@@ -6,6 +6,7 @@ import './globals.css';
 import { ActiveProfileGate } from '@/components/active-profile-gate';
 import { ActiveProfileIndicator } from '@/components/header/active-profile-indicator';
 import { PrimaryNavLinks } from '@/components/header/nav-links';
+import { ThemeToggleButton } from '@/components/header/theme-toggle-button';
 import { Providers } from '@/components/providers';
 
 export const metadata: Metadata = {
@@ -19,9 +20,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeInitializer = `
+    (function () {
+      try {
+        const storageKey = 'gbi-theme-preference';
+        const root = document.documentElement;
+        const stored = window.localStorage.getItem(storageKey);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme;
+      } catch (error) {
+        console.warn('Theme init failed', error);
+      }
+    })();
+  `;
+
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-100 text-slate-900 antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitializer }} />
+      </head>
+      <body className="min-h-screen bg-[var(--page-bg)] text-[var(--page-text)] antialiased transition-colors duration-300">
         <Providers>
           <div className="flex min-h-screen flex-col">
             <header className="sticky top-0 z-40 border-b border-white/60 bg-white/80 shadow-sm backdrop-blur">
@@ -46,8 +66,9 @@ export default function RootLayout({
                   >
                     FIFA GBI Data Extraction Assistant
                   </Link>
-                  <nav className="flex items-center gap-3 text-sm font-medium text-slate-600">
+                  <nav className="flex items-center gap-3 text-sm font-medium text-slate-600 data-[theme=dark]:text-slate-300">
                     <PrimaryNavLinks />
+                    <ThemeToggleButton />
                     <ActiveProfileIndicator />
                   </nav>
                 </div>

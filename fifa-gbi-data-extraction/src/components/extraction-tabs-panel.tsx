@@ -24,9 +24,11 @@ type TabPayload = {
   results: ExtractionFieldResult[];
 };
 
-type ExtractionTabsPanelProps = {
+export type ExtractionTabsPanelProps = {
   paperId: string;
   tabs: TabPayload[];
+  layoutMode?: LayoutMode;
+  onLayoutModeChange?: (layout: LayoutMode) => void;
 };
 
 type FeedbackTone = 'info' | 'success' | 'error';
@@ -37,11 +39,16 @@ type FeedbackState = {
   tab?: ExtractionTab;
 };
 
-type LayoutMode = 'accordion' | 'tabbed';
+export type LayoutMode = 'accordion' | 'tabbed' | 'full';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
 
-export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps) {
+export function ExtractionTabsPanel({
+  paperId,
+  tabs,
+  layoutMode,
+  onLayoutModeChange,
+}: ExtractionTabsPanelProps) {
   const router = useRouter();
   const { apiKey, isLoaded } = useGeminiApiKey();
 
@@ -50,7 +57,8 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
 
   const [openAiTab, setOpenAiTab] = useState<ExtractionTab | null>(null);
   const [openManualTab, setOpenManualTab] = useState<ExtractionTab | null>(null);
-  const [layout, setLayout] = useState<LayoutMode>('accordion');
+  const [internalLayout, setInternalLayout] = useState<LayoutMode>('accordion');
+  const layout = layoutMode ?? internalLayout;
   const orderedTabs = useMemo(() => [...aiTabs, ...manualTabs], [aiTabs, manualTabs]);
   const [activeTab, setActiveTab] = useState<ExtractionTab | null>(orderedTabs[0]?.tab ?? null);
   const [selectedMap, setSelectedMap] = useState<Map<ExtractionTab, Set<string>>>(
@@ -68,11 +76,25 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
     () => [
       { id: 'accordion', label: 'Accordion', helper: 'Expand sections while keeping everything visible.' },
       { id: 'tabbed', label: 'Focus', helper: 'Work one tab at a time without visual clutter.' },
+      { id: 'full', label: 'Full screen', helper: 'Hide the PDF preview and maximize the data workspace.' },
     ],
     [],
   );
 
   const getLayoutHelper = () => layoutOptions.find((option) => option.id === layout)?.helper ?? '';
+
+  useEffect(() => {
+    if (layoutMode && layoutMode !== internalLayout) {
+      setInternalLayout(layoutMode);
+    }
+  }, [layoutMode, internalLayout]);
+
+  const handleLayoutChange = (next: LayoutMode) => {
+    if (!layoutMode) {
+      setInternalLayout(next);
+    }
+    onLayoutModeChange?.(next);
+  };
 
   const scrollToAccordion = useCallback(
     (tab: ExtractionTab | null, refs: MutableRefObject<Map<ExtractionTab, HTMLDivElement>>) => {
@@ -111,7 +133,7 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
   }, [orderedTabs, activeTab]);
 
   useEffect(() => {
-    if (layout === 'tabbed' && !activeTab && orderedTabs.length) {
+    if ((layout === 'tabbed' || layout === 'full') && !activeTab && orderedTabs.length) {
       setActiveTab(orderedTabs[0].tab);
     }
   }, [layout, orderedTabs, activeTab]);
@@ -246,7 +268,11 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
     const selectedSet = selectedMap.get(item.tab) ?? new Set<string>();
     const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
     const gridClassName =
-      currentLayout === 'tabbed' ? 'grid gap-4 sm:grid-cols-2' : 'grid gap-4 md:grid-cols-2';
+      currentLayout === 'tabbed'
+        ? 'grid gap-4 sm:grid-cols-2'
+        : currentLayout === 'full'
+          ? 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3'
+          : 'grid gap-4 md:grid-cols-2';
 
     return (
       <div className="space-y-4">
@@ -304,7 +330,11 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
     const groups = groupFieldsById(item.fields);
     const hasGroups = groups.size > 0;
     const gridClassName =
-      currentLayout === 'tabbed' ? 'grid gap-4 sm:grid-cols-2' : 'grid gap-4 md:grid-cols-2';
+      currentLayout === 'tabbed'
+        ? 'grid gap-4 sm:grid-cols-2'
+        : currentLayout === 'full'
+          ? 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3'
+          : 'grid gap-4 md:grid-cols-2';
 
     return (
       <div className="space-y-4">
@@ -434,15 +464,34 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
     </div>
   );
 
-  const renderTabbed = () => {
+  const renderTabbed = (mode: LayoutMode) => {
     const active = orderedTabs.find((item) => item.tab === activeTab) ?? orderedTabs[0];
     const isActiveAi = active ? aiExtractionTabs.has(active.tab) : false;
+    const isFull = mode === 'full';
 
     return (
       <div className="space-y-4">
-        <div className="rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm">
-          <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,220px)_minmax(0,1fr)]">
-            <nav className="flex gap-2 overflow-x-auto border-b border-slate-200/60 px-4 py-3 text-sm text-slate-600 lg:flex-col lg:border-b-0 lg:border-r lg:px-5 lg:py-6">
+        <div
+          className={`rounded-3xl border ${
+            isFull
+              ? 'border-slate-200/80 bg-white/95 shadow-xl ring-1 ring-slate-200/70'
+              : 'border-slate-200/70 bg-white/90 shadow-sm'
+          }`}
+        >
+          <div
+            className={
+              isFull
+                ? 'flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]'
+                : 'flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,220px)_minmax(0,1fr)]'
+            }
+          >
+            <nav
+              className={`flex gap-2 overflow-x-auto border-b border-slate-200/60 px-4 py-3 text-sm text-slate-600 ${
+                isFull
+                  ? 'lg:flex-col lg:border-b-0 lg:border-r lg:px-6 lg:py-6'
+                  : 'lg:flex-col lg:border-b-0 lg:border-r lg:px-5 lg:py-6'
+              }`}
+            >
               {orderedTabs.map((item) => {
                 const isActive = item.tab === active?.tab;
                 const tabLabel = extractionTabMeta[item.tab].title;
@@ -451,7 +500,7 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
                     key={item.tab}
                     type="button"
                     onClick={() => setActiveTab(item.tab)}
-                    className={`flex-1 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition lg:flex-none lg:rounded-xl lg:px-4 lg:py-2 ${
+                    className={`flex-1 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition lg:flex-none lg:whitespace-normal lg:text-left lg:rounded-xl lg:px-4 lg:py-2 ${
                       isActive ? 'bg-indigo-100/70 text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'
                     }`}
                   >
@@ -460,9 +509,9 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
                 );
               })}
             </nav>
-            <div className="space-y-4 px-4 py-5 lg:px-6 lg:py-6">
+            <div className={`space-y-4 px-4 py-5 ${isFull ? 'lg:px-8 lg:py-7' : 'lg:px-6 lg:py-6'}`}>
               {active ? (
-                isActiveAi ? renderAiCard(active, 'tabbed') : renderManualCard(active, 'tabbed')
+                isActiveAi ? renderAiCard(active, mode) : renderManualCard(active, mode)
               ) : (
                 <p className="text-sm text-slate-500">No extraction tabs available.</p>
               )}
@@ -489,7 +538,7 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
                   <button
                     key={option.id}
                     type="button"
-                    onClick={() => setLayout(option.id)}
+                    onClick={() => handleLayoutChange(option.id)}
                     className={`rounded-full px-3 py-1.5 transition ${
                       layout === option.id
                         ? 'bg-white text-slate-900 shadow'
@@ -509,7 +558,8 @@ export function ExtractionTabsPanel({ paperId, tabs }: ExtractionTabsPanelProps)
             </div>
           </div>
           {layout === 'accordion' ? renderAccordion() : null}
-          {layout === 'tabbed' ? renderTabbed() : null}
+          {layout === 'tabbed' ? renderTabbed('tabbed') : null}
+          {layout === 'full' ? renderTabbed('full') : null}
         </section>
       </div>
     </>
