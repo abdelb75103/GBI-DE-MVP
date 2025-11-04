@@ -33,18 +33,18 @@ function decodeCookie(raw: string | undefined): ActiveProfileSession | null {
   }
 }
 
-export function readActiveProfileSession(): ActiveProfileSession | null {
+type CookieStore =
+  | { get: (name: string) => { value?: string } | undefined }
+  | { getAll: () => Array<{ name: string; value: string }> };
+
+export async function readActiveProfileSession(): Promise<ActiveProfileSession | null> {
   let cookieValue: string | undefined;
   try {
-    const store = cookies();
-    if (store && typeof (store as unknown as { get?: unknown }).get === 'function') {
-      const cookie = (store as unknown as { get: (name: string) => { value?: string } | undefined }).get(COOKIE_NAME);
-      cookieValue = cookie?.value;
-    } else if (store && typeof (store as unknown as { getAll?: () => Array<{ name: string; value: string }> }).getAll === 'function') {
-      const match = (store as unknown as { getAll: () => Array<{ name: string; value: string }> })
-        .getAll()
-        .find((item) => item.name === COOKIE_NAME);
-      cookieValue = match?.value;
+    const store = (await cookies()) as unknown as CookieStore | undefined;
+    if (store && 'get' in store && typeof store.get === 'function') {
+      cookieValue = store.get(COOKIE_NAME)?.value;
+    } else if (store && 'getAll' in store && typeof store.getAll === 'function') {
+      cookieValue = store.getAll().find((item) => item.name === COOKIE_NAME)?.value;
     }
   } catch {
     cookieValue = process.env.GBI_ACTIVE_PROFILE_OVERRIDE;

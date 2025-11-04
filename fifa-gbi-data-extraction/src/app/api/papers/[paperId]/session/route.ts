@@ -10,13 +10,16 @@ const bodySchema = z.object({
   action: z.enum(['start', 'heartbeat', 'end']),
 });
 
-export async function POST(request: NextRequest, { params }: { params: { paperId: string } }) {
-  const profile = readActiveProfileSession();
+export async function POST(
+  request: NextRequest,
+  context: { params: { paperId: string } | Promise<{ paperId: string }> },
+) {
+  const profile = await readActiveProfileSession();
   if (!profile) {
     return NextResponse.json({ error: 'Select a profile before editing papers.' }, { status: 401 });
   }
 
-  const paperId = params.paperId;
+  const { paperId } = await context.params;
   let parsed: z.infer<typeof bodySchema>;
 
   try {

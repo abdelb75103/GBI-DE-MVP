@@ -491,6 +491,36 @@ export const mockDb = {
     return paperRowList.map((row) => mapPaperRow(row, noteCounts.get(row.id) ?? 0));
   },
 
+  async saveExtractionFields(
+    paperId: string,
+    tab: ExtractionTab,
+    fields: Array<{ fieldId: string; value: string; metric: ExtractionFieldMetric | null }>,
+    options?: { updatedBy?: string },
+  ) {
+    const extractionRow = await ensureExtractionRow(paperId, tab, undefined);
+    await supabaseClient()
+      .from('extractions')
+      .update({
+        updated_at: new Date().toISOString(),
+        updated_by: options?.updatedBy ?? null,
+      })
+      .eq('id', extractionRow.id);
+
+    for (const field of fields) {
+      await upsertExtractionFieldRow(extractionRow.id, field.fieldId, {
+        value: field.value?.trim() ? field.value : null,
+        status: field.value?.trim() ? 'reported' : 'not_reported',
+        metric: (field.metric ?? null) as SupabaseExtractionMetric | null,
+      });
+    }
+
+    if (tab === 'participantCharacteristics') {
+      await syncPopulationSlices(paperId);
+    }
+
+    return fetchExtractionById(extractionRow.id);
+  },
+
   async getPaper(id: string): Promise<Paper | undefined> {
     const supabase = supabaseClient();
     const { data, error } = await supabase.from('papers').select('*').eq('id', id).maybeSingle();

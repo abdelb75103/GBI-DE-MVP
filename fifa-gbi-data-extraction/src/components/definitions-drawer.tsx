@@ -6,9 +6,13 @@ import type { DefinitionCategory } from '@/lib/definitions';
 
 type DefinitionsDrawerProps = {
   categories: DefinitionCategory[];
+  triggerClassName?: string;
 };
 
-export function DefinitionsDrawer({ categories }: DefinitionsDrawerProps) {
+const defaultTriggerClassName =
+  'fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2';
+
+export function DefinitionsDrawer({ categories, triggerClassName }: DefinitionsDrawerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState('');
 
@@ -45,7 +49,7 @@ export function DefinitionsDrawer({ categories }: DefinitionsDrawerProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        className={triggerClassName ?? defaultTriggerClassName}
       >
         Definitions
       </button>
@@ -129,4 +133,3 @@ export function DefinitionsDrawer({ categories }: DefinitionsDrawerProps) {
     </>
   );
 }
-

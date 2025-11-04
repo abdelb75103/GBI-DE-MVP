@@ -1,4 +1,3 @@
-import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 import { getAdminServiceClient } from '@/lib/supabase';
@@ -20,11 +19,10 @@ const encodeCookie = (payload: CookiePayload) => Buffer.from(JSON.stringify(payl
 
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => ({}))) as RequestPayload;
-  const response = NextResponse.json({ ok: true });
-  const store = cookies();
 
   if (!body.profileId) {
-    store.delete(COOKIE_NAME);
+    const response = NextResponse.json({ ok: true });
+    response.cookies.delete(COOKIE_NAME);
     return response;
   }
 
@@ -45,7 +43,8 @@ export async function POST(request: Request) {
     role: profile.role,
   };
 
-  store.set({
+  const response = NextResponse.json({ profile: payload });
+  response.cookies.set({
     name: COOKIE_NAME,
     value: encodeCookie(payload),
     httpOnly: true,
@@ -54,5 +53,5 @@ export async function POST(request: Request) {
     path: '/',
   });
 
-  return NextResponse.json({ profile: payload });
+  return response;
 }
