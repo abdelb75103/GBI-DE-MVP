@@ -29,9 +29,6 @@ export type ExtractionTabsPanelProps = {
   tabs: TabPayload[];
   layoutMode?: LayoutMode;
   onLayoutModeChange?: (layout: LayoutMode) => void;
-  onUnsavedChange?: (hasUnsaved: boolean) => void;
-  isLocked?: boolean;
-  profileId: string | null;
 };
 
 type FeedbackTone = 'info' | 'success' | 'error';
@@ -46,127 +43,11 @@ export type LayoutMode = 'accordion' | 'tabbed' | 'full';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
 
-type DraftPayload = Record<ExtractionTab, Record<string, string>>;
-
-const cloneDraftPayload = (payload: DraftPayload): DraftPayload =>
-  Object.fromEntries(
-    Object.entries(payload).map(([tab, fields]) => [tab, { ...fields }]),
-  ) as DraftPayload;
-
-const normalizeDraftPayload = (payload: DraftPayload): DraftPayload => {
-  const cloned = cloneDraftPayload(payload);
-  (Object.keys(cloned) as ExtractionTab[]).forEach((tab) => {
-    Object.keys(cloned[tab]).forEach((fieldId) => {
-      cloned[tab][fieldId] = (cloned[tab][fieldId] ?? '').trim();
-    });
-  });
-  return cloned;
-};
-
-const createBaselineDrafts = (tabs: TabPayload[]): DraftPayload => {
-  const output: Partial<DraftPayload> = {};
-  tabs.forEach((item) => {
-    const defaults: Record<string, string> = {};
-    const resultMap = new Map(item.results.map((field) => [field.fieldId, field.value ?? '']));
-    item.fields.forEach((field) => {
-      defaults[field.id] = resultMap.get(field.id) ?? '';
-    });
-    output[item.tab] = defaults;
-  });
-  return output as DraftPayload;
-};
-
-const mergeDraftsWithBaseline = (baseline: DraftPayload, drafts: DraftPayload): DraftPayload => {
-  const merged = cloneDraftPayload(baseline);
-  (Object.keys(drafts) as ExtractionTab[]).forEach((tab) => {
-    merged[tab] = { ...(merged[tab] ?? {}), ...drafts[tab] };
-  });
-  return merged;
-};
-
-const computeDirtyTabs = (initial: DraftPayload, drafts: DraftPayload): Set<ExtractionTab> => {
-  const dirty = new Set<ExtractionTab>();
-  const tabs = new Set<ExtractionTab>([
-    ...(Object.keys(initial) as ExtractionTab[]),
-    ...(Object.keys(drafts) as ExtractionTab[]),
-  ]);
-  tabs.forEach((tab) => {
-    const initialFields = initial[tab] ?? {};
-    const draftFields = drafts[tab] ?? {};
-    const fieldIds = new Set([...Object.keys(initialFields), ...Object.keys(draftFields)]);
-    for (const fieldId of fieldIds) {
-      const initialValue = (initialFields[fieldId] ?? '').trim();
-      const draftValue = (draftFields[fieldId] ?? '').trim();
-      if (initialValue !== draftValue) {
-        dirty.add(tab);
-        break;
-      }
-    }
-  });
-  return dirty;
-};
-
-const storageKeyForDrafts = (paperId: string, profileId: string | null) =>
-  profileId ? `gbi.drafts.${paperId}.${profileId}` : null;
-
-const loadDraftsFromStorage = (
-  paperId: string,
-  profileId: string | null,
-  baseline: DraftPayload,
-): DraftPayload => {
-  if (typeof window === 'undefined') {
-    return baseline;
-  }
-  const key = storageKeyForDrafts(paperId, profileId);
-  if (!key) {
-    return baseline;
-  }
-  const raw = window.localStorage.getItem(key);
-  if (!raw) {
-    return baseline;
-  }
-  try {
-    const parsed = JSON.parse(raw) as { profileId?: string; drafts?: DraftPayload };
-    if (parsed.profileId && parsed.profileId !== profileId) {
-      return baseline;
-    }
-    if (!parsed.drafts) {
-      return baseline;
-    }
-    return mergeDraftsWithBaseline(baseline, parsed.drafts);
-  } catch {
-    return baseline;
-  }
-};
-
-const saveDraftsToStorage = (
-  paperId: string,
-  profileId: string | null,
-  drafts: DraftPayload | null,
-) => {
-  if (typeof window === 'undefined') {
-    return;
-  }
-  const key = storageKeyForDrafts(paperId, profileId);
-  if (!key) {
-    return;
-  }
-  if (!drafts) {
-    window.localStorage.removeItem(key);
-    return;
-  }
-  const payload = JSON.stringify({ profileId, drafts });
-  window.localStorage.setItem(key, payload);
-};
-
 export function ExtractionTabsPanel({
   paperId,
   tabs,
   layoutMode,
   onLayoutModeChange,
-  onUnsavedChange,
-  isLocked = false,
-  profileId,
 }: ExtractionTabsPanelProps) {
   const router = useRouter();
   const { apiKey, isLoaded } = useGeminiApiKey();
@@ -192,213 +73,6 @@ export function ExtractionTabsPanel({
         ][],
       ),
   );
-
-  const baselineDrafts = useMemo(() => createBaselineDrafts(tabs), [tabs]);
-  const lastProfileIdRef = useRef<string | null>(profileId ?? null);
-  const [initialDrafts, setInitialDrafts] = useState<DraftPayload>(baselineDrafts);
-  const [drafts, setDrafts] = useState<DraftPayload>(() =>
-    loadDraftsFromStorage(paperId, profileId ?? null, baselineDrafts),
-  );
-
-  useEffect(() => {
-    setInitialDrafts(baselineDrafts);
-
-    if (profileId && lastProfileIdRef.current !== profileId) {
-      setDrafts(loadDraftsFromStorage(paperId, profileId, baselineDrafts));
-      lastProfileIdRef.current = profileId;
-      return;
-    }
-
-    setDrafts((prev) => mergeDraftsWithBaseline(baselineDrafts, prev));
-  }, [baselineDrafts, paperId, profileId]);
-
-  const dirtyTabs = useMemo(() => computeDirtyTabs(initialDrafts, drafts), [initialDrafts, drafts]);
-  const hasUnsavedChanges = dirtyTabs.size > 0;
-
-  useEffect(() => {
-    onUnsavedChange?.(hasUnsavedChanges);
-  }, [hasUnsavedChanges, onUnsavedChange]);
-
-  useEffect(() => {
-    if (!profileId) {
-      return;
-    }
-    if (isLocked) {
-      return;
-    }
-    if (dirtyTabs.size === 0) {
-      saveDraftsToStorage(paperId, profileId, null);
-      return;
-    }
-    saveDraftsToStorage(paperId, profileId, drafts);
-  }, [drafts, dirtyTabs, paperId, profileId, isLocked]);
-
-  const isFieldDirty = useCallback(
-    (tab: ExtractionTab, fieldId: string) => {
-      const initialValue = (initialDrafts[tab]?.[fieldId] ?? '').trim();
-      const draftValue = (drafts[tab]?.[fieldId] ?? '').trim();
-      return initialValue !== draftValue;
-    },
-    [initialDrafts, drafts],
-  );
-
-  const dirtyFieldSets = useMemo(() => {
-    const map = new Map<ExtractionTab, Set<string>>();
-    (Object.keys(drafts) as ExtractionTab[]).forEach((tab) => {
-      const fields = drafts[tab] ?? {};
-      const set = new Set<string>();
-      Object.keys(fields).forEach((fieldId) => {
-        if (isFieldDirty(tab, fieldId)) {
-          set.add(fieldId);
-        }
-      });
-      map.set(tab, set);
-    });
-    return map;
-  }, [drafts, isFieldDirty]);
-
-  const [isSaving, setIsSaving] = useState(false);
-  const [saveError, setSaveError] = useState<string | null>(null);
-  const [saveSuccess, setSaveSuccess] = useState<string | null>(null);
-
-  const getDraftValue = useCallback(
-    (tab: ExtractionTab, fieldId: string) => drafts[tab]?.[fieldId] ?? '',
-    [drafts],
-  );
-
-  const updateField = useCallback(
-    (tab: ExtractionTab, fieldId: string, value: string) => {
-      if (isLocked) {
-        return;
-      }
-      setSaveError(null);
-      setSaveSuccess(null);
-      setDrafts((prev) => {
-        const next = cloneDraftPayload(prev);
-        if (!next[tab]) {
-          next[tab] = {} as Record<string, string>;
-        }
-        next[tab][fieldId] = value;
-        return next;
-      });
-    },
-    [isLocked],
-  );
-
-  const applyAiResults = useCallback(
-    (tab: ExtractionTab, fields: Array<{ fieldId: string; value: string | null }>) => {
-      if (isLocked) {
-        return;
-      }
-      setSaveError(null);
-      setSaveSuccess(null);
-      setDrafts((prev) => {
-        const next = cloneDraftPayload(prev);
-        const target = { ...(next[tab] ?? {}) } as Record<string, string>;
-        fields.forEach((field) => {
-          target[field.fieldId] = field.value ?? '';
-        });
-        next[tab] = target;
-        return next;
-      });
-    },
-    [isLocked],
-  );
-
-  useEffect(() => {
-    if (!saveSuccess) {
-      return;
-    }
-    const timer = setTimeout(() => setSaveSuccess(null), 3000);
-    return () => clearTimeout(timer);
-  }, [saveSuccess]);
-
-  useEffect(() => {
-    if (hasUnsavedChanges) {
-      setSaveSuccess(null);
-    }
-  }, [hasUnsavedChanges]);
-
-  const handleSave = useCallback(async () => {
-    if (isLocked || dirtyTabs.size === 0 || isSaving) {
-      return;
-    }
-
-    const updates = Array.from(dirtyTabs).map((tab) => {
-      const currentFields = drafts[tab] ?? {};
-      const initialFields = initialDrafts[tab] ?? {};
-      const fieldIds = new Set([...Object.keys(currentFields), ...Object.keys(initialFields)]);
-      const fields: Record<string, string> = {};
-      fieldIds.forEach((fieldId) => {
-        const nextValue = (currentFields[fieldId] ?? '').trim();
-        const previousValue = (initialFields[fieldId] ?? '').trim();
-        if (nextValue !== previousValue) {
-          fields[fieldId] = nextValue;
-        }
-      });
-      return { tab, fields };
-    }).filter((entry) => Object.keys(entry.fields).length > 0);
-
-    if (updates.length === 0) {
-      const normalised = normalizeDraftPayload(drafts);
-      setDrafts(normalised);
-      setInitialDrafts(cloneDraftPayload(normalised));
-      setSaveSuccess('Changes saved');
-      setSaveError(null);
-      if (profileId) {
-        saveDraftsToStorage(paperId, profileId, null);
-      }
-      onUnsavedChange?.(false);
-      return;
-    }
-
-    setIsSaving(true);
-    setSaveError(null);
-    setSaveSuccess(null);
-
-    try {
-      const response = await fetch('/api/extract/save', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paperId, updates }),
-      });
-
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        throw new Error(payload.error ?? 'Failed to save changes');
-      }
-
-      const normalised = normalizeDraftPayload(drafts);
-      setDrafts(normalised);
-      setInitialDrafts(cloneDraftPayload(normalised));
-      setSaveSuccess('Changes saved');
-      if (profileId) {
-        saveDraftsToStorage(paperId, profileId, null);
-      }
-      router.refresh();
-    } catch (error) {
-      setSaveError(error instanceof Error ? error.message : 'Failed to save changes');
-    } finally {
-      setIsSaving(false);
-    }
-  }, [dirtyTabs, drafts, initialDrafts, isLocked, isSaving, paperId, profileId, router, onUnsavedChange]);
-
-  const handleDiscard = useCallback(() => {
-    if (isLocked || dirtyTabs.size === 0) {
-      return;
-    }
-    if (typeof window !== 'undefined' && !window.confirm('Discard unsaved changes?')) {
-      return;
-    }
-    const normalised = normalizeDraftPayload(initialDrafts);
-    setDrafts(normalised);
-    setInitialDrafts(cloneDraftPayload(normalised));
-    setSaveError(null);
-    setSaveSuccess(null);
-    if (profileId) {
-      saveDraftsToStorage(paperId, profileId, null);
-    }
-  }, [dirtyTabs, initialDrafts, isLocked, paperId, profileId]);
   const [feedback, setFeedback] = useState<FeedbackState | null>(null);
   const [isPending, startTransition] = useTransition();
   const aiAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
@@ -551,11 +225,6 @@ useEffect(() => {
       return;
     }
 
-    if (isLocked) {
-      setFeedback({ message: 'This paper is currently locked for editing.', tone: 'error', tab });
-      return;
-    }
-
     if (!isLoaded || !apiKey) {
       setFeedback({
         message: 'Enter your Gemini API key in API settings before running extraction.',
@@ -580,14 +249,13 @@ useEffect(() => {
           body: JSON.stringify({ paperId, tab, fields: selected, apiKey }),
         });
 
-        const payload = await response.json().catch(() => ({}));
         if (!response.ok) {
-          throw new Error(payload?.error ?? 'Extraction failed');
+          const payload = await response.json().catch(() => ({}));
+          throw new Error(payload.error ?? 'Extraction failed');
         }
 
-        const fields = Array.isArray(payload?.fields) ? payload.fields : [];
-        applyAiResults(tab, fields);
-        setFeedback({ message: 'Draft updated. Review and save when ready.', tone: 'success', tab });
+        setFeedback({ message: 'Extraction complete.', tone: 'success', tab });
+        router.refresh();
       } catch (error) {
         setFeedback({
           message: `Extraction failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
@@ -657,6 +325,7 @@ useEffect(() => {
 
   const renderAiCard = (item: TabPayload, currentLayout: LayoutMode, showTitle = true) => {
     const selectedSet = selectedMap.get(item.tab) ?? new Set<string>();
+    const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
     const gridClassName =
       currentLayout === 'tabbed'
         ? 'grid gap-4 sm:grid-cols-2'
@@ -678,7 +347,7 @@ useEffect(() => {
           <button
             type="button"
             onClick={() => handleExtraction(item.tab)}
-            disabled={isPending || isLocked}
+            disabled={isPending}
             className="inline-flex items-center justify-center rounded-full border border-indigo-200/70 bg-indigo-50/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-600 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 disabled:opacity-60"
           >
             {isPending ? 'Extracting…' : 'Auto-extract selected data'}
@@ -688,14 +357,13 @@ useEffect(() => {
         <div className={gridClassName}>
           {item.fields.map((field) => {
             const isAutoExtractable = field.id !== 'studyId';
-            const value = getDraftValue(item.tab, field.id);
-            const dirty = isFieldDirty(item.tab, field.id);
             return (
               <ExtractionFieldEditor
                 key={field.id}
+                paperId={paperId}
+                tab={item.tab}
                 definition={field}
-                value={value}
-                onChange={(next) => updateField(item.tab, field.id, next)}
+                result={resultMap.get(field.id)}
                 supportsAi={isAutoExtractable}
                 selected={selectedSet.has(field.id)}
                 onSelectedChange={(checked) =>
@@ -714,8 +382,6 @@ useEffect(() => {
                     return next;
                   })
                 }
-                disabled={isLocked}
-                dirty={dirty}
               />
             );
           })}
@@ -725,9 +391,9 @@ useEffect(() => {
   };
 
   const renderManualCard = (item: TabPayload, currentLayout: LayoutMode, showTitle = true) => {
+    const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
     const groups = groupFieldsById(item.fields);
     const hasGroups = groups.size > 0;
-    const dirtySet = dirtyFieldSets.get(item.tab) ?? new Set<string>();
     const gridClassName =
       currentLayout === 'tabbed'
         ? 'grid gap-4 sm:grid-cols-2'
@@ -750,16 +416,15 @@ useEffect(() => {
             {Array.from(groups.values()).map((group) => (
               <ManualGroupEditor
                 key={group.label}
+                paperId={paperId}
+                tab={item.tab}
                 groupLabel={group.label}
                 fields={group.fields.sort((a, b) => {
                   const orderA = a.metric ? metricOrder.indexOf(a.metric) : Number.MAX_SAFE_INTEGER;
                   const orderB = b.metric ? metricOrder.indexOf(b.metric) : Number.MAX_SAFE_INTEGER;
                   return orderA - orderB;
                 })}
-                values={drafts[item.tab] ?? {}}
-                onChange={(fieldId, value) => updateField(item.tab, fieldId, value)}
-                dirtyFields={dirtySet}
-                disabled={isLocked}
+                results={resultMap}
               />
             ))}
           </div>
@@ -768,12 +433,11 @@ useEffect(() => {
             {item.fields.map((field) => (
               <ExtractionFieldEditor
                 key={field.id}
+                paperId={paperId}
+                tab={item.tab}
                 definition={field}
-                value={getDraftValue(item.tab, field.id)}
-                onChange={(next) => updateField(item.tab, field.id, next)}
+                result={resultMap.get(field.id)}
                 supportsAi={false}
-                disabled={isLocked}
-                dirty={isFieldDirty(item.tab, field.id)}
               />
             ))}
           </div>
@@ -923,9 +587,6 @@ useEffect(() => {
     );
   };
 
-  const isSaveDisabled = !hasUnsavedChanges || isSaving || isLocked;
-  const isDiscardDisabled = !hasUnsavedChanges || isSaving || isLocked;
-
   return (
     <>
       {renderFeedbackToast()}
@@ -936,60 +597,29 @@ useEffect(() => {
               <h2 className="text-lg font-semibold text-slate-900">Extraction workspace</h2>
               <p className="text-xs text-slate-500">{getLayoutHelper()}</p>
             </div>
-            <div className="flex w-full flex-col items-start gap-3 sm:items-end lg:w-auto">
-              <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:self-end">
-                <div className="inline-flex rounded-full bg-slate-100/60 p-1 text-xs font-semibold text-slate-600 shadow-inner">
-                  {layoutOptions.map((option) => (
-                    <button
-                      key={option.id}
-                      type="button"
-                      onClick={() => handleLayoutChange(option.id)}
-                      className={`rounded-full px-3 py-1.5 transition ${
-                        layout === option.id
-                          ? 'bg-white text-slate-900 shadow'
-                          : 'text-slate-500 hover:text-slate-700'
-                      }`}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-                <Link
-                  href="/settings/api"
-                  className="text-xs font-semibold uppercase tracking-wide text-indigo-600 underline"
-                >
-                  API settings
-                </Link>
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <div className="inline-flex rounded-full bg-slate-100/60 p-1 text-xs font-semibold text-slate-600 shadow-inner">
+                {layoutOptions.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => handleLayoutChange(option.id)}
+                    className={`rounded-full px-3 py-1.5 transition ${
+                      layout === option.id
+                        ? 'bg-white text-slate-900 shadow'
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
               </div>
-              <div className="flex flex-wrap items-center gap-2 sm:justify-end">
-                <button
-                  type="button"
-                  onClick={handleSave}
-                  disabled={isSaveDisabled}
-                  className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-indigo-500 disabled:opacity-60"
-                >
-                  {isSaving ? 'Saving…' : 'Save changes'}
-                </button>
-                <button
-                  type="button"
-                  onClick={handleDiscard}
-                  disabled={isDiscardDisabled}
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200/80 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-slate-800 disabled:opacity-60"
-                >
-                  Discard
-                </button>
-                {hasUnsavedChanges ? (
-                  <span className="rounded-full bg-amber-100/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-amber-700">
-                    Unsaved draft
-                  </span>
-                ) : null}
-              </div>
-              {saveError ? (
-                <p className="text-xs text-rose-600 sm:text-right">{saveError}</p>
-              ) : null}
-              {!saveError && saveSuccess ? (
-                <p className="text-xs text-emerald-600 sm:text-right">{saveSuccess}</p>
-              ) : null}
+              <Link
+                href="/settings/api"
+                className="text-xs font-semibold uppercase tracking-wide text-indigo-600 underline"
+              >
+                API settings
+              </Link>
             </div>
           </div>
           {layout === 'accordion' ? renderAccordion() : null}

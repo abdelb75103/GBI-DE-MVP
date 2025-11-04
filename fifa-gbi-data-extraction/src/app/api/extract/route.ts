@@ -53,7 +53,7 @@ export async function POST(request: Request) {
       tab,
       documentText: 'Use the attached PDF document to extract the requested fields.',
       paperTitle: paper.title,
-      doi: paper.doi ?? undefined,
+      doi: paper.doi,
       apiKey,
       fieldIds: fields,
       pdfBase64,
