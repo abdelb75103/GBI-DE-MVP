@@ -4,8 +4,19 @@ import { useEffect, useState } from 'react';
 
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 
-// Remove example placeholders in data boxes per request
-const MULTILINE_PLACEHOLDERS: Record<string, string> = {};
+const MULTILINE_PLACEHOLDERS: Record<string, string> = {
+  ageCategory: 'U19\nU21',
+  sex: 'U19 — male\nU21 — female',
+  meanAge: 'U19 — 16.8 ± 0.9\nU21 — 20.1 ± 0.3',
+  sampleSizePlayers: 'U19 — 62\nU21 — 60',
+  numberOfTeams: 'U19 — 4 clubs\nU21 — 5 clubs',
+  studyPeriodYears: 'U19 — 4 seasons\nU21 — 3 seasons',
+  observationDuration: 'U19 — 4 seasons\nU21 — 3 seasons',
+  numberOfSeasons: 'U19 — 4\nU21 — 3',
+  seasonLength: 'Tournament A — 4 weeks\nTournament B — 2 weeks',
+  matchExposure: 'U19 — 250 h\nU21 — 210 h',
+  trainingExposure: 'U19 — 420 h\nU21 — 390 h',
+};
 
 type ExtractionFieldEditorProps = {
   definition: ExtractionFieldDefinition;
@@ -29,7 +40,7 @@ export function ExtractionFieldEditor({
   dirty = false,
 }: ExtractionFieldEditorProps) {
   const [draftValue, setDraftValue] = useState(value ?? '');
-  const placeholder = '';
+  const placeholder = MULTILINE_PLACEHOLDERS[definition.id] ?? '';
 
   useEffect(() => {
     const next = value ?? '';
