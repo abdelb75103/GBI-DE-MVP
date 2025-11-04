@@ -1,9 +1,9 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { useActiveProfileState } from '@/hooks/use-active-profile';
 
-type ActiveProfileValue = ReturnType<typeof useActiveProfileState>;
+import type { ActiveProfileValue } from '@/hooks/use-active-profile';
+import { useActiveProfileState } from '@/hooks/use-active-profile';
 
 const ActiveProfileContext = createContext<ActiveProfileValue | null>(null);
 

@@ -41,15 +41,7 @@ export interface Paper {
   primaryFileId: string | null;
   flagReason: string | null;
   metadata?: Record<string, unknown>;
-  activeSession?: PaperActiveSession | null;
   noteCount: number;
-}
-
-export interface PaperActiveSession {
-  profileId: string;
-  fullName: string;
-  startedAt: string;
-  heartbeatAt: string;
 }
 
 export interface StoredFile {

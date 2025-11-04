@@ -1,5 +1,4 @@
-import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
-import type { ExtractionTab } from '@/lib/types';
+import type { ExtractionFieldDefinition, ExtractionTab } from '@/lib/extraction/schema';
 
 type PromptOptions = {
   tab: ExtractionTab;
@@ -9,7 +8,7 @@ type PromptOptions = {
   doi?: string;
 };
 
-const TAB_TITLES: Partial<Record<ExtractionTab, string>> = {
+const TAB_TITLES: Record<ExtractionTab, string> = {
   studyDetails: 'Tab 1: Study Details',
   participantCharacteristics: 'Tab 2: Participant Characteristics',
   definitions: 'Tab 3: Definition & Data Collection',
@@ -18,7 +17,6 @@ const TAB_TITLES: Partial<Record<ExtractionTab, string>> = {
 
 export function buildExtractionPrompt(options: PromptOptions) {
   const { tab, fieldDefinitions, documentText, paperTitle, doi } = options;
-  const tabTitle = TAB_TITLES[tab] ?? `Tab: ${tab}`;
 
   const fieldInstructions = fieldDefinitions
     .map(
@@ -31,7 +29,7 @@ export function buildExtractionPrompt(options: PromptOptions) {
     'You are an expert sports science data abstractor helping the FIFA Global Burden of Injury & Illness project. Extract only the requested data fields and respond in strict JSON.',
     '',
     'Context:',
-    `- Target worksheet: ${tabTitle}`,
+    `- Target worksheet: ${TAB_TITLES[tab]}`,
     `- Paper title (if known): ${paperTitle ?? 'Unknown'}`,
     `- DOI (if known): ${doi ?? 'Unknown'}`,
     '',

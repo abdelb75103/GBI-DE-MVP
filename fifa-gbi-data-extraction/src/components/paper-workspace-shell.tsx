@@ -43,11 +43,11 @@ export function PaperWorkspaceShell({
   }));
 
   const heartbeatTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const sessionRetryTimerRef = useRef<NodeJS.Timeout | null>(null);
   const sessionStartedRef = useRef(false);
 
   const showViewer = layoutMode !== 'full';
   const profileId = profile?.id ?? null;
+  const profileName = profile?.fullName ?? '';
 
   const notifyUnsavedChange = useCallback(
     (value: boolean) => {
@@ -79,7 +79,6 @@ export function PaperWorkspaceShell({
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        credentials: 'same-origin',
         body: payload,
       });
 
@@ -104,21 +103,8 @@ export function PaperWorkspaceShell({
       }
     };
 
-    const clearRetryTimer = () => {
-      if (sessionRetryTimerRef.current) {
-        clearTimeout(sessionRetryTimerRef.current);
-        sessionRetryTimerRef.current = null;
-      }
-    };
-
-    const startSession = async (attempt = 1): Promise<void> => {
-      if (isCancelled) {
-        return;
-      }
-
-      if (attempt === 1) {
-        notifySessionChange({ status: 'starting', session: initialActiveSession });
-      }
+    const startSession = async () => {
+      notifySessionChange({ status: 'starting', session: initialActiveSession });
 
       const result = await sendSessionMutation('start');
       if (isCancelled) {
@@ -127,30 +113,15 @@ export function PaperWorkspaceShell({
 
       if (!result.ok) {
         if (result.status === 409 && result.data?.current) {
-          clearRetryTimer();
           notifySessionChange({ status: 'conflict', session: result.data.current });
-          return;
+        } else {
+          notifySessionChange({
+            status: 'error',
+            message: result.data?.error ?? 'Unable to start workspace session.',
+          });
         }
-
-        if (result.status === 401 && attempt < 4) {
-          clearRetryTimer();
-          sessionRetryTimerRef.current = setTimeout(() => {
-            if (!isCancelled) {
-              void startSession(attempt + 1);
-            }
-          }, attempt * 200);
-          return;
-        }
-
-        clearRetryTimer();
-        notifySessionChange({
-          status: 'error',
-          message: result.data?.error ?? 'Unable to start workspace session.',
-        });
         return;
       }
-
-      clearRetryTimer();
 
       const session: PaperActiveSession | undefined = result.data?.session;
       if (!session) {
@@ -190,7 +161,6 @@ export function PaperWorkspaceShell({
     return () => {
       isCancelled = true;
       cleanUpHeartbeat();
-      clearRetryTimer();
       sessionStartedRef.current = false;
       window.removeEventListener('beforeunload', handleBeforeUnload);
       void sendSessionMutation('end', true);

@@ -150,8 +150,6 @@ export function useActiveProfileState() {
     void fetch('/api/session/profile', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      credentials: 'same-origin',
-      keepalive: true,
       body: JSON.stringify({ profileId: next ? next.id : null }),
     }).catch(() => {});
 

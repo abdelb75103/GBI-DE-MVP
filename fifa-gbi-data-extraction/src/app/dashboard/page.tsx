@@ -17,7 +17,7 @@ export default async function DashboardPage() {
   const inProgressCount = papers.filter(
     (paper) => paper.status === 'processing' || paper.status === 'uploaded',
   ).length;
-  const activeProfile = await readActiveProfileSession();
+  const activeProfile = readActiveProfileSession();
   const isAdmin = activeProfile?.role === 'admin';
 
   const personalStats = (isAdmin

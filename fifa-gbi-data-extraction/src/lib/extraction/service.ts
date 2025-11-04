@@ -4,7 +4,6 @@ import { buildExtractionPrompt } from '@/lib/extraction/prompt';
 import { extractionFieldDefinitions, ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import { createGeminiModel, getModelName } from '@/lib/extraction/gemini-client';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
-import type { Part } from '@google/generative-ai';
 
 export type TabExtractionResponse = {
   tab: ExtractionTab;
@@ -48,11 +47,9 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
   const model = createGeminiModel(options.apiKey);
   let generation;
   try {
-    const parts: Part[] = [];
+    const parts: Array<{ text?: string; inlineData?: { mimeType: string; data: string } }> = [];
     if (options.pdfBase64) {
-      parts.push({
-        inlineData: { mimeType: 'application/pdf', data: options.pdfBase64 },
-      });
+      parts.push({ inlineData: { mimeType: 'application/pdf', data: options.pdfBase64 } });
     }
     parts.push({ text: prompt });
 
