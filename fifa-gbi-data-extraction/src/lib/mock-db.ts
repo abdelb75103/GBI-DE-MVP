@@ -129,7 +129,7 @@ const mapExportRow = (row: ExportJobRow): ExportJob => ({
   paperIds: row.paper_ids ?? [],
   status: row.status,
   createdAt: row.created_at,
-  downloadUrl: row.download_path ?? null,
+  downloadUrl: row.download_path ?? `/api/exports/${row.id}/download`,
   checksumSha256: row.checksum_sha256 ?? null,
 });
 
@@ -595,7 +595,6 @@ export const mockDb = {
       status: 'ready',
       created_at: createdAt,
       checksum_sha256: crypto.createHash('sha256').update(JSON.stringify({ kind, paperIds, createdAt })).digest('hex'),
-      download_path: `/api/exports/${id}/download`,
     };
 
     const { data, error } = await supabase.from('export_jobs').insert(payload).select('*').single();

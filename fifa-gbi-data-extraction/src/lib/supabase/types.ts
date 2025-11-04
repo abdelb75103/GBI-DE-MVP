@@ -39,7 +39,7 @@ export interface Database {
           status: ExportStatus;
           created_at: string;
           checksum_sha256: string | null;
-          download_path: string | null;
+          download_path?: string | null;
         };
         Insert: {
           id?: string;
@@ -48,7 +48,6 @@ export interface Database {
           status?: ExportStatus;
           created_at?: string;
           checksum_sha256?: string | null;
-          download_path?: string | null;
         };
         Update: {
           id?: string;
@@ -57,7 +56,6 @@ export interface Database {
           status?: ExportStatus;
           created_at?: string;
           checksum_sha256?: string | null;
-          download_path?: string | null;
         };
         Relationships: [];
       };
