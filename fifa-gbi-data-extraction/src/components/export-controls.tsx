@@ -46,8 +46,16 @@ export function ExportControls({ paperIds }: ExportControlsProps) {
       });
 
       if (!response.ok) {
-        const payload = await response.json();
-        setError(payload.error ?? 'Unable to start export');
+        let message = 'Unable to start export';
+        try {
+          const payload = await response.json();
+          if (payload?.error) {
+            message = payload.error;
+          }
+        } catch {
+          message = `${message} (status ${response.status})`;
+        }
+        setError(message);
         return;
       }
 
