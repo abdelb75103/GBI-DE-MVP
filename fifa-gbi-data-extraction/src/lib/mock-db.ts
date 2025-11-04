@@ -21,6 +21,7 @@ import type {
   StoredFile,
 } from '@/lib/types';
 import { derivePopulationGroups, type ParsedPopulationGroup } from '@/lib/extraction/populations';
+import type { PaperActiveSession } from '@/lib/types';
 
 type PaperRow = Database['public']['Tables']['papers']['Row'];
 type PaperInsert = Database['public']['Tables']['papers']['Insert'];
@@ -35,6 +36,74 @@ type ExtractionFieldInsert = Database['public']['Tables']['extraction_fields']['
 type ExportJobRow = Database['public']['Tables']['export_jobs']['Row'];
 type PopulationGroupRow = Database['public']['Tables']['population_groups']['Row'];
 type PopulationValueRow = Database['public']['Tables']['population_values']['Row'];
+
+type ActiveSessionMetadata = {
+  profileId?: string;
+  fullName?: string;
+  startedAt?: string;
+  heartbeatAt?: string;
+};
+
+const ACTIVE_SESSION_TIMEOUT_MS = 5 * 60 * 1000;
+
+const nowIso = () => new Date().toISOString();
+
+export class PaperSessionConflictError extends Error {
+  current: PaperActiveSession;
+  constructor(current: PaperActiveSession) {
+    super(`Paper is currently being edited by ${current.fullName || current.profileId}`);
+    this.name = 'PaperSessionConflictError';
+    this.current = current;
+  }
+}
+
+const parseActiveSessionMetadata = (
+  metadata: Record<string, unknown> | undefined,
+): PaperActiveSession | null => {
+  if (!metadata || typeof metadata !== 'object') {
+    return null;
+  }
+
+  const session = (metadata as { activeSession?: ActiveSessionMetadata }).activeSession;
+  if (
+    !session ||
+    typeof session.profileId !== 'string' ||
+    !session.profileId ||
+    typeof session.fullName !== 'string' ||
+    typeof session.startedAt !== 'string' ||
+    typeof session.heartbeatAt !== 'string'
+  ) {
+    return null;
+  }
+
+  return {
+    profileId: session.profileId,
+    fullName: session.fullName,
+    startedAt: session.startedAt,
+    heartbeatAt: session.heartbeatAt,
+  };
+};
+
+const isSessionExpired = (session: PaperActiveSession): boolean => {
+  const heartbeat = new Date(session.heartbeatAt).getTime();
+  if (Number.isNaN(heartbeat)) {
+    return true;
+  }
+  return Date.now() - heartbeat > ACTIVE_SESSION_TIMEOUT_MS;
+};
+
+const withActiveSessionMetadata = (
+  metadata: Record<string, unknown> | undefined,
+  session: PaperActiveSession | null,
+): Record<string, unknown> => {
+  const base = { ...(metadata ?? {}) };
+  if (session) {
+    base.activeSession = session;
+  } else {
+    delete (base as ActiveSessionMetadata).activeSession;
+  }
+  return base;
+};
 
 type CreatePaperInput = {
   title: string;
@@ -83,24 +152,31 @@ const supabaseClient = () => {
   return getAdminServiceClient();
 };
 
-const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => ({
-  id: row.id,
-  assignedStudyId: row.assigned_study_id ?? '',
-  title: row.title,
-  status: row.status,
-  leadAuthor: row.lead_author,
-  journal: row.journal,
-  year: row.year,
-  doi: row.doi,
-  createdAt: row.uploaded_at,
-  updatedAt: row.updated_at,
-  storageBucket: row.storage_bucket ?? null,
-  storageObjectPath: row.storage_object_path ?? null,
-  primaryFileId: row.primary_file_id ?? null,
-  flagReason: row.flag_reason ?? null,
-  metadata: row.metadata ?? undefined,
-  noteCount,
-});
+const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => {
+  const metadata = row.metadata ?? undefined;
+  const parsedSession = parseActiveSessionMetadata(metadata);
+  const activeSession = parsedSession && !isSessionExpired(parsedSession) ? parsedSession : null;
+
+  return {
+    id: row.id,
+    assignedStudyId: row.assigned_study_id ?? '',
+    title: row.title,
+    status: row.status,
+    leadAuthor: row.lead_author,
+    journal: row.journal,
+    year: row.year,
+    doi: row.doi,
+    createdAt: row.uploaded_at,
+    updatedAt: row.updated_at,
+    storageBucket: row.storage_bucket ?? null,
+    storageObjectPath: row.storage_object_path ?? null,
+    primaryFileId: row.primary_file_id ?? null,
+    flagReason: row.flag_reason ?? null,
+    metadata,
+    activeSession,
+    noteCount,
+  };
+};
 
 const mapFileRow = (row: FileRow): StoredFile => ({
   id: row.id,
@@ -238,7 +314,7 @@ const upsertExtractionFieldRow = async (
     throw new Error(`Failed to persist extraction field ${fieldId}: ${error?.message ?? 'Unknown error'}`);
   }
 
-  return data;
+  return data as ExtractionFieldRow;
 };
 
 const ensureExtractionRow = async (
@@ -258,8 +334,10 @@ const ensureExtractionRow = async (
     throw new Error(`Failed to load extraction: ${lookupError.message}`);
   }
 
-  if (existing) {
-    return existing;
+  const existingRow = existing as ExtractionRow | null;
+
+  if (existingRow) {
+    return existingRow;
   }
 
   const insertPayload: Database['public']['Tables']['extractions']['Insert'] = {
@@ -280,7 +358,7 @@ const ensureExtractionRow = async (
     throw new Error(`Failed to create extraction: ${insertError?.message ?? 'Unknown error'}`);
   }
 
-  return created;
+  return created as ExtractionRow;
 };
 
 const fetchExtractionById = async (id: string): Promise<ExtractionResult> => {
@@ -347,7 +425,9 @@ const syncPopulationSlices = async (paperId: string) => {
 
     const valueRows: PopulationValueRow[] = [];
 
-    insertedGroups?.forEach((groupRow) => {
+    const insertedGroupRows = insertedGroups as PopulationGroupRow[] | null;
+
+    insertedGroupRows?.forEach((groupRow) => {
       const parsed = groups.find((candidate) => candidate.position === groupRow.position);
       if (!parsed) {
         return;
@@ -388,7 +468,8 @@ export const mockDb = {
       throw new Error(`Failed to list papers: ${error.message}`);
     }
 
-    const ids = (paperRows ?? []).map((row) => row.id);
+    const paperRowList = (paperRows ?? []) as PaperRow[];
+    const ids = paperRowList.map((row) => row.id);
     const noteCounts = new Map<string, number>();
 
     if (ids.length > 0) {
@@ -407,7 +488,7 @@ export const mockDb = {
       });
     }
 
-    return (paperRows ?? []).map((row) => mapPaperRow(row as PaperRow, noteCounts.get(row.id) ?? 0));
+    return paperRowList.map((row) => mapPaperRow(row, noteCounts.get(row.id) ?? 0));
   },
 
   async getPaper(id: string): Promise<Paper | undefined> {
@@ -425,7 +506,7 @@ export const mockDb = {
     const { data: noteRows } = await supabase.from('paper_notes').select('paper_id').eq('paper_id', id);
     const noteCount = noteRows?.length ?? 0;
 
-    return mapPaperRow(data, noteCount);
+    return mapPaperRow(data as PaperRow, noteCount);
   },
 
   async createPaper(input: CreatePaperInput): Promise<Paper> {
@@ -452,7 +533,80 @@ export const mockDb = {
       throw new Error(`Failed to create paper: ${error?.message ?? 'Unknown error'}`);
     }
 
-    return mapPaperRow(data);
+    return mapPaperRow(data as PaperRow);
+  },
+
+  async startPaperSession(
+    paperId: string,
+    session: { profileId: string; fullName: string },
+  ): Promise<PaperActiveSession> {
+    const paper = await this.getPaper(paperId);
+    if (!paper) {
+      throw new Error(`Paper ${paperId} not found`);
+    }
+
+    const existing = paper.activeSession && !isSessionExpired(paper.activeSession) ? paper.activeSession : null;
+    if (existing && existing.profileId !== session.profileId) {
+      throw new PaperSessionConflictError(existing);
+    }
+
+    const startedAt = existing?.startedAt ?? nowIso();
+    const nextSession: PaperActiveSession = {
+      profileId: session.profileId,
+      fullName: session.fullName,
+      startedAt,
+      heartbeatAt: nowIso(),
+    };
+
+    await this.updatePaper(paperId, {
+      metadata: withActiveSessionMetadata(paper.metadata as Record<string, unknown> | undefined, nextSession),
+    });
+
+    return nextSession;
+  },
+
+  async heartbeatPaperSession(paperId: string, profileId: string): Promise<PaperActiveSession | null> {
+    const paper = await this.getPaper(paperId);
+    if (!paper) {
+      throw new Error(`Paper ${paperId} not found`);
+    }
+
+    const existing = paper.activeSession && !isSessionExpired(paper.activeSession) ? paper.activeSession : null;
+    if (!existing || existing.profileId !== profileId) {
+      if (existing && isSessionExpired(existing)) {
+        await this.updatePaper(paperId, {
+          metadata: withActiveSessionMetadata(paper.metadata as Record<string, unknown> | undefined, null),
+        });
+      }
+      return null;
+    }
+
+    const nextSession: PaperActiveSession = {
+      ...existing,
+      heartbeatAt: nowIso(),
+    };
+
+    await this.updatePaper(paperId, {
+      metadata: withActiveSessionMetadata(paper.metadata as Record<string, unknown> | undefined, nextSession),
+    });
+
+    return nextSession;
+  },
+
+  async endPaperSession(paperId: string, profileId: string): Promise<void> {
+    const paper = await this.getPaper(paperId);
+    if (!paper) {
+      return;
+    }
+
+    const existing = paper.activeSession;
+    if (existing && existing.profileId !== profileId && !isSessionExpired(existing)) {
+      return;
+    }
+
+    await this.updatePaper(paperId, {
+      metadata: withActiveSessionMetadata(paper.metadata as Record<string, unknown> | undefined, null),
+    });
   },
 
   async updatePaper(
@@ -467,7 +621,7 @@ export const mockDb = {
       year: updates.year,
       doi: updates.doi,
       status: updates.status as PaperStatus | undefined,
-      storage_bucket: updates.storageBucket,
+      storage_bucket: updates.storageBucket ?? undefined,
       storage_object_path: updates.storageObjectPath,
       primary_file_id: updates.primaryFileId,
       flag_reason: updates.flagReason,
@@ -492,7 +646,7 @@ export const mockDb = {
       throw new Error(`Failed to load file ${id}: ${error.message}`);
     }
 
-    return data ? mapFileRow(data) : undefined;
+    return data ? mapFileRow(data as FileRow) : undefined;
   },
 
   async attachFile(input: CreateFileInput): Promise<StoredFile> {
@@ -516,12 +670,14 @@ export const mockDb = {
       throw new Error(`Failed to attach file: ${error?.message ?? 'Unknown error'}`);
     }
 
+    const fileRow = data as FileRow;
+
     await supabase
       .from('papers')
-      .update({ primary_file_id: data.id, updated_at: new Date().toISOString() })
+      .update({ primary_file_id: fileRow.id, updated_at: new Date().toISOString() })
       .eq('id', input.paperId);
 
-    return mapFileRow(data);
+    return mapFileRow(fileRow);
   },
 
   async toggleFlag(paperId: string, reason: string | null) {
@@ -548,7 +704,8 @@ export const mockDb = {
       throw new Error(`Failed to list notes: ${error.message}`);
     }
 
-    return (data ?? []).map(mapNoteRow);
+    const noteRowList = (data ?? []) as NoteRow[];
+    return noteRowList.map(mapNoteRow);
   },
 
   async addNote(input: CreateNoteInput): Promise<PaperNote> {
@@ -567,7 +724,7 @@ export const mockDb = {
       throw new Error(`Failed to create note: ${error?.message ?? 'Unknown error'}`);
     }
 
-    return mapNoteRow(data);
+    return mapNoteRow(data as NoteRow);
   },
 
   async listExports(): Promise<ExportJob[]> {
@@ -581,7 +738,8 @@ export const mockDb = {
       throw new Error(`Failed to list export jobs: ${error.message}`);
     }
 
-    return (data ?? []).map(mapExportRow);
+    const exportRows = (data ?? []) as ExportJobRow[];
+    return exportRows.map(mapExportRow);
   },
 
   async createExport(kind: SupabaseExportKind, paperIds: string[]): Promise<ExportJob> {
@@ -604,7 +762,7 @@ export const mockDb = {
       throw new Error(`Failed to create export job: ${error?.message ?? 'Unknown error'}`);
     }
 
-    return mapExportRow(data);
+    return mapExportRow(data as ExportJobRow);
   },
 
   async getExport(id: string): Promise<ExportJob | undefined> {
@@ -615,7 +773,7 @@ export const mockDb = {
       throw new Error(`Failed to load export job ${id}: ${error.message}`);
     }
 
-    return data ? mapExportRow(data) : undefined;
+    return data ? mapExportRow(data as ExportJobRow) : undefined;
   },
 
   async listExtractions(paperId: string): Promise<ExtractionResult[]> {
@@ -714,7 +872,8 @@ export const mockDb = {
       throw new Error(`Failed to list population groups: ${error.message}`);
     }
 
-    return (data ?? []).map(mapPopulationGroupRow);
+    const groupRows = (data ?? []) as PopulationGroupRow[];
+    return groupRows.map(mapPopulationGroupRow);
   },
 
   async listPopulationValues(paperId: string): Promise<PopulationValue[]> {
@@ -728,6 +887,7 @@ export const mockDb = {
       throw new Error(`Failed to list population values: ${error.message}`);
     }
 
-    return (data ?? []).map(mapPopulationValueRow);
+    const valueRows = (data ?? []) as PopulationValueRow[];
+    return valueRows.map(mapPopulationValueRow);
   },
 };
