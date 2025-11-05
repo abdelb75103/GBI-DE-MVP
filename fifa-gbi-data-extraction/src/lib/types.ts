@@ -25,6 +25,14 @@ export type ExtractionFieldStatus = 'reported' | 'not_reported' | 'uncertain';
 
 export type ExtractionUpdatedBy = string | null;
 
+export interface PaperSession {
+  paperId: string;
+  profileId: string;
+  fullName: string;
+  startedAt: string;
+  lastHeartbeatAt: string;
+}
+
 export interface Paper {
   id: string;
   assignedStudyId: string;
@@ -43,6 +51,7 @@ export interface Paper {
   metadata?: Record<string, unknown>;
   noteCount: number;
   assignedTo: string | null;
+  activeSession: PaperSession | null;
 }
 
 export interface StoredFile {

@@ -3,12 +3,19 @@
 import { useState } from 'react';
 
 import { ExtractionTabsPanel, type ExtractionTabsPanelProps, type LayoutMode } from '@/components/extraction-tabs-panel';
+import type { PaperSession } from '@/lib/types';
 
 export type PaperWorkspaceShellProps = {
   paperId: string;
   tabs: ExtractionTabsPanelProps['tabs'];
   viewerUrl: string | null;
 };
+
+export type WorkspaceSessionState =
+  | { status: 'initial'; session: PaperSession | null }
+  | { status: 'active'; session: PaperSession }
+  | { status: 'conflict'; session: PaperSession }
+  | { status: 'error'; session: PaperSession | null; message: string };
 
 export function PaperWorkspaceShell({ paperId, tabs, viewerUrl }: PaperWorkspaceShellProps) {
   const [layoutMode, setLayoutMode] = useState<LayoutMode>('accordion');

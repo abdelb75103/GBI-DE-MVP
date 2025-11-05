@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { DefinitionsDrawer } from '@/components/definitions-drawer';
@@ -25,11 +25,16 @@ type PaperWorkspaceClientProps = {
 
 export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: PaperWorkspaceClientProps) {
   const router = useRouter();
-  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
-  const [sessionStatus, setSessionStatus] = useState<WorkspaceSessionState>(() => ({
-    status: 'initial',
-    session: paper.activeSession ?? null,
-  }));
+  const hasUnsavedChanges = false;
+  const sessionStatus = useMemo<WorkspaceSessionState>(() => {
+    if (paper.activeSession) {
+      return {
+        status: 'active',
+        session: paper.activeSession,
+      };
+    }
+    return { status: 'initial', session: null };
+  }, [paper.activeSession]);
 
   const handleBackToDashboard = useCallback(() => {
     if (hasUnsavedChanges && !window.confirm('You have unsaved changes. Save them before leaving?')) {
@@ -123,9 +128,6 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
           paperId={paper.id}
           tabs={tabs}
           viewerUrl={viewerUrl}
-          initialActiveSession={paper.activeSession ?? null}
-          onUnsavedChange={setHasUnsavedChanges}
-          onSessionChange={setSessionStatus}
         />
 
         <div className="grid gap-6 xl:grid-cols-2">

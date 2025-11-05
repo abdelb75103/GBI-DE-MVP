@@ -12,14 +12,14 @@ const bodySchema = z.object({
 
 export async function POST(
   request: NextRequest,
-  context: { params: { paperId: string } | Promise<{ paperId: string }> },
+  { params }: { params: Promise<{ paperId: string }> },
 ) {
   const profile = await readActiveProfileSession();
   if (!profile) {
     return NextResponse.json({ error: 'Select a profile before editing papers.' }, { status: 401 });
   }
 
-  const { paperId } = await context.params;
+  const { paperId } = await params;
   let parsed: z.infer<typeof bodySchema>;
 
   try {
