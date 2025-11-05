@@ -22,20 +22,33 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
 
     startTransition(async () => {
       setError(null);
-      const response = await fetch(`/api/papers/${paperId}/notes`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ author: 'dev-user', body: body.trim() }),
-      });
+      
+      try {
+        const response = await fetch(`/api/papers/${paperId}/notes`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ body: body.trim() }),
+        });
 
-      if (!response.ok) {
-        const payload = await response.json();
-        setError(payload.error ?? 'Unable to save note');
-        return;
+        if (!response.ok) {
+          let errorMessage = 'Unable to save note';
+          try {
+            const payload = await response.json();
+            errorMessage = payload.error ?? errorMessage;
+          } catch {
+            // Response has no JSON body, use status text
+            errorMessage = response.statusText || `Error: ${response.status}`;
+          }
+          setError(errorMessage);
+          return;
+        }
+
+        setBody('');
+        router.refresh();
+      } catch (err) {
+        setError('Failed to save note. Please try again.');
+        console.error('Note save error:', err);
       }
-
-      setBody('');
-      router.refresh();
     });
   };
 

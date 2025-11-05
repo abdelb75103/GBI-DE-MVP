@@ -17,57 +17,8 @@ export default async function DashboardPage() {
   const inProgressCount = papers.filter(
     (paper) => paper.status === 'processing' || paper.status === 'uploaded',
   ).length;
-  const activeProfile = readActiveProfileSession();
+  const activeProfile = await readActiveProfileSession();
   const isAdmin = activeProfile?.role === 'admin';
-
-  const personalStats = (isAdmin
-    ? [
-      {
-        label: 'Papers in workspace',
-        value: papers.length,
-        caption: 'Visible to the whole team',
-        accent: 'from-indigo-500/15 via-sky-400/10 to-indigo-400/20',
-        text: 'text-indigo-700',
-      },
-      {
-        label: 'Ready for review',
-        value: extractedCount,
-        caption: 'Awaiting quality assurance',
-        accent: 'from-emerald-500/15 via-teal-400/10 to-green-400/20',
-        text: 'text-emerald-700',
-      },
-      {
-        label: 'Flagged items',
-        value: flaggedCount,
-        caption: 'Needing follow-up',
-        accent: 'from-rose-500/15 via-orange-400/10 to-amber-400/20',
-        text: 'text-rose-700',
-      },
-    ]
-    : [
-      {
-        label: 'Papers ready to claim',
-        value: inProgressCount,
-        caption: 'Grab the next study when you are free',
-        accent: 'from-sky-500/15 via-cyan-400/10 to-indigo-300/20',
-        text: 'text-sky-700',
-      },
-      {
-        label: 'Team extractions completed',
-        value: extractedCount,
-        caption: 'Completed extractions by the team',
-        accent: 'from-emerald-500/15 via-teal-400/10 to-green-400/20',
-        text: 'text-emerald-700',
-      },
-      {
-        label: 'Items awaiting review',
-        value: flaggedCount,
-        caption: 'Flags to raise with AbdelRahman',
-        accent: 'from-rose-500/15 via-orange-400/10 to-amber-400/20',
-        text: 'text-rose-700',
-      },
-    ])
-    .map((stat, index) => ({ ...stat, id: `${stat.label}-${index}` }));
 
   return (
     <div className="space-y-12">
@@ -86,30 +37,16 @@ export default async function DashboardPage() {
               <p className="text-sm leading-relaxed text-slate-600">
                 Monitor every paper in the pipeline, flag issues for reviewers, and export structured data the moment it&apos;s ready.
               </p>
-              <div className="flex flex-wrap gap-3">
-                {isAdmin ? (
+              {isAdmin ? (
+                <div className="flex flex-wrap gap-3">
                   <Link
                     href="/upload"
                     className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
                   >
                     Upload a PDF
                   </Link>
-                ) : null}
-                <Link
-                  href="#uploads"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-                >
-                  Review uploads
-                </Link>
-              </div>
-            </div>
-            <div className="w-full max-w-xs rounded-2xl border border-white/60 bg-white/80 p-5 shadow-lg ring-1 ring-white/60 backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500">Exports</p>
-              <p className="mt-3 text-3xl font-semibold text-slate-900">{exportJobs.length}</p>
-              <p className="mt-1 text-xs text-slate-500">Exports generated in the last 7 days</p>
-              <div className="mt-4 text-xs text-slate-500">
-                Trigger new exports anytime to sync structured data to downstream tools.
-              </div>
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
@@ -156,43 +93,6 @@ export default async function DashboardPage() {
                   <div
                     className={`h-full bg-gradient-to-r ${item.accent} opacity-90`}
                     style={{ width: `${Math.min(100, item.value === 0 ? 4 : Math.round((item.value / Math.max(1, papers.length)) * 100))}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="space-y-6 rounded-3xl border border-slate-200/70 bg-slate-50/80 p-7 shadow-lg ring-1 ring-slate-200/60 backdrop-blur">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Personal dashboard</p>
-              <p className="text-sm font-semibold text-slate-900">
-                {activeProfile?.fullName ? `${activeProfile.fullName}'s dashboard` : 'Select a profile to personalise'}
-              </p>
-            </div>
-            <span className="inline-flex items-center rounded-full bg-indigo-100/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-600">
-              {isAdmin ? 'ADMIN' : (activeProfile?.role ?? '—').toUpperCase()}
-            </span>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {personalStats.map((item, index) => (
-              <div
-                key={item.id}
-                className="relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white/90 p-5 shadow-md ring-1 ring-slate-200/60 backdrop-blur"
-              >
-                <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${item.accent} opacity-75`} aria-hidden />
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">{item.label}</p>
-                <div className="mt-3 flex items-baseline justify-between gap-4">
-                  <p className={`text-3xl font-semibold ${item.text}`}>{item.value}</p>
-                  <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500">
-                    {index + 1}
-                  </span>
-                </div>
-                <p className="mt-2 text-xs text-slate-600">{item.caption}</p>
-                <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-white/70">
-                  <div
-                    className={`h-full bg-gradient-to-r ${item.accent} opacity-90`}
-                    style={{ width: `${Math.min(100, item.value === 0 ? 6 : Math.round((item.value / Math.max(1, papers.length)) * 100))}%` }}
                   />
                 </div>
               </div>

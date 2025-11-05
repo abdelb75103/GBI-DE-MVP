@@ -21,7 +21,7 @@ const encodeCookie = (payload: CookiePayload) => Buffer.from(JSON.stringify(payl
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => ({}))) as RequestPayload;
   const response = NextResponse.json({ ok: true });
-  const store = cookies();
+  const store = await cookies();
 
   if (!body.profileId) {
     store.delete(COOKIE_NAME);

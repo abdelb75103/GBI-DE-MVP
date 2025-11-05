@@ -44,6 +44,7 @@ type CreatePaperInput = {
   doi?: string | null;
   status?: PaperStatus;
   metadata?: Record<string, unknown>;
+  uploadedBy?: string | null;
 };
 
 type CreateFileInput = {
@@ -59,7 +60,6 @@ type CreateFileInput = {
 
 type CreateNoteInput = {
   paperId: string;
-  author: string;
   body: string;
 };
 
@@ -70,6 +70,7 @@ type UpdateExtractionFieldOptions = {
   sourceQuote?: string | null;
   pageHint?: string | null;
   metric?: SupabaseExtractionMetric | null;
+  updatedBy?: string | null;
 };
 
 const ensureSupabaseConfigured = () => {
@@ -100,6 +101,7 @@ const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => ({
   flagReason: row.flag_reason ?? null,
   metadata: row.metadata ?? undefined,
   noteCount,
+  assignedTo: row.assigned_to ?? null,
 });
 
 const mapFileRow = (row: FileRow): StoredFile => ({
@@ -118,7 +120,6 @@ const mapFileRow = (row: FileRow): StoredFile => ({
 const mapNoteRow = (row: NoteRow): PaperNote => ({
   id: row.id,
   paperId: row.paper_id,
-  author: row.author,
   body: row.body,
   createdAt: row.created_at,
 });
@@ -226,6 +227,7 @@ const upsertExtractionFieldRow = async (
     metric: (updates.metric ?? null) as SupabaseExtractionMetric | null,
     status: updates.status ?? 'not_reported',
     updated_at: new Date().toISOString(),
+    updated_by: updates.updatedBy ?? null,
   };
 
   const { data, error } = await supabase
@@ -441,6 +443,7 @@ export const mockDb = {
       doi: input.doi ?? null,
       status: input.status ?? 'uploaded',
       storage_bucket: 'papers',
+      uploaded_by: input.uploadedBy ?? null,
       uploaded_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
       metadata: input.metadata ?? {},
@@ -548,7 +551,7 @@ export const mockDb = {
       throw new Error(`Failed to list notes: ${error.message}`);
     }
 
-    return (data ?? []).map(mapNoteRow);
+    return (data ?? []).map((row) => mapNoteRow(row as NoteRow));
   },
 
   async addNote(input: CreateNoteInput): Promise<PaperNote> {
@@ -556,7 +559,6 @@ export const mockDb = {
     const payload: NoteInsert = {
       id: crypto.randomUUID(),
       paper_id: input.paperId,
-      author: input.author,
       body: input.body,
       created_at: new Date().toISOString(),
     };
@@ -567,7 +569,7 @@ export const mockDb = {
       throw new Error(`Failed to create note: ${error?.message ?? 'Unknown error'}`);
     }
 
-    return mapNoteRow(data);
+    return mapNoteRow(data as NoteRow);
   },
 
   async listExports(): Promise<ExportJob[]> {
@@ -664,6 +666,7 @@ export const mockDb = {
       pageHint?: string | null;
       metric?: ExtractionFieldMetric | null;
       model?: string;
+      updatedBy?: string | null;
     },
   ): Promise<ExtractionResult> {
     const status = updates.status ?? (updates.value ? 'reported' : 'not_reported');
@@ -688,6 +691,7 @@ export const mockDb = {
       sourceQuote: updates.sourceQuote ?? null,
       pageHint: updates.pageHint ?? null,
       metric: (updates.metric ?? null) as SupabaseExtractionMetric | null,
+      updatedBy: updates.updatedBy ?? null,
     });
 
     if (fieldId === 'title' && updates.value) {
@@ -699,6 +703,42 @@ export const mockDb = {
     }
 
     return fetchExtractionById(extractionRow.id);
+  },
+
+  async saveExtractionFields(
+    paperId: string,
+    tab: ExtractionTab,
+    fields: Array<{ fieldId: string; value: string | null; metric?: ExtractionFieldMetric | null }>,
+    options: { updatedBy: string },
+  ): Promise<void> {
+    const extractionRow = await ensureExtractionRow(paperId, tab, 'human-input');
+    
+    await supabaseClient()
+      .from('extractions')
+      .update({
+        model: 'human-input',
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', extractionRow.id);
+
+    for (const field of fields) {
+      const status: SupabaseFieldStatus = field.value ? 'reported' : 'not_reported';
+      
+      await upsertExtractionFieldRow(extractionRow.id, field.fieldId, {
+        value: field.value,
+        status,
+        metric: (field.metric ?? null) as SupabaseExtractionMetric | null,
+        updatedBy: options.updatedBy,
+      });
+
+      if (field.fieldId === 'title' && field.value) {
+        await this.updatePaper(paperId, { title: field.value });
+      }
+    }
+
+    if (tab === 'participantCharacteristics') {
+      await syncPopulationSlices(paperId);
+    }
   },
 
   async listPopulationGroups(paperId: string): Promise<PopulationGroup[]> {

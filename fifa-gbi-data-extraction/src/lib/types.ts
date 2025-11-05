@@ -42,6 +42,7 @@ export interface Paper {
   flagReason: string | null;
   metadata?: Record<string, unknown>;
   noteCount: number;
+  assignedTo: string | null;
 }
 
 export interface StoredFile {
@@ -60,7 +61,6 @@ export interface StoredFile {
 export interface PaperNote {
   id: string;
   paperId: string;
-  author: string;
   body: string;
   createdAt: string;
 }

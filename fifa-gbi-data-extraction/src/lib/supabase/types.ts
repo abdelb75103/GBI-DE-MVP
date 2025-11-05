@@ -162,6 +162,7 @@ export interface Database {
           metadata: Record<string, unknown>;
           primary_file_id: string | null;
           flag_reason: string | null;
+          assigned_to: string | null;
         };
         Insert: {
           id?: string;
@@ -180,6 +181,7 @@ export interface Database {
           metadata?: Record<string, unknown>;
           primary_file_id?: string | null;
           flag_reason?: string | null;
+          assigned_to?: string | null;
         };
         Update: {
           id?: string;
@@ -198,11 +200,19 @@ export interface Database {
           metadata?: Record<string, unknown>;
           primary_file_id?: string | null;
           flag_reason?: string | null;
+          assigned_to?: string | null;
         };
         Relationships: [
           {
             foreignKeyName: 'papers_uploaded_by_fkey';
             columns: ['uploaded_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'papers_assigned_to_fkey';
+            columns: ['assigned_to'];
             isOneToOne: false;
             referencedRelation: 'profiles';
             referencedColumns: ['id'];
@@ -267,21 +277,18 @@ export interface Database {
         Row: {
           id: string;
           paper_id: string;
-          author: string;
           body: string;
           created_at: string;
         };
         Insert: {
           id?: string;
           paper_id: string;
-          author: string;
           body: string;
           created_at?: string;
         };
         Update: {
           id?: string;
           paper_id?: string;
-          author?: string;
           body?: string;
           created_at?: string;
         };

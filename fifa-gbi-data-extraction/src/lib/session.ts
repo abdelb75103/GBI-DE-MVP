@@ -33,19 +33,12 @@ function decodeCookie(raw: string | undefined): ActiveProfileSession | null {
   }
 }
 
-export function readActiveProfileSession(): ActiveProfileSession | null {
+export async function readActiveProfileSession(): Promise<ActiveProfileSession | null> {
   let cookieValue: string | undefined;
   try {
-    const store = cookies();
-    if (store && typeof (store as unknown as { get?: unknown }).get === 'function') {
-      const cookie = (store as unknown as { get: (name: string) => { value?: string } | undefined }).get(COOKIE_NAME);
-      cookieValue = cookie?.value;
-    } else if (store && typeof (store as unknown as { getAll?: () => Array<{ name: string; value: string }> }).getAll === 'function') {
-      const match = (store as unknown as { getAll: () => Array<{ name: string; value: string }> })
-        .getAll()
-        .find((item) => item.name === COOKIE_NAME);
-      cookieValue = match?.value;
-    }
+    const store = await cookies();
+    const cookie = store.get(COOKIE_NAME);
+    cookieValue = cookie?.value;
   } catch {
     cookieValue = process.env.GBI_ACTIVE_PROFILE_OVERRIDE;
   }

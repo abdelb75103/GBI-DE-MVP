@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { mockDb } from '@/lib/mock-db';
+import { readActiveProfileSession } from '@/lib/session';
 
 export const runtime = 'nodejs';
 
@@ -13,13 +14,22 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const { author, body } = (await request.json()) as { author?: string; body?: string };
+  try {
+    const { body } = (await request.json()) as { body?: string };
 
-  if (!author || !body) {
-    return NextResponse.json({ error: 'Author and body are required' }, { status: 400 });
+    if (!body) {
+      return NextResponse.json({ error: 'Body is required' }, { status: 400 });
+    }
+
+    const note = await mockDb.addNote({ 
+      paperId: paperIdFromRequest(request), 
+      body 
+    });
+
+    return NextResponse.json({ note }, { status: 201 });
+  } catch (error) {
+    console.error('[notes] Error saving note:', error);
+    const message = error instanceof Error ? error.message : 'Failed to save note';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
-
-  const note = await mockDb.addNote({ paperId: paperIdFromRequest(request), author, body });
-
-  return NextResponse.json({ note }, { status: 201 });
 }
