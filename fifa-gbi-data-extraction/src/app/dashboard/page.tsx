@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { ExportControls } from '@/components/export-controls';
-import { PapersTable } from '@/components/papers-table';
+import { PapersDashboardClient } from '@/components/papers-dashboard-client';
 import { formatDateTimeUTC } from '@/lib/format';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
@@ -117,7 +117,7 @@ export default async function DashboardPage() {
               </Link>
             ) : null}
           </div>
-          <PapersTable papers={papers} canBulkExport={isAdmin} />
+          <PapersDashboardClient papers={papers} canBulkExport={isAdmin} />
         </section>
 
         <aside className="space-y-6">

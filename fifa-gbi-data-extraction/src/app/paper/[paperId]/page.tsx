@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { NoteComposer } from '@/components/note-composer';
@@ -8,23 +8,123 @@ import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
 import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
 import { definitionCategories } from '@/lib/definitions';
-import { mockDb } from '@/lib/mock-db';
+import { mockDb, PaperSessionConflictError } from '@/lib/mock-db';
 import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { formatDateTimeUTC } from '@/lib/format';
 import { PaperWorkspaceShell } from '@/components/paper-workspace-shell';
+import { readActiveProfileSession } from '@/lib/session';
 
 export const dynamic = 'force-dynamic';
 
 export default async function PaperWorkspace({
   params,
+  searchParams,
 }: {
   params: Promise<{ paperId: string }>;
+  searchParams: Promise<{ conflict?: string }>;
 }) {
   const { paperId } = await params;
+  const { conflict } = await searchParams;
+  
+  const profile = await readActiveProfileSession();
+  if (!profile) {
+    redirect('/profiles/select?returnTo=' + encodeURIComponent(`/paper/${paperId}`));
+  }
+
   const paper = await mockDb.getPaper(paperId);
 
   if (!paper) {
     notFound();
+  }
+
+  // If redirected here due to a conflict, show error page immediately
+  // This prevents infinite redirect loops and unnecessary re-checks
+  if (conflict === 'true') {
+    const assigneeName = paper.assigneeName || 'another user';
+    return (
+      <div className="space-y-10">
+        <section className="relative overflow-hidden rounded-3xl border border-rose-200/70 bg-rose-50/80 p-8 shadow-xl ring-1 ring-rose-200/60">
+          <div className="relative z-10 flex flex-col gap-6">
+            <div className="space-y-3">
+              <span className="inline-flex items-center rounded-full bg-rose-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-rose-600">
+                Paper Unavailable
+              </span>
+              <h1 className="text-3xl font-semibold text-slate-900">Access Restricted</h1>
+              <div className="space-y-4 text-slate-700">
+                <p className="text-lg">
+                  This paper is currently assigned to <strong>{assigneeName}</strong>.
+                </p>
+                <p className="text-sm">
+                  To prevent conflicts and data loss, only one person can work on a paper at a time. 
+                  Please choose a different paper from the dashboard or wait until this paper becomes available.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 pt-4">
+              <Link
+                href="/dashboard"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
+              >
+                ← Back to Dashboard
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // Check if paper is assigned to someone else before attempting to start session
+  if (paper.assignedTo && paper.assignedTo !== profile.id) {
+    // Paper is already assigned to someone else
+    const assigneeName = paper.assigneeName || 'another user';
+    return (
+      <div className="space-y-10">
+        <section className="relative overflow-hidden rounded-3xl border border-rose-200/70 bg-rose-50/80 p-8 shadow-xl ring-1 ring-rose-200/60">
+          <div className="relative z-10 flex flex-col gap-6">
+            <div className="space-y-3">
+              <span className="inline-flex items-center rounded-full bg-rose-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-rose-600">
+                Paper Unavailable
+              </span>
+              <h1 className="text-3xl font-semibold text-slate-900">Access Restricted</h1>
+              <div className="space-y-4 text-slate-700">
+                <p className="text-lg">
+                  This paper is currently assigned to <strong>{assigneeName}</strong>.
+                </p>
+                <p className="text-sm">
+                  To prevent conflicts and data loss, only one person can work on a paper at a time. 
+                  Please choose a different paper from the dashboard or wait until this paper becomes available.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 pt-4">
+              <Link
+                href="/dashboard"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
+              >
+                ← Back to Dashboard
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // Try to start the session (this will auto-assign the paper)
+  try {
+    await mockDb.startPaperSession(paperId, {
+      profileId: profile.id,
+      fullName: profile.fullName,
+    });
+  } catch (error) {
+    if (error instanceof PaperSessionConflictError) {
+      // If we get a conflict, redirect with error message
+      // On reload, the conflict parameter will be checked first to show error immediately
+      redirect(`/paper/${paperId}?conflict=true`);
+    }
+    // For other errors, log and continue (the UI will handle it)
+    console.error('[PaperWorkspace] Failed to start session:', error);
   }
 
   const file = paper.primaryFileId ? await mockDb.getFile(paper.primaryFileId) : undefined;

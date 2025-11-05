@@ -479,6 +479,7 @@ export const mockDb = {
     const rows = (paperRows ?? []) as PaperRow[];
     const ids = rows.map((row) => row.id);
     const noteCounts = new Map<string, number>();
+    const assigneeNames = new Map<string, string>();
 
     if (ids.length > 0) {
       const { data: noteRows, error: notesError } = await supabase
@@ -494,9 +495,31 @@ export const mockDb = {
         const current = noteCounts.get(row.paper_id) ?? 0;
         noteCounts.set(row.paper_id, current + 1);
       });
+
+      // Fetch assignee profiles for assigned papers
+      const assignedToIds = rows.map((row) => row.assigned_to).filter((id): id is string => id !== null);
+      if (assignedToIds.length > 0) {
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('id, full_name')
+          .in('id', assignedToIds);
+
+        if (!profilesError && profiles) {
+          profiles.forEach((profile) => {
+            assigneeNames.set(profile.id, profile.full_name);
+          });
+        }
+      }
     }
 
-    return rows.map((row) => mapPaperRow(row, noteCounts.get(row.id) ?? 0));
+    return rows.map((row) => {
+      const paper = mapPaperRow(row, noteCounts.get(row.id) ?? 0);
+      // Attach assignee name if available
+      if (row.assigned_to && assigneeNames.has(row.assigned_to)) {
+        paper.assigneeName = assigneeNames.get(row.assigned_to);
+      }
+      return paper;
+    });
   },
 
   async getPaper(id: string): Promise<Paper | undefined> {
@@ -514,7 +537,23 @@ export const mockDb = {
     const { data: noteRows } = await supabase.from('paper_notes').select('paper_id').eq('paper_id', id);
     const noteCount = noteRows?.length ?? 0;
 
-    return mapPaperRow(data as PaperRow, noteCount);
+    const row = data as PaperRow;
+    const paper = mapPaperRow(row, noteCount);
+
+    // Fetch assignee name if paper is assigned
+    if (row.assigned_to) {
+      const { data: assigneeProfile } = await supabase
+        .from('profiles')
+        .select('full_name')
+        .eq('id', row.assigned_to)
+        .maybeSingle();
+      
+      if (assigneeProfile) {
+        paper.assigneeName = assigneeProfile.full_name;
+      }
+    }
+
+    return paper;
   },
 
   async createPaper(input: CreatePaperInput): Promise<Paper> {
@@ -727,8 +766,32 @@ export const mockDb = {
       throw new Error(`Paper ${paperId} not found`);
     }
 
-    const existing = paper.activeSession;
+    // Check if paper is assigned to someone else (database field takes precedence)
+    if (paper.assignedTo && paper.assignedTo !== input.profileId) {
+      // Fetch the assignee's profile info for better error message
+      const supabase = supabaseClient();
+      const { data: assigneeProfile } = await supabase
+        .from('profiles')
+        .select('id, full_name')
+        .eq('id', paper.assignedTo)
+        .maybeSingle();
 
+      const conflictSession: PaperSession = {
+        paperId,
+        profileId: paper.assignedTo,
+        fullName: assigneeProfile?.full_name ?? 'Another user',
+        startedAt: paper.activeSession?.startedAt ?? paper.updatedAt,
+        lastHeartbeatAt: paper.activeSession?.lastHeartbeatAt ?? paper.updatedAt,
+      };
+
+      throw new PaperSessionConflictError(
+        conflictSession,
+        `This paper is currently assigned to ${assigneeProfile?.full_name ?? 'another user'}. Please choose a different paper.`
+      );
+    }
+
+    // Also check activeSession in metadata for backward compatibility
+    const existing = paper.activeSession;
     if (existing && existing.profileId !== input.profileId) {
       throw new PaperSessionConflictError(existing);
     }

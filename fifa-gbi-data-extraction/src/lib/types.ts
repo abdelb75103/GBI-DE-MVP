@@ -51,6 +51,7 @@ export interface Paper {
   metadata?: Record<string, unknown>;
   noteCount: number;
   assignedTo: string | null;
+  assigneeName?: string;
   activeSession: PaperSession | null;
 }
 
