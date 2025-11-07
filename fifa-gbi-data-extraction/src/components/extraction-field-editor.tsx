@@ -7,7 +7,29 @@ import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
 import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 
-const MULTILINE_PLACEHOLDERS: Record<string, string> = {};
+const MULTILINE_PLACEHOLDERS: Record<string, string> = {
+  // Population-defining fields (use identifiers)
+  ageCategory: 'Example (defines populations):\nU19\nU21',
+  sex: 'Example (defines populations):\nmale\nfemale',
+  // All other fields (values only, no labels)
+  meanAge: 'Example (values only):\n16.8 ± 0.9\n20.1 ± 0.3\n\nLine 1 = Pop 1, Line 2 = Pop 2',
+  sampleSizePlayers: 'Example:\n62\n60',
+  numberOfTeams: 'Example:\n4 clubs\n5 clubs',
+  studyPeriodYears: 'Example:\n4 years\n3 years',
+  observationDuration: 'Example:\n4 seasons\n3 seasons',
+  // Exposure (values only)
+  seasonLength: 'Example:\n4 weeks\n2 weeks',
+  numberOfSeasons: 'Example:\n4\n3',
+  matchExposure: 'Example:\n250 h\n210 h',
+  trainingExposure: 'Example:\n420 h\n390 h',
+  // Injury Outcome (values only)
+  injuryTotalCount: 'Example:\n150\n120',
+  injuryIncidenceOverall: 'Example:\n3.2\n2.8',
+  injuryIncidenceMatch: 'Example:\n4.1\n3.5',
+  // Illness Outcome (values only)
+  illnessTotalCount: 'Example:\n45\n38',
+  illnessIncidenceOverall: 'Example:\n1.2\n0.9',
+};
 
 type ExtractionFieldEditorProps = {
   paperId: string;
@@ -67,19 +89,28 @@ export function ExtractionFieldEditor({
       }`}
     >
       <div
-        className={`flex items-center gap-2 text-sm font-semibold ${
+        className={`flex items-center justify-between gap-2 text-sm font-semibold ${
           supportsAi ? 'text-indigo-900' : 'text-emerald-900'
         }`}
       >
-        {supportsAi && onSelectedChange ? (
-          <input
-            type="checkbox"
-            className="h-4 w-4 rounded border border-slate-300 text-indigo-600 focus:ring-indigo-500"
-            checked={isSelected}
-            onChange={(event) => onSelectedChange(event.target.checked)}
-          />
-        ) : null}
-        <span>{definition.label}</span>
+        <div className="flex items-center gap-2">
+          {supportsAi && onSelectedChange ? (
+            <input
+              type="checkbox"
+              className="h-4 w-4 rounded border border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              checked={isSelected}
+              onChange={(event) => onSelectedChange(event.target.checked)}
+            />
+          ) : null}
+          <span>{definition.label}</span>
+        </div>
+        {placeholder && (
+          <span className="text-[10px] font-normal text-slate-500" title={placeholder}>
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+        )}
       </div>
       <textarea
         value={draftValue}

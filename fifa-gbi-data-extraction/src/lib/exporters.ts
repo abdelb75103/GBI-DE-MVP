@@ -25,7 +25,7 @@ const valueColumns = extractionFieldDefinitions.map((definition) => ({
   tabLabel: extractionTabMeta[definition.tab]?.title ?? definition.tab,
 }));
 
-const baseHeaders = ['Paper ID', 'Paper Title', 'Status', 'Population Label'] as const;
+const baseHeaders = ['Paper ID', 'Paper Title', 'Status'] as const;
 
 type ExportExtractionField = {
   fieldId: string;
@@ -104,12 +104,24 @@ const mapPopulationGroups = (
       id: group.id,
       label: group.label,
       position: group.position,
-      values: (bucket.get(group.id) ?? []).map((entry) => ({
-        fieldId: entry.fieldId,
-        value: entry.value ?? null,
-        metric: entry.metric ?? null,
-        unit: entry.unit ?? null,
-      })),
+      values: (bucket.get(group.id) ?? []).map((entry) => {
+        let value = entry.value ?? null;
+        
+        // Safety: Strip any "label — " prefix that might have leaked through
+        if (value && typeof value === 'string') {
+          const labelMatch = value.match(/^.+?\s*[:\-–—]\s*(.+)$/);
+          if (labelMatch) {
+            value = labelMatch[1].trim();
+          }
+        }
+        
+        return {
+          fieldId: entry.fieldId,
+          value,
+          metric: entry.metric ?? null,
+          unit: entry.unit ?? null,
+        };
+      }),
     }))
     .sort((a, b) => a.position - b.position);
 };
@@ -190,22 +202,41 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
         : [{ id: '__default__', paperId: paper.id, tab: 'participantCharacteristics', label: '', position: 0, createdAt: '', updatedAt: '' }];
     const sortedGroups = groups.sort((a, b) => a.position - b.position);
 
+    // Determine which fields have population-specific data
+    const fieldsWithPopulationData = new Set<string>();
+    populationValues.forEach((pv) => {
+      if (pv.value) {
+        fieldsWithPopulationData.add(pv.fieldId);
+      }
+    });
+
     sortedGroups.forEach((group) => {
       const baseCells = [
         escapeCsv(paper.assignedStudyId || paper.id),
         escapeCsv(paper.title ?? ''),
         escapeCsv(paper.status),
-        escapeCsv(group.label ?? ''),
       ];
 
       const groupValues = valuesByGroup.get(group.id);
+      const isDefaultGroup = group.id === '__default__';
 
       valueColumns.forEach((column) => {
         let value: string | null | undefined = groupValues?.get(column.id) ?? null;
 
-        if (value == null) {
+        // Only fall back to extraction field if:
+        // 1. We're in the default group (no populations), OR
+        // 2. This field has NO population-specific data at all
+        if (value == null && (isDefaultGroup || !fieldsWithPopulationData.has(column.id))) {
           const field = fieldMap.get(column.id);
           value = field?.value ?? null;
+        }
+
+        // Safety: Strip any "label — " prefix that might have leaked through
+        if (value && typeof value === 'string') {
+          const labelMatch = value.match(/^.+?\s*[:\-–—]\s*(.+)$/);
+          if (labelMatch) {
+            value = labelMatch[1].trim();
+          }
         }
 
         baseCells.push(escapeCsv(value ?? ''));

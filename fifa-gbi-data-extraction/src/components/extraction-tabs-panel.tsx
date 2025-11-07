@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import { ExtractionFieldEditor } from '@/components/extraction-field-editor';
 import { ManualGroupEditor } from '@/components/manual-group-editor';
+import { ManualGroupTableEditor } from '@/components/manual-group-table-editor';
 import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 import { useGeminiApiKey } from '@/hooks/use-gemini-api-key';
 import {
@@ -416,20 +417,36 @@ useEffect(() => {
         )}
         {hasGroups ? (
           <div className="space-y-5">
-            {Array.from(groups.values()).map((group) => (
-              <ManualGroupEditor
-                key={group.label}
-                paperId={paperId}
-                tab={item.tab}
-                groupLabel={group.label}
-                fields={group.fields.sort((a, b) => {
-                  const orderA = a.metric ? metricOrder.indexOf(a.metric) : Number.MAX_SAFE_INTEGER;
-                  const orderB = b.metric ? metricOrder.indexOf(b.metric) : Number.MAX_SAFE_INTEGER;
-                  return orderA - orderB;
-                })}
-                results={resultMap}
-              />
-            ))}
+            {Array.from(groups.values()).map((group) => {
+              const sortedFields = group.fields.sort((a, b) => {
+                const orderA = a.metric ? metricOrder.indexOf(a.metric) : Number.MAX_SAFE_INTEGER;
+                const orderB = b.metric ? metricOrder.indexOf(b.metric) : Number.MAX_SAFE_INTEGER;
+                return orderA - orderB;
+              });
+              
+              // Use table editor for the 4 metric-based tabs
+              const useTableEditor = ['injuryTissueType', 'injuryLocation', 'illnessRegion', 'illnessEtiology'].includes(item.tab);
+              
+              return useTableEditor ? (
+                <ManualGroupTableEditor
+                  key={group.label}
+                  paperId={paperId}
+                  tab={item.tab}
+                  groupLabel={group.label}
+                  fields={sortedFields}
+                  results={resultMap}
+                />
+              ) : (
+                <ManualGroupEditor
+                  key={group.label}
+                  paperId={paperId}
+                  tab={item.tab}
+                  groupLabel={group.label}
+                  fields={sortedFields}
+                  results={resultMap}
+                />
+              );
+            })}
           </div>
         ) : (
           <div className={gridClassName}>

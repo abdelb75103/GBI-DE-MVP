@@ -22,6 +22,12 @@ export function PrimaryNavLinks() {
       >
         Dashboard
       </Link>
+      <Link
+        href="/extraction-instructions"
+        className="px-3 py-1.5 transition hover:text-slate-900"
+      >
+        Extraction Instructions
+      </Link>
       {isAdmin ? (
         <Link
           href="/upload"

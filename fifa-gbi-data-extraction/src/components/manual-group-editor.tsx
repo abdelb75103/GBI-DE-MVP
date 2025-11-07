@@ -1,7 +1,6 @@
 'use client';
 
-import { useContext, useEffect, useRef, useState, useTransition } from 'react';
-import { useRouter } from 'next/navigation';
+import { useContext, useEffect, useState } from 'react';
 
 import { extractionMetrics } from '@/lib/extraction/schema';
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
@@ -56,34 +55,34 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
     { wrapper: string; label: string; input: string; ring: string }
   > = {
     prevalence: {
-      wrapper: 'border-sky-200/80 bg-sky-50/70',
-      label: 'text-sky-700',
-      input: 'border-sky-200/70 focus:border-sky-300 focus:ring-sky-200/70',
-      ring: 'ring-sky-100/80',
+      wrapper: 'border-slate-300/60 bg-slate-50',
+      label: 'text-slate-700',
+      input: 'border-slate-300/60 focus:border-slate-400 focus:ring-slate-300/40',
+      ring: 'ring-slate-200/50',
     },
     incidence: {
-      wrapper: 'border-indigo-200/80 bg-indigo-50/70',
-      label: 'text-indigo-700',
-      input: 'border-indigo-200/70 focus:border-indigo-300 focus:ring-indigo-200/70',
-      ring: 'ring-indigo-100/80',
+      wrapper: 'border-blue-300/50 bg-blue-50/40',
+      label: 'text-blue-800',
+      input: 'border-blue-300/50 focus:border-blue-400 focus:ring-blue-300/40',
+      ring: 'ring-blue-200/40',
     },
     burden: {
-      wrapper: 'border-emerald-200/80 bg-emerald-50/70',
-      label: 'text-emerald-700',
-      input: 'border-emerald-200/70 focus:border-emerald-300 focus:ring-emerald-200/70',
-      ring: 'ring-emerald-100/80',
+      wrapper: 'border-teal-300/50 bg-teal-50/40',
+      label: 'text-teal-800',
+      input: 'border-teal-300/50 focus:border-teal-400 focus:ring-teal-300/40',
+      ring: 'ring-teal-200/40',
     },
     severityMeanDays: {
-      wrapper: 'border-amber-200/80 bg-amber-50/70',
-      label: 'text-amber-700',
-      input: 'border-amber-200/70 focus:border-amber-300 focus:ring-amber-200/70',
-      ring: 'ring-amber-100/80',
+      wrapper: 'border-orange-300/50 bg-orange-50/40',
+      label: 'text-orange-800',
+      input: 'border-orange-300/50 focus:border-orange-400 focus:ring-orange-300/40',
+      ring: 'ring-orange-200/40',
     },
     severityTotalDays: {
-      wrapper: 'border-rose-200/80 bg-rose-50/70',
-      label: 'text-rose-700',
-      input: 'border-rose-200/70 focus:border-rose-300 focus:ring-rose-200/70',
-      ring: 'ring-rose-100/80',
+      wrapper: 'border-red-300/50 bg-red-50/40',
+      label: 'text-red-800',
+      input: 'border-red-300/50 focus:border-red-400 focus:ring-red-300/40',
+      ring: 'ring-red-200/40',
     },
   };
 
@@ -118,7 +117,6 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
           );
         })}
       </div>
-      {isPending ? <p className="px-4 pb-3 text-xs text-slate-500">Saving…</p> : null}
     </div>
   );
 }

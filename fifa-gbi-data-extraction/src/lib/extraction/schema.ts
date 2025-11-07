@@ -86,28 +86,28 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     id: 'sex',
     label: 'Sex',
     description:
-      'Sex of participants (male, female, mixed). Enter one population per line (e.g., "U19 — male") so rows stay aligned.',
+      'Sex of participants. DEFINES POPULATIONS. Enter identifiers only: "male\\nfemale". Other fields use same line order for their values.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'ageCategory',
     label: 'Age Category',
     description:
-      'Age group or category. List one population per line (e.g., "U19", "U21") to anchor the rest of the population-specific rows.',
+      'Age group. DEFINES POPULATIONS. Enter identifiers only: "U19\\nU21". Other fields use same line order for their values.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'meanAge',
     label: 'Mean age (±SD) or range',
     description:
-      'Mean age ± SD or range. Match one line per population (e.g., "U19 — 16.8 ± 0.9") so downstream exports can link values automatically.',
+      'Mean age ± SD. For multiple populations: enter VALUES ONLY, one per line: "16.8 ± 0.9\\n20.1 ± 0.3". Line 1 = Pop 1, Line 2 = Pop 2.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'sampleSizePlayers',
     label: 'Sample Size (players)',
     description:
-      'Number of players included. Keep one population per line (e.g., "U19 — 62") and align the order with Age Category.',
+      'Number of players. For multiple populations: enter VALUES ONLY, one per line: "62\\n60". Match the line order from Sex or Age Category.',
     tab: 'participantCharacteristics',
   },
   {
@@ -222,37 +222,37 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryTotalCount',
     label: 'Total number of injuries',
-    description: 'Total count of injuries recorded in the study.',
+    description: 'Total count of injuries. For multiple populations: enter VALUES ONLY (e.g., "150\\n120"), one per line.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryMatchCount',
     label: 'Number of match injuries',
-    description: 'Injuries that occurred during matches.',
+    description: 'Injuries that occurred during matches. For multiple populations, enter each on a new line.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryTrainingCount',
     label: 'Number of training injuries',
-    description: 'Injuries that occurred during training.',
+    description: 'Injuries that occurred during training. For multiple populations, enter each on a new line.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryIncidenceOverall',
     label: 'Injury incidence (overall)',
-    description: 'Overall injury incidence rate as reported.',
+    description: 'Overall injury incidence rate as reported. For multiple populations, enter each on a new line (e.g., "U19 — 3.2\\nU21 — 2.8").',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryIncidenceMatch',
     label: 'Match injury incidence',
-    description: 'Injury incidence during matches.',
+    description: 'Injury incidence during matches. For multiple populations, enter each on a new line.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryIncidenceTraining',
     label: 'Training injury incidence',
-    description: 'Injury incidence during training.',
+    description: 'Injury incidence during training. For multiple populations, enter each on a new line.',
     tab: 'injuryOutcome',
   },
   {
@@ -387,37 +387,37 @@ const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'illnessTotalCount',
     label: 'Total number of illnesses',
-    description: 'Total count of illnesses recorded.',
+    description: 'Total count of illnesses recorded. For multiple populations, enter each on a new line with optional label (e.g., "U19 — 45\\nU21 — 38").',
     tab: 'illnessOutcome',
   },
   {
     id: 'illnessMatchCount',
     label: 'Number of match illnesses',
-    description: 'Illnesses that occurred around matches.',
+    description: 'Illnesses that occurred around matches. For multiple populations, enter each on a new line.',
     tab: 'illnessOutcome',
   },
   {
     id: 'illnessTrainingCount',
     label: 'Number of training illnesses',
-    description: 'Illnesses that occurred during training.',
+    description: 'Illnesses that occurred during training. For multiple populations, enter each on a new line.',
     tab: 'illnessOutcome',
   },
   {
     id: 'illnessIncidenceOverall',
     label: 'Illness incidence (overall)',
-    description: 'Overall illness incidence rate.',
+    description: 'Overall illness incidence rate. For multiple populations, enter each on a new line.',
     tab: 'illnessOutcome',
   },
   {
     id: 'illnessIncidenceMatch',
     label: 'Match illnesses incidence',
-    description: 'Illness incidence during matches.',
+    description: 'Illness incidence during matches. For multiple populations, enter each on a new line.',
     tab: 'illnessOutcome',
   },
   {
     id: 'illnessIncidenceTraining',
     label: 'Training illnesses incidence',
-    description: 'Illness incidence during training.',
+    description: 'Illness incidence during training. For multiple populations, enter each on a new line.',
     tab: 'illnessOutcome',
   },
   {
@@ -505,7 +505,7 @@ const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
 // Metric-based manual tabs (Tabs 8–11)
 // ---------------------------------------------------------------------------
 export const extractionMetrics: Array<{ metric: ExtractionFieldMetric; label: string }> = [
-  { metric: 'prevalence', label: 'Prevalence' },
+  { metric: 'prevalence', label: 'Count' },
   { metric: 'incidence', label: 'Incidence' },
   { metric: 'burden', label: 'Burden' },
   { metric: 'severityMeanDays', label: 'Severity (mean days out)' },
@@ -523,7 +523,7 @@ type MetricDescription = {
 };
 
 const metricDescriptions: MetricDescription[] = [
-  { metric: 'prevalence', labelSuffix: 'Prevalence' },
+  { metric: 'prevalence', labelSuffix: 'Count' },
   { metric: 'incidence', labelSuffix: 'Incidence' },
   { metric: 'burden', labelSuffix: 'Burden' },
   { metric: 'severityMeanDays', labelSuffix: 'Severity (mean days out)' },
@@ -714,19 +714,19 @@ export const extractionTabMeta: Record<ExtractionTab, { title: string; descripti
   },
   injuryTissueType: {
     title: 'Injury tissue & type',
-    description: 'Manual entry capturing prevalence, incidence, burden, and severity by tissue/tissue type.',
+    description: 'Manual entry capturing count, incidence, burden, and severity by tissue/tissue type.',
   },
   injuryLocation: {
     title: 'Injury location',
-    description: 'Manual entry capturing prevalence, incidence, burden, and severity by anatomical location.',
+    description: 'Manual entry capturing count, incidence, burden, and severity by anatomical location.',
   },
   illnessRegion: {
     title: 'Illness region',
-    description: 'Manual entry capturing prevalence, incidence, burden, and severity by organ system.',
+    description: 'Manual entry capturing count, incidence, burden, and severity by organ system.',
   },
   illnessEtiology: {
     title: 'Illness etiology',
-    description: 'Manual entry capturing prevalence, incidence, burden, and severity by illness cause.',
+    description: 'Manual entry capturing count, incidence, burden, and severity by illness cause.',
   },
 };
 

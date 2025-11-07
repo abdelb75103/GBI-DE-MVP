@@ -402,23 +402,27 @@ const fetchExtractionById = async (id: string): Promise<ExtractionResult> => {
 const syncPopulationSlices = async (paperId: string) => {
   try {
     const supabase = supabaseClient();
+    
+    // Fetch ALL extractions for this paper (all tabs)
     const { data, error } = await supabase
       .from('extractions')
       .select('id, paper_id, tab, model, created_at, updated_at, extraction_fields(*)')
-      .eq('paper_id', paperId)
-      .eq('tab', 'participantCharacteristics')
-      .maybeSingle();
+      .eq('paper_id', paperId);
 
     if (error && error.code !== 'PGRST116') {
       throw error;
     }
 
-    const extraction =
-      data != null
-        ? mapExtractionRow(data as ExtractionRow & { extraction_fields: ExtractionFieldRow[] })
-        : null;
+    // Combine all fields from all tabs
+    const allFields: ExtractionFieldResult[] = [];
+    if (data) {
+      data.forEach((extraction) => {
+        const mapped = mapExtractionRow(extraction as ExtractionRow & { extraction_fields: ExtractionFieldRow[] });
+        allFields.push(...mapped.fields);
+      });
+    }
 
-    const groups: ParsedPopulationGroup[] = derivePopulationGroups(extraction?.fields ?? []);
+    const groups: ParsedPopulationGroup[] = derivePopulationGroups(allFields);
     const groupsByPosition = new Map<number, ParsedPopulationGroup>();
     groups.forEach((group) => groupsByPosition.set(group.position, group));
 
@@ -451,6 +455,14 @@ const syncPopulationSlices = async (paperId: string) => {
     const valueRows: PopulationValueRow[] = [];
 
     const insertedGroupRows = (insertedGroups ?? []) as PopulationGroupRow[];
+    
+    // Build a map of fieldId -> metric for quick lookup
+    const fieldMetricMap = new Map<string, string | null>();
+    allFields.forEach((field) => {
+      if (field.metric) {
+        fieldMetricMap.set(field.fieldId, field.metric);
+      }
+    });
 
     insertedGroupRows.forEach((groupRow) => {
       const parsed = groupsByPosition.get(groupRow.position);
@@ -458,6 +470,14 @@ const syncPopulationSlices = async (paperId: string) => {
         return;
       }
       Object.entries(parsed.values).forEach(([fieldId, value]) => {
+        // Skip if this value is actually a population label (not real data)
+        // This happens when standalone labels are stored in Count field to preserve populations
+        // If value matches the group label exactly, it's not real data
+        if (value && value.trim() === groupRow.label.trim()) {
+          return; // Skip this - it's a label, not a data value
+        }
+        
+        const metric = fieldMetricMap.get(fieldId) ?? null;
         valueRows.push({
           id: crypto.randomUUID(),
           population_group_id: groupRow.id,
@@ -465,7 +485,7 @@ const syncPopulationSlices = async (paperId: string) => {
           field_id: fieldId,
           source_field_id: fieldId,
           value: value ?? null,
-          metric: null,
+          metric: metric as SupabaseExtractionMetric | null,
           unit: null,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
@@ -1069,9 +1089,8 @@ export const mockDb = {
       await this.updatePaper(paperId, { title: updates.value });
     }
 
-    if (tab === 'participantCharacteristics') {
-      await syncPopulationSlices(paperId);
-    }
+    // Sync population slices for ANY tab (all tabs can have multi-population data)
+    await syncPopulationSlices(paperId);
 
     return fetchExtractionById(extractionRow.id);
   },
@@ -1107,9 +1126,8 @@ export const mockDb = {
       }
     }
 
-    if (tab === 'participantCharacteristics') {
-      await syncPopulationSlices(paperId);
-    }
+    // Sync population slices for ANY tab (all tabs can have multi-population data)
+    await syncPopulationSlices(paperId);
   },
 
   async listPopulationGroups(paperId: string): Promise<PopulationGroup[]> {
