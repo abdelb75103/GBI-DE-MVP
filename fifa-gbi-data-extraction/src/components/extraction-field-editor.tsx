@@ -55,11 +55,11 @@ export function ExtractionFieldEditor({
   
   // Get local value if it exists, otherwise use server value
   const localValue = getFieldValue(tab, definition.id);
-  const currentValue = localValue !== undefined ? localValue : (result?.value ?? '');
-  const [draftValue, setDraftValue] = useState(currentValue);
+  const currentValue = localValue !== undefined ? localValue : result?.value ?? '';
+  const [draftValue, setDraftValue] = useState(currentValue ?? '');
 
   useEffect(() => {
-    setDraftValue(currentValue);
+    setDraftValue(currentValue ?? '');
   }, [currentValue]);
 
   const isSelected = supportsAi ? selected : true;

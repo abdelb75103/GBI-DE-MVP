@@ -366,6 +366,8 @@ const ensureExtractionRow = async (
     throw new Error(`Failed to create extraction: ${insertError?.message ?? 'Unknown error'}`);
   }
 
+  const createdRow = created as ExtractionRow;
+
   // Auto-populate studyId field when creating studyDetails extraction
   if (tab === 'studyDetails') {
     const { data: paper } = await supabase
@@ -375,7 +377,7 @@ const ensureExtractionRow = async (
       .single();
 
     if (paper?.assigned_study_id) {
-      await upsertExtractionFieldRow(created.id, 'studyId', {
+      await upsertExtractionFieldRow(createdRow.id, 'studyId', {
         value: paper.assigned_study_id,
         status: 'reported',
         updatedBy: null,
@@ -383,7 +385,7 @@ const ensureExtractionRow = async (
     }
   }
 
-  return created as ExtractionRow;
+  return createdRow;
 };
 
 const fetchExtractionById = async (id: string): Promise<ExtractionResult> => {
@@ -484,7 +486,7 @@ const syncPopulationSlices = async (paperId: string) => {
     const insertedGroupRows = (insertedGroups ?? []) as PopulationGroupRow[];
     
     // Build a map of fieldId -> metric for quick lookup
-    const fieldMetricMap = new Map<string, string | null>();
+    const fieldMetricMap = new Map<string, ExtractionFieldMetric | null>();
     allFields.forEach((field) => {
       if (field.metric) {
         fieldMetricMap.set(field.fieldId, field.metric);
