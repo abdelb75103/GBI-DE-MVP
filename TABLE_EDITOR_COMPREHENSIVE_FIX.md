@@ -5,7 +5,7 @@
 ### ✅ Issue 1: Cannot Enter Population Label First
 **Problem:** Had to enter a value before you could type in the population label.
 
-**Root Cause:** Population labels were only extracted from "label — value" format. If you entered just a label with no value, it wasn't saved.
+**Root Cause:** Population labels were only extracted from "label - value" format. If you entered just a label with no value, it wasn't saved.
 
 **Fix:** 
 - Labels are now saved independently
@@ -35,9 +35,9 @@ const multiLineValue = updatedRows
     const hasValue = cellValue && cellValue.trim();
     const hasLabel = row.label && row.label.trim();
     
-    // Both label and value → "label — value"
+    // Both label and value → "label - value"
     if (hasLabel && hasValue) {
-      return `${row.label} — ${cellValue}`;
+      return `${row.label} - ${cellValue}`;
     }
     
     // Only value → just the value
@@ -64,7 +64,7 @@ const multiLineValue = updatedRows
 const lines = currentValue ? currentValue.split('\n') : [];
 
 // Parse each line
-const match = lineValue.match(/^(.+?)\s*[—-]\s*(.+)$/);
+const match = lineValue.match(/^(.+?)\s*[--]\s*(.+)$/);
 if (match) {
   row.label = match[1].trim();
   row.values[metric] = match[2].trim();
@@ -100,7 +100,7 @@ Value: "\n"  ← Two empty lines (Row 1 male, Row 2 female)
 **What Gets Saved:**
 ```
 Field: injuryTissueType_muscle_injury_prevalence
-Value: "male — 50\nfemale — 40"
+Value: "male - 50\nfemale - 40"
 ```
 
 ### Example 2: Blank Row in Middle
@@ -118,10 +118,10 @@ Value: "male — 50\nfemale — 40"
 
 **Saved to DB:**
 ```
-Count field: "U19 — 50\n\nU21 — 40"
+Count field: "U19 - 50\n\nU21 - 40"
                       ^^^ Empty line preserves Row 2
 
-Incidence field: "U19 — 3.2\n\nU21 — 2.8"
+Incidence field: "U19 - 3.2\n\nU21 - 2.8"
                             ^^^ Empty line preserves Row 2
 ```
 
@@ -156,12 +156,12 @@ Row 2: Study001, ..., 40, 2.8, ...  ← U21 (Row 2 was blank, so skipped)
 
 **Saved to DB:**
 ```
-Count: "male — 50\nfemale — 40"
+Count: "male - 50\nfemale - 40"
 
-Incidence: "male — 3.2\n"
+Incidence: "male - 3.2\n"
            ^^^ Empty line for female row (has label but no incidence value)
 
-Burden: "\nfemale — 2.1"
+Burden: "\nfemale - 2.1"
         ^^^ Empty line for male row (has label but no burden value)
 ```
 
@@ -251,7 +251,7 @@ Row 2: ..., 40, (blank), 2.1, ...  ← female
 - [ ] Save
 - [ ] Go back and enter "male" in Population
 - [ ] Check: Value "50" is still there
-- [ ] Check: Now shows "male — 50" in database
+- [ ] Check: Now shows "male - 50" in database
 
 ---
 

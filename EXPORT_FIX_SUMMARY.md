@@ -33,7 +33,7 @@
 2. **Table editor saves as multi-line format**:
    ```
    field_id: "injuryTissueType_muscle_tendon_prevalence"
-   value: "U19 — 50\nU21 — 40"
+   value: "U19 - 50\nU21 - 40"
    metric: "prevalence"
    ```
 

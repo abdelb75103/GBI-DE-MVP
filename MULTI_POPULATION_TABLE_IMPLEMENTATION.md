@@ -47,9 +47,9 @@ User sees:
 └─────────────┴────────────┴───────────┴────────┴──────────┴──────────┘
 
 Database stores (multi-line format):
-prevalence: "U19 — 150\nU21 — 120"
-incidence: "U19 — 3.2\nU21 — 2.8"
-burden: "U19 — 45\nU21 — 38"
+prevalence: "U19 - 150\nU21 - 120"
+incidence: "U19 - 3.2\nU21 - 2.8"
+burden: "U19 - 45\nU21 - 38"
 ...
 
 Export creates (2 rows):

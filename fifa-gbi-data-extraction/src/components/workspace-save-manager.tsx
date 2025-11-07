@@ -47,7 +47,7 @@ type WorkspaceSaveManagerProps = {
 const MAX_PENDING_UPDATES = 100; // Warn when exceeding this
 const AUTO_SAVE_THRESHOLD = 150; // Auto-save when reaching this
 
-export function WorkspaceSaveManager({ paperId, currentStatus, children }: WorkspaceSaveManagerProps) {
+export function WorkspaceSaveManager({ paperId, children }: WorkspaceSaveManagerProps) {
   const router = useRouter();
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -143,6 +143,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
       handleSave(false);
       setShouldAutoSave(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shouldAutoSave]);
 
   // Show warning when exceeding threshold
@@ -156,10 +157,9 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
 
   // Update a field locally (not saved to DB yet)
   const updateField = (update: FieldUpdate) => {
-    const key = `${update.tab}:${update.fieldId}`;
     setPendingUpdates((prev) => {
       const next = new Map(prev);
-      next.set(key, update);
+      next.set(`${update.tab}:${update.fieldId}`, update);
       return next;
     });
     markAsChanged();

@@ -15,11 +15,11 @@ This commit implements a simpler line-based format for multi-population data and
 Gender: male
         female
         
-Age: male — 20
-     female — 22
+Age: male - 20
+     female - 22
      
-Injuries: male — 150
-          female — 120
+Injuries: male - 150
+          female - 120
 ```
 
 **NEW Format (current):**
@@ -46,7 +46,7 @@ Injuries: 150
 - `levelOfPlay`: `professional\namateur`
 
 **All Other Fields** (values only, NO labels):
-- `meanAge`: `20.5\n22.1` (NOT ~~`male — 20.5\nfemale — 22.1`~~)
+- `meanAge`: `20.5\n22.1` (NOT ~~`male - 20.5\nfemale - 22.1`~~)
 - `sampleSizePlayers`: `62\n60`
 - `injuryTotalCount`: `150\n120`
 - `injuryIncidenceOverall`: `3.2\n2.8`
@@ -144,7 +144,7 @@ ageField.value.split(/\r?\n/).map((line) => line.trim()).forEach((segment, index
 2. **`fifa-gbi-data-extraction/src/lib/extraction/prompt.ts`**
    - Updated AI instructions for new line-based format
    - Added detailed examples for population-defining fields vs data fields
-   - Removed "label — value" format from instructions (kept for legacy support)
+   - Removed "label - value" format from instructions (kept for legacy support)
 
 3. **`fifa-gbi-data-extraction/src/lib/extraction/schema.ts`**
    - Updated field descriptions to reflect new format
@@ -162,12 +162,12 @@ ageField.value.split(/\r?\n/).map((line) => line.trim()).forEach((segment, index
 
 6. **`fifa-gbi-data-extraction/src/components/manual-group-table-editor.tsx`**
    - Updated to save labels separately from values
-   - Values stored without "label — " prefix
+   - Values stored without "label - " prefix
    - Labels preserved in first metric for row identification
 
 ### Export
 7. **`fifa-gbi-data-extraction/src/lib/exporters.ts`**
-   - Added safety check to strip "label — " prefix from values
+   - Added safety check to strip "label - " prefix from values
    - Prevents label artifacts in export data
 
 ---
@@ -185,7 +185,7 @@ ageField.value.split(/\r?\n/).map((line) => line.trim()).forEach((segment, index
 
 ## 🔄 Backward Compatibility
 
-- **Legacy "label — value" format still supported** in parsing logic
+- **Legacy "label - value" format still supported** in parsing logic
 - Old data will continue to work correctly
 - New entries use the simpler format
 - Mixed formats allowed (some fields old, some new)
@@ -271,14 +271,14 @@ New Format:
 - Population-defining fields (sex, ageCategory): identifiers only
   Example: sex: "male\nfemale"
 - All other fields: values only, NO labels
-  Example: meanAge: "20.5\n22.1" (NOT "male — 20.5\nfemale — 22.1")
+  Example: meanAge: "20.5\n22.1" (NOT "male - 20.5\nfemale - 22.1")
 - Line position links values across fields
 
 Major Changes:
 1. Updated AI extraction prompts to use simpler format
 2. Population-defining fields clearly marked in descriptions
 3. All field placeholders updated with new examples
-4. Parsing logic handles both new (values-only) and legacy (label — value) formats
+4. Parsing logic handles both new (values-only) and legacy (label - value) formats
 5. Table editor saves labels separately from values
 6. Export filter prevents population labels from appearing as data values
 
@@ -301,7 +301,7 @@ Technical Details:
 - Values only stored for non-blank segments
 - syncPopulationSlices filters out label artifacts in exports
 - parseEntry distinguishes population-defining fields from data fields
-- Backward compatible with legacy 'label — value' format
+- Backward compatible with legacy 'label - value' format
 
 Files Modified:
 - src/lib/extraction/prompt.ts - AI instructions for new format

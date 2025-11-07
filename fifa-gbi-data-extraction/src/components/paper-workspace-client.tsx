@@ -177,7 +177,7 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
             </p>
             <div className="mt-5 space-y-5">
               <NoteComposer paperId={paper.id} />
-              <NoteList initialNotes={notes} />
+              <NoteList initialNotes={notes} paperId={paper.id} />
             </div>
           </div>
         </div>

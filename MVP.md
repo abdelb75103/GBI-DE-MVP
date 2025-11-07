@@ -1,4 +1,4 @@
-# Fifa GBI Data Extraction Assistant — **MVP PRD (Scaffold-First, No Auth)**
+# Fifa GBI Data Extraction Assistant - **MVP PRD (Scaffold-First, No Auth)**
 
 > Version: 0.9 (MVP)  
 > Date: 2025-10-24  
@@ -34,7 +34,7 @@
 - Typical 10–15 page PDF auto-extract completes in **≤ 30 s** on clean text-layer PDFs.
 
 ---
-## 3) Source Schema (cleaned — no 'Unnamed')
+## 3) Source Schema (cleaned - no 'Unnamed')
 
 **Auto-extract fields** = **Tabs 1–4** (listed in order).
 **Export order** = **All tabs in the workbook** (top to bottom), **every column included**.
@@ -1423,7 +1423,7 @@
    - Low-confidence fields are highlighted; I can confirm or override.
 
 4. **OCR fallback**  
-   - If the PDF has no text layer, I’m prompted to **Run OCR**; results are flagged “OCR used—verify carefully”.
+   - If the PDF has no text layer, I’m prompted to **Run OCR**; results are flagged “OCR used-verify carefully”.
 
 5. **Export**  
    - From the list, I export CSV/JSON for the current filter; columns appear in **exact Excel order** (all tabs).  
@@ -1456,7 +1456,7 @@ Admin override path is stubbed (record a reason), to be secured when auth lands.
 ## 7) Architecture (MVP build)
 
 - **Frontend**: Next.js + TypeScript + Tailwind; **PDF.js** viewer.  
-- **Server**: Firebase **Cloud Functions** (or Supabase Edge Functions) — **all** Gemini calls here.  
+- **Server**: Firebase **Cloud Functions** (or Supabase Edge Functions) - **all** Gemini calls here.  
 - **DB/Storage**:  
   - Preferred: **Supabase (Postgres + RLS + Storage)**.  
   - Alt (Firebase-native): **Firestore + Cloud Storage** (strict Security Rules later).  

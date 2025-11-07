@@ -107,9 +107,9 @@ const mapPopulationGroups = (
       values: (bucket.get(group.id) ?? []).map((entry) => {
         let value = entry.value ?? null;
         
-        // Safety: Strip any "label — " prefix that might have leaked through
+        // Safety: Strip any "label: " or "label - " prefix that might have leaked through (backward compatibility)
         if (value && typeof value === 'string') {
-          const labelMatch = value.match(/^.+?\s*[:\-–—]\s*(.+)$/);
+          const labelMatch = value.match(/^.+?\s*[:\-–-]\s*(.+)$/);
           if (labelMatch) {
             value = labelMatch[1].trim();
           }
@@ -240,9 +240,9 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
           value = field?.value ?? null;
         }
 
-        // Safety: Strip any "label — " prefix that might have leaked through
+        // Safety: Strip any "label: " or "label - " prefix that might have leaked through (backward compatibility)
         if (value && typeof value === 'string') {
-          const labelMatch = value.match(/^.+?\s*[:\-–—]\s*(.+)$/);
+          const labelMatch = value.match(/^.+?\s*[:\-–-]\s*(.+)$/);
           if (labelMatch) {
             value = labelMatch[1].trim();
           }

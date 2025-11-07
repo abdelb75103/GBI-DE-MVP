@@ -1,4 +1,6 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 
 const prerequisites = [
   'Read the Project Overview so you understand the goals, scope, and terminology before extracting.',
@@ -69,23 +71,11 @@ const donts = [
   'Do not rely on AI to make final decisions without human review.',
 ];
 
-const scenarios = [
-  'Multiple populations/ages/tournaments: list each on its own line and maintain consistent ordering.',
-  'Ambiguous or missing data: leave blank and add a Note describing what you checked.',
-  'Poor scans or OCR issues: Flag with a short explanation if you cannot reliably extract data.',
-];
-
 const checklist = [
   'AI-assisted tabs reviewed and corrected manually.',
   'Injury & Illness tabs completed where data exists; blanks left when not reported.',
   'Multi-value fields use one value per line with consistent row alignment.',
   'Status, Notes, and Flags updated appropriately; workspace saved.',
-];
-
-const appendixPlaceholders = [
-  'Exact names of the first four AI-assisted tabs.',
-  'Full list of available status values and their definitions.',
-  'Location and label of the Save action in each layout (Accordion, Focus, Full Screen).',
 ];
 
 const stepCardGradients = [
@@ -104,13 +94,49 @@ const stepAccentColors = [
   { border: 'bg-cyan-500/80', circle: 'bg-cyan-500', bullet: 'bg-cyan-500' },
 ];
 
-export const metadata: Metadata = {
-  title: 'Extraction Instructions | FIFA GBI Data Extraction Assistant',
-  description:
-    'Step-by-step instructions for researchers performing manual extractions with AI assistance in the FIFA GBI MVP app.',
-};
+type TabType = 'workflow' | 'codebook';
 
 export default function ExtractionInstructionsPage() {
+  const [activeTab, setActiveTab] = useState<TabType>('workflow');
+
+  return (
+    <div className="space-y-8">
+      {/* Tab Navigation */}
+      <div className="flex items-center justify-center border-b border-slate-200/70">
+        <nav className="inline-flex gap-1 rounded-full bg-slate-100/60 p-1 shadow-inner">
+          <button
+            type="button"
+            onClick={() => setActiveTab('workflow')}
+            className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${
+              activeTab === 'workflow'
+                ? 'bg-white text-slate-900 shadow'
+                : 'text-slate-500 hover:text-slate-700'
+            }`}
+          >
+            Extraction Workflow
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('codebook')}
+            className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${
+              activeTab === 'codebook'
+                ? 'bg-white text-slate-900 shadow'
+                : 'text-slate-500 hover:text-slate-700'
+            }`}
+          >
+            Codebook
+          </button>
+        </nav>
+      </div>
+
+      {/* Tab Content */}
+      {activeTab === 'workflow' && <WorkflowTab />}
+      {activeTab === 'codebook' && <CodebookTab />}
+    </div>
+  );
+}
+
+function WorkflowTab() {
   return (
     <div className="space-y-12">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br from-white via-indigo-50/30 to-emerald-50/30 p-10 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
@@ -280,26 +306,6 @@ export default function ExtractionInstructionsPage() {
         </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-amber-200/50 bg-gradient-to-br from-amber-50/50 via-white to-white p-8 shadow-lg ring-1 ring-amber-200/30 backdrop-blur">
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-amber-500 to-amber-300" />
-            <h2 className="text-2xl font-semibold text-slate-900">Common scenarios</h2>
-          </div>
-          <p className="text-sm leading-relaxed text-slate-600">
-            Reference these quick notes for the situations researchers encounter most often during extraction.
-          </p>
-        </div>
-        <ul className="space-y-3.5 text-sm leading-relaxed text-slate-700">
-          {scenarios.map((item, index) => (
-            <li key={item} className="flex gap-3 group">
-              <span aria-hidden className="mt-1 block h-2 w-2 flex-shrink-0 rounded-full bg-amber-500 shadow-sm ring-2 ring-amber-100 group-hover:scale-110 transition-transform" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <section className="grid gap-6 rounded-3xl border border-emerald-200/50 bg-gradient-to-br from-emerald-50/50 via-white to-white p-8 shadow-lg ring-1 ring-emerald-200/30 backdrop-blur lg:grid-cols-5">
         <div className="lg:col-span-2 lg:border-r lg:border-emerald-200/40 lg:pr-8">
           <div className="flex items-center gap-2 mb-3">
@@ -321,28 +327,543 @@ export default function ExtractionInstructionsPage() {
           </ul>
         </div>
       </section>
+    </div>
+  );
+}
 
-      <section className="space-y-5 rounded-3xl border border-dashed border-slate-300/70 bg-gradient-to-br from-slate-50/40 via-white to-slate-50/30 p-8 text-sm leading-relaxed text-slate-600 shadow-md">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-200/70 text-slate-600">
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-          </div>
-          <h2 className="text-lg font-semibold text-slate-900">Appendix: to be confirmed</h2>
+function CodebookTab() {
+  return (
+    <div className="space-y-8">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br from-white via-violet-50/30 to-indigo-50/30 p-10 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <div className="absolute -left-12 -top-12 h-56 w-56 rounded-full bg-violet-400/25 blur-3xl" aria-hidden />
+        <div className="absolute -bottom-16 -right-12 h-64 w-64 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
+        <div className="relative z-10 space-y-4">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-violet-100 to-indigo-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-violet-700 shadow-sm ring-1 ring-violet-200/50">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-pulse" aria-hidden />
+            Consensus definitions
+          </span>
+          <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">Data extraction codebook</h1>
+          <p className="max-w-3xl text-base leading-relaxed text-slate-600">
+            Standardized definitions from consensus statements in football injury and illness surveillance. 
+            Use these as reference when extracting data to ensure consistency with international standards.
+          </p>
         </div>
-        <p className="text-slate-600">
-          Capture these details once the UI labels and status values are finalised so this page stays fully accurate.
-        </p>
-        <ul className="space-y-3">
-          {appendixPlaceholders.map((item) => (
-            <li key={item} className="flex gap-3">
-              <span aria-hidden className="mt-1 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-400 shadow-sm ring-2 ring-slate-200" />
-              <span className="text-slate-600">{item}</span>
-            </li>
-          ))}
-        </ul>
       </section>
+
+      {/* Injury & Illness Definitions */}
+      <section className="space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/50 via-white to-white p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-indigo-300" />
+            <h2 className="text-2xl font-semibold text-slate-900">Injury &amp; illness definitions</h2>
+          </div>
+          <p className="text-sm text-slate-600">
+            When completing the codebook fields, capture how the paper defines injury and illness, specifically whether
+            it uses a medical-attention threshold, a time-loss threshold, or both. Use the summaries below to stay
+            consistent.
+          </p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          <div className="space-y-2 rounded-2xl border border-emerald-200/50 bg-gradient-to-br from-emerald-50/50 to-white p-5">
+            <h3 className="font-semibold text-emerald-900">Injury definition</h3>
+            <p className="text-sm leading-relaxed text-slate-700">
+              Physical complaint arising from football participation (training or match). Capture whether the paper only
+              records injuries that remove the player (time-loss), those that trigger medical review, or both.
+            </p>
+          </div>
+          <div className="space-y-2 rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-50/50 to-white p-5">
+            <h3 className="font-semibold text-amber-900">Illness definition</h3>
+            <p className="text-sm leading-relaxed text-slate-700">
+              Non-traumatic health complaint (e.g., infections, environmental, chronic). Again, record whether the
+              authors limited reporting to medical-attention cases, time-loss cases, or both.
+            </p>
+          </div>
+          <div className="space-y-3 rounded-2xl border border-rose-200/50 bg-gradient-to-br from-rose-50/50 to-white p-5">
+            <h3 className="font-semibold text-rose-900">Medical-attention vs time-loss</h3>
+            <ul className="space-y-1 text-sm leading-relaxed text-slate-700">
+              <li><strong>Medical-attention:</strong> Player is assessed/treated by qualified staff, regardless of time missed.</li>
+              <li><strong>Time-loss:</strong> Player cannot complete full training or match participation (current or future).</li>
+              <li><strong>Both:</strong> Study records a case if either threshold is met.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Severity Classification */}
+      <section className="space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/50 via-white to-violet-50/30 p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-violet-500 to-violet-300" />
+            <h2 className="text-2xl font-semibold text-slate-900">Severity classification</h2>
+          </div>
+          <p className="text-sm text-slate-600">Football-specific injury severity bands based on days until return to full training</p>
+        </div>
+        <div className="space-y-3">
+          <div className="rounded-2xl border border-violet-200/50 bg-gradient-to-r from-violet-50/50 to-white p-5">
+            <div className="space-y-4">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Minimal</div>
+                  <div className="text-lg font-bold text-slate-900">0 days</div>
+                </div>
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mild</div>
+                  <div className="text-lg font-bold text-slate-900">1-3 days</div>
+                </div>
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mild</div>
+                  <div className="text-lg font-bold text-slate-900">4-7 days</div>
+                </div>
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Moderate</div>
+                  <div className="text-lg font-bold text-slate-900">8-28 days</div>
+                </div>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Severe</div>
+                  <div className="text-lg font-bold text-slate-900">29-90 days</div>
+                </div>
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Severe</div>
+                  <div className="text-lg font-bold text-slate-900">91-180 days</div>
+                </div>
+                <div className="space-y-1 rounded-xl border border-slate-200 bg-white p-3">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Very severe</div>
+                  <div className="text-lg font-bold text-slate-900">&gt;180 days</div>
+                </div>
+              </div>
+              <p className="text-xs italic text-slate-600">
+                Note: Day of injury is counted as day zero. Return to football is the date when the player returns 
+                to full, unrestricted team training without modifications in duration or activities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recurrent Injury Definition */}
+      <section className="space-y-4 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/40 via-white to-emerald-50/40 p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-1 rounded-full bg-gradient-to-b from-emerald-500 to-emerald-300" />
+          <h2 className="text-2xl font-semibold text-slate-900">Recurrent injury definition</h2>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-600">
+          Reference this wording when filling the codebook. We only capture whether the paper defines recurrence in this
+          football consensus way, not the sub-categories.
+        </p>
+        <div className="rounded-3xl border border-emerald-200/60 bg-white/90 p-6 shadow-inner">
+          <p className="text-base leading-relaxed text-slate-800">
+            <strong>Recurrent injury:</strong> the same injury type and anatomical site that occurs after the player has
+            fully returned to unrestricted training or match play following a previous injury.
+          </p>
+        </div>
+      </section>
+
+      {/* Exposure Types */}
+      <section className="space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/50 via-white to-indigo-50/30 p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-indigo-300" />
+            <h2 className="text-2xl font-semibold text-slate-900">Exposure types</h2>
+          </div>
+          <p className="text-sm text-slate-600">Categories of player participation for exposure measurement</p>
+        </div>
+        <div className="space-y-4">
+          <div className="space-y-2 rounded-2xl border border-indigo-200/50 bg-gradient-to-br from-indigo-50/50 to-white p-5">
+            <h3 className="font-semibold text-indigo-900">Match Exposure</h3>
+            <p className="text-sm leading-relaxed text-slate-700">
+              Organized scheduled play between opposing teams from different clubs. Internal practice matches 
+              count as training exposure, not match exposure.
+            </p>
+          </div>
+          <div className="space-y-2 rounded-2xl border border-teal-200/50 bg-gradient-to-br from-teal-50/50 to-white p-5">
+            <h3 className="font-semibold text-teal-900">Training Exposure</h3>
+            <p className="text-sm leading-relaxed text-slate-700">
+              Team-based or individual football activities under team staff guidance aimed at developing skills, 
+              tactics, or physical conditioning. Excludes rehabilitation sessions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mechanism Categories */}
+      <section className="space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/50 via-white to-amber-50/30 p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-amber-500 to-amber-300" />
+            <h2 className="text-2xl font-semibold text-slate-900">Mechanism categories</h2>
+          </div>
+          <p className="text-sm text-slate-600">Classification of injury mode of onset and contact mechanisms</p>
+        </div>
+        <div className="space-y-5">
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-700">Mode of Onset</h3>
+            <div className="grid gap-3 md:grid-cols-3">
+              <div className="space-y-2 rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-50/50 to-white p-4">
+                <h4 className="font-semibold text-amber-900">Acute</h4>
+                <p className="text-sm text-slate-700">Single, identifiable traumatic event</p>
+              </div>
+              <div className="space-y-2 rounded-2xl border border-orange-200/50 bg-gradient-to-br from-orange-50/50 to-white p-4">
+                <h4 className="font-semibold text-orange-900">Repetitive</h4>
+                <p className="text-sm text-slate-700">Gradual onset from repeated microtrauma</p>
+              </div>
+              <div className="space-y-2 rounded-2xl border border-rose-200/50 bg-gradient-to-br from-rose-50/50 to-white p-4">
+                <h4 className="font-semibold text-rose-900">Mixed</h4>
+                <p className="text-sm text-slate-700">Combination of acute and repetitive mechanisms</p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-700">Contact classification</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-2 rounded-2xl border border-slate-200 bg-white/90 p-4">
+                <h4 className="text-base font-semibold text-slate-900">Contact</h4>
+                <p className="text-sm text-slate-700">
+                  Impact with another player, the ball, equipment, or the environment that directly contributes to the
+                  injury. Includes tackles, collisions, and being struck.
+                </p>
+              </div>
+              <div className="space-y-2 rounded-2xl border border-slate-200 bg-white/90 p-4">
+                <h4 className="text-base font-semibold text-slate-900">Non-contact</h4>
+                <p className="text-sm text-slate-700">
+                  No contact event triggered the injury. Typically linked to sprinting, cutting, or overuse actions.
+                  Use this category for every mechanism that lacks direct contact.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Field Guide - Simplified */}
+      <section className="space-y-4 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/50 via-white to-cyan-50/30 p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-cyan-500 to-cyan-300" />
+            <h2 className="text-2xl font-semibold text-slate-900">Field guide</h2>
+          </div>
+          <p className="text-sm text-slate-600">
+            Click any section to see what to enter and examples. Keep it simple: copy what you see in the paper.
+          </p>
+        </div>
+
+        <SimpleFieldGroup title="Study Details">
+          <SimpleField 
+            name="Lead Author"
+            example="Smith JA"
+            paperExample="Smith JA, Jones B, et al."
+            tip="Surname and initials"
+          />
+          <SimpleField 
+            name="Year of Publication"
+            example="2023"
+            paperExample="Published in 2023"
+          />
+          <SimpleField 
+            name="Study Design"
+            example="prospective cohort"
+            paperExample="This prospective cohort study followed players over 3 seasons"
+            choices={["prospective cohort", "retrospective cohort", "cross-sectional", "case series", "case-control", "other"]}
+            tip="Pick the match, not the full sentence"
+          />
+        </SimpleFieldGroup>
+
+        <SimpleFieldGroup title="Participant Characteristics">
+          <SimpleField 
+            name="FIFA Discipline"
+            example="futsal"
+            paperExample="Data from the FIFA Futsal World Cup"
+            choices={["11-a-side", "futsal", "beach soccer", "amputee", "other"]}
+          />
+          <SimpleField 
+            name="Country"
+            example="England"
+            paperExample="Study conducted in England"
+          />
+          <SimpleField 
+            name="Level of Play"
+            example="professional"
+            paperExample="Professional players from the Premier League"
+            choices={["professional", "semi-professional", "amateur", "youth elite", "youth recreational", "mixed"]}
+          />
+          <SimpleField 
+            name="Sex"
+            example="male"
+            paperExample="Study included 62 male players"
+            choices={["male", "female", "mixed"]}
+          />
+          <SimpleField 
+            name="Age Category"
+            example="U19"
+            paperExample="U19 and U21 age groups participated"
+            tip="Use for specific age groups like U19, U21, senior"
+          />
+          <SimpleField 
+            name="Mean Age"
+            example="20.5 ± 2.1"
+            paperExample="Mean age was 20.5 ± 2.1 years"
+            tip="Copy the numbers, skip 'years'"
+          />
+          <SimpleField 
+            name="Sample Size"
+            example="62"
+            paperExample="Study included 62 male players"
+            tip="Just the number, no words"
+          />
+          <SimpleField 
+            name="Number of Teams"
+            example="16"
+            paperExample="16 teams participated in the tournament"
+          />
+          <SimpleField 
+            name="Study Period"
+            example="3"
+            paperExample="Data collected over 3 years"
+            tip="In years"
+          />
+          <SimpleField 
+            name="Observation Duration"
+            example="4 seasons"
+            paperExample="Players were followed for 4 seasons"
+          />
+        </SimpleFieldGroup>
+
+        <SimpleFieldGroup title="Definitions">
+          <SimpleField 
+            name="Injury Definition"
+            example="time-loss"
+            paperExample="Injuries were defined as time-loss injuries preventing participation..."
+            choices={["medical attention", "time-loss", "medical attention or time-loss"]}
+            tip="Pick the closest match, not the full sentence"
+          />
+          <SimpleField 
+            name="Illness Definition"
+            example="medical attention"
+            paperExample="Illnesses requiring medical attention were recorded"
+            choices={["medical attention", "time-loss", "medical attention or time-loss"]}
+            tip="Pick the closest match"
+          />
+          <SimpleField 
+            name="Incidence Definition"
+            example="per 1000 player-hours"
+            paperExample="Injury incidence was calculated per 1000 player-hours"
+          />
+          <SimpleField 
+            name="Burden Definition"
+            example="days lost per 1000 player-hours"
+            paperExample="Burden was calculated as days lost per 1000 player-hours"
+          />
+          <SimpleField 
+            name="Severity Definition"
+            example="Minimal (0 days), Mild (1-7 days), Moderate (8-28 days), Severe (>28 days)"
+            paperExample="Severity was classified as minimal (0 days)..."
+            tip="Copy how they categorize severity"
+          />
+          <SimpleField 
+            name="Recurrent Injury Definition"
+            example="Same injury type and site after full return to participation"
+            paperExample="A recurrent injury was defined as the same type and site after the player returned to full training/match availability"
+            tip="Capture only the definition (e.g., same type & site post–return). Do not list early/late categories."
+          />
+          <SimpleField 
+            name="Mechanism Reporting"
+            example="contact vs non-contact"
+            paperExample="Mechanism was classified as either contact or non-contact"
+          />
+        </SimpleFieldGroup>
+
+        <SimpleFieldGroup title="Exposure Data">
+          <SimpleField 
+            name="Season Length"
+            example="38"
+            paperExample="The season lasted 38 weeks"
+            tip="In weeks, just the number"
+          />
+          <SimpleField 
+            name="Number of Seasons"
+            example="4"
+            paperExample="Data from 4 consecutive seasons"
+          />
+          <SimpleField 
+            name="Exposure Unit"
+            example="player-hours"
+            paperExample="Total match exposure was 8,500 player-hours"
+            choices={["hours", "player-hours", "athlete-exposures", "match-exposures", "sessions", "other"]}
+          />
+          <SimpleField 
+            name="Total Exposure"
+            example="15000"
+            paperExample="Total exposure was 15,000 player-hours"
+            tip="Just the number, no unit"
+          />
+          <SimpleField 
+            name="Match Exposure"
+            example="8500"
+            paperExample="Total match exposure was 8,500 player-hours"
+            tip="Just the number. Unit goes in field above."
+          />
+          <SimpleField 
+            name="Training Exposure"
+            example="6500"
+            paperExample="Training exposure was 6,500 player-hours"
+            tip="Just the number, no 'hours'"
+          />
+        </SimpleFieldGroup>
+
+        <SimpleFieldGroup title="Injury & Illness Data (Manual Tabs)">
+          <SimpleField 
+            name="Injury Count"
+            example="150"
+            paperExample="A total of 150 injuries were recorded"
+            tip="Just the number"
+          />
+          <SimpleField 
+            name="Injury Incidence"
+            example="3.2"
+            paperExample="Injury incidence was 3.2 per 1000 player-hours"
+            tip="Just the number, no 'per 1000h'"
+          />
+          <SimpleField 
+            name="Recurrence Rate"
+            example="15.2%"
+            paperExample="Recurrence rate was 15.2%"
+            tip="Keep the % symbol"
+          />
+        </SimpleFieldGroup>
+
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+          <h3 className="font-semibold text-amber-900 mb-3">When there are multiple groups</h3>
+          <div className="space-y-3 text-sm text-slate-700">
+            <div className="bg-white rounded-lg p-3 border border-amber-100">
+              <p className="text-xs text-slate-500 mb-2">Paper says:</p>
+              <p className="text-slate-900">"62 males with 150 injuries and 60 females with 120 injuries"</p>
+            </div>
+            <div className="bg-white rounded-lg p-3 border border-amber-100">
+              <p className="text-xs text-slate-500 mb-2">Enter each on a new line:</p>
+              <div className="space-y-1.5 font-mono text-xs">
+                <div className="flex items-center gap-3">
+                  <span className="text-slate-500 w-32">Sample Size:</span>
+                  <div className="flex-1 bg-slate-50 rounded px-2 py-1">
+                    <div>62</div>
+                    <div>60</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-slate-500 w-32">Injury Count:</span>
+                  <div className="flex-1 bg-slate-50 rounded px-2 py-1">
+                    <div>150</div>
+                    <div>120</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-amber-800 italic">Each line = one group. Keep same order across all fields.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Reference */}
+      <section className="rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-50/30 via-white to-slate-50/30 p-8 shadow-lg ring-1 ring-slate-200/60">
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-gradient-to-b from-slate-500 to-slate-300" />
+            <h2 className="text-xl font-semibold text-slate-900">References</h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-slate-700">
+            <p>
+              <strong>Fuller CW et al.</strong> Consensus statement on injury definitions and data collection procedures in studies of football injuries. 
+              <em> Br J Sports Med.</em> 2006;40:193–201. doi:10.1136/bjsm.2005.025270.
+            </p>
+            <p>
+              <strong>Bahr R et al.</strong> International Olympic Committee consensus statement: methods for recording and reporting of epidemiological data on injury and illness in sport 2020. 
+              <em> Br J Sports Med.</em> 2020;54:372–389. doi:10.1136/bjsports-2019-101969.
+            </p>
+            <p>
+              <strong>Waldén M et al.</strong> Football-specific extension of the IOC consensus statement. 
+              <em> Br J Sports Med.</em> 2023;57:1341–1350. doi:10.1136/bjsports-2022-106405.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// Simple Field Group - Collapsible
+function SimpleFieldGroup({ title, children }: { title: string; children: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border border-slate-200 rounded-xl bg-white overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 text-left hover:bg-slate-50 transition"
+      >
+        <span className="font-medium text-slate-900">{title}</span>
+        <svg 
+          className={`h-4 w-4 text-slate-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isOpen && (
+        <div className="border-t border-slate-100 p-4 space-y-4 bg-slate-50">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Simple Field - Shows what to enter
+type SimpleFieldProps = {
+  name: string;
+  example: string;
+  paperExample?: string;
+  choices?: string[];
+  tip?: string;
+};
+
+function SimpleField({ name, example, paperExample, choices, tip }: SimpleFieldProps) {
+  return (
+    <div className="bg-white rounded-lg border border-slate-200 p-3 text-sm">
+      <div className="font-medium text-slate-900 mb-2">{name}</div>
+      
+      {paperExample && (
+        <div className="mb-2 p-2 bg-blue-50 rounded text-xs">
+          <div className="text-blue-600 font-medium mb-1">Paper says:</div>
+          <div className="text-slate-700 italic">"{paperExample}"</div>
+        </div>
+      )}
+
+      <div className="p-2 bg-emerald-50 rounded">
+        <div className="text-emerald-700 font-medium text-xs mb-1">You enter:</div>
+        <code className="text-slate-900">{example}</code>
+      </div>
+
+      {choices && (
+        <div className="mt-2 pt-2 border-t border-slate-100">
+          <div className="text-xs text-slate-500 mb-1.5">Choose from:</div>
+          <div className="flex flex-wrap gap-1">
+            {choices.map((choice) => (
+              <span key={choice} className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded">
+                {choice}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tip && (
+        <div className="mt-2 text-xs text-slate-500 italic">
+          💡 {tip}
+        </div>
+      )}
     </div>
   );
 }

@@ -463,7 +463,6 @@ export interface Database {
       export_kind: ExportKind;
       export_status: ExportStatus;
       extraction_tab: ExtractionTab;
-      extraction_updated_by: ExtractionUpdatedBy;
     };
   };
 }

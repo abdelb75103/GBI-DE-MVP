@@ -856,6 +856,15 @@ export const mockDb = {
     return mapNoteRow(data as NoteRow);
   },
 
+  async deleteNote(noteId: string): Promise<void> {
+    const supabase = supabaseClient();
+    const { error } = await supabase.from('paper_notes').delete().eq('id', noteId);
+
+    if (error) {
+      throw new Error(`Failed to delete note: ${error.message}`);
+    }
+  },
+
   async listExports(): Promise<ExportJob[]> {
     const supabase = supabaseClient();
     const { data, error } = await supabase

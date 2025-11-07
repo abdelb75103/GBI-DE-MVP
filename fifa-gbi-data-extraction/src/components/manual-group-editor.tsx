@@ -23,15 +23,28 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
   const { updateField, getFieldValue } = useContext(WorkspaceSaveContext);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
 
+  // Sync drafts from server/local data (intentional state update in effect)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    const next: Record<string, string> = {};
-    for (const field of fields) {
-      // Check for local value first, then server value
-      const localValue = getFieldValue(tab, field.id);
-      const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
-      next[field.id] = currentValue ?? '';
-    }
-    setDrafts(next);
+    setDrafts((prevDrafts) => {
+      const next: Record<string, string> = {};
+      let hasChanges = false;
+      
+      for (const field of fields) {
+        // Check for local value first, then server value
+        const localValue = getFieldValue(tab, field.id);
+        const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
+        next[field.id] = currentValue ?? '';
+        
+        // Check if value changed
+        if (prevDrafts[field.id] !== next[field.id]) {
+          hasChanges = true;
+        }
+      }
+      
+      // Only update if there are actual changes to avoid cascading renders
+      return hasChanges ? next : prevDrafts;
+    });
   }, [fields, results, getFieldValue, tab]);
 
   const handleChange = (field: ExtractionFieldDefinition, value: string) => {

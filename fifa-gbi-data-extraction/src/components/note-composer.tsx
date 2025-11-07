@@ -12,16 +12,16 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
   const [body, setBody] = useState('');
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const saveNote = () => {
     if (!body.trim()) {
-      setError('Note cannot be empty');
       return;
     }
 
     startTransition(async () => {
       setError(null);
+      setSuccessMessage(null);
       
       try {
         const response = await fetch(`/api/papers/${paperId}/notes`, {
@@ -44,12 +44,29 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
         }
 
         setBody('');
+        setSuccessMessage('Note saved');
+        setTimeout(() => setSuccessMessage(null), 2000);
         router.refresh();
       } catch (err) {
         setError('Failed to save note. Please try again.');
         console.error('Note save error:', err);
       }
     });
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!body.trim()) {
+      setError('Note cannot be empty');
+      return;
+    }
+    saveNote();
+  };
+
+  const handleBlur = () => {
+    if (body.trim()) {
+      saveNote();
+    }
   };
 
   return (
@@ -61,12 +78,14 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
         id="note"
         name="note"
         className="h-28 w-full rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-        placeholder="Capture extraction decisions or follow-ups..."
+        placeholder="Capture extraction decisions or follow-ups... (auto-saves when you click outside)"
         value={body}
         onChange={(event) => setBody(event.target.value)}
+        onBlur={handleBlur}
         disabled={isPending}
       />
       {error ? <p className="text-xs font-medium text-rose-500">{error}</p> : null}
+      {successMessage ? <p className="text-xs font-medium text-emerald-600">{successMessage}</p> : null}
       <div className="flex justify-end">
         <button
           type="submit"

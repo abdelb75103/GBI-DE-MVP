@@ -1,17 +1,17 @@
 # New Simpler Multi-Population Format
 
-## ✅ Major Change: Line-Based Format (NO More "label — value" Everywhere)
+## ✅ Major Change: Line-Based Format (NO More "label - value" Everywhere)
 
 ### OLD Format (What We Had):
 ```
 Gender: male
         female
         
-Age: male — 20
-     female — 22
+Age: male - 20
+     female - 22
      
-Injuries: male — 150
-          female — 120
+Injuries: male - 150
+          female - 120
 ```
 
 ### NEW Format (What We Have Now):
@@ -44,7 +44,7 @@ These fields define the populations. Enter **identifiers only**, one per line:
 ### All Other Fields (Values Only, NO Labels)
 All other fields contain **values only**. The line number links them to the populations:
 
-- **Mean Age**: `20.5\n22.1` (NOT ~~`male — 20.5\nfemale — 22.1`~~)
+- **Mean Age**: `20.5\n22.1` (NOT ~~`male - 20.5\nfemale - 22.1`~~)
 - **Sample Size**: `62\n60`
 - **Match Exposure**: `250 h\n210 h`
 - **Total Injuries**: `150\n120`
@@ -55,7 +55,7 @@ All other fields contain **values only**. The line number links them to the popu
 ## What Changed
 
 ### 1. ✅ AI Prompt Updated
-**Before:** Told AI to format everything as "label — value"  
+**Before:** Told AI to format everything as "label - value"  
 **After:** Only population-defining fields use identifiers, all other fields are values only
 
 **Example AI Output:**
@@ -80,7 +80,7 @@ Hover info icons now show the new simpler format:
 ### 4. ✅ Parsing Logic Updated
 - Recognizes `ageCategory` and `sex` as population-defining fields
 - All other fields parsed as pure values (no label extraction)
-- Legacy "label — value" format still supported for backward compatibility
+- Legacy "label - value" format still supported for backward compatibility
 
 ### 5. ✅ Table Editor Updated
 - Saves population labels separately (not mixed with values)
@@ -131,7 +131,7 @@ STUDY001, "...", extracted, ..., 120, 2.8, ...
 
 ## Migration Notes
 
-- **Old data still works**: Legacy "label — value" format is still parsed correctly
+- **Old data still works**: Legacy "label - value" format is still parsed correctly
 - **New entries use new format**: AI and manual entry now use the simpler format
 - **Mixed formats OK**: Can have some fields with old format, some with new
 

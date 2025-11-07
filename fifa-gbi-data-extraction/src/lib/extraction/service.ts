@@ -29,8 +29,8 @@ const MAX_DOCUMENT_CHARS = 60_000;
 const extractionItemSchema = z.object({
   key: z.string(),
   value: z.union([z.string(), z.null()]).optional(),
-  source: z.string().optional(),
-});
+  source: z.union([z.string(), z.null()]).optional().nullable(),
+}).passthrough(); // Allow extra fields, be lenient
 
 export async function extractTab(options: ExtractTabOptions): Promise<TabExtractionResponse> {
   const tabFields = filterTabFields(options.tab, options.fieldIds);
@@ -93,13 +93,48 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
     );
   }
 
-  const validated = z.array(extractionItemSchema).parse(parsed);
-  const fields = mapValidatedResults(tabFields, validated);
+  // Use safeParse for lenient validation - don't fail on minor issues
+  const validationResult = z.array(extractionItemSchema).safeParse(parsed);
+  
+  if (!validationResult.success) {
+    // Log the error but try to continue with partial data
+    console.warn(`[extractTab] Validation warnings for ${options.tab}:`, validationResult.error.issues);
+    
+    // Try to extract what we can - filter out invalid items and continue
+    const validItems: z.infer<typeof extractionItemSchema>[] = [];
+    if (Array.isArray(parsed)) {
+      for (const item of parsed) {
+        const itemResult = extractionItemSchema.safeParse(item);
+        if (itemResult.success) {
+          validItems.push(itemResult.data);
+        } else {
+          console.warn(`[extractTab] Skipping invalid item:`, item, itemResult.error.issues);
+        }
+      }
+    }
+    
+    // If we have some valid items, use them; otherwise throw
+    if (validItems.length === 0) {
+      throw new Error(
+        `Extraction validation failed for tab ${options.tab}: ${validationResult.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`).join('; ')}`
+      );
+    }
+    
+    const fields = mapValidatedResults(tabFields, validItems);
+    return {
+      tab: options.tab,
+      fields,
+      raw: validItems,
+      model: getModelName(),
+    };
+  }
+  
+  const fields = mapValidatedResults(tabFields, validationResult.data);
 
   return {
     tab: options.tab,
     fields,
-    raw: validated,
+    raw: validationResult.data,
     model: getModelName(),
   };
 }
@@ -126,7 +161,10 @@ function mapValidatedResults(
     const rawValue = candidate?.value ?? null;
     const trimmed = typeof rawValue === 'string' ? rawValue.trim() : null;
     const value = trimmed && trimmed.length > 0 ? trimmed : null;
-    const source = candidate?.source?.trim();
+    // Handle source being null, undefined, or string - be lenient
+    const source = candidate?.source 
+      ? (typeof candidate.source === 'string' ? candidate.source.trim() : null)
+      : null;
     const status: ExtractionFieldResult['status'] = value ? 'reported' : 'not_reported';
 
     return {

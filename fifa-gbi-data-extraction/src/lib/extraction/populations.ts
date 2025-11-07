@@ -29,7 +29,7 @@ const PARTICIPANT_CHAR_FIELDS: string[] = [
 ];
 
 // We no longer maintain a hardcoded list - instead, we parse ANY field
-// that contains multi-line data (detected by newlines or label — value pattern)
+// that contains multi-line data (detected by newlines or label: value pattern)
 
 const normalizeLabel = (label: string) => label.trim().toLowerCase();
 
@@ -47,8 +47,8 @@ const parseEntry = (fieldId: string, raw: string): ParsedEntry => {
     return { label: raw.trim(), value: raw.trim() };
   }
 
-  // For all other fields, check if it has "label — value" format (legacy support)
-  const match = raw.match(/^(.+?)\s*[:\-–—]\s*(.+)$/);
+  // For all other fields, check if it has "label: value" or "label - value" format (legacy support, backward compatibility)
+  const match = raw.match(/^(.+?)\s*[:\-–-]\s*(.+)$/);
   if (match) {
     return { label: match[1].trim(), value: match[2].trim() };
   }

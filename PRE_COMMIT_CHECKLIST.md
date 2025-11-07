@@ -7,7 +7,7 @@
 
 **How it works now:**
 - Labels entered without values are saved in the **first metric field (Count)** as standalone text
-- When reloading: First metric is checked for standalone labels (no "—" separator)
+- When reloading: First metric is checked for standalone labels (no "-" separator)
 - Labels are preserved across save/reload cycles
 
 **Example:**
@@ -31,7 +31,7 @@ Reload → Parses "male" from Count field → Label restored ✓
 **Rules enforced:**
 - Blank cells stay blank (no population labels leaking)
 - No auto-filling or data bleeding
-- Export safety check strips any accidental "label — " prefixes
+- Export safety check strips any accidental "label - " prefixes
 
 ### 4. Multi-Population Support - ALL Tabs
 **Status:** ✅ WORKING
@@ -74,14 +74,14 @@ Reload → Parses "male" from Count field → Label restored ✓
 - ✅ "Prevalence" changed to "Count"
 - ✅ Blank cells export as blank (no artifacts)
 - ✅ Each population = separate row
-- ✅ Safety check strips "label — " prefixes
+- ✅ Safety check strips "label - " prefixes
 
 ### 8. AI Extraction Prompts
 **Status:** ✅ UPDATED
 
 **AI instructions include:**
 - Multi-population detection for ALL fields
-- Format as "label — value" on new lines
+- Format as "label - value" on new lines
 - Examples for participant, exposure, injury, and illness data
 - Handles sex, age, tournaments, teams, levels
 
@@ -96,7 +96,7 @@ Reload → Parses "male" from Count field → Label restored ✓
 ✓ Save paper
 ✓ Reload page
 ✓ Check: "male" label is still there
-✓ Add values → "male — 50" format works
+✓ Add values → "male - 50" format works
 ```
 
 ### Scenario 2: Blank Row in Middle
@@ -240,7 +240,7 @@ Reload → Parses "male" from Count field → Label restored ✓
 
 ## ⚠️ Known Limitations
 
-1. **Old Data**: Papers with data entered before these fixes may have artifacts (e.g., "label — " in cells). Solution: Re-enter data for those papers.
+1. **Old Data**: Papers with data entered before these fixes may have artifacts (e.g., "label - " in cells). Solution: Re-enter data for those papers.
 
 2. **Label Storage**: Labels are stored in the first metric field (Count). If a user somehow deletes the Count field entirely, labels might be lost. (Edge case, unlikely in normal use)
 

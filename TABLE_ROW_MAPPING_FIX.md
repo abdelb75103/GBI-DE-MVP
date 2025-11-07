@@ -4,15 +4,15 @@
 
 Looking at the screenshots, the issues are:
 
-1. **Population labels appearing in data cells**: "femal—" instead of blank
+1. **Population labels appearing in data cells**: "femal-" instead of blank
 2. **Data not aligning properly**: Table Row 1 ≠ Export Row 1
 
 ## Root Causes
 
 ### 1. Old Data in Database
-The table editor was previously saving blank cells as `"label — "` (e.g., `"femal — "`), which:
+The table editor was previously saving blank cells as `"label - "` (e.g., `"femal - "`), which:
 - Gets stored in `population_values` 
-- Appears in export as `"femal—"`
+- Appears in export as `"femal-"`
 
 ### 2. Need to Re-Enter Data
 Any data entered BEFORE the table editor fix will have these artifacts.
@@ -25,13 +25,13 @@ Any data entered BEFORE the table editor fix will have these artifacts.
 **What it does:**
 - ONLY saves cells that have actual values
 - Blank cells = NOT saved (completely empty)
-- Format: `"label — value"` only if BOTH exist
+- Format: `"label - value"` only if BOTH exist
 
 **Code:**
 ```typescript
 if (!cellValue || !cellValue.trim()) return '';  // Skip blank cells
 return row.label && row.label.trim() 
-  ? `${row.label} — ${cellValue}`  // Both exist
+  ? `${row.label} - ${cellValue}`  // Both exist
   : cellValue;                       // Only value exists
 ```
 
@@ -39,14 +39,14 @@ return row.label && row.label.trim()
 **File:** `exporters.ts`
 
 **What it does:**
-- Strips any `"label — "` prefix before exporting
+- Strips any `"label - "` prefix before exporting
 - Safety net for old data
 
 **Code:**
 ```typescript
-// Safety: Strip any "label — " prefix that might have leaked through
+// Safety: Strip any "label - " prefix that might have leaked through
 if (value && typeof value === 'string') {
-  const labelMatch = value.match(/^.+?\s*[:\-–—]\s*(.+)$/);
+  const labelMatch = value.match(/^.+?\s*[:\-–-]\s*(.+)$/);
   if (labelMatch) {
     value = labelMatch[1].trim();  // Extract just the value part
   }
@@ -82,13 +82,13 @@ if (value == null && (isDefaultGroup || !fieldsWithPopulationData.has(column.id)
 ### Saved to DB:
 ```
 Field: injuryTissueType_muscle_injury_prevalence
-Value: "male — 50\nfemale — 40"
+Value: "male - 50\nfemale - 40"
 
 Field: injuryTissueType_muscle_injury_incidence
-Value: "male — 3.2"  ← ONLY Row 1 saved (Row 2 blank, not saved)
+Value: "male - 3.2"  ← ONLY Row 1 saved (Row 2 blank, not saved)
 
 Field: injuryTissueType_muscle_injury_burden
-Value: "female — 2.1"  ← ONLY Row 2 saved (Row 1 blank, not saved)
+Value: "female - 2.1"  ← ONLY Row 2 saved (Row 1 blank, not saved)
 ```
 
 ### Population Values:
@@ -145,7 +145,7 @@ Row 2: Study001, ..., 40, (blank), 2.1, ...  ← Female data
    - Blank cells should be blank
 
 ### Why This is Necessary:
-The old table editor saved `"label — "` for blank cells, which is now stored in the database. The new logic won't save blanks this way, but existing data needs to be re-entered to clear the artifacts.
+The old table editor saved `"label - "` for blank cells, which is now stored in the database. The new logic won't save blanks this way, but existing data needs to be re-entered to clear the artifacts.
 
 ## Testing Checklist
 

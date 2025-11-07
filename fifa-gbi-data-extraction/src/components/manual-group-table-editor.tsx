@@ -77,13 +77,13 @@ export function ManualGroupTableEditor({
 
         // NEW SIMPLER FORMAT: Labels and values are separate
         // Check if this is the first metric (prevalence/count) which stores labels
-        if (metric === 'prevalence' && lineValue.trim() && !lineValue.includes('—')) {
+        if (metric === 'prevalence' && lineValue.trim() && !lineValue.includes('-')) {
           // This is a standalone label (new format)
           if (!row.label) row.label = lineValue.trim();
           row.values[metric] = '';
-        } else if (lineValue.includes('—')) {
-          // Legacy format: "label — value"
-          const match = lineValue.match(/^(.+?)\s*[—-]\s*(.+)$/);
+        } else if (lineValue.includes('-')) {
+          // Legacy format: "label - value"
+          const match = lineValue.match(/^(.+?)\s*[:\-–-]\s*(.+)$/);
           if (match) {
             if (!row.label) row.label = match[1].trim();
             row.values[metric] = match[2].trim();
@@ -125,9 +125,9 @@ export function ManualGroupTableEditor({
       const hasValue = cellValue && cellValue.trim();
       const hasLabel = row.label && row.label.trim();
       
-      // If both label and value exist, format as "label — value"
+      // If both label and value exist, format as "label - value"
       if (hasLabel && hasValue) {
-        return `${row.label} — ${cellValue}`;
+        return `${row.label} - ${cellValue}`;
       }
       // If only value exists, return just the value
       if (hasValue) {
@@ -135,11 +135,11 @@ export function ManualGroupTableEditor({
       }
       // NEW FORMAT: Labels and values are separate
       // If this row has a label but no value for THIS cell
-      // For the FIRST metric (prevalence/count), save just the label to preserve it (without "—")
+      // For the FIRST metric (prevalence/count), save just the label to preserve it (without "-")
       // For other metrics, save empty string
       if (hasLabel) {
         if (metric === 'prevalence') {
-          return row.label;  // Save label alone (NEW: no "— value" format)
+          return row.label;  // Save label alone (NEW: no "- value" format)
         }
         return '';  // Empty line to preserve row index
       }
@@ -181,9 +181,9 @@ export function ManualGroupTableEditor({
         const hasValue = cellValue && cellValue.trim();
         const hasLabel = row.label && row.label.trim();
         
-        // If both label and value exist, format as "label — value"
+        // If both label and value exist, format as "label - value"
         if (hasLabel && hasValue) {
-          return `${row.label} — ${cellValue}`;
+          return `${row.label} - ${cellValue}`;
         }
         // If only value exists, return just the value
         if (hasValue) {
@@ -248,9 +248,9 @@ export function ManualGroupTableEditor({
         const hasValue = cellValue && cellValue.trim();
         const hasLabel = row.label && row.label.trim();
         
-        // If both label and value exist, format as "label — value"
+        // If both label and value exist, format as "label - value"
         if (hasLabel && hasValue) {
-          return `${row.label} — ${cellValue}`;
+          return `${row.label} - ${cellValue}`;
         }
         // If only value exists, return just the value
         if (hasValue) {
@@ -331,7 +331,7 @@ export function ManualGroupTableEditor({
                       type="text"
                       value={row.values[metric] ?? ''}
                       onChange={(e) => handleCellChange(row.id, metric, e.target.value)}
-                      placeholder="—"
+                      placeholder=""
                       className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-300 focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
                     />
                   </td>

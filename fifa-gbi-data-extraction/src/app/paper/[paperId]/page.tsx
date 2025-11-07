@@ -235,7 +235,7 @@ export default async function PaperWorkspace({
               <div className="rounded-2xl bg-gradient-to-br from-indigo-50/60 to-slate-50/80 p-4 shadow-sm ring-1 ring-indigo-200/30 transition hover:shadow-md">
                 <NoteComposer paperId={paper.id} />
               </div>
-              <NoteList initialNotes={notes} />
+              <NoteList initialNotes={notes} paperId={paper.id} />
             </div>
           </div>
         </div>

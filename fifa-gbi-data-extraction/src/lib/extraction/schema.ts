@@ -60,14 +60,14 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'studyDesign',
     label: 'Study Design',
-    description: 'Study design or methodology classification stated by authors.',
+    description: 'Study design classification. Return standardized value: "prospective cohort" | "retrospective cohort" | "cross-sectional" | "case series" | "case-control" | "other".',
     tab: 'studyDetails',
   },
   // Tab 2 – Participant Characteristics
   {
     id: 'fifaDiscipline',
     label: 'FIFA Discipline',
-    description: 'Football discipline (e.g., 11-a-side, futsal).',
+    description: 'Football discipline. Return standardized value: "11-a-side" | "futsal" | "beach soccer" | "amputee" | "other".',
     tab: 'participantCharacteristics',
   },
   {
@@ -79,7 +79,7 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'levelOfPlay',
     label: 'Level of Play',
-    description: 'Competitive level (professional, amateur, youth).',
+    description: 'Competitive level. Return standardized value: "professional" | "semi-professional" | "amateur" | "youth elite" | "youth recreational" | "mixed".',
     tab: 'participantCharacteristics',
   },
   {
@@ -100,14 +100,14 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     id: 'meanAge',
     label: 'Mean age (±SD) or range',
     description:
-      'Mean age ± SD. For multiple populations: enter VALUES ONLY, one per line: "16.8 ± 0.9\\n20.1 ± 0.3". Line 1 = Pop 1, Line 2 = Pop 2.',
+      'Mean age ± SD. Extract VALUE ONLY (no "years" unit). For multiple populations: "16.8 ± 0.9\\n20.1 ± 0.3". Line 1 = Pop 1, Line 2 = Pop 2.',
     tab: 'participantCharacteristics',
   },
   {
     id: 'sampleSizePlayers',
     label: 'Sample Size (players)',
     description:
-      'Number of players. For multiple populations: enter VALUES ONLY, one per line: "62\\n60". Match the line order from Sex or Age Category.',
+      'Number of players. Extract NUMERIC VALUE ONLY (no labels). For multiple populations: "62\\n60" (NOT "male: 62\\nfemale: 60"). Match line order from Sex or Age Category.',
     tab: 'participantCharacteristics',
   },
   {
@@ -128,20 +128,20 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     id: 'observationDuration',
     label: 'Observation duration',
     description:
-      'Observation window as reported. Maintain one line per population (e.g., "U19 — 4 seasons") for consistent parsing.',
+      'Observation window as reported. Extract VALUE ONLY (no population labels). For multiple populations: "4 seasons\\n3 seasons" (NOT "U19: 4 seasons").',
     tab: 'participantCharacteristics',
   },
   // Tab 3 – Definition & Data Collection
   {
     id: 'injuryDefinition',
     label: 'Injury Definition',
-    description: 'Definition used for injury.',
+    description: 'Definition used for injury. Return standardized value: "medical attention" | "time-loss" | "medical attention or time-loss" only.',
     tab: 'definitions',
   },
   {
     id: 'illnessDefinition',
     label: 'Illness Definition',
-    description: 'Definition used for illness.',
+    description: 'Definition used for illness. Return standardized value: "medical attention" | "time-loss" | "medical attention or time-loss" only.',
     tab: 'definitions',
   },
   {
@@ -179,38 +179,38 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     id: 'seasonLength',
     label: 'Length of season/tournament (weeks)',
     description:
-      'Duration of season or competition in weeks. Use one line per population/tournament when multiple groups are reported.',
+      'Duration in weeks. Extract NUMERIC VALUE ONLY (no "weeks" unit). Use one line per population/tournament when multiple groups are reported.',
     tab: 'exposure',
   },
   {
     id: 'numberOfSeasons',
     label: 'Number of seasons',
     description:
-      'Total number of seasons covered. Keep populations on separate lines (e.g., "U19 — 4") for cleaner exports.',
+      'Total number of seasons. Extract NUMERIC VALUE ONLY (no population labels). For multiple populations: "4\\n3" (NOT "U19: 4\\nU21: 3").',
     tab: 'exposure',
   },
   {
     id: 'exposureMeasurementUnit',
     label: 'Exposure Measurement (unit)',
-    description: 'Unit used for exposure reporting.',
+    description: 'Unit used for exposure. Return standardized value: "hours" | "player-hours" | "athlete-exposures" | "match-exposures" | "sessions" | "other".',
     tab: 'exposure',
   },
   {
     id: 'totalExposure',
     label: 'Total Exposure',
-    description: 'Total exposure value reported.',
+    description: 'Total exposure value. Extract NUMERIC VALUE ONLY (no units). Units captured in exposureMeasurementUnit field.',
     tab: 'exposure',
   },
   {
     id: 'matchExposure',
     label: 'Match Exposure',
-    description: 'Match exposure value. If splits exist, keep one line per population/year/tournament.',
+    description: 'Match exposure value. Extract NUMERIC VALUE ONLY (no units). Units captured in exposureMeasurementUnit. One line per population if splits exist.',
     tab: 'exposure',
   },
   {
     id: 'trainingExposure',
     label: 'Training Exposure',
-    description: 'Training exposure value. Match the line order used for other population-specific fields.',
+    description: 'Training exposure value. Extract NUMERIC VALUE ONLY (no units). Units captured in exposureMeasurementUnit. Match line order from other population fields.',
     tab: 'exposure',
   },
 ];
@@ -222,7 +222,7 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryTotalCount',
     label: 'Total number of injuries',
-    description: 'Total count of injuries. For multiple populations: enter VALUES ONLY (e.g., "150\\n120"), one per line.',
+    description: 'Total count of injuries. Extract NUMERIC VALUE ONLY (no labels or units). For multiple populations: "150\\n120" (NOT "male: 150").',
     tab: 'injuryOutcome',
   },
   {
@@ -240,7 +240,7 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryIncidenceOverall',
     label: 'Injury incidence (overall)',
-    description: 'Overall injury incidence rate as reported. For multiple populations, enter each on a new line (e.g., "U19 — 3.2\\nU21 — 2.8").',
+    description: 'Overall injury incidence rate. Extract NUMERIC VALUE ONLY (no population labels or units). For multiple populations: "3.2\\n2.8" (NOT "U19: 3.2").',
     tab: 'injuryOutcome',
   },
   {
@@ -378,7 +378,7 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryRecurrenceRate',
     label: 'Recurrence rate (%)',
-    description: 'Injury recurrence rate percentage.',
+    description: 'Injury recurrence rate. Extract with % symbol: "15.2%" (NOT "15.2").',
     tab: 'injuryOutcome',
   },
 ];
@@ -387,7 +387,7 @@ const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'illnessTotalCount',
     label: 'Total number of illnesses',
-    description: 'Total count of illnesses recorded. For multiple populations, enter each on a new line with optional label (e.g., "U19 — 45\\nU21 — 38").',
+    description: 'Total count of illnesses. Extract NUMERIC VALUE ONLY (no population labels). For multiple populations: "45\\n38" (NOT "U19: 45").',
     tab: 'illnessOutcome',
   },
   {
@@ -405,7 +405,7 @@ const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'illnessIncidenceOverall',
     label: 'Illness incidence (overall)',
-    description: 'Overall illness incidence rate. For multiple populations, enter each on a new line.',
+    description: 'Overall illness incidence rate. Extract NUMERIC VALUE ONLY (no population labels or units). For multiple populations: "2.1\\n1.8".',
     tab: 'illnessOutcome',
   },
   {

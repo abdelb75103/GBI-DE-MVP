@@ -48,7 +48,7 @@ export default function UploadPage() {
             <div className="space-y-2">
               <h1 className="text-3xl font-semibold text-slate-900">Stage a new study PDF</h1>
               <p className="text-sm leading-relaxed text-slate-600">
-                Drop in the source document—title, DOI, and other metadata will be auto-extracted once processing kicks
+                Drop in the source document. Title, DOI, and other metadata will be auto-extracted once processing kicks
                 off.
               </p>
             </div>
