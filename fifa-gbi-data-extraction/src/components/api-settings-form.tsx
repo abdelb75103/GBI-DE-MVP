@@ -6,9 +6,11 @@ import { useState } from 'react';
 import { useGeminiApiKey } from '@/hooks/use-gemini-api-key';
 
 export function ApiSettingsForm() {
-  const { apiKey, setApiKey, clearApiKey, isLoaded } = useGeminiApiKey();
-  const [draft, setDraft] = useState(apiKey ?? '');
+  const { isConfigured, isLoaded, saveKey, clearKey } = useGeminiApiKey();
+  const [draft, setDraft] = useState('');
   const [saved, setSaved] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isLoaded) {
     return (
@@ -18,22 +20,41 @@ export function ApiSettingsForm() {
     );
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const value = (draft || '').trim();
     if (!value) {
-      setSaved('Enter a valid API key before saving.');
+      setError('Enter a valid API key before saving.');
+      setSaved(null);
       return;
     }
-    setApiKey(value);
-    setDraft(value);
-    setSaved('API key saved. You can now run AI extraction.');
+    setIsSubmitting(true);
+    setError(null);
+    setSaved(null);
+    try {
+      await saveKey(value);
+      setDraft('');
+      setSaved('API key saved. You can now run AI extraction.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to save API key');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleClear = () => {
-    clearApiKey();
-    setDraft('');
-    setSaved('API key removed. Enter a new key to re-enable extraction.');
+  const handleClear = async () => {
+    setIsSubmitting(true);
+    setError(null);
+    setSaved(null);
+    try {
+      await clearKey();
+      setDraft('');
+      setSaved('API key removed. Enter a new key to re-enable extraction.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to clear API key');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -51,7 +72,11 @@ export function ApiSettingsForm() {
               .
             </p>
           </div>
-          {apiKey ? <span className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600">Active</span> : null}
+          {isConfigured ? (
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-600">Active</span>
+          ) : (
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-500">Not configured</span>
+          )}
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -65,22 +90,26 @@ export function ApiSettingsForm() {
               onChange={(event) => setDraft(event.target.value)}
               placeholder="Paste your API key"
               className="mt-2 w-full rounded-2xl border border-slate-200/70 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+              disabled={isSubmitting}
             />
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <button
               type="submit"
-              className="inline-flex items-center rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-indigo-500"
+              className="inline-flex items-center rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-indigo-500 disabled:opacity-60"
+              disabled={isSubmitting}
             >
               Save and continue
             </button>
             <button
               type="button"
               onClick={handleClear}
-              className="text-sm font-semibold text-slate-500 transition hover:text-slate-700"
+              className="text-sm font-semibold text-slate-500 transition hover:text-slate-700 disabled:opacity-60"
+              disabled={isSubmitting || !isConfigured}
             >
               Clear key
             </button>
+            {error ? <span className="text-xs text-rose-500">{error}</span> : null}
             {saved ? <span className="text-xs text-slate-500">{saved}</span> : null}
           </div>
         </form>

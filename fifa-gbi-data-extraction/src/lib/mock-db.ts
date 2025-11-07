@@ -1226,4 +1226,48 @@ export const mockDb = {
     const rows = (data ?? []) as PopulationValueRow[];
     return rows.map(mapPopulationValueRow);
   },
+
+  async getProfileGeminiKey(profileId: string): Promise<string | null> {
+    const supabase = supabaseClient();
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('gemini_api_key')
+      .eq('id', profileId)
+      .maybeSingle();
+
+    if (error) {
+      throw new Error(`Failed to load Gemini API key: ${error.message}`);
+    }
+
+    return (data as { gemini_api_key: string | null } | null)?.gemini_api_key ?? null;
+  },
+
+  async setProfileGeminiKey(profileId: string, apiKey: string): Promise<void> {
+    const supabase = supabaseClient();
+    const { error } = await supabase
+      .from('profiles')
+      .update({ gemini_api_key: apiKey.trim(), updated_at: new Date().toISOString() })
+      .eq('id', profileId);
+
+    if (error) {
+      throw new Error(`Failed to save Gemini API key: ${error.message}`);
+    }
+  },
+
+  async clearProfileGeminiKey(profileId: string): Promise<void> {
+    const supabase = supabaseClient();
+    const { error } = await supabase
+      .from('profiles')
+      .update({ gemini_api_key: null, updated_at: new Date().toISOString() })
+      .eq('id', profileId);
+
+    if (error) {
+      throw new Error(`Failed to clear Gemini API key: ${error.message}`);
+    }
+  },
+
+  async hasProfileGeminiKey(profileId: string): Promise<boolean> {
+    const key = await this.getProfileGeminiKey(profileId);
+    return Boolean(key);
+  },
 };

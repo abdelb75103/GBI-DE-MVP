@@ -52,7 +52,7 @@ export function ExtractionTabsPanel({
   onLayoutModeChange,
 }: ExtractionTabsPanelProps) {
   const router = useRouter();
-  const { apiKey, isLoaded } = useGeminiApiKey();
+  const { isConfigured, isLoaded } = useGeminiApiKey();
   const { markAsChanged } = useContext(WorkspaceSaveContext);
 
   const aiTabs = tabs.filter((tab) => aiExtractionTabs.has(tab.tab));
@@ -228,9 +228,14 @@ useEffect(() => {
       return;
     }
 
-    if (!isLoaded || !apiKey) {
+    if (!isLoaded) {
+      setFeedback({ message: 'Checking API settings. Please wait a moment and try again.', tone: 'error', tab });
+      return;
+    }
+
+    if (!isConfigured) {
       setFeedback({
-        message: 'Enter your Gemini API key in API settings before running extraction.',
+        message: 'Connect your Gemini API key in Settings > API before running extraction.',
         tone: 'error',
         tab,
       });
@@ -249,7 +254,7 @@ useEffect(() => {
         const response = await fetch('/api/extract', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paperId, tab, fields: selected, apiKey }),
+          body: JSON.stringify({ paperId, tab, fields: selected }),
         });
 
         if (!response.ok) {

@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { extractTab } from '@/lib/extraction/service';
 import { aiExtractionTabs, extractionTabs } from '@/lib/extraction/schema';
 import { mockDb } from '@/lib/mock-db';
+import { readActiveProfileSession } from '@/lib/session';
 import type { StoredFile } from '@/lib/types';
 
 export const runtime = 'nodejs';
@@ -15,7 +16,6 @@ const requestSchema = z.object({
   paperId: z.string().min(1),
   tab: z.enum(extractionTabs),
   fields: z.array(z.string().min(1)).min(1),
-  apiKey: z.string().min(1, 'API key is required'),
 });
 
 export async function POST(request: Request) {
@@ -27,7 +27,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: message }, { status: 400 });
   }
 
-  const { paperId, tab, fields, apiKey } = parsed;
+  const { paperId, tab, fields } = parsed;
+  const profile = await readActiveProfileSession();
+  if (!profile) {
+    return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
+  }
+
+  const apiKey = await mockDb.getProfileGeminiKey(profile.id);
+  if (!apiKey) {
+    return NextResponse.json({ error: 'Add your Gemini API key in Settings > API before running extraction.' }, { status: 400 });
+  }
   if (!aiExtractionTabs.has(tab)) {
     return NextResponse.json({ error: 'AI extraction is only available for study details, participant characteristics, definitions, and exposure.' }, { status: 400 });
   }

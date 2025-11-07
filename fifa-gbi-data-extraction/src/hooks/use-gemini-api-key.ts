@@ -1,43 +1,75 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'gbi.geminiApiKey';
-
-const isBrowser = typeof window !== 'undefined';
-
-function readKey() {
-  if (!isBrowser) {
-    return null;
-  }
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored && stored.length > 0 ? stored : null;
-}
+type GeminiKeyState = {
+  isLoaded: boolean;
+  isConfigured: boolean;
+};
 
 export function useGeminiApiKey() {
-  const [apiKey, setApiKeyState] = useState<string | null>(readKey);
+  const [state, setState] = useState<GeminiKeyState>({ isLoaded: false, isConfigured: false });
+  const [lastError, setLastError] = useState<string | null>(null);
 
-  const setApiKey = (value: string) => {
-    if (!isBrowser) {
-      return;
+  const refresh = useCallback(async () => {
+    try {
+      const response = await fetch('/api/settings/gemini', { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error('Unable to load API settings');
+      }
+      const payload = (await response.json()) as { configured: boolean };
+      setState({ isLoaded: true, isConfigured: Boolean(payload?.configured) });
+      setLastError(null);
+    } catch (error) {
+      console.error('[useGeminiApiKey] Failed to load settings', error);
+      setState((prev) => ({ ...prev, isLoaded: true }));
+      setLastError(error instanceof Error ? error.message : 'Unable to load API settings');
     }
-    const trimmed = value.trim();
-    window.localStorage.setItem(STORAGE_KEY, trimmed);
-    setApiKeyState(trimmed);
-  };
+  }, []);
 
-  const clearApiKey = () => {
-    if (!isBrowser) {
-      return;
+  useEffect(() => {
+    refresh().catch(() => {
+      // Error already logged inside refresh; swallow here to avoid unhandled rejections.
+    });
+  }, [refresh]);
+
+  const saveKey = useCallback(
+    async (apiKey: string) => {
+      const value = apiKey.trim();
+      if (!value) {
+        throw new Error('API key is required');
+      }
+      const response = await fetch('/api/settings/gemini', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey: value }),
+      });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error ?? 'Failed to save API key');
+      }
+      setState({ isLoaded: true, isConfigured: true });
+      setLastError(null);
+    },
+    [],
+  );
+
+  const clearKey = useCallback(async () => {
+    const response = await fetch('/api/settings/gemini', { method: 'DELETE' });
+    if (!response.ok) {
+      const payload = await response.json().catch(() => ({}));
+      throw new Error(payload.error ?? 'Failed to clear API key');
     }
-    window.localStorage.removeItem(STORAGE_KEY);
-    setApiKeyState(null);
-  };
+    setState({ isLoaded: true, isConfigured: false });
+    setLastError(null);
+  }, []);
 
   return {
-    apiKey,
-    isLoaded: isBrowser,
-    setApiKey,
-    clearApiKey,
+    isLoaded: state.isLoaded,
+    isConfigured: state.isConfigured,
+    lastError,
+    refresh,
+    saveKey,
+    clearKey,
   };
 }
