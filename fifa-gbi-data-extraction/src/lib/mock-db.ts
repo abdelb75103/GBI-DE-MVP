@@ -364,6 +364,23 @@ const ensureExtractionRow = async (
     throw new Error(`Failed to create extraction: ${insertError?.message ?? 'Unknown error'}`);
   }
 
+  // Auto-populate studyId field when creating studyDetails extraction
+  if (tab === 'studyDetails') {
+    const { data: paper } = await supabase
+      .from('papers')
+      .select('assigned_study_id')
+      .eq('id', paperId)
+      .single();
+
+    if (paper?.assigned_study_id) {
+      await upsertExtractionFieldRow(created.id, 'studyId', {
+        value: paper.assigned_study_id,
+        status: 'reported',
+        updatedBy: null,
+      });
+    }
+  }
+
   return created as ExtractionRow;
 };
 

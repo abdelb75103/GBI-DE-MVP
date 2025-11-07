@@ -145,12 +145,6 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     tab: 'definitions',
   },
   {
-    id: 'mentalHealthDefinition',
-    label: 'Mental Health Problem Definition',
-    description: 'Definition of mental health issues if described.',
-    tab: 'definitions',
-  },
-  {
     id: 'incidenceDefinition',
     label: 'Incidence Definition',
     description: 'How incidence was defined.',
@@ -506,116 +500,6 @@ const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
   },
 ];
 
-const mentalHealthOutcomeDefinitions: ExtractionFieldDefinition[] = [
-  {
-    id: 'mhProblemTotal',
-    label: 'Total number of mental health problems',
-    description: 'Total count of mental health problems reported.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhIncidenceOverall',
-    label: 'Mental health problems incidence (overall)',
-    description: 'Overall incidence for mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhReportingMethod',
-    label: 'Method of reporting mental health problems',
-    description: 'How mental health problems were reported.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhTimeLossTotal',
-    label: 'Total time-loss due to mental health problems',
-    description: 'Total time-loss due to mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhTimeLossMedian',
-    label: 'Median time-loss',
-    description: 'Median time-loss for mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhTimeLossMean',
-    label: 'Mean time-loss',
-    description: 'Mean time-loss for mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhBurden',
-    label: 'Mental health burden',
-    description: 'Burden metric for mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhMostCommonSymptoms',
-    label: 'Most common mental health symptoms',
-    description: 'Most common mental health symptoms reported.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhMostCommonDisorder',
-    label: 'Most common mental health disorder',
-    description: 'Most common mental health disorder reported.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhMostCommonSeverity',
-    label: 'Most common mental health severity class',
-    description: 'Most common severity classification for mental health.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhModeGradual',
-    label: 'Mode of onset – Gradual',
-    description: 'Gradual onset mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhModeAcute',
-    label: 'Mode of onset – Acute',
-    description: 'Acute onset mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhModeMixed',
-    label: 'Mode of onset – Mixed',
-    description: 'Mixed onset mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhModeUnknown',
-    label: 'Mode of onset – Unknown',
-    description: 'Unknown onset mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhDurationMedian',
-    label: 'Median mental health duration',
-    description: 'Median duration for mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhDurationMean',
-    label: 'Mean mental health duration (±SD)',
-    description: 'Mean duration for mental health problems with SD.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhRecurrentTotal',
-    label: 'Total recurrent mental health problems',
-    description: 'Total count of recurrent mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-  {
-    id: 'mhRecurrenceRate',
-    label: 'Recurrence rate (%)',
-    description: 'Recurrence rate for mental health problems.',
-    tab: 'mentalHealthOutcomes',
-  },
-];
 
 // ---------------------------------------------------------------------------
 // Metric-based manual tabs (Tabs 8–11)
@@ -763,27 +647,6 @@ function generateMetricFields(tab: ExtractionTab, groups: MetricGroup[]): Extrac
   );
 }
 
-const mentalHealthSymptomsDefinitions: ExtractionFieldDefinition[] = [
-  { id: 'mhSymptomGeneral', label: 'Symptoms', description: 'General mental health symptoms reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhDistress', label: 'Distress', description: 'Distress-related symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhAnxietySymptoms', label: 'Anxiety', description: 'Anxiety symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhDepressionSymptoms', label: 'Depression', description: 'Depression symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhSleepDisturbance', label: 'Sleep disturbance', description: 'Sleep disturbance symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhDisorderedEating', label: 'Disordered eating', description: 'Disordered eating symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhAlcoholMisuseSymptoms', label: 'Alcohol misuse', description: 'Alcohol misuse symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhDrugMisuseSymptoms', label: 'Drug misuse', description: 'Drug misuse symptoms.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhDepressiveDisorders', label: 'Depressive disorders', description: 'Depressive disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhAnxietyDisorders', label: 'Anxiety disorders', description: 'Anxiety disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhSpecificPhobias', label: 'Specific phobias', description: 'Specific phobias reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhPanicDisorder', label: 'Panic disorder', description: 'Panic disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhSomatisation', label: 'Somatisation', description: 'Somatisation disorders.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhEatingDisorders', label: 'Eating disorders', description: 'Eating disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhSleepDisorders', label: 'Sleep disorders', description: 'Sleep disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhGambling', label: 'Gambling or betting disorder', description: 'Gambling or betting disorders.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhOcd', label: 'Obsessive–compulsive disorders', description: 'Obsessive–compulsive disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhBipolar', label: 'Bipolar disorders', description: 'Bipolar disorders reported.', tab: 'mentalHealthSymptoms' },
-  { id: 'mhAlcoholSubstanceDisorders', label: 'Alcohol and other substance misuse', description: 'Alcohol and other substance misuse disorders.', tab: 'mentalHealthSymptoms' },
-];
 
 const metricFieldDefinitions: ExtractionFieldDefinition[] = [
   ...generateMetricFields('injuryTissueType', injuryTissueTypeGroups),
@@ -799,8 +662,6 @@ export const extractionFieldDefinitions: ExtractionFieldDefinition[] = [
   ...aiFieldDefinitions,
   ...injuryOutcomeDefinitions,
   ...illnessOutcomeDefinitions,
-  ...mentalHealthOutcomeDefinitions,
-  ...mentalHealthSymptomsDefinitions,
   ...metricFieldDefinitions,
 ];
 
@@ -811,12 +672,10 @@ export const extractionTabs: ExtractionTab[] = [
   'exposure',
   'injuryOutcome',
   'illnessOutcome',
-  'mentalHealthOutcomes',
   'injuryTissueType',
   'injuryLocation',
   'illnessRegion',
   'illnessEtiology',
-  'mentalHealthSymptoms',
 ];
 
 export const aiExtractionTabs = new Set<ExtractionTab>([
@@ -853,10 +712,6 @@ export const extractionTabMeta: Record<ExtractionTab, { title: string; descripti
     title: 'Illness outcome',
     description: 'Manual entry for illness incidence, burden, and duration metrics.',
   },
-  mentalHealthOutcomes: {
-    title: 'Mental health outcomes',
-    description: 'Manual entry for mental health problem metrics and onset information.',
-  },
   injuryTissueType: {
     title: 'Injury tissue & type',
     description: 'Manual entry capturing prevalence, incidence, burden, and severity by tissue/tissue type.',
@@ -872,10 +727,6 @@ export const extractionTabMeta: Record<ExtractionTab, { title: string; descripti
   illnessEtiology: {
     title: 'Illness etiology',
     description: 'Manual entry capturing prevalence, incidence, burden, and severity by illness cause.',
-  },
-  mentalHealthSymptoms: {
-    title: 'Mental health symptoms & disorders',
-    description: 'Manual entry for specific mental health symptoms and disorders reported.',
   },
 };
 

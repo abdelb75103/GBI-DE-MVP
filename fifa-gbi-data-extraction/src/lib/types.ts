@@ -1,4 +1,4 @@
-export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived';
+export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived' | 'mental_health' | 'uefa' | 'american_data';
 
 export type ExtractionTab =
   | 'studyDetails'
@@ -7,12 +7,10 @@ export type ExtractionTab =
   | 'exposure'
   | 'injuryOutcome'
   | 'illnessOutcome'
-  | 'mentalHealthOutcomes'
   | 'injuryTissueType'
   | 'injuryLocation'
   | 'illnessRegion'
-  | 'illnessEtiology'
-  | 'mentalHealthSymptoms';
+  | 'illnessEtiology';
 
 export type ExtractionFieldMetric =
   | 'prevalence'

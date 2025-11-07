@@ -1,6 +1,6 @@
 export type UserRole = 'admin' | 'extractor' | 'observer';
 
-export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived';
+export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived' | 'mental_health' | 'uefa' | 'american_data';
 
 export type AssignmentStatus = 'claimed' | 'in_progress' | 'completed' | 'released' | 'returned';
 
@@ -19,12 +19,10 @@ export type ExtractionTab =
   | 'exposure'
   | 'injuryOutcome'
   | 'illnessOutcome'
-  | 'mentalHealthOutcomes'
   | 'injuryTissueType'
   | 'injuryLocation'
   | 'illnessRegion'
-  | 'illnessEtiology'
-  | 'mentalHealthSymptoms';
+  | 'illnessEtiology';
 
 export type ExtractionUpdatedBy = string | null;
 

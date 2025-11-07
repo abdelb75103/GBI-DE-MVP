@@ -17,7 +17,7 @@ const bodySchema = z.object({
   confidence: z.number().min(0).max(100).optional().nullable(),
   sourceQuote: z.string().optional(),
   pageHint: z.string().optional(),
-  metric: z.enum(['prevalence', 'incidence', 'burden', 'severityMeanDays', 'severityTotalDays']).optional(),
+  metric: z.enum(['prevalence', 'incidence', 'burden', 'severityMeanDays', 'severityTotalDays']).optional().nullable(),
 });
 
 export const runtime = 'nodejs';

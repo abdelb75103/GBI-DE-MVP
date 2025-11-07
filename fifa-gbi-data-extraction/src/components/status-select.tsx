@@ -6,12 +6,12 @@ import { useState, useTransition } from 'react';
 import type { PaperStatus } from '@/lib/types';
 
 const options: { value: PaperStatus; label: string }[] = [
-  { value: 'uploaded', label: 'Uploaded' },
   { value: 'processing', label: 'Processing' },
   { value: 'extracted', label: 'Extracted' },
   { value: 'flagged', label: 'Flagged' },
-  { value: 'qa_review', label: 'QA Review' },
-  { value: 'archived', label: 'Archived' },
+  { value: 'mental_health', label: 'Mental Health' },
+  { value: 'uefa', label: 'UEFA' },
+  { value: 'american_data', label: 'American Data' },
 ];
 
 type StatusSelectProps = {

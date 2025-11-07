@@ -73,7 +73,8 @@ export async function POST(request: Request) {
       });
     }
 
-    await mockDb.updatePaper(paper.id, { status: 'extracted' });
+    // Restore previous status - don't auto-set to 'extracted'
+    await mockDb.updatePaper(paper.id, { status: previousStatus });
 
     return NextResponse.json({
       paperId: paper.id,

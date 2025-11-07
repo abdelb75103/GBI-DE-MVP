@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState, useTransition } from 'react';
+import { useContext, useEffect, useRef, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { extractionMetrics } from '@/lib/extraction/schema';
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
+import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 import type {
   ExtractionFieldMetric,
   ExtractionFieldResult,
@@ -20,65 +21,32 @@ type ManualGroupEditorProps = {
 };
 
 export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }: ManualGroupEditorProps) {
-  const router = useRouter();
+  const { updateField, getFieldValue } = useContext(WorkspaceSaveContext);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
-  const timersRef = useRef<Record<string, NodeJS.Timeout>>({});
-  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const next: Record<string, string> = {};
     for (const field of fields) {
-      const existing = results.get(field.id);
-      next[field.id] = existing?.value ?? '';
+      // Check for local value first, then server value
+      const localValue = getFieldValue(tab, field.id);
+      const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
+      next[field.id] = currentValue ?? '';
     }
     setDrafts(next);
-  }, [fields, results]);
+  }, [fields, results, getFieldValue, tab]);
 
-  const persist = (field: ExtractionFieldDefinition, value: string) => {
-    startTransition(async () => {
-      try {
-        const response = await fetch('/api/extract/field', {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            paperId,
-            tab,
-            fieldId: field.id,
-            value: value.trim(),
-            metric: field.metric,
-          }),
-        });
-
-        if (!response.ok) {
-          const payload = await response.json().catch(() => ({}));
-          throw new Error(payload.error ?? 'Failed to update field');
-        }
-
-        router.refresh();
-      } catch (error) {
-        console.error('Failed to update field', error);
-      }
+  const handleChange = (field: ExtractionFieldDefinition, value: string) => {
+    // Update local state immediately for UI
+    setDrafts((prev) => ({ ...prev, [field.id]: value }));
+    
+    // Update the context (marks as changed and stores locally)
+    updateField({
+      paperId,
+      tab,
+      fieldId: field.id,
+      value: value.trim() || null,
+      metric: field.metric,
     });
-  };
-
-  const schedulePersist = (field: ExtractionFieldDefinition, value: string) => {
-    const timers = timersRef.current;
-    if (timers[field.id]) {
-      clearTimeout(timers[field.id]);
-    }
-    timers[field.id] = setTimeout(() => {
-      persist(field, value);
-      delete timers[field.id];
-    }, 400);
-  };
-
-  const handleBlur = (field: ExtractionFieldDefinition, value: string) => {
-    const timers = timersRef.current;
-    if (timers[field.id]) {
-      clearTimeout(timers[field.id]);
-      delete timers[field.id];
-    }
-    persist(field, value);
   };
 
   const fieldsByMetric = new Map(fields.map((field) => [field.metric, field]));
@@ -141,11 +109,8 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
               <input
                 value={draftValue}
                 onChange={(event) => {
-                  const nextValue = event.target.value;
-                  setDrafts((prev) => ({ ...prev, [field.id]: nextValue }));
-                  schedulePersist(field, nextValue);
+                  handleChange(field, event.target.value);
                 }}
-                onBlur={(event) => handleBlur(field, event.target.value)}
                 placeholder=""
                 className={`rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 ${styles.input}`}
               />

@@ -1,24 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState, useTransition } from 'react';
+import { useContext, useEffect, useRef, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
+import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 
-const MULTILINE_PLACEHOLDERS: Record<string, string> = {
-  ageCategory: 'U19\nU21',
-  sex: 'U19 — male\nU21 — female',
-  meanAge: 'U19 — 16.8 ± 0.9\nU21 — 20.1 ± 0.3',
-  sampleSizePlayers: 'U19 — 62\nU21 — 60',
-  numberOfTeams: 'U19 — 4 clubs\nU21 — 5 clubs',
-  studyPeriodYears: 'U19 — 4 seasons\nU21 — 3 seasons',
-  observationDuration: 'U19 — 4 seasons\nU21 — 3 seasons',
-  numberOfSeasons: 'U19 — 4\nU21 — 3',
-  seasonLength: 'Tournament A — 4 weeks\nTournament B — 2 weeks',
-  matchExposure: 'U19 — 250 h\nU21 — 210 h',
-  trainingExposure: 'U19 — 420 h\nU21 — 390 h',
-};
+const MULTILINE_PLACEHOLDERS: Record<string, string> = {};
 
 type ExtractionFieldEditorProps = {
   paperId: string;
@@ -39,69 +28,32 @@ export function ExtractionFieldEditor({
   selected = true,
   onSelectedChange,
 }: ExtractionFieldEditorProps) {
-  const router = useRouter();
-  const [draftValue, setDraftValue] = useState(result?.value ?? '');
-  const [isPending, startTransition] = useTransition();
-  const debounceRef = useRef<NodeJS.Timeout | null>(null);
+  const { updateField, getFieldValue } = useContext(WorkspaceSaveContext);
   const placeholder = MULTILINE_PLACEHOLDERS[definition.id] ?? '';
+  
+  // Get local value if it exists, otherwise use server value
+  const localValue = getFieldValue(tab, definition.id);
+  const currentValue = localValue !== undefined ? localValue : (result?.value ?? '');
+  const [draftValue, setDraftValue] = useState(currentValue);
 
   useEffect(() => {
-    setDraftValue(result?.value ?? '');
-  }, [result?.value]);
-
-  useEffect(() => () => {
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
-  }, []);
+    setDraftValue(currentValue);
+  }, [currentValue]);
 
   const isSelected = supportsAi ? selected : true;
 
-  const persist = (nextValue: string) => {
-    if (supportsAi && !isSelected) {
-      return;
-    }
-    startTransition(async () => {
-      try {
-        const response = await fetch('/api/extract/field', {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            paperId,
-            tab,
-            fieldId: definition.id,
-            value: nextValue.trim(),
-            metric: definition.metric,
-          }),
-        });
-
-        if (!response.ok) {
-          const payload = await response.json().catch(() => ({}));
-          throw new Error(payload.error ?? "Failed to update field");
-        }
-
-        router.refresh();
-      } catch (error) {
-        console.error('Failed to update field', error);
-      }
+  const handleChange = (value: string) => {
+    // Update local state immediately for UI
+    setDraftValue(value);
+    
+    // Update the context (marks as changed and stores locally)
+    updateField({
+      paperId,
+      tab,
+      fieldId: definition.id,
+      value: value.trim() || null,
+      metric: definition.metric,
     });
-  };
-
-  const schedulePersist = (nextValue: string) => {
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
-    debounceRef.current = setTimeout(() => persist(nextValue), 400);
-  };
-
-  const handleBlur = () => {
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
-    if (supportsAi && !isSelected) {
-      return;
-    }
-    persist(draftValue);
   };
 
   return (
@@ -136,11 +88,8 @@ export function ExtractionFieldEditor({
           if (supportsAi && !isSelected) {
             return;
           }
-          const nextValue = event.target.value;
-          setDraftValue(nextValue);
-          schedulePersist(nextValue);
+          handleChange(event.target.value);
         }}
-        onBlur={handleBlur}
         rows={3}
         placeholder={placeholder}
         className={`rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 ${
@@ -149,7 +98,6 @@ export function ExtractionFieldEditor({
             : 'border-emerald-200/80 focus:border-emerald-300 focus:ring-emerald-200/70'
         }`}
       />
-      {isPending ? <p className="text-[11px] text-slate-500">Saving…</p> : null}
     </div>
   );
 }
