@@ -26,7 +26,7 @@ export const runtime = 'nodejs';
 export async function POST(request: Request) {
   const profile = await readActiveProfileSession();
   if (!profile) {
-    return NextResponse.json({ error: 'Select a profile before saving changes.' }, { status: 401 });
+    return NextResponse.json({ error: 'Authentication required. Please select a profile before saving changes.' }, { status: 401 });
   }
 
   let parsed: z.infer<typeof bodySchema>;
@@ -34,8 +34,11 @@ export async function POST(request: Request) {
     const body = await request.json();
     parsed = bodySchema.parse(body);
   } catch (error) {
-    const message = error instanceof z.ZodError ? error.issues.map((issue) => issue.message).join(', ') : 'Invalid body';
-    return NextResponse.json({ error: message }, { status: 400 });
+    console.error('[extract/save] Validation error:', error);
+    const message = error instanceof z.ZodError 
+      ? `Validation failed: ${error.issues.map((issue) => `${issue.path.join('.')}: ${issue.message}`).join('; ')}` 
+      : 'Invalid request body';
+    return NextResponse.json({ error: message, details: error instanceof z.ZodError ? error.issues : undefined }, { status: 400 });
   }
 
   try {
@@ -50,6 +53,7 @@ export async function POST(request: Request) {
       });
 
       if (fields.length === 0) {
+        console.warn(`[extract/save] No fields to save for tab ${update.tab} in paper ${parsed.paperId}`);
         continue;
       }
 
@@ -58,10 +62,16 @@ export async function POST(request: Request) {
       });
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, savedUpdates: parsed.updates.length });
   } catch (error) {
-    console.error('[extract/save] failed', error);
-    const message = error instanceof Error ? error.message : 'Failed to save changes';
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error(`[extract/save] Failed to save extraction fields for paper ${parsed.paperId}:`, error);
+    const message = error instanceof Error 
+      ? `Failed to save changes to paper ${parsed.paperId}: ${error.message}` 
+      : 'An unknown error occurred while saving changes';
+    return NextResponse.json({ 
+      error: message, 
+      paperId: parsed.paperId,
+      context: 'extraction_save'
+    }, { status: 500 });
   }
 }

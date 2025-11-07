@@ -90,36 +90,73 @@ export async function POST(request: Request) {
   }
 }
 
-async function loadFileBuffer(file: StoredFile) {
+async function loadFileBuffer(file: StoredFile): Promise<Buffer> {
+  console.log(`[loadFileBuffer] Loading file ${file.id} (${file.name})`);
+  
+  // Try loading from base64 data
   if (file.dataBase64) {
-    return Buffer.from(file.dataBase64, 'base64');
+    console.log('[loadFileBuffer] Loading from dataBase64');
+    try {
+      return Buffer.from(file.dataBase64, 'base64');
+    } catch (error) {
+      console.error('[loadFileBuffer] Failed to decode dataBase64:', error);
+      throw new Error(`Failed to decode file data: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   }
 
+  // Try loading from publicUrl
   if (file.publicUrl) {
+    // Data URL format
     if (file.publicUrl.startsWith('data:')) {
+      console.log('[loadFileBuffer] Loading from data URL');
       const base64Part = file.publicUrl.split(',')[1];
       if (!base64Part) {
-        throw new Error('Invalid data URL for file');
+        throw new Error('Invalid data URL: missing base64 data after comma');
       }
-      return Buffer.from(base64Part, 'base64');
+      try {
+        return Buffer.from(base64Part, 'base64');
+      } catch (error) {
+        console.error('[loadFileBuffer] Failed to decode data URL:', error);
+        throw new Error(`Failed to decode data URL: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
     }
 
+    // Local file path
     if (file.publicUrl.startsWith('/')) {
       const absolutePath = path.join(process.cwd(), 'public', path.basename(file.publicUrl));
-      return fs.readFile(absolutePath);
+      console.log(`[loadFileBuffer] Loading from local file: ${absolutePath}`);
+      try {
+        return await fs.readFile(absolutePath);
+      } catch (error) {
+        console.error(`[loadFileBuffer] Failed to read local file ${absolutePath}:`, error);
+        throw new Error(`Failed to read file from disk (${absolutePath}): ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
     }
 
-    if (file.publicUrl.startsWith('http')) {
-      const response = await fetch(file.publicUrl);
-      if (!response.ok) {
-        throw new Error(`Failed to load file from storage: ${response.statusText}`);
+    // HTTP(S) URL
+    if (file.publicUrl.startsWith('http://') || file.publicUrl.startsWith('https://')) {
+      console.log(`[loadFileBuffer] Loading from HTTP URL: ${file.publicUrl}`);
+      try {
+        const response = await fetch(file.publicUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        const arrayBuffer = await response.arrayBuffer();
+        return Buffer.from(arrayBuffer);
+      } catch (error) {
+        console.error(`[loadFileBuffer] Failed to fetch from URL ${file.publicUrl}:`, error);
+        throw new Error(`Failed to download file from ${file.publicUrl}: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
-      const arrayBuffer = await response.arrayBuffer();
-      return Buffer.from(arrayBuffer);
     }
+
+    // Unsupported URL format
+    console.error(`[loadFileBuffer] Unsupported publicUrl format: ${file.publicUrl}`);
+    throw new Error(`Unsupported file URL format: "${file.publicUrl}". Expected data:, /, http://, or https://`);
   }
 
-  throw new Error('No file data available for extraction');
+  // No data source available
+  console.error(`[loadFileBuffer] File ${file.id} has no data source (no dataBase64 or publicUrl)`);
+  throw new Error(`File "${file.name}" has no accessible data source. Please re-upload the file.`);
 }
 
 function bufferToBase64(buffer: Buffer) {

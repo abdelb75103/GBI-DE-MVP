@@ -24,6 +24,7 @@ export type ExtractionTab =
   | 'illnessRegion'
   | 'illnessEtiology';
 
+// Profile ID of user who made the update, or null for system/AI
 export type ExtractionUpdatedBy = string | null;
 
 export interface Database {
@@ -69,7 +70,7 @@ export interface Database {
           metric: ExtractionMetric | null;
           status: ExtractionFieldStatus;
           updated_at: string;
-          updated_by: ExtractionUpdatedBy;
+          updated_by: string | null;
         };
         Insert: {
           id?: string;
@@ -82,7 +83,7 @@ export interface Database {
           metric?: ExtractionMetric | null;
           status?: ExtractionFieldStatus;
           updated_at?: string;
-          updated_by?: ExtractionUpdatedBy;
+          updated_by?: string | null;
         };
         Update: {
           id?: string;
@@ -95,7 +96,7 @@ export interface Database {
           metric?: ExtractionMetric | null;
           status?: ExtractionFieldStatus;
           updated_at?: string;
-          updated_by?: ExtractionUpdatedBy;
+          updated_by?: string | null;
         };
         Relationships: [
           {

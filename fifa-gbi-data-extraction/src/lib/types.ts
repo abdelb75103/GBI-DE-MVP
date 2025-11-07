@@ -1,3 +1,5 @@
+import type { ExtractionMetric } from '@/lib/supabase/types';
+
 export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived' | 'mental_health' | 'uefa' | 'american_data';
 
 export type ExtractionTab =
@@ -12,12 +14,8 @@ export type ExtractionTab =
   | 'illnessRegion'
   | 'illnessEtiology';
 
-export type ExtractionFieldMetric =
-  | 'prevalence'
-  | 'incidence'
-  | 'burden'
-  | 'severityMeanDays'
-  | 'severityTotalDays';
+// Use the database-defined type for consistency
+export type ExtractionFieldMetric = ExtractionMetric;
 
 export type ExtractionFieldStatus = 'reported' | 'not_reported' | 'uncertain';
 

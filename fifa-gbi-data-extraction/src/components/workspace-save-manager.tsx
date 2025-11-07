@@ -44,6 +44,9 @@ type WorkspaceSaveManagerProps = {
   children: React.ReactNode;
 };
 
+const MAX_PENDING_UPDATES = 100; // Warn when exceeding this
+const AUTO_SAVE_THRESHOLD = 150; // Auto-save when reaching this
+
 export function WorkspaceSaveManager({ paperId, currentStatus, children }: WorkspaceSaveManagerProps) {
   const router = useRouter();
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -52,9 +55,11 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
   const [message, setMessage] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [pendingNavigation, setPendingNavigation] = useState<string | null>(null);
+  const [showWarning, setShowWarning] = useState(false);
   
   // Store all pending field updates locally (not saved to DB yet)
   const [pendingUpdates, setPendingUpdates] = useState<Map<string, FieldUpdate>>(new Map());
+  const [shouldAutoSave, setShouldAutoSave] = useState(false);
 
   // Browser tab/window close warning (native browser dialog)
   useEffect(() => {
@@ -123,6 +128,31 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
   const markAsSaved = () => {
     setHasUnsavedChanges(false);
   };
+
+  // Watch for auto-save threshold - use effect to avoid stale closure
+  useEffect(() => {
+    if (pendingUpdates.size >= AUTO_SAVE_THRESHOLD && hasUnsavedChanges && !isPending) {
+      console.warn(`Auto-saving due to ${pendingUpdates.size} pending updates`);
+      setShouldAutoSave(true);
+    }
+  }, [pendingUpdates.size, hasUnsavedChanges, isPending]);
+
+  // Perform auto-save when triggered
+  useEffect(() => {
+    if (shouldAutoSave) {
+      handleSave(false);
+      setShouldAutoSave(false);
+    }
+  }, [shouldAutoSave]);
+
+  // Show warning when exceeding threshold
+  useEffect(() => {
+    if (pendingUpdates.size > MAX_PENDING_UPDATES && pendingUpdates.size < AUTO_SAVE_THRESHOLD) {
+      setShowWarning(true);
+    } else if (pendingUpdates.size <= MAX_PENDING_UPDATES) {
+      setShowWarning(false);
+    }
+  }, [pendingUpdates.size]);
 
   // Update a field locally (not saved to DB yet)
   const updateField = (update: FieldUpdate) => {
@@ -265,7 +295,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
               {/* Message */}
               <div className="mb-6 rounded-2xl bg-slate-50/80 p-4 ring-1 ring-slate-200/40">
                 <p className="text-sm leading-relaxed text-slate-700">
-                  All unsaved progress will be permanently lost if you discard your changes. We recommend saving your work to continue later or mark it as complete.
+                  You have <strong>{pendingUpdates.size} unsaved changes</strong>. All progress will be <strong className="text-rose-700">permanently lost</strong> if you discard. We strongly recommend saving your work.
                 </p>
               </div>
               
@@ -296,22 +326,25 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
                 <button
                   type="button"
                   onClick={() => {
-                    setPendingUpdates(new Map());
-                    setHasUnsavedChanges(false);
-                    setShowModal(false);
-                    if (pendingNavigation) {
-                      const url = new URL(pendingNavigation);
-                      router.push(url.pathname);
-                      setPendingNavigation(null);
-                    } else {
-                      // Go back if browser back was pressed
-                      window.history.back();
+                    // Double confirmation for destructive action
+                    if (confirm(`⚠️ WARNING: You are about to permanently delete ${pendingUpdates.size} unsaved changes.\n\nThis action CANNOT be undone.\n\nAre you absolutely sure you want to discard all your work?`)) {
+                      setPendingUpdates(new Map());
+                      setHasUnsavedChanges(false);
+                      setShowModal(false);
+                      if (pendingNavigation) {
+                        const url = new URL(pendingNavigation);
+                        router.push(url.pathname);
+                        setPendingNavigation(null);
+                      } else {
+                        // Go back if browser back was pressed
+                        window.history.back();
+                      }
                     }
                   }}
                   disabled={isPending}
-                  className="w-full rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 hover:shadow-md disabled:opacity-50"
+                  className="w-full rounded-full border-2 border-rose-300 bg-white px-6 py-3.5 text-sm font-semibold text-rose-700 shadow-sm transition hover:bg-rose-50 hover:border-rose-400 hover:shadow-md disabled:opacity-50"
                 >
-                  Discard All Changes
+                  ⚠️ Discard All {pendingUpdates.size} Changes (Cannot Undo)
                 </button>
                 <button
                   type="button"
@@ -326,6 +359,42 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children }: Works
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Warning for too many pending updates */}
+      {showWarning && pendingUpdates.size > MAX_PENDING_UPDATES && (
+        <div className="fixed bottom-24 right-6 z-50 max-w-md rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 shadow-lg">
+          <div className="flex items-start gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5 text-amber-600 mt-0.5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-amber-900">
+                You have {pendingUpdates.size} unsaved changes
+              </p>
+              <p className="text-xs text-amber-700 mt-1">
+                Consider saving soon to avoid data loss. Auto-save will trigger at {AUTO_SAVE_THRESHOLD} changes.
+              </p>
+            </div>
+            <button
+              onClick={() => setShowWarning(false)}
+              className="text-amber-600 hover:text-amber-800"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+              </svg>
+            </button>
           </div>
         </div>
       )}

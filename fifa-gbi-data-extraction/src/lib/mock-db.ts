@@ -100,6 +100,8 @@ const normalizePaperMetadata = (metadata: Paper['metadata']): Record<string, unk
   return {};
 };
 
+// Session info is now stored only in metadata (not in assigned_to column)
+// This avoids race conditions from dual tracking
 const parseActiveSession = (metadata: Record<string, unknown>, paperId: string): PaperSession | null => {
   const raw = metadata.activeSession;
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
@@ -121,7 +123,7 @@ const parseActiveSession = (metadata: Record<string, unknown>, paperId: string):
   };
 };
 
-const applyActiveSessionMetadata = (
+const setActiveSessionMetadata = (
   metadata: Record<string, unknown>,
   session: PaperSession | null,
 ): Record<string, unknown> => {
@@ -245,7 +247,7 @@ const mapExtractionFieldRow = (row: ExtractionFieldRow): ExtractionFieldResult =
   confidence: row.confidence !== null && row.confidence !== undefined ? Number(row.confidence) : null,
   sourceQuote: row.source_quote ?? null,
   pageHint: row.page_hint ?? null,
-  metric: (row.metric ?? undefined) as ExtractionFieldMetric | undefined,
+  metric: row.metric ?? undefined,
   status: row.status,
   updatedAt: row.updated_at,
   updatedBy: (row as { updated_by?: string | null }).updated_by ?? null,
@@ -306,7 +308,7 @@ const upsertExtractionFieldRow = async (
     confidence: updates.confidence ?? null,
     source_quote: updates.sourceQuote ?? null,
     page_hint: updates.pageHint ?? null,
-    metric: (updates.metric ?? null) as SupabaseExtractionMetric | null,
+    metric: updates.metric ?? null,
     status: updates.status ?? 'not_reported',
     updated_at: new Date().toISOString(),
     updated_by: updates.updatedBy ?? null,
@@ -399,6 +401,31 @@ const fetchExtractionById = async (id: string): Promise<ExtractionResult> => {
   return mapExtractionRow(data as ExtractionRow & { extraction_fields: ExtractionFieldRow[] });
 };
 
+// Fields that define or contain population-specific data
+const POPULATION_RELATED_FIELDS = new Set([
+  // Population-defining fields
+  'ageCategory',
+  'sex',
+  // Fields that can have multi-line population-specific values
+  'meanAge',
+  'sampleSizePlayers',
+  'numberOfTeams',
+  'studyPeriodYears',
+  'observationDuration',
+  'seasonLength',
+  'numberOfSeasons',
+  'totalExposure',
+  'matchExposure',
+  'trainingExposure',
+]);
+
+const shouldSyncPopulations = (fieldId: string): boolean => {
+  // Sync if it's a population-defining field OR if it's a metric-based field (contains population data)
+  return POPULATION_RELATED_FIELDS.has(fieldId) || fieldId.includes('_prevalence') || 
+    fieldId.includes('_incidence') || fieldId.includes('_burden') || 
+    fieldId.includes('_severityMeanDays') || fieldId.includes('_severityTotalDays');
+};
+
 const syncPopulationSlices = async (paperId: string) => {
   try {
     const supabase = supabaseClient();
@@ -470,11 +497,18 @@ const syncPopulationSlices = async (paperId: string) => {
         return;
       }
       Object.entries(parsed.values).forEach(([fieldId, value]) => {
-        // Skip if this value is actually a population label (not real data)
-        // This happens when standalone labels are stored in Count field to preserve populations
-        // If value matches the group label exactly, it's not real data
-        if (value && value.trim() === groupRow.label.trim()) {
-          return; // Skip this - it's a label, not a data value
+        // Skip only if this is a prevalence/count field AND value exactly matches the label
+        // AND there's no other data in this field (indicating it's a standalone label placeholder)
+        // This is more precise than the previous logic which could accidentally skip real data
+        const isPrevalenceField = fieldId.endsWith('_prevalence') || 
+          ['injuryTotalCount', 'illnessTotalCount'].includes(fieldId);
+        
+        if (isPrevalenceField && value && value.trim() === groupRow.label.trim()) {
+          // Check if this looks like a standalone label (no numeric data)
+          const hasNumericData = /\d/.test(value);
+          if (!hasNumericData) {
+            return; // Skip this - it's likely just a label placeholder
+          }
         }
         
         const metric = fieldMetricMap.get(fieldId) ?? null;
@@ -485,7 +519,7 @@ const syncPopulationSlices = async (paperId: string) => {
           field_id: fieldId,
           source_field_id: fieldId,
           value: value ?? null,
-          metric: metric as SupabaseExtractionMetric | null,
+          metric: metric,
           unit: null,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
@@ -877,7 +911,7 @@ export const mockDb = {
       throw new Error(`Paper ${paperId} not found`);
     }
 
-    // Check if paper is assigned to someone else (database field takes precedence)
+    // Check if paper is assigned to someone else using ONLY assigned_to column (single source of truth)
     if (paper.assignedTo && paper.assignedTo !== input.profileId) {
       // Fetch the assignee's profile info for better error message
       const supabase = supabaseClient();
@@ -901,13 +935,8 @@ export const mockDb = {
       );
     }
 
-    // Also check activeSession in metadata for backward compatibility
-    const existing = paper.activeSession;
-    if (existing && existing.profileId !== input.profileId) {
-      throw new PaperSessionConflictError(existing);
-    }
-
     const now = new Date().toISOString();
+    const existing = paper.activeSession;
     const session: PaperSession = {
       paperId,
       profileId: input.profileId,
@@ -916,7 +945,7 @@ export const mockDb = {
       lastHeartbeatAt: now,
     };
 
-    const metadata = applyActiveSessionMetadata(normalizePaperMetadata(paper.metadata), session);
+    const metadata = setActiveSessionMetadata(normalizePaperMetadata(paper.metadata), session);
 
     const supabase = supabaseClient();
     const { error } = await supabase
@@ -942,14 +971,14 @@ export const mockDb = {
       throw new Error(`Paper ${paperId} not found`);
     }
 
-    const existing = paper.activeSession;
-
-    if (!existing) {
-      throw new Error(`No active session for paper ${paperId}`);
+    // Check assigned_to column (single source of truth)
+    if (!paper.assignedTo || paper.assignedTo !== profileId) {
+      throw new Error(`No active session for paper ${paperId} or session belongs to different user`);
     }
 
-    if (existing.profileId !== profileId) {
-      throw new PaperSessionConflictError(existing);
+    const existing = paper.activeSession;
+    if (!existing) {
+      throw new Error(`No active session metadata for paper ${paperId}`);
     }
 
     const now = new Date().toISOString();
@@ -958,7 +987,7 @@ export const mockDb = {
       lastHeartbeatAt: now,
     };
 
-    const metadata = applyActiveSessionMetadata(normalizePaperMetadata(paper.metadata), session);
+    const metadata = setActiveSessionMetadata(normalizePaperMetadata(paper.metadata), session);
 
     const supabase = supabaseClient();
     const { error } = await supabase
@@ -967,7 +996,8 @@ export const mockDb = {
         metadata,
         updated_at: now,
       })
-      .eq('id', paperId);
+      .eq('id', paperId)
+      .eq('assigned_to', profileId); // Ensure ownership hasn't changed
 
     if (error) {
       throw new Error(`Failed to extend paper session: ${error.message}`);
@@ -983,17 +1013,13 @@ export const mockDb = {
       throw new Error(`Paper ${paperId} not found`);
     }
 
-    const existing = paper.activeSession;
-
-    if (!existing) {
+    // Only clear if currently assigned to this profile (single source of truth check)
+    if (!paper.assignedTo || paper.assignedTo !== profileId) {
+      // Not assigned to this user, nothing to do
       return;
     }
 
-    if (existing && existing.profileId !== profileId) {
-      throw new PaperSessionConflictError(existing);
-    }
-
-    const metadata = applyActiveSessionMetadata(normalizePaperMetadata(paper.metadata), null);
+    const metadata = setActiveSessionMetadata(normalizePaperMetadata(paper.metadata), null);
 
     const supabase = supabaseClient();
     const { error } = await supabase
@@ -1003,7 +1029,8 @@ export const mockDb = {
         metadata,
         updated_at: new Date().toISOString(),
       })
-      .eq('id', paperId);
+      .eq('id', paperId)
+      .eq('assigned_to', profileId); // Ensure we only clear if still assigned to this user
 
     if (error) {
       throw new Error(`Failed to end paper session: ${error.message}`);
@@ -1081,7 +1108,7 @@ export const mockDb = {
       confidence: normalizedConfidence,
       sourceQuote: updates.sourceQuote ?? null,
       pageHint: updates.pageHint ?? null,
-      metric: (updates.metric ?? null) as SupabaseExtractionMetric | null,
+      metric: updates.metric ?? null,
       updatedBy: updates.updatedBy ?? null,
     });
 
@@ -1089,8 +1116,10 @@ export const mockDb = {
       await this.updatePaper(paperId, { title: updates.value });
     }
 
-    // Sync population slices for ANY tab (all tabs can have multi-population data)
-    await syncPopulationSlices(paperId);
+    // Only sync population slices if this field affects populations
+    if (shouldSyncPopulations(fieldId)) {
+      await syncPopulationSlices(paperId);
+    }
 
     return fetchExtractionById(extractionRow.id);
   },
@@ -1102,32 +1131,60 @@ export const mockDb = {
     options: { updatedBy: string },
   ): Promise<void> {
     const extractionRow = await ensureExtractionRow(paperId, tab, 'human-input');
+    const supabase = supabaseClient();
+    const now = new Date().toISOString();
     
-    await supabaseClient()
+    // Batch all field upserts into a single operation for atomicity
+    const fieldPayloads: ExtractionFieldInsert[] = fields.map((field) => {
+      const status: SupabaseFieldStatus = field.value ? 'reported' : 'not_reported';
+      return {
+        id: crypto.randomUUID(),
+        extraction_id: extractionRow.id,
+        field_id: field.fieldId,
+        value: field.value,
+        confidence: null,
+        source_quote: null,
+        page_hint: null,
+        metric: field.metric ?? null,
+        status,
+        updated_at: now,
+        updated_by: options.updatedBy, // Profile ID of user making the change
+      };
+    });
+
+    // Execute as a single batch upsert (more atomic than sequential operations)
+    const { error: fieldError } = await supabase
+      .from('extraction_fields')
+      .upsert(fieldPayloads, { onConflict: 'extraction_id,field_id' });
+    
+    if (fieldError) {
+      throw new Error(`Failed to save extraction fields: ${fieldError.message}`);
+    }
+
+    // Update extraction timestamp
+    const { error: updateError } = await supabase
       .from('extractions')
       .update({
         model: 'human-input',
-        updated_at: new Date().toISOString(),
+        updated_at: now,
       })
       .eq('id', extractionRow.id);
 
-    for (const field of fields) {
-      const status: SupabaseFieldStatus = field.value ? 'reported' : 'not_reported';
-      
-      await upsertExtractionFieldRow(extractionRow.id, field.fieldId, {
-        value: field.value,
-        status,
-        metric: (field.metric ?? null) as SupabaseExtractionMetric | null,
-        updatedBy: options.updatedBy,
-      });
-
-      if (field.fieldId === 'title' && field.value) {
-        await this.updatePaper(paperId, { title: field.value });
-      }
+    if (updateError) {
+      throw new Error(`Failed to update extraction timestamp: ${updateError.message}`);
     }
 
-    // Sync population slices for ANY tab (all tabs can have multi-population data)
-    await syncPopulationSlices(paperId);
+    // Check if title needs updating
+    const titleField = fields.find((f) => f.fieldId === 'title');
+    if (titleField?.value) {
+      await this.updatePaper(paperId, { title: titleField.value });
+    }
+
+    // Only sync if any of the saved fields affect populations
+    const needsSync = fields.some((field) => shouldSyncPopulations(field.fieldId));
+    if (needsSync) {
+      await syncPopulationSlices(paperId);
+    }
   },
 
   async listPopulationGroups(paperId: string): Promise<PopulationGroup[]> {

@@ -196,10 +196,19 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
       valuesByGroup.set(value.populationGroupId, groupValues);
     });
 
+    // If no population groups, create a single default group with a meaningful label
     const groups =
       populationGroups.length > 0
         ? [...populationGroups]
-        : [{ id: '__default__', paperId: paper.id, tab: 'participantCharacteristics', label: '', position: 0, createdAt: '', updatedAt: '' }];
+        : [{ 
+            id: '__default__', 
+            paperId: paper.id, 
+            tab: 'participantCharacteristics' as const, 
+            label: 'All participants', // More descriptive than empty string
+            position: 0, 
+            createdAt: '', 
+            updatedAt: '' 
+          }];
     const sortedGroups = groups.sort((a, b) => a.position - b.position);
 
     // Determine which fields have population-specific data

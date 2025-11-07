@@ -15,29 +15,27 @@ begin
       'exposure',
       'injuryOutcome',
       'illnessOutcome',
-      'mentalHealthOutcomes',
       'injuryTissueType',
       'injuryLocation',
       'illnessRegion',
-      'illnessEtiology',
-      'mentalHealthSymptoms'
+      'illnessEtiology'
     );
   end if;
 end $$;
 
-do $$
-begin
-  if not exists (select 1 from pg_type where typname = 'extraction_updated_by') then
-    create type extraction_updated_by as enum ('human', 'ai');
-  end if;
-end $$;
+-- Removed extraction_updated_by enum - we now track actual user profiles instead
 
 -- Papers -------------------------------------------------------------------
 
 alter table if exists public.papers
+  add column if not exists assigned_study_id text unique,
   add column if not exists flag_reason text,
   add column if not exists status public.paper_status default 'uploaded',
   add column if not exists metadata jsonb default '{}'::jsonb;
+
+create index if not exists papers_assigned_study_id_idx on public.papers (assigned_study_id);
+
+comment on column public.papers.assigned_study_id is 'Human-readable study identifier (e.g., S001, S002) automatically assigned';
 
 -- Paper files --------------------------------------------------------------
 
@@ -61,12 +59,13 @@ create index if not exists paper_files_paper_id_idx on public.paper_files (paper
 create table if not exists public.paper_notes (
   id uuid primary key default gen_random_uuid(),
   paper_id uuid not null references public.papers (id) on delete cascade,
-  author text not null,
   body text not null,
   created_at timestamptz not null default now()
 );
 
 create index if not exists paper_notes_paper_id_idx on public.paper_notes (paper_id);
+
+comment on table public.paper_notes is 'Notes are written by the person assigned to the paper';
 
 -- Extractions --------------------------------------------------------------
 
@@ -93,11 +92,13 @@ create table if not exists public.extraction_fields (
   metric public.extraction_metric,
   status public.extraction_field_status not null default 'not_reported',
   updated_at timestamptz not null default now(),
-  updated_by extraction_updated_by not null default 'human'
+  updated_by text
 );
 
 create unique index if not exists extraction_fields_unique_field
   on public.extraction_fields (extraction_id, field_id);
+
+comment on column public.extraction_fields.updated_by is 'Profile ID of user who last updated this field, or NULL for system/AI updates';
 
 -- Population normalization -------------------------------------------------
 
