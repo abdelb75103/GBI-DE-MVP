@@ -14,9 +14,10 @@ import type { Paper } from '@/lib/types';
 type PapersTableProps = {
   papers: Paper[];
   canBulkExport?: boolean;
+  isAdmin?: boolean;
 };
 
-export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) {
+export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: PapersTableProps) {
   const router = useRouter();
   const { profile } = useActiveProfileState();
   const [isPending, startTransition] = useTransition();
@@ -26,6 +27,7 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [downloadKind, setDownloadKind] = useState<'csv' | 'json' | null>(null);
   const [menuOpenFor, setMenuOpenFor] = useState<string | null>(null);
+  const [deleteConfirmFor, setDeleteConfirmFor] = useState<string | null>(null);
   const menuRefs = useRef(new Map<string, HTMLDivElement>());
 
   const getAssignmentStatus = (paper: Paper) => {
@@ -96,6 +98,28 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
         setDownloadUrl(payload.export.downloadUrl);
         setDownloadKind(kind);
       }
+      router.refresh();
+    });
+  };
+
+  const handleDelete = (paperId: string) => {
+    startTransition(async () => {
+      setError(null);
+      setMessage(null);
+
+      const response = await fetch(`/api/papers/${paperId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => ({}))) as { error?: string };
+        setError(payload.error ?? 'Failed to delete paper');
+        return;
+      }
+
+      setMessage('Paper deleted successfully');
+      setDeleteConfirmFor(null);
+      setMenuOpenFor(null);
       router.refresh();
     });
   };
@@ -330,6 +354,47 @@ export function PapersTable({ papers, canBulkExport = true }: PapersTableProps) 
                           >
                             Download CSV
                           </a>
+                          {isAdmin && (
+                            <>
+                              <div className="my-1 border-t border-slate-200" />
+                              {deleteConfirmFor === paper.id ? (
+                                <div className="rounded-lg bg-rose-50 p-2">
+                                  <p className="text-xs font-semibold text-rose-700 mb-2">
+                                    Confirm deletion?
+                                  </p>
+                                  <div className="flex gap-2">
+                                    <button
+                                      type="button"
+                                      onClick={() => handleDelete(paper.id)}
+                                      disabled={isPending}
+                                      className="flex-1 rounded-md bg-rose-600 px-2 py-1 text-xs font-semibold text-white transition hover:bg-rose-700 disabled:opacity-50"
+                                    >
+                                      Delete
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => setDeleteConfirmFor(null)}
+                                      disabled={isPending}
+                                      className="flex-1 rounded-md border border-slate-300 bg-white px-2 py-1 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-50"
+                                    >
+                                      Cancel
+                                    </button>
+                                  </div>
+                                </div>
+                              ) : (
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setDeleteConfirmFor(paper.id);
+                                  }}
+                                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-rose-600 transition hover:bg-rose-50"
+                                >
+                                  Delete Paper
+                                  <span aria-hidden>🗑️</span>
+                                </button>
+                              )}
+                            </>
+                          )}
                         </div>
                       ) : null}
                     </div>

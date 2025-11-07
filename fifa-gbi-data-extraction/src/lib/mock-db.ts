@@ -624,6 +624,80 @@ export const mockDb = {
     return this.getPaper(id);
   },
 
+  async deletePaper(id: string): Promise<void> {
+    const supabase = supabaseClient();
+    
+    // Get extraction IDs first
+    const { data: extractions, error: extractionsError } = await supabase
+      .from('extractions')
+      .select('id')
+      .eq('paper_id', id);
+    
+    if (extractionsError) {
+      throw new Error(`Failed to fetch extractions for deletion: ${extractionsError.message}`);
+    }
+    
+    const extractionIds = (extractions ?? []).map((e) => e.id);
+    
+    // Delete associated data first (cascade delete)
+    if (extractionIds.length > 0) {
+      const { error: fieldsError } = await supabase
+        .from('extraction_fields')
+        .delete()
+        .in('extraction_id', extractionIds);
+      if (fieldsError) {
+        throw new Error(`Failed to delete extraction fields: ${fieldsError.message}`);
+      }
+    }
+    
+    const { error: extractionsDeleteError } = await supabase
+      .from('extractions')
+      .delete()
+      .eq('paper_id', id);
+    if (extractionsDeleteError) {
+      throw new Error(`Failed to delete extractions: ${extractionsDeleteError.message}`);
+    }
+    
+    const { error: popValuesError } = await supabase
+      .from('population_values')
+      .delete()
+      .eq('paper_id', id);
+    if (popValuesError) {
+      throw new Error(`Failed to delete population values: ${popValuesError.message}`);
+    }
+    
+    const { error: popGroupsError } = await supabase
+      .from('population_groups')
+      .delete()
+      .eq('paper_id', id);
+    if (popGroupsError) {
+      throw new Error(`Failed to delete population groups: ${popGroupsError.message}`);
+    }
+    
+    const { error: notesError } = await supabase
+      .from('paper_notes')
+      .delete()
+      .eq('paper_id', id);
+    if (notesError) {
+      throw new Error(`Failed to delete paper notes: ${notesError.message}`);
+    }
+    
+    const { error: filesError } = await supabase
+      .from('paper_files')
+      .delete()
+      .eq('paper_id', id);
+    if (filesError) {
+      throw new Error(`Failed to delete paper files: ${filesError.message}`);
+    }
+    
+    // Finally delete the paper
+    const { error } = await supabase.from('papers').delete().eq('id', id);
+
+    if (error) {
+      throw new Error(`Failed to delete paper: ${error.message}`);
+    }
+  },
+
   async getFile(id: string): Promise<StoredFile | undefined> {
     const supabase = supabaseClient();
     const { data, error } = await supabase.from('paper_files').select('*').eq('id', id).maybeSingle();

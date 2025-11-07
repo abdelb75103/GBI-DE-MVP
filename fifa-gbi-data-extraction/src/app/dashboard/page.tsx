@@ -117,7 +117,7 @@ export default async function DashboardPage() {
               </Link>
             ) : null}
           </div>
-          <PapersDashboardClient papers={papers} canBulkExport={isAdmin} />
+          <PapersDashboardClient papers={papers} canBulkExport={isAdmin} isAdmin={isAdmin} />
         </section>
 
         <aside className="space-y-6">
