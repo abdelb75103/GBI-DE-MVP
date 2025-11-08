@@ -41,7 +41,7 @@ export default async function PaperWorkspace({
   }
 
   const isAdmin = profile.role === 'admin';
-  const isAssignedToOther = paper.assignedTo && paper.assignedTo !== profile.id;
+  const isAssignedToOther = Boolean(paper.assignedTo && paper.assignedTo !== profile.id);
   const isReadOnly = isAdmin && isAssignedToOther;
 
   // If redirected here due to a conflict, show error page immediately

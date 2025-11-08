@@ -962,21 +962,22 @@ export const mockDb = {
     }
 
     const isAdmin = input.isAdmin ?? false;
-    const isAssignedToOther = paper.assignedTo && paper.assignedTo !== input.profileId;
+    const assignedTo = paper.assignedTo;
+    const isAssignedToOther = Boolean(assignedTo && assignedTo !== input.profileId);
 
     // Check if paper is assigned to someone else using ONLY assigned_to column (single source of truth)
-    if (isAssignedToOther && !isAdmin) {
+    if (isAssignedToOther && !isAdmin && assignedTo) {
       // Fetch the assignee's profile info for better error message
       const supabase = supabaseClient();
       const { data: assigneeProfile } = await supabase
         .from('profiles')
         .select('id, full_name')
-        .eq('id', paper.assignedTo)
+        .eq('id', assignedTo)
         .maybeSingle();
 
       const conflictSession: PaperSession = {
         paperId,
-        profileId: paper.assignedTo,
+        profileId: assignedTo,
         fullName: assigneeProfile?.full_name ?? 'Another user',
         startedAt: paper.activeSession?.startedAt ?? paper.updatedAt,
         lastHeartbeatAt: paper.activeSession?.lastHeartbeatAt ?? paper.updatedAt,
