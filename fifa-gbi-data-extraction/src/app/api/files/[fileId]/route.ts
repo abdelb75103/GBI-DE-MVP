@@ -32,14 +32,9 @@ export async function GET(
       return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
     }
 
-    // Check access: admins can access any paper, others can access if assigned to them or unassigned
-    const isAdmin = profile.role === 'admin';
-    const isAssignedToUser = paper.assignedTo === profile.id;
-    const isUnassigned = !paper.assignedTo;
-
-    if (!isAdmin && !isAssignedToUser && !isUnassigned) {
-      return NextResponse.json({ error: 'Access denied' }, { status: 403 });
-    }
+    // Any authenticated teammate can view/download PDFs.
+    // The workspace already enforces edit permissions through sessions,
+    // so gatekeeping here only leads to inconsistent previews.
 
     let fileBuffer: Buffer | null = null;
 
