@@ -41,7 +41,7 @@ export async function GET(
       return NextResponse.json({ error: 'Access denied' }, { status: 403 });
     }
 
-    let fileBuffer: Buffer;
+    let fileBuffer: Buffer | null = null;
 
     // Priority 1: Load from Supabase Storage if available
     if (file.storageBucket && file.storageObjectPath) {
@@ -89,7 +89,7 @@ export async function GET(
     );
     headers.set('Cache-Control', 'private, max-age=3600');
 
-    return new NextResponse(fileBuffer, {
+    return new NextResponse(fileBuffer as unknown as BodyInit, {
       status: 200,
       headers,
     });
@@ -101,4 +101,3 @@ export async function GET(
     );
   }
 }
-
