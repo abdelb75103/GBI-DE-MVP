@@ -157,6 +157,63 @@ npm run build
 npm run lint
 ```
 
+### 6. Supabase Storage Bucket Setup
+
+⚠️ **REQUIRED**: Create and configure the `papers` storage bucket for PDF file storage:
+
+**Steps to create the bucket:**
+
+1. Go to your Supabase Dashboard → Storage
+2. Click "Create a new bucket"
+3. Name: `papers`
+4. **Public bucket**: ❌ **UNCHECKED** (keep it private for security)
+5. Click "Create bucket"
+
+**Configure bucket policies:**
+
+After creating the bucket, set up Row Level Security (RLS) policies:
+
+```sql
+-- Allow authenticated users to upload files
+CREATE POLICY "Allow authenticated uploads"
+ON storage.objects FOR INSERT
+TO authenticated
+WITH CHECK (bucket_id = 'papers');
+
+-- Allow authenticated users to read files
+CREATE POLICY "Allow authenticated reads"
+ON storage.objects FOR SELECT
+TO authenticated
+USING (bucket_id = 'papers');
+
+-- Allow service role to manage all files (for server-side operations)
+CREATE POLICY "Allow service role full access"
+ON storage.objects FOR ALL
+TO service_role
+USING (bucket_id = 'papers')
+WITH CHECK (bucket_id = 'papers');
+```
+
+**Alternative: Use Supabase Dashboard**
+1. Go to Storage → `papers` bucket → Policies
+2. Click "New Policy"
+3. Create policies for:
+   - **INSERT**: Allow authenticated users
+   - **SELECT**: Allow authenticated users
+   - **ALL**: Allow service_role (for admin operations)
+
+**Verify bucket exists:**
+```sql
+-- Check if bucket exists
+SELECT * FROM storage.buckets WHERE name = 'papers';
+```
+
+**Test upload:**
+After setup, try uploading a PDF through the app. If it fails, check:
+- Bucket name is exactly `papers` (case-sensitive)
+- Service role key is set in environment variables
+- RLS policies are properly configured
+
 ## 📋 Summary
 
 **Code Status**: ✅ All code is properly configured and synchronized
@@ -166,6 +223,11 @@ npm run lint
 2. Clean up existing data if necessary
 3. Verify the old `extraction_updated_by` enum is removed
 
+**Storage Status**: ⚠️ NEEDS ATTENTION - You must:
+1. Create the `papers` storage bucket
+2. Configure RLS policies for authenticated access
+3. Verify service role has access
+
 **Environment**: ⚠️ VERIFY - Ensure all environment variables are set
 
 ---
@@ -174,9 +236,10 @@ npm run lint
 
 1. ✅ Apply migrations to Supabase
 2. ✅ Set environment variables
-3. ✅ Clean up existing data (if needed)
-4. ✅ Run tests
-5. ✅ Deploy
+3. ✅ Create and configure `papers` storage bucket
+4. ✅ Clean up existing data (if needed)
+5. ✅ Run tests
+6. ✅ Deploy
 
 If you encounter any errors, check the "Common Issues" section above.
 

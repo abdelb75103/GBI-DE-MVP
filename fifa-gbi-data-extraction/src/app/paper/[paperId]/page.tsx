@@ -147,11 +147,14 @@ export default async function PaperWorkspace({
     fields: extractionFieldDefinitions.filter((field) => field.tab === tab),
     results: extractionMap.get(tab)?.fields ?? [],
   }));
-  const viewerUrl = file?.publicUrl
-    ? file.publicUrl
-    : file?.dataBase64
-      ? `data:${file.mimeType};base64,${file.dataBase64}`
-      : null;
+  // Priority 1: Use API endpoint for secure file serving (works for both storage and base64 files)
+  // Priority 2: Use publicUrl if available (for external URLs)
+  // Priority 3: Fallback to data URL for legacy files (temporary backward compatibility)
+  const viewerUrl = file
+    ? file.publicUrl && !file.publicUrl.startsWith('data:')
+      ? file.publicUrl
+      : `/api/files/${file.id}`
+    : null;
 
   return (
     <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>

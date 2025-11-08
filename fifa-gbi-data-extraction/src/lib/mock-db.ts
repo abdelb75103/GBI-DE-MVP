@@ -821,6 +821,67 @@ export const mockDb = {
     return data ? mapFileRow(data as FileRow) : undefined;
   },
 
+  /**
+   * Uploads a file buffer to Supabase Storage
+   * @param buffer File buffer to upload
+   * @param fileName Original file name
+   * @param bucket Storage bucket name (default: 'papers')
+   * @returns Object with storageBucket and storageObjectPath
+   */
+  async uploadFileToStorage(
+    buffer: Buffer,
+    fileName: string,
+    bucket: string = 'papers'
+  ): Promise<{ storageBucket: string; storageObjectPath: string }> {
+    const supabase = getAdminServiceClient();
+
+    // Generate unique path: {paperId}/{timestamp}-{sanitized-filename}
+    // For now, use a UUID-based path since we don't have paperId yet
+    const fileId = crypto.randomUUID();
+    const sanitizedFileName = fileName.replace(/[^a-zA-Z0-9.-]/g, '_');
+    const timestamp = Date.now();
+    const storageObjectPath = `${fileId}/${timestamp}-${sanitizedFileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from(bucket)
+      .upload(storageObjectPath, buffer, {
+        contentType: 'application/pdf',
+        upsert: false,
+      });
+
+    if (uploadError) {
+      throw new Error(`Failed to upload file to storage: ${uploadError.message}`);
+    }
+
+    return {
+      storageBucket: bucket,
+      storageObjectPath,
+    };
+  },
+
+  /**
+   * Gets a signed URL for a file in Supabase Storage (valid for 1 hour)
+   * @param bucket Storage bucket name
+   * @param path Storage object path
+   * @returns Signed URL or null if file not found
+   */
+  async getStorageSignedUrl(
+    bucket: string,
+    path: string
+  ): Promise<string | null> {
+    const supabase = getAdminServiceClient();
+    const { data, error } = await supabase.storage
+      .from(bucket)
+      .createSignedUrl(path, 3600); // 1 hour expiry
+
+    if (error || !data) {
+      console.error(`Failed to create signed URL for ${bucket}/${path}:`, error);
+      return null;
+    }
+
+    return data.signedUrl;
+  },
+
   async attachFile(input: CreateFileInput): Promise<StoredFile> {
     const supabase = supabaseClient();
     const payload: FileInsert = {

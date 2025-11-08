@@ -112,7 +112,7 @@ export async function POST(request: Request) {
   }
 
   const arrayBuffer = await file.arrayBuffer();
-  const base64 = Buffer.from(arrayBuffer).toString('base64');
+  const fileBuffer = Buffer.from(arrayBuffer);
 
   const paper = await mockDb.createPaper({
     title: title ?? file.name,
@@ -123,12 +123,42 @@ export async function POST(request: Request) {
     uploadedBy: profile?.id ?? null,
   });
 
+  // Upload to Supabase Storage
+  let storageInfo: { storageBucket: string; storageObjectPath: string } | null = null;
+  try {
+    storageInfo = await mockDb.uploadFileToStorage(fileBuffer, file.name, 'papers');
+  } catch (storageError) {
+    console.error('[POST /api/uploads] Failed to upload to storage:', storageError);
+    // Fallback to base64 if storage upload fails
+    const base64 = fileBuffer.toString('base64');
+    const storedFile = await mockDb.attachFile({
+      paperId: paper.id,
+      name: file.name,
+      size: file.size,
+      mimeType: file.type || 'application/pdf',
+      dataBase64: base64,
+      storageBucket: null,
+      storageObjectPath: null,
+    });
+
+    const updatedPaper = await mockDb.updatePaper(paper.id, {
+      primaryFileId: storedFile.id,
+      storageBucket: storedFile.storageBucket,
+      storageObjectPath: storedFile.storageObjectPath,
+    });
+
+    return NextResponse.json({ paper: updatedPaper ?? paper, file: storedFile }, { status: 201 });
+  }
+
+  // Store file metadata with storage info (no base64)
   const storedFile = await mockDb.attachFile({
     paperId: paper.id,
     name: file.name,
     size: file.size,
     mimeType: file.type || 'application/pdf',
-    dataBase64: base64,
+    dataBase64: null, // Don't store base64 for new uploads
+    storageBucket: storageInfo.storageBucket,
+    storageObjectPath: storageInfo.storageObjectPath,
   });
 
   const updatedPaper = await mockDb.updatePaper(paper.id, {

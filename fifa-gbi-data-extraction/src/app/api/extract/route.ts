@@ -1,6 +1,3 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
@@ -102,7 +99,34 @@ export async function POST(request: Request) {
 async function loadFileBuffer(file: StoredFile): Promise<Buffer> {
   console.log(`[loadFileBuffer] Loading file ${file.id} (${file.name})`);
   
-  // Try loading from base64 data
+  // Priority 1: Load from Supabase Storage if available
+  if (file.storageBucket && file.storageObjectPath) {
+    console.log(`[loadFileBuffer] Loading from Supabase Storage: ${file.storageBucket}/${file.storageObjectPath}`);
+    try {
+      const { getAdminServiceClient } = await import('@/lib/supabase');
+      const supabase = getAdminServiceClient();
+      const { data, error } = await supabase.storage
+        .from(file.storageBucket)
+        .download(file.storageObjectPath);
+
+      if (error) {
+        console.error(`[loadFileBuffer] Failed to download from storage:`, error);
+        throw new Error(`Failed to download file from storage: ${error.message}`);
+      }
+
+      if (!data) {
+        throw new Error('Storage download returned no data');
+      }
+
+      const arrayBuffer = await data.arrayBuffer();
+      return Buffer.from(arrayBuffer);
+    } catch (error) {
+      console.error('[loadFileBuffer] Storage download failed, falling back to base64:', error);
+      // Fall through to base64 if storage fails
+    }
+  }
+
+  // Priority 2: Try loading from base64 data (legacy files)
   if (file.dataBase64) {
     console.log('[loadFileBuffer] Loading from dataBase64');
     try {
@@ -113,7 +137,7 @@ async function loadFileBuffer(file: StoredFile): Promise<Buffer> {
     }
   }
 
-  // Try loading from publicUrl
+  // Priority 3: Try loading from publicUrl
   if (file.publicUrl) {
     // Data URL format
     if (file.publicUrl.startsWith('data:')) {
@@ -127,18 +151,6 @@ async function loadFileBuffer(file: StoredFile): Promise<Buffer> {
       } catch (error) {
         console.error('[loadFileBuffer] Failed to decode data URL:', error);
         throw new Error(`Failed to decode data URL: ${error instanceof Error ? error.message : 'Unknown error'}`);
-      }
-    }
-
-    // Local file path
-    if (file.publicUrl.startsWith('/')) {
-      const absolutePath = path.join(process.cwd(), 'public', path.basename(file.publicUrl));
-      console.log(`[loadFileBuffer] Loading from local file: ${absolutePath}`);
-      try {
-        return await fs.readFile(absolutePath);
-      } catch (error) {
-        console.error(`[loadFileBuffer] Failed to read local file ${absolutePath}:`, error);
-        throw new Error(`Failed to read file from disk (${absolutePath}): ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     }
 
