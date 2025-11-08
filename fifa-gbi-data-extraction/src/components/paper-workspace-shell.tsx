@@ -9,6 +9,7 @@ export type PaperWorkspaceShellProps = {
   paperId: string;
   tabs: ExtractionTabsPanelProps['tabs'];
   viewerUrl: string | null;
+  readOnly?: boolean;
 };
 
 export type WorkspaceSessionState =
@@ -17,7 +18,7 @@ export type WorkspaceSessionState =
   | { status: 'conflict'; session: PaperSession }
   | { status: 'error'; session: PaperSession | null; message: string };
 
-export function PaperWorkspaceShell({ paperId, tabs, viewerUrl }: PaperWorkspaceShellProps) {
+export function PaperWorkspaceShell({ paperId, tabs, viewerUrl, readOnly = false }: PaperWorkspaceShellProps) {
   const [layoutMode, setLayoutMode] = useState<LayoutMode>('accordion');
 
   const showViewer = layoutMode !== 'full';
@@ -75,6 +76,7 @@ export function PaperWorkspaceShell({ paperId, tabs, viewerUrl }: PaperWorkspace
         tabs={tabs}
         layoutMode={layoutMode}
         onLayoutModeChange={setLayoutMode}
+        readOnly={readOnly}
       />
     </div>
   );

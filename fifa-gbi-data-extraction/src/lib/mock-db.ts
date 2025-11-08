@@ -67,6 +67,7 @@ type CreateNoteInput = {
 type PaperSessionInput = {
   profileId: string;
   fullName: string;
+  isAdmin?: boolean;
 };
 
 type UpdateExtractionFieldOptions = {
@@ -428,11 +429,37 @@ const shouldSyncPopulations = (fieldId: string): boolean => {
     fieldId.includes('_severityMeanDays') || fieldId.includes('_severityTotalDays');
 };
 
+const createPopulationSignature = (groups: ParsedPopulationGroup[]): string | null => {
+  if (!groups.length) {
+    return null;
+  }
+  const normalised = groups
+    .map((group) => ({
+      position: group.position,
+      label: group.label,
+      values: Object.keys(group.values)
+        .sort()
+        .reduce<Record<string, string | null>>((acc, key) => {
+          acc[key] = group.values[key] ?? null;
+          return acc;
+        }, {}),
+    }))
+    .sort((a, b) => a.position - b.position);
+  return JSON.stringify(normalised);
+};
+
 const syncPopulationSlices = async (paperId: string) => {
   try {
     const supabase = supabaseClient();
-    
-    // Fetch ALL extractions for this paper (all tabs)
+
+    const { data: paperRow } = await supabase
+      .from('papers')
+      .select('metadata')
+      .eq('id', paperId)
+      .maybeSingle();
+    const metadata = normalizeRowMetadata(paperRow?.metadata ?? {});
+    const previousSignature = typeof metadata.populationHash === 'string' ? metadata.populationHash : null;
+
     const { data, error } = await supabase
       .from('extractions')
       .select('id, paper_id, tab, model, created_at, updated_at, extraction_fields(*)')
@@ -442,7 +469,6 @@ const syncPopulationSlices = async (paperId: string) => {
       throw error;
     }
 
-    // Combine all fields from all tabs
     const allFields: ExtractionFieldResult[] = [];
     if (data) {
       data.forEach((extraction) => {
@@ -455,10 +481,23 @@ const syncPopulationSlices = async (paperId: string) => {
     const groupsByPosition = new Map<number, ParsedPopulationGroup>();
     groups.forEach((group) => groupsByPosition.set(group.position, group));
 
+    const nextSignature = createPopulationSignature(groups);
+    if (nextSignature && nextSignature === previousSignature) {
+      return;
+    }
+
     await supabase.from('population_values').delete().eq('paper_id', paperId);
     await supabase.from('population_groups').delete().eq('paper_id', paperId);
 
     if (groups.length === 0) {
+      if (previousSignature) {
+        const nextMetadata = { ...metadata };
+        delete nextMetadata.populationHash;
+        await supabase
+          .from('papers')
+          .update({ metadata: nextMetadata, updated_at: new Date().toISOString() })
+          .eq('id', paperId);
+      }
       return;
     }
 
@@ -482,10 +521,7 @@ const syncPopulationSlices = async (paperId: string) => {
     }
 
     const valueRows: PopulationValueRow[] = [];
-
     const insertedGroupRows = (insertedGroups ?? []) as PopulationGroupRow[];
-    
-    // Build a map of fieldId -> metric for quick lookup
     const fieldMetricMap = new Map<string, ExtractionFieldMetric | null>();
     allFields.forEach((field) => {
       if (field.metric) {
@@ -499,20 +535,16 @@ const syncPopulationSlices = async (paperId: string) => {
         return;
       }
       Object.entries(parsed.values).forEach(([fieldId, value]) => {
-        // Skip only if this is a prevalence/count field AND value exactly matches the label
-        // AND there's no other data in this field (indicating it's a standalone label placeholder)
-        // This is more precise than the previous logic which could accidentally skip real data
-        const isPrevalenceField = fieldId.endsWith('_prevalence') || 
+        const isPrevalenceField = fieldId.endsWith('_prevalence') ||
           ['injuryTotalCount', 'illnessTotalCount'].includes(fieldId);
-        
+
         if (isPrevalenceField && value && value.trim() === groupRow.label.trim()) {
-          // Check if this looks like a standalone label (no numeric data)
           const hasNumericData = /\d/.test(value);
           if (!hasNumericData) {
-            return; // Skip this - it's likely just a label placeholder
+            return;
           }
         }
-        
+
         const metric = fieldMetricMap.get(fieldId) ?? null;
         valueRows.push({
           id: crypto.randomUUID(),
@@ -521,7 +553,7 @@ const syncPopulationSlices = async (paperId: string) => {
           field_id: fieldId,
           source_field_id: fieldId,
           value: value ?? null,
-          metric: metric,
+          metric,
           unit: null,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
@@ -535,6 +567,13 @@ const syncPopulationSlices = async (paperId: string) => {
         throw insertValuesError;
       }
     }
+
+    const nextMetadata = { ...metadata };
+    nextMetadata.populationHash = nextSignature;
+    await supabase
+      .from('papers')
+      .update({ metadata: nextMetadata, updated_at: new Date().toISOString() })
+      .eq('id', paperId);
   } catch (error) {
     console.error('[mockDb] Failed to sync population slices', error);
   }
@@ -922,8 +961,11 @@ export const mockDb = {
       throw new Error(`Paper ${paperId} not found`);
     }
 
+    const isAdmin = input.isAdmin ?? false;
+    const isAssignedToOther = paper.assignedTo && paper.assignedTo !== input.profileId;
+
     // Check if paper is assigned to someone else using ONLY assigned_to column (single source of truth)
-    if (paper.assignedTo && paper.assignedTo !== input.profileId) {
+    if (isAssignedToOther && !isAdmin) {
       // Fetch the assignee's profile info for better error message
       const supabase = supabaseClient();
       const { data: assigneeProfile } = await supabase
@@ -959,7 +1001,27 @@ export const mockDb = {
     const metadata = setActiveSessionMetadata(normalizePaperMetadata(paper.metadata), session);
 
     const supabase = supabaseClient();
-    const { error } = await supabase
+    
+    // If admin is viewing someone else's paper, don't update assignment
+    if (isAssignedToOther && isAdmin) {
+      // Just update metadata for session tracking, but don't change assignment
+      const { error } = await supabase
+        .from('papers')
+        .update({
+          metadata,
+          updated_at: now,
+        })
+        .eq('id', paperId);
+
+      if (error) {
+        throw new Error(`Failed to start paper session: ${error.message}`);
+      }
+
+      return session;
+    }
+
+    // Normal flow: assign or update assignment
+    const updateQuery = supabase
       .from('papers')
       .update({
         assigned_to: input.profileId,
@@ -968,8 +1030,31 @@ export const mockDb = {
       })
       .eq('id', paperId);
 
-    if (error) {
+    if (paper.assignedTo) {
+      updateQuery.eq('assigned_to', paper.assignedTo);
+    } else {
+      updateQuery.is('assigned_to', null);
+    }
+
+    const { data: updatedRow, error } = await updateQuery.select('assigned_to').maybeSingle();
+
+    if (error && error.code !== 'PGRST116') {
       throw new Error(`Failed to start paper session: ${error.message}`);
+    }
+
+    if (!updatedRow) {
+      const latest = await this.getPaper(paperId);
+      if (latest?.assignedTo && latest.assignedTo !== input.profileId) {
+        const conflict: PaperSession = {
+          paperId,
+          profileId: latest.assignedTo,
+          fullName: latest.assigneeName ?? 'Another user',
+          startedAt: latest.activeSession?.startedAt ?? latest.updatedAt,
+          lastHeartbeatAt: latest.activeSession?.lastHeartbeatAt ?? latest.updatedAt,
+        };
+        throw new PaperSessionConflictError(conflict, 'Another teammate claimed this paper moments ago.');
+      }
+      throw new Error('Failed to start paper session due to a concurrent update. Please retry.');
     }
 
     return session;

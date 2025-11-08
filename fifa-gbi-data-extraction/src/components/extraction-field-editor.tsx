@@ -1,7 +1,6 @@
 'use client';
 
-import { useContext, useEffect, useRef, useState, useTransition } from 'react';
-import { useRouter } from 'next/navigation';
+import { useContext } from 'react';
 
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
@@ -9,26 +8,26 @@ import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 
 const MULTILINE_PLACEHOLDERS: Record<string, string> = {
   // Population-defining fields (use identifiers)
-  ageCategory: 'Example (defines populations):\nU19\nU21',
-  sex: 'Example (defines populations):\nmale\nfemale',
+  ageCategory: '',
+  sex: '',
   // All other fields (values only, no labels)
-  meanAge: 'Example (values only):\n16.8 ± 0.9\n20.1 ± 0.3\n\nLine 1 = Pop 1, Line 2 = Pop 2',
-  sampleSizePlayers: 'Example:\n62\n60',
-  numberOfTeams: 'Example:\n4 clubs\n5 clubs',
-  studyPeriodYears: 'Example:\n4 years\n3 years',
-  observationDuration: 'Example:\n4 seasons\n3 seasons',
+  meanAge: '',
+  sampleSizePlayers: '',
+  numberOfTeams: '',
+  studyPeriodYears: '',
+  observationDuration: '',
   // Exposure (values only)
-  seasonLength: 'Example:\n4 weeks\n2 weeks',
-  numberOfSeasons: 'Example:\n4\n3',
-  matchExposure: 'Example:\n250 h\n210 h',
-  trainingExposure: 'Example:\n420 h\n390 h',
+  seasonLength: '',
+  numberOfSeasons: '',
+  matchExposure: '',
+  trainingExposure: '',
   // Injury Outcome (values only)
-  injuryTotalCount: 'Example:\n150\n120',
-  injuryIncidenceOverall: 'Example:\n3.2\n2.8',
-  injuryIncidenceMatch: 'Example:\n4.1\n3.5',
+  injuryTotalCount: '',
+  injuryIncidenceOverall: '',
+  injuryIncidenceMatch: '',
   // Illness Outcome (values only)
-  illnessTotalCount: 'Example:\n45\n38',
-  illnessIncidenceOverall: 'Example:\n1.2\n0.9',
+  illnessTotalCount: '',
+  illnessIncidenceOverall: '',
 };
 
 type ExtractionFieldEditorProps = {
@@ -39,6 +38,7 @@ type ExtractionFieldEditorProps = {
   supportsAi: boolean;
   selected?: boolean;
   onSelectedChange?: (value: boolean) => void;
+  readOnly?: boolean;
 };
 
 export function ExtractionFieldEditor({
@@ -49,31 +49,23 @@ export function ExtractionFieldEditor({
   supportsAi,
   selected = true,
   onSelectedChange,
+  readOnly = false,
 }: ExtractionFieldEditorProps) {
   const { updateField, getFieldValue } = useContext(WorkspaceSaveContext);
   const placeholder = MULTILINE_PLACEHOLDERS[definition.id] ?? '';
   
   // Get local value if it exists, otherwise use server value
   const localValue = getFieldValue(tab, definition.id);
-  const currentValue = localValue !== undefined ? localValue : result?.value ?? '';
-  const [draftValue, setDraftValue] = useState(currentValue ?? '');
-
-  useEffect(() => {
-    setDraftValue(currentValue ?? '');
-  }, [currentValue]);
+  const currentValue = localValue !== undefined ? localValue ?? '' : result?.value ?? '';
 
   const isSelected = supportsAi ? selected : true;
 
   const handleChange = (value: string) => {
-    // Update local state immediately for UI
-    setDraftValue(value);
-    
-    // Update the context (marks as changed and stores locally)
     updateField({
       paperId,
       tab,
       fieldId: definition.id,
-      value: value.trim() || null,
+      value,
       metric: definition.metric,
     });
   };
@@ -100,6 +92,7 @@ export function ExtractionFieldEditor({
               className="h-4 w-4 rounded border border-slate-300 text-indigo-600 focus:ring-indigo-500"
               checked={isSelected}
               onChange={(event) => onSelectedChange(event.target.checked)}
+              disabled={readOnly}
             />
           ) : null}
           <span>{definition.label}</span>
@@ -113,10 +106,10 @@ export function ExtractionFieldEditor({
         )}
       </div>
       <textarea
-        value={draftValue}
-        disabled={supportsAi ? !isSelected : false}
+        value={currentValue}
+        disabled={readOnly || (supportsAi ? !isSelected : false)}
         onChange={(event) => {
-          if (supportsAi && !isSelected) {
+          if (readOnly || (supportsAi && !isSelected)) {
             return;
           }
           handleChange(event.target.value);
@@ -124,9 +117,11 @@ export function ExtractionFieldEditor({
         rows={3}
         placeholder={placeholder}
         className={`rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 ${
-          supportsAi
-            ? 'border-indigo-200/80 focus:border-indigo-300 focus:ring-indigo-200/70'
-            : 'border-emerald-200/80 focus:border-emerald-300 focus:ring-emerald-200/70'
+          readOnly
+            ? 'border-slate-200 bg-slate-50 cursor-not-allowed opacity-75'
+            : supportsAi
+              ? 'border-indigo-200/80 focus:border-indigo-300 focus:ring-indigo-200/70'
+              : 'border-emerald-200/80 focus:border-emerald-300 focus:ring-emerald-200/70'
         }`}
       />
     </div>

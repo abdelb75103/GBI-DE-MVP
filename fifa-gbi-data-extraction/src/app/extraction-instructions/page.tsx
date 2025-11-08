@@ -737,7 +737,7 @@ function CodebookTab() {
           <div className="space-y-3 text-sm text-slate-700">
             <div className="bg-white rounded-lg p-3 border border-amber-100">
               <p className="text-xs text-slate-500 mb-2">Paper says:</p>
-              <p className="text-slate-900">"62 males with 150 injuries and 60 females with 120 injuries"</p>
+              <p className="text-slate-900">&ldquo;62 males with 150 injuries and 60 females with 120 injuries&rdquo;</p>
             </div>
             <div className="bg-white rounded-lg p-3 border border-amber-100">
               <p className="text-xs text-slate-500 mb-2">Enter each on a new line:</p>
@@ -837,7 +837,7 @@ function SimpleField({ name, example, paperExample, choices, tip }: SimpleFieldP
       {paperExample && (
         <div className="mb-2 p-2 bg-blue-50 rounded text-xs">
           <div className="text-blue-600 font-medium mb-1">Paper says:</div>
-          <div className="text-slate-700 italic">"{paperExample}"</div>
+          <div className="text-slate-700 italic">&ldquo;{paperExample}&rdquo;</div>
         </div>
       )}
 

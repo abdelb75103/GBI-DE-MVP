@@ -55,6 +55,7 @@ export function DefinitionsDrawer({ categories, triggerClassName }: DefinitionsD
       </button>
 
       <div
+        data-clickable="true"
         className={`fixed inset-0 z-40 bg-slate-900/40 transition-opacity ${isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
         onClick={() => setIsOpen(false)}
         aria-hidden={!isOpen}

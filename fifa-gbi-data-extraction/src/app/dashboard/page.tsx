@@ -7,6 +7,7 @@ import { PapersDashboardClient } from '@/components/papers-dashboard-client';
 import { formatDateTimeUTC } from '@/lib/format';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
+import { isActiveStatus, isCompletedStatus } from '@/lib/status-groups';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,22 +25,20 @@ export default async function DashboardPage() {
   // Calculate metrics
   const totalPapers = papers.length;
   const availablePapers = papers.filter((paper) => !paper.assignedTo).length;
-  const userPapers = papers.filter((paper) => paper.assignedTo === userId).length;
-  const userPapersPercentage = totalPapers > 0 ? Math.round((userPapers / totalPapers) * 100) : 0;
   
-  const completedCount = papers.filter((paper) => paper.status === 'extracted').length;
-  const userCompletedCount = papers.filter(
-    (paper) => paper.status === 'extracted' && paper.assignedTo === userId,
-  ).length;
+  const activePapers = papers.filter((paper) => isActiveStatus(paper.status));
+  const completedPapers = papers.filter((paper) => isCompletedStatus(paper.status));
+  
+  const inProgressCount = activePapers.length;
+  const completedCount = completedPapers.length;
+  
+  const userActivePapers = activePapers.filter((paper) => paper.assignedTo === userId).length;
+  const userActiveShare = inProgressCount > 0 ? Math.round((userActivePapers / inProgressCount) * 100) : 0;
+  const userInProgressCount = userActivePapers;
+  const userInProgressPercentage = userActiveShare;
+  
+  const userCompletedCount = completedPapers.filter((paper) => paper.assignedTo === userId).length;
   const userCompletedPercentage = completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
-  
-  const inProgressCount = papers.filter(
-    (paper) => paper.status === 'processing' || paper.status === 'uploaded',
-  ).length;
-  const userInProgressCount = papers.filter(
-    (paper) => (paper.status === 'processing' || paper.status === 'uploaded') && paper.assignedTo === userId,
-  ).length;
-  const userInProgressPercentage = inProgressCount > 0 ? Math.round((userInProgressCount / inProgressCount) * 100) : 0;
   
   const flaggedCount = papers.filter((paper) => Boolean(paper.flagReason)).length;
   
@@ -94,40 +93,40 @@ export default async function DashboardPage() {
             </div>
           </div>
           <div className={`grid gap-3 sm:grid-cols-2 ${isAdmin ? 'xl:grid-cols-4' : 'xl:grid-cols-3'}`}>
-            {/* Card 1: Active Papers (Available + My Papers combined) */}
+            {/* Card 1: All Papers */}
             <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500/20 via-sky-400/10 to-indigo-400/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Active papers</p>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-80" aria-hidden />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">All papers</p>
               <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-indigo-700">{totalPapers}</p>
+                <p className="text-xl font-semibold text-purple-700">{totalPapers}</p>
                 <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
               </div>
               <p className="mt-1 text-[10px] text-slate-600">
-                {userPapers} are yours ({userPapersPercentage}%) • {availablePapers} available
+                {availablePapers} available right now • You have {userActivePapers} active ({userActiveShare}% of workload)
               </p>
               <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
                 <div
-                  className="h-full bg-gradient-to-r from-indigo-500/20 via-sky-400/10 to-indigo-400/20 opacity-90"
+                  className="h-full bg-gradient-to-r from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-90"
                   style={{ width: `${Math.min(100, totalPapers === 0 ? 4 : Math.round((totalPapers / Math.max(1, totalPapers)) * 100))}%` }}
                 />
               </div>
             </div>
 
-            {/* Card 2: In Progress */}
+            {/* Card 2: My Papers In Progress */}
             <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-500/20 via-cyan-400/10 to-indigo-300/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">In progress</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">My papers in progress</p>
               <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-sky-700">{inProgressCount}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
+                <p className="text-xl font-semibold text-sky-700">{userInProgressCount}</p>
+                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Yours</span>
               </div>
               <p className="mt-1 text-[10px] text-slate-600">
-                Processing or awaiting extraction • You have {userInProgressCount} ({userInProgressPercentage}%)
+                {userInProgressPercentage}% of all in-progress work • {inProgressCount} total
               </p>
               <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
                 <div
-                  className="h-full bg-gradient-to-r from-sky-500/20 via-cyan-400/10 to-indigo-300/20 opacity-90"
-                  style={{ width: `${Math.min(100, inProgressCount === 0 ? 4 : Math.round((inProgressCount / Math.max(1, totalPapers)) * 100))}%` }}
+                  className="h-full bg-gradient-to-r from-sky-500/40 via-cyan-400/30 to-indigo-300/40 opacity-90"
+                  style={{ width: `${Math.min(100, inProgressCount === 0 ? 0 : Math.round((userInProgressCount / Math.max(1, inProgressCount)) * 100))}%` }}
                 />
               </div>
             </div>
@@ -141,7 +140,7 @@ export default async function DashboardPage() {
                 <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
               </div>
               <p className="mt-1 text-[10px] text-slate-600">
-                You completed {userCompletedCount} ({userCompletedPercentage}%)
+                You completed {userCompletedCount} ({userCompletedPercentage}% of team output)
               </p>
               <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
                 <div
@@ -153,15 +152,32 @@ export default async function DashboardPage() {
 
             {/* Card 4: Needs Attention (Admin Only) */}
             {isAdmin && (
-              <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
+              <Link
+                href="/dashboard?filter=flagged"
+                className="relative block overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur transition hover:shadow-lg hover:ring-slate-300/60"
+              >
                 <div className="absolute inset-0 -z-10 bg-gradient-to-br from-rose-500/20 via-orange-400/10 to-amber-400/20 opacity-80" aria-hidden />
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Needs attention</p>
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-4 w-4 text-rose-600"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 2.25a.75.75 0 01.75.75v16.5a.75.75 0 01-1.064.681l-1.5-.681a.75.75 0 01-.186-1.238L3 18.75V3A.75.75 0 013 2.25zm16.023 2.25a.75.75 0 01.75.75v11.5a.75.75 0 01-.75.75h-5.5a.75.75 0 01-.75-.75V5.25a.75.75 0 01.75-.75h5.5zM8.25 2.25a.75.75 0 01.75.75v16.5a.75.75 0 01-.75.75h-5.5a.75.75 0 01-.75-.75V3a.75.75 0 01.75-.75h5.5z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Needs attention</p>
+                </div>
                 <div className="mt-1.5 flex items-baseline justify-between gap-2">
                   <p className="text-xl font-semibold text-rose-700">{flaggedCount}</p>
                   <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
                 </div>
                 <p className="mt-1 text-[10px] text-slate-600">
-                  Flagged items awaiting follow-up
+                  Flagged items awaiting review
                 </p>
                 <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
                   <div
@@ -169,7 +185,7 @@ export default async function DashboardPage() {
                     style={{ width: `${Math.min(100, flaggedCount === 0 ? 4 : Math.round((flaggedCount / Math.max(1, totalPapers)) * 100))}%` }}
                   />
                 </div>
-              </div>
+              </Link>
             )}
           </div>
         </div>

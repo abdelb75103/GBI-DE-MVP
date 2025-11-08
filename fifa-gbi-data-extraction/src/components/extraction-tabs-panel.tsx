@@ -31,6 +31,7 @@ export type ExtractionTabsPanelProps = {
   tabs: TabPayload[];
   layoutMode?: LayoutMode;
   onLayoutModeChange?: (layout: LayoutMode) => void;
+  readOnly?: boolean;
 };
 
 type FeedbackTone = 'info' | 'success' | 'error';
@@ -50,6 +51,7 @@ export function ExtractionTabsPanel({
   tabs,
   layoutMode,
   onLayoutModeChange,
+  readOnly = false,
 }: ExtractionTabsPanelProps) {
   const router = useRouter();
   const { isConfigured, isLoaded } = useGeminiApiKey();
@@ -391,6 +393,7 @@ useEffect(() => {
                     return next;
                   })
                 }
+                readOnly={readOnly}
               />
             );
           })}
@@ -463,6 +466,7 @@ useEffect(() => {
                 definition={field}
                 result={resultMap.get(field.id)}
                 supportsAi={false}
+                readOnly={readOnly}
               />
             ))}
           </div>

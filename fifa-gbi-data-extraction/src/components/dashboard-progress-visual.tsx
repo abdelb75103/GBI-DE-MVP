@@ -43,13 +43,13 @@ export function DashboardProgressVisual({
             opacity={0.3}
           />
           
-          {/* Blue ring - Total papers base */}
+          {/* Purple ring - Total papers base */}
           <circle
             cx={size / 2}
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="url(#blueGradient)"
+            stroke="url(#purpleGradient)"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={0}
@@ -71,13 +71,13 @@ export function DashboardProgressVisual({
             className="transition-all duration-1000 ease-out"
           />
           
-          {/* Purple ring - Your completed papers */}
+          {/* Blue ring - Your completed papers */}
           <circle
             cx={size / 2}
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="url(#purpleGradient)"
+            stroke="url(#blueGradient)"
             strokeWidth={strokeWidth - 8}
             strokeDasharray={circumference}
             strokeDashoffset={userOffset}
@@ -111,12 +111,12 @@ export function DashboardProgressVisual({
       
       {/* Legend - Next to the wheel */}
       <div className="flex flex-col gap-2 flex-1">
-        <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-blue-50/80 via-sky-50/60 to-blue-50/80 px-3 py-2 shadow-sm ring-1 ring-blue-200/50 backdrop-blur-sm">
+        <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-purple-50/80 via-violet-50/60 to-purple-50/80 px-3 py-2 shadow-sm ring-1 ring-purple-200/50 backdrop-blur-sm">
           <div className="flex items-center gap-2">
-            <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-blue-500 to-blue-400 shadow-sm" />
+            <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-purple-500 to-violet-400 shadow-sm" />
             <span className="text-xs font-medium text-slate-700">Total Papers</span>
           </div>
-          <span className="text-sm font-semibold text-blue-700">{totalPapers}</span>
+          <span className="text-sm font-semibold text-purple-700">{totalPapers}</span>
         </div>
         
         <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-emerald-50/80 via-teal-50/60 to-emerald-50/80 px-3 py-2 shadow-sm ring-1 ring-emerald-200/50 backdrop-blur-sm">
@@ -127,15 +127,14 @@ export function DashboardProgressVisual({
           <span className="text-sm font-semibold text-emerald-700">{completedPapers}</span>
         </div>
         
-        <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-purple-50/80 via-violet-50/60 to-purple-50/80 px-3 py-2 shadow-sm ring-1 ring-purple-200/50 backdrop-blur-sm">
+        <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-blue-50/80 via-sky-50/60 to-blue-50/80 px-3 py-2 shadow-sm ring-1 ring-blue-200/50 backdrop-blur-sm">
           <div className="flex items-center gap-2">
-            <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-purple-500 to-purple-400 shadow-sm" />
+            <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-blue-500 to-blue-400 shadow-sm" />
             <span className="text-xs font-medium text-slate-700">Your Completed</span>
           </div>
-          <span className="text-sm font-semibold text-purple-700">{userCompletedPapers}</span>
+          <span className="text-sm font-semibold text-blue-700">{userCompletedPapers}</span>
         </div>
       </div>
     </div>
   );
 }
-

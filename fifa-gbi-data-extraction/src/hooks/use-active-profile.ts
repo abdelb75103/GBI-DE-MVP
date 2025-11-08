@@ -128,7 +128,7 @@ export function useActiveProfileState() {
   const profile = useSyncExternalStore(subscribe, readProfileSnapshot, getProfileServerSnapshot);
   const isLoaded = useSyncExternalStore(subscribe, readLoadedSnapshot, getLoadedServerSnapshot);
 
-  const setProfile = useCallback((next: ActiveProfile | null) => {
+  const setProfile = useCallback(async (next: ActiveProfile | null) => {
     if (typeof window === 'undefined') {
       return;
     }
@@ -147,23 +147,31 @@ export function useActiveProfileState() {
 
     isLoadedSnapshot = true;
 
-    void fetch('/api/session/profile', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ profileId: next ? next.id : null }),
-    }).catch(() => {});
+    try {
+      await fetch('/api/session/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ profileId: next ? next.id : null }),
+      });
+    } catch {
+      // Ignore cookie persistence errors; local state is still updated
+    }
 
     notifyListeners();
   }, []);
+
+  const clearProfile = useCallback(async () => {
+    await setProfile(null);
+  }, [setProfile]);
 
   const value = useMemo(
     () => ({
       profile,
       isLoaded,
       setProfile,
-      clearProfile: () => setProfile(null),
+      clearProfile,
     }),
-    [profile, isLoaded, setProfile],
+    [profile, isLoaded, setProfile, clearProfile],
   );
 
   return value;

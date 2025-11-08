@@ -37,9 +37,10 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
     [profiles],
   );
 
-  const handleSelect = (profile: ProfileOption) => {
-    setProfile(profile);
+  const handleSelect = async (profile: ProfileOption) => {
+    await setProfile(profile);
     router.replace('/dashboard');
+    router.refresh();
   };
 
   return (

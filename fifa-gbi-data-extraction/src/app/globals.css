@@ -59,10 +59,37 @@ html[data-theme='dark'] ::selection {
 
 a,
 button,
+summary,
+label,
 [role='button'],
+[role='link'],
+[role='menuitem'],
+[role='option'],
+[role='switch'],
+[role='tab'],
+[data-clickable='true'],
 [type='button'],
-[type='submit'] {
+[type='submit'],
+[type='reset'],
+input[type='checkbox'],
+input[type='radio'] {
   cursor: pointer;
+}
+
+button:disabled,
+[role='button'][aria-disabled='true'],
+[role='link'][aria-disabled='true'],
+[role='menuitem'][aria-disabled='true'],
+[role='option'][aria-disabled='true'],
+[role='switch'][aria-disabled='true'],
+[role='tab'][aria-disabled='true'],
+[data-clickable='true'][data-disabled='true'],
+[type='button']:disabled,
+[type='submit']:disabled,
+[type='reset']:disabled,
+input[type='checkbox']:disabled,
+input[type='radio']:disabled {
+  cursor: not-allowed;
 }
 
 /* Surface overrides */

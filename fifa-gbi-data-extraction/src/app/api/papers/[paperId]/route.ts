@@ -57,8 +57,9 @@ export async function DELETE(
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error('[DELETE paper] failed', error);
+    const errorMessage = error instanceof Error ? error.message : 'Failed to delete paper.';
     return NextResponse.json(
-      { error: 'Failed to delete paper.' },
+      { error: errorMessage },
       { status: 500 }
     );
   }

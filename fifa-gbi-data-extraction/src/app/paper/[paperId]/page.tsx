@@ -15,6 +15,7 @@ import { PaperWorkspaceShell } from '@/components/paper-workspace-shell';
 import { readActiveProfileSession } from '@/lib/session';
 import { WorkspaceSaveManager } from '@/components/workspace-save-manager';
 import { WorkspaceSaveButton } from '@/components/workspace-save-button';
+import { PaperActionButtons } from '@/components/paper-action-buttons';
 
 export const dynamic = 'force-dynamic';
 
@@ -39,9 +40,14 @@ export default async function PaperWorkspace({
     notFound();
   }
 
+  const isAdmin = profile.role === 'admin';
+  const isAssignedToOther = paper.assignedTo && paper.assignedTo !== profile.id;
+  const isReadOnly = isAdmin && isAssignedToOther;
+
   // If redirected here due to a conflict, show error page immediately
   // This prevents infinite redirect loops and unnecessary re-checks
-  if (conflict === 'true') {
+  // But allow admins to proceed even with conflict
+  if (conflict === 'true' && !isAdmin) {
     const assigneeName = paper.assigneeName || 'another user';
     return (
       <div className="space-y-10">
@@ -77,7 +83,8 @@ export default async function PaperWorkspace({
   }
 
   // Check if paper is assigned to someone else before attempting to start session
-  if (paper.assignedTo && paper.assignedTo !== profile.id) {
+  // Admins can proceed in read-only mode
+  if (isAssignedToOther && !isAdmin) {
     // Paper is already assigned to someone else
     const assigneeName = paper.assigneeName || 'another user';
     return (
@@ -113,14 +120,15 @@ export default async function PaperWorkspace({
     );
   }
 
-  // Try to start the session (this will auto-assign the paper)
+  // Try to start the session (this will auto-assign the paper, or allow admin read-only access)
   try {
     await mockDb.startPaperSession(paperId, {
       profileId: profile.id,
       fullName: profile.fullName,
+      isAdmin,
     });
   } catch (error) {
-    if (error instanceof PaperSessionConflictError) {
+    if (error instanceof PaperSessionConflictError && !isAdmin) {
       // If we get a conflict, redirect with error message
       // On reload, the conflict parameter will be checked first to show error immediately
       redirect(`/paper/${paperId}?conflict=true`);
@@ -146,8 +154,24 @@ export default async function PaperWorkspace({
       : null;
 
   return (
-    <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status}>
+    <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>
       <div className="space-y-10">
+        {isReadOnly && (
+          <section className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-amber-50/80 p-6 shadow-xl ring-1 ring-amber-200/60">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-amber-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
+                Read-Only Mode
+              </span>
+              <p className="text-sm font-medium text-amber-900">
+                Viewing{' '}
+                <strong>
+                  {(paper.assigneeName || 'another user')}&rsquo;s
+                </strong>{' '}
+                paper in read-only mode. You cannot edit or save changes.
+              </p>
+            </div>
+          </section>
+        )}
         <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-8 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
           <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
           <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
@@ -176,20 +200,22 @@ export default async function PaperWorkspace({
               >
                 Back to dashboard
               </Link>
-              <WorkspaceSaveButton />
+              {!isReadOnly && <WorkspaceSaveButton />}
             </div>
           </div>
         </section>
 
         <div className="flex flex-col gap-8">
-          <PaperWorkspaceShell paperId={paper.id} tabs={tabPayload} viewerUrl={viewerUrl} />
+          <PaperWorkspaceShell paperId={paper.id} tabs={tabPayload} viewerUrl={viewerUrl} readOnly={isReadOnly} />
 
           <div className="grid gap-6 xl:grid-cols-2">
           <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
             <div className="space-y-5">
-              <div className="rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
-                <StatusSelect paperId={paper.id} status={paper.status} />
-              </div>
+              {!isReadOnly && (
+                <div className="rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
+                  <StatusSelect paperId={paper.id} status={paper.status} />
+                </div>
+              )}
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">File details</p>
                 {file ? (
@@ -214,9 +240,18 @@ export default async function PaperWorkspace({
                 <p className="mt-1 text-xs text-slate-500">
                   Use flags to mark issues that need reviewer attention.
                 </p>
-                <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
-                  <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
-                </div>
+                {!isReadOnly && (
+                  <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
+                    <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
+                  </div>
+                )}
+                {isReadOnly && (
+                  <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40">
+                    <p className="text-xs text-slate-500">
+                      {paper.flagReason ? `Flagged: ${paper.flagReason}` : 'Not flagged'}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -239,6 +274,8 @@ export default async function PaperWorkspace({
             </div>
           </div>
         </div>
+
+        <PaperActionButtons readOnly={isReadOnly} />
       </div>
 
         <DefinitionsDrawer categories={definitionCategories} />

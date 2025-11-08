@@ -46,9 +46,10 @@ export function ActiveProfileIndicator() {
       </span>
       <button
         type="button"
-        onClick={() => {
-          clearProfile();
+        onClick={async () => {
+          await clearProfile();
           router.push('/profiles/select');
+          router.refresh();
         }}
         className="font-semibold text-indigo-600 transition hover:text-indigo-700"
       >

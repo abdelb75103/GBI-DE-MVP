@@ -41,13 +41,14 @@ export function useWorkspaceSave() {
 type WorkspaceSaveManagerProps = {
   paperId: string;
   currentStatus: string;
+  readOnly?: boolean;
   children: React.ReactNode;
 };
 
 const MAX_PENDING_UPDATES = 100; // Warn when exceeding this
 const AUTO_SAVE_THRESHOLD = 150; // Auto-save when reaching this
 
-export function WorkspaceSaveManager({ paperId, children }: WorkspaceSaveManagerProps) {
+export function WorkspaceSaveManager({ paperId, children, readOnly = false }: WorkspaceSaveManagerProps) {
   const router = useRouter();
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -157,6 +158,9 @@ export function WorkspaceSaveManager({ paperId, children }: WorkspaceSaveManager
 
   // Update a field locally (not saved to DB yet)
   const updateField = (update: FieldUpdate) => {
+    if (readOnly) {
+      return; // Don't allow updates in read-only mode
+    }
     setPendingUpdates((prev) => {
       const next = new Map(prev);
       next.set(`${update.tab}:${update.fieldId}`, update);
@@ -180,41 +184,47 @@ export function WorkspaceSaveManager({ paperId, children }: WorkspaceSaveManager
       try {
         // Step 1: Save all pending field updates
         if (pendingUpdates.size > 0) {
-          // Group updates by tab
           const updatesByTab = new Map<ExtractionTab, Map<string, FieldUpdate>>();
-          
-          for (const [key, update] of pendingUpdates) {
+
+          for (const update of pendingUpdates.values()) {
             if (!updatesByTab.has(update.tab)) {
               updatesByTab.set(update.tab, new Map());
             }
             updatesByTab.get(update.tab)!.set(update.fieldId, update);
           }
 
-          // Save each tab's updates
-          for (const [tab, updates] of updatesByTab) {
-            const fields = Array.from(updates.values()).map((u) => ({
-              fieldId: u.fieldId,
-              value: u.value,
-              metric: u.metric ?? null,
-            }));
+          const batchedUpdates = Array.from(updatesByTab.entries())
+            .map(([tab, updates]) => {
+              if (!updates.size) {
+                return null;
+              }
+              const fields = Object.fromEntries(
+                Array.from(updates.values()).map((u) => {
+                  if (typeof u.value === 'string') {
+                    const trimmed = u.value.trim();
+                    return [u.fieldId, trimmed || ''];
+                  }
+                  return [u.fieldId, u.value ?? ''];
+                }),
+              );
+              return { tab, fields };
+            })
+            .filter((entry): entry is { tab: ExtractionTab; fields: Record<string, string> } => Boolean(entry));
 
+          if (batchedUpdates.length) {
             const response = await fetch('/api/extract/save', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                paperId,
-                updates: [{ tab, fields: Object.fromEntries(fields.map((f) => [f.fieldId, f.value ?? ''])) }],
-              }),
+              body: JSON.stringify({ paperId, updates: batchedUpdates }),
             });
 
             if (!response.ok) {
               const payload = (await response.json().catch(() => ({}))) as { error?: string };
               throw new Error(payload.error ?? 'Failed to save field updates');
             }
-          }
 
-          // Clear pending updates after successful save
-          setPendingUpdates(new Map());
+            setPendingUpdates(new Map());
+          }
         }
 
         // Step 2: Update the paper status to 'extracted' only if marking complete
@@ -414,4 +424,3 @@ export function WorkspaceSaveManager({ paperId, children }: WorkspaceSaveManager
     </WorkspaceSaveContext.Provider>
   );
 }
-

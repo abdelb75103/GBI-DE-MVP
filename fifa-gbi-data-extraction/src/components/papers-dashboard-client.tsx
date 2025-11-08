@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 
 import { PapersTable } from '@/components/papers-table';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
+import { isActiveStatus, isCompletedStatus } from '@/lib/status-groups';
 import type { Paper, PaperStatus } from '@/lib/types';
 
 type PapersDashboardClientProps = {
@@ -43,6 +44,9 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         result = result.filter((paper) => !paper.assignedTo);
       } else if (assignmentFilter === 'mine') {
         result = result.filter((paper) => paper.assignedTo === profile.id);
+        if (statusFilter === 'all') {
+          result = result.filter((paper) => !isCompletedStatus(paper.status));
+        }
       }
     }
 
@@ -91,7 +95,9 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     return {
       all: papers.length,
       available: papers.filter((paper) => !paper.assignedTo).length,
-      mine: papers.filter((paper) => paper.assignedTo === profile.id).length,
+      mine: papers.filter(
+        (paper) => paper.assignedTo === profile.id && isActiveStatus(paper.status),
+      ).length,
     };
   }, [papers, profile]);
 
@@ -285,4 +291,3 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     </div>
   );
 }
-
