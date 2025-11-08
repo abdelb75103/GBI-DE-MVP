@@ -14,6 +14,7 @@ type FieldUpdate = {
 
 type WorkspaceSaveContextType = {
   hasUnsavedChanges: boolean;
+  hasPendingAiDecisions: boolean;
   isPending: boolean;
   markAsChanged: () => void;
   markAsSaved: () => void;
@@ -23,10 +24,12 @@ type WorkspaceSaveContextType = {
   getFieldValue: (tab: ExtractionTab, fieldId: string) => string | null | undefined;
   currentStatus: PaperStatus;
   setCurrentStatus: (status: PaperStatus) => void;
+  setPendingAiDecisions: (count: number) => void;
 };
 
 export const WorkspaceSaveContext = createContext<WorkspaceSaveContextType>({
   hasUnsavedChanges: false,
+  hasPendingAiDecisions: false,
   isPending: false,
   markAsChanged: () => {},
   markAsSaved: () => {},
@@ -36,6 +39,7 @@ export const WorkspaceSaveContext = createContext<WorkspaceSaveContextType>({
   getFieldValue: () => undefined,
   currentStatus: 'uploaded',
   setCurrentStatus: () => {},
+  setPendingAiDecisions: () => {},
 });
 
 export function useWorkspaceSave() {
@@ -67,6 +71,9 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
   // Store all pending field updates locally (not saved to DB yet)
   const [pendingUpdates, setPendingUpdates] = useState<Map<string, FieldUpdate>>(new Map());
   const [shouldAutoSave, setShouldAutoSave] = useState(false);
+  const [pendingAiDecisions, setPendingAiDecisionsState] = useState(0);
+  const hasPendingAiDecisions = pendingAiDecisions > 0;
+  const shouldBlockNavigation = hasUnsavedChanges || hasPendingAiDecisions;
 
   useEffect(() => {
     setPaperStatus(currentStatus);
@@ -75,7 +82,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
   // Browser tab/window close warning (native browser dialog)
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (hasUnsavedChanges) {
+      if (shouldBlockNavigation) {
         e.preventDefault();
         e.returnValue = '';
         return '';
@@ -84,12 +91,12 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
 
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [hasUnsavedChanges]);
+  }, [shouldBlockNavigation]);
 
   // Intercept all link clicks for navigation blocking
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (!hasUnsavedChanges) return;
+      if (!shouldBlockNavigation) return;
 
       const target = e.target as HTMLElement;
       const link = target.closest('a[href]') as HTMLAnchorElement | null;
@@ -108,11 +115,11 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
 
     document.addEventListener('click', handleClick, true);
     return () => document.removeEventListener('click', handleClick, true);
-  }, [hasUnsavedChanges]);
+  }, [shouldBlockNavigation]);
 
   // Intercept browser back button
   useEffect(() => {
-    if (!hasUnsavedChanges) return;
+    if (!shouldBlockNavigation) return;
 
     const handlePopState = (e: PopStateEvent) => {
       e.preventDefault();
@@ -128,7 +135,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [hasUnsavedChanges]);
+  }, [shouldBlockNavigation]);
 
   const markAsChanged = () => {
     setHasUnsavedChanges(true);
@@ -187,6 +194,11 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
   };
 
   const handleSave = async (markComplete: boolean, shouldNavigate = false) => {
+    if (hasPendingAiDecisions) {
+      setError('Resolve all AI extracted fields by approving or declining them before saving.');
+      return;
+    }
+
     startTransition(async () => {
       setError(null);
       setMessage(null);
@@ -274,6 +286,11 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
   };
 
   const handleDiscard = () => {
+    if (hasPendingAiDecisions) {
+      alert('Approve or decline all AI extracted fields before leaving.');
+      return;
+    }
+
     if (confirm('Are you sure you want to discard all unsaved changes? This will reload the page.')) {
       setPendingUpdates(new Map());
       setHasUnsavedChanges(false);
@@ -285,6 +302,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
     <WorkspaceSaveContext.Provider
       value={{
         hasUnsavedChanges,
+        hasPendingAiDecisions,
         isPending,
         markAsChanged,
         markAsSaved,
@@ -294,10 +312,11 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
         getFieldValue,
         currentStatus: paperStatus,
         setCurrentStatus: setPaperStatus,
+        setPendingAiDecisions: setPendingAiDecisionsState,
       }}
     >
       {/* Modal when trying to leave with unsaved changes */}
-      {showModal && hasUnsavedChanges && (
+      {showModal && shouldBlockNavigation && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-md">
           <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-2xl ring-1 ring-slate-200/60">
             {/* Decorative gradient background */}
@@ -331,9 +350,19 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
               
               {/* Message */}
               <div className="mb-6 rounded-2xl bg-slate-50/80 p-4 ring-1 ring-slate-200/40">
-                <p className="text-sm leading-relaxed text-slate-700">
-                  You have <strong>{pendingUpdates.size} unsaved changes</strong>. All progress will be <strong className="text-rose-700">permanently lost</strong> if you discard. We strongly recommend saving your work.
-                </p>
+                <div className="space-y-2 text-sm leading-relaxed text-slate-700">
+                  {hasUnsavedChanges ? (
+                    <p>
+                      You have <strong>{pendingUpdates.size} unsaved changes</strong>. All progress will be{' '}
+                      <strong className="text-rose-700">permanently lost</strong> if you discard. We strongly recommend saving your work.
+                    </p>
+                  ) : null}
+                  {hasPendingAiDecisions ? (
+                    <p className="text-amber-700">
+                      Approve or decline <strong>{pendingAiDecisions}</strong> AI extracted fields before leaving this paper.
+                    </p>
+                  ) : null}
+                </div>
               </div>
               
               {/* Action buttons */}

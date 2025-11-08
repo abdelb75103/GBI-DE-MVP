@@ -6,6 +6,9 @@ import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
 import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 
+type ReviewState = 'pending' | 'approved' | 'declined';
+type ReviewAction = 'approve' | 'decline';
+
 const MULTILINE_PLACEHOLDERS: Record<string, string> = {
   // Population-defining fields (use identifiers)
   ageCategory: '',
@@ -39,6 +42,9 @@ type ExtractionFieldEditorProps = {
   selected?: boolean;
   onSelectedChange?: (value: boolean) => void;
   readOnly?: boolean;
+  requiresReview?: boolean;
+  reviewState?: ReviewState;
+  onReviewDecision?: (action: ReviewAction) => void;
 };
 
 export function ExtractionFieldEditor({
@@ -50,6 +56,9 @@ export function ExtractionFieldEditor({
   selected = true,
   onSelectedChange,
   readOnly = false,
+  requiresReview = false,
+  reviewState,
+  onReviewDecision,
 }: ExtractionFieldEditorProps) {
   const { updateField, getFieldValue } = useContext(WorkspaceSaveContext);
   const placeholder = MULTILINE_PLACEHOLDERS[definition.id] ?? '';
@@ -59,6 +68,11 @@ export function ExtractionFieldEditor({
   const currentValue = localValue !== undefined ? localValue ?? '' : result?.value ?? '';
 
   const isSelected = supportsAi ? selected : true;
+  const currentReviewState: ReviewState | undefined = requiresReview ? reviewState ?? 'pending' : undefined;
+  const isPendingReview = Boolean(requiresReview && currentReviewState === 'pending');
+  const reviewLocked = isPendingReview;
+  const showReviewControls = isPendingReview && !readOnly && Boolean(onReviewDecision);
+  const showReviewBadge = isPendingReview;
 
   const handleChange = (value: string) => {
     updateField({
@@ -69,6 +83,28 @@ export function ExtractionFieldEditor({
       metric: definition.metric,
     });
   };
+
+  const handleApprove = () => {
+    if (!onReviewDecision || readOnly) {
+      return;
+    }
+    onReviewDecision('approve');
+  };
+
+  const handleDecline = () => {
+    if (!onReviewDecision || readOnly) {
+      return;
+    }
+    onReviewDecision('decline');
+    handleChange('');
+  };
+
+  const reviewBadgeConfig =
+    currentReviewState === 'approved'
+      ? { label: 'Approved', className: 'bg-emerald-100 text-emerald-700' }
+      : currentReviewState === 'declined'
+        ? { label: 'Declined', className: 'bg-rose-100 text-rose-700' }
+        : { label: 'Needs review', className: 'bg-amber-100 text-amber-700' };
 
   return (
     <div
@@ -97,6 +133,41 @@ export function ExtractionFieldEditor({
           ) : null}
           <span>{definition.label}</span>
         </div>
+        <div className="flex items-center gap-2">
+          {showReviewBadge ? (
+            <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${reviewBadgeConfig.className}`}>
+              {reviewBadgeConfig.label}
+            </span>
+          ) : null}
+          {showReviewControls ? (
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={handleApprove}
+                className={`flex h-7 w-7 items-center justify-center rounded-full border text-xs font-bold transition ${
+                  currentReviewState === 'approved'
+                    ? 'border-emerald-500 bg-emerald-500 text-white'
+                    : 'border-emerald-200/80 bg-white text-emerald-600 hover:border-emerald-400 hover:bg-emerald-50'
+                }`}
+                aria-label="Approve AI suggestion"
+              >
+                ✓
+              </button>
+              <button
+                type="button"
+                onClick={handleDecline}
+                className={`flex h-7 w-7 items-center justify-center rounded-full border text-xs font-bold transition ${
+                  currentReviewState === 'declined'
+                    ? 'border-rose-500 bg-rose-500 text-white'
+                    : 'border-rose-200/80 bg-white text-rose-600 hover:border-rose-400 hover:bg-rose-50'
+                }`}
+                aria-label="Decline AI suggestion"
+              >
+                ✕
+              </button>
+            </div>
+          ) : null}
+        </div>
         {placeholder && (
           <span className="text-[10px] font-normal text-slate-500" title={placeholder}>
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,9 +178,9 @@ export function ExtractionFieldEditor({
       </div>
       <textarea
         value={currentValue}
-        disabled={readOnly || (supportsAi ? !isSelected : false)}
+        disabled={readOnly || reviewLocked || (supportsAi ? !isSelected : false)}
         onChange={(event) => {
-          if (readOnly || (supportsAi && !isSelected)) {
+          if (readOnly || reviewLocked || (supportsAi && !isSelected)) {
             return;
           }
           handleChange(event.target.value);
@@ -117,13 +188,16 @@ export function ExtractionFieldEditor({
         rows={3}
         placeholder={placeholder}
         className={`rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 ${
-          readOnly
+          readOnly || reviewLocked
             ? 'border-slate-200 bg-slate-50 cursor-not-allowed opacity-75'
             : supportsAi
               ? 'border-indigo-200/80 focus:border-indigo-300 focus:ring-indigo-200/70'
               : 'border-emerald-200/80 focus:border-emerald-300 focus:ring-emerald-200/70'
         }`}
       />
+      {reviewLocked ? (
+        <p className="text-xs text-slate-500">Approve or decline the AI suggestion to edit this field.</p>
+      ) : null}
     </div>
   );
 }

@@ -141,12 +141,16 @@ export default async function PaperWorkspace({
   const notes = await mockDb.listNotes(paper.id);
   const extractions = await mockDb.listExtractions(paper.id);
   const extractionMap = new Map(extractions.map((extraction) => [extraction.tab, extraction] as const));
-  const tabPayload = extractionTabs.map((tab) => ({
-    tab,
-    label: extractionTabMeta[tab].title,
-    fields: extractionFieldDefinitions.filter((field) => field.tab === tab),
-    results: extractionMap.get(tab)?.fields ?? [],
-  }));
+  const tabPayload = extractionTabs.map((tab) => {
+    const extraction = extractionMap.get(tab);
+    return {
+      tab,
+      label: extractionTabMeta[tab].title,
+      fields: extractionFieldDefinitions.filter((field) => field.tab === tab),
+      results: extraction?.fields ?? [],
+      extractionModel: extraction?.model ?? 'human-input',
+    };
+  });
   // Priority 1: Use API endpoint for secure file serving (works for both storage and base64 files)
   // Priority 2: Use publicUrl if available (for external URLs)
   // Priority 3: Fallback to data URL for legacy files (temporary backward compatibility)

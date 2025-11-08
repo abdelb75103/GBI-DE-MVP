@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { ExtractionFieldEditor } from '@/components/extraction-field-editor';
 import { ManualGroupEditor } from '@/components/manual-group-editor';
 import { ManualGroupTableEditor } from '@/components/manual-group-table-editor';
+import { useWorkspaceSave } from '@/components/workspace-save-manager';
 import { useGeminiApiKey } from '@/hooks/use-gemini-api-key';
 import {
   aiExtractionTabs,
@@ -23,6 +24,7 @@ type TabPayload = {
   label: string;
   fields: ExtractionFieldDefinition[];
   results: ExtractionFieldResult[];
+  extractionModel: string;
 };
 
 export type ExtractionTabsPanelProps = {
@@ -41,6 +43,10 @@ type FeedbackState = {
   tab?: ExtractionTab;
 };
 
+type ReviewDecision = 'pending' | 'approved' | 'declined';
+
+const buildReviewKey = (tab: ExtractionTab, fieldId: string) => `${tab}:${fieldId}`;
+
 export type LayoutMode = 'accordion' | 'tabbed' | 'full';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
@@ -53,6 +59,7 @@ export function ExtractionTabsPanel({
   readOnly = false,
 }: ExtractionTabsPanelProps) {
   const router = useRouter();
+  const { setPendingAiDecisions } = useWorkspaceSave();
   const { isConfigured, isLoaded } = useGeminiApiKey();
   const aiTabs = tabs.filter((tab) => aiExtractionTabs.has(tab.tab));
   const manualTabs = tabs.filter((tab) => humanExtractionTabs.includes(tab.tab));
@@ -79,6 +86,76 @@ export function ExtractionTabsPanel({
   const [isPending, startTransition] = useTransition();
   const aiAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
   const manualAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
+  const [reviewStates, setReviewStates] = useState<Map<string, ReviewDecision>>(new Map());
+
+  const reviewRequiredKeys = useMemo(() => {
+    const keys = new Set<string>();
+    if (readOnly) {
+      return keys;
+    }
+    aiTabs.forEach((item) => {
+      const isAiModel = item.extractionModel && item.extractionModel !== 'human-input';
+      if (!isAiModel) {
+        return;
+      }
+      const resultMap = new Map(item.results.map((field) => [field.fieldId, field]));
+      item.fields.forEach((field) => {
+        if (field.id === 'studyId') {
+          return;
+        }
+        const result = resultMap.get(field.id);
+        const hasValue = typeof result?.value === 'string' && result.value.trim().length > 0;
+        if (hasValue) {
+          keys.add(buildReviewKey(item.tab, field.id));
+        }
+      });
+    });
+    return keys;
+  }, [aiTabs, readOnly]);
+
+  useEffect(() => {
+    if (readOnly) {
+      setReviewStates((prev) => (prev.size ? new Map() : prev));
+      return;
+    }
+    setReviewStates((prev) => {
+      let changed = false;
+      const next = new Map(prev);
+      reviewRequiredKeys.forEach((key) => {
+        if (!next.has(key)) {
+          next.set(key, 'pending');
+          changed = true;
+        }
+      });
+      next.forEach((_, key) => {
+        if (!reviewRequiredKeys.has(key)) {
+          next.delete(key);
+          changed = true;
+        }
+      });
+      return changed ? next : prev;
+    });
+  }, [reviewRequiredKeys, readOnly]);
+
+  const pendingReviewCount = useMemo(() => {
+    let count = 0;
+    reviewRequiredKeys.forEach((key) => {
+      const state = reviewStates.get(key) ?? 'pending';
+      if (state === 'pending') {
+        count += 1;
+      }
+    });
+    return count;
+  }, [reviewStates, reviewRequiredKeys]);
+
+  useEffect(() => {
+    if (readOnly) {
+      setPendingAiDecisions(0);
+      return () => setPendingAiDecisions(0);
+    }
+    setPendingAiDecisions(pendingReviewCount);
+    return () => setPendingAiDecisions(0);
+  }, [pendingReviewCount, readOnly, setPendingAiDecisions]);
 
   const layoutOptions: { id: LayoutMode; label: string; helper: string }[] = useMemo(
     () => [
@@ -282,6 +359,21 @@ useEffect(() => {
     setOpenManualTab((current) => (current === tab ? null : tab));
   };
 
+  const handleReviewDecision = useCallback(
+    (tab: ExtractionTab, fieldId: string, action: 'approve' | 'decline') => {
+      const key = buildReviewKey(tab, fieldId);
+      setReviewStates((prev) => {
+        if (!prev.has(key)) {
+          return prev;
+        }
+        const next = new Map(prev);
+        next.set(key, action === 'approve' ? 'approved' : 'declined');
+        return next;
+      });
+    },
+    [],
+  );
+
   const renderFeedbackToast = () => {
     if (!feedback) {
       return null;
@@ -365,6 +457,9 @@ useEffect(() => {
         <div className={gridClassName}>
           {item.fields.map((field) => {
             const isAutoExtractable = field.id !== 'studyId';
+            const reviewKey = buildReviewKey(item.tab, field.id);
+            const requiresReview = reviewRequiredKeys.has(reviewKey);
+            const reviewState = reviewStates.get(reviewKey) ?? (requiresReview ? 'pending' : undefined);
             return (
               <ExtractionFieldEditor
                 key={field.id}
@@ -374,6 +469,13 @@ useEffect(() => {
                 result={resultMap.get(field.id)}
                 supportsAi={isAutoExtractable}
                 selected={selectedSet.has(field.id)}
+                requiresReview={requiresReview}
+                reviewState={reviewState}
+                onReviewDecision={
+                  requiresReview && !readOnly
+                    ? (decision) => handleReviewDecision(item.tab, field.id, decision)
+                    : undefined
+                }
                 onSelectedChange={(checked) =>
                   setSelectedMap((prev) => {
                     if (!isAutoExtractable) {
