@@ -19,8 +19,34 @@ export default async function DashboardPage() {
   const isAdmin = activeProfile?.role === 'admin';
   const userId = activeProfile?.id || null;
   
-  // Extract first name from profile
-  const firstName = activeProfile?.fullName?.split(' ')[0] || 'User';
+  // Extract first name from profile, skipping common titles
+  const extractFirstName = (fullName: string | undefined | null): string => {
+    if (!fullName) return 'User';
+    
+    const words = fullName.trim().split(/\s+/);
+    if (words.length === 0) return 'User';
+    
+    // Common titles to skip (case-insensitive, with/without periods)
+    const titles = new Set([
+      'dr', 'dr.', 'doctor',
+      'prof', 'prof.', 'professor',
+      'mr', 'mr.', 'mister',
+      'mrs', 'mrs.', 'missus',
+      'ms', 'ms.', 'miss'
+    ]);
+    
+    // Check if first word is a title
+    const firstWord = words[0].toLowerCase().replace(/\.$/, ''); // Remove trailing period
+    if (titles.has(firstWord) && words.length > 1) {
+      // Skip title and return the next word (actual first name)
+      return words[1];
+    }
+    
+    // Return first word if it's not a title or if there's only one word
+    return words[0];
+  };
+  
+  const firstName = extractFirstName(activeProfile?.fullName);
   
   // Calculate metrics
   const totalPapers = papers.length;
