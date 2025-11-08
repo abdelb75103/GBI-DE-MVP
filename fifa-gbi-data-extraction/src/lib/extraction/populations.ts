@@ -33,14 +33,6 @@ const PARTICIPANT_CHAR_FIELDS: string[] = [
 
 const normalizeLabel = (label: string) => label.trim().toLowerCase();
 
-const splitEntries = (raw: string): string[] => {
-  return raw
-    .split(/\r?\n/)
-    .flatMap((line) => line.split(/;/))
-    .map((segment) => segment.trim())
-    .filter((segment) => segment.length > 0);
-};
-
 const parseEntry = (fieldId: string, raw: string): ParsedEntry => {
   // Population-defining fields (ageCategory, sex) are just identifiers
   if (fieldId === 'ageCategory' || fieldId === 'sex') {

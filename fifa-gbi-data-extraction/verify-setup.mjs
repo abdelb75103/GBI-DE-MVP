@@ -70,7 +70,7 @@ async function verify() {
     {
       name: '📦 paper_notes table (no author column)',
       test: async () => {
-        const { data, error } = await supabase.from('paper_notes').select('id,paper_id,body,created_at').limit(0);
+        const { error } = await supabase.from('paper_notes').select('id,paper_id,body,created_at').limit(0);
         // Should work without author column
         return !error;
       },
@@ -188,4 +188,3 @@ verify().then(success => {
   console.error('\n❌ Error:', err.message);
   process.exit(1);
 });
-

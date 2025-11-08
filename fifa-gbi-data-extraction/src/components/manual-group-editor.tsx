@@ -24,7 +24,7 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
   const [drafts, setDrafts] = useState<Record<string, string>>({});
 
   // Sync drafts from server/local data (intentional state update in effect)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  /* eslint-disable react-hooks/set-state-in-effect -- Effect hydrates local draft cache from server snapshots */
   useEffect(() => {
     setDrafts((prevDrafts) => {
       const next: Record<string, string> = {};
@@ -46,6 +46,7 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
       return hasChanges ? next : prevDrafts;
     });
   }, [fields, results, getFieldValue, tab]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const handleChange = (field: ExtractionFieldDefinition, value: string) => {
     // Update local state immediately for UI

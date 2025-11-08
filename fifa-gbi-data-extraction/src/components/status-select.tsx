@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 
+import { useWorkspaceSave } from '@/components/workspace-save-manager';
 import type { PaperStatus } from '@/lib/types';
 
 const options: { value: PaperStatus; label: string }[] = [
@@ -24,6 +25,7 @@ export function StatusSelect({ paperId, status }: StatusSelectProps) {
   const [value, setValue] = useState(status);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const { setCurrentStatus } = useWorkspaceSave();
 
   const handleChange = (next: PaperStatus) => {
     setValue(next);
@@ -41,6 +43,7 @@ export function StatusSelect({ paperId, status }: StatusSelectProps) {
         return;
       }
 
+      setCurrentStatus(next);
       router.refresh();
     });
   };

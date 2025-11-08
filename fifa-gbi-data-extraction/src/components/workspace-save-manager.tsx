@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useState, useTransition } from 'react';
-import type { ExtractionTab, ExtractionFieldMetric } from '@/lib/types';
+import type { ExtractionTab, ExtractionFieldMetric, PaperStatus } from '@/lib/types';
 
 type FieldUpdate = {
   paperId: string;
@@ -21,6 +21,8 @@ type WorkspaceSaveContextType = {
   handleDiscard: () => void;
   updateField: (update: FieldUpdate) => void;
   getFieldValue: (tab: ExtractionTab, fieldId: string) => string | null | undefined;
+  currentStatus: PaperStatus;
+  setCurrentStatus: (status: PaperStatus) => void;
 };
 
 export const WorkspaceSaveContext = createContext<WorkspaceSaveContextType>({
@@ -32,6 +34,8 @@ export const WorkspaceSaveContext = createContext<WorkspaceSaveContextType>({
   handleDiscard: () => {},
   updateField: () => {},
   getFieldValue: () => undefined,
+  currentStatus: 'uploaded',
+  setCurrentStatus: () => {},
 });
 
 export function useWorkspaceSave() {
@@ -40,15 +44,16 @@ export function useWorkspaceSave() {
 
 type WorkspaceSaveManagerProps = {
   paperId: string;
-  currentStatus: string;
+  currentStatus: PaperStatus;
   readOnly?: boolean;
   children: React.ReactNode;
 };
 
 const MAX_PENDING_UPDATES = 100; // Warn when exceeding this
 const AUTO_SAVE_THRESHOLD = 150; // Auto-save when reaching this
+const PRESERVE_STATUSES_ON_COMPLETE: PaperStatus[] = ['mental_health', 'uefa', 'american_data'];
 
-export function WorkspaceSaveManager({ paperId, children, readOnly = false }: WorkspaceSaveManagerProps) {
+export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnly = false }: WorkspaceSaveManagerProps) {
   const router = useRouter();
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -57,10 +62,15 @@ export function WorkspaceSaveManager({ paperId, children, readOnly = false }: Wo
   const [showModal, setShowModal] = useState(false);
   const [pendingNavigation, setPendingNavigation] = useState<string | null>(null);
   const [showWarning, setShowWarning] = useState(false);
+  const [paperStatus, setPaperStatus] = useState<PaperStatus>(currentStatus);
   
   // Store all pending field updates locally (not saved to DB yet)
   const [pendingUpdates, setPendingUpdates] = useState<Map<string, FieldUpdate>>(new Map());
   const [shouldAutoSave, setShouldAutoSave] = useState(false);
+
+  useEffect(() => {
+    setPaperStatus(currentStatus);
+  }, [currentStatus]);
 
   // Browser tab/window close warning (native browser dialog)
   useEffect(() => {
@@ -180,6 +190,8 @@ export function WorkspaceSaveManager({ paperId, children, readOnly = false }: Wo
     startTransition(async () => {
       setError(null);
       setMessage(null);
+      const shouldPromoteToExtracted =
+        markComplete && !PRESERVE_STATUSES_ON_COMPLETE.includes(paperStatus);
 
       try {
         // Step 1: Save all pending field updates
@@ -227,8 +239,8 @@ export function WorkspaceSaveManager({ paperId, children, readOnly = false }: Wo
           }
         }
 
-        // Step 2: Update the paper status to 'extracted' only if marking complete
-        if (markComplete) {
+        // Step 2: Update the paper status to 'extracted' only if allowed
+        if (shouldPromoteToExtracted) {
           const response = await fetch(`/api/papers/${paperId}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -239,6 +251,8 @@ export function WorkspaceSaveManager({ paperId, children, readOnly = false }: Wo
             const payload = (await response.json().catch(() => ({}))) as { error?: string };
             throw new Error(payload.error ?? 'Failed to update status');
           }
+
+          setPaperStatus('extracted');
         }
 
         setMessage(markComplete ? 'Saved and marked as complete' : 'Changes saved successfully');
@@ -268,7 +282,20 @@ export function WorkspaceSaveManager({ paperId, children, readOnly = false }: Wo
   };
 
   return (
-    <WorkspaceSaveContext.Provider value={{ hasUnsavedChanges, isPending, markAsChanged, markAsSaved, handleSave, handleDiscard, updateField, getFieldValue }}>
+    <WorkspaceSaveContext.Provider
+      value={{
+        hasUnsavedChanges,
+        isPending,
+        markAsChanged,
+        markAsSaved,
+        handleSave,
+        handleDiscard,
+        updateField,
+        getFieldValue,
+        currentStatus: paperStatus,
+        setCurrentStatus: setPaperStatus,
+      }}
+    >
       {/* Modal when trying to leave with unsaved changes */}
       {showModal && hasUnsavedChanges && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-md">

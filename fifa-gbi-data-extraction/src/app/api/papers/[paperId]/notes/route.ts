@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { mockDb } from '@/lib/mock-db';
-import { readActiveProfileSession } from '@/lib/session';
 
 export const runtime = 'nodejs';
 

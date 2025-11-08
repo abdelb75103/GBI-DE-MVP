@@ -17,7 +17,6 @@ export function DashboardProgressVisual({
   const circumference = 2 * Math.PI * radius;
   
   // Calculate percentages
-  const totalProgress = 100; // Full circle for total papers
   const completedPercentage = totalPapers > 0 ? (completedPapers / totalPapers) * 100 : 0;
   const userPercentage = totalPapers > 0 ? (userCompletedPapers / totalPapers) * 100 : 0;
   

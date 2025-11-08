@@ -170,7 +170,7 @@ function WorkflowTab() {
         </div>
         <div className="lg:col-span-3">
           <ul className="space-y-3.5 text-sm leading-relaxed text-slate-700">
-            {prerequisites.map((item, index) => (
+            {prerequisites.map((item) => (
               <li key={item} className="flex gap-3 group">
                 <span aria-hidden className="mt-1 block h-2 w-2 flex-shrink-0 rounded-full bg-indigo-500 shadow-sm ring-2 ring-indigo-100 group-hover:scale-110 transition-transform" />
                 <span>{item}</span>

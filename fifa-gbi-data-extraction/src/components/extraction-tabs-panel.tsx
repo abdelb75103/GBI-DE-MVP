@@ -1,14 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback, useContext, useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import type { MutableRefObject } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { ExtractionFieldEditor } from '@/components/extraction-field-editor';
 import { ManualGroupEditor } from '@/components/manual-group-editor';
 import { ManualGroupTableEditor } from '@/components/manual-group-table-editor';
-import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 import { useGeminiApiKey } from '@/hooks/use-gemini-api-key';
 import {
   aiExtractionTabs,
@@ -55,8 +54,6 @@ export function ExtractionTabsPanel({
 }: ExtractionTabsPanelProps) {
   const router = useRouter();
   const { isConfigured, isLoaded } = useGeminiApiKey();
-  const { markAsChanged } = useContext(WorkspaceSaveContext);
-
   const aiTabs = tabs.filter((tab) => aiExtractionTabs.has(tab.tab));
   const manualTabs = tabs.filter((tab) => humanExtractionTabs.includes(tab.tab));
 
