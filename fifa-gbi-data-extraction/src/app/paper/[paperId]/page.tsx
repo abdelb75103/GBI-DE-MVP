@@ -184,7 +184,7 @@ export default async function PaperWorkspace({
           <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
           <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-3">
-              <span className="inline-flex items-center rounded-full bg-indigo-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600">
+              <span className="inline-flex items-center rounded-full bg-indigo-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
                 Paper workspace
               </span>
               <div className="space-y-3">
@@ -264,11 +264,8 @@ export default async function PaperWorkspace({
           </div>
 
           <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div className="flex items-center justify-between gap-3">
+            <div>
               <h2 className="text-sm font-semibold text-slate-900">Notes</h2>
-              <span className="rounded-full bg-indigo-100/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-indigo-600">
-                Collaboration
-              </span>
             </div>
             <p className="mt-2 text-xs text-slate-500">
               Capture extraction decisions, definitions, or follow-up questions.

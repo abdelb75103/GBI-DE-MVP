@@ -135,16 +135,16 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
             onClick={() => setAssignmentFilter(option.value)}
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition ${
               assignmentFilter === option.value
-                ? 'bg-indigo-100 text-indigo-700 border-2 border-indigo-300'
-                : 'bg-slate-100 text-slate-600 border-2 border-transparent hover:bg-slate-200 hover:text-slate-800'
+                ? 'bg-indigo-600 text-white border-2 border-indigo-500'
+                : 'bg-slate-700/50 text-slate-300 border-2 border-transparent hover:bg-slate-600/50 hover:text-slate-200'
             }`}
           >
             {option.label}
             <span
               className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 text-[10px] font-bold ${
                 assignmentFilter === option.value
-                  ? 'bg-indigo-200 text-indigo-800'
-                  : 'bg-slate-200 text-slate-700'
+                  ? 'bg-indigo-500 text-white'
+                  : 'bg-slate-600/50 text-slate-300'
               }`}
             >
               {option.count}

@@ -790,7 +790,7 @@ useEffect(() => {
               <p className="text-xs text-slate-500">{getLayoutHelper()}</p>
             </div>
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-              <div className="inline-flex rounded-full bg-slate-100/60 p-1 text-xs font-semibold text-slate-600 shadow-inner">
+              <div className="inline-flex rounded-full bg-slate-800/60 p-1 text-xs font-semibold text-slate-300 shadow-inner">
                 {layoutOptions.map((option) => (
                   <button
                     key={option.id}
@@ -798,8 +798,8 @@ useEffect(() => {
                     onClick={() => handleLayoutChange(option.id)}
                     className={`rounded-full px-3 py-1.5 transition ${
                       layout === option.id
-                        ? 'bg-white text-slate-900 shadow'
-                        : 'text-slate-500 hover:text-slate-700'
+                        ? 'bg-indigo-600 text-white shadow'
+                        : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
                     {option.label}

@@ -37,8 +37,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const next = stored === 'light' || stored === 'dark' ? stored : prefersDark ? 'dark' : 'light';
+      const next = stored === 'light' || stored === 'dark' ? stored : 'light';
       // eslint-disable-next-line react-hooks/set-state-in-effect -- Initialising theme from persisted preference
       setThemeState(next);
       applyTheme(next);

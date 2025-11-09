@@ -63,8 +63,8 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
         type="button"
         className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
           isFlagged
-            ? 'border-rose-200/80 bg-rose-50/80 text-rose-600 hover:bg-rose-100'
-            : 'border-slate-200/70 bg-white/70 text-slate-600 hover:border-slate-300 hover:text-slate-900'
+            ? 'border-rose-700/80 bg-rose-900/80 text-rose-200 hover:bg-rose-800'
+            : 'border-slate-700/70 bg-slate-800/70 text-slate-300 hover:border-slate-600 hover:text-slate-100'
         }`}
         onClick={handleClick}
         disabled={isPending}

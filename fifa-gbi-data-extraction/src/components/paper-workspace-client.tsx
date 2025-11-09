@@ -166,11 +166,8 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
           </div>
 
           <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div className="flex items-center justify-between gap-3">
+            <div>
               <h2 className="text-sm font-semibold text-slate-900">Notes</h2>
-              <span className="rounded-full bg-indigo-100/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-indigo-600">
-                Collaboration
-              </span>
             </div>
             <p className="mt-2 text-xs text-slate-500">
               Capture extraction decisions, definitions, or follow-up questions.

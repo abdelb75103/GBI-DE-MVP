@@ -79,9 +79,9 @@ const checklist = [
 ];
 
 const stepCardGradients = [
-  'from-indigo-500/12 via-slate-50 to-white',
-  'from-emerald-500/12 via-slate-50 to-white',
-  'from-amber-500/12 via-slate-50 to-white',
+  'from-slate-800/90 via-indigo-900/30 to-slate-800/90',
+  'from-slate-800/90 via-emerald-900/30 to-slate-800/90',
+  'from-slate-800/90 via-amber-900/30 to-slate-800/90',
 ];
 
 const stepAccentColors = [
@@ -198,7 +198,7 @@ function WorkflowTab() {
               const borderColor = index % 3 === 0 ? 'border-indigo-200/70' : index % 3 === 1 ? 'border-emerald-200/70' : 'border-amber-200/70';
               return (
                 <div key={step.title} className={`relative flex w-60 flex-shrink-0 flex-col gap-3 rounded-2xl border ${borderColor} bg-gradient-to-b ${bgGradient} p-5 shadow-md hover:shadow-lg transition-all duration-200`}>
-                  <div className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${colors.circle} text-base font-semibold text-white shadow-md ring-4 ring-white/70`}>
+                  <div className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${colors.circle} text-base font-semibold text-white shadow-md ring-4 ring-slate-200/70`}>
                     {index + 1}
                   </div>
                   <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-800">{step.title}</h3>
@@ -219,7 +219,7 @@ function WorkflowTab() {
         </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-900/5 via-white to-indigo-50/60 p-10 shadow-lg ring-1 ring-slate-200/60 backdrop-blur">
+      <section className="space-y-6 rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-900/90 via-indigo-950/50 to-indigo-950/80 p-10 shadow-lg ring-1 ring-slate-200/60 backdrop-blur">
         <div className="space-y-3">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-indigo-100 to-violet-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700 shadow-sm ring-1 ring-indigo-200/50">
             <span className="flex h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse" aria-hidden />
@@ -240,11 +240,11 @@ function WorkflowTab() {
             return (
               <div
                 key={step.title}
-                className={`relative overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br ${gradient} p-6 shadow-md transition-all duration-200 hover:shadow-lg`}
+                className={`relative overflow-hidden rounded-3xl border border-slate-700/50 bg-gradient-to-br ${gradient} p-6 shadow-md transition-all duration-200 hover:shadow-lg`}
               >
                 <div className={`absolute inset-y-0 left-0 w-1 rounded-l-3xl ${colors.border}`} aria-hidden />
                 <div className="flex items-start gap-4">
-                  <span className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${colors.circle} text-base font-semibold text-white shadow-md ring-4 ring-white/50`}>
+                  <span className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${colors.circle} text-base font-semibold text-white shadow-md ring-4 ring-slate-700/30`}>
                     {index + 1}
                   </span>
                   <div className="space-y-3 flex-1">
