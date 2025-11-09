@@ -48,8 +48,11 @@ export function DefinitionsDrawer({ categories, triggerClassName }: DefinitionsD
     <>
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
-        className={`z-40 ${triggerClasses}`}
+        disabled
+        aria-hidden="true"
+        tabIndex={-1}
+        onClick={() => {}}
+        className={`z-40 pointer-events-none hidden select-none opacity-0 ${triggerClasses}`}
       >
         Definitions
       </button>
