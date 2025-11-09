@@ -67,7 +67,7 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'fifaDiscipline',
     label: 'FIFA Discipline',
-    description: 'Football discipline. Return standardized value: "11-a-side" | "futsal" | "beach soccer" | "amputee" | "other".',
+    description: 'Football discipline. Return standardized value: "Association football (11-a-side)" | "Futsal" | "Beach soccer" | "Para football".',
     tab: 'participantCharacteristics',
   },
   {
@@ -79,7 +79,7 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'levelOfPlay',
     label: 'Level of Play',
-    description: 'Competitive level. Return standardized value: "professional" | "semi-professional" | "amateur" | "youth elite" | "youth recreational" | "mixed".',
+    description: 'Competitive level. Examples: "amateur" | "semi-professional" | "professional". Extract as reported in the paper.',
     tab: 'participantCharacteristics',
   },
   {
@@ -93,7 +93,7 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     id: 'ageCategory',
     label: 'Age Category',
     description:
-      'Age group. DEFINES POPULATIONS. Enter identifiers only: "U19\\nU21". Other fields use same line order for their values.',
+      'Age group. DEFINES POPULATIONS. Enter identifiers only: "U19\\nU21". Examples: U19, U21, U16, Youth, Senior, etc. Other fields use same line order for their values.',
     tab: 'participantCharacteristics',
   },
   {
@@ -262,18 +262,6 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
     tab: 'injuryOutcome',
   },
   {
-    id: 'injuryIncidenceAdjusted',
-    label: 'Adjusted injury incidence (overall)',
-    description: 'Adjusted injury incidence rate if provided.',
-    tab: 'injuryOutcome',
-  },
-  {
-    id: 'injuryConfounders',
-    label: 'Confounders',
-    description: 'Confounders considered in injury analysis.',
-    tab: 'injuryOutcome',
-  },
-  {
     id: 'injuryTimeLossTotal',
     label: 'Total time-loss due to injury',
     description: 'Total time-loss due to injuries.',
@@ -324,37 +312,37 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryModeRepetitiveGradual',
     label: 'Mode of onset – Repetitive gradual',
-    description: 'Proportion or notes for repetitive gradual onset injuries.',
+    description: 'Number of repetitive gradual onset injuries reported. Extract NUMERIC COUNT ONLY.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryModeRepetitiveSudden',
     label: 'Mode of onset – Repetitive sudden',
-    description: 'Proportion or notes for repetitive sudden onset injuries.',
+    description: 'Number of repetitive sudden onset injuries reported. Extract NUMERIC COUNT ONLY.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryModeAcuteSudden',
     label: 'Mode of onset – Acute sudden',
-    description: 'Proportion or notes for acute sudden onset injuries.',
+    description: 'Number of acute sudden onset injuries reported. Extract NUMERIC COUNT ONLY.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryContact',
     label: 'Contact',
-    description: 'Notes on contact-related injuries.',
+    description: 'Number of contact-related injuries reported. Extract NUMERIC COUNT ONLY.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryNonContact',
     label: 'Non-contact',
-    description: 'Notes on non-contact injuries.',
+    description: 'Number of non-contact injuries reported. Extract NUMERIC COUNT ONLY.',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryCumulativeRepetitive',
     label: 'Cumulative (repetitive)',
-    description: 'Cumulative repetitive injury data.',
+    description: 'Number of cumulative repetitive injuries reported. Extract NUMERIC COUNT ONLY.',
     tab: 'injuryOutcome',
   },
   {

@@ -572,9 +572,9 @@ function CodebookTab() {
         <SimpleFieldGroup title="Participant Characteristics">
           <SimpleField 
             name="FIFA Discipline"
-            example="futsal"
+            example="Futsal"
             paperExample="Data from the FIFA Futsal World Cup"
-            choices={["11-a-side", "futsal", "beach soccer", "amputee", "other"]}
+            choices={["Association football (11-a-side)", "Futsal", "Beach soccer", "Para football"]}
           />
           <SimpleField 
             name="Country"
@@ -585,7 +585,8 @@ function CodebookTab() {
             name="Level of Play"
             example="professional"
             paperExample="Professional players from the Premier League"
-            choices={["professional", "semi-professional", "amateur", "youth elite", "youth recreational", "mixed"]}
+            choices={["amateur", "semi-professional", "professional"]}
+            tip="Examples only - extract as reported in the paper"
           />
           <SimpleField 
             name="Sex"
@@ -597,7 +598,7 @@ function CodebookTab() {
             name="Age Category"
             example="U19"
             paperExample="U19 and U21 age groups participated"
-            tip="Use for specific age groups like U19, U21, senior"
+            tip="Examples: U19, U21, U16, Youth, Senior, etc."
           />
           <SimpleField 
             name="Mean Age"

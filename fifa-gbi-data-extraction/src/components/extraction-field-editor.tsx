@@ -11,8 +11,11 @@ type ReviewAction = 'approve' | 'decline';
 
 const MULTILINE_PLACEHOLDERS: Record<string, string> = {
   // Population-defining fields (use identifiers)
-  ageCategory: '',
+  ageCategory: 'e.g.,\nU19\nU21\nU16\nYouth\nSenior',
   sex: '',
+  // Participant Characteristics
+  fifaDiscipline: 'e.g.,\nAssociation football (11-a-side)\nFutsal\nBeach soccer\nPara football',
+  levelOfPlay: 'e.g.,\namateur\nsemi-professional\nprofessional',
   // All other fields (values only, no labels)
   meanAge: '',
   sampleSizePlayers: '',
