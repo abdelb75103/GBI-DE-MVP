@@ -170,8 +170,8 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   },
   {
     id: 'mechanismReporting',
-    label: 'Mechanism of Injury Reporting',
-    description: 'How mechanism of injury was described/reporting approach.',
+    label: 'Who reported the data',
+    description: 'Who reported the injury data. Examples: Medical Staff, Coach, Player-selfreported. Return standardized value if applicable: "Medical Staff" | "Coach" | "Player-selfreported" | "other" | free text if not matching.',
     tab: 'definitions',
   },
   // Tab 4 – Exposure Data
