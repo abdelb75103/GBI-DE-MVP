@@ -64,6 +64,10 @@ type ExportPopulationGroup = {
 
 const GLOBAL_TABS = new Set(['studyDetails', 'participantCharacteristics', 'definitions', 'exposure']);
 
+// Tabs that use the table editor - these should NEVER autocomplete from extraction fields
+// Blank cells must stay blank - strict 1:1 row mapping
+const TABLE_EDITOR_TABS = new Set(['injuryTissueType', 'injuryLocation', 'illnessRegion', 'illnessEtiology']);
+
 const sanitizeLegacyValue = (value: string | null | undefined): string | null => {
   if (!value) {
     return null;
@@ -210,6 +214,7 @@ const normalizePopulations = (
   });
 
   // First pass: normalize non-global fields by splitting multiline values
+  // CRITICAL: For table editor tabs, values must ONLY appear in the group/row they belong to
   const normalizedGroups = groups.map((group) => {
     const normalizedValues: ExportPopulationValue[] = [];
 
@@ -217,18 +222,56 @@ const normalizePopulations = (
     group.values.forEach((entry) => {
       const tab = fieldTabMap.get(entry.fieldId);
       const isGlobal = tab ? GLOBAL_TABS.has(tab as ExtractionTab) : false;
+      const isTableEditorTab = tab ? TABLE_EDITOR_TABS.has(tab as ExtractionTab) : false;
 
       if (!isGlobal && entry.value && typeof entry.value === 'string' && entry.value.includes('\n')) {
         // Non-global field with multiline value: split and assign to position
         const lines = splitIntoLines(entry.value);
         const lineValue = lines[group.position] ?? '';
-        normalizedValues.push({
-          ...entry,
-          value: lineValue || null,
-        });
-      } else {
-        // Non-global field without multiline, or global field (handled in second pass)
+        // For table editor tabs, only include if the line at this position has actual content
+        // This prevents blank cells from being included
+        if (isTableEditorTab) {
+          if (lineValue && lineValue.trim().length > 0) {
+            normalizedValues.push({
+              ...entry,
+              value: lineValue.trim(),
+            });
+          }
+          // If blank, don't add to normalizedValues - it will be set to null in second pass
+        } else {
+          normalizedValues.push({
+            ...entry,
+            value: lineValue || null,
+          });
+        }
+      } else if (!isGlobal && !isTableEditorTab) {
+        // Non-global, non-table-editor field without multiline: keep as-is
+        // (Global fields handled in second pass)
         normalizedValues.push(entry);
+      } else if (!isGlobal && isTableEditorTab && entry.value) {
+        // Table editor tab with single value (no newlines)
+        // CRITICAL: Check if the extraction field has multiline data
+        // If so, we need to parse it correctly to get the value for this specific group/row
+        const field = fieldMap.get(entry.fieldId);
+        if (field?.value && typeof field.value === 'string' && field.value.includes('\n')) {
+          // Extraction field has multiline data - parse it correctly
+          const lines = splitIntoLines(field.value);
+          const lineValue = lines[group.position] ?? '';
+          if (lineValue && lineValue.trim().length > 0) {
+            normalizedValues.push({
+              ...entry,
+              value: lineValue.trim(),
+            });
+          }
+          // If blank at this position, don't add - will be null in second pass
+        } else {
+          // Single value stored directly for this group - include it
+          // This happens when data comes from population_values table
+          normalizedValues.push(entry);
+        }
+      } else {
+        // Global field: handled in second pass
+        // Don't add here, will be processed in second pass
       }
     });
 
@@ -238,11 +281,12 @@ const normalizePopulations = (
     };
   });
 
-  // Second pass: handle global fields
+  // Second pass: handle global fields and ensure table editor tabs don't autocomplete
   return normalizedGroups.map((group) => {
     const valueMap = new Map<string, string | null>();
     
-    // Start with existing normalized values
+    // Start with existing normalized values from first pass
+    // For table editor tabs, these are ONLY values that belong to this specific group/row
     group.values.forEach((entry) => {
       valueMap.set(entry.fieldId, entry.value);
     });
@@ -251,6 +295,7 @@ const normalizePopulations = (
     valueColumns.forEach((column) => {
       const tab = fieldTabMap.get(column.id);
       const isGlobal = tab ? GLOBAL_TABS.has(tab as ExtractionTab) : false;
+      const isTableEditorTab = tab ? TABLE_EDITOR_TABS.has(tab as ExtractionTab) : false;
 
       if (isGlobal) {
         const lines = getGlobalLines(column.id);
@@ -266,19 +311,50 @@ const normalizePopulations = (
           valueMap.set(column.id, field?.value ?? null);
         }
       } else {
-        // Non-global: ensure value doesn't contain newlines (should already be normalized)
+        // Non-global field
         const currentValue = valueMap.get(column.id);
-        if (currentValue && typeof currentValue === 'string' && currentValue.includes('\n')) {
-          // Safety: split and take line at group position
-          const lines = splitIntoLines(currentValue);
-          valueMap.set(column.id, lines[group.position] ?? '');
-        } else if (!valueMap.has(column.id)) {
-          // Field doesn't have population data: fall back to extraction field value
-          // But only if it doesn't contain newlines (non-global fields should be per-row)
-          const field = fieldMap.get(column.id);
-          const fieldValue = field?.value ?? null;
-          if (fieldValue && typeof fieldValue === 'string' && !fieldValue.includes('\n')) {
-            valueMap.set(column.id, fieldValue);
+        
+        if (isTableEditorTab) {
+          // CRITICAL: Table editor tabs use strict 1:1 row mapping
+          // Values MUST come from the group's own data - never from extraction fields
+          // Never autocomplete or propagate values
+          
+          if (currentValue && typeof currentValue === 'string' && currentValue.includes('\n')) {
+            // Safety: split and take line at group position
+            const lines = splitIntoLines(currentValue);
+            const lineValue = lines[group.position] ?? '';
+            if (lineValue && lineValue.trim().length > 0) {
+              valueMap.set(column.id, lineValue.trim());
+            } else {
+              valueMap.set(column.id, null);
+            }
+          } else if (!valueMap.has(column.id)) {
+            // Field doesn't have population data for this row
+            // MUST stay blank - never autocomplete
+            valueMap.set(column.id, null);
+          } else if (currentValue) {
+            // We have a value - make sure it's not empty
+            if (typeof currentValue === 'string' && currentValue.trim().length === 0) {
+              valueMap.set(column.id, null);
+            }
+          }
+        } else {
+          // Non-table-editor tab: normal processing
+          if (currentValue && typeof currentValue === 'string' && currentValue.includes('\n')) {
+            // Safety: split and take line at group position
+            const lines = splitIntoLines(currentValue);
+            valueMap.set(column.id, lines[group.position] ?? '');
+          } else if (!valueMap.has(column.id)) {
+            // Field doesn't have population data for this row
+            // For non-table-editor tabs, check extraction field value
+            // But only use it if it's a single value (not multiline)
+            const field = fieldMap.get(column.id);
+            const fieldValue = field?.value ?? null;
+            if (fieldValue && typeof fieldValue === 'string' && !fieldValue.includes('\n')) {
+              valueMap.set(column.id, fieldValue);
+            } else {
+              valueMap.set(column.id, null);
+            }
           }
         }
       }

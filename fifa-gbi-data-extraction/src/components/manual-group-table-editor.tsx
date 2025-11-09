@@ -39,24 +39,32 @@ export function ManualGroupTableEditor({
     [fields]
   );
 
-  // Parse multi-line data into rows without relying on population labels
+  // Parse multi-line data into rows with strict 1:1 row mapping
+  // Row 1 in storage = Row 1 in table, Row 2 = Row 2, etc.
+  // Blank cells remain blank - no autocomplete or extension
   useEffect(() => {
     const hydratedRows: PopulationRow[] = [];
 
+    // Find the maximum row count across ALL metrics for this tab
+    // This ensures we show the same number of rows for all metrics
+    // Each tab is independent - we only look at fields for this specific tab
     const rowCount = extractionMetrics.reduce((max, { metric }) => {
       const field = fieldsByMetric.get(metric);
       if (!field) {
         return max;
       }
+      // Only use data from current tab - no cross-tab autocomplete
       const localValue = getFieldValue(tab, field.id);
       const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
       if (!currentValue) {
         return max;
       }
+      // Split by newline - preserve empty lines to maintain row positions
       const lines = currentValue.split('\n');
       return Math.max(max, lines.length);
     }, 1);
 
+    // Create rows based on strict position mapping (index 0 = Row 1, index 1 = Row 2, etc.)
     for (let index = 0; index < rowCount; index++) {
       const values: Record<ExtractionFieldMetric, string> = {} as Record<ExtractionFieldMetric, string>;
       extractionMetrics.forEach(({ metric }) => {
@@ -64,11 +72,16 @@ export function ManualGroupTableEditor({
         if (!field) {
           return;
         }
+        // Only use data from current tab
         const localValue = getFieldValue(tab, field.id);
         const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
+        // Split and preserve empty lines - don't filter them out
         const lines = currentValue ? currentValue.split('\n') : [];
+        // Get value at exact index position - if missing, use empty string (blank cell)
+        // This ensures strict 1:1 mapping: Row 1 = lines[0], Row 2 = lines[1], etc.
         values[metric] = lines[index]?.trim() ?? '';
       });
+      // Use index-based ID to maintain position mapping
       hydratedRows.push({ id: `${groupLabel}-row-${index}`, values });
     }
 
@@ -80,11 +93,22 @@ export function ManualGroupTableEditor({
     if (!field) {
       return null;
     }
-    const lines = rowState.map((row) => row.values[metric]?.trim() ?? '');
+    
+    // Map ALL rows - preserve empty strings for blank cells
+    // This ensures strict 1:1 row mapping (Row 1 = Row 1, Row 2 = Row 2, etc.)
+    const lines = rowState.map((row) => {
+      const value = row.values[metric]?.trim() ?? '';
+      return value; // Explicitly return empty string if blank - preserves row position
+    });
+    
+    // Check if ANY row has content
     const hasContent = lines.some((line) => line.length > 0);
     if (!hasContent) {
-      return null;
+      return null; // Return null only if ALL rows are blank
     }
+    
+    // Join with newlines - empty strings will create empty lines
+    // This ensures all metrics have the same number of lines (same row count)
     return lines.join('\n');
   };
 
@@ -112,15 +136,18 @@ export function ManualGroupTableEditor({
   };
 
   const addRow = () => {
+    // Add a new blank row at the end
+    // Use index-based ID to maintain strict position mapping
     const newRow: PopulationRow = {
-      id: `${groupLabel}-row-${Date.now()}`,
+      id: `${groupLabel}-row-${rows.length}`, // Use current length as index for new row
       values: extractionMetrics.reduce((acc, { metric }) => {
-        acc[metric] = '';
+        acc[metric] = ''; // All cells start blank - no autocomplete
         return acc;
       }, {} as Record<ExtractionFieldMetric, string>),
     };
     const next = [...rows, newRow];
     setRows(next);
+    // Serialize all metrics to ensure consistent row count across all columns
     extractionMetrics.forEach(({ metric }) => commitMetric(next, metric));
   };
 
@@ -128,8 +155,13 @@ export function ManualGroupTableEditor({
     if (rows.length <= 1) {
       return;
     }
+    // Remove the row and renumber remaining rows to maintain strict position mapping
+    // After removal, Row 3 becomes Row 2, Row 4 becomes Row 3, etc.
+    // This is normal table behavior - we maintain sequential positions
     const next = rows.filter((row) => row.id !== rowId);
     setRows(next);
+    // Re-serialize all metrics with the updated row positions
+    // This ensures all metrics maintain the same row count after removal
     extractionMetrics.forEach(({ metric }) => commitMetric(next, metric));
   };
 
