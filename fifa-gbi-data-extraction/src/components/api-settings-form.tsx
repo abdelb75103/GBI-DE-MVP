@@ -116,22 +116,29 @@ export function ApiSettingsForm() {
       </div>
 
       <div className="space-y-4 rounded-3xl border border-slate-200/70 bg-white/90 p-8 shadow-sm ring-1 ring-slate-200/60">
-        <h2 className="text-lg font-semibold text-slate-900">Google Gemini API notes</h2>
-        <ol className="list-decimal space-y-2 pl-5 text-sm text-slate-600">
+        <h2 className="text-lg font-semibold text-slate-900">How to Get Your API Key</h2>
+        <ol className="list-decimal space-y-3 pl-5 text-sm text-slate-700">
           <li>
-            The free tier of the Google Gemini API has rate limits. You can review current limits in the{' '}
-            <Link href="https://ai.google.dev/pricing" target="_blank" className="text-indigo-600 underline">
-              pricing guide
+            Go to{' '}
+            <Link href="https://aistudio.google.com/app/apikey" className="text-indigo-600 underline font-semibold" target="_blank">
+              Google AI Studio
             </Link>
-            .
+            {' '}and sign in with your Google account.
           </li>
           <li>
-            This app sends the PDF text to a Gemini Flash model for fast extraction. If Flash is unavailable, you may try other
-            Flash variants, but latency will vary.
+            Click the <strong>"Get API key"</strong> or <strong>"Create API Key"</strong> button.
           </li>
           <li>
-            Verify that the key is entered exactly without leading or trailing spaces. Most extraction failures are caused by typos
-            or expired keys.
+            Select an existing Google Cloud project or create a new one (you can use the default project).
+          </li>
+          <li>
+            Your API key will be generated and displayed. Click <strong>"Copy"</strong> to copy it to your clipboard.
+          </li>
+          <li>
+            Paste the API key into the form above and click <strong>"Save and continue"</strong>.
+          </li>
+          <li className="text-red-600 font-semibold">
+            IMPORTANT: Ensure your Google account does NOT have a payment method attached. The free tier should work without billing information.
           </li>
         </ol>
       </div>
