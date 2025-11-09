@@ -459,6 +459,13 @@ export interface Database {
         Args: Record<string, never>;
         Returns: boolean;
       };
+      verify_profile_password: {
+        Args: {
+          profile_id: string;
+          provided_password: string;
+        };
+        Returns: boolean;
+      };
     };
     Enums: {
       user_role: UserRole;
