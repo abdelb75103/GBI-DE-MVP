@@ -1,8 +1,10 @@
 import { extractionFieldDefinitions, extractionTabMeta } from '@/lib/extraction/schema';
+import { derivePopulationGroups } from '@/lib/extraction/populations';
 import { mockDb } from '@/lib/mock-db';
 import type {
   ExtractionFieldResult,
   ExtractionResult,
+  ExtractionTab,
   Paper,
   PopulationGroup,
   PopulationValue,
@@ -24,6 +26,10 @@ const valueColumns = extractionFieldDefinitions.map((definition) => ({
   label: toTitleCase(definition.label),
   tabLabel: extractionTabMeta[definition.tab]?.title ?? definition.tab,
 }));
+
+const fieldMetricLookup = new Map(
+  extractionFieldDefinitions.map((definition) => [definition.id, definition.metric ?? null]),
+);
 
 const baseHeaders = ['Paper ID', 'Paper Title', 'Status'] as const;
 
@@ -54,6 +60,23 @@ type ExportPopulationGroup = {
   label: string;
   position: number;
   values: ExportPopulationValue[];
+};
+
+const GLOBAL_TABS = new Set(['studyDetails', 'participantCharacteristics', 'definitions', 'exposure']);
+
+const sanitizeLegacyValue = (value: string | null | undefined): string | null => {
+  if (!value) {
+    return null;
+  }
+  const match = value.match(/^.+?\s*[:\-–-]\s*(.+)$/);
+  return match ? match[1].trim() : value;
+};
+
+const splitIntoLines = (value: string | null | undefined): string[] => {
+  if (!value) {
+    return [];
+  }
+  return value.split(/\r?\n/);
 };
 
 const mapFile = (file: StoredFile | null | undefined) =>
@@ -104,26 +127,52 @@ const mapPopulationGroups = (
       id: group.id,
       label: group.label,
       position: group.position,
-      values: (bucket.get(group.id) ?? []).map((entry) => {
-        let value = entry.value ?? null;
-        
-        // Safety: Strip any "label: " or "label - " prefix that might have leaked through (backward compatibility)
-        if (value && typeof value === 'string') {
-          const labelMatch = value.match(/^.+?\s*[:\-–-]\s*(.+)$/);
-          if (labelMatch) {
-            value = labelMatch[1].trim();
-          }
-        }
-        
-        return {
-          fieldId: entry.fieldId,
-          value,
-          metric: entry.metric ?? null,
-          unit: entry.unit ?? null,
-        };
-      }),
+      values: (bucket.get(group.id) ?? []).map((entry) => ({
+        fieldId: entry.fieldId,
+        value: sanitizeLegacyValue(entry.value ?? null),
+        metric: entry.metric ?? null,
+        unit: entry.unit ?? null,
+      })),
     }))
     .sort((a, b) => a.position - b.position);
+};
+
+const deriveExportPopulationGroups = (
+  extractions: ExtractionResult[],
+  paperId: string,
+): ExportPopulationGroup[] => {
+  const derived = derivePopulationGroups(
+    extractions.flatMap((extraction) => extraction.fields),
+  );
+  return derived.map<ExportPopulationGroup>((group, index) => ({
+    id: `derived-${paperId}-${index}`,
+    label: group.label,
+    position: group.position,
+    values: Object.entries(group.values).map(([fieldId, value]) => ({
+      fieldId,
+      value,
+      metric: fieldMetricLookup.get(fieldId) ?? null,
+      unit: null,
+    })),
+  }));
+};
+
+const resolvePopulationGroups = (
+  groups: PopulationGroup[],
+  values: PopulationValue[],
+  extractions: ExtractionResult[],
+  paperId: string,
+): ExportPopulationGroup[] => {
+  if (groups.length > 0 && values.length > 0) {
+    const mapped = mapPopulationGroups(groups, values);
+    const hasMultiline = mapped.some((group) =>
+      group.values.some((entry) => typeof entry.value === 'string' && entry.value.includes('\n')),
+    );
+    if (!hasMultiline) {
+      return mapped;
+    }
+  }
+  return deriveExportPopulationGroups(extractions, paperId);
 };
 
 const buildFieldValueMap = (extractions: ExtractionResult[]): Map<string, ExtractionFieldResult> => {
@@ -134,6 +183,121 @@ const buildFieldValueMap = (extractions: ExtractionResult[]): Map<string, Extrac
     });
   });
   return map;
+};
+
+const normalizePopulations = (
+  groups: ExportPopulationGroup[],
+  extractions: ExtractionResult[],
+): ExportPopulationGroup[] => {
+  if (groups.length === 0) {
+    return groups;
+  }
+
+  const fieldMap = buildFieldValueMap(extractions);
+  const fieldLineCache = new Map<string, string[]>();
+  const getGlobalLines = (fieldId: string): string[] => {
+    if (!fieldLineCache.has(fieldId)) {
+      const field = fieldMap.get(fieldId);
+      fieldLineCache.set(fieldId, splitIntoLines(field?.value ?? null));
+    }
+    return fieldLineCache.get(fieldId) ?? [];
+  };
+
+  // Build a map of fieldId -> tab for quick lookup
+  const fieldTabMap = new Map<string, string>();
+  extractionFieldDefinitions.forEach((def) => {
+    fieldTabMap.set(def.id, def.tab);
+  });
+
+  // First pass: normalize non-global fields by splitting multiline values
+  const normalizedGroups = groups.map((group) => {
+    const normalizedValues: ExportPopulationValue[] = [];
+
+    // Process each value entry
+    group.values.forEach((entry) => {
+      const tab = fieldTabMap.get(entry.fieldId);
+      const isGlobal = tab ? GLOBAL_TABS.has(tab as ExtractionTab) : false;
+
+      if (!isGlobal && entry.value && typeof entry.value === 'string' && entry.value.includes('\n')) {
+        // Non-global field with multiline value: split and assign to position
+        const lines = splitIntoLines(entry.value);
+        const lineValue = lines[group.position] ?? '';
+        normalizedValues.push({
+          ...entry,
+          value: lineValue || null,
+        });
+      } else {
+        // Non-global field without multiline, or global field (handled in second pass)
+        normalizedValues.push(entry);
+      }
+    });
+
+    return {
+      ...group,
+      values: normalizedValues,
+    };
+  });
+
+  // Second pass: handle global fields
+  return normalizedGroups.map((group) => {
+    const valueMap = new Map<string, string | null>();
+    
+    // Start with existing normalized values
+    group.values.forEach((entry) => {
+      valueMap.set(entry.fieldId, entry.value);
+    });
+
+    // Process all value columns to ensure global fields are handled
+    valueColumns.forEach((column) => {
+      const tab = fieldTabMap.get(column.id);
+      const isGlobal = tab ? GLOBAL_TABS.has(tab as ExtractionTab) : false;
+
+      if (isGlobal) {
+        const lines = getGlobalLines(column.id);
+        if (lines.length > 1) {
+          // Multi-line: use line at group position
+          valueMap.set(column.id, lines[group.position] ?? '');
+        } else if (lines.length === 1) {
+          // Single-line: repeat on all rows
+          valueMap.set(column.id, lines[0]);
+        } else if (!valueMap.has(column.id)) {
+          // No lines: check if field exists in extraction
+          const field = fieldMap.get(column.id);
+          valueMap.set(column.id, field?.value ?? null);
+        }
+      } else {
+        // Non-global: ensure value doesn't contain newlines (should already be normalized)
+        const currentValue = valueMap.get(column.id);
+        if (currentValue && typeof currentValue === 'string' && currentValue.includes('\n')) {
+          // Safety: split and take line at group position
+          const lines = splitIntoLines(currentValue);
+          valueMap.set(column.id, lines[group.position] ?? '');
+        } else if (!valueMap.has(column.id)) {
+          // Field doesn't have population data: fall back to extraction field value
+          // But only if it doesn't contain newlines (non-global fields should be per-row)
+          const field = fieldMap.get(column.id);
+          const fieldValue = field?.value ?? null;
+          if (fieldValue && typeof fieldValue === 'string' && !fieldValue.includes('\n')) {
+            valueMap.set(column.id, fieldValue);
+          }
+        }
+      }
+    });
+
+    return {
+      ...group,
+      values: Array.from(valueMap.entries()).map(([fieldId, value]) => {
+        // Find original entry to preserve metric and unit
+        const originalEntry = group.values.find((e) => e.fieldId === fieldId);
+        return {
+          fieldId,
+          value: value || null,
+          metric: originalEntry?.metric ?? fieldMetricLookup.get(fieldId) ?? null,
+          unit: originalEntry?.unit ?? null,
+        };
+      }),
+    };
+  });
 };
 
 export async function buildJsonExport(paperIds: string[]) {
@@ -148,12 +312,15 @@ export async function buildJsonExport(paperIds: string[]) {
       const populationGroups = await mockDb.listPopulationGroups(paper.id);
       const populationValues = await mockDb.listPopulationValues(paper.id);
 
+      const populations = resolvePopulationGroups(populationGroups, populationValues, extractions, paper.id);
+      const normalizedPopulations = normalizePopulations(populations, extractions);
+
       return {
         paper,
         file: mapFile(file),
         notes,
         extractions: extractions.map(mapExtraction),
-        populations: mapPopulationGroups(populationGroups, populationValues),
+        populations: normalizedPopulations,
       };
     }),
   );
@@ -187,36 +354,30 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
       mockDb.listPopulationValues(paper.id),
     ]);
 
-    const fieldMap = buildFieldValueMap(extractions);
+    let exportGroups = resolvePopulationGroups(populationGroups, populationValues, extractions, paper.id);
+    if (!exportGroups.length) {
+      exportGroups = [
+        {
+          id: '__default__',
+          label: 'All participants',
+          position: 0,
+          values: [],
+        },
+      ];
+    }
+    
+    // Normalize populations to split multiline values and handle global fields
+    const normalizedGroups = normalizePopulations(exportGroups, extractions);
+    const sortedGroups = [...normalizedGroups].sort((a, b) => a.position - b.position);
 
+    // Build value map for quick lookup
     const valuesByGroup = new Map<string, Map<string, string | null>>();
-    populationValues.forEach((value) => {
-      const groupValues = valuesByGroup.get(value.populationGroupId) ?? new Map<string, string | null>();
-      groupValues.set(value.fieldId, value.value ?? null);
-      valuesByGroup.set(value.populationGroupId, groupValues);
-    });
-
-    // If no population groups, create a single default group with a meaningful label
-    const groups =
-      populationGroups.length > 0
-        ? [...populationGroups]
-        : [{ 
-            id: '__default__', 
-            paperId: paper.id, 
-            tab: 'participantCharacteristics' as const, 
-            label: 'All participants', // More descriptive than empty string
-            position: 0, 
-            createdAt: '', 
-            updatedAt: '' 
-          }];
-    const sortedGroups = groups.sort((a, b) => a.position - b.position);
-
-    // Determine which fields have population-specific data
-    const fieldsWithPopulationData = new Set<string>();
-    populationValues.forEach((pv) => {
-      if (pv.value) {
-        fieldsWithPopulationData.add(pv.fieldId);
-      }
+    sortedGroups.forEach((group) => {
+      const map = new Map<string, string | null>();
+      group.values.forEach((entry) => {
+        map.set(entry.fieldId, entry.value ?? null);
+      });
+      valuesByGroup.set(group.id, map);
     });
 
     sortedGroups.forEach((group) => {
@@ -227,27 +388,18 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
       ];
 
       const groupValues = valuesByGroup.get(group.id);
-      const isDefaultGroup = group.id === '__default__';
 
       valueColumns.forEach((column) => {
         let value: string | null | undefined = groupValues?.get(column.id) ?? null;
 
-        // Only fall back to extraction field if:
-        // 1. We're in the default group (no populations), OR
-        // 2. This field has NO population-specific data at all
-        if (value == null && (isDefaultGroup || !fieldsWithPopulationData.has(column.id))) {
-          const field = fieldMap.get(column.id);
-          value = field?.value ?? null;
-        }
-
-        // Safety: Strip any "label: " or "label - " prefix that might have leaked through (backward compatibility)
+        // Values are already normalized by normalizePopulations, but apply legacy sanitization
+        value = sanitizeLegacyValue(value);
+        
+        // Final safety check: remove any remaining newlines
         if (value && typeof value === 'string') {
-          const labelMatch = value.match(/^.+?\s*[:\-–-]\s*(.+)$/);
-          if (labelMatch) {
-            value = labelMatch[1].trim();
-          }
+          value = value.replace(/\r?\n/g, ' ');
         }
-
+        
         baseCells.push(escapeCsv(value ?? ''));
       });
 

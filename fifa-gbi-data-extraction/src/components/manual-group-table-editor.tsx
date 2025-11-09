@@ -20,8 +20,7 @@ type ManualGroupTableEditorProps = {
 };
 
 type PopulationRow = {
-  id: string; // Unique ID for each row
-  label: string;
+  id: string; // Stable identifier for each row
   values: Record<ExtractionFieldMetric, string>;
 };
 
@@ -40,253 +39,98 @@ export function ManualGroupTableEditor({
     [fields]
   );
 
-  // Parse multi-line data into rows
+  // Parse multi-line data into rows without relying on population labels
   useEffect(() => {
-    const parsedRows: PopulationRow[] = [];
-    const maxLines = new Map<ExtractionFieldMetric, number>();
+    const hydratedRows: PopulationRow[] = [];
 
-    // Find the maximum number of lines across all metrics (keep blank lines!)
-    extractionMetrics.forEach(({ metric }) => {
+    const rowCount = extractionMetrics.reduce((max, { metric }) => {
       const field = fieldsByMetric.get(metric);
-      if (!field) return;
-
+      if (!field) {
+        return max;
+      }
       const localValue = getFieldValue(tab, field.id);
       const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
-      const lines = currentValue ? currentValue.split('\n') : []; // DON'T filter blank lines
-      maxLines.set(metric, lines.length);
-    });
+      if (!currentValue) {
+        return max;
+      }
+      const lines = currentValue.split('\n');
+      return Math.max(max, lines.length);
+    }, 1);
 
-    const numRows = Math.max(1, ...Array.from(maxLines.values()));
-
-    // Create rows, preserving blank rows
-    for (let i = 0; i < numRows; i++) {
-      const row: PopulationRow = {
-        id: `${groupLabel}-row-${i}`,
-        label: '',
-        values: {} as Record<ExtractionFieldMetric, string>,
-      };
-
+    for (let index = 0; index < rowCount; index++) {
+      const values: Record<ExtractionFieldMetric, string> = {} as Record<ExtractionFieldMetric, string>;
       extractionMetrics.forEach(({ metric }) => {
         const field = fieldsByMetric.get(metric);
-        if (!field) return;
-
+        if (!field) {
+          return;
+        }
         const localValue = getFieldValue(tab, field.id);
         const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
-        const lines = currentValue ? currentValue.split('\n') : []; // DON'T filter blank lines
-        const lineValue = lines[i] ?? '';
-
-        // NEW SIMPLER FORMAT: Labels and values are separate
-        // Check if this is the first metric (prevalence/count) which stores labels
-        if (metric === 'prevalence' && lineValue.trim() && !lineValue.includes('-')) {
-          // This is a standalone label (new format)
-          if (!row.label) row.label = lineValue.trim();
-          row.values[metric] = '';
-        } else if (lineValue.includes('-')) {
-          // Legacy format: "label - value"
-          const match = lineValue.match(/^(.+?)\s*[:\-–-]\s*(.+)$/);
-          if (match) {
-            if (!row.label) row.label = match[1].trim();
-            row.values[metric] = match[2].trim();
-          } else {
-            row.values[metric] = lineValue.trim();
-          }
-        } else if (lineValue.trim()) {
-          // Just a value (new format)
-          row.values[metric] = lineValue.trim();
-        } else {
-          // Blank cell
-          row.values[metric] = '';
-        }
+        const lines = currentValue ? currentValue.split('\n') : [];
+        values[metric] = lines[index]?.trim() ?? '';
       });
-
-      parsedRows.push(row);
+      hydratedRows.push({ id: `${groupLabel}-row-${index}`, values });
     }
 
-    setRows(parsedRows);
+    setRows(hydratedRows);
   }, [results, getFieldValue, tab, groupLabel, fieldsByMetric]);
 
-  const handleCellChange = (rowId: string, metric: ExtractionFieldMetric, value: string) => {
-    setRows((prev) =>
-      prev.map((row) =>
-        row.id === rowId ? { ...row, values: { ...row.values, [metric]: value } } : row,
-      ),
-    );
-
-    // Convert rows back to multi-line format for each metric
+  const serializeRows = (rowState: PopulationRow[], metric: ExtractionFieldMetric): string | null => {
     const field = fieldsByMetric.get(metric);
-    if (!field) return;
+    if (!field) {
+      return null;
+    }
+    const lines = rowState.map((row) => row.values[metric]?.trim() ?? '');
+    const hasContent = lines.some((line) => line.length > 0);
+    if (!hasContent) {
+      return null;
+    }
+    return lines.join('\n');
+  };
 
-    const updatedRows = rows.map((row) =>
-      row.id === rowId ? { ...row, values: { ...row.values, [metric]: value } } : row,
-    );
-
-    const lines = updatedRows.map((row) => {
-      const cellValue = row.values[metric] ?? '';
-      const hasValue = cellValue && cellValue.trim();
-      const hasLabel = row.label && row.label.trim();
-      
-      // If both label and value exist, format as "label - value"
-      if (hasLabel && hasValue) {
-        return `${row.label} - ${cellValue}`;
-      }
-      // If only value exists, return just the value
-      if (hasValue) {
-        return cellValue;
-      }
-      // NEW FORMAT: Labels and values are separate
-      // If this row has a label but no value for THIS cell
-      // For the FIRST metric (prevalence/count), save just the label to preserve it (without "-")
-      // For other metrics, save empty string
-      if (hasLabel) {
-        if (metric === 'prevalence') {
-          return row.label;  // Save label alone (NEW: no "- value" format)
-        }
-        return '';  // Empty line to preserve row index
-      }
-      // Completely empty row
-      return '';
-    });
-    
-    const multiLineValue = lines.join('\n');
-    
-    // Only trim trailing newlines if there's actual content somewhere
-    const hasAnyContent = lines.some((line) => line.trim().length > 0);
-    const finalValue = hasAnyContent 
-      ? multiLineValue.replace(/\n+$/, '')  // Trim trailing empties only if we have content
-      : (updatedRows.some((row) => row.label && row.label.trim()) 
-          ? multiLineValue  // Keep structure if we have labels
-          : null);  // Completely empty - save as null
-
+  const commitMetric = (rowState: PopulationRow[], metric: ExtractionFieldMetric) => {
+    const field = fieldsByMetric.get(metric);
+    if (!field) {
+      return;
+    }
+    const value = serializeRows(rowState, metric);
     updateField({
       paperId,
       tab,
       fieldId: field.id,
-      value: finalValue,
+      value,
       metric: field.metric,
     });
   };
 
-  const handleLabelChange = (rowId: string, label: string) => {
-    setRows((prev) => prev.map((row) => (row.id === rowId ? { ...row, label } : row)));
-
-    // Update all metrics with the new label
-    const updatedRows = rows.map((row) => (row.id === rowId ? { ...row, label } : row));
-
-    extractionMetrics.forEach(({ metric }) => {
-      const field = fieldsByMetric.get(metric);
-      if (!field) return;
-
-      const lines = updatedRows.map((row) => {
-        const cellValue = row.values[metric] ?? '';
-        const hasValue = cellValue && cellValue.trim();
-        const hasLabel = row.label && row.label.trim();
-        
-        // If both label and value exist, format as "label - value"
-        if (hasLabel && hasValue) {
-          return `${row.label} - ${cellValue}`;
-        }
-        // If only value exists, return just the value
-        if (hasValue) {
-          return cellValue;
-        }
-        // If this row has a label but no value for THIS cell
-        // For the FIRST metric (prevalence/count), save just the label to preserve it
-        // For other metrics, save empty string
-        if (hasLabel) {
-          if (metric === 'prevalence') {
-            return row.label;  // Save label in first metric to preserve it
-          }
-          return '';  // Empty line to preserve row index
-        }
-        // Completely empty row
-        return '';
-      });
-      
-      const multiLineValue = lines.join('\n');
-      
-      // Only trim trailing newlines if there's actual content somewhere
-      const hasAnyContent = lines.some((line) => line.trim().length > 0);
-      const finalValue = hasAnyContent 
-        ? multiLineValue.replace(/\n+$/, '')  // Trim trailing empties only if we have content
-        : (updatedRows.some((row) => row.label && row.label.trim()) 
-            ? multiLineValue  // Keep structure if we have labels
-            : null);  // Completely empty - save as null
-
-      updateField({
-        paperId,
-        tab,
-        fieldId: field.id,
-        value: finalValue,
-        metric: field.metric,
-      });
-    });
+  const handleCellChange = (rowId: string, metric: ExtractionFieldMetric, value: string) => {
+    const next = rows.map((row) =>
+      row.id === rowId ? { ...row, values: { ...row.values, [metric]: value } } : row,
+    );
+    setRows(next);
+    commitMetric(next, metric);
   };
 
   const addRow = () => {
     const newRow: PopulationRow = {
       id: `${groupLabel}-row-${Date.now()}`,
-      label: '',
-      values: {} as Record<ExtractionFieldMetric, string>,
+      values: extractionMetrics.reduce((acc, { metric }) => {
+        acc[metric] = '';
+        return acc;
+      }, {} as Record<ExtractionFieldMetric, string>),
     };
-    extractionMetrics.forEach(({ metric }) => {
-      newRow.values[metric] = '';
-    });
-    setRows((prev) => [...prev, newRow]);
+    const next = [...rows, newRow];
+    setRows(next);
+    extractionMetrics.forEach(({ metric }) => commitMetric(next, metric));
   };
 
   const removeRow = (rowId: string) => {
-    const updatedRows = rows.filter((row) => row.id !== rowId);
-    setRows(updatedRows);
-
-    // Update all fields
-    extractionMetrics.forEach(({ metric }) => {
-      const field = fieldsByMetric.get(metric);
-      if (!field) return;
-
-      const lines = updatedRows.map((row) => {
-        const cellValue = row.values[metric] ?? '';
-        const hasValue = cellValue && cellValue.trim();
-        const hasLabel = row.label && row.label.trim();
-        
-        // If both label and value exist, format as "label - value"
-        if (hasLabel && hasValue) {
-          return `${row.label} - ${cellValue}`;
-        }
-        // If only value exists, return just the value
-        if (hasValue) {
-          return cellValue;
-        }
-        // If this row has a label but no value for THIS cell
-        // For the FIRST metric (prevalence/count), save just the label to preserve it
-        // For other metrics, save empty string
-        if (hasLabel) {
-          if (metric === 'prevalence') {
-            return row.label;  // Save label in first metric to preserve it
-          }
-          return '';  // Empty line to preserve row index
-        }
-        // Completely empty row
-        return '';
-      });
-      
-      const multiLineValue = lines.join('\n');
-      
-      // Only trim trailing newlines if there's actual content somewhere
-      const hasAnyContent = lines.some((line) => line.trim().length > 0);
-      const finalValue = hasAnyContent 
-        ? multiLineValue.replace(/\n+$/, '')  // Trim trailing empties only if we have content
-        : (updatedRows.some((row) => row.label && row.label.trim()) 
-            ? multiLineValue  // Keep structure if we have labels
-            : null);  // Completely empty - save as null
-
-      updateField({
-        paperId,
-        tab,
-        fieldId: field.id,
-        value: finalValue,
-        metric: field.metric,
-      });
-    });
+    if (rows.length <= 1) {
+      return;
+    }
+    const next = rows.filter((row) => row.id !== rowId);
+    setRows(next);
+    extractionMetrics.forEach(({ metric }) => commitMetric(next, metric));
   };
 
   return (
@@ -299,9 +143,6 @@ export function ManualGroupTableEditor({
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-slate-200 bg-slate-50">
-              <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-600">
-                Population
-              </th>
               {extractionMetrics.map(({ metric, label }) => (
                 <th
                   key={metric}
@@ -314,17 +155,8 @@ export function ManualGroupTableEditor({
             </tr>
           </thead>
           <tbody>
-            {rows.map((row, idx) => (
+            {rows.map((row) => (
               <tr key={row.id} className="border-b border-slate-100 hover:bg-slate-50/50">
-                <td className="px-4 py-3">
-                  <input
-                    type="text"
-                    value={row.label}
-                    onChange={(e) => handleLabelChange(row.id, e.target.value)}
-                    placeholder={`Population ${idx + 1}`}
-                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
-                  />
-                </td>
                 {extractionMetrics.map(({ metric }) => (
                   <td key={metric} className="px-4 py-3">
                     <input
@@ -375,10 +207,9 @@ export function ManualGroupTableEditor({
           >
             <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
           </svg>
-          Add Population
+          Add Row
         </button>
       </div>
     </div>
   );
 }
-

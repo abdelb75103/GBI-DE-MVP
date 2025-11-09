@@ -86,7 +86,38 @@ export function ExtractionTabsPanel({
   const [isPending, startTransition] = useTransition();
   const aiAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
   const manualAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
-  const [reviewStates, setReviewStates] = useState<Map<string, ReviewDecision>>(new Map());
+  // Load persisted review decisions from localStorage
+  const loadPersistedReviewStates = useCallback(() => {
+    if (typeof window === 'undefined') {
+      return new Map<string, { decision: ReviewDecision; valueHash: string }>();
+    }
+    try {
+      const stored = localStorage.getItem(`review-states-${paperId}`);
+      if (!stored) {
+        return new Map<string, { decision: ReviewDecision; valueHash: string }>();
+      }
+      const parsed = JSON.parse(stored) as Record<string, { decision: ReviewDecision; valueHash: string }>;
+      return new Map(Object.entries(parsed).map(([key, data]) => [key, data]));
+    } catch {
+      return new Map<string, { decision: ReviewDecision; valueHash: string }>();
+    }
+  }, [paperId]);
+
+  // Get current field value hash for a review key
+  const getFieldValueHash = useCallback((tab: ExtractionTab, fieldId: string): string => {
+    const tabItem = aiTabs.find((item) => item.tab === tab);
+    if (!tabItem) {
+      return '';
+    }
+    const result = tabItem.results.find((field) => field.fieldId === fieldId);
+    const value = typeof result?.value === 'string' ? result.value.trim() : '';
+    // Simple hash of the value to detect changes
+    return value.length > 0 ? `${value.length}-${value.slice(0, 20)}` : '';
+  }, [aiTabs]);
+
+  const [reviewStates, setReviewStates] = useState<Map<string, { decision: ReviewDecision; valueHash: string }>>(() => {
+    return loadPersistedReviewStates();
+  });
 
   const reviewRequiredKeys = useMemo(() => {
     const keys = new Set<string>();
@@ -113,6 +144,22 @@ export function ExtractionTabsPanel({
     return keys;
   }, [aiTabs, readOnly]);
 
+  // Persist review states to localStorage
+  useEffect(() => {
+    if (typeof window === 'undefined' || readOnly) {
+      return;
+    }
+    try {
+      const toStore: Record<string, { decision: ReviewDecision; valueHash: string }> = {};
+      reviewStates.forEach((data, key) => {
+        toStore[key] = data;
+      });
+      localStorage.setItem(`review-states-${paperId}`, JSON.stringify(toStore));
+    } catch {
+      // Ignore localStorage errors
+    }
+  }, [reviewStates, paperId, readOnly]);
+
   useEffect(() => {
     if (readOnly) {
       setReviewStates((prev) => (prev.size ? new Map() : prev));
@@ -121,27 +168,42 @@ export function ExtractionTabsPanel({
     setReviewStates((prev) => {
       let changed = false;
       const next = new Map(prev);
+      
       reviewRequiredKeys.forEach((key) => {
-        if (!next.has(key)) {
-          next.set(key, 'pending');
+        const [tab, fieldId] = key.split(':') as [ExtractionTab, string];
+        const currentValueHash = getFieldValueHash(tab, fieldId);
+        const existing = next.get(key);
+        
+        if (!existing) {
+          // New field requiring review
+          next.set(key, { decision: 'pending', valueHash: currentValueHash });
+          changed = true;
+        } else if (existing.valueHash !== currentValueHash) {
+          // Field value changed (extraction was rerun) - reset to pending
+          next.set(key, { decision: 'pending', valueHash: currentValueHash });
           changed = true;
         }
+        // If value hash matches, keep existing decision (approved/declined)
       });
+      
+      // Remove keys that no longer require review
       next.forEach((_, key) => {
         if (!reviewRequiredKeys.has(key)) {
           next.delete(key);
           changed = true;
         }
       });
+      
       return changed ? next : prev;
     });
-  }, [reviewRequiredKeys, readOnly]);
+  }, [reviewRequiredKeys, readOnly, getFieldValueHash]);
 
   const pendingReviewCount = useMemo(() => {
     let count = 0;
     reviewRequiredKeys.forEach((key) => {
-      const state = reviewStates.get(key) ?? 'pending';
-      if (state === 'pending') {
+      const stateData = reviewStates.get(key);
+      const decision = stateData?.decision ?? 'pending';
+      if (decision === 'pending') {
         count += 1;
       }
     });
@@ -362,16 +424,17 @@ useEffect(() => {
   const handleReviewDecision = useCallback(
     (tab: ExtractionTab, fieldId: string, action: 'approve' | 'decline') => {
       const key = buildReviewKey(tab, fieldId);
+      const valueHash = getFieldValueHash(tab, fieldId);
       setReviewStates((prev) => {
-        if (!prev.has(key)) {
-          return prev;
-        }
         const next = new Map(prev);
-        next.set(key, action === 'approve' ? 'approved' : 'declined');
+        next.set(key, {
+          decision: action === 'approve' ? 'approved' : 'declined',
+          valueHash,
+        });
         return next;
       });
     },
-    [],
+    [getFieldValueHash],
   );
 
   const renderFeedbackToast = () => {
@@ -459,7 +522,8 @@ useEffect(() => {
             const isAutoExtractable = field.id !== 'studyId';
             const reviewKey = buildReviewKey(item.tab, field.id);
             const requiresReview = reviewRequiredKeys.has(reviewKey);
-            const reviewState = reviewStates.get(reviewKey) ?? (requiresReview ? 'pending' : undefined);
+            const stateData = reviewStates.get(reviewKey);
+            const reviewState = stateData?.decision ?? (requiresReview ? 'pending' : undefined);
             return (
               <ExtractionFieldEditor
                 key={field.id}

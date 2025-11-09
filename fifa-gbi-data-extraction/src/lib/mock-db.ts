@@ -423,10 +423,24 @@ const POPULATION_RELATED_FIELDS = new Set([
 ]);
 
 const shouldSyncPopulations = (fieldId: string): boolean => {
-  // Sync if it's a population-defining field OR if it's a metric-based field (contains population data)
-  return POPULATION_RELATED_FIELDS.has(fieldId) || fieldId.includes('_prevalence') || 
-    fieldId.includes('_incidence') || fieldId.includes('_burden') || 
-    fieldId.includes('_severityMeanDays') || fieldId.includes('_severityTotalDays');
+  // Explicit population fields (age/sex/exposure) or metric-based tables
+  if (
+    POPULATION_RELATED_FIELDS.has(fieldId) ||
+    fieldId.includes('_prevalence') ||
+    fieldId.includes('_incidence') ||
+    fieldId.includes('_burden') ||
+    fieldId.includes('_severityMeanDays') ||
+    fieldId.includes('_severityTotalDays')
+  ) {
+    return true;
+  }
+
+  // Injury/illness outcome fields often store one entry per line; treat each newline as a population row
+  if (fieldId.startsWith('injury') || fieldId.startsWith('illness')) {
+    return true;
+  }
+
+  return false;
 };
 
 const createPopulationSignature = (groups: ParsedPopulationGroup[]): string | null => {
