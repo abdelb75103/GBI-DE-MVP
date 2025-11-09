@@ -402,6 +402,7 @@ export interface Database {
           avatar_url: string | null;
           default_gemini_model: string | null;
           gemini_api_key: string | null;
+          password_hash: string | null;
           created_at: string;
           updated_at: string;
         };
@@ -413,6 +414,7 @@ export interface Database {
           avatar_url?: string | null;
           default_gemini_model?: string | null;
           gemini_api_key?: string | null;
+          password_hash?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -424,6 +426,7 @@ export interface Database {
           avatar_url?: string | null;
           default_gemini_model?: string | null;
           gemini_api_key?: string | null;
+          password_hash?: string | null;
           created_at?: string;
           updated_at?: string;
         };
