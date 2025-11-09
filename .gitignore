@@ -1,1 +1,31 @@
 .DS_Store
+
+# Dependencies
+node_modules/
+package-lock.json
+package.json
+
+# Password files (should never be committed)
+PASSWORDS.md
+PASSWORDS_TEMPLATE.md
+*.passwords.*
+setup-production-passwords-random.sql
+
+# Environment files
+.env*
+.env.local
+
+# Build artifacts
+.next/
+out/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo

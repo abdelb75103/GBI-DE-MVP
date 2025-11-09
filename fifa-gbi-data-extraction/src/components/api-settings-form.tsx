@@ -126,16 +126,16 @@ export function ApiSettingsForm() {
             {' '}and sign in with your Google account.
           </li>
           <li>
-            Click the <strong>"Get API key"</strong> or <strong>"Create API Key"</strong> button.
+            Click the <strong>&quot;Get API key&quot;</strong> or <strong>&quot;Create API Key&quot;</strong> button.
           </li>
           <li>
             Select an existing Google Cloud project or create a new one (you can use the default project).
           </li>
           <li>
-            Your API key will be generated and displayed. Click <strong>"Copy"</strong> to copy it to your clipboard.
+            Your API key will be generated and displayed. Click <strong>&quot;Copy&quot;</strong> to copy it to your clipboard.
           </li>
           <li>
-            Paste the API key into the form above and click <strong>"Save and continue"</strong>.
+            Paste the API key into the form above and click <strong>&quot;Save and continue&quot;</strong>.
           </li>
           <li className="text-red-600 font-semibold">
             IMPORTANT: Ensure your Google account does NOT have a payment method attached. The free tier should work without billing information.
