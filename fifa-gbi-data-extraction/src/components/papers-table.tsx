@@ -176,7 +176,6 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
             <th className="px-6 py-3 font-semibold">Title</th>
             <th className="px-6 py-3 text-center font-semibold">Assignment</th>
             <th className="px-6 py-3 text-center font-semibold">Status</th>
-            <th className="px-6 py-3 text-center font-semibold">Uploaded</th>
             <th className="px-6 py-3 text-center font-semibold">Notes</th>
             <th className="px-6 py-3 text-center font-semibold">Flag</th>
             <th className="px-6 py-3 text-center font-semibold">Actions</th>
@@ -185,7 +184,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
         <tbody className="divide-y divide-slate-100/70 bg-white/80">
           {papers.length === 0 ? (
             <tr>
-              <td className="px-6 py-12 text-center text-sm text-slate-500" colSpan={8}>
+              <td className="px-6 py-12 text-center text-sm text-slate-500" colSpan={7}>
                 No uploads yet. Start by adding a PDF.
               </td>
             </tr>
@@ -256,9 +255,6 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
                   <td className="px-6 py-4 text-center">
                     <StatusPill status={paper.status} />
                   </td>
-                <td className="px-6 py-4 text-center text-sm text-slate-500">
-                  <time dateTime={paper.createdAt}>{formatDateTimeUTC(paper.createdAt)}</time>
-                </td>
                 <td className="px-6 py-4 text-center text-sm font-medium text-slate-600">
                   {paper.noteCount ?? 0}
                 </td>
