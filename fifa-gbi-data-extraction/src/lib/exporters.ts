@@ -468,9 +468,6 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
       valueColumns.forEach((column) => {
         let value: string | null | undefined = groupValues?.get(column.id) ?? null;
 
-        // Values are already normalized by normalizePopulations, but apply legacy sanitization
-        value = sanitizeLegacyValue(value);
-        
         // Final safety check: remove any remaining newlines
         if (value && typeof value === 'string') {
           value = value.replace(/\r?\n/g, ' ');
