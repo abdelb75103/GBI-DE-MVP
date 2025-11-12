@@ -48,37 +48,42 @@ export default async function DashboardPage() {
   
   const firstName = extractFirstName(activeProfile?.fullName);
   
-  // Calculate metrics
-  const totalPapers = papers.length;
-  const availablePapers = papers.filter((paper) => !paper.assignedTo).length;
+  // Optimize: Calculate all metrics in a single pass
+  type ContributorMap = Record<string, { name: string; completedCount: number }>;
+  let totalPapers = 0;
+  let availablePapers = 0;
+  let inProgressCount = 0;
+  let completedCount = 0;
+  let userActivePapers = 0;
+  let userCompletedCount = 0;
+  let flaggedCount = 0;
+  const contributorStats: ContributorMap = {};
   
-  const activePapers = papers.filter((paper) => isActiveStatus(paper.status));
-  const completedPapers = papers.filter((paper) => isCompletedStatus(paper.status));
+  for (const paper of papers) {
+    totalPapers++;
+    if (!paper.assignedTo) availablePapers++;
+    if (isActiveStatus(paper.status)) {
+      inProgressCount++;
+      if (paper.assignedTo === userId) userActivePapers++;
+    }
+    if (isCompletedStatus(paper.status)) {
+      completedCount++;
+      if (paper.assignedTo === userId) userCompletedCount++;
+      // Calculate contributor stats in the same pass
+      if (paper.status === 'extracted' && paper.assignedTo && paper.assigneeName) {
+        if (!contributorStats[paper.assignedTo]) {
+          contributorStats[paper.assignedTo] = { name: paper.assigneeName, completedCount: 0 };
+        }
+        contributorStats[paper.assignedTo].completedCount += 1;
+      }
+    }
+    if (Boolean(paper.flagReason)) flaggedCount++;
+  }
   
-  const inProgressCount = activePapers.length;
-  const completedCount = completedPapers.length;
-  
-  const userActivePapers = activePapers.filter((paper) => paper.assignedTo === userId).length;
   const userActiveShare = inProgressCount > 0 ? Math.round((userActivePapers / inProgressCount) * 100) : 0;
   const userInProgressCount = userActivePapers;
   const userInProgressPercentage = userActiveShare;
-  
-  const userCompletedCount = completedPapers.filter((paper) => paper.assignedTo === userId).length;
   const userCompletedPercentage = completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
-  
-  const flaggedCount = papers.filter((paper) => Boolean(paper.flagReason)).length;
-  
-  // Calculate contributor statistics
-  type ContributorMap = Record<string, { name: string; completedCount: number }>;
-  const contributorStats = papers.reduce<ContributorMap>((acc, paper) => {
-    if (paper.status === 'extracted' && paper.assignedTo && paper.assigneeName) {
-      if (!acc[paper.assignedTo]) {
-        acc[paper.assignedTo] = { name: paper.assigneeName, completedCount: 0 };
-      }
-      acc[paper.assignedTo].completedCount += 1;
-    }
-    return acc;
-  }, {});
   
   const contributors = Object.entries(contributorStats).map(([id, data]) => ({
     id,

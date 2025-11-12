@@ -5,10 +5,19 @@ import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from
 import type { MutableRefObject } from 'react';
 import { useRouter } from 'next/navigation';
 
+import dynamic from 'next/dynamic';
+
 import { ExtractionFieldEditor } from '@/components/extraction-field-editor';
-import { ManualGroupEditor } from '@/components/manual-group-editor';
-import { ManualGroupTableEditor } from '@/components/manual-group-table-editor';
 import { useWorkspaceSave } from '@/components/workspace-save-manager';
+
+// Lazy load heavy manual editors
+const ManualGroupEditor = dynamic(() => import('@/components/manual-group-editor').then((mod) => ({ default: mod.ManualGroupEditor })), {
+  loading: () => <div className="text-xs text-slate-500">Loading editor...</div>,
+});
+
+const ManualGroupTableEditor = dynamic(() => import('@/components/manual-group-table-editor').then((mod) => ({ default: mod.ManualGroupTableEditor })), {
+  loading: () => <div className="text-xs text-slate-500">Loading table editor...</div>,
+});
 import { useGeminiApiKey } from '@/hooks/use-gemini-api-key';
 import {
   aiExtractionTabs,

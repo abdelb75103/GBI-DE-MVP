@@ -1,12 +1,14 @@
 'use client';
 
+import { memo, useMemo } from 'react';
+
 type DashboardProgressVisualProps = {
   totalPapers: number;
   completedPapers: number;
   userCompletedPapers: number;
 };
 
-export function DashboardProgressVisual({
+export const DashboardProgressVisual = memo(function DashboardProgressVisual({
   totalPapers,
   completedPapers,
   userCompletedPapers,
@@ -16,15 +18,22 @@ export function DashboardProgressVisual({
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   
-  // Calculate percentages
-  const completedPercentage = totalPapers > 0 ? (completedPapers / totalPapers) * 100 : 0;
-  const userPercentage = totalPapers > 0 ? (userCompletedPapers / totalPapers) * 100 : 0;
-  
-  // Calculate stroke dash offsets
-  const completedOffset = circumference - (completedPercentage / 100) * circumference;
-  const userOffset = circumference - (userPercentage / 100) * circumference;
-  
-  const completionRate = totalPapers > 0 ? Math.round((completedPapers / totalPapers) * 100) : 0;
+  // Memoize calculations
+  const { completedPercentage, userPercentage, completedOffset, userOffset, completionRate } = useMemo(() => {
+    const completedPct = totalPapers > 0 ? (completedPapers / totalPapers) * 100 : 0;
+    const userPct = totalPapers > 0 ? (userCompletedPapers / totalPapers) * 100 : 0;
+    const completedOff = circumference - (completedPct / 100) * circumference;
+    const userOff = circumference - (userPct / 100) * circumference;
+    const completion = totalPapers > 0 ? Math.round((completedPapers / totalPapers) * 100) : 0;
+    
+    return {
+      completedPercentage: completedPct,
+      userPercentage: userPct,
+      completedOffset: completedOff,
+      userOffset: userOff,
+      completionRate: completion,
+    };
+  }, [totalPapers, completedPapers, userCompletedPapers, circumference]);
 
   return (
     <div className="flex items-center gap-6">
@@ -136,4 +145,4 @@ export function DashboardProgressVisual({
       </div>
     </div>
   );
-}
+});

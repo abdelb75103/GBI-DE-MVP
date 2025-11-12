@@ -1,5 +1,7 @@
 'use client';
 
+import { memo } from 'react';
+
 import type { PaperStatus } from '@/lib/types';
 
 const statusStyles: Record<PaperStatus, string> = {
@@ -30,7 +32,7 @@ type StatusPillProps = {
   status: PaperStatus;
 };
 
-export function StatusPill({ status }: StatusPillProps) {
+export const StatusPill = memo(function StatusPill({ status }: StatusPillProps) {
   return (
     <span
       className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${statusStyles[status]}`}
@@ -38,4 +40,4 @@ export function StatusPill({ status }: StatusPillProps) {
       {statusLabels[status]}
     </span>
   );
-}
+});

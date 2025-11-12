@@ -1,10 +1,19 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useMemo, useState } from 'react';
 
-import { PapersTable } from '@/components/papers-table';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
 import type { Paper, PaperStatus } from '@/lib/types';
+
+// Lazy load heavy table component
+const PapersTable = dynamic(() => import('@/components/papers-table').then((mod) => ({ default: mod.PapersTable })), {
+  loading: () => (
+    <div className="flex items-center justify-center py-12">
+      <div className="text-sm text-slate-500">Loading papers...</div>
+    </div>
+  ),
+});
 
 type PapersDashboardClientProps = {
   papers: Paper[];

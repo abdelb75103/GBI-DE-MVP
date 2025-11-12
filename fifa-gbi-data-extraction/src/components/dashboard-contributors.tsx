@@ -1,5 +1,7 @@
 'use client';
 
+import { memo, useMemo } from 'react';
+
 type Contributor = {
   id: string;
   name: string;
@@ -12,15 +14,21 @@ type DashboardContributorsProps = {
   totalCompleted: number;
 };
 
-export function DashboardContributors({
+export const DashboardContributors = memo(function DashboardContributors({
   contributors,
   currentUserId,
   totalCompleted,
 }: DashboardContributorsProps) {
-  // Sort by completed count and take top 8
-  const topContributors = [...contributors]
-    .sort((a, b) => b.completedCount - a.completedCount)
-    .slice(0, 8);
+  // Memoize sorted contributors
+  const topContributors = useMemo(() => {
+    return [...contributors]
+      .sort((a, b) => b.completedCount - a.completedCount)
+      .slice(0, 8);
+  }, [contributors]);
+  
+  const maxCount = useMemo(() => {
+    return Math.max(...topContributors.map((c) => c.completedCount), 1);
+  }, [topContributors]);
 
   const getAccentColor = (index: number, isCurrentUser: boolean) => {
     if (isCurrentUser) {
@@ -77,8 +85,6 @@ export function DashboardContributors({
       </div>
     );
   }
-
-  const maxCount = Math.max(...topContributors.map((c) => c.completedCount), 1);
 
   return (
     <div className="space-y-3">
@@ -137,5 +143,5 @@ export function DashboardContributors({
       })}
     </div>
   );
-}
+});
 

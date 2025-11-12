@@ -1,9 +1,9 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { NoteComposer } from '@/components/note-composer';
 import { NoteList } from '@/components/note-list';
@@ -14,6 +14,12 @@ import { definitionCategories } from '@/lib/definitions';
 import { formatDateTimeUTC } from '@/lib/format';
 import type { Paper, PaperNote, StoredFile } from '@/lib/types';
 import type { ExtractionTabsPanelProps } from '@/components/extraction-tabs-panel';
+
+// Lazy load heavy components
+const DefinitionsDrawer = dynamic(() => import('@/components/definitions-drawer').then((mod) => ({ default: mod.DefinitionsDrawer })), {
+  ssr: false,
+  loading: () => null,
+});
 
 type PaperWorkspaceClientProps = {
   paper: Paper;
