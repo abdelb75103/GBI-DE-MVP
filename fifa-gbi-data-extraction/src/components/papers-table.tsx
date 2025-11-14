@@ -17,11 +17,14 @@ type PapersTableProps = {
   isAdmin?: boolean;
 };
 
+const PAGE_SIZE = 20;
+
 export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: PapersTableProps) {
   const router = useRouter();
   const { profile } = useActiveProfileState();
   const [isPending, startTransition] = useTransition();
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
@@ -42,6 +45,14 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
   const allIds = useMemo(() => papers.map((p) => p.id), [papers]);
   const allSelected = selected.size > 0 && allIds.every((id) => selected.has(id));
   const someSelected = selected.size > 0 && !allSelected;
+
+  const totalPages = Math.max(1, Math.ceil(papers.length / PAGE_SIZE));
+  const currentPageSafe = Math.min(Math.max(currentPage, 1), totalPages);
+  const startIndex = (currentPageSafe - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const visiblePapers = papers.slice(startIndex, endIndex);
+  const hasPreviousPage = currentPageSafe > 1;
+  const hasNextPage = currentPageSafe < totalPages;
 
   const toggleAll = () => {
     setSelected((prev) => {
@@ -101,6 +112,13 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
     });
   };
 
+  useEffect(() => {
+    setCurrentPage((prev) => {
+      if (prev < 1) return 1;
+      if (prev > totalPages) return totalPages;
+      return prev;
+    });
+  }, [totalPages]);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -189,7 +207,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
               </td>
             </tr>
           ) : (
-            papers.map((paper) => {
+            visiblePapers.map((paper) => {
               const assignmentStatus = getAssignmentStatus(paper);
               const isAssignedToOther = assignmentStatus === 'assigned';
               // Admins can access all papers, so don't grey them out
@@ -345,6 +363,34 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
           )}
         </tbody>
       </table>
+      {papers.length > PAGE_SIZE ? (
+        <div className="flex items-center justify-between border-t border-slate-200/70 px-6 py-3 text-xs text-slate-500">
+          <div>
+            Showing {startIndex + 1}–{Math.min(endIndex, papers.length)} of {papers.length}
+          </div>
+          <div className="inline-flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={!hasPreviousPage}
+              className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
+            >
+              Previous
+            </button>
+            <span>
+              Page {currentPageSafe} of {totalPages}
+            </span>
+            <button
+              type="button"
+              onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+              disabled={!hasNextPage}
+              className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
