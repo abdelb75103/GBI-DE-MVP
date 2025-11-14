@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: 'FIFA GBI Data Extraction Assistant',
   description:
     'Internal tooling for the FIFA Global Burden of Injury & Illness data extraction workflow.',
+  icons: {
+    icon: '/images/gbi-logo.png',
+    shortcut: '/images/gbi-logo.png',
+    apple: '/images/gbi-logo.png',
+  },
 };
 
 export default function RootLayout({
