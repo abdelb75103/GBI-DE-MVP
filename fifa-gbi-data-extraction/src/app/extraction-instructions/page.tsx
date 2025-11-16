@@ -723,7 +723,37 @@ function CodebookTab() {
             name="Injury Incidence"
             example="3.2"
             paperExample="Injury incidence was 3.2 per 1000 player-hours"
-            tip="Just the number, no 'per 1000h'"
+            tip="Just the number, no 'per 1000h'. If the paper defines injury as medical-attention, enter that rate here and use the time-loss incidence boxes below for any separately reported time-loss rates."
+          />
+          <SimpleField 
+            name="Match Injury Incidence"
+            example="18.4"
+            paperExample="Match incidence reached 18.4 injuries per 1000 match-hours"
+            tip="Enter the match rate for the primary definition. If a medical-attention paper also lists a time-loss match incidence, capture it in the dedicated time-loss field instead of duplicating."
+          />
+          <SimpleField 
+            name="Training Injury Incidence"
+            example="2.4"
+            paperExample="Training incidence was 2.4 per 1000 training-hours"
+            tip="Same logic as above—this is for the primary definition, and the time-loss training box only needs data when both definitions are reported separately."
+          />
+          <SimpleField 
+            name="Time-loss Injury Incidence"
+            example="2.1"
+            paperExample="Time-loss incidence was 2.1 per 1000 player-hours"
+            tip="ONLY fill this and the match/training time-loss boxes when the study uses a medical-attention definition but still reports time-loss incidence separately. If the study already uses a time-loss definition you can ignore these."
+          />
+          <SimpleField 
+            name="Time-loss Match Injury Incidence"
+            example="9.7"
+            paperExample="Time-loss match incidence was 9.7 per 1000 match-hours"
+            tip="Use this only when a medical-attention study also provides the time-loss match rate."
+          />
+          <SimpleField 
+            name="Time-loss Training Injury Incidence"
+            example="1.5"
+            paperExample="Time-loss training incidence was 1.5 per 1000 training-hours"
+            tip="Use this only when a medical-attention study also provides the time-loss training rate."
           />
           <SimpleField 
             name="Recurrence Rate"

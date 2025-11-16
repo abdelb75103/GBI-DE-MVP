@@ -281,19 +281,43 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryIncidenceOverall',
     label: 'Injury incidence (overall)',
-    description: 'Overall injury incidence rate. Extract NUMERIC VALUE ONLY (no population labels or units). For multiple populations: "3.2\\n2.8" (NOT "U19: 3.2").',
+    description:
+      'Overall injury incidence rate for the primary definition used in the paper. Extract NUMERIC VALUE ONLY (no population labels or units). For multiple populations: "3.2\\n2.8" (NOT "U19: 3.2"). If the study uses a medical-attention definition AND separately reports time-loss incidence, enter the medical-attention rate here and put the time-loss rate in "injuryIncidenceTimeLossOverall".',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryIncidenceMatch',
     label: 'Match injury incidence',
-    description: 'Injury incidence during matches. For multiple populations, enter each on a new line.',
+    description:
+      'Match injury incidence rate using the study’s primary definition. For multiple populations, enter each on a new line. If the paper uses a medical-attention definition and provides a second (time-loss) match incidence, record the medical-attention rate here and the time-loss rate in "injuryIncidenceTimeLossMatch".',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryIncidenceTraining',
     label: 'Training injury incidence',
-    description: 'Injury incidence during training. For multiple populations, enter each on a new line.',
+    description:
+      'Training injury incidence rate using the study’s primary definition. For multiple populations, enter each on a new line. If the paper uses a medical-attention definition and provides a second (time-loss) training incidence, record the medical-attention rate here and the time-loss rate in "injuryIncidenceTimeLossTraining".',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceTimeLossOverall',
+    label: 'Injury incidence (time-loss only, overall)',
+    description:
+      'Overall time-loss injury incidence rate. ONLY fill this in when the study states it used a medical-attention definition but still reports a separate time-loss incidence. Otherwise leave blank.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceTimeLossMatch',
+    label: 'Match injury incidence (time-loss only)',
+    description:
+      'Match injury incidence rate for time-loss-only cases. Only fill in when the paper uses a medical-attention definition and separately reports time-loss match incidence. Otherwise leave blank.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryIncidenceTimeLossTraining',
+    label: 'Training injury incidence (time-loss only)',
+    description:
+      'Training injury incidence rate for time-loss-only cases. Only fill in when the paper uses a medical-attention definition and separately reports time-loss training incidence. Otherwise leave blank.',
     tab: 'injuryOutcome',
   },
   {
