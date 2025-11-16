@@ -34,12 +34,9 @@ const MULTILINE_PLACEHOLDERS: Record<string, string> = {
   trainingExposure: '',
   // Injury Outcome (values only)
   injuryTotalCount: '',
-  injuryIncidenceOverall:
-    'Use the rate associated with the study’s primary definition (usually medical-attention). If a medical-attention study also gives time-loss incidence, log the medical-attention rate here and the time-loss rate below.',
-  injuryIncidenceMatch:
-    'Match incidence for the primary definition. Only populate the time-loss match field when a medical-attention study provides both.',
-  injuryIncidenceTraining:
-    'Training incidence for the primary definition. Only populate the time-loss training field when a medical-attention study provides both.',
+  injuryIncidenceOverall: '',
+  injuryIncidenceMatch: '',
+  injuryIncidenceTraining: '',
   injuryIncidenceTimeLossOverall:
     'ONLY fill in when the study uses a medical-attention definition but also reports a separate time-loss incidence. Otherwise leave blank.',
   injuryIncidenceTimeLossMatch:

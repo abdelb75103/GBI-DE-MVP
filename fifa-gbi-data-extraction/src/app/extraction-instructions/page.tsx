@@ -723,19 +723,16 @@ function CodebookTab() {
             name="Injury Incidence"
             example="3.2"
             paperExample="Injury incidence was 3.2 per 1000 player-hours"
-            tip="Just the number, no 'per 1000h'. If the paper defines injury as medical-attention, enter that rate here and use the time-loss incidence boxes below for any separately reported time-loss rates."
           />
           <SimpleField 
             name="Match Injury Incidence"
             example="18.4"
             paperExample="Match incidence reached 18.4 injuries per 1000 match-hours"
-            tip="Enter the match rate for the primary definition. If a medical-attention paper also lists a time-loss match incidence, capture it in the dedicated time-loss field instead of duplicating."
           />
           <SimpleField 
             name="Training Injury Incidence"
             example="2.4"
             paperExample="Training incidence was 2.4 per 1000 training-hours"
-            tip="Same logic as above—this is for the primary definition, and the time-loss training box only needs data when both definitions are reported separately."
           />
           <SimpleField 
             name="Time-loss Injury Incidence"
