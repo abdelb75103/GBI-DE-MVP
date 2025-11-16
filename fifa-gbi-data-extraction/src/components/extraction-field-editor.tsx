@@ -22,6 +22,8 @@ const MULTILINE_PLACEHOLDERS: Record<string, string> = {
   numberOfTeams: '',
   studyPeriodYears: '',
   observationDuration: '',
+  injuryMedicalAttentionCount: 'If separated out in study. If not just use total injuries and ignore this.',
+  injuryTimeLossCount: 'If separated out in study. If not just use total injuries and ignore this.',
   // Exposure (values only)
   seasonLength: '',
   numberOfSeasons: '',
