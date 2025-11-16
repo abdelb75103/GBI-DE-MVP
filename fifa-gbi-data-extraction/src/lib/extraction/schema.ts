@@ -118,13 +118,6 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
     tab: 'participantCharacteristics',
   },
   {
-    id: 'studyPeriodYears',
-    label: 'Study period (years)',
-    description:
-      'Total duration of study follow-up in years. If multiple populations are reported, keep one line per population.',
-    tab: 'participantCharacteristics',
-  },
-  {
     id: 'observationDuration',
     label: 'Observation duration',
     description:
@@ -239,26 +232,50 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
   },
   {
     id: 'injuryMedicalAttentionCount',
-    label: 'Medical attention injuries',
+    label: 'Total medical attention injuries',
     description: 'If the study separates medical-attention-only injuries, enter that count (otherwise repeat total injuries).',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryTimeLossCount',
-    label: 'Time-loss injuries',
+    label: 'Total time-loss injuries',
     description: 'If the study separates time-loss injuries, enter that count (otherwise repeat total injuries).',
     tab: 'injuryOutcome',
   },
   {
     id: 'injuryMatchCount',
-    label: 'Number of match injuries',
+    label: 'Total match injuries',
     description: 'Injuries that occurred during matches. For multiple populations, enter each on a new line.',
     tab: 'injuryOutcome',
   },
   {
+    id: 'injuryMatchMedicalAttentionCount',
+    label: 'Medical attention match injuries',
+    description: 'If the study separates medical-attention-only match injuries, enter that count (otherwise repeat total match injuries).',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryMatchTimeLossCount',
+    label: 'Time-loss match injuries',
+    description: 'If the study separates time-loss match injuries, enter that count (otherwise repeat total match injuries).',
+    tab: 'injuryOutcome',
+  },
+  {
     id: 'injuryTrainingCount',
-    label: 'Number of training injuries',
+    label: 'Total training injuries',
     description: 'Injuries that occurred during training. For multiple populations, enter each on a new line.',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTrainingMedicalAttentionCount',
+    label: 'Medical attention training injuries',
+    description: 'If the study separates medical-attention-only training injuries, enter that count (otherwise repeat total training injuries).',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTrainingTimeLossCount',
+    label: 'Time-loss training injuries',
+    description: 'If the study separates time-loss training injuries, enter that count (otherwise repeat total training injuries).',
     tab: 'injuryOutcome',
   },
   {

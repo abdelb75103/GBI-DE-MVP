@@ -12,7 +12,6 @@ const POPULATION_FIELD_IDS = new Set([
   'meanAge',
   'sampleSizePlayers',
   'numberOfTeams',
-  'studyPeriodYears',
   'observationDuration',
   'seasonLength',
   'numberOfSeasons',

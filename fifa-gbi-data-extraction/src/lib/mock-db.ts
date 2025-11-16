@@ -413,7 +413,6 @@ const POPULATION_RELATED_FIELDS = new Set([
   'meanAge',
   'sampleSizePlayers',
   'numberOfTeams',
-  'studyPeriodYears',
   'observationDuration',
   'seasonLength',
   'numberOfSeasons',
