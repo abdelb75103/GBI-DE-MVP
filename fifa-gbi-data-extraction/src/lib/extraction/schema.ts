@@ -238,6 +238,18 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
     tab: 'injuryOutcome',
   },
   {
+    id: 'injuryMedicalAttentionCount',
+    label: 'Medical attention injuries',
+    description: 'If the study separates medical-attention-only injuries, enter that count (otherwise repeat total injuries).',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTimeLossCount',
+    label: 'Time-loss injuries',
+    description: 'If the study separates time-loss injuries, enter that count (otherwise repeat total injuries).',
+    tab: 'injuryOutcome',
+  },
+  {
     id: 'injuryMatchCount',
     label: 'Number of match injuries',
     description: 'Injuries that occurred during matches. For multiple populations, enter each on a new line.',
