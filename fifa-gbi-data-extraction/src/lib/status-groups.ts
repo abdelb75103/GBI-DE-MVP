@@ -8,6 +8,7 @@ export const ACTIVE_STATUSES: PaperStatus[] = [
   'mental_health',
   'uefa',
   'american_data',
+  'systematic_review',
 ];
 
 export const COMPLETED_STATUSES: PaperStatus[] = ['extracted', 'archived'];

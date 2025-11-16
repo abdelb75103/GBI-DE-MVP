@@ -226,6 +226,18 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
     tab: 'injuryOutcome',
   },
   {
+    id: 'injuryPlayersCompletedStudy',
+    label: 'Number of players that completed the study',
+    description: 'Enter the number of players who completed the study (equals sample size unless withdrawals occurred).',
+    tab: 'injuryOutcome',
+  },
+  {
+    id: 'injuryTeamsCompletedStudy',
+    label: 'Number of teams that completed the study',
+    description: 'Enter the number of teams who completed the study (equals number of teams sampled unless withdrawals occurred).',
+    tab: 'injuryOutcome',
+  },
+  {
     id: 'injuryMatchCount',
     label: 'Number of match injuries',
     description: 'Injuries that occurred during matches. For multiple populations, enter each on a new line.',
@@ -379,6 +391,18 @@ const illnessOutcomeDefinitions: ExtractionFieldDefinition[] = [
     tab: 'illnessOutcome',
   },
   {
+    id: 'illnessPlayersCompletedStudy',
+    label: 'Number of players that completed the study',
+    description: 'Enter the number of players who completed the study (equals sample size unless withdrawals occurred).',
+    tab: 'illnessOutcome',
+  },
+  {
+    id: 'illnessTeamsCompletedStudy',
+    label: 'Number of teams that completed the study',
+    description: 'Enter the number of teams who completed the study (equals number of teams sampled unless withdrawals occurred).',
+    tab: 'illnessOutcome',
+  },
+  {
     id: 'illnessMatchCount',
     label: 'Number of match illnesses',
     description: 'Illnesses that occurred around matches. For multiple populations, enter each on a new line.',
@@ -527,6 +551,7 @@ const injuryTissueTypeGroups: MetricGroup[] = [
   { id: 'tendon_rupture', label: 'Tendon rupture' },
   { id: 'nervous', label: 'Nervous' },
   { id: 'brain_spinal', label: 'Brain/spinal cord injury' },
+  { id: 'concussion', label: 'Concussion' },
   { id: 'peripheral_nerve', label: 'Peripheral nerve injury' },
   { id: 'bone', label: 'Bone' },
   { id: 'bone_fracture', label: 'Bone fracture' },
@@ -534,6 +559,7 @@ const injuryTissueTypeGroups: MetricGroup[] = [
   { id: 'bone_contusion', label: 'Bone contusion' },
   { id: 'avascular_necrosis', label: 'Avascular necrosis' },
   { id: 'physis', label: 'Physis injury' },
+  { id: 'cartilage_synovium_bursa', label: 'Cartilage/synovium/bursa' },
   { id: 'cartilage_injury', label: 'Cartilage injury' },
   { id: 'arthritis', label: 'Arthritis' },
   { id: 'synovitis_capsulitis', label: 'Synovitis/capsulitis' },

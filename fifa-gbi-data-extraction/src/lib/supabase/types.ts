@@ -1,6 +1,16 @@
 export type UserRole = 'admin' | 'extractor' | 'observer';
 
-export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived' | 'mental_health' | 'uefa' | 'american_data';
+export type PaperStatus =
+  | 'uploaded'
+  | 'processing'
+  | 'extracted'
+  | 'flagged'
+  | 'qa_review'
+  | 'archived'
+  | 'mental_health'
+  | 'uefa'
+  | 'american_data'
+  | 'systematic_review';
 
 export type AssignmentStatus = 'claimed' | 'in_progress' | 'completed' | 'released' | 'returned';
 

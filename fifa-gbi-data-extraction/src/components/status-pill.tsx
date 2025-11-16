@@ -12,6 +12,7 @@ const statusStyles: Record<PaperStatus, string> = {
   mental_health: 'border-purple-200/80 bg-purple-100/80 text-purple-700',
   uefa: 'border-blue-200/80 bg-blue-100/80 text-blue-700',
   american_data: 'border-cyan-200/80 bg-cyan-100/80 text-cyan-700',
+  systematic_review: 'border-fuchsia-200/80 bg-fuchsia-100/80 text-fuchsia-700',
 };
 
 const statusLabels: Record<PaperStatus, string> = {
@@ -24,6 +25,7 @@ const statusLabels: Record<PaperStatus, string> = {
   mental_health: 'Mental Health',
   uefa: 'UEFA',
   american_data: 'American Data',
+  systematic_review: 'Systematic Review',
 };
 
 type StatusPillProps = {

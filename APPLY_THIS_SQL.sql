@@ -48,6 +48,8 @@ begin
 end $$;
 
 -- Papers table modifications
+alter type if exists public.paper_status add value if not exists 'systematic_review';
+
 alter table if exists public.papers
   add column if not exists assigned_study_id text unique,
   add column if not exists flag_reason text,
@@ -214,4 +216,3 @@ select
 union all
 select 
   'paper_notes.author column removed' as change;
-

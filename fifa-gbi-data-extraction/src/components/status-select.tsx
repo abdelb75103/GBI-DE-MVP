@@ -13,6 +13,7 @@ const options: { value: PaperStatus; label: string }[] = [
   { value: 'mental_health', label: 'Mental Health' },
   { value: 'uefa', label: 'UEFA' },
   { value: 'american_data', label: 'American Data' },
+  { value: 'systematic_review', label: 'Systematic Review' },
 ];
 
 type StatusSelectProps = {
@@ -38,8 +39,13 @@ export function StatusSelect({ paperId, status }: StatusSelectProps) {
       });
 
       if (!response.ok) {
-        const payload = await response.json();
-        setError(payload.error ?? 'Unable to update status');
+        let payload: { error?: string } | null = null;
+        try {
+          payload = (await response.json()) as { error?: string } | null;
+        } catch (error) {
+          console.warn('Failed to parse status update error payload', error);
+        }
+        setError(payload?.error ?? 'Unable to update status');
         return;
       }
 

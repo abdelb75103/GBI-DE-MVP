@@ -1,6 +1,16 @@
 import type { ExtractionMetric } from '@/lib/supabase/types';
 
-export type PaperStatus = 'uploaded' | 'processing' | 'extracted' | 'flagged' | 'qa_review' | 'archived' | 'mental_health' | 'uefa' | 'american_data';
+export type PaperStatus =
+  | 'uploaded'
+  | 'processing'
+  | 'extracted'
+  | 'flagged'
+  | 'qa_review'
+  | 'archived'
+  | 'mental_health'
+  | 'uefa'
+  | 'american_data'
+  | 'systematic_review';
 
 export type ExtractionTab =
   | 'studyDetails'

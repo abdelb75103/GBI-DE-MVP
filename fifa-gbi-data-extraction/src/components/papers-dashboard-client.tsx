@@ -187,6 +187,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
               <option value="mental_health">Mental Health</option>
               <option value="uefa">UEFA</option>
               <option value="american_data">American Data</option>
+              <option value="systematic_review">Systematic Review</option>
             </select>
           </div>
 

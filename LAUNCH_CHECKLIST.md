@@ -129,3 +129,14 @@ Complete this checklist before launching the FIFA GBI Data Extraction Assistant 
 
 All scripts and documentation are prepared. Run the SQL scripts in Supabase Dashboard to complete the setup.
 
+
+
+
+
+
+
+
+
+
+
+

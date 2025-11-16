@@ -27,14 +27,16 @@ export function PasswordPrompt({
       // Focus input when modal opens
       inputRef.current.focus();
     }
-  }, [isOpen]);
-
-  useEffect(() => {
-    // Reset state when modal opens/closes
+    
+    // Reset state when modal closes
     if (!isOpen) {
-      setPassword('');
-      setError(null);
-      setIsVerifying(false);
+      // Use setTimeout to avoid calling setState synchronously in effect
+      const timer = setTimeout(() => {
+        setPassword('');
+        setError(null);
+        setIsVerifying(false);
+      }, 0);
+      return () => clearTimeout(timer);
     }
   }, [isOpen]);
 

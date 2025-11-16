@@ -55,7 +55,12 @@ type WorkspaceSaveManagerProps = {
 
 const MAX_PENDING_UPDATES = 100; // Warn when exceeding this
 const AUTO_SAVE_THRESHOLD = 150; // Auto-save when reaching this
-const PRESERVE_STATUSES_ON_COMPLETE: PaperStatus[] = ['mental_health', 'uefa', 'american_data'];
+const PRESERVE_STATUSES_ON_COMPLETE: PaperStatus[] = [
+  'mental_health',
+  'uefa',
+  'american_data',
+  'systematic_review',
+];
 
 export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnly = false }: WorkspaceSaveManagerProps) {
   const router = useRouter();
