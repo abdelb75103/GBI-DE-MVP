@@ -7,7 +7,12 @@ import { PapersDashboardClient } from '@/components/papers-dashboard-client';
 import { formatDateTimeUTC } from '@/lib/format';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
-import { isActiveStatus, isCompletedStatus } from '@/lib/status-groups';
+import {
+  isActiveStatus,
+  isCompletedStatus,
+  isProgressCompletedStatus,
+  isTaggedAutoCompleteStatus,
+} from '@/lib/status-groups';
 
 export const dynamic = 'force-dynamic';
 
@@ -54,9 +59,13 @@ export default async function DashboardPage() {
   
   const activePapers = papers.filter((paper) => isActiveStatus(paper.status));
   const completedPapers = papers.filter((paper) => isCompletedStatus(paper.status));
+  const taggedCompletedPapers = papers.filter((paper) => isTaggedAutoCompleteStatus(paper.status));
+  const progressCompletedPapers = papers.filter((paper) => isProgressCompletedStatus(paper.status));
   
   const inProgressCount = activePapers.length;
   const completedCount = completedPapers.length;
+  const taggedCompletedCount = taggedCompletedPapers.length;
+  const progressCompletedCount = progressCompletedPapers.length;
   
   const userActivePapers = activePapers.filter((paper) => paper.assignedTo === userId).length;
   const userActiveShare = inProgressCount > 0 ? Math.round((userActivePapers / inProgressCount) * 100) : 0;
@@ -226,7 +235,8 @@ export default async function DashboardPage() {
           </div>
           <DashboardProgressVisual
             totalPapers={totalPapers}
-            completedPapers={completedCount}
+            completedPapers={progressCompletedCount}
+            taggedCompletedPapers={taggedCompletedCount}
             userCompletedPapers={userCompletedCount}
           />
         </section>

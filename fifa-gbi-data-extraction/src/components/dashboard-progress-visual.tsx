@@ -3,12 +3,14 @@
 type DashboardProgressVisualProps = {
   totalPapers: number;
   completedPapers: number;
+  taggedCompletedPapers: number;
   userCompletedPapers: number;
 };
 
 export function DashboardProgressVisual({
   totalPapers,
   completedPapers,
+  taggedCompletedPapers,
   userCompletedPapers,
 }: DashboardProgressVisualProps) {
   const size = 200;
@@ -18,10 +20,12 @@ export function DashboardProgressVisual({
   
   // Calculate percentages
   const completedPercentage = totalPapers > 0 ? (completedPapers / totalPapers) * 100 : 0;
+  const taggedPercentage = totalPapers > 0 ? (taggedCompletedPapers / totalPapers) * 100 : 0;
   const userPercentage = totalPapers > 0 ? (userCompletedPapers / totalPapers) * 100 : 0;
   
   // Calculate stroke dash offsets
   const completedOffset = circumference - (completedPercentage / 100) * circumference;
+  const taggedOffset = circumference - (taggedPercentage / 100) * circumference;
   const userOffset = circumference - (userPercentage / 100) * circumference;
   
   const completionRate = totalPapers > 0 ? Math.round((completedPapers / totalPapers) * 100) : 0;
@@ -56,7 +60,7 @@ export function DashboardProgressVisual({
             opacity={0.4}
           />
           
-          {/* Green ring - Completed papers */}
+          {/* Green ring - Progress completed papers (includes tagged) */}
           <circle
             cx={size / 2}
             cy={size / 2}
@@ -70,6 +74,20 @@ export function DashboardProgressVisual({
             className="transition-all duration-1000 ease-out"
           />
           
+          {/* Amber ring - Tagged complete papers */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            stroke="url(#amberGradient)"
+            strokeWidth={strokeWidth - 6}
+            strokeDasharray={circumference}
+            strokeDashoffset={taggedOffset}
+            strokeLinecap="round"
+            className="transition-all duration-1000 ease-out"
+          />
+          
           {/* Blue ring - Your completed papers */}
           <circle
             cx={size / 2}
@@ -77,7 +95,7 @@ export function DashboardProgressVisual({
             r={radius}
             fill="none"
             stroke="url(#blueGradient)"
-            strokeWidth={strokeWidth - 8}
+            strokeWidth={strokeWidth - 12}
             strokeDasharray={circumference}
             strokeDashoffset={userOffset}
             strokeLinecap="round"
@@ -98,13 +116,17 @@ export function DashboardProgressVisual({
               <stop offset="0%" stopColor="#8b5cf6" />
               <stop offset="100%" stopColor="#a78bfa" />
             </linearGradient>
+            <linearGradient id="amberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f59e0b" />
+              <stop offset="100%" stopColor="#fbbf24" />
+            </linearGradient>
           </defs>
         </svg>
         
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="text-3xl font-bold text-slate-900">{completionRate}%</div>
-          <div className="text-xs font-medium text-slate-500">Complete</div>
+          <div className="text-xs font-medium text-slate-500">Team progress</div>
         </div>
       </div>
       
@@ -121,9 +143,17 @@ export function DashboardProgressVisual({
         <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-emerald-500/20 px-3 py-2 shadow-sm ring-1 ring-emerald-500/30 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-400 shadow-sm" />
-            <span className="text-xs font-medium text-slate-700">Completed</span>
+            <span className="text-xs font-medium text-slate-700">Completed (incl. tagged)</span>
           </div>
           <span className="text-sm font-semibold text-emerald-700">{completedPapers}</span>
+        </div>
+        
+        <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-amber-400/25 via-yellow-400/15 to-amber-300/20 px-3 py-2 shadow-sm ring-1 ring-amber-400/30 backdrop-blur-sm">
+          <div className="flex items-center gap-2">
+            <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-amber-400 to-yellow-300 shadow-sm" />
+            <span className="text-xs font-medium text-slate-700">Tagged for completion</span>
+          </div>
+          <span className="text-sm font-semibold text-amber-700">{taggedCompletedPapers}</span>
         </div>
         
         <div className="flex items-center justify-between gap-3 rounded-lg bg-gradient-to-br from-blue-500/20 via-sky-500/15 to-blue-500/20 px-3 py-2 shadow-sm ring-1 ring-blue-500/30 backdrop-blur-sm">
@@ -133,6 +163,11 @@ export function DashboardProgressVisual({
           </div>
           <span className="text-sm font-semibold text-blue-700">{userCompletedPapers}</span>
         </div>
+        
+        <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
+          Note: Tagged items (UEFA, Mental health, American data, Systematic reviews) count toward overall progress
+          but do not for individuals completion.
+        </p>
       </div>
     </div>
   );

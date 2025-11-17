@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useState, useTransition } from 'react';
 import type { ExtractionTab, ExtractionFieldMetric, PaperStatus } from '@/lib/types';
+import { isTaggedAutoCompleteStatus } from '@/lib/status-groups';
 
 type FieldUpdate = {
   paperId: string;
@@ -55,13 +56,6 @@ type WorkspaceSaveManagerProps = {
 
 const MAX_PENDING_UPDATES = 100; // Warn when exceeding this
 const AUTO_SAVE_THRESHOLD = 150; // Auto-save when reaching this
-const PRESERVE_STATUSES_ON_COMPLETE: PaperStatus[] = [
-  'mental_health',
-  'uefa',
-  'american_data',
-  'systematic_review',
-];
-
 export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnly = false }: WorkspaceSaveManagerProps) {
   const router = useRouter();
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -207,8 +201,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
     startTransition(async () => {
       setError(null);
       setMessage(null);
-      const shouldPromoteToExtracted =
-        markComplete && !PRESERVE_STATUSES_ON_COMPLETE.includes(paperStatus);
+      const shouldPromoteToExtracted = markComplete && !isTaggedAutoCompleteStatus(paperStatus);
 
       try {
         // Step 1: Save all pending field updates
