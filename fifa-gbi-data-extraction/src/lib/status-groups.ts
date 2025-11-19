@@ -5,6 +5,7 @@ export const TAGGED_AUTO_COMPLETE_STATUSES: PaperStatus[] = [
   'uefa',
   'american_data',
   'systematic_review',
+  'referee',
 ];
 
 export const ACTIVE_STATUSES: PaperStatus[] = ['uploaded', 'processing', 'flagged', 'qa_review'];

@@ -14,6 +14,7 @@ const options: { value: PaperStatus; label: string }[] = [
   { value: 'uefa', label: 'UEFA' },
   { value: 'american_data', label: 'American Data' },
   { value: 'systematic_review', label: 'Systematic Review' },
+  { value: 'referee', label: 'Referee' },
 ];
 
 type StatusSelectProps = {

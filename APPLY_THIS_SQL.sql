@@ -49,6 +49,7 @@ end $$;
 
 -- Papers table modifications
 alter type if exists public.paper_status add value if not exists 'systematic_review';
+alter type if exists public.paper_status add value if not exists 'referee';
 
 alter table if exists public.papers
   add column if not exists assigned_study_id text unique,

@@ -10,7 +10,8 @@ export type PaperStatus =
   | 'mental_health'
   | 'uefa'
   | 'american_data'
-  | 'systematic_review';
+  | 'systematic_review'
+  | 'referee';
 
 export type AssignmentStatus = 'claimed' | 'in_progress' | 'completed' | 'released' | 'returned';
 
