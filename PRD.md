@@ -2478,7 +2478,7 @@ incidence, training incidence, 95% CI, adjusted incidence, confounders.
 ◦
 Severity & Burden: total time-loss, median, mean time-loss, injury burden, burden 95% CI.
 ◦
-Most common & Breakdown: Most common injury type (dropdown), location, severity.
+Most common & Breakdown: Most common injury diagnosis (dropdown), type, location, severity.
 ◦
 Mechanism breakdown: mode of onset (fields for repetitive gradual/sudden, acute),
 contact vs non-contact vs overuse.
@@ -2612,8 +2612,8 @@ Injury Outcome Columns: Total number of injuries, Number of match injuries, Numb
 training injuries, Injury incidence (overall), Match injury incidence, Training injury incidence,
 Injury incidence 95% CI, Adjusted Injury incidence (overall), Confounders (for adjusted
 incidence), Total Time-Loss due to Injury (days), Median Time-loss (days), Mean Time-Loss (days),
-Injury Burden (days lost per 1000h), Injury Burden 95% CI, Most common injury type, Most
-common injury location, Most common injury severity class, Mode of Onset – Repetitive Gradual
+Injury Burden (days lost per 1000h), Injury Burden 95% CI, Most common injury diagnosis, Most
+common injury type, Most common injury location, Most common injury severity class, Mode of Onset – Repetitive Gradual
 (# injuries), Mode of Onset – Repetitive Sudden, Mode of Onset – Acute Sudden, Contact (#),
 Non-Contact (#), Cumulative (Repetitive) (#), Median injury duration (days), Mean injury duration
 (±SD), Total recurrent injuries, Recurrence rate (%).
@@ -2890,7 +2890,7 @@ match injuries,Number of training injuries,Injury incidence (overall),Match
 injury incidence,Training injury incidence,Injury incidence 95% CI,Adjusted
 Injury incidence (overall),Confounders,Total Time-Loss due to Injury,Median
 Time-loss,Mean Time-Loss,Injury Burden,Injury Burden 95% CI,Most common
-injury type,Most common injury location,Most common injury severity
+injury diagnosis,Most common injury type,Most common injury location,Most common injury severity
 class,Mode of Onset - Repetitive Gradual,Mode of Onset - Repetitive
 Sudden,Mode of Onset - Acute Sudden,Contact,Non-Contact,Cumulative
 (Repetitive),Median injury duration,Mean injury duration (±SD),Total

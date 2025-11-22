@@ -43,6 +43,7 @@ const MULTILINE_PLACEHOLDERS: Record<string, string> = {
     'ONLY fill in when the study uses a medical-attention definition and separately reports a time-loss match incidence.',
   injuryIncidenceTimeLossTraining:
     'ONLY fill in when the study uses a medical-attention definition and separately reports a time-loss training incidence.',
+  injuryMostCommonDiagnosis: 'e.g.,\nHamstring muscle injury\nAnkle ligament injury\nKnee ligament injury\nAdductor muscle injury',
   // Illness Outcome (values only)
   illnessTotalCount: '',
   illnessIncidenceOverall: '',

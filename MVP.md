@@ -97,6 +97,7 @@
 - Mean Time-Loss
 - Injury Burden
 - Injury Burden 95% CI
+- Most common injury diagnosis
 - Most common injury type
 - Most common injury location
 - Miost Common Injury Severity Class
@@ -489,6 +490,10 @@
     {
       "label": "Injury Burden 95% CI",
       "key": "injury_burden_95_ci"
+    },
+    {
+      "label": "Most common injury diagnosis",
+      "key": "most_common_injury_diagnosis"
     },
     {
       "label": "Most common injury type",
@@ -1236,6 +1241,7 @@
   "Mean Time-Loss",
   "Injury Burden",
   "Injury Burden 95% CI",
+  "Most common injury diagnosis",
   "Most common injury type",
   "Most common injury location",
   "Miost Common Injury Severity Class",

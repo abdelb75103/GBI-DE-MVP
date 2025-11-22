@@ -357,6 +357,12 @@ const injuryOutcomeDefinitions: ExtractionFieldDefinition[] = [
     tab: 'injuryOutcome',
   },
   {
+    id: 'injuryMostCommonDiagnosis',
+    label: 'Most common injury diagnosis',
+    description: 'Specific injury diagnosis reported as most common (e.g., hamstring strain).',
+    tab: 'injuryOutcome',
+  },
+  {
     id: 'injuryMostCommonType',
     label: 'Most common injury type',
     description: 'Most common type of injury reported.',
