@@ -586,6 +586,7 @@ export const extractionMetrics: Array<{ metric: ExtractionFieldMetric; label: st
 type MetricGroup = {
   id: string;
   label: string;
+  displayLabel?: string;
 };
 
 type MetricDescription = {
@@ -601,7 +602,23 @@ const metricDescriptions: MetricDescription[] = [
   { metric: 'severityTotalDays', labelSuffix: 'Severity (total days out)' },
 ];
 
+function generateDiagnosisFields(tab: ExtractionTab, groups: MetricGroup[]): ExtractionFieldDefinition[] {
+  return groups.map((group) => ({
+    id: `${tab}_${group.id}_diagnosis`,
+    label: 'Injury diagnosis',
+    description: 'Free-text injury diagnosis for this row (e.g., hamstring strain, ACL rupture).',
+    tab,
+    groupId: `${tab}:${group.id}`,
+    groupLabel: group.displayLabel ?? group.label,
+  }));
+}
+
 const injuryTissueTypeGroups: MetricGroup[] = [
+  {
+    id: 'injury_diagnosis',
+    label: 'Injury diagnosis',
+    displayLabel: 'Injury diagnosis (e.g., hamstring strain, ACL rupture, ankle ligament injury)',
+  },
   { id: 'muscle_tendon', label: 'Muscle/tendon' },
   { id: 'muscle_injury', label: 'Muscle injury' },
   { id: 'muscle_contusion', label: 'Muscle contusion' },
@@ -714,7 +731,7 @@ function generateMetricFields(tab: ExtractionTab, groups: MetricGroup[]): Extrac
         tab,
         metric: metric.metric,
         groupId: `${tab}:${group.id}`,
-        groupLabel: group.label,
+        groupLabel: group.displayLabel ?? group.label,
       } satisfies ExtractionFieldDefinition;
     }),
   );
@@ -722,6 +739,10 @@ function generateMetricFields(tab: ExtractionTab, groups: MetricGroup[]): Extrac
 
 
 const metricFieldDefinitions: ExtractionFieldDefinition[] = [
+  ...generateDiagnosisFields(
+    'injuryTissueType',
+    injuryTissueTypeGroups.filter((group) => group.id === 'injury_diagnosis'),
+  ),
   ...generateMetricFields('injuryTissueType', injuryTissueTypeGroups),
   ...generateMetricFields('injuryLocation', injuryLocationGroups),
   ...generateMetricFields('illnessRegion', illnessRegionGroups),

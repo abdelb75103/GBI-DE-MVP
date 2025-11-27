@@ -590,8 +590,11 @@ useEffect(() => {
           <div className="space-y-5">
             {Array.from(groups.values()).map((group) => {
               const sortedFields = group.fields.sort((a, b) => {
-                const orderA = a.metric ? metricOrder.indexOf(a.metric) : Number.MAX_SAFE_INTEGER;
-                const orderB = b.metric ? metricOrder.indexOf(b.metric) : Number.MAX_SAFE_INTEGER;
+                const orderA = a.metric ? metricOrder.indexOf(a.metric) : -1;
+                const orderB = b.metric ? metricOrder.indexOf(b.metric) : -1;
+                if (orderA === orderB) {
+                  return a.id.localeCompare(b.id);
+                }
                 return orderA - orderB;
               });
               

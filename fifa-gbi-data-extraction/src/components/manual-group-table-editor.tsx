@@ -21,6 +21,7 @@ type ManualGroupTableEditorProps = {
 
 type PopulationRow = {
   id: string; // Stable identifier for each row
+  diagnosis: string;
   values: Record<ExtractionFieldMetric, string>;
 };
 
@@ -35,8 +36,17 @@ export function ManualGroupTableEditor({
   const [rows, setRows] = useState<PopulationRow[]>([]);
 
   const fieldsByMetric = useMemo(
-    () => new Map(fields.map((field) => [field.metric!, field])),
-    [fields]
+    () =>
+      new Map(
+        fields
+          .filter((field): field is ExtractionFieldDefinition & { metric: ExtractionFieldMetric } => Boolean(field.metric))
+          .map((field) => [field.metric, field]),
+      ),
+    [fields],
+  );
+  const diagnosisField = useMemo(
+    () => fields.find((field) => field.id.endsWith('_diagnosis')),
+    [fields],
   );
 
   // Parse multi-line data into rows with strict 1:1 row mapping
@@ -48,21 +58,23 @@ export function ManualGroupTableEditor({
     // Find the maximum row count across ALL metrics for this tab
     // This ensures we show the same number of rows for all metrics
     // Each tab is independent - we only look at fields for this specific tab
-    const rowCount = extractionMetrics.reduce((max, { metric }) => {
+    const getLinesForField = (fieldId: string) => {
+      const localValue = getFieldValue(tab, fieldId);
+      const currentValue = localValue !== undefined ? localValue : (results.get(fieldId)?.value ?? '');
+      return currentValue ? currentValue.split('\n') : [];
+    };
+
+    const metricRowCount = extractionMetrics.reduce((max, { metric }) => {
       const field = fieldsByMetric.get(metric);
       if (!field) {
         return max;
       }
       // Only use data from current tab - no cross-tab autocomplete
-      const localValue = getFieldValue(tab, field.id);
-      const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
-      if (!currentValue) {
-        return max;
-      }
-      // Split by newline - preserve empty lines to maintain row positions
-      const lines = currentValue.split('\n');
-      return Math.max(max, lines.length);
+      const lines = getLinesForField(field.id);
+      return lines.length ? Math.max(max, lines.length) : max;
     }, 1);
+    const diagnosisLines = diagnosisField ? getLinesForField(diagnosisField.id) : [];
+    const rowCount = Math.max(metricRowCount, diagnosisLines.length || 0, 1);
 
     // Create rows based on strict position mapping (index 0 = Row 1, index 1 = Row 2, etc.)
     for (let index = 0; index < rowCount; index++) {
@@ -73,20 +85,21 @@ export function ManualGroupTableEditor({
           return;
         }
         // Only use data from current tab
-        const localValue = getFieldValue(tab, field.id);
-        const currentValue = localValue !== undefined ? localValue : (results.get(field.id)?.value ?? '');
-        // Split and preserve empty lines - don't filter them out
-        const lines = currentValue ? currentValue.split('\n') : [];
+        const lines = getLinesForField(field.id);
         // Get value at exact index position - if missing, use empty string (blank cell)
         // This ensures strict 1:1 mapping: Row 1 = lines[0], Row 2 = lines[1], etc.
-        values[metric] = lines[index]?.trim() ?? '';
+        values[metric] = lines[index] ?? '';
       });
       // Use index-based ID to maintain position mapping
-      hydratedRows.push({ id: `${groupLabel}-row-${index}`, values });
+      hydratedRows.push({
+        id: `${groupLabel}-row-${index}`,
+        diagnosis: diagnosisLines[index] ?? '',
+        values,
+      });
     }
 
     setRows(hydratedRows);
-  }, [results, getFieldValue, tab, groupLabel, fieldsByMetric]);
+  }, [results, getFieldValue, tab, groupLabel, fieldsByMetric, diagnosisField]);
 
   const serializeRows = (rowState: PopulationRow[], metric: ExtractionFieldMetric): string | null => {
     const field = fieldsByMetric.get(metric);
@@ -97,12 +110,12 @@ export function ManualGroupTableEditor({
     // Map ALL rows - preserve empty strings for blank cells
     // This ensures strict 1:1 row mapping (Row 1 = Row 1, Row 2 = Row 2, etc.)
     const lines = rowState.map((row) => {
-      const value = row.values[metric]?.trim() ?? '';
+      const value = row.values[metric] ?? '';
       return value; // Explicitly return empty string if blank - preserves row position
     });
     
     // Check if ANY row has content
-    const hasContent = lines.some((line) => line.length > 0);
+    const hasContent = lines.some((line) => line.trim().length > 0);
     if (!hasContent) {
       return null; // Return null only if ALL rows are blank
     }
@@ -110,6 +123,15 @@ export function ManualGroupTableEditor({
     // Join with newlines - empty strings will create empty lines
     // This ensures all metrics have the same number of lines (same row count)
     return lines.join('\n');
+  };
+
+  const serializeDiagnosis = (rowState: PopulationRow[]): string | null => {
+    if (!diagnosisField) {
+      return null;
+    }
+    const lines = rowState.map((row) => row.diagnosis ?? '');
+    const hasContent = lines.some((line) => line.trim().length > 0);
+    return hasContent ? lines.join('\n') : null;
   };
 
   const commitMetric = (rowState: PopulationRow[], metric: ExtractionFieldMetric) => {
@@ -127,12 +149,41 @@ export function ManualGroupTableEditor({
     });
   };
 
-  const handleCellChange = (rowId: string, metric: ExtractionFieldMetric, value: string) => {
+  const commitDiagnosis = (rowState: PopulationRow[]) => {
+    if (!diagnosisField) {
+      return;
+    }
+    const value = serializeDiagnosis(rowState);
+    updateField({
+      paperId,
+      tab,
+      fieldId: diagnosisField.id,
+      value,
+      metric: diagnosisField.metric,
+    });
+  };
+
+  const handleCellChange = (rowId: string, key: ExtractionFieldMetric | 'diagnosis', value: string) => {
     const next = rows.map((row) =>
-      row.id === rowId ? { ...row, values: { ...row.values, [metric]: value } } : row,
+      row.id === rowId
+        ? key === 'diagnosis'
+          ? { ...row, diagnosis: value }
+          : { ...row, values: { ...row.values, [key]: value } }
+        : row,
     );
     setRows(next);
-    commitMetric(next, metric);
+    if (key === 'diagnosis') {
+      commitDiagnosis(next);
+    } else {
+      commitMetric(next, key);
+    }
+  };
+
+  const commitAllColumns = (rowState: PopulationRow[]) => {
+    if (diagnosisField) {
+      commitDiagnosis(rowState);
+    }
+    extractionMetrics.forEach(({ metric }) => commitMetric(rowState, metric));
   };
 
   const addRow = () => {
@@ -140,6 +191,7 @@ export function ManualGroupTableEditor({
     // Use index-based ID to maintain strict position mapping
     const newRow: PopulationRow = {
       id: `${groupLabel}-row-${rows.length}`, // Use current length as index for new row
+      diagnosis: '',
       values: extractionMetrics.reduce((acc, { metric }) => {
         acc[metric] = ''; // All cells start blank - no autocomplete
         return acc;
@@ -147,8 +199,7 @@ export function ManualGroupTableEditor({
     };
     const next = [...rows, newRow];
     setRows(next);
-    // Serialize all metrics to ensure consistent row count across all columns
-    extractionMetrics.forEach(({ metric }) => commitMetric(next, metric));
+    commitAllColumns(next);
   };
 
   const removeRow = (rowId: string) => {
@@ -160,10 +211,10 @@ export function ManualGroupTableEditor({
     // This is normal table behavior - we maintain sequential positions
     const next = rows.filter((row) => row.id !== rowId);
     setRows(next);
-    // Re-serialize all metrics with the updated row positions
-    // This ensures all metrics maintain the same row count after removal
-    extractionMetrics.forEach(({ metric }) => commitMetric(next, metric));
+    commitAllColumns(next);
   };
+
+  const diagnosisColumnLabel = 'Injury diagnosis';
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -175,6 +226,11 @@ export function ManualGroupTableEditor({
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-slate-200 bg-slate-50">
+              {diagnosisField ? (
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-600">
+                  {diagnosisColumnLabel}
+                </th>
+              ) : null}
               {extractionMetrics.map(({ metric, label }) => (
                 <th
                   key={metric}
@@ -189,6 +245,17 @@ export function ManualGroupTableEditor({
           <tbody>
             {rows.map((row) => (
               <tr key={row.id} className="border-b border-slate-100 hover:bg-slate-50/50">
+                {diagnosisField ? (
+                  <td className="px-4 py-3">
+                    <input
+                      type="text"
+                      value={row.diagnosis}
+                      onChange={(e) => handleCellChange(row.id, 'diagnosis', e.target.value)}
+                      placeholder=""
+                      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-300 focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                    />
+                  </td>
+                ) : null}
                 {extractionMetrics.map(({ metric }) => (
                   <td key={metric} className="px-4 py-3">
                     <input
