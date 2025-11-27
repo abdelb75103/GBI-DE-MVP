@@ -1,0 +1,21 @@
+import type { Database } from '@/lib/supabase/types';
+
+export type PaperRow = Database['public']['Tables']['papers']['Row'];
+export type PaperInsert = Database['public']['Tables']['papers']['Insert'];
+export type PaperUpdate = Database['public']['Tables']['papers']['Update'];
+
+export type FileRow = Database['public']['Tables']['paper_files']['Row'];
+export type FileInsert = Database['public']['Tables']['paper_files']['Insert'];
+
+export type NoteRow = Database['public']['Tables']['paper_notes']['Row'];
+export type NoteInsert = Database['public']['Tables']['paper_notes']['Insert'];
+
+export type ExtractionRow = Database['public']['Tables']['extractions']['Row'];
+export type ExtractionInsert = Database['public']['Tables']['extractions']['Insert'];
+export type ExtractionFieldRow = Database['public']['Tables']['extraction_fields']['Row'];
+export type ExtractionFieldInsert = Database['public']['Tables']['extraction_fields']['Insert'];
+
+export type ExportJobRow = Database['public']['Tables']['export_jobs']['Row'];
+
+export type PopulationGroupRow = Database['public']['Tables']['population_groups']['Row'];
+export type PopulationValueRow = Database['public']['Tables']['population_values']['Row'];
