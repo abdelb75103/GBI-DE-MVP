@@ -15,6 +15,7 @@ type ManualGroupTableEditorProps = {
   paperId: string;
   tab: ExtractionTab;
   groupLabel: string;
+  groupDescription?: string;
   fields: ExtractionFieldDefinition[];
   results: Map<string, ExtractionFieldResult>;
 };
@@ -29,6 +30,7 @@ export function ManualGroupTableEditor({
   paperId,
   tab,
   groupLabel,
+  groupDescription,
   fields,
   results,
 }: ManualGroupTableEditorProps) {
@@ -219,7 +221,10 @@ export function ManualGroupTableEditor({
   return (
     <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 bg-slate-50 px-4 py-3">
-        <h4 className="text-sm font-semibold text-slate-700">{groupLabel}</h4>
+        <div className="space-y-0.5">
+          <h4 className="text-base font-semibold text-slate-900">{groupLabel}</h4>
+          {groupDescription ? <p className="text-sm font-medium text-slate-500">{groupDescription}</p> : null}
+        </div>
       </div>
 
       <div className="overflow-x-auto">

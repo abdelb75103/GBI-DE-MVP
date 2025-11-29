@@ -347,15 +347,23 @@ useEffect(() => {
   }, [openManualTab, scrollToAccordion]);
 
   const groupFieldsById = (fields: ExtractionFieldDefinition[]) => {
-    const groups = new Map<string, { label: string; fields: ExtractionFieldDefinition[] }>();
+    const groups = new Map<string, { label: string; description?: string; fields: ExtractionFieldDefinition[] }>();
     fields.forEach((field) => {
       if (!field.groupId) {
         return;
       }
       if (!groups.has(field.groupId)) {
-        groups.set(field.groupId, { label: field.groupLabel ?? field.groupId, fields: [] });
+        groups.set(field.groupId, {
+          label: field.groupLabel ?? field.groupId,
+          description: field.groupDescription,
+          fields: [],
+        });
       }
-      groups.get(field.groupId)!.fields.push(field);
+      const entry = groups.get(field.groupId)!;
+      if (!entry.description && field.groupDescription) {
+        entry.description = field.groupDescription;
+      }
+      entry.fields.push(field);
     });
     return groups;
   };
@@ -607,6 +615,7 @@ useEffect(() => {
                   paperId={paperId}
                   tab={item.tab}
                   groupLabel={group.label}
+                  groupDescription={group.description}
                   fields={sortedFields}
                   results={resultMap}
                 />
@@ -616,6 +625,7 @@ useEffect(() => {
                   paperId={paperId}
                   tab={item.tab}
                   groupLabel={group.label}
+                  groupDescription={group.description}
                   fields={sortedFields}
                   results={resultMap}
                 />

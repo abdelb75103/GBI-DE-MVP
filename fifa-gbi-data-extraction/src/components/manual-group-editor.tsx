@@ -15,11 +15,12 @@ type ManualGroupEditorProps = {
   paperId: string;
   tab: ExtractionTab;
   groupLabel: string;
+  groupDescription?: string;
   fields: ExtractionFieldDefinition[];
   results: Map<string, ExtractionFieldResult>;
 };
 
-export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }: ManualGroupEditorProps) {
+export function ManualGroupEditor({ paperId, tab, groupLabel, groupDescription, fields, results }: ManualGroupEditorProps) {
   const { updateField, getFieldValue } = useContext(WorkspaceSaveContext);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
 
@@ -103,7 +104,10 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, fields, results }:
   return (
     <div className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-sm ring-1 ring-slate-200/60">
       <div className="border-b border-slate-200/70 bg-slate-50/80 px-4 py-3 text-sm font-semibold text-slate-700">
-        {groupLabel}
+        <div className="space-y-0.5">
+          <div className="text-base font-semibold text-slate-900">{groupLabel}</div>
+          {groupDescription ? <div className="text-sm font-medium text-slate-500">{groupDescription}</div> : null}
+        </div>
       </div>
       <div className="grid gap-4 px-4 py-5 md:grid-cols-5">
         {extractionMetrics.map(({ metric, label }) => {

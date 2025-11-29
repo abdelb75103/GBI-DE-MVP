@@ -14,6 +14,7 @@ export type ExtractionFieldDefinition = {
   metric?: ExtractionFieldMetric;
   groupId?: string;
   groupLabel?: string;
+  groupDescription?: string;
 };
 
 // ---------------------------------------------------------------------------
@@ -587,12 +588,19 @@ type MetricGroup = {
   id: string;
   label: string;
   displayLabel?: string;
+  description?: string;
 };
 
 type MetricDescription = {
   metric: ExtractionFieldMetric;
   labelSuffix: string;
 };
+
+const overallRegionGuidance =
+  'Overall region; leave blank if the paper only reports specific areas. Capture both overall and specific values whenever both are available.';
+
+const overallTissueGuidance =
+  'Overall tissue; leave blank if the paper only reports specific pathologies. Capture both overall and specific values whenever both are available.';
 
 const metricDescriptions: MetricDescription[] = [
   { metric: 'prevalence', labelSuffix: 'Count' },
@@ -609,7 +617,8 @@ function generateDiagnosisFields(tab: ExtractionTab, groups: MetricGroup[]): Ext
     description: 'Free-text injury diagnosis for this row (e.g., hamstring strain, ACL rupture).',
     tab,
     groupId: `${tab}:${group.id}`,
-    groupLabel: group.displayLabel ?? group.label,
+    groupLabel: group.label,
+    groupDescription: group.description ?? group.displayLabel,
   }));
 }
 
@@ -619,51 +628,124 @@ const injuryTissueTypeGroups: MetricGroup[] = [
     label: 'Injury diagnosis',
     displayLabel: 'Injury diagnosis (e.g., hamstring strain, ACL rupture, ankle ligament injury)',
   },
-  { id: 'muscle_tendon', label: 'Muscle/tendon' },
+  {
+    id: 'muscle_tendon',
+    label: 'Muscle/tendon',
+    displayLabel:
+      'Overall tissue: Muscle/tendon (includes muscle injury, contusion, compartment syndrome, tendinopathy, tendon rupture). ' +
+      overallTissueGuidance,
+  },
   { id: 'muscle_injury', label: 'Muscle injury' },
   { id: 'muscle_contusion', label: 'Muscle contusion' },
   { id: 'muscle_compartment', label: 'Muscle compartment syndrome' },
   { id: 'tendinopathy', label: 'Tendinopathy' },
   { id: 'tendon_rupture', label: 'Tendon rupture' },
-  { id: 'nervous', label: 'Nervous' },
+  {
+    id: 'nervous',
+    label: 'Nervous',
+    displayLabel: 'Overall tissue: Nervous (includes brain/spinal cord and peripheral nerve injury). ' + overallTissueGuidance,
+  },
   { id: 'brain_spinal', label: 'Brain/spinal cord injury' },
   { id: 'concussion', label: 'Concussion' },
   { id: 'peripheral_nerve', label: 'Peripheral nerve injury' },
-  { id: 'bone', label: 'Bone' },
+  {
+    id: 'bone',
+    label: 'Bone',
+    displayLabel:
+      'Overall tissue: Bone (includes fracture, bone stress injury, bone contusion, avascular necrosis, physis injury). ' +
+      overallTissueGuidance,
+  },
   { id: 'bone_fracture', label: 'Bone fracture' },
   { id: 'bone_stress', label: 'Bone stress injury' },
   { id: 'bone_contusion', label: 'Bone contusion' },
   { id: 'avascular_necrosis', label: 'Avascular necrosis' },
   { id: 'physis', label: 'Physis injury' },
-  { id: 'cartilage_synovium_bursa', label: 'Cartilage/synovium/bursa' },
+  {
+    id: 'cartilage_synovium_bursa',
+    label: 'Cartilage/synovium/bursa',
+    displayLabel:
+      'Overall tissue: Cartilage/synovium/bursa (includes cartilage injury, arthritis, synovitis/capsulitis, bursitis). ' +
+      overallTissueGuidance,
+  },
   { id: 'cartilage_injury', label: 'Cartilage injury' },
   { id: 'arthritis', label: 'Arthritis' },
   { id: 'synovitis_capsulitis', label: 'Synovitis/capsulitis' },
   { id: 'bursitis', label: 'Bursitis' },
-  { id: 'ligament_joint_capsule', label: 'Ligament/joint capsule' },
+  {
+    id: 'ligament_joint_capsule',
+    label: 'Ligament/joint capsule',
+    displayLabel:
+      'Overall tissue: Ligament/joint capsule (includes joint sprain/acute instability, chronic instability). ' + overallTissueGuidance,
+  },
   { id: 'joint_sprain', label: 'Joint sprain' },
   { id: 'chronic_instability', label: 'Chronic instability' },
+  {
+    id: 'superficial_tissues_skin',
+    label: 'Superficial tissues/skin',
+    displayLabel:
+      'Overall tissue: Superficial tissues/skin (includes superficial contusion, laceration, abrasion). ' + overallTissueGuidance,
+  },
   { id: 'superficial_contusion', label: 'Contusion (superficial)' },
   { id: 'laceration', label: 'Laceration' },
   { id: 'abrasion', label: 'Abrasion' },
-  { id: 'vessels', label: 'Vessels' },
-  { id: 'stump', label: 'Stump' },
-  { id: 'internal_organs', label: 'Internal organs' },
+  {
+    id: 'vessels',
+    label: 'Vessels',
+    displayLabel: 'Overall tissue: Vessels (includes vascular trauma). ' + overallTissueGuidance,
+  },
+  { id: 'vascular_trauma', label: 'Vascular trauma' },
+  {
+    id: 'stump',
+    label: 'Stump',
+    displayLabel: 'Overall tissue: Stump (amputees). ' + overallTissueGuidance,
+  },
+  { id: 'stump_injury', label: 'Stump injury' },
+  {
+    id: 'internal_organs',
+    label: 'Internal organs',
+    displayLabel: 'Overall tissue: Internal organs (includes organ trauma). ' + overallTissueGuidance,
+  },
+  { id: 'organ_trauma', label: 'Organ trauma' },
+  {
+    id: 'non_specific_tissue',
+    label: 'Non-specific tissue type',
+    displayLabel: 'Non-specific tissue type (tissue not specified). ' + overallTissueGuidance,
+  },
 ];
 
 const injuryLocationGroups: MetricGroup[] = [
+  {
+    id: 'head_neck_overall',
+    label: 'Head & neck (overall)',
+    displayLabel: 'Overall region: Head & neck (includes head, neck). ' + overallRegionGuidance,
+  },
   { id: 'head', label: 'Head' },
   { id: 'neck', label: 'Neck' },
+  {
+    id: 'upper_limb_overall',
+    label: 'Upper limb (overall)',
+    displayLabel: 'Overall region: Upper limb (includes shoulder, upper arm, elbow, forearm, wrist, hand). ' + overallRegionGuidance,
+  },
   { id: 'shoulder', label: 'Shoulder' },
   { id: 'upper_arm', label: 'Upper arm' },
   { id: 'elbow', label: 'Elbow' },
   { id: 'forearm', label: 'Forearm' },
   { id: 'wrist', label: 'Wrist' },
   { id: 'hand', label: 'Hand' },
+  {
+    id: 'trunk_overall',
+    label: 'Trunk (overall)',
+    displayLabel: 'Overall region: Trunk (includes chest, thoracic spine, lumbosacral, abdomen). ' + overallRegionGuidance,
+  },
   { id: 'chest', label: 'Chest' },
   { id: 'thoracic_spine', label: 'Thoracic spine' },
   { id: 'lumbosacral', label: 'Lumbosacral' },
   { id: 'abdomen', label: 'Abdomen' },
+  {
+    id: 'lower_limb_overall',
+    label: 'Lower limb (overall)',
+    displayLabel: 'Overall region: Lower limb (includes hip/groin, thigh, knee, lower leg, ankle, foot). ' + overallRegionGuidance,
+  },
   { id: 'hip', label: 'Hip' },
   { id: 'groin', label: 'Groin' },
   { id: 'thigh', label: 'Thigh' },
@@ -671,8 +753,12 @@ const injuryLocationGroups: MetricGroup[] = [
   { id: 'lower_leg', label: 'Lower leg' },
   { id: 'ankle', label: 'Ankle' },
   { id: 'foot', label: 'Foot' },
-  { id: 'unspecified', label: 'Unspecified' },
-  { id: 'multiple', label: 'Multiple' },
+  { id: 'unspecified', label: 'Region unspecified', displayLabel: 'Region unspecified (overall). ' + overallRegionGuidance },
+  {
+    id: 'multiple',
+    label: 'Multiple regions',
+    displayLabel: 'Multiple regions (single injury crossing two or more regions). ' + overallRegionGuidance,
+  },
   { id: 'side_left', label: 'Side – Left' },
   { id: 'side_right', label: 'Side – Right' },
   { id: 'side_centre', label: 'Side – Centre' },
@@ -731,7 +817,8 @@ function generateMetricFields(tab: ExtractionTab, groups: MetricGroup[]): Extrac
         tab,
         metric: metric.metric,
         groupId: `${tab}:${group.id}`,
-        groupLabel: group.displayLabel ?? group.label,
+        groupLabel: group.label,
+        groupDescription: group.description ?? group.displayLabel,
       } satisfies ExtractionFieldDefinition;
     }),
   );
@@ -808,11 +895,13 @@ export const extractionTabMeta: Record<ExtractionTab, { title: string; descripti
   },
   injuryTissueType: {
     title: 'Injury tissue & type',
-    description: 'Manual entry capturing count, incidence, burden, and severity by tissue/tissue type.',
+    description:
+      'Manual entry capturing count, incidence, burden, and severity by tissue/tissue type. Includes optional overall tissue categories; leave the overall row blank when only specific pathologies are reported—capture both overall and specific values when available.',
   },
   injuryLocation: {
     title: 'Injury location',
-    description: 'Manual entry capturing count, incidence, burden, and severity by anatomical location.',
+    description:
+      'Manual entry capturing count, incidence, burden, and severity by anatomical location. Includes optional overall region categories; leave the overall row blank when only specific areas are reported—capture both overall and specific values when available.',
   },
   illnessRegion: {
     title: 'Illness region',
