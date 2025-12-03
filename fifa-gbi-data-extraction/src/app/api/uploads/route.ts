@@ -4,7 +4,16 @@ import { Buffer } from 'node:buffer';
 
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
-import { generateDuplicateKey, calculateFuzzyTitleScore, categorizeDuplicate, doiMatches } from '@/lib/dedupe';
+import {
+  generateDuplicateKeyV2,
+  calculateFuzzyTitleScore,
+  categorizeDuplicate,
+  doiMatches,
+  normalizeDoi,
+  generateTitleFingerprint,
+  computeFileSha256,
+  calculateFilenameScore,
+} from '@/lib/dedupe';
 
 export const runtime = 'nodejs';
 
@@ -29,12 +38,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'File exceeds 20 MB limit' }, { status: 400 });
   }
 
+  const arrayBuffer = await file.arrayBuffer();
+  const fileBuffer = Buffer.from(arrayBuffer);
+
+  const extractedTitle = title ?? file.name;
+  const normalizedDoi = normalizeDoi(doi);
+  const duplicateKeyV2 = generateDuplicateKeyV2(extractedTitle, leadAuthor, year);
+  const titleFingerprint = generateTitleFingerprint(extractedTitle);
+  const fileSha256 = computeFileSha256(fileBuffer);
+
   // Check for duplicates before processing the file
   const existingPapers = await mockDb.listPapers();
   
   // 1. Check for exact DOI match
-  if (doi) {
-    const doiDuplicate = existingPapers.find((paper) => doiMatches(doi, paper.doi));
+  if (normalizedDoi) {
+    const doiDuplicate = existingPapers.find((paper) => doiMatches(normalizedDoi, paper.normalizedDoi ?? paper.doi));
     if (doiDuplicate) {
       return NextResponse.json(
         {
@@ -49,11 +67,25 @@ export async function POST(request: Request) {
     }
   }
 
-  // 2. Check for exact key match (normalized title + author + year)
-  const duplicateKey = generateDuplicateKey(title ?? file.name, leadAuthor, year);
+  // 2. Check for exact file hash match
+  const fileHashMatch = existingPapers.find((paper) => paper.primaryFileSha256 && paper.primaryFileSha256 === fileSha256);
+  if (fileHashMatch) {
+    return NextResponse.json(
+      {
+        error: 'Duplicate paper detected',
+        reason: 'file_hash',
+        message: `This PDF file matches an existing upload: "${fileHashMatch.title}"`,
+        existingPaperId: fileHashMatch.id,
+        existingPaperTitle: fileHashMatch.title,
+      },
+      { status: 409 },
+    );
+  }
+
+  // 3. Check for exact key match (normalized title + author + year)
   const exactMatch = existingPapers.find((paper) => {
-    const paperKey = generateDuplicateKey(paper.title, paper.leadAuthor, paper.year);
-    return paperKey === duplicateKey;
+    const paperKey = paper.duplicateKeyV2 ?? generateDuplicateKeyV2(paper.extractedTitle ?? paper.title, paper.leadAuthor, paper.year);
+    return paperKey === duplicateKeyV2;
   });
 
   if (exactMatch) {
@@ -69,12 +101,12 @@ export async function POST(request: Request) {
     );
   }
 
-  // 3. Check for fuzzy title match
+  // 4. Check for fuzzy title match
   let highestFuzzyScore = 0;
   let fuzzyMatch: typeof existingPapers[0] | null = null;
 
   for (const paper of existingPapers) {
-    const score = calculateFuzzyTitleScore(title ?? file.name, paper.title);
+    const score = calculateFuzzyTitleScore(extractedTitle, paper.extractedTitle ?? paper.title);
     if (score > highestFuzzyScore) {
       highestFuzzyScore = score;
       fuzzyMatch = paper;
@@ -97,6 +129,17 @@ export async function POST(request: Request) {
     );
   }
 
+  // 5. Filename similarity as final weak signal
+  let filenameScore = 0;
+  let filenameMatch: typeof existingPapers[0] | null = null;
+  for (const paper of existingPapers) {
+    const score = calculateFilenameScore(file.name, paper.originalFileName ?? paper.title);
+    if (score > filenameScore) {
+      filenameScore = score;
+      filenameMatch = paper;
+    }
+  }
+
   if (duplicateLevel === 'possible' && fuzzyMatch) {
     return NextResponse.json(
       {
@@ -111,15 +154,46 @@ export async function POST(request: Request) {
     );
   }
 
-  const arrayBuffer = await file.arrayBuffer();
-  const fileBuffer = Buffer.from(arrayBuffer);
+  if (filenameScore >= 92 && filenameMatch) {
+    return NextResponse.json(
+      {
+        error: 'Duplicate paper detected',
+        reason: 'filename',
+        message: `This filename is nearly identical to an existing upload (${filenameScore}% match): "${filenameMatch.title}"`,
+        existingPaperId: filenameMatch.id,
+        existingPaperTitle: filenameMatch.title,
+        similarityScore: filenameScore,
+      },
+      { status: 409 },
+    );
+  }
+
+  if (filenameScore >= 85 && filenameMatch) {
+    return NextResponse.json(
+      {
+        warning: 'Possible duplicate detected',
+        message: `This filename is similar to an existing upload (${filenameScore}% match): "${filenameMatch.title}"`,
+        existingPaperId: filenameMatch.id,
+        existingPaperTitle: filenameMatch.title,
+        similarityScore: filenameScore,
+        canProceed: true,
+      },
+      { status: 409 },
+    );
+  }
 
   const paper = await mockDb.createPaper({
-    title: title ?? file.name,
+    title: extractedTitle,
+    extractedTitle,
     leadAuthor,
     year,
     journal,
     doi,
+    normalizedDoi,
+    duplicateKeyV2,
+    titleFingerprint,
+    primaryFileSha256: fileSha256,
+    originalFileName: file.name,
     uploadedBy: profile?.id ?? null,
   });
 
@@ -134,9 +208,11 @@ export async function POST(request: Request) {
     const storedFile = await mockDb.attachFile({
       paperId: paper.id,
       name: file.name,
+      originalFileName: file.name,
       size: file.size,
       mimeType: file.type || 'application/pdf',
       dataBase64: base64,
+      fileSha256,
       storageBucket: null,
       storageObjectPath: null,
     });
@@ -154,11 +230,13 @@ export async function POST(request: Request) {
   const storedFile = await mockDb.attachFile({
     paperId: paper.id,
     name: file.name,
+    originalFileName: file.name,
     size: file.size,
     mimeType: file.type || 'application/pdf',
     dataBase64: null, // Don't store base64 for new uploads
     storageBucket: storageInfo.storageBucket,
     storageObjectPath: storageInfo.storageObjectPath,
+    fileSha256,
   });
 
   const updatedPaper = await mockDb.updatePaper(paper.id, {

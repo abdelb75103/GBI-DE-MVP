@@ -62,18 +62,21 @@ export const getStorageSignedUrl = async (bucket: string, path: string): Promise
 export const attachFile = async (input: {
   paperId: string;
   name: string;
+  originalFileName?: string | null;
   size: number;
   mimeType: string;
   dataBase64?: string | null;
   storageBucket?: string | null;
   storageObjectPath?: string | null;
   publicUrl?: string | null;
+  fileSha256?: string | null;
 }): Promise<StoredFile> => {
   const supabase = supabaseClient();
   const payload: FileInsert = {
     id: crypto.randomUUID(),
     paper_id: input.paperId,
     name: input.name,
+    original_file_name: input.originalFileName ?? input.name,
     size: input.size,
     mime_type: input.mimeType,
     uploaded_at: new Date().toISOString(),
@@ -81,6 +84,7 @@ export const attachFile = async (input: {
     storage_bucket: input.storageBucket ?? 'papers',
     storage_object_path: input.storageObjectPath ?? null,
     public_url: input.publicUrl ?? null,
+    file_sha256: input.fileSha256 ?? null,
   };
 
   const { data, error } = await supabase.from('paper_files').insert(payload).select('*').single();
@@ -93,7 +97,12 @@ export const attachFile = async (input: {
 
   await supabase
     .from('papers')
-    .update({ primary_file_id: fileRow.id, updated_at: new Date().toISOString() })
+    .update({
+      primary_file_id: fileRow.id,
+      primary_file_sha256: input.fileSha256 ?? null,
+      original_file_name: input.originalFileName ?? input.name,
+      updated_at: new Date().toISOString(),
+    })
     .eq('id', input.paperId);
 
   return mapFileRow(fileRow);

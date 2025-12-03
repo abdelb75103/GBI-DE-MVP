@@ -1,4 +1,5 @@
 import crypto from 'node:crypto';
+import { Buffer } from 'node:buffer';
 
 /**
  * Normalize text for duplicate detection
@@ -109,3 +110,51 @@ export function doiMatches(doi1: string | null | undefined, doi2: string | null 
   return normalized1 === normalized2 && normalized1.length > 0;
 }
 
+/**
+ * Normalize DOI for storage/comparison
+ */
+export function normalizeDoi(doi: string | null | undefined): string {
+  if (!doi) {
+    return '';
+  }
+  return doi.trim().toLowerCase().replace(/^doi:\s*/i, '');
+}
+
+/**
+ * Generate improved duplicate key using extracted title + author + year
+ */
+export function generateDuplicateKeyV2(
+  extractedTitle: string | null | undefined,
+  author: string | null | undefined,
+  year: string | null | undefined,
+): string {
+  const normalizedTitle = normalizeText(extractedTitle);
+  const normalizedAuthor = normalizeText(author);
+  const normalizedYear = year?.trim() || '';
+
+  const combined = `${normalizedTitle}|${normalizedAuthor}|${normalizedYear}`;
+  return crypto.createHash('sha256').update(combined).digest('hex');
+}
+
+/**
+ * Generate a reusable title fingerprint (normalized title text)
+ */
+export function generateTitleFingerprint(title: string | null | undefined): string {
+  return normalizeText(title);
+}
+
+/**
+ * Compute SHA-256 hash of a file buffer
+ */
+export function computeFileSha256(data: Buffer | ArrayBuffer | Uint8Array): string {
+  const buffer = Buffer.isBuffer(data) ? data : Buffer.from(data as ArrayBuffer);
+  return crypto.createHash('sha256').update(buffer).digest('hex');
+}
+
+/**
+ * Calculate filename similarity (stemmed, punctuation stripped)
+ */
+export function calculateFilenameScore(name1: string | null | undefined, name2: string | null | undefined): number {
+  const stripExtension = (name: string) => name.replace(/\.[^.]+$/, '');
+  return calculateFuzzyTitleScore(stripExtension(name1 ?? ''), stripExtension(name2 ?? ''));
+}

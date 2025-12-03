@@ -159,13 +159,20 @@ export interface Database {
           id: string;
           assigned_study_id: string;
           title: string;
+          extracted_title: string | null;
           lead_author: string | null;
           journal: string | null;
           year: string | null;
           doi: string | null;
+          normalized_doi: string | null;
+          duplicate_key_v2: string | null;
+          title_fingerprint: string | null;
+          dedupe_review_status: 'clean' | 'duplicate' | 'possible' | 'needs_review';
           status: PaperStatus;
           storage_bucket: string;
           storage_object_path: string | null;
+          primary_file_sha256: string | null;
+          original_file_name: string | null;
           uploaded_by: string | null;
           uploaded_at: string;
           updated_at: string;
@@ -178,13 +185,20 @@ export interface Database {
           id?: string;
           assigned_study_id?: string;
           title: string;
+          extracted_title?: string | null;
           lead_author?: string | null;
           journal?: string | null;
           year?: string | null;
           doi?: string | null;
+          normalized_doi?: string | null;
+          duplicate_key_v2?: string | null;
+          title_fingerprint?: string | null;
+          dedupe_review_status?: 'clean' | 'duplicate' | 'possible' | 'needs_review';
           status?: PaperStatus;
           storage_bucket?: string;
           storage_object_path?: string | null;
+          primary_file_sha256?: string | null;
+          original_file_name?: string | null;
           uploaded_by?: string | null;
           uploaded_at?: string;
           updated_at?: string;
@@ -197,13 +211,20 @@ export interface Database {
           id?: string;
           assigned_study_id?: string;
           title?: string;
+          extracted_title?: string | null;
           lead_author?: string | null;
           journal?: string | null;
           year?: string | null;
           doi?: string | null;
+          normalized_doi?: string | null;
+          duplicate_key_v2?: string | null;
+          title_fingerprint?: string | null;
+          dedupe_review_status?: 'clean' | 'duplicate' | 'possible' | 'needs_review';
           status?: PaperStatus;
           storage_bucket?: string;
           storage_object_path?: string | null;
+          primary_file_sha256?: string | null;
+          original_file_name?: string | null;
           uploaded_by?: string | null;
           uploaded_at?: string;
           updated_at?: string;
@@ -241,6 +262,7 @@ export interface Database {
           id: string;
           paper_id: string;
           name: string;
+          original_file_name: string | null;
           size: number;
           mime_type: string;
           uploaded_at: string;
@@ -248,11 +270,13 @@ export interface Database {
           storage_object_path: string | null;
           public_url: string | null;
           data_base64: string | null;
+          file_sha256: string | null;
         };
         Insert: {
           id?: string;
           paper_id: string;
           name: string;
+          original_file_name?: string | null;
           size: number;
           mime_type: string;
           uploaded_at?: string;
@@ -260,11 +284,13 @@ export interface Database {
           storage_object_path?: string | null;
           public_url?: string | null;
           data_base64?: string | null;
+          file_sha256?: string | null;
         };
         Update: {
           id?: string;
           paper_id?: string;
           name?: string;
+          original_file_name?: string | null;
           size?: number;
           mime_type?: string;
           uploaded_at?: string;
@@ -272,6 +298,7 @@ export interface Database {
           storage_object_path?: string | null;
           public_url?: string | null;
           data_base64?: string | null;
+          file_sha256?: string | null;
         };
         Relationships: [
           {
@@ -308,6 +335,70 @@ export interface Database {
             columns: ['paper_id'];
             isOneToOne: false;
             referencedRelation: 'papers';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      paper_duplicates: {
+        Row: {
+          id: string;
+          paper_id_a: string;
+          paper_id_b: string;
+          reason: string;
+          score: number | null;
+          level: string;
+          status: string;
+          detected_at: string;
+          resolved_at: string | null;
+          resolved_by: string | null;
+          notes: string | null;
+        };
+        Insert: {
+          id?: string;
+          paper_id_a: string;
+          paper_id_b: string;
+          reason: string;
+          score?: number | null;
+          level?: string;
+          status?: string;
+          detected_at?: string;
+          resolved_at?: string | null;
+          resolved_by?: string | null;
+          notes?: string | null;
+        };
+        Update: {
+          id?: string;
+          paper_id_a?: string;
+          paper_id_b?: string;
+          reason?: string;
+          score?: number | null;
+          level?: string;
+          status?: string;
+          detected_at?: string;
+          resolved_at?: string | null;
+          resolved_by?: string | null;
+          notes?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'paper_duplicates_paper_id_a_fkey';
+            columns: ['paper_id_a'];
+            isOneToOne: false;
+            referencedRelation: 'papers';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'paper_duplicates_paper_id_b_fkey';
+            columns: ['paper_id_b'];
+            isOneToOne: false;
+            referencedRelation: 'papers';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'paper_duplicates_resolved_by_fkey';
+            columns: ['resolved_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
             referencedColumns: ['id'];
           },
         ];

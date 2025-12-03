@@ -29,6 +29,13 @@ export const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => {
     id: row.id,
     assignedStudyId: row.assigned_study_id ?? '',
     title: row.title,
+    extractedTitle: row.extracted_title ?? null,
+    normalizedDoi: row.normalized_doi ?? null,
+    duplicateKeyV2: row.duplicate_key_v2 ?? null,
+    titleFingerprint: row.title_fingerprint ?? null,
+    dedupeReviewStatus: row.dedupe_review_status ?? undefined,
+    primaryFileSha256: row.primary_file_sha256 ?? null,
+    originalFileName: row.original_file_name ?? null,
     status: row.status,
     leadAuthor: row.lead_author,
     journal: row.journal,
@@ -51,6 +58,7 @@ export const mapFileRow = (row: FileRow): StoredFile => ({
   id: row.id,
   paperId: row.paper_id,
   name: row.name,
+  originalFileName: row.original_file_name ?? null,
   size: row.size,
   mimeType: row.mime_type,
   uploadedAt: row.uploaded_at,
@@ -58,6 +66,7 @@ export const mapFileRow = (row: FileRow): StoredFile => ({
   storageObjectPath: row.storage_object_path ?? null,
   publicUrl: row.public_url ?? null,
   dataBase64: row.data_base64 ?? null,
+  fileSha256: row.file_sha256 ?? null,
 });
 
 export const mapNoteRow = (row: NoteRow): PaperNote => ({

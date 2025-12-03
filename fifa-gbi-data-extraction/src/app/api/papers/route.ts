@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
 import type { Paper } from '@/lib/types';
+import { generateDuplicateKeyV2, normalizeDoi, generateTitleFingerprint } from '@/lib/dedupe';
 
 export const runtime = 'nodejs';
 
@@ -31,10 +32,14 @@ export async function POST(request: Request) {
   try {
     const paper = await mockDb.createPaper({
       title: body.title.trim(),
+      extractedTitle: body.title.trim(),
       leadAuthor: body.leadAuthor,
       year: body.year,
       journal: body.journal,
       doi: body.doi,
+      normalizedDoi: normalizeDoi(body.doi ?? null),
+      duplicateKeyV2: generateDuplicateKeyV2(body.title.trim(), body.leadAuthor, body.year),
+      titleFingerprint: generateTitleFingerprint(body.title.trim()),
       status: body.status,
       uploadedBy: profile.id, // Track who created the paper
     });

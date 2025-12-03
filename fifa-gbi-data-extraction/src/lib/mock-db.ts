@@ -22,6 +22,7 @@ import {
 } from '@/lib/db/extractions';
 import { clearProfileGeminiKey, getProfileGeminiKey, hasProfileGeminiKey, setProfileGeminiKey } from '@/lib/db/profiles';
 import { PaperSessionConflictError } from '@/lib/db/shared';
+import { listPaperDuplicates, resolvePaperDuplicate, scanForDuplicates } from '@/lib/db/duplicates';
 
 export { PaperSessionConflictError };
 
@@ -60,4 +61,8 @@ export const mockDb = {
   setProfileGeminiKey,
   clearProfileGeminiKey,
   hasProfileGeminiKey,
+
+  listPaperDuplicates,
+  scanForDuplicates,
+  resolvePaperDuplicate,
 };

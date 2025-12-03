@@ -2,8 +2,9 @@ import crypto from 'node:crypto';
 
 import { mapPaperRow } from '@/lib/db/mappers';
 import { PaperSessionConflictError, normalizePaperMetadata, setActiveSessionMetadata, supabaseClient } from '@/lib/db/shared';
-import type { Paper, PaperSession, PaperStatus } from '@/lib/types';
+import type { Paper, PaperSession, PaperStatus, DedupeReviewStatus } from '@/lib/types';
 import type { PaperInsert, PaperRow, PaperUpdate } from '@/lib/db/types';
+import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
 
 const parseStudySequence = (value: string | null | undefined): number => {
   if (!value) {
@@ -120,24 +121,45 @@ export const getPaper = async (id: string): Promise<Paper | undefined> => {
 
 export const createPaper = async (input: {
   title: string;
+  extractedTitle?: string | null;
   leadAuthor?: string | null;
   year?: string | null;
   journal?: string | null;
   doi?: string | null;
+  normalizedDoi?: string | null;
+  duplicateKeyV2?: string | null;
+  titleFingerprint?: string | null;
+  dedupeReviewStatus?: DedupeReviewStatus;
+  primaryFileSha256?: string | null;
+  originalFileName?: string | null;
   status?: PaperStatus;
   metadata?: Record<string, unknown>;
   uploadedBy?: string | null;
 }): Promise<Paper> => {
+  const extractedTitle = input.extractedTitle ?? input.title;
+  const normalizedDoi = input.normalizedDoi ?? normalizeDoi(input.doi);
+  const normalizedDoiValue = normalizedDoi && normalizedDoi.length > 0 ? normalizedDoi : null;
+  const duplicateKeyV2 = input.duplicateKeyV2 ?? generateDuplicateKeyV2(extractedTitle, input.leadAuthor, input.year);
+  const titleFingerprint = input.titleFingerprint ?? generateTitleFingerprint(extractedTitle);
+  const dedupeReviewStatus: DedupeReviewStatus = input.dedupeReviewStatus ?? 'clean';
+
   const supabase = supabaseClient();
   const assignedId = await generateAssignedStudyId();
   const payload: PaperInsert = {
     id: crypto.randomUUID(),
     assigned_study_id: assignedId,
     title: input.title,
+    extracted_title: extractedTitle,
     lead_author: input.leadAuthor ?? null,
     journal: input.journal ?? null,
     year: input.year ?? null,
     doi: input.doi ?? null,
+    normalized_doi: normalizedDoiValue,
+    duplicate_key_v2: duplicateKeyV2 ?? null,
+    title_fingerprint: titleFingerprint ?? null,
+    dedupe_review_status: dedupeReviewStatus,
+    primary_file_sha256: input.primaryFileSha256 ?? null,
+    original_file_name: input.originalFileName ?? null,
     status: input.status ?? 'uploaded',
     storage_bucket: 'papers',
     uploaded_by: input.uploadedBy ?? null,
@@ -159,13 +181,45 @@ export const updatePaper = async (
   id: string,
   updates: Partial<Omit<Paper, 'id' | 'assignedStudyId' | 'createdAt'>>,
 ): Promise<Paper | undefined> => {
+  const existing = await getPaper(id);
+
+  if (!existing) {
+    return undefined;
+  }
+
+  const nextTitle = updates.title ?? existing.title;
+  const nextExtractedTitle = updates.extractedTitle ?? existing.extractedTitle ?? nextTitle;
+  const nextLeadAuthor = updates.leadAuthor ?? existing.leadAuthor ?? null;
+  const nextYear = updates.year ?? existing.year ?? null;
+  const nextDoi = updates.doi ?? existing.doi ?? null;
+  const nextNormalizedDoi = updates.normalizedDoi ?? normalizeDoi(nextDoi);
+  const nextNormalizedDoiValue = nextNormalizedDoi && nextNormalizedDoi.length > 0 ? nextNormalizedDoi : null;
+  const nextDuplicateKeyV2 =
+    updates.duplicateKeyV2 ??
+    generateDuplicateKeyV2(
+      nextExtractedTitle ?? nextTitle,
+      nextLeadAuthor,
+      nextYear,
+    );
+  const nextTitleFingerprint = updates.titleFingerprint ?? generateTitleFingerprint(nextExtractedTitle ?? nextTitle);
+  const nextDedupeReviewStatus = updates.dedupeReviewStatus ?? existing.dedupeReviewStatus ?? 'clean';
+  const nextPrimaryFileSha256 = updates.primaryFileSha256 ?? existing.primaryFileSha256 ?? null;
+  const nextOriginalFileName = updates.originalFileName ?? existing.originalFileName ?? null;
+
   const supabase = supabaseClient();
   const payload: PaperUpdate = {
-    title: updates.title,
-    lead_author: updates.leadAuthor,
-    journal: updates.journal,
-    year: updates.year,
-    doi: updates.doi,
+    title: nextTitle,
+    extracted_title: nextExtractedTitle ?? null,
+    lead_author: nextLeadAuthor,
+    journal: updates.journal ?? existing.journal ?? null,
+    year: nextYear,
+    doi: nextDoi,
+    normalized_doi: nextNormalizedDoiValue,
+    duplicate_key_v2: nextDuplicateKeyV2,
+    title_fingerprint: nextTitleFingerprint,
+    dedupe_review_status: nextDedupeReviewStatus,
+    primary_file_sha256: nextPrimaryFileSha256,
+    original_file_name: nextOriginalFileName,
     status: updates.status as PaperStatus | undefined,
     updated_at: new Date().toISOString(),
   };

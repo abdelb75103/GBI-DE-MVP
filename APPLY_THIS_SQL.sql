@@ -181,6 +181,62 @@ create index if not exists papers_assigned_to_idx on public.papers (assigned_to)
 comment on column public.papers.assigned_to is 'Profile ID of the user currently assigned to work on this paper';
 
 -- ============================================================================
+-- MIGRATION 2B: Robust Deduplication Metadata & Admin Review Queue
+-- ============================================================================
+
+-- Dedupe review status enum
+do $$
+begin
+  if not exists (select 1 from pg_type where typname = 'dedupe_review_status') then
+    create type public.dedupe_review_status as enum ('clean', 'duplicate', 'possible', 'needs_review');
+  end if;
+end $$;
+
+-- Paper-level dedupe metadata
+alter table if exists public.papers
+  add column if not exists extracted_title text,
+  add column if not exists normalized_doi text,
+  add column if not exists duplicate_key_v2 text,
+  add column if not exists title_fingerprint text,
+  add column if not exists dedupe_review_status public.dedupe_review_status default 'clean',
+  add column if not exists primary_file_sha256 text,
+  add column if not exists original_file_name text;
+
+create index if not exists papers_normalized_doi_idx on public.papers (normalized_doi);
+create index if not exists papers_duplicate_key_v2_idx on public.papers (duplicate_key_v2);
+create index if not exists papers_title_fingerprint_idx on public.papers (title_fingerprint);
+create index if not exists papers_dedupe_review_status_idx on public.papers (dedupe_review_status);
+
+-- File-level dedupe metadata
+alter table if exists public.paper_files
+  add column if not exists original_file_name text,
+  add column if not exists file_sha256 text;
+
+create index if not exists paper_files_file_sha256_idx on public.paper_files (file_sha256);
+
+-- Admin review queue for suspected duplicates
+create table if not exists public.paper_duplicates (
+  id uuid primary key default gen_random_uuid(),
+  paper_id_a uuid not null references public.papers (id) on delete cascade,
+  paper_id_b uuid not null references public.papers (id) on delete cascade,
+  reason text not null,
+  score numeric,
+  level text not null default 'duplicate', -- 'duplicate' or 'possible'
+  status text not null default 'unreviewed', -- 'unreviewed', 'confirmed_duplicate', 'not_duplicate', 'dismissed'
+  detected_at timestamptz not null default now(),
+  resolved_at timestamptz,
+  resolved_by uuid references public.profiles (id),
+  notes text
+);
+
+create unique index if not exists paper_duplicates_unique_pair_idx
+  on public.paper_duplicates (paper_id_a, paper_id_b);
+
+create index if not exists paper_duplicates_status_idx on public.paper_duplicates (status, detected_at desc);
+
+comment on table public.paper_duplicates is 'Admin-only review queue of suspected duplicate papers. Pair is stored as (paper_id_a, paper_id_b) with paper_id_a < paper_id_b.';
+
+-- ============================================================================
 -- MIGRATION 3: Simplify Notes
 -- ============================================================================
 

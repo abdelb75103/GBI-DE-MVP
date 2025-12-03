@@ -32,6 +32,8 @@ export type ExtractionFieldStatus = 'reported' | 'not_reported' | 'uncertain';
 
 export type ExtractionUpdatedBy = string | null;
 
+export type DedupeReviewStatus = 'clean' | 'duplicate' | 'possible' | 'needs_review';
+
 export interface PaperSession {
   paperId: string;
   profileId: string;
@@ -49,6 +51,13 @@ export interface Paper {
   journal: string | null;
   year: string | null;
   doi: string | null;
+  extractedTitle?: string | null;
+  normalizedDoi?: string | null;
+  duplicateKeyV2?: string | null;
+  titleFingerprint?: string | null;
+  dedupeReviewStatus?: DedupeReviewStatus;
+  primaryFileSha256?: string | null;
+  originalFileName?: string | null;
   createdAt: string;
   updatedAt: string;
   storageBucket: string | null;
@@ -66,6 +75,7 @@ export interface StoredFile {
   id: string;
   paperId: string;
   name: string;
+  originalFileName?: string | null;
   size: number;
   mimeType: string;
   uploadedAt: string;
@@ -73,6 +83,7 @@ export interface StoredFile {
   storageObjectPath: string | null;
   publicUrl: string | null;
   dataBase64?: string | null;
+  fileSha256?: string | null;
 }
 
 export interface PaperNote {
@@ -136,4 +147,18 @@ export interface ExportJob {
   createdAt: string;
   downloadUrl?: string | null;
   checksumSha256?: string | null;
+}
+
+export interface PaperDuplicate {
+  id: string;
+  paperIdA: string;
+  paperIdB: string;
+  reason: string;
+  score: number | null;
+  level: 'duplicate' | 'possible';
+  status: 'unreviewed' | 'confirmed_duplicate' | 'not_duplicate' | 'dismissed';
+  detectedAt: string;
+  resolvedAt: string | null;
+  resolvedBy: string | null;
+  notes: string | null;
 }

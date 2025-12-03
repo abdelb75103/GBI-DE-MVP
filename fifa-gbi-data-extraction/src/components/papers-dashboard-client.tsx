@@ -183,12 +183,12 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
               <option value="extracted">Extracted</option>
               <option value="flagged">Flagged</option>
               <option value="qa_review">QA Review</option>
-              <option value="archived">Archived</option>
               <option value="mental_health">Mental Health</option>
               <option value="uefa">UEFA</option>
               <option value="american_data">American Data</option>
               <option value="systematic_review">Systematic Review</option>
               <option value="referee">Referee</option>
+              {isAdmin ? <option value="archived">Archived</option> : null}
             </select>
           </div>
 

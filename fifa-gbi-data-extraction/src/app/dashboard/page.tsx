@@ -18,8 +18,9 @@ export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
   const papers = await mockDb.listPapers();
+  const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
   const exportJobs = await mockDb.listExports();
-  const activePaperIds = papers.map((paper) => paper.id);
+  const activePaperIds = visiblePapers.map((paper) => paper.id);
   const activeProfile = await readActiveProfileSession();
   const isAdmin = activeProfile?.role === 'admin';
   const userId = activeProfile?.id || null;
@@ -54,13 +55,13 @@ export default async function DashboardPage() {
   const firstName = extractFirstName(activeProfile?.fullName);
   
   // Calculate metrics
-  const totalPapers = papers.length;
-  const availablePapers = papers.filter((paper) => !paper.assignedTo).length;
+  const totalPapers = visiblePapers.length;
+  const availablePapers = visiblePapers.filter((paper) => !paper.assignedTo).length;
   
-  const activePapers = papers.filter((paper) => isActiveStatus(paper.status));
-  const completedPapers = papers.filter((paper) => isCompletedStatus(paper.status));
-  const taggedCompletedPapers = papers.filter((paper) => isTaggedAutoCompleteStatus(paper.status));
-  const progressCompletedPapers = papers.filter((paper) => isProgressCompletedStatus(paper.status));
+  const activePapers = visiblePapers.filter((paper) => isActiveStatus(paper.status));
+  const completedPapers = visiblePapers.filter((paper) => isCompletedStatus(paper.status));
+  const taggedCompletedPapers = visiblePapers.filter((paper) => isTaggedAutoCompleteStatus(paper.status));
+  const progressCompletedPapers = visiblePapers.filter((paper) => isProgressCompletedStatus(paper.status));
   
   const inProgressCount = activePapers.length;
   const completedCount = completedPapers.length;
@@ -75,11 +76,11 @@ export default async function DashboardPage() {
   const userCompletedCount = completedPapers.filter((paper) => paper.assignedTo === userId).length;
   const userCompletedPercentage = completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
   
-  const flaggedCount = papers.filter((paper) => Boolean(paper.flagReason)).length;
+  const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
   
   // Calculate contributor statistics
   type ContributorMap = Record<string, { name: string; completedCount: number }>;
-  const contributorStats = papers.reduce<ContributorMap>((acc, paper) => {
+  const contributorStats = visiblePapers.reduce<ContributorMap>((acc, paper) => {
     if (paper.status === 'extracted' && paper.assignedTo && paper.assigneeName) {
       if (!acc[paper.assignedTo]) {
         acc[paper.assignedTo] = { name: paper.assigneeName, completedCount: 0 };
@@ -122,6 +123,12 @@ export default async function DashboardPage() {
                     className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
                   >
                     Upload a PDF
+                  </Link>
+                  <Link
+                    href="/dashboard/dedupe"
+                    className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/80 px-5 py-2 text-sm font-semibold text-indigo-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50"
+                  >
+                    Run dedupe review
                   </Link>
                 </div>
               ) : null}
@@ -270,7 +277,7 @@ export default async function DashboardPage() {
               </Link>
             ) : null}
           </div>
-          <PapersDashboardClient papers={papers} canBulkExport={isAdmin} isAdmin={isAdmin} />
+          <PapersDashboardClient papers={visiblePapers} canBulkExport={isAdmin} isAdmin={isAdmin} />
         </section>
 
         <aside className="space-y-6">
