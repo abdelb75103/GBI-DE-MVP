@@ -3,12 +3,11 @@ import crypto from 'node:crypto';
 import { supabaseClient } from '@/lib/db/shared';
 import { mapPaperRow } from '@/lib/db/mappers';
 import type { Paper, PaperDuplicate } from '@/lib/types';
-import type { FileRow, PaperRow } from '@/lib/db/types';
+import type { FileRow, PaperRow, PaperDuplicateRow } from '@/lib/db/types';
 import {
   calculateFilenameScore,
   calculateFuzzyTitleScore,
   generateDuplicateKeyV2,
-  generateTitleFingerprint,
   normalizeDoi,
 } from '@/lib/dedupe';
 
@@ -58,7 +57,9 @@ export const listPaperDuplicates = async (): Promise<PaperDuplicate[]> => {
     throw new Error(`Failed to list duplicate candidates: ${error.message}`);
   }
 
-  return (data ?? []).map((row) => ({
+  const rows = (data ?? []) as PaperDuplicateRow[];
+
+  return rows.map((row) => ({
     id: row.id,
     paperIdA: row.paper_id_a,
     paperIdB: row.paper_id_b,
@@ -112,7 +113,8 @@ export const scanForDuplicates = async (): Promise<PaperDuplicate[]> => {
   if (filesError) {
     throw new Error(`Failed to load files for dedupe scan: ${filesError.message}`);
   }
-  const fileMap = Object.fromEntries((fileRows ?? []).map((row) => [row.id, row as FileRow]));
+  const fileRowsTyped = (fileRows ?? []) as FileRow[];
+  const fileMap = Object.fromEntries(fileRowsTyped.map((row) => [row.id, row]));
 
   // Existing duplicate records for status preservation
   const existing = await listPaperDuplicates();

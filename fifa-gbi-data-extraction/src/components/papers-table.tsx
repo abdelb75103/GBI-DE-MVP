@@ -8,7 +8,6 @@ import { AssignmentBadge } from '@/components/assignment-badge';
 import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { StatusPill } from '@/components/status-pill';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
-import { formatDateTimeUTC } from '@/lib/format';
 import type { Paper } from '@/lib/types';
 
 type PapersTableProps = {
@@ -111,14 +110,6 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin = false }: P
       router.refresh();
     });
   };
-
-  useEffect(() => {
-    setCurrentPage((prev) => {
-      if (prev < 1) return 1;
-      if (prev > totalPages) return totalPages;
-      return prev;
-    });
-  }, [totalPages]);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {

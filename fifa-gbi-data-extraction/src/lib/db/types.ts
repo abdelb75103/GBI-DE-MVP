@@ -16,6 +16,7 @@ export type ExtractionFieldRow = Database['public']['Tables']['extraction_fields
 export type ExtractionFieldInsert = Database['public']['Tables']['extraction_fields']['Insert'];
 
 export type ExportJobRow = Database['public']['Tables']['export_jobs']['Row'];
+export type PaperDuplicateRow = Database['public']['Tables']['paper_duplicates']['Row'];
 
 export type PopulationGroupRow = Database['public']['Tables']['population_groups']['Row'];
 export type PopulationValueRow = Database['public']['Tables']['population_values']['Row'];
