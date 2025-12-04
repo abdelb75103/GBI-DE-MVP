@@ -16,6 +16,7 @@ import { readActiveProfileSession } from '@/lib/session';
 import { WorkspaceSaveManager } from '@/components/workspace-save-manager';
 import { WorkspaceSaveButton } from '@/components/workspace-save-button';
 import { PaperActionButtons } from '@/components/paper-action-buttons';
+import { MobileWorkspaceBlocker } from '@/components/mobile-workspace-blocker';
 
 export const dynamic = 'force-dynamic';
 
@@ -161,130 +162,132 @@ export default async function PaperWorkspace({
     : null;
 
   return (
-    <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>
-      <div className="space-y-10">
-        {isReadOnly && (
-          <section className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-amber-50/80 p-6 shadow-xl ring-1 ring-amber-200/60">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-amber-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
-                Read-Only Mode
-              </span>
-              <p className="text-sm font-medium text-amber-900">
-                Viewing{' '}
-                <strong>
-                  {(paper.assigneeName || 'another user')}&rsquo;s
-                </strong>{' '}
-                paper in read-only mode. You cannot edit or save changes.
-              </p>
+    <MobileWorkspaceBlocker>
+      <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>
+        <div className="space-y-10">
+          {isReadOnly && (
+            <section className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-amber-50/80 p-6 shadow-xl ring-1 ring-amber-200/60">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex items-center rounded-full bg-amber-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
+                  Read-Only Mode
+                </span>
+                <p className="text-sm font-medium text-amber-900">
+                  Viewing{' '}
+                  <strong>
+                    {(paper.assigneeName || 'another user')}&rsquo;s
+                  </strong>{' '}
+                  paper in read-only mode. You cannot edit or save changes.
+                </p>
+              </div>
+            </section>
+          )}
+          <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8">
+            <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
+            <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
+            <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="space-y-3">
+                <span className="inline-flex items-center rounded-full bg-indigo-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
+                  Paper workspace
+                </span>
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
+                      {paper.assignedStudyId}
+                    </span>
+                    <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl">{paper.title}</h1>
+                    <StatusPill status={paper.status} />
+                  </div>
+                  {paper.leadAuthor ? (
+                    <p className="text-sm text-slate-600">{paper.leadAuthor}</p>
+                  ) : null}
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="/dashboard"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
+                >
+                  Back to dashboard
+                </Link>
+                {!isReadOnly && <WorkspaceSaveButton />}
+              </div>
             </div>
           </section>
-        )}
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-8 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-          <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
-          <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-          <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="space-y-3">
-              <span className="inline-flex items-center rounded-full bg-indigo-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
-                Paper workspace
-              </span>
-              <div className="space-y-3">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
-                    {paper.assignedStudyId}
-                  </span>
-                  <h1 className="text-3xl font-semibold text-slate-900">{paper.title}</h1>
-                  <StatusPill status={paper.status} />
-                </div>
-                {paper.leadAuthor ? (
-                  <p className="text-sm text-slate-600">{paper.leadAuthor}</p>
-                ) : null}
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                href="/dashboard"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-              >
-                Back to dashboard
-              </Link>
-              {!isReadOnly && <WorkspaceSaveButton />}
-            </div>
-          </div>
-        </section>
 
-        <div className="flex flex-col gap-8">
-          <PaperWorkspaceShell paperId={paper.id} tabs={tabPayload} viewerUrl={viewerUrl} readOnly={isReadOnly} />
+          <div className="flex flex-col gap-8">
+            <PaperWorkspaceShell paperId={paper.id} tabs={tabPayload} viewerUrl={viewerUrl} readOnly={isReadOnly} />
 
-          <div className="grid gap-6 xl:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div className="space-y-5">
-              {!isReadOnly && (
-                <div className="rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
-                  <StatusSelect paperId={paper.id} status={paper.status} />
-                </div>
-              )}
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">File details</p>
-                {file ? (
-                  <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                    <li>
-                      <span className="font-medium text-slate-700">Name:</span> {file.name}
-                    </li>
-                    <li>
-                      <span className="font-medium text-slate-700">Size:</span> {formatBytes(file.size)}
-                    </li>
-                    <li>
-                      <span className="font-medium text-slate-700">Uploaded:</span>{' '}
-                      <time dateTime={file.uploadedAt}>{formatDateTimeUTC(file.uploadedAt)}</time>
-                    </li>
-                  </ul>
-                ) : (
-                  <p className="mt-3 text-sm text-slate-500">File metadata will be available after upload.</p>
-                )}
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Flags</p>
-                <p className="mt-1 text-xs text-slate-500">
-                  Use flags to mark issues that need reviewer attention.
-                </p>
-                {!isReadOnly && (
-                  <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
-                    <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
+            <div className="grid gap-6 xl:grid-cols-2">
+              <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+                <div className="space-y-5">
+                  {!isReadOnly && (
+                    <div className="rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
+                      <StatusSelect paperId={paper.id} status={paper.status} />
+                    </div>
+                  )}
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">File details</p>
+                    {file ? (
+                      <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                        <li>
+                          <span className="font-medium text-slate-700">Name:</span> {file.name}
+                        </li>
+                        <li>
+                          <span className="font-medium text-slate-700">Size:</span> {formatBytes(file.size)}
+                        </li>
+                        <li>
+                          <span className="font-medium text-slate-700">Uploaded:</span>{' '}
+                          <time dateTime={file.uploadedAt}>{formatDateTimeUTC(file.uploadedAt)}</time>
+                        </li>
+                      </ul>
+                    ) : (
+                      <p className="mt-3 text-sm text-slate-500">File metadata will be available after upload.</p>
+                    )}
                   </div>
-                )}
-                {isReadOnly && (
-                  <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40">
-                    <p className="text-xs text-slate-500">
-                      {paper.flagReason ? `Flagged: ${paper.flagReason}` : 'Not flagged'}
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Flags</p>
+                    <p className="mt-1 text-xs text-slate-500">
+                      Use flags to mark issues that need reviewer attention.
                     </p>
+                    {!isReadOnly && (
+                      <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
+                        <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
+                      </div>
+                    )}
+                    {isReadOnly && (
+                      <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40">
+                        <p className="text-xs text-slate-500">
+                          {paper.flagReason ? `Flagged: ${paper.flagReason}` : 'Not flagged'}
+                        </p>
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">Notes</h2>
-            </div>
-            <p className="mt-2 text-xs text-slate-500">
-              Capture extraction decisions, definitions, or follow-up questions.
-            </p>
-            <div className="mt-5 space-y-5">
-              <div className="rounded-2xl bg-gradient-to-br from-indigo-50/60 to-slate-50/80 p-4 shadow-sm ring-1 ring-indigo-200/30 transition hover:shadow-md">
-                <NoteComposer paperId={paper.id} />
+              <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+                <div>
+                  <h2 className="text-sm font-semibold text-slate-900">Notes</h2>
+                </div>
+                <p className="mt-2 text-xs text-slate-500">
+                  Capture extraction decisions, definitions, or follow-up questions.
+                </p>
+                <div className="mt-5 space-y-5">
+                  <div className="rounded-2xl bg-gradient-to-br from-indigo-50/60 to-slate-50/80 p-4 shadow-sm ring-1 ring-indigo-200/30 transition hover:shadow-md">
+                    <NoteComposer paperId={paper.id} />
+                  </div>
+                  <NoteList initialNotes={notes} paperId={paper.id} />
+                </div>
               </div>
-              <NoteList initialNotes={notes} paperId={paper.id} />
             </div>
+
+            <PaperActionButtons readOnly={isReadOnly} />
           </div>
         </div>
 
-        <PaperActionButtons readOnly={isReadOnly} />
-      </div>
-
         <DefinitionsDrawer categories={definitionCategories} />
-      </div>
-    </WorkspaceSaveManager>
+      </WorkspaceSaveManager>
+    </MobileWorkspaceBlocker>
   );
 }
 

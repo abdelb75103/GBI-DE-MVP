@@ -97,9 +97,9 @@ export default async function DashboardPage() {
   }));
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10 sm:space-y-12">
       {/* Hero Section - Original Style with Personalized Badge */}
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-10 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
         <div className="absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
         <div className="absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
         <div className="absolute top-6 left-6 z-20">
@@ -107,10 +107,10 @@ export default async function DashboardPage() {
             Dashboard
           </span>
         </div>
-        <div className="relative z-10 space-y-10 pt-4">
+        <div className="relative z-10 space-y-8 pt-4">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl space-y-4">
-              <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+            <div className="max-w-2xl space-y-4">
+              <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl lg:text-4xl">
                 {firstName}&apos;s Dashboard
               </h1>
               <p className="text-sm leading-relaxed text-slate-600">
@@ -134,7 +134,7 @@ export default async function DashboardPage() {
               ) : null}
             </div>
           </div>
-          <div className={`grid gap-3 sm:grid-cols-2 ${isAdmin ? 'xl:grid-cols-4' : 'xl:grid-cols-3'}`}>
+          <div className={`grid gap-4 sm:grid-cols-2 ${isAdmin ? 'xl:grid-cols-4' : 'xl:grid-cols-3'}`}>
             {/* Card 1: All Papers */}
             <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-80" aria-hidden />

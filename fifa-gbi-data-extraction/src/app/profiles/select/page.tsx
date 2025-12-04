@@ -66,14 +66,14 @@ export default async function ProfileSelectPage() {
   const finalProfiles = profilesWithDisplayRole;
 
   return (
-    <section className="relative isolate overflow-hidden rounded-[2.75rem] border border-indigo-100/80 bg-white/90 shadow-2xl ring-1 ring-slate-200/60">
-      <div className="relative z-10 grid gap-10 px-8 py-12 sm:px-12 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:px-16">
-        <div className="flex min-h-[28rem] flex-col justify-between">
-          <div className="flex flex-1 flex-col justify-start gap-6 pt-6">
+    <section className="relative isolate overflow-hidden rounded-[2.25rem] border border-indigo-100/80 bg-white/90 shadow-2xl ring-1 ring-slate-200/60">
+      <div className="relative z-10 grid gap-10 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-[minmax(0,25rem)_minmax(0,1fr)] lg:px-14">
+        <div className="flex min-h-[20rem] flex-col justify-between gap-8 lg:min-h-[26rem]">
+          <div className="flex flex-1 flex-col justify-start gap-4 pt-2 sm:pt-4">
             <span className="inline-flex w-fit items-center rounded-full border border-indigo-100 bg-indigo-50/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600">
               Welcome back
             </span>
-            <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+            <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl lg:text-4xl">
               The FIFA Global Burden of Injury and Illness in Football Project
             </h1>
             <p className="text-xs font-medium uppercase tracking-[0.32em] text-slate-400">
@@ -82,10 +82,11 @@ export default async function ProfileSelectPage() {
           </div>
         </div>
 
-        <div className="space-y-6 lg:-ml-8 lg:pl-2">
-          <div className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/70 backdrop-blur">
+        <div className="space-y-6 lg:-ml-6 lg:pl-2">
+          <div className="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-5 shadow-xl ring-1 ring-slate-200/70 backdrop-blur sm:p-6">
             <div className="space-y-2">
               <h2 className="text-lg font-semibold text-slate-900">Choose your account</h2>
+              <p className="text-sm text-slate-600">Pick your profile to enter the workspace.</p>
             </div>
             <div className="mt-6 space-y-4">
               {loadError ? (

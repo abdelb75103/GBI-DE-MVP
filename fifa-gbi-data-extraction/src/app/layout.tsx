@@ -5,6 +5,7 @@ import Link from 'next/link';
 import './globals.css';
 import { ActiveProfileGate } from '@/components/active-profile-gate';
 import { ActiveProfileIndicator } from '@/components/header/active-profile-indicator';
+import { MobileNav } from '@/components/header/mobile-nav';
 import { PrimaryNavLinks } from '@/components/header/nav-links';
 import { ThemeToggleButton } from '@/components/header/theme-toggle-button';
 import { Providers } from '@/components/providers';
@@ -49,55 +50,61 @@ export default function RootLayout({
         <Providers>
           <div className="flex min-h-screen flex-col">
             <header className="sticky top-0 z-40 border-b border-white/60 bg-white/80 shadow-sm backdrop-blur">
-              <div className="mx-auto flex w-full max-w-[calc(100vw-3rem)] items-center gap-6 px-6 py-5">
-                <div className="flex justify-start">
-                  <span className="sr-only">University College Dublin</span>
-                  <div className="flex h-14 w-14 items-center justify-center">
-                    <Image
-                      src="/images/University_College_Dublin_logo.svg.png"
-                      alt="UCD logo"
-                      width={56}
-                      height={56}
-                      className="h-full w-auto object-contain"
-                      priority
-                    />
+              <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6">
+                <div className="flex items-center gap-4 py-4 md:py-5">
+                  <div className="flex flex-1 items-center gap-3 md:gap-4">
+                    <div className="flex items-center gap-3">
+                      <span className="sr-only">University College Dublin</span>
+                      <div className="flex h-12 w-12 items-center justify-center sm:h-14 sm:w-14">
+                        <Image
+                          src="/images/University_College_Dublin_logo.svg.png"
+                          alt="UCD logo"
+                          width={56}
+                          height={56}
+                          className="h-full w-auto object-contain"
+                          priority
+                        />
+                      </div>
+                      <Link
+                        href="/dashboard"
+                        className="text-lg font-semibold text-slate-900 transition hover:text-indigo-700 sm:text-xl md:text-2xl"
+                      >
+                        FIFA GBI Data Extraction Assistant
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-1 items-center justify-between gap-4">
-                  <Link
-                    href="/dashboard"
-                    className="text-2xl font-semibold text-slate-900 transition hover:text-indigo-700"
-                  >
-                    FIFA GBI Data Extraction Assistant
-                  </Link>
-                  <nav className="flex items-center gap-3 text-sm font-medium text-slate-600 data-[theme=dark]:text-slate-300">
+
+                  <nav className="hidden items-center gap-3 text-sm font-medium text-slate-600 md:flex md:text-base data-[theme=dark]:text-slate-300">
                     <PrimaryNavLinks />
                     <ThemeToggleButton />
                     <ActiveProfileIndicator />
                   </nav>
-                </div>
-                <div className="flex justify-end">
-                  <span className="sr-only">Fédération Internationale de Football Association</span>
-                  <div className="flex h-14 w-24 items-center justify-center">
-                    <Image
-                      src="/images/FIFA_logo_without_slogan.svg.png"
-                      alt="FIFA logo"
-                      width={120}
-                      height={44}
-                      className="h-full w-auto object-contain"
-                      priority
-                    />
+
+                  <div className="hidden justify-end sm:flex">
+                    <span className="sr-only">Fédération Internationale de Football Association</span>
+                    <div className="flex h-12 w-20 items-center justify-center sm:h-14 sm:w-24">
+                      <Image
+                        src="/images/FIFA_logo_without_slogan.svg.png"
+                        alt="FIFA logo"
+                        width={120}
+                        height={44}
+                        className="h-full w-auto object-contain"
+                        priority
+                      />
+                    </div>
                   </div>
+
+                  <MobileNav />
                 </div>
               </div>
             </header>
-            <main className="mx-auto flex w-full max-w-[calc(100vw-3rem)] flex-1 flex-col px-6 py-10">
+            <main className="mx-auto flex w-full max-w-screen-2xl flex-1 flex-col px-4 py-8 sm:px-6 sm:py-10">
               <ActiveProfileGate>
                 {children}
               </ActiveProfileGate>
             </main>
             <footer className="border-t border-white/70 bg-white/60 py-8 text-sm text-slate-600">
-              <div className="mx-auto flex w-full max-w-[calc(100vw-3rem)] flex-col items-center gap-6 px-6 text-center">
+              <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center gap-6 px-4 text-center sm:px-6">
                 <div className="space-y-2">
                   <h2 className="text-base font-semibold text-slate-800">Disclaimer</h2>
                   <p>

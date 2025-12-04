@@ -22,6 +22,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
   const [flaggedFilter, setFlaggedFilter] = useState<boolean | 'all'>('all');
   const [notesFilter, setNotesFilter] = useState<boolean | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   // Get unique assignees for user filter dropdown
   const uniqueAssignees = useMemo(() => {
@@ -119,6 +120,132 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     setSearchQuery('');
   };
 
+  const renderSearchControl = (className = 'xl:col-span-2') => (
+    <div className={className}>
+      <label htmlFor="search" className="mb-1.5 block text-xs font-semibold text-slate-600">
+        Search
+      </label>
+      <input
+        id="search"
+        type="text"
+        placeholder="Title, author, ID, DOI..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+      />
+    </div>
+  );
+
+  const filterFields = (
+    <>
+      <div>
+        <label htmlFor="status-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
+          Status
+        </label>
+        <select
+          id="status-filter"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value as PaperStatus | 'all')}
+          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="all">All Statuses</option>
+          <option value="uploaded">Uploaded</option>
+          <option value="processing">Processing</option>
+          <option value="extracted">Extracted</option>
+          <option value="flagged">Flagged</option>
+          <option value="qa_review">QA Review</option>
+          <option value="mental_health">Mental Health</option>
+          <option value="uefa">UEFA</option>
+          <option value="american_data">American Data</option>
+          <option value="systematic_review">Systematic Review</option>
+          <option value="referee">Referee</option>
+          {isAdmin ? <option value="archived">Archived</option> : null}
+        </select>
+      </div>
+
+      {isAdmin && (
+        <div>
+          <label htmlFor="user-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
+            Assigned User
+          </label>
+          <select
+            id="user-filter"
+            value={userFilter}
+            onChange={(e) => setUserFilter(e.target.value)}
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          >
+            <option value="all">All Users</option>
+            {uniqueAssignees.map(({ id, name }) => (
+              <option key={id} value={id}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <div>
+        <label htmlFor="flagged-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
+          Flagged
+        </label>
+        <select
+          id="flagged-filter"
+          value={flaggedFilter === 'all' ? 'all' : flaggedFilter ? 'yes' : 'no'}
+          onChange={(e) => setFlaggedFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')}
+          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="all">All</option>
+          <option value="yes">Flagged Only</option>
+          <option value="no">Not Flagged</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="notes-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
+          Notes
+        </label>
+        <select
+          id="notes-filter"
+          value={notesFilter === 'all' ? 'all' : notesFilter ? 'yes' : 'no'}
+          onChange={(e) => setNotesFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')}
+          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="all">All</option>
+          <option value="yes">Has Notes</option>
+          <option value="no">No Notes</option>
+        </select>
+      </div>
+    </>
+  );
+
+  const filterSummary = hasActiveFilters ? (
+    <div className="flex items-center justify-between gap-3 rounded-lg border border-indigo-200 bg-indigo-50/50 px-4 py-2.5">
+      <p className="text-xs text-indigo-700">
+        <span className="font-semibold">{filteredPapers.length}</span> of{' '}
+        <span className="font-semibold">{papers.length}</span> papers match your filters
+      </p>
+      <button
+        type="button"
+        onClick={resetFilters}
+        className="inline-flex items-center gap-1.5 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 transition hover:bg-indigo-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="h-3.5 w-3.5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+            clipRule="evenodd"
+          />
+        </svg>
+        Reset Filters
+      </button>
+    </div>
+  ) : null;
+
   return (
     <div className="space-y-4">
       {/* Assignment Filter Tabs */}
@@ -148,139 +275,35 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         ))}
       </div>
 
-      {/* Advanced Filters */}
-      <div className="px-6 space-y-4">
+      {/* Mobile filters */}
+      <div className="space-y-3 px-4 md:hidden">
+        {renderSearchControl('')}
+        <button
+          type="button"
+          onClick={() => setShowMobileFilters((open) => !open)}
+          className="inline-flex w-full items-center justify-between rounded-xl border border-slate-200/70 bg-white/80 px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-700"
+        >
+          <span>Advanced filters</span>
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            className={`h-4 w-4 transition ${showMobileFilters ? 'rotate-180' : ''}`}
+            aria-hidden
+          >
+            <path d="M3.5 6l4.5 4L12.5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
+        {showMobileFilters ? <div className="grid gap-3 sm:grid-cols-2">{filterFields}</div> : null}
+        {filterSummary}
+      </div>
+
+      {/* Desktop filters */}
+      <div className="hidden space-y-4 px-6 md:block">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          {/* Search */}
-          <div className="xl:col-span-2">
-            <label htmlFor="search" className="block text-xs font-semibold text-slate-600 mb-1.5">
-              Search
-            </label>
-            <input
-              id="search"
-              type="text"
-              placeholder="Title, author, ID, DOI..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            />
-          </div>
-
-          {/* Status Filter */}
-          <div>
-            <label htmlFor="status-filter" className="block text-xs font-semibold text-slate-600 mb-1.5">
-              Status
-            </label>
-            <select
-              id="status-filter"
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value as PaperStatus | 'all')}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            >
-              <option value="all">All Statuses</option>
-              <option value="uploaded">Uploaded</option>
-              <option value="processing">Processing</option>
-              <option value="extracted">Extracted</option>
-              <option value="flagged">Flagged</option>
-              <option value="qa_review">QA Review</option>
-              <option value="mental_health">Mental Health</option>
-              <option value="uefa">UEFA</option>
-              <option value="american_data">American Data</option>
-              <option value="systematic_review">Systematic Review</option>
-              <option value="referee">Referee</option>
-              {isAdmin ? <option value="archived">Archived</option> : null}
-            </select>
-          </div>
-
-          {/* User Filter (Admin Only) */}
-          {isAdmin && (
-            <div>
-              <label htmlFor="user-filter" className="block text-xs font-semibold text-slate-600 mb-1.5">
-                Assigned User
-              </label>
-              <select
-                id="user-filter"
-                value={userFilter}
-                onChange={(e) => setUserFilter(e.target.value)}
-                className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              >
-                <option value="all">All Users</option>
-                {uniqueAssignees.map(({ id, name }) => (
-                  <option key={id} value={id}>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
-
-          {/* Flagged Filter */}
-          <div>
-            <label htmlFor="flagged-filter" className="block text-xs font-semibold text-slate-600 mb-1.5">
-              Flagged
-            </label>
-            <select
-              id="flagged-filter"
-              value={flaggedFilter === 'all' ? 'all' : flaggedFilter ? 'yes' : 'no'}
-              onChange={(e) =>
-                setFlaggedFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')
-              }
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            >
-              <option value="all">All</option>
-              <option value="yes">Flagged Only</option>
-              <option value="no">Not Flagged</option>
-            </select>
-          </div>
-
-          {/* Notes Filter */}
-          <div>
-            <label htmlFor="notes-filter" className="block text-xs font-semibold text-slate-600 mb-1.5">
-              Notes
-            </label>
-            <select
-              id="notes-filter"
-              value={notesFilter === 'all' ? 'all' : notesFilter ? 'yes' : 'no'}
-              onChange={(e) =>
-                setNotesFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')
-              }
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            >
-              <option value="all">All</option>
-              <option value="yes">Has Notes</option>
-              <option value="no">No Notes</option>
-            </select>
-          </div>
+          {renderSearchControl('xl:col-span-2')}
+          {filterFields}
         </div>
-
-        {/* Filter Summary & Reset */}
-        {hasActiveFilters && (
-          <div className="flex items-center justify-between gap-3 rounded-lg border border-indigo-200 bg-indigo-50/50 px-4 py-2.5">
-            <p className="text-xs text-indigo-700">
-              <span className="font-semibold">{filteredPapers.length}</span> of{' '}
-              <span className="font-semibold">{papers.length}</span> papers match your filters
-            </p>
-            <button
-              type="button"
-              onClick={resetFilters}
-              className="inline-flex items-center gap-1.5 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 transition hover:bg-indigo-200"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="h-3.5 w-3.5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Reset Filters
-            </button>
-          </div>
-        )}
+        {filterSummary}
       </div>
 
       {/* Papers Table */}

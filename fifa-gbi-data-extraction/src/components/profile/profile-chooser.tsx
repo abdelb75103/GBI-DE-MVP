@@ -76,7 +76,7 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
               type="button"
               onClick={() => handleSelect(profile)}
               aria-label={`Continue as ${profile.fullName}`}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 text-left shadow-sm ring-1 ring-slate-200/60 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="group relative w-full overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-5 text-left shadow-sm ring-1 ring-slate-200/60 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:p-6"
             >
               <div
                 className={`absolute inset-0 -z-10 bg-gradient-to-br ${gradient} opacity-80 transition-opacity group-hover:opacity-100`}
@@ -86,7 +86,7 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
                 <span className="inline-flex w-fit items-center gap-1 rounded-full border border-white/60 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-600 shadow-sm transition group-hover:border-indigo-200 group-hover:text-indigo-700">
                   {profile.displayRole ?? ROLE_LABELS[profile.role]}
                 </span>
-                <span className="text-xl font-semibold text-slate-900 transition group-hover:text-indigo-700">
+                <span className="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-700 sm:text-xl">
                   {profile.fullName}
                 </span>
                 <span className="flex items-center gap-2 text-sm font-medium text-indigo-600 transition group-hover:translate-x-1">

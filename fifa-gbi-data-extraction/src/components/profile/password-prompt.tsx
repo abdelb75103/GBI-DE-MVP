@@ -95,14 +95,14 @@ export function PasswordPrompt({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-4 sm:items-center"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="password-prompt-title"
     >
       <div
-        className="relative w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl ring-1 ring-slate-200/60"
+        className="relative w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl ring-1 ring-slate-200/60 sm:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-6">
@@ -167,4 +167,3 @@ export function PasswordPrompt({
     </div>
   );
 }
-
