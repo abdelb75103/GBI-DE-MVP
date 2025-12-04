@@ -68,6 +68,7 @@ export interface Paper {
   noteCount: number;
   assignedTo: string | null;
   assigneeName?: string;
+  downloadUrl?: string | null;
   activeSession: PaperSession | null;
 }
 
