@@ -211,7 +211,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                 </div>
 
                 <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                  <AssignmentBadge status={assignmentStatus} name={paper.assigneeName} />
+                  <AssignmentBadge status={assignmentStatus} assigneeName={paper.assigneeName} />
                   <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-700">
                     {paper.noteCount} {notesLabel}
                   </span>
@@ -383,7 +383,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                       </div>
                     </td>
                     <td className="px-6 py-4 text-center">
-                      <AssignmentBadge status={assignmentStatus} name={paper.assigneeName} />
+                    <AssignmentBadge status={assignmentStatus} assigneeName={paper.assigneeName} />
                     </td>
                     <td className="px-6 py-4 text-center">
                       <StatusPill status={paper.status} />
