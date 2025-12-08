@@ -4,6 +4,7 @@ import { Buffer } from 'node:buffer';
 
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
+import type { UploadQueueItem } from '@/lib/types';
 import {
   generateDuplicateKeyV2,
   calculateFuzzyTitleScore,
@@ -18,6 +19,9 @@ import {
 export const runtime = 'nodejs';
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024; // 20 MB
+
+const pickUploadTitle = (upload: UploadQueueItem) =>
+  upload.extractedTitle ?? upload.title ?? upload.originalFileName ?? upload.fileName;
 
 export async function POST(request: Request) {
   const profile = await readActiveProfileSession();
@@ -48,7 +52,10 @@ export async function POST(request: Request) {
   const fileSha256 = computeFileSha256(fileBuffer);
 
   // Check for duplicates before processing the file
-  const existingPapers = await mockDb.listPapers();
+  const [existingPapers, pendingUploads] = await Promise.all([
+    mockDb.listPapers(),
+    mockDb.listUploadQueueEntries(),
+  ]);
   
   // 1. Check for exact DOI match
   if (normalizedDoi) {
@@ -61,6 +68,21 @@ export async function POST(request: Request) {
           message: `A paper with this DOI already exists: "${doiDuplicate.title}"`,
           existingPaperId: doiDuplicate.id,
           existingPaperTitle: doiDuplicate.title,
+        },
+        { status: 409 },
+      );
+    }
+    const pendingDoiDuplicate = pendingUploads.find((upload) =>
+      doiMatches(normalizedDoi, upload.normalizedDoi ?? upload.doi),
+    );
+    if (pendingDoiDuplicate) {
+      return NextResponse.json(
+        {
+          error: 'Duplicate paper detected',
+          reason: 'pending_doi',
+          message: `A pending upload with this DOI is awaiting approval: "${pickUploadTitle(pendingDoiDuplicate)}"`,
+          pendingUploadId: pendingDoiDuplicate.id,
+          pendingUploadTitle: pickUploadTitle(pendingDoiDuplicate),
         },
         { status: 409 },
       );
@@ -81,6 +103,19 @@ export async function POST(request: Request) {
       { status: 409 },
     );
   }
+  const pendingHashMatch = pendingUploads.find((upload) => upload.fileSha256 && upload.fileSha256 === fileSha256);
+  if (pendingHashMatch) {
+    return NextResponse.json(
+      {
+        error: 'Duplicate paper detected',
+        reason: 'pending_file_hash',
+        message: `A pending upload already contains this PDF: "${pickUploadTitle(pendingHashMatch)}"`,
+        pendingUploadId: pendingHashMatch.id,
+        pendingUploadTitle: pickUploadTitle(pendingHashMatch),
+      },
+      { status: 409 },
+    );
+  }
 
   // 3. Check for exact key match (normalized title + author + year)
   const exactMatch = existingPapers.find((paper) => {
@@ -96,6 +131,23 @@ export async function POST(request: Request) {
         message: `This paper already exists: "${exactMatch.title}"`,
         existingPaperId: exactMatch.id,
         existingPaperTitle: exactMatch.title,
+      },
+      { status: 409 },
+    );
+  }
+  const pendingExactMatch = pendingUploads.find((upload) => {
+    const uploadKey =
+      upload.duplicateKeyV2 ?? generateDuplicateKeyV2(pickUploadTitle(upload), upload.leadAuthor, upload.year);
+    return uploadKey === duplicateKeyV2;
+  });
+  if (pendingExactMatch) {
+    return NextResponse.json(
+      {
+        error: 'Duplicate paper detected',
+        reason: 'pending_exact',
+        message: `A pending upload with this title/author/year already exists: "${pickUploadTitle(pendingExactMatch)}"`,
+        pendingUploadId: pendingExactMatch.id,
+        pendingUploadTitle: pickUploadTitle(pendingExactMatch),
       },
       { status: 409 },
     );
@@ -124,6 +176,43 @@ export async function POST(request: Request) {
         existingPaperId: fuzzyMatch.id,
         existingPaperTitle: fuzzyMatch.title,
         similarityScore: highestFuzzyScore,
+      },
+      { status: 409 },
+    );
+  }
+
+  let pendingHighestFuzzy = 0;
+  let pendingFuzzyMatch: UploadQueueItem | null = null;
+  for (const upload of pendingUploads) {
+    const score = calculateFuzzyTitleScore(extractedTitle, pickUploadTitle(upload));
+    if (score > pendingHighestFuzzy) {
+      pendingHighestFuzzy = score;
+      pendingFuzzyMatch = upload;
+    }
+  }
+  const pendingDuplicateLevel = categorizeDuplicate(pendingHighestFuzzy);
+  if (pendingDuplicateLevel === 'duplicate' && pendingFuzzyMatch) {
+    return NextResponse.json(
+      {
+        error: 'Duplicate paper detected',
+        reason: 'pending_fuzzy',
+        message: `A pending upload appears similar (${pendingHighestFuzzy}% match): "${pickUploadTitle(pendingFuzzyMatch)}"`,
+        pendingUploadId: pendingFuzzyMatch.id,
+        pendingUploadTitle: pickUploadTitle(pendingFuzzyMatch),
+        similarityScore: pendingHighestFuzzy,
+      },
+      { status: 409 },
+    );
+  }
+  if (pendingDuplicateLevel === 'possible' && pendingFuzzyMatch) {
+    return NextResponse.json(
+      {
+        warning: 'Possible duplicate detected',
+        message: `A pending upload may match (${pendingHighestFuzzy}% match): "${pickUploadTitle(pendingFuzzyMatch)}"`,
+        pendingUploadId: pendingFuzzyMatch.id,
+        pendingUploadTitle: pickUploadTitle(pendingFuzzyMatch),
+        similarityScore: pendingHighestFuzzy,
+        canProceed: true,
       },
       { status: 409 },
     );
@@ -182,7 +271,52 @@ export async function POST(request: Request) {
     );
   }
 
-  const paper = await mockDb.createPaper({
+  let pendingFilenameScore = 0;
+  let pendingFilenameMatch: UploadQueueItem | null = null;
+  for (const upload of pendingUploads) {
+    const score = calculateFilenameScore(file.name, upload.originalFileName ?? upload.fileName);
+    if (score > pendingFilenameScore) {
+      pendingFilenameScore = score;
+      pendingFilenameMatch = upload;
+    }
+  }
+  if (pendingFilenameScore >= 92 && pendingFilenameMatch) {
+    return NextResponse.json(
+      {
+        error: 'Duplicate paper detected',
+        reason: 'pending_filename',
+        message: `A pending upload has a very similar filename (${pendingFilenameScore}% match): "${pickUploadTitle(pendingFilenameMatch)}"`,
+        pendingUploadId: pendingFilenameMatch.id,
+        pendingUploadTitle: pickUploadTitle(pendingFilenameMatch),
+        similarityScore: pendingFilenameScore,
+      },
+      { status: 409 },
+    );
+  }
+  if (pendingFilenameScore >= 85 && pendingFilenameMatch) {
+    return NextResponse.json(
+      {
+        warning: 'Possible duplicate detected',
+        message: `A pending upload may be similar (${pendingFilenameScore}% filename match): "${pickUploadTitle(pendingFilenameMatch)}"`,
+        pendingUploadId: pendingFilenameMatch.id,
+        pendingUploadTitle: pickUploadTitle(pendingFilenameMatch),
+        similarityScore: pendingFilenameScore,
+        canProceed: true,
+      },
+      { status: 409 },
+    );
+  }
+
+  let storageInfo: { storageBucket: string; storageObjectPath: string } | null = null;
+  let dataBase64: string | null = null;
+  try {
+    storageInfo = await mockDb.uploadFileToStorage(fileBuffer, file.name, 'papers');
+  } catch (storageError) {
+    console.error('[POST /api/uploads] Failed to upload to storage:', storageError);
+    dataBase64 = fileBuffer.toString('base64');
+  }
+
+  const queuedUpload = await mockDb.queueUpload({
     title: extractedTitle,
     extractedTitle,
     leadAuthor,
@@ -192,58 +326,16 @@ export async function POST(request: Request) {
     normalizedDoi,
     duplicateKeyV2,
     titleFingerprint,
-    primaryFileSha256: fileSha256,
+    fileName: file.name,
     originalFileName: file.name,
-    uploadedBy: profile?.id ?? null,
-  });
-
-  // Upload to Supabase Storage
-  let storageInfo: { storageBucket: string; storageObjectPath: string } | null = null;
-  try {
-    storageInfo = await mockDb.uploadFileToStorage(fileBuffer, file.name, 'papers');
-  } catch (storageError) {
-    console.error('[POST /api/uploads] Failed to upload to storage:', storageError);
-    // Fallback to base64 if storage upload fails
-    const base64 = fileBuffer.toString('base64');
-    const storedFile = await mockDb.attachFile({
-      paperId: paper.id,
-      name: file.name,
-      originalFileName: file.name,
-      size: file.size,
-      mimeType: file.type || 'application/pdf',
-      dataBase64: base64,
-      fileSha256,
-      storageBucket: null,
-      storageObjectPath: null,
-    });
-
-    const updatedPaper = await mockDb.updatePaper(paper.id, {
-      primaryFileId: storedFile.id,
-      storageBucket: storedFile.storageBucket,
-      storageObjectPath: storedFile.storageObjectPath,
-    });
-
-    return NextResponse.json({ paper: updatedPaper ?? paper, file: storedFile }, { status: 201 });
-  }
-
-  // Store file metadata with storage info (no base64)
-  const storedFile = await mockDb.attachFile({
-    paperId: paper.id,
-    name: file.name,
-    originalFileName: file.name,
-    size: file.size,
     mimeType: file.type || 'application/pdf',
-    dataBase64: null, // Don't store base64 for new uploads
-    storageBucket: storageInfo.storageBucket,
-    storageObjectPath: storageInfo.storageObjectPath,
+    size: file.size,
     fileSha256,
+    storageBucket: storageInfo?.storageBucket ?? null,
+    storageObjectPath: storageInfo?.storageObjectPath ?? null,
+    dataBase64,
+    createdBy: profile?.id ?? null,
   });
 
-  const updatedPaper = await mockDb.updatePaper(paper.id, {
-    primaryFileId: storedFile.id,
-    storageBucket: storedFile.storageBucket,
-    storageObjectPath: storedFile.storageObjectPath,
-  });
-
-  return NextResponse.json({ paper: updatedPaper ?? paper, file: storedFile }, { status: 201 });
+  return NextResponse.json({ upload: queuedUpload }, { status: 201 });
 }

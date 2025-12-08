@@ -23,6 +23,8 @@ export type ExportKind = 'csv' | 'json';
 
 export type ExportStatus = 'pending' | 'ready' | 'failed';
 
+export type UploadQueueStatus = 'pending' | 'approved' | 'rejected';
+
 export type ExtractionTab =
   | 'studyDetails'
   | 'participantCharacteristics'
@@ -253,6 +255,115 @@ export interface Database {
             columns: ['primary_file_id'];
             isOneToOne: true;
             referencedRelation: 'paper_files';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      paper_upload_queue: {
+        Row: {
+          id: string;
+          storage_bucket: string | null;
+          storage_object_path: string | null;
+          data_base64: string | null;
+          file_name: string;
+          original_file_name: string | null;
+          mime_type: string;
+          size: number;
+          file_sha256: string | null;
+          title: string;
+          extracted_title: string | null;
+          lead_author: string | null;
+          journal: string | null;
+          year: string | null;
+          doi: string | null;
+          normalized_doi: string | null;
+          duplicate_key_v2: string | null;
+          title_fingerprint: string | null;
+          metadata: Record<string, unknown>;
+          status: UploadQueueStatus;
+          created_by: string | null;
+          approved_by: string | null;
+          created_at: string;
+          approved_at: string | null;
+          paper_id: string | null;
+          notes: string | null;
+        };
+        Insert: {
+          id?: string;
+          storage_bucket?: string | null;
+          storage_object_path?: string | null;
+          data_base64?: string | null;
+          file_name: string;
+          original_file_name?: string | null;
+          mime_type: string;
+          size: number;
+          file_sha256?: string | null;
+          title: string;
+          extracted_title?: string | null;
+          lead_author?: string | null;
+          journal?: string | null;
+          year?: string | null;
+          doi?: string | null;
+          normalized_doi?: string | null;
+          duplicate_key_v2?: string | null;
+          title_fingerprint?: string | null;
+          metadata?: Record<string, unknown>;
+          status?: UploadQueueStatus;
+          created_by?: string | null;
+          approved_by?: string | null;
+          created_at?: string;
+          approved_at?: string | null;
+          paper_id?: string | null;
+          notes?: string | null;
+        };
+        Update: {
+          id?: string;
+          storage_bucket?: string | null;
+          storage_object_path?: string | null;
+          data_base64?: string | null;
+          file_name?: string;
+          original_file_name?: string | null;
+          mime_type?: string;
+          size?: number;
+          file_sha256?: string | null;
+          title?: string;
+          extracted_title?: string | null;
+          lead_author?: string | null;
+          journal?: string | null;
+          year?: string | null;
+          doi?: string | null;
+          normalized_doi?: string | null;
+          duplicate_key_v2?: string | null;
+          title_fingerprint?: string | null;
+          metadata?: Record<string, unknown>;
+          status?: UploadQueueStatus;
+          created_by?: string | null;
+          approved_by?: string | null;
+          created_at?: string;
+          approved_at?: string | null;
+          paper_id?: string | null;
+          notes?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'paper_upload_queue_approved_by_fkey';
+            columns: ['approved_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'paper_upload_queue_created_by_fkey';
+            columns: ['created_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'paper_upload_queue_paper_id_fkey';
+            columns: ['paper_id'];
+            isOneToOne: false;
+            referencedRelation: 'papers';
             referencedColumns: ['id'];
           },
         ];

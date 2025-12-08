@@ -23,6 +23,14 @@ import {
 import { clearProfileGeminiKey, getProfileGeminiKey, hasProfileGeminiKey, setProfileGeminiKey } from '@/lib/db/profiles';
 import { PaperSessionConflictError } from '@/lib/db/shared';
 import { listPaperDuplicates, resolvePaperDuplicate, scanForDuplicates } from '@/lib/db/duplicates';
+import {
+  queueUpload,
+  listUploadQueueEntries,
+  getUploadQueueEntries,
+  markUploadQueueApproved,
+  markUploadQueueRejected,
+  countPendingUploadQueueEntries,
+} from '@/lib/db/upload-queue';
 
 export { PaperSessionConflictError };
 
@@ -65,4 +73,11 @@ export const mockDb = {
   listPaperDuplicates,
   scanForDuplicates,
   resolvePaperDuplicate,
+
+  queueUpload,
+  listUploadQueueEntries,
+  getUploadQueueEntries,
+  markUploadQueueApproved,
+  markUploadQueueRejected,
+  countPendingUploadQueueEntries,
 };

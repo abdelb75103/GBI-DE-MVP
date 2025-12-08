@@ -1,4 +1,4 @@
-import type { ExtractionMetric } from '@/lib/supabase/types';
+import type { ExtractionMetric, UploadQueueStatus } from '@/lib/supabase/types';
 
 export type PaperStatus =
   | 'uploaded'
@@ -162,4 +162,34 @@ export interface PaperDuplicate {
   resolvedAt: string | null;
   resolvedBy: string | null;
   notes: string | null;
+}
+
+export interface UploadQueueItem {
+  id: string;
+  status: UploadQueueStatus;
+  title: string;
+  extractedTitle: string | null;
+  leadAuthor: string | null;
+  year: string | null;
+  journal: string | null;
+  doi: string | null;
+  normalizedDoi: string | null;
+  duplicateKeyV2: string | null;
+  titleFingerprint: string | null;
+  metadata: Record<string, unknown>;
+  fileName: string;
+  originalFileName: string | null;
+  mimeType: string;
+  size: number;
+  fileSha256: string | null;
+  storageBucket: string | null;
+  storageObjectPath: string | null;
+  dataBase64: string | null;
+  createdAt: string;
+  createdBy: string | null;
+  createdByName?: string;
+  approvedAt: string | null;
+  approvedBy: string | null;
+  approvedByName?: string;
+  paperId: string | null;
 }

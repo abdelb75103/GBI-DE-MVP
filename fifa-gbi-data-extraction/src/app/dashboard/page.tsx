@@ -24,6 +24,7 @@ export default async function DashboardPage() {
   const activeProfile = await readActiveProfileSession();
   const isAdmin = activeProfile?.role === 'admin';
   const userId = activeProfile?.id || null;
+  const pendingUploadCount = isAdmin ? await mockDb.countPendingUploadQueueEntries() : 0;
   
   // Extract first name from profile, skipping common titles
   const extractFirstName = (fullName: string | undefined | null): string => {
@@ -129,6 +130,17 @@ export default async function DashboardPage() {
                     className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/80 px-5 py-2 text-sm font-semibold text-indigo-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50"
                   >
                     Run dedupe review
+                  </Link>
+                  <Link
+                    href="/dashboard/upload-approvals"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-5 py-2 text-sm font-semibold text-emerald-700 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50"
+                  >
+                    Review uploads
+                    {pendingUploadCount > 0 ? (
+                      <span className="inline-flex min-w-[1.75rem] items-center justify-center rounded-full bg-emerald-600/10 px-2 text-xs font-semibold text-emerald-700">
+                        {pendingUploadCount}
+                      </span>
+                    ) : null}
                   </Link>
                 </div>
               ) : null}

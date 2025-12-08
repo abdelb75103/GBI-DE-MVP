@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { FormEvent, useRef, useState, useTransition } from 'react';
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
@@ -11,14 +10,20 @@ type UploadFailure = {
   reason: string;
 };
 
+type UploadSuccess = {
+  id: string;
+  title: string;
+  fileName: string;
+};
+
 export function UploadForm() {
-  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState<{ current: number; total: number } | null>(null);
   const [summary, setSummary] = useState<{
     total: number;
     successCount: number;
     failures: UploadFailure[];
+    uploads: UploadSuccess[];
   } | null>(null);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -54,7 +59,7 @@ export function UploadForm() {
       setSummary(null);
       setProgress({ current: 0, total: files.length });
       const failures: UploadFailure[] = [];
-      const successfulPaperIds: string[] = [];
+      const uploads: UploadSuccess[] = [];
 
       for (const [index, file] of files.entries()) {
         setProgress({ current: index + 1, total: files.length });
@@ -94,12 +99,13 @@ export function UploadForm() {
         }
 
         const payload = await response.json();
-        const paperId = payload.paper?.id as string | undefined;
+        const uploadId = payload.upload?.id as string | undefined;
+        const uploadTitle = (payload.upload?.title as string | undefined) ?? file.name;
 
-        if (paperId) {
-          successfulPaperIds.push(paperId);
+        if (uploadId) {
+          uploads.push({ id: uploadId, title: uploadTitle, fileName: file.name });
         } else {
-          failures.push({ fileName: file.name, reason: 'Upload succeeded without an ID' });
+          failures.push({ fileName: file.name, reason: 'Upload succeeded without a queue reference' });
         }
       }
 
@@ -111,12 +117,13 @@ export function UploadForm() {
       setProgress(null);
       const summaryPayload = {
         total: files.length,
-        successCount: successfulPaperIds.length,
+        successCount: uploads.length,
         failures,
+        uploads,
       };
       setSummary(summaryPayload);
 
-      if (successfulPaperIds.length === 0) {
+      if (uploads.length === 0) {
         setError(
           failures.length === 0
             ? 'Upload failed for an unknown reason.'
@@ -128,18 +135,9 @@ export function UploadForm() {
       if (failures.length > 0) {
         setError('Some files failed to upload. See details below.');
       }
-
-      if (successfulPaperIds.length === 1 && failures.length === 0) {
+      if (failures.length === 0) {
         setError(null);
-        router.push(`/paper/${successfulPaperIds[0]}`);
-      } else {
-        if (failures.length === 0) {
-          setError(null);
-        }
-        router.push('/dashboard');
       }
-
-      router.refresh();
     });
   };
 
@@ -165,7 +163,8 @@ export function UploadForm() {
           disabled={isPending}
         />
         <p className="mt-2 text-xs text-slate-500">
-          Max 20 MB per file. Upload up to {MAX_FILE_COUNT} PDFs per batch. Duplicates will be handled manually later.
+          Max 20 MB per file. Upload up to {MAX_FILE_COUNT} PDFs per batch. New uploads stay hidden until an admin approves
+          them.
         </p>
       </div>
 
@@ -191,8 +190,27 @@ export function UploadForm() {
       {summary ? (
         <div className="rounded-2xl border border-slate-200/80 bg-white/70 p-4 shadow-inner">
           <p className="text-sm font-semibold text-slate-700">
-            Uploaded {summary.successCount} of {summary.total} file{summary.total === 1 ? '' : 's'}.
+            Staged {summary.successCount} of {summary.total} file{summary.total === 1 ? '' : 's'} for approval.
           </p>
+          {summary.uploads.length > 0 ? (
+            <div className="mt-2 text-xs text-slate-500">
+              <p className="font-semibold text-slate-600">Awaiting admin review:</p>
+              <ul className="mt-1 space-y-1">
+                {summary.uploads.slice(0, 5).map((upload) => (
+                  <li key={upload.id}>
+                    {upload.fileName}
+                    {upload.title && upload.title !== upload.fileName ? ` → ${upload.title}` : ''}
+                  </li>
+                ))}
+                {summary.uploads.length > 5 ? (
+                  <li>And {summary.uploads.length - 5} more.</li>
+                ) : null}
+              </ul>
+              <p className="mt-2 text-[11px] text-slate-500">
+                Papers remain hidden until an admin approves them. You&apos;ll see them on the dashboard afterward.
+              </p>
+            </div>
+          ) : null}
           {summary.failures.length > 0 ? (
             <div className="mt-2 text-sm text-rose-600">
               <p className="font-medium">Failed uploads:</p>
@@ -205,11 +223,7 @@ export function UploadForm() {
                 {summary.failures.length > 10 ? <li>And {summary.failures.length - 10} more.</li> : null}
               </ul>
             </div>
-          ) : (
-            <p className="mt-2 text-sm text-emerald-600">
-              All uploads completed successfully. Redirecting you now.
-            </p>
-          )}
+          ) : null}
         </div>
       ) : null}
 
