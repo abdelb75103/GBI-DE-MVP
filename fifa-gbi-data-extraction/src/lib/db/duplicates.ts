@@ -23,16 +23,8 @@ type PaperWithDedupe = Paper & {
 const keyIgnoreOrder = (a: string, b: string) => (a < b ? `${a}:${b}` : `${b}:${a}`);
 const keyOrdered = (a: string, b: string) => `${a}:${b}`;
 
-const orderByUploaded = (a: PaperWithDedupe, b: PaperWithDedupe): [PaperWithDedupe, PaperWithDedupe] => {
-  const timeA = new Date(a.createdAt).getTime();
-  const timeB = new Date(b.createdAt).getTime();
-
-  if (Number.isNaN(timeA) || Number.isNaN(timeB) || timeA === timeB) {
-    return a.id < b.id ? [a, b] : [b, a];
-  }
-
-  return timeA <= timeB ? [a, b] : [b, a];
-};
+const canonicalPair = (a: string, b: string): [string, string] => (a < b ? [a, b] : [b, a]);
+const canonicalKey = (a: string, b: string) => keyOrdered(...canonicalPair(a, b));
 
 const makePairKey = (a: string, b: string) => keyIgnoreOrder(a, b);
 
@@ -127,9 +119,9 @@ export const scanForDuplicates = async (): Promise<PaperDuplicate[]> => {
     for (let j = i + 1; j < papers.length; j += 1) {
       const paperA = papers[i];
       const paperB = papers[j];
-      const [older, newer] = orderByUploaded(paperA, paperB);
-      const orderedKey = keyOrdered(older.id, newer.id);
-      const ignoreOrderKey = makePairKey(paperA.id, paperB.id);
+      const [paperIdA, paperIdB] = canonicalPair(paperA.id, paperB.id);
+      const orderedKey = canonicalKey(paperA.id, paperB.id);
+      const ignoreOrderKey = orderedKey;
       desiredOrderedKeys.add(orderedKey);
 
       const normalizedDoiA = normalizeDoi(paperA.normalizedDoi ?? paperA.doi);
@@ -189,10 +181,14 @@ export const scanForDuplicates = async (): Promise<PaperDuplicate[]> => {
       }
 
       const existingRow = existingIgnoreOrderMap.get(ignoreOrderKey);
+      const id =
+        existingRow && existingRow.paperIdA === paperIdA && existingRow.paperIdB === paperIdB
+          ? existingRow.id
+          : crypto.randomUUID();
       candidates.push({
-        id: existingRow?.id ?? crypto.randomUUID(),
-        paperIdA: older.id,
-        paperIdB: newer.id,
+        id,
+        paperIdA,
+        paperIdB,
         reason,
         score,
         level,
@@ -228,7 +224,7 @@ export const scanForDuplicates = async (): Promise<PaperDuplicate[]> => {
   }
 
   const staleIds = existing
-    .filter((row) => !desiredOrderedKeys.has(keyOrdered(row.paperIdA, row.paperIdB)))
+    .filter((row) => !desiredOrderedKeys.has(canonicalKey(row.paperIdA, row.paperIdB)))
     .map((row) => row.id);
 
   if (staleIds.length > 0) {
