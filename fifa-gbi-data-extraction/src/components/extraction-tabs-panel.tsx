@@ -405,18 +405,22 @@ useEffect(() => {
 
         if (!response.ok) {
           const payload = await response.json().catch(() => ({}));
-          throw new Error(payload.error ?? 'Extraction failed');
+          throw new Error(
+            typeof payload.error === 'string'
+              ? payload.error
+              : 'AI extraction failed. Please try again.',
+          );
         }
 
         setFeedback({ message: 'Extraction complete.', tone: 'success', tab });
         // AI extraction saves directly to DB, no need to mark as changed
         router.refresh();
       } catch (error) {
-        setFeedback({
-          message: `Extraction failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
-          tone: 'error',
-          tab,
-        });
+        const message =
+          error instanceof Error && error.message
+            ? error.message
+            : 'AI extraction failed. Please try again.';
+        setFeedback({ message, tone: 'error', tab });
       }
     });
   };
@@ -504,15 +508,24 @@ useEffect(() => {
           ? 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3'
           : 'grid gap-4 md:grid-cols-2';
 
+    const isLiteModel =
+      item.extractionModel && item.extractionModel.toLowerCase().includes('flash-lite');
+
     return (
       <div className="space-y-4">
         {showTitle ? (
           <div className="space-y-1">
             <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
-            <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+            <p className="text-xs text-slate-500">
+              {extractionTabMeta[item.tab].description}
+              {isLiteModel ? ' (using Lite backup)' : null}
+            </p>
           </div>
         ) : (
-          <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+          <p className="text-xs text-slate-500">
+            {extractionTabMeta[item.tab].description}
+            {isLiteModel ? ' (using Lite backup)' : null}
+          </p>
         )}
         <div className="flex flex-wrap items-center gap-2">
           <button

@@ -1,25 +1,27 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const MODEL_NAME = 'gemini-2.5-flash';
+const PRIMARY_MODEL_NAME = 'gemini-2.5-flash';
+const FALLBACK_MODEL_NAME = 'gemini-2.5-flash-lite';
 
 type ModelCacheKey = string;
 
 const modelCache = new Map<ModelCacheKey, ReturnType<GoogleGenerativeAI['getGenerativeModel']>>();
 
-export function createGeminiModel(apiKey: string) {
+export function createGeminiModel(apiKey: string, modelName: string = PRIMARY_MODEL_NAME) {
   const trimmed = apiKey.trim();
   if (!trimmed) {
     throw new Error('Gemini API key is required');
   }
 
-  const cached = modelCache.get(trimmed);
+  const cacheKey: ModelCacheKey = `${trimmed}:${modelName}`;
+  const cached = modelCache.get(cacheKey);
   if (cached) {
     return cached;
   }
 
   const client = new GoogleGenerativeAI(trimmed);
   const model = client.getGenerativeModel({
-    model: MODEL_NAME,
+    model: modelName,
     generationConfig: {
       temperature: 0.2,
       topP: 0.9,
@@ -28,10 +30,14 @@ export function createGeminiModel(apiKey: string) {
     },
   });
 
-  modelCache.set(trimmed, model);
+  modelCache.set(cacheKey, model);
   return model;
 }
 
 export function getModelName() {
-  return MODEL_NAME;
+  return PRIMARY_MODEL_NAME;
+}
+
+export function getFallbackModelName() {
+  return FALLBACK_MODEL_NAME;
 }

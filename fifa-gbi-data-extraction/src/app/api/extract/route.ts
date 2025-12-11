@@ -90,7 +90,10 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     await mockDb.updatePaper(paper.id, { status: previousStatus });
-    const message = error instanceof Error ? error.message : 'Extraction failed';
+    const message =
+      error instanceof Error && error.message
+        ? error.message
+        : 'AI extraction failed. Please try again.';
     console.error('[extract] Extraction error:', message);
     return NextResponse.json({ error: message }, { status: 500 });
   }

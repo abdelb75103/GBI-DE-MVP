@@ -5,7 +5,7 @@ import type { Part } from '@google/generative-ai';
 
 import { buildExtractionPrompt } from '@/lib/extraction/prompt';
 import { extractionFieldDefinitions, ExtractionFieldDefinition } from '@/lib/extraction/schema';
-import { createGeminiModel, getModelName } from '@/lib/extraction/gemini-client';
+import { createGeminiModel, getFallbackModelName, getModelName } from '@/lib/extraction/gemini-client';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
 
 export type TabExtractionResponse = {
@@ -47,17 +47,22 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
     doi: options.doi,
   });
 
-  const model = createGeminiModel(options.apiKey);
-  let generation;
-  try {
-    const parts: Part[] = [];
-    if (options.pdfBase64) {
-      parts.push({
-        inlineData: { mimeType: 'application/pdf', data: options.pdfBase64 },
-      } as Part);
-    }
-    parts.push({ text: prompt } as Part);
+  const primaryModelName = getModelName();
+  const fallbackModelName = getFallbackModelName();
 
+  let generation;
+  let usedModelName = primaryModelName;
+
+  const parts: Part[] = [];
+  if (options.pdfBase64) {
+    parts.push({
+      inlineData: { mimeType: 'application/pdf', data: options.pdfBase64 },
+    } as Part);
+  }
+  parts.push({ text: prompt } as Part);
+
+  try {
+    const model = createGeminiModel(options.apiKey, primaryModelName);
     generation = await model.generateContent({
       contents: [
         {
@@ -67,7 +72,32 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
       ],
     });
   } catch (error) {
-    throw new Error(`Gemini request failed for tab ${options.tab}: ${(error as Error).message}`);
+    const message = (error as Error).message ?? '';
+    const lower = message.toLowerCase();
+    const isLimitError =
+      lower.includes('rate') ||
+      lower.includes('quota') ||
+      lower.includes('limit') ||
+      lower.includes('exceeded');
+
+    if (!isLimitError) {
+      throw new Error('AI extraction failed. Please try again.');
+    }
+
+    try {
+      const fallbackModel = createGeminiModel(options.apiKey, fallbackModelName);
+      generation = await fallbackModel.generateContent({
+        contents: [
+          {
+            role: 'user',
+            parts,
+          },
+        ],
+      });
+      usedModelName = fallbackModelName;
+    } catch (fallbackError) {
+      throw new Error('AI extraction hit usage limits. Please wait a few minutes and try again.');
+    }
   }
 
   const candidate = generation.response?.candidates?.[0];
@@ -132,7 +162,7 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
       tab: options.tab,
       fields,
       raw: validItems,
-      model: getModelName(),
+      model: usedModelName,
     };
   }
   
@@ -142,7 +172,7 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
     tab: options.tab,
     fields,
     raw: validationResult.data,
-    model: getModelName(),
+    model: usedModelName,
   };
 }
 
