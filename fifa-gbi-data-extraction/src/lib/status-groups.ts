@@ -10,9 +10,13 @@ export const TAGGED_AUTO_COMPLETE_STATUSES: PaperStatus[] = [
 
 export const ACTIVE_STATUSES: PaperStatus[] = ['uploaded', 'processing', 'flagged', 'qa_review'];
 
-export const COMPLETED_STATUSES: PaperStatus[] = ['extracted', 'archived'];
+export const COMPLETED_STATUSES: PaperStatus[] = ['extracted'];
 
-const PROGRESS_COMPLETE_STATUSES: PaperStatus[] = [...COMPLETED_STATUSES, ...TAGGED_AUTO_COMPLETE_STATUSES];
+const PROGRESS_COMPLETE_STATUSES: PaperStatus[] = [
+  ...COMPLETED_STATUSES,
+  ...TAGGED_AUTO_COMPLETE_STATUSES,
+  'flagged',
+];
 
 export const isActiveStatus = (status: PaperStatus) => ACTIVE_STATUSES.includes(status);
 export const isCompletedStatus = (status: PaperStatus) => COMPLETED_STATUSES.includes(status);

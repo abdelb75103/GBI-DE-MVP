@@ -75,7 +75,8 @@ export default async function DashboardPage() {
   const userInProgressPercentage = userActiveShare;
   
   const userCompletedCount = completedPapers.filter((paper) => paper.assignedTo === userId).length;
-  const userCompletedPercentage = completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
+  const userCompletedPercentage =
+    completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
   
   const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
   
@@ -190,8 +191,8 @@ export default async function DashboardPage() {
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/20 via-teal-400/10 to-green-400/20 opacity-80" aria-hidden />
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Completed</p>
               <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-emerald-700">{completedCount}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
+                <p className="text-xl font-semibold text-emerald-700">{userCompletedCount}</p>
+                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Yours</span>
               </div>
               <p className="mt-1 text-[10px] text-slate-600">
                 You completed {userCompletedCount} ({userCompletedPercentage}% of team output)
@@ -199,7 +200,12 @@ export default async function DashboardPage() {
               <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
                 <div
                   className="h-full bg-gradient-to-r from-emerald-500/20 via-teal-400/10 to-green-400/20 opacity-90"
-                  style={{ width: `${Math.min(100, completedCount === 0 ? 4 : Math.round((completedCount / Math.max(1, totalPapers)) * 100))}%` }}
+                  style={{
+                    width: `${Math.min(
+                      100,
+                      completedCount === 0 ? 0 : Math.round((userCompletedCount / Math.max(1, completedCount)) * 100),
+                    )}%`,
+                  }}
                 />
               </div>
             </div>
@@ -256,6 +262,7 @@ export default async function DashboardPage() {
             totalPapers={totalPapers}
             completedPapers={progressCompletedCount}
             taggedCompletedPapers={taggedCompletedCount}
+            flaggedPapers={flaggedCount}
             userCompletedPapers={userCompletedCount}
           />
         </section>
