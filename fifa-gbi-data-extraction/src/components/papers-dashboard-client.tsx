@@ -53,8 +53,8 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
       result = result.filter((paper) => paper.status === statusFilter);
     }
 
-    // User filter (admin only)
-    if (isAdmin && userFilter !== 'all') {
+    // User filter
+    if (userFilter !== 'all') {
       result = result.filter((paper) => paper.assignedTo === userFilter);
     }
 
@@ -163,26 +163,24 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         </select>
       </div>
 
-      {isAdmin && (
-        <div>
-          <label htmlFor="user-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
-            Assigned User
-          </label>
-          <select
-            id="user-filter"
-            value={userFilter}
-            onChange={(e) => setUserFilter(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-          >
-            <option value="all">All Users</option>
-            {uniqueAssignees.map(({ id, name }) => (
-              <option key={id} value={id}>
-                {name}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+      <div>
+        <label htmlFor="user-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
+          Assigned User
+        </label>
+        <select
+          id="user-filter"
+          value={userFilter}
+          onChange={(e) => setUserFilter(e.target.value)}
+          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        >
+          <option value="all">All Users</option>
+          {uniqueAssignees.map(({ id, name }) => (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div>
         <label htmlFor="flagged-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
@@ -258,7 +256,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition ${
               assignmentFilter === option.value
                 ? 'bg-indigo-600 text-white border-2 border-indigo-500'
-                : 'bg-slate-700/50 text-slate-300 border-2 border-transparent hover:bg-slate-600/50 hover:text-slate-200'
+                : 'bg-slate-100 text-slate-700 border-2 border-slate-200 hover:bg-slate-200 hover:text-slate-800'
             }`}
           >
             {option.label}
@@ -266,7 +264,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
               className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 text-[10px] font-bold ${
                 assignmentFilter === option.value
                   ? 'bg-indigo-500 text-white'
-                  : 'bg-slate-600/50 text-slate-300'
+                  : 'bg-slate-200 text-slate-700'
               }`}
             >
               {option.count}

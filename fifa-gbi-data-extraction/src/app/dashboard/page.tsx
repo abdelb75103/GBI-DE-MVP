@@ -79,6 +79,7 @@ export default async function DashboardPage() {
     completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
   
   const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
+  const showTeamProgress = false;
   
   // Calculate contributor statistics
   type ContributorMap = Record<string, { name: string; completedCount: number }>;
@@ -252,9 +253,13 @@ export default async function DashboardPage() {
       </section>
 
       {/* Progress Visual and Contributors Grid */}
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className={`grid gap-6 ${showTeamProgress ? 'lg:grid-cols-2' : ''}`}>
         {/* Circular Progress Visualization */}
-        <section className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <section
+          className={`rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur ${
+            showTeamProgress ? '' : 'lg:col-span-2'
+          }`}
+        >
           <div className="mb-4">
             <h2 className="text-lg font-semibold text-slate-900">Overall Progress</h2>
           </div>
@@ -268,7 +273,12 @@ export default async function DashboardPage() {
         </section>
 
         {/* Top Contributors */}
-        <section className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <section
+          className={`rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur ${
+            showTeamProgress ? '' : 'hidden'
+          }`}
+          aria-hidden={!showTeamProgress}
+        >
           <div className="mb-4">
             <h2 className="text-lg font-semibold text-slate-900">Team Progress</h2>
           </div>

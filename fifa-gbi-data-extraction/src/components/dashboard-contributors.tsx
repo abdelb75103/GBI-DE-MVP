@@ -17,6 +17,7 @@ export function DashboardContributors({
   currentUserId,
   totalCompleted,
 }: DashboardContributorsProps) {
+  const hideContributorNames = true;
   // Sort by completed count and take top 8
   const topContributors = [...contributors]
     .sort((a, b) => b.completedCount - a.completedCount)
@@ -87,6 +88,9 @@ export function DashboardContributors({
         const percentage = totalCompleted > 0 ? Math.round((contributor.completedCount / totalCompleted) * 100) : 0;
         const barWidth = maxCount > 0 ? Math.round((contributor.completedCount / maxCount) * 100) : 0;
         const colors = getAccentColor(index, isCurrentUser);
+        const nameClasses = `text-sm font-semibold truncate ${
+          isCurrentUser ? 'text-purple-900' : 'text-slate-900'
+        }${hideContributorNames ? ' text-transparent select-none' : ''}`;
         
         return (
           <div
@@ -108,11 +112,11 @@ export function DashboardContributors({
                     ★
                   </div>
                 )}
-                <span className={`text-sm font-semibold truncate ${isCurrentUser ? 'text-purple-900' : 'text-slate-900'}`}>
+                <span className={nameClasses} aria-hidden={hideContributorNames || undefined}>
                   {contributor.name}
-                  {isCurrentUser && (
+                  {isCurrentUser && !hideContributorNames ? (
                     <span className="ml-1.5 text-xs font-normal text-purple-600">(You)</span>
-                  )}
+                  ) : null}
                 </span>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
@@ -138,4 +142,3 @@ export function DashboardContributors({
     </div>
   );
 }
-
