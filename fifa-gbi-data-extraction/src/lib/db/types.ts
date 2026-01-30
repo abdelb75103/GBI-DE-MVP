@@ -1,5 +1,8 @@
 import type { Database } from '@/lib/supabase/types';
 
+export type AiReviewDecisionRow = Database['public']['Tables']['ai_review_decisions']['Row'];
+export type AiReviewDecisionInsert = Database['public']['Tables']['ai_review_decisions']['Insert'];
+
 export type PaperRow = Database['public']['Tables']['papers']['Row'];
 export type PaperInsert = Database['public']['Tables']['papers']['Insert'];
 export type PaperUpdate = Database['public']['Tables']['papers']['Update'];

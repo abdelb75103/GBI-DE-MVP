@@ -43,6 +43,45 @@ export type ExtractionUpdatedBy = string | null;
 export interface Database {
   public: {
     Tables: {
+      ai_review_decisions: {
+        Row: {
+          paper_id: string;
+          tab: ExtractionTab;
+          field_id: string;
+          decision: 'approved' | 'declined';
+          reviewer_profile_id: string;
+        };
+        Insert: {
+          paper_id: string;
+          tab: ExtractionTab;
+          field_id: string;
+          decision: 'approved' | 'declined';
+          reviewer_profile_id: string;
+        };
+        Update: {
+          paper_id?: string;
+          tab?: ExtractionTab;
+          field_id?: string;
+          decision?: 'approved' | 'declined';
+          reviewer_profile_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'ai_review_decisions_paper_id_fkey';
+            columns: ['paper_id'];
+            isOneToOne: false;
+            referencedRelation: 'papers';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'ai_review_decisions_reviewer_profile_id_fkey';
+            columns: ['reviewer_profile_id'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       export_jobs: {
         Row: {
           id: string;

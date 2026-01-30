@@ -437,16 +437,25 @@ useEffect(() => {
     (tab: ExtractionTab, fieldId: string, action: 'approve' | 'decline') => {
       const key = buildReviewKey(tab, fieldId);
       const valueHash = getFieldValueHash(tab, fieldId);
+      const decision = action === 'approve' ? 'approved' : 'declined';
       setReviewStates((prev) => {
         const next = new Map(prev);
         next.set(key, {
-          decision: action === 'approve' ? 'approved' : 'declined',
+          decision,
           valueHash,
         });
         return next;
       });
+
+      void fetch('/api/ai-review-decision', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paperId, tab, fieldId, decision }),
+      }).catch(() => {
+        // Best-effort logging only; never block review workflow.
+      });
     },
-    [getFieldValueHash],
+    [getFieldValueHash, paperId],
   );
 
   const renderFeedbackToast = () => {

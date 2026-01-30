@@ -79,6 +79,15 @@ export async function POST(request: Request) {
       });
     }
 
+    // Any re-extraction invalidates prior review decisions for the affected fields.
+    try {
+      const fieldIds = fields.filter((fieldId) => fieldId !== 'studyId');
+      await mockDb.clearAiReviewDecisionsForFields({ paperId: paper.id, tab, fieldIds });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn('[extract] Failed to clear AI review decisions:', message);
+    }
+
     // Restore previous status - don't auto-set to 'extracted'
     await mockDb.updatePaper(paper.id, { status: previousStatus });
 

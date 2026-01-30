@@ -20,6 +20,12 @@ import {
   saveExtractionFields,
   updateExtractionField,
 } from '@/lib/db/extractions';
+import {
+  clearAiReviewDecisionsForFields,
+  listAiReviewDecisions,
+  listProfileNamesById,
+  upsertAiReviewDecision,
+} from '@/lib/db/ai-review-decisions';
 import { clearProfileGeminiKey, getProfileGeminiKey, hasProfileGeminiKey, setProfileGeminiKey } from '@/lib/db/profiles';
 import { PaperSessionConflictError } from '@/lib/db/shared';
 import { listPaperDuplicates, resolvePaperDuplicate, scanForDuplicates } from '@/lib/db/duplicates';
@@ -64,6 +70,11 @@ export const mockDb = {
   saveExtractionFields,
   listPopulationGroups,
   listPopulationValues,
+
+  upsertAiReviewDecision,
+  clearAiReviewDecisionsForFields,
+  listAiReviewDecisions,
+  listProfileNamesById,
 
   getProfileGeminiKey,
   setProfileGeminiKey,
