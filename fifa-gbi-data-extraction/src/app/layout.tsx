@@ -108,7 +108,7 @@ export default function RootLayout({
                 <div className="space-y-2">
                   <h2 className="text-base font-semibold text-slate-800">Disclaimer</h2>
                   <p>
-                    This is an internal research tool developed by Abdelrahman Bakier, PhD student, for academic,
+                    This is an internal research tool developed by AbdelRahman Babiker, PhD student, for academic,
                     non-commercial use only. Its purpose is to aid in the FIFA GBI project. This tool is not for
                     public distribution or commercial use.
                   </p>
