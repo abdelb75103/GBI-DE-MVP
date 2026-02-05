@@ -88,9 +88,10 @@ export function DashboardContributors({
         const percentage = totalCompleted > 0 ? Math.round((contributor.completedCount / totalCompleted) * 100) : 0;
         const barWidth = maxCount > 0 ? Math.round((contributor.completedCount / maxCount) * 100) : 0;
         const colors = getAccentColor(index, isCurrentUser);
+        const shouldHideName = hideContributorNames && !isCurrentUser;
         const nameClasses = `text-sm font-semibold truncate ${
           isCurrentUser ? 'text-purple-900' : 'text-slate-900'
-        }${hideContributorNames ? ' text-transparent select-none' : ''}`;
+        }${shouldHideName ? ' text-transparent select-none' : ''}`;
         
         return (
           <div
@@ -112,9 +113,9 @@ export function DashboardContributors({
                     ★
                   </div>
                 )}
-                <span className={nameClasses} aria-hidden={hideContributorNames || undefined}>
+                <span className={nameClasses} aria-hidden={shouldHideName || undefined}>
                   {contributor.name}
-                  {isCurrentUser && !hideContributorNames ? (
+                  {isCurrentUser ? (
                     <span className="ml-1.5 text-xs font-normal text-purple-600">(You)</span>
                   ) : null}
                 </span>

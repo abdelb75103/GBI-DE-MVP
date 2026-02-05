@@ -79,7 +79,7 @@ export default async function DashboardPage() {
     completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
   
   const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
-  const showTeamProgress = false;
+  const showTeamProgress = true;
   
   // Calculate contributor statistics
   type ContributorMap = Record<string, { name: string; completedCount: number }>;

@@ -133,11 +133,11 @@ export function ExtractionFieldEditor({
       }`}
     >
       <div
-        className={`flex items-center justify-between gap-2 text-sm font-semibold ${
+        className={`flex flex-wrap items-center justify-between gap-2 text-sm font-semibold ${
           supportsAi ? 'text-indigo-900' : 'text-emerald-900'
         }`}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 flex-1 items-center gap-2">
           {supportsAi && onSelectedChange ? (
             <input
               type="checkbox"
@@ -147,16 +147,16 @@ export function ExtractionFieldEditor({
               disabled={readOnly}
             />
           ) : null}
-          <span>{definition.label}</span>
+          <span className="min-w-0 break-words">{definition.label}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-shrink-0 items-center gap-2">
           {showReviewBadge ? (
             <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${reviewBadgeConfig.className}`}>
               {reviewBadgeConfig.label}
             </span>
           ) : null}
           {showReviewControls ? (
-            <div className="flex items-center gap-1">
+            <div className="flex flex-shrink-0 items-center gap-1">
               <button
                 type="button"
                 onClick={handleApprove}
@@ -185,7 +185,7 @@ export function ExtractionFieldEditor({
           ) : null}
         </div>
         {placeholder && (
-          <span className="text-[10px] font-normal text-slate-500" title={placeholder}>
+          <span className="flex flex-shrink-0 text-[10px] font-normal text-slate-500" title={placeholder}>
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
