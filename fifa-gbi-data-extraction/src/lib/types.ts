@@ -9,6 +9,7 @@ export type PaperStatus =
   | 'archived'
   | 'mental_health'
   | 'uefa'
+  | 'aspetar_asprev'
   | 'american_data'
   | 'systematic_review'
   | 'referee';

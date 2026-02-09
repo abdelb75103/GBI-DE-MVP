@@ -12,6 +12,7 @@ const options: { value: PaperStatus; label: string }[] = [
   { value: 'flagged', label: 'Flagged' },
   { value: 'mental_health', label: 'Mental Health' },
   { value: 'uefa', label: 'UEFA' },
+  { value: 'aspetar_asprev', label: 'Aspetar ASPREV' },
   { value: 'american_data', label: 'American Data' },
   { value: 'systematic_review', label: 'Systematic Review' },
   { value: 'referee', label: 'Referee' },

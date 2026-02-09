@@ -44,7 +44,7 @@
 - Notes: Use for context, uncertainties, or explanations of decisions.
 - Flag: Use when you do not know how to proceed with a paper or it needs help/triage. Add a brief note explaining the issue.
 - Status: If a paper should not be extracted, change its status instead of extracting. Save afterward.
-  - Do not extract: UEFA ECIS papers, NCAA papers, RIO papers, and Mental Health papers. Assign the appropriate status label and save.
+  - Do not extract: UEFA ECIS papers, Aspetar ASPREV papers, NCAA papers, RIO papers, and Mental Health papers. Assign the appropriate status label and save.
   - You may leave Notes without Flagging if you attempted extraction but remain unsure about specific items.
 
 7) Save Changes
@@ -60,7 +60,7 @@
 - Do verify every AI‑suggested value before saving.
 - Do enter one value per line when multiple groups exist; keep line positions aligned across related fields.
 - Do leave fields blank if the paper doesn’t report a value.
-- Don’t extract for excluded categories (UEFA ECIS, NCAA, RIO, Mental Health); set status instead and save.
+- Don’t extract for excluded categories (UEFA ECIS, Aspetar ASPREV, NCAA, RIO, Mental Health); set status instead and save.
 - Don’t rely on AI to make final decisions.
 
 ## Common Scenarios

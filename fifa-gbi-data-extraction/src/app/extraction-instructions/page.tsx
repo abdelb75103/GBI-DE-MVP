@@ -42,7 +42,7 @@ const processSteps = [
     details: [
       'Add Notes for context, uncertainties, or decisions you want reviewers to see.',
       'Use Flag when you cannot proceed and need help; include a short explanation.',
-      'Set Status instead of extracting for excluded papers (UEFA ECIS, NCAA, RIO, Mental Health) and save.',
+      'Set Status instead of extracting for excluded papers (UEFA ECIS, Aspetar ASPREV, NCAA, RIO, Mental Health) and save.',
     ],
   },
   {
@@ -67,7 +67,7 @@ const dos = [
 ];
 
 const donts = [
-  'Do not extract excluded categories (UEFA ECIS, NCAA, RIO, Mental Health); set the status instead.',
+  'Do not extract excluded categories (UEFA ECIS, Aspetar ASPREV, NCAA, RIO, Mental Health); set the status instead.',
   'Do not rely on AI to make final decisions without human review.',
 ];
 
