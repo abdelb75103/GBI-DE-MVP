@@ -53,14 +53,35 @@ export async function clearAiReviewDecisionsForFields(input: {
 
 export async function listAiReviewDecisions(): Promise<AiReviewDecision[]> {
   const supabase = supabaseClient();
-  const { data, error } = await supabase.from('ai_review_decisions').select('*');
+  const pageSize = 1000;
+  const rows: AiReviewDecisionRow[] = [];
+  let from = 0;
 
-  if (error) {
-    throw new Error(`Failed to list AI review decisions: ${error.message}`);
+  while (true) {
+    const to = from + pageSize - 1;
+    const { data, error } = await supabase
+      .from('ai_review_decisions')
+      .select('*')
+      .order('paper_id', { ascending: true })
+      .order('tab', { ascending: true })
+      .order('field_id', { ascending: true })
+      .range(from, to);
+
+    if (error) {
+      throw new Error(`Failed to list AI review decisions: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as AiReviewDecisionRow[];
+    rows.push(...batch);
+
+    if (batch.length < pageSize) {
+      break;
+    }
+
+    from += pageSize;
   }
 
-  return (data ?? []).map((row) => {
-    const typed = row as AiReviewDecisionRow;
+  return rows.map((typed) => {
     return {
       paperId: typed.paper_id,
       tab: typed.tab,
@@ -96,4 +117,3 @@ export async function listProfileNamesById(profileIds: string[]): Promise<Map<st
 
   return map;
 }
-
