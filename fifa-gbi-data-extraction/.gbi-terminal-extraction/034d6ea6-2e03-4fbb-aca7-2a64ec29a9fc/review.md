@@ -1,0 +1,742 @@
+# S266 terminal extraction review
+
+- Paper: Saudi Professional League: A Prospective Study of the Injuries and Illnesses Sustained by Professional Soccer Players During the 2015 - 2016 Season
+- Paper ID: 034d6ea6-2e03-4fbb-aca7-2a64ec29a9fc
+- Status: extracted
+- Guidance: None recorded yet
+- Updated: 2026-03-09T18:29:39.912Z
+
+## AI context from tabs 1-4
+- Injury Definition: medical attention regardless of the consequences with respect to absences from competition or training
+- Illness Definition: medical attention regardless of the consequences with respect to absences from competition or training
+- Severity Definition: number of days lost by the player between the day of the injury and their next day of participation in training or co...
+- Who reported the data: Medical Staff
+- Number of seasons: 1
+- FIFA Discipline: Association football (11-a-side)
+- Country: Saudi Arabia
+- Level of Play: professional
+- Sample Size (players): 300
+- Number of teams/clubs: 10
+- Observation duration: 1 season
+- Lead Author: Muaidi QI
+- Title: Saudi Professional League: A Prospective Study of the Injuries and Illnesses Sustained by Professional Soccer Players...
+- Year of Publication: 2019
+- Journal: Asian J Sports Med.
+- DOI: 10.5812/asjsm.79930
+- Study Design: prospective cohort
+
+## Chunks
+
+### Injury outcome
+- Chunk ID: injuryOutcome:full
+- Status: applied
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:26:02.101Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Total number of injuries: [blank] -> 386 | source: Among these soccer players, we recorded a total of 386 injuries.
+- Number of players that completed the study: [blank] -> 300 | source: ten clubs (each consisting of 30 soccer players) returned the medical report forms.
+- Number of teams that completed the study: [blank] -> 10 | source: Out of the 14 soccer clubs that participated in train- ing and competition in the 2015 - 2016 Saudi Professional Leag...
+- Total medical attention injuries: [blank] -> 386 | source: Following the F-MARC and IOC approaches, all of the injuries and illnesses (both new and recurring) incurred during c...
+- Total time-loss injuries: [blank] -> 334 | source: It was estimated that 86% of the injuries (n = 334) re- sulted in some loss of participation; however, 52 injuries di...
+- Total match injuries: [blank] -> 142 | source: Moreover, 64% of the in- juries (n = 244) occurred during training, and 142 of the injuries occurred during competition.
+- Medical attention match injuries: [blank] -> [blank]
+- Time-loss match injuries: [blank] -> [blank]
+- Total training injuries: [blank] -> 244 | source: Moreover, 64% of the in- juries (n = 244) occurred during training, and 142 of the injuries occurred during competition.
+- Medical attention training injuries: [blank] -> [blank]
+- Time-loss training injuries: [blank] -> [blank]
+- Injury incidence (overall): [blank] -> [blank]
+- Match injury incidence: [blank] -> [blank]
+- Training injury incidence: [blank] -> [blank]
+- Injury incidence (time-loss only, overall): [blank] -> [blank]
+- Match injury incidence (time-loss only): [blank] -> [blank]
+- Training injury incidence (time-loss only): [blank] -> [blank]
+- Injury incidence 95% CI: [blank] -> [blank]
+- Total time-loss due to injury: [blank] -> [blank]
+- Median time-loss: [blank] -> [blank]
+- Mean time-loss: [blank] -> [blank]
+- Injury burden: [blank] -> [blank]
+- Injury burden 95% CI: [blank] -> [blank]
+- Most common injury diagnosis: [blank] -> Contusions, hematomas, and bruises | source: Contusions, hematomas, and bruises (n = 138, 35%) were the injuries most commonly reported, followed by strains, musc...
+- Most common injury type: [blank] -> Contusions, hematomas, and bruises | source: Contusions, hematomas, and bruises (n = 138, 35%) were the injuries most commonly reported, followed by strains, musc...
+- Most common injury location: [blank] -> lower limb injuries | source: Most of the injuries reported were lower limb injuries (n = 306, 79%), with just 28 upper limb injuries (7%) reported.
+- Most common injury severity class: [blank] -> 4-7 days | source: Approximately one third of the injuries (n = 117, 30.3%) re- sulted time losses of 1 - 3 days, and 134 (36%) injuries...
+- Mode of onset – Repetitive gradual: [blank] -> 115 | source: The three most common injury causes were contact with other players (n = 150, 39.3%), overuse (n = 115, 29.7%), and n...
+- Mode of onset – Repetitive sudden: [blank] -> [blank]
+- Mode of onset – Acute sudden: [blank] -> 27 | source: The three most common injury causes were contact with other players (n = 150, 39.3%), overuse (n = 115, 29.7%), and n...
+- Contact: [blank] -> 150 | source: The three most common injury causes were contact with other players (n = 150, 39.3%), overuse (n = 115, 29.7%), and n...
+- Non-contact: [blank] -> 27 | source: The three most common injury causes were contact with other players (n = 150, 39.3%), overuse (n = 115, 29.7%), and n...
+- Cumulative (repetitive): [blank] -> 115 | source: The three most common injury causes were contact with other players (n = 150, 39.3%), overuse (n = 115, 29.7%), and n...
+- Median injury duration: [blank] -> [blank]
+- Mean injury duration (±SD): [blank] -> [blank]
+- Total recurrent injuries: [blank] -> 20 | source: Recurrence of previous injury (Training: 1+3+4+1=9, Competition: 0+2+5+4=11, Total: 20) - Table 2.
+- Recurrence rate (%): [blank] -> [blank]
+
+### Illness outcome
+- Chunk ID: illnessOutcome:full
+- Status: applied
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:26:16.721Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Total number of illnesses: [blank] -> 75 | source: In total, 75 illnesses were reported in 63 players, which was equivalent to 210 incidents per one thousand players.
+- Number of players that completed the study: [blank] -> 300 | source: Ten professional soccer clubs (300 total players) who participated in the Saudi Professional League were followed pro...
+- Number of teams that completed the study: [blank] -> 10 | source: Out of the 14 soccer clubs that participated in train- ing and competition in the 2015 - 2016 Saudi Professional Leag...
+- Number of match illnesses: [blank] -> [blank]
+- Number of training illnesses: [blank] -> [blank]
+- Illness incidence (overall): [blank] -> 210 | source: In total, 75 illnesses were reported in 63 players, which was equivalent to 210 incidents per one thousand players.
+- Match illnesses incidence: [blank] -> [blank]
+- Training illnesses incidence: [blank] -> [blank]
+- Illness incidence 95% CI: [blank] -> [blank]
+- Total time-loss due to illnesses: [blank] -> [blank]
+- Median time-loss: [blank] -> [blank]
+- Mean time-loss: [blank] -> [blank]
+- Illness burden: [blank] -> [blank]
+- Illness burden 95% CI: [blank] -> [blank]
+- Most common organ system/region: [blank] -> respiratory system | source: The most commonly affected systems were the respiratory system (n = 46, 61%) and the gastrointestinal system (n = 16,...
+- Most common etiology: [blank] -> infection | source: The most common cause of illness was an infection (n = 51, 68%).
+- Most common illness severity class: [blank] -> [blank]
+- Mode of onset – Gradual: [blank] -> [blank]
+- Mode of onset – Sudden: [blank] -> [blank]
+- Median illness duration: [blank] -> [blank]
+- Mean illness duration (±SD): [blank] -> [blank]
+
+### Injury tissue & type - diagnosis
+- Chunk ID: injuryTissueType:diagnosis
+- Status: applied
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:26:28.094Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Injury diagnosis: [blank] -> Knee ligament ruptures Hamstring strains Quadriceps strains Lower back pain Groin injuries | source: Out of these seven injuries, four were knee ligament ruptures. A total of 83 injuries entailed estimated absences of ...
+
+### Injury tissue & type - Count
+- Chunk ID: injuryTissueType:prevalence
+- Status: applied
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:26:50.745Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Injury diagnosis – Count: [blank] -> 386 | source: Out of the 386 injuries reported, 86% of the injuries were expected to result in playing time lost.
+- Muscle/tendon – Count: [blank] -> 68 | source: Contusions, hematomas, and bruises (n = 138, 35%) were the injuries most commonly reported, followed by strains, musc...
+- Muscle injury – Count: [blank] -> 68 | source: Contusions, hematomas, and bruises (n = 138, 35%) were the injuries most commonly reported, followed by strains, musc...
+- Muscle contusion – Count: [blank] -> 138 | source: Contusions, hematomas, and bruises (n = 138, 35%) were the injuries most commonly reported, followed by strains, musc...
+- Muscle compartment syndrome – Count: [blank] -> [blank]
+- Tendinopathy – Count: [blank] -> [blank]
+- Tendon rupture – Count: [blank] -> [blank]
+- Nervous – Count: [blank] -> [blank]
+- Brain/spinal cord injury – Count: [blank] -> [blank]
+- Concussion – Count: [blank] -> [blank] | source: None of the seven reported concussions were considered to be severe.
+- Peripheral nerve injury – Count: [blank] -> [blank]
+- Bone – Count: [blank] -> [blank]
+- Bone fracture – Count: [blank] -> 3 | source: Fractures were reported at a relatively lower rate in the current study during both competition and training, and the...
+- Bone stress injury – Count: [blank] -> [blank]
+- Bone contusion – Count: [blank] -> [blank]
+- Avascular necrosis – Count: [blank] -> [blank]
+- Physis injury – Count: [blank] -> [blank]
+- Cartilage/synovium/bursa – Count: [blank] -> [blank]
+- Cartilage injury – Count: [blank] -> [blank]
+- Arthritis – Count: [blank] -> [blank]
+- Synovitis/capsulitis – Count: [blank] -> [blank]
+- Bursitis – Count: [blank] -> [blank]
+- Ligament/joint capsule – Count: [blank] -> 4 | source: Out of these seven injuries, four were knee ligament ruptures.
+- Joint sprain – Count: [blank] -> 35 | source: Figure 1. The most common injuries during competition and training (Sprain bar shows approx 20 for Training and appro...
+- Chronic instability – Count: [blank] -> [blank]
+- Superficial tissues/skin – Count: [blank] -> [blank]
+- Contusion (superficial) – Count: [blank] -> 138 | source: Contusions, hematomas, and bruises (n = 138, 35%) were the injuries most commonly reported, followed by strains, musc...
+- Laceration – Count: [blank] -> [blank]
+- Abrasion – Count: [blank] -> [blank]
+- Vessels – Count: [blank] -> [blank]
+- Vascular trauma – Count: [blank] -> [blank]
+- Stump – Count: [blank] -> [blank]
+- Stump injury – Count: [blank] -> [blank]
+- Internal organs – Count: [blank] -> [blank]
+- Organ trauma – Count: [blank] -> [blank]
+- Non-specific tissue type – Count: [blank] -> [blank]
+
+### Injury tissue & type - Incidence
+- Chunk ID: injuryTissueType:incidence
+- Status: draft
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:26:59.134Z
+- Applied: Not applied
+- Injury diagnosis – Incidence: [blank] -> [blank]
+- Muscle/tendon – Incidence: [blank] -> [blank]
+- Muscle injury – Incidence: [blank] -> [blank]
+- Muscle contusion – Incidence: [blank] -> [blank]
+- Muscle compartment syndrome – Incidence: [blank] -> [blank]
+- Tendinopathy – Incidence: [blank] -> [blank]
+- Tendon rupture – Incidence: [blank] -> [blank]
+- Nervous – Incidence: [blank] -> [blank]
+- Brain/spinal cord injury – Incidence: [blank] -> [blank]
+- Concussion – Incidence: [blank] -> [blank] | source: None of the seven reported concussions were considered to be severe.
+- Peripheral nerve injury – Incidence: [blank] -> [blank]
+- Bone – Incidence: [blank] -> [blank]
+- Bone fracture – Incidence: [blank] -> [blank] | source: Fractures were reported at a relatively lower rate in the current study during both competition and training, and the...
+- Bone stress injury – Incidence: [blank] -> [blank]
+- Bone contusion – Incidence: [blank] -> [blank]
+- Avascular necrosis – Incidence: [blank] -> [blank]
+- Physis injury – Incidence: [blank] -> [blank]
+- Cartilage/synovium/bursa – Incidence: [blank] -> [blank]
+- Cartilage injury – Incidence: [blank] -> [blank]
+- Arthritis – Incidence: [blank] -> [blank]
+- Synovitis/capsulitis – Incidence: [blank] -> [blank]
+- Bursitis – Incidence: [blank] -> [blank]
+- Ligament/joint capsule – Incidence: [blank] -> [blank]
+- Joint sprain – Incidence: [blank] -> [blank]
+- Chronic instability – Incidence: [blank] -> [blank]
+- Superficial tissues/skin – Incidence: [blank] -> [blank]
+- Contusion (superficial) – Incidence: [blank] -> [blank]
+- Laceration – Incidence: [blank] -> [blank]
+- Abrasion – Incidence: [blank] -> [blank]
+- Vessels – Incidence: [blank] -> [blank]
+- Vascular trauma – Incidence: [blank] -> [blank]
+- Stump – Incidence: [blank] -> [blank]
+- Stump injury – Incidence: [blank] -> [blank]
+- Internal organs – Incidence: [blank] -> [blank]
+- Organ trauma – Incidence: [blank] -> [blank]
+- Non-specific tissue type – Incidence: [blank] -> [blank]
+
+### Injury tissue & type - Burden
+- Chunk ID: injuryTissueType:burden
+- Status: draft
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:27:11.712Z
+- Applied: Not applied
+- Injury diagnosis – Burden: [blank] -> [blank]
+- Muscle/tendon – Burden: [blank] -> [blank]
+- Muscle injury – Burden: [blank] -> [blank]
+- Muscle contusion – Burden: [blank] -> [blank]
+- Muscle compartment syndrome – Burden: [blank] -> [blank]
+- Tendinopathy – Burden: [blank] -> [blank]
+- Tendon rupture – Burden: [blank] -> [blank]
+- Nervous – Burden: [blank] -> [blank]
+- Brain/spinal cord injury – Burden: [blank] -> [blank]
+- Concussion – Burden: [blank] -> [blank]
+- Peripheral nerve injury – Burden: [blank] -> [blank]
+- Bone – Burden: [blank] -> [blank]
+- Bone fracture – Burden: [blank] -> [blank]
+- Bone stress injury – Burden: [blank] -> [blank]
+- Bone contusion – Burden: [blank] -> [blank]
+- Avascular necrosis – Burden: [blank] -> [blank]
+- Physis injury – Burden: [blank] -> [blank]
+- Cartilage/synovium/bursa – Burden: [blank] -> [blank]
+- Cartilage injury – Burden: [blank] -> [blank]
+- Arthritis – Burden: [blank] -> [blank]
+- Synovitis/capsulitis – Burden: [blank] -> [blank]
+- Bursitis – Burden: [blank] -> [blank]
+- Ligament/joint capsule – Burden: [blank] -> [blank]
+- Joint sprain – Burden: [blank] -> [blank]
+- Chronic instability – Burden: [blank] -> [blank]
+- Superficial tissues/skin – Burden: [blank] -> [blank]
+- Contusion (superficial) – Burden: [blank] -> [blank]
+- Laceration – Burden: [blank] -> [blank]
+- Abrasion – Burden: [blank] -> [blank]
+- Vessels – Burden: [blank] -> [blank]
+- Vascular trauma – Burden: [blank] -> [blank]
+- Stump – Burden: [blank] -> [blank]
+- Stump injury – Burden: [blank] -> [blank]
+- Internal organs – Burden: [blank] -> [blank]
+- Organ trauma – Burden: [blank] -> [blank]
+- Non-specific tissue type – Burden: [blank] -> [blank]
+
+### Injury tissue & type - Severity (mean days out)
+- Chunk ID: injuryTissueType:severityMeanDays
+- Status: draft
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:27:22.022Z
+- Applied: Not applied
+- Injury diagnosis – Severity (mean days out): [blank] -> [blank]
+- Muscle/tendon – Severity (mean days out): [blank] -> [blank]
+- Muscle injury – Severity (mean days out): [blank] -> [blank]
+- Muscle contusion – Severity (mean days out): [blank] -> [blank]
+- Muscle compartment syndrome – Severity (mean days out): [blank] -> [blank]
+- Tendinopathy – Severity (mean days out): [blank] -> [blank]
+- Tendon rupture – Severity (mean days out): [blank] -> [blank]
+- Nervous – Severity (mean days out): [blank] -> [blank]
+- Brain/spinal cord injury – Severity (mean days out): [blank] -> [blank]
+- Concussion – Severity (mean days out): [blank] -> [blank] | source: None of the seven reported concussions were considered to be severe.
+- Peripheral nerve injury – Severity (mean days out): [blank] -> [blank]
+- Bone – Severity (mean days out): [blank] -> [blank]
+- Bone fracture – Severity (mean days out): [blank] -> [blank] | source: Fractures were reported at a relatively lower rate in the current study during both competition and training, and the...
+- Bone stress injury – Severity (mean days out): [blank] -> [blank]
+- Bone contusion – Severity (mean days out): [blank] -> [blank]
+- Avascular necrosis – Severity (mean days out): [blank] -> [blank]
+- Physis injury – Severity (mean days out): [blank] -> [blank]
+- Cartilage/synovium/bursa – Severity (mean days out): [blank] -> [blank]
+- Cartilage injury – Severity (mean days out): [blank] -> [blank]
+- Arthritis – Severity (mean days out): [blank] -> [blank]
+- Synovitis/capsulitis – Severity (mean days out): [blank] -> [blank]
+- Bursitis – Severity (mean days out): [blank] -> [blank]
+- Ligament/joint capsule – Severity (mean days out): [blank] -> [blank] | source: Out of these seven injuries, four were knee ligament ruptures.
+- Joint sprain – Severity (mean days out): [blank] -> [blank]
+- Chronic instability – Severity (mean days out): [blank] -> [blank]
+- Superficial tissues/skin – Severity (mean days out): [blank] -> [blank]
+- Contusion (superficial) – Severity (mean days out): [blank] -> [blank]
+- Laceration – Severity (mean days out): [blank] -> [blank]
+- Abrasion – Severity (mean days out): [blank] -> [blank]
+- Vessels – Severity (mean days out): [blank] -> [blank]
+- Vascular trauma – Severity (mean days out): [blank] -> [blank]
+- Stump – Severity (mean days out): [blank] -> [blank]
+- Stump injury – Severity (mean days out): [blank] -> [blank]
+- Internal organs – Severity (mean days out): [blank] -> [blank]
+- Organ trauma – Severity (mean days out): [blank] -> [blank]
+- Non-specific tissue type – Severity (mean days out): [blank] -> [blank]
+
+### Injury tissue & type - Severity (total days out)
+- Chunk ID: injuryTissueType:severityTotalDays
+- Status: draft
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:27:30.853Z
+- Applied: Not applied
+- Injury diagnosis – Severity (total days out): [blank] -> [blank]
+- Muscle/tendon – Severity (total days out): [blank] -> [blank]
+- Muscle injury – Severity (total days out): [blank] -> [blank]
+- Muscle contusion – Severity (total days out): [blank] -> [blank]
+- Muscle compartment syndrome – Severity (total days out): [blank] -> [blank]
+- Tendinopathy – Severity (total days out): [blank] -> [blank]
+- Tendon rupture – Severity (total days out): [blank] -> [blank]
+- Nervous – Severity (total days out): [blank] -> [blank]
+- Brain/spinal cord injury – Severity (total days out): [blank] -> [blank]
+- Concussion – Severity (total days out): [blank] -> [blank]
+- Peripheral nerve injury – Severity (total days out): [blank] -> [blank]
+- Bone – Severity (total days out): [blank] -> [blank]
+- Bone fracture – Severity (total days out): [blank] -> [blank]
+- Bone stress injury – Severity (total days out): [blank] -> [blank]
+- Bone contusion – Severity (total days out): [blank] -> [blank]
+- Avascular necrosis – Severity (total days out): [blank] -> [blank]
+- Physis injury – Severity (total days out): [blank] -> [blank]
+- Cartilage/synovium/bursa – Severity (total days out): [blank] -> [blank]
+- Cartilage injury – Severity (total days out): [blank] -> [blank]
+- Arthritis – Severity (total days out): [blank] -> [blank]
+- Synovitis/capsulitis – Severity (total days out): [blank] -> [blank]
+- Bursitis – Severity (total days out): [blank] -> [blank]
+- Ligament/joint capsule – Severity (total days out): [blank] -> [blank]
+- Joint sprain – Severity (total days out): [blank] -> [blank]
+- Chronic instability – Severity (total days out): [blank] -> [blank]
+- Superficial tissues/skin – Severity (total days out): [blank] -> [blank]
+- Contusion (superficial) – Severity (total days out): [blank] -> [blank]
+- Laceration – Severity (total days out): [blank] -> [blank]
+- Abrasion – Severity (total days out): [blank] -> [blank]
+- Vessels – Severity (total days out): [blank] -> [blank]
+- Vascular trauma – Severity (total days out): [blank] -> [blank]
+- Stump – Severity (total days out): [blank] -> [blank]
+- Stump injury – Severity (total days out): [blank] -> [blank]
+- Internal organs – Severity (total days out): [blank] -> [blank]
+- Organ trauma – Severity (total days out): [blank] -> [blank]
+- Non-specific tissue type – Severity (total days out): [blank] -> [blank]
+
+### Injury location - Count
+- Chunk ID: injuryLocation:prevalence
+- Status: applied
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:28:00.794Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Head & neck (overall) – Count: [blank] -> 31 | source: Table 1, sum of Face (incl. eye, ear, nose), Head, and Cervical/thoracic region rows.
+- Head – Count: [blank] -> 7 | source: Table 1, Head row.
+- Neck – Count: [blank] -> 6 | source: Table 1, Cervical/thoracic region row.
+- Upper limb (overall) – Count: [blank] -> 25 | source: Table 1, Upper extremity row.
+- Shoulder – Count: [blank] -> [blank]
+- Upper arm – Count: [blank] -> [blank]
+- Elbow – Count: [blank] -> [blank]
+- Forearm – Count: [blank] -> [blank]
+- Wrist – Count: [blank] -> [blank]
+- Hand – Count: [blank] -> [blank]
+- Trunk (overall) – Count: [blank] -> 25 | source: Table 1, sum of Cervical/thoracic region, Lower back, and Abdominal region rows.
+- Chest – Count: [blank] -> [blank]
+- Thoracic spine – Count: [blank] -> [blank]
+- Lumbosacral – Count: [blank] -> 16 | source: Table 1, Lower back row.
+- Abdomen – Count: [blank] -> 3 | source: Table 1, Abdominal region row.
+- Lower limb (overall) – Count: [blank] -> 306 | source: Most of the injuries reported were lower limb injuries (n = 306, 79%)
+- Hip – Count: [blank] -> 31 | source: Table 1, Hip/groin row.
+- Groin – Count: [blank] -> 31 | source: Table 1, Hip/groin row.
+- Thigh – Count: [blank] -> 94 | source: Table 1, Thigh (ant/post) row.
+- Knee – Count: [blank] -> 67 | source: Table 1, Knee row.
+- Lower leg – Count: [blank] -> 43 | source: Table 1, Lower leg row.
+- Ankle – Count: [blank] -> 43 | source: Table 1, Ankle/achilles tendon row.
+- Foot – Count: [blank] -> 28 | source: Table 1, Foot/toe row.
+- Region unspecified – Count: [blank] -> [blank]
+- Multiple regions – Count: [blank] -> [blank]
+- Side – Left – Count: [blank] -> [blank]
+- Side – Right – Count: [blank] -> [blank]
+- Side – Centre – Count: [blank] -> [blank]
+- Side – Bilateral – Count: [blank] -> [blank]
+- Position – Goalkeeper – Count: [blank] -> 43 | source: the lowest among the goalkeepers (n = 43, 878 injuries per one thousand players).
+- Position – Defender – Count: [blank] -> [blank]
+- Position – Midfielder – Count: [blank] -> [blank]
+- Position – Attacker – Count: [blank] -> 99 | source: The injury risk was the highest among the forwards (n = 99,1,903 injuries per one thousand players)
+
+### Injury location - Incidence
+- Chunk ID: injuryLocation:incidence
+- Status: applied
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:28:11.905Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Head & neck (overall) – Incidence: [blank] -> [blank]
+- Head – Incidence: [blank] -> [blank]
+- Neck – Incidence: [blank] -> [blank]
+- Upper limb (overall) – Incidence: [blank] -> [blank]
+- Shoulder – Incidence: [blank] -> [blank]
+- Upper arm – Incidence: [blank] -> [blank]
+- Elbow – Incidence: [blank] -> [blank]
+- Forearm – Incidence: [blank] -> [blank]
+- Wrist – Incidence: [blank] -> [blank]
+- Hand – Incidence: [blank] -> [blank]
+- Trunk (overall) – Incidence: [blank] -> [blank]
+- Chest – Incidence: [blank] -> [blank]
+- Thoracic spine – Incidence: [blank] -> [blank]
+- Lumbosacral – Incidence: [blank] -> [blank]
+- Abdomen – Incidence: [blank] -> [blank]
+- Lower limb (overall) – Incidence: [blank] -> [blank]
+- Hip – Incidence: [blank] -> [blank]
+- Groin – Incidence: [blank] -> [blank]
+- Thigh – Incidence: [blank] -> [blank]
+- Knee – Incidence: [blank] -> [blank]
+- Lower leg – Incidence: [blank] -> [blank]
+- Ankle – Incidence: [blank] -> [blank]
+- Foot – Incidence: [blank] -> [blank]
+- Region unspecified – Incidence: [blank] -> [blank]
+- Multiple regions – Incidence: [blank] -> [blank]
+- Side – Left – Incidence: [blank] -> [blank]
+- Side – Right – Incidence: [blank] -> [blank]
+- Side – Centre – Incidence: [blank] -> [blank]
+- Side – Bilateral – Incidence: [blank] -> [blank]
+- Position – Goalkeeper – Incidence: [blank] -> 878 | source: The injury risk was the highest among the forwards (n = 99,1,903 injuries per one thousand players) and the lowest am...
+- Position – Defender – Incidence: [blank] -> [blank]
+- Position – Midfielder – Incidence: [blank] -> [blank]
+- Position – Attacker – Incidence: [blank] -> 1903 | source: The injury risk was the highest among the forwards (n = 99,1,903 injuries per one thousand players) and the lowest am...
+
+### Injury location - Burden
+- Chunk ID: injuryLocation:burden
+- Status: applied
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:28:25.771Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Head & neck (overall) – Burden: [blank] -> [blank]
+- Head – Burden: [blank] -> [blank]
+- Neck – Burden: [blank] -> [blank]
+- Upper limb (overall) – Burden: [blank] -> [blank]
+- Shoulder – Burden: [blank] -> [blank]
+- Upper arm – Burden: [blank] -> [blank]
+- Elbow – Burden: [blank] -> [blank]
+- Forearm – Burden: [blank] -> [blank]
+- Wrist – Burden: [blank] -> [blank]
+- Hand – Burden: [blank] -> [blank]
+- Trunk (overall) – Burden: [blank] -> [blank]
+- Chest – Burden: [blank] -> [blank]
+- Thoracic spine – Burden: [blank] -> [blank]
+- Lumbosacral – Burden: [blank] -> [blank]
+- Abdomen – Burden: [blank] -> [blank]
+- Lower limb (overall) – Burden: [blank] -> 79% | source: Results: Out of the 386 injuries reported, 86% of the injuries were expected to result in playing time lost. Contact ...
+- Hip – Burden: [blank] -> [blank]
+- Groin – Burden: [blank] -> [blank]
+- Thigh – Burden: [blank] -> 17.6% | source: Results: Out of the 386 injuries reported, 86% of the injuries were expected to result in playing time lost. Contact ...
+- Knee – Burden: [blank] -> 7.71% | source: 5.1. Injuries The results of this study showed a predominance in lower extremity injuries among the soccer players (7...
+- Lower leg – Burden: [blank] -> [blank]
+- Ankle – Burden: [blank] -> 13.1% | source: 5.1. Injuries The results of this study showed a predominance in lower extremity injuries among the soccer players (7...
+- Foot – Burden: [blank] -> [blank]
+- Region unspecified – Burden: [blank] -> [blank]
+- Multiple regions – Burden: [blank] -> [blank]
+- Side – Left – Burden: [blank] -> [blank]
+- Side – Right – Burden: [blank] -> [blank]
+- Side – Centre – Burden: [blank] -> [blank]
+- Side – Bilateral – Burden: [blank] -> [blank]
+- Position – Goalkeeper – Burden: [blank] -> 43 | source: 4.1. Incidence and Level Among these soccer players, we recorded a total of 386 injuries. The Mann-Whitney U test res...
+- Position – Defender – Burden: [blank] -> [blank]
+- Position – Midfielder – Burden: [blank] -> [blank]
+- Position – Attacker – Burden: [blank] -> 99 | source: 4.1. Incidence and Level Among these soccer players, we recorded a total of 386 injuries. The Mann-Whitney U test res...
+
+### Injury location - Severity (mean days out)
+- Chunk ID: injuryLocation:severityMeanDays
+- Status: draft
+- Model: gemini-2.5-flash
+- Extracted: 2026-03-09T18:28:33.498Z
+- Applied: Not applied
+- Head & neck (overall) – Severity (mean days out): [blank] -> [blank]
+- Head – Severity (mean days out): [blank] -> [blank]
+- Neck – Severity (mean days out): [blank] -> [blank]
+- Upper limb (overall) – Severity (mean days out): [blank] -> [blank]
+- Shoulder – Severity (mean days out): [blank] -> [blank]
+- Upper arm – Severity (mean days out): [blank] -> [blank]
+- Elbow – Severity (mean days out): [blank] -> [blank]
+- Forearm – Severity (mean days out): [blank] -> [blank]
+- Wrist – Severity (mean days out): [blank] -> [blank]
+- Hand – Severity (mean days out): [blank] -> [blank]
+- Trunk (overall) – Severity (mean days out): [blank] -> [blank]
+- Chest – Severity (mean days out): [blank] -> [blank]
+- Thoracic spine – Severity (mean days out): [blank] -> [blank]
+- Lumbosacral – Severity (mean days out): [blank] -> [blank]
+- Abdomen – Severity (mean days out): [blank] -> [blank]
+- Lower limb (overall) – Severity (mean days out): [blank] -> [blank]
+- Hip – Severity (mean days out): [blank] -> [blank]
+- Groin – Severity (mean days out): [blank] -> [blank]
+- Thigh – Severity (mean days out): [blank] -> [blank]
+- Knee – Severity (mean days out): [blank] -> [blank]
+- Lower leg – Severity (mean days out): [blank] -> [blank]
+- Ankle – Severity (mean days out): [blank] -> [blank]
+- Foot – Severity (mean days out): [blank] -> [blank]
+- Region unspecified – Severity (mean days out): [blank] -> [blank]
+- Multiple regions – Severity (mean days out): [blank] -> [blank]
+- Side – Left – Severity (mean days out): [blank] -> [blank]
+- Side – Right – Severity (mean days out): [blank] -> [blank]
+- Side – Centre – Severity (mean days out): [blank] -> [blank]
+- Side – Bilateral – Severity (mean days out): [blank] -> [blank]
+- Position – Goalkeeper – Severity (mean days out): [blank] -> [blank]
+- Position – Defender – Severity (mean days out): [blank] -> [blank]
+- Position – Midfielder – Severity (mean days out): [blank] -> [blank]
+- Position – Attacker – Severity (mean days out): [blank] -> [blank]
+
+### Injury location - Severity (total days out)
+- Chunk ID: injuryLocation:severityTotalDays
+- Status: draft
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:28:41.158Z
+- Applied: Not applied
+- Head & neck (overall) – Severity (total days out): [blank] -> [blank]
+- Head – Severity (total days out): [blank] -> [blank]
+- Neck – Severity (total days out): [blank] -> [blank]
+- Upper limb (overall) – Severity (total days out): [blank] -> [blank]
+- Shoulder – Severity (total days out): [blank] -> [blank]
+- Upper arm – Severity (total days out): [blank] -> [blank]
+- Elbow – Severity (total days out): [blank] -> [blank]
+- Forearm – Severity (total days out): [blank] -> [blank]
+- Wrist – Severity (total days out): [blank] -> [blank]
+- Hand – Severity (total days out): [blank] -> [blank]
+- Trunk (overall) – Severity (total days out): [blank] -> [blank]
+- Chest – Severity (total days out): [blank] -> [blank]
+- Thoracic spine – Severity (total days out): [blank] -> [blank]
+- Lumbosacral – Severity (total days out): [blank] -> [blank]
+- Abdomen – Severity (total days out): [blank] -> [blank]
+- Lower limb (overall) – Severity (total days out): [blank] -> [blank]
+- Hip – Severity (total days out): [blank] -> [blank]
+- Groin – Severity (total days out): [blank] -> [blank]
+- Thigh – Severity (total days out): [blank] -> [blank]
+- Knee – Severity (total days out): [blank] -> [blank]
+- Lower leg – Severity (total days out): [blank] -> [blank]
+- Ankle – Severity (total days out): [blank] -> [blank]
+- Foot – Severity (total days out): [blank] -> [blank]
+- Region unspecified – Severity (total days out): [blank] -> [blank]
+- Multiple regions – Severity (total days out): [blank] -> [blank]
+- Side – Left – Severity (total days out): [blank] -> [blank]
+- Side – Right – Severity (total days out): [blank] -> [blank]
+- Side – Centre – Severity (total days out): [blank] -> [blank]
+- Side – Bilateral – Severity (total days out): [blank] -> [blank]
+- Position – Goalkeeper – Severity (total days out): [blank] -> [blank]
+- Position – Defender – Severity (total days out): [blank] -> [blank]
+- Position – Midfielder – Severity (total days out): [blank] -> [blank]
+- Position – Attacker – Severity (total days out): [blank] -> [blank]
+
+### Illness region - Count
+- Chunk ID: illnessRegion:prevalence
+- Status: applied
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:28:47.341Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Cardiovascular – Count: [blank] -> [blank]
+- Dermatological – Count: [blank] -> [blank]
+- Dental – Count: [blank] -> [blank]
+- Endocrinological – Count: [blank] -> [blank]
+- Gastrointestinal – Count: [blank] -> 16 | source: The most commonly affected systems were the respiratory system (n = 46, 61%) and the gastrointestinal system (n = 16,...
+- Genitourinary – Count: [blank] -> [blank]
+- Hematological – Count: [blank] -> [blank]
+- Musculoskeletal – Count: [blank] -> [blank]
+- Neurological – Count: [blank] -> [blank]
+- Ophthalmological – Count: [blank] -> [blank]
+- Otological – Count: [blank] -> [blank]
+- Psychiatric/psychological – Count: [blank] -> [blank]
+- Respiratory – Count: [blank] -> 46 | source: The most commonly affected systems were the respiratory system (n = 46, 61%) and the gastrointestinal system (n = 16,...
+- Thermoregulatory – Count: [blank] -> [blank]
+- Multiple systems – Count: [blank] -> [blank]
+- Unknown or not specified – Count: [blank] -> [blank]
+
+### Illness region - Incidence
+- Chunk ID: illnessRegion:incidence
+- Status: applied
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:28:51.360Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Cardiovascular – Incidence: [blank] -> [blank]
+- Dermatological – Incidence: [blank] -> [blank]
+- Dental – Incidence: [blank] -> [blank]
+- Endocrinological – Incidence: [blank] -> [blank]
+- Gastrointestinal – Incidence: [blank] -> 21% | source: The most commonly affected systems were the respiratory system (n = 46, 61%) and the gastrointestinal system (n = 16,...
+- Genitourinary – Incidence: [blank] -> [blank]
+- Hematological – Incidence: [blank] -> [blank]
+- Musculoskeletal – Incidence: [blank] -> [blank]
+- Neurological – Incidence: [blank] -> [blank]
+- Ophthalmological – Incidence: [blank] -> [blank]
+- Otological – Incidence: [blank] -> [blank]
+- Psychiatric/psychological – Incidence: [blank] -> [blank]
+- Respiratory – Incidence: [blank] -> 61% | source: The most commonly affected systems were the respiratory system (n = 46, 61%) and the gastrointestinal system (n = 16,...
+- Thermoregulatory – Incidence: [blank] -> [blank]
+- Multiple systems – Incidence: [blank] -> [blank]
+- Unknown or not specified – Incidence: [blank] -> [blank]
+
+### Illness region - Burden
+- Chunk ID: illnessRegion:burden
+- Status: draft
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:28:55.301Z
+- Applied: Not applied
+- Cardiovascular – Burden: [blank] -> [blank]
+- Dermatological – Burden: [blank] -> [blank]
+- Dental – Burden: [blank] -> [blank]
+- Endocrinological – Burden: [blank] -> [blank]
+- Gastrointestinal – Burden: [blank] -> [blank]
+- Genitourinary – Burden: [blank] -> [blank]
+- Hematological – Burden: [blank] -> [blank]
+- Musculoskeletal – Burden: [blank] -> [blank]
+- Neurological – Burden: [blank] -> [blank]
+- Ophthalmological – Burden: [blank] -> [blank]
+- Otological – Burden: [blank] -> [blank]
+- Psychiatric/psychological – Burden: [blank] -> [blank]
+- Respiratory – Burden: [blank] -> [blank]
+- Thermoregulatory – Burden: [blank] -> [blank]
+- Multiple systems – Burden: [blank] -> [blank]
+- Unknown or not specified – Burden: [blank] -> [blank]
+
+### Illness region - Severity (mean days out)
+- Chunk ID: illnessRegion:severityMeanDays
+- Status: draft
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:28:59.189Z
+- Applied: Not applied
+- Cardiovascular – Severity (mean days out): [blank] -> [blank]
+- Dermatological – Severity (mean days out): [blank] -> [blank]
+- Dental – Severity (mean days out): [blank] -> [blank]
+- Endocrinological – Severity (mean days out): [blank] -> [blank]
+- Gastrointestinal – Severity (mean days out): [blank] -> [blank]
+- Genitourinary – Severity (mean days out): [blank] -> [blank]
+- Hematological – Severity (mean days out): [blank] -> [blank]
+- Musculoskeletal – Severity (mean days out): [blank] -> [blank]
+- Neurological – Severity (mean days out): [blank] -> [blank]
+- Ophthalmological – Severity (mean days out): [blank] -> [blank]
+- Otological – Severity (mean days out): [blank] -> [blank]
+- Psychiatric/psychological – Severity (mean days out): [blank] -> [blank]
+- Respiratory – Severity (mean days out): [blank] -> [blank]
+- Thermoregulatory – Severity (mean days out): [blank] -> [blank]
+- Multiple systems – Severity (mean days out): [blank] -> [blank]
+- Unknown or not specified – Severity (mean days out): [blank] -> [blank]
+
+### Illness region - Severity (total days out)
+- Chunk ID: illnessRegion:severityTotalDays
+- Status: draft
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:29:02.591Z
+- Applied: Not applied
+- Cardiovascular – Severity (total days out): [blank] -> [blank]
+- Dermatological – Severity (total days out): [blank] -> [blank]
+- Dental – Severity (total days out): [blank] -> [blank]
+- Endocrinological – Severity (total days out): [blank] -> [blank]
+- Gastrointestinal – Severity (total days out): [blank] -> [blank]
+- Genitourinary – Severity (total days out): [blank] -> [blank]
+- Hematological – Severity (total days out): [blank] -> [blank]
+- Musculoskeletal – Severity (total days out): [blank] -> [blank]
+- Neurological – Severity (total days out): [blank] -> [blank]
+- Ophthalmological – Severity (total days out): [blank] -> [blank]
+- Otological – Severity (total days out): [blank] -> [blank]
+- Psychiatric/psychological – Severity (total days out): [blank] -> [blank]
+- Respiratory – Severity (total days out): [blank] -> [blank]
+- Thermoregulatory – Severity (total days out): [blank] -> [blank]
+- Multiple systems – Severity (total days out): [blank] -> [blank]
+- Unknown or not specified – Severity (total days out): [blank] -> [blank]
+
+### Illness etiology - Count
+- Chunk ID: illnessEtiology:prevalence
+- Status: applied
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:29:06.623Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Allergic – Count: [blank] -> [blank]
+- Environmental (exercise related) – Count: [blank] -> [blank]
+- Environmental (nonexercise) – Count: [blank] -> [blank]
+- Immunological/inflammatory – Count: [blank] -> [blank]
+- Infection – Count: [blank] -> 51 | source: The most common cause of illness was an infection (n = 51, 68%).
+- Neoplasm – Count: [blank] -> [blank]
+- Metabolic/nutritional – Count: [blank] -> [blank]
+- Thrombotic/hemorrhagic – Count: [blank] -> [blank]
+- Degenerative or chronic condition – Count: [blank] -> [blank]
+- Developmental anomaly – Count: [blank] -> [blank]
+- Drug-related/poisoning – Count: [blank] -> [blank]
+- Multiple – Count: [blank] -> [blank]
+- Unknown or not specified – Count: [blank] -> [blank]
+
+### Illness etiology - Incidence
+- Chunk ID: illnessEtiology:incidence
+- Status: applied
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:29:12.522Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Allergic – Incidence: [blank] -> [blank]
+- Environmental (exercise related) – Incidence: [blank] -> [blank]
+- Environmental (nonexercise) – Incidence: [blank] -> [blank]
+- Immunological/inflammatory – Incidence: [blank] -> [blank]
+- Infection – Incidence: [blank] -> 61% | source: The most commonly affected systems were the respiratory system (n = 46, 61%) and the gastrointestinal system (n = 16,...
+- Neoplasm – Incidence: [blank] -> [blank]
+- Metabolic/nutritional – Incidence: [blank] -> [blank]
+- Thrombotic/hemorrhagic – Incidence: [blank] -> [blank]
+- Degenerative or chronic condition – Incidence: [blank] -> [blank]
+- Developmental anomaly – Incidence: [blank] -> [blank]
+- Drug-related/poisoning – Incidence: [blank] -> [blank]
+- Multiple – Incidence: [blank] -> [blank]
+- Unknown or not specified – Incidence: [blank] -> [blank]
+
+### Illness etiology - Burden
+- Chunk ID: illnessEtiology:burden
+- Status: applied
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:29:16.654Z
+- Applied: 2026-03-09T18:29:39.873Z
+- Allergic – Burden: [blank] -> [blank]
+- Environmental (exercise related) – Burden: [blank] -> [blank]
+- Environmental (nonexercise) – Burden: [blank] -> [blank]
+- Immunological/inflammatory – Burden: [blank] -> [blank]
+- Infection – Burden: [blank] -> 51 | source: The most common cause of illness was an infection (n = 51, 68%).
+- Neoplasm – Burden: [blank] -> [blank]
+- Metabolic/nutritional – Burden: [blank] -> [blank]
+- Thrombotic/hemorrhagic – Burden: [blank] -> [blank]
+- Degenerative or chronic condition – Burden: [blank] -> [blank]
+- Developmental anomaly – Burden: [blank] -> [blank]
+- Drug-related/poisoning – Burden: [blank] -> [blank]
+- Multiple – Burden: [blank] -> [blank]
+- Unknown or not specified – Burden: [blank] -> [blank]
+
+### Illness etiology - Severity (mean days out)
+- Chunk ID: illnessEtiology:severityMeanDays
+- Status: draft
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:29:19.896Z
+- Applied: Not applied
+- Allergic – Severity (mean days out): [blank] -> [blank]
+- Environmental (exercise related) – Severity (mean days out): [blank] -> [blank]
+- Environmental (nonexercise) – Severity (mean days out): [blank] -> [blank]
+- Immunological/inflammatory – Severity (mean days out): [blank] -> [blank]
+- Infection – Severity (mean days out): [blank] -> [blank] | source: The most common cause of illness was an infection (n = 51, 68%). Twenty-nine illnesses (39%) were associated with fev...
+- Neoplasm – Severity (mean days out): [blank] -> [blank]
+- Metabolic/nutritional – Severity (mean days out): [blank] -> [blank]
+- Thrombotic/hemorrhagic – Severity (mean days out): [blank] -> [blank]
+- Degenerative or chronic condition – Severity (mean days out): [blank] -> [blank]
+- Developmental anomaly – Severity (mean days out): [blank] -> [blank]
+- Drug-related/poisoning – Severity (mean days out): [blank] -> [blank]
+- Multiple – Severity (mean days out): [blank] -> [blank]
+- Unknown or not specified – Severity (mean days out): [blank] -> [blank]
+
+### Illness etiology - Severity (total days out)
+- Chunk ID: illnessEtiology:severityTotalDays
+- Status: draft
+- Model: gemini-2.5-flash-lite
+- Extracted: 2026-03-09T18:29:22.778Z
+- Applied: Not applied
+- Allergic – Severity (total days out): [blank] -> [blank]
+- Environmental (exercise related) – Severity (total days out): [blank] -> [blank]
+- Environmental (nonexercise) – Severity (total days out): [blank] -> [blank]
+- Immunological/inflammatory – Severity (total days out): [blank] -> [blank]
+- Infection – Severity (total days out): [blank] -> [blank] | source: The most common cause of illness was an infection (n = 51, 68%). Twenty-nine illnesses (39%) were associated with fev...
+- Neoplasm – Severity (total days out): [blank] -> [blank]
+- Metabolic/nutritional – Severity (total days out): [blank] -> [blank]
+- Thrombotic/hemorrhagic – Severity (total days out): [blank] -> [blank]
+- Degenerative or chronic condition – Severity (total days out): [blank] -> [blank]
+- Developmental anomaly – Severity (total days out): [blank] -> [blank]
+- Drug-related/poisoning – Severity (total days out): [blank] -> [blank]
+- Multiple – Severity (total days out): [blank] -> [blank]
+- Unknown or not specified – Severity (total days out): [blank] -> [blank]
+
+## Safety
+- Blank extracted values are not applied unless you run apply with --allow-empty-overwrite.
+- No live writes occur during prep, extract, or review.
