@@ -1,0 +1,7 @@
+interface:
+  display_name: "GBI Live Extraction"
+  short_description: "Terminal-first live paper extraction workflow"
+  default_prompt: "Use $gbi-live-extraction to stage, review, and apply a manual extraction update for a FIFA GBI paper."
+
+policy:
+  allow_implicit_invocation: true
