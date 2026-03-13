@@ -1,0 +1,4 @@
+interface:
+  display_name: "Covidence PDF Retrieval"
+  short_description: "Read-only Covidence PDF download workflow"
+  default_prompt: "Use $covidence-pdf-retrieval to reconcile a Covidence export, download missing PDFs from Extraction, and summarize the manifest results."

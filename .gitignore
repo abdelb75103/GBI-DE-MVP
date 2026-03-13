@@ -30,3 +30,15 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 PROFILE_PASSWORDS.md
+
+# Local paper libraries
+Full Text - Data Extraaction/**/*.pdf
+Full Text - Data Extraaction/**/*.PDF
+Full Text - Data Extraaction/**/.DS_Store
+Full Text - Data Extraaction/*.txt
+Full Text - Data Extraaction/**/*.rdf
+
+# Local Covidence exports and generated artifacts
+/review_603597_included_csv_*.csv
+/775.full.pdf
+/fifa-gbi-data-extraction/covidence-import-results.csv
