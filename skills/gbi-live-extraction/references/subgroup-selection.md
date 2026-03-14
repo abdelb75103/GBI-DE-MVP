@@ -30,6 +30,9 @@ Read this file when the paper could be extracted either as a pooled line or as m
 ## Sample Size Rule
 
 - For `sampleSizePlayers`, prefer the directly reported number of players or participants.
+- If the paper gives a direct total plus direct subgroup proportions, you may split `sampleSizePlayers` by those proportions when the arithmetic is transparent.
+- Example: total players plus `71% boys / 29% girls` can support `sampleSizePlayers` for `male / female`.
+- When you do this, note explicitly that the sample sizes are proportion-derived.
 - Do not use `player seasons`, `athlete-exposures`, or similar repeat-participation denominators as player sample size unless the schema field explicitly calls for that unit.
 
 ## Sparse Papers

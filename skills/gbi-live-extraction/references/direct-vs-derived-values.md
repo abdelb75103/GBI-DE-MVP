@@ -12,6 +12,9 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 - Transparent aggregation of directly reported compatible values is allowed.
 - Example: summing directly reported exposure subrows within the same subgroup into one broader total.
 - Example: summing directly reported subtype counts into a broader structured row when they share the same denominator and the schema row clearly represents that combined category.
+- For participant-count fields only, a direct total may be split by directly reported subgroup proportions when the paper explicitly gives both pieces of information and the arithmetic is transparent.
+- Example: total players plus `71% boys / 29% girls` may be used to fill `sampleSizePlayers` for `male / female`.
+- When you do this, note that the participant counts were proportion-derived in the review summary or backlog note.
 
 ## Not Allowed
 
@@ -19,6 +22,7 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 - Count-to-exposure calculations
 - Burden-to-days calculations
 - Any back-calculation from rate ratios, odds ratios, or regression outputs
+- Do not extend the participant-count exception to injury counts, exposure, burden, incidence, recurrence, severity, or structured tissue/location outcomes.
 
 ## What To Do Instead
 
