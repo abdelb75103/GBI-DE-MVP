@@ -51,6 +51,14 @@ export type LayoutMode = 'accordion' | 'tabbed' | 'full';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
 
+const isAiGeneratedModel = (model: string | null | undefined) => {
+  if (!model) {
+    return false;
+  }
+  const normalized = model.toLowerCase();
+  return normalized.includes('gemini');
+};
+
 export function ExtractionTabsPanel({
   paperId,
   tabs,
@@ -125,7 +133,7 @@ export function ExtractionTabsPanel({
       return keys;
     }
     aiTabs.forEach((item) => {
-      const isAiModel = item.extractionModel && item.extractionModel !== 'human-input';
+      const isAiModel = isAiGeneratedModel(item.extractionModel);
       if (!isAiModel) {
         return;
       }

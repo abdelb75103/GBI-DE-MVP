@@ -42,3 +42,24 @@ Full Text - Data Extraaction/**/*.rdf
 /review_603597_included_csv_*.csv
 /775.full.pdf
 /fifa-gbi-data-extraction/covidence-import-results.csv
+
+# Temporary extraction artifacts
+.tmp-*
+**/.tmp-*
+.gbi-terminal-extraction/
+codex-review.txt
+
+# Local SQL and MJS scripts
+*.sql
+generate-*-passwords.mjs
+list-profiles.mjs
+clear-test-data.mjs
+
+# PDF and CSV files (source data)
+*.pdf
+**/*.pdf
+*.csv
+**/*.csv
+
+# Optional batch review notes (numerous and often local)
+**/batch-*-review.md

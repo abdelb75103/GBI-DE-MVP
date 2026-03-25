@@ -130,4 +130,6 @@ Relevant code:
 - Use `files-final-3` as the authoritative final download folder for this run.
 - Earlier `files`, `files-final`, and `files-final-2` folders were partial or aborted runs.
 - If this workflow is repeated, do a new `prepare` pass first instead of reusing stale missing queues.
+- If unresolved items remain after a first download pass, build a second-pass unresolved queue with `npm run covidence:unresolved` and rerun `npm run covidence:download` only on those rows.
+- For the current post-second-pass manual residue, see `docs/covidence-pdf-followup-todo.md`.
 - If a user asks for the exact March 2026 retrieval workflow again, invoke the `covidence-pdf-retrieval` skill and start from the paths listed above.

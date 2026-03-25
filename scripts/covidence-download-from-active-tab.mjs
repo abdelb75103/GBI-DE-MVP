@@ -155,6 +155,8 @@ function jsString(value) {
 
 function normalizeText(value) {
   return String(value ?? '')
+    .normalize('NFKD')
+    .replace(/\p{Diacritic}/gu, '')
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .replace(/\s+/g, ' ')
@@ -180,6 +182,19 @@ function navigateTo(url) {
   runChromeEval(script);
 }
 
+function truncateSearchTerm(term, maxLength = 140) {
+  const normalized = String(term ?? '').replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxLength) {
+    return normalized;
+  }
+  return normalized.slice(0, maxLength).trim();
+}
+
+function covidenceSearchTerm(covidenceNumber) {
+  const match = String(covidenceNumber ?? '').match(/#?\s*(\d+)/);
+  return match ? `#${match[1]}` : String(covidenceNumber ?? '').trim();
+}
+
 function parseReviewId() {
   const url = runChromeUrl();
   const match = url.match(/reviews\/(\d+)/);
@@ -195,20 +210,59 @@ function openSearchResults(reviewId, term) {
   sleep(1200);
 }
 
-function openStudyFromSearch({ covidenceNumber, study, title }) {
+function buildSearchQueries(row) {
+  const yearMatch = String(row.title || '').match(/\b(19|20)\d{2}\b/);
+  const year = yearMatch ? yearMatch[0] : '';
+  const titleTokens = normalizeText(row.title || '')
+    .split(' ')
+    .filter((token) => token.length >= 4)
+    .slice(0, 10)
+    .join(' ');
+
+  return Array.from(
+    new Set(
+      [
+        covidenceSearchTerm(row.covidenceNumber),
+        truncateSearchTerm(`${row.study || ''} ${year}`),
+        truncateSearchTerm(`${row.study || ''} ${titleTokens}`),
+        truncateSearchTerm(titleTokens),
+        truncateSearchTerm(row.study || ''),
+      ].filter(Boolean),
+    ),
+  );
+}
+
+function resolveStudyCandidate({ covidenceNumber, study, title }) {
   const script = `
 (() => {
   const normalize = (text) => (text || '').replace(/\\s+/g, ' ').trim();
   const normalizeLoose = (text) => normalize(text).toLowerCase().replace(/[^a-z0-9\\s]/g, ' ').replace(/\\s+/g, ' ').trim();
-  const targetNumber = ${jsString(normalizeText((covidenceNumber || '').replace('–', '-')))};
+  const numberMatch = (${jsString(covidenceNumber || '')}).match(/#?\\s*(\\d+)/);
+  const targetNumber = numberMatch ? '#' + numberMatch[1] : '';
+  const targetNumberLoose = normalizeLoose(targetNumber);
   const targetStudy = ${jsString(normalizeText(study || ''))};
   const targetTitle = ${jsString(normalizeText(title || ''))};
   const titleTokens = targetTitle.split(' ').filter((token) => token.length >= 4);
-  const links = Array.from(document.querySelectorAll('a[href*="/review_studies/"]'));
+  const currentUrl = window.location.href;
+  const bodyText = normalize(document.body.innerText);
+  const bodyTextLoose = normalizeLoose(bodyText);
+
+  if (currentUrl.includes('/extraction/study/') && (!targetNumberLoose || bodyTextLoose.includes(targetNumberLoose))) {
+    return JSON.stringify({ status: 'opened', href: currentUrl, matchScore: 99, matchText: bodyText.slice(0, 300) });
+  }
+
+  const links = Array.from(document.querySelectorAll('a[href*="/review_studies/"], a[href*="/extraction/study/"]'));
+  const exactNumberLink = links.find((link) => normalizeLoose(link.innerText).startsWith(targetNumberLoose + ' ')) || links.find((link) => normalizeLoose(link.innerText).startsWith(targetNumberLoose));
+  if (exactNumberLink) {
+    window.location.href = exactNumberLink.href.replace('/review_studies/', '/extraction/study/');
+    return JSON.stringify({ status: 'opened', href: exactNumberLink.href, matchScore: 98, matchText: normalize(exactNumberLink.innerText).slice(0, 300) });
+  }
+
   const scored = links.map((link) => {
     const text = normalizeLoose(link.innerText);
     let score = 0;
-    if (targetNumber && text.includes(targetNumber)) score += 1;
+    if (targetNumberLoose && text.startsWith(targetNumberLoose)) score += 8;
+    if (targetNumberLoose && text.includes(targetNumberLoose)) score += 4;
     if (targetStudy && text.includes(targetStudy)) score += 1;
     if (targetTitle && text.includes(targetTitle)) score += 4;
     const prefix = targetTitle.slice(0, 80);
@@ -218,10 +272,10 @@ function openStudyFromSearch({ covidenceNumber, study, title }) {
     return { href: link.href, text, score };
   }).sort((a, b) => b.score - a.score);
   const match = scored[0];
-  if (!match || match.score < 3) {
-    return JSON.stringify({ status: 'not_found', pageText: normalize(document.body.innerText).slice(0, 800) });
+  if (!match || match.score < 4) {
+    return JSON.stringify({ status: 'not_found', pageText: bodyText.slice(0, 800) });
   }
-  window.location.href = match.href;
+  window.location.href = match.href.replace('/review_studies/', '/extraction/study/');
   return JSON.stringify({ status: 'opened', href: match.href, matchScore: match.score, matchText: match.text.slice(0, 300) });
 })()
 `;
@@ -229,37 +283,86 @@ function openStudyFromSearch({ covidenceNumber, study, title }) {
   return runChromeEvalJson(script);
 }
 
-function revealPdfOnStudyPage(expectedTitle) {
+function inspectStudyPage({ covidenceNumber, study, title }) {
   const script = `
 (() => {
   const normalize = (text) => (text || '').replace(/\\s+/g, ' ').trim();
   const normalizeLoose = (text) => normalize(text).toLowerCase().replace(/[^a-z0-9\\s]/g, ' ').replace(/\\s+/g, ' ').trim();
-  const text = normalize(document.body.innerText);
+  const numberMatch = (${jsString(covidenceNumber || '')}).match(/#?\\s*(\\d+)/);
+  const targetNumber = numberMatch ? '#' + numberMatch[1] : '';
+  const targetNumberLoose = normalizeLoose(targetNumber);
+  const targetStudy = ${jsString(normalizeText(study || ''))};
   const textLoose = normalizeLoose(document.body.innerText);
-  const expectedTitle = ${jsString(normalizeText(expectedTitle || ''))};
-  const expectedPrefix = expectedTitle.slice(0, 80);
-  if (expectedPrefix && !textLoose.includes(expectedPrefix)) {
-    return JSON.stringify({ status: 'study_page_mismatch', pageText: text.slice(0, 800) });
+  const text = normalize(document.body.innerText);
+  const targetTitle = ${jsString(normalizeText(title || ''))};
+  const titleTokens = targetTitle.split(' ').filter((token) => token.length >= 4);
+  const titleOverlap = titleTokens.length ? titleTokens.filter((token) => textLoose.includes(token)).length / titleTokens.length : 0;
+  const currentUrl = window.location.href;
+  const urlLooksRight = currentUrl.includes('/extraction/study/');
+  const numberMatched = !targetNumberLoose || textLoose.includes(targetNumberLoose);
+  const studyMatched = targetStudy ? textLoose.includes(targetStudy) : false;
+  const titleMatched = targetTitle ? textLoose.includes(targetTitle) : false;
+  const hydrated = urlLooksRight && numberMatched && (titleMatched || studyMatched || titleOverlap >= 0.45);
+
+  if (!urlLooksRight || (textLoose.includes('loading studies') && !numberMatched)) {
+    return JSON.stringify({ status: 'loading', pageText: text.slice(0, 800), currentUrl });
   }
-  const pdfLink = document.querySelector('a[href*="response-content-type=application%2Fpdf"], a[href$=".pdf"], a[href*=".pdf?"]');
-  if (pdfLink) {
+
+  if (!hydrated && numberMatched) {
     return JSON.stringify({
-      status: 'ready',
-      pdfUrl: pdfLink.href,
-      pdfName: normalize(pdfLink.textContent),
-      pageText: text.slice(0, 800)
+      status: 'loading',
+      pageText: text.slice(0, 800),
+      currentUrl,
+      titleOverlap,
+      numberMatched,
+      studyMatched,
+      titleMatched
     });
   }
-  const button = Array.from(document.querySelectorAll('button')).find((btn) => normalize(btn.innerText) === 'View full text');
+
+  if (!hydrated) {
+    return JSON.stringify({ status: 'study_page_mismatch', pageText: text.slice(0, 800), currentUrl, titleOverlap, numberMatched, studyMatched, titleMatched });
+  }
+
+  const pdfLink = document.querySelector('a[href*="response-content-type=application%2Fpdf"], a[href$=".pdf"], a[href*=".pdf?"], iframe[src*=".pdf"], embed[src*=".pdf"], object[data*=".pdf"]');
+  if (pdfLink) {
+    const href = pdfLink.href || pdfLink.src || pdfLink.data || '';
+    return JSON.stringify({
+      status: 'ready',
+      pdfUrl: href,
+      pdfName: normalize(pdfLink.textContent),
+      pageText: text.slice(0, 800),
+      currentUrl
+    });
+  }
+  const buttons = Array.from(document.querySelectorAll('button'));
+  const button = buttons.find((btn) => ['View full text', 'Show full text'].includes(normalize(btn.innerText)));
   if (!button) {
-    return JSON.stringify({ status: 'no_button', pageText: text.slice(0, 800) });
+    const hideButton = buttons.find((btn) => normalize(btn.innerText) === 'Hide full text');
+    if (hideButton) {
+      return JSON.stringify({ status: 'waiting_for_pdf', pageText: text.slice(0, 800), currentUrl });
+    }
+    return JSON.stringify({ status: 'no_button', pageText: text.slice(0, 800), currentUrl });
   }
   button.click();
-  return JSON.stringify({ status: 'clicked', pageText: text.slice(0, 800) });
+  return JSON.stringify({ status: 'clicked', pageText: text.slice(0, 800), currentUrl });
 })()
 `;
 
   return runChromeEvalJson(script);
+}
+
+function waitForStudyPage(row) {
+  let lastState = null;
+  for (let attempt = 1; attempt <= 8; attempt += 1) {
+    const state = inspectStudyPage(row);
+    lastState = state;
+    if (!['loading', 'clicked', 'waiting_for_pdf'].includes(state.status)) {
+      return state;
+    }
+    sleep(900 * attempt);
+  }
+  return lastState || { status: 'study_page_mismatch', pageText: '' };
 }
 
 function sanitizeFileName(value, fallback) {
@@ -328,12 +431,16 @@ function main() {
       continue;
     }
 
-    const searchTerms = [row.title, `${row.study || ''} ${row.title || ''}`.trim(), row.study, covidenceNumber].filter(Boolean);
+    const searchTerms = buildSearchQueries({
+      covidenceNumber,
+      study: row.study,
+      title: row.title,
+    });
     let openResult = null;
 
     for (const term of searchTerms) {
       openSearchResults(reviewId, term);
-      openResult = openStudyFromSearch({
+      openResult = resolveStudyCandidate({
         covidenceNumber,
         study: row.study,
         title: row.title,
@@ -360,12 +467,11 @@ function main() {
 
     sleep(1200);
 
-    let state = revealPdfOnStudyPage(row.title);
-    if (state.status === 'clicked') {
-      console.log(`open ${label}`);
-      sleep(1200);
-      state = revealPdfOnStudyPage(row.title);
-    }
+    let state = waitForStudyPage({
+      covidenceNumber,
+      study: row.study,
+      title: row.title,
+    });
 
     if (state.status !== 'ready' || !state.pdfUrl) {
       console.log(`miss ${label} :: ${state.status}`);
