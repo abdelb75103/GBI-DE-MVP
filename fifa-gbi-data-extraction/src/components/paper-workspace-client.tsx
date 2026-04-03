@@ -126,6 +126,7 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
       <div className="flex flex-col gap-8">
         <PaperWorkspaceShell
           paperId={paper.id}
+          assignedStudyId={paper.assignedStudyId}
           tabs={tabs}
           viewerUrl={viewerUrl}
         />

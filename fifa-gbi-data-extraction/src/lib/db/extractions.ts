@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import { mapExtractionRow, mapPopulationGroupRow, mapPopulationValueRow } from '@/lib/db/mappers';
 import { supabaseClient } from '@/lib/db/shared';
 import { shouldSyncPopulations, syncPopulationSlices } from '@/lib/db/population-sync';
+import { normalizeGlobalFieldValue } from '@/lib/extraction/normalize';
 import type {
   ExtractionFieldMetric,
   ExtractionFieldResult,
@@ -193,7 +194,8 @@ export const updateExtractionField = async (
     updatedBy?: string | null;
   },
 ): Promise<ExtractionResult> => {
-  const status = updates.status ?? (updates.value ? 'reported' : 'not_reported');
+  const normalizedValue = normalizeGlobalFieldValue(fieldId, updates.value);
+  const status = updates.status ?? (normalizedValue ? 'reported' : 'not_reported');
   const normalizedConfidence =
     typeof updates.confidence === 'number' && !Number.isNaN(updates.confidence)
       ? Math.min(Math.max(updates.confidence, 0), 1)
@@ -209,7 +211,7 @@ export const updateExtractionField = async (
     .eq('id', extractionRow.id);
 
   await upsertExtractionFieldRow(extractionRow.id, fieldId, {
-    value: updates.value ?? null,
+    value: normalizedValue,
     status,
     confidence: normalizedConfidence,
     sourceQuote: updates.sourceQuote ?? null,
@@ -218,8 +220,8 @@ export const updateExtractionField = async (
     updatedBy: updates.updatedBy ?? null,
   });
 
-  if (fieldId === 'title' && updates.value) {
-    await updatePaper(paperId, { title: updates.value });
+  if (fieldId === 'title' && normalizedValue) {
+    await updatePaper(paperId, { title: normalizedValue });
   }
 
   if (shouldSyncPopulations(fieldId)) {
@@ -239,7 +241,15 @@ export const saveExtractionFields = async (
   const supabase = supabaseClient();
   const now = new Date().toISOString();
 
-  const fieldPayloads: ExtractionFieldInsert[] = fields.map((field) => {
+  const normalizedFields = fields.map((field) => {
+    const value = normalizeGlobalFieldValue(field.fieldId, field.value);
+    return {
+      ...field,
+      value,
+    };
+  });
+
+  const fieldPayloads: ExtractionFieldInsert[] = normalizedFields.map((field) => {
     const fieldStatus: SupabaseFieldStatus = field.value ? 'reported' : 'not_reported';
     return {
       id: crypto.randomUUID(),
@@ -276,12 +286,12 @@ export const saveExtractionFields = async (
     throw new Error(`Failed to update extraction timestamp: ${updateError.message}`);
   }
 
-  const titleField = fields.find((f) => f.fieldId === 'title');
+  const titleField = normalizedFields.find((f) => f.fieldId === 'title');
   if (titleField?.value) {
     await updatePaper(paperId, { title: titleField.value });
   }
 
-  const needsSync = fields.some((field) => shouldSyncPopulations(field.fieldId));
+  const needsSync = normalizedFields.some((field) => shouldSyncPopulations(field.fieldId));
   if (needsSync) {
     await syncPopulationSlices(paperId);
   }

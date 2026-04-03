@@ -8,6 +8,9 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 - Fill all compatible rows rather than stopping after only the broadest categories.
 - If a table reports both parent categories and child subcategories, sweep both levels.
 - Do not treat a parent bucket as complete if the same table also provides directly mappable subtypes beneath it.
+- If the live paper is already mapped to a subgroup split such as `Total / subgroup...`, structured-row completeness includes column completeness. Do not leave a row pooled on the first line if the source table reports that same row across subgroup columns.
+- When a structured table reports subgroup columns for only one family, expand only that family. Example: if a location table is age-group split but the type table is pooled-only, `injuryLocation_*` should be multiline by subgroup while `injuryTissueType_*` stays total-only.
+- For multiline structured fields, use this rule consistently: reported subgroup values occupy their matching subgroup lines; pooled-only values stay on the first `Total` line only; unreported subgroup cells remain blank.
 - Do the same check for usable figures when the figure categories map cleanly to the schema.
 - Apply the same scan to severity tables and mechanism tables before leaving `injuryMostCommonSeverity`, `injuryContact`, or `injuryNonContact` blank.
 - Treat multi-page or continued tables as a single audit unit. Do not stop after the first page of a table if later pages continue the same location, type, mechanism, or severity block.
@@ -52,6 +55,15 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 - If the schema has a dedicated CI field for that value, use it.
 - If the schema does not have a dedicated CI field, store the CI inline in the same cell as `rate (lower to upper)`.
 - This applies to metric-table tabs such as `injuryTissueType` and `injuryLocation`, and also to other extracted numeric fields when no separate CI field exists.
+
+## Definitions Rule
+
+- Normalize `injuryDefinition` to `physical complaint`, `medical attention`, or `time-loss` whenever the paper allows a clean standardization.
+- If the source uses a combined injury definition, preserve the combination in shortest accurate form, for example `medical attention or time-loss`.
+- If the paper's wording is ambiguous, workflow-based, or not fully formalized, choose the closest defensible standardized label and record the ambiguity in the backlog note.
+- Whenever any incidence, prevalence, burden, or rate field is extracted, make sure `incidenceDefinition` states the denominator frame explicitly.
+- Prefer forms such as `per 1000 player-hours`, `per 1000 athlete-exposures`, `per 100 players`, `per player-season`, or `per training day`.
+- If the denominator basis is only partly clear, store the shortest accurate incidence-definition text you can support and note the uncertainty in the review summary or backlog note instead of leaving the field vague.
 
 ## Subsection Rule
 

@@ -223,8 +223,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
               const fields = Object.fromEntries(
                 Array.from(updates.values()).map((u) => {
                   if (typeof u.value === 'string') {
-                    const trimmed = u.value.trim();
-                    return [u.fieldId, trimmed || ''];
+                    return [u.fieldId, u.value];
                   }
                   return [u.fieldId, u.value ?? ''];
                 }),

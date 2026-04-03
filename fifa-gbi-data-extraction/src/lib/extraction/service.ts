@@ -3,6 +3,7 @@ import { jsonrepair } from 'jsonrepair';
 
 import type { Part } from '@google/generative-ai';
 
+import { normalizeGlobalFieldValue } from '@/lib/extraction/normalize';
 import { buildExtractionPrompt } from '@/lib/extraction/prompt';
 import { extractionFieldDefinitions, ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import { createGeminiModel, getFallbackModelName, getModelName } from '@/lib/extraction/gemini-client';
@@ -95,7 +96,7 @@ export async function extractTab(options: ExtractTabOptions): Promise<TabExtract
         ],
       });
       usedModelName = fallbackModelName;
-    } catch (fallbackError) {
+    } catch {
       throw new Error('AI extraction hit usage limits. Please wait a few minutes and try again.');
     }
   }
@@ -197,7 +198,8 @@ function mapValidatedResults(
 
     const rawValue = candidate?.value ?? null;
     const trimmed = typeof rawValue === 'string' ? rawValue.trim() : null;
-    const value = trimmed && trimmed.length > 0 ? trimmed : null;
+    const normalizedValue = normalizeGlobalFieldValue(definition.id, trimmed);
+    const value = normalizedValue && normalizedValue.length > 0 ? normalizedValue : null;
     // Handle source being null, undefined, or string - be lenient
     const source = candidate?.source 
       ? (typeof candidate.source === 'string' ? candidate.source.trim() : null)

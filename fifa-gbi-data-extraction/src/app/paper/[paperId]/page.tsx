@@ -8,6 +8,7 @@ import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
 import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
 import { definitionCategories } from '@/lib/definitions';
+import { normalizeGlobalFieldValue } from '@/lib/extraction/normalize';
 import { mockDb, PaperSessionConflictError } from '@/lib/mock-db';
 import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { formatDateTimeUTC } from '@/lib/format';
@@ -148,7 +149,11 @@ export default async function PaperWorkspace({
       tab,
       label: extractionTabMeta[tab].title,
       fields: extractionFieldDefinitions.filter((field) => field.tab === tab),
-      results: extraction?.fields ?? [],
+      results:
+        extraction?.fields.map((field) => ({
+          ...field,
+          value: normalizeGlobalFieldValue(field.fieldId, field.value),
+        })) ?? [],
       extractionModel: extraction?.model ?? 'human-input',
     };
   });
@@ -215,7 +220,13 @@ export default async function PaperWorkspace({
           </section>
 
           <div className="flex flex-col gap-8">
-            <PaperWorkspaceShell paperId={paper.id} tabs={tabPayload} viewerUrl={viewerUrl} readOnly={isReadOnly} />
+            <PaperWorkspaceShell
+              paperId={paper.id}
+              assignedStudyId={paper.assignedStudyId}
+              tabs={tabPayload}
+              viewerUrl={viewerUrl}
+              readOnly={isReadOnly}
+            />
 
             <div className="grid gap-6 xl:grid-cols-2">
               <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">

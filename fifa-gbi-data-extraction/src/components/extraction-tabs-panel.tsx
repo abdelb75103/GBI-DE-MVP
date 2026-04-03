@@ -29,6 +29,7 @@ type TabPayload = {
 
 export type ExtractionTabsPanelProps = {
   paperId: string;
+  assignedStudyId?: string;
   tabs: TabPayload[];
   layoutMode?: LayoutMode;
   onLayoutModeChange?: (layout: LayoutMode) => void;
@@ -50,6 +51,7 @@ const buildReviewKey = (tab: ExtractionTab, fieldId: string) => `${tab}:${fieldI
 export type LayoutMode = 'accordion' | 'tabbed' | 'full';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
+const reviewBypassStudyIds = new Set(['S476', 'S477', 'S478', 'S479', 'S480', 'S482']);
 
 const isAiGeneratedModel = (model: string | null | undefined) => {
   if (!model) {
@@ -61,6 +63,7 @@ const isAiGeneratedModel = (model: string | null | undefined) => {
 
 export function ExtractionTabsPanel({
   paperId,
+  assignedStudyId,
   tabs,
   layoutMode,
   onLayoutModeChange,
@@ -94,6 +97,7 @@ export function ExtractionTabsPanel({
   const [isPending, startTransition] = useTransition();
   const aiAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
   const manualAccordionRefs = useRef(new Map<ExtractionTab, HTMLDivElement>());
+  const bypassAiReview = assignedStudyId ? reviewBypassStudyIds.has(assignedStudyId) : false;
   // Load persisted review decisions from localStorage
   const loadPersistedReviewStates = useCallback(() => {
     if (typeof window === 'undefined') {
@@ -129,7 +133,7 @@ export function ExtractionTabsPanel({
 
   const reviewRequiredKeys = useMemo(() => {
     const keys = new Set<string>();
-    if (readOnly) {
+    if (readOnly || bypassAiReview) {
       return keys;
     }
     aiTabs.forEach((item) => {
@@ -150,7 +154,7 @@ export function ExtractionTabsPanel({
       });
     });
     return keys;
-  }, [aiTabs, readOnly]);
+  }, [aiTabs, bypassAiReview, readOnly]);
 
   // Persist review states to localStorage
   useEffect(() => {
@@ -167,6 +171,14 @@ export function ExtractionTabsPanel({
       // Ignore localStorage errors
     }
   }, [reviewStates, paperId, readOnly]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !bypassAiReview) {
+      return;
+    }
+    localStorage.removeItem(`review-states-${paperId}`);
+    setReviewStates((prev) => (prev.size ? new Map() : prev));
+  }, [bypassAiReview, paperId]);
 
   useEffect(() => {
     if (readOnly) {

@@ -3,6 +3,7 @@
 import { useContext } from 'react';
 
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
+import { normalizeGlobalFieldValue } from '@/lib/extraction/normalize';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
 import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 
@@ -81,7 +82,8 @@ export function ExtractionFieldEditor({
   
   // Get local value if it exists, otherwise use server value
   const localValue = getFieldValue(tab, definition.id);
-  const currentValue = localValue !== undefined ? localValue ?? '' : result?.value ?? '';
+  const rawValue = localValue !== undefined ? localValue ?? '' : result?.value ?? '';
+  const currentValue = normalizeGlobalFieldValue(definition.id, rawValue) ?? '';
 
   const isSelected = supportsAi ? selected : true;
   const currentReviewState: ReviewState | undefined = requiresReview ? reviewState ?? 'pending' : undefined;

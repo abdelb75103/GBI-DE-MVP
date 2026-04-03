@@ -7,6 +7,7 @@ import type { PaperSession } from '@/lib/types';
 
 export type PaperWorkspaceShellProps = {
   paperId: string;
+  assignedStudyId?: string;
   tabs: ExtractionTabsPanelProps['tabs'];
   viewerUrl: string | null;
   readOnly?: boolean;
@@ -18,7 +19,13 @@ export type WorkspaceSessionState =
   | { status: 'conflict'; session: PaperSession }
   | { status: 'error'; session: PaperSession | null; message: string };
 
-export function PaperWorkspaceShell({ paperId, tabs, viewerUrl, readOnly = false }: PaperWorkspaceShellProps) {
+export function PaperWorkspaceShell({
+  paperId,
+  assignedStudyId,
+  tabs,
+  viewerUrl,
+  readOnly = false,
+}: PaperWorkspaceShellProps) {
   const [layoutMode, setLayoutMode] = useState<LayoutMode>('accordion');
 
   const showViewer = layoutMode !== 'full';
@@ -73,6 +80,7 @@ export function PaperWorkspaceShell({ paperId, tabs, viewerUrl, readOnly = false
 
       <ExtractionTabsPanel
         paperId={paperId}
+        assignedStudyId={assignedStudyId}
         tabs={tabs}
         layoutMode={layoutMode}
         onLayoutModeChange={setLayoutMode}

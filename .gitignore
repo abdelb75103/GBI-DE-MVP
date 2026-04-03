@@ -48,6 +48,14 @@ Full Text - Data Extraaction/**/*.rdf
 **/.tmp-*
 .gbi-terminal-extraction/
 codex-review.txt
+/tmp/
+/tmp-*/
+/tmp-*.txt
+/tmp-*.json
+/tmp-*.md
+/tmp-*.png
+/supabase/.temp/
+/fifa-gbi-data-extraction/tmp*
 
 # Local SQL and MJS scripts
 *.sql
