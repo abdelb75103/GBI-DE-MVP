@@ -22,7 +22,7 @@ Pull missing PDFs from Covidence without changing anything in Covidence, save th
   - inspect the active Chrome tab URL/title and evaluate JS in the focused tab.
 - `scripts/covidence-download-from-active-tab.mjs`
   - drive the active Covidence extraction tab, search for papers, open the study page, locate the PDF, and download it.
-- `fifa-gbi-data-extraction/import-covidence-pdfs.mjs`
+- `fifa-gbi-data-extraction/scripts/import-covidence-pdfs.mjs`
   - import downloaded PDFs into the live Supabase-backed app while preventing duplicates by file hash and paper matching.
 
 ## Key Preconditions
@@ -95,7 +95,7 @@ Total unresolved from the Covidence run: `14`.
 
 ## Live Import Results
 
-The downloaded PDFs were imported into the live Supabase-backed database using `fifa-gbi-data-extraction/import-covidence-pdfs.mjs`.
+The downloaded PDFs were imported into the live Supabase-backed database using `fifa-gbi-data-extraction/scripts/import-covidence-pdfs.mjs`.
 
 Final import result counts:
 

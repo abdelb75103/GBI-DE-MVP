@@ -83,7 +83,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     }
 
     return result;
-  }, [papers, profile, assignmentFilter, statusFilter, userFilter, flaggedFilter, notesFilter, searchQuery, isAdmin]);
+  }, [papers, profile, assignmentFilter, statusFilter, userFilter, flaggedFilter, notesFilter, searchQuery]);
 
   const counts = useMemo(() => {
     if (!profile) {

@@ -82,7 +82,7 @@ Notes for second pass:
 
 ```bash
 cd fifa-gbi-data-extraction
-node import-covidence-pdfs.mjs \
+node scripts/import-covidence-pdfs.mjs \
   --manifest /abs/path/output-dir/files-final/covidence-download-manifest.csv \
   --references /abs/path/review.csv \
   --files-dir /abs/path/output-dir/files-final \

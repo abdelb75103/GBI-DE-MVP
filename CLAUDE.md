@@ -26,7 +26,7 @@ npm run lint       # ESLint check
 npm run covidence:import-pdfs  # Import PDFs from Covidence
 ```
 
-No automated test suite exists. Manual verification: `node verify-setup.mjs`.
+No automated test suite exists. Manual verification from `fifa-gbi-data-extraction/`: `npm run db:verify-setup`.
 
 ## Architecture
 

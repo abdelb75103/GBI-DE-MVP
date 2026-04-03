@@ -41,6 +41,7 @@ Full Text - Data Extraaction/**/*.rdf
 # Local Covidence exports and generated artifacts
 /review_603597_included_csv_*.csv
 /775.full.pdf
+/exports/
 /fifa-gbi-data-extraction/covidence-import-results.csv
 
 # Temporary extraction artifacts
@@ -50,6 +51,7 @@ Full Text - Data Extraaction/**/*.rdf
 codex-review.txt
 /tmp/
 /tmp-*/
+/tmp-s*/
 /tmp-*.txt
 /tmp-*.json
 /tmp-*.md
