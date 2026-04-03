@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
+import { canAccessWorkspace } from '@/lib/profile-access';
 import { getAdminServiceClient } from '@/lib/supabase';
 import type { UserRole } from '@/lib/supabase';
 
@@ -37,6 +38,11 @@ export async function POST(request: Request) {
 
   if (error || !profile) {
     return NextResponse.json({ error: 'Profile not found' }, { status: 404 });
+  }
+
+  if (!canAccessWorkspace(profile)) {
+    store.delete(COOKIE_NAME);
+    return NextResponse.json({ error: 'This profile no longer has workspace access.' }, { status: 403 });
   }
 
   const payload: CookiePayload = {

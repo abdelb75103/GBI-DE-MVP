@@ -33,6 +33,9 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
   void _isAdmin;
 
   const getAssignmentStatus = (paper: Paper) => {
+    if (paper.status === 'archived') {
+      return 'duplicate' as const;
+    }
     if (!paper.assignedTo) {
       return 'available' as const;
     }

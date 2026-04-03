@@ -78,3 +78,15 @@ export const supabaseClient = () => {
   ensureSupabaseConfigured();
   return getAdminServiceClient();
 };
+
+export const chunkValues = <T>(values: T[], size: number): T[][] => {
+  if (size <= 0) {
+    throw new Error('chunkValues size must be greater than 0.');
+  }
+
+  const chunks: T[][] = [];
+  for (let index = 0; index < values.length; index += size) {
+    chunks.push(values.slice(index, index + size));
+  }
+  return chunks;
+};

@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useSyncExternalStore } from 'react';
 
+import { canAccessWorkspace } from '@/lib/profile-access';
 import type { UserRole } from '@/lib/supabase';
 
 const STORAGE_KEY = 'gbi.activeProfile';
@@ -40,11 +41,13 @@ function parseProfile(raw: string | null): ActiveProfile | null {
     if (!parsed?.id || !parsed?.fullName || !parsed?.role) {
       return null;
     }
-    return {
+    const profile = {
       id: parsed.id,
       fullName: parsed.fullName,
       role: parsed.role,
     } satisfies ActiveProfile;
+
+    return canAccessWorkspace(profile) ? profile : null;
   } catch {
     return null;
   }
@@ -133,7 +136,7 @@ export function useActiveProfileState() {
       return;
     }
 
-    if (!next) {
+    if (!next || !canAccessWorkspace(next)) {
       window.localStorage.removeItem(STORAGE_KEY);
       cachedProfile = null;
     } else {

@@ -1,6 +1,6 @@
 'use client';
 
-type AssignmentStatus = 'available' | 'mine' | 'assigned';
+type AssignmentStatus = 'available' | 'mine' | 'assigned' | 'duplicate';
 
 type AssignmentBadgeProps = {
   status: AssignmentStatus;
@@ -8,6 +8,14 @@ type AssignmentBadgeProps = {
 };
 
 export function AssignmentBadge({ status, assigneeName }: AssignmentBadgeProps) {
+  if (status === 'duplicate') {
+    return (
+      <span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-rose-700">
+        Duplicate
+      </span>
+    );
+  }
+
   if (status === 'available') {
     return (
       <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
@@ -30,4 +38,3 @@ export function AssignmentBadge({ status, assigneeName }: AssignmentBadgeProps) 
     </span>
   );
 }
-

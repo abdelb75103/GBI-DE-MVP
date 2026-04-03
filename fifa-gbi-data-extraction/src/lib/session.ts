@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 
+import { canAccessWorkspace } from '@/lib/profile-access';
 import type { UserRole } from '@/lib/supabase';
 
 const COOKIE_NAME = 'gbi_active_profile';
@@ -23,11 +24,13 @@ function decodeCookie(raw: string | undefined): ActiveProfileSession | null {
       return null;
     }
 
-    return {
+    const session = {
       id: payload.id,
       fullName: payload.fullName ?? '',
       role: payload.role,
     };
+
+    return canAccessWorkspace(session) ? session : null;
   } catch {
     return null;
   }

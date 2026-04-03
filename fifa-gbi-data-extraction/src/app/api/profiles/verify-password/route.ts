@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 
+import { canAccessWorkspace } from '@/lib/profile-access';
 import { getAdminServiceClient } from '@/lib/supabase';
 
 export const runtime = 'nodejs';
@@ -43,6 +44,13 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'Invalid profile or password' },
         { status: 401 },
+      );
+    }
+
+    if (!canAccessWorkspace(profile)) {
+      return NextResponse.json(
+        { error: 'This profile no longer has workspace access' },
+        { status: 403 },
       );
     }
 
@@ -95,4 +103,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

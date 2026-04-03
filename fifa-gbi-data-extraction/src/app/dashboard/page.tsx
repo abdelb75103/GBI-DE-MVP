@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 import { DashboardContributors } from '@/components/dashboard-contributors';
 import { DashboardProgressVisual } from '@/components/dashboard-progress-visual';
@@ -17,12 +18,17 @@ import {
 export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
+  const activeProfile = await readActiveProfileSession();
+  if (!activeProfile) {
+    redirect('/profiles/select');
+  }
+
+  const isAdmin = activeProfile?.role === 'admin';
   const papers = await mockDb.listPapers();
   const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
+  const dashboardTablePapers = isAdmin ? papers : visiblePapers;
   const exportJobs = await mockDb.listExports();
   const activePaperIds = visiblePapers.map((paper) => paper.id);
-  const activeProfile = await readActiveProfileSession();
-  const isAdmin = activeProfile?.role === 'admin';
   const userId = activeProfile?.id || null;
   const pendingUploadCount = isAdmin ? await mockDb.countPendingUploadQueueEntries() : 0;
   
@@ -84,7 +90,7 @@ export default async function DashboardPage() {
   // Calculate contributor statistics
   type ContributorMap = Record<string, { name: string; completedCount: number }>;
   const contributorStats = visiblePapers.reduce<ContributorMap>((acc, paper) => {
-    if (paper.status === 'extracted' && paper.assignedTo && paper.assigneeName) {
+    if (isProgressCompletedStatus(paper.status) && paper.assignedTo && paper.assigneeName) {
       if (!acc[paper.assignedTo]) {
         acc[paper.assignedTo] = { name: paper.assigneeName, completedCount: 0 };
       }
@@ -285,7 +291,7 @@ export default async function DashboardPage() {
           <DashboardContributors
             contributors={contributors}
             currentUserId={userId}
-            totalCompleted={completedCount}
+            totalCompleted={progressCompletedCount}
           />
         </section>
       </div>
@@ -306,7 +312,7 @@ export default async function DashboardPage() {
               </Link>
             ) : null}
           </div>
-          <PapersDashboardClient papers={visiblePapers} canBulkExport={isAdmin} isAdmin={isAdmin} />
+          <PapersDashboardClient papers={dashboardTablePapers} canBulkExport={isAdmin} isAdmin={isAdmin} />
         </section>
 
         <aside className="space-y-6">

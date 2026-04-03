@@ -1,10 +1,18 @@
 import crypto from 'node:crypto';
 
 import { mapPaperRow } from '@/lib/db/mappers';
-import { PaperSessionConflictError, normalizePaperMetadata, setActiveSessionMetadata, supabaseClient } from '@/lib/db/shared';
+import {
+  PaperSessionConflictError,
+  chunkValues,
+  normalizePaperMetadata,
+  setActiveSessionMetadata,
+  supabaseClient,
+} from '@/lib/db/shared';
 import type { Paper, PaperSession, PaperStatus, DedupeReviewStatus } from '@/lib/types';
 import type { PaperInsert, PaperRow, PaperUpdate } from '@/lib/db/types';
 import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
+
+const BATCHED_IN_QUERY_SIZE = 100;
 
 const parseStudySequence = (value: string | null | undefined): number => {
   if (!value) {
@@ -48,31 +56,37 @@ export const listPapers = async (): Promise<Paper[]> => {
   const assigneeNames = new Map<string, string>();
 
   if (ids.length > 0) {
-    const { data: noteRows, error: notesError } = await supabase
-      .from('paper_notes')
-      .select('paper_id')
-      .in('paper_id', ids);
+    for (const batchIds of chunkValues(ids, BATCHED_IN_QUERY_SIZE)) {
+      const { data: noteRows, error: notesError } = await supabase
+        .from('paper_notes')
+        .select('paper_id')
+        .in('paper_id', batchIds);
 
-    if (notesError) {
-      throw new Error(`Failed to load note counts: ${notesError.message}`);
+      if (notesError) {
+        throw new Error(`Failed to load note counts: ${notesError.message}`);
+      }
+
+      (noteRows ?? []).forEach((row) => {
+        const current = noteCounts.get(row.paper_id) ?? 0;
+        noteCounts.set(row.paper_id, current + 1);
+      });
     }
 
-    (noteRows ?? []).forEach((row) => {
-      const current = noteCounts.get(row.paper_id) ?? 0;
-      noteCounts.set(row.paper_id, current + 1);
-    });
-
-    const assignedToIds = rows.map((row) => row.assigned_to).filter((id): id is string => id !== null);
+    const assignedToIds = Array.from(
+      new Set(rows.map((row) => row.assigned_to).filter((id): id is string => id !== null)),
+    );
     if (assignedToIds.length > 0) {
-      const { data: profiles, error: profilesError } = await supabase
-        .from('profiles')
-        .select('id, full_name')
-        .in('id', assignedToIds);
+      for (const batchIds of chunkValues(assignedToIds, BATCHED_IN_QUERY_SIZE)) {
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('id, full_name')
+          .in('id', batchIds);
 
-      if (!profilesError && profiles) {
-        profiles.forEach((profile) => {
-          assigneeNames.set(profile.id, profile.full_name);
-        });
+        if (!profilesError && profiles) {
+          profiles.forEach((profile) => {
+            assigneeNames.set(profile.id, profile.full_name);
+          });
+        }
       }
     }
   }

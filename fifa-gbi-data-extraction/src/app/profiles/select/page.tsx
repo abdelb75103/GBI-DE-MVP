@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { ProfileChooser } from '@/components/profile/profile-chooser';
+import { canAccessWorkspace, getDisplayRole } from '@/lib/profile-access';
 import { getAdminServiceClient } from '@/lib/supabase';
 import type { UserRole } from '@/lib/supabase';
 
@@ -42,28 +43,12 @@ export default async function ProfileSelectPage() {
     loadError = message;
   }
 
-  // Project Lead profile IDs (UUIDs from SQL script)
-  const projectLeadIds = new Set([
-    '550e8400-e29b-41d4-a716-446655440001', // Ben Clarsen
-    '550e8400-e29b-41d4-a716-446655440002', // Eamonn Delahunt
-    '550e8400-e29b-41d4-a716-446655440003', // Nicol van Dyk
-  ]);
-
-  // Check if project leads exist in database and add displayRole
-  const profilesWithDisplayRole = profiles.map((profile) => {
-    if (projectLeadIds.has(profile.id) && profile.role === 'extractor') {
-      return {
-        ...profile,
-        displayRole: 'Project Lead' as const,
-      };
-    }
-    return profile;
-  });
-
-  // No fallback profiles - we only use database profiles
-
-  // Use profiles with display role
-  const finalProfiles = profilesWithDisplayRole;
+  const finalProfiles = profiles
+    .filter((profile) => canAccessWorkspace(profile))
+    .map((profile) => ({
+      ...profile,
+      displayRole: getDisplayRole(profile),
+    }));
 
   return (
     <section className="relative isolate overflow-hidden rounded-[2.25rem] border border-indigo-100/80 bg-white/90 shadow-2xl ring-1 ring-slate-200/60">
