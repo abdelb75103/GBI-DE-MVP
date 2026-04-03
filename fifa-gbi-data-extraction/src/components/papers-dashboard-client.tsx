@@ -41,7 +41,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     // Assignment filter
     if (profile && assignmentFilter !== 'all') {
       if (assignmentFilter === 'available') {
-        result = result.filter((paper) => !paper.assignedTo);
+        result = result.filter((paper) => !paper.assignedTo && paper.status !== 'archived');
       } else if (assignmentFilter === 'mine') {
         // Show all papers assigned to user, including completed ones
         result = result.filter((paper) => paper.assignedTo === profile.id);
@@ -92,7 +92,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
 
     return {
       all: papers.length,
-      available: papers.filter((paper) => !paper.assignedTo).length,
+      available: papers.filter((paper) => !paper.assignedTo && paper.status !== 'archived').length,
       mine: papers.filter((paper) => paper.assignedTo === profile.id).length, // Include all assigned papers, including completed
     };
   }, [papers, profile]);
