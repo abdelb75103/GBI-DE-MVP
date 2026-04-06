@@ -78,3 +78,8 @@
 - Exact names of the first four AI‑assisted tabs.
 - Full list of status values and their definitions.
 - Where the Save button is located in each layout (Accordion/Focus/Full Screen).
+
+## Exposure-Flagged Paper Reviews
+- When reviewing papers flagged for exposure/denominator issues, follow [NO_EXPOSURE_REVIEW_WORKFLOW.md](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/reports/NO_EXPOSURE_REVIEW_WORKFLOW.md).
+- Use that workflow to decide whether the paper should remain `extracted`, be repaired using a defensible derived denominator, or be retagged to `no_exposure`.
+- Do not treat a paper as exposure-time usable just because the methods say exposure was collected. The paper must publish usable exposure totals, a time-based incidence/burden result, or enough reported information for a defensible derivation.
