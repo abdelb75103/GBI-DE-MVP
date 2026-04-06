@@ -10,7 +10,7 @@ export const TAGGED_AUTO_COMPLETE_STATUSES: PaperStatus[] = [
   'referee',
 ];
 
-export const ACTIVE_STATUSES: PaperStatus[] = ['uploaded', 'processing', 'flagged', 'qa_review'];
+export const ACTIVE_STATUSES: PaperStatus[] = ['uploaded', 'processing', 'flagged'];
 
 export const COMPLETED_STATUSES: PaperStatus[] = ['extracted'];
 
