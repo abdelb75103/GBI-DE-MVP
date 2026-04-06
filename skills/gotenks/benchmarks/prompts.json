@@ -1,0 +1,101 @@
+[
+  {
+    "id": "weekly-report",
+    "title": "Weekly status report",
+    "category": "report",
+    "priority": 3,
+    "web": false,
+    "sources": [
+      "fixtures/weekly-status-notes.md"
+    ],
+    "prompt": "Write a concise weekly report for leadership. Cover wins, risks, and next steps in polished markdown."
+  },
+  {
+    "id": "meeting-summary",
+    "title": "Partner meeting summary",
+    "category": "summary",
+    "priority": 2,
+    "web": false,
+    "sources": [
+      "fixtures/partner-meeting-notes.md"
+    ],
+    "prompt": "Turn these raw partner meeting notes into a clean summary with decisions, follow-ups, and owners."
+  },
+  {
+    "id": "research-brief",
+    "title": "Customer research brief",
+    "category": "research-brief",
+    "priority": 2,
+    "web": false,
+    "sources": [
+      "fixtures/customer-interviews.md"
+    ],
+    "prompt": "Create a research brief that synthesizes the customer interview notes into themes, evidence, and implications."
+  },
+  {
+    "id": "decision-memo",
+    "title": "Rollout decision memo",
+    "category": "decision-memo",
+    "priority": 2,
+    "web": false,
+    "sources": [
+      "fixtures/rollout-options.md"
+    ],
+    "prompt": "Write a decision memo recommending one rollout option and explaining the tradeoffs clearly."
+  },
+  {
+    "id": "action-plan",
+    "title": "Thirty-day action plan",
+    "category": "action-plan",
+    "priority": 2,
+    "web": false,
+    "sources": [
+      "fixtures/retro-findings.md"
+    ],
+    "prompt": "Convert the retrospective findings into a practical 30-day action plan with owners and sequencing."
+  },
+  {
+    "id": "executive-update",
+    "title": "Executive KPI update",
+    "category": "executive-update",
+    "priority": 3,
+    "web": false,
+    "sources": [
+      "fixtures/kpi-snapshot.md"
+    ],
+    "prompt": "Write an executive update that summarizes the KPI snapshot, highlights what matters, and flags risks."
+  },
+  {
+    "id": "model-evaluation-report",
+    "title": "Dual-LLM pilot report",
+    "category": "report",
+    "priority": 5,
+    "web": false,
+    "sources": [
+      "fixtures/model-eval-notes.md"
+    ],
+    "prompt": "Write a polished internal report on the dual-LLM pilot. Focus on findings, caveats, and the recommendation."
+  },
+  {
+    "id": "launch-brief",
+    "title": "Gotenks launch brief",
+    "category": "brief",
+    "priority": 5,
+    "web": false,
+    "sources": [
+      "fixtures/gotenks-launch-notes.md"
+    ],
+    "prompt": "Create a launch brief for Gotenks that explains the value proposition, target users, release scope, and launch risks."
+  },
+  {
+    "id": "benchmark-research-memo",
+    "title": "Benchmarking research memo",
+    "category": "research-memo",
+    "priority": 4,
+    "web": true,
+    "sources": [
+      "fixtures/benchmarking-goals.md"
+    ],
+    "prompt": "Write a research-backed memo on how to benchmark AI writing assistants for internal teams. Use the shared research packet and provided goals to recommend a practical evaluation approach."
+  }
+]

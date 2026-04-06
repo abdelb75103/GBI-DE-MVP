@@ -4,15 +4,16 @@ This file summarizes the current Full text review screening queue inspected from
 
 Rule used for `Has PDF Now`: `Yes` only when the Covidence card showed an attached PDF file. External links alone did not count.
 
-Rule used for `Foreign Language`: any note mentioning a language such as `Spanish`, `German`, `Dutch`, `Portugese`, `French`, `Slovenian`, `Polish`, `Czech`, `Swedish`, `Danish`, or `Norwegian` was treated as foreign-language, even if the note also said `Request`.
+Rule used for `Foreign Language`: any note mentioning a language such as `Spanish`, `German`, `Dutch`, `Portugese`, `French`, `Slovenian`, `Polish`, `Czech`, `Swedish`, `Danish`, `Norwegian`, or `Turkish` was treated as foreign-language, even if the note also said `Request`.
 
 ## Summary
 
 - Rows captured from the rendered queue: 74
-- Foreign-language papers: 38
+- Foreign-language papers: 40
   - German: 9
+  - Turkish: 1
   - Portugese: 7
-  - Spanish: 7
+  - Spanish: 8
   - French: 5
   - Dutch: 3
   - Swedish: 2
@@ -21,7 +22,7 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
   - Norwegian: 1
   - Polish: 1
   - Slovenian: 1
-- Papers that still need full texts: 35
+- Papers that still need full texts: 33
 - English papers with PDFs left to inspect: 0
 
 ## Foreign-Language Papers
@@ -40,6 +41,12 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | #722 | Yes | German | Hirschm√ºller 2015 Epidemiologie von Verletzungen und √úberlastungssch√§den vergangener paralympischer Spiele. Hirschm√ºller, A. and Kosel, J. and S√ºdkamp, N. P. and Kubosch, E. J. 2015;(): 2015 DOI: 10.5960/dzsm.2015.207 Full text Originalia_Hirschmueller_VerletzungenParalympischerSpiele_2015-11.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #736 | No | German | Berbig 1997 Die Verletzungsgefaehrdung im Spitzenfussball aus der Sicht des Sporttraumatologen. Berbig, R. 1997;(): 1997 Upload full text |
 
+### Turkish (1)
+
+| Covidence # | Has PDF Now | Exact Note | Title |
+| --- | --- | --- | --- |
+| #53 | Yes | Turkish \| Retrieved 2026-04-05 via open DergiPark PDF | Can 2006 Incidence of injury in female soccer players: A pilot study Can F. and Erden Z. 2006;(): 2006 Full text Can-2006.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
+
 ### Portugese (7)
 
 | Covidence # | Has PDF Now | Exact Note | Title |
@@ -52,13 +59,14 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | #854 | No | Portugese | PinheiroLima 2021 Epidemiologia de les√µes em jovens atletas de futebol das categorias sub-17 e 20 de um clube profissional de futebol do Rio de Janeiro. Pinheiro Lima, Vicente and de Souza Vale, Rodrigo Gomes and Pinheiro Lima, Bruno Lucas and de Oliveira Filho, Gilson Ramos and da Silva Novaes, Jefferson and Pinto de Castro, Juliana Brand√£o and Moreira Nunes, Rodolfo de Alkmim 2021;(): 2021 Upload full text |
 | #855 | Yes | Request \| \| Portugese | TeixeiraOs√≥rio 2022 INCID√äNCIA DE LES√ïES E/OU DORES MUSCULOESQUEL√âTICAS E FATORES ASSOCIADOS EM EQUIPES DE FUTEBOL PROFISSIONAL DO ESTADO DO RIO DE JANEIRO DURANTE O CAMPEONATO BRASILEIRO S√âRIE A DE 2018. Teixeira Os√≥rio, Ailton and Meziat-Filho, Ney and Souto Maior, Alex 2022;(): 2022 Full text 12782-Texto do artigo-65670-1-10-20230311 (1).pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 
-### Spanish (7)
+### Spanish (8)
 
 | Covidence # | Has PDF Now | Exact Note | Title |
 | --- | --- | --- | --- |
 | #113 | Yes | Tag: Spanish | Noya 2012 Incidence of injuries in Spanish professional football over a season: Days off due to injury Noya J. and Sillero M. 2012;(): 2012 DOI: 10.1016/j.apunts.2011.10.001 Full text Noya J. and Sillero M. - 2012 - Incidence of injuries in Spanish professional football over a season Days off due to injury.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #412 | Yes | Spanish | RafaelCorrea 2013 Muscle skeletal injuries incidence in professional soccer players Rafael Correa J. and Galvan-Villamarin F. and Munoz Vargas E. and Esteban Lopez C. and Clavijo M. and Rodriguez A. 2013;(): 2013 DOI: 10.1016/S0120-8845 Full text Rafael Correa J. and Galvan-Villamarin F. and Munoz Vargas E. and Esteban Lopez C. and Clavijo M. and Rodriguez A. - 2013 - Muscle skeletal injuries incidence in professional soccer players.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #565 | Yes | Spanish | Duque-Arias 2024 Incidence of Muscular Injuries in Professional Soccer Players: An Analysis before and during the COVID-19 Pandemic Duque-Arias M. and Agreda-Sossa J. and Mendez-Galvis E. and Estrada-Castrillon M. and Saldarriaga-Franco J. and Gallo-Villegas J. AO - Estrada-Castrillon, Mauricio; ORCID: https://orcid.org/0000-0002-5392-4800 AO - Gallo-Villegas, Jaime; ORCID: https://orcid.org/0000-0002-6296-5110 AO - Mendez-Galvis, Edgar; ORCID: https://orcid.org/0000-0001-8795-8833 AO - Saldarriaga-Franco, Juan; ORCID: https://orcid.org/0000-0002-4982-7047 2024;(): 2024 DOI: 10.17533/udea.iatreia.238 Full text 2.+Incidencia+de+lesiones+musculares.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
+| #357 | Yes | Spanish \| Retrieved 2026-04-05 via direct journal PDF | Pereira 2003 Epidemeology of Anterior Cruciate Ligament injuries in professional football players Pereira M.T. and Nanni G. and Roi G.S. 2003;(): 2003 Full text Pereira-2003.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #710 | Yes | Spanish | Reyes 2023 Estudio descriptivo de las lesiones de ligamento cruzado en el f√∫tbol femenino. Reyes, Sara Serrat and G√≥me, Josefa S√°nchez and Ponce, Inmaculada Gonz√°lez and Moraleda, Blanca Romero 2023;(): 2023 DOI: 10.47197/retos.v50.96622 Full text 73763.pdf Primary Full text uploaded by Covidence (Open Access) Manage full text |
 | #737 | No | Request Spanish | Gonzalez 1995 Incidencia y epidemiologia de las lesiones ocurridas durante una temporada en un club de futbol. Gonzalez, J. and Guijarro Andujar, J. and Amigo de Bonet Sans, N. 1995;(): 1995 Upload full text |
 | #815 | Yes | Spanish | Garcia-Tamez 2012 [Epidemiology of injuries in a male college indoor soccer team] Garcia-Tamez S.E. and Echegoyen-Monroy S. and Ybarra-Barrera P. and Rodriguez M.C. 2012;(): 2012 Full text or124b.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
@@ -125,12 +133,10 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | --- | ---: | --- | --- |
 | #13 | 2 | Request \| \| cant access without paying - requested, waiting | Lopes 2023 Epidemiology of Injuries in Elite Male Futsal Players Lopes M. and Martins F. and Brito J. and Figueiredo P. and Tomas R. and Ribeiro F. and Travassos B. AO - Lopes, Mario; ORCID: https://orcid.org/0000-0001-9790-2120 2023;(): 2023 DOI: 10.1097/JSM.0000000000001142 Upload full text |
 | #36 | 2 | Request \| \| requested - waiting | Grassi 2022 Epidemiology of Achilles Tendon Rupture in Italian First Division Football (Soccer) Players and Their Performance after Return to Play Grassi A. and Caravelli S. and Fuiano M. and D'Hooghe P. and Filippini M. and della Villa F. and Mosca M. and Zaffagnini S. 2022;(): 2022 DOI: 10.1097/JSM.0000000000000879 Upload full text |
-| #53 | 1 | Requested. Waiting for response | Can 2006 Incidence of injury in female soccer players: A pilot study Can F. and Erden Z. 2006;(): 2006 Upload full text |
 | #63 | 3 | Request \| \| 'Thank you for your interest in this document. Access to the full text requires a subscription or can be purchased.' - dont have access \| \| requested - waiting | Jaber 2022 Injury Profile among Elite Youth Male Football Players in a German Academy. Jaber, Ayham and Weishorn, Johannes and Berrsche, Gregor and Ott, Henning and Bangert, Yannic 2022;(): 2022 DOI: 10.1055/a-1516-4139 Upload full text |
 | #69 | 2 | Request \| \| requested - waiting | Pellegrini 2021 Injury analysis of a professional female soccer team in first division Italian season. Pellegrini, Andrea and Lombardi, Martina and Riva, Nicola and Combi, Franco and Pecci, Claudio and Porcellini, Giuseppe 2021;(): 2021 DOI: 10.23736/S0022-4707.21.11688-3 Upload full text |
 | #83 | 1 | Request | Tummala 2018 Hip and Groin Injuries Among Collegiate Male Soccer Players: The 10-Year Epidemiology, Incidence, and Prevention. Tummala, Sailesh V and Chhabra, Anikar and Makovicka, Justin L and Patel, Karan A and Hartigan, David E 2018;(): 2018 DOI: 10.3928/01477447-20181010-01 Upload full text |
 | #95 | 2 | Request \| \| requested - waiting for response | Tourny 2014 Epidemiologic study of young soccer player's injuries in U12 to U20 Tourny C. and Sangnier S. and Cotte T. and Langlois R. and Coquart J. 2014;(): 2014 Upload full text |
-| #357 | 1 | Requested- waiting | Pereira 2003 Epidemeology of Anterior Cruciate Ligament injuries in professional football players Pereira M.T. and Nanni G. and Roi G.S. 2003;(): 2003 Upload full text |
 | #361 | 0 |  | Ostenberg 2000 Injury risk factors in female European football. A prospective study of 123 players during one season Ostenberg A. and Roos H. 2000;(): 2000 Upload full text Note |
 | #364 | 1 | Requested - waiting | McHardy 2001 Injury associated with soccer: A review of epidemiology and etiology McHardy A. and Pollard H. 2001;(): 2001 Upload full text |
 | #368 | 2 | Request \| \| requested - waiting for response | Volpi 2000 Soccer injury epidemiology Volpi P. 2000;(): 2000 Full text https://www.safetylit.org/citations/index.php?fuseaction=citations.viewdetails&citationIds[]=citjournalarticle_75762_38 Manage full text |

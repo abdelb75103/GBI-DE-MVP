@@ -31,6 +31,12 @@ yarn-error.log*
 *.tsbuildinfo
 PROFILE_PASSWORDS.md
 
+# Python and skill-runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+**/.gotenks/
+
 # Local paper libraries
 Full Text - Data Extraaction/**/*.pdf
 Full Text - Data Extraaction/**/*.PDF

@@ -195,7 +195,7 @@ export function DashboardProgressVisual({
         </div>
         
         <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
-          Note: Tagged items (UEFA, Aspetar ASPREV, Mental health, American data, Systematic reviews) and flagged
+          Note: Tagged items (UEFA, FIFA data, Aspetar ASPREV, Mental health, American data, Systematic reviews) and flagged
           studies count toward overall progress but do not for individuals completion.
         </p>
       </div>

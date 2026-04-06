@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gotenks"
+  short_description: "Blend Codex and Claude drafts"
+  default_prompt: "Use $gotenks to turn this brief, any attached notes, and any optional research packet into one humanized markdown deliverable."

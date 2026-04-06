@@ -3,6 +3,7 @@ import type { PaperStatus } from '@/lib/types';
 export const TAGGED_AUTO_COMPLETE_STATUSES: PaperStatus[] = [
   'mental_health',
   'uefa',
+  'fifa_data',
   'aspetar_asprev',
   'american_data',
   'systematic_review',
