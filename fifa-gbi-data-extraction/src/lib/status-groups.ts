@@ -9,6 +9,7 @@ export const TAGGED_AUTO_COMPLETE_STATUSES: PaperStatus[] = [
   'american_data',
   'systematic_review',
   'referee',
+  'retrospective_substudy_analysis',
 ];
 
 export const ACTIVE_STATUSES: PaperStatus[] = ['uploaded', 'processing', 'flagged'];

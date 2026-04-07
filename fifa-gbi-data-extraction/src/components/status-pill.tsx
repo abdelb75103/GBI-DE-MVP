@@ -17,6 +17,7 @@ const statusStyles: Record<PaperStatus, string> = {
   american_data: 'border-cyan-200/80 bg-cyan-100/80 text-cyan-700',
   systematic_review: 'border-fuchsia-200/80 bg-fuchsia-100/80 text-fuchsia-700',
   referee: 'border-amber-200/80 bg-amber-100/80 text-amber-700',
+  retrospective_substudy_analysis: 'border-violet-200/80 bg-violet-100/80 text-violet-700',
 };
 
 const statusLabels: Record<PaperStatus, string> = {
@@ -34,6 +35,7 @@ const statusLabels: Record<PaperStatus, string> = {
   american_data: 'American Data',
   systematic_review: 'Systematic Review',
   referee: 'Referee',
+  retrospective_substudy_analysis: 'Retrospective Sub-study Analysis',
 };
 
 type StatusPillProps = {

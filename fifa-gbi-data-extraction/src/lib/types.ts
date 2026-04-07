@@ -14,7 +14,8 @@ export type PaperStatus =
   | 'aspetar_asprev'
   | 'american_data'
   | 'systematic_review'
-  | 'referee';
+  | 'referee'
+  | 'retrospective_substudy_analysis';
 
 export type ExtractionTab =
   | 'studyDetails'

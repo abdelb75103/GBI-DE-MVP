@@ -18,6 +18,7 @@ const options: { value: PaperStatus; label: string }[] = [
   { value: 'american_data', label: 'American Data' },
   { value: 'systematic_review', label: 'Systematic Review' },
   { value: 'referee', label: 'Referee' },
+  { value: 'retrospective_substudy_analysis', label: 'Retrospective Sub-study Analysis' },
 ];
 
 type StatusSelectProps = {
