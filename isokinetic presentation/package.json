@@ -1,0 +1,19 @@
+{
+  "name": "isokinetic-presentation",
+  "version": "1.0.0",
+  "description": "This folder is the cleaned handoff packet for a fresh chat/context window.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.445",
+    "@types/react": "^19.2.14",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.445"
+  }
+}

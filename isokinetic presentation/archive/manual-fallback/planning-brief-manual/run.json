@@ -1,0 +1,12 @@
+{
+  "status": "manual-fallback",
+  "completed_at": "2026-04-03",
+  "note": "Created manually after the packaged Gotenks workflow was not used because the nested research CLI stalled.",
+  "artifacts": {
+    "final": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/planning-brief/final.md"
+  },
+  "inputs": {
+    "prompt_file": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/planning-prompt.md",
+    "research_file": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/research/research.md"
+  }
+}

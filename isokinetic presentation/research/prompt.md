@@ -1,0 +1,1 @@
+Build a primary-source research packet for an academic conference talk on the FIFA GBI Living Systematic Review. Focus on the football injury surveillance consensus statements, the football-specific extension, and the 2026 global surveillance-map paper. Emphasize best-practice reporting, comparability, and the most useful framing for a professional conference talk.
