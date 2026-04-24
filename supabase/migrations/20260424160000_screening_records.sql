@@ -70,3 +70,8 @@ create index if not exists screening_records_file_sha256_idx
 
 create index if not exists screening_records_promoted_paper_idx
   on public.screening_records (promoted_paper_id);
+
+-- The app accesses screening records only through authenticated Next.js
+-- server routes using the Supabase service role. Keep direct browser/anon
+-- access closed by enabling RLS without public policies.
+alter table public.screening_records enable row level security;
