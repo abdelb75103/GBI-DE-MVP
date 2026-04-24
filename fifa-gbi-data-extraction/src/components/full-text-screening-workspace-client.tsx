@@ -54,7 +54,8 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
     : canChangeReviewerVote;
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
-  const pdfUrl = `/api/full-text-screening/${record.id}/file#view=FitH`;
+  const pdfDirectUrl = `/api/full-text-screening/${record.id}/file`;
+  const pdfUrl = `${pdfDirectUrl}#view=FitH`;
 
   const saveDecision = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -121,8 +122,27 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
       <div className="grid min-h-[calc(100vh-190px)] gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(280px,320px)]">
-        <section className="min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-          <iframe src={pdfUrl} className="h-full min-h-[82vh] w-full border-0 bg-white" title={`${record.assignedStudyId} full text PDF`} />
+        <section className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">PDF preview</p>
+              <p className="text-xs text-slate-500">If the preview is blank, open the PDF directly.</p>
+            </div>
+            <a
+              href={pdfDirectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              Open PDF in new tab
+            </a>
+          </div>
+          <iframe
+            src={pdfUrl}
+            className="h-full min-h-[calc(82vh-58px)] w-full flex-1 border-0 bg-white"
+            title={`${record.assignedStudyId} full text PDF`}
+            allow="fullscreen"
+          />
         </section>
 
         <aside className="min-w-0 space-y-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
