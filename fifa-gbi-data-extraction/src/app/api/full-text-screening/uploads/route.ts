@@ -59,13 +59,15 @@ export async function POST(request: Request) {
     );
   }
 
-  let storageInfo: { storageBucket: string; storageObjectPath: string } | null = null;
-  let dataBase64: string | null = null;
+  let storageInfo: { storageBucket: string; storageObjectPath: string };
   try {
     storageInfo = await mockDb.uploadFileToStorage(buffer, file.name, 'papers');
   } catch (storageError) {
     console.error('[POST /api/full-text-screening/uploads] Storage upload failed:', storageError);
-    dataBase64 = buffer.toString('base64');
+    return NextResponse.json(
+      { error: 'PDF storage upload failed. Please retry before adding this record to screening.' },
+      { status: 502 },
+    );
   }
 
   const title = ((formData.get('title') as string | null) || file.name).trim();
@@ -78,9 +80,9 @@ export async function POST(request: Request) {
     doi: (formData.get('doi') as string | null) || null,
     sourceLabel: (formData.get('sourceLabel') as string | null) || 'local-upload',
     sourceRecordId: (formData.get('sourceRecordId') as string | null) || null,
-    storageBucket: storageInfo?.storageBucket ?? null,
-    storageObjectPath: storageInfo?.storageObjectPath ?? null,
-    dataBase64,
+    storageBucket: storageInfo.storageBucket,
+    storageObjectPath: storageInfo.storageObjectPath,
+    dataBase64: null,
     fileName: file.name,
     originalFileName: file.name,
     mimeType: file.type || 'application/pdf',

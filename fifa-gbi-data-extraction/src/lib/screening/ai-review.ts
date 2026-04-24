@@ -28,6 +28,16 @@ export type ScreeningAiResult = {
   rawResponse: unknown;
 };
 
+export class ScreeningAiParseError extends Error {
+  rawText: string;
+
+  constructor(message: string, rawText: string) {
+    super(message);
+    this.name = 'ScreeningAiParseError';
+    this.rawText = rawText;
+  }
+}
+
 export async function reviewFullTextScreeningRecord(
   record: ScreeningRecord,
   apiKey: string,
@@ -75,15 +85,27 @@ export async function reviewFullTextScreeningRecord(
     throw new Error('AI full-text screening returned an empty response.');
   }
 
-  const parsed = parseJson(rawText);
-  const validated = screeningAiSchema.parse(parsed);
+  let parsed: unknown;
+  try {
+    parsed = parseJson(rawText);
+  } catch {
+    throw new ScreeningAiParseError('AI full-text screening returned malformed JSON.', rawText);
+  }
+
+  const validated = screeningAiSchema.safeParse(parsed);
+  if (!validated.success) {
+    throw new ScreeningAiParseError(
+      `AI full-text screening response did not match the expected schema: ${validated.error.issues.map((issue) => issue.message).join(', ')}`,
+      rawText,
+    );
+  }
 
   return {
-    suggestedDecision: validated.suggestedDecision,
-    reason: validated.reason,
-    evidenceQuote: validated.evidenceQuote ?? null,
-    sourceLocation: validated.sourceLocation ?? null,
-    confidence: validated.confidence ?? null,
+    suggestedDecision: validated.data.suggestedDecision,
+    reason: validated.data.reason,
+    evidenceQuote: validated.data.evidenceQuote ?? null,
+    sourceLocation: validated.data.sourceLocation ?? null,
+    confidence: validated.data.confidence ?? null,
     model: usedModelName,
     criteriaVersion: SCREENING_CRITERIA_VERSION,
     rawResponse: parsed,

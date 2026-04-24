@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
 import { mockDb } from '@/lib/mock-db';
-import { EXCLUSION_REASONS } from '@/lib/screening/reviewer-decisions';
+import { EXCLUSION_REASONS, MAX_EXCLUSION_REASON_CHARS } from '@/lib/screening/reviewer-decisions';
 import { readActiveProfileSession } from '@/lib/session';
 
 export const runtime = 'nodejs';
@@ -11,7 +11,7 @@ const requestSchema = z.object({
   decision: z.enum(['include', 'exclude']),
   decisionAction: z.enum(['reviewer_vote', 'consensus_resolution']).optional(),
   reason: z.enum(EXCLUSION_REASONS).optional().nullable(),
-  otherReason: z.string().optional().nullable(),
+  otherReason: z.string().trim().max(MAX_EXCLUSION_REASON_CHARS).optional().nullable(),
 });
 
 export async function PATCH(

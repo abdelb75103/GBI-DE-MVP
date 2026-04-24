@@ -6,7 +6,7 @@ import { supabaseClient } from '@/lib/db/shared';
 import { createPaper, updatePaper } from '@/lib/db/papers';
 import { attachFile } from '@/lib/db/files';
 import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
-import { getReviewerDecisions, getScreeningResolution, type FullTextDecisionAction } from '@/lib/screening/reviewer-decisions';
+import { MAX_EXCLUSION_REASON_CHARS, type FullTextDecisionAction } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
 import type { ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 
@@ -212,105 +212,19 @@ export const saveScreeningDecision = async (
     throw new Error('A reason is required for excluded full-text records.');
   }
 
-  const existingRecord = await getScreeningRecord(id);
-  if (!existingRecord) {
-    throw new Error('Screening record not found');
+  const trimmedReason = input.reason?.trim() || null;
+  if (trimmedReason && trimmedReason.length > MAX_EXCLUSION_REASON_CHARS) {
+    throw new Error(`Exclusion reason must be ${MAX_EXCLUSION_REASON_CHARS} characters or fewer.`);
   }
 
-  const decidedAt = new Date().toISOString();
-  const existingDecisions = getReviewerDecisions(existingRecord);
-  const firstTwo = existingDecisions.slice(0, 2);
-  const hasConflict =
-    firstTwo.length === 2 &&
-    firstTwo[0]?.decision !== firstTwo[1]?.decision;
-  const thirdDecision = existingDecisions[2];
-
-  const nextDecision = {
-    reviewerProfileId: input.reviewerProfileId,
-    reviewerName: input.reviewerName ?? null,
-    decision: input.decision,
-    reason: input.reason?.trim() || null,
-    decidedAt,
-  };
-
-  const isFirstTwoReviewer = firstTwo.some((decision) => decision.reviewerProfileId === input.reviewerProfileId);
-  const isConsensusReviewer = thirdDecision?.reviewerProfileId === input.reviewerProfileId;
-  const requestedAction = input.decisionAction ?? 'reviewer_vote';
-
-  let decisions = firstTwo;
-  if (requestedAction === 'consensus_resolution') {
-    if (!hasConflict) {
-      throw new Error('Conflict resolution is only available when the first two reviewer decisions conflict.');
-    }
-    decisions = [...firstTwo, nextDecision];
-  } else if (isFirstTwoReviewer) {
-    const updatedFirstTwo = firstTwo.map((decision) =>
-      decision.reviewerProfileId === input.reviewerProfileId ? nextDecision : decision,
-    );
-    const stillConflicted = updatedFirstTwo.length === 2 && updatedFirstTwo[0]?.decision !== updatedFirstTwo[1]?.decision;
-    decisions = stillConflicted && thirdDecision ? [...updatedFirstTwo, thirdDecision] : updatedFirstTwo;
-  } else if (firstTwo.length < 2) {
-    decisions = [...firstTwo, nextDecision];
-  } else if (isConsensusReviewer) {
-    throw new Error('Use the consensus action to update the final conflict decision.');
-  } else {
-    throw new Error('This record already has two reviewer decisions. Update an existing decision or resolve a conflict.');
-  }
-
-  const metadataBefore = existingRecord.metadata as Record<string, unknown> | null;
-  const previousAudit = Array.isArray(metadataBefore?.fullTextDecisionAudit)
-    ? metadataBefore.fullTextDecisionAudit
-    : [];
-  const resolutionBefore = getScreeningResolution(existingRecord);
-  const action = requestedAction === 'consensus_resolution'
-    ? thirdDecision
-      ? 'updated_consensus_resolution'
-      : 'consensus_resolution'
-    : isFirstTwoReviewer
-      ? 'updated_vote'
-      : 'initial_vote';
-
-  const metadata: Record<string, unknown> = {
-    ...(existingRecord.metadata ?? {}),
-    fullTextDecisions: decisions,
-    fullTextDecisionAudit: [
-      ...previousAudit,
-      {
-        ...nextDecision,
-        action,
-        resolutionBefore,
-      },
-    ],
-  };
-  const statusRecord = { ...existingRecord, metadata } satisfies ScreeningRecord;
-  const resolution = getScreeningResolution(statusRecord);
-  metadata.fullTextResolution = resolution;
-
-  const concordantExcludeReasons = decisions
-    .filter((decision) => decision.decision === 'exclude')
-    .map((decision) => decision.reason?.trim())
-    .filter((reason): reason is string => Boolean(reason));
-
-  const manualDecision =
-    resolution === 'ready_for_extraction'
-      ? 'include'
-      : resolution === 'excluded'
-        ? 'exclude'
-        : null;
-
-  const { data, error } = await supabaseClient()
-    .from('screening_records')
-    .update({
-      manual_decision: manualDecision,
-      manual_reason: resolution === 'excluded' ? Array.from(new Set(concordantExcludeReasons)).join(' / ') : null,
-      manual_decided_by: input.reviewerProfileId,
-      manual_decided_at: decidedAt,
-      metadata,
-      updated_at: decidedAt,
-    })
-    .eq('id', id)
-    .select('*')
-    .single();
+  const { data, error } = await supabaseClient().rpc('save_screening_vote', {
+    p_record_id: id,
+    p_reviewer_profile_id: input.reviewerProfileId,
+    p_reviewer_name: input.reviewerName ?? null,
+    p_decision: input.decision,
+    p_decision_action: input.decisionAction ?? 'reviewer_vote',
+    p_reason: trimmedReason,
+  });
 
   if (error || !data) {
     throw new Error(`Failed to save screening decision: ${error?.message ?? 'Unknown error'}`);

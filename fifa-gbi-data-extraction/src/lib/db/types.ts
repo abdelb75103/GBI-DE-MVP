@@ -25,6 +25,7 @@ export type UploadQueueInsert = Database['public']['Tables']['paper_upload_queue
 export type ScreeningRecordRow = Database['public']['Tables']['screening_records']['Row'];
 export type ScreeningRecordInsert = Database['public']['Tables']['screening_records']['Insert'];
 export type ScreeningRecordUpdate = Database['public']['Tables']['screening_records']['Update'];
+export type ScreeningVoteRow = Database['public']['Tables']['screening_votes']['Row'];
 
 export type PopulationGroupRow = Database['public']['Tables']['population_groups']['Row'];
 export type PopulationValueRow = Database['public']['Tables']['population_values']['Row'];

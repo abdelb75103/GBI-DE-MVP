@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radical full-text screening redesigns</title>
+    <style>
+      :root {
+        --ink: #07111f;
+        --muted: #536174;
+        --line: #d8e1ed;
+        --paper: #fbfdff;
+        --white: #fff;
+        --blue: #2563eb;
+        --cyan: #0891b2;
+        --green: #059669;
+        --green-soft: #dcfce7;
+        --green-line: #86efac;
+        --red: #be123c;
+        --red-soft: #ffe4e6;
+        --dark: #0f172a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #eef4fb;
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .page {
+        width: min(1500px, calc(100vw - 28px));
+        margin: 0 auto;
+        padding: 22px 0 46px;
+      }
+
+      .intro {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      .intro h1 {
+        margin-bottom: 8px;
+        font-size: 28px;
+        letter-spacing: -0.04em;
+      }
+
+      .intro p {
+        margin-bottom: 0;
+        max-width: 830px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: white;
+        padding: 7px 11px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 850;
+        white-space: nowrap;
+      }
+
+      .tag.include {
+        border-color: var(--green-line);
+        background: var(--green-soft);
+        color: #065f46;
+      }
+
+      .tag.exclude {
+        border-color: #fecdd3;
+        background: var(--red-soft);
+        color: #9f1239;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      .mockups {
+        display: grid;
+        gap: 30px;
+      }
+
+      .mockup {
+        overflow: hidden;
+        border: 1px solid #cbd5e1;
+        border-radius: 24px;
+        background: white;
+        box-shadow: 0 18px 55px rgba(15, 23, 42, 0.1);
+      }
+
+      .mockup-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+        padding: 16px 18px;
+        background: rgba(255, 255, 255, 0.88);
+      }
+
+      .mockup-header strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 16px;
+      }
+
+      .mockup-header span {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .pdf {
+        min-width: 0;
+        background: linear-gradient(135deg, #f8fafc, #fff 58%, #eff6ff);
+      }
+
+      .pdf-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 58px;
+        border-bottom: 1px solid var(--line);
+        padding: 0 18px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 950;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .sub {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .open {
+        border: 1px solid #c7d2fe;
+        border-radius: 999px;
+        background: white;
+        padding: 8px 14px;
+        color: #3730a3;
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .pdf-card {
+        margin: 14px;
+        min-height: 630px;
+        overflow: hidden;
+        border: 1px dashed #94a3b8;
+        border-radius: 14px;
+        background: white;
+      }
+
+      .pdf-toolbar {
+        height: 46px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 0 24px;
+        background: #333;
+        color: white;
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .doc {
+        width: min(730px, calc(100% - 88px));
+        min-height: 520px;
+        margin: 0 auto;
+        padding: 34px 44px;
+        color: #050505;
+      }
+
+      .doc h2 {
+        margin-bottom: 26px;
+        font-size: 27px;
+      }
+
+      .doc-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 18px;
+        margin: 12px 0;
+        font-size: 17px;
+      }
+
+      .doc-row b {
+        font-weight: 900;
+      }
+
+      .screen-a {
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr) 330px;
+        min-height: 735px;
+      }
+
+      .rail-a {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        border-right: 1px solid var(--line);
+        background: var(--dark);
+        color: white;
+        padding: 14px 10px;
+      }
+
+      .rail-a .brand {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        margin: 0 auto 20px;
+        border-radius: 14px;
+        background: white;
+        color: var(--dark);
+        font-weight: 950;
+      }
+
+      .rail-nav {
+        display: grid;
+        gap: 10px;
+      }
+
+      .rail-nav span {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        margin: 0 auto;
+        border-radius: 16px;
+        color: #cbd5e1;
+        font-size: 18px;
+      }
+
+      .rail-nav .active {
+        background: #1e293b;
+        color: white;
+        box-shadow: inset 3px 0 0 #38bdf8;
+      }
+
+      .side-a {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        border-left: 1px solid var(--line);
+        background: #fbfdff;
+      }
+
+      .record-band {
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .record-band h3 {
+        margin: 10px 0 0;
+        font-size: 21px;
+        line-height: 1.22;
+        letter-spacing: -0.035em;
+      }
+
+      .decision-hero {
+        display: grid;
+        align-content: center;
+        gap: 18px;
+        padding: 20px 18px;
+      }
+
+      .verdict-meter {
+        overflow: hidden;
+        border: 1px solid var(--green-line);
+        border-radius: 26px;
+        background: #f0fdf4;
+      }
+
+      .verdict-top {
+        padding: 18px;
+        background: linear-gradient(135deg, #dcfce7, #ecfeff);
+      }
+
+      .verdict-top h2 {
+        margin: 10px 0 4px;
+        color: #064e3b;
+        font-size: 40px;
+        letter-spacing: -0.06em;
+      }
+
+      .verdict-body {
+        display: grid;
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .evidence-strip {
+        border-left: 4px solid var(--blue);
+        padding-left: 13px;
+      }
+
+      .evidence-strip blockquote {
+        margin: 0 0 9px;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .vote-dock {
+        border-top: 1px solid var(--line);
+        background: white;
+        padding: 16px 18px;
+      }
+
+      .vote-dock h4 {
+        margin: 0 0 10px;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .vote-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+      }
+
+      button {
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: white;
+        color: var(--ink);
+        font: inherit;
+        font-weight: 900;
+      }
+
+      .include-btn {
+        border-color: var(--green-line);
+        background: var(--green-soft);
+        color: #065f46;
+      }
+
+      .exclude-btn {
+        border-color: #fecdd3;
+        color: var(--red);
+      }
+
+      .save {
+        width: 100%;
+        margin-top: 10px;
+        border: 0;
+        background: linear-gradient(90deg, #4f46e5, #0ea5e9, #10b981);
+        color: white;
+      }
+
+      .screen-b {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        min-height: 735px;
+        background: #edf4fb;
+      }
+
+      .screen-b .pdf-card {
+        min-height: 650px;
+        margin-right: 365px;
+      }
+
+      .floating-command {
+        position: absolute;
+        right: 18px;
+        top: 74px;
+        bottom: 18px;
+        width: 330px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.18);
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18);
+        backdrop-filter: blur(18px);
+      }
+
+      .command-title {
+        padding: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .command-title h3 {
+        margin: 10px 0 0;
+        font-size: 24px;
+        line-height: 1.15;
+        letter-spacing: -0.055em;
+      }
+
+      .command-content {
+        display: grid;
+        align-content: start;
+        gap: 14px;
+        padding: 16px 18px;
+      }
+
+      .command-card {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: white;
+        padding: 14px;
+      }
+
+      .command-card.include {
+        border-color: var(--green-line);
+        background: linear-gradient(135deg, #ecfdf5, #f8fafc);
+      }
+
+      .command-card h4 {
+        margin: 8px 0;
+        font-size: 17px;
+      }
+
+      .command-card p {
+        margin: 0;
+        color: var(--ink);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .segmented {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #f1f5f9;
+        padding: 4px;
+      }
+
+      .segmented span {
+        border-radius: 999px;
+        padding: 8px 3px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .segmented span:first-child {
+        background: var(--dark);
+        color: white;
+      }
+
+      .screen-c {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        min-height: 735px;
+        background: #f8fafc;
+      }
+
+      .canvas-c {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+      }
+
+      .evidence-map {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 0 14px 14px;
+      }
+
+      .map-panel {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: white;
+        padding: 14px;
+      }
+
+      .map-panel h4 {
+        margin: 0 0 10px;
+        font-size: 14px;
+      }
+
+      .map-panel p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .right-c {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        border-left: 1px solid var(--line);
+        background: #07111f;
+        color: white;
+      }
+
+      .right-c .record-band {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .right-c .sub {
+        color: #94a3b8;
+      }
+
+      .decision-ring {
+        display: grid;
+        place-items: center;
+        padding: 24px 18px 10px;
+      }
+
+      .ring {
+        width: 190px;
+        height: 190px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background:
+          radial-gradient(circle at center, #07111f 55%, transparent 56%),
+          conic-gradient(#10b981 0deg 330deg, rgba(255, 255, 255, 0.14) 330deg 360deg);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 18px 55px rgba(16, 185, 129, 0.18);
+      }
+
+      .ring div {
+        text-align: center;
+      }
+
+      .ring strong {
+        display: block;
+        color: #86efac;
+        font-size: 34px;
+        letter-spacing: -0.05em;
+      }
+
+      .ring span {
+        color: #cbd5e1;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .dark-list {
+        display: grid;
+        gap: 12px;
+        padding: 8px 18px 18px;
+      }
+
+      .dark-item {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 13px;
+      }
+
+      .dark-item h4 {
+        margin: 0 0 7px;
+        color: white;
+        font-size: 13px;
+      }
+
+      .dark-item p {
+        margin: 0;
+        color: #cbd5e1;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .right-c .vote-dock {
+        border-top-color: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .right-c .vote-dock h4 {
+        color: white;
+      }
+
+      @media (max-width: 1050px) {
+        .screen-a,
+        .screen-c {
+          grid-template-columns: 1fr;
+        }
+
+        .rail-a {
+          display: none;
+        }
+
+        .screen-b .pdf-card {
+          margin-right: 14px;
+        }
+
+        .floating-command {
+          position: static;
+          width: auto;
+          margin: 0 14px 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="intro">
+        <div>
+          <h1>Three radical alternatives for the screening workspace</h1>
+          <p>
+            These intentionally move beyond the current side-panel stack. They borrow from command-center review tools,
+            PDF annotation apps, and decision-support dashboards while keeping the existing blue, green, red, slate system.
+          </p>
+        </div>
+        <span class="tag">Pick a direction</span>
+      </section>
+
+      <div class="mockups">
+        <section class="mockup">
+          <div class="mockup-header">
+            <div>
+              <strong>Idea 1: Command Rail + Verdict Hero</strong>
+              <span>Visual thesis: dense clinical review tool with a left command rail and a large, unmistakable verdict surface.</span>
+            </div>
+            <span class="tag include"><span class="dot"></span>Most user-friendly</span>
+          </div>
+          <div class="screen-a">
+            <nav class="rail-a">
+              <div class="brand">GBI</div>
+              <div class="rail-nav">
+                <span>Q</span>
+                <span class="active">PDF</span>
+                <span>AI</span>
+                <span>✓</span>
+              </div>
+              <span class="tag" style="background:#1e293b;color:white;border-color:#334155">0/2</span>
+            </nav>
+            <section class="pdf">
+              <div class="pdf-top">
+                <div>
+                  <p class="eyebrow">PDF source</p>
+                  <p class="sub">S629 · Danish full text for screening workflow</p>
+                </div>
+                <button class="open">Open PDF</button>
+              </div>
+              <div class="pdf-card">
+                <div class="pdf-toolbar">☰ <span>file</span><span>1 / 9</span><span>111%</span><span>⌕</span><span>↻</span><span>⇩</span></div>
+                <div class="doc">
+                  <h2>Rapid #: -26575266</h2>
+                  <div class="doc-row"><span>CROSS REF ID:</span><b>8385454160007966</b></div>
+                  <div class="doc-row"><span>LENDER:</span><b>WAU Library</b></div>
+                  <div class="doc-row"><span>ARTICLE TITLE:</span><b>Soccer injuries in old boys' games</b></div>
+                  <div class="doc-row"><span>YEAR:</span><span>1984-04-16</span></div>
+                </div>
+              </div>
+            </section>
+            <aside class="side-a">
+              <div class="record-band">
+                <span class="tag">S629 · full-text · 0/2</span>
+                <h3>Danish full text for screening workflow</h3>
+              </div>
+              <div class="decision-hero">
+                <div class="verdict-meter">
+                  <div class="verdict-top">
+                    <span class="tag include"><span class="dot"></span>AI recommendation</span>
+                    <h2>Include</h2>
+                    <p class="sub">100% confidence</p>
+                  </div>
+                  <div class="verdict-body">
+                    <p>The study reports original injury epidemiology in competitive old boys' football with usable football-specific injury data.</p>
+                    <div class="evidence-strip">
+                      <blockquote>"Skadehyppigheden per spiller var 97,8 skader per 1.000 kamptimer."</blockquote>
+                      <p class="sub">page 6, section RESULTATER</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vote-dock">
+                <h4>Cast reviewer vote</h4>
+                <div class="vote-grid">
+                  <button class="include-btn">Include</button>
+                  <button class="exclude-btn">Exclude</button>
+                </div>
+                <button class="save">Save reviewer vote</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="mockup">
+          <div class="mockup-header">
+            <div>
+              <strong>Idea 2: Floating Review Command Palette</strong>
+              <span>Visual thesis: PDF owns the screen; the reviewer gets a floating command surface like modern annotation tools.</span>
+            </div>
+            <span class="tag">Most radical</span>
+          </div>
+          <div class="screen-b">
+            <section class="pdf">
+              <div class="pdf-top">
+                <div>
+                  <p class="eyebrow">PDF source</p>
+                  <p class="sub">S629 · full-text review</p>
+                </div>
+                <button class="open">Open PDF</button>
+              </div>
+              <div class="pdf-card">
+                <div class="pdf-toolbar">☰ <span>file</span><span>1 / 9</span><span>111%</span><span>⌕</span><span>↻</span><span>⇩</span></div>
+                <div class="doc">
+                  <h2>Rapid #: -26575266</h2>
+                  <div class="doc-row"><span>CROSS REF ID:</span><b>8385454160007966</b></div>
+                  <div class="doc-row"><span>LENDER:</span><b>WAU Library</b></div>
+                  <div class="doc-row"><span>ARTICLE TITLE:</span><b>Soccer injuries in old boys' games</b></div>
+                  <div class="doc-row"><span>YEAR:</span><span>1984-04-16</span></div>
+                </div>
+              </div>
+            </section>
+            <aside class="floating-command">
+              <div class="command-title">
+                <span class="tag">S629 · 0/2 reviewers</span>
+                <h3>Danish full text for screening workflow</h3>
+              </div>
+              <div class="command-content">
+                <div class="segmented">
+                  <span>Decide</span>
+                  <span>Evidence</span>
+                  <span>History</span>
+                </div>
+                <div class="command-card include">
+                  <span class="tag include"><span class="dot"></span>AI says include</span>
+                  <h4>100% confidence</h4>
+                  <p>Original injury epidemiology in competitive old boys' football with a usable denominator.</p>
+                </div>
+                <div class="command-card">
+                  <h4>Key evidence</h4>
+                  <p><b><i>"Skadehyppigheden per spiller var 97,8 skader per 1.000 kamptimer."</i></b></p>
+                  <p class="sub">page 6, RESULTATER</p>
+                </div>
+                <div class="command-card">
+                  <h4>Reviewer status</h4>
+                  <p>No reviewer decision yet. Your vote will be saved as reviewer 1.</p>
+                </div>
+              </div>
+              <div class="vote-dock">
+                <div class="vote-grid">
+                  <button class="include-btn">Include</button>
+                  <button class="exclude-btn">Exclude</button>
+                </div>
+                <button class="save">Save reviewer vote</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="mockup">
+          <div class="mockup-header">
+            <div>
+              <strong>Idea 3: Evidence Map + Dark Decision Cockpit</strong>
+              <span>Visual thesis: the PDF and evidence map stay light; the decision area becomes a focused high-contrast cockpit.</span>
+            </div>
+            <span class="tag">Strongest separation</span>
+          </div>
+          <div class="screen-c">
+            <section class="canvas-c">
+              <div class="pdf-top">
+                <div>
+                  <p class="eyebrow">Evidence workspace</p>
+                  <p class="sub">PDF source with extracted decision signals below</p>
+                </div>
+                <button class="open">Open PDF</button>
+              </div>
+              <div class="pdf-card" style="min-height:500px">
+                <div class="pdf-toolbar">☰ <span>file</span><span>1 / 9</span><span>111%</span><span>⌕</span><span>↻</span><span>⇩</span></div>
+                <div class="doc" style="min-height:380px">
+                  <h2>Rapid #: -26575266</h2>
+                  <div class="doc-row"><span>CROSS REF ID:</span><b>8385454160007966</b></div>
+                  <div class="doc-row"><span>ARTICLE TITLE:</span><b>Soccer injuries in old boys' games</b></div>
+                  <div class="doc-row"><span>YEAR:</span><span>1984-04-16</span></div>
+                </div>
+              </div>
+              <div class="evidence-map">
+                <div class="map-panel">
+                  <span class="tag include"><span class="dot"></span>AI include</span>
+                  <h4>Why it qualifies</h4>
+                  <p>Original injury epidemiology, football-specific injury data, usable denominator.</p>
+                </div>
+                <div class="map-panel">
+                  <span class="tag">Quote</span>
+                  <h4>"97,8 skader per 1.000 kamptimer"</h4>
+                  <p>Evidence extracted from page 6, RESULTATER.</p>
+                </div>
+              </div>
+            </section>
+            <aside class="right-c">
+              <div class="record-band">
+                <span class="tag" style="background:#111c2e;color:white;border-color:#263449">S629 · full-text · 0/2</span>
+                <h3>Danish full text for screening workflow</h3>
+                <p class="sub">Decision cockpit</p>
+              </div>
+              <div>
+                <div class="decision-ring">
+                  <div class="ring">
+                    <div>
+                      <strong>Include</strong>
+                      <span>100% confidence</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="dark-list">
+                  <div class="dark-item">
+                    <h4>AI rationale</h4>
+                    <p>Original injury epidemiology in competitive old boys' football.</p>
+                  </div>
+                  <div class="dark-item">
+                    <h4>Reviewer history</h4>
+                    <p>No reviewer decision yet. Two reviewer votes required.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="vote-dock">
+                <h4>Your reviewer vote</h4>
+                <div class="vote-grid">
+                  <button class="include-btn">Include</button>
+                  <button class="exclude-btn">Exclude</button>
+                </div>
+                <button class="save">Save reviewer vote</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

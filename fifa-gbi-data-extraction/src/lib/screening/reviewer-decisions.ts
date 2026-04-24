@@ -14,6 +14,8 @@ export const EXCLUSION_REASONS = [
   'Other',
 ] as const;
 
+export const MAX_EXCLUSION_REASON_CHARS = 500;
+
 export type ExclusionReason = (typeof EXCLUSION_REASONS)[number];
 
 export type FullTextReviewerDecision = {

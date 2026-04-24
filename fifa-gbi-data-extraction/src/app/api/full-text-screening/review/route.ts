@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
 import { mockDb } from '@/lib/mock-db';
-import { reviewFullTextScreeningRecord } from '@/lib/screening/ai-review';
+import { ScreeningAiParseError, reviewFullTextScreeningRecord } from '@/lib/screening/ai-review';
 import { readActiveProfileSession } from '@/lib/session';
 
 export const runtime = 'nodejs';
@@ -56,9 +56,16 @@ export async function POST(request: Request) {
       reviewed.push(updated);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'AI review failed';
+      const rawResponse = error instanceof ScreeningAiParseError
+        ? {
+          rawText: error.rawText.slice(0, 12000),
+          truncated: error.rawText.length > 12000,
+        }
+        : undefined;
       const updated = await mockDb.updateScreeningAiSuggestion(id, {
         status: 'failed',
         error: message,
+        rawResponse,
       });
       reviewed.push(updated);
       errors.push({ id, message });

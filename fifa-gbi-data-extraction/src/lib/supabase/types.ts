@@ -581,6 +581,60 @@ export interface Database {
           },
         ];
       };
+      screening_votes: {
+        Row: {
+          id: string;
+          screening_record_id: string;
+          vote_order: number;
+          vote_role: 'reviewer_vote' | 'consensus_resolution';
+          reviewer_profile_id: string;
+          reviewer_name: string | null;
+          decision: ScreeningDecision;
+          reason: string | null;
+          decided_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          screening_record_id: string;
+          vote_order: number;
+          vote_role: 'reviewer_vote' | 'consensus_resolution';
+          reviewer_profile_id: string;
+          reviewer_name?: string | null;
+          decision: ScreeningDecision;
+          reason?: string | null;
+          decided_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          screening_record_id?: string;
+          vote_order?: number;
+          vote_role?: 'reviewer_vote' | 'consensus_resolution';
+          reviewer_profile_id?: string;
+          reviewer_name?: string | null;
+          decision?: ScreeningDecision;
+          reason?: string | null;
+          decided_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'screening_votes_reviewer_profile_id_fkey';
+            columns: ['reviewer_profile_id'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'screening_votes_screening_record_id_fkey';
+            columns: ['screening_record_id'];
+            isOneToOne: false;
+            referencedRelation: 'screening_records';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       paper_files: {
         Row: {
           id: string;
@@ -884,6 +938,17 @@ export interface Database {
       is_observer: {
         Args: Record<string, never>;
         Returns: boolean;
+      };
+      save_screening_vote: {
+        Args: {
+          p_record_id: string;
+          p_reviewer_profile_id: string;
+          p_reviewer_name: string | null;
+          p_decision: ScreeningDecision;
+          p_decision_action?: 'reviewer_vote' | 'consensus_resolution';
+          p_reason?: string | null;
+        };
+        Returns: Database['public']['Tables']['screening_records']['Row'];
       };
       verify_profile_password: {
         Args: {
