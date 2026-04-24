@@ -9,8 +9,8 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 ## Summary
 
 - Rows captured from the rendered queue: 74
-- Foreign-language papers: 41
-  - German: 9
+- Foreign-language papers: 42
+  - German: 10
   - Turkish: 1
   - Portugese: 7
   - Spanish: 8
@@ -30,7 +30,7 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 
 ## Foreign-Language Papers
 
-### German (9)
+### German (10)
 
 | Covidence # | Has PDF Now | Exact Note | Title |
 | --- | --- | --- | --- |
@@ -43,6 +43,7 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | #720 | Yes | German | Fromm 2018 Outcome von Muskelverletzungen im Nachwuchsfussball. Fromm, L. and Meyer, P. and Vavken, P. and Leumann, A. 2018;(): 2018 Full text 1-2018_4_Fromm.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #722 | Yes | German | Hirschm√ºller 2015 Epidemiologie von Verletzungen und √úberlastungssch√§den vergangener paralympischer Spiele. Hirschm√ºller, A. and Kosel, J. and S√ºdkamp, N. P. and Kubosch, E. J. 2015;(): 2015 DOI: 10.5960/dzsm.2015.207 Full text Originalia_Hirschmueller_VerletzungenParalympischerSpiele_2015-11.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #736 | No | German | Berbig 1997 Die Verletzungsgefaehrdung im Spitzenfussball aus der Sicht des Sporttraumatologen. Berbig, R. 1997;(): 1997 Upload full text |
+| #757 | Yes | German title identified from full text; PDF uploaded April 16 pass | Blaser 1992 Unfallverletzungen beim Fussballsport. Blaser K. U. and Aeschlimann A. 1992 |
 
 ### Turkish (1)
 
