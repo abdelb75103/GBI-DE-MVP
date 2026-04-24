@@ -24,6 +24,8 @@ export type FullTextReviewerDecision = {
   decidedAt: string;
 };
 
+export type FullTextDecisionAction = 'reviewer_vote' | 'consensus_resolution';
+
 export type FullTextDecisionAuditEntry = FullTextReviewerDecision & {
   action: 'initial_vote' | 'updated_vote' | 'consensus_resolution' | 'updated_consensus_resolution';
   resolutionBefore: ScreeningResolution;
@@ -65,9 +67,7 @@ export const getReviewerDecisions = (record: ScreeningRecord): FullTextReviewerD
     ? metadata.fullTextDecisions.filter(isReviewerDecision)
     : [];
 
-  if (decisions.length > 0) {
-    return [...decisions].sort((a, b) => Date.parse(a.decidedAt) - Date.parse(b.decidedAt));
-  }
+  if (decisions.length > 0) return decisions.slice(0, 3);
 
   if (!record.manualDecision || !record.manualDecidedBy || !record.manualDecidedAt) {
     return [];

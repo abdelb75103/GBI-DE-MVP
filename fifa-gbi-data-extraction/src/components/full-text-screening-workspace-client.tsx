@@ -9,19 +9,22 @@ import {
   getReviewerDecisions,
   getScreeningResolution,
   summarizeExclusionReasons,
+  type FullTextDecisionAction,
   type ExclusionReason,
 } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
   initialRecord: ScreeningRecord;
+  currentReviewerId: string;
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 
-export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
+export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewerId }: Props) {
   const [record, setRecord] = useState(initialRecord);
+  const [decisionAction, setDecisionAction] = useState<FullTextDecisionAction>('reviewer_vote');
   const [decision, setDecision] = useState<ScreeningDecision | null>(null);
   const [reason, setReason] = useState<ExclusionReason | ''>('');
   const [otherReason, setOtherReason] = useState('');
@@ -35,7 +38,20 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
     reviewerDecisions.length >= 2 &&
     reviewerDecisions[0]?.decision !== reviewerDecisions[1]?.decision;
   const thirdDecision = firstTwoConflict ? reviewerDecisions[2] : undefined;
-  const decisionMode = firstTwoConflict && !thirdDecision ? 'Resolve conflict' : 'Your decision';
+  const currentReviewerVote = reviewerDecisions
+    .slice(0, 2)
+    .find((item) => item.reviewerProfileId === currentReviewerId);
+  const canChangeReviewerVote = reviewerDecisions.length < 2 || Boolean(currentReviewerVote);
+  const canRecordConsensus = firstTwoConflict;
+  const activeDecisionAction = canRecordConsensus && (!canChangeReviewerVote || decisionAction === 'consensus_resolution')
+    ? 'consensus_resolution'
+    : 'reviewer_vote';
+  const decisionMode = activeDecisionAction === 'consensus_resolution'
+    ? thirdDecision ? 'Update conflict resolution' : 'Resolve conflict'
+    : currentReviewerVote ? 'Change my reviewer vote' : 'Your reviewer vote';
+  const canSubmitDecision = activeDecisionAction === 'consensus_resolution'
+    ? canRecordConsensus
+    : canChangeReviewerVote;
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
   const pdfUrl = `/api/full-text-screening/${record.id}/file#view=FitH`;
@@ -44,6 +60,15 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
     event.preventDefault();
     if (!decision) {
       setNotice({ tone: 'error', message: 'Choose Include or Exclude.' });
+      return;
+    }
+    if (!canSubmitDecision) {
+      setNotice({
+        tone: 'error',
+        message: activeDecisionAction === 'consensus_resolution'
+          ? 'Conflict resolution is only available for conflicting reviewer decisions.'
+          : 'This record already has two reviewer votes. Only an original reviewer can change their vote.',
+      });
       return;
     }
     if (decision === 'exclude' && !reason) {
@@ -59,7 +84,12 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
       const response = await fetch(`/api/full-text-screening/${record.id}/decision`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ decision, reason: decision === 'exclude' ? reason : null, otherReason }),
+        body: JSON.stringify({
+          decision,
+          decisionAction: activeDecisionAction,
+          reason: decision === 'exclude' ? reason : null,
+          otherReason,
+        }),
       });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -70,7 +100,12 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
       setDecision(null);
       setReason('');
       setOtherReason('');
-      setNotice({ tone: 'success', message: 'Reviewer decision saved.' });
+      setNotice({
+        tone: 'success',
+        message: activeDecisionAction === 'consensus_resolution'
+          ? 'Conflict resolution saved.'
+          : 'Reviewer vote saved.',
+      });
     });
   };
 
@@ -140,11 +175,32 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
           <form onSubmit={saveDecision} className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{decisionMode}</p>
-              {firstTwoConflict && !thirdDecision ? (
-                <p className="mt-1 text-xs text-slate-500">
-                  Save the consensus decision here. It is recorded separately from the first two votes and becomes the final decision.
-                </p>
+              {firstTwoConflict ? (
+                <div className="mt-3 grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    disabled={!canChangeReviewerVote}
+                    onClick={() => setDecisionAction('reviewer_vote')}
+                    className={`rounded-lg border px-3 py-2 text-xs font-semibold disabled:cursor-not-allowed disabled:opacity-50 ${activeDecisionAction === 'reviewer_vote' ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white text-slate-700'}`}
+                  >
+                    Change my vote
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDecisionAction('consensus_resolution')}
+                    className={`rounded-lg border px-3 py-2 text-xs font-semibold ${activeDecisionAction === 'consensus_resolution' ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-200 bg-white text-slate-700'}`}
+                  >
+                    Resolve conflict
+                  </button>
+                </div>
               ) : null}
+              <p className="mt-2 text-xs text-slate-500">
+                {activeDecisionAction === 'consensus_resolution'
+                  ? 'This is stored as the final conflict decision and does not overwrite the first two reviewer votes. If you choose exclude, select an exclusion reason.'
+                  : currentReviewerVote
+                    ? 'This updates only your individual reviewer vote. Any previous consensus remains active only if the first two votes still conflict.'
+                    : 'This is stored as your reviewer vote.'}
+              </p>
             </div>
             <div className="grid gap-2">
               <button
@@ -184,8 +240,13 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
                 ) : null}
               </>
             ) : null}
-            <button disabled={isPending} className="w-full rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">
-              Save decision
+            {!canSubmitDecision ? (
+              <p className="rounded-lg bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900">
+                This record already has two reviewer votes. Only an original reviewer can change their vote, unless there is a conflict to resolve by consensus.
+              </p>
+            ) : null}
+            <button disabled={isPending || !canSubmitDecision} className="w-full rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">
+              {activeDecisionAction === 'consensus_resolution' ? 'Save conflict resolution' : 'Save reviewer vote'}
             </button>
           </form>
         </aside>

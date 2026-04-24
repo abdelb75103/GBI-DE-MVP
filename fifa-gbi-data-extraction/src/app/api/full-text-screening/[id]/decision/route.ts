@@ -9,6 +9,7 @@ export const runtime = 'nodejs';
 
 const requestSchema = z.object({
   decision: z.enum(['include', 'exclude']),
+  decisionAction: z.enum(['reviewer_vote', 'consensus_resolution']).optional(),
   reason: z.enum(EXCLUSION_REASONS).optional().nullable(),
   otherReason: z.string().optional().nullable(),
 });
@@ -34,6 +35,7 @@ export async function PATCH(
       : parsed.data.reason;
     const record = await mockDb.saveScreeningDecision(id, {
       decision: parsed.data.decision,
+      decisionAction: parsed.data.decisionAction,
       reason,
       reviewerProfileId: profile.id,
       reviewerName: profile.fullName,

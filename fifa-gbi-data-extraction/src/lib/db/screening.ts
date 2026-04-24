@@ -6,7 +6,7 @@ import { supabaseClient } from '@/lib/db/shared';
 import { createPaper, updatePaper } from '@/lib/db/papers';
 import { attachFile } from '@/lib/db/files';
 import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
-import { getReviewerDecisions, getScreeningResolution } from '@/lib/screening/reviewer-decisions';
+import { getReviewerDecisions, getScreeningResolution, type FullTextDecisionAction } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
 import type { ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 
@@ -200,7 +200,13 @@ export const markScreeningAiRunning = async (ids: string[]): Promise<void> => {
 
 export const saveScreeningDecision = async (
   id: string,
-  input: { decision: ScreeningDecision; reason?: string | null; reviewerProfileId: string; reviewerName?: string | null },
+  input: {
+    decision: ScreeningDecision;
+    decisionAction?: FullTextDecisionAction;
+    reason?: string | null;
+    reviewerProfileId: string;
+    reviewerName?: string | null;
+  },
 ): Promise<ScreeningRecord> => {
   if (input.decision === 'exclude' && !input.reason?.trim()) {
     throw new Error('A reason is required for excluded full-text records.');
@@ -229,11 +235,13 @@ export const saveScreeningDecision = async (
 
   const isFirstTwoReviewer = firstTwo.some((decision) => decision.reviewerProfileId === input.reviewerProfileId);
   const isConsensusReviewer = thirdDecision?.reviewerProfileId === input.reviewerProfileId;
+  const requestedAction = input.decisionAction ?? 'reviewer_vote';
 
   let decisions = firstTwo;
-  if (hasConflict && !thirdDecision) {
-    decisions = [...firstTwo, nextDecision];
-  } else if (hasConflict && thirdDecision && isConsensusReviewer) {
+  if (requestedAction === 'consensus_resolution') {
+    if (!hasConflict) {
+      throw new Error('Conflict resolution is only available when the first two reviewer decisions conflict.');
+    }
     decisions = [...firstTwo, nextDecision];
   } else if (isFirstTwoReviewer) {
     const updatedFirstTwo = firstTwo.map((decision) =>
@@ -243,6 +251,8 @@ export const saveScreeningDecision = async (
     decisions = stillConflicted && thirdDecision ? [...updatedFirstTwo, thirdDecision] : updatedFirstTwo;
   } else if (firstTwo.length < 2) {
     decisions = [...firstTwo, nextDecision];
+  } else if (isConsensusReviewer) {
+    throw new Error('Use the consensus action to update the final conflict decision.');
   } else {
     throw new Error('This record already has two reviewer decisions. Update an existing decision or resolve a conflict.');
   }
@@ -252,8 +262,7 @@ export const saveScreeningDecision = async (
     ? metadataBefore.fullTextDecisionAudit
     : [];
   const resolutionBefore = getScreeningResolution(existingRecord);
-  const isConsensusDecision = hasConflict && (!thirdDecision || isConsensusReviewer);
-  const action = isConsensusDecision
+  const action = requestedAction === 'consensus_resolution'
     ? thirdDecision
       ? 'updated_consensus_resolution'
       : 'consensus_resolution'
