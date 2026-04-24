@@ -24,7 +24,6 @@ const MAX_FILE_BYTES = 20 * 1024 * 1024;
 
 export function FullTextScreeningClient({ initialRecords, profileRole, loadError }: Props) {
   const [records, setRecords] = useState(initialRecords);
-  const [selectedIds, setSelectedIds] = useState<Record<string, boolean>>({});
   const [filter, setFilter] = useState<Filter>('all');
   const [search, setSearch] = useState('');
   const [notice, setNotice] = useState<Notice>(null);
@@ -32,15 +31,11 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const isAdmin = profileRole === 'admin';
 
-  const checkedIds = Object.entries(selectedIds).filter(([, checked]) => checked).map(([id]) => id);
-
   const counts = useMemo(() => {
-    const aiInclude = records.filter((record) => record.aiSuggestedDecision === 'include').length;
-    const aiExclude = records.filter((record) => record.aiSuggestedDecision === 'exclude').length;
     return {
       all: records.length,
-      aiInclude,
-      aiExclude,
+      included: records.filter((record) => getScreeningResolution(record) === 'ready_for_extraction').length,
+      excluded: records.filter((record) => getScreeningResolution(record) === 'excluded').length,
       conflicts: records.filter((record) => getScreeningResolution(record) === 'conflict').length,
       promoted: records.filter((record) => record.promotedPaperId).length,
     };
@@ -122,28 +117,6 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
     });
   };
 
-  const runAiReview = () => {
-    if (checkedIds.length === 0) return;
-    startTransition(async () => {
-      const response = await fetch('/api/full-text-screening/review', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: checkedIds }),
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'AI review failed' });
-        return;
-      }
-      await refreshRecords();
-      const errors = Array.isArray(payload.errors) ? payload.errors.length : 0;
-      setNotice({
-        tone: errors > 0 ? 'error' : 'success',
-        message: errors > 0 ? `AI reviewed with ${errors} error${errors === 1 ? '' : 's'}.` : `AI reviewed ${checkedIds.length} record${checkedIds.length === 1 ? '' : 's'}.`,
-      });
-    });
-  };
-
   return (
     <div className="mx-auto w-full max-w-[1180px] space-y-6">
       <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -173,10 +146,10 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           <Metric label="All" value={counts.all} tone="slate" />
-          <Metric label="AI include" value={counts.aiInclude} tone="green" />
-          <Metric label="AI exclude" value={counts.aiExclude} tone="red" />
+          <Metric label="Include" value={counts.included} tone="green" />
+          <Metric label="Exclude" value={counts.excluded} tone="red" />
           <Metric label="Conflict" value={counts.conflicts} tone="amber" />
-          <Metric label="Promoted" value={counts.promoted} tone="blue" />
+          <Metric label="Promoted to extraction" value={counts.promoted} tone="blue" />
         </div>
       </section>
 
@@ -200,27 +173,18 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
                 placeholder="Search title, study ID, author, DOI..."
                 className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm sm:w-80"
               />
-              <button
-                onClick={runAiReview}
-                disabled={isPending || checkedIds.length === 0}
-                className="rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-45"
-              >
-                Run AI review
-              </button>
             </div>
           </div>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[900px] border-collapse text-left text-sm">
+          <table className="w-full min-w-[820px] border-collapse text-left text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-[0.14em] text-slate-500">
               <tr>
-                <th className="w-10 px-4 py-3" />
                 <th className="px-4 py-3">Study</th>
                 <th className="px-4 py-3">AI suggestion</th>
                 <th className="px-4 py-3">Reviewers</th>
                 <th className="px-4 py-3">Outcome</th>
-                <th className="px-4 py-3">Reason</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -228,10 +192,6 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
                 <ScreeningRow
                   key={record.id}
                   record={record}
-                  checked={Boolean(selectedIds[record.id])}
-                  onCheckedChange={(checked) => {
-                    setSelectedIds((previous) => ({ ...previous, [record.id]: checked }));
-                  }}
                 />
               ))}
             </tbody>
@@ -245,32 +205,12 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
   );
 }
 
-function ScreeningRow({
-  record,
-  checked,
-  onCheckedChange,
-}: {
-  record: ScreeningRecord;
-  checked: boolean;
-  onCheckedChange: (checked: boolean) => void;
-}) {
+function ScreeningRow({ record }: { record: ScreeningRecord }) {
   const resolution = getScreeningResolution(record);
   const reviewerDecisions = getReviewerDecisions(record);
-  const reason = resolution === 'excluded' || resolution === 'conflict'
-    ? summarizeExclusionReasons(record)
-    : record.aiReason;
 
   return (
     <tr className="bg-white hover:bg-slate-50">
-      <td className="px-4 py-4 align-top">
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={(event) => onCheckedChange(event.target.checked)}
-          className="h-4 w-4 rounded border-slate-300 text-indigo-600"
-          aria-label={`Select ${record.assignedStudyId}`}
-        />
-      </td>
       <td className="max-w-[420px] px-4 py-4 align-top">
         <Link href={`/full-text-screening/${record.id}`} className="group">
           <div className="flex items-center gap-2">
@@ -293,9 +233,6 @@ function ScreeningRow({
       </td>
       <td className="px-4 py-4 align-top">
         <ResolutionBadge resolution={resolution} />
-      </td>
-      <td className="max-w-[280px] px-4 py-4 align-top text-xs leading-relaxed text-slate-600">
-        {reason || 'Pending'}
       </td>
     </tr>
   );
