@@ -219,10 +219,6 @@ export const saveScreeningDecision = async (
     firstTwo[0]?.decision !== firstTwo[1]?.decision;
   const thirdDecision = existingDecisions[2];
 
-  if (hasConflict && thirdDecision && thirdDecision.reviewerProfileId !== input.reviewerProfileId) {
-    throw new Error('This conflict has already been resolved.');
-  }
-
   const nextDecision = {
     reviewerProfileId: input.reviewerProfileId,
     reviewerName: input.reviewerName ?? null,
@@ -231,26 +227,37 @@ export const saveScreeningDecision = async (
     decidedAt,
   };
 
-  const decisions = hasConflict
-    ? [...firstTwo, nextDecision]
-    : [
-        ...existingDecisions
-          .slice(0, 2)
-          .filter((decision) => decision.reviewerProfileId !== input.reviewerProfileId),
-        nextDecision,
-      ].slice(0, 2);
+  const isFirstTwoReviewer = firstTwo.some((decision) => decision.reviewerProfileId === input.reviewerProfileId);
+  const isConsensusReviewer = thirdDecision?.reviewerProfileId === input.reviewerProfileId;
+
+  let decisions = firstTwo;
+  if (hasConflict && !thirdDecision) {
+    decisions = [...firstTwo, nextDecision];
+  } else if (hasConflict && thirdDecision && isConsensusReviewer) {
+    decisions = [...firstTwo, nextDecision];
+  } else if (isFirstTwoReviewer) {
+    const updatedFirstTwo = firstTwo.map((decision) =>
+      decision.reviewerProfileId === input.reviewerProfileId ? nextDecision : decision,
+    );
+    const stillConflicted = updatedFirstTwo.length === 2 && updatedFirstTwo[0]?.decision !== updatedFirstTwo[1]?.decision;
+    decisions = stillConflicted && thirdDecision ? [...updatedFirstTwo, thirdDecision] : updatedFirstTwo;
+  } else if (firstTwo.length < 2) {
+    decisions = [...firstTwo, nextDecision];
+  } else {
+    throw new Error('This record already has two reviewer decisions. Update an existing decision or resolve a conflict.');
+  }
 
   const metadataBefore = existingRecord.metadata as Record<string, unknown> | null;
   const previousAudit = Array.isArray(metadataBefore?.fullTextDecisionAudit)
     ? metadataBefore.fullTextDecisionAudit
     : [];
   const resolutionBefore = getScreeningResolution(existingRecord);
-  const isConsensusDecision = hasConflict;
+  const isConsensusDecision = hasConflict && (!thirdDecision || isConsensusReviewer);
   const action = isConsensusDecision
     ? thirdDecision
       ? 'updated_consensus_resolution'
       : 'consensus_resolution'
-    : existingDecisions.some((decision) => decision.reviewerProfileId === input.reviewerProfileId)
+    : isFirstTwoReviewer
       ? 'updated_vote'
       : 'initial_vote';
 
