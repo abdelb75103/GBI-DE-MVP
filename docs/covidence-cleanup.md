@@ -9,7 +9,7 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 ## Summary
 
 - Rows captured from the rendered queue: 74
-- Foreign-language papers: 40
+- Foreign-language papers: 41
   - German: 9
   - Turkish: 1
   - Portugese: 7
@@ -18,7 +18,7 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
   - Dutch: 3
   - Swedish: 2
   - Czech: 1
-  - Danish: 1
+  - Danish: 2
   - Norwegian: 1
   - Polish: 1
   - Slovenian: 1
@@ -106,10 +106,11 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | --- | --- | --- | --- |
 | #728 | No | Request Czech | Napravnik 1979 Rozbor pricin, mechanismu a prevence sportovnich urazu. Napravnik, C. 1979;(): 1979 Upload full text |
 
-### Danish (1)
+### Danish (2)
 
 | Covidence # | Has PDF Now | Exact Note | Title |
 | --- | --- | --- | --- |
+| #752 | Yes | Danish title identified from title; PDF uploaded April 15 pass | Hinge 1984 Fodboldskader hos old boys fodboldspillere. Hinge 1984 |
 | #759 | No | Request Danish | Jorgensen 1981 [Patterns of injuries in Danish division soccer]. Jorgensen, U 1981;(): 1981 Upload full text |
 
 ### Norwegian (1)
