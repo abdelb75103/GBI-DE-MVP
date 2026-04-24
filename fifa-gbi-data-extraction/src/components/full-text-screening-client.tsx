@@ -1,16 +1,15 @@
 'use client';
 
-import { FormEvent, useMemo, useRef, useState, useTransition } from 'react';
+import { ChangeEvent, useMemo, useRef, useState, useTransition } from 'react';
 import Link from 'next/link';
 
 import {
-  getDecisionProgressLabel,
   getReviewerDecisions,
   getScreeningResolution,
   getScreeningWorkStatus,
   type ScreeningWorkStatus,
 } from '@/lib/screening/reviewer-decisions';
-import type { ScreeningRecord } from '@/lib/types';
+import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
   initialRecords: ScreeningRecord[];
@@ -103,17 +102,12 @@ export function FullTextScreeningClient({
     setRecords(payload.records ?? []);
   };
 
-  const handleUpload = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const files = fileInputRef.current?.files ? Array.from(fileInputRef.current.files) : [];
-    if (files.length === 0) {
-      setNotice({ tone: 'error', message: 'Select at least one PDF.' });
-      return;
-    }
+  const handleFilesSelected = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files ? Array.from(event.target.files) : [];
+    if (files.length === 0) return;
 
     startTransition(async () => {
-      const failures = [];
+      const failures: string[] = [];
       let successCount = 0;
       for (const file of files) {
         if (!file.name.toLowerCase().endsWith('.pdf')) {
@@ -136,7 +130,6 @@ export function FullTextScreeningClient({
         successCount += 1;
       }
 
-      form.reset();
       if (fileInputRef.current) fileInputRef.current.value = '';
       await refreshRecords();
       setNotice({
@@ -154,33 +147,44 @@ export function FullTextScreeningClient({
         <div className="absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
         <div className="absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
         <div className="relative z-10 space-y-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-2xl space-y-3">
-              <span className="inline-flex items-center rounded-full bg-gradient-to-br from-indigo-100/90 via-sky-50/80 to-indigo-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700 shadow-sm ring-1 ring-indigo-200/50 backdrop-blur-sm">
-                Full-text screening
-              </span>
-              <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Review queue</h1>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl space-y-2">
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Full-text screening</h1>
               <p className="text-sm leading-relaxed text-slate-600">
                 Vote on full-text PDFs, resolve conflicts, and promote included studies to extraction.
               </p>
             </div>
             {isAdmin ? (
-              <form onSubmit={handleUpload} className="flex flex-col gap-2 sm:flex-row sm:items-center">
+              <div className="flex flex-col items-stretch gap-1.5 sm:items-end">
                 <input
                   ref={fileInputRef}
-                  name="files"
                   type="file"
                   accept="application/pdf"
                   multiple
-                  className="w-full min-w-0 rounded-full border border-dashed border-slate-300 bg-white/70 px-4 py-2 text-sm text-slate-700 sm:w-80"
+                  onChange={handleFilesSelected}
+                  className="hidden"
+                  id="full-text-upload"
                 />
-                <button
-                  disabled={isPending}
-                  className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/80 px-5 py-2 text-sm font-semibold text-indigo-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 disabled:opacity-60"
+                <label
+                  htmlFor="full-text-upload"
+                  className={`group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#0b3a70]/20 transition hover:bg-[#092f5f] ${
+                    isPending ? 'pointer-events-none opacity-70' : ''
+                  }`}
                 >
-                  Upload PDFs
-                </button>
-              </form>
+                  {isPending ? (
+                    <>
+                      <span aria-hidden className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                      Uploading…
+                    </>
+                  ) : (
+                    <>
+                      <UploadIcon />
+                      Upload PDFs
+                    </>
+                  )}
+                </label>
+                <p className="text-[11px] text-slate-500">PDF only · up to 20 MB each</p>
+              </div>
             ) : null}
           </div>
 
@@ -229,13 +233,13 @@ export function FullTextScreeningClient({
       {loadError ? <Notice tone="error" message={loadError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-        <div className="border-b border-slate-200/70 px-5 py-4">
+      <section className="overflow-hidden rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <div className="border-b border-slate-200/70 bg-gradient-to-b from-white to-slate-50/40 px-5 py-4">
           <div className="grid gap-3 lg:grid-cols-[240px_minmax(0,1fr)]">
             <select
               value={filter}
               onChange={(event) => setFilter(event.target.value as QueueFilter)}
-              className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
+              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none"
             >
               <option value="all">All records</option>
               <option value="needs_your_vote">Needs my vote</option>
@@ -245,18 +249,23 @@ export function FullTextScreeningClient({
               <option value="conflict">Conflicts</option>
               <option value="promoted">Promoted to extraction</option>
             </select>
-            <input
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search title, study ID, author, DOI..."
-              className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm shadow-sm"
-            />
+            <div className="relative">
+              <span aria-hidden className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                <SearchIcon />
+              </span>
+              <input
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Search title, study ID, author, DOI..."
+                className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none"
+              />
+            </div>
           </div>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[820px] border-collapse text-left text-sm">
-            <thead className="bg-slate-50/70 text-[11px] uppercase tracking-[0.18em] text-slate-500">
+          <table className="w-full min-w-[860px] border-collapse text-left text-sm">
+            <thead className="bg-slate-50/60 text-[11px] uppercase tracking-[0.18em] text-slate-500">
               <tr>
                 <th className="px-5 py-3 font-semibold">Study</th>
                 <th className="px-5 py-3 font-semibold">AI suggestion</th>
@@ -264,7 +273,7 @@ export function FullTextScreeningClient({
                 <th className="px-5 py-3 font-semibold">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-200/60">
               {filteredRecords.map((record) => (
                 <ScreeningRow
                   key={record.id}
@@ -283,6 +292,15 @@ export function FullTextScreeningClient({
   );
 }
 
+const STATUS_ACCENT: Record<ScreeningWorkStatus, string> = {
+  needs_your_vote: 'bg-indigo-400',
+  awaiting_other_reviewer: 'bg-sky-300',
+  ready_for_extraction: 'bg-emerald-400',
+  excluded: 'bg-rose-400',
+  conflict: 'bg-amber-400',
+  promoted: 'bg-violet-400',
+};
+
 function ScreeningRow({
   record,
   currentReviewerId,
@@ -295,30 +313,47 @@ function ScreeningRow({
   const status = getScreeningWorkStatus(record, currentReviewerId);
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : 'Author pending';
   const displayTitle = cleanDisplayTitle(record.title);
+  const totalVotes = reviewerDecisions.length;
+  const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;
+  const excludeVotes = reviewerDecisions.filter((d) => d.decision === 'exclude').length;
 
   return (
-    <tr className="bg-white/60 hover:bg-slate-50/80">
-      <td className="max-w-[440px] px-5 py-4 align-top">
-        <Link href={`/full-text-screening/${record.id}`} className="group block">
+    <tr className="group relative bg-white transition hover:bg-indigo-50/30">
+      <td className="relative max-w-[440px] py-4 pl-5 pr-5 align-middle">
+        <span aria-hidden className={`absolute left-0 top-2 bottom-2 w-1 rounded-r-full ${STATUS_ACCENT[status]}`} />
+        <Link href={`/full-text-screening/${record.id}`} className="block pl-2">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-slate-900">{record.assignedStudyId}</span>
+            <span className="text-xs font-bold tracking-wide text-[#0b3a70]">{record.assignedStudyId}</span>
+            <span className="text-xs text-slate-400">·</span>
             <span className="text-xs text-slate-500">{authorLabel}</span>
           </div>
-          <p className="mt-1 font-semibold text-slate-900 group-hover:text-indigo-700">{displayTitle}</p>
+          <p className="mt-1 line-clamp-2 font-semibold leading-snug text-slate-900 transition group-hover:text-[#0b3a70]">{displayTitle}</p>
         </Link>
       </td>
-      <td className="px-5 py-4 align-top">
+      <td className="px-5 py-4 align-middle">
         <AiBadge record={record} />
       </td>
-      <td className="px-5 py-4 align-top">
-        <p className="font-medium text-slate-800">{getDecisionProgressLabel(record)}</p>
-        <p className="mt-1 text-xs text-slate-500">
-          {reviewerDecisions.length > 0
-            ? reviewerDecisions.map((decision) => decision.decision).join(' + ')
-            : 'No votes yet'}
-        </p>
+      <td className="px-5 py-4 align-middle">
+        <div className="flex items-center gap-2.5">
+          <VoteSlots decisions={reviewerDecisions} />
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-semibold text-[#0b3a70]">
+              {totalVotes}
+              <span className="text-slate-400">/2</span>
+            </span>
+            {totalVotes > 0 ? (
+              <span className="text-[11px] text-slate-500">
+                {includeVotes > 0 ? `${includeVotes} inc` : ''}
+                {includeVotes > 0 && excludeVotes > 0 ? ' · ' : ''}
+                {excludeVotes > 0 ? `${excludeVotes} exc` : ''}
+              </span>
+            ) : (
+              <span className="text-[11px] text-slate-400">No votes</span>
+            )}
+          </div>
+        </div>
       </td>
-      <td className="px-5 py-4 align-top">
+      <td className="px-5 py-4 align-middle">
         <StatusBadge status={status} resolution={resolution} />
       </td>
     </tr>
@@ -359,18 +394,18 @@ function QueueCard({
 
 function AiBadge({ record }: { record: ScreeningRecord }) {
   if (record.aiStatus === 'running') {
-    return <Pill tone="slate">AI running</Pill>;
+    return <IconPill tone="slate" icon="dot">AI running</IconPill>;
   }
   if (record.aiStatus === 'failed') {
-    return <Pill tone="amber">AI failed</Pill>;
+    return <IconPill tone="amber" icon="warn">AI failed</IconPill>;
   }
   if (record.aiSuggestedDecision === 'include') {
-    return <Pill tone="emerald">AI include</Pill>;
+    return <IconPill tone="emerald" icon="check">AI include</IconPill>;
   }
   if (record.aiSuggestedDecision === 'exclude') {
-    return <Pill tone="rose">AI exclude</Pill>;
+    return <IconPill tone="rose" icon="cross">AI exclude</IconPill>;
   }
-  return <Pill tone="slate">Not run</Pill>;
+  return <IconPill tone="slate" icon="dash">Not run</IconPill>;
 }
 
 function StatusBadge({
@@ -390,29 +425,30 @@ function StatusBadge({
   };
   const tones: Record<ScreeningWorkStatus, PillTone> = {
     needs_your_vote: 'indigo',
-    awaiting_other_reviewer: 'slate',
+    awaiting_other_reviewer: 'sky',
     ready_for_extraction: 'emerald',
     excluded: 'rose',
     conflict: 'amber',
-    promoted: 'sky',
+    promoted: 'violet',
   };
   return (
     <div className="space-y-1">
       <Pill tone={tones[status]}>{labels[status]}</Pill>
-      {resolution === 'conflict' ? <p className="text-xs text-slate-500">Resolve conflict</p> : null}
+      {resolution === 'conflict' ? <p className="text-[11px] font-medium text-amber-700">Resolve conflict →</p> : null}
     </div>
   );
 }
 
-type PillTone = 'indigo' | 'slate' | 'emerald' | 'rose' | 'amber' | 'sky';
+type PillTone = 'indigo' | 'slate' | 'emerald' | 'rose' | 'amber' | 'sky' | 'violet';
 
 const PILL_CLASSES: Record<PillTone, string> = {
-  indigo: 'border-indigo-200/70 bg-indigo-50/80 text-indigo-700',
-  slate: 'border-slate-200/70 bg-slate-50/80 text-slate-700',
-  emerald: 'border-emerald-200/70 bg-emerald-50/80 text-emerald-700',
-  rose: 'border-rose-200/70 bg-rose-50/80 text-rose-700',
-  amber: 'border-amber-200/70 bg-amber-50/80 text-amber-700',
-  sky: 'border-sky-200/70 bg-sky-50/80 text-sky-700',
+  indigo: 'border-indigo-200 bg-indigo-50 text-indigo-700',
+  slate: 'border-slate-200 bg-slate-50 text-slate-700',
+  emerald: 'border-emerald-200 bg-emerald-50 text-emerald-700',
+  rose: 'border-rose-200 bg-rose-50 text-rose-700',
+  amber: 'border-amber-200 bg-amber-50 text-amber-800',
+  sky: 'border-sky-200 bg-sky-50 text-sky-700',
+  violet: 'border-violet-200 bg-violet-50 text-violet-700',
 };
 
 function Pill({ tone, children }: { tone: PillTone; children: React.ReactNode }) {
@@ -420,6 +456,88 @@ function Pill({ tone, children }: { tone: PillTone; children: React.ReactNode })
     <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${PILL_CLASSES[tone]}`}>
       {children}
     </span>
+  );
+}
+
+const ICON_PILL_DOT_CLASSES: Record<PillTone, string> = {
+  indigo: 'bg-indigo-500',
+  slate: 'bg-slate-400',
+  emerald: 'bg-emerald-500',
+  rose: 'bg-rose-500',
+  amber: 'bg-amber-500',
+  sky: 'bg-sky-500',
+  violet: 'bg-violet-500',
+};
+
+function IconPill({ tone, icon, children }: { tone: PillTone; icon: 'check' | 'cross' | 'dot' | 'dash' | 'warn'; children: React.ReactNode }) {
+  const iconChar = icon === 'check' ? '✓' : icon === 'cross' ? '✕' : icon === 'warn' ? '!' : icon === 'dash' ? '–' : '';
+  return (
+    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-semibold ${PILL_CLASSES[tone]}`}>
+      {icon === 'dot' ? (
+        <span aria-hidden className={`inline-block h-1.5 w-1.5 animate-pulse rounded-full ${ICON_PILL_DOT_CLASSES[tone]}`} />
+      ) : (
+        <span aria-hidden className="text-[11px] leading-none">{iconChar}</span>
+      )}
+      {children}
+    </span>
+  );
+}
+
+function VoteSlots({ decisions }: { decisions: ReadonlyArray<{ decision: ScreeningDecision }> }) {
+  const slots = [decisions[0]?.decision, decisions[1]?.decision];
+  return (
+    <div className="flex items-center gap-1">
+      {slots.map((slot, i) => {
+        if (slot === 'include') {
+          return (
+            <span
+              key={i}
+              aria-hidden
+              className="grid h-5 w-5 place-items-center rounded-full bg-emerald-500 text-[10px] font-bold leading-none text-white shadow-sm shadow-emerald-500/40 ring-2 ring-emerald-100"
+            >
+              ✓
+            </span>
+          );
+        }
+        if (slot === 'exclude') {
+          return (
+            <span
+              key={i}
+              aria-hidden
+              className="grid h-5 w-5 place-items-center rounded-full bg-rose-500 text-[10px] font-bold leading-none text-white shadow-sm shadow-rose-500/40 ring-2 ring-rose-100"
+            >
+              ✕
+            </span>
+          );
+        }
+        return (
+          <span
+            key={i}
+            aria-hidden
+            className="h-5 w-5 rounded-full border-2 border-dashed border-slate-300 bg-white"
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+function UploadIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M8 11V2.5" />
+      <path d="m4.5 6 3.5-3.5L11.5 6" />
+      <path d="M2.5 11.5v1A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
+    </svg>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="7" cy="7" r="5" />
+      <path d="m13.5 13.5-3-3" />
+    </svg>
   );
 }
 
