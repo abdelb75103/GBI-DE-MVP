@@ -6,6 +6,7 @@ import { supabaseClient } from '@/lib/db/shared';
 import { createPaper, updatePaper } from '@/lib/db/papers';
 import { attachFile } from '@/lib/db/files';
 import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
+import { getReviewerDecisions, getScreeningResolution } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
 import type { ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 
@@ -199,20 +200,57 @@ export const markScreeningAiRunning = async (ids: string[]): Promise<void> => {
 
 export const saveScreeningDecision = async (
   id: string,
-  input: { decision: ScreeningDecision; reason?: string | null; reviewerProfileId: string },
+  input: { decision: ScreeningDecision; reason?: string | null; reviewerProfileId: string; reviewerName?: string | null },
 ): Promise<ScreeningRecord> => {
   if (input.decision === 'exclude' && !input.reason?.trim()) {
     throw new Error('A reason is required for excluded full-text records.');
   }
 
+  const existingRecord = await getScreeningRecord(id);
+  if (!existingRecord) {
+    throw new Error('Screening record not found');
+  }
+
+  const decidedAt = new Date().toISOString();
+  const decisions = getReviewerDecisions(existingRecord)
+    .filter((decision) => decision.reviewerProfileId !== input.reviewerProfileId);
+  decisions.push({
+    reviewerProfileId: input.reviewerProfileId,
+    reviewerName: input.reviewerName ?? null,
+    decision: input.decision,
+    reason: input.reason?.trim() || null,
+    decidedAt,
+  });
+
+  const metadata: Record<string, unknown> = {
+    ...(existingRecord.metadata ?? {}),
+    fullTextDecisions: decisions,
+  };
+  const statusRecord = { ...existingRecord, metadata } satisfies ScreeningRecord;
+  const resolution = getScreeningResolution(statusRecord);
+  metadata.fullTextResolution = resolution;
+
+  const concordantExcludeReasons = decisions
+    .filter((decision) => decision.decision === 'exclude')
+    .map((decision) => decision.reason?.trim())
+    .filter((reason): reason is string => Boolean(reason));
+
+  const manualDecision =
+    resolution === 'ready_for_extraction'
+      ? 'include'
+      : resolution === 'excluded'
+        ? 'exclude'
+        : null;
+
   const { data, error } = await supabaseClient()
     .from('screening_records')
     .update({
-      manual_decision: input.decision,
-      manual_reason: input.reason?.trim() || null,
+      manual_decision: manualDecision,
+      manual_reason: resolution === 'excluded' ? Array.from(new Set(concordantExcludeReasons)).join(' / ') : null,
       manual_decided_by: input.reviewerProfileId,
-      manual_decided_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      manual_decided_at: decidedAt,
+      metadata,
+      updated_at: decidedAt,
     })
     .eq('id', id)
     .select('*')

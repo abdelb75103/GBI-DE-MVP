@@ -2,13 +2,15 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
 import { mockDb } from '@/lib/mock-db';
+import { EXCLUSION_REASONS } from '@/lib/screening/reviewer-decisions';
 import { readActiveProfileSession } from '@/lib/session';
 
 export const runtime = 'nodejs';
 
 const requestSchema = z.object({
   decision: z.enum(['include', 'exclude']),
-  reason: z.string().optional().nullable(),
+  reason: z.enum(EXCLUSION_REASONS).optional().nullable(),
+  otherReason: z.string().optional().nullable(),
 });
 
 export async function PATCH(
@@ -27,10 +29,14 @@ export async function PATCH(
   }
 
   try {
+    const reason = parsed.data.reason === 'Other'
+      ? parsed.data.otherReason
+      : parsed.data.reason;
     const record = await mockDb.saveScreeningDecision(id, {
       decision: parsed.data.decision,
-      reason: parsed.data.reason,
+      reason,
       reviewerProfileId: profile.id,
+      reviewerName: profile.fullName,
     });
     return NextResponse.json({ record });
   } catch (error) {

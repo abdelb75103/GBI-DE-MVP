@@ -3,8 +3,13 @@
 import { FormEvent, useMemo, useRef, useState, useTransition } from 'react';
 import Link from 'next/link';
 
-import { SCREENING_CRITERIA_VERSION } from '@/lib/screening/criteria';
-import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
+import {
+  getDecisionProgressLabel,
+  getReviewerDecisions,
+  getScreeningResolution,
+  summarizeExclusionReasons,
+} from '@/lib/screening/reviewer-decisions';
+import type { ScreeningRecord } from '@/lib/types';
 
 type Props = {
   initialRecords: ScreeningRecord[];
@@ -12,31 +17,40 @@ type Props = {
   loadError: string | null;
 };
 
-type Filter = 'all' | 'awaiting_ai' | 'ai_suggested' | 'included' | 'excluded' | 'promoted';
+type Filter = 'all' | 'ready_for_extraction' | 'excluded' | 'conflict' | 'promoted';
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
 
 export function FullTextScreeningClient({ initialRecords, profileRole, loadError }: Props) {
   const [records, setRecords] = useState(initialRecords);
-  const [selectedRecordId, setSelectedRecordId] = useState(initialRecords[0]?.id ?? null);
   const [selectedIds, setSelectedIds] = useState<Record<string, boolean>>({});
   const [filter, setFilter] = useState<Filter>('all');
   const [search, setSearch] = useState('');
   const [notice, setNotice] = useState<Notice>(null);
-  const [decisionReason, setDecisionReason] = useState('');
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const isAdmin = profileRole === 'admin';
 
+  const checkedIds = Object.entries(selectedIds).filter(([, checked]) => checked).map(([id]) => id);
+
+  const counts = useMemo(() => {
+    const aiInclude = records.filter((record) => record.aiSuggestedDecision === 'include').length;
+    const aiExclude = records.filter((record) => record.aiSuggestedDecision === 'exclude').length;
+    return {
+      all: records.length,
+      aiInclude,
+      aiExclude,
+      conflicts: records.filter((record) => getScreeningResolution(record) === 'conflict').length,
+      promoted: records.filter((record) => record.promotedPaperId).length,
+    };
+  }, [records]);
+
   const filteredRecords = useMemo(() => {
     const query = search.trim().toLowerCase();
     return records.filter((record) => {
-      if (filter === 'awaiting_ai' && record.aiStatus !== 'not_run') return false;
-      if (filter === 'ai_suggested' && record.aiStatus !== 'completed') return false;
-      if (filter === 'included' && record.manualDecision !== 'include') return false;
-      if (filter === 'excluded' && record.manualDecision !== 'exclude') return false;
-      if (filter === 'promoted' && !record.promotedPaperId) return false;
+      const resolution = getScreeningResolution(record);
+      if (filter !== 'all' && resolution !== filter) return false;
       if (!query) return true;
       return [
         record.assignedStudyId,
@@ -46,23 +60,13 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
         record.journal,
         record.doi,
         record.originalFileName,
+        record.aiReason,
+        summarizeExclusionReasons(record),
       ]
         .filter(Boolean)
         .some((value) => String(value).toLowerCase().includes(query));
     });
   }, [records, filter, search]);
-
-  const selectedRecord = filteredRecords.find((record) => record.id === selectedRecordId) ?? filteredRecords[0] ?? null;
-  const checkedIds = Object.entries(selectedIds).filter(([, checked]) => checked).map(([id]) => id);
-
-  const counts = useMemo(() => ({
-    all: records.length,
-    awaitingAi: records.filter((record) => record.aiStatus === 'not_run').length,
-    aiSuggested: records.filter((record) => record.aiStatus === 'completed').length,
-    included: records.filter((record) => record.manualDecision === 'include').length,
-    excluded: records.filter((record) => record.manualDecision === 'exclude').length,
-    promoted: records.filter((record) => record.promotedPaperId).length,
-  }), [records]);
 
   const refreshRecords = async () => {
     const response = await fetch('/api/full-text-screening', { cache: 'no-store' });
@@ -71,9 +75,6 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
     }
     const payload = (await response.json()) as { records: ScreeningRecord[] };
     setRecords(payload.records ?? []);
-    if (!selectedRecordId && payload.records?.[0]) {
-      setSelectedRecordId(payload.records[0].id);
-    }
   };
 
   const handleUpload = (event: FormEvent<HTMLFormElement>) => {
@@ -98,12 +99,8 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
           continue;
         }
 
-        const data = new FormData(form);
-        data.delete('files');
+        const data = new FormData();
         data.set('file', file);
-        if (!data.get('title')) {
-          data.set('title', file.name);
-        }
         const response = await fetch('/api/full-text-screening/uploads', { method: 'POST', body: data });
         if (!response.ok) {
           const payload = (await response.json().catch(() => ({}))) as { error?: string };
@@ -126,13 +123,12 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
   };
 
   const runAiReview = () => {
-    const ids = checkedIds.length > 0 ? checkedIds : selectedRecord ? [selectedRecord.id] : [];
-    if (ids.length === 0) return;
+    if (checkedIds.length === 0) return;
     startTransition(async () => {
       const response = await fetch('/api/full-text-screening/review', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids }),
+        body: JSON.stringify({ ids: checkedIds }),
       });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -143,206 +139,241 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
       const errors = Array.isArray(payload.errors) ? payload.errors.length : 0;
       setNotice({
         tone: errors > 0 ? 'error' : 'success',
-        message: errors > 0 ? `AI reviewed with ${errors} error${errors === 1 ? '' : 's'}.` : `AI reviewed ${ids.length} record${ids.length === 1 ? '' : 's'}.`,
-      });
-    });
-  };
-
-  const saveDecision = (decision: ScreeningDecision) => {
-    if (!selectedRecord) return;
-    startTransition(async () => {
-      const response = await fetch(`/api/full-text-screening/${selectedRecord.id}/decision`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ decision, reason: decisionReason }),
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision' });
-        return;
-      }
-      await refreshRecords();
-      setDecisionReason('');
-      setNotice({ tone: 'success', message: `Saved ${decision} decision for ${selectedRecord.assignedStudyId}.` });
-    });
-  };
-
-  const promoteIncluded = () => {
-    const ids = checkedIds.length > 0 ? checkedIds : selectedRecord ? [selectedRecord.id] : [];
-    if (ids.length === 0) return;
-    startTransition(async () => {
-      const response = await fetch('/api/full-text-screening/promote', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids }),
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Promotion failed' });
-        return;
-      }
-      await refreshRecords();
-      const promoted = Array.isArray(payload.promoted) ? payload.promoted.length : 0;
-      const errors = Array.isArray(payload.errors) ? payload.errors.length : 0;
-      setNotice({
-        tone: errors > 0 ? 'error' : 'success',
-        message: `Promoted ${promoted}; ${errors} error${errors === 1 ? '' : 's'}.`,
+        message: errors > 0 ? `AI reviewed with ${errors} error${errors === 1 ? '' : 's'}.` : `AI reviewed ${checkedIds.length} record${checkedIds.length === 1 ? '' : 's'}.`,
       });
     });
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1320px] space-y-6">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8">
-        <div className="absolute -right-10 -top-16 h-52 w-52 rounded-full bg-cyan-200/40 blur-3xl" aria-hidden />
-        <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="space-y-3">
-            <span className="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700">
-              Screening
-            </span>
-            <div>
-              <h1 className="text-3xl font-semibold text-slate-950">Full-text screening</h1>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600">
-                Upload candidate PDFs, run advisory AI screening, record manual Include/Exclude decisions, and promote
-                included studies into extraction with the same study ID.
-              </p>
-            </div>
+    <div className="mx-auto w-full max-w-[1180px] space-y-6">
+      <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">Full-text screening</p>
+            <h1 className="mt-2 text-2xl font-semibold text-slate-950">Review queue</h1>
           </div>
-          <div className="grid w-full grid-cols-3 gap-3 text-center lg:w-auto sm:grid-cols-6">
-            <Metric label="All" value={counts.all} />
-            <Metric label="No AI" value={counts.awaitingAi} />
-            <Metric label="AI" value={counts.aiSuggested} />
-            <Metric label="Include" value={counts.included} />
-            <Metric label="Exclude" value={counts.excluded} />
-            <Metric label="Promoted" value={counts.promoted} />
-          </div>
+          {isAdmin ? (
+            <form onSubmit={handleUpload} className="flex flex-col gap-2 sm:flex-row sm:items-center">
+              <input
+                ref={fileInputRef}
+                name="files"
+                type="file"
+                accept="application/pdf"
+                multiple
+                className="w-full min-w-0 rounded-xl border border-dashed border-indigo-200 bg-indigo-50/40 px-3 py-2 text-sm text-indigo-700 sm:w-80"
+              />
+              <button
+                disabled={isPending}
+                className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:opacity-60"
+              >
+                Upload
+              </button>
+            </form>
+          ) : null}
+        </div>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <Metric label="All" value={counts.all} tone="slate" />
+          <Metric label="AI include" value={counts.aiInclude} tone="green" />
+          <Metric label="AI exclude" value={counts.aiExclude} tone="red" />
+          <Metric label="Conflict" value={counts.conflicts} tone="amber" />
+          <Metric label="Promoted" value={counts.promoted} tone="blue" />
         </div>
       </section>
 
       {loadError ? <Notice tone="error" message={loadError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      {isAdmin ? (
-        <form onSubmit={handleUpload} className="grid gap-3 rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm lg:grid-cols-3 min-[1800px]:grid-cols-[minmax(0,1.3fr)_repeat(4,minmax(0,0.75fr))_auto]">
-          <input ref={fileInputRef} name="files" type="file" accept="application/pdf" multiple className="min-w-0 rounded-xl border border-dashed border-indigo-200 bg-indigo-50/40 px-3 py-2 text-sm text-indigo-700" />
-          <input name="title" placeholder="Optional title override" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
-          <input name="leadAuthor" placeholder="Lead author" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
-          <input name="year" placeholder="Year" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
-          <input name="doi" placeholder="DOI" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
-          <button disabled={isPending} className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:opacity-60">
-            Upload
-          </button>
-        </form>
-      ) : null}
-
-      <div className="grid gap-6 min-[1800px]:grid-cols-[minmax(360px,0.95fr)_minmax(0,1.35fr)]">
-        <section className="space-y-4 rounded-3xl border border-slate-200/70 bg-white/85 p-4 shadow-xl ring-1 ring-slate-200/60">
-          <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_180px]">
-            <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search title, study ID, author, DOI..." className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
-            <select value={filter} onChange={(event) => setFilter(event.target.value as Filter)} className="rounded-xl border border-slate-200 px-3 py-2 text-sm">
-              <option value="all">All records</option>
-              <option value="awaiting_ai">Awaiting AI</option>
-              <option value="ai_suggested">AI suggested</option>
-              <option value="included">Included</option>
-              <option value="excluded">Excluded</option>
-              <option value="promoted">Promoted</option>
-            </select>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button onClick={runAiReview} disabled={isPending || (!selectedRecord && checkedIds.length === 0)} className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white disabled:opacity-50">
-              Run AI review
-            </button>
-            {isAdmin ? (
-              <button onClick={promoteIncluded} disabled={isPending || (!selectedRecord && checkedIds.length === 0)} className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-800 disabled:opacity-50">
-                Promote included
-              </button>
-            ) : null}
-            <button onClick={() => setSelectedIds({})} className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600">
-              Clear selected
-            </button>
-          </div>
-          <div className="max-h-[68vh] overflow-y-auto rounded-2xl border border-slate-100">
-            {filteredRecords.map((record) => (
+      <section className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="border-b border-slate-200 p-4">
+          <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+            <div className="flex flex-wrap gap-2">
+              <FilterButton label="All" active={filter === 'all'} tone="slate" onClick={() => setFilter('all')} />
+              <FilterButton label="Included" active={filter === 'ready_for_extraction'} tone="green" onClick={() => setFilter('ready_for_extraction')} />
+              <FilterButton label="Excluded" active={filter === 'excluded'} tone="red" onClick={() => setFilter('excluded')} />
+              <FilterButton label="Conflict" active={filter === 'conflict'} tone="amber" onClick={() => setFilter('conflict')} />
+              <FilterButton label="Promoted to extraction" active={filter === 'promoted'} tone="blue" onClick={() => setFilter('promoted')} />
+            </div>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+              <input
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Search title, study ID, author, DOI..."
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm sm:w-80"
+              />
               <button
-                key={record.id}
-                type="button"
-                onClick={() => setSelectedRecordId(record.id)}
-                className={`grid w-full grid-cols-[auto_minmax(0,1fr)] gap-3 border-b border-slate-100 p-3 text-left transition hover:bg-slate-50 ${selectedRecord?.id === record.id ? 'bg-indigo-50/70' : 'bg-white'}`}
+                onClick={runAiReview}
+                disabled={isPending || checkedIds.length === 0}
+                className="rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-45"
               >
-                <input
-                  type="checkbox"
-                  checked={Boolean(selectedIds[record.id])}
-                  onChange={(event) => {
-                    event.stopPropagation();
-                    setSelectedIds((previous) => ({ ...previous, [record.id]: event.target.checked }));
-                  }}
-                  onClick={(event) => event.stopPropagation()}
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600"
-                />
-                <div className="min-w-0 space-y-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-700">{record.assignedStudyId}</span>
-                    <DecisionBadge record={record} />
-                  </div>
-                  <p className="truncate text-sm font-semibold text-slate-900">{record.title}</p>
-                  <p className="text-xs text-slate-500">{[record.leadAuthor, record.year, record.journal].filter(Boolean).join(' • ') || 'Metadata pending'}</p>
-                </div>
+                Run AI review
               </button>
-            ))}
-            {filteredRecords.length === 0 ? <p className="p-6 text-center text-sm text-slate-500">No screening records match this view.</p> : null}
+            </div>
           </div>
-        </section>
+        </div>
 
-        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]">
-          <div className="min-h-[72vh] overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl ring-1 ring-slate-200/60">
-            {selectedRecord ? (
-              <object data={`/api/full-text-screening/${selectedRecord.id}/file`} type="application/pdf" className="h-full min-h-[72vh] w-full">
-                <iframe src={`/api/full-text-screening/${selectedRecord.id}/file`} className="h-full min-h-[72vh] w-full border-0" title="Full-text screening PDF" />
-              </object>
-            ) : (
-              <div className="flex h-full min-h-[72vh] items-center justify-center text-sm text-slate-500">Select a screening record.</div>
-            )}
-          </div>
-          <aside className="space-y-4 rounded-3xl border border-slate-200/70 bg-white/85 p-5 shadow-xl ring-1 ring-slate-200/60">
-            {selectedRecord ? (
-              <>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Selected record</p>
-                  <h2 className="mt-2 text-xl font-semibold text-slate-950">{selectedRecord.title}</h2>
-                  <p className="mt-1 text-sm text-slate-500">{selectedRecord.assignedStudyId}</p>
-                </div>
-                <AuditBlock record={selectedRecord} />
-                <div className="space-y-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Manual decision</p>
-                  <textarea value={decisionReason} onChange={(event) => setDecisionReason(event.target.value)} placeholder="Reason required for Exclude; optional for Include" className="min-h-24 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm" />
-                  <div className="flex flex-wrap gap-2">
-                    <button onClick={() => saveDecision('include')} disabled={isPending} className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white disabled:opacity-50">Include</button>
-                    <button onClick={() => saveDecision('exclude')} disabled={isPending} className="rounded-full bg-rose-600 px-4 py-2 text-xs font-semibold text-white disabled:opacity-50">Exclude</button>
-                  </div>
-                </div>
-                {selectedRecord.promotedPaperId ? (
-                  <Link href={`/paper/${selectedRecord.promotedPaperId}`} className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-800">
-                    Open promoted extraction record
-                  </Link>
-                ) : null}
-              </>
-            ) : (
-              <p className="text-sm text-slate-500">Select a record to inspect AI evidence and save a decision.</p>
-            )}
-          </aside>
-        </section>
-      </div>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[900px] border-collapse text-left text-sm">
+            <thead className="bg-slate-50 text-xs uppercase tracking-[0.14em] text-slate-500">
+              <tr>
+                <th className="w-10 px-4 py-3" />
+                <th className="px-4 py-3">Study</th>
+                <th className="px-4 py-3">AI suggestion</th>
+                <th className="px-4 py-3">Reviewers</th>
+                <th className="px-4 py-3">Outcome</th>
+                <th className="px-4 py-3">Reason</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {filteredRecords.map((record) => (
+                <ScreeningRow
+                  key={record.id}
+                  record={record}
+                  checked={Boolean(selectedIds[record.id])}
+                  onCheckedChange={(checked) => {
+                    setSelectedIds((previous) => ({ ...previous, [record.id]: checked }));
+                  }}
+                />
+              ))}
+            </tbody>
+          </table>
+          {filteredRecords.length === 0 ? (
+            <p className="p-8 text-center text-sm text-slate-500">No records match this view.</p>
+          ) : null}
+        </div>
+      </section>
     </div>
   );
 }
 
-function Metric({ label, value }: { label: string; value: number }) {
+function ScreeningRow({
+  record,
+  checked,
+  onCheckedChange,
+}: {
+  record: ScreeningRecord;
+  checked: boolean;
+  onCheckedChange: (checked: boolean) => void;
+}) {
+  const resolution = getScreeningResolution(record);
+  const reviewerDecisions = getReviewerDecisions(record);
+  const reason = resolution === 'excluded' || resolution === 'conflict'
+    ? summarizeExclusionReasons(record)
+    : record.aiReason;
+
   return (
-    <div className="rounded-2xl border border-slate-200/70 bg-white/70 px-3 py-2 shadow-sm">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{label}</p>
-      <p className="mt-1 text-xl font-semibold text-slate-950">{value}</p>
+    <tr className="bg-white hover:bg-slate-50">
+      <td className="px-4 py-4 align-top">
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(event) => onCheckedChange(event.target.checked)}
+          className="h-4 w-4 rounded border-slate-300 text-indigo-600"
+          aria-label={`Select ${record.assignedStudyId}`}
+        />
+      </td>
+      <td className="max-w-[420px] px-4 py-4 align-top">
+        <Link href={`/full-text-screening/${record.id}`} className="group">
+          <div className="flex items-center gap-2">
+            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-700">{record.assignedStudyId}</span>
+            <span className="text-xs text-slate-500">{record.leadAuthor ?? 'Author pending'}</span>
+          </div>
+          <p className="mt-2 font-semibold text-slate-950 group-hover:text-indigo-700">{record.title}</p>
+        </Link>
+      </td>
+      <td className="px-4 py-4 align-top">
+        <AiBadge record={record} />
+      </td>
+      <td className="px-4 py-4 align-top">
+        <p className="font-semibold text-slate-900">{getDecisionProgressLabel(record)}</p>
+        <p className="mt-1 text-xs text-slate-500">
+          {reviewerDecisions.length > 0
+            ? reviewerDecisions.map((decision) => decision.decision).join(' + ')
+            : 'No reviewer decision'}
+        </p>
+      </td>
+      <td className="px-4 py-4 align-top">
+        <ResolutionBadge resolution={resolution} />
+      </td>
+      <td className="max-w-[280px] px-4 py-4 align-top text-xs leading-relaxed text-slate-600">
+        {reason || 'Pending'}
+      </td>
+    </tr>
+  );
+}
+
+function Metric({ label, value, tone }: { label: string; value: number; tone: 'slate' | 'green' | 'red' | 'amber' | 'blue' }) {
+  const classes = {
+    slate: 'border-slate-200 bg-slate-50 text-slate-900',
+    green: 'border-emerald-200 bg-emerald-50 text-emerald-900',
+    red: 'border-rose-200 bg-rose-50 text-rose-900',
+    amber: 'border-amber-200 bg-amber-50 text-amber-900',
+    blue: 'border-sky-200 bg-sky-50 text-sky-900',
+  }[tone];
+  return (
+    <div className={`rounded-2xl border px-4 py-3 ${classes}`}>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] opacity-70">{label}</p>
+      <p className="mt-1 text-2xl font-semibold">{value}</p>
     </div>
   );
+}
+
+function FilterButton({
+  label,
+  active,
+  tone,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  tone: 'slate' | 'green' | 'red' | 'amber' | 'blue';
+  onClick: () => void;
+}) {
+  const tones = {
+    slate: active ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-700',
+    green: active ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-emerald-200 bg-emerald-50 text-emerald-800',
+    red: active ? 'border-rose-600 bg-rose-600 text-white' : 'border-rose-200 bg-rose-50 text-rose-800',
+    amber: active ? 'border-amber-500 bg-amber-500 text-white' : 'border-amber-200 bg-amber-50 text-amber-800',
+    blue: active ? 'border-sky-600 bg-sky-600 text-white' : 'border-sky-200 bg-sky-50 text-sky-800',
+  };
+  return (
+    <button onClick={onClick} className={`rounded-full border px-3 py-1.5 text-xs font-semibold ${tones[tone]}`}>
+      {label}
+    </button>
+  );
+}
+
+function AiBadge({ record }: { record: ScreeningRecord }) {
+  if (record.aiStatus === 'running') {
+    return <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">AI running</span>;
+  }
+  if (record.aiStatus === 'failed') {
+    return <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">AI failed</span>;
+  }
+  if (record.aiSuggestedDecision === 'include') {
+    return <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">AI include</span>;
+  }
+  if (record.aiSuggestedDecision === 'exclude') {
+    return <span className="rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-800">AI exclude</span>;
+  }
+  return <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">Not run</span>;
+}
+
+function ResolutionBadge({ resolution }: { resolution: ReturnType<typeof getScreeningResolution> }) {
+  const labels = {
+    pending: 'Pending',
+    ready_for_extraction: 'Ready for extraction',
+    excluded: 'Excluded',
+    conflict: 'Conflict',
+    promoted: 'Promoted',
+  };
+  const classes = {
+    pending: 'bg-slate-100 text-slate-700',
+    ready_for_extraction: 'bg-emerald-100 text-emerald-800',
+    excluded: 'bg-rose-100 text-rose-800',
+    conflict: 'bg-amber-100 text-amber-800',
+    promoted: 'bg-sky-100 text-sky-800',
+  };
+  return <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${classes[resolution]}`}>{labels[resolution]}</span>;
 }
 
 function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; message: string }) {
@@ -352,34 +383,4 @@ function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; mess
       ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
       : 'border-slate-200 bg-slate-50 text-slate-700';
   return <div className={`rounded-2xl border px-4 py-3 text-sm font-medium ${classes}`}>{message}</div>;
-}
-
-function DecisionBadge({ record }: { record: ScreeningRecord }) {
-  if (record.promotedPaperId) return <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">Promoted</span>;
-  if (record.manualDecision === 'include') return <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">Included</span>;
-  if (record.manualDecision === 'exclude') return <span className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-semibold text-rose-700">Excluded</span>;
-  if (record.aiStatus === 'completed') return <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-[11px] font-semibold text-indigo-700">AI: {record.aiSuggestedDecision}</span>;
-  if (record.aiStatus === 'failed') return <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-700">AI failed</span>;
-  return <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">Awaiting AI</span>;
-}
-
-function AuditBlock({ record }: { record: ScreeningRecord }) {
-  return (
-    <div className="space-y-3 rounded-2xl border border-slate-200 bg-white p-4 text-sm">
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">AI suggestion</p>
-        <p className="mt-1 font-semibold text-slate-900">{record.aiSuggestedDecision ?? 'Not run'}</p>
-        {record.aiReason ? <p className="mt-1 text-slate-600">{record.aiReason}</p> : null}
-        {record.aiEvidenceQuote ? <blockquote className="mt-2 border-l-4 border-indigo-200 pl-3 text-slate-700">{record.aiEvidenceQuote}</blockquote> : null}
-      </div>
-      <div className="grid gap-2 text-xs text-slate-500">
-        <p>Criteria: {record.aiCriteriaVersion ?? SCREENING_CRITERIA_VERSION}</p>
-        <p>Model: {record.aiModel ?? 'Not run'}</p>
-        <p>Confidence: {record.aiConfidence === null ? 'Not reported' : record.aiConfidence}</p>
-        <p>Manual decision: {record.manualDecision ?? 'Not decided'}</p>
-        {record.manualReason ? <p>Manual reason: {record.manualReason}</p> : null}
-        {record.manualDecidedByName ? <p>Reviewer: {record.manualDecidedByName}</p> : null}
-      </div>
-    </div>
-  );
 }
