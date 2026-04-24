@@ -142,7 +142,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-4">
+    <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/full-text-screening"
@@ -155,9 +155,9 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
 
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="grid min-h-[calc(100vh-168px)] overflow-hidden rounded-2xl border border-slate-200/70 bg-white shadow-lg ring-1 ring-slate-200/50 xl:grid-cols-[minmax(0,1fr)_360px]">
-        <div className="grid min-h-[calc(100vh-168px)] min-w-0 grid-rows-[auto_minmax(0,1fr)] bg-slate-50/80">
-          <div className="flex items-center justify-between gap-3 border-b border-slate-200/70 px-4 py-3">
+      <section className="grid min-h-[calc(100vh-168px)] overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur xl:grid-cols-[minmax(0,1fr)_420px]">
+        <div className="grid min-h-[calc(100vh-168px)] min-w-0 grid-rows-[auto_minmax(0,1fr)] bg-gradient-to-br from-white/90 via-slate-50/85 to-sky-50/70">
+          <div className="flex items-center justify-between gap-3 border-b border-slate-200/70 px-4 py-3 sm:px-5">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-slate-900">Evidence workspace</p>
               <p className="mt-1 text-xs font-medium text-slate-700">PDF source</p>
@@ -171,11 +171,11 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               Open PDF
             </a>
           </div>
-          <div className="flex min-h-0 p-2.5 sm:p-3">
-            <div className="flex min-h-[calc(100vh-240px)] w-full overflow-hidden rounded-xl border border-dashed border-slate-300/90 bg-white shadow-inner">
+          <div className="flex min-h-0 p-2.5 sm:p-4">
+            <div className="flex min-h-[calc(100vh-244px)] w-full overflow-hidden rounded-2xl border border-slate-300/70 bg-white shadow-inner">
               <iframe
                 src={pdfUrl}
-                className="h-full min-h-[calc(100vh-240px)] w-full flex-1 border-0 bg-white"
+                className="h-full min-h-[calc(100vh-244px)] w-full flex-1 border-0 bg-white"
                 title={`${record.assignedStudyId} full text PDF`}
                 allow="fullscreen"
               />
@@ -183,14 +183,14 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
           </div>
         </div>
 
-        <form onSubmit={saveDecision} className="grid min-h-[calc(100vh-168px)] min-w-0 grid-rows-[auto_1fr_auto] border-l border-[#2c5d8f] bg-[#eaf5ff] text-slate-950 shadow-[inset_14px_0_32px_rgba(15,23,42,0.04)]">
-          <div className="border-b border-[#2c5d8f] bg-[#cfe7fb] px-5 py-5">
+        <form onSubmit={saveDecision} className="grid min-h-[calc(100vh-168px)] min-w-0 grid-rows-[auto_1fr_auto] border-l border-slate-200/80 bg-gradient-to-b from-sky-50/90 via-white/86 to-sky-50/90 text-slate-950 shadow-[inset_18px_0_36px_rgba(15,23,42,0.045)]">
+          <div className="border-b border-slate-200/80 bg-gradient-to-br from-white/95 via-sky-50/80 to-indigo-50/60 px-5 py-5">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-bold text-[#0b3a70]">{record.assignedStudyId}</span>
-              <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold text-[#0b3a70]">full-text</span>
+              <span className="rounded-full border border-blue-200 bg-white/85 px-3 py-1 text-xs font-bold text-[#0b3a70] shadow-sm">{record.assignedStudyId}</span>
+              <span className="rounded-full border border-blue-100 bg-blue-50/85 px-3 py-1 text-xs font-bold text-[#0b3a70]">full-text</span>
               <Pill tone="slate">{getDecisionProgressLabel(record)}</Pill>
             </div>
-            <h1 className="mt-4 break-words text-xl font-bold leading-snug tracking-[-0.03em] text-[#092f5f]">{displayTitle}</h1>
+            <h1 className="mt-4 break-words text-2xl font-semibold leading-tight tracking-[-0.035em] text-[#092f5f]">{displayTitle}</h1>
             {[authorLabel, record.year].filter(Boolean).length > 0 ? (
               <p className="mt-2 text-sm font-semibold text-slate-600">
                 {[authorLabel, record.year].filter(Boolean).join(' · ')}
@@ -198,54 +198,78 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
             ) : null}
           </div>
 
-          <div className="min-h-0 overflow-y-auto px-5 py-5">
-            <section className="py-2">
-              <div className={`rounded-2xl border px-5 py-4 shadow-sm ${aiDecisionCardClass}`}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#0b3a70]/70">AI recommendation</p>
-                <div className={`mt-2 flex items-center gap-2.5 text-4xl font-black tracking-[-0.05em] ${aiDecisionTextClass}`}>
-                  <span className="text-3xl leading-none">{aiDecisionIcon}</span>
+          <div className="min-h-0 overflow-y-auto p-5">
+            <div className="grid grid-cols-2 gap-3">
+              <div className={`col-span-2 rounded-3xl border px-5 py-5 shadow-sm ${aiDecisionCardClass}`}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#0b3a70]/70">AI read</p>
+                <div className={`mt-3 flex items-center gap-3 text-4xl font-black tracking-[-0.055em] ${aiDecisionTextClass}`}>
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/60 text-2xl leading-none shadow-sm">{aiDecisionIcon}</span>
                   <span>{aiDecisionLabel}</span>
                 </div>
+                <p className="mt-3 text-xs font-semibold leading-relaxed text-slate-700">
+                  Advisory only. Final eligibility depends on reviewer votes.
+                </p>
               </div>
-            </section>
 
-            <div className="mt-5 space-y-3">
-              <section className="rounded-2xl border border-[#2c5d8f] bg-white p-4 shadow-sm">
+              <section className="rounded-3xl border border-slate-200/80 bg-white/85 p-4 shadow-sm">
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#0b3a70]">Status</p>
+                <div className="mt-3 text-3xl font-black tracking-[-0.05em] text-[#092f5f]">{getDecisionProgressLabel(record)}</div>
+                <p className="mt-2 text-xs font-semibold leading-relaxed text-slate-600">Reviewer progress</p>
+              </section>
+
+              <section className="rounded-3xl border border-slate-200/80 bg-white/85 p-4 shadow-sm">
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#0b3a70]">Resolution</p>
+                <div className="mt-3">
+                  <ResolutionBadge resolution={resolution} />
+                </div>
+                <p className="mt-3 text-xs font-semibold leading-relaxed text-slate-600">Current record state</p>
+              </section>
+
+              <section className="col-span-2 rounded-3xl border border-slate-200/80 bg-white/85 p-5 shadow-sm">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0b3a70]">AI rationale</p>
                 {record.aiReason ? (
-                  <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-950">{record.aiReason}</p>
+                  <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-900">{record.aiReason}</p>
                 ) : (
-                  <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-800">No AI recommendation has been recorded yet.</p>
+                  <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-700">No AI recommendation has been recorded yet.</p>
                 )}
               </section>
 
-              <section className="rounded-2xl border border-[#2c5d8f] bg-white p-4 shadow-sm">
+              <section className="col-span-2 rounded-3xl border border-slate-200/80 bg-white/85 p-5 shadow-sm">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0b3a70]">Reviewer history</p>
-                  <span className="rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 text-xs font-bold text-[#0b3a70]">{getDecisionProgressLabel(record)}</span>
+                  <span className="rounded-full border border-blue-200 bg-blue-50/90 px-2.5 py-0.5 text-xs font-bold text-[#0b3a70]">{getDecisionProgressLabel(record)}</span>
                 </div>
                 <div className="mt-3 space-y-2">
-                {reviewerDecisions.length > 0 ? reviewerDecisions.map((item, index) => (
-                  <div key={`${item.reviewerProfileId}-${item.decidedAt}`} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <DecisionPill decision={item.decision} />
-                      <span className="text-xs font-semibold text-slate-950">{item.reviewerName ?? 'Reviewer'}</span>
+                  {reviewerDecisions.length > 0 ? reviewerDecisions.map((item, index) => (
+                    <div key={`${item.reviewerProfileId}-${item.decidedAt}`} className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <DecisionPill decision={item.decision} />
+                        <span className="text-xs font-semibold text-slate-900">{item.reviewerName ?? 'Reviewer'}</span>
+                      </div>
+                      {item.reason ? <p className="mt-2 text-xs font-semibold text-slate-700">{item.reason}</p> : null}
+                      {firstTwoConflict && index === 2 ? (
+                        <p className="mt-2 text-xs font-bold text-slate-900">Final conflict decision</p>
+                      ) : null}
                     </div>
-                    {item.reason ? <p className="mt-2 text-xs font-semibold text-slate-800">{item.reason}</p> : null}
-                    {firstTwoConflict && index === 2 ? (
-                      <p className="mt-2 text-xs font-bold text-slate-950">Final conflict decision</p>
-                    ) : null}
-                  </div>
-                )) : (
-                  <p className="text-sm font-semibold text-slate-900">No reviewer decision yet. Two reviewer votes are required.</p>
-                )}
+                  )) : (
+                    <div className="grid gap-2">
+                      <div className="flex items-center justify-between rounded-2xl border border-slate-200/80 bg-slate-50/80 px-3 py-2.5 text-xs font-bold text-slate-600">
+                        <span>Reviewer 1</span>
+                        <span>Not voted</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-2xl border border-slate-200/80 bg-slate-50/80 px-3 py-2.5 text-xs font-bold text-slate-600">
+                        <span>Reviewer 2</span>
+                        <span>Not voted</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 {exclusionReasonSummary ? <p className="mt-3 text-xs font-semibold text-slate-800">Exclusion reasons: {exclusionReasonSummary}</p> : null}
               </section>
             </div>
           </div>
 
-          <div className="border-t border-[#2c5d8f] bg-[#cfe7fb] px-5 py-5">
+          <div className="border-t border-slate-200/80 bg-gradient-to-br from-sky-100/85 via-sky-50/90 to-white/90 px-5 py-5">
             <p className="text-sm font-black uppercase tracking-[0.16em] text-[#0b3a70]">{decisionMode}</p>
             {firstTwoConflict ? (
               <div className="mt-3 grid grid-cols-2 gap-2">
