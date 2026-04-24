@@ -335,3 +335,21 @@ begin
   return v_record;
 end;
 $$;
+
+revoke all on function public.save_screening_vote(
+  uuid,
+  uuid,
+  text,
+  text,
+  text,
+  text
+) from public;
+
+grant execute on function public.save_screening_vote(
+  uuid,
+  uuid,
+  text,
+  text,
+  text,
+  text
+) to service_role;
