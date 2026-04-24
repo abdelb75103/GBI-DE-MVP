@@ -22,5 +22,5 @@ export default async function FullTextScreeningWorkspacePage({
     notFound();
   }
 
-  return <FullTextScreeningWorkspaceClient initialRecord={record} />;
+  return <FullTextScreeningWorkspaceClient initialRecord={record} currentReviewerId={profile.id} />;
 }

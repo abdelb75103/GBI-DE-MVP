@@ -24,6 +24,7 @@ export default async function FullTextScreeningPage() {
   return (
     <FullTextScreeningClient
       initialRecords={records}
+      currentReviewerId={profile.id}
       profileRole={profile.role}
       loadError={loadError}
     />

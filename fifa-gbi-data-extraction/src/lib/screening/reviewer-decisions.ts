@@ -31,6 +31,14 @@ export type ScreeningResolution =
   | 'conflict'
   | 'promoted';
 
+export type ScreeningWorkStatus =
+  | 'needs_your_vote'
+  | 'awaiting_other_reviewer'
+  | 'ready_for_extraction'
+  | 'excluded'
+  | 'conflict'
+  | 'promoted';
+
 type ScreeningMetadata = {
   fullTextDecisions?: FullTextReviewerDecision[];
   fullTextResolution?: ScreeningResolution;
@@ -52,7 +60,7 @@ export const getReviewerDecisions = (record: ScreeningRecord): FullTextReviewerD
     : [];
 
   if (decisions.length > 0) {
-    return decisions;
+    return [...decisions].sort((a, b) => Date.parse(a.decidedAt) - Date.parse(b.decidedAt));
   }
 
   if (!record.manualDecision || !record.manualDecidedBy || !record.manualDecidedAt) {
@@ -73,21 +81,16 @@ export const getScreeningResolution = (record: ScreeningRecord): ScreeningResolu
     return 'promoted';
   }
 
-  const metadata = record.metadata as ScreeningMetadata;
-  if (
-    metadata.fullTextResolution === 'ready_for_extraction' ||
-    metadata.fullTextResolution === 'excluded' ||
-    metadata.fullTextResolution === 'conflict'
-  ) {
-    return metadata.fullTextResolution;
-  }
-
   const decisions = getReviewerDecisions(record);
   if (decisions.length < 2) {
     return 'pending';
   }
 
   const firstTwo = decisions.slice(0, 2);
+  if (decisions.length >= 3 && firstTwo[0]?.decision !== firstTwo[1]?.decision) {
+    return decisions[2].decision === 'include' ? 'ready_for_extraction' : 'excluded';
+  }
+
   const includes = firstTwo.filter((decision) => decision.decision === 'include').length;
   const excludes = firstTwo.filter((decision) => decision.decision === 'exclude').length;
 
@@ -98,7 +101,40 @@ export const getScreeningResolution = (record: ScreeningRecord): ScreeningResolu
 
 export const getDecisionProgressLabel = (record: ScreeningRecord) => {
   const decisions = getReviewerDecisions(record);
+  if (decisions.length >= 3) {
+    return 'Resolved';
+  }
   return `${Math.min(decisions.length, 2)}/2`;
+};
+
+export const hasReviewerVoted = (record: ScreeningRecord, reviewerProfileId: string) =>
+  getReviewerDecisions(record).some((decision) => decision.reviewerProfileId === reviewerProfileId);
+
+export const getScreeningWorkStatus = (
+  record: ScreeningRecord,
+  reviewerProfileId: string,
+): ScreeningWorkStatus => {
+  const resolution = getScreeningResolution(record);
+  if (resolution !== 'pending') {
+    return resolution;
+  }
+  return hasReviewerVoted(record, reviewerProfileId) ? 'awaiting_other_reviewer' : 'needs_your_vote';
+};
+
+export const getScreeningStatusLabel = (
+  record: ScreeningRecord,
+  reviewerProfileId: string,
+) => {
+  const status = getScreeningWorkStatus(record, reviewerProfileId);
+  const decisions = getReviewerDecisions(record);
+  if (status === 'needs_your_vote') {
+    return decisions.length === 0 ? 'No votes' : 'One vote';
+  }
+  if (status === 'awaiting_other_reviewer') return 'Awaiting other reviewer';
+  if (status === 'ready_for_extraction') return 'Ready for extraction';
+  if (status === 'excluded') return 'Excluded';
+  if (status === 'conflict') return 'Conflict';
+  return 'Promoted';
 };
 
 export const summarizeExclusionReasons = (record: ScreeningRecord) => {

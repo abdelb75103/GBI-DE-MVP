@@ -212,15 +212,36 @@ export const saveScreeningDecision = async (
   }
 
   const decidedAt = new Date().toISOString();
-  const decisions = getReviewerDecisions(existingRecord)
-    .filter((decision) => decision.reviewerProfileId !== input.reviewerProfileId);
-  decisions.push({
+  const existingDecisions = getReviewerDecisions(existingRecord);
+  const firstTwo = existingDecisions.slice(0, 2);
+  const hasConflict =
+    firstTwo.length === 2 &&
+    firstTwo[0]?.decision !== firstTwo[1]?.decision;
+  const thirdDecision = existingDecisions[2];
+
+  if (hasConflict && !thirdDecision && firstTwo.some((decision) => decision.reviewerProfileId === input.reviewerProfileId)) {
+    throw new Error('A separate conflict reviewer is required to resolve this record.');
+  }
+  if (hasConflict && thirdDecision && thirdDecision.reviewerProfileId !== input.reviewerProfileId) {
+    throw new Error('This conflict has already been resolved.');
+  }
+
+  const nextDecision = {
     reviewerProfileId: input.reviewerProfileId,
     reviewerName: input.reviewerName ?? null,
     decision: input.decision,
     reason: input.reason?.trim() || null,
     decidedAt,
-  });
+  };
+
+  const decisions = hasConflict
+    ? [...firstTwo, nextDecision]
+    : [
+        ...existingDecisions
+          .slice(0, 2)
+          .filter((decision) => decision.reviewerProfileId !== input.reviewerProfileId),
+        nextDecision,
+      ].slice(0, 2);
 
   const metadata: Record<string, unknown> = {
     ...(existingRecord.metadata ?? {}),

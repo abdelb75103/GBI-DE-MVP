@@ -15,11 +15,13 @@ import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
   initialRecord: ScreeningRecord;
+  currentReviewerId: string;
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 
-export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
+export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewerId }: Props) {
   const [record, setRecord] = useState(initialRecord);
   const [decision, setDecision] = useState<ScreeningDecision | null>(null);
   const [reason, setReason] = useState<ExclusionReason | ''>('');
@@ -30,6 +32,17 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
   const reviewerDecisions = useMemo(() => getReviewerDecisions(record), [record]);
   const resolution = getScreeningResolution(record);
   const exclusionReasonSummary = summarizeExclusionReasons(record);
+  const firstTwoConflict =
+    reviewerDecisions.length >= 2 &&
+    reviewerDecisions[0]?.decision !== reviewerDecisions[1]?.decision;
+  const thirdDecision = firstTwoConflict ? reviewerDecisions[2] : undefined;
+  const currentReviewerIsOriginalConflictReviewer = firstTwoConflict
+    ? reviewerDecisions.slice(0, 2).some((item) => item.reviewerProfileId === currentReviewerId)
+    : false;
+  const decisionMode = firstTwoConflict && !thirdDecision ? 'Resolve conflict' : 'Your decision';
+  const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
+  const displayTitle = cleanDisplayTitle(record.title);
+  const pdfUrl = `/api/full-text-screening/${record.id}/file#view=FitH`;
 
   const saveDecision = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -77,23 +90,21 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
       <div className="grid min-h-[calc(100vh-190px)] gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(280px,320px)]">
-        <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-          <object data={`/api/full-text-screening/${record.id}/file`} type="application/pdf" className="h-full min-h-[78vh] w-full">
-            <iframe src={`/api/full-text-screening/${record.id}/file`} className="h-full min-h-[78vh] w-full border-0" title="Full-text screening PDF" />
-          </object>
+        <section className="min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+          <iframe src={pdfUrl} className="h-full min-h-[82vh] w-full border-0 bg-white" title={`${record.assignedStudyId} full text PDF`} />
         </section>
 
-        <aside className="min-w-0 space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <aside className="min-w-0 space-y-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <section className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Selected record</p>
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{record.assignedStudyId}</span>
-              <span className="text-sm text-slate-500">{record.leadAuthor ?? 'Author pending'}</span>
+              <span className="font-semibold text-slate-900">{record.assignedStudyId}</span>
+              {authorLabel ? <span className="text-sm text-slate-500">{authorLabel}</span> : null}
             </div>
-            <h1 className="break-words text-xl font-semibold leading-snug text-slate-950">{record.title}</h1>
+            <h1 className="break-words text-xl font-semibold leading-snug text-slate-950">{displayTitle}</h1>
           </section>
 
-          <section className={`rounded-2xl border p-4 ${record.aiSuggestedDecision === 'exclude' ? 'border-rose-200 bg-rose-50' : record.aiSuggestedDecision === 'include' ? 'border-emerald-200 bg-emerald-50' : 'border-slate-200 bg-slate-50'}`}>
+          <section className={`rounded-xl border p-4 ${record.aiSuggestedDecision === 'exclude' ? 'border-rose-100 bg-rose-50' : record.aiSuggestedDecision === 'include' ? 'border-emerald-100 bg-emerald-50' : 'border-slate-200 bg-slate-50'}`}>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">AI suggestion</p>
             <div className="mt-2">
               <AiBadge record={record} />
@@ -106,7 +117,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
             ) : null}
           </section>
 
-          <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <section className="rounded-xl border border-slate-200 bg-slate-50 p-4">
             <div className="flex items-center justify-between gap-3">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Reviewer decisions</p>
               <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-slate-700">{getDecisionProgressLabel(record)}</span>
@@ -119,6 +130,9 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
                     <span className="text-xs text-slate-500">{item.reviewerName ?? 'Reviewer'}</span>
                   </div>
                   {item.reason ? <p className="mt-2 text-xs text-slate-600">{item.reason}</p> : null}
+                  {firstTwoConflict && reviewerDecisions[2]?.reviewerProfileId === item.reviewerProfileId ? (
+                    <p className="mt-2 text-xs font-semibold text-slate-700">Final conflict decision</p>
+                  ) : null}
                 </div>
               )) : (
                 <p className="text-sm text-slate-500">No reviewer decision yet.</p>
@@ -127,8 +141,20 @@ export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
             {exclusionReasonSummary ? <p className="mt-3 text-xs text-slate-600">Exclusion reasons: {exclusionReasonSummary}</p> : null}
           </section>
 
-          <form onSubmit={saveDecision} className="space-y-3 rounded-2xl border border-slate-200 bg-white p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Your decision</p>
+          <form onSubmit={saveDecision} className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{decisionMode}</p>
+              {firstTwoConflict && !thirdDecision ? (
+                <p className="mt-1 text-xs text-slate-500">
+                  A third decision resolves the conflict and becomes the final decision.
+                </p>
+              ) : null}
+              {firstTwoConflict && !thirdDecision && currentReviewerIsOriginalConflictReviewer ? (
+                <p className="mt-2 rounded-lg bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900">
+                  This record needs an independent conflict reviewer.
+                </p>
+              ) : null}
+            </div>
             <div className="grid gap-2">
               <button
                 type="button"
