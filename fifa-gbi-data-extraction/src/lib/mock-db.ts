@@ -37,6 +37,15 @@ import {
   markUploadQueueRejected,
   countPendingUploadQueueEntries,
 } from '@/lib/db/upload-queue';
+import {
+  createScreeningRecord,
+  getScreeningRecord,
+  listScreeningRecords,
+  markScreeningAiRunning,
+  promoteScreeningRecord,
+  saveScreeningDecision,
+  updateScreeningAiSuggestion,
+} from '@/lib/db/screening';
 
 export { PaperSessionConflictError };
 
@@ -91,4 +100,12 @@ export const mockDb = {
   markUploadQueueApproved,
   markUploadQueueRejected,
   countPendingUploadQueueEntries,
+
+  listScreeningRecords,
+  getScreeningRecord,
+  createScreeningRecord,
+  markScreeningAiRunning,
+  updateScreeningAiSuggestion,
+  saveScreeningDecision,
+  promoteScreeningRecord,
 };

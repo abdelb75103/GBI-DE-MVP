@@ -33,6 +33,13 @@ export function PrimaryNavLinks({ onNavigate }: { onNavigate?: () => void } = {}
       >
         Extraction Instructions
       </Link>
+      <Link
+        href="/full-text-screening"
+        className={linkClasses}
+        onClick={onNavigate}
+      >
+        Full-text Screening
+      </Link>
       {isAdmin ? (
         <>
           <Link href="/dashboard/ai-review-metrics" className={linkClasses} onClick={onNavigate}>

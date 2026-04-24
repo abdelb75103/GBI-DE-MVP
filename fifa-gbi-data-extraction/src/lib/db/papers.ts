@@ -11,36 +11,9 @@ import {
 import type { Paper, PaperSession, PaperStatus, DedupeReviewStatus } from '@/lib/types';
 import type { PaperInsert, PaperRow, PaperUpdate } from '@/lib/db/types';
 import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
+import { generateAssignedStudyId } from '@/lib/db/study-ids';
 
 const BATCHED_IN_QUERY_SIZE = 100;
-
-const parseStudySequence = (value: string | null | undefined): number => {
-  if (!value) {
-    return 0;
-  }
-  const match = /^S(\d+)$/i.exec(value.trim());
-  return match ? Number.parseInt(match[1], 10) : 0;
-};
-
-const generateAssignedStudyId = async (): Promise<string> => {
-  const supabase = supabaseClient();
-  const { data, error } = await supabase
-    .from('papers')
-    .select('assigned_study_id')
-    .order('assigned_study_id', { ascending: false })
-    .limit(1000);
-
-  if (error) {
-    throw new Error(`Failed to compute next Study ID: ${error.message}`);
-  }
-
-  const maxSequence = (data ?? []).reduce((max, row) => {
-    const seq = parseStudySequence(row.assigned_study_id);
-    return seq > max ? seq : max;
-  }, 0);
-
-  return `S${String(maxSequence + 1).padStart(3, '0')}`;
-};
 
 export const listPapers = async (): Promise<Paper[]> => {
   const supabase = supabaseClient();
@@ -149,6 +122,7 @@ export const createPaper = async (input: {
   status?: PaperStatus;
   metadata?: Record<string, unknown>;
   uploadedBy?: string | null;
+  assignedStudyId?: string | null;
 }): Promise<Paper> => {
   const extractedTitle = input.extractedTitle ?? input.title;
   const normalizedDoi = input.normalizedDoi ?? normalizeDoi(input.doi);
@@ -158,7 +132,7 @@ export const createPaper = async (input: {
   const dedupeReviewStatus: DedupeReviewStatus = input.dedupeReviewStatus ?? 'clean';
 
   const supabase = supabaseClient();
-  const assignedId = await generateAssignedStudyId();
+  const assignedId = input.assignedStudyId ?? await generateAssignedStudyId();
   const payload: PaperInsert = {
     id: crypto.randomUUID(),
     assigned_study_id: assignedId,
