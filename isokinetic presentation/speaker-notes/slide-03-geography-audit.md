@@ -6,9 +6,9 @@ This note records the current geography logic used for Slide 3 so the provisiona
 
 ## Source
 
-Export used:
+Master sheet used:
 
-- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/all-studies-export-2026-04-03T20-52-31-100Z.csv`
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/outputs/master/master-analysis-sheet.csv`
 
 Counting unit:
 
@@ -16,81 +16,55 @@ Counting unit:
 
 ## Status Counts
 
-- Total unique papers: `570`
-- `american_data`: `81`
-- `uefa`: `40`
-- Combined `american_data + uefa`: `121`
-- Remaining papers outside those two statuses: `449`
+- Total unique papers: `499`
+- `american_data`: `84`
+- `uefa`: `38`
+- Combined `american_data + uefa`: `122`
+- Remaining papers outside those two statuses: `377`
 
 ## Geography Logic
 
-The current slide uses a hybrid geography layer:
+The current slide now uses two separate geography layers:
 
-1. Specific-country dots where a paper can be placed at country level
-2. A broad `Europe` regional bucket for `uefa` papers
-3. A broad `Americas` regional bucket for `american_data` papers
+1. Stage 1 combines:
+   - the five highest-count country placements
+   - the broad `UEFA ECIS` regional bucket from `uefa`
+   - the broad `American (NCAA & RIO)` regional bucket from `american_data`
+2. Stage 2 removes the two broad status buckets and keeps only country-level placements
+3. Any remaining broad regional wording is treated as `not yet placed` in the country-only stage
 
 ### Specific-country mapping
 
-Papers are counted into specific-country dots only when the `country` field resolves to a usable country label.
+Papers are counted into specific-country dots only when the `country_standardized` value resolves to a usable country label.
 
-Normalisations applied:
-
-- `USA`, `US`, `U.S.`, `U.S.A.` → `United States`
-- lower-case label cleanups such as `germany`, `japan`, `korea`
-- `Hong Kong` normalized consistently
-
-Broad labels excluded from specific-country mapping:
+Broad labels excluded from the country-only stage include anything that still describes regions rather than countries, for example:
 
 - `Europe`
 - `10 European countries`
 - `International`
 - `Worldwide`
-- `Multiple`
 - `Multinational`
-- `Not reported`
-- `Unknown`
+- `Southern Africa`
+- `Asia (international tournaments)`
 - labels containing `countries`
 - labels containing `confederation`
 
 ## Geography Counts
 
-- Papers with any non-empty `country` field: `355`
-- Papers mappable to specific countries after cleaning: `340`
-- Unique specific-country labels after cleaning: `72`
-- Paper-country pairs after splitting multi-country rows: `388`
+- Papers with any populated country field in the master sheet: `496`
+- Papers mappable to specific countries after cleaning: `431`
+- Unique specific-country labels after cleaning: `50`
 
 Important note:
 
-- None of the current `american_data` papers contribute to the specific-country dot layer under this logic
-- Current `uefa` rows only contain broad geography labels such as `Europe` or `10 European countries`, so they do not contribute to the specific-country dot layer either
+- `american_data` and `uefa` are shown only as broad stage-1 overlays
+- They are intentionally removed from the stage-2 country-only breakdown
 
 ## Regional Buckets
 
-- `Europe` bucket from `uefa`: `40` papers
-- `Americas` bucket from `american_data`: `81` papers
-- Combined regional buckets: `121` papers
-
-## Previous Geography Figure
-
-The previous geography-layer framing represented:
-
-- `340` papers via specific-country dots
-- `121` papers via the two regional buckets
-
-So:
-
-- `340 + 121 = 461`
-- `461 / 570 = 80.9%`
-
-Interpretation:
-
-- `80.9%` of all studies are represented by the current geography layer
-- `19.1%` of all studies are not yet geographically placed under this logic
-
-This means:
-
-- `109` studies remain outside the current geography layer
+- `UEFA ECIS` bucket from `uefa`: `38` papers
+- `American (NCAA & RIO)` bucket from `american_data`: `84` papers
+- Combined regional buckets: `122` papers
 
 ## Current Two-Stage Slide Logic
 
@@ -104,75 +78,75 @@ Use the union of:
 
 Counts:
 
-- top-5 country papers: `141`
-- `american_data`: `81`
-- `uefa`: `40`
+- top-5 country papers: `146`
+- `american_data`: `84`
+- `uefa`: `38`
 - overlap between these three sets in the current export: `0`
-- union total: `262`
+- union total: `268`
 
 So:
 
-- `262 / 570 = 46.0%`
+- `268 / 499 = 53.7%`
 
 Safe wording:
 
-- `46.0% of all studies`
+- `53.7% of all studies`
 - `5 countries + American and UEFA surveillance buckets`
 
 ### Stage 2: Remove dominant American / UEFA buckets
 
 Remove:
 
-- `american_data` (`81`)
-- `uefa` (`40`)
+- `american_data` (`84`)
+- `uefa` (`38`)
 
 Counts after removal:
 
-- remaining studies: `449`
-- top-5 country papers still present: `141`
-- total country labels remaining: `72`
-- other countries after removing the top 5: `67`
-- studies in the other 67 countries: `199`
-- studies not yet geographically placed in this reduced subset: `109`
+- remaining studies: `377`
+- top-5 country papers still present: `146`
+- total specific-country labels remaining: `50`
+- other countries after removing the top 5: `45`
+- studies in the other 45 countries: `201`
+- studies not yet geographically placed in this reduced subset: `30`
 
 So:
 
-- `141 / 449 = 31.4%`
-- `199 / 449 = 44.3%`
-- `109 / 449 = 24.3%`
+- `146 / 377 = 38.7%`
+- `201 / 377 = 53.3%`
+- `30 / 377 = 8.0%`
 
 Safe wording:
 
-- `31.4% of the remaining studies`
-- `31.4% in just 5 countries`
-- `44.3% across the other 67`
-- `24.3% not yet placed`
+- `38.7% of the remaining studies`
+- `38.7% in just 5 countries`
+- `53.3% across the other 45`
+- `8.0% not yet placed`
 
 ## Top Country Concentrations
 
 Current leading country counts:
 
-- Spain: `39`
-- United States: `33`
-- England: `26`
-- Sweden: `25`
-- Germany: `22`
+- Spain: `41`
+- United States: `34`
+- Sweden: `28`
+- Germany: `24`
+- England: `23`
 
 ## Safe Slide Wording
 
 Safe wording for the slide or script:
 
-- `46.0% of all studies`
+- `53.7% of all studies`
 - `5 countries + American and UEFA surveillance buckets`
-- `31.4% of the remaining studies`
-- `44.3% across the other 67`
+- `38.7% of the remaining studies`
+- `53.3% across the other 45`
 
 Avoid saying:
 
-- that the remaining `19.1%` are spread across other countries
+- that the remaining papers are all cleanly placeable at country level
 - that the current slide is a final country count
 - that `Europe` or `Americas` are country labels
-- that there are `72 other countries` after removing the top 5
+- that there are `50 other countries` after removing the top 5
 
 ## Update Rule
 
@@ -189,8 +163,8 @@ Do not update one location and leave conflicting numbers elsewhere.
 
 These figures are provisional and depend on:
 
-- the current export state
-- current status labels
+- the current master-sheet state
+- current status labels in the master sheet
 - the current country-field cleaning logic
 - the decision to use regional overlays for `uefa` and `american_data`
 

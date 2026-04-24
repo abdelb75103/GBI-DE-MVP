@@ -2,7 +2,7 @@
 
 ## Slide Objective
 
-Establish the central mismatch: football is a global sport, but its player-health evidence base remains geographically concentrated, unevenly distributed across confederations, and incomplete in what it captures. The audience should feel this tension before hearing any solution. The slide moves from a global claim, through surveillance coverage, to prospective literature concentration, tightening the argument in three stages.
+Establish one clear mismatch: football is global, but both surveillance and the literature remain concentrated. The slide should stay visually spare. The paper gives the first proof point, then the review data shows that the literature is even more concentrated still.
 
 ---
 
@@ -11,10 +11,10 @@ Establish the central mismatch: football is a global sport, but its player-healt
 | Beat | On-Screen Action | Speaking Cue |
 |------|-----------------|--------------|
 | **R1** | Slide title fades in | Open with the framing premise, state the mismatch without dramatics |
-| **R2** | Surveillance headline numbers appear (138 leagues · 53 countries · 6 confederations · 49 programmes in 20 countries) | Anchor to the surveillance-map paper; acknowledge real activity, then immediately qualify its concentration |
-| **R3** | Coverage gap detail builds in (illness, mental health, methodology) | Widen the lens beyond geography, the gaps are structural, not only spatial |
-| **R4** | Broad literature concentration panel appears (`46.0% of all studies`) with top-5 countries plus American and UEFA surveillance buckets | Establish the broader concentration view first |
-| **R5** | American and UEFA overlays transition out; cleaner country-only concentration panel appears (`31.4% of the remaining studies`) | Show that concentration remains strong even after removing the dominant surveillance buckets |
+| **R2** | Surveillance-paper headline appears (`49 ongoing programmes` / `20 countries`) | Anchor to the recent paper; acknowledge real activity, then immediately qualify its concentration |
+| **R3** | Bridge line appears | Pivot cleanly from surveillance concentration to literature concentration |
+| **R4** | Broad literature concentration panel appears (`53.7% of current studies`) with top-5 countries plus American and UEFA surveillance buckets | Make one strong comparative point, not a long list of figures |
+| **R5** | American and UEFA overlays transition out; cleaner country-only concentration panel appears (`38.7% in just 5 countries`) | Show that the concentration remains after removing the broad buckets |
 | **R6** | Closing implication line appears | Land the need for a globally integrated living system |
 
 ---
@@ -27,19 +27,19 @@ Establish the central mismatch: football is a global sport, but its player-healt
 
 ### Beat R2: The Surveillance Anchor
 
-"The most current picture we have comes from the 2026 surveillance-mapping work. McCall and colleagues surveyed 138 national leagues across 53 countries, covering all six confederations. There is real surveillance activity happening globally. But when you look at where that activity is sustained, the picture narrows. Of the 49 ongoing surveillance programmes identified, the majority were concentrated in just 20 countries. Fifteen more were still in the planning phase."
+"The most current picture we have comes from the 2026 surveillance-mapping work. There is real surveillance activity happening globally. But when you look at where that activity is sustained, the picture narrows. The paper identified 49 ongoing surveillance programmes, and those were concentrated in just 20 countries."
 
-### Beat R3: The Gaps Beyond Geography
+### Beat R3: The Pivot
 
-"And it is not only geography. Of those programmes, 33 collected illness data. Only 11 included mental health problems. Forty-one reported consensus-based methodology, which means a meaningful fraction did not. Global surveillance activity exists, but it remains concentrated in a limited number of countries, uneven across confederations, and incomplete in what it captures."
+"That is already a concentrated picture. But the prospective literature is even more concentrated still."
 
 ### Beat R4: The Literature Concentration
 
-"But the prospective literature is even more concentrated than the surveillance landscape. In the current export we have 570 studies in total. If we combine the five leading countries with the dominant American-data and UEFA surveillance buckets, that already accounts for 262 studies, 46.0% of the full export."
+"But the prospective literature is even more concentrated than the surveillance landscape. In the current master sheet, 53.7% of studies sit inside just five countries plus the dominant American and UEFA buckets."
 
 ### Beat R5: The Sharpened Example
 
-"And if we remove those dominant American and UEFA surveillance buckets and look again, the concentration is still strong. That leaves 449 studies. Of those, 141, or 31.4%, still come from just five countries: Spain, the United States, England, Sweden, and Germany. Another 44.3% are distributed across the other 67 countries, and 24.3% are not yet geographically placed."
+"And if we remove those two broad buckets and look again, the concentration is still strong. Even then, 38.7% of the remaining studies still come from just five countries: Spain, the United States, Sweden, Germany, and England."
 
 ### Beat R6: The Implication
 
@@ -54,16 +54,18 @@ Establish the central mismatch: football is a global sport, but its player-healt
 **Title area:**
 > The global game, the fragmented evidence
 
-**Surveillance block (R2-R3, staged):**
-- 138 national leagues surveyed · 53 countries · 6 confederations
-- 49 ongoing programmes → concentrated in 20 countries
-- 33 captured illness · 11 included mental health · 41 used consensus methodology
+**Surveillance block (R2, staged):**
+- Recent surveillance paper
+- Wilke et al. 2026
+- 49 ongoing programmes
+- 20 countries
 
 **Literature block (R4, staged):**
-- Stage 1: 46.0% of all studies
-- 5 countries + American and UEFA surveillance buckets
-- Stage 2: 31.4% in just 5 countries
-- 44.3% across the other 67
+- Stage 1: 53.7% of all studies
+- 5 countries + American / UEFA buckets
+- Stage 2: 38.7% in just 5 countries
+
+Keep the slide sparse. Put the fuller denominator, ranking, and paper-detail material in the notes, not on the slide.
 
 **No paragraph text on-slide.** Numbers and short labels only. The speaker carries the narrative.
 
@@ -73,6 +75,24 @@ Establish the central mismatch: football is a global sport, but its player-healt
 
 The surveillance figures (R2-R3) are drawn from the published surveillance-map paper (McCall et al. 2026) and require no provisional disclaimer.
 
-The literature figures (R4-R5) are drawn from the current extraction export and are provisional. The speaker must verbally note, once before the literature build starts, that these are directional signals from the current dataset, which remains under cleaning and harmonisation. Exact country counts, bucket definitions, proportions, and rankings may shift before the final analysis set is locked.
+The literature figures (R4-R5) are drawn from the current master sheet and are provisional. The speaker should note once, before the literature build starts, that these are directional signals from the current dataset, which remains under cleaning and harmonisation. The extra denominator and geography detail can stay in the notes rather than on the slide.
 
-See the audit note in [slide-03-geography-audit.md](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/speaker-notes/slide-03-geography-audit.md) for the current counting logic behind the `461 / 570 = 80.9%` figure.
+## Map Accuracy Note
+
+The paper body clearly reports:
+
+- 49 ongoing national-league surveillance programmes
+- concentrated across 20 countries
+- confederation spread of those ongoing programmes:
+  - UEFA: 23 programmes across 9 countries
+  - AFC: 11 programmes across 4 countries
+  - CAF: 6 programmes across 3 countries
+  - CONMEBOL: 7 programmes across 2 countries
+  - Concacaf: 2 programmes across 2 countries
+  - OFC: 0
+
+The main paper text does not enumerate a clean country list for all 20 countries. The slide map therefore uses 20 country-level dots placed to match the published confederation distribution as closely as possible, rather than claiming a fully enumerated country list that the paper body does not print directly.
+
+The current pin positions were re-set against the actual rendered SVG silhouette so the visible dots sit on land and the top-country labels land on the intended countries.
+
+See the audit note in [slide-03-geography-audit.md](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/speaker-notes/slide-03-geography-audit.md) for the current counting logic behind the `268 / 499 = 53.7%` stage-one figure.

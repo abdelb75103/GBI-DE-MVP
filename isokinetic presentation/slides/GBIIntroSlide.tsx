@@ -18,26 +18,26 @@ export const GBIIntroSlide: React.FC = () => {
   };
 
   // Animation Timings (Click/Speech-cued simulate via sequence)
-  const tHeadline = spring({ frame: frame - 15, fps, config: { damping: 200 } });
-  const tDef = spring({ frame: frame - 30, fps, config: { damping: 200 } });
+  const tHeadline = spring({ frame: frame - 15, fps, config: { damping: 22, stiffness: 120 } });
+  const tDef = spring({ frame: frame - 30, fps, config: { damping: 22, stiffness: 120 } });
   
   // Left Fragments
-  const tFrag1 = spring({ frame: frame - 60, fps, config: { damping: 200 } });
-  const tFrag2 = spring({ frame: frame - 70, fps, config: { damping: 200 } });
-  const tFrag3 = spring({ frame: frame - 80, fps, config: { damping: 200 } });
+  const tFrag1 = spring({ frame: frame - 60, fps, config: { damping: 22, stiffness: 120 } });
+  const tFrag2 = spring({ frame: frame - 70, fps, config: { damping: 22, stiffness: 120 } });
+  const tFrag3 = spring({ frame: frame - 80, fps, config: { damping: 22, stiffness: 120 } });
   
   // Center System
-  const tSystem = spring({ frame: frame - 120, fps, config: { damping: 200 } });
+  const tSystem = spring({ frame: frame - 120, fps, config: { damping: 22, stiffness: 120 } });
   
   // Right Anchors
-  const tVal1 = spring({ frame: frame - 160, fps, config: { damping: 200 } });
-  const tVal2 = spring({ frame: frame - 170, fps, config: { damping: 200 } });
-  const tVal3 = spring({ frame: frame - 180, fps, config: { damping: 200 } });
-  const tVal4 = spring({ frame: frame - 190, fps, config: { damping: 200 } });
-  const tVal5 = spring({ frame: frame - 200, fps, config: { damping: 200 } });
+  const tVal1 = spring({ frame: frame - 160, fps, config: { damping: 22, stiffness: 120 } });
+  const tVal2 = spring({ frame: frame - 170, fps, config: { damping: 22, stiffness: 120 } });
+  const tVal3 = spring({ frame: frame - 180, fps, config: { damping: 22, stiffness: 120 } });
+  const tVal4 = spring({ frame: frame - 190, fps, config: { damping: 22, stiffness: 120 } });
+  const tVal5 = spring({ frame: frame - 200, fps, config: { damping: 22, stiffness: 120 } });
   
   // Final emphasis
-  const tProp = spring({ frame: frame - 250, fps, config: { damping: 100 } });
+  const tProp = spring({ frame: frame - 250, fps, config: { damping: 22, stiffness: 120 } });
 
   const inputStyle = (animVal: number): React.CSSProperties => ({
     padding: '24px 32px',

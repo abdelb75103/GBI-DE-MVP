@@ -2,6 +2,7 @@ import React from 'react';
 import { spring, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
 import { BlueBackgroundShell } from './BlueBackgroundShell';
 import { HeaderBrandLockup } from './HeaderBrandLockup';
+import { PreliminaryDataFooter } from './PreliminaryDataFooter';
 
 const BreakdownCard: React.FC<{
   value: string;
@@ -233,6 +234,7 @@ export const ExtractionBreakdownSlide: React.FC = () => {
             <BreakdownCard value="18" label="Papers including illness" reveal={rowTwoReveal} />
           </div>
 
+          <PreliminaryDataFooter />
         </div>
       </div>
     </BlueBackgroundShell>

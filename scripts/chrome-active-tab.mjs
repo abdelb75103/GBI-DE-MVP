@@ -59,6 +59,19 @@ end tell
 `);
 }
 
+function executeJavaScriptFile(filePath) {
+  const escapedPath = filePath.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+  return runAppleScript(`
+set js to read POSIX file "${escapedPath}" as «class utf8»
+tell application "Google Chrome"
+  if (count of windows) = 0 then error "Google Chrome has no open windows"
+  tell active tab of front window
+    return execute javascript js
+  end tell
+end tell
+`);
+}
+
 function dumpLinksScript() {
   return `
 (() => {
@@ -103,11 +116,12 @@ function main() {
   }
 
   if (command === 'eval') {
-    const script = args.scriptFile ? fs.readFileSync(args.scriptFile, 'utf8') : args.script;
-    if (!script) {
+    const scriptPath = args.scriptFile || args['script-file'];
+    const script = scriptPath ? null : args.script;
+    if (!scriptPath && !script) {
       throw new Error('eval requires --script or --script-file');
     }
-    console.log(executeJavaScript(script));
+    console.log(scriptPath ? executeJavaScriptFile(scriptPath) : executeJavaScript(script));
     return;
   }
 

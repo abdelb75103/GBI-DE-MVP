@@ -9,7 +9,10 @@
     "lint": "eslint",
     "db:clear-test-data": "node scripts/clear-test-data.mjs",
     "db:verify-setup": "node scripts/verify-setup.mjs",
-    "covidence:import-pdfs": "node scripts/import-covidence-pdfs.mjs"
+    "covidence:import-pdfs": "node scripts/import-covidence-pdfs.mjs",
+    "kb:sync": "node scripts/kb-sync.mjs",
+    "kb:synthesize": "node scripts/kb-synthesize.mjs",
+    "kb:check": "node scripts/kb-check.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

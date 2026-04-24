@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from 'remotion';
+import { useCurrentFrame, useVideoConfig, spring, interpolate } from 'remotion';
 import { BlueBackgroundShell } from './BlueBackgroundShell';
 import { HeaderBrandLockup } from './HeaderBrandLockup';
 
@@ -21,7 +21,7 @@ export const GBIMethodsSlide: React.FC = () => {
 	};
 
 	// Animation timings
-	const headlineReveal = spring({ frame: frame - 15, fps, config: { damping: 200 } });
+	const headlineReveal = spring({ frame: frame - 15, fps, config: { damping: 22, stiffness: 120 } });
 
 	const pipelineStartFrame = 45;
 	const delayPerNode = 20;
@@ -39,7 +39,7 @@ export const GBIMethodsSlide: React.FC = () => {
 
 	return (
 		<BlueBackgroundShell centerOverlay={<HeaderBrandLockup theme="blue" />} pitchVariant="halfway">
-			<AbsoluteFill style={{ padding: '60px 100px', display: 'flex', flexDirection: 'column' }}>
+			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', paddingTop: '20px' }}>
 				{/* Headline */}
 				<div style={{ 
 					marginTop: '20px', 
@@ -96,7 +96,7 @@ export const GBIMethodsSlide: React.FC = () => {
 
 					{nodes.map((node, i) => {
 						const animDelay = pipelineStartFrame + i * delayPerNode;
-						const nodeReveal = spring({ frame: frame - animDelay, fps, config: { damping: 200 } });
+						const nodeReveal = spring({ frame: frame - animDelay, fps, config: { damping: 22, stiffness: 120 } });
 						const isModelNode = node.label === 'Model';
 
 						return (
@@ -145,7 +145,7 @@ export const GBIMethodsSlide: React.FC = () => {
 							{ title: 'Subgroup Estimation', text: 'Comparable, updateable evidence' },
 							{ title: 'Explicit Uncertainty', text: 'Nuanced statistical interpretation' }
 						].map((item, i) => {
-							const itemAnim = spring({ frame: frame - (bayesianStartFrame + i * 20), fps, config: { damping: 200 } });
+							const itemAnim = spring({ frame: frame - (bayesianStartFrame + i * 20), fps, config: { damping: 22, stiffness: 120 } });
 							return (
 								<div key={item.title} style={{ 
 									flex: 1,
@@ -171,7 +171,7 @@ export const GBIMethodsSlide: React.FC = () => {
 						})}
 					</div>
 				</div>
-			</AbsoluteFill>
+			</div>
 		</BlueBackgroundShell>
 	);
 };

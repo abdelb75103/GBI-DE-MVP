@@ -2,7 +2,10 @@ import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
 import { TitleSlide } from './slides/TitleSlide';
 import { TeamSlide } from './slides/TeamSlide';
-import { ProblemFramingSlide } from './slides/ProblemFramingSlide';
+import {
+  ProblemFramingLiteratureSlide,
+  ProblemFramingSurveillanceSlide,
+} from './slides/ProblemFramingSlide';
 import { GBIIntroSlide } from './slides/GBIIntroSlide';
 import { GBIMethodsSlide } from './slides/GBIMethodsSlide';
 import { GBIBayesianSlide } from './slides/GBIBayesianSlide';
@@ -12,9 +15,16 @@ import { ExtractionBreakdownSlide } from './slides/ExtractionBreakdownSlide';
 import { ExtractionChallengesSlide } from './slides/ExtractionChallengesSlide';
 import { ExtractionFrameworkSlide } from './slides/ExtractionFrameworkSlide';
 import { SexAgeConcentrationSlide } from './slides/SexAgeConcentrationSlide';
-import { PapersTimelineSlide } from './slides/PapersTimelineSlide';
+import {
+  PapersTimelineExcludedOverlaySlide,
+  PapersTimelineOverallSlide,
+} from './slides/PapersTimelineSlide';
+import { WomenOverlayTimelineSlide } from './slides/WomenOverlayTimelineSlide';
+import { FifaDisciplineBreakdownSlide } from './slides/FifaDisciplineBreakdownSlide';
 import { InjuryDefinitionUseSlide } from './slides/InjuryDefinitionUseSlide';
-import { ClosingSynthesisSlide } from './slides/ClosingSynthesisSlide';
+import {ClosingNextStepsSlide, ClosingWhatWeNeedSlide} from './slides/ClosingActionSlide';
+import { AppendixSurveillanceProgrammeCountingSlide } from './slides/AppendixSurveillanceProgrammeCountingSlide';
+import { ThankYouSlide } from './slides/ThankYouSlide';
 
 type DeckEntry = {
   component: React.ComponentType;
@@ -25,7 +35,8 @@ type DeckEntry = {
 const DECK_SLIDES: DeckEntry[] = [
   {component: TitleSlide, duration: 150, id: 'TitleSlide'},
   {component: TeamSlide, duration: 150, id: 'TeamSlide'},
-  {component: ProblemFramingSlide, duration: 600, id: 'ProblemFramingSlide'},
+  {component: ProblemFramingSurveillanceSlide, duration: 150, id: 'ProblemFramingSurveillanceSlide'},
+  {component: ProblemFramingLiteratureSlide, duration: 210, id: 'ProblemFramingLiteratureSlide'},
   {component: GBIIntroSlide, duration: 350, id: 'GBIIntroSlide'},
   {component: GBIMethodsSlide, duration: 400, id: 'GBIMethodsSlide'},
   {component: GBIBayesianSlide, duration: 400, id: 'GBIBayesianSlide'},
@@ -34,10 +45,16 @@ const DECK_SLIDES: DeckEntry[] = [
   {component: ExtractionBreakdownSlide, duration: 400, id: 'ExtractionBreakdownSlide'},
   {component: ExtractionFrameworkSlide, duration: 400, id: 'ExtractionFrameworkSlide'},
   {component: ExtractionChallengesSlide, duration: 400, id: 'ExtractionChallengesSlide'},
-  {component: PapersTimelineSlide, duration: 400, id: 'PapersTimelineSlide'},
+  {component: PapersTimelineOverallSlide, duration: 180, id: 'PapersTimelineOverallSlide'},
+  {component: PapersTimelineExcludedOverlaySlide, duration: 240, id: 'PapersTimelineExcludedOverlaySlide'},
+  {component: WomenOverlayTimelineSlide, duration: 400, id: 'WomenOverlayTimelineSlide'},
+  {component: FifaDisciplineBreakdownSlide, duration: 400, id: 'FifaDisciplineBreakdownSlide'},
   {component: InjuryDefinitionUseSlide, duration: 400, id: 'InjuryDefinitionUseSlide'},
   {component: SexAgeConcentrationSlide, duration: 400, id: 'SexAgeConcentrationSlide'},
-  {component: ClosingSynthesisSlide, duration: 450, id: 'ClosingSynthesisSlide'},
+  {component: ClosingWhatWeNeedSlide, duration: 240, id: 'ClosingWhatWeNeedSlide'},
+  {component: ClosingNextStepsSlide, duration: 220, id: 'ClosingNextStepsSlide'},
+  {component: ThankYouSlide, duration: 180, id: 'ThankYouSlide'},
+  {component: AppendixSurveillanceProgrammeCountingSlide, duration: 360, id: 'AppendixSurveillanceProgrammeCountingSlide'},
 ];
 
 const DECK_SEQUENCES = DECK_SLIDES.reduce<

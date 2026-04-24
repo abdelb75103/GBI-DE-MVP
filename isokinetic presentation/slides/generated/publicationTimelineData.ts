@@ -211,5 +211,6 @@ export const publicationTimelineMeta = {
   papersSince2020: 164,
   earliestYear: 1974,
   latestYear: 2024,
+  excludedStatuses: [],
   source: "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/outputs/master/master-analysis-sheet.csv",
 } as const;

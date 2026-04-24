@@ -1,5 +1,16 @@
 import type { PaperStatus } from '@/lib/types';
 
+export const BULK_EXPORT_STATUSES: PaperStatus[] = [
+  'extracted',
+  'american_data',
+  'uefa',
+  'referee',
+  'mental_health',
+  'aspetar_asprev',
+  'flagged',
+  'fifa_data',
+];
+
 export const TAGGED_AUTO_COMPLETE_STATUSES: PaperStatus[] = [
   'mental_health',
   'uefa',
@@ -28,3 +39,4 @@ export const isTaggedAutoCompleteStatus = (status: PaperStatus) =>
   TAGGED_AUTO_COMPLETE_STATUSES.includes(status);
 export const isProgressCompletedStatus = (status: PaperStatus) =>
   PROGRESS_COMPLETE_STATUSES.includes(status);
+export const isBulkExportStatus = (status: PaperStatus) => BULK_EXPORT_STATUSES.includes(status);

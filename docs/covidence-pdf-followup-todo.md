@@ -209,6 +209,75 @@ Run context:
 - Recovered by second pass: `34`
 - Remaining manual queue now: `4`
 
+## Session 4: April 15-16, 2026 Full Text Review Upload Pass
+
+Run context:
+- Source list: the highlighted records in `/Users/abdelbabiker/Desktop/refifagbioriginalsearch/Covidence Missing Full Texts found.pdf`
+- Local files checked recursively in:
+  - `/Users/abdelbabiker/Desktop/refifagbioriginalsearch`
+  - `/Users/abdelbabiker/Desktop/refifagbioriginalsearch/refifagbioriginalsearch (2)`
+- Matching rule: read the first page of the candidate PDF and, when needed, the second or third page before uploading in Covidence Full text review
+
+### PDFs successfully attached in Covidence during this pass
+
+- `#13`, `#36`, `#63`, `#69`, `#83`, `#95`
+- `#361`, `#364`, `#387`, `#388`, `#425`
+- `#550`, `#568`, `#628`, `#637`
+- `#752`, `#757`, `#760`
+- `#801`, `#802`, `#811`, `#847`, `#869`
+
+### Remaining unresolved after the second pass
+
+#### Confirmed not found in the desktop folder set
+
+- `#368` Volpi 2000
+  - *Soccer injury epidemiology*
+- `#375` Green Jr. 1997
+  - *Scaphoid fractures in soccer goalkeepers*
+- `#617` Gamez 2006
+  - *Epidemiology of beach volleyball and beach soccer*
+- `#727` Ouyang 2001
+  - *The prevention and treatment of injuries in Chinese female football players.*
+- `#859` Mtshali 2015
+  - *Football injuries during a South African university sport tournament.*
+
+#### Still need a separate source or manual verification
+
+- `#370` Juma 1998
+  - *Outline of sport injuries in the V World Youth Championship for FIFA Cup in Saudi Arabia*
+  - Covidence already has a full-text link, but no verified local PDF was found for attachment.
+- `#378` Mackay 1996
+  - *Pre-season injuries in Scottish football: A prospective study*
+  - No verified local PDF was found in the desktop folder set.
+- `#744` Engebretsen 1987
+  - *Fotballskader og kunstgress.*
+  - No verified local PDF was found in the desktop folder set.
+- `#748` Perdriel 1975
+  - *Traumatismes orbitaires dans la pratique du football.*
+  - No verified local PDF was found in the desktop folder set.
+- `#758` Goldberg 1988
+  - *Injuries in youth football.*
+  - The only local hit was `1-s2.0-0022437589900182-main.pdf`, which is a citation/abstract-style page, not the full article PDF.
+
+### Next actions
+
+- Work item 1: resolve whether `#370` can remain link-only
+  - Open the Covidence record and decide if the existing external full-text link is acceptable for the review workflow.
+  - If not, source and upload a real PDF later.
+- Work item 2: request/source missing PDFs externally for `#368`, `#375`, `#617`, `#727`, `#744`, `#748`, and `#859`
+  - Preferred order: library access, publisher site, interlibrary loan, then manual web search.
+- Work item 3: manually re-check `#378`
+  - Look for alternate filenames, scans without OCR text, or local copies stored outside the April 15-16 desktop folders.
+- Work item 4: manually re-check `#758`
+  - Confirm whether the local `1-s2.0-0022437589900182-main.pdf` can ever be treated as sufficient.
+  - Current recommendation: treat it as insufficient and keep `#758` unresolved until the real article PDF is found.
+
+### Completion target for this queue
+
+- Accept `#370` as resolved if link-only is allowed.
+- Source and upload real PDFs for `#368`, `#375`, `#617`, `#727`, `#744`, `#748`, and `#859`.
+- Either find a valid full article for `#378` and `#758` or explicitly mark them as unavailable after final manual checking.
+
 ## Key Files
 
 - Session 1 final manifest:

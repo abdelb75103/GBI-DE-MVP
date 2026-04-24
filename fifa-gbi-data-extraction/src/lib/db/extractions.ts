@@ -23,6 +23,32 @@ import type {
 import type { ExtractionFieldStatus as SupabaseFieldStatus } from '@/lib/supabase/types';
 import { updatePaper } from '@/lib/db/papers';
 
+const getAssignedStudyIdForPaper = async (paperId: string): Promise<string | null> => {
+  const { data, error } = await supabaseClient()
+    .from('papers')
+    .select('assigned_study_id')
+    .eq('id', paperId)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(`Failed to load assigned study ID for paper ${paperId}: ${error.message}`);
+  }
+
+  return data?.assigned_study_id ?? null;
+};
+
+const canonicalizeStudyIdValue = async (
+  paperId: string,
+  fieldId: string,
+  value: string | null,
+): Promise<string | null> => {
+  if (fieldId !== 'studyId') {
+    return value;
+  }
+
+  return getAssignedStudyIdForPaper(paperId);
+};
+
 const upsertExtractionFieldRow = async (
   extractionId: string,
   fieldId: string,
@@ -108,15 +134,11 @@ const ensureExtractionRow = async (
 
   // Auto-populate studyId field when creating studyDetails extraction
   if (tab === 'studyDetails') {
-    const { data: paper } = await supabase
-      .from('papers')
-      .select('assigned_study_id')
-      .eq('id', paperId)
-      .single();
+    const assignedStudyId = await getAssignedStudyIdForPaper(paperId);
 
-    if (paper?.assigned_study_id) {
+    if (assignedStudyId) {
       await upsertExtractionFieldRow(createdRow.id, 'studyId', {
-        value: paper.assigned_study_id,
+        value: assignedStudyId,
         status: 'reported',
         updatedBy: null,
       });
@@ -194,7 +216,11 @@ export const updateExtractionField = async (
     updatedBy?: string | null;
   },
 ): Promise<ExtractionResult> => {
-  const normalizedValue = normalizeGlobalFieldValue(fieldId, updates.value);
+  const normalizedValue = await canonicalizeStudyIdValue(
+    paperId,
+    fieldId,
+    normalizeGlobalFieldValue(fieldId, updates.value),
+  );
   const status = updates.status ?? (normalizedValue ? 'reported' : 'not_reported');
   const normalizedConfidence =
     typeof updates.confidence === 'number' && !Number.isNaN(updates.confidence)
@@ -241,13 +267,19 @@ export const saveExtractionFields = async (
   const supabase = supabaseClient();
   const now = new Date().toISOString();
 
-  const normalizedFields = fields.map((field) => {
-    const value = normalizeGlobalFieldValue(field.fieldId, field.value);
-    return {
-      ...field,
-      value,
-    };
-  });
+  const normalizedFields = await Promise.all(
+    fields.map(async (field) => {
+      const value = await canonicalizeStudyIdValue(
+        paperId,
+        field.fieldId,
+        normalizeGlobalFieldValue(field.fieldId, field.value),
+      );
+      return {
+        ...field,
+        value,
+      };
+    }),
+  );
 
   const fieldPayloads: ExtractionFieldInsert[] = normalizedFields.map((field) => {
     const fieldStatus: SupabaseFieldStatus = field.value ? 'reported' : 'not_reported';

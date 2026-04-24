@@ -2,6 +2,7 @@ import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { BlueBackgroundShell } from './BlueBackgroundShell';
 import { HeaderBrandLockup } from './HeaderBrandLockup';
+import { PreliminaryDataFooter } from './PreliminaryDataFooter';
 
 const formatNumber = (value: number) =>
   new Intl.NumberFormat('en-IE').format(value);
@@ -544,6 +545,7 @@ export const ExtractionFrameworkSlide: React.FC = () => {
               Fuller et al. 2006; Bahr et al. 2020; Walden et al. 2023
             </div>
           </div>
+          <PreliminaryDataFooter />
         </div>
       </div>
     </BlueBackgroundShell>

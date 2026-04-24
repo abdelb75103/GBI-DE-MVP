@@ -22,8 +22,11 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
   - Norwegian: 1
   - Polish: 1
   - Slovenian: 1
-- Papers that still need full texts: 33
+- Papers that still need full texts: 10
 - English papers with PDFs left to inspect: 0
+- Last manual status refresh: April 16, 2026
+  - Manual Covidence upload pass added PDFs for `#95`, `#550`, `#757`, `#811`, and `#869`
+  - The earlier April 15 upload pass had already added PDFs for `#13`, `#36`, `#63`, `#69`, `#83`, `#361`, `#364`, `#387`, `#388`, `#425`, `#568`, `#628`, `#637`, `#752`, `#760`, `#801`, `#802`, and `#847`
 
 ## Foreign-Language Papers
 
@@ -131,41 +134,50 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 
 | Covidence # | Note Count | Exact Note | Title |
 | --- | ---: | --- | --- |
-| #13 | 2 | Request \| \| cant access without paying - requested, waiting | Lopes 2023 Epidemiology of Injuries in Elite Male Futsal Players Lopes M. and Martins F. and Brito J. and Figueiredo P. and Tomas R. and Ribeiro F. and Travassos B. AO - Lopes, Mario; ORCID: https://orcid.org/0000-0001-9790-2120 2023;(): 2023 DOI: 10.1097/JSM.0000000000001142 Upload full text |
-| #36 | 2 | Request \| \| requested - waiting | Grassi 2022 Epidemiology of Achilles Tendon Rupture in Italian First Division Football (Soccer) Players and Their Performance after Return to Play Grassi A. and Caravelli S. and Fuiano M. and D'Hooghe P. and Filippini M. and della Villa F. and Mosca M. and Zaffagnini S. 2022;(): 2022 DOI: 10.1097/JSM.0000000000000879 Upload full text |
-| #63 | 3 | Request \| \| 'Thank you for your interest in this document. Access to the full text requires a subscription or can be purchased.' - dont have access \| \| requested - waiting | Jaber 2022 Injury Profile among Elite Youth Male Football Players in a German Academy. Jaber, Ayham and Weishorn, Johannes and Berrsche, Gregor and Ott, Henning and Bangert, Yannic 2022;(): 2022 DOI: 10.1055/a-1516-4139 Upload full text |
-| #69 | 2 | Request \| \| requested - waiting | Pellegrini 2021 Injury analysis of a professional female soccer team in first division Italian season. Pellegrini, Andrea and Lombardi, Martina and Riva, Nicola and Combi, Franco and Pecci, Claudio and Porcellini, Giuseppe 2021;(): 2021 DOI: 10.23736/S0022-4707.21.11688-3 Upload full text |
-| #83 | 1 | Request | Tummala 2018 Hip and Groin Injuries Among Collegiate Male Soccer Players: The 10-Year Epidemiology, Incidence, and Prevention. Tummala, Sailesh V and Chhabra, Anikar and Makovicka, Justin L and Patel, Karan A and Hartigan, David E 2018;(): 2018 DOI: 10.3928/01477447-20181010-01 Upload full text |
-| #95 | 2 | Request \| \| requested - waiting for response | Tourny 2014 Epidemiologic study of young soccer player's injuries in U12 to U20 Tourny C. and Sangnier S. and Cotte T. and Langlois R. and Coquart J. 2014;(): 2014 Upload full text |
-| #361 | 0 |  | Ostenberg 2000 Injury risk factors in female European football. A prospective study of 123 players during one season Ostenberg A. and Roos H. 2000;(): 2000 Upload full text Note |
-| #364 | 1 | Requested - waiting | McHardy 2001 Injury associated with soccer: A review of epidemiology and etiology McHardy A. and Pollard H. 2001;(): 2001 Upload full text |
-| #368 | 2 | Request \| \| requested - waiting for response | Volpi 2000 Soccer injury epidemiology Volpi P. 2000;(): 2000 Full text https://www.safetylit.org/citations/index.php?fuseaction=citations.viewdetails&citationIds[]=citjournalarticle_75762_38 Manage full text |
-| #370 | 1 | Request | Juma 1998 Outline of sport injuries in the V World Youth Championship for FIFA Cup in Saudi Arabia Juma A.H. 1998;(): 1998 Full text https://europepmc.org/article/med/10085609 Manage full text |
-| #375 | 1 | Request | GreenJr 1997 Scaphoid fractures in soccer goalkeepers Green Jr. J.R. and Rayan G.M. 1997;(): 1997 Upload full text |
-| #378 | 2 | Request \| \| requested - waiting | Mackay 1996 Pre-season injuries in Scottish football: A prospective study Mackay G.M. and Hillis W.S. 1996;(): 1996 Upload full text |
-| #387 | 2 | Request \| \| requested - waiting for response | Sieland 2020 Injuries and functional performance status in young elite football players: a prospective 2-year monitoring. Sieland, Johanna and Krause, Frieder and Kalo, Kristin and Wilke, Jan and Vogt, Lutz and Banzer, Winfried and Niederer, Daniel 2020;(): 2020 DOI: 10.23736/S0022-4707.20.10886-7 Upload full text |
-| #388 | 2 | Request \| \| Requested - waiting | Latella 1992 The epidemiology and mechanisms of soccer injuries Latella F. and Serni G. and Aglietti P. and Zaccherotti G. and De Biase P. 1992;(): 1992 Upload full text |
-| #425 | 2 | Request \| \| Requested - waiting | Gatterer 2012 Effects of the performance level and the FIFA "11" injury prevention program on the injury rate in Italian male amateur soccer players Gatterer H. and Ruedl G. and Faulhaber M. and Regele M. and Burtscher M. 2012;(): 2012 Upload full text |
-| #550 | 1 | Request | Watson 1997 Injuries in schoolboy players of basketball, field-hockey, hurling, Gaelic football, rugby and soccer. Watson, A.W.S. 1997;(): 1997 Full text https://natlib-primo.hosted.exlibrisgroup.com/primo-explore/fulldisplay?vid=NLNZ&docid=INNZ7114516320002837&context=L&search_scope=INNZ Manage full text |
-| #568 | 1 | Request | Paliobeis 2021 Injury incidence is higher on artificial turf compared with natural grass in high school athletes: A retrospective cohort study Paliobeis A. and Sivasundaram L. and Knapik D.M. and Labelle M.W. and Olson M. and Karns M.R. and Salata M.J. and Voos J.E. 2021;(): 2021 DOI: 10.1097/BCO.0000000000001012 Upload full text |
+| #368 | 2 | Request \| \| requested - waiting for response; no verified local PDF found in the April 16 second pass | Volpi 2000 Soccer injury epidemiology Volpi P. 2000;(): 2000 Full text https://www.safetylit.org/citations/index.php?fuseaction=citations.viewdetails&citationIds[]=citjournalarticle_75762_38 Manage full text |
+| #370 | 1 | Request; Covidence currently has a full-text link only and no local PDF was verified for upload in the April 16 second pass | Juma 1998 Outline of sport injuries in the V World Youth Championship for FIFA Cup in Saudi Arabia Juma A.H. 1998;(): 1998 Full text https://europepmc.org/article/med/10085609 Manage full text |
+| #375 | 1 | Request; no verified local PDF found in the April 16 second pass | GreenJr 1997 Scaphoid fractures in soccer goalkeepers Green Jr. J.R. and Rayan G.M. 1997;(): 1997 Upload full text |
+| #378 | 2 | Request \| \| requested - waiting; no verified local PDF found in the April 16 second pass | Mackay 1996 Pre-season injuries in Scottish football: A prospective study Mackay G.M. and Hillis W.S. 1996;(): 1996 Upload full text |
 | #617 | 3 |  | Gamez 2006 Epidemiology of beach volleyball and beach soccer Gamez J. and Montaner A.M. and Alcantara E. and Alemany S. and Lopez M.A. and Montero J. and Garia A.G. and Vera P.M. 2006;(): 2006 Upload full text |
-| #628 | 2 | Request \| \| requested - waiting | Volpi 1992 Epidemiological survey of injuries during the 1st under 17 World Football Championships Volpi P. 1992;(): 1992 Upload full text |
-| #637 | 2 | Request \| \| requested - waiting for library | Kristiansen 1983 Association football injuries in school boys Kristiansen B. 1983;(): 1983 Upload full text |
-| #727 | 1 | Request | Ouyang 2001 The prevention and treatment of injuries in Chinese female football players. Ouyang, X. 2001;(): 2001 Full text https://pesquisa.bvsalud.org/portal/resource/pt/wpr-582558?lang=en# Manage full text |
-| #744 | 1 | Request | Engebretsen 1987 Fotballskader og kunstgress. Engebretsen, L. and Kase, T. 1987;(): 1987 Upload full text |
-| #748 | 1 | Request | Perdriel 1975 Traumatismes orbitaires dans la pratique du football. Perdriel, G. 1975;(): 1975 Upload full text |
-| #752 | 1 | Correct Refernce | Hinge 1984 Fodboldskader hos old boys fodboldspillere. Hinge, H.H. and Brassoe, J.O. 1984;(): 1984 Upload full text |
-| #757 | 1 | Request Full Article | Blaser 1992 [Accidental injuries in soccer]. Blaser, K U and Aeschlimann, A 1992;(): 1992 Full text https://pubmed.ncbi.nlm.nih.gov/1561540/ Manage full text |
-| #758 | 1 | Request | Goldberg 1988 Injuries in youth football. Goldberg, B and Rosenthal, P P and Robertson, L S and Nicholas, J A 1988;(): 1988 Upload full text |
-| #760 | 1 | Request | McPHEE 1947 Football injuries; a ten-year review of football injuries at Princeton University. McPHEE, H R 1947;(): 1947 Upload full text |
-| #801 | 2 | Request \| \| requested - waiting | McFadyen 1999 Orofacial injuries in youth soccer McFadyen J.A. and Shulman J.D. 1999;(): 1999 Upload full text |
-| #802 | 2 | Request \| \| requested - waiting for response | Thiebat 2021 Incidence of injuries in young soccer players: epidemiological study in an Italian elite club. Thiebat, Gabriele and Spreafico, Andrea and Mazzoni, Stefano and Ravasio, Giovanni and de Girolamo, Laura and Schoenhuber, Herbert 2021;(): 2021 DOI: 10.23736/S0022-4707.20.11157-5 Upload full text |
-| #811 | 2 | Request \| \| requested - waiting | Eirale 2013 How injuries affect rehabilitation workload in a National Team during an elite soccer event? An experience from the FIFA 2010 World Cup Eirale C. and Farooq A. and Bisciotti G. and Chalabi H. 2013;(): 2013 Full text https://www.minervamedica.it/en/journals/sports-med-physical-fitness/article.php?cod=R40Y2013N02A0192 Manage full text |
-| #847 | 2 | Request \| \| Requested - waiting | Olumide 2016 Incidence and factors associated with injuries among adolescent players in an amateur soccer tournament in Nigeria. Olumide, Adesola and Ajide, Kemisola 2016;(): 2016 Upload full text |
-| #859 | 1 | Request | MTSHALI 2015 Football injuries during a South African university sport tournament. MTSHALI, S. and STEWART, A. V. and MUSENGE, E. 2015;(): 2015 Upload full text |
-| #869 | 1 | Requested from library | Edama 2012 Medical support for an all-star youth soccer team in Niigata prefecture by physical therapists--Eight year evaluation of the incidence of acute injury, and change of acute injury incidence by active water supply. Edama, M. and Omori, G. and Kakubari, I. and Iokawa, T. and Tanaka, M. and Iida, S. and Koga, Y. 2012;(): 2012 Upload full text |
+| #727 | 1 | Request; no verified local PDF found in the April 16 second pass | Ouyang 2001 The prevention and treatment of injuries in Chinese female football players. Ouyang, X. 2001;(): 2001 Full text https://pesquisa.bvsalud.org/portal/resource/pt/wpr-582558?lang=en# Manage full text |
+| #744 | 1 | Request; no verified local PDF found in the April 16 second pass | Engebretsen 1987 Fotballskader og kunstgress. Engebretsen, L. and Kase, T. 1987;(): 1987 Upload full text |
+| #748 | 1 | Request; no verified local PDF found in the April 16 second pass | Perdriel 1975 Traumatismes orbitaires dans la pratique du football. Perdriel, G. 1975;(): 1975 Upload full text |
+| #758 | 1 | Request; only an abstract/citation-style local PDF was found, not the full article | Goldberg 1988 Injuries in youth football. Goldberg, B and Rosenthal, P P and Robertson, L S and Nicholas, J A 1988;(): 1988 Upload full text |
+| #859 | 1 | Request; no verified local PDF found in the April 16 second pass | MTSHALI 2015 Football injuries during a South African university sport tournament. MTSHALI, S. and STEWART, A. V. and MUSENGE, E. 2015;(): 2015 Upload full text |
+
+## To Dos
+
+### Immediate manual actions in Covidence
+
+- `#370`
+  - Decide whether the existing external full-text link is sufficient, or replace/supplement it later with an attached PDF if a real local or external PDF is sourced.
+
+### Source new PDFs outside the desktop folder set
+
+- `#368`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+- `#375`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+- `#617`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+- `#727`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+- `#744`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+- `#748`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+- `#859`
+  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
+
+### Re-verify possible partial/uncertain matches before any upload
+
+- `#378`
+  - Re-check for mislabeled local scans or alternate filenames before requesting from outside sources.
+- `#758`
+  - Do not upload `1-s2.0-0022437589900182-main.pdf` as full text unless a manual review confirms it is acceptable for this workflow; it currently looks like a citation/abstract page rather than the article PDF.
 
 ## Notes
 
-- `#361` has no note and no attached PDF.
+- Rows removed from the table above were resolved by direct Covidence PDF upload during the April 15-16, 2026 manual pass.
 - `#617` still has missing note text in this capture and no attached PDF.
+- `#370` still has full text in Covidence only as an external link, not as an attached PDF file.

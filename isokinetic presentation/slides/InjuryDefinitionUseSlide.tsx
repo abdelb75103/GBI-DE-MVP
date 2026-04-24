@@ -2,6 +2,7 @@ import React from 'react';
 import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BlueBackgroundShell} from './BlueBackgroundShell';
 import {HeaderBrandLockup} from './HeaderBrandLockup';
+import {PreliminaryDataFooter} from './PreliminaryDataFooter';
 import {injuryDefinitionAnalysis} from './generated/injuryDefinitionAnalysis';
 
 const COLORS = {
@@ -308,6 +309,7 @@ export const InjuryDefinitionUseSlide: React.FC = () => {
 
           <TakeawayPanel reveal={keyPointReveal} />
         </div>
+        <PreliminaryDataFooter />
       </div>
     </BlueBackgroundShell>
   );

@@ -2,13 +2,27 @@ import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BlueBackgroundShell} from './BlueBackgroundShell';
 import {HeaderBrandLockup} from './HeaderBrandLockup';
+import {PreliminaryDataFooter} from './PreliminaryDataFooter';
 import {publicationTimelineData} from './generated/publicationTimelineData';
+import {
+  publicationTimelineDataV2,
+  publicationTimelineMetaV2,
+} from './generated/publicationTimelineDataV2';
 
 const DATA = publicationTimelineData;
+const FILTERED_DATA = publicationTimelineDataV2;
+const FILTERED_BY_YEAR = new Map(FILTERED_DATA.map((item) => [item.year, item.count]));
+const OVERLAY_DATA = DATA.map((item) => ({
+  year: item.year,
+  totalCount: item.count,
+  filteredCount: FILTERED_BY_YEAR.get(item.year) ?? 0,
+}));
+
 const TOTAL_PAPERS = DATA.reduce((sum, item) => sum + item.count, 0);
+const FILTERED_TOTAL_PAPERS = publicationTimelineMetaV2.totalPapers;
 const EARLIEST_YEAR = DATA[0].year;
 const LATEST_YEAR = DATA[DATA.length - 1].year;
-const MAX_COUNT = Math.max(...DATA.map((item) => item.count));
+const MAX_COUNT = Math.max(...OVERLAY_DATA.map((item) => item.totalCount));
 const PAPERS_SINCE_2020 = DATA.filter((item) => item.year >= 2020).reduce((s, i) => s + i.count, 0);
 
 const PEAK_YEARS = DATA.filter((item) => item.count === MAX_COUNT).map((item) => item.year);
@@ -38,6 +52,10 @@ const colors = {
   line: '#FFFFFF',
   lineSoft: 'rgba(139, 196, 255, 0.18)',
   glow: 'rgba(139, 196, 255, 0.18)',
+  filteredLine: '#F6C86C',
+  filteredLineSoft: 'rgba(246, 200, 108, 0.2)',
+  filteredBar: 'rgba(246, 200, 108, 0.58)',
+  filteredGlow: 'rgba(246, 200, 108, 0.18)',
   kpiBg: 'rgba(255, 255, 255, 0.09)',
   kpiBorder: 'rgba(255, 255, 255, 0.16)',
   kpiAccent: '#8BC4FF',
@@ -46,7 +64,13 @@ const colors = {
   msGold: '#D4A853',
   msGoldDot: 'rgba(212, 168, 83, 0.45)',
   msText: '#E8CC8A',
+  legendTotal: 'rgba(198, 226, 255, 0.65)',
+  legendFiltered: '#F6C86C',
 };
+
+const OVERALL_COMPLETE_FRAME = 150;
+
+type PapersTimelineMode = 'full' | 'overall-only' | 'excluded-only';
 
 function getBarFill(year: number): string {
   if (year < 2006) return barPeriods.pre2006;
@@ -54,18 +78,32 @@ function getBarFill(year: number): string {
   return barPeriods.post2020;
 }
 
-export const PapersTimelineSlide: React.FC = () => {
+const PapersTimelineBase: React.FC<{mode: PapersTimelineMode}> = ({mode}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
 
-  const titleReveal = spring({frame: frame - 6, fps, config: {damping: 18}});
-  const kpiReveal = spring({frame: frame - 14, fps, config: {damping: 18}});
-  const chartReveal = spring({frame: frame - 24, fps, config: {damping: 18}});
-  const lineReveal = interpolate(frame, [32, 175], [0, 1], {
+  const baseFrame = mode === 'excluded-only' ? OVERALL_COMPLETE_FRAME : frame;
+  const chartFrame = mode === 'overall-only' ? Math.min(frame, OVERALL_COMPLETE_FRAME) : baseFrame;
+
+  const titleReveal = spring({frame: chartFrame - 6, fps, config: {damping: 18}});
+  const kpiReveal = spring({frame: chartFrame - 14, fps, config: {damping: 18}});
+  const chartReveal = spring({frame: chartFrame - 24, fps, config: {damping: 18}});
+  const lineReveal = interpolate(chartFrame, [32, OVERALL_COMPLETE_FRAME], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const milestoneReveal = interpolate(frame, [155, 250], [0, 1], {
+  const filteredReveal = mode === 'full'
+    ? interpolate(frame, [184, 256], [0, 1], {
+        extrapolateLeft: 'clamp',
+        extrapolateRight: 'clamp',
+      })
+    : mode === 'excluded-only'
+      ? interpolate(frame, [14, 210], [0, 1], {
+          extrapolateLeft: 'clamp',
+          extrapolateRight: 'clamp',
+        })
+      : 0;
+  const milestoneReveal = interpolate(chartFrame, [145, 235], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -79,14 +117,21 @@ export const PapersTimelineSlide: React.FC = () => {
   const usableHeight = chartHeight - axisBottom - 36;
   const step = usableWidth / (DATA.length - 1);
 
-  const points = DATA.map((item, index) => ({
+  const points = OVERLAY_DATA.map((item, index) => ({
     year: item.year,
-    count: item.count,
+    count: item.totalCount,
     x: axisLeft + index * step,
-    y: xAxisY - (item.count / MAX_COUNT) * usableHeight,
+    y: xAxisY - (item.totalCount / MAX_COUNT) * usableHeight,
+  }));
+  const filteredPoints = OVERLAY_DATA.map((item, index) => ({
+    year: item.year,
+    count: item.filteredCount,
+    x: axisLeft + index * step,
+    y: xAxisY - (item.filteredCount / MAX_COUNT) * usableHeight,
   }));
 
   const polylinePoints = points.map((point) => `${point.x},${point.y}`).join(' ');
+  const filteredPolylinePoints = filteredPoints.map((point) => `${point.x},${point.y}`).join(' ');
 
   const trackerIndex = lineReveal * (points.length - 1);
   const trackerLeftIndex = Math.floor(trackerIndex);
@@ -177,6 +222,15 @@ export const PapersTimelineSlide: React.FC = () => {
                 pointerEvents: 'none',
               }}
             />
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: `radial-gradient(circle at ${chartWidth * 0.7}px ${chartHeight * 0.36}px, ${colors.filteredGlow} 0%, transparent 45%)`,
+                opacity: filteredReveal,
+                pointerEvents: 'none',
+              }}
+            />
 
             <svg
               width={chartWidth}
@@ -222,26 +276,40 @@ export const PapersTimelineSlide: React.FC = () => {
               />
 
               {/* Bars — three period shades */}
-              {DATA.map((item, index) => {
+              {OVERLAY_DATA.map((item, index) => {
                 const point = points[index];
+                const filteredPoint = filteredPoints[index];
                 const reveal = spring({
-                  frame: frame - (30 + index * 2),
+                  frame: chartFrame - (30 + index * 2),
                   fps,
                   config: {damping: 18},
                 });
-                const barHeight = (item.count / MAX_COUNT) * usableHeight * chartReveal * reveal;
+                const barHeight = (item.totalCount / MAX_COUNT) * usableHeight * chartReveal * reveal;
+                const filteredBarHeight = (item.filteredCount / MAX_COUNT) * usableHeight * chartReveal * reveal;
                 const barY = xAxisY - barHeight;
                 const barWidth = step < 22 ? Math.max(6, step - 3) : 16;
                 return (
-                  <rect
-                    key={item.year}
-                    x={point.x - barWidth / 2}
-                    y={barY}
-                    width={barWidth}
-                    height={barHeight}
-                    rx={barWidth / 2}
-                    fill={getBarFill(item.year)}
-                  />
+                  <g key={item.year}>
+                    <rect
+                      x={point.x - barWidth / 2}
+                      y={barY}
+                      width={barWidth}
+                      height={barHeight}
+                      rx={barWidth / 2}
+                      fill={getBarFill(item.year)}
+                    />
+                    {item.filteredCount > 0 ? (
+                      <rect
+                        x={filteredPoint.x - Math.max(6, barWidth - 6) / 2}
+                        y={xAxisY - filteredBarHeight}
+                        width={Math.max(6, barWidth - 6)}
+                        height={filteredBarHeight}
+                        rx={Math.max(6, barWidth - 6) / 2}
+                        fill={colors.filteredBar}
+                        opacity={filteredReveal}
+                      />
+                    ) : null}
+                  </g>
                 );
               })}
 
@@ -288,6 +356,25 @@ export const PapersTimelineSlide: React.FC = () => {
                 />
               </g>
 
+              <g style={{clipPath: `inset(0 ${(1 - filteredReveal) * 100}% 0 0)`}}>
+                <polyline
+                  points={filteredPolylinePoints}
+                  fill="none"
+                  stroke={colors.filteredLineSoft}
+                  strokeWidth={18}
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+                <polyline
+                  points={filteredPolylinePoints}
+                  fill="none"
+                  stroke={colors.filteredLine}
+                  strokeWidth={5}
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+              </g>
+
               {/* Tracker dot */}
               <circle cx={trackerX} cy={trackerY} r={26} fill={colors.glow} opacity={lineReveal} />
               <circle cx={trackerX} cy={trackerY} r={9} fill={colors.line} opacity={lineReveal} />
@@ -295,7 +382,7 @@ export const PapersTimelineSlide: React.FC = () => {
               {/* ─── KPI cards ─── */}
               {kpiData.map((kpi, index) => {
                 const kReveal = spring({
-                  frame: frame - (14 + index * 5),
+                  frame: chartFrame - (14 + index * 5),
                   fps,
                   config: {damping: 18},
                 });
@@ -354,12 +441,57 @@ export const PapersTimelineSlide: React.FC = () => {
                 );
               })}
 
+              <foreignObject x={64} y={392} width={640} height={150}>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    gap: 16,
+                    opacity: filteredReveal,
+                    padding: '18px 22px',
+                    borderRadius: 22,
+                    background: 'rgba(7, 26, 48, 0.6)',
+                    border: `1px solid ${colors.axis}`,
+                    backdropFilter: 'blur(8px)',
+                    transform: `translateY(${interpolate(filteredReveal, [0, 1], [18, 0])}px)`,
+                  }}
+                >
+                  <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
+                    <div
+                      style={{
+                        width: 52,
+                        height: 6,
+                        borderRadius: 999,
+                        background: colors.legendTotal,
+                      }}
+                    />
+                    <div style={{fontSize: 21, fontWeight: 650, color: colors.textSecondary}}>
+                      All papers ({TOTAL_PAPERS})
+                    </div>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
+                    <div
+                      style={{
+                        width: 52,
+                        height: 6,
+                        borderRadius: 999,
+                        background: colors.legendFiltered,
+                      }}
+                    />
+                    <div style={{fontSize: 21, fontWeight: 650, color: colors.textPrimary}}>
+                      Excluding UEFA ECIS, NCAA-ISP, and high-school RIO papers ({FILTERED_TOTAL_PAPERS})
+                    </div>
+                  </div>
+                </div>
+              </foreignObject>
+
               {/* ─── Milestone markers — gold, below x-axis ─── */}
               {MILESTONES.map((milestone, index) => {
                 const point = points.find((entry) => entry.year === milestone.year);
                 if (!point) return null;
                 const reveal = spring({
-                  frame: frame - (158 + index * 16),
+                  frame: chartFrame - (148 + index * 16),
                   fps,
                   config: {damping: 16},
                 });
@@ -425,6 +557,21 @@ export const PapersTimelineSlide: React.FC = () => {
           </div>
         </div>
       </AbsoluteFill>
+      <div style={{position: 'absolute', bottom: 14, left: 96, right: 96, zIndex: 20}}>
+        <PreliminaryDataFooter />
+      </div>
     </BlueBackgroundShell>
   );
+};
+
+export const PapersTimelineSlide: React.FC = () => {
+  return <PapersTimelineBase mode="full" />;
+};
+
+export const PapersTimelineOverallSlide: React.FC = () => {
+  return <PapersTimelineBase mode="overall-only" />;
+};
+
+export const PapersTimelineExcludedOverlaySlide: React.FC = () => {
+  return <PapersTimelineBase mode="excluded-only" />;
 };

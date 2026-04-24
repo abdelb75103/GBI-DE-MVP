@@ -1,6 +1,5 @@
 import React from 'react';
 import { AbsoluteFill } from 'remotion';
-import {HeaderEventMark} from './HeaderEventMark';
 
 type WhiteBackgroundShellProps = {
   centerOverlay?: React.ReactNode;
@@ -15,8 +14,8 @@ export const WhiteBackgroundShell: React.FC<WhiteBackgroundShellProps> = ({ cent
     bgTeal: '#EEF5FA',
     bgMid: '#E9F1F8',
     bgSoft: '#DFEEF6',
-    textPrimary: '#0057B8', // True FIFA blue instead of dark navy/black
-    textSecondary: 'rgba(0, 87, 184, 0.6)', // Softer FIFA blue for secondary
+    textPrimary: 'rgba(0, 87, 184, 0.52)',
+    textSecondary: 'rgba(0, 87, 184, 0.3)',
     rule: 'rgba(0, 87, 184, 0.15)',
     pitchLine: 'rgba(0, 87, 184, 0.25)', // Clearer light blue outline
   };
@@ -193,6 +192,7 @@ export const WhiteBackgroundShell: React.FC<WhiteBackgroundShellProps> = ({ cent
               lineHeight: headerLineHeight,
               letterSpacing: '0.01em',
               zIndex: 1,
+              opacity: 0.84,
             }}
           >
             <div
@@ -201,7 +201,7 @@ export const WhiteBackgroundShell: React.FC<WhiteBackgroundShellProps> = ({ cent
                 flexDirection: 'column',
                 fontSize: `${headerFontSize}px`,
                 color: colors.textSecondary,
-                fontWeight: 600,
+                fontWeight: 560,
               }}
             >
               <span style={{ color: colors.textPrimary }}>
@@ -211,31 +211,21 @@ export const WhiteBackgroundShell: React.FC<WhiteBackgroundShellProps> = ({ cent
             </div>
           </div>
 
-          <div
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: `${crestSlotWidth}px`,
-              height: `${crestSlotHeight}px`,
-              zIndex: 2,
-            }}
-          >
-            {centerOverlay}
-          </div>
-
-          <div
-            style={{
-              position: 'absolute',
-              right: 0,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 1,
-            }}
-          >
-            <HeaderEventMark theme="white" />
-          </div>
+          {centerOverlay ? (
+            <div
+              style={{
+                position: 'absolute',
+                right: 0,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: `${crestSlotWidth}px`,
+                height: `${crestSlotHeight}px`,
+                zIndex: 2,
+              }}
+            >
+              {centerOverlay}
+            </div>
+          ) : null}
         </div>
 
         <div style={{ flex: 1, position: 'relative' }}>{children}</div>

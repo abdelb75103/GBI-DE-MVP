@@ -468,6 +468,11 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
       valueColumns.forEach((column) => {
         let value: string | null | undefined = groupValues?.get(column.id) ?? null;
 
+        // Keep exported study IDs canonical even if an old extraction field is stale.
+        if (column.id === 'studyId') {
+          value = paper.assignedStudyId || paper.id;
+        }
+
         // Final safety check: remove any remaining newlines
         if (value && typeof value === 'string') {
           value = value.replace(/\r?\n/g, ' ');

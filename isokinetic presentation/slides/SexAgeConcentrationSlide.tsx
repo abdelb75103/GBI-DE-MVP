@@ -2,6 +2,7 @@ import React from 'react';
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { BlueBackgroundShell } from './BlueBackgroundShell';
 import { HeaderBrandLockup } from './HeaderBrandLockup';
+import { PreliminaryDataFooter } from './PreliminaryDataFooter';
 import { sexAgeSlideData, sexAgeSlideMeta } from './generated/sexAgeSlideData';
 
 const COLORS = {
@@ -317,6 +318,7 @@ export const SexAgeConcentrationSlide: React.FC = () => {
             Adult men&apos;s football continues to dominate the literature, underlining the need to expand surveillance across women&apos;s and youth cohorts to capture the full landscape of the game.
           </div>
         </div>
+        <PreliminaryDataFooter />
       </div>
     </BlueBackgroundShell>
   );

@@ -133,3 +133,111 @@ Relevant code:
 - If unresolved items remain after a first download pass, build a second-pass unresolved queue with `npm run covidence:unresolved` and rerun `npm run covidence:download` only on those rows.
 - For the current post-second-pass manual residue, see `docs/covidence-pdf-followup-todo.md`.
 - If a user asks for the exact March 2026 retrieval workflow again, invoke the `covidence-pdf-retrieval` skill and start from the paths listed above.
+
+## April 7, 2026 Update
+
+The counts above are the March 2026 state and are no longer the live website totals.
+
+Current verified live database counts on April 7, 2026:
+
+- `629` studies in the latest Covidence included export
+- `626` total papers in the live DB
+- `586` visible on the dashboard
+- `40` papers in the live DB currently have status `archived`
+
+Current count interpretation:
+
+- The true raw DB gap versus Covidence is now `3` papers: `629 - 626 = 3`.
+- The dashboard gap is larger because archived papers are hidden from the standard dashboard view: `626 - 40 = 586`.
+- That means the visible dashboard gap versus Covidence is `43`, but `40` of those are explained by archived records and only `3` are explained by the raw DB count gap.
+
+Current April 7 retrieval/import pass:
+
+- New Covidence included export compared against the previous included export: `34` newly added studies
+- Reconciliation against the local PDF library: `3` existing, `1` ambiguous existing, `30` missing
+- Covidence download run: `29` downloaded, `1` unresolved `no_button`
+- Live import result: `28` new papers created and attached, `1` skipped because the exact file hash already existed live
+
+Current unresolved/manual item from the April 7 pass:
+
+- `#524` Rogan 2013: *Static stretching of the hamstring muscle for injury prevention in football codes: a systematic review.*
+  - Covidence status during retrieval: `no_button`
+  - Meaning: the study opened in Covidence Extraction, but there was no downloadable PDF or usable full-text control exposed for automation
+
+Working explanation for the remaining raw count gap on April 7:
+
+- Treat `#524` Rogan 2013 as a known current missing-live record.
+- The remaining raw gap after Rogan is `2` papers.
+- User context from the April 6, 2026 work suggests those `2` papers were intentionally deleted because they did not match what should have been included.
+- That means the current `629` Covidence vs `626` DB count is provisionally explained as:
+  - `1` known unresolved Covidence paper (`#524` Rogan 2013)
+  - `2` intentionally removed live DB papers from the April 6 cleanup
+
+Known intentionally removed paper from the April 6 cleanup:
+
+- `S097` — *Technology and inclusivity*
+
+Current confidence note:
+
+- This explains the arithmetic cleanly, but the exact titles of the `2` intentionally deleted papers are not recorded in this file yet.
+- One of the two intentionally deleted papers is now confirmed: `S097` — *Technology and inclusivity*.
+- If needed later, confirm them from the April 6 chat or any Supabase audit/history source rather than inferring from count math alone.
+
+Important caveat for count comparisons:
+
+- The live DB and the current Covidence included export do not map `1:1` by count alone.
+- Some live DB records are legacy or project-specific records that do not appear in the current Covidence included export.
+- Some newly added Covidence records were reconciled to local files rather than imported in the April 7 pass, and one new record remains unresolved in Covidence.
+- Because of that, the `3`-paper raw count gap should be treated as a live inventory gap, not as a complete title-level explanation by itself.
+
+Concrete files for the April 7 pass:
+
+- Reference CSV:
+  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/review_603597_included_csv_20260408005101.csv`
+- Reconciliation/output root:
+  - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-04-07`
+- Final combined manifest:
+  - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-04-07/files-final/combined-manifest.csv`
+- Unresolved queue:
+  - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-04-07/unresolved.csv`
+- Live import results:
+  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/covidence-import-results.csv`
+
+## April 15-16, 2026 Full Text Review Upload Update
+
+This was a separate manual Covidence `Full text review` upload pass, not part of the earlier Extraction-side retrieval workflow.
+
+Desktop source used:
+
+- `/Users/abdelbabiker/Desktop/refifagbioriginalsearch`
+- `/Users/abdelbabiker/Desktop/refifagbioriginalsearch/refifagbioriginalsearch (2)`
+- Reference list PDF: `/Users/abdelbabiker/Desktop/refifagbioriginalsearch/Covidence Missing Full Texts found.pdf`
+
+What changed in Covidence during this pass:
+
+- Verified local PDFs were matched against Covidence records by reading the PDF title/author pages and then uploaded directly into Covidence Full text review.
+- Existing link-only records `#550`, `#757`, and `#811` were converted into records with attached PDFs as well.
+- Newly attached during the April 15-16 pass:
+  - `#13`, `#36`, `#63`, `#69`, `#83`, `#95`
+  - `#361`, `#364`, `#387`, `#388`, `#425`
+  - `#550`, `#568`, `#628`, `#637`
+  - `#752`, `#757`, `#760`
+  - `#801`, `#802`, `#811`, `#847`, `#869`
+
+Current residue after the second pass:
+
+- Confirmed not present in the desktop folder set:
+  - `#368`, `#375`, `#617`, `#727`, `#859`
+- Still unresolved because no safe full-article local PDF could be matched:
+  - `#370`, `#378`, `#744`, `#748`, `#758`
+
+Follow-up source of truth for this residue:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-pdf-followup-todo.md`
+
+Practical next steps from this point:
+
+- Decide whether `#370` is acceptable as link-only in Covidence.
+- Source new PDFs externally for `#368`, `#375`, `#617`, `#727`, `#744`, `#748`, and `#859`.
+- Re-check `#378` for any mislabeled or non-OCR local copy before requesting it externally.
+- Keep `#758` unresolved unless the real article PDF is found; the current local file looks like a citation/abstract page rather than full text.

@@ -8,7 +8,7 @@ export const GBIEligibilitySlide: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // Animation timing: sequential reveals
-  const titleReveal = spring({ frame: frame - 15, fps, config: { damping: 14 } });
+  const titleReveal = 1;
   const includePanelReveal = spring({ frame: frame - 30, fps, config: { damping: 14 } });
   const excludePanelReveal = spring({ frame: frame - 45, fps, config: { damping: 14 } });
   const includeItemsReveal = spring({ frame: frame - 60, fps, config: { damping: 14 } });
@@ -88,6 +88,20 @@ export const GBIEligibilitySlide: React.FC = () => {
     height: '8px',
     borderRadius: '50%',
     backgroundColor: accentColor,
+  });
+
+  const highlightBulletStyle: React.CSSProperties = {
+    ...bulletItemStyle,
+    isolation: 'isolate',
+  };
+
+  const highlightOverlayStyle = (accentOpacity: number, borderOpacity: number): React.CSSProperties => ({
+    position: 'absolute',
+    inset: '-8px -12px',
+    backgroundColor: `rgba(232, 178, 80, ${accentOpacity})`,
+    borderLeft: `3px solid rgba(232, 178, 80, ${borderOpacity})`,
+    borderRadius: '8px',
+    zIndex: -1,
   });
 
   return (
@@ -193,36 +207,20 @@ export const GBIEligibilitySlide: React.FC = () => {
               opacity: excludeItemsReveal,
               transform: `translateY(${interpolate(excludeItemsReveal, [0, 1], [20, 0])}px)`,
             }}>
-              {/* KEY: Retrospective  -  spotlighted */}
-              <div style={{
-                ...bulletItemStyle,
-                backgroundColor: `rgba(255, 255, 0, ${keyHighlightBg})`,
-                borderLeft: `3px solid rgba(255, 255, 0, ${keyHighlightBorder})`,
-                borderRadius: '8px',
-                padding: '8px 12px 8px 28px',
-                margin: '-8px -12px',
-              }}>
-                <div style={{ ...bulletDotStyle(colors.excludeAccent), top: '22px' }} />
+              <div style={highlightBulletStyle}>
+                <div style={highlightOverlayStyle(keyHighlightBg, keyHighlightBorder)} />
+                <div style={bulletDotStyle(colors.excludeAccent)} />
                 Retrospective, cross-sectional, case-control
               </div>
-              {/* Secondary  -  dims */}
               <div style={{ ...bulletItemStyle, opacity: secondaryExcludeDim }}>
                 <div style={bulletDotStyle(colors.excludeAccent)} />
                 Non-competitive or non-FIFA football
               </div>
-              {/* KEY: No exposure reporting  -  spotlighted */}
-              <div style={{
-                ...bulletItemStyle,
-                backgroundColor: `rgba(255, 255, 0, ${keyHighlightBg})`,
-                borderLeft: `3px solid rgba(255, 255, 0, ${keyHighlightBorder})`,
-                borderRadius: '8px',
-                padding: '8px 12px 8px 28px',
-                margin: '-8px -12px',
-              }}>
-                <div style={{ ...bulletDotStyle(colors.excludeAccent), top: '22px' }} />
+              <div style={highlightBulletStyle}>
+                <div style={highlightOverlayStyle(keyHighlightBg, keyHighlightBorder)} />
+                <div style={bulletDotStyle(colors.excludeAccent)} />
                 No exposure-based outcome reporting
               </div>
-              {/* Secondary  -  dims */}
               <div style={{ ...bulletItemStyle, opacity: secondaryExcludeDim }}>
                 <div style={bulletDotStyle(colors.excludeAccent)} />
                 Registers, hospital records, public databases only

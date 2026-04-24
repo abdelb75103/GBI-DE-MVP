@@ -11,6 +11,40 @@ const outputDir = path.join(repoRoot, 'exports');
 
 const GLOBAL_TABS = new Set(['studyDetails', 'participantCharacteristics', 'definitions', 'exposure']);
 const TABLE_EDITOR_TABS = new Set(['injuryTissueType', 'injuryLocation', 'illnessRegion', 'illnessEtiology']);
+const DEFAULT_OUTPUT_PREFIX = 'all-studies-export';
+
+function parseArgs(argv) {
+  const includeStatuses = [];
+  const excludeStatuses = [];
+  let outputPrefix = DEFAULT_OUTPUT_PREFIX;
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+
+    if (arg === '--include-status') {
+      includeStatuses.push(argv[index + 1]);
+      index += 1;
+      continue;
+    }
+
+    if (arg === '--exclude-status') {
+      excludeStatuses.push(argv[index + 1]);
+      index += 1;
+      continue;
+    }
+
+    if (arg === '--output-prefix') {
+      outputPrefix = argv[index + 1] || DEFAULT_OUTPUT_PREFIX;
+      index += 1;
+    }
+  }
+
+  return {
+    includeStatuses: includeStatuses.filter(Boolean),
+    excludeStatuses: excludeStatuses.filter(Boolean),
+    outputPrefix,
+  };
+}
 
 function loadEnvFile(filePath) {
   const env = {};
@@ -189,6 +223,7 @@ async function fetchAllRows(supabase, table, select, orderColumn) {
 }
 
 async function main() {
+  const { includeStatuses, excludeStatuses, outputPrefix } = parseArgs(process.argv.slice(2));
   const env = loadEnvFile(envPath);
   const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
@@ -274,8 +309,22 @@ async function main() {
 
   const headers = ['paper_id', 'paper_title', 'status', 'population_label', ...orderedFields.map((field) => field.id)];
   const lines = [headers.map(csvEscape).join(',')];
+  const includedStatusSet = new Set(includeStatuses);
+  const excludedStatusSet = new Set(excludeStatuses);
+  const selectedPapers =
+    includedStatusSet.size || excludedStatusSet.size
+      ? papers.filter((paper) => {
+          if (includedStatusSet.size > 0 && !includedStatusSet.has(paper.status)) {
+            return false;
+          }
+          if (excludedStatusSet.has(paper.status)) {
+            return false;
+          }
+          return true;
+        })
+      : papers;
 
-  for (const paper of papers) {
+  for (const paper of selectedPapers) {
     const extractionRows = extractionsByPaper.get(paper.id) ?? [];
     const groupRows = groupsByPaper.get(paper.id) ?? [];
     const valueRows = valuesByPaper.get(paper.id) ?? [];
@@ -293,6 +342,10 @@ async function main() {
 
       for (const field of orderedFields) {
         let value = normalizeValueForGroup(field.id, field.tab, group, groupValues, fieldMap);
+        // Keep exported study IDs canonical even if an old extraction field is stale.
+        if (field.id === 'studyId') {
+          value = paper.assigned_study_id || paper.id;
+        }
         if (typeof value === 'string') {
           value = value.replace(/\r?\n/g, ' ').trim();
         }
@@ -305,10 +358,10 @@ async function main() {
 
   fs.mkdirSync(outputDir, { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const outputPath = path.join(outputDir, `all-studies-export-${stamp}.csv`);
+  const outputPath = path.join(outputDir, `${outputPrefix}-${stamp}.csv`);
   fs.writeFileSync(outputPath, `\uFEFF${lines.join('\r\n')}`);
 
-  console.log(`papers=${papers.length}`);
+  console.log(`papers=${selectedPapers.length}`);
   console.log(`rows=${lines.length - 1}`);
   console.log(`output=${outputPath}`);
 }

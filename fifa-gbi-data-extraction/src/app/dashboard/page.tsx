@@ -9,6 +9,7 @@ import { formatDateTimeUTC } from '@/lib/format';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
 import {
+  isBulkExportStatus,
   isActiveStatus,
   isCompletedStatus,
   isProgressCompletedStatus,
@@ -28,7 +29,7 @@ export default async function DashboardPage() {
   const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
   const dashboardTablePapers = isAdmin ? papers : visiblePapers;
   const exportJobs = await mockDb.listExports();
-  const activePaperIds = visiblePapers.map((paper) => paper.id);
+  const activePaperIds = visiblePapers.filter((paper) => isBulkExportStatus(paper.status)).map((paper) => paper.id);
   const userId = activeProfile?.id || null;
   const pendingUploadCount = isAdmin ? await mockDb.countPendingUploadQueueEntries() : 0;
   

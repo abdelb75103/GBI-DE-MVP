@@ -2,6 +2,7 @@ import React from 'react';
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {BlueBackgroundShell} from './BlueBackgroundShell';
 import {HeaderBrandLockup} from './HeaderBrandLockup';
+import {PreliminaryDataFooter} from './PreliminaryDataFooter';
 
 const c = {
   white: '#FFFFFF',
@@ -425,6 +426,7 @@ export const ExtractionChallengesSlide: React.FC = () => {
               </div>
             </div>
           </div>
+          <PreliminaryDataFooter />
         </div>
       </div>
     </BlueBackgroundShell>

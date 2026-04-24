@@ -21,20 +21,20 @@ export const GBIBayesianSlide: React.FC = () => {
 	};
 
 	// Animation Timings mapping to click/speech cues
-	const tHeadline = spring({ frame: frame - 15, fps, config: { damping: 200 } });
-	const tPipeline1 = spring({ frame: frame - 45, fps, config: { damping: 200 } });
-	const tPipeline2 = spring({ frame: frame - 60, fps, config: { damping: 200 } });
-	const tPipeline3 = spring({ frame: frame - 75, fps, config: { damping: 200 } });
-	const tPipeline4 = spring({ frame: frame - 90, fps, config: { damping: 200 } });
-	const tModelling = spring({ frame: frame - 130, fps, config: { damping: 200 } });
+	const tHeadline = spring({ frame: frame - 15, fps, config: { damping: 22, stiffness: 120 } });
+	const tPipeline1 = spring({ frame: frame - 45, fps, config: { damping: 22, stiffness: 120 } });
+	const tPipeline2 = spring({ frame: frame - 60, fps, config: { damping: 22, stiffness: 120 } });
+	const tPipeline3 = spring({ frame: frame - 75, fps, config: { damping: 22, stiffness: 120 } });
+	const tPipeline4 = spring({ frame: frame - 90, fps, config: { damping: 22, stiffness: 120 } });
+	const tModelling = spring({ frame: frame - 130, fps, config: { damping: 22, stiffness: 120 } });
 	
-	const tPrior = spring({ frame: frame - 170, fps, config: { damping: 200 } });
-	const tNewEvidence = spring({ frame: frame - 210, fps, config: { damping: 200 } });
-	const tPosterior = spring({ frame: frame - 250, fps, config: { damping: 200 } });
+	const tPrior = spring({ frame: frame - 170, fps, config: { damping: 22, stiffness: 120 } });
+	const tNewEvidence = spring({ frame: frame - 210, fps, config: { damping: 22, stiffness: 120 } });
+	const tPosterior = spring({ frame: frame - 250, fps, config: { damping: 22, stiffness: 120 } });
 
-	const tTakeaway1 = spring({ frame: frame - 300, fps, config: { damping: 200 } });
-	const tTakeaway2 = spring({ frame: frame - 320, fps, config: { damping: 200 } });
-	const tTakeaway3 = spring({ frame: frame - 340, fps, config: { damping: 200 } });
+	const tTakeaway1 = spring({ frame: frame - 300, fps, config: { damping: 22, stiffness: 120 } });
+	const tTakeaway2 = spring({ frame: frame - 320, fps, config: { damping: 22, stiffness: 120 } });
+	const tTakeaway3 = spring({ frame: frame - 340, fps, config: { damping: 22, stiffness: 120 } });
 	
 	const pipelineItemStyle = (animVal: number): React.CSSProperties => ({
 		padding: '18px 28px',
