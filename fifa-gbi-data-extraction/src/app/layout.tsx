@@ -51,9 +51,9 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             <header className="sticky top-0 z-40 border-b border-white/60 bg-white/80 shadow-sm backdrop-blur">
               <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6">
-                <div className="flex items-center gap-4 py-4 md:py-5">
-                  <div className="flex flex-1 items-center gap-3 md:gap-4">
-                    <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 py-3 md:gap-4 md:py-3.5">
+                  <div className="flex min-w-0 flex-1 items-center gap-3 md:gap-4">
+                    <div className="flex min-w-0 items-center gap-3">
                       <span className="sr-only">University College Dublin</span>
                       <div className="flex h-12 w-12 items-center justify-center sm:h-14 sm:w-14">
                         <Image
@@ -67,14 +67,14 @@ export default function RootLayout({
                       </div>
                       <Link
                         href="/dashboard"
-                        className="text-lg font-semibold text-slate-900 transition hover:text-indigo-700 sm:text-xl md:text-2xl"
+                        className="text-base font-semibold leading-tight text-slate-900 transition hover:text-indigo-700 sm:text-lg lg:text-xl"
                       >
-                        FIFA GBI Data Extraction Assistant
+                        FIFA GBI
                       </Link>
                     </div>
                   </div>
 
-                  <nav className="hidden items-center gap-3 text-sm font-medium text-slate-600 md:flex md:text-base data-[theme=dark]:text-slate-300">
+                  <nav className="hidden items-center gap-1.5 text-[13px] font-medium text-slate-600 md:flex lg:gap-2 data-[theme=dark]:text-slate-300">
                     <PrimaryNavLinks />
                     <ThemeToggleButton />
                     <ActiveProfileIndicator />

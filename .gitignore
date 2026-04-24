@@ -67,6 +67,7 @@ codex-review.txt
 
 # Local SQL and MJS scripts
 *.sql
+!supabase/migrations/*.sql
 generate-*-passwords.mjs
 list-profiles.mjs
 clear-test-data.mjs

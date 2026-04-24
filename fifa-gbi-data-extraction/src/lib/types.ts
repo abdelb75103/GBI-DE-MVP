@@ -38,6 +38,10 @@ export type ExtractionUpdatedBy = string | null;
 
 export type DedupeReviewStatus = 'clean' | 'duplicate' | 'possible' | 'needs_review';
 
+export type ScreeningStage = 'title_abstract' | 'full_text';
+export type ScreeningAiStatus = 'not_run' | 'running' | 'completed' | 'failed';
+export type ScreeningDecision = 'include' | 'exclude';
+
 export interface PaperSession {
   paperId: string;
   profileId: string;
@@ -196,4 +200,53 @@ export interface UploadQueueItem {
   approvedBy: string | null;
   approvedByName?: string;
   paperId: string | null;
+}
+
+export interface ScreeningRecord {
+  id: string;
+  stage: ScreeningStage;
+  assignedStudyId: string;
+  title: string;
+  abstract: string | null;
+  leadAuthor: string | null;
+  journal: string | null;
+  year: string | null;
+  doi: string | null;
+  normalizedDoi: string | null;
+  sourceLabel: string | null;
+  sourceRecordId: string | null;
+  storageBucket: string | null;
+  storageObjectPath: string | null;
+  dataBase64?: string | null;
+  fileName: string | null;
+  originalFileName: string | null;
+  mimeType: string | null;
+  size: number | null;
+  fileSha256: string | null;
+  aiStatus: ScreeningAiStatus;
+  aiSuggestedDecision: ScreeningDecision | null;
+  aiReason: string | null;
+  aiEvidenceQuote: string | null;
+  aiSourceLocation: string | null;
+  aiConfidence: number | null;
+  aiModel: string | null;
+  aiCriteriaVersion: string | null;
+  aiRawResponse?: unknown;
+  aiError: string | null;
+  aiReviewedAt: string | null;
+  manualDecision: ScreeningDecision | null;
+  manualReason: string | null;
+  manualDecidedBy: string | null;
+  manualDecidedByName?: string;
+  manualDecidedAt: string | null;
+  promotedPaperId: string | null;
+  promotedBy: string | null;
+  promotedByName?: string;
+  promotedAt: string | null;
+  createdBy: string | null;
+  createdByName?: string;
+  createdAt: string;
+  updatedAt: string;
+  metadata: Record<string, unknown>;
+  notes: string | null;
 }

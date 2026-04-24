@@ -28,6 +28,9 @@ export type ExportKind = 'csv' | 'json';
 export type ExportStatus = 'pending' | 'ready' | 'failed';
 
 export type UploadQueueStatus = 'pending' | 'approved' | 'rejected';
+export type ScreeningStage = 'title_abstract' | 'full_text';
+export type ScreeningAiStatus = 'not_run' | 'running' | 'completed' | 'failed';
+export type ScreeningDecision = 'include' | 'exclude';
 
 export type ExtractionTab =
   | 'studyDetails'
@@ -411,6 +414,227 @@ export interface Database {
           },
         ];
       };
+      screening_records: {
+        Row: {
+          id: string;
+          stage: ScreeningStage;
+          assigned_study_id: string;
+          title: string;
+          abstract: string | null;
+          lead_author: string | null;
+          journal: string | null;
+          year: string | null;
+          doi: string | null;
+          normalized_doi: string | null;
+          source_label: string | null;
+          source_record_id: string | null;
+          storage_bucket: string | null;
+          storage_object_path: string | null;
+          data_base64: string | null;
+          file_name: string | null;
+          original_file_name: string | null;
+          mime_type: string | null;
+          size: number | null;
+          file_sha256: string | null;
+          ai_status: ScreeningAiStatus;
+          ai_suggested_decision: ScreeningDecision | null;
+          ai_reason: string | null;
+          ai_evidence_quote: string | null;
+          ai_source_location: string | null;
+          ai_confidence: number | null;
+          ai_model: string | null;
+          ai_criteria_version: string | null;
+          ai_raw_response: unknown;
+          ai_error: string | null;
+          ai_reviewed_at: string | null;
+          manual_decision: ScreeningDecision | null;
+          manual_reason: string | null;
+          manual_decided_by: string | null;
+          manual_decided_at: string | null;
+          promoted_paper_id: string | null;
+          promoted_by: string | null;
+          promoted_at: string | null;
+          created_by: string | null;
+          created_at: string;
+          updated_at: string;
+          metadata: Record<string, unknown>;
+          notes: string | null;
+        };
+        Insert: {
+          id?: string;
+          stage?: ScreeningStage;
+          assigned_study_id: string;
+          title: string;
+          abstract?: string | null;
+          lead_author?: string | null;
+          journal?: string | null;
+          year?: string | null;
+          doi?: string | null;
+          normalized_doi?: string | null;
+          source_label?: string | null;
+          source_record_id?: string | null;
+          storage_bucket?: string | null;
+          storage_object_path?: string | null;
+          data_base64?: string | null;
+          file_name?: string | null;
+          original_file_name?: string | null;
+          mime_type?: string | null;
+          size?: number | null;
+          file_sha256?: string | null;
+          ai_status?: ScreeningAiStatus;
+          ai_suggested_decision?: ScreeningDecision | null;
+          ai_reason?: string | null;
+          ai_evidence_quote?: string | null;
+          ai_source_location?: string | null;
+          ai_confidence?: number | null;
+          ai_model?: string | null;
+          ai_criteria_version?: string | null;
+          ai_raw_response?: unknown;
+          ai_error?: string | null;
+          ai_reviewed_at?: string | null;
+          manual_decision?: ScreeningDecision | null;
+          manual_reason?: string | null;
+          manual_decided_by?: string | null;
+          manual_decided_at?: string | null;
+          promoted_paper_id?: string | null;
+          promoted_by?: string | null;
+          promoted_at?: string | null;
+          created_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+          metadata?: Record<string, unknown>;
+          notes?: string | null;
+        };
+        Update: {
+          id?: string;
+          stage?: ScreeningStage;
+          assigned_study_id?: string;
+          title?: string;
+          abstract?: string | null;
+          lead_author?: string | null;
+          journal?: string | null;
+          year?: string | null;
+          doi?: string | null;
+          normalized_doi?: string | null;
+          source_label?: string | null;
+          source_record_id?: string | null;
+          storage_bucket?: string | null;
+          storage_object_path?: string | null;
+          data_base64?: string | null;
+          file_name?: string | null;
+          original_file_name?: string | null;
+          mime_type?: string | null;
+          size?: number | null;
+          file_sha256?: string | null;
+          ai_status?: ScreeningAiStatus;
+          ai_suggested_decision?: ScreeningDecision | null;
+          ai_reason?: string | null;
+          ai_evidence_quote?: string | null;
+          ai_source_location?: string | null;
+          ai_confidence?: number | null;
+          ai_model?: string | null;
+          ai_criteria_version?: string | null;
+          ai_raw_response?: unknown;
+          ai_error?: string | null;
+          ai_reviewed_at?: string | null;
+          manual_decision?: ScreeningDecision | null;
+          manual_reason?: string | null;
+          manual_decided_by?: string | null;
+          manual_decided_at?: string | null;
+          promoted_paper_id?: string | null;
+          promoted_by?: string | null;
+          promoted_at?: string | null;
+          created_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+          metadata?: Record<string, unknown>;
+          notes?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'screening_records_created_by_fkey';
+            columns: ['created_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'screening_records_manual_decided_by_fkey';
+            columns: ['manual_decided_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'screening_records_promoted_by_fkey';
+            columns: ['promoted_by'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'screening_records_promoted_paper_id_fkey';
+            columns: ['promoted_paper_id'];
+            isOneToOne: false;
+            referencedRelation: 'papers';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      screening_votes: {
+        Row: {
+          id: string;
+          screening_record_id: string;
+          vote_order: number;
+          vote_role: 'reviewer_vote' | 'consensus_resolution';
+          reviewer_profile_id: string;
+          reviewer_name: string | null;
+          decision: ScreeningDecision;
+          reason: string | null;
+          decided_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          screening_record_id: string;
+          vote_order: number;
+          vote_role: 'reviewer_vote' | 'consensus_resolution';
+          reviewer_profile_id: string;
+          reviewer_name?: string | null;
+          decision: ScreeningDecision;
+          reason?: string | null;
+          decided_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          screening_record_id?: string;
+          vote_order?: number;
+          vote_role?: 'reviewer_vote' | 'consensus_resolution';
+          reviewer_profile_id?: string;
+          reviewer_name?: string | null;
+          decision?: ScreeningDecision;
+          reason?: string | null;
+          decided_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'screening_votes_reviewer_profile_id_fkey';
+            columns: ['reviewer_profile_id'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'screening_votes_screening_record_id_fkey';
+            columns: ['screening_record_id'];
+            isOneToOne: false;
+            referencedRelation: 'screening_records';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       paper_files: {
         Row: {
           id: string;
@@ -714,6 +938,17 @@ export interface Database {
       is_observer: {
         Args: Record<string, never>;
         Returns: boolean;
+      };
+      save_screening_vote: {
+        Args: {
+          p_record_id: string;
+          p_reviewer_profile_id: string;
+          p_reviewer_name: string | null;
+          p_decision: ScreeningDecision;
+          p_decision_action?: 'reviewer_vote' | 'consensus_resolution';
+          p_reason?: string | null;
+        };
+        Returns: Database['public']['Tables']['screening_records']['Row'];
       };
       verify_profile_password: {
         Args: {
