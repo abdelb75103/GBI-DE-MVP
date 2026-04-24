@@ -8,7 +8,8 @@ export function PrimaryNavLinks({ onNavigate }: { onNavigate?: () => void } = {}
   const { profile } = useActiveProfile();
   const isAdmin = profile?.role === 'admin';
 
-  const linkClasses = "px-3 py-1.5 transition hover:text-slate-900";
+  const linkClasses =
+    "rounded-full px-2.5 py-1.5 font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950";
 
   return (
     <>
@@ -38,7 +39,7 @@ export function PrimaryNavLinks({ onNavigate }: { onNavigate?: () => void } = {}
         className={linkClasses}
         onClick={onNavigate}
       >
-        Full-text Screening
+        Full Text
       </Link>
       {isAdmin ? (
         <>
@@ -47,7 +48,7 @@ export function PrimaryNavLinks({ onNavigate }: { onNavigate?: () => void } = {}
           </Link>
           <Link
             href="/upload"
-            className="px-3 py-1.5 text-indigo-600 transition hover:text-indigo-700"
+            className="rounded-full px-2.5 py-1.5 font-semibold text-indigo-600 transition hover:bg-indigo-50 hover:text-indigo-700"
             onClick={onNavigate}
           >
             Upload PDF

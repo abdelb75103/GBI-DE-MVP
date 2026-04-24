@@ -52,7 +52,7 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
     });
   }, [records, filter, search]);
 
-  const selectedRecord = records.find((record) => record.id === selectedRecordId) ?? filteredRecords[0] ?? null;
+  const selectedRecord = filteredRecords.find((record) => record.id === selectedRecordId) ?? filteredRecords[0] ?? null;
   const checkedIds = Object.entries(selectedIds).filter(([, checked]) => checked).map(([id]) => id);
 
   const counts = useMemo(() => ({
@@ -192,7 +192,7 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
   };
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto w-full max-w-[1320px] space-y-6">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8">
         <div className="absolute -right-10 -top-16 h-52 w-52 rounded-full bg-cyan-200/40 blur-3xl" aria-hidden />
         <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
@@ -208,7 +208,7 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3 text-center sm:grid-cols-6">
+          <div className="grid w-full grid-cols-3 gap-3 text-center lg:w-auto sm:grid-cols-6">
             <Metric label="All" value={counts.all} />
             <Metric label="No AI" value={counts.awaitingAi} />
             <Metric label="AI" value={counts.aiSuggested} />
@@ -223,8 +223,8 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
       {isAdmin ? (
-        <form onSubmit={handleUpload} className="grid gap-3 rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm lg:grid-cols-[minmax(0,1.4fr)_repeat(4,minmax(0,0.8fr))_auto]">
-          <input ref={fileInputRef} name="files" type="file" accept="application/pdf" multiple className="rounded-xl border border-dashed border-indigo-200 bg-indigo-50/40 px-3 py-2 text-sm text-indigo-700" />
+        <form onSubmit={handleUpload} className="grid gap-3 rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm lg:grid-cols-3 min-[1800px]:grid-cols-[minmax(0,1.3fr)_repeat(4,minmax(0,0.75fr))_auto]">
+          <input ref={fileInputRef} name="files" type="file" accept="application/pdf" multiple className="min-w-0 rounded-xl border border-dashed border-indigo-200 bg-indigo-50/40 px-3 py-2 text-sm text-indigo-700" />
           <input name="title" placeholder="Optional title override" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
           <input name="leadAuthor" placeholder="Lead author" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
           <input name="year" placeholder="Year" className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
@@ -235,7 +235,7 @@ export function FullTextScreeningClient({ initialRecords, profileRole, loadError
         </form>
       ) : null}
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(360px,0.95fr)_minmax(0,1.35fr)]">
+      <div className="grid gap-6 min-[1800px]:grid-cols-[minmax(360px,0.95fr)_minmax(0,1.35fr)]">
         <section className="space-y-4 rounded-3xl border border-slate-200/70 bg-white/85 p-4 shadow-xl ring-1 ring-slate-200/60">
           <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_180px]">
             <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search title, study ID, author, DOI..." className="rounded-xl border border-slate-200 px-3 py-2 text-sm" />
