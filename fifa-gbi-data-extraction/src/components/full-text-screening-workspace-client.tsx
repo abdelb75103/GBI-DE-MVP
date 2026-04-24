@@ -15,13 +15,12 @@ import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
   initialRecord: ScreeningRecord;
-  currentReviewerId: string;
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 
-export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewerId }: Props) {
+export function FullTextScreeningWorkspaceClient({ initialRecord }: Props) {
   const [record, setRecord] = useState(initialRecord);
   const [decision, setDecision] = useState<ScreeningDecision | null>(null);
   const [reason, setReason] = useState<ExclusionReason | ''>('');
@@ -36,9 +35,6 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
     reviewerDecisions.length >= 2 &&
     reviewerDecisions[0]?.decision !== reviewerDecisions[1]?.decision;
   const thirdDecision = firstTwoConflict ? reviewerDecisions[2] : undefined;
-  const currentReviewerIsOriginalConflictReviewer = firstTwoConflict
-    ? reviewerDecisions.slice(0, 2).some((item) => item.reviewerProfileId === currentReviewerId)
-    : false;
   const decisionMode = firstTwoConflict && !thirdDecision ? 'Resolve conflict' : 'Your decision';
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
@@ -123,14 +119,14 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-slate-700">{getDecisionProgressLabel(record)}</span>
             </div>
             <div className="mt-3 space-y-2">
-              {reviewerDecisions.length > 0 ? reviewerDecisions.map((item) => (
+              {reviewerDecisions.length > 0 ? reviewerDecisions.map((item, index) => (
                 <div key={`${item.reviewerProfileId}-${item.decidedAt}`} className="rounded-xl border border-slate-200 bg-white p-3">
                   <div className="flex items-center justify-between gap-2">
                     <DecisionPill decision={item.decision} />
                     <span className="text-xs text-slate-500">{item.reviewerName ?? 'Reviewer'}</span>
                   </div>
                   {item.reason ? <p className="mt-2 text-xs text-slate-600">{item.reason}</p> : null}
-                  {firstTwoConflict && reviewerDecisions[2]?.reviewerProfileId === item.reviewerProfileId ? (
+                  {firstTwoConflict && index === 2 ? (
                     <p className="mt-2 text-xs font-semibold text-slate-700">Final conflict decision</p>
                   ) : null}
                 </div>
@@ -146,12 +142,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{decisionMode}</p>
               {firstTwoConflict && !thirdDecision ? (
                 <p className="mt-1 text-xs text-slate-500">
-                  A third decision resolves the conflict and becomes the final decision.
-                </p>
-              ) : null}
-              {firstTwoConflict && !thirdDecision && currentReviewerIsOriginalConflictReviewer ? (
-                <p className="mt-2 rounded-lg bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900">
-                  This record needs an independent conflict reviewer.
+                  Save the consensus decision here. It is recorded separately from the first two votes and becomes the final decision.
                 </p>
               ) : null}
             </div>

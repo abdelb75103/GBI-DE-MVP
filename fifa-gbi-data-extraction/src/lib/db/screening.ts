@@ -219,9 +219,6 @@ export const saveScreeningDecision = async (
     firstTwo[0]?.decision !== firstTwo[1]?.decision;
   const thirdDecision = existingDecisions[2];
 
-  if (hasConflict && !thirdDecision && firstTwo.some((decision) => decision.reviewerProfileId === input.reviewerProfileId)) {
-    throw new Error('A separate conflict reviewer is required to resolve this record.');
-  }
   if (hasConflict && thirdDecision && thirdDecision.reviewerProfileId !== input.reviewerProfileId) {
     throw new Error('This conflict has already been resolved.');
   }
@@ -243,9 +240,31 @@ export const saveScreeningDecision = async (
         nextDecision,
       ].slice(0, 2);
 
+  const metadataBefore = existingRecord.metadata as Record<string, unknown> | null;
+  const previousAudit = Array.isArray(metadataBefore?.fullTextDecisionAudit)
+    ? metadataBefore.fullTextDecisionAudit
+    : [];
+  const resolutionBefore = getScreeningResolution(existingRecord);
+  const isConsensusDecision = hasConflict;
+  const action = isConsensusDecision
+    ? thirdDecision
+      ? 'updated_consensus_resolution'
+      : 'consensus_resolution'
+    : existingDecisions.some((decision) => decision.reviewerProfileId === input.reviewerProfileId)
+      ? 'updated_vote'
+      : 'initial_vote';
+
   const metadata: Record<string, unknown> = {
     ...(existingRecord.metadata ?? {}),
     fullTextDecisions: decisions,
+    fullTextDecisionAudit: [
+      ...previousAudit,
+      {
+        ...nextDecision,
+        action,
+        resolutionBefore,
+      },
+    ],
   };
   const statusRecord = { ...existingRecord, metadata } satisfies ScreeningRecord;
   const resolution = getScreeningResolution(statusRecord);

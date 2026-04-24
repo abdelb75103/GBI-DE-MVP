@@ -24,6 +24,11 @@ export type FullTextReviewerDecision = {
   decidedAt: string;
 };
 
+export type FullTextDecisionAuditEntry = FullTextReviewerDecision & {
+  action: 'initial_vote' | 'updated_vote' | 'consensus_resolution' | 'updated_consensus_resolution';
+  resolutionBefore: ScreeningResolution;
+};
+
 export type ScreeningResolution =
   | 'pending'
   | 'ready_for_extraction'
@@ -41,6 +46,7 @@ export type ScreeningWorkStatus =
 
 type ScreeningMetadata = {
   fullTextDecisions?: FullTextReviewerDecision[];
+  fullTextDecisionAudit?: FullTextDecisionAuditEntry[];
   fullTextResolution?: ScreeningResolution;
   [key: string]: unknown;
 };
