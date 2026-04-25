@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useMemo, useRef, useState, useTransition } from
 
 import {
   getTitleAbstractDecisions,
+  getTitleAbstractMetadata,
   getTitleAbstractResolution,
   getTitleAbstractWorkStatus,
   type TitleAbstractDecision,
@@ -29,7 +30,10 @@ type QueueFilter =
   | 'excluded'
   | 'promoted_to_full_text'
   | 'missing_abstract'
-  | 'flagged';
+  | 'flagged'
+  | 'ai_include'
+  | 'ai_exclude'
+  | 'ai_not_run';
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 
@@ -39,7 +43,7 @@ const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
   pending: 'Pending',
   ready_for_full_text: 'Ready for full text',
   excluded: 'Excluded',
-  needs_resolver: 'Needs resolver',
+  needs_resolver: 'Conflict',
   promoted_to_full_text: 'Promoted',
 };
 
@@ -48,7 +52,7 @@ const STATUS_LABELS: Record<TitleAbstractWorkStatus, string> = {
   awaiting_other_reviewer: 'Awaiting other reviewer',
   ready_for_full_text: 'Ready for full text',
   excluded: 'Excluded',
-  needs_resolver: 'Needs resolver',
+  needs_resolver: 'Conflict',
   promoted_to_full_text: 'Promoted',
 };
 
@@ -85,6 +89,9 @@ export function TitleAbstractScreeningClient({
       promoted: statuses.filter((status) => status === 'promoted_to_full_text').length,
       missingAbstract: records.filter((record) => !record.abstract?.trim()).length,
       flagged: records.filter((record) => getTitleAbstractDecisions(record).some((item) => item.decision === 'flag')).length,
+      aiInclude: records.filter((record) => record.aiSuggestedDecision === 'include').length,
+      aiExclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
+      aiNotRun: records.filter((record) => record.aiStatus !== 'completed').length,
     };
   }, [currentReviewerId, records]);
 
@@ -95,7 +102,10 @@ export function TitleAbstractScreeningClient({
       const decisions = getTitleAbstractDecisions(record);
       if (filter === 'missing_abstract' && record.abstract?.trim()) return false;
       if (filter === 'flagged' && !decisions.some((item) => item.decision === 'flag')) return false;
-      if (!['all', 'missing_abstract', 'flagged'].includes(filter) && status !== filter) return false;
+      if (filter === 'ai_include' && record.aiSuggestedDecision !== 'include') return false;
+      if (filter === 'ai_exclude' && record.aiSuggestedDecision !== 'exclude') return false;
+      if (filter === 'ai_not_run' && record.aiStatus === 'completed') return false;
+      if (!['all', 'missing_abstract', 'flagged', 'ai_include', 'ai_exclude', 'ai_not_run'].includes(filter) && status !== filter) return false;
       if (!query) return true;
       return [
         record.assignedStudyId,
@@ -261,7 +271,7 @@ export function TitleAbstractScreeningClient({
                 disabled={isPending}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Promote ready
+                Sync legacy includes
               </button>
             </div>
           ) : null}
@@ -337,12 +347,16 @@ export function TitleAbstractScreeningClient({
               <FilterButton label="All records" count={counts.all} active={filter === 'all'} onClick={() => setFilter('all')} />
               <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => setFilter('needs_your_vote')} accent="brand" />
               <FilterButton label="Awaiting other" count={counts.awaitingOther} active={filter === 'awaiting_other_reviewer'} onClick={() => setFilter('awaiting_other_reviewer')} />
-              <FilterButton label="Needs resolver" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => setFilter('needs_resolver')} accent="amber" />
+              <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => setFilter('needs_resolver')} accent="amber" />
               <FilterButton label="Ready for full text" count={counts.ready} active={filter === 'ready_for_full_text'} onClick={() => setFilter('ready_for_full_text')} accent="emerald" />
               <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => setFilter('excluded')} accent="rose" />
               <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => setFilter('flagged')} accent="amber" />
               <FilterButton label="Missing abstract" count={counts.missingAbstract} active={filter === 'missing_abstract'} onClick={() => setFilter('missing_abstract')} />
               <FilterButton label="Promoted" count={counts.promoted} active={filter === 'promoted_to_full_text'} onClick={() => setFilter('promoted_to_full_text')} accent="emerald" />
+              <div className="my-3 border-t border-slate-200" />
+              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => setFilter('ai_include')} accent="emerald" />
+              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => setFilter('ai_exclude')} accent="rose" />
+              <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => setFilter('ai_not_run')} />
             </div>
           </div>
         </aside>
@@ -411,6 +425,10 @@ function ReferenceDetail({
   onSaveDecision: (event: FormEvent<HTMLFormElement>) => void;
 }) {
   const decisions = getTitleAbstractDecisions(record);
+  const metadata = getTitleAbstractMetadata(record);
+  const linkedFullTextId = typeof metadata.titleAbstractPromotedRecordId === 'string'
+    ? metadata.titleAbstractPromotedRecordId
+    : null;
   const resolution = getTitleAbstractResolution(record);
   const currentReviewerVote = decisions.find((item) => item.reviewerProfileId === currentReviewerId);
   const canResolve = resolution === 'needs_resolver';
@@ -425,6 +443,11 @@ function ReferenceDetail({
             {!record.abstract?.trim() ? (
               <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800">
                 <span aria-hidden>!</span> Missing abstract
+              </span>
+            ) : null}
+            {linkedFullTextId ? (
+              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800">
+                Full text record created
               </span>
             ) : null}
           </div>
@@ -448,6 +471,8 @@ function ReferenceDetail({
             {record.abstract?.trim() || 'No abstract was imported or found through the free metadata lookup. Screen from title and citation details, or retrieve metadata before final adjudication.'}
           </p>
         </section>
+
+        <AiRecommendationCard record={record} />
 
         <DecisionPanel
           decision={decision}
@@ -480,6 +505,62 @@ function ReferenceDetail({
         </section>
       </div>
     </article>
+  );
+}
+
+function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
+  const hasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
+  const label = record.aiStatus === 'running'
+    ? 'Running'
+    : record.aiStatus === 'failed'
+      ? 'Failed'
+      : record.aiSuggestedDecision === 'include'
+        ? 'Include'
+        : record.aiSuggestedDecision === 'exclude'
+          ? 'Exclude'
+          : 'Not run';
+  const tone = record.aiSuggestedDecision === 'include'
+    ? 'emerald'
+    : record.aiSuggestedDecision === 'exclude'
+      ? 'rose'
+      : record.aiStatus === 'failed'
+        ? 'amber'
+        : 'slate';
+  const panelClasses = tone === 'emerald'
+    ? 'border-emerald-200 bg-emerald-50/50'
+    : tone === 'rose'
+      ? 'border-rose-200 bg-rose-50/50'
+      : tone === 'amber'
+        ? 'border-amber-200 bg-amber-50/50'
+        : 'border-slate-200 bg-slate-50/70';
+  const badgeClasses = tone === 'emerald'
+    ? 'border-emerald-300 bg-white text-emerald-800'
+    : tone === 'rose'
+      ? 'border-rose-300 bg-white text-rose-800'
+      : tone === 'amber'
+        ? 'border-amber-300 bg-white text-amber-800'
+        : 'border-slate-200 bg-white text-slate-600';
+
+  return (
+    <section className={`rounded-2xl border px-5 py-4 ${panelClasses}`}>
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">AI recommendation</p>
+        <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold ${badgeClasses}`}>
+          {label}
+        </span>
+      </div>
+      {record.aiReason ? (
+        <p className="mt-3 text-sm leading-6 text-slate-700">{record.aiReason}</p>
+      ) : (
+        <p className="mt-3 text-sm leading-6 text-slate-500">No local title/abstract AI recommendation has been recorded yet.</p>
+      )}
+      {hasDecision && record.aiSuggestedDecision === 'exclude' && record.aiEvidenceQuote ? (
+        <blockquote className="mt-3 rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm leading-6 text-slate-700">
+          “{record.aiEvidenceQuote}”
+          {record.aiSourceLocation ? <footer className="mt-1 text-xs font-semibold text-slate-500">{record.aiSourceLocation}</footer> : null}
+        </blockquote>
+      ) : null}
+    </section>
   );
 }
 

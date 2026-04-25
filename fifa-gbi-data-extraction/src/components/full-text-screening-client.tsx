@@ -7,6 +7,7 @@ import {
   getReviewerDecisions,
   getScreeningResolution,
   getScreeningWorkStatus,
+  isAwaitingFullTextPdf,
   type ScreeningWorkStatus,
 } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
@@ -20,6 +21,7 @@ type Props = {
 
 type QueueFilter =
   | 'all'
+  | 'awaiting_pdf'
   | 'needs_your_vote'
   | 'awaiting_other_reviewer'
   | 'ready_for_extraction'
@@ -60,6 +62,7 @@ export function FullTextScreeningClient({
     const oneVote = records.filter((record) => getReviewerDecisions(record).length === 1).length;
     return {
       all: records.length,
+      awaitingPdf: records.filter(isAwaitingFullTextPdf).length,
       needsYourVote: records.filter((record) => getScreeningWorkStatus(record, currentReviewerId) === 'needs_your_vote').length,
       awaitingOther: records.filter((record) => getScreeningWorkStatus(record, currentReviewerId) === 'awaiting_other_reviewer').length,
       complete: records.filter((record) => {
@@ -141,6 +144,36 @@ export function FullTextScreeningClient({
     });
   };
 
+  const handleRecordPdfSelected = (recordId: string, event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    startTransition(async () => {
+      if (!file.name.toLowerCase().endsWith('.pdf')) {
+        setNotice({ tone: 'error', message: `${file.name}: not a PDF` });
+        event.target.value = '';
+        return;
+      }
+      if (file.size > MAX_FILE_BYTES) {
+        setNotice({ tone: 'error', message: `${file.name}: exceeds 20 MB` });
+        event.target.value = '';
+        return;
+      }
+
+      const data = new FormData();
+      data.set('file', file);
+      const response = await fetch(`/api/full-text-screening/${recordId}/file`, { method: 'POST', body: data });
+      const payload = await response.json().catch(() => ({})) as { error?: string };
+      event.target.value = '';
+      if (!response.ok) {
+        setNotice({ tone: 'error', message: payload.error ?? 'PDF attach failed' });
+        return;
+      }
+      await refreshRecords();
+      setNotice({ tone: 'success', message: `Attached ${file.name} to the full-text record.` });
+    });
+  };
+
   return (
     <div className="mx-auto w-full max-w-[1180px] space-y-6">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
@@ -188,7 +221,15 @@ export function FullTextScreeningClient({
             ) : null}
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
+            <QueueCard
+              label="Awaiting PDF"
+              value={counts.awaitingPdf}
+              detail="Included at title/abstract"
+              action="Upload full text"
+              tone="amber"
+              onClick={() => setFilter('awaiting_pdf')}
+            />
             <QueueCard
               label="Screen studies"
               value={counts.needsYourVote}
@@ -242,6 +283,7 @@ export function FullTextScreeningClient({
               className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none"
             >
               <option value="all">All records</option>
+              <option value="awaiting_pdf">Awaiting PDF</option>
               <option value="needs_your_vote">Needs my vote</option>
               <option value="awaiting_other_reviewer">Awaiting other reviewer</option>
               <option value="ready_for_extraction">Included</option>
@@ -279,6 +321,9 @@ export function FullTextScreeningClient({
                   key={record.id}
                   record={record}
                   currentReviewerId={currentReviewerId}
+                  isAdmin={isAdmin}
+                  isPending={isPending}
+                  onAttachPdf={handleRecordPdfSelected}
                 />
               ))}
             </tbody>
@@ -293,6 +338,7 @@ export function FullTextScreeningClient({
 }
 
 const STATUS_ACCENT: Record<ScreeningWorkStatus, string> = {
+  awaiting_pdf: 'bg-amber-400',
   needs_your_vote: 'bg-indigo-400',
   awaiting_other_reviewer: 'bg-sky-300',
   ready_for_extraction: 'bg-emerald-400',
@@ -304,9 +350,15 @@ const STATUS_ACCENT: Record<ScreeningWorkStatus, string> = {
 function ScreeningRow({
   record,
   currentReviewerId,
+  isAdmin,
+  isPending,
+  onAttachPdf,
 }: {
   record: ScreeningRecord;
   currentReviewerId: string;
+  isAdmin: boolean;
+  isPending: boolean;
+  onAttachPdf: (recordId: string, event: ChangeEvent<HTMLInputElement>) => void;
 }) {
   const resolution = getScreeningResolution(record);
   const reviewerDecisions = getReviewerDecisions(record);
@@ -316,6 +368,8 @@ function ScreeningRow({
   const totalVotes = reviewerDecisions.length;
   const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;
   const excludeVotes = reviewerDecisions.filter((d) => d.decision === 'exclude').length;
+  const awaitingPdf = isAwaitingFullTextPdf(record);
+  const uploadInputId = `full-text-upload-${record.id}`;
 
   return (
     <tr className="group relative bg-white transition hover:bg-indigo-50/30">
@@ -354,7 +408,29 @@ function ScreeningRow({
         </div>
       </td>
       <td className="px-5 py-4 align-middle">
-        <StatusBadge status={status} resolution={resolution} />
+        <div className="space-y-2">
+          <StatusBadge status={status} resolution={resolution} />
+          {isAdmin && awaitingPdf ? (
+            <div>
+              <input
+                id={uploadInputId}
+                type="file"
+                accept="application/pdf"
+                className="hidden"
+                disabled={isPending}
+                onChange={(event) => onAttachPdf(record.id, event)}
+              />
+              <label
+                htmlFor={uploadInputId}
+                className={`inline-flex cursor-pointer items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] font-semibold text-amber-800 transition hover:border-amber-300 hover:bg-amber-100 ${
+                  isPending ? 'pointer-events-none opacity-60' : ''
+                }`}
+              >
+                Upload PDF
+              </label>
+            </div>
+          ) : null}
+        </div>
       </td>
     </tr>
   );
@@ -416,6 +492,7 @@ function StatusBadge({
   resolution: ReturnType<typeof getScreeningResolution>;
 }) {
   const labels: Record<ScreeningWorkStatus, string> = {
+    awaiting_pdf: 'Awaiting PDF',
     needs_your_vote: 'Needs my vote',
     awaiting_other_reviewer: 'Awaiting other reviewer',
     ready_for_extraction: 'Ready for extraction',
@@ -424,6 +501,7 @@ function StatusBadge({
     promoted: 'Promoted',
   };
   const tones: Record<ScreeningWorkStatus, PillTone> = {
+    awaiting_pdf: 'amber',
     needs_your_vote: 'indigo',
     awaiting_other_reviewer: 'sky',
     ready_for_extraction: 'emerald',

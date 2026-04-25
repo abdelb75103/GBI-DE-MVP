@@ -1,12 +1,13 @@
 'use client';
 
-import { FormEvent, useMemo, useState, useTransition } from 'react';
+import { ChangeEvent, FormEvent, useMemo, useState, useTransition } from 'react';
 import Link from 'next/link';
 
 import {
   EXCLUSION_REASONS,
   getReviewerDecisions,
   getScreeningResolution,
+  isAwaitingFullTextPdf,
   summarizeExclusionReasons,
   type FullTextDecisionAction,
   type ExclusionReason,
@@ -16,12 +17,15 @@ import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 type Props = {
   initialRecord: ScreeningRecord;
   currentReviewerId: string;
+  profileRole: 'admin' | 'extractor' | 'observer';
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 
-export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewerId }: Props) {
+const MAX_FILE_BYTES = 20 * 1024 * 1024;
+
+export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewerId, profileRole }: Props) {
   const [record, setRecord] = useState(initialRecord);
   const [decisionAction, setDecisionAction] = useState<FullTextDecisionAction>('reviewer_vote');
   const [decision, setDecision] = useState<ScreeningDecision | null>(null);
@@ -29,6 +33,8 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
   const [otherReason, setOtherReason] = useState('');
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
+  const isAdmin = profileRole === 'admin';
+  const awaitingPdf = isAwaitingFullTextPdf(record);
 
   const reviewerDecisions = useMemo(() => getReviewerDecisions(record), [record]);
   const resolution = getScreeningResolution(record);
@@ -48,9 +54,9 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
   const decisionMode = activeDecisionAction === 'consensus_resolution'
     ? thirdDecision ? 'Update conflict resolution' : 'Resolve conflict'
     : currentReviewerVote ? 'Update your vote' : 'Your vote';
-  const canSubmitDecision = activeDecisionAction === 'consensus_resolution'
+  const canSubmitDecision = !awaitingPdf && (activeDecisionAction === 'consensus_resolution'
     ? canRecordConsensus
-    : canChangeReviewerVote;
+    : canChangeReviewerVote);
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
   const pdfDirectUrl = `/api/full-text-screening/${record.id}/file`;
@@ -145,6 +151,36 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
     });
   };
 
+  const attachPdf = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    startTransition(async () => {
+      if (!file.name.toLowerCase().endsWith('.pdf')) {
+        setNotice({ tone: 'error', message: `${file.name}: not a PDF` });
+        event.target.value = '';
+        return;
+      }
+      if (file.size > MAX_FILE_BYTES) {
+        setNotice({ tone: 'error', message: `${file.name}: exceeds 20 MB` });
+        event.target.value = '';
+        return;
+      }
+
+      const data = new FormData();
+      data.set('file', file);
+      const response = await fetch(`/api/full-text-screening/${record.id}/file`, { method: 'POST', body: data });
+      const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
+      event.target.value = '';
+      if (!response.ok || !payload.record) {
+        setNotice({ tone: 'error', message: payload.error ?? 'PDF attach failed' });
+        return;
+      }
+      setRecord(payload.record);
+      setNotice({ tone: 'success', message: `Attached ${file.name} to this full-text record.` });
+    });
+  };
+
   return (
     <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-7">
@@ -190,23 +226,49 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">PDF source</p>
               <p className="mt-0.5 text-xs text-slate-500">Evidence workspace</p>
             </div>
-            <a
-              href={pdfDirectUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-            >
-              Open PDF
-            </a>
+            {!awaitingPdf ? (
+              <a
+                href={pdfDirectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
+              >
+                Open PDF
+              </a>
+            ) : null}
           </div>
           <div className="flex min-h-0 flex-1 px-3 pb-3">
             <div className="flex min-h-[calc(100vh-300px)] w-full overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/60">
-              <iframe
-                src={pdfUrl}
-                className="h-full min-h-[calc(100vh-300px)] w-full flex-1 border-0 bg-white"
-                title={`${record.assignedStudyId} full text PDF`}
-                allow="fullscreen"
-              />
+              {awaitingPdf ? (
+                <div className="grid w-full place-items-center p-8 text-center">
+                  <div className="max-w-md rounded-2xl border border-amber-200 bg-amber-50 p-6 text-amber-900">
+                    <p className="text-sm font-semibold">Full-text PDF required</p>
+                    <p className="mt-2 text-sm leading-6">
+                      This record came through title/abstract screening and is waiting for the full-text PDF before reviewer voting or AI review can begin.
+                    </p>
+                    {isAdmin ? (
+                      <div className="mt-4">
+                        <input id="workspace-pdf-upload" type="file" accept="application/pdf" className="hidden" disabled={isPending} onChange={attachPdf} />
+                        <label
+                          htmlFor="workspace-pdf-upload"
+                          className={`inline-flex cursor-pointer items-center rounded-full bg-[#0b3a70] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#092f5f] ${
+                            isPending ? 'pointer-events-none opacity-60' : ''
+                          }`}
+                        >
+                          {isPending ? 'Uploading…' : 'Upload full-text PDF'}
+                        </label>
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  src={pdfUrl}
+                  className="h-full min-h-[calc(100vh-300px)] w-full flex-1 border-0 bg-white"
+                  title={`${record.assignedStudyId} full text PDF`}
+                  allow="fullscreen"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -309,7 +371,9 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
 
             {!canSubmitDecision ? (
               <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-900">
-                Two reviewer votes already recorded. Only an original reviewer can change their vote, unless there is a conflict to resolve.
+                {awaitingPdf
+                  ? 'Attach the full-text PDF before reviewer voting.'
+                  : 'Two reviewer votes already recorded. Only an original reviewer can change their vote, unless there is a conflict to resolve.'}
               </p>
             ) : null}
 
@@ -342,6 +406,12 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
             ) : (
               <p className="mt-3 text-sm leading-relaxed text-slate-500">No AI recommendation has been recorded yet.</p>
             )}
+            {record.aiSuggestedDecision === 'exclude' && record.aiEvidenceQuote ? (
+              <blockquote className="mt-3 rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm leading-6 text-slate-700">
+                “{record.aiEvidenceQuote}”
+                {record.aiSourceLocation ? <footer className="mt-1 text-xs font-semibold text-slate-500">{record.aiSourceLocation}</footer> : null}
+              </blockquote>
+            ) : null}
             <p className="mt-3 text-[11px] leading-relaxed text-slate-500">Advisory only. Final eligibility depends on reviewer votes.</p>
           </div>
 
@@ -509,6 +579,7 @@ function AiStatusBadge({ tone, label, hasDecision }: { tone: 'emerald' | 'rose' 
 
 function ResolutionBadge({ resolution }: { resolution: ReturnType<typeof getScreeningResolution> }) {
   const labels = {
+    awaiting_pdf: 'Awaiting PDF',
     pending: 'Pending',
     ready_for_extraction: 'Ready for extraction',
     excluded: 'Excluded',
@@ -516,6 +587,7 @@ function ResolutionBadge({ resolution }: { resolution: ReturnType<typeof getScre
     promoted: 'Promoted',
   } as const;
   const tones: Record<keyof typeof labels, PillTone> = {
+    awaiting_pdf: 'amber',
     pending: 'slate',
     ready_for_extraction: 'emerald',
     excluded: 'rose',

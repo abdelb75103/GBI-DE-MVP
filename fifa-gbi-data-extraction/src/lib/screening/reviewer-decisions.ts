@@ -35,12 +35,14 @@ export type FullTextDecisionAuditEntry = FullTextReviewerDecision & {
 
 export type ScreeningResolution =
   | 'pending'
+  | 'awaiting_pdf'
   | 'ready_for_extraction'
   | 'excluded'
   | 'conflict'
   | 'promoted';
 
 export type ScreeningWorkStatus =
+  | 'awaiting_pdf'
   | 'needs_your_vote'
   | 'awaiting_other_reviewer'
   | 'ready_for_extraction'
@@ -52,6 +54,7 @@ type ScreeningMetadata = {
   fullTextDecisions?: FullTextReviewerDecision[];
   fullTextDecisionAudit?: FullTextDecisionAuditEntry[];
   fullTextResolution?: ScreeningResolution;
+  awaitingFullTextPdf?: boolean;
   [key: string]: unknown;
 };
 
@@ -84,9 +87,18 @@ export const getReviewerDecisions = (record: ScreeningRecord): FullTextReviewerD
   }];
 };
 
+export const isAwaitingFullTextPdf = (record: ScreeningRecord): boolean => {
+  if (record.stage !== 'full_text') return false;
+  const metadata = record.metadata as ScreeningMetadata;
+  return metadata.awaitingFullTextPdf === true && !record.storageObjectPath && !record.fileName;
+};
+
 export const getScreeningResolution = (record: ScreeningRecord): ScreeningResolution => {
   if (record.promotedPaperId) {
     return 'promoted';
+  }
+  if (isAwaitingFullTextPdf(record)) {
+    return 'awaiting_pdf';
   }
 
   const decisions = getReviewerDecisions(record);
@@ -139,6 +151,7 @@ export const getScreeningStatusLabel = (
     return decisions.length === 0 ? 'No votes' : 'One vote';
   }
   if (status === 'awaiting_other_reviewer') return 'Awaiting other reviewer';
+  if (status === 'awaiting_pdf') return 'Awaiting PDF';
   if (status === 'ready_for_extraction') return 'Ready for extraction';
   if (status === 'excluded') return 'Excluded';
   if (status === 'conflict') return 'Conflict';

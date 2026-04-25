@@ -5,9 +5,13 @@ import { mapScreeningRecordRow } from '@/lib/db/mappers';
 import { generateAssignedStudyId } from '@/lib/db/study-ids';
 import { supabaseClient } from '@/lib/db/shared';
 import { createPaper, updatePaper } from '@/lib/db/papers';
-import { attachFile } from '@/lib/db/files';
-import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
-import { MAX_EXCLUSION_REASON_CHARS, type FullTextDecisionAction } from '@/lib/screening/reviewer-decisions';
+import { attachFile, uploadFileToStorage } from '@/lib/db/files';
+import { computeFileSha256, generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
+import {
+  MAX_EXCLUSION_REASON_CHARS,
+  isAwaitingFullTextPdf,
+  type FullTextDecisionAction,
+} from '@/lib/screening/reviewer-decisions';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
 import type { ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 import {
@@ -16,6 +20,8 @@ import {
   type TitleAbstractDecision,
   type TitleAbstractDecisionAction,
 } from '@/lib/screening/title-abstract-decisions';
+
+const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
 
 const loadProfileNames = async (ids: Array<string | null | undefined>): Promise<Map<string, string>> => {
   const profileIds = Array.from(new Set(ids.filter((id): id is string => Boolean(id))));
@@ -248,6 +254,17 @@ export const saveScreeningDecision = async (
     throw new Error(`Exclusion reason must be ${MAX_EXCLUSION_REASON_CHARS} characters or fewer.`);
   }
 
+  const existingRecord = await getScreeningRecord(id);
+  if (!existingRecord) {
+    throw new Error('Screening record not found.');
+  }
+  if (existingRecord.stage !== 'full_text') {
+    throw new Error('This decision endpoint is only available for full-text records.');
+  }
+  if (isAwaitingFullTextPdf(existingRecord)) {
+    throw new Error('Attach the full-text PDF before recording full-text screening decisions.');
+  }
+
   const { data, error } = await supabaseClient().rpc('save_screening_vote', {
     p_record_id: id,
     p_reviewer_profile_id: input.reviewerProfileId,
@@ -289,6 +306,9 @@ export const saveTitleAbstractDecision = async (
   if (record.stage !== 'title_abstract') {
     throw new Error('This decision endpoint is only available for title/abstract records.');
   }
+  if (getTitleAbstractMetadata(record).titleAbstractPromotedRecordId) {
+    throw new Error('This title/abstract record has already moved to full-text screening.');
+  }
 
   const next = applyTitleAbstractDecision(record, {
     reviewerProfileId: input.reviewerProfileId,
@@ -308,7 +328,7 @@ export const saveTitleAbstractDecision = async (
     .map((decision) => decision.note?.trim())
     .filter((note): note is string => Boolean(note));
 
-  return updateScreeningRecordMetadata(
+  const updated = await updateScreeningRecordMetadata(
     id,
     {
       ...getTitleAbstractMetadata(record),
@@ -322,6 +342,13 @@ export const saveTitleAbstractDecision = async (
       manual_decided_at: next.updatedAt,
     },
   );
+
+  if (next.resolution === 'ready_for_full_text') {
+    const promoted = await promoteTitleAbstractRecord(updated.id, input.reviewerProfileId);
+    return promoted.record;
+  }
+
+  return updated;
 };
 
 export const promoteTitleAbstractRecord = async (
@@ -343,9 +370,6 @@ export const promoteTitleAbstractRecord = async (
     throw new Error('Only included title/abstract records can be promoted.');
   }
 
-  const placeholderPdf = Buffer.from(
-    '%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n2 0 obj<</Type/Pages/Count 0>>endobj\ntrailer<</Root 1 0 R>>\n%%EOF',
-  ).toString('base64');
   const fullTextRecord = await createScreeningRecord({
     stage: 'full_text',
     title: record.title,
@@ -356,16 +380,18 @@ export const promoteTitleAbstractRecord = async (
     doi: record.doi,
     sourceLabel: record.sourceLabel ?? 'title-abstract-screening',
     sourceRecordId: record.sourceRecordId,
-    dataBase64: placeholderPdf,
-    fileName: `${record.assignedStudyId}-awaiting-full-text.pdf`,
+    dataBase64: AWAITING_FULL_TEXT_PDF_SENTINEL,
+    fileName: null,
     originalFileName: null,
-    mimeType: 'application/pdf',
-    size: 0,
+    mimeType: null,
+    size: null,
     createdBy: profileId,
     metadata: {
       ...record.metadata,
       titleAbstractRecordId: record.id,
       titleAbstractStudyId: record.assignedStudyId,
+      titleAbstractPromotedAt: new Date().toISOString(),
+      titleAbstractPromotedBy: profileId,
       awaitingFullTextPdf: true,
     },
   });
@@ -380,6 +406,79 @@ export const promoteTitleAbstractRecord = async (
   return { record: updated, fullTextRecordId: fullTextRecord.id };
 };
 
+export const attachFullTextPdfToScreeningRecord = async (
+  id: string,
+  input: {
+    buffer: Buffer;
+    fileName: string;
+    mimeType?: string | null;
+    size: number;
+    profileId: string;
+  },
+): Promise<ScreeningRecord> => {
+  const record = await getScreeningRecord(id);
+  if (!record) {
+    throw new Error('Screening record not found');
+  }
+  if (record.stage !== 'full_text') {
+    throw new Error('PDF files can only be attached to full-text screening records.');
+  }
+  const metadata = record.metadata ?? {};
+  if (metadata.awaitingFullTextPdf !== true && (record.storageObjectPath || record.dataBase64)) {
+    throw new Error('This full-text screening record already has a PDF.');
+  }
+
+  const fileSha256 = computeFileSha256(input.buffer);
+  const [existingScreening, existingPapers] = await Promise.all([
+    listScreeningRecords('full_text'),
+    supabaseClient().from('papers').select('id, assigned_study_id, title, primary_file_sha256'),
+  ]);
+
+  const existingScreeningMatch = existingScreening.find((candidate) => candidate.id !== id && candidate.fileSha256 === fileSha256);
+  if (existingScreeningMatch) {
+    throw new Error(`Duplicate screening PDF detected in ${existingScreeningMatch.assignedStudyId}.`);
+  }
+  if (existingPapers.error) {
+    throw new Error(`Failed to check extraction duplicates: ${existingPapers.error.message}`);
+  }
+  const existingPaperMatch = (existingPapers.data ?? []).find((paper) => paper.primary_file_sha256 === fileSha256);
+  if (existingPaperMatch) {
+    throw new Error(`PDF already exists in extraction as ${existingPaperMatch.assigned_study_id}.`);
+  }
+
+  const storageInfo = await uploadFileToStorage(input.buffer, input.fileName, 'papers');
+  const now = new Date().toISOString();
+  const { data, error } = await supabaseClient()
+    .from('screening_records')
+    .update({
+      storage_bucket: storageInfo.storageBucket,
+      storage_object_path: storageInfo.storageObjectPath,
+      data_base64: null,
+      file_name: input.fileName,
+      original_file_name: input.fileName,
+      mime_type: input.mimeType || 'application/pdf',
+      size: input.size,
+      file_sha256: fileSha256,
+      metadata: {
+        ...metadata,
+        awaitingFullTextPdf: false,
+        fullTextPdfAttachedAt: now,
+        fullTextPdfAttachedBy: input.profileId,
+      },
+      updated_at: now,
+    })
+    .eq('id', id)
+    .select('*')
+    .single();
+
+  if (error || !data) {
+    throw new Error(`Failed to attach full-text PDF: ${error?.message ?? 'Unknown error'}`);
+  }
+
+  const [updated] = await mapRows([data as ScreeningRecordRow]);
+  return updated;
+};
+
 export const promoteScreeningRecord = async (
   id: string,
   profileId: string,
@@ -390,6 +489,9 @@ export const promoteScreeningRecord = async (
   }
   if (record.manualDecision !== 'include') {
     throw new Error('Only manually included screening records can be promoted.');
+  }
+  if (isAwaitingFullTextPdf(record) || (!record.storageObjectPath && !record.dataBase64)) {
+    throw new Error('Attach the full-text PDF before promoting this record to extraction.');
   }
   if (record.promotedPaperId) {
     return { record, paperId: record.promotedPaperId };

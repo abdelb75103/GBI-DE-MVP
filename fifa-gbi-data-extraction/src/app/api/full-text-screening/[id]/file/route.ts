@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
+import { isAwaitingFullTextPdf } from '@/lib/screening/reviewer-decisions';
 import { getAdminServiceClient } from '@/lib/supabase';
 
 export const runtime = 'nodejs';
@@ -66,6 +67,9 @@ export async function GET(
   if (!record) {
     return NextResponse.json({ error: 'Screening record not found' }, { status: 404 });
   }
+  if (isAwaitingFullTextPdf(record)) {
+    return NextResponse.json({ error: 'Full-text PDF has not been uploaded yet' }, { status: 404 });
+  }
 
   let fileBuffer: Buffer | null = null;
   if (record.storageBucket && record.storageObjectPath) {
@@ -107,4 +111,46 @@ export async function GET(
   headers.set('Content-Length', fileBuffer.length.toString());
 
   return new NextResponse(fileBuffer as unknown as BodyInit, { status: 200, headers });
+}
+
+const MAX_FILE_BYTES = 20 * 1024 * 1024;
+
+export async function POST(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const profile = await readActiveProfileSession();
+  if (!profile || profile.role !== 'admin') {
+    return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
+  }
+
+  const { id } = await params;
+  const formData = await request.formData();
+  const file = formData.get('file');
+  if (!(file instanceof File)) {
+    return NextResponse.json({ error: 'No file provided' }, { status: 400 });
+  }
+  if (!file.name.toLowerCase().endsWith('.pdf')) {
+    return NextResponse.json({ error: 'Only PDF files can be uploaded for full-text screening' }, { status: 400 });
+  }
+  if (file.size > MAX_FILE_BYTES) {
+    return NextResponse.json({ error: 'File exceeds 20 MB limit' }, { status: 400 });
+  }
+
+  try {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const record = await mockDb.attachFullTextPdfToScreeningRecord(id, {
+      buffer,
+      fileName: file.name,
+      mimeType: file.type || 'application/pdf',
+      size: file.size,
+      profileId: profile.id,
+    });
+    return NextResponse.json({ record });
+  } catch (error) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : 'Failed to attach PDF' },
+      { status: 400 },
+    );
+  }
 }
