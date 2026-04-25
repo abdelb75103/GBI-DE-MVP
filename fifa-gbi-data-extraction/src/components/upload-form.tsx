@@ -233,7 +233,7 @@ export function UploadForm() {
           className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
           disabled={isPending}
         >
-          Upload PDFs
+          Upload full text
         </button>
       </div>
     </form>

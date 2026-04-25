@@ -579,7 +579,7 @@ function AiStatusBadge({ tone, label, hasDecision }: { tone: 'emerald' | 'rose' 
 
 function ResolutionBadge({ resolution }: { resolution: ReturnType<typeof getScreeningResolution> }) {
   const labels = {
-    awaiting_pdf: 'Awaiting PDF',
+    awaiting_pdf: 'Upload full text',
     pending: 'Pending',
     ready_for_extraction: 'Ready for extraction',
     excluded: 'Excluded',

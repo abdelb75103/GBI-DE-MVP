@@ -151,7 +151,7 @@ export const getScreeningStatusLabel = (
     return decisions.length === 0 ? 'No votes' : 'One vote';
   }
   if (status === 'awaiting_other_reviewer') return 'Awaiting other reviewer';
-  if (status === 'awaiting_pdf') return 'Awaiting PDF';
+  if (status === 'awaiting_pdf') return 'Upload full text';
   if (status === 'ready_for_extraction') return 'Ready for extraction';
   if (status === 'excluded') return 'Excluded';
   if (status === 'conflict') return 'Conflict';

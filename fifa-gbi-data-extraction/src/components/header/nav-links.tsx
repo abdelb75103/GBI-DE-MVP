@@ -58,7 +58,7 @@ export function PrimaryNavLinks({ onNavigate }: { onNavigate?: () => void } = {}
             className="rounded-full px-2.5 py-1.5 font-semibold text-indigo-600 transition hover:bg-indigo-50 hover:text-indigo-700"
             onClick={onNavigate}
           >
-            Upload PDF
+            Upload full text
           </Link>
         </>
       ) : null}
