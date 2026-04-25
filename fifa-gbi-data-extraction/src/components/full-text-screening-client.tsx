@@ -409,6 +409,14 @@ function ScreeningRow({
       <td className="px-5 py-4 align-middle">
         <div className="space-y-2">
           <StatusBadge status={status} resolution={resolution} />
+          {record.promotedPaperId ? (
+            <Link
+              href={`/paper/${record.promotedPaperId}`}
+              className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-800 transition hover:border-emerald-300 hover:bg-emerald-100"
+            >
+              Open extraction
+            </Link>
+          ) : null}
           {isAdmin && awaitingPdf ? (
             <div>
               <input

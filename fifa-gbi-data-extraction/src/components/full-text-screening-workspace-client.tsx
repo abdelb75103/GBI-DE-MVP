@@ -144,6 +144,8 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
         record?: ScreeningRecord;
         error?: string;
         duplicateWarnings?: DuplicateWarning[];
+        promotedPaperId?: string;
+        promotionError?: string;
       };
       if (!response.ok) {
         setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision' });
@@ -158,13 +160,18 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
       setReason('');
       setOtherReason('');
       const duplicateMessage = formatDuplicateWarningMessage(payload.duplicateWarnings ?? []);
+      const promotionMessage = payload.promotionError
+        ? ` Vote saved, but automatic promotion failed: ${payload.promotionError}`
+        : payload.promotedPaperId
+          ? ' Promoted to extraction.'
+          : '';
       setNotice({
-        tone: duplicateMessage ? 'neutral' : 'success',
+        tone: payload.promotionError || duplicateMessage ? 'neutral' : 'success',
         message: duplicateMessage
-          ? `${activeDecisionAction === 'consensus_resolution' ? 'Conflict resolution saved.' : 'Reviewer vote saved.'} ${duplicateMessage}`
+          ? `${activeDecisionAction === 'consensus_resolution' ? 'Conflict resolution saved.' : 'Reviewer vote saved.'}${promotionMessage} ${duplicateMessage}`
           : activeDecisionAction === 'consensus_resolution'
-            ? 'Conflict resolution saved.'
-            : 'Reviewer vote saved.',
+            ? `Conflict resolution saved.${promotionMessage}`
+            : `Reviewer vote saved.${promotionMessage}`,
       });
     });
   };
@@ -225,6 +232,14 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            {record.promotedPaperId ? (
+              <Link
+                href={`/paper/${record.promotedPaperId}`}
+                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+              >
+                Open extraction
+              </Link>
+            ) : null}
             <Link
               href="/full-text-screening"
               className="inline-flex items-center justify-center gap-1.5 rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"

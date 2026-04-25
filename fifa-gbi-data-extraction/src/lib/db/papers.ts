@@ -293,6 +293,17 @@ export const deletePaper = async (id: string): Promise<void> => {
     throw new Error(`Failed to delete paper notes: ${notesError.message}`);
   }
 
+  const { error: primaryFileError } = await supabase
+    .from('papers')
+    .update({
+      primary_file_id: null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('id', id);
+  if (primaryFileError) {
+    throw new Error(`Failed to clear primary file before deletion: ${primaryFileError.message}`);
+  }
+
   const { error: filesError } = await supabase
     .from('paper_files')
     .delete()
