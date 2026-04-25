@@ -120,12 +120,12 @@ export const applyTitleAbstractDecision = (
     decisions = existing.filter((decision) => decision.action !== 'resolver_decision').slice(0, 2);
     decisions.push(nextDecision);
   } else {
-    const existingIndex = existing.findIndex(
+    const reviewerVotes = existing.filter((decision) => decision.action !== 'resolver_decision').slice(0, 2);
+    const existingIndex = reviewerVotes.findIndex(
       (decision) => decision.action !== 'resolver_decision' && decision.reviewerProfileId === input.reviewerProfileId,
     );
-    const reviewerVotes = existing.filter((decision) => decision.action !== 'resolver_decision').slice(0, 2);
     if (existingIndex >= 0) {
-      decisions = existing.map((decision, index) => (index === existingIndex ? nextDecision : decision)).slice(0, 3);
+      decisions = reviewerVotes.map((decision, index) => (index === existingIndex ? nextDecision : decision));
     } else if (reviewerVotes.length < 2) {
       decisions = [...reviewerVotes, nextDecision];
     } else {

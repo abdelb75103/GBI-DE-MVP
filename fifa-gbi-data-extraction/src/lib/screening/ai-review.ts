@@ -6,6 +6,7 @@ import type { Part } from '@google/generative-ai';
 
 import { supabaseClient } from '@/lib/db/shared';
 import { FULL_TEXT_SCREENING_CRITERIA, SCREENING_CRITERIA_VERSION } from '@/lib/screening/criteria';
+import { isAwaitingFullTextPdf } from '@/lib/screening/reviewer-decisions';
 import { createGeminiModel, getFallbackModelName, getModelName } from '@/lib/extraction/gemini-client';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
@@ -99,12 +100,18 @@ export async function reviewFullTextScreeningRecord(
       rawText,
     );
   }
+  if (validated.data.suggestedDecision === 'exclude' && !validated.data.evidenceQuote?.trim()) {
+    throw new ScreeningAiParseError('AI full-text screening exclusion is missing a source quote.', rawText);
+  }
+  if (validated.data.suggestedDecision === 'exclude' && !validated.data.sourceLocation?.trim()) {
+    throw new ScreeningAiParseError('AI full-text screening exclusion is missing a source location.', rawText);
+  }
 
   return {
     suggestedDecision: validated.data.suggestedDecision,
     reason: validated.data.reason,
-    evidenceQuote: validated.data.evidenceQuote ?? null,
-    sourceLocation: validated.data.sourceLocation ?? null,
+    evidenceQuote: validated.data.suggestedDecision === 'exclude' ? validated.data.evidenceQuote ?? null : null,
+    sourceLocation: validated.data.suggestedDecision === 'exclude' ? validated.data.sourceLocation ?? null : null,
     confidence: validated.data.confidence ?? null,
     model: usedModelName,
     criteriaVersion: SCREENING_CRITERIA_VERSION,
@@ -113,6 +120,9 @@ export async function reviewFullTextScreeningRecord(
 }
 
 async function loadScreeningPdfBase64(record: ScreeningRecord): Promise<string> {
+  if (isAwaitingFullTextPdf(record)) {
+    throw new Error('Attach the full-text PDF before running AI full-text screening.');
+  }
   if (record.dataBase64) {
     return record.dataBase64;
   }
@@ -140,11 +150,14 @@ You are supporting FIFA GBI full-text screening. Make an advisory preliminary de
 Return strict JSON with exactly:
 {
   "suggestedDecision": "include" | "exclude",
-  "reason": "short audit-ready reason",
-  "evidenceQuote": "short direct quote from the PDF supporting the decision, or null",
-  "sourceLocation": "page/table/section hint if visible, or null",
+  "reason": "for include: short eligibility summary; for exclude: short audit-ready exclusion reason",
+  "evidenceQuote": "required only when suggestedDecision is exclude: short direct quote from the PDF defending the exclusion; null for include",
+  "sourceLocation": "required only when suggestedDecision is exclude: page/table/section hint; null for include",
   "confidence": number from 0 to 1
 }
+
+For Include recommendations, do not provide a source quote. Give only a concise reason explaining why full-text extraction should proceed.
+For Exclude recommendations, defend the exclusion with one short verbatim quote from the paper and a source location. If you cannot quote the paper for the exclusion, do not force a confident exclusion.
 
 Study ID: ${record.assignedStudyId}
 Title: ${record.title}
