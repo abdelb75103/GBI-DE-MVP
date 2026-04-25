@@ -27,6 +27,14 @@ const firstNonEmpty = (...values: Array<unknown>) => {
   return '';
 };
 
+const extractDoi = (value: unknown) => {
+  const normalized = normalizeWhitespace(value)
+    .replace(/^doi:\s*/i, '')
+    .replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+  const match = normalized.match(/10\.\d{4,9}\/[^\s,;"']+/i);
+  return (match?.[0] ?? normalized).replace(/[.)\]]+$/, '');
+};
+
 const getCaseInsensitive = (row: Record<string, string>, keys: string[]) => {
   const normalizedKeys = new Map(Object.keys(row).map((key) => [key.toLowerCase().replace(/[^a-z0-9]/g, ''), key]));
   for (const key of keys) {
@@ -142,7 +150,7 @@ export function parseReferences(text: string, fileName: string, sourceLabel: str
         authors: authors.join('; ') || null,
         journal: firstNonEmpty(record.JO?.[0], record.JF?.[0], record.T2?.[0]) || null,
         year: firstNonEmpty(record.PY?.[0], record.Y1?.[0])?.slice(0, 4) || null,
-        doi: firstNonEmpty(record.DO?.[0]) || null,
+        doi: extractDoi(firstNonEmpty(record.DO?.[0])) || null,
         sourceRecordId: firstNonEmpty(record.ID?.[0], record.UR?.[0]) || null,
         sourceLabel,
         raw: Object.fromEntries(Object.entries(record).map(([key, values]) => [key, values.join(' | ')])),
@@ -160,7 +168,7 @@ export function parseReferences(text: string, fileName: string, sourceLabel: str
         authors: authors.join('; ') || null,
         journal: firstNonEmpty(record.JT?.[0], record.TA?.[0]) || null,
         year: firstNonEmpty(record.DP?.[0])?.match(/\d{4}/)?.[0] ?? null,
-        doi: firstNonEmpty(record.AID?.find((value) => /\[doi\]/i.test(value))?.replace(/\s*\[doi\]\s*/i, '')) || null,
+        doi: extractDoi(firstNonEmpty(record.AID?.find((value) => /\[doi\]/i.test(value))?.replace(/\s*\[doi\]\s*/i, ''))) || null,
         sourceRecordId: firstNonEmpty(record.PMID?.[0]) || null,
         sourceLabel,
         raw: Object.fromEntries(Object.entries(record).map(([key, values]) => [key, values.join(' | ')])),
@@ -178,7 +186,7 @@ export function parseReferences(text: string, fileName: string, sourceLabel: str
       authors: authorText || null,
       journal: firstNonEmpty(getCaseInsensitive(row, ['Journal', 'Publication', 'Source Title'])) || null,
       year: firstNonEmpty(getCaseInsensitive(row, ['Published Year', 'Year', 'Publication Year']))?.match(/\d{4}/)?.[0] ?? null,
-      doi: firstNonEmpty(getCaseInsensitive(row, ['DOI', 'DOI URL'])) || null,
+      doi: extractDoi(firstNonEmpty(getCaseInsensitive(row, ['DOI', 'DOI URL']))) || null,
       sourceRecordId: firstNonEmpty(getCaseInsensitive(row, ['Covidence #', 'PMID', 'ID', 'Ref', 'Record ID'])) || null,
       sourceLabel,
       raw: row,
@@ -186,7 +194,7 @@ export function parseReferences(text: string, fileName: string, sourceLabel: str
   }).filter((record) => record.title);
 }
 
-export const normalizeImportedDoi = (doi: string | null) => normalizeDoi(doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+export const normalizeImportedDoi = (doi: string | null) => normalizeDoi(extractDoi(doi));
 
 export async function enrichReference(reference: ImportedReference): Promise<ImportedReference & { enrichment: Record<string, unknown> }> {
   if (reference.abstract && reference.doi && reference.journal) {

@@ -36,6 +36,13 @@ type QueueFilter =
   | 'ai_not_run';
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+type DuplicateWarning = {
+  target: 'full_text' | 'extraction';
+  matchedStudyId: string | null;
+  matchedTitle: string;
+  reason: string;
+  score: number;
+};
 
 const MAX_REFERENCE_FILE_BYTES = 6 * 1024 * 1024;
 
@@ -69,7 +76,6 @@ export function TitleAbstractScreeningClient({
   const [decision, setDecision] = useState<TitleAbstractDecision | null>(null);
   const [decisionAction, setDecisionAction] = useState<TitleAbstractDecisionAction>('reviewer_vote');
   const [note, setNote] = useState('');
-  const [sourceLabel, setSourceLabel] = useState('reference-import');
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -143,7 +149,6 @@ export function TitleAbstractScreeningClient({
     startTransition(async () => {
       const body = new FormData();
       body.set('file', file);
-      body.set('sourceLabel', sourceLabel);
       const response = await fetch('/api/title-abstract-screening/imports', { method: 'POST', body });
       const payload = await response.json().catch(() => ({})) as {
         error?: string;
@@ -188,7 +193,11 @@ export function TitleAbstractScreeningClient({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ decision, decisionAction, note }),
       });
-      const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
+      const payload = await response.json().catch(() => ({})) as {
+        record?: ScreeningRecord;
+        error?: string;
+        duplicateWarnings?: DuplicateWarning[];
+      };
       if (!response.ok || !payload.record) {
         setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision.' });
         return;
@@ -197,36 +206,10 @@ export function TitleAbstractScreeningClient({
       setNote('');
       setDecision(null);
       setDecisionAction('reviewer_vote');
-      setNotice({ tone: 'success', message: 'Decision saved.' });
-    });
-  };
-
-  const promoteReady = () => {
-    const readyIds = records
-      .filter((record) => getTitleAbstractResolution(record) === 'ready_for_full_text')
-      .map((record) => record.id);
-    if (readyIds.length === 0) {
-      setNotice({ tone: 'neutral', message: 'No included title/abstract records are ready to promote.' });
-      return;
-    }
-
-    startTransition(async () => {
-      const response = await fetch('/api/title-abstract-screening/promote', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: readyIds }),
-      });
-      const payload = await response.json().catch(() => ({})) as { promoted?: unknown[]; errors?: Array<{ message: string }>; error?: string };
-      if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Promotion failed.' });
-        return;
-      }
-      await refreshRecords();
-      const promoted = payload.promoted?.length ?? 0;
-      const errors = payload.errors?.length ?? 0;
+      const duplicateMessage = formatDuplicateWarningMessage(payload.duplicateWarnings ?? []);
       setNotice({
-        tone: errors > 0 ? 'error' : 'success',
-        message: `Promoted ${promoted} record${promoted === 1 ? '' : 's'} to full-text screening${errors ? `; ${errors} failed` : ''}.`,
+        tone: duplicateMessage ? 'neutral' : 'success',
+        message: duplicateMessage ? `Decision saved. ${duplicateMessage}` : 'Decision saved.',
       });
     });
   };
@@ -241,13 +224,6 @@ export function TitleAbstractScreeningClient({
           </div>
           {isAdmin ? (
             <div className="flex flex-wrap items-center gap-2">
-              <input
-                value={sourceLabel}
-                onChange={(event) => setSourceLabel(event.target.value)}
-                className="w-40 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm transition placeholder:text-slate-400 focus:border-slate-400 focus:outline-none"
-                placeholder="Source label"
-                aria-label="Source label"
-              />
               <input
                 ref={fileInputRef}
                 type="file"
@@ -265,14 +241,6 @@ export function TitleAbstractScreeningClient({
                 <UploadIcon />
                 {isPending ? 'Working…' : 'Import references'}
               </label>
-              <button
-                type="button"
-                onClick={promoteReady}
-                disabled={isPending}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                Sync legacy includes
-              </button>
             </div>
           ) : null}
         </div>
@@ -434,9 +402,9 @@ function ReferenceDetail({
   const canResolve = resolution === 'needs_resolver';
 
   return (
-    <article className="min-h-0 min-w-0 flex-1 overflow-y-auto">
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-5 py-7 sm:px-8 sm:py-8">
-        <header className="space-y-3">
+    <article className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-5 py-7 sm:px-8 sm:py-8 xl:px-10">
+        <header className="pb-2">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-[#0b3a70] px-3 py-1 text-xs font-bold tracking-wide text-white">{record.assignedStudyId}</span>
             <ResolutionPill resolution={resolution}>{RESOLUTION_LABELS[resolution]}</ResolutionPill>
@@ -451,7 +419,7 @@ function ReferenceDetail({
               </span>
             ) : null}
           </div>
-          <h2 className="break-words text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-[1.65rem]">
+          <h2 className="mt-3 break-words text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-[1.65rem]">
             {record.title}
           </h2>
         </header>
@@ -465,8 +433,8 @@ function ReferenceDetail({
           ]}
         />
 
-        <section>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Abstract</p>
+        <section className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 shadow-sm shadow-slate-900/[0.02]">
+          <SectionEyebrow>Abstract</SectionEyebrow>
           <p className="mt-3 whitespace-pre-wrap break-words text-[0.95rem] leading-7 text-slate-800">
             {record.abstract?.trim() || 'No abstract was imported or found through the free metadata lookup. Screen from title and citation details, or retrieve metadata before final adjudication.'}
           </p>
@@ -487,8 +455,8 @@ function ReferenceDetail({
           onSubmit={onSaveDecision}
         />
 
-        <section>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Reviewer notes</p>
+        <section className="border-t border-slate-200/80 pt-5">
+          <SectionEyebrow>Reviewer notes</SectionEyebrow>
           <div className="mt-3 space-y-2">
             {decisions.length > 0 ? decisions.map((entry) => (
               <ReviewerNoteCard
@@ -506,6 +474,26 @@ function ReferenceDetail({
       </div>
     </article>
   );
+}
+
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+      <span aria-hidden className="h-px w-5 bg-slate-300" />
+      {children}
+    </p>
+  );
+}
+
+function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
+  const warning = warnings[0];
+  if (!warning) {
+    return '';
+  }
+  const location = warning.target === 'full_text' ? 'full-text screening' : 'extraction';
+  const study = warning.matchedStudyId ? `${warning.matchedStudyId}: ` : '';
+  const extraCount = warnings.length > 1 ? ` (+${warnings.length - 1} more)` : '';
+  return `Possible duplicate found in ${location}: ${study}${warning.matchedTitle}${extraCount}. Please check before continuing.`;
 }
 
 function AiRecommendationCard({ record }: { record: ScreeningRecord }) {

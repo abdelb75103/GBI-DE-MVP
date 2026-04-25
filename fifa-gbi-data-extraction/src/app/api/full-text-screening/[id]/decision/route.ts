@@ -33,14 +33,14 @@ export async function PATCH(
     const reason = parsed.data.reason === 'Other'
       ? parsed.data.otherReason
       : parsed.data.reason;
-    const record = await mockDb.saveScreeningDecision(id, {
+    const result = await mockDb.saveScreeningDecision(id, {
       decision: parsed.data.decision,
       decisionAction: parsed.data.decisionAction,
       reason,
       reviewerProfileId: profile.id,
       reviewerName: profile.fullName,
     });
-    return NextResponse.json({ record });
+    return NextResponse.json(result);
   } catch (error) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to save screening decision' },

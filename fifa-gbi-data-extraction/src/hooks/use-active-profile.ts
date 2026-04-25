@@ -6,6 +6,7 @@ import { canAccessWorkspace } from '@/lib/profile-access';
 import type { UserRole } from '@/lib/supabase';
 
 const STORAGE_KEY = 'gbi.activeProfile';
+const SESSION_PROFILE_PATH = '/api/session/profile';
 
 export type ActiveProfile = {
   id: string;
@@ -99,6 +100,25 @@ function notifyListeners() {
   listeners.forEach((listener) => listener());
 }
 
+async function persistProfileSession(profileId: string | null): Promise<void> {
+  const response = await fetch(SESSION_PROFILE_PATH, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ profileId }),
+  });
+
+  if (!response.ok) {
+    let message = 'Failed to update profile session.';
+    try {
+      const data = (await response.json()) as { error?: string };
+      message = data.error || message;
+    } catch {
+      // Keep the generic message when the server did not return JSON.
+    }
+    throw new Error(message);
+  }
+}
+
 function handleStorageEvent(event: StorageEvent) {
   if (event.key && event.key !== STORAGE_KEY) {
     return;
@@ -134,11 +154,7 @@ export function useActiveProfileState() {
   useEffect(() => {
     const nextProfile = syncCacheFromStorage();
     if (nextProfile) {
-      fetch('/api/session/profile', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ profileId: nextProfile.id }),
-      }).catch(() => {
+      persistProfileSession(nextProfile.id).catch(() => {
         // Local profile state remains usable; server cookie sync can retry on the next mount.
       });
     }
@@ -165,13 +181,14 @@ export function useActiveProfileState() {
     isLoadedSnapshot = true;
 
     try {
-      await fetch('/api/session/profile', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ profileId: next ? next.id : null }),
-      });
-    } catch {
-      // Ignore cookie persistence errors; local state is still updated
+      await persistProfileSession(next ? next.id : null);
+    } catch (error) {
+      if (next) {
+        window.localStorage.removeItem(STORAGE_KEY);
+        cachedProfile = null;
+      }
+      notifyListeners();
+      throw error;
     }
 
     notifyListeners();

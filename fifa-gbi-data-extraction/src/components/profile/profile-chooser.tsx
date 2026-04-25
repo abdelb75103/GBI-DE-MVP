@@ -56,7 +56,6 @@ export function ProfileChooser({ profiles }: { profiles: ProfileOption[] }) {
     setIsPasswordPromptOpen(false);
     setSelectedProfile(null);
     router.replace('/dashboard');
-    router.refresh();
   };
 
   const handlePasswordCancel = () => {

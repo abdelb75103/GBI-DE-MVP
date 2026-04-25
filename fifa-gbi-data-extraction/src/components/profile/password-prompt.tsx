@@ -7,7 +7,7 @@ type PasswordPromptProps = {
   profileId: string;
   isOpen: boolean;
   onClose: () => void;
-  onSuccess: () => void;
+  onSuccess: () => void | Promise<void>;
 };
 
 export function PasswordPrompt({
@@ -73,11 +73,11 @@ export function PasswordPrompt({
 
       // Password verified successfully
       setPassword('');
+      await onSuccess();
       setIsVerifying(false);
-      onSuccess();
     } catch (err) {
       console.error('[PasswordPrompt] Error:', err);
-      setError('Failed to verify password. Please try again.');
+      setError(err instanceof Error ? err.message : 'Failed to verify password. Please try again.');
       setIsVerifying(false);
       inputRef.current?.focus();
     }

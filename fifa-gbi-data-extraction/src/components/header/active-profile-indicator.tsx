@@ -46,10 +46,11 @@ export function ActiveProfileIndicator() {
       </span>
       <button
         type="button"
-        onClick={async () => {
-          await clearProfile();
-          router.push('/profiles/select');
-          router.refresh();
+        onClick={() => {
+          router.replace('/profiles/select');
+          void clearProfile().catch((error) => {
+            console.error('[ActiveProfileIndicator] Failed to clear profile session:', error);
+          });
         }}
         className="font-semibold text-indigo-600 transition hover:text-indigo-700"
       >

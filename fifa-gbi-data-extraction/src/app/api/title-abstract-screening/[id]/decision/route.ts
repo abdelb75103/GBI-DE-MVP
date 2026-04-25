@@ -28,14 +28,14 @@ export async function PATCH(
   }
 
   try {
-    const record = await mockDb.saveTitleAbstractDecision(id, {
+    const result = await mockDb.saveTitleAbstractDecision(id, {
       decision: parsed.data.decision,
       decisionAction: parsed.data.decisionAction,
       note: parsed.data.note,
       reviewerProfileId: profile.id,
       reviewerName: profile.fullName,
     });
-    return NextResponse.json({ record });
+    return NextResponse.json(result);
   } catch (error) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to save decision' },

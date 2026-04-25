@@ -21,6 +21,13 @@ type Props = {
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+type DuplicateWarning = {
+  target: 'full_text' | 'extraction';
+  matchedStudyId: string | null;
+  matchedTitle: string;
+  reason: string;
+  score: number;
+};
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
@@ -133,20 +140,31 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
           otherReason,
         }),
       });
-      const payload = await response.json().catch(() => ({}));
+      const payload = await response.json().catch(() => ({})) as {
+        record?: ScreeningRecord;
+        error?: string;
+        duplicateWarnings?: DuplicateWarning[];
+      };
       if (!response.ok) {
         setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision' });
+        return;
+      }
+      if (!payload.record) {
+        setNotice({ tone: 'error', message: 'Failed to save decision' });
         return;
       }
       setRecord(payload.record);
       setDecision(null);
       setReason('');
       setOtherReason('');
+      const duplicateMessage = formatDuplicateWarningMessage(payload.duplicateWarnings ?? []);
       setNotice({
-        tone: 'success',
-        message: activeDecisionAction === 'consensus_resolution'
-          ? 'Conflict resolution saved.'
-          : 'Reviewer vote saved.',
+        tone: duplicateMessage ? 'neutral' : 'success',
+        message: duplicateMessage
+          ? `${activeDecisionAction === 'consensus_resolution' ? 'Conflict resolution saved.' : 'Reviewer vote saved.'} ${duplicateMessage}`
+          : activeDecisionAction === 'consensus_resolution'
+            ? 'Conflict resolution saved.'
+            : 'Reviewer vote saved.',
       });
     });
   };
@@ -595,6 +613,16 @@ function ResolutionBadge({ resolution }: { resolution: ReturnType<typeof getScre
     promoted: 'sky',
   };
   return <Pill tone={tones[resolution]}>{labels[resolution]}</Pill>;
+}
+
+function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
+  const warning = warnings[0];
+  if (!warning) {
+    return '';
+  }
+  const study = warning.matchedStudyId ? `${warning.matchedStudyId}: ` : '';
+  const extraCount = warnings.length > 1 ? ` (+${warnings.length - 1} more)` : '';
+  return `Possible duplicate found in extraction: ${study}${warning.matchedTitle}${extraCount}. Please check before continuing.`;
 }
 
 function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; message: string }) {

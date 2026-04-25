@@ -4,16 +4,25 @@ import { Buffer } from 'node:buffer';
 import { mapScreeningRecordRow } from '@/lib/db/mappers';
 import { generateAssignedStudyId } from '@/lib/db/study-ids';
 import { supabaseClient } from '@/lib/db/shared';
-import { createPaper, updatePaper } from '@/lib/db/papers';
+import { createPaper, listPapers, updatePaper } from '@/lib/db/papers';
 import { attachFile, uploadFileToStorage } from '@/lib/db/files';
-import { computeFileSha256, generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
+import {
+  calculateFuzzyTitleScore,
+  categorizeDuplicate,
+  computeFileSha256,
+  doiMatches,
+  generateDuplicateKeyV2,
+  generateTitleFingerprint,
+  normalizeDoi,
+} from '@/lib/dedupe';
 import {
   MAX_EXCLUSION_REASON_CHARS,
+  getScreeningResolution,
   isAwaitingFullTextPdf,
   type FullTextDecisionAction,
 } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
-import type { ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
+import type { Paper, ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 import {
   applyTitleAbstractDecision,
   getTitleAbstractMetadata,
@@ -22,6 +31,102 @@ import {
 } from '@/lib/screening/title-abstract-decisions';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
+
+export type PromotionDuplicateWarning = {
+  target: 'full_text' | 'extraction';
+  matchedId: string;
+  matchedStudyId: string | null;
+  matchedTitle: string;
+  reason: 'doi' | 'title_author_year' | 'fuzzy_title';
+  score: number;
+};
+
+type DuplicateCandidate = {
+  id: string;
+  assignedStudyId?: string | null;
+  title: string;
+  leadAuthor: string | null;
+  year: string | null;
+  doi: string | null;
+  normalizedDoi?: string | null;
+};
+
+const findPromotionDuplicateWarnings = (
+  source: Pick<ScreeningRecord, 'title' | 'leadAuthor' | 'year' | 'doi' | 'normalizedDoi'>,
+  candidates: DuplicateCandidate[],
+  target: PromotionDuplicateWarning['target'],
+): PromotionDuplicateWarning[] => {
+  const sourceDoi = normalizeDoi(source.normalizedDoi ?? source.doi);
+  const sourceKey = generateDuplicateKeyV2(source.title, source.leadAuthor, source.year);
+
+  return candidates.flatMap((candidate) => {
+    const candidateDoi = normalizeDoi(candidate.normalizedDoi ?? candidate.doi);
+    const candidateKey = generateDuplicateKeyV2(candidate.title, candidate.leadAuthor, candidate.year);
+    const fuzzyScore = calculateFuzzyTitleScore(source.title, candidate.title);
+
+    let reason: PromotionDuplicateWarning['reason'] | null = null;
+    let score = 0;
+    if (sourceDoi && doiMatches(sourceDoi, candidateDoi)) {
+      reason = 'doi';
+      score = 100;
+    } else if (sourceKey === candidateKey) {
+      reason = 'title_author_year';
+      score = 100;
+    } else if (categorizeDuplicate(fuzzyScore) === 'duplicate') {
+      reason = 'fuzzy_title';
+      score = fuzzyScore;
+    }
+
+    if (!reason) {
+      return [];
+    }
+
+    return [{
+      target,
+      matchedId: candidate.id,
+      matchedStudyId: candidate.assignedStudyId ?? null,
+      matchedTitle: candidate.title,
+      reason,
+      score,
+    }];
+  });
+};
+
+const findFullTextPromotionWarnings = async (record: ScreeningRecord): Promise<PromotionDuplicateWarning[]> => {
+  const fullTextRecords = await listScreeningRecords('full_text');
+  return findPromotionDuplicateWarnings(
+    record,
+    fullTextRecords
+      .filter((candidate) => candidate.id !== record.id)
+      .map((candidate) => ({
+        id: candidate.id,
+        assignedStudyId: candidate.assignedStudyId,
+        title: candidate.title,
+        leadAuthor: candidate.leadAuthor,
+        year: candidate.year,
+        doi: candidate.doi,
+        normalizedDoi: candidate.normalizedDoi,
+      })),
+    'full_text',
+  );
+};
+
+const findExtractionPromotionWarnings = async (record: ScreeningRecord): Promise<PromotionDuplicateWarning[]> => {
+  const papers = await listPapers();
+  return findPromotionDuplicateWarnings(
+    record,
+    papers.map((paper: Paper) => ({
+      id: paper.id,
+      assignedStudyId: paper.assignedStudyId,
+      title: paper.extractedTitle ?? paper.title,
+      leadAuthor: paper.leadAuthor,
+      year: paper.year,
+      doi: paper.doi,
+      normalizedDoi: paper.normalizedDoi,
+    })),
+    'extraction',
+  );
+};
 
 const loadProfileNames = async (ids: Array<string | null | undefined>): Promise<Map<string, string>> => {
   const profileIds = Array.from(new Set(ids.filter((id): id is string => Boolean(id))));
@@ -244,7 +349,7 @@ export const saveScreeningDecision = async (
     reviewerProfileId: string;
     reviewerName?: string | null;
   },
-): Promise<ScreeningRecord> => {
+): Promise<{ record: ScreeningRecord; duplicateWarnings: PromotionDuplicateWarning[] }> => {
   if (input.decision === 'exclude' && !input.reason?.trim()) {
     throw new Error('A reason is required for excluded full-text records.');
   }
@@ -279,7 +384,10 @@ export const saveScreeningDecision = async (
   }
 
   const [record] = await mapRows([data as ScreeningRecordRow]);
-  return record;
+  const duplicateWarnings = getScreeningResolution(record) === 'ready_for_extraction'
+    ? await findExtractionPromotionWarnings(record)
+    : [];
+  return { record, duplicateWarnings };
 };
 
 export const saveTitleAbstractDecision = async (
@@ -291,7 +399,7 @@ export const saveTitleAbstractDecision = async (
     reviewerProfileId: string;
     reviewerName?: string | null;
   },
-): Promise<ScreeningRecord> => {
+): Promise<{ record: ScreeningRecord; duplicateWarnings: PromotionDuplicateWarning[] }> => {
   if (input.decision === 'flag' && !input.note?.trim()) {
     throw new Error('A note is required when flagging a title/abstract record.');
   }
@@ -345,16 +453,19 @@ export const saveTitleAbstractDecision = async (
 
   if (next.resolution === 'ready_for_full_text') {
     const promoted = await promoteTitleAbstractRecord(updated.id, input.reviewerProfileId);
-    return promoted.record;
+    return {
+      record: promoted.record,
+      duplicateWarnings: promoted.duplicateWarnings,
+    };
   }
 
-  return updated;
+  return { record: updated, duplicateWarnings: [] };
 };
 
 export const promoteTitleAbstractRecord = async (
   id: string,
   profileId: string,
-): Promise<{ record: ScreeningRecord; fullTextRecordId: string }> => {
+): Promise<{ record: ScreeningRecord; fullTextRecordId: string; duplicateWarnings: PromotionDuplicateWarning[] }> => {
   const record = await getScreeningRecord(id);
   if (!record) {
     throw new Error('Screening record not found');
@@ -364,12 +475,13 @@ export const promoteTitleAbstractRecord = async (
   }
   const metadata = getTitleAbstractMetadata(record);
   if (metadata.titleAbstractPromotedRecordId && typeof metadata.titleAbstractPromotedRecordId === 'string') {
-    return { record, fullTextRecordId: metadata.titleAbstractPromotedRecordId };
+    return { record, fullTextRecordId: metadata.titleAbstractPromotedRecordId, duplicateWarnings: [] };
   }
   if (metadata.titleAbstractResolution !== 'ready_for_full_text' && record.manualDecision !== 'include') {
     throw new Error('Only included title/abstract records can be promoted.');
   }
 
+  const duplicateWarnings = await findFullTextPromotionWarnings(record);
   const fullTextRecord = await createScreeningRecord({
     stage: 'full_text',
     title: record.title,
@@ -403,7 +515,7 @@ export const promoteTitleAbstractRecord = async (
     titleAbstractPromotedBy: profileId,
   });
 
-  return { record: updated, fullTextRecordId: fullTextRecord.id };
+  return { record: updated, fullTextRecordId: fullTextRecord.id, duplicateWarnings };
 };
 
 export const attachFullTextPdfToScreeningRecord = async (
@@ -482,7 +594,7 @@ export const attachFullTextPdfToScreeningRecord = async (
 export const promoteScreeningRecord = async (
   id: string,
   profileId: string,
-): Promise<{ record: ScreeningRecord; paperId: string }> => {
+): Promise<{ record: ScreeningRecord; paperId: string; duplicateWarnings: PromotionDuplicateWarning[] }> => {
   const record = await getScreeningRecord(id);
   if (!record) {
     throw new Error('Screening record not found');
@@ -494,8 +606,10 @@ export const promoteScreeningRecord = async (
     throw new Error('Attach the full-text PDF before promoting this record to extraction.');
   }
   if (record.promotedPaperId) {
-    return { record, paperId: record.promotedPaperId };
+    return { record, paperId: record.promotedPaperId, duplicateWarnings: [] };
   }
+
+  const duplicateWarnings = await findExtractionPromotionWarnings(record);
 
   const { data: existingPaper, error: existingPaperError } = await supabaseClient()
     .from('papers')
@@ -569,5 +683,5 @@ export const promoteScreeningRecord = async (
   }
 
   const [updatedRecord] = await mapRows([data as ScreeningRecordRow]);
-  return { record: updatedRecord, paperId: paper.id };
+  return { record: updatedRecord, paperId: paper.id, duplicateWarnings };
 };
