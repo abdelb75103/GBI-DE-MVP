@@ -43,8 +43,11 @@ import {
   listScreeningRecords,
   markScreeningAiRunning,
   promoteScreeningRecord,
+  promoteTitleAbstractRecord,
   saveScreeningDecision,
+  saveTitleAbstractDecision,
   updateScreeningAiSuggestion,
+  updateScreeningRecordMetadata,
 } from '@/lib/db/screening';
 
 export { PaperSessionConflictError };
@@ -106,6 +109,9 @@ export const mockDb = {
   createScreeningRecord,
   markScreeningAiRunning,
   updateScreeningAiSuggestion,
+  updateScreeningRecordMetadata,
   saveScreeningDecision,
+  saveTitleAbstractDecision,
   promoteScreeningRecord,
+  promoteTitleAbstractRecord,
 };

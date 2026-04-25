@@ -35,6 +35,13 @@ export function PrimaryNavLinks({ onNavigate }: { onNavigate?: () => void } = {}
         Extraction Instructions
       </Link>
       <Link
+        href="/title-abstract-screening"
+        className={linkClasses}
+        onClick={onNavigate}
+      >
+        Title & Abstract
+      </Link>
+      <Link
         href="/full-text-screening"
         className={linkClasses}
         onClick={onNavigate}
