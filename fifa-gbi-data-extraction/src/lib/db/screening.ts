@@ -1,4 +1,5 @@
 import crypto from 'node:crypto';
+import { Buffer } from 'node:buffer';
 
 import { mapScreeningRecordRow } from '@/lib/db/mappers';
 import { generateAssignedStudyId } from '@/lib/db/study-ids';
@@ -9,6 +10,12 @@ import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '
 import { MAX_EXCLUSION_REASON_CHARS, type FullTextDecisionAction } from '@/lib/screening/reviewer-decisions';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
 import type { ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
+import {
+  applyTitleAbstractDecision,
+  getTitleAbstractMetadata,
+  type TitleAbstractDecision,
+  type TitleAbstractDecisionAction,
+} from '@/lib/screening/title-abstract-decisions';
 
 const loadProfileNames = async (ids: Array<string | null | undefined>): Promise<Map<string, string>> => {
   const profileIds = Array.from(new Set(ids.filter((id): id is string => Boolean(id))));
@@ -184,6 +191,30 @@ export const updateScreeningAiSuggestion = async (
   return record;
 };
 
+export const updateScreeningRecordMetadata = async (
+  id: string,
+  metadata: Record<string, unknown>,
+  updates: Partial<Pick<ScreeningRecordUpdate, 'manual_decision' | 'manual_reason' | 'manual_decided_by' | 'manual_decided_at' | 'promoted_paper_id' | 'promoted_by' | 'promoted_at'>> = {},
+): Promise<ScreeningRecord> => {
+  const { data, error } = await supabaseClient()
+    .from('screening_records')
+    .update({
+      ...updates,
+      metadata,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('id', id)
+    .select('*')
+    .single();
+
+  if (error || !data) {
+    throw new Error(`Failed to update screening record: ${error?.message ?? 'Unknown error'}`);
+  }
+
+  const [record] = await mapRows([data as ScreeningRecordRow]);
+  return record;
+};
+
 export const markScreeningAiRunning = async (ids: string[]): Promise<void> => {
   if (ids.length === 0) {
     return;
@@ -232,6 +263,121 @@ export const saveScreeningDecision = async (
 
   const [record] = await mapRows([data as ScreeningRecordRow]);
   return record;
+};
+
+export const saveTitleAbstractDecision = async (
+  id: string,
+  input: {
+    decision: TitleAbstractDecision;
+    decisionAction?: TitleAbstractDecisionAction;
+    note?: string | null;
+    reviewerProfileId: string;
+    reviewerName?: string | null;
+  },
+): Promise<ScreeningRecord> => {
+  if (input.decision === 'flag' && !input.note?.trim()) {
+    throw new Error('A note is required when flagging a title/abstract record.');
+  }
+  if (input.note && input.note.trim().length > MAX_EXCLUSION_REASON_CHARS) {
+    throw new Error(`Decision note must be ${MAX_EXCLUSION_REASON_CHARS} characters or fewer.`);
+  }
+
+  const record = await getScreeningRecord(id);
+  if (!record) {
+    throw new Error('Screening record not found.');
+  }
+  if (record.stage !== 'title_abstract') {
+    throw new Error('This decision endpoint is only available for title/abstract records.');
+  }
+
+  const next = applyTitleAbstractDecision(record, {
+    reviewerProfileId: input.reviewerProfileId,
+    reviewerName: input.reviewerName,
+    decision: input.decision,
+    action: input.decisionAction,
+    note: input.note,
+  });
+
+  const manualDecision = next.resolution === 'ready_for_full_text'
+    ? 'include'
+    : next.resolution === 'excluded'
+      ? 'exclude'
+      : null;
+  const exclusionNotes = next.decisions
+    .filter((decision) => decision.decision === 'exclude')
+    .map((decision) => decision.note?.trim())
+    .filter((note): note is string => Boolean(note));
+
+  return updateScreeningRecordMetadata(
+    id,
+    {
+      ...getTitleAbstractMetadata(record),
+      titleAbstractDecisions: next.decisions,
+      titleAbstractResolution: next.resolution,
+    },
+    {
+      manual_decision: manualDecision,
+      manual_reason: manualDecision === 'exclude' ? Array.from(new Set(exclusionNotes)).join(' / ') || 'Excluded at title/abstract screening' : null,
+      manual_decided_by: input.reviewerProfileId,
+      manual_decided_at: next.updatedAt,
+    },
+  );
+};
+
+export const promoteTitleAbstractRecord = async (
+  id: string,
+  profileId: string,
+): Promise<{ record: ScreeningRecord; fullTextRecordId: string }> => {
+  const record = await getScreeningRecord(id);
+  if (!record) {
+    throw new Error('Screening record not found');
+  }
+  if (record.stage !== 'title_abstract') {
+    throw new Error('Only title/abstract records can be promoted to full-text screening.');
+  }
+  const metadata = getTitleAbstractMetadata(record);
+  if (metadata.titleAbstractPromotedRecordId && typeof metadata.titleAbstractPromotedRecordId === 'string') {
+    return { record, fullTextRecordId: metadata.titleAbstractPromotedRecordId };
+  }
+  if (metadata.titleAbstractResolution !== 'ready_for_full_text' && record.manualDecision !== 'include') {
+    throw new Error('Only included title/abstract records can be promoted.');
+  }
+
+  const placeholderPdf = Buffer.from(
+    '%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n2 0 obj<</Type/Pages/Count 0>>endobj\ntrailer<</Root 1 0 R>>\n%%EOF',
+  ).toString('base64');
+  const fullTextRecord = await createScreeningRecord({
+    stage: 'full_text',
+    title: record.title,
+    abstract: record.abstract,
+    leadAuthor: record.leadAuthor,
+    journal: record.journal,
+    year: record.year,
+    doi: record.doi,
+    sourceLabel: record.sourceLabel ?? 'title-abstract-screening',
+    sourceRecordId: record.sourceRecordId,
+    dataBase64: placeholderPdf,
+    fileName: `${record.assignedStudyId}-awaiting-full-text.pdf`,
+    originalFileName: null,
+    mimeType: 'application/pdf',
+    size: 0,
+    createdBy: profileId,
+    metadata: {
+      ...record.metadata,
+      titleAbstractRecordId: record.id,
+      titleAbstractStudyId: record.assignedStudyId,
+      awaitingFullTextPdf: true,
+    },
+  });
+
+  const updated = await updateScreeningRecordMetadata(record.id, {
+    ...metadata,
+    titleAbstractPromotedRecordId: fullTextRecord.id,
+    titleAbstractPromotedAt: new Date().toISOString(),
+    titleAbstractPromotedBy: profileId,
+  });
+
+  return { record: updated, fullTextRecordId: fullTextRecord.id };
 };
 
 export const promoteScreeningRecord = async (

@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useSyncExternalStore } from 'react';
 
 import { canAccessWorkspace } from '@/lib/profile-access';
 import type { UserRole } from '@/lib/supabase';
@@ -130,6 +130,20 @@ function subscribe(listener: () => void) {
 export function useActiveProfileState() {
   const profile = useSyncExternalStore(subscribe, readProfileSnapshot, getProfileServerSnapshot);
   const isLoaded = useSyncExternalStore(subscribe, readLoadedSnapshot, getLoadedServerSnapshot);
+
+  useEffect(() => {
+    const nextProfile = syncCacheFromStorage();
+    if (nextProfile) {
+      fetch('/api/session/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ profileId: nextProfile.id }),
+      }).catch(() => {
+        // Local profile state remains usable; server cookie sync can retry on the next mount.
+      });
+    }
+    notifyListeners();
+  }, []);
 
   const setProfile = useCallback(async (next: ActiveProfile | null) => {
     if (typeof window === 'undefined') {
