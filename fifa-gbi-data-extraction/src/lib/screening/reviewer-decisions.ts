@@ -90,7 +90,7 @@ export const getReviewerDecisions = (record: ScreeningRecord): FullTextReviewerD
 export const isAwaitingFullTextPdf = (record: ScreeningRecord): boolean => {
   if (record.stage !== 'full_text') return false;
   const metadata = record.metadata as ScreeningMetadata;
-  return metadata.awaitingFullTextPdf === true && !record.storageObjectPath && !record.fileName;
+  return metadata.awaitingFullTextPdf === true && !record.storageObjectPath;
 };
 
 export const getScreeningResolution = (record: ScreeningRecord): ScreeningResolution => {
