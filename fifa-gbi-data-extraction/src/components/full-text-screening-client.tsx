@@ -212,7 +212,7 @@ export function FullTextScreeningClient({
                   ) : (
                     <>
                       <UploadIcon />
-                      Upload PDFs
+                      Upload full text
                     </>
                   )}
                 </label>
@@ -223,10 +223,9 @@ export function FullTextScreeningClient({
 
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
             <QueueCard
-              label="Awaiting PDF"
+              label="Upload full text"
               value={counts.awaitingPdf}
               detail="Included at title/abstract"
-              action="Upload full text"
               tone="amber"
               onClick={() => setFilter('awaiting_pdf')}
             />
@@ -283,7 +282,7 @@ export function FullTextScreeningClient({
               className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none"
             >
               <option value="all">All records</option>
-              <option value="awaiting_pdf">Awaiting PDF</option>
+              <option value="awaiting_pdf">Upload full text</option>
               <option value="needs_your_vote">Needs my vote</option>
               <option value="awaiting_other_reviewer">Awaiting other reviewer</option>
               <option value="ready_for_extraction">Included</option>
@@ -426,7 +425,7 @@ function ScreeningRow({
                   isPending ? 'pointer-events-none opacity-60' : ''
                 }`}
               >
-                Upload PDF
+                Upload full text
               </label>
             </div>
           ) : null}
@@ -492,7 +491,7 @@ function StatusBadge({
   resolution: ReturnType<typeof getScreeningResolution>;
 }) {
   const labels: Record<ScreeningWorkStatus, string> = {
-    awaiting_pdf: 'Awaiting PDF',
+    awaiting_pdf: 'Upload full text',
     needs_your_vote: 'Needs my vote',
     awaiting_other_reviewer: 'Awaiting other reviewer',
     ready_for_extraction: 'Ready for extraction',
