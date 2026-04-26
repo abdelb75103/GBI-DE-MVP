@@ -10,11 +10,11 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="lg:hidden">
+    <div className="relative z-10 flex shrink-0 lg:hidden">
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200/70 bg-white/80 text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-200/70"
+        className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200/70 bg-white/80 text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-200/70"
         aria-label="Open navigation"
       >
         <span className="sr-only">Open navigation</span>

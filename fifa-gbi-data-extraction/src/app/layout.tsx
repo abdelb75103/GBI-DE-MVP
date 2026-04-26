@@ -79,7 +79,7 @@ export default function RootLayout({
                       <ActiveProfileIndicator />
                     </div>
 
-                    <div className="hidden h-10 w-20 items-center justify-end sm:flex lg:w-24">
+                    <div className="hidden h-10 w-24 shrink-0 items-center justify-end lg:flex">
                       <span className="sr-only">Fédération Internationale de Football Association</span>
                       <Image
                         src="/images/FIFA_logo_without_slogan.svg.png"
