@@ -218,52 +218,74 @@ export function TitleAbstractScreeningClient({
 
   return (
     <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6">
-      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="space-y-1.5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0b3a70]/70">Screening</p>
-            <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Title and abstract screening</h1>
-          </div>
-          {isAdmin ? (
-            <div className="flex flex-wrap items-center gap-2">
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".csv,.ris,.nbib,.txt"
-                onChange={handleImport}
-                className="hidden"
-                id="reference-import"
-              />
-              <label
-                htmlFor="reference-import"
-                className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#092f5f] ${
-                  isPending ? 'pointer-events-none opacity-70' : ''
-                }`}
-              >
-                <UploadIcon />
-                {isPending ? 'Working…' : 'Import references'}
-              </label>
-            </div>
-          ) : null}
-        </div>
-
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-          <div className="flex flex-wrap items-end justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Screening progress</p>
-              <p className="mt-1 text-sm text-slate-600">
-                {completedCount} of {counts.all} references have a final title/abstract outcome.
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
+        <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
+        <div className="relative z-10 flex flex-col gap-5">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl space-y-3">
+              <span className="inline-flex w-fit items-center rounded-full bg-gradient-to-br from-indigo-100/90 via-sky-50/80 to-indigo-50/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0b3a70] shadow-sm ring-1 ring-indigo-200/50 backdrop-blur-sm">
+                Title &amp; abstract screening
+              </span>
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
+                Title and abstract screening
+              </h1>
+              <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                Import references, vote, and promote eligible studies to full-text review.
               </p>
             </div>
-            <p className="text-2xl font-semibold text-[#0b3a70]">{progressPercent}%</p>
+            {isAdmin ? (
+              <div className="flex flex-wrap items-center gap-2">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".csv,.ris,.nbib,.txt"
+                  onChange={handleImport}
+                  className="hidden"
+                  id="reference-import"
+                />
+                <label
+                  htmlFor="reference-import"
+                  className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(11,58,112,0.55)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#082f5d] ${
+                    isPending ? 'pointer-events-none opacity-70' : ''
+                  }`}
+                >
+                  <UploadIcon />
+                  {isPending ? 'Working…' : 'Import references'}
+                </label>
+              </div>
+            ) : null}
           </div>
-          <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white ring-1 ring-slate-200">
-            <div className="h-full rounded-full bg-[#0b3a70]" style={{ width: `${progressPercent}%` }} />
+
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <ScreeningStat label="Total records" value={counts.all} caption="All imported references" tone="navy" />
+            <ScreeningStat label="Needs my vote" value={counts.needsYourVote} caption="Awaiting your decision" tone="indigo" />
+            <ScreeningStat label="Conflicts" value={counts.resolver} caption="Need a resolver" tone="amber" />
+            <ScreeningStat label="Promoted" value={counts.promoted} caption="Sent to full-text screening" tone="emerald" />
           </div>
-          <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
-            <span>{counts.needsYourVote} need your vote</span>
-            <span>{counts.resolver} need resolver</span>
-            <span>{counts.promoted} promoted to full text</span>
+
+          <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-4 shadow-sm ring-1 ring-slate-200/50 backdrop-blur">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Screening progress</p>
+                <p className="mt-1 text-sm text-slate-600">
+                  <span className="font-semibold tabular-nums text-slate-800">{completedCount}</span> of{' '}
+                  <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> references have a final outcome.
+                </p>
+              </div>
+              <p className="text-2xl font-semibold tabular-nums text-[#0b3a70]">{progressPercent}%</p>
+            </div>
+            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-[#0b3a70] via-[#1e4f8a] to-sky-500 transition-[width] duration-700 ease-out"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </div>
+            <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+              <span>{counts.needsYourVote} need your vote</span>
+              <span>{counts.resolver} need resolver</span>
+              <span>{counts.promoted} promoted to full text</span>
+            </div>
           </div>
         </div>
       </section>
@@ -271,8 +293,8 @@ export function TitleAbstractScreeningClient({
       {loadError ? <Notice tone="error" message={loadError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="grid min-h-[calc(100vh-240px)] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm lg:grid-cols-[300px_minmax(0,1fr)_220px]">
-        <aside className="flex min-h-[420px] min-w-0 flex-col border-b border-slate-200 bg-slate-50/60 lg:min-h-0 lg:border-b-0 lg:border-r">
+      <section className="grid min-h-[calc(100vh-260px)] overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:grid-cols-[300px_minmax(0,1fr)_220px]">
+        <aside className="flex min-h-[420px] min-w-0 flex-col border-b border-slate-200/70 bg-slate-50/60 lg:min-h-0 lg:border-b-0 lg:border-r">
           <div className="border-b border-slate-200 px-4 py-4">
             <div className="flex items-center justify-between gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">References</p>
@@ -798,8 +820,10 @@ function FilterButton({
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm font-medium transition ${
-        active ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-white hover:text-slate-900'
+      className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 ease-out ${
+        active
+          ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-12px_rgba(11,58,112,0.6)]'
+          : 'text-slate-600 hover:bg-white hover:text-[#0b3a70]'
       }`}
     >
       <span className="flex items-center gap-2">
@@ -883,6 +907,49 @@ function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; mess
       ? 'border-emerald-200/70 bg-emerald-50/80 text-emerald-700'
       : 'border-slate-200/70 bg-slate-50/80 text-slate-700';
   return <div className={`rounded-2xl border px-4 py-3 text-sm font-medium ${classes}`}>{message}</div>;
+}
+
+type ScreeningStatTone = 'navy' | 'indigo' | 'amber' | 'emerald';
+
+const SCREENING_STAT_TONES: Record<ScreeningStatTone, { value: string; gradient: string }> = {
+  navy: {
+    value: 'text-[#0b3a70]',
+    gradient: 'from-[#0b3a70]/12 via-sky-300/10 to-indigo-200/15',
+  },
+  indigo: {
+    value: 'text-indigo-700',
+    gradient: 'from-indigo-500/15 via-sky-300/10 to-indigo-200/15',
+  },
+  amber: {
+    value: 'text-amber-700',
+    gradient: 'from-amber-400/20 via-orange-300/10 to-amber-200/20',
+  },
+  emerald: {
+    value: 'text-emerald-700',
+    gradient: 'from-emerald-500/15 via-teal-300/10 to-emerald-200/20',
+  },
+};
+
+function ScreeningStat({
+  label,
+  value,
+  caption,
+  tone,
+}: {
+  label: string;
+  value: number;
+  caption: string;
+  tone: ScreeningStatTone;
+}) {
+  const styles = SCREENING_STAT_TONES[tone];
+  return (
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-md ring-1 ring-slate-200/60 backdrop-blur transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg">
+      <div aria-hidden className={`pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br ${styles.gradient}`} />
+      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">{label}</p>
+      <p className={`mt-2 text-2xl font-semibold tracking-tight tabular-nums ${styles.value}`}>{value}</p>
+      <p className="mt-1.5 text-[11px] leading-snug text-slate-600">{caption}</p>
+    </div>
+  );
 }
 
 function UploadIcon() {

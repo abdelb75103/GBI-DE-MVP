@@ -86,7 +86,7 @@ export default async function DataExtractionPage() {
     completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
   
   const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
-  const showTeamProgress = true;
+  const showTeamProgress = false;
   
   // Calculate contributor statistics
   type ContributorMap = Record<string, { name: string; completedCount: number }>;
@@ -108,45 +108,45 @@ export default async function DataExtractionPage() {
 
   return (
     <div className="space-y-10 sm:space-y-12">
-      {/* Hero Section - Original Style with Personalized Badge */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
-        <div className="absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="absolute top-6 left-6 z-20">
-          <span className="inline-flex items-center rounded-full bg-gradient-to-br from-indigo-100/90 via-sky-50/80 to-indigo-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700 shadow-sm ring-1 ring-indigo-200/50 backdrop-blur-sm">
-            Data extraction
-          </span>
-        </div>
-        <div className="relative z-10 space-y-8 pt-4">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl space-y-4">
-              <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl lg:text-4xl">
-                {firstName}&apos;s Data Extraction
-              </h1>
-              <p className="text-sm leading-relaxed text-slate-600">
-                Track your papers and see your progress at a glance.
-              </p>
+        <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
+        <div className="relative z-10 space-y-8">
+          <div className="flex flex-col gap-5">
+            <span className="inline-flex w-fit items-center rounded-full bg-gradient-to-br from-indigo-100/90 via-sky-50/80 to-indigo-50/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0b3a70] shadow-sm ring-1 ring-indigo-200/50 backdrop-blur-sm">
+              Data extraction
+            </span>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl space-y-3">
+                <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
+                  {firstName}&apos;s Data Extraction
+                </h1>
+                <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                  Track your papers and see your progress at a glance.
+                </p>
+              </div>
               {isAdmin ? (
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   <Link
                     href="/upload"
-                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
+                    className="inline-flex items-center justify-center rounded-full bg-[#0b3a70] px-5 py-2 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(11,58,112,0.55)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#082f5d]"
                   >
                     Upload a PDF
                   </Link>
                   <Link
                     href="/dashboard/dedupe"
-                    className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/80 px-5 py-2 text-sm font-semibold text-indigo-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50"
+                    className="inline-flex items-center justify-center rounded-full border border-slate-200/80 bg-white/80 px-5 py-2 text-sm font-semibold text-[#0b3a70] shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#0b3a70]/30 hover:bg-white"
                   >
                     Run dedupe review
                   </Link>
                   <Link
                     href="/dashboard/upload-approvals"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-5 py-2 text-sm font-semibold text-emerald-700 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-5 py-2 text-sm font-semibold text-emerald-700 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-emerald-300 hover:bg-emerald-50"
                   >
                     Review uploads
                     {pendingUploadCount > 0 ? (
-                      <span className="inline-flex min-w-[1.75rem] items-center justify-center rounded-full bg-emerald-600/10 px-2 text-xs font-semibold text-emerald-700">
+                      <span className="inline-flex min-w-[1.5rem] items-center justify-center rounded-full bg-emerald-600/10 px-2 text-xs font-semibold text-emerald-700">
                         {pendingUploadCount}
                       </span>
                     ) : null}
@@ -156,120 +156,55 @@ export default async function DataExtractionPage() {
             </div>
           </div>
           <div className={`grid gap-4 sm:grid-cols-2 ${isAdmin ? 'xl:grid-cols-4' : 'xl:grid-cols-3'}`}>
-            {/* Card 1: All Papers */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">All papers</p>
-              <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-purple-700">{totalPapers}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
-              </div>
-              <p className="mt-1 text-[10px] text-slate-600">
-                {availablePapers} available right now • You have {userActivePapers} active ({userActiveShare}% of workload)
-              </p>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                <div
-                  className="h-full bg-gradient-to-r from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-90"
-                  style={{ width: `${Math.min(100, totalPapers === 0 ? 4 : Math.round((totalPapers / Math.max(1, totalPapers)) * 100))}%` }}
-                />
-              </div>
-            </div>
-
-            {/* Card 2: My Papers In Progress */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-500/20 via-cyan-400/10 to-indigo-300/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">My papers in progress</p>
-              <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-sky-700">{userInProgressCount}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Yours</span>
-              </div>
-              <p className="mt-1 text-[10px] text-slate-600">
-                {userInProgressPercentage}% of all in-progress work • {inProgressCount} total
-              </p>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                <div
-                  className="h-full bg-gradient-to-r from-sky-500/40 via-cyan-400/30 to-indigo-300/40 opacity-90"
-                  style={{ width: `${Math.min(100, inProgressCount === 0 ? 0 : Math.round((userInProgressCount / Math.max(1, inProgressCount)) * 100))}%` }}
-                />
-              </div>
-            </div>
-
-            {/* Card 3: Completed */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/20 via-teal-400/10 to-green-400/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Completed</p>
-              <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-emerald-700">{userCompletedCount}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Yours</span>
-              </div>
-              <p className="mt-1 text-[10px] text-slate-600">
-                You completed {userCompletedCount} ({userCompletedPercentage}% of team output)
-              </p>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                <div
-                  className="h-full bg-gradient-to-r from-emerald-500/20 via-teal-400/10 to-green-400/20 opacity-90"
-                  style={{
-                    width: `${Math.min(
-                      100,
-                      completedCount === 0 ? 0 : Math.round((userCompletedCount / Math.max(1, completedCount)) * 100),
-                    )}%`,
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Card 4: Needs Attention (Admin Only) */}
-            {isAdmin && (
-              <Link
-                href="/data-extraction"
-                className="relative block overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur transition hover:shadow-lg hover:ring-slate-300/60"
-              >
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-rose-500/20 via-orange-400/10 to-amber-400/20 opacity-80" aria-hidden />
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-4 w-4 text-rose-600"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 2.25a.75.75 0 01.75.75v16.5a.75.75 0 01-1.064.681l-1.5-.681a.75.75 0 01-.186-1.238L3 18.75V3A.75.75 0 013 2.25zm16.023 2.25a.75.75 0 01.75.75v11.5a.75.75 0 01-.75.75h-5.5a.75.75 0 01-.75-.75V5.25a.75.75 0 01.75-.75h5.5zM8.25 2.25a.75.75 0 01.75.75v16.5a.75.75 0 01-.75.75h-5.5a.75.75 0 01-.75-.75V3a.75.75 0 01.75-.75h5.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Needs attention</p>
-                </div>
-                <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                  <p className="text-xl font-semibold text-rose-700">{flaggedCount}</p>
-                  <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
-                </div>
-                <p className="mt-1 text-[10px] text-slate-600">
-                  Flagged items awaiting review
-                </p>
-                <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                  <div
-                    className="h-full bg-gradient-to-r from-rose-500/20 via-orange-400/10 to-amber-400/20 opacity-90"
-                    style={{ width: `${Math.min(100, flaggedCount === 0 ? 4 : Math.round((flaggedCount / Math.max(1, totalPapers)) * 100))}%` }}
-                  />
-                </div>
-              </Link>
-            )}
+            <StatCard
+              tone="purple"
+              label="All papers"
+              value={totalPapers}
+              eyebrow="Overall"
+              caption={`${availablePapers} available · You have ${userActivePapers} active (${userActiveShare}%)`}
+              progress={100}
+            />
+            <StatCard
+              tone="sky"
+              label="My papers in progress"
+              value={userInProgressCount}
+              eyebrow="Yours"
+              caption={`${userInProgressPercentage}% of all in-progress · ${inProgressCount} total`}
+              progress={inProgressCount === 0 ? 0 : Math.round((userInProgressCount / Math.max(1, inProgressCount)) * 100)}
+            />
+            <StatCard
+              tone="emerald"
+              label="Completed"
+              value={userCompletedCount}
+              eyebrow="Yours"
+              caption={`You completed ${userCompletedCount} (${userCompletedPercentage}% of team output)`}
+              progress={completedCount === 0 ? 0 : Math.round((userCompletedCount / Math.max(1, completedCount)) * 100)}
+            />
+            {isAdmin ? (
+              <StatCard
+                tone="rose"
+                label="Needs attention"
+                value={flaggedCount}
+                eyebrow="Flagged"
+                caption="Items awaiting reviewer attention"
+                progress={flaggedCount === 0 ? 4 : Math.round((flaggedCount / Math.max(1, totalPapers)) * 100)}
+              />
+            ) : null}
           </div>
         </div>
       </section>
 
-      {/* Progress Visual and Contributors Grid */}
-      <div className={`grid gap-6 ${showTeamProgress ? 'lg:grid-cols-2' : ''}`}>
-        {/* Circular Progress Visualization */}
-        <section
-          className={`rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur ${
-            showTeamProgress ? '' : 'lg:col-span-2'
-          }`}
-        >
-          <div className="mb-4">
-            <h2 className="text-lg font-semibold text-slate-900">Overall Progress</h2>
+      {/* Overall Progress (full width, team progress hidden) */}
+      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8">
+        <div className="pointer-events-none absolute -right-10 -top-16 h-48 w-48 rounded-full bg-indigo-200/30 blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute -bottom-12 -left-8 h-52 w-52 rounded-full bg-emerald-200/30 blur-3xl" aria-hidden />
+        <div className="relative mb-5 flex items-center justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Progress</p>
+            <h2 className="mt-1 text-xl font-semibold tracking-tight text-slate-900">Overall progress</h2>
           </div>
+        </div>
+        <div className="relative">
           <DashboardProgressVisual
             totalPapers={totalPapers}
             completedPapers={progressCompletedCount}
@@ -277,37 +212,32 @@ export default async function DataExtractionPage() {
             flaggedPapers={flaggedCount}
             userCompletedPapers={userCompletedCount}
           />
-        </section>
-
-        {/* Top Contributors */}
-        <section
-          className={`rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur ${
-            showTeamProgress ? '' : 'hidden'
-          }`}
-          aria-hidden={!showTeamProgress}
-        >
-          <div className="mb-4">
-            <h2 className="text-lg font-semibold text-slate-900">Team Progress</h2>
+        </div>
+        {showTeamProgress ? (
+          <div className="relative mt-8 border-t border-slate-200/70 pt-6">
+            <h3 className="text-sm font-semibold tracking-tight text-slate-900">Team progress</h3>
+            <div className="mt-4">
+              <DashboardContributors
+                contributors={contributors}
+                currentUserId={userId}
+                totalCompleted={progressCompletedCount}
+              />
+            </div>
           </div>
-          <DashboardContributors
-            contributors={contributors}
-            currentUserId={userId}
-            totalCompleted={progressCompletedCount}
-          />
-        </section>
-      </div>
+        ) : null}
+      </section>
 
       <div className="grid gap-8 lg:grid-cols-[1.85fr,1fr]" id="uploads">
-        <section className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+        <section className="overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
           <div className="flex items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5">
             <div>
-              <h2 className="text-lg font-semibold text-slate-900">Uploaded PDFs</h2>
-              <p className="text-xs text-slate-500">Keep track of status, notes, and flags per paper.</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Library</p>
+              <h2 className="mt-1 text-lg font-semibold tracking-tight text-slate-900">Uploaded PDFs</h2>
             </div>
             {isAdmin ? (
               <Link
                 href="/upload"
-                className="hidden rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700 sm:inline-flex"
+                className="hidden rounded-full border border-slate-200/80 bg-white px-4 py-1.5 text-xs font-semibold text-[#0b3a70] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#0b3a70]/30 hover:bg-slate-50 sm:inline-flex"
               >
                 Add new PDF
               </Link>
@@ -368,6 +298,76 @@ export default async function DataExtractionPage() {
             </div>
           </section>
         </aside>
+      </div>
+    </div>
+  );
+}
+
+type StatTone = 'purple' | 'sky' | 'emerald' | 'rose';
+
+const STAT_TONES: Record<StatTone, { value: string; gradient: string; bar: string; ring: string; track: string }> = {
+  purple: {
+    value: 'text-purple-700',
+    gradient: 'from-purple-500/20 via-violet-400/10 to-purple-400/20',
+    bar: 'bg-gradient-to-r from-purple-500 via-violet-400 to-purple-400',
+    ring: 'ring-purple-300/30',
+    track: 'bg-purple-100/60',
+  },
+  sky: {
+    value: 'text-sky-700',
+    gradient: 'from-sky-500/20 via-cyan-400/10 to-indigo-300/20',
+    bar: 'bg-gradient-to-r from-sky-500 via-cyan-400 to-indigo-300',
+    ring: 'ring-sky-300/30',
+    track: 'bg-sky-100/60',
+  },
+  emerald: {
+    value: 'text-emerald-700',
+    gradient: 'from-emerald-500/20 via-teal-400/10 to-green-400/20',
+    bar: 'bg-gradient-to-r from-emerald-500 via-teal-400 to-green-400',
+    ring: 'ring-emerald-300/30',
+    track: 'bg-emerald-100/60',
+  },
+  rose: {
+    value: 'text-rose-700',
+    gradient: 'from-rose-500/20 via-orange-400/10 to-amber-400/20',
+    bar: 'bg-gradient-to-r from-rose-500 via-orange-400 to-amber-400',
+    ring: 'ring-rose-300/30',
+    track: 'bg-rose-100/60',
+  },
+};
+
+function StatCard({
+  tone,
+  label,
+  value,
+  eyebrow,
+  caption,
+  progress,
+}: {
+  tone: StatTone;
+  label: string;
+  value: number;
+  eyebrow: string;
+  caption: string;
+  progress: number;
+}) {
+  const styles = STAT_TONES[tone];
+  return (
+    <div className={`group relative flex h-full min-h-[148px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-md ring-1 ${styles.ring} backdrop-blur transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg`}>
+      <div aria-hidden className={`pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br ${styles.gradient}`} />
+      <div>
+        <div className="flex items-baseline justify-between gap-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">{label}</p>
+          <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-slate-400">{eyebrow}</span>
+        </div>
+        <p className={`mt-2 text-2xl font-semibold tracking-tight tabular-nums ${styles.value}`}>{value}</p>
+        <p className="mt-1.5 text-[11px] leading-snug text-slate-600">{caption}</p>
+      </div>
+      <div className={`mt-3 h-1.5 w-full overflow-hidden rounded-full ${styles.track}`}>
+        <div
+          className={`h-full rounded-full ${styles.bar} transition-[width] duration-700 ease-out`}
+          style={{ width: `${Math.min(100, progress)}%` }}
+        />
       </div>
     </div>
   );

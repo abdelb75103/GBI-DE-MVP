@@ -30,14 +30,15 @@ type QueueFilter =
   | 'promoted';
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 
-type CardTone = 'indigo' | 'sky' | 'amber' | 'emerald' | 'purple';
+type CardTone = 'purple' | 'indigo' | 'sky' | 'amber' | 'emerald' | 'rose';
 
 const CARD_TONES: Record<CardTone, { gradient: string; value: string }> = {
+  purple: { gradient: 'from-purple-500/20 via-violet-400/10 to-purple-400/20', value: 'text-purple-700' },
   indigo: { gradient: 'from-indigo-500/20 via-sky-400/10 to-indigo-400/20', value: 'text-indigo-700' },
   sky: { gradient: 'from-sky-500/20 via-cyan-400/10 to-indigo-300/20', value: 'text-sky-700' },
-  amber: { gradient: 'from-rose-500/20 via-orange-400/10 to-amber-400/20', value: 'text-rose-700' },
+  amber: { gradient: 'from-amber-400/25 via-orange-300/15 to-amber-300/20', value: 'text-amber-700' },
   emerald: { gradient: 'from-emerald-500/20 via-teal-400/10 to-green-400/20', value: 'text-emerald-700' },
-  purple: { gradient: 'from-purple-500/20 via-violet-400/10 to-purple-400/20', value: 'text-purple-700' },
+  rose: { gradient: 'from-rose-500/20 via-orange-400/10 to-amber-400/20', value: 'text-rose-700' },
 };
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
@@ -176,15 +177,18 @@ export function FullTextScreeningClient({
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1180px] space-y-6">
+    <div className="mx-auto w-full max-w-screen-2xl space-y-6">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
-        <div className="absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="relative z-10 space-y-6">
+        <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
+        <div className="relative z-10 space-y-7">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl space-y-2">
-              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Full-text screening</h1>
-              <p className="text-sm leading-relaxed text-slate-600">
+            <div className="max-w-2xl space-y-3">
+              <span className="inline-flex w-fit items-center rounded-full bg-gradient-to-br from-teal-100/90 via-emerald-50/80 to-teal-50/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-700 shadow-sm ring-1 ring-teal-200/50 backdrop-blur-sm">
+                Full-text screening
+              </span>
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">Full-text screening</h1>
+              <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
                 Vote on full-text PDFs, resolve conflicts, and promote included studies to extraction.
               </p>
             </div>
@@ -201,7 +205,7 @@ export function FullTextScreeningClient({
                 />
                 <label
                   htmlFor="full-text-upload"
-                  className={`group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#0b3a70]/20 transition hover:bg-[#092f5f] ${
+                  className={`group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(11,58,112,0.55)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#082f5d] ${
                     isPending ? 'pointer-events-none opacity-70' : ''
                   }`}
                 >
@@ -222,7 +226,7 @@ export function FullTextScreeningClient({
             ) : null}
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             <QueueCard
               label="Upload full text"
               value={counts.awaitingPdf}
@@ -269,18 +273,22 @@ export function FullTextScreeningClient({
             />
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white/75 p-4 shadow-sm">
+          <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-4 shadow-sm ring-1 ring-slate-200/50 backdrop-blur">
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Full-text progress</p>
                 <p className="mt-1 text-sm text-slate-600">
-                  {counts.complete} of {counts.all} full-text records have a final screening outcome.
+                  <span className="font-semibold tabular-nums text-slate-800">{counts.complete}</span> of{' '}
+                  <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> full-text records have a final screening outcome.
                 </p>
               </div>
-              <p className="text-2xl font-semibold text-teal-700">{progressPercent}%</p>
+              <p className="text-2xl font-semibold tabular-nums text-teal-700">{progressPercent}%</p>
             </div>
-            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200">
-              <div className="h-full rounded-full bg-teal-600" style={{ width: `${progressPercent}%` }} />
+            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-teal-700 via-teal-500 to-emerald-400 transition-[width] duration-700 ease-out"
+                style={{ width: `${progressPercent}%` }}
+              />
             </div>
             <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
               <span>{counts.needsYourVote} need your vote</span>
@@ -392,7 +400,7 @@ function ScreeningRow({
   const uploadInputId = `full-text-upload-${record.id}`;
 
   return (
-    <tr className="group relative bg-white transition hover:bg-indigo-50/30">
+    <tr className="group relative bg-white transition-colors duration-200 ease-out hover:bg-[#0b3a70]/[0.04]">
       <td className="relative max-w-[440px] py-4 pl-5 pr-5 align-middle">
         <span aria-hidden className={`absolute left-0 top-2 bottom-2 w-1 rounded-r-full ${STATUS_ACCENT[status]}`} />
         <Link href={`/full-text-screening/${record.id}`} className="block pl-2">
@@ -483,15 +491,15 @@ function QueueCard({
   return (
     <button
       onClick={onClick}
-      className="group relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 text-left shadow-md ring-1 ring-slate-200/60 backdrop-blur transition hover:shadow-lg hover:ring-slate-300/70"
+      className="group relative flex h-full min-h-[128px] flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-4 text-left shadow-md ring-1 ring-slate-200/60 backdrop-blur transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:ring-slate-300/70"
     >
-      <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${toneClasses.gradient} opacity-80`} aria-hidden />
+      <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${toneClasses.gradient}`} aria-hidden />
       <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">{label}</p>
-      <div className="mt-1.5 flex items-baseline justify-between gap-2">
-        <p className={`text-xl font-semibold ${toneClasses.value}`}>{value}</p>
+      <div className="mt-2 flex items-baseline justify-between gap-2">
+        <p className={`text-2xl font-semibold tracking-tight tabular-nums ${toneClasses.value}`}>{value}</p>
       </div>
-      <p className="mt-1 text-[11px] leading-snug text-slate-600">{detail}</p>
-      {action ? <p className="mt-2 text-[11px] font-semibold text-indigo-700">{action}</p> : null}
+      <p className="mt-1.5 text-[11px] leading-snug text-slate-600">{detail}</p>
+      {action ? <p className="mt-auto pt-2 text-[11px] font-semibold text-[#0b3a70]">{action} →</p> : null}
     </button>
   );
 }

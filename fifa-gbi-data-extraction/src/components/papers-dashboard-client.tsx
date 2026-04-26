@@ -131,7 +131,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         placeholder="Title, author, ID, DOI..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
       />
     </div>
   );
@@ -146,7 +146,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
           id="status-filter"
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value as PaperStatus | 'all')}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All Statuses</option>
           <option value="uploaded">Uploaded</option>
@@ -173,7 +173,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
           id="user-filter"
           value={userFilter}
           onChange={(e) => setUserFilter(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All Users</option>
           {uniqueAssignees.map(({ id, name }) => (
@@ -192,7 +192,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
           id="flagged-filter"
           value={flaggedFilter === 'all' ? 'all' : flaggedFilter ? 'yes' : 'no'}
           onChange={(e) => setFlaggedFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All</option>
           <option value="yes">Flagged Only</option>
@@ -208,7 +208,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
           id="notes-filter"
           value={notesFilter === 'all' ? 'all' : notesFilter ? 'yes' : 'no'}
           onChange={(e) => setNotesFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All</option>
           <option value="yes">Has Notes</option>
@@ -219,15 +219,15 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
   );
 
   const filterSummary = hasActiveFilters ? (
-    <div className="flex items-center justify-between gap-3 rounded-lg border border-indigo-200 bg-indigo-50/50 px-4 py-2.5">
-      <p className="text-xs text-indigo-700">
-        <span className="font-semibold">{filteredPapers.length}</span> of{' '}
-        <span className="font-semibold">{papers.length}</span> papers match your filters
+    <div className="flex items-center justify-between gap-3 rounded-xl border border-[#0b3a70]/15 bg-[#0b3a70]/5 px-4 py-2.5">
+      <p className="text-xs text-[#0b3a70]">
+        <span className="font-semibold tabular-nums">{filteredPapers.length}</span> of{' '}
+        <span className="font-semibold tabular-nums">{papers.length}</span> papers match your filters
       </p>
       <button
         type="button"
         onClick={resetFilters}
-        className="inline-flex items-center gap-1.5 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 transition hover:bg-indigo-200"
+        className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#0b3a70] ring-1 ring-[#0b3a70]/15 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0b3a70] hover:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -247,32 +247,33 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
   ) : null;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Assignment Filter Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-slate-200/70 px-6 pb-4">
-        {assignmentFilterOptions.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => setAssignmentFilter(option.value)}
-            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wide transition ${
-              assignmentFilter === option.value
-                ? 'bg-indigo-600 text-white border-2 border-indigo-500'
-                : 'bg-slate-100 text-slate-700 border-2 border-slate-200 hover:bg-slate-200 hover:text-slate-800'
-            }`}
-          >
-            {option.label}
-            <span
-              className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                assignmentFilter === option.value
-                  ? 'bg-indigo-500 text-white'
-                  : 'bg-slate-200 text-slate-700'
+      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200/70 px-6 py-4">
+        {assignmentFilterOptions.map((option) => {
+          const active = assignmentFilter === option.value;
+          return (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => setAssignmentFilter(option.value)}
+              className={`group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ease-out ${
+                active
+                  ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-10px_rgba(11,58,112,0.6)] ring-1 ring-[#0b3a70]/40'
+                  : 'bg-white/70 text-slate-600 ring-1 ring-slate-200/70 hover:bg-white hover:text-[#0b3a70] hover:ring-[#0b3a70]/30'
               }`}
             >
-              {option.count}
-            </span>
-          </button>
-        ))}
+              <span className="leading-none">{option.label}</span>
+              <span
+                className={`inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full px-1.5 text-[10px] font-bold leading-none tabular-nums ${
+                  active ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-[#0b3a70]/10 group-hover:text-[#0b3a70]'
+                }`}
+              >
+                {option.count}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {/* Mobile filters */}
