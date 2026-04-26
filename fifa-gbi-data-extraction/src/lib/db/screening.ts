@@ -349,7 +349,12 @@ export const saveScreeningDecision = async (
     reviewerProfileId: string;
     reviewerName?: string | null;
   },
-): Promise<{ record: ScreeningRecord; duplicateWarnings: PromotionDuplicateWarning[] }> => {
+): Promise<{
+  record: ScreeningRecord;
+  duplicateWarnings: PromotionDuplicateWarning[];
+  promotedPaperId?: string;
+  promotionError?: string;
+}> => {
   if (input.decision === 'exclude' && !input.reason?.trim()) {
     throw new Error('A reason is required for excluded full-text records.');
   }
@@ -384,10 +389,24 @@ export const saveScreeningDecision = async (
   }
 
   const [record] = await mapRows([data as ScreeningRecordRow]);
-  const duplicateWarnings = getScreeningResolution(record) === 'ready_for_extraction'
-    ? await findExtractionPromotionWarnings(record)
-    : [];
-  return { record, duplicateWarnings };
+  if (getScreeningResolution(record) !== 'ready_for_extraction') {
+    return { record, duplicateWarnings: [] };
+  }
+
+  try {
+    const promoted = await promoteScreeningRecord(record.id, input.reviewerProfileId);
+    return {
+      record: promoted.record,
+      duplicateWarnings: promoted.duplicateWarnings,
+      promotedPaperId: promoted.paperId,
+    };
+  } catch (error) {
+    return {
+      record,
+      duplicateWarnings: await findExtractionPromotionWarnings(record),
+      promotionError: error instanceof Error ? error.message : 'Automatic promotion failed.',
+    };
+  }
 };
 
 export const saveTitleAbstractDecision = async (
