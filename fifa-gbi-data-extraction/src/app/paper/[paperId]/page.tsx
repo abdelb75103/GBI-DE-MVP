@@ -66,16 +66,16 @@ export default async function PaperWorkspace({
                 </p>
                 <p className="text-sm">
                   To prevent conflicts and data loss, only one person can work on a paper at a time. 
-                  Please choose a different paper from the dashboard or wait until this paper becomes available.
+                  Please choose a different paper from data extraction or wait until this paper becomes available.
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-4">
               <Link
-                href="/dashboard"
+                href="/data-extraction"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
               >
-                ← Back to Dashboard
+                ← Back to Data Extraction
               </Link>
             </div>
           </div>
@@ -104,16 +104,16 @@ export default async function PaperWorkspace({
                 </p>
                 <p className="text-sm">
                   To prevent conflicts and data loss, only one person can work on a paper at a time. 
-                  Please choose a different paper from the dashboard or wait until this paper becomes available.
+                  Please choose a different paper from data extraction or wait until this paper becomes available.
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-4">
               <Link
-                href="/dashboard"
+                href="/data-extraction"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
               >
-                ← Back to Dashboard
+                ← Back to Data Extraction
               </Link>
             </div>
           </div>
@@ -209,10 +209,10 @@ export default async function PaperWorkspace({
               </div>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="/dashboard"
+                  href="/data-extraction"
                   className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
                 >
-                  Back to dashboard
+                  Back to data extraction
                 </Link>
                 {!isReadOnly && <WorkspaceSaveButton />}
               </div>

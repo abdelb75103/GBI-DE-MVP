@@ -1,22 +1,103 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-import { DashboardContributors } from '@/components/dashboard-contributors';
-import { DashboardProgressVisual } from '@/components/dashboard-progress-visual';
-import { ExportControls } from '@/components/export-controls';
-import { PapersDashboardClient } from '@/components/papers-dashboard-client';
-import { formatDateTimeUTC } from '@/lib/format';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
 import {
-  isBulkExportStatus,
-  isActiveStatus,
-  isCompletedStatus,
-  isProgressCompletedStatus,
-  isTaggedAutoCompleteStatus,
-} from '@/lib/status-groups';
+  getExtractionMetrics,
+  getFullTextMetrics,
+  getTitleAbstractMetrics,
+  type WorkflowStageMetrics,
+} from '@/lib/workflow-metrics';
 
 export const dynamic = 'force-dynamic';
+
+const extractFirstName = (fullName: string | undefined | null): string => {
+  if (!fullName) return 'Researcher';
+
+  const words = fullName.trim().split(/\s+/);
+  if (words.length === 0) return 'Researcher';
+
+  const titles = new Set([
+    'dr',
+    'dr.',
+    'doctor',
+    'prof',
+    'prof.',
+    'professor',
+    'mr',
+    'mr.',
+    'mister',
+    'mrs',
+    'mrs.',
+    'missus',
+    'ms',
+    'ms.',
+    'miss',
+  ]);
+
+  const firstWord = words[0].toLowerCase().replace(/\.$/, '');
+  if (titles.has(firstWord) && words.length > 1) {
+    return words[1];
+  }
+
+  return words[0];
+};
+
+type StageTone = 'navy' | 'teal' | 'amber';
+
+type StageCard = {
+  title: string;
+  eyebrow: string;
+  href: string;
+  action: string;
+  metrics: WorkflowStageMetrics;
+  tone: StageTone;
+  icon: 'documentSearch' | 'documentCheck' | 'table';
+  metricLabels: [string, string, string];
+};
+
+const toneClasses: Record<StageTone, {
+  text: string;
+  number: string;
+  iconShell: string;
+  iconText: string;
+  progress: string;
+  button: string;
+  border: string;
+  shadow: string;
+}> = {
+  navy: {
+    text: 'text-[#062b56]',
+    number: 'bg-[#062b56] text-white',
+    iconShell: 'bg-[#e8eef7]',
+    iconText: 'text-[#062b56]',
+    progress: 'bg-[#062b56]',
+    button: 'bg-[#062b56] text-white hover:bg-[#0b3a70]',
+    border: 'border-[#c9d5e8] hover:border-[#0b3a70]/45',
+    shadow: 'hover:shadow-[#0b3a70]/15',
+  },
+  teal: {
+    text: 'text-teal-800',
+    number: 'bg-teal-700 text-white',
+    iconShell: 'bg-teal-50',
+    iconText: 'text-teal-700',
+    progress: 'bg-teal-700',
+    button: 'bg-teal-700 text-white hover:bg-teal-800',
+    border: 'border-teal-200 hover:border-teal-400',
+    shadow: 'hover:shadow-teal-700/15',
+  },
+  amber: {
+    text: 'text-amber-700',
+    number: 'bg-amber-600 text-white',
+    iconShell: 'bg-amber-50',
+    iconText: 'text-amber-600',
+    progress: 'bg-amber-500',
+    button: 'bg-amber-500 text-slate-950 hover:bg-amber-600 hover:text-white',
+    border: 'border-amber-200 hover:border-amber-400',
+    shadow: 'hover:shadow-amber-600/15',
+  },
+};
 
 export default async function DashboardPage() {
   const activeProfile = await readActiveProfileSession();
@@ -24,351 +105,177 @@ export default async function DashboardPage() {
     redirect('/profiles/select');
   }
 
-  const isAdmin = activeProfile?.role === 'admin';
-  const papers = await mockDb.listPapers();
-  const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
-  const dashboardTablePapers = isAdmin ? papers : visiblePapers;
-  const exportJobs = await mockDb.listExports();
-  const activePaperIds = visiblePapers.filter((paper) => isBulkExportStatus(paper.status)).map((paper) => paper.id);
-  const userId = activeProfile?.id || null;
-  const pendingUploadCount = isAdmin ? await mockDb.countPendingUploadQueueEntries() : 0;
-  
-  // Extract first name from profile, skipping common titles
-  const extractFirstName = (fullName: string | undefined | null): string => {
-    if (!fullName) return 'User';
-    
-    const words = fullName.trim().split(/\s+/);
-    if (words.length === 0) return 'User';
-    
-    // Common titles to skip (case-insensitive, with/without periods)
-    const titles = new Set([
-      'dr', 'dr.', 'doctor',
-      'prof', 'prof.', 'professor',
-      'mr', 'mr.', 'mister',
-      'mrs', 'mrs.', 'missus',
-      'ms', 'ms.', 'miss'
-    ]);
-    
-    // Check if first word is a title
-    const firstWord = words[0].toLowerCase().replace(/\.$/, ''); // Remove trailing period
-    if (titles.has(firstWord) && words.length > 1) {
-      // Skip title and return the next word (actual first name)
-      return words[1];
-    }
-    
-    // Return first word if it's not a title or if there's only one word
-    return words[0];
-  };
-  
-  const firstName = extractFirstName(activeProfile?.fullName);
-  
-  // Calculate metrics
-  const totalPapers = visiblePapers.length;
-  const availablePapers = visiblePapers.filter((paper) => !paper.assignedTo).length;
-  
-  const activePapers = visiblePapers.filter((paper) => isActiveStatus(paper.status));
-  const completedPapers = visiblePapers.filter((paper) => isCompletedStatus(paper.status));
-  const taggedCompletedPapers = visiblePapers.filter((paper) => isTaggedAutoCompleteStatus(paper.status));
-  const progressCompletedPapers = visiblePapers.filter((paper) => isProgressCompletedStatus(paper.status));
-  
-  const inProgressCount = activePapers.length;
-  const completedCount = completedPapers.length;
-  const taggedCompletedCount = taggedCompletedPapers.length;
-  const progressCompletedCount = progressCompletedPapers.length;
-  
-  const userActivePapers = activePapers.filter((paper) => paper.assignedTo === userId).length;
-  const userActiveShare = inProgressCount > 0 ? Math.round((userActivePapers / inProgressCount) * 100) : 0;
-  const userInProgressCount = userActivePapers;
-  const userInProgressPercentage = userActiveShare;
-  
-  const userCompletedCount = completedPapers.filter((paper) => paper.assignedTo === userId).length;
-  const userCompletedPercentage =
-    completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
-  
-  const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
-  const showTeamProgress = true;
-  
-  // Calculate contributor statistics
-  type ContributorMap = Record<string, { name: string; completedCount: number }>;
-  const contributorStats = visiblePapers.reduce<ContributorMap>((acc, paper) => {
-    if (isProgressCompletedStatus(paper.status) && paper.assignedTo && paper.assigneeName) {
-      if (!acc[paper.assignedTo]) {
-        acc[paper.assignedTo] = { name: paper.assigneeName, completedCount: 0 };
-      }
-      acc[paper.assignedTo].completedCount += 1;
-    }
-    return acc;
-  }, {});
-  
-  const contributors = Object.entries(contributorStats).map(([id, data]) => ({
-    id,
-    name: data.name,
-    completedCount: data.completedCount,
-  }));
+  const [titleAbstractRecords, fullTextRecords, papers] = await Promise.all([
+    mockDb.listScreeningRecords('title_abstract'),
+    mockDb.listScreeningRecords('full_text'),
+    mockDb.listPapers(),
+  ]);
+
+  const firstName = extractFirstName(activeProfile.fullName);
+  const stageCards: StageCard[] = [
+    {
+      title: 'Title & Abstract Screening',
+      eyebrow: 'First pass',
+      href: '/title-abstract-screening',
+      action: 'Continue Screening',
+      metrics: getTitleAbstractMetrics(titleAbstractRecords, activeProfile.id),
+      tone: 'navy',
+      icon: 'documentSearch',
+      metricLabels: ['Total Records', 'Screened', 'Progress'],
+    },
+    {
+      title: 'Full Text Screening',
+      eyebrow: 'Eligibility review',
+      href: '/full-text-screening',
+      action: 'Continue Screening',
+      metrics: getFullTextMetrics(fullTextRecords, activeProfile.id),
+      tone: 'teal',
+      icon: 'documentCheck',
+      metricLabels: ['Full Texts', 'Screened', 'Progress'],
+    },
+    {
+      title: 'Data Extraction',
+      eyebrow: 'Final capture',
+      href: '/data-extraction',
+      action: 'Continue Extraction',
+      metrics: getExtractionMetrics(papers),
+      tone: 'amber',
+      icon: 'table',
+      metricLabels: ['Papers', 'Extracted', 'Progress'],
+    },
+  ];
 
   return (
-    <div className="space-y-10 sm:space-y-12">
-      {/* Hero Section - Original Style with Personalized Badge */}
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
-        <div className="absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="absolute top-6 left-6 z-20">
-          <span className="inline-flex items-center rounded-full bg-gradient-to-br from-indigo-100/90 via-sky-50/80 to-indigo-50/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700 shadow-sm ring-1 ring-indigo-200/50 backdrop-blur-sm">
-            Dashboard
-          </span>
-        </div>
-        <div className="relative z-10 space-y-8 pt-4">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl space-y-4">
-              <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl lg:text-4xl">
-                {firstName}&apos;s Dashboard
-              </h1>
-              <p className="text-sm leading-relaxed text-slate-600">
-                Track your papers and see your progress at a glance.
-              </p>
-              {isAdmin ? (
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    href="/upload"
-                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
-                  >
-                    Upload a PDF
-                  </Link>
-                  <Link
-                    href="/dashboard/dedupe"
-                    className="inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/80 px-5 py-2 text-sm font-semibold text-indigo-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50"
-                  >
-                    Run dedupe review
-                  </Link>
-                  <Link
-                    href="/dashboard/upload-approvals"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-5 py-2 text-sm font-semibold text-emerald-700 shadow-sm transition hover:border-emerald-300 hover:bg-emerald-50"
-                  >
-                    Review uploads
-                    {pendingUploadCount > 0 ? (
-                      <span className="inline-flex min-w-[1.75rem] items-center justify-center rounded-full bg-emerald-600/10 px-2 text-xs font-semibold text-emerald-700">
-                        {pendingUploadCount}
-                      </span>
-                    ) : null}
-                  </Link>
-                </div>
-              ) : null}
-            </div>
-          </div>
-          <div className={`grid gap-4 sm:grid-cols-2 ${isAdmin ? 'xl:grid-cols-4' : 'xl:grid-cols-3'}`}>
-            {/* Card 1: All Papers */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">All papers</p>
-              <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-purple-700">{totalPapers}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
-              </div>
-              <p className="mt-1 text-[10px] text-slate-600">
-                {availablePapers} available right now • You have {userActivePapers} active ({userActiveShare}% of workload)
-              </p>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                <div
-                  className="h-full bg-gradient-to-r from-purple-500/20 via-violet-400/10 to-purple-400/20 opacity-90"
-                  style={{ width: `${Math.min(100, totalPapers === 0 ? 4 : Math.round((totalPapers / Math.max(1, totalPapers)) * 100))}%` }}
-                />
-              </div>
-            </div>
-
-            {/* Card 2: My Papers In Progress */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-500/20 via-cyan-400/10 to-indigo-300/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">My papers in progress</p>
-              <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-sky-700">{userInProgressCount}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Yours</span>
-              </div>
-              <p className="mt-1 text-[10px] text-slate-600">
-                {userInProgressPercentage}% of all in-progress work • {inProgressCount} total
-              </p>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                <div
-                  className="h-full bg-gradient-to-r from-sky-500/40 via-cyan-400/30 to-indigo-300/40 opacity-90"
-                  style={{ width: `${Math.min(100, inProgressCount === 0 ? 0 : Math.round((userInProgressCount / Math.max(1, inProgressCount)) * 100))}%` }}
-                />
-              </div>
-            </div>
-
-            {/* Card 3: Completed */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur">
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/20 via-teal-400/10 to-green-400/20 opacity-80" aria-hidden />
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Completed</p>
-              <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                <p className="text-xl font-semibold text-emerald-700">{userCompletedCount}</p>
-                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Yours</span>
-              </div>
-              <p className="mt-1 text-[10px] text-slate-600">
-                You completed {userCompletedCount} ({userCompletedPercentage}% of team output)
-              </p>
-              <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                <div
-                  className="h-full bg-gradient-to-r from-emerald-500/20 via-teal-400/10 to-green-400/20 opacity-90"
-                  style={{
-                    width: `${Math.min(
-                      100,
-                      completedCount === 0 ? 0 : Math.round((userCompletedCount / Math.max(1, completedCount)) * 100),
-                    )}%`,
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Card 4: Needs Attention (Admin Only) */}
-            {isAdmin && (
-              <Link
-                href="/dashboard?filter=flagged"
-                className="relative block overflow-hidden rounded-xl border border-slate-200/70 bg-white/80 p-3 shadow-md ring-1 ring-slate-200/60 backdrop-blur transition hover:shadow-lg hover:ring-slate-300/60"
-              >
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-rose-500/20 via-orange-400/10 to-amber-400/20 opacity-80" aria-hidden />
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-4 w-4 text-rose-600"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 2.25a.75.75 0 01.75.75v16.5a.75.75 0 01-1.064.681l-1.5-.681a.75.75 0 01-.186-1.238L3 18.75V3A.75.75 0 013 2.25zm16.023 2.25a.75.75 0 01.75.75v11.5a.75.75 0 01-.75.75h-5.5a.75.75 0 01-.75-.75V5.25a.75.75 0 01.75-.75h5.5zM8.25 2.25a.75.75 0 01.75.75v16.5a.75.75 0 01-.75.75h-5.5a.75.75 0 01-.75-.75V3a.75.75 0 01.75-.75h5.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Needs attention</p>
-                </div>
-                <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                  <p className="text-xl font-semibold text-rose-700">{flaggedCount}</p>
-                  <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-slate-500">Overall</span>
-                </div>
-                <p className="mt-1 text-[10px] text-slate-600">
-                  Flagged items awaiting review
-                </p>
-                <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-white/60">
-                  <div
-                    className="h-full bg-gradient-to-r from-rose-500/20 via-orange-400/10 to-amber-400/20 opacity-90"
-                    style={{ width: `${Math.min(100, flaggedCount === 0 ? 4 : Math.round((flaggedCount / Math.max(1, totalPapers)) * 100))}%` }}
-                  />
-                </div>
-              </Link>
-            )}
-          </div>
+    <div className="space-y-7">
+      <section className="border-b border-slate-200/70 pb-6">
+        <div className="space-y-2">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+            Welcome back, {firstName}
+          </h1>
+          <p className="text-lg text-slate-600">FIFA GBI workflow dashboard</p>
         </div>
       </section>
 
-      {/* Progress Visual and Contributors Grid */}
-      <div className={`grid gap-6 ${showTeamProgress ? 'lg:grid-cols-2' : ''}`}>
-        {/* Circular Progress Visualization */}
-        <section
-          className={`rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur ${
-            showTeamProgress ? '' : 'lg:col-span-2'
-          }`}
-        >
-          <div className="mb-4">
-            <h2 className="text-lg font-semibold text-slate-900">Overall Progress</h2>
-          </div>
-          <DashboardProgressVisual
-            totalPapers={totalPapers}
-            completedPapers={progressCompletedCount}
-            taggedCompletedPapers={taggedCompletedCount}
-            flaggedPapers={flaggedCount}
-            userCompletedPapers={userCompletedCount}
-          />
-        </section>
+      <section className="grid min-w-0 gap-6 2xl:grid-cols-3">
+        {stageCards.map((card, index) => (
+          <WorkflowCard key={card.href} card={card} index={index + 1} />
+        ))}
+      </section>
 
-        {/* Top Contributors */}
-        <section
-          className={`rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur ${
-            showTeamProgress ? '' : 'hidden'
-          }`}
-          aria-hidden={!showTeamProgress}
-        >
-          <div className="mb-4">
-            <h2 className="text-lg font-semibold text-slate-900">Team Progress</h2>
-          </div>
-          <DashboardContributors
-            contributors={contributors}
-            currentUserId={userId}
-            totalCompleted={progressCompletedCount}
-          />
-        </section>
-      </div>
-
-      <div className="grid gap-8 lg:grid-cols-[1.85fr,1fr]" id="uploads">
-        <section className="rounded-3xl border border-slate-200/70 bg-white/80 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-          <div className="flex items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5">
-            <div>
-              <h2 className="text-lg font-semibold text-slate-900">Uploaded PDFs</h2>
-              <p className="text-xs text-slate-500">Keep track of status, notes, and flags per paper.</p>
-            </div>
-            {isAdmin ? (
-              <Link
-                href="/upload"
-                className="hidden rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700 sm:inline-flex"
-              >
-                Add new PDF
-              </Link>
-            ) : null}
-          </div>
-          <PapersDashboardClient papers={dashboardTablePapers} canBulkExport={isAdmin} isAdmin={isAdmin} />
-        </section>
-
-        <aside className="space-y-6">
-          <ExportControls paperIds={activePaperIds} />
-
-          <section className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div className="flex items-center justify-between gap-4">
-              <h2 className="text-base font-semibold text-slate-900">Recent exports</h2>
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Activity
-              </span>
-            </div>
-            <div className="mt-4">
-              {exportJobs.length === 0 ? (
-                <p className="text-sm text-slate-500">Exports will appear here once generated.</p>
-              ) : (
-                <ul className="space-y-4">
-                  {exportJobs.map((job) => (
-                    <li
-                      key={job.id}
-                      className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-md ring-1 ring-slate-200/60 backdrop-blur"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-semibold text-slate-900">
-                          {job.kind.toUpperCase()} · {job.paperIds.length} papers
-                        </span>
-                        <span className="inline-flex items-center rounded-full bg-emerald-100/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-600">
-                          {job.status}
-                        </span>
-                      </div>
-                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
-                        <time dateTime={job.createdAt}>{formatDateTimeUTC(job.createdAt)}</time>
-                        <div className="flex items-center gap-2">
-                          {job.downloadUrl ? (
-                            <a
-                              href={job.downloadUrl}
-                              download
-                              className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-600 transition hover:border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700"
-                            >
-                              Download {job.kind.toUpperCase()}
-                            </a>
-                          ) : null}
-                          {job.checksumSha256 ? (
-                            <span className="font-mono text-slate-400">checksum {job.checksumSha256}</span>
-                          ) : null}
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </section>
-        </aside>
-      </div>
     </div>
+  );
+}
+
+function WorkflowCard({ card, index }: { card: StageCard; index: number }) {
+  const tone = toneClasses[card.tone];
+
+  return (
+    <Link
+      href={card.href}
+      className={`group flex min-w-0 flex-col justify-between rounded-2xl border ${tone.border} bg-white/95 p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-2xl sm:min-h-[430px] sm:p-6 ${tone.shadow}`}
+    >
+      <div className="space-y-6">
+        <div className="flex items-start gap-4 sm:gap-5">
+          <div className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-full sm:h-24 sm:w-24 ${tone.iconShell} ${tone.iconText}`}>
+            <StageIcon icon={card.icon} />
+          </div>
+          <div className="min-w-0 space-y-2">
+            <div className="flex items-center gap-3">
+              <span className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${tone.number}`}>
+                {index}
+              </span>
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">{card.eyebrow}</p>
+            </div>
+            <h2 className="text-xl font-bold leading-tight tracking-tight text-slate-950 sm:text-2xl">{card.title}</h2>
+          </div>
+        </div>
+
+        <div className="h-px bg-slate-200/80" />
+
+        <div className="grid grid-cols-3 divide-x divide-slate-200">
+          <MetricColumn label={card.metricLabels[0]} value={card.metrics.total} tone={tone.text} />
+          <MetricColumn label={card.metricLabels[1]} value={card.metrics.completed} tone={tone.text} />
+          <MetricColumn label={card.metricLabels[2]} value={`${card.metrics.progress}%`} tone={tone.text} />
+        </div>
+
+        <div className="space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-sm font-bold text-slate-800">Overall Progress</p>
+            <p className={`text-sm font-bold ${tone.text}`}>
+              {card.metrics.completed} / {card.metrics.total}
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="h-3 flex-1 overflow-hidden rounded-full bg-slate-200/80">
+              <div className={`h-full rounded-full ${tone.progress}`} style={{ width: `${card.metrics.progress}%` }} />
+            </div>
+            <span className={`w-10 text-right text-sm font-bold ${tone.text}`}>{card.metrics.progress}%</span>
+          </div>
+        </div>
+
+        <div className="grid gap-2 border-t border-slate-200/80 pt-4 text-sm">
+          <StageStat label={card.metrics.primaryLabel} value={card.metrics.primaryCount} />
+          <StageStat label={card.metrics.secondaryLabel} value={card.metrics.secondaryCount} />
+          <StageStat label={card.metrics.tertiaryLabel} value={card.metrics.tertiaryCount} />
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <span className={`inline-flex w-full items-center justify-center gap-3 rounded-lg px-5 py-3 text-sm font-bold shadow-sm transition ${tone.button}`}>
+          {card.action}
+          <span className="text-lg transition group-hover:translate-x-1" aria-hidden>
+            →
+          </span>
+        </span>
+      </div>
+    </Link>
+  );
+}
+
+function MetricColumn({ label, value, tone }: { label: string; value: number | string; tone: string }) {
+  return (
+    <div className="px-3 first:pl-0 last:pr-0">
+      <p className={`text-3xl font-bold tracking-tight ${tone}`}>{value}</p>
+      <p className="mt-2 text-sm font-medium leading-5 text-slate-600">{label}</p>
+    </div>
+  );
+}
+
+function StageStat({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="flex items-center justify-between gap-4">
+      <span className="text-slate-500">{label}</span>
+      <span className="font-bold text-slate-900">{value}</span>
+    </div>
+  );
+}
+
+function StageIcon({ icon }: { icon: StageCard['icon'] }) {
+  if (icon === 'documentSearch') {
+    return (
+      <svg viewBox="0 0 48 48" fill="none" className="h-12 w-12" aria-hidden>
+        <path d="M14 6h14l8 8v24H14V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M28 6v9h8M19 22h11M19 28h8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="32" cy="32" r="6" stroke="currentColor" strokeWidth="3" />
+        <path d="m37 37 5 5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (icon === 'documentCheck') {
+    return (
+      <svg viewBox="0 0 48 48" fill="none" className="h-12 w-12" aria-hidden>
+        <path d="M14 6h14l8 8v28H14V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M28 6v9h8M19 24h11M19 31h7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+        <path d="m28 34 4 4 8-10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 48 48" fill="none" className="h-12 w-12" aria-hidden>
+      <rect x="8" y="10" width="32" height="28" rx="2" stroke="currentColor" strokeWidth="3" />
+      <path d="M8 19h32M8 28h32M18 10v28M29 10v28" stroke="currentColor" strokeWidth="3" />
+    </svg>
   );
 }

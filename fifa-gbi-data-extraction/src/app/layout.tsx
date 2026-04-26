@@ -49,40 +49,38 @@ export default function RootLayout({
       <body className="min-h-screen bg-[var(--page-bg)] text-[var(--page-text)] antialiased transition-colors duration-300">
         <Providers>
           <div className="flex min-h-screen flex-col">
-            <header className="sticky top-0 z-40 border-b border-white/60 bg-white/80 shadow-sm backdrop-blur">
+            <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/90 shadow-sm backdrop-blur">
               <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6">
-                <div className="flex items-center gap-3 py-3 md:gap-4 md:py-3.5">
-                  <div className="flex min-w-0 flex-1 items-center gap-3 md:gap-4">
-                    <div className="flex min-w-0 items-center gap-3">
+                <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 lg:grid-cols-[auto_minmax(0,1fr)_auto]">
+                    <Link href="/dashboard" className="flex min-w-0 items-center gap-3 transition hover:opacity-85">
                       <span className="sr-only">University College Dublin</span>
-                      <div className="flex h-12 w-12 items-center justify-center sm:h-14 sm:w-14">
+                      <span className="flex h-11 w-11 items-center justify-center sm:h-12 sm:w-12">
                         <Image
                           src="/images/University_College_Dublin_logo.svg.png"
                           alt="UCD logo"
-                          width={56}
-                          height={56}
+                          width={52}
+                          height={52}
                           className="h-full w-auto object-contain"
                           priority
                         />
-                      </div>
-                      <Link
-                        href="/dashboard"
-                        className="text-base font-semibold leading-tight text-slate-900 transition hover:text-indigo-700 sm:text-lg lg:text-xl"
-                      >
+                      </span>
+                      <span className="border-l border-slate-200 pl-3 text-lg font-bold leading-tight tracking-tight text-slate-950 sm:text-xl">
                         FIFA GBI
-                      </Link>
-                    </div>
-                  </div>
+                      </span>
+                    </Link>
 
-                  <nav className="hidden items-center gap-1.5 text-[13px] font-medium text-slate-600 md:flex lg:gap-2 data-[theme=dark]:text-slate-300">
+                  <nav className="hidden min-w-0 items-center justify-center gap-8 text-[13px] font-semibold text-slate-600 lg:flex data-[theme=dark]:text-slate-300">
                     <PrimaryNavLinks />
-                    <ThemeToggleButton />
-                    <ActiveProfileIndicator />
                   </nav>
 
-                  <div className="hidden justify-end sm:flex">
-                    <span className="sr-only">Fédération Internationale de Football Association</span>
-                    <div className="flex h-12 w-20 items-center justify-center sm:h-14 sm:w-24">
+                  <div className="flex min-w-0 items-center justify-end gap-3">
+                    <div className="hidden items-center gap-2 lg:flex">
+                      <ThemeToggleButton />
+                      <ActiveProfileIndicator />
+                    </div>
+
+                    <div className="hidden h-10 w-20 items-center justify-end sm:flex lg:w-24">
+                      <span className="sr-only">Fédération Internationale de Football Association</span>
                       <Image
                         src="/images/FIFA_logo_without_slogan.svg.png"
                         alt="FIFA logo"
@@ -92,9 +90,9 @@ export default function RootLayout({
                         priority
                       />
                     </div>
-                  </div>
 
-                  <MobileNav />
+                    <MobileNav />
+                  </div>
                 </div>
               </div>
             </header>

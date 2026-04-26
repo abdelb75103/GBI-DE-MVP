@@ -27,10 +27,10 @@ export default function UploadPage() {
           Only administrators can upload new PDFs. If you believe this is a mistake, please contact AbdelRahman.
         </p>
         <Link
-          href="/dashboard"
+          href="/data-extraction"
           className="inline-flex items-center justify-center rounded-full border border-amber-200 bg-white/80 px-5 py-2 text-sm font-semibold text-amber-800 shadow-sm transition hover:border-amber-300 hover:text-amber-900"
         >
-          Back to dashboard
+          Back to data extraction
         </Link>
       </div>
     );
@@ -54,10 +54,10 @@ export default function UploadPage() {
             </div>
           </div>
           <Link
-            href="/dashboard"
+            href="/data-extraction"
             className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
           >
-            Back to dashboard
+            Back to data extraction
           </Link>
         </div>
       </section>

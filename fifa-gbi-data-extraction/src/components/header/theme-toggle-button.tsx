@@ -39,23 +39,18 @@ export function ThemeToggleButton() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="relative inline-flex h-9 w-16 items-center rounded-full border border-slate-200/70 bg-white/70 px-1.5 text-xs font-semibold text-slate-600 shadow-sm transition hover:border-indigo-200 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-200/80 data-[state=dark]:border-indigo-300 data-[state=dark]:text-indigo-200"
+      className="relative inline-flex h-9 w-12 items-center rounded-full border border-slate-200/70 bg-white/80 px-1.5 text-xs font-semibold text-slate-600 shadow-sm transition hover:border-indigo-200 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-200/80 data-[state=dark]:border-indigo-300 data-[state=dark]:text-indigo-200"
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       data-state={isDark ? 'dark' : 'light'}
     >
       <span
-        className={`absolute inset-y-1 flex w-[calc(50%-0.2rem)] items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 shadow transition-transform duration-300 ease-in-out ${
-          isDark ? 'translate-x-[calc(100%+0.3rem)] bg-indigo-500/20 text-indigo-100' : 'translate-x-0'
+        className={`absolute inset-y-1 flex w-6 items-center justify-center rounded-full bg-[#0b3a70] text-white shadow transition-transform duration-300 ease-in-out ${
+          isDark ? 'translate-x-4' : 'translate-x-0'
         }`}
       >
         {isDark ? <MoonIcon className="h-4 w-4" /> : <SunIcon className="h-4 w-4" />}
       </span>
-      <span className="flex w-1/2 items-center justify-center text-[11px] uppercase tracking-wide">
-        <SunIcon className="h-4 w-4" />
-      </span>
-      <span className="flex w-1/2 items-center justify-center text-[11px] uppercase tracking-wide">
-        <MoonIcon className="h-4 w-4" />
-      </span>
+      <span className="sr-only">{isDark ? 'Dark' : 'Light'}</span>
     </button>
   );
 }

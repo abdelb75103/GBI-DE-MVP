@@ -74,6 +74,7 @@ export function FullTextScreeningClient({
       oneVote,
     };
   }, [currentReviewerId, records]);
+  const progressPercent = counts.all > 0 ? Math.round((counts.complete / counts.all) * 100) : 0;
 
   const filteredRecords = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -266,6 +267,26 @@ export function FullTextScreeningClient({
               tone="purple"
               onClick={() => setFilter('all')}
             />
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white/75 p-4 shadow-sm">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Full-text progress</p>
+                <p className="mt-1 text-sm text-slate-600">
+                  {counts.complete} of {counts.all} full-text records have a final screening outcome.
+                </p>
+              </div>
+              <p className="text-2xl font-semibold text-teal-700">{progressPercent}%</p>
+            </div>
+            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200">
+              <div className="h-full rounded-full bg-teal-600" style={{ width: `${progressPercent}%` }} />
+            </div>
+            <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+              <span>{counts.needsYourVote} need your vote</span>
+              <span>{counts.awaitingPdf} need PDF upload</span>
+              <span>{counts.conflicts} conflicts</span>
+            </div>
           </div>
         </div>
       </section>

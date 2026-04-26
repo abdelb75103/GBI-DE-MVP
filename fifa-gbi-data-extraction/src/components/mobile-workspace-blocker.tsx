@@ -28,10 +28,10 @@ export function MobileWorkspaceBlocker({ children, breakpoint = 1024 }: MobileWo
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
-            href="/dashboard"
+            href="/data-extraction"
             className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
           >
-            ← Back to dashboard
+            ← Back to data extraction
           </Link>
         </div>
       </div>

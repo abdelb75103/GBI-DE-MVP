@@ -100,6 +100,8 @@ export function TitleAbstractScreeningClient({
       aiNotRun: records.filter((record) => record.aiStatus !== 'completed').length,
     };
   }, [currentReviewerId, records]);
+  const completedCount = counts.ready + counts.excluded + counts.promoted;
+  const progressPercent = counts.all > 0 ? Math.round((completedCount / counts.all) * 100) : 0;
 
   const filteredRecords = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -243,6 +245,26 @@ export function TitleAbstractScreeningClient({
               </label>
             </div>
           ) : null}
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Screening progress</p>
+              <p className="mt-1 text-sm text-slate-600">
+                {completedCount} of {counts.all} references have a final title/abstract outcome.
+              </p>
+            </div>
+            <p className="text-2xl font-semibold text-[#0b3a70]">{progressPercent}%</p>
+          </div>
+          <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-white ring-1 ring-slate-200">
+            <div className="h-full rounded-full bg-[#0b3a70]" style={{ width: `${progressPercent}%` }} />
+          </div>
+          <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
+            <span>{counts.needsYourVote} need your vote</span>
+            <span>{counts.resolver} need resolver</span>
+            <span>{counts.promoted} promoted to full text</span>
+          </div>
         </div>
       </section>
 

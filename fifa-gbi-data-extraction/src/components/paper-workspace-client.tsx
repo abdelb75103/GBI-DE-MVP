@@ -40,7 +40,7 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
     if (hasUnsavedChanges && !window.confirm('You have unsaved changes. Save them before leaving?')) {
       return;
     }
-    router.push('/dashboard');
+    router.push('/data-extraction');
   }, [hasUnsavedChanges, router]);
 
   const sessionBanner = useMemo(() => {
@@ -117,7 +117,7 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
               onClick={handleBackToDashboard}
               className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
             >
-              Back to dashboard
+              Back to data extraction
             </button>
           </div>
         </div>

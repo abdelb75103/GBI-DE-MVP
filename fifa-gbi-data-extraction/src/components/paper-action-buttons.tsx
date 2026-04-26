@@ -14,10 +14,10 @@ export function PaperActionButtons({ readOnly = false }: PaperActionButtonsProps
     return (
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Link
-          href="/dashboard"
+          href="/data-extraction"
           className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
         >
-          ← Back to Dashboard
+          ← Back to Data Extraction
         </Link>
       </div>
     );
@@ -94,10 +94,10 @@ export function PaperActionButtons({ readOnly = false }: PaperActionButtonsProps
         )}
       </button>
       <Link
-        href="/dashboard"
+        href="/data-extraction"
         className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
       >
-        ← Back to Dashboard
+        ← Back to Data Extraction
       </Link>
     </div>
   );
