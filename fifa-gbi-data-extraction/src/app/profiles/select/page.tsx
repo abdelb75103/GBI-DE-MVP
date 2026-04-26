@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { ProfileChooser } from '@/components/profile/profile-chooser';
 import { canAccessWorkspace, getDisplayRole } from '@/lib/profile-access';
@@ -51,45 +52,55 @@ export default async function ProfileSelectPage() {
     }));
 
   return (
-    <section className="relative isolate overflow-hidden rounded-[2.25rem] border border-indigo-100/80 bg-white/90 shadow-2xl ring-1 ring-slate-200/60">
-      <div className="relative z-10 grid gap-10 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-[minmax(0,25rem)_minmax(0,1fr)] lg:px-14">
-        <div className="flex min-h-[20rem] flex-col justify-between gap-8 lg:min-h-[26rem]">
-          <div className="flex flex-1 flex-col justify-start gap-4 pt-2 sm:pt-4">
-            <span className="inline-flex w-fit items-center rounded-full border border-indigo-100 bg-indigo-50/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600">
-              Welcome back
-            </span>
-            <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl lg:text-4xl">
-              The FIFA Global Burden of Injury and Illness in Football Project
-            </h1>
-            <p className="text-xs font-medium uppercase tracking-[0.32em] text-slate-400">
-              FIFA GBI data extraction workspace
-            </p>
-          </div>
+    <section className="relative grid min-h-[calc(100svh-12rem)] min-w-0 overflow-hidden rounded-[2.5rem] bg-[#ffffff] shadow-2xl ring-1 ring-slate-200/70 lg:grid-cols-[minmax(0,0.9fr)_minmax(28rem,1fr)]">
+      <Image
+        src="/images/profile-global-football-network.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none absolute inset-0 z-0 object-cover object-center opacity-100"
+        priority
+      />
+      <div className="relative z-10 flex min-w-0 flex-col justify-center gap-8 overflow-hidden px-7 py-8 text-left sm:px-10 sm:py-12 lg:min-h-[30rem] lg:px-14">
+        <div className="max-w-xl space-y-5 lg:-translate-y-24">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#1479d6]">Welcome back</p>
+          <h1 className="max-w-full break-words text-2xl font-semibold leading-[1.06] tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            The FIFA Global Burden of Injury and Illness in Football Project
+          </h1>
+          <p className="max-w-full break-words text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 sm:max-w-md sm:text-sm sm:tracking-[0.28em]">
+            FIFA GBI workspace
+          </p>
         </div>
 
-        <div className="space-y-6 lg:-ml-6 lg:pl-2">
-          <div className="rounded-[1.75rem] border border-slate-200/80 bg-white/80 p-5 shadow-xl ring-1 ring-slate-200/70 backdrop-blur sm:p-6">
-            <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-slate-900">Choose your account</h2>
-              <p className="text-sm text-slate-600">Pick your profile to enter the workspace.</p>
+      </div>
+
+      <div className="relative z-10 flex min-h-[32rem] min-w-0 items-center justify-center overflow-hidden px-6 py-8 sm:px-10 sm:py-10 lg:min-h-[34rem] lg:px-14">
+        <div className="relative w-full max-w-xl rounded-3xl border border-white/70 bg-white/78 p-5 shadow-2xl shadow-[#0b3a70]/18 ring-1 ring-white/90 backdrop-blur-md sm:p-8">
+          <div className="mb-6 flex items-start justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Select profile</h2>
             </div>
-            <div className="mt-6 space-y-4">
-              {loadError ? (
-                <div className="rounded-2xl border border-rose-200/80 bg-rose-50/90 p-5 text-sm text-rose-700">
-                  {loadError}
-                </div>
-              ) : finalProfiles.length === 0 ? (
-                <div className="rounded-2xl border border-amber-200/80 bg-amber-50/80 p-5 text-sm text-amber-700">
-                  No profiles found. Create users in Supabase before proceeding.{' '}
-                  <Link href="https://app.supabase.com/" className="font-semibold underline" target="_blank">
-                    Open Supabase
-                  </Link>
-                </div>
-              ) : (
-                <ProfileChooser profiles={finalProfiles} />
-              )}
-            </div>
+            {!loadError && finalProfiles.length > 0 ? (
+              <p className="rounded-full bg-[#edf5ff] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#0b3a70]">
+                {finalProfiles.length} {finalProfiles.length === 1 ? 'profile' : 'profiles'}
+              </p>
+            ) : null}
           </div>
+
+          {loadError ? (
+            <div className="rounded-2xl border border-rose-200/80 bg-rose-50/90 p-5 text-sm text-rose-700">
+              {loadError}
+            </div>
+          ) : finalProfiles.length === 0 ? (
+            <div className="rounded-2xl border border-amber-200/80 bg-amber-50/80 p-5 text-sm text-amber-700">
+              No profiles found. Create users in Supabase before proceeding.{' '}
+              <Link href="https://app.supabase.com/" className="font-semibold underline" target="_blank">
+                Open Supabase
+              </Link>
+            </div>
+          ) : (
+            <ProfileChooser profiles={finalProfiles} />
+          )}
         </div>
       </div>
     </section>

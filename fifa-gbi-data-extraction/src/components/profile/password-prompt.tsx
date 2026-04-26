@@ -95,14 +95,14 @@ export function PasswordPrompt({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-4 sm:items-center"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-hidden rounded-3xl bg-[#0b3a70]/12 p-4 backdrop-blur-[6px] sm:items-center"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="password-prompt-title"
     >
       <div
-        className="relative w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl ring-1 ring-slate-200/60 sm:p-6"
+        className="relative w-full max-w-lg rounded-3xl border border-white/80 bg-white/92 p-5 shadow-2xl shadow-[#0b3a70]/18 ring-1 ring-[#b8ddf7]/50 backdrop-blur-xl sm:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-6">
@@ -133,7 +133,7 @@ export function PasswordPrompt({
               onChange={(e) => setPassword(e.target.value)}
               onKeyDown={handleKeyDown}
               disabled={isVerifying}
-              className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500"
+              className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500"
               placeholder="Enter your password"
               autoComplete="current-password"
             />
@@ -150,14 +150,14 @@ export function PasswordPrompt({
               type="button"
               onClick={onClose}
               disabled={isVerifying}
-              className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isVerifying || !password.trim()}
-              className="flex-1 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex-1 rounded-lg bg-[#0b3a70] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#082f5f] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/25 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isVerifying ? 'Verifying...' : 'Continue'}
             </button>
