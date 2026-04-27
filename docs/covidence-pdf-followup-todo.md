@@ -226,6 +226,42 @@ Run context:
 - `#752`, `#757`, `#760`
 - `#801`, `#802`, `#811`, `#847`, `#869`
 
+### April 27, 2026 additional full text
+
+- `#744` Engebretsen 1987
+  - *Fotballskader og kunstgress.*
+  - PDF now available: `/Users/abdelbabiker/Downloads/8385453620007966.pdf`
+  - Language/status: Norwegian article; mark as `has PDF` and `non-English paper`.
+  - Evidence: delivery note identifies *Tidsskrift for den Norske Laegeforening*, 1987, volume `107/26`, pages `2215-2217`, article title *Fotballskader og kunstgress*, authors Lars Engebretsen and Trygve Kase.
+
+### April 27, 2026 website import of newly included full texts
+
+These records came from the April 24 full-text screening decision report and were imported into the data extraction website from local PDFs. All imported records have PDFs attached.
+
+| Covidence # | Website ID | Website status | Paper |
+| --- | --- | --- | --- |
+| `#13` | `S629` | `uploaded` | *Epidemiology of Injuries in Elite Male Futsal Players* |
+| `#63` | `S630` | `uploaded` | *Injury Profile among Elite Youth Male Football Players in a German Academy* |
+| `#69` | `S631` | `uploaded` | *Injury Analysis of a Professional Female Soccer Team* |
+| `#83` | `S632` | `uploaded` | *Hip and Groin Injuries Among Collegiate Male Soccer Players* |
+| `#364` | `S633` | `uploaded` | *Injury Associated with Soccer: A Review of Epidemiology and Etiology* |
+| `#387` | `S634` | `uploaded` | *Injuries and Functional Performance Status in Young Elite Football Players* |
+| `#388` | `S635` | `uploaded` | *The Epidemiology and Mechanisms of Soccer Injuries* |
+| `#425` | `S636` | `uploaded` | *FIFA "11" Injury Prevention Program in Italian Amateur Soccer* |
+| `#628` | `S637` | `uploaded` | *Epidemiological Survey of Injuries During the 1st Under 17 World Football Championship* |
+| `#637` | `S638` | `uploaded` | *Association Football Injuries in School Boys* |
+| `#802` | `S639` | `uploaded` | *Incidence of Injuries in Young Soccer Players* |
+| `#811` | `S640` | `uploaded` | *Injuries and Rehabilitation Workload in a National Team During the 2010 World Cup* |
+| `#847` | `S641` | `uploaded` | *Injuries Among Adolescent Players in an Amateur Soccer Tournament in Nigeria* |
+| `#869` | `S642` | `uploaded` | *Medical Support for an All-Star Youth Soccer Team in Niigata* |
+
+Import files:
+- Manifest/results: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/covidence-new-inclusions-2026-04-27`
+- Source report: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-uploaded-23-full-text-screening-review.html`
+
+Related already-live record:
+- `#361` Ostenberg 2000 was already present as `S216` with status `extracted`, so it was not re-imported.
+
 ### Remaining unresolved after the second pass
 
 #### Confirmed not found in the desktop folder set
@@ -249,9 +285,6 @@ Run context:
 - `#378` Mackay 1996
   - *Pre-season injuries in Scottish football: A prospective study*
   - No verified local PDF was found in the desktop folder set.
-- `#744` Engebretsen 1987
-  - *Fotballskader og kunstgress.*
-  - No verified local PDF was found in the desktop folder set.
 - `#748` Perdriel 1975
   - *Traumatismes orbitaires dans la pratique du football.*
   - No verified local PDF was found in the desktop folder set.
@@ -264,7 +297,7 @@ Run context:
 - Work item 1: resolve whether `#370` can remain link-only
   - Open the Covidence record and decide if the existing external full-text link is acceptable for the review workflow.
   - If not, source and upload a real PDF later.
-- Work item 2: request/source missing PDFs externally for `#368`, `#375`, `#617`, `#727`, `#744`, `#748`, and `#859`
+- Work item 2: request/source missing PDFs externally for `#368`, `#375`, `#617`, `#727`, `#748`, and `#859`
   - Preferred order: library access, publisher site, interlibrary loan, then manual web search.
 - Work item 3: manually re-check `#378`
   - Look for alternate filenames, scans without OCR text, or local copies stored outside the April 15-16 desktop folders.
@@ -275,7 +308,7 @@ Run context:
 ### Completion target for this queue
 
 - Accept `#370` as resolved if link-only is allowed.
-- Source and upload real PDFs for `#368`, `#375`, `#617`, `#727`, `#744`, `#748`, and `#859`.
+- Source and upload real PDFs for `#368`, `#375`, `#617`, `#727`, `#748`, and `#859`.
 - Either find a valid full article for `#378` and `#758` or explicitly mark them as unavailable after final manual checking.
 
 ## Key Files

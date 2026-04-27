@@ -260,13 +260,13 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
               className={`group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ease-out ${
                 active
                   ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-10px_rgba(11,58,112,0.6)] ring-1 ring-[#0b3a70]/40'
-                  : 'bg-white/70 text-slate-600 ring-1 ring-slate-200/70 hover:bg-white hover:text-[#0b3a70] hover:ring-[#0b3a70]/30'
+                  : 'border border-slate-300 bg-white text-slate-800 shadow-sm ring-1 ring-slate-200 hover:border-[#0b3a70]/40 hover:bg-slate-50 hover:text-[#0b3a70] hover:ring-[#0b3a70]/30'
               }`}
             >
               <span className="leading-none">{option.label}</span>
               <span
                 className={`inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full px-1.5 text-[10px] font-bold leading-none tabular-nums ${
-                  active ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-[#0b3a70]/10 group-hover:text-[#0b3a70]'
+                  active ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-800 group-hover:bg-[#0b3a70]/10 group-hover:text-[#0b3a70]'
                 }`}
               >
                 {option.count}

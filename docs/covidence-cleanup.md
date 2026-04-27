@@ -114,11 +114,12 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | #752 | Yes | Danish title identified from title; PDF uploaded April 15 pass | Hinge 1984 Fodboldskader hos old boys fodboldspillere. Hinge 1984 |
 | #759 | No | Request Danish | Jorgensen 1981 [Patterns of injuries in Danish division soccer]. Jorgensen, U 1981;(): 1981 Upload full text |
 
-### Norwegian (1)
+### Norwegian (2)
 
 | Covidence # | Has PDF Now | Exact Note | Title |
 | --- | --- | --- | --- |
 | #630 | No | Request Norwegian | Drogset 1990 Injuries among soccer players in lower division clubs Drogset J.O. and Midthjell K. 1990;(): 1990 Upload full text |
+| #744 | Yes | Norwegian article; PDF uploaded/available April 27, 2026 as `/Users/abdelbabiker/Downloads/8385453620007966.pdf`; mark as non-English paper | Engebretsen 1987 Fotballskader og kunstgress. Engebretsen, L. and Kase, T. 1987;(): 1987 Upload full text |
 
 ### Polish (1)
 
@@ -142,7 +143,6 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | #378 | 2 | Request \| \| requested - waiting; no verified local PDF found in the April 16 second pass | Mackay 1996 Pre-season injuries in Scottish football: A prospective study Mackay G.M. and Hillis W.S. 1996;(): 1996 Upload full text |
 | #617 | 3 |  | Gamez 2006 Epidemiology of beach volleyball and beach soccer Gamez J. and Montaner A.M. and Alcantara E. and Alemany S. and Lopez M.A. and Montero J. and Garia A.G. and Vera P.M. 2006;(): 2006 Upload full text |
 | #727 | 1 | Request; no verified local PDF found in the April 16 second pass | Ouyang 2001 The prevention and treatment of injuries in Chinese female football players. Ouyang, X. 2001;(): 2001 Full text https://pesquisa.bvsalud.org/portal/resource/pt/wpr-582558?lang=en# Manage full text |
-| #744 | 1 | Request; no verified local PDF found in the April 16 second pass | Engebretsen 1987 Fotballskader og kunstgress. Engebretsen, L. and Kase, T. 1987;(): 1987 Upload full text |
 | #748 | 1 | Request; no verified local PDF found in the April 16 second pass | Perdriel 1975 Traumatismes orbitaires dans la pratique du football. Perdriel, G. 1975;(): 1975 Upload full text |
 | #758 | 1 | Request; only an abstract/citation-style local PDF was found, not the full article | Goldberg 1988 Injuries in youth football. Goldberg, B and Rosenthal, P P and Robertson, L S and Nicholas, J A 1988;(): 1988 Upload full text |
 | #859 | 1 | Request; no verified local PDF found in the April 16 second pass | MTSHALI 2015 Football injuries during a South African university sport tournament. MTSHALI, S. and STEWART, A. V. and MUSENGE, E. 2015;(): 2015 Upload full text |
@@ -163,8 +163,6 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 - `#617`
   - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
 - `#727`
-  - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
-- `#744`
   - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.
 - `#748`
   - Search library holdings, publisher pages, or interlibrary loan for the full article PDF.

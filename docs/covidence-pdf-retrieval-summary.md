@@ -229,7 +229,7 @@ Current residue after the second pass:
 - Confirmed not present in the desktop folder set:
   - `#368`, `#375`, `#617`, `#727`, `#859`
 - Still unresolved because no safe full-article local PDF could be matched:
-  - `#370`, `#378`, `#744`, `#748`, `#758`
+  - `#370`, `#378`, `#748`, `#758`
 
 Follow-up source of truth for this residue:
 
@@ -238,6 +238,49 @@ Follow-up source of truth for this residue:
 Practical next steps from this point:
 
 - Decide whether `#370` is acceptable as link-only in Covidence.
-- Source new PDFs externally for `#368`, `#375`, `#617`, `#727`, `#744`, `#748`, and `#859`.
+- Source new PDFs externally for `#368`, `#375`, `#617`, `#727`, `#748`, and `#859`.
 - Re-check `#378` for any mislabeled or non-OCR local copy before requesting it externally.
 - Keep `#758` unresolved unless the real article PDF is found; the current local file looks like a citation/abstract page rather than full text.
+
+## April 27, 2026 Additional Full Text Update
+
+- `#744` Engebretsen 1987 is no longer in the missing-PDF residue.
+- PDF now available: `/Users/abdelbabiker/Downloads/8385453620007966.pdf`
+- Language/status: Norwegian article; mark as `has PDF` and `non-English paper`.
+- Evidence from the delivery note: *Tidsskrift for den Norske Laegeforening*, 1987, volume `107/26`, pages `2215-2217`, article title *Fotballskader og kunstgress*, authors Lars Engebretsen and Trygve Kase.
+- Remaining externally sourced PDF targets from that residue are now `#368`, `#375`, `#617`, `#727`, `#748`, and `#859`; `#370`, `#378`, and `#758` still need their separate checks described above.
+
+## April 27, 2026 Included Full Texts Imported To Website
+
+Context:
+
+- Source decision report: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-uploaded-23-full-text-screening-review.html`
+- Import manifest/results directory: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/covidence-new-inclusions-2026-04-27`
+- PDF source directory: `/Users/abdelbabiker/Desktop/refifagbioriginalsearch`
+- Workflow: used the Covidence PDF import script with a small manifest generated from the April 24 full-text decision report. No new Covidence browser download was needed because all target PDFs were already present locally.
+- Result: `14` new live website papers created, each with `primary_file_id` set and a PDF attached.
+- Live DB verification after import: `641` total papers; latest assigned IDs through `S642`.
+
+Imported records:
+
+| Covidence # | Website ID | Status | Paper |
+| --- | --- | --- | --- |
+| `#13` | `S629` | `uploaded` | *Epidemiology of Injuries in Elite Male Futsal Players* |
+| `#63` | `S630` | `uploaded` | *Injury Profile among Elite Youth Male Football Players in a German Academy* |
+| `#69` | `S631` | `uploaded` | *Injury Analysis of a Professional Female Soccer Team* |
+| `#83` | `S632` | `uploaded` | *Hip and Groin Injuries Among Collegiate Male Soccer Players* |
+| `#364` | `S633` | `uploaded` | *Injury Associated with Soccer: A Review of Epidemiology and Etiology* |
+| `#387` | `S634` | `uploaded` | *Injuries and Functional Performance Status in Young Elite Football Players* |
+| `#388` | `S635` | `uploaded` | *The Epidemiology and Mechanisms of Soccer Injuries* |
+| `#425` | `S636` | `uploaded` | *FIFA "11" Injury Prevention Program in Italian Amateur Soccer* |
+| `#628` | `S637` | `uploaded` | *Epidemiological Survey of Injuries During the 1st Under 17 World Football Championship* |
+| `#637` | `S638` | `uploaded` | *Association Football Injuries in School Boys* |
+| `#802` | `S639` | `uploaded` | *Incidence of Injuries in Young Soccer Players* |
+| `#811` | `S640` | `uploaded` | *Injuries and Rehabilitation Workload in a National Team During the 2010 World Cup* |
+| `#847` | `S641` | `uploaded` | *Injuries Among Adolescent Players in an Amateur Soccer Tournament in Nigeria* |
+| `#869` | `S642` | `uploaded` | *Medical Support for an All-Star Youth Soccer Team in Niigata* |
+
+Notes:
+
+- `#364` is a reference-list checker rather than a primary extraction paper, but it was uploaded as requested so the PDF is available on the website.
+- `#361` Ostenberg 2000 was already present on the website as `S216` with status `extracted`, so it was not re-imported.

@@ -63,7 +63,7 @@ These papers were traceable as citations, abstracts, or older catalog references
 - `#550` Watson 1997
 - `#617` Gamez 2006
 - `#637` Kristiansen 1983
-- `#744` Engebretsen 1987
+- `#744` Engebretsen 1987 - resolved April 27, 2026 via uploaded PDF; Norwegian/non-English
 - `#748` Perdriel 1975
 - `#752` Hinge 1984
 - `#758` Goldberg 1988
@@ -107,7 +107,7 @@ The older unresolved papers are not all the same case. Some are clearly modern p
 | `#628` | Volpi 1992 | repository or catalog record with no file | `https://moh-it.pure.elsevier.com/en/publications/epidemiological-survey-of-injuries-during-the-1st-under-17-world-` | Record exists; no attached full text | Stop |
 | `#637` | Kristiansen 1983 | print holding or catalog only | `https://jyu.finna.fi/Record/arto.014449264` | Library record located; no digital full text found | Stop |
 | `#727` | Ouyang 2001 | repository or catalog record with no file | `https://pesquisa.bvsalud.org/portal/resource/pt/wpr-582558?lang=en#` | Bibliographic record found; no attached full text | Stop |
-| `#744` | Engebretsen 1987 | no reliable trace beyond citation metadata | `https://scholar.google.com/scholar?q=%22Fotballskader+og+kunstgress%22` | Retry found no stable digital record with full text | Stop |
+| `#744` | Engebretsen 1987 | resolved by later supplied PDF | `https://scholar.google.com/scholar?q=%22Fotballskader+og+kunstgress%22` | PDF available April 27, 2026 at `/Users/abdelbabiker/Downloads/8385453620007966.pdf`; article is Norwegian/non-English | Mark as has PDF and non-English paper |
 | `#748` | Perdriel 1975 | no reliable trace beyond citation metadata | `https://scholar.google.com/scholar?q=%22Traumatismes+orbitaires+dans+la+pratique+du+football%22` | Retry found no stable digital record with full text | Stop |
 | `#752` | Hinge 1984 | no reliable trace beyond citation metadata | `https://scholar.google.com/scholar?q=%22Fodboldskader+hos+old+boys+fodboldspillere%22` | Retry found no direct digital record with full text | Stop |
 | `#757` | Blaser 1992 | repository record with no file | `https://edoc.unibas.ch/entities/publication/67539b92-c888-4172-a727-3eb61ec7111a` | Repository record exists but attached file is not the article PDF | Stop |
