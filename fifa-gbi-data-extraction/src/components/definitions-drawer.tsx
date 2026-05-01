@@ -48,92 +48,94 @@ export function DefinitionsDrawer({ categories, triggerClassName }: DefinitionsD
     <>
       <button
         type="button"
-        disabled
-        aria-hidden="true"
-        tabIndex={-1}
-        onClick={() => {}}
-        className={`z-40 pointer-events-none hidden select-none opacity-0 ${triggerClasses}`}
+        onClick={() => setIsOpen(true)}
+        className={`z-40 ${triggerClasses}`}
+        aria-expanded={isOpen}
+        aria-controls="definitions-drawer"
       >
         Definitions
       </button>
 
-      <div
-        data-clickable="true"
-        className={`fixed inset-0 z-40 bg-slate-900/40 transition-opacity ${isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
-        onClick={() => setIsOpen(false)}
-        aria-hidden={!isOpen}
-      />
-
-      <aside
-        className={`fixed inset-y-0 right-0 z-50 w-full max-w-md transform border-l border-slate-200 bg-white shadow-2xl transition-transform duration-200 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-        aria-hidden={!isOpen}
-      >
-        <header className="flex items-start justify-between gap-3 border-b border-slate-200 px-6 py-5">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-indigo-500">Reference</p>
-            <h2 className="mt-1 text-lg font-semibold text-slate-900">IOC / OSIICS Definitions</h2>
-            <p className="mt-1 text-xs text-slate-500">
-              Quick reference for injury &amp; illness terminology. Filter to find relevant terms while reviewing a paper.
-            </p>
-          </div>
-          <button
-            type="button"
+      {isOpen ? (
+        <>
+          <div
+            data-clickable="true"
+            className="fixed inset-0 z-40 bg-slate-900/40"
             onClick={() => setIsOpen(false)}
-            className="rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shadow-sm transition hover:border-slate-300 hover:text-slate-700"
-            aria-label="Close definitions panel"
+            aria-hidden="true"
+          />
+
+          <aside
+            id="definitions-drawer"
+            className="fixed inset-y-0 right-0 z-50 w-full max-w-md border-l border-slate-200 bg-white shadow-2xl"
+            aria-label="IOC / OSIICS definitions"
           >
-            Close
-          </button>
-        </header>
+            <header className="flex items-start justify-between gap-3 border-b border-slate-200 px-6 py-5">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-indigo-500">Reference</p>
+                <h2 className="mt-1 text-lg font-semibold text-slate-900">IOC / OSIICS Definitions</h2>
+                <p className="mt-1 text-xs text-slate-500">
+                  Quick reference for injury &amp; illness terminology. Filter to find relevant terms while reviewing a paper.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500 shadow-sm transition hover:border-slate-300 hover:text-slate-700"
+                aria-label="Close definitions panel"
+              >
+                Close
+              </button>
+            </header>
 
-        <div className="border-b border-slate-200 px-6 py-4">
-          <label className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-            Filter
-            <input
-              type="text"
-              value={filter}
-              onChange={(event) => setFilter(event.target.value)}
-              placeholder="Search terms…"
-              className="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-2 text-sm text-slate-700 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-            />
-          </label>
-        </div>
-
-        <div className="h-full overflow-y-auto px-6 py-5">
-          {filtered.length === 0 ? (
-            <p className="text-sm text-slate-500">No definitions match your search.</p>
-          ) : (
-            <div className="space-y-6">
-              {filtered.map((category) => (
-                <section key={category.id} className="space-y-3">
-                  <header>
-                    <h3 className="text-sm font-semibold text-slate-900">{category.title}</h3>
-                    <p className="mt-1 text-xs text-slate-500">{category.description}</p>
-                  </header>
-                  <ul className="space-y-3">
-                    {category.entries.map((entry) => (
-                      <li
-                        key={entry.id}
-                        className="rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4 text-sm text-slate-700 shadow-sm"
-                      >
-                        <p className="font-semibold text-slate-900">{entry.label}</p>
-                        <p className="mt-1 text-xs text-slate-600">{entry.summary}</p>
-                        {entry.source ? (
-                          <p className="mt-2 text-[11px] uppercase tracking-wide text-slate-400">
-                            Source: {entry.source}
-                          </p>
-                        ) : null}
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
+            <div className="border-b border-slate-200 px-6 py-4">
+              <label className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Filter
+                <input
+                  type="text"
+                  value={filter}
+                  onChange={(event) => setFilter(event.target.value)}
+                  placeholder="Search terms…"
+                  className="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-2 text-sm text-slate-700 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+                />
+              </label>
             </div>
-          )}
-        </div>
-      </aside>
+
+            <div className="h-full overflow-y-auto px-6 py-5">
+              {filtered.length === 0 ? (
+                <p className="text-sm text-slate-500">No definitions match your search.</p>
+              ) : (
+                <div className="space-y-6">
+                  {filtered.map((category) => (
+                    <section key={category.id} className="space-y-3">
+                      <header>
+                        <h3 className="text-sm font-semibold text-slate-900">{category.title}</h3>
+                        <p className="mt-1 text-xs text-slate-500">{category.description}</p>
+                      </header>
+                      <ul className="space-y-3">
+                        {category.entries.map((entry) => (
+                          <li
+                            key={entry.id}
+                            className="rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4 text-sm text-slate-700 shadow-sm"
+                          >
+                            <p className="font-semibold text-slate-900">{entry.label}</p>
+                            <p className="mt-1 text-xs text-slate-600">{entry.summary}</p>
+                            {entry.source ? (
+                              <p className="mt-2 text-[11px] uppercase tracking-wide text-slate-400">
+                                Source: {entry.source}
+                              </p>
+                            ) : null}
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  ))}
+                </div>
+              )}
+            </div>
+          </aside>
+        </>
+      ) : null}
     </>
   );
 }
