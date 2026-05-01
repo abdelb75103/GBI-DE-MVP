@@ -169,7 +169,7 @@ export default async function PaperWorkspace({
   return (
     <MobileWorkspaceBlocker>
       <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>
-        <div className="space-y-10">
+        <div className="extraction-workspace-page space-y-10">
           {isReadOnly && (
             <section className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-amber-50/80 p-6 shadow-xl ring-1 ring-amber-200/60">
               <div className="flex items-center gap-3">

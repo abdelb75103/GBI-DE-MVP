@@ -198,6 +198,33 @@ input[type='radio']:disabled {
   color: #f8fafc !important;
 }
 
+/* Keep the extraction workspace visually stable instead of inheriting the dim glass theme. */
+.extraction-workspace-page {
+  --page-bg: radial-gradient(120% 120% at 2% 0%, #eef2ff 0%, #f8fafc 45%, #f1f5f9 100%);
+  --page-text: #0f172a;
+  --surface: rgba(255, 255, 255, 0.96);
+  --surface-strong: #ffffff;
+  --surface-muted: rgba(248, 250, 252, 0.96);
+  --surface-border: rgba(148, 163, 184, 0.35);
+  --surface-border-strong: rgba(148, 163, 184, 0.45);
+  --surface-ring: rgba(148, 163, 184, 0.32);
+  --text-strong: #0f172a;
+  --text-primary: #1e293b;
+  --text-muted: #475569;
+  --text-soft: #64748b;
+  color: var(--page-text);
+  position: relative;
+}
+
+.extraction-workspace-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--page-bg);
+  pointer-events: none;
+}
+
 /* Form focus overrides */
 [class*='focus\:ring-indigo-200'] {
   --tw-ring-color: color-mix(in srgb, #818cf8 55%, transparent);
