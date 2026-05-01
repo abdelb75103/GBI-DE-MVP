@@ -58,7 +58,7 @@ export function ManualGroupEditor({ paperId, tab, groupLabel, groupDescription, 
       paperId,
       tab,
       fieldId: field.id,
-      value: value.trim() || null,
+      value: value || null,
       metric: field.metric,
     });
   };

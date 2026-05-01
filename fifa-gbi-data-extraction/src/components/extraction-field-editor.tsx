@@ -82,8 +82,10 @@ export function ExtractionFieldEditor({
   
   // Get local value if it exists, otherwise use server value
   const localValue = getFieldValue(tab, definition.id);
-  const rawValue = localValue !== undefined ? localValue ?? '' : result?.value ?? '';
-  const currentValue = normalizeGlobalFieldValue(definition.id, rawValue) ?? '';
+  const currentValue =
+    localValue !== undefined
+      ? localValue ?? ''
+      : normalizeGlobalFieldValue(definition.id, result?.value ?? '') ?? '';
 
   const isSelected = supportsAi ? selected : true;
   const currentReviewState: ReviewState | undefined = requiresReview ? reviewState ?? 'pending' : undefined;
