@@ -101,7 +101,7 @@ Backlog ordering rule:
    - For count-style fields such as mode-of-onset rows, do not invent subgroup counts from percentages unless the paper prints a stable subgroup injury denominator. If a reviewer explicitly wants those rows filled anyway and only percentages are available, store the percentages with a `%` suffix and note clearly in the backlog that the onset rows are percentage fallbacks rather than true counts.
    - When a reported count, incidence, burden, or similar extracted value includes a `95% CI`, preserve it during this review step using the schema’s dedicated CI field when available, otherwise inline after the value itself.
    - If a dedicated CI field exists for a metric, store the base estimate in the main field and the interval only in the dedicated CI field. Do not duplicate that same CI inline in the estimate field.
-   - Standardize inline confidence interval formatting as `estimate (lower-upper)` even if the paper uses commas, `to`, brackets, or another delimiter. Example: `2.7 (2.2-3.2)`.
+   - Standardize inline confidence interval formatting as `estimate (lower - upper)` even if the paper uses commas, `to`, brackets, or another delimiter. Example: `2.7 (2.2 - 3.2)`.
    - Use this completion checklist before calling any paper `review-ready`:
      - line mapping confirmed against the strongest directly reported subgroup axis
      - all location/type/mechanism/severity tables or figures scanned through their final continuation page

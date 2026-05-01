@@ -9,7 +9,8 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 ## Summary
 
 - Rows captured from the rendered queue: 74
-- Foreign-language papers: 42
+- Foreign-language papers captured in this cleanup snapshot: 42
+- Non-English records tracked in the April 27 translation manifest: 43
   - German: 10
   - Turkish: 1
   - Portugese: 7
@@ -27,6 +28,74 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 - Last manual status refresh: April 16, 2026
   - Manual Covidence upload pass added PDFs for `#95`, `#550`, `#757`, `#811`, and `#869`
   - The earlier April 15 upload pass had already added PDFs for `#13`, `#36`, `#63`, `#69`, `#83`, `#361`, `#364`, `#387`, `#388`, `#425`, `#568`, `#628`, `#637`, `#752`, `#760`, `#801`, `#802`, and `#847`
+
+## April 27, 2026 Non-English Translation and Screening Update
+
+The non-English translation batch has now been completed for every locally available/downloadable non-English PDF.
+
+Authoritative output folder:
+
+- `/Users/abdelbabiker/Desktop/non-english-translations`
+
+Repo mirror:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/non-english-translations`
+
+Current translation status from the April 27 manifest:
+
+- `43` non-English records tracked.
+- `29` English translation PDFs completed.
+- `0` downloaded PDFs pending translation.
+- `14` records remain without a downloadable PDF found in Covidence/local tracking.
+
+Audit and manifest:
+
+- `/Users/abdelbabiker/Desktop/non-english-translations/manifest.csv`
+- `/Users/abdelbabiker/Desktop/non-english-translations/TRANSLATION_AUDIT.md`
+
+Advisory full-text screening recommendation packet:
+
+- `/Users/abdelbabiker/Desktop/non-english-translations/screening-review/non-english-fulltext-screening-recommendations.pdf`
+- `/Users/abdelbabiker/Desktop/non-english-translations/screening-review/non-english-fulltext-screening-recommendations.normalized.json`
+
+Screening recommendation counts:
+
+- `26` preliminary include.
+- `3` preliminary exclude.
+- `14` unsure because no downloadable full text was available.
+
+April 30 corrections:
+
+- `#710` was missed because its local PDF source path was present in `#710/source-path.txt`, but the manifest still classified the row as `no_downloadable_pdf_in_covidence`.
+- The PDF was recovered from `/Users/abdelbabiker/Downloads/Dialnet-EstudioDescriptivoDeLasLesionesDeLigamentoCruzadoE-9062439.pdf`, translated, and added to the audit.
+- `#854` was also missed because the manifest still classified it as `no_pdf_in_covidence`; a local filename audit found `/Users/abdelbabiker/Downloads/Dialnet-EpidemiologiaDeLesoesEmJovensAtletasDeFutebolDasCa-7599370.pdf`.
+- `#854` has now been translated from Portuguese, rendered as an English PDF, added to the audit, and changed from `unsure` to preliminary `include` in the screening recommendation packet.
+
+No Covidence decisions were changed during the translation or screening-report generation workflow.
+
+## April 30, 2026 Translation PDF Upload Update
+
+All `29` completed English translation PDFs were uploaded to their matching Covidence records in review `603597`.
+
+Upload audit files:
+
+- `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs/UPLOAD_AUDIT.md`
+- `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs/UPLOAD_AUDIT.csv`
+- `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs/UPLOAD_AUDIT.json`
+
+Repo backlog/log copy:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/research/non-english-covidence-upload-log-2026-04-30.md`
+
+Upload outcome:
+
+- `29/29` successful Covidence document records.
+- Missing document IDs after upload: `0`.
+- Uploaded records: `#50`, `#53`, `#113`, `#245`, `#249`, `#252`, `#357`, `#412`, `#418`, `#547`, `#565`, `#605`, `#626`, `#646`, `#710`, `#719`, `#720`, `#721`, `#722`, `#733`, `#734`, `#744`, `#752`, `#757`, `#798`, `#815`, `#835`, `#854`, `#855`.
+- Source-language counts uploaded: German `8`, Portuguese `7`, Spanish `7`, Dutch `2`, French `2`, Danish `1`, Norwegian `1`, Turkish `1`.
+- The reusable workflow is now captured in `skills/covidence-translation-upload`.
+
+No Covidence screening decisions were changed during the upload workflow.
 
 ## Foreign-Language Papers
 
@@ -60,7 +129,7 @@ Rule used for `Foreign Language`: any note mentioning a language such as `Spanis
 | #721 | Yes | Portugese | doNascimento 2017 AN√ÅLISE DO PERFIL EPIDEMIOL√ìGICO DE LES√ïES ESPORTIVAS EM ATLETAS DE FUTEBOL PROFISSIONAL. do Nascimento, Nivan Almeida and de Melo e Silva, Bruno Gilberto 2017;(): 2017 Full text 503-Article Text-2091-1-10-20170908.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #733 | Yes | Portugese | Zanuto 2010 An√°lise Epidemiol√≥gica de Les√µes e Perfil F√≠sico de Atletas do Futebol Amador na Regi√£o do Oeste Paulista. Zanuto, Everton Alex Carvalho and Harada, Hiroyuki and Filho, Lu√≠s Roberto Almeida Gabriel 2010;(): 2010 DOI: 10.1590/s1517-86922010000200008 Full text Zanuto-2010-An√°lise Epidemiol√≥gica de Les√µe.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 | #734 | Yes | Portugese | ApprobatoSelistre 2009 Incid√™ncia de Les√µes nos Jogadores de Futebol Masculino Sub-21 Durante os Jogos Regionais de Sert√£ozinho-SP de 2006. Approbato Selistre, Luiz Fernando and Stamato Taube, Oswaldo Luiz and Alves Ferreira, Luciano Maia and Barros Jr., Edson Alves 2009;(): 2009 DOI: 10.1590/s1517-86922009000600006 Full text Approbato Selis-2009-Incid√™ncia de Les√µes no.pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
-| #854 | No | Portugese | PinheiroLima 2021 Epidemiologia de les√µes em jovens atletas de futebol das categorias sub-17 e 20 de um clube profissional de futebol do Rio de Janeiro. Pinheiro Lima, Vicente and de Souza Vale, Rodrigo Gomes and Pinheiro Lima, Bruno Lucas and de Oliveira Filho, Gilson Ramos and da Silva Novaes, Jefferson and Pinto de Castro, Juliana Brand√£o and Moreira Nunes, Rodolfo de Alkmim 2021;(): 2021 Upload full text |
+| #854 | No; local PDF recovered April 30 | Portuguese | PinheiroLima 2021 Epidemiologia de les√µes em jovens atletas de futebol das categorias sub-17 e 20 de um clube profissional de futebol do Rio de Janeiro. Pinheiro Lima, Vicente and de Souza Vale, Rodrigo Gomes and Pinheiro Lima, Bruno Lucas and de Oliveira Filho, Gilson Ramos and da Silva Novaes, Jefferson and Pinto de Castro, Juliana Brand√£o and Moreira Nunes, Rodolfo de Alkmim 2021;(): 2021 Upload full text |
 | #855 | Yes | Request \| \| Portugese | TeixeiraOs√≥rio 2022 INCID√äNCIA DE LES√ïES E/OU DORES MUSCULOESQUEL√âTICAS E FATORES ASSOCIADOS EM EQUIPES DE FUTEBOL PROFISSIONAL DO ESTADO DO RIO DE JANEIRO DURANTE O CAMPEONATO BRASILEIRO S√âRIE A DE 2018. Teixeira Os√≥rio, Ailton and Meziat-Filho, Ney and Souto Maior, Alex 2022;(): 2022 Full text 12782-Texto do artigo-65670-1-10-20230311 (1).pdf Primary Full text uploaded by Abdelrahman Babiker Manage full text |
 
 ### Spanish (8)

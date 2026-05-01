@@ -8,6 +8,7 @@ Repository layout is split by responsibility:
 - `docs/product/` - PRD and MVP specs
 - `docs/planning/` - planning artifacts
 - `docs/reports/` - review and checklist docs
+- `docs/research/` - research-method notes, including non-English translation and screening status
 - `sql/setup/` - setup and launch SQL scripts
 - `sql/admin/` - one-off admin SQL utilities
 - `scripts/` - root-level automation helpers

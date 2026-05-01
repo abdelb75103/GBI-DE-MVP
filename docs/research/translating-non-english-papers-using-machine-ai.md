@@ -2,6 +2,8 @@
 
 Date: 2026-04-24
 
+Status updates: 2026-04-27, 2026-04-30
+
 ## Direction for This Review
 
 For non-English papers identified during screening, the preferred direction is to use machine translation or AI-assisted translation as a practical support tool for eligibility screening, while keeping the screening decision with the review team.
@@ -14,6 +16,76 @@ This means:
 - If a paper is potentially eligible, unclear, or the exclusion depends on nuanced terminology, study design, outcome wording, population detail, or methods, it should be checked by a bilingual reviewer, native speaker, or translator where possible.
 - If a paper is included and will contribute data extraction, risk-of-bias assessment, GRADE, or interpretation of results, human verification is preferred. A full professional translation is not always required, but some competent human language check is more defensible than relying only on raw machine output.
 - If adequate translation or checking cannot be obtained, the study should be listed as awaiting classification rather than excluded solely because of language.
+
+## April 27, 2026 Project Output
+
+The non-English full-text translation batch for Covidence review `603597` is complete for every locally available/downloadable non-English PDF identified in the project tracking folder.
+
+Primary output folder:
+
+- `/Users/abdelbabiker/Desktop/non-english-translations`
+
+Repo mirror:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/non-english-translations`
+
+Tracking files:
+
+- `/Users/abdelbabiker/Desktop/non-english-translations/manifest.csv`
+- `/Users/abdelbabiker/Desktop/non-english-translations/TRANSLATION_AUDIT.md`
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/non-english-translations/manifest.csv`
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/non-english-translations/TRANSLATION_AUDIT.md`
+
+Current counts:
+
+- `43` non-English records tracked.
+- `29` English translation PDFs completed.
+- `0` downloaded PDFs pending translation.
+- `14` records remain without a downloadable PDF found in Covidence or local tracking.
+
+Translation method:
+
+- Translations were performed locally by Codex from extracted PDF text.
+- No third-party translation service or translation API was used.
+- The local Codex CLI rejected `gpt-5.5`; the completed workflow used `gpt-5.4`. This is documented in the per-paper `translation-notes.md` files and in the audit file.
+- Original PDFs, extracted text, translated text, English PDFs, and translation notes are stored in Covidence-numbered folders.
+
+Full-text screening recommendation packet:
+
+- Folder: `/Users/abdelbabiker/Desktop/non-english-translations/screening-review`
+- PDF: `/Users/abdelbabiker/Desktop/non-english-translations/screening-review/non-english-fulltext-screening-recommendations.pdf`
+- Markdown: `/Users/abdelbabiker/Desktop/non-english-translations/screening-review/non-english-fulltext-screening-recommendations.md`
+- Structured JSON: `/Users/abdelbabiker/Desktop/non-english-translations/screening-review/non-english-fulltext-screening-recommendations.normalized.json`
+
+Screening packet counts:
+
+- `43` records reviewed.
+- `26` preliminary include recommendations.
+- `3` preliminary exclude recommendations.
+- `14` unsure recommendations because no downloadable full text was available.
+
+The screening recommendation packet used criteria version `fifa-gbi-full-text-v1-2026-04-24` and is advisory only. Reviewers still make final screening decisions.
+
+April 30 corrections:
+
+- `#710` had been missed in the April 27 translation loop because its local source path existed in `#710/source-path.txt`, but the manifest row still said `no_downloadable_pdf_in_covidence`.
+- The PDF was recovered from `/Users/abdelbabiker/Downloads/Dialnet-EstudioDescriptivoDeLasLesionesDeLigamentoCruzadoE-9062439.pdf`.
+- `#710` is now translated and the manifest/audit/screening recommendation packet have been updated.
+- `#854` was also missed because the manifest row said `no_pdf_in_covidence`; a later local filename audit found the exact matching Portuguese PDF at `/Users/abdelbabiker/Downloads/Dialnet-EpidemiologiaDeLesoesEmJovensAtletasDeFutebolDasCa-7599370.pdf`.
+- `#854` is now translated, rendered as an English PDF, and moved from `unsure` to a preliminary `include` recommendation in the screening packet.
+
+April 30 Covidence upload completion:
+
+- All `29` completed English translation PDFs were uploaded to their matching Covidence review-reference records in review `603597`.
+- Upload audit folder: `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs`
+- Upload audit files:
+  - `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs/UPLOAD_AUDIT.md`
+  - `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs/UPLOAD_AUDIT.csv`
+  - `/Users/abdelbabiker/Desktop/non-english-translations/covidence-upload-pdfs/UPLOAD_AUDIT.json`
+- Repo backlog/log copy: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/research/non-english-covidence-upload-log-2026-04-30.md`
+- Upload status: `29/29` successful Covidence document records.
+- Uploaded source-language counts: German `8`, Portuguese `7`, Spanish `7`, Dutch `2`, French `2`, Danish `1`, Norwegian `1`, Turkish `1`.
+- The reusable workflow has been saved as the repo skill `skills/covidence-translation-upload`.
 
 ## Practical Screening Hierarchy
 

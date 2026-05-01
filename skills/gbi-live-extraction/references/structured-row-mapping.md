@@ -53,7 +53,7 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 
 - Preserve reported `95% CI` values anywhere they are available and relevant to the extracted metric.
 - If the schema has a dedicated CI field for that value, use it.
-- If the schema does not have a dedicated CI field, store the CI inline in the same cell as `rate (lower to upper)`.
+- If the schema does not have a dedicated CI field, store the CI inline in the same cell as `rate (lower - upper)`.
 - This applies to metric-table tabs such as `injuryTissueType` and `injuryLocation`, and also to other extracted numeric fields when no separate CI field exists.
 
 ## Definitions Rule
