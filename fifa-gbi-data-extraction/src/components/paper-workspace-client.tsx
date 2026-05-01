@@ -3,14 +3,12 @@
 import { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { NoteComposer } from '@/components/note-composer';
 import { NoteList } from '@/components/note-list';
 import { PaperWorkspaceShell, type WorkspaceSessionState } from '@/components/paper-workspace-shell';
 import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
-import { definitionCategories } from '@/lib/definitions';
 import { formatDateTimeUTC } from '@/lib/format';
 import type { Paper, PaperNote, StoredFile } from '@/lib/types';
 import type { ExtractionTabsPanelProps } from '@/components/extraction-tabs-panel';
@@ -180,8 +178,6 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
           </div>
         </div>
       </div>
-
-      <DefinitionsDrawer categories={definitionCategories} />
     </div>
   );
 }

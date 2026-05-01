@@ -7,10 +7,8 @@ import { NoteList } from '@/components/note-list';
 import { StatusPill } from '@/components/status-pill';
 import { StatusSelect } from '@/components/status-select';
 import { extractionFieldDefinitions, extractionTabMeta, extractionTabs } from '@/lib/extraction/schema';
-import { definitionCategories } from '@/lib/definitions';
 import { normalizeGlobalFieldValue } from '@/lib/extraction/normalize';
 import { mockDb, PaperSessionConflictError } from '@/lib/mock-db';
-import { DefinitionsDrawer } from '@/components/definitions-drawer';
 import { formatDateTimeUTC } from '@/lib/format';
 import { PaperWorkspaceShell } from '@/components/paper-workspace-shell';
 import { readActiveProfileSession } from '@/lib/session';
@@ -295,8 +293,6 @@ export default async function PaperWorkspace({
             <PaperActionButtons readOnly={isReadOnly} />
           </div>
         </div>
-
-        <DefinitionsDrawer categories={definitionCategories} />
       </WorkspaceSaveManager>
     </MobileWorkspaceBlocker>
   );
