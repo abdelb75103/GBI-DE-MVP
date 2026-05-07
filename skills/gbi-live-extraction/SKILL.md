@@ -28,6 +28,7 @@ Backlog ordering rule:
 - When a reviewer correction reveals a reusable extraction rule, recurring miss, or clearer convention, update this skill in the same turn before continuing with later papers. Treat that maintenance step as part of the extraction workflow, not optional cleanup.
 - Prefer additive-only live updates. Do not overwrite nonblank extraction values unless the user explicitly asks for a correction.
 - Default to the terminal-first manual extraction workflow. Do not call Gemini or use AI suggestions unless the user explicitly asks for that.
+- After any live extraction apply, run a separate high-reasoning Codex review gate before calling the paper or batch ready for human review. The extraction itself can use whatever reasoning level the user/session started with, but the review gate must use the newest available Codex model at high reasoning; as of 2026-05-07, prefer GPT-5.5 high reasoning when available. Do not freeze this to one model name: if a newer Codex model is available, use the newer model and record it in the review notes/backlog.
 - Extract Tabs `1-10` manually in the terminal/chat workflow. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology`.
 - If `./scripts/terminal-extract.sh` is not present in this checkout, fall back to the direct terminal workflow:
   - inspect the local PDF/text manually
@@ -144,7 +145,17 @@ Backlog ordering rule:
    - This also applies to figure-derived counts: if you estimate row values from a graph, note that the stored row was figure-derived, that text/table values took precedence where available, and that the figure was used only for missing compatible rows.
 6. Only after approval, run `bash -lc './scripts/terminal-extract.sh apply --paper <paperId|studyId>'` when available.
    - If the script is missing, apply approved changes through direct Supabase terminal writes.
-7. Leave live status changes to the user unless they explicitly ask for one.
+7. Run the high-reasoning Codex review gate for the paper or batch.
+   - Use the newest available Codex model at high reasoning, currently GPT-5.5 high reasoning when available. If the runtime cannot select a separate model/reasoning level, run the strongest available independent review pass and state that limitation in the backlog or final summary.
+   - Scope the review to the live website state, not only local drafts. Query or inspect the live Supabase-backed record(s), including `papers`, `paper_files`, `extractions`, `extraction_fields`, `population_groups`, `population_values`, and `paper_notes` where applicable.
+   - For batches, verify every paper independently and then verify batch-level consistency: correct batch membership, correct count, no missing or extra study IDs, and backlog order.
+   - The review gate must look specifically for gaps in population logic, row alignment, `studyId` preservation, translated-paper provenance notes, source-file attachment, status/readiness state, missing definitions/exposure fields, missing CIs, missing mechanism/contact values, and whether location/type tabs were filled wherever the source reports compatible data.
+   - For `injuryLocation` and `injuryTissueType`, check both presence and appropriateness. If a paper reports compatible location/type counts, incidence, burden, severity, or diagnosis rows, they must be live and dual-written. If location/type rows are absent, the review must confirm and record the reason: not reported, incompatible denominator, figure not readable enough, no clean numeric value, or outside schema mapping.
+   - Check dual-write integrity: every structured value shown through `population_values` must have a matching newline-aligned `extraction_fields` value, and multiline values must preserve the selected population row order.
+   - Classify findings as `blocker`, `needs reviewer attention`, or `no action`. Fix blockers before saying the extraction is ready for human review. Keep reviewer-attention notes visible in the backlog/final summary without blocking readiness when the live data is defensible.
+   - Do not mark a paper `reviewed_complete` during this gate. The output of this gate is only `ready for human review` unless the user explicitly asks to complete the batch.
+   - If the review gate changes live extraction data, rerun the gate on the changed paper(s) before stopping.
+8. Leave live status changes to the user unless they explicitly ask for one.
    - When the user says a whole batch is complete, mark each row in that batch `✅ reviewed_complete`, set any remaining in-scope paper statuses to `extracted`, and add `Completed: YYYY-MM-DD` to that batch section in `docs/review-backlog.md`.
    - Whenever you add or update a batch section in `docs/review-backlog.md`, verify that the file still reads in ascending batch order with the newest batch appended at the end.
 
@@ -159,6 +170,7 @@ Backlog ordering rule:
 - If a staged draft already exists, do not use `prep --force` unless the user wants to discard it.
 - Preserve existing live manual edits unless the user explicitly approves changing populated values.
 - For papers awaiting user review, prefer live status `processing` rather than `extracted`.
+- Do not skip the high-reasoning Codex review gate because an extraction script ran successfully. Script success proves only that data was written; the review gate decides whether the extraction is ready for human review.
 - Do not describe a paper as `review-ready` if the structured-table completion checklist has not been satisfied.
 - Never treat a paper as available for a new batch if `assigned_to` is already set to another profile. `available` queue selection must exclude all papers already assigned to someone else.
 - `Available` means truly unassigned, not merely `uploaded`.
