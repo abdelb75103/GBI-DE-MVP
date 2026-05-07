@@ -15,8 +15,8 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 - For participant-count fields only, a direct total may be split by directly reported subgroup proportions when the paper explicitly gives both pieces of information and the arithmetic is transparent.
 - Example: total players plus `71% boys / 29% girls` may be used to fill `sampleSizePlayers` for `male / female`.
 - When you do this, note that the participant counts were proportion-derived in the review summary or backlog note.
-- Reviewer-authorized exception: if a reviewer explicitly instructs you to convert structured location/type percentages into Count-field values and the paper gives a clear total injury denominator for that same table, you may convert `% × denominator` into the nearest whole-number count.
-- When using that exception, record in the backlog note that the stored counts were reviewer-requested percentage-derived counts and name the denominator used.
+- Structured percentage-to-count exception: if a paper reports clean percentages over a clearly stated, stable numerator for compatible injury outcome, location, type, mechanism, or foul-play rows, you may convert `% × denominator` into the nearest whole-number Count-field value when the mapping is defensible.
+- When using that exception, record in the backlog note that the stored counts were percentage-derived and name the denominator used.
 
 ## Not Allowed
 
@@ -24,7 +24,7 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 - Count-to-exposure calculations
 - Burden-to-days calculations
 - Any back-calculation from rate ratios, odds ratios, or regression outputs
-- Do not extend the participant-count exception to injury counts, exposure, burden, incidence, recurrence, severity, or structured tissue/location outcomes.
+- Do not extend the participant-count exception to exposure, burden, incidence, recurrence, severity, or structured tissue/location outcomes, except for the explicit structured percentage-to-count exception above.
 
 ## What To Do Instead
 
