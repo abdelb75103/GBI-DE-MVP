@@ -12,7 +12,8 @@ Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/revie
 - Treat requests to "update the process" after a paper review as requests to update this skill, not the app's user-facing instructions.
 - Extract Tabs `1-10` manually. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology`.
 - Prefer additive-only live updates. Do not overwrite nonblank values unless the user explicitly asks for a correction.
-- Preserve existing live manual edits and assignments. Do not overwrite another extractor's `assigned_to`.
+- Default assignment profile is `AbdelRahman Babiker` (`00000000-0000-0000-0000-000000000001`). Assign every paper selected for extraction or batch review to that profile unless the user states otherwise.
+- Preserve existing live manual edits. If a selected paper is assigned to another profile, do not overwrite it silently; either skip it or reassign it only when the user explicitly asks for that paper/batch to be assigned to AbdelRahman Babiker.
 - For papers awaiting human review, prefer live status `processing`, not `extracted`.
 - Treat `studyId` as display-only/system-seeded. Preserve or restore it to `papers.assigned_study_id` when writing directly to Supabase.
 - Put rationale, caveats, and reviewer-facing notes in `docs/review-backlog.md` by default. Use live paper notes for required provenance or user-requested record notes.
@@ -31,7 +32,7 @@ Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/revie
 1. Prepare the paper.
    - If available, run `bash -lc './scripts/terminal-extract.sh prep --paper <paperId|studyId>'`.
    - If the script is missing, inspect the PDF/text directly, use repo schema/types as source of truth, and apply approved changes through direct Supabase writes.
-   - When selecting a "next available" paper, verify `assigned_to` first. `Available` means truly unassigned, not merely `uploaded`.
+   - When selecting a "next available" paper, verify `assigned_to` first. `Available` means truly unassigned, not merely `uploaded`; assign selected papers to AbdelRahman Babiker before extraction unless instructed otherwise.
 2. Choose population rows before filling fields.
    - Use the strongest directly reported axis: study arm, sex, age group, competition level, team/region, season, surface, tournament phase, or another explicit cohort split.
    - If pooled and subgroup values both exist, use `Total / subgroup...` unless the source table gives a more defensible order.

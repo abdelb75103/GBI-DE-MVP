@@ -5,9 +5,11 @@ Use this reference when checking core metadata, participant fields, definitions,
 ## Assignment And Status
 
 - Before selecting any paper for a new batch, verify `assigned_to`.
-- Do not treat a paper as available if another profile is assigned.
+- Default assignment profile is `AbdelRahman Babiker` (`00000000-0000-0000-0000-000000000001`).
+- Assign every paper selected for extraction, translated-paper processing, or batch review to AbdelRahman Babiker unless the user states another profile.
+- Do not treat a paper as available if another profile is assigned, unless the user explicitly asks to reassign that paper or batch to AbdelRahman Babiker.
 - If a paper was selected by mistake despite an existing assignment, record the audit issue and do not use it as future queue precedent.
-- A paper touched during extraction or exclusion work should be assigned to `AbdelRahman Babiker` only if it is truly unassigned and legitimately part of the current queue.
+- A paper touched during extraction or exclusion work should be assigned to `AbdelRahman Babiker` when it is unassigned or explicitly included in the current user-approved reassignment scope.
 - Papers awaiting user review should normally remain `processing`.
 - Do not normalize exclusion statuses such as `american_data`, `systematic_review`, `uefa`, or `referee` to `processing`.
 - Only UEFA Elite Club study-family papers should be tagged `uefa`; do not use `uefa` for all UEFA-branded competitions.
