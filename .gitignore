@@ -48,6 +48,7 @@ Full Text - Data Extraaction/**/*.rdf
 /review_603597_included_csv_*.csv
 /775.full.pdf
 /exports/
+/outputs/
 /fifa-gbi-data-extraction/covidence-import-results.csv
 
 # Temporary extraction artifacts

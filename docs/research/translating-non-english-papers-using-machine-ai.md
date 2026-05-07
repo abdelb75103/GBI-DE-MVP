@@ -87,6 +87,32 @@ April 30 Covidence upload completion:
 - Uploaded source-language counts: German `8`, Portuguese `7`, Spanish `7`, Dutch `2`, French `2`, Danish `1`, Norwegian `1`, Turkish `1`.
 - The reusable workflow has been saved as the repo skill `skills/covidence-translation-upload`.
 
+## May 7, 2026 Extraction-Ready PDF Follow-Up
+
+Included translated papers that are moving toward extraction now have a cleaner local PDF batch for extraction use.
+
+Output folder:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/outputs/extraction-ready-translations/2026-05-07`
+
+Audit documentation:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/research/non-english-extraction-ready-pdf-audit-2026-05-07.md`
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/outputs/extraction-ready-translations/2026-05-07/EXTRACTION_READY_AUDIT.md`
+
+Generation method:
+
+- Local deterministic PDF generation from the existing English translation text.
+- Original source PDF tables were detected with PyMuPDF and recorded in per-paper audits.
+- Table-like translated blocks were rendered as structured tables where possible.
+- No image generation, translation API, or third-party translation service was used.
+
+Extraction caveat:
+
+- The original PDF remains the source of truth.
+- Recreated English tables should be used as extraction aids only.
+- Papers `#418`, `#720`, `#719`, `#565`, and `#710` are flagged `needs_table_spot_check` because the original PDFs expose more detected grid tables than the translated-table rendering count.
+
 ## Practical Screening Hierarchy
 
 1. Clearly irrelevant after machine or AI translation:

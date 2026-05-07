@@ -67,12 +67,14 @@
 - Multiple populations/ages/tournaments: list each on its own line; maintain consistent line order for all related fields.
 - Ambiguous or missing data: leave blank and add a Note describing what you checked.
 - Poor scans or OCR issues: Flag with a note if you cannot reliably extract.
+- Translated non-English papers: use the cleaned extraction-ready PDF under `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/outputs/extraction-ready-translations/2026-05-07/pdfs` together with the original PDF. Check the matching paper audit before extracting table-derived values, especially for papers marked `needs_table_spot_check`.
 
 ## Review Checklist (Quick)
 - AI‑assisted tabs: manually checked and corrected.
 - Manual tabs (Injury/Illness): completed where data exists; blanks left where not reported.
 - Multi‑value fields: one value per line; row alignment preserved across tabs.
 - Status and Notes/Flags set appropriately; changes saved.
+- For translated non-English papers: original source PDF page/table checked for every value taken from a recreated English table.
 
 ## Appendix (Fill‑In Later)
 - Exact names of the first four AI‑assisted tabs.
