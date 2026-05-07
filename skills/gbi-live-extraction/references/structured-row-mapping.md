@@ -14,6 +14,8 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 - Do the same check for usable figures when the figure categories map cleanly to the schema.
 - Apply the same scan to severity tables and mechanism tables before leaving `injuryMostCommonSeverity`, `injuryContact`, or `injuryNonContact` blank.
 - Treat multi-page or continued tables as a single audit unit. Do not stop after the first page of a table if later pages continue the same location, type, mechanism, or severity block.
+- Do not let one structured family block another. If `injuryLocation` is subgroup-split but `injuryTissueType` is pooled-only, keep that mixed completion style instead of forcing both tabs into the same row detail.
+- Treat structured tabs as metric sweeps, not count-only passes. For every compatible row, check prevalence/count, incidence, burden, severity, diagnosis, and confidence intervals before calling the family complete.
 
 ## Completeness Gate
 
@@ -76,3 +78,25 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 - If the source reports days lost per injury or severity by injury type or location, populate the matching severity field using the statistic actually reported.
 - If the source reports mean days, enter the plain value.
 - If the source reports median days, label it clearly in the value and mention that in the review summary or backlog note.
+- Never put burden metrics into `severityTotalDays`, `severityMeanDays`, or other raw-days fields unless the paper actually reports total, mean, or median days lost for that exact row. Burden belongs in `..._burden`.
+
+## Mechanism And Onset Rule
+
+- Classify each source-table row family before mapping: tissue/diagnosis rows go to `injuryTissueType`, location/body-region rows go to `injuryLocation`, onset rows go to `injuryMode...`, and mechanism rows stay in mechanism/contact fields.
+- Do not aggregate overuse rows into `injuryTissueType_muscle_tendon` when overuse is reported as an onset category rather than a tissue diagnosis.
+- For count-style onset rows, do not invent subgroup counts from percentages unless the paper prints a stable subgroup injury denominator.
+- If the reviewer explicitly wants percentage fallbacks, store percentages with a `%` suffix and note that they are not true counts.
+
+## Figure Rule
+
+- Use figure-derived values only when the figure is readable enough to support defensible extraction.
+- Restrict figure-derived rows to missing compatible rows.
+- Mark figure-derived rows with lower confidence/page hint when the workflow supports it.
+- Do not let a figure estimate overwrite a direct table/text value.
+
+## Percentage-To-Count Rule
+
+- If a paper reports clean percentages over a clearly stated numerator for compatible outcome, location, type, mechanism, or foul-play rows, convert to absolute counts only when defensible.
+- Use the nearest whole-number count and keep it compatible with the printed subtotal.
+- Do not derive counts from unclear, mixed, or overly rounded denominators.
+- Record in the backlog that the stored count was percentage-derived and name the denominator.

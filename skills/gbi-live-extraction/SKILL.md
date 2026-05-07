@@ -1,198 +1,88 @@
 ---
 name: gbi-live-extraction
-description: Use the terminal-first workflow for staged manual-tab extraction in the FIFA GBI repo. Use this when a user wants help extracting all tabs from a paper PDF, reviewing the draft in chat, and applying approved values to the live Supabase-backed site without touching the UI.
+description: Use the terminal-first workflow for staged manual-tab extraction in the FIFA GBI repo. Use this when extracting, reviewing, applying, QA-checking, or batch-processing paper data in the live Supabase-backed extraction site without using the UI.
 ---
 
 # GBI Live Extraction
 
-Run all commands from `fifa-gbi-data-extraction/`.
+Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/review-backlog.md`.
 
-Track review state in `docs/review-backlog.md`.
+## Core Defaults
 
-Backlog ordering rule:
-- Keep `docs/review-backlog.md` in strictly increasing batch order.
-- When creating a new batch section, append it after the current highest-numbered batch instead of inserting it near a similarly numbered older section.
-- If you discover an existing batch was added out of order, move that whole batch block so the backlog remains sequential before continuing with new extraction work.
+- Treat requests to "update the process" after a paper review as requests to update this skill, not the app's user-facing instructions.
+- Extract Tabs `1-10` manually. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology`.
+- Prefer additive-only live updates. Do not overwrite nonblank values unless the user explicitly asks for a correction.
+- Preserve existing live manual edits and assignments. Do not overwrite another extractor's `assigned_to`.
+- For papers awaiting human review, prefer live status `processing`, not `extracted`.
+- Treat `studyId` as display-only/system-seeded. Preserve or restore it to `papers.assigned_study_id` when writing directly to Supabase.
+- Put rationale, caveats, and reviewer-facing notes in `docs/review-backlog.md` by default. Use live paper notes for required provenance or user-requested record notes.
 
-## Default Interpretation
+## References To Load
 
-- Treat requests to "update the process" after a paper review as requests to update this skill, not the app's user-facing extraction instructions.
-- For translated non-English papers, prefer the extraction-ready English PDF generated under `outputs/extraction-ready-translations/` plus the original source PDF. Do not extract from the earlier plain-text translation PDF alone when a cleaned extraction-ready version exists.
-- For the 2026-05-07 included translated batch, prefer the live Supabase rows `S643`-`S660`. These rows use merged PDFs with the translated smart-appendix pages first and the original source PDF second, and each row is linked to its Covidence number through `metadata.translatedCovidenceNumber`.
-- When translated papers need extraction-ready tables/figures appended before extraction, use the `gbi-translated-pdf-appendix` skill and the `scripts/build_smart_extraction_appendices.py` workflow.
-- If extracting directly from local files for this batch, prefer merged PDFs under `outputs/extraction-ready-translations/2026-05-07/merged-translated-original-all18/pdfs` over standalone smart-appendix PDFs because they preserve translated and original source pages in one review file.
-- Source priority for translated papers: use the translated English pages first to understand the paper and identify candidate fields, then verify every table-derived count, denominator, incidence, subgroup label, figure-derived value, and unusual definition against the original-language pages in the second half of the merged PDF. If translation and original disagree, the original source controls and the discrepancy must be recorded in the backlog.
-- Every translated-paper extraction must add a live paper note stating the source language, translation date, translation model/workflow, and that extraction used the merged translated-first/original-second PDF. For the 2026-05-07 batch, use `Translated from <language> on 2026-05-07 using Codex GPT-5 workflow; extracted from merged PDF with English translation first and original source second.` Update `<language>` from metadata/manifest.
-- Before extracting a translated non-English paper, check its paper audit file for source-table detections and any `needs_table_spot_check` status. If flagged, inspect the named original PDF pages before relying on the recreated English table layout.
-- When using a recreated translated table, treat it as an extraction aid rather than an independent source. Verify table-derived counts, denominators, incidence values, severity values, subgroup labels, confidence intervals, and footnotes against the original PDF and the English translation text.
-- When a reviewer correction reveals a reusable extraction rule, recurring miss, or clearer convention, update this skill in the same turn before continuing with later papers. Treat that maintenance step as part of the extraction workflow, not optional cleanup.
-- Prefer additive-only live updates. Do not overwrite nonblank extraction values unless the user explicitly asks for a correction.
-- Default to the terminal-first manual extraction workflow. Do not call Gemini or use AI suggestions unless the user explicitly asks for that.
-- After any live extraction apply, run a separate high-reasoning Codex review gate before calling the paper or batch ready for human review. The extraction itself can use whatever reasoning level the user/session started with, but the review gate must use the newest available Codex model at high reasoning; as of 2026-05-07, prefer GPT-5.5 high reasoning when available. Do not freeze this to one model name: if a newer Codex model is available, use the newer model and record it in the review notes/backlog.
-- Extract Tabs `1-10` manually in the terminal/chat workflow. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology`.
-- If `./scripts/terminal-extract.sh` is not present in this checkout, fall back to the direct terminal workflow:
-  - inspect the local PDF/text manually
-  - use the repo schema/types as the source of truth for field ids
-  - apply approved live changes through direct Supabase terminal writes
-  - record rationale and follow-up notes in `docs/review-backlog.md`
+- Read `references/subgroup-selection.md` when pooled vs subgroup line mapping is not obvious.
+- Read `references/field-completeness.md` when checking Tabs `1-4`, author/title metadata, definitions, exposure, status handling, or assignment safety.
+- Read `references/structured-row-mapping.md` before filling or QA-checking `injuryTissueType`, `injuryLocation`, severity, diagnosis, or mechanism rows.
+- Read `references/direct-vs-derived-values.md` before calculating or aggregating any value that is not printed directly.
+- Read `references/translated-papers.md` for translated non-English PDFs, smart appendices, merged translated/original files, and translation provenance notes.
+- Read `references/review-gate.md` for the mandatory post-apply high-reasoning Codex review gate.
 
 ## Workflow
 
-1. If available, run `bash -lc './scripts/terminal-extract.sh prep --paper <paperId|studyId>'`.
-   - If the script is missing, create a local working folder, fetch or inspect the paper PDF/text directly, and proceed manually.
-   - When a user asks for the "next available" paper or batch, treat `available` as `unassigned` first. Before selecting any paper, verify its live `assigned_to` value and exclude any paper already assigned to another profile, even if its status might otherwise look batchable.
-2. If the paper is ambiguous, identify the intended subgroup before extracting. Read `references/subgroup-selection.md` when the right line mapping is not obvious.
-   - Build the population row layout before filling fields. The row layout must reflect the strongest direct population axis in the paper: intervention arms, sex, age group, competition level, team/region, season, tournament phase, or another explicit cohort split.
-   - If the paper reports three populations, create three rows. If it also reports pooled values not assignable to those populations, add a first `Total` row and keep pooled-only values on that first row with blanks below. Do not collapse the paper into one pooled row just because some fields are shared.
-   - If the paper reports subgroup-only values and no pooled total, do not invent a `Total` row. Use only the directly reported population rows.
-   - If the paper reports a pooled total plus subgroups, use `Total / subgroup 1 / subgroup 2 ...` ordering unless the source table clearly uses another order that is more defensible.
-   - After choosing rows, align every multiline value to that row layout. Shared/global values go on the first row only; subgroup-specific values go on the matching subgroup rows; unavailable values remain blank placeholders to preserve alignment.
-   - For trials or controlled comparisons, check first whether the paper reports clean arm-level tables. If it does, default to arm-level line mapping instead of a pooled row.
-   - If the paper reports clean age-group rows, default to an age-group split instead of a pooled-only line.
-   - If the paper's main analysis is reported through another direct subgroup axis such as maturity status, menstrual-cycle phase, skill group, sex, or playing level, default to that split instead of a pooled row when the subgroup tables are clean and central to the paper's results.
-   - Hard rule for sex-stratified papers: if the paper reports boys/girls or male/female results as actual study rows, do not leave the paper as a pooled `mixed` line. Rebuild it to `Total / Boys / Girls` or `Total / Male / Female` when pooled totals also exist, or just `Boys / Girls` or `Male / Female` when no pooled total is reported.
-   - When using an age-group split, put `Total` as the first row whenever the paper also reports pooled whole-cohort values.
-   - Apply the same `Total first` rule to sex splits whenever the paper reports both pooled and sex-stratified values.
-   - For age-group splits, keep pooled-only metrics in the `Total` row rather than deriving subgroup values that the paper does not report directly.
-   - If the live split includes a `Total` row but a structured metric is reported only for the subgroup rows, preserve row alignment by leaving the first `Total` line blank rather than shifting subgroup values upward. Example: store `\n0.9\n0.44\n0.08`, not `0.9\n0.44\n0.08`, when the paper reports only Early/Normal/Late values.
-   - Apply the same rule in reverse: if the live split has subgroup rows but the paper reports only a pooled `Total` value, keep that value on the first `Total` line and leave the subgroup lines blank rather than copying the pooled value downward. Example: store `thigh\n\n\n`, not `thigh\nthigh\nthigh\nthigh`, when only the pooled most-common location is directly reported.
-   - Once a split is chosen, keep subgroup rows only for fields where the paper actually reports or implies subgroup differences.
-   - Hard rule for shared/global fields: if a metric is paper-wide or identical across every subgroup, put it on the first row only and leave the remaining subgroup lines blank. Do not mechanically duplicate shared values downward just to fill every row. Example: store `Australia\n\n\n` or `prospective cohort\n\n\n`, not `Australia\nAustralia\nAustralia\nAustralia`.
-   - Apply that same top-row-only rule across all tabs, not just participant characteristics. This includes shared study details (`leadAuthor`, `title`, `yearOfPublication`, `journal`, `doi`, `studyDesign`), shared participant fields (`country`, `fifaDiscipline`, `levelOfPlay`, global `ageCategory`, `observationDuration`), shared definitions, shared exposure metadata (`exposureMeasurementUnit`, `numberOfSeasons`), and shared headline outcomes (`injuryMostCommonDiagnosis`, `injuryMostCommonType`, `injuryMostCommonLocation`) when they are not subgroup-specific.
-   - Only keep multiline values when the paper actually reports row-specific differences, or when blank spacer lines are needed to preserve row alignment for total-vs-subgroup reporting.
-   - Exception for `sex` in subgroup papers: if a split is being shown live and a plain global sex value would hide which row is which, label the sex rows with the subgroup names instead of repeating a bare identical value. Example: `female - control`, `female - intervention` or `female - RR`, `female - RX`, `female - XX`.
-3. If available, run `bash -lc './scripts/terminal-extract.sh extract --paper <paperId|studyId> --tab <manual-tab> --guidance "<user instruction>"'`.
-   - If the script is missing, stage the proposal manually from the local source text and the live schema.
-4. Review the staged output with `bash -lc './scripts/terminal-extract.sh review --paper <paperId|studyId>'` when available.
-   - If the script is missing, review the proposed values directly against the source tables/figures before any live apply.
-   - For any non-excluded extracted paper, Tabs `1-10` are manual review scope. Do not call a paper extracted-and-ready-for-review unless the directly relevant tabs have been checked field-by-field against the paper, with Tabs `1-4` always included and Tabs `5-10` reviewed whenever the paper reports compatible data for them.
-   - If a paper already has Tabs `1-5` live but the source tables clearly support compatible structured rows for Tabs `7-8`, create those missing structured tabs rather than leaving the paper as a headline-only pass.
-   - In `studyDetails`, always explicitly verify `leadAuthor`, `title`, `yearOfPublication`, `journal`, `doi` if present in the paper, and `studyDesign`.
-   - Format `leadAuthor` as `Surname Initials` using the first author's published initials, not surname only. Examples: `Zebis MK`, `Kakavelakis KN`, `Szymski D`.
-   - Treat `studyId` as display-only and system-seeded in Tab `1`, not as an extraction target. Preserve the app-assigned `studyId`; do not manually rewrite, replace, clear, or re-extract it during refreshes or corrective passes. When writing directly to Supabase, explicitly preserve or restore the `studyId` extraction field to the paper's `assigned_study_id` so the website never shows it as removed.
-   - Treat Tab `2` (`participantCharacteristics`) as a completeness-checked tab, not a light pass. Explicitly verify `country`, `fifaDiscipline`, `levelOfPlay`, `ageCategory`, `sex`, `sampleSizePlayers`, `numberOfTeams`, `meanAge`, and `observationDuration` whenever the paper reports or clearly implies them.
-   - For `meanAge`, do not stop at the baseline participant table. Also scan the abstract, methods, results text, table footnotes, and subgroup/result tables for directly reported age means, age ranges, or `mean ± SD` values and capture them wherever they appear.
-   - If the paper reports age as a range or another directly reported non-mean format rather than a mean, still store that direct age expression in `meanAge` instead of leaving the field blank, and note the format implicitly by preserving the published wording style such as `16-18` or `17.4 ± 1.2`.
-   - When a paper gives a season or study window, preserve the year context in `observationDuration` rather than shortening it to a generic count. Example: `2009-2010 competitive season (33 weeks)`, not just `33 weeks`.
-   - Do not leave easy participant fields blank when they are obvious from the paper context. If the cohort is clearly from one country, one football code, one level of play, one study window, or one club/team structure, fill `country`, `fifaDiscipline`, `levelOfPlay`, `observationDuration`, and `numberOfTeams` directly rather than leaving them empty.
-   - Standardize `fifaDiscipline` to the schema’s exact supported values. Use `Association football (11-a-side)`, `Futsal`, `Beach soccer`, or `Para football` when applicable; do not leave non-standard free text such as `football` when the correct standardized option is obvious.
-   - When a paper is stored as a subgroup split, keep `participantCharacteristics` row-by-row only for fields that truly vary by subgroup. If `country`, `levelOfPlay`, `fifaDiscipline`, `numberOfTeams`, `observationDuration`, or similar fields are identical across the whole paper, a single universal value is preferred over repeating the same line on every subgroup row. For `sex`, prefer a single universal value unless the live split would become ambiguous; in that case use subgroup-labeled sex rows such as `female - control` or `male - U17`.
-   - Treat Tabs `3-4` as mandatory extraction work, not filler tabs. Before leaving `definitions` or `exposure` sparse, explicitly check for directly reported values for `injuryDefinition`, `illnessDefinition`, `incidenceDefinition`, `burdenDefinition`, `severityDefinition`, `recurrenceDefinition`, `mechanismReporting`, `seasonLength`, `numberOfSeasons`, `exposureMeasurementUnit`, `totalExposure`, `matchExposure`, and `trainingExposure`.
-   - Standardize `injuryDefinition` to one of these canonical labels whenever the paper supports it: `physical complaint`, `medical attention`, or `time-loss`.
-   - If the paper defines injury using a combined rule, preserve the combination in shortest accurate form such as `medical attention or time-loss` or `physical complaint or time-loss` rather than collapsing it to one label.
-   - If the paper's injury definition is broad, unclear, or only implied by the surveillance workflow, still choose the closest supported canonical label when defensible and record the ambiguity in the backlog note instead of leaving the issue unstated.
-   - Treat `incidenceDefinition` as mandatory whenever an incidence, rate, prevalence, or burden metric is extracted. Explicitly capture what the denominator frame is, for example `per 1000 player-hours`, `per 1000 athlete-exposures`, `per 100 players`, `per player-season`, or `per training day`.
-   - If the paper reports incidence values but the denominator frame is ambiguous, incomplete, or inconsistent across the paper, store the shortest accurate incidence-definition text you can defend and add a backlog note calling out the ambiguity. Do not leave `incidenceDefinition` blank when an incidence metric is being extracted unless the paper truly gives no denominator clue at all.
-   - `mechanismReporting` should name the person or role reporting the injury data itself, using the shortest accurate reporter label such as `Medical Staff`, `Coach`, or `Player-selfreported`. Do not put mixed workflow prose there, and do not replace the injury reporter with the person who logged exposure if those were different.
-   - If a paper reports exposure in non-hour denominators such as athlete-exposures, player-months, player-days, or match-minutes, still fill Tab `4` using the direct denominator rather than leaving exposure blank, and set `exposureMeasurementUnit` to the closest supported value or `other` when needed.
-   - If a field in Tabs `1-4` is checked and genuinely not reported, leave it as `not_reported`; do not skip it just because a tab looks secondary.
-   - Before calling a pass `sparse`, `headline-only`, or `outcome only`, scan the results text/prose, all results tables, and usable figures for directly fillable `injuryTissueType`, `injuryLocation`, severity, and mechanism/contact rows. Read `references/structured-row-mapping.md` when the paper has more than one outcome table.
-   - If the paper contains any text, table, or figure with injury `location`, `body region`, `anatomical site`, `type`, `diagnosis`, `tissue`, `sprain`, `strain`, `fracture`, `overuse`, or similar structured breakdowns, Tabs `7-8` must be explicitly checked before the paper is considered review-ready. Do not silently leave Tabs `7-8` empty when such evidence exists.
-   - For `injuryTissueType` and `injuryLocation`, do not stop at parent buckets if the same table also reports directly mappable subtypes or subregions.
-   - Hard rule for structured tabs under a chosen split: if the live paper is split by `Total / subgroup...`, then `injuryLocation`, `injuryTissueType`, and other structured-row tabs must be audited row-by-row against that same split. When a source table reports subgroup-specific values for a structured row, fill the multiline field across all reported columns in live row order rather than leaving it pooled on the first line only.
-   - Apply that rule even when the subgroup split comes from a table that is specific to locations or another single structured family. Example: if `Table 1` reports age-group location counts, expand the matching `injuryLocation_*` multiline rows across `Total / U9-11 / U12-14 / ...` instead of leaving only the pooled total.
-   - Keep pooled-only structured metrics pooled. If the paper reports a structured value only for the full cohort and not for the subgroups, store it on the first `Total` line only and leave subgroup lines blank.
-   - Do not let one structured family block another. If `injuryLocation` is subgroup-split but `injuryTissueType` is pooled-only because the paper reports no subgroup tissue rows, keep `injuryLocation` expanded and `injuryTissueType` total-only rather than forcing both tabs into the same completion style.
-   - Treat Tabs `7-8` as metric sweeps, not count-only passes. If a compatible row family reports prevalence/count, incidence, burden, and/or severity in the source table, check and fill every directly mappable metric for that row family before calling the tab complete.
-   - For translated non-English papers, explicitly name the extraction-ready PDF, the original PDF page/table source, and the paper audit status in the backlog note whenever Tabs `7-8` are filled from a recreated translated table.
-   - Do not treat parent-category counts from one table as completion of subtype metrics from another table. If a later table or figure reports directly mappable subtype incidence, burden, diagnosis, or severity rows, sweep that later table separately and add those fields too.
-   - If an injury-type table reports an `other`, `other injury`, or similarly residual diagnosis/tissue bucket that cannot be mapped more specifically, store it under `injuryTissueType_non_specific_tissue`.
-   - If a paper already has extracted `injuryTissueType` or `injuryLocation` rows, also scan for matching directly mappable severity totals, severity means/medians, incidence rows, burden rows, and diagnosis rows and add them as a follow-up when available, not just counts.
-   - When reviewing a structured table, classify each row family before mapping it: tissue/diagnosis rows go to `injuryTissueType`, location/body-region rows go to `injuryLocation`, onset rows go to `injuryMode...`, and mechanism rows stay in mechanism/contact fields. Do not aggregate across row families just because they appear in the same table.
-   - When a structured row has already been filled with prevalence/count, explicitly verify whether the same source row or row family also reports incidence, burden, mean/median days lost, total days lost, or named diagnoses before leaving the row family incomplete.
-   - Use source priority in this order for structured rows: direct table values first, explicit prose summaries second, readable figures third. Do not let a figure estimate overwrite a direct text/table value for the same row.
-   - Use readable figures to support completeness when the paper clearly shows additional compatible location/type rows that are not quantified in the prose or tables.
-   - When adding figure-derived rows, restrict them to rows that are missing from the direct text/table extraction, store them as estimates rather than direct counts, and mark them with lower confidence plus a figure page hint.
-   - Never put burden metrics into `severityTotalDays`, `severityMeanDays`, or other raw-days fields unless the paper actually reports total days lost or mean/median days lost for that exact row. Burden belongs in `..._burden` fields only.
-   - If a location/type subtype table reports named diagnoses such as `ACL rupture`, `ankle sprain`, `hamstring strain`, `foot fracture`, `tendinopathy`, or `tendon rupture`, map them into the closest diagnosis/subtype row when the schema supports it, or note explicitly in the backlog why they were left blank.
-   - When multiple directly reported subtype rows map cleanly into one schema row and share the same denominator, you may aggregate not just prevalence/count but also incidence and burden into that schema row. Record the aggregation explicitly in the backlog note.
-   - Do not aggregate overuse rows into `injuryTissueType_muscle_tendon` or other tissue/type rows when the paper reports overuse as an onset category rather than a tissue diagnosis. If the same table separates `strain` and `overuse`, keep the tissue row diagnosis-specific (for example, `strain` only) and store the overuse count under the appropriate onset field such as `injuryModeRepetitiveGradual`.
-   - If the paper reports clean percentages over a clearly stated numerator for injury outcome fields, injury location, type, mechanism, foul-play, or similar compatible rows, convert those percentages into absolute counts and store them in the appropriate Count fields when the mapping is defensible. Record in the backlog note that those counts were percentage-derived rather than directly printed as raw counts.
-   - Only do this percentage-to-count conversion when the base numerator is explicit and stable (for example `58` total injuries or `53` traumatic injuries). Do not derive counts from percentages when the denominator is unclear, mixed across subgroups, or obviously rounded too coarsely to support a reliable count.
-   - When converting percentages to counts, use the nearest defensible whole-number count and make sure the result stays compatible with the paper’s stated subtotal. If several rounded percentages compete and cannot all be made internally consistent, prefer leaving the row blank over forcing a misleading count.
-   - If a prior live pass mistakenly stored percentage strings in structured Count fields and the denominator is explicit, treat the correction as a valid corrective overwrite: replace those percentage strings with the nearest whole-number counts and note the correction in the backlog.
-   - For structured multiline fields, alignment is part of correctness. If the first live row is `Total` but the paper reports only subgroup rows, keep the leading blank line in `extraction_fields` so later rows still map to the correct subgroup and do not trim that blank away during live corrections.
-   - Likewise, when only the pooled `Total` value is directly reported, store it only on the first line and keep the subgroup lines blank. Never shift a pooled value into subgroup rows and never shift subgroup-only values into the `Total` row.
-   - For count-style fields such as mode-of-onset rows, do not invent subgroup counts from percentages unless the paper prints a stable subgroup injury denominator. If a reviewer explicitly wants those rows filled anyway and only percentages are available, store the percentages with a `%` suffix and note clearly in the backlog that the onset rows are percentage fallbacks rather than true counts.
-   - When a reported count, incidence, burden, or similar extracted value includes a `95% CI`, preserve it during this review step using the schema’s dedicated CI field when available, otherwise inline after the value itself.
-   - If a dedicated CI field exists for a metric, store the base estimate in the main field and the interval only in the dedicated CI field. Do not duplicate that same CI inline in the estimate field.
-   - Standardize inline confidence interval formatting as `estimate (lower - upper)` even if the paper uses commas, `to`, brackets, or another delimiter. Example: `2.7 (2.2 - 3.2)`.
-   - Use this completion checklist before calling any paper `review-ready`:
-     - line mapping confirmed against the strongest directly reported subgroup axis
-     - all location/type/mechanism/severity tables or figures scanned through their final continuation page
-     - all clean one-to-one rows filled
-     - all clean parent-field or `overall` mappings filled
-     - all directly mappable subtype rows under any filled parent bucket also checked and filled
-     - every filled structured location/type row family checked for reported prevalence/count, incidence, burden, severity, and diagnosis metrics rather than stopping after the first compatible metric
-     - Tabs `1-4` checked and filled, with any missing first-tab fields intentionally left `not_reported` rather than skipped
-     - Tab `2` specifically checked for direct participant fields including `country`, `fifaDiscipline`, and `meanAge`
-     - `meanAge` explicitly scanned not just in participant tables but also in abstract/results prose, subgroup tables, and table footnotes when the main baseline table is sparse
-     - Tabs `3-4` specifically checked for all direct definition and exposure fields before calling the paper review-ready
-     - `observationDuration` checked anywhere it appears and kept year-specific when the source reports a season or study window
-     - `mechanismReporting` explicitly checked for the injury reporter role rather than the exposure logger or a workflow description
-     - `studyId` preserved as the app-assigned value
-     - all reported `95% CI` values either stored in their dedicated field or appended inline where no CI field exists
-     - any compatible subrow aggregations noted
-     - any intentionally blank combined or incompatible rows noted
-     - any still-sparse paper has an explicit reason recorded
-5. Summarize the proposal and wait for explicit approval before applying.
-   - Always state the line mapping, whether a stronger subgroup split replaces a pooled line, whether the update is additive-only or corrective, any compatible subrow aggregations, any proportion-derived participant counts, any age values recovered outside the baseline table, any median-labeled severity values, any tables or figures scanned for structured rows, and any intentionally blank fields.
-   - When Tabs `7-8` are in scope, name the specific structured text/table/figure sources scanned in the summary/backlog note and say whether they were filled or intentionally left blank for compatibility reasons.
-   - In the summary, call out any preserved season-year wording in `observationDuration` and where reported `95% CI` values were stored, especially when a dedicated CI field was used instead of inline text.
-   - If exposure or incidence rows come from a subset but sample size comes from the full cohort, keep the direct values but call out that denominator mismatch explicitly in the backlog note.
-   - If a value is derived rather than directly reported, say so explicitly in the backlog note instead of presenting it as though it were a direct paper value.
-   - This applies to percentage-derived counts as well: if you convert percentages into absolute counts for structured rows, note the source denominator and that the stored count was derived from reported percentages.
-   - This also applies to figure-derived counts: if you estimate row values from a graph, note that the stored row was figure-derived, that text/table values took precedence where available, and that the figure was used only for missing compatible rows.
-6. Only after approval, run `bash -lc './scripts/terminal-extract.sh apply --paper <paperId|studyId>'` when available.
-   - If the script is missing, apply approved changes through direct Supabase terminal writes.
-7. Run the high-reasoning Codex review gate for the paper or batch.
-   - Use the newest available Codex model at high reasoning, currently GPT-5.5 high reasoning when available. If the runtime cannot select a separate model/reasoning level, run the strongest available independent review pass and state that limitation in the backlog or final summary.
-   - Scope the review to the live website state, not only local drafts. Query or inspect the live Supabase-backed record(s), including `papers`, `paper_files`, `extractions`, `extraction_fields`, `population_groups`, `population_values`, and `paper_notes` where applicable.
-   - For batches, verify every paper independently and then verify batch-level consistency: correct batch membership, correct count, no missing or extra study IDs, and backlog order.
-   - The review gate must look specifically for gaps in population logic, row alignment, `studyId` preservation, translated-paper provenance notes, source-file attachment, status/readiness state, missing definitions/exposure fields, missing CIs, missing mechanism/contact values, and whether location/type tabs were filled wherever the source reports compatible data.
-   - For `injuryLocation` and `injuryTissueType`, check both presence and appropriateness. If a paper reports compatible location/type counts, incidence, burden, severity, or diagnosis rows, they must be live and dual-written. If location/type rows are absent, the review must confirm and record the reason: not reported, incompatible denominator, figure not readable enough, no clean numeric value, or outside schema mapping.
-   - Check dual-write integrity: every structured value shown through `population_values` must have a matching newline-aligned `extraction_fields` value, and multiline values must preserve the selected population row order.
-   - Classify findings as `blocker`, `needs reviewer attention`, or `no action`. Fix blockers before saying the extraction is ready for human review. Keep reviewer-attention notes visible in the backlog/final summary without blocking readiness when the live data is defensible.
-   - Do not mark a paper `reviewed_complete` during this gate. The output of this gate is only `ready for human review` unless the user explicitly asks to complete the batch.
-   - If the review gate changes live extraction data, rerun the gate on the changed paper(s) before stopping.
-8. Leave live status changes to the user unless they explicitly ask for one.
-   - When the user says a whole batch is complete, mark each row in that batch `✅ reviewed_complete`, set any remaining in-scope paper statuses to `extracted`, and add `Completed: YYYY-MM-DD` to that batch section in `docs/review-backlog.md`.
-   - Whenever you add or update a batch section in `docs/review-backlog.md`, verify that the file still reads in ascending batch order with the newest batch appended at the end.
+1. Prepare the paper.
+   - If available, run `bash -lc './scripts/terminal-extract.sh prep --paper <paperId|studyId>'`.
+   - If the script is missing, inspect the PDF/text directly, use repo schema/types as source of truth, and apply approved changes through direct Supabase writes.
+   - When selecting a "next available" paper, verify `assigned_to` first. `Available` means truly unassigned, not merely `uploaded`.
+2. Choose population rows before filling fields.
+   - Use the strongest directly reported axis: study arm, sex, age group, competition level, team/region, season, surface, tournament phase, or another explicit cohort split.
+   - If pooled and subgroup values both exist, use `Total / subgroup...` unless the source table gives a more defensible order.
+   - If subgroup-only values exist and no pooled total is reported, do not invent a `Total` row.
+   - Shared/global values go on the first row only; subgroup-specific values go on matching rows; blanks preserve row alignment.
+3. Extract manually.
+   - If available, run `bash -lc './scripts/terminal-extract.sh extract --paper <paperId|studyId> --tab <manual-tab> --guidance "<user instruction>"'`.
+   - If not available, stage values manually from the source text/PDF and live schema.
+4. Review before apply.
+   - If available, run `bash -lc './scripts/terminal-extract.sh review --paper <paperId|studyId>'`.
+   - Check Tabs `1-4` for every included paper, and Tabs `5-10` whenever compatible outcome, structured, illness, or mechanism data exists.
+   - Before calling a paper ready, scan all results tables and usable figures for location, type/diagnosis/tissue, severity, mechanism/contact, incidence, burden, and CI values.
+5. Summarize and wait for explicit approval before applying.
+   - State line mapping, additive vs corrective scope, source tables/figures scanned, derived/aggregated values, missing-but-checked items, and any reviewer caveats.
+   - Never run `apply` without explicit approval.
+6. Apply approved changes.
+   - If available, run `bash -lc './scripts/terminal-extract.sh apply --paper <paperId|studyId>'`.
+   - If not available, apply through direct Supabase writes.
+   - Always dual-write structured rows: any value in `population_values` must have the matching newline-aligned `extraction_fields` value.
+7. Run the high-reasoning review gate.
+   - Use `references/review-gate.md`.
+   - This is required after any live apply, whether one paper or a batch. Script success alone is not review readiness.
+   - Fix blockers and rerun the gate on changed papers before saying they are ready for human review.
+8. Manage status only when asked.
+   - When the user says a batch is complete, mark each row `✅ reviewed_complete`, set remaining in-scope live statuses to `extracted`, and add `Completed: YYYY-MM-DD`.
+   - Otherwise leave live statuses alone.
+
+## Field Rules
+
+- Format `leadAuthor` as `Surname Initials`, e.g. `Zebis MK`.
+- Standardize `fifaDiscipline` to schema-supported values such as `Association football (11-a-side)`, `Futsal`, `Beach soccer`, or `Para football`.
+- Normalize `injuryDefinition` to `physical complaint`, `medical attention`, `time-loss`, or the shortest accurate combined label.
+- Make `incidenceDefinition` denominator-explicit whenever any incidence, prevalence, rate, or burden metric is extracted.
+- Use the shortest accurate value; do not paste full prose definitions when the schema label already gives context.
+- Preserve reported `95% CI` values in dedicated CI fields where available, otherwise inline as `estimate (lower - upper)`.
+- Do not put burden metrics into raw days-out severity fields unless the paper reports total/mean/median days lost for that exact row.
+- If a median days-lost value is stored in a generic severity field, label it as median and mention it in the backlog/review note.
+- If a field is checked and genuinely absent, leave it blank/`not_reported`; do not skip it silently.
+- Use `references/field-completeness.md` for detailed completeness rules.
 
 ## Safety
 
-- Always dual-write structured tab rows. Any field stored in `population_values` must also have a corresponding `extraction_fields` entry (newline-separated Total/arm values) under that tab's `extraction_id` — this applies to `injuryLocation`, `injuryTissueType`, and all other structured-row tabs.
-- Use the shortest accurate field value. Do not write full prose definitions or repeat context the schema label already provides. Examples: `injuryDefinition: "time-loss"`, `exposureMeasurementUnit: "player-hours"`, `observationDuration: "6 months (2012/2013)"`.
-- For `injuryDefinition`, normalize to the canonical labels `physical complaint`, `medical attention`, and `time-loss` whenever possible, preserving direct combinations like `medical attention or time-loss` when the paper explicitly uses a combined definition.
-- For `incidenceDefinition`, prefer denominator-explicit values such as `per 1000 player-hours`, `per 1000 athlete-exposures`, `per 100 players`, or `per player-season` instead of vague text like `incidence` or `injury rate`.
-- Never use `apply` without explicit user approval.
-- Do not pass `--allow-empty-overwrite` unless the user explicitly wants blank values to replace existing data.
-- If a staged draft already exists, do not use `prep --force` unless the user wants to discard it.
-- Preserve existing live manual edits unless the user explicitly approves changing populated values.
-- For papers awaiting user review, prefer live status `processing` rather than `extracted`.
-- Do not skip the high-reasoning Codex review gate because an extraction script ran successfully. Script success proves only that data was written; the review gate decides whether the extraction is ready for human review.
-- Do not describe a paper as `review-ready` if the structured-table completion checklist has not been satisfied.
-- Never treat a paper as available for a new batch if `assigned_to` is already set to another profile. `available` queue selection must exclude all papers already assigned to someone else.
-- `Available` means truly unassigned, not merely `uploaded`.
-- Before creating any new batch, explicitly verify the `assigned_to` value for each candidate paper. If any candidate is already assigned, skip it and move to the next truly unassigned paper instead of touching, tagging, or reassigning it.
-- If you discover after the fact that a paper in a batch was already assigned to someone else, record that audit issue in `docs/review-backlog.md`, do not describe it as newly available work, and do not use that paper as justification for future queue selection.
-- Any paper touched during live extraction or exclusion work should be assigned to `AbdelRahman Babiker` only if it is truly unassigned and legitimately part of the current queue. Do not overwrite another extractor's existing assignment just because the paper was selected by mistake.
-- Put rationale, caveats, and review commentary in the backlog by default rather than as live paper notes.
-- Only UEFA Elite Club study-family papers should be tagged `uefa`. Do not exclude a paper as `uefa` just because it is UEFA-branded or takes place in a UEFA competition.
-- Exclusion papers should keep their true live statuses while pending review. Do not normalize `american_data`, `systematic_review`, `uefa`, `referee`, or other exclusion statuses to `processing` just because they are still awaiting manual review.
-- If a paper appears to be a companion sub-study of an already extracted cohort, flag that to the user before treating it as routine new extraction work.
-- If a local PDF is image-only or not machine-readable, a sparse abstract-level pass is allowed only if that limitation is stated explicitly in the backlog note.
-- If a translated non-English paper has a cleaned extraction-ready PDF, do not call it sparse or table-limited until the matching `table-audit-#NNN.md` and original PDF table pages have been checked.
-- Use figure-driven values only when the figure is readable enough to support a defensible extraction. If the figure text, labels, or plotted values are not legible, stay text/table-only rather than guessing or over-interpreting the figure.
-- If a reported days-lost field is labeled as median or `median (IQR)`, do not describe it as mean. If the schema only offers a generic severity-days field for that row, store the reported median value there and note the median labeling clearly in the backlog/review commentary.
-- When normalizing inline uncertainty text, convert confidence intervals to range form only. Do not rewrite non-CI statistics such as SD, IQR, or raw ranges into CI-style notation.
-- When multiline labels or multiline extracted values are corrected live, keep `population_groups` and `population_values` aligned with the corrected split.
-
-## References
-
-- Read `references/subgroup-selection.md` for pooled-vs-split decisions, home-venue vs playing-surface distinctions, and sample-size line mapping.
-- Read `references/direct-vs-derived-values.md` for direct-vs-calculated value rules and allowed aggregations.
-- Read `references/structured-row-mapping.md` for tissue/type and location row mapping, inline CI handling, and subsection-specific table rules.
+- Do not use `--allow-empty-overwrite` unless the user explicitly asks to blank existing values.
+- Do not use `prep --force` if a staged draft exists unless the user wants to discard it.
+- Do not call an extraction `review-ready` until the structured-table completion checklist in `references/structured-row-mapping.md` and the post-apply gate in `references/review-gate.md` are satisfied.
+- Do not classify exclusion papers as `processing` just because they are awaiting review; preserve true exclusion statuses such as `american_data`, `systematic_review`, `uefa`, or `referee`.
+- Only UEFA Elite Club study-family papers should be tagged `uefa`.
+- If a paper appears to be a companion sub-study, flag it before treating it as routine new extraction work.
+- If a local PDF is image-only or not machine-readable, a sparse abstract-level pass is allowed only if that limitation is stated explicitly.
+- Use figure-derived values only when the figure is readable enough to support a defensible extraction; text/table values take precedence.
+- Keep `docs/review-backlog.md` in strictly increasing batch order. Add new batches after the current highest batch.
 
 ## Manual Tabs
 

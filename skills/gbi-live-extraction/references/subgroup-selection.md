@@ -6,6 +6,10 @@ Read this file when the paper could be extracted either as a pooled line or as m
 
 - Prefer the most explicit reported subgroup structure over a pooled headline row when the subgroup split is directly usable in the schema.
 - If a paper reports both pooled totals and a clean subgroup table, do not default to the pooled line unless the subgroup denominators are incomplete or incompatible with the live fields.
+- Build the population row layout before filling fields.
+- If the source reports pooled values and subgroups, use `Total / subgroup 1 / subgroup 2 ...` unless the source table clearly uses a more defensible order.
+- If the source reports subgroup-only values and no pooled total, do not invent a `Total` row.
+- Keep subgroup rows only for fields where the paper actually reports or implies subgroup differences.
 
 ## Trial Arm Rule
 
@@ -21,6 +25,22 @@ Read this file when the paper could be extracted either as a pooled line or as m
 - Male vs female
 - Playing surface comparisons when the paper truly compares exposure or injuries on those surfaces
 - Club home-venue surface comparisons such as `artificial turf home venue` vs `natural grass home venue`
+
+## Row Alignment Rule
+
+- Shared/global values go on the first row only; leave later subgroup lines blank.
+- Subgroup-specific values go on the matching subgroup rows.
+- Pooled-only metrics stay on the first `Total` row; do not copy pooled values downward.
+- Subgroup-only metrics keep a leading blank if the first live row is `Total`; do not shift subgroup values upward.
+- Apply this across all tabs, including study details, participant fields, definitions, exposure metadata, headline outcomes, and structured tabs.
+- Only keep multiline values when row-specific values exist or blank spacer lines are needed to preserve alignment.
+
+## Sex-Split Rule
+
+- If boys/girls or male/female results are actual study rows, do not leave the paper as pooled `mixed`.
+- Use `Total / Boys / Girls` or `Total / Male / Female` when pooled totals also exist.
+- Use only `Boys / Girls` or `Male / Female` when no pooled total is reported.
+- If a subgroup split is shown live and global sex would hide row identity, label sex rows with the subgroup names.
 
 ## Home-Venue vs Playing-Surface Rule
 
