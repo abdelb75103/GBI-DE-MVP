@@ -44,6 +44,9 @@ AUDIT_DIR = ROOT / "Data Analysis" / "Data Cleaning" / "audit" / "uefa-master"
 TODAY = date.today().isoformat()
 
 MANDATORY_IDS = {
+    "S068",  # UEFA-related comparator, no longer status=uefa after own-workspace extraction
+    "S109",  # UEFA tournament audit, no longer status=uefa after own-workspace extraction
+    "S111",  # UEFA-method-only/non-ECIS source retained in triage even if assigned elsewhere
     "S200",  # all-injury ECIS anchor, currently extracted
     "S112",  # WECIS anchor
 }
@@ -265,6 +268,15 @@ def styles() -> dict[str, ParagraphStyle]:
             fontSize=7.2,
             leading=9,
         ),
+        "table_header": ParagraphStyle(
+            "TableHeader",
+            parent=base["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=7.2,
+            leading=9,
+            textColor=colors.white,
+            alignment=TA_LEFT,
+        ),
     }
 
 
@@ -295,16 +307,16 @@ def build_doc(path: Path, title: str, story: list[Any]) -> None:
     doc.build(story)
 
 
-def source_table(rows: list[SourcePaper], style: ParagraphStyle) -> Table:
+def source_table(rows: list[SourcePaper], style: ParagraphStyle, header_style: ParagraphStyle) -> Table:
     data = [
         [
-            para("Study ID", style),
-            para("Year", style),
-            para("Status", style),
-            para("Category", style),
-            para("Role", style),
-            para("Decision", style),
-            para("Title", style),
+            para("Study ID", header_style),
+            para("Year", header_style),
+            para("Status", header_style),
+            para("Category", header_style),
+            para("Role", header_style),
+            para("Decision", header_style),
+            para("Title", header_style),
         ]
     ]
     for row in rows:
@@ -372,7 +384,7 @@ def build_master_pdf(path: Path, title: str, rows: list[SourcePaper], kind: str)
         )
     )
     story.append(para("Source Inventory And Decisions", s["h1"]))
-    story.append(source_table(rows, s["small"]))
+    story.append(source_table(rows, s["small"], s["table_header"]))
     story.append(PageBreak())
     story.append(para("Field-Level Provenance Requirements", s["h1"]))
     story.extend(
@@ -430,7 +442,7 @@ def build_triage_pdf(path: Path, rows: list[SourcePaper]) -> None:
         )
     )
     story.append(para("Papers Requiring Separate Workspace Handling", s["h1"]))
-    story.append(source_table(rows, s["small"]))
+    story.append(source_table(rows, s["small"], s["table_header"]))
     story.append(Spacer(1, 8))
     story.append(para("Audit Notes", s["h1"]))
     for row in rows:

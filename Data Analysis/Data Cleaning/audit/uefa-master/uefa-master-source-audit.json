@@ -1,5 +1,5 @@
 {
-  "prepared": "2026-05-17",
+  "prepared": "2026-05-18",
   "counts": {
     "all_sources_reviewed": 39,
     "ecis_men_sources": 35,
@@ -130,7 +130,7 @@
     {
       "study_id": "S068",
       "title": "Injury epidemiology in professional football in South America compared with Europe",
-      "status": "uefa",
+      "status": "processing",
       "year": "2021",
       "lead_author": "Bengtsson H",
       "doi": "",
@@ -214,7 +214,7 @@
     {
       "study_id": "S109",
       "title": "Hagglund M. and Walden M. and Ekstrand J. - 2009 - UEFA injury study - An injury audit of European Championships 2006 to 2008.pdf",
-      "status": "uefa",
+      "status": "processing",
       "year": "2009",
       "lead_author": "Hagglund M",
       "doi": "10.1136/bjsm.2008.056937",
