@@ -19,6 +19,7 @@ const options: { value: PaperStatus; label: string }[] = [
   { value: 'systematic_review', label: 'Systematic Review' },
   { value: 'referee', label: 'Referee' },
   { value: 'retrospective_substudy_analysis', label: 'Retrospective Sub-study Analysis' },
+  { value: 'uefa_master_extraction', label: 'UEFA Master Extraction' },
 ];
 
 type StatusSelectProps = {

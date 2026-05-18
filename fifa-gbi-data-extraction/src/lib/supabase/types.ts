@@ -15,7 +15,8 @@ export type PaperStatus =
   | 'american_data'
   | 'systematic_review'
   | 'referee'
-  | 'retrospective_substudy_analysis';
+  | 'retrospective_substudy_analysis'
+  | 'uefa_master_extraction';
 
 export type AssignmentStatus = 'claimed' | 'in_progress' | 'completed' | 'released' | 'returned';
 

@@ -14,6 +14,9 @@ type PapersDashboardClientProps = {
 
 type AssignmentFilter = 'all' | 'available' | 'mine';
 
+const isUnavailableForAssignment = (status: PaperStatus) =>
+  status === 'archived' || status === 'uefa_master_extraction';
+
 export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = false }: PapersDashboardClientProps) {
   const { profile } = useActiveProfileState();
   const [assignmentFilter, setAssignmentFilter] = useState<AssignmentFilter>('all');
@@ -41,7 +44,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     // Assignment filter
     if (profile && assignmentFilter !== 'all') {
       if (assignmentFilter === 'available') {
-        result = result.filter((paper) => !paper.assignedTo && paper.status !== 'archived');
+        result = result.filter((paper) => !paper.assignedTo && !isUnavailableForAssignment(paper.status));
       } else if (assignmentFilter === 'mine') {
         // Show all papers assigned to user, including completed ones
         result = result.filter((paper) => paper.assignedTo === profile.id);
@@ -92,7 +95,7 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
 
     return {
       all: papers.length,
-      available: papers.filter((paper) => !paper.assignedTo && paper.status !== 'archived').length,
+      available: papers.filter((paper) => !paper.assignedTo && !isUnavailableForAssignment(paper.status)).length,
       mine: papers.filter((paper) => paper.assignedTo === profile.id).length, // Include all assigned papers, including completed
     };
   }, [papers, profile]);
@@ -161,6 +164,8 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
           <option value="american_data">American Data</option>
           <option value="systematic_review">Systematic Review</option>
           <option value="referee">Referee</option>
+          <option value="retrospective_substudy_analysis">Retrospective Sub-study Analysis</option>
+          <option value="uefa_master_extraction">UEFA Master Extraction</option>
           {isAdmin ? <option value="archived">Archived</option> : null}
         </select>
       </div>

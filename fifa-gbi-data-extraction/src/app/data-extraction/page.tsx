@@ -12,6 +12,7 @@ import {
   isBulkExportStatus,
   isActiveStatus,
   isCompletedStatus,
+  isDashboardCountExcludedStatus,
   isProgressCompletedStatus,
   isTaggedAutoCompleteStatus,
 } from '@/lib/status-groups';
@@ -26,10 +27,11 @@ export default async function DataExtractionPage() {
 
   const isAdmin = activeProfile?.role === 'admin';
   const papers = await mockDb.listPapers();
-  const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
-  const dashboardTablePapers = isAdmin ? papers : visiblePapers;
+  const countablePapers = papers.filter((paper) => !isDashboardCountExcludedStatus(paper.status));
+  const tablePapers = papers.filter((paper) => paper.status !== 'archived');
+  const dashboardTablePapers = isAdmin ? papers : tablePapers;
   const exportJobs = await mockDb.listExports();
-  const activePaperIds = visiblePapers.filter((paper) => isBulkExportStatus(paper.status)).map((paper) => paper.id);
+  const activePaperIds = tablePapers.filter((paper) => isBulkExportStatus(paper.status)).map((paper) => paper.id);
   const userId = activeProfile?.id || null;
   const pendingUploadCount = isAdmin ? await mockDb.countPendingUploadQueueEntries() : 0;
   
@@ -63,13 +65,13 @@ export default async function DataExtractionPage() {
   const firstName = extractFirstName(activeProfile?.fullName);
   
   // Calculate metrics
-  const totalPapers = visiblePapers.length;
-  const availablePapers = visiblePapers.filter((paper) => !paper.assignedTo).length;
+  const totalPapers = countablePapers.length;
+  const availablePapers = countablePapers.filter((paper) => !paper.assignedTo).length;
   
-  const activePapers = visiblePapers.filter((paper) => isActiveStatus(paper.status));
-  const completedPapers = visiblePapers.filter((paper) => isCompletedStatus(paper.status));
-  const taggedCompletedPapers = visiblePapers.filter((paper) => isTaggedAutoCompleteStatus(paper.status));
-  const progressCompletedPapers = visiblePapers.filter((paper) => isProgressCompletedStatus(paper.status));
+  const activePapers = countablePapers.filter((paper) => isActiveStatus(paper.status));
+  const completedPapers = countablePapers.filter((paper) => isCompletedStatus(paper.status));
+  const taggedCompletedPapers = countablePapers.filter((paper) => isTaggedAutoCompleteStatus(paper.status));
+  const progressCompletedPapers = countablePapers.filter((paper) => isProgressCompletedStatus(paper.status));
   
   const inProgressCount = activePapers.length;
   const completedCount = completedPapers.length;
@@ -85,12 +87,12 @@ export default async function DataExtractionPage() {
   const userCompletedPercentage =
     completedCount > 0 ? Math.round((userCompletedCount / completedCount) * 100) : 0;
   
-  const flaggedCount = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
+  const flaggedCount = countablePapers.filter((paper) => Boolean(paper.flagReason)).length;
   const showTeamProgress = false;
   
   // Calculate contributor statistics
   type ContributorMap = Record<string, { name: string; completedCount: number }>;
-  const contributorStats = visiblePapers.reduce<ContributorMap>((acc, paper) => {
+  const contributorStats = countablePapers.reduce<ContributorMap>((acc, paper) => {
     if (isProgressCompletedStatus(paper.status) && paper.assignedTo && paper.assigneeName) {
       if (!acc[paper.assignedTo]) {
         acc[paper.assignedTo] = { name: paper.assigneeName, completedCount: 0 };
