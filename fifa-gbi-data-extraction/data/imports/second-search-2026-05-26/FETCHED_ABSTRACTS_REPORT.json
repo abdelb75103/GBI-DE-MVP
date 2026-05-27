@@ -1,0 +1,86 @@
+{
+  "searchBatchLabel": "Second search - Ishanka - 2026-05-26",
+  "fetchedAbstracts": 10,
+  "records": [
+    {
+      "assignedStudyId": "S1228",
+      "title": "The Importance of Preventing and Managing Anterior Cruciate Ligament Injuries in Female Soccer Players.",
+      "provider": "crossref",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:45.418Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S1545",
+      "title": "Adaptive Sports and Recreation in Persons with Limb Loss/Limb Deficiency",
+      "provider": "ncbi_pubmed",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:45.741Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S1582",
+      "title": "Evolving landscape of sports injuries and recommendations on injury preventions: A retrospective analysis in Singapore",
+      "provider": "crossref",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:45.909Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S1622",
+      "title": "Media's Effect on Athletes' Mental Health",
+      "provider": "ncbi_pubmed",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.028Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S1705",
+      "title": "Preparticipation Cardiac Evaluation from the Pediatric Perspective",
+      "provider": "ncbi_pubmed",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.084Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S2109",
+      "title": "Effectiveness of High‐Intensity Small‐Sided Soccer Games Versus Traditional Soccer Training on Cardiovascular and Metabolic Health Outcomes in Adolescents With Increased Metabolic Risk: A Randomized Controlled Trial.",
+      "provider": "crossref",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.163Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S3285",
+      "title": "'We may need some help; we are just parents who have chosen to engage in football': a qualitative study on amateur coaches' experiences of use of and support for injury prevention training in Sweden.",
+      "provider": "crossref",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.244Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S3588",
+      "title": "Predictive models of injury risk in male professional football players: a systematic review.",
+      "provider": "crossref",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.360Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S4782",
+      "title": "American-Style Football Players: A Novel Window Into the Brain-Heart Connection.",
+      "provider": "ncbi_pubmed",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.553Z",
+      "hasAbstract": true
+    },
+    {
+      "assignedStudyId": "S4975",
+      "title": "Time to Command-Following and Outcomes After Traumatic Brain Injury.",
+      "provider": "crossref",
+      "titleScore": 100,
+      "fetchedAt": "2026-05-26T23:28:46.435Z",
+      "hasAbstract": true
+    }
+  ]
+}

@@ -10,6 +10,9 @@
     "db:clear-test-data": "node scripts/clear-test-data.mjs",
     "db:verify-setup": "node scripts/verify-setup.mjs",
     "covidence:import-pdfs": "node scripts/import-covidence-pdfs.mjs",
+    "second-search:import": "node scripts/import-second-search-references.mjs",
+    "second-search:restore-fuzzy": "node scripts/restore-second-search-fuzzy-removals.mjs",
+    "second-search:audit": "node scripts/audit-second-search-import.mjs",
     "kb:sync": "node scripts/kb-sync.mjs",
     "kb:synthesize": "node scripts/kb-synthesize.mjs",
     "kb:check": "node scripts/kb-check.mjs"

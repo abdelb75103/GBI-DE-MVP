@@ -17,13 +17,25 @@ const BATCHED_IN_QUERY_SIZE = 100;
 
 export const listPapers = async (): Promise<Paper[]> => {
   const supabase = supabaseClient();
-  const { data: paperRows, error } = await supabase.from('papers').select('*').order('uploaded_at', { ascending: false });
+  const paperRows: PaperRow[] = [];
+  const pageSize = 1000;
 
-  if (error) {
-    throw new Error(`Failed to list papers: ${error.message}`);
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('papers')
+      .select('*')
+      .order('uploaded_at', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list papers: ${error.message}`);
+    }
+
+    paperRows.push(...((data ?? []) as PaperRow[]));
+    if (!data || data.length < pageSize) break;
   }
 
-  const rows = (paperRows ?? []) as PaperRow[];
+  const rows = paperRows;
   const ids = rows.map((row) => row.id);
   const noteCounts = new Map<string, number>();
   const assigneeNames = new Map<string, string>();

@@ -32,7 +32,7 @@ const extractDoi = (value: unknown) => {
     .replace(/^doi:\s*/i, '')
     .replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
   const match = normalized.match(/10\.\d{4,9}\/[^\s,;"']+/i);
-  return (match?.[0] ?? normalized).replace(/[.)\]]+$/, '');
+  return match?.[0].replace(/[.)\]]+$/, '') ?? '';
 };
 
 const getCaseInsensitive = (row: Record<string, string>, keys: string[]) => {
@@ -139,9 +139,9 @@ const pickAuthor = (authors: string[]) => {
 export function parseReferences(text: string, fileName: string, sourceLabel: string): ImportedReference[] {
   const lowerName = fileName.toLowerCase();
   if (lowerName.endsWith('.ris')) {
-    return splitTaggedRecords(text, /^([A-Z0-9]{2})\s+-\s+(.*)$/).map((record) => {
+    return splitTaggedRecords(text, /^([A-Z0-9]{2,4})\s*-\s*(.*)$/).map((record) => {
       const title = firstNonEmpty(record.TI?.[0], record.T1?.[0], record.CT?.[0]);
-      const abstract = firstNonEmpty(record.AB?.join(' ')) || null;
+      const abstract = firstNonEmpty(record.AB?.join(' '), record.N2?.join(' ')) || null;
       const authors = record.AU ?? record.A1 ?? [];
       return {
         title,
@@ -159,7 +159,7 @@ export function parseReferences(text: string, fileName: string, sourceLabel: str
   }
 
   if (lowerName.endsWith('.nbib') || lowerName.endsWith('.txt')) {
-    return splitTaggedRecords(text, /^([A-Z]{2,4})\s+-\s+(.*)$/).map((record) => {
+    return splitTaggedRecords(text, /^([A-Z]{2,4})\s*-\s*(.*)$/).map((record) => {
       const authors = record.AU ?? record.FAU ?? [];
       return {
         title: firstNonEmpty(record.TI?.join(' '), record.TT?.join(' ')),

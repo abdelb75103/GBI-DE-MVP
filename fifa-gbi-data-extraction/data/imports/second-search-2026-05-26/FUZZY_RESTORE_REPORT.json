@@ -1,0 +1,286 @@
+{
+  "mode": "apply",
+  "searchBatchLabel": "Second search - Ishanka - 2026-05-26",
+  "parsed": 7051,
+  "strictDuplicateRemoval": 2179,
+  "strictExpectedImported": 4872,
+  "actualSecondBatchBeforeRestore": 4827,
+  "previouslyRestoredInBatch": 0,
+  "alreadyPresentUnderStrictRules": 4827,
+  "restoreCandidates": 45,
+  "restored": 45,
+  "restoredWithAbstracts": 42,
+  "restoredMissingAbstracts": 3,
+  "restoredRows": [
+    {
+      "title": "2024 Scholars' Research Symposium Abstract: Characteristics of Play Associated with Head Impact Severity During Tackling in Youth Football",
+      "source": "Embase",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Early sports specialization in Japanese young soccer players and related factors",
+      "source": "Embase",
+      "doi": "10.1101/2024.04.03.24305292",
+      "hasAbstract": true
+    },
+    {
+      "title": "Effects of Mid-Season Camp Period Loading on Sports Injury Anxiety and Physical Performance of Professional Male Soccer Players",
+      "source": "Embase",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Evaluation of Strength and Functional Ability of Soccer Players Two Years After Anterior Cruciate Ligament Reconstruction: A Cross-sectional Study",
+      "source": "Embase",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "HIGHER ECCENTRIC HAMSTRING MUSCLE FATIGUE AFTER PARTICIPATION IN A SOCCER MATCH IN YOUNG FEMALE ATHLETES",
+      "source": "Embase",
+      "doi": "10.1136/bmjsem-2024-sportskongres2024.11",
+      "hasAbstract": true
+    },
+    {
+      "title": "Impact Deceleration Differences on Natural Grass Versus Synthetic Turf High School Football Fields",
+      "source": "Embase",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "OPTIMIZING FOOTBALL TRAINING AT MULTAN SPORTS COMPLEX: INTEGRATING PORTABLE FORCE PLATES FOR ADVANCED PERFORMANCE ANALYSIS",
+      "source": "Embase",
+      "doi": "10.48047/afjbs.6.14.2024.6301-6312",
+      "hasAbstract": true
+    },
+    {
+      "title": "Strengthening exercise and motor control among football players with ankle sprain: A scoping review",
+      "source": "Embase",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Trieste, free port - Football therapy with psychiatric patients. For the 100th anniversary of Franco Basaglia's birth",
+      "source": "Embase",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Correction to: The Football Association Injury and Illness Surveillance Study: The Incidence, Burden and Severity of Injuries and Illness in Men's and Women's International Football.",
+      "source": "Medline",
+      "doi": "10.1007/s40279-023-01971-5",
+      "hasAbstract": false
+    },
+    {
+      "title": "Descriptive epidemiology study of hand injuries sustained in Gaelic football referred to a hand therapy service over 1 year.",
+      "source": "Medline",
+      "doi": "10.1136/bmjsem-2024-001974",
+      "hasAbstract": true
+    },
+    {
+      "title": "[Revision surgery of anterior cruciate ligament plasty].",
+      "source": "PubMed",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Brain Tissue Strain During Adolescent Soccer Heading Using the Cloud-Based Brain Simulation Research Platform Finite Element Head Model.",
+      "source": "PubMed",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Cortical circuit principles predict patterns of trauma induced tauopathy in humans.",
+      "source": "PubMed",
+      "doi": "10.1101/2024.05.02.592271",
+      "hasAbstract": true
+    },
+    {
+      "title": "Epigenetic Age Monitoring in Professional Soccer Players for Tracking Recovery and the Effects of Strenuous Exercise.",
+      "source": "PubMed",
+      "doi": "10.1111/acel.70182",
+      "hasAbstract": true
+    },
+    {
+      "title": "Erratum. Which Criteria Determine Return-to-Play Decisions Following Hip and Groin Injuries in Soccer Players: A Scoping Review.",
+      "source": "PubMed",
+      "doi": "10.1123/jsr.2026-0107",
+      "hasAbstract": false
+    },
+    {
+      "title": "Infographic. Multiligament knee injury (MLKI): an expert consensus statement on nomenclature, diagnosis, treatment and rehabilitation.",
+      "source": "PubMed",
+      "doi": "10.1136/bjsports-2024-109051",
+      "hasAbstract": false
+    },
+    {
+      "title": "Mass Participation and Tournament Event Management for the Team Physician: A Consensus Statement (2022 Update).",
+      "source": "PubMed",
+      "doi": "10.1249/mss.0000000000003325",
+      "hasAbstract": true
+    },
+    {
+      "title": "Motivators and barriers to mouthguard compliance by adult Gaelic football athletes.",
+      "source": "PubMed",
+      "doi": "10.1371/journal.pone.0315555",
+      "hasAbstract": true
+    },
+    {
+      "title": "Position-Specific Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season, Prospective Cohort Study.",
+      "source": "PubMed",
+      "doi": "10.1097/jsm.0000000000001453",
+      "hasAbstract": true
+    },
+    {
+      "title": "Reliability of Concussion Signs and Symptoms Reporting Among Former Professional American-Style Football Players.",
+      "source": "PubMed",
+      "doi": "10.1177/08977151251362274",
+      "hasAbstract": true
+    },
+    {
+      "title": "Sport specialization, injury and illness: a prospective study of elite female adolescent soccer players.",
+      "source": "PubMed",
+      "doi": "10.23736/s0022-4707.25.17535-x",
+      "hasAbstract": true
+    },
+    {
+      "title": "The epidemiology of recreation-related cervical and thoracic fractures.",
+      "source": "PubMed",
+      "doi": "10.1016/j.spinee.2024.09.027",
+      "hasAbstract": true
+    },
+    {
+      "title": "The influence of the lower limb components on genu varum in football players: a full leg length magnetic resonance imaging study.",
+      "source": "PubMed",
+      "doi": "10.1186/s13102-025-01075-9",
+      "hasAbstract": true
+    },
+    {
+      "title": "Using a Bayesian network to classify time to return to sport based on football injury epidemiological data.",
+      "source": "PubMed",
+      "doi": "10.1371/journal.pone.0314184",
+      "hasAbstract": true
+    },
+    {
+      "title": "Associations Between Instrumented Mouthguard-Measured Head Acceleration Events and Post-Match Biomarkers of Astroglial and Axonal Injury in Male Amateur Australian Football Players.",
+      "source": "SportDiscus",
+      "doi": "10.1007/s40279-024-02138-6",
+      "hasAbstract": true
+    },
+    {
+      "title": "Bio-banding in Soccer: A Scoping Review.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Construct validity of the Sideways Shoulder Sway Test for Assessment of Sensorimotor Control of the Glenohumeral Joint.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Decision-making on injury prevention and rehabilitation in professional football - A coach, medical staff, and player perspective.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Editorial.",
+      "source": "SportDiscus",
+      "doi": "10.53841/bpssepr.2024.19.1.2",
+      "hasAbstract": true
+    },
+    {
+      "title": "EDITORIAL.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "EDITORIAL.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "EDITORIAL.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Effect of maturation on overuse knee injury prevalence: A cross-sectional study of youth football players in Japan.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Exploring the relationship between training load and injury risk in Leinster Schoolboy Rugby: analysis of the SCRUm cohort study phase 2.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Hamstring muscle volume contribution to hamstring eccentric strength in collegiate football athletes.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Injury incidence in Leinster Schoolboy Rugby players in 2022-23 season; the SCRUm cohort study phase 2.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Latest Clinical Research Published by ACSM.",
+      "source": "SportDiscus",
+      "doi": "10.1249/jsr.0000000000001332",
+      "hasAbstract": true
+    },
+    {
+      "title": "Latest Clinical Research Published by ACSM.",
+      "source": "SportDiscus",
+      "doi": "10.1249/jsr.0000000000001306",
+      "hasAbstract": true
+    },
+    {
+      "title": "Neuromuscular characteristics of female futsal players: a systematic review.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Nutritional intake, sports nutrition knowledge and energy availability in recreational female football players.",
+      "source": "SportDiscus",
+      "doi": "10.1080/15438627.2025.2520528",
+      "hasAbstract": true
+    },
+    {
+      "title": "The Effects of Motor Imagery on Balance and on the Fear of Re-Injury in Professional Football Players with Ankle Sprain.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "The effects of rhythm jump training on agility and jumping ability in preadolescent Japanese soccer players: A non-randomized controlled trial.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "Validity and reliability of the groin injury screening questionnaire in Japanese.",
+      "source": "SportDiscus",
+      "doi": null,
+      "hasAbstract": true
+    },
+    {
+      "title": "СИСТЕМНА ОРГАНІЗАЦІЯ ЗАСОБІВ ВІДНОВЛЕННЯ ТА СТИМУЛЯЦІЇ ПРАЦЕЗДАТНОСТІ ФУТБОЛІСТІВ ВІКОВОЇ КАТЕГОРІЇ U19.",
+      "source": "SportDiscus",
+      "doi": "10.28925/2664-2069.2025.119",
+      "hasAbstract": true
+    }
+  ]
+}

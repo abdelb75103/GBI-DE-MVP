@@ -25,12 +25,53 @@ import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate }
 import type { Paper, ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 import {
   applyTitleAbstractDecision,
+  getTitleAbstractDecisions,
   getTitleAbstractMetadata,
+  getTitleAbstractWorkStatus,
   type TitleAbstractDecision,
   type TitleAbstractDecisionAction,
 } from '@/lib/screening/title-abstract-decisions';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
+export const TITLE_ABSTRACT_QUEUE_PAGE_SIZE = 50;
+
+export type TitleAbstractQueueFilter =
+  | 'all'
+  | 'needs_your_vote'
+  | 'awaiting_other_reviewer'
+  | 'needs_resolver'
+  | 'ready_for_full_text'
+  | 'excluded'
+  | 'promoted_to_full_text'
+  | 'missing_abstract'
+  | 'flagged'
+  | 'ai_include'
+  | 'ai_exclude'
+  | 'ai_not_run';
+
+export type TitleAbstractQueueCounts = {
+  all: number;
+  needsYourVote: number;
+  awaitingOther: number;
+  resolver: number;
+  ready: number;
+  excluded: number;
+  promoted: number;
+  missingAbstract: number;
+  flagged: number;
+  aiInclude: number;
+  aiExclude: number;
+  aiNotRun: number;
+};
+
+export type TitleAbstractQueuePage = {
+  records: ScreeningRecord[];
+  counts: TitleAbstractQueueCounts;
+  filteredTotal: number;
+  offset: number;
+  limit: number;
+  hasMore: boolean;
+};
 
 export type PromotionDuplicateWarning = {
   target: 'full_text' | 'extraction';
@@ -155,6 +196,7 @@ const mapRows = async (rows: ScreeningRecordRow[]): Promise<ScreeningRecord[]> =
 
 export type CreateScreeningRecordInput = {
   stage?: ScreeningStage;
+  assignedStudyId?: string | null;
   title: string;
   abstract?: string | null;
   leadAuthor?: string | null;
@@ -177,17 +219,112 @@ export type CreateScreeningRecordInput = {
 };
 
 export const listScreeningRecords = async (stage: ScreeningStage = 'full_text'): Promise<ScreeningRecord[]> => {
-  const { data, error } = await supabaseClient()
-    .from('screening_records')
-    .select('*')
-    .eq('stage', stage)
-    .order('created_at', { ascending: false });
+  const supabase = supabaseClient();
+  const rows: ScreeningRecordRow[] = [];
+  const pageSize = 1000;
 
-  if (error) {
-    throw new Error(`Failed to list screening records. Apply the screening migration first: ${error.message}`);
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('screening_records')
+      .select('*')
+      .eq('stage', stage)
+      .order('created_at', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list screening records. Apply the screening migration first: ${error.message}`);
+    }
+
+    rows.push(...((data ?? []) as ScreeningRecordRow[]));
+    if (!data || data.length < pageSize) break;
   }
 
-  return mapRows((data ?? []) as ScreeningRecordRow[]);
+  return mapRows(rows);
+};
+
+const matchesTitleAbstractSearch = (record: ScreeningRecord, query: string) => {
+  if (!query) return true;
+  return [
+    record.assignedStudyId,
+    record.title,
+    record.abstract,
+    record.leadAuthor,
+    record.year,
+    record.journal,
+    record.doi,
+    record.sourceRecordId,
+    record.sourceLabel,
+  ].filter(Boolean).some((value) => String(value).toLowerCase().includes(query));
+};
+
+const matchesTitleAbstractFilter = (
+  record: ScreeningRecord,
+  filter: TitleAbstractQueueFilter,
+  reviewerProfileId: string,
+) => {
+  if (filter === 'all') return true;
+  const status = getTitleAbstractWorkStatus(record, reviewerProfileId);
+  const decisions = getTitleAbstractDecisions(record);
+  if (filter === 'missing_abstract') return !record.abstract?.trim();
+  if (filter === 'flagged') return decisions.some((item) => item.decision === 'flag');
+  if (filter === 'ai_include') return record.aiSuggestedDecision === 'include';
+  if (filter === 'ai_exclude') return record.aiSuggestedDecision === 'exclude';
+  if (filter === 'ai_not_run') return record.aiStatus !== 'completed';
+  return status === filter;
+};
+
+const getTitleAbstractQueueCounts = (
+  records: ScreeningRecord[],
+  reviewerProfileId: string,
+): TitleAbstractQueueCounts => {
+  const statuses = records.map((record) => getTitleAbstractWorkStatus(record, reviewerProfileId));
+  return {
+    all: records.length,
+    needsYourVote: statuses.filter((status) => status === 'needs_your_vote').length,
+    awaitingOther: statuses.filter((status) => status === 'awaiting_other_reviewer').length,
+    resolver: statuses.filter((status) => status === 'needs_resolver').length,
+    ready: statuses.filter((status) => status === 'ready_for_full_text').length,
+    excluded: statuses.filter((status) => status === 'excluded').length,
+    promoted: statuses.filter((status) => status === 'promoted_to_full_text').length,
+    missingAbstract: records.filter((record) => !record.abstract?.trim()).length,
+    flagged: records.filter((record) => getTitleAbstractDecisions(record).some((item) => item.decision === 'flag')).length,
+    aiInclude: records.filter((record) => record.aiSuggestedDecision === 'include').length,
+    aiExclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
+    aiNotRun: records.filter((record) => record.aiStatus !== 'completed').length,
+  };
+};
+
+export const listTitleAbstractQueuePage = async ({
+  reviewerProfileId,
+  filter = 'all',
+  search = '',
+  offset = 0,
+  limit = TITLE_ABSTRACT_QUEUE_PAGE_SIZE,
+}: {
+  reviewerProfileId: string;
+  filter?: TitleAbstractQueueFilter;
+  search?: string;
+  offset?: number;
+  limit?: number;
+}): Promise<TitleAbstractQueuePage> => {
+  const records = await listScreeningRecords('title_abstract');
+  const counts = getTitleAbstractQueueCounts(records, reviewerProfileId);
+  const query = search.trim().toLowerCase();
+  const safeOffset = Math.max(0, offset);
+  const safeLimit = Math.min(150, Math.max(1, limit));
+  const filtered = records.filter((record) =>
+    matchesTitleAbstractFilter(record, filter, reviewerProfileId) &&
+    matchesTitleAbstractSearch(record, query)
+  );
+
+  return {
+    records: filtered.slice(safeOffset, safeOffset + safeLimit),
+    counts,
+    filteredTotal: filtered.length,
+    offset: safeOffset,
+    limit: safeLimit,
+    hasMore: safeOffset + safeLimit < filtered.length,
+  };
 };
 
 export const getScreeningRecord = async (id: string): Promise<ScreeningRecord | undefined> => {
@@ -209,7 +346,7 @@ export const getScreeningRecord = async (id: string): Promise<ScreeningRecord | 
 };
 
 export const createScreeningRecord = async (input: CreateScreeningRecordInput): Promise<ScreeningRecord> => {
-  const assignedStudyId = await generateAssignedStudyId();
+  const assignedStudyId = input.assignedStudyId?.trim() || await generateAssignedStudyId();
   const normalizedDoi = normalizeDoi(input.doi);
   const title = input.title.trim() || input.originalFileName || input.fileName || 'Untitled screening record';
   const extractedTitle = title;
@@ -503,6 +640,7 @@ export const promoteTitleAbstractRecord = async (
   const duplicateWarnings = await findFullTextPromotionWarnings(record);
   const fullTextRecord = await createScreeningRecord({
     stage: 'full_text',
+    assignedStudyId: record.assignedStudyId,
     title: record.title,
     abstract: record.abstract,
     leadAuthor: record.leadAuthor,

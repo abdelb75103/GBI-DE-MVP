@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useMemo, useRef, useState, useTransition } from 'react';
+import { ChangeEvent, FormEvent, ReactNode, UIEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
 
 import {
   getTitleAbstractDecisions,
@@ -15,7 +15,7 @@ import {
 import type { ScreeningRecord } from '@/lib/types';
 
 type Props = {
-  initialRecords: ScreeningRecord[];
+  initialQueue: TitleAbstractQueuePage | null;
   currentReviewerId: string;
   profileRole: 'admin' | 'extractor' | 'observer';
   loadError: string | null;
@@ -36,6 +36,28 @@ type QueueFilter =
   | 'ai_not_run';
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+type QueueCounts = {
+  all: number;
+  needsYourVote: number;
+  awaitingOther: number;
+  resolver: number;
+  ready: number;
+  excluded: number;
+  promoted: number;
+  missingAbstract: number;
+  flagged: number;
+  aiInclude: number;
+  aiExclude: number;
+  aiNotRun: number;
+};
+type TitleAbstractQueuePage = {
+  records: ScreeningRecord[];
+  counts: QueueCounts;
+  filteredTotal: number;
+  offset: number;
+  limit: number;
+  hasMore: boolean;
+};
 type DuplicateWarning = {
   target: 'full_text' | 'extraction';
   matchedStudyId: string | null;
@@ -44,7 +66,22 @@ type DuplicateWarning = {
   score: number;
 };
 
-const MAX_REFERENCE_FILE_BYTES = 6 * 1024 * 1024;
+const MAX_REFERENCE_FILE_BYTES = 25 * 1024 * 1024;
+const QUEUE_PAGE_SIZE = 50;
+const EMPTY_COUNTS: QueueCounts = {
+  all: 0,
+  needsYourVote: 0,
+  awaitingOther: 0,
+  resolver: 0,
+  ready: 0,
+  excluded: 0,
+  promoted: 0,
+  missingAbstract: 0,
+  flagged: 0,
+  aiInclude: 0,
+  aiExclude: 0,
+  aiNotRun: 0,
+};
 
 const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
   pending: 'Pending',
@@ -64,79 +101,109 @@ const STATUS_LABELS: Record<TitleAbstractWorkStatus, string> = {
 };
 
 export function TitleAbstractScreeningClient({
-  initialRecords,
+  initialQueue,
   currentReviewerId,
   profileRole,
   loadError,
 }: Props) {
-  const [records, setRecords] = useState(initialRecords);
-  const [selectedId, setSelectedId] = useState(initialRecords[0]?.id ?? '');
+  const [records, setRecords] = useState(initialQueue?.records ?? []);
+  const [counts, setCounts] = useState<QueueCounts>(initialQueue?.counts ?? EMPTY_COUNTS);
+  const [filteredTotal, setFilteredTotal] = useState(initialQueue?.filteredTotal ?? 0);
+  const [hasMore, setHasMore] = useState(initialQueue?.hasMore ?? false);
+  const [nextOffset, setNextOffset] = useState(initialQueue ? initialQueue.offset + initialQueue.records.length : 0);
+  const [selectedId, setSelectedId] = useState(initialQueue?.records[0]?.id ?? '');
   const [filter, setFilter] = useState<QueueFilter>('all');
   const [search, setSearch] = useState('');
+  const [isLoadingQueue, setIsLoadingQueue] = useState(false);
+  const [queueError, setQueueError] = useState<string | null>(null);
   const [decision, setDecision] = useState<TitleAbstractDecision | null>(null);
   const [decisionAction, setDecisionAction] = useState<TitleAbstractDecisionAction>('reviewer_vote');
   const [note, setNote] = useState('');
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const queueInitializedRef = useRef(false);
+  const selectedIdRef = useRef(selectedId);
   const isAdmin = profileRole === 'admin';
 
   const selected = records.find((record) => record.id === selectedId) ?? records[0] ?? null;
+  useEffect(() => {
+    selectedIdRef.current = selectedId;
+  }, [selectedId]);
 
-  const counts = useMemo(() => {
-    const statuses = records.map((record) => getTitleAbstractWorkStatus(record, currentReviewerId));
-    return {
-      all: records.length,
-      needsYourVote: statuses.filter((status) => status === 'needs_your_vote').length,
-      awaitingOther: statuses.filter((status) => status === 'awaiting_other_reviewer').length,
-      resolver: statuses.filter((status) => status === 'needs_resolver').length,
-      ready: statuses.filter((status) => status === 'ready_for_full_text').length,
-      excluded: statuses.filter((status) => status === 'excluded').length,
-      promoted: statuses.filter((status) => status === 'promoted_to_full_text').length,
-      missingAbstract: records.filter((record) => !record.abstract?.trim()).length,
-      flagged: records.filter((record) => getTitleAbstractDecisions(record).some((item) => item.decision === 'flag')).length,
-      aiInclude: records.filter((record) => record.aiSuggestedDecision === 'include').length,
-      aiExclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
-      aiNotRun: records.filter((record) => record.aiStatus !== 'completed').length,
-    };
-  }, [currentReviewerId, records]);
   const completedCount = counts.ready + counts.excluded + counts.promoted;
   const progressPercent = counts.all > 0 ? Math.round((completedCount / counts.all) * 100) : 0;
 
-  const filteredRecords = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    return records.filter((record) => {
-      const status = getTitleAbstractWorkStatus(record, currentReviewerId);
-      const decisions = getTitleAbstractDecisions(record);
-      if (filter === 'missing_abstract' && record.abstract?.trim()) return false;
-      if (filter === 'flagged' && !decisions.some((item) => item.decision === 'flag')) return false;
-      if (filter === 'ai_include' && record.aiSuggestedDecision !== 'include') return false;
-      if (filter === 'ai_exclude' && record.aiSuggestedDecision !== 'exclude') return false;
-      if (filter === 'ai_not_run' && record.aiStatus === 'completed') return false;
-      if (!['all', 'missing_abstract', 'flagged', 'ai_include', 'ai_exclude', 'ai_not_run'].includes(filter) && status !== filter) return false;
-      if (!query) return true;
-      return [
-        record.assignedStudyId,
-        record.title,
-        record.abstract,
-        record.leadAuthor,
-        record.year,
-        record.journal,
-        record.doi,
-        record.sourceRecordId,
-        record.sourceLabel,
-      ].filter(Boolean).some((value) => String(value).toLowerCase().includes(query));
-    });
-  }, [currentReviewerId, filter, records, search]);
+  const fetchQueuePage = useCallback(async (offset: number, replace: boolean, signal?: AbortSignal) => {
+    setIsLoadingQueue(true);
+    setQueueError(null);
+    try {
+      const params = new URLSearchParams({
+        filter,
+        search,
+        offset: String(offset),
+        limit: String(QUEUE_PAGE_SIZE),
+      });
+      const response = await fetch(`/api/title-abstract-screening?${params.toString()}`, {
+        cache: 'no-store',
+        signal,
+      });
+      if (!response.ok) throw new Error('Failed to refresh title/abstract records');
+      const payload = await response.json() as TitleAbstractQueuePage;
+      setCounts(payload.counts ?? EMPTY_COUNTS);
+      setFilteredTotal(payload.filteredTotal ?? 0);
+      setHasMore(Boolean(payload.hasMore));
+      setNextOffset((payload.offset ?? 0) + (payload.records?.length ?? 0));
+      setRecords((current) => {
+        const nextRecords = replace ? payload.records ?? [] : [...current, ...(payload.records ?? [])];
+        const deduped = Array.from(new Map(nextRecords.map((record) => [record.id, record])).values());
+        if (replace && !deduped.some((record) => record.id === selectedIdRef.current)) {
+          setSelectedId(deduped[0]?.id ?? '');
+        }
+        return deduped;
+      });
+    } finally {
+      setIsLoadingQueue(false);
+    }
+  }, [filter, search]);
+
+  useEffect(() => {
+    if (!queueInitializedRef.current) {
+      queueInitializedRef.current = true;
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      fetchQueuePage(0, true, controller.signal).catch((error) => {
+        if (!controller.signal.aborted) {
+          setQueueError(error instanceof Error ? error.message : 'Failed to load records.');
+        }
+      });
+    }, 250);
+
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
+  }, [fetchQueuePage]);
 
   const refreshRecords = async () => {
-    const response = await fetch('/api/title-abstract-screening', { cache: 'no-store' });
-    if (!response.ok) throw new Error('Failed to refresh title/abstract records');
-    const payload = await response.json() as { records: ScreeningRecord[] };
-    const nextRecords = payload.records ?? [];
-    setRecords(nextRecords);
-    if (!nextRecords.some((record) => record.id === selectedId)) {
-      setSelectedId(nextRecords[0]?.id ?? '');
+    await fetchQueuePage(0, true);
+  };
+
+  const loadMoreRecords = () => {
+    if (!hasMore || isLoadingQueue) return;
+    fetchQueuePage(nextOffset, false).catch((error) => {
+      setQueueError(error instanceof Error ? error.message : 'Failed to load more records.');
+    });
+  };
+
+  const handleQueueScroll = (event: UIEvent<HTMLDivElement>) => {
+    const target = event.currentTarget;
+    const distanceFromBottom = target.scrollHeight - target.scrollTop - target.clientHeight;
+    if (distanceFromBottom < 360) {
+      loadMoreRecords();
     }
   };
 
@@ -144,7 +211,7 @@ export function TitleAbstractScreeningClient({
     const file = event.target.files?.[0];
     if (!file) return;
     if (file.size > MAX_REFERENCE_FILE_BYTES) {
-      setNotice({ tone: 'error', message: 'Reference file exceeds 6 MB.' });
+      setNotice({ tone: 'error', message: 'Reference file exceeds 25 MB.' });
       return;
     }
 
@@ -291,6 +358,7 @@ export function TitleAbstractScreeningClient({
       </section>
 
       {loadError ? <Notice tone="error" message={loadError} /> : null}
+      {queueError ? <Notice tone="error" message={queueError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
       <section className="grid min-h-[calc(100vh-260px)] overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:grid-cols-[300px_minmax(0,1fr)_220px]">
@@ -313,8 +381,8 @@ export function TitleAbstractScreeningClient({
             </div>
           </div>
 
-          <div className="min-h-0 flex-1 overflow-y-auto">
-            {filteredRecords.map((record) => (
+          <div className="min-h-0 flex-1 overflow-y-auto" onScroll={handleQueueScroll}>
+            {records.map((record) => (
               <ReferenceRow
                 key={record.id}
                 record={record}
@@ -323,8 +391,23 @@ export function TitleAbstractScreeningClient({
                 onClick={() => setSelectedId(record.id)}
               />
             ))}
-            {filteredRecords.length === 0 ? (
+            {records.length === 0 && !isLoadingQueue ? (
               <p className="px-5 py-10 text-center text-sm text-slate-500">No references match this view.</p>
+            ) : null}
+            {records.length > 0 ? (
+              <div className="border-t border-slate-200 px-4 py-3 text-center text-xs font-medium text-slate-500">
+                Showing {records.length} of {filteredTotal}
+              </div>
+            ) : null}
+            {isLoadingQueue ? (
+              <div className="px-4 py-4 text-center text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                Loading references
+              </div>
+            ) : null}
+            {!hasMore && records.length > 0 ? (
+              <div className="px-4 pb-4 text-center text-[11px] font-medium text-slate-400">
+                End of this queue
+              </div>
             ) : null}
           </div>
         </aside>
@@ -520,7 +603,7 @@ function ReferenceDetail({
   );
 }
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
       <span aria-hidden className="h-px w-5 bg-slate-300" />
@@ -889,7 +972,7 @@ const VOTE_MARK_CLASSES: Record<TitleAbstractDecision, string> = {
   flag: 'bg-amber-500 text-white shadow-sm shadow-amber-500/30 ring-1 ring-amber-100',
 };
 
-function ResolutionPill({ resolution, children }: { resolution: TitleAbstractResolution; children: React.ReactNode }) {
+function ResolutionPill({ resolution, children }: { resolution: TitleAbstractResolution; children: ReactNode }) {
   const classes: Record<TitleAbstractResolution, string> = {
     pending: 'border-slate-200 bg-slate-50 text-slate-600',
     ready_for_full_text: 'border-emerald-200 bg-emerald-50 text-emerald-700',

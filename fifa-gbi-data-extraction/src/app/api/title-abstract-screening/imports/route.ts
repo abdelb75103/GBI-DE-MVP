@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 
 import {
   calculateFuzzyTitleScore,
-  categorizeDuplicate,
   doiMatches,
   generateDuplicateKeyV2,
   generateTitleFingerprint,
@@ -13,22 +12,23 @@ import { readActiveProfileSession } from '@/lib/session';
 
 export const runtime = 'nodejs';
 
-const MAX_REFERENCE_FILE_BYTES = 6 * 1024 * 1024;
-const MAX_IMPORT_ROWS = 350;
+const MAX_REFERENCE_FILE_BYTES = 25 * 1024 * 1024;
 
 const isDuplicate = (
   candidate: { title: string; leadAuthor: string | null; year: string | null; doi: string | null },
   existing: Array<{ title: string; leadAuthor: string | null; year: string | null; doi: string | null; normalizedDoi?: string | null }>,
 ) => {
   const normalizedDoi = normalizeImportedDoi(candidate.doi);
-  if (normalizedDoi && existing.some((record) => doiMatches(normalizedDoi, record.normalizedDoi ?? record.doi))) {
-    return { duplicate: true, reason: 'doi' };
+  if (normalizedDoi) {
+    const doiDuplicate = existing.some((record) => {
+      if (!doiMatches(normalizedDoi, record.normalizedDoi ?? record.doi)) return false;
+      return calculateFuzzyTitleScore(candidate.title, record.title) >= 80;
+    });
+    if (doiDuplicate) return { duplicate: true, reason: 'doi' };
   }
   const key = generateDuplicateKeyV2(candidate.title, candidate.leadAuthor, candidate.year);
   const exact = existing.some((record) => generateDuplicateKeyV2(record.title, record.leadAuthor, record.year) === key);
   if (exact) return { duplicate: true, reason: 'title_author_year' };
-  const fuzzy = existing.reduce((best, record) => Math.max(best, calculateFuzzyTitleScore(candidate.title, record.title)), 0);
-  if (categorizeDuplicate(fuzzy) === 'duplicate') return { duplicate: true, reason: `fuzzy_${fuzzy}` };
   return { duplicate: false, reason: '' };
 };
 
@@ -45,11 +45,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'No reference file provided' }, { status: 400 });
   }
   if (file.size > MAX_REFERENCE_FILE_BYTES) {
-    return NextResponse.json({ error: 'Reference file exceeds 6 MB limit' }, { status: 400 });
+    return NextResponse.json({ error: 'Reference file exceeds 25 MB limit' }, { status: 400 });
   }
 
   const text = await file.text();
-  const parsed = parseReferences(text, file.name, sourceLabel).slice(0, MAX_IMPORT_ROWS);
+  const shouldEnrich = String(formData.get('enrichMetadata') || '').toLowerCase() === 'true';
+  const parsed = parseReferences(text, file.name, sourceLabel);
   if (parsed.length === 0) {
     return NextResponse.json({ error: 'No references with titles were found in this file.' }, { status: 400 });
   }
@@ -68,7 +69,9 @@ export async function POST(request: Request) {
   const failures = [];
 
   for (const reference of parsed) {
-    const enriched = await enrichReference(reference);
+    const enriched = shouldEnrich
+      ? await enrichReference(reference)
+      : { ...reference, enrichment: { provider: 'import', enriched: false, skipped: true } };
     const duplicate = isDuplicate(enriched, existing);
     if (duplicate.duplicate) {
       skipped.push({ title: enriched.title, reason: duplicate.reason });
