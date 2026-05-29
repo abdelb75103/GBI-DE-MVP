@@ -145,6 +145,198 @@ function sourceRow(label, sourceId, fields, options = {}) {
   };
 }
 
+function numericEstimate(value) {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  const match = trimmed.match(/^[-+]?\d+(?:\.\d+)?/);
+  return match ? match[0] : null;
+}
+
+function addStructuredMetricSweep(fields) {
+  const incidence = numericEstimate(fields.injuryIncidenceOverall);
+  const burden = numericEstimate(fields.injuryBurden);
+  const severityMeanDays = numericEstimate(fields.injuryDurationMean);
+  const severityTotalDays = numericEstimate(fields.injuryTimeLossTotal);
+  const output = { ...fields };
+
+  for (const fieldId of Object.keys(fields)) {
+    if (!fieldId.startsWith('injuryTissueType_') && !fieldId.startsWith('injuryLocation_')) continue;
+    if (!fieldId.endsWith('_prevalence')) continue;
+    const prefix = fieldId.slice(0, -'_prevalence'.length);
+    if (incidence && !output[`${prefix}_incidence`]) output[`${prefix}_incidence`] = incidence;
+    if (burden && !output[`${prefix}_burden`]) output[`${prefix}_burden`] = burden;
+    if (severityMeanDays && !output[`${prefix}_severityMeanDays`]) {
+      output[`${prefix}_severityMeanDays`] = severityMeanDays;
+    }
+    if (severityTotalDays && !output[`${prefix}_severityTotalDays`]) {
+      output[`${prefix}_severityTotalDays`] = severityTotalDays;
+    }
+  }
+
+  return output;
+}
+
+const ecisSharedFieldIds = new Set([
+  'fifaDiscipline',
+  'country',
+  'levelOfPlay',
+  'ageCategory',
+  'injuryDefinition',
+  'incidenceDefinition',
+  'burdenDefinition',
+  'severityDefinition',
+  'recurrenceDefinition',
+  'mechanismReporting',
+  'exposureMeasurementUnit',
+]);
+
+function leanEcisRow(legacyRow, sexScope, fieldPatch = {}) {
+  const fields = {};
+  for (const [fieldId, value] of Object.entries(legacyRow.fields)) {
+    if (ecisSharedFieldIds.has(fieldId)) continue;
+    fields[fieldId] = value;
+  }
+  const enrichedFields = addStructuredMetricSweep(fields);
+  return {
+    label: legacyRow.label,
+    sourceId: legacyRow.sourceId,
+    fields: {
+      ...enrichedFields,
+      studyId: 'UEFA-ECIS-MASTER',
+      sex: sexScope,
+      ...fieldPatch,
+    },
+  };
+}
+
+function buildRefinedEcisRows(s200Fields) {
+  const legacyRows = buildEcisSupplementRows();
+  const byLabel = new Map(legacyRows.map((row) => [row.label, row]));
+  const retained = [
+    ['S043 hamstring injuries - 2001/02-2021/22', 'male - hamstring-specific study'],
+    ['S046 hip/groin injuries - 2001/02-2015/16', 'male - hip/groin-specific study', {
+      injuryLocation_groin_prevalence: '1812',
+    }],
+    ['S046 adductor-related hip/groin injuries - 2001/02-2015/16', 'male - adductor-specific study', {
+      injuryLocation_groin_prevalence: '1139',
+      injuryLocation_groin_incidence: '0.63',
+      injuryTissueType_muscle_tendon_prevalence: '1139',
+      injuryTissueType_muscle_tendon_incidence: '0.63',
+    }],
+    ['S006 LCL injuries - 2001-2018', 'male - LCL-specific study'],
+    ['S006 PCL injuries - 2001-2018', 'male - PCL-specific study'],
+    ['S106 MCL injuries - 2001/02-2011/12', 'male - MCL-specific study'],
+    ['S401 ACL injuries - 2001-2015', 'male - ACL-specific study'],
+    ['S107 ankle injuries - 2001/02-2011/12', 'male - ankle-specific study', {
+      injuryLocation_ankle_incidence: '1.022',
+      injuryLocation_ankle_burden: '16.3',
+      injuryLocation_ankle_severityMeanDays: '15.9',
+      injuryTissueType_bone_fracture_prevalence: '18',
+      injuryTissueType_bone_fracture_incidence: '0.017',
+      injuryTissueType_bone_fracture_burden: '1.5',
+      injuryTissueType_bone_fracture_severityMeanDays: '89.6',
+      injuryTissueType_bone_stress_prevalence: '4',
+      injuryTissueType_bone_stress_incidence: '0.004',
+      injuryTissueType_ligament_joint_capsule_prevalence: '744',
+      injuryTissueType_ligament_joint_capsule_incidence: '0.704',
+      injuryTissueType_joint_sprain_prevalence: '729',
+      injuryTissueType_joint_sprain_incidence: '0.690',
+      injuryTissueType_joint_sprain_burden: '10.6',
+      injuryTissueType_joint_sprain_severityMeanDays: '15.4',
+      injuryTissueType_cartilage_injury_prevalence: '12',
+      injuryTissueType_cartilage_injury_incidence: '0.011',
+      injuryTissueType_superficial_contusion_prevalence: '182',
+      injuryTissueType_superficial_contusion_incidence: '0.172',
+      injuryTissueType_superficial_contusion_burden: '1.1',
+      injuryTissueType_superficial_contusion_severityMeanDays: '6.2',
+      injuryTissueType_laceration_prevalence: '10',
+      injuryTissueType_laceration_incidence: '0.010',
+      injuryTissueType_peripheral_nerve_prevalence: '2',
+      injuryTissueType_peripheral_nerve_incidence: '0.002',
+      injuryTissueType_synovitis_capsulitis_prevalence: '65',
+      injuryTissueType_synovitis_capsulitis_incidence: '0.062',
+      injuryTissueType_synovitis_capsulitis_burden: '1.0',
+      injuryTissueType_synovitis_capsulitis_severityMeanDays: '16.0',
+    }],
+    ['S368 isolated syndesmotic ankle injuries - 2001-2016', 'male - syndesmosis-specific study'],
+    ['S113 upper extremity injuries - 2001-2011', 'male - upper-extremity-specific study'],
+    ['S340 head/neck injuries - 2001/02-2009/10', 'male - head/neck-specific study', {
+      injuryLocation_head_neck_overall_incidence: '0.170',
+      injuryLocation_head_neck_overall_severityMeanDays: '10.4',
+      injuryLocation_head_incidence: '0.135',
+      injuryLocation_head_severityMeanDays: '11.6',
+      injuryLocation_neck_incidence: '0.035',
+      injuryLocation_neck_severityMeanDays: '5.6',
+      injuryTissueType_concussion_prevalence: '48',
+      injuryTissueType_concussion_incidence: '0.060',
+      injuryTissueType_concussion_severityMeanDays: '10.5',
+      injuryTissueType_bone_fracture_prevalence: '39',
+      injuryTissueType_bone_fracture_incidence: '0.049',
+      injuryTissueType_bone_fracture_severityMeanDays: '16.7',
+      injuryTissueType_superficial_contusion_prevalence: '12',
+      injuryTissueType_laceration_prevalence: '10',
+      injuryTissueType_laceration_incidence: '0.012',
+      injuryTissueType_laceration_severityMeanDays: '2.6',
+      injuryTissueType_muscle_injury_prevalence: '5',
+      injuryTissueType_muscle_injury_incidence: '0.006',
+      injuryTissueType_muscle_injury_severityMeanDays: '6.4',
+      injuryTissueType_joint_sprain_prevalence: '1',
+      injuryTissueType_joint_sprain_incidence: '0.001',
+      injuryTissueType_joint_sprain_severityMeanDays: '3',
+    }],
+    ['S340 concussion - 2001/02-2009/10', 'male - concussion-specific study'],
+    ['S202 stress fractures - ECIS-related cohorts', 'male - stress-fracture-specific study', { injuryRecurrentTotal: '', injuryRecurrenceRate: '29%' }],
+    ['S451 fifth metatarsal fractures - 2001-2012', 'male - fifth-metatarsal-fracture-specific study'],
+    ['S091 Achilles tendinopathy - 2001-2011', 'male - Achilles-tendinopathy-specific study'],
+    ['S091 Achilles tendon rupture - 2001-2011', 'male - Achilles-rupture-specific study'],
+    ['S007 indirect thigh muscle injuries - 2001-2013', 'male - indirect-thigh-specific study'],
+    ['S007 direct thigh muscle contusions - 2001-2013', 'male - direct-thigh-contusion-specific study'],
+  ];
+
+  return [
+    {
+      label: 'S200 ECIS men all injuries anchor - 2001/02-2018/19',
+      sourceId: 'S200',
+      fields: {
+        ...s200Fields,
+        studyId: 'UEFA-ECIS-MASTER',
+        studyDesign: s200Fields.studyDesign || 'prospective cohort',
+        fifaDiscipline: 'Association football (11-a-side)',
+        country: 'Europe (multi-country)',
+        levelOfPlay: 'Professional elite',
+        sex: 'Male',
+        ageCategory: 'Senior',
+        sampleSizePlayers: '3302',
+        numberOfTeams: '49',
+        observationDuration: '2001/02-2018/19',
+        numberOfSeasons: '18',
+        injuryDefinition: 'time-loss',
+        incidenceDefinition: 'injuries per 1000 player-hours',
+        burdenDefinition: 'days lost per 1000 player-hours',
+        severityDefinition: 'days from injury until medically cleared for full participation',
+        recurrenceDefinition: 'same type and location as a previous injury',
+        mechanismReporting: 'Medical staff',
+        exposureMeasurementUnit: 'hours',
+        totalExposure: '1784281',
+        injuryTotalCount: '11820',
+        injuryTrainingCount: '5035',
+        injuryMatchCount: '6785',
+        injuryIncidenceOverall: '6.6',
+        injuryIncidenceTraining: '3.4 (95% CI 3.3-3.5)',
+        injuryIncidenceMatch: '23.8 (95% CI 23.2-24.4)',
+        injuryMostCommonType: 'muscle injury',
+        injuryTissueType_muscle_injury_prevalence: '4763',
+        injuryTissueType_ligament_joint_capsule_prevalence: '1971',
+      },
+    },
+    ...retained.map(([label, sexScope, fieldPatch]) => {
+      const row = byLabel.get(label);
+      if (!row) throw new Error(`Missing retained ECIS legacy row: ${label}`);
+      return leanEcisRow(row, sexScope, fieldPatch);
+    }),
+  ];
+}
+
 async function loadPaperByStudyId(supabase, studyId) {
   const { data, error } = await supabase
     .from('papers')
@@ -172,7 +364,7 @@ async function loadFilledFieldMap(supabase, paperId) {
   return fields;
 }
 
-function manualWecisFieldMap() {
+function manualWecisTotalFieldMap() {
   return {
     studyDesign: 'prospective cohort',
     sampleSizePlayers: '596',
@@ -184,22 +376,168 @@ function manualWecisFieldMap() {
     burdenDefinition: 'days lost per 1000 player-hours',
     mechanismReporting: 'Medical staff',
     exposureMeasurementUnit: 'hours',
+    totalExposure: '227922',
+    trainingExposure: '195945',
+    matchExposure: '31977',
     injuryTotalCount: '1527',
     injuryPlayersCompletedStudy: '596',
     injuryTeamsCompletedStudy: '15',
     injuryTimeLossCount: '1527',
+    injuryTrainingCount: '940',
+    injuryMatchCount: '587',
     injuryIncidenceOverall: '6.7',
     injuryIncidenceMatch: '18.4',
     injuryIncidenceTraining: '4.8',
     injuryIncidenceCi95: 'overall 6.4-7.0; match 16.9-19.9; training 4.5-5.1',
+    injuryTimeLossTotal: '40632',
+    injuryBurden: '175.5',
     injuryMostCommonDiagnosis: 'hamstring muscle injury',
     injuryMostCommonType: 'muscle injury',
     injuryMostCommonLocation: 'thigh',
     injuryTissueType_injury_diagnosis_diagnosis: 'hamstring muscle injury',
     injuryTissueType_injury_diagnosis_prevalence: '188',
-    injuryTissueType_muscle_injury_prevalence: '188',
-    injuryLocation_thigh_prevalence: '188',
+    injuryTissueType_injury_diagnosis_incidence: '0.8',
+    injuryTissueType_injury_diagnosis_burden: '8.3',
+    injuryTissueType_muscle_injury_prevalence: '598',
+    injuryTissueType_concussion_prevalence: '47',
+    injuryTissueType_concussion_incidence: '0.2',
+    injuryTissueType_concussion_burden: '0.8',
+    injuryTissueType_cartilage_synovium_bursa_prevalence: '56',
+    injuryTissueType_cartilage_synovium_bursa_incidence: '0.2',
+    injuryTissueType_cartilage_synovium_bursa_burden: '15.6',
+    injuryTissueType_cartilage_injury_prevalence: '56',
+    injuryTissueType_cartilage_injury_incidence: '0.2',
+    injuryTissueType_cartilage_injury_burden: '15.6',
+    injuryTissueType_ligament_joint_capsule_prevalence: '304',
+    injuryTissueType_joint_sprain_prevalence: '263',
+    injuryLocation_head_neck_overall_prevalence: '71',
+    injuryLocation_head_prevalence: '60',
+    injuryLocation_head_incidence: '0.3',
+    injuryLocation_head_burden: '0.9',
+    injuryLocation_neck_prevalence: '11',
+    injuryLocation_neck_incidence: '0.0',
+    injuryLocation_neck_burden: '0.0',
+    injuryLocation_upper_limb_overall_prevalence: '61',
+    injuryLocation_shoulder_prevalence: '24',
+    injuryLocation_shoulder_incidence: '0.1',
+    injuryLocation_shoulder_burden: '1.7',
+    injuryLocation_hand_prevalence: '37',
+    injuryLocation_hand_incidence: '0.2',
+    injuryLocation_hand_burden: '7.5',
+    injuryLocation_trunk_overall_prevalence: '91',
+    injuryLocation_abdomen_prevalence: '7',
+    injuryLocation_abdomen_incidence: '0.0',
+    injuryLocation_abdomen_burden: '0.0',
+    injuryLocation_lumbosacral_prevalence: '76',
+    injuryLocation_lumbosacral_incidence: '0.3',
+    injuryLocation_lumbosacral_burden: '2.3',
+    injuryLocation_lower_limb_overall_prevalence: '1304',
+    injuryLocation_groin_prevalence: '151',
+    injuryLocation_groin_incidence: '0.7',
+    injuryLocation_groin_burden: '7.3',
+    injuryLocation_thigh_prevalence: '408',
+    injuryLocation_thigh_incidence: '1.8',
+    injuryLocation_thigh_burden: '25.3',
+    injuryLocation_knee_prevalence: '270',
+    injuryLocation_knee_incidence: '1.2',
+    injuryLocation_knee_burden: '84.5',
+    injuryLocation_lower_leg_prevalence: '175',
+    injuryLocation_lower_leg_incidence: '0.8',
+    injuryLocation_lower_leg_burden: '15.2',
+    injuryLocation_ankle_prevalence: '209',
+    injuryLocation_ankle_incidence: '0.9',
+    injuryLocation_ankle_burden: '16.2',
+    injuryLocation_foot_prevalence: '91',
+    injuryLocation_foot_incidence: '0.4',
+    injuryLocation_foot_burden: '9.0',
   };
+}
+
+const wecisSeasonRows = [
+  {
+    label: 'S112 WECIS women season - 2018/2019',
+    observationDuration: '2018/2019',
+    injuryTotalCount: '323',
+    injuryTrainingCount: '174',
+    injuryMatchCount: '151',
+    injuryIncidenceOverall: '6.1',
+    injuryIncidenceMatch: '19.2',
+    injuryIncidenceTraining: '3.8',
+    injuryIncidenceCi95: 'overall 5.5-6.8; match 16.3-22.5; training 3.3-4.5',
+    injuryTimeLossTotal: '7173',
+    injuryBurden: '126.3',
+  },
+  {
+    label: 'S112 WECIS women season - 2019/2020',
+    observationDuration: '2019/2020',
+    injuryTotalCount: '306',
+    injuryTrainingCount: '208',
+    injuryMatchCount: '96',
+    injuryIncidenceOverall: '5.7',
+    injuryIncidenceMatch: '14.2',
+    injuryIncidenceTraining: '4.5',
+    injuryIncidenceCi95: 'overall 5.1-6.4; match 11.6-17.3; training 3.9-5.2',
+    injuryTimeLossTotal: '10317',
+    injuryBurden: '174.9',
+  },
+  {
+    label: 'S112 WECIS women season - 2020/2021',
+    observationDuration: '2020/2021',
+    injuryTotalCount: '470',
+    injuryTrainingCount: '305',
+    injuryMatchCount: '165',
+    injuryIncidenceOverall: '7.0',
+    injuryIncidenceMatch: '19.9',
+    injuryIncidenceTraining: '5.2',
+    injuryIncidenceCi95: 'overall 6.4-7.7; match 17.1-23.2; training 4.7-5.8',
+    injuryTimeLossTotal: '12434',
+    injuryBurden: '189.5',
+  },
+  {
+    label: 'S112 WECIS women season - 2021/2022',
+    observationDuration: '2021/2022',
+    injuryTotalCount: '428',
+    injuryTrainingCount: '253',
+    injuryMatchCount: '175',
+    injuryIncidenceOverall: '7.8',
+    injuryIncidenceMatch: '19.4',
+    injuryIncidenceTraining: '5.5',
+    injuryIncidenceCi95: 'overall 7.1-8.6; match 16.7-22.5; training 4.9-6.2',
+    injuryTimeLossTotal: '10708',
+    injuryBurden: '183.4',
+  },
+];
+
+function buildWecisRows(s112Fields, targetStudyId = 'S112') {
+  const common = {
+    studyDesign: 'prospective cohort',
+    sampleSizePlayers: '596',
+    numberOfTeams: '15',
+    numberOfSeasons: '1',
+    studyId: targetStudyId,
+    fifaDiscipline: 'Association football (11-a-side)',
+    country: 'Europe (multi-country)',
+    levelOfPlay: 'Professional elite',
+    sex: 'Female',
+    ageCategory: 'Senior',
+  };
+
+  return [
+    sourceRow('S112 WECIS women total - 2018/2019-2021/2022', 'S112', {
+      ...s112Fields,
+      ...manualWecisTotalFieldMap(),
+      studyId: targetStudyId,
+      fifaDiscipline: 'Association football (11-a-side)',
+      country: 'Europe (multi-country)',
+      levelOfPlay: 'Professional elite',
+      sex: 'Female',
+      ageCategory: 'Senior',
+    }, { sex: 'Female' }),
+    ...wecisSeasonRows.map(({ label, ...fields }) => sourceRow(label, 'S112', {
+      ...common,
+      ...fields,
+    }, { sex: 'Female' })),
+  ];
 }
 
 async function clearMasterExtractions(supabase, paperId) {
@@ -340,7 +678,7 @@ async function insertPopulationGroups(supabase, paperId, rows) {
   }
 }
 
-async function rebuildMaster(supabase, paper, rows, masterStudyId, metadataPatch) {
+async function rebuildMaster(supabase, paper, rows, masterStudyId, metadataPatch, paperPatch = {}) {
   await clearMasterExtractions(supabase, paper.id);
   const fieldRows = rowsToFieldRows(rows, masterStudyId);
   await insertFieldRows(supabase, paper.id, fieldRows);
@@ -350,11 +688,12 @@ async function rebuildMaster(supabase, paper, rows, masterStudyId, metadataPatch
     .from('papers')
     .update({
       assigned_to: ABDEL_PROFILE_ID,
+      ...paperPatch,
       metadata: {
         ...(paper.metadata ?? {}),
         ...metadataPatch,
         fullMasterExtractionAppliedAt: now,
-        fullMasterExtractionMethod: 'Direct Supabase script; synthetic UEFA master rebuilt from audited source rows with population-row alignment.',
+        fullMasterExtractionMethod: 'Direct Supabase script; UEFA extraction rebuilt from audited source rows with population-row alignment.',
       },
       updated_at: now,
     })
@@ -1194,65 +1533,73 @@ function buildS109Rows() {
 }
 
 async function main() {
+  const onlyWecis = process.argv.includes('--only-wecis');
+  const onlyEcis = process.argv.includes('--only-ecis');
   const env = loadEnvFile(envPath);
   const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
     auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
   });
 
-  const ecisMaster = await loadPaperByStudyId(supabase, 'UEFA-ECIS-MASTER');
-  const wecisMaster = await loadPaperByStudyId(supabase, 'UEFA-WECIS-MASTER');
-  const s200 = await loadPaperByStudyId(supabase, 'S200');
-  const s112 = await loadPaperByStudyId(supabase, 'S112');
+  let wecisResult = null;
+  if (!onlyEcis) {
+    const s112 = await loadPaperByStudyId(supabase, 'S112');
+    const s112Fields = await loadFilledFieldMap(supabase, s112.id);
+    const wecisRows = buildWecisRows(s112Fields, 'S112');
 
-  const s200Fields = await loadFilledFieldMap(supabase, s200.id);
-  const ecisRows = [
-    {
-      label: 'S200 ECIS men all injuries anchor - 2001/02-2018/19',
-      sourceId: 'S200',
-      fields: { ...s200Fields, studyId: 'UEFA-ECIS-MASTER' },
-    },
-    ...buildEcisSupplementRows(),
-  ];
+    wecisResult = await rebuildMaster(
+      supabase,
+      s112,
+      wecisRows,
+      'S112',
+      {
+        uefaWecis: true,
+        wecisSourceOfTruth: true,
+        sourceControl: 'S112 WECIS source-of-truth record; Table 2 is extracted as Total plus four season rows. Tables 3 and 4 are extracted to structured location/type tabs on the Total row with numeric-only metric cells; non-additive parent incidence/burden cells are left blank.',
+      },
+      { status: 'extracted' },
+    );
+  }
 
-  const s112Fields = await loadFilledFieldMap(supabase, s112.id);
-  const wecisRows = [
-    sourceRow('S112 WECIS women all injuries anchor - 2018/19-2021/22', 'S112', {
-      ...s112Fields,
-      ...manualWecisFieldMap(),
-      studyId: 'UEFA-WECIS-MASTER',
-      fifaDiscipline: 'Association football (11-a-side)',
-      country: 'Europe (multi-country)',
-      levelOfPlay: 'Professional elite',
-      sex: 'Female',
-      ageCategory: 'Senior',
-    }, { sex: 'Female' }),
-  ];
+  let ecisResult = null;
+  let ownWorkspace = null;
 
-  const ecisResult = await rebuildMaster(supabase, ecisMaster, ecisRows, 'UEFA-ECIS-MASTER', {
-    sourceControl: 'S200 anchor plus audited ECIS supplement rows; row-level source IDs are embedded in population labels.',
-  });
-  const wecisResult = await rebuildMaster(supabase, wecisMaster, wecisRows, 'UEFA-WECIS-MASTER', {
-    sourceControl: 'S112 WECIS anchor; no extra WECIS supplement papers were identified in the UEFA-tagged audit.',
-  });
+  if (!onlyWecis) {
+    const ecisMaster = await loadPaperByStudyId(supabase, 'UEFA-ECIS-MASTER');
+    const s200 = await loadPaperByStudyId(supabase, 'S200');
+    const s200Fields = await loadFilledFieldMap(supabase, s200.id);
+    const ecisRows = process.env.USE_LEGACY_UEFA_ECIS_ROWS === '1'
+      ? [
+          {
+            label: 'S200 ECIS men all injuries anchor - 2001/02-2018/19',
+            sourceId: 'S200',
+            fields: { ...s200Fields, studyId: 'UEFA-ECIS-MASTER' },
+          },
+          ...buildEcisSupplementRows(),
+        ]
+      : buildRefinedEcisRows(s200Fields);
+    ecisResult = await rebuildMaster(supabase, ecisMaster, ecisRows, 'UEFA-ECIS-MASTER', {
+      sourceControl: 'S200 all-injury anchor plus refined ECIS concept rows. Supplement papers are live only when they add incidence, burden, time-loss, recurrence, mechanism, or exposure detail not cleanly captured by the all-injury anchor. Source-only diagnosis count rows are audit-only to reduce duplicate counting.',
+    });
 
-  const s068 = await loadPaperByStudyId(supabase, 'S068');
-  const s109 = await loadPaperByStudyId(supabase, 'S109');
-  const s111 = await loadPaperByStudyId(supabase, 'S111');
+    if (!onlyEcis) {
+      const s068 = await loadPaperByStudyId(supabase, 'S068');
+      const s109 = await loadPaperByStudyId(supabase, 'S109');
+      const s111 = await loadPaperByStudyId(supabase, 'S111');
 
-  const s068Result = await applyRowsAdditive(supabase, s068, buildS068Rows(), 'processing');
-  const s109Result = await applyRowsAdditive(supabase, s109, buildS109Rows(), 'processing');
-  const s111Result = await applyRowsAdditive(supabase, s111, [], 'processing');
+      ownWorkspace = {
+        S068: await applyRowsAdditive(supabase, s068, buildS068Rows(), 'processing'),
+        S109: await applyRowsAdditive(supabase, s109, buildS109Rows(), 'processing'),
+        S111: await applyRowsAdditive(supabase, s111, [], 'processing'),
+      };
+    }
+  }
 
   console.log(JSON.stringify({
     rebuiltMasters: {
       'UEFA-ECIS-MASTER': ecisResult,
-      'UEFA-WECIS-MASTER': wecisResult,
+      S112: wecisResult,
     },
-    ownWorkspace: {
-      S068: s068Result,
-      S109: s109Result,
-      S111: s111Result,
-    },
+    ownWorkspace,
   }, null, 2));
 }
 

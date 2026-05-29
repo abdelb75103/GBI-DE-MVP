@@ -296,12 +296,9 @@ async function main() {
   });
 
   const ecisMaster = await loadPaperByStudyId(supabase, 'UEFA-ECIS-MASTER');
-  const wecisMaster = await loadPaperByStudyId(supabase, 'UEFA-WECIS-MASTER');
   const s200 = await loadPaperByStudyId(supabase, 'S200');
-  const s112 = await loadPaperByStudyId(supabase, 'S112');
 
   await clearMasterExtractions(supabase, ecisMaster.id);
-  await clearMasterExtractions(supabase, wecisMaster.id);
 
   const s200Fields = overrideStudyDetails(
     withProvenance(await loadFilledFields(supabase, s200.id), 'S200', 'ECIS men all-injury anchor'),
@@ -315,34 +312,17 @@ async function main() {
     s200Fields.filter((field) => ['sex', 'ageCategory', 'sampleSizePlayers', 'numberOfTeams', 'observationDuration', 'numberOfSeasons', 'totalExposure'].includes(field.fieldId)),
   );
 
-  const s112BaseFields = overrideStudyDetails(
-    withProvenance(await loadFilledFields(supabase, s112.id), 'S112', 'WECIS women all-injury anchor'),
-    'UEFA-WECIS-MASTER',
-  );
-  const wecisFields = [...s112BaseFields, ...manualWecisFields()];
-  const dedupedWecis = Array.from(new Map(wecisFields.map((field) => [field.fieldId, field])).values());
-  await insertFields(supabase, wecisMaster.id, dedupedWecis);
-  await insertSinglePopulationGroup(
-    supabase,
-    wecisMaster.id,
-    'WECIS women all injuries - 2018/19-2021/22',
-    dedupedWecis.filter((field) => ['sex', 'ageCategory', 'sampleSizePlayers', 'numberOfTeams', 'observationDuration', 'numberOfSeasons'].includes(field.fieldId)),
-  );
-
   const now = new Date().toISOString();
-  for (const paper of [ecisMaster, wecisMaster]) {
-    const metadata = {
-      ...(paper.metadata ?? {}),
-      anchorExtractionAppliedAt: now,
-      anchorExtractionMethod: 'Direct Supabase script; S200/S112 anchor values only; supplements require separate review.',
-    };
-    await supabase.from('papers').update({ metadata, updated_at: now }).eq('id', paper.id);
-  }
+  const metadata = {
+    ...(ecisMaster.metadata ?? {}),
+    anchorExtractionAppliedAt: now,
+    anchorExtractionMethod: 'Direct Supabase script; S200 anchor values only; supplements require separate review.',
+  };
+  await supabase.from('papers').update({ metadata, updated_at: now }).eq('id', ecisMaster.id);
 
   console.log(JSON.stringify({
     updated: [
       { assignedStudyId: 'UEFA-ECIS-MASTER', paperId: ecisMaster.id, source: 'S200', fields: s200Fields.length },
-      { assignedStudyId: 'UEFA-WECIS-MASTER', paperId: wecisMaster.id, source: 'S112', fields: dedupedWecis.length },
     ],
   }, null, 2));
 }

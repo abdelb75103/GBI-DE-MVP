@@ -27,23 +27,6 @@ const masters = [
       ordinaryUefaSourcesAreSourceOnly: true,
     },
   },
-  {
-    assignedStudyId: 'UEFA-WECIS-MASTER',
-    title: 'UEFA WECIS Women Master Extraction',
-    extractedTitle: 'UEFA WECIS Women Master Extraction',
-    leadAuthor: 'UEFA WECIS master',
-    year: '2026',
-    filePath: path.join(repoRoot, 'output', 'pdf', 'UEFA_WECIS_Women_Master_Extraction.pdf'),
-    fileName: 'UEFA_WECIS_Women_Master_Extraction.pdf',
-    metadata: {
-      syntheticRecord: true,
-      masterExtraction: true,
-      masterFamily: 'UEFA WECIS women',
-      countingUnit: 'programme-period',
-      sourceAuditPath: 'Data Analysis/Data Cleaning/audit/uefa-master/uefa-master-source-audit.json',
-      ordinaryUefaSourcesAreSourceOnly: true,
-    },
-  },
 ];
 
 function loadEnvFile(filePath) {
