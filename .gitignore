@@ -79,6 +79,11 @@ clear-test-data.mjs
 *.csv
 **/*.csv
 
+# Raw reference-manager search exports (large; only the import reports are tracked)
+*.ris
+*.nbib
+/fifa-gbi-data-extraction/data/imports/**/*.docx
+
 # Optional batch review notes (numerous and often local)
 **/batch-*-review.md
 

@@ -4,16 +4,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Layout
 
-This is a monorepo. The main Next.js application lives in `fifa-gbi-data-extraction/`. Supporting extraction workflows live in `skills/` and `scripts/`.
+This is a monorepo. The main Next.js application lives in `fifa-gbi-data-extraction/`. Supporting extraction/automation workflows live in `skills/` and `scripts/`. See `README.md` for the full `docs/` and `sql/` breakdown.
 
 ```
-fifa-gbi-data-extraction/   # Main app (Next.js + Supabase + Gemini)
-skills/
-  gbi-live-extraction/      # Terminal-first manual extraction skill
-  covidence-pdf-retrieval/  # PDF retrieval from Covidence
-scripts/                    # Node.js Chrome/Covidence automation utilities
-supabase/                   # DB config
+fifa-gbi-data-extraction/   # Main app (Next.js + Supabase + AI extraction)
+skills/                     # Reusable workflows (each has SKILL.md)
+  gbi-live-extraction/             # Terminal-first manual extraction (primary workflow)
+  covidence-pdf-retrieval/         # Reconcile/download Covidence PDFs
+  covidence-translation-upload/    # Upload English translations to Covidence
+  fifa-title-abstract-screening/   # Advisory AI title/abstract screening review
+  gbi-translated-pdf-appendix/     # Build appendix PDFs for translated papers
+scripts/                    # Root-level Node.js Chrome/Covidence + Python automation
+sql/                        # setup/ + admin/ SQL scripts
+docs/                       # setup, implementation, product, research notes
+supabase/                   # DB config + migrations
 ```
+
+There are **two** `package.json` files: the app's (`fifa-gbi-data-extraction/`) and a root-level one for Covidence/Chrome automation (`npm run covidence:*`, `chrome:*` from the repo root).
 
 ## Commands
 
@@ -23,10 +30,13 @@ All commands run from `fifa-gbi-data-extraction/`:
 npm run dev        # Start dev server (http://localhost:3000)
 npm run build      # Production build (uses --webpack flag)
 npm run lint       # ESLint check
-npm run covidence:import-pdfs  # Import PDFs from Covidence
+npm run covidence:import-pdfs   # Import PDFs from Covidence
+npm run second-search:import    # Import second-search reference batch (data/imports/)
+npm run second-search:audit     # Audit the second-search import
+npm run kb:sync                 # Sync papers to Obsidian vault (see README for kb:synthesize / kb:check)
 ```
 
-No automated test suite exists. Manual verification from `fifa-gbi-data-extraction/`: `npm run db:verify-setup`.
+No automated test suite / runner exists. Verify DB setup from `fifa-gbi-data-extraction/`: `npm run db:verify-setup`. Ad-hoc `*.test.mjs` files under `tests/` are run directly with `node`.
 
 ## Architecture
 
@@ -59,6 +69,9 @@ No automated test suite exists. Manual verification from `fifa-gbi-data-extracti
 
 ### AI Extraction
 
+The in-app extraction engine is Gemini, but **do not run Gemini** for AI screening/extraction/review unless the user explicitly asks (see `AGENTS.md`). Default to running AI functions locally with GPT-5.5 (medium reasoning) and applying results to the DB from that local workflow; record the model used and explain any substitution.
+
+App-side Gemini integration (when explicitly requested):
 - Primary/fallback Gemini model selection with rate-limit handling in `service.ts`
 - `jsonrepair` used to handle malformed AI JSON responses
 - Gemini API key is stored per-user in the `settings` table, loaded via `use-gemini-api-key.ts` hook
@@ -74,6 +87,16 @@ For terminal-based manual extraction (the primary workflow), use the `gbi-live-e
 - Do not overwrite non-blank extraction values unless the user explicitly asks
 - Preserve app-assigned `studyId` — never rewrite or clear it
 - Track review state in `fifa-gbi-data-extraction/docs/review-backlog.md`
+
+## Working-Style Rules (`AGENTS.md`)
+
+`AGENTS.md` at the repo root holds binding user preferences. Highlights:
+- **AI models:** default to local GPT-5.5; do not use Gemini unless explicitly asked (see above).
+- **Dev servers:** do not kill/restart running local servers unless asked; reuse the existing one.
+- **Commits:** do not create/amend/push commits unless the user explicitly asks for commit work.
+- **External/plugin actions** (email, shared docs, Covidence uploads, PR merges, calendar, permissions): present exactly what will change and who is affected, then act only after explicit approval.
+- **Cosmetic tweaks:** make the focused edit and report changed files; skip extended verification unless asked.
+- **Spreadsheets:** don't auto-open files after edits; don't add subtitles/helper text unless asked.
 
 ## Environment
 
