@@ -17,6 +17,7 @@ Write recommendations as JSON:
       "sourceQuote": null,
       "sourceLocation": null,
       "confidence": 0.72,
+      "targetTag": null,
       "tags": ["football", "injury"],
       "auditNotes": "Lenient title/abstract include."
     }
@@ -26,8 +27,11 @@ Write recommendations as JSON:
 
 ## Constraints
 
-- `decision` must be `include` or `exclude`.
+- `decision` must be `include`, `exclude`, or `undecided`.
 - `confidence` must be between `0` and `1`.
 - `include` recommendations must have `sourceQuote: null`, `sourceLocation: null`, and `exclusionReason: null`.
+- `undecided` recommendations must have `sourceQuote: null`, `sourceLocation: null`, and `exclusionReason: null`.
 - `exclude` recommendations must have non-empty `exclusionReason`, `sourceQuote`, and `sourceLocation`.
+- `targetTag` must be `null` or `systematic_review`.
+- Systematic reviews, scoping reviews, evidence syntheses, and meta-analyses relevant to football/soccer injury or illness should use `decision: "include"` and `targetTag: "systematic_review"`.
 - `sourceQuote` for exclusions must come from the record metadata provided in the export, not from an inferred or external source.

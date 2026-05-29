@@ -47,17 +47,27 @@ if (!supabaseUrl || !serviceRoleKey) {
 const payload = JSON.parse(readFileSync(path.resolve(String(inputPath)), 'utf8'));
 const recommendations = Array.isArray(payload.recommendations) ? payload.recommendations : [];
 const criteriaVersion = payload.criteriaVersion || 'fifa-gbi-title-abstract-v1-2026-04-25';
+const modelName = payload.model
+  ? `${payload.model}${payload.reasoning ? ` (${payload.reasoning})` : ''} via local codex exec`
+  : 'codex-local-title-abstract-screening-skill';
 const apply = Boolean(args.get('apply'));
 const force = Boolean(args.get('force'));
+const quiet = Boolean(args.get('quiet'));
 
 const validate = (item) => {
   if (!item || typeof item !== 'object') return 'Recommendation must be an object.';
   if (!item.recordId) return 'Missing recordId.';
-  if (item.decision !== 'include' && item.decision !== 'exclude') return `${item.recordId}: decision must be include or exclude.`;
+  if (item.decision !== 'include' && item.decision !== 'exclude' && item.decision !== 'undecided') {
+    return `${item.recordId}: decision must be include, exclude, or undecided.`;
+  }
   if (!item.reason || typeof item.reason !== 'string') return `${item.recordId}: reason is required.`;
   if (typeof item.confidence !== 'number' || item.confidence < 0 || item.confidence > 1) return `${item.recordId}: confidence must be 0-1.`;
+  if (item.targetTag && item.targetTag !== 'systematic_review') return `${item.recordId}: targetTag must be systematic_review or null.`;
   if (item.decision === 'include' && (item.exclusionReason || item.sourceQuote || item.sourceLocation)) {
     return `${item.recordId}: include recommendations must not include exclusion quote/source fields.`;
+  }
+  if (item.decision === 'undecided' && (item.exclusionReason || item.sourceQuote || item.sourceLocation)) {
+    return `${item.recordId}: undecided recommendations must not include exclusion quote/source fields.`;
   }
   if (item.decision === 'exclude' && (!item.exclusionReason || !item.sourceQuote || !item.sourceLocation)) {
     return `${item.recordId}: exclude recommendations require exclusionReason, sourceQuote, and sourceLocation.`;
@@ -71,45 +81,57 @@ if (failures.length > 0) {
 }
 
 const supabase = createClient(supabaseUrl, serviceRoleKey, { auth: { persistSession: false } });
-const { data: existingRows, error: existingError } = await supabase
-  .from('screening_records')
-  .select('id, stage, ai_status')
-  .in('id', recommendations.map((item) => item.recordId));
+const existingRows = [];
+const chunk = (items, size) => {
+  const chunks = [];
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+  return chunks;
+};
 
-if (existingError) {
-  throw new Error(`Failed to validate existing records: ${existingError.message}`);
+for (const ids of chunk(recommendations.map((item) => item.recordId), 100)) {
+  const { data, error: existingError } = await supabase
+    .from('screening_records')
+    .select('id, stage, ai_status')
+    .in('id', ids);
+
+  if (existingError) {
+    throw new Error(`Failed to validate existing records: ${existingError.message}`);
+  }
+  existingRows.push(...(data ?? []));
 }
 
-const existingById = new Map((existingRows ?? []).map((row) => [row.id, row]));
+const existingById = new Map(existingRows.map((row) => [row.id, row]));
 let appliedCount = 0;
 let skippedCount = 0;
 
 for (const item of recommendations) {
   const existing = existingById.get(item.recordId);
   if (!existing) {
-    console.log(`skip ${item.recordId}: record not found`);
+    if (!quiet) console.log(`skip ${item.recordId}: record not found`);
     skippedCount += 1;
     continue;
   }
   if (existing.stage !== 'title_abstract') {
-    console.log(`skip ${item.recordId}: not a title/abstract record`);
+    if (!quiet) console.log(`skip ${item.recordId}: not a title/abstract record`);
     skippedCount += 1;
     continue;
   }
   if (!force && existing.ai_status === 'completed') {
-    console.log(`skip ${item.recordId}: AI already completed`);
+    if (!quiet) console.log(`skip ${item.recordId}: AI already completed`);
     skippedCount += 1;
     continue;
   }
 
   const update = {
     ai_status: 'completed',
-    ai_suggested_decision: item.decision,
+    ai_suggested_decision: item.decision === 'undecided' ? null : item.decision,
     ai_reason: item.reason,
     ai_evidence_quote: item.decision === 'exclude' ? item.sourceQuote : null,
     ai_source_location: item.decision === 'exclude' ? item.sourceLocation : null,
     ai_confidence: item.confidence,
-    ai_model: 'codex-local-title-abstract-screening-skill',
+    ai_model: modelName,
     ai_criteria_version: criteriaVersion,
     ai_raw_response: item,
     ai_error: null,
@@ -118,7 +140,7 @@ for (const item of recommendations) {
   };
 
   if (!apply) {
-    console.log(`dry-run ${item.recordId}: ${item.decision} (${item.confidence})`);
+    if (!quiet) console.log(`dry-run ${item.recordId}: ${item.decision} (${item.confidence})`);
     appliedCount += 1;
     continue;
   }
@@ -131,7 +153,7 @@ for (const item of recommendations) {
   if (error) {
     throw new Error(`Failed to update ${item.recordId}: ${error.message}`);
   }
-  console.log(`updated ${item.recordId}: ${item.decision}`);
+  if (!quiet) console.log(`updated ${item.recordId}: ${item.decision}`);
   appliedCount += 1;
 }
 
