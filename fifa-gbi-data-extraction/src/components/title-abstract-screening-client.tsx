@@ -39,6 +39,7 @@ type QueueFilter =
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 type QueueCounts = {
   all: number;
+  myVotes: number;
   needsYourVote: number;
   awaitingOther: number;
   resolver: number;
@@ -71,6 +72,7 @@ const MAX_REFERENCE_FILE_BYTES = 25 * 1024 * 1024;
 const QUEUE_PAGE_SIZE = 50;
 const EMPTY_COUNTS: QueueCounts = {
   all: 0,
+  myVotes: 0,
   needsYourVote: 0,
   awaitingOther: 0,
   resolver: 0,
@@ -86,6 +88,7 @@ const EMPTY_COUNTS: QueueCounts = {
 
 const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
   pending: 'Pending',
+  flagged: 'Flagged',
   ready_for_full_text: 'Ready for full text',
   excluded: 'Excluded',
   needs_resolver: 'Conflict',
@@ -95,6 +98,7 @@ const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
 const STATUS_LABELS: Record<TitleAbstractWorkStatus, string> = {
   needs_your_vote: 'Needs my vote',
   awaiting_other_reviewer: 'Awaiting other reviewer',
+  flagged: 'Flagged',
   ready_for_full_text: 'Ready for full text',
   excluded: 'Excluded',
   needs_resolver: 'Conflict',
@@ -139,6 +143,7 @@ export function TitleAbstractScreeningClient({
 
   const completedCount = counts.ready + counts.excluded + counts.promoted;
   const progressPercent = counts.all > 0 ? Math.round((completedCount / counts.all) * 100) : 0;
+  const personalProgressPercent = counts.all > 0 ? Math.round((counts.myVotes / counts.all) * 100) : 0;
 
   const fetchQueuePage = useCallback(async (offset: number, replace: boolean, signal?: AbortSignal) => {
     setIsLoadingQueue(true);
@@ -203,6 +208,16 @@ export function TitleAbstractScreeningClient({
     fetchQueuePage(nextOffset, false).catch((error) => {
       setQueueError(error instanceof Error ? error.message : 'Failed to load more records.');
     });
+  };
+
+  const handleFilterChange = (nextFilter: QueueFilter) => {
+    if (nextFilter === filter) return;
+    setFilter(nextFilter);
+    setSelectedId('');
+    setRecords([]);
+    setFilteredTotal(0);
+    setHasMore(false);
+    setNextOffset(0);
   };
 
   const handleQueueScroll = (event: UIEvent<HTMLDivElement>) => {
@@ -336,26 +351,48 @@ export function TitleAbstractScreeningClient({
           </div>
 
           <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-4 shadow-sm ring-1 ring-slate-200/50 backdrop-blur">
-            <div className="flex flex-wrap items-end justify-between gap-3">
+            <div className="grid gap-5 lg:grid-cols-2">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Screening progress</p>
-                <p className="mt-1 text-sm text-slate-600">
-                  <span className="font-semibold tabular-nums text-slate-800">{completedCount}</span> of{' '}
-                  <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> references have a final outcome.
-                </p>
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">My progress</p>
+                    <p className="mt-1 text-sm text-slate-600">
+                      <span className="font-semibold tabular-nums text-slate-800">{counts.myVotes}</span> of{' '}
+                      <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> references voted by you.
+                    </p>
+                  </div>
+                  <p className="text-2xl font-semibold tabular-nums text-[#0b3a70]">{personalProgressPercent}%</p>
+                </div>
+                <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-[#0b3a70] via-[#1e4f8a] to-sky-500 transition-[width] duration-700 ease-out"
+                    style={{ width: `${personalProgressPercent}%` }}
+                  />
+                </div>
               </div>
-              <p className="text-2xl font-semibold tabular-nums text-[#0b3a70]">{progressPercent}%</p>
-            </div>
-            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-[#0b3a70] via-[#1e4f8a] to-sky-500 transition-[width] duration-700 ease-out"
-                style={{ width: `${progressPercent}%` }}
-              />
+              <div>
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Final outcomes</p>
+                    <p className="mt-1 text-sm text-slate-600">
+                      <span className="font-semibold tabular-nums text-slate-800">{completedCount}</span> of{' '}
+                      <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> references have a final outcome.
+                    </p>
+                  </div>
+                  <p className="text-2xl font-semibold tabular-nums text-[#0b3a70]">{progressPercent}%</p>
+                </div>
+                <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 transition-[width] duration-700 ease-out"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
+              </div>
             </div>
             <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
               <span>{counts.needsYourVote} need your vote</span>
-              <span>{counts.resolver} need resolver</span>
-              <span>{counts.promoted} promoted to full text</span>
+              <span>{counts.flagged} flagged</span>
+              <span>{counts.resolver} conflicts</span>
             </div>
           </div>
         </div>
@@ -443,19 +480,19 @@ export function TitleAbstractScreeningClient({
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
             <div className="space-y-1">
-              <FilterButton label="All records" count={counts.all} active={filter === 'all'} onClick={() => setFilter('all')} />
-              <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => setFilter('needs_your_vote')} accent="brand" />
-              <FilterButton label="Awaiting other" count={counts.awaitingOther} active={filter === 'awaiting_other_reviewer'} onClick={() => setFilter('awaiting_other_reviewer')} />
-              <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => setFilter('needs_resolver')} accent="amber" />
-              <FilterButton label="Ready for full text" count={counts.ready} active={filter === 'ready_for_full_text'} onClick={() => setFilter('ready_for_full_text')} accent="emerald" />
-              <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => setFilter('excluded')} accent="rose" />
-              <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => setFilter('flagged')} accent="amber" />
-              <FilterButton label="Missing abstract" count={counts.missingAbstract} active={filter === 'missing_abstract'} onClick={() => setFilter('missing_abstract')} />
-              <FilterButton label="Promoted" count={counts.promoted} active={filter === 'promoted_to_full_text'} onClick={() => setFilter('promoted_to_full_text')} accent="emerald" />
+              <FilterButton label="All records" count={counts.all} active={filter === 'all'} onClick={() => handleFilterChange('all')} />
+              <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => handleFilterChange('needs_your_vote')} accent="brand" />
+              <FilterButton label="Awaiting other" count={counts.awaitingOther} active={filter === 'awaiting_other_reviewer'} onClick={() => handleFilterChange('awaiting_other_reviewer')} />
+              <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => handleFilterChange('needs_resolver')} accent="amber" />
+              <FilterButton label="Ready for full text" count={counts.ready} active={filter === 'ready_for_full_text'} onClick={() => handleFilterChange('ready_for_full_text')} accent="emerald" />
+              <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => handleFilterChange('excluded')} accent="rose" />
+              <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => handleFilterChange('flagged')} accent="amber" />
+              <FilterButton label="Missing abstract" count={counts.missingAbstract} active={filter === 'missing_abstract'} onClick={() => handleFilterChange('missing_abstract')} />
+              <FilterButton label="Promoted" count={counts.promoted} active={filter === 'promoted_to_full_text'} onClick={() => handleFilterChange('promoted_to_full_text')} accent="emerald" />
               <div className="my-3 border-t border-slate-200" />
-              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => setFilter('ai_include')} accent="emerald" />
-              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => setFilter('ai_exclude')} accent="rose" />
-              <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => setFilter('ai_not_run')} />
+              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} accent="emerald" />
+              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} accent="rose" />
+              <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => handleFilterChange('ai_not_run')} />
             </div>
           </div>
         </aside>
@@ -956,6 +993,7 @@ function StatusDot({ status }: { status: TitleAbstractWorkStatus }) {
   const classes: Record<TitleAbstractWorkStatus, string> = {
     needs_your_vote: 'bg-[#0b3a70]',
     awaiting_other_reviewer: 'bg-slate-300',
+    flagged: 'bg-amber-500',
     ready_for_full_text: 'bg-emerald-500',
     excluded: 'bg-rose-500',
     needs_resolver: 'bg-amber-500',
@@ -1002,6 +1040,7 @@ const VOTE_MARK_CLASSES: Record<TitleAbstractDecision, string> = {
 function ResolutionPill({ resolution, children }: { resolution: TitleAbstractResolution; children: ReactNode }) {
   const classes: Record<TitleAbstractResolution, string> = {
     pending: 'border-slate-200 bg-slate-50 text-slate-600',
+    flagged: 'border-amber-200 bg-amber-50 text-amber-800',
     ready_for_full_text: 'border-emerald-200 bg-emerald-50 text-emerald-700',
     excluded: 'border-rose-200 bg-rose-50 text-rose-700',
     needs_resolver: 'border-amber-200 bg-amber-50 text-amber-800',

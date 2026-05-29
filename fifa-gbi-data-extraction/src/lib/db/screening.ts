@@ -34,6 +34,51 @@ import {
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
 export const TITLE_ABSTRACT_QUEUE_PAGE_SIZE = 50;
+const TITLE_ABSTRACT_QUEUE_CACHE_MS = 30_000;
+const TITLE_ABSTRACT_QUEUE_SELECT = [
+  'id',
+  'stage',
+  'assigned_study_id',
+  'title',
+  'abstract',
+  'lead_author',
+  'journal',
+  'year',
+  'doi',
+  'normalized_doi',
+  'source_label',
+  'source_record_id',
+  'storage_bucket',
+  'storage_object_path',
+  'file_name',
+  'original_file_name',
+  'mime_type',
+  'size',
+  'file_sha256',
+  'ai_status',
+  'ai_suggested_decision',
+  'ai_reason',
+  'ai_evidence_quote',
+  'ai_source_location',
+  'ai_confidence',
+  'ai_model',
+  'ai_criteria_version',
+  'ai_raw_response',
+  'ai_error',
+  'ai_reviewed_at',
+  'manual_decision',
+  'manual_reason',
+  'manual_decided_by',
+  'manual_decided_at',
+  'promoted_paper_id',
+  'promoted_by',
+  'promoted_at',
+  'created_by',
+  'created_at',
+  'updated_at',
+  'metadata',
+  'notes',
+].join(',');
 
 export type TitleAbstractQueueFilter =
   | 'all'
@@ -51,6 +96,7 @@ export type TitleAbstractQueueFilter =
 
 export type TitleAbstractQueueCounts = {
   all: number;
+  myVotes: number;
   needsYourVote: number;
   awaitingOther: number;
   resolver: number;
@@ -194,6 +240,12 @@ const mapRows = async (rows: ScreeningRecordRow[]): Promise<ScreeningRecord[]> =
   return rows.map((row) => mapScreeningRecordRow(row, names));
 };
 
+let titleAbstractQueueCache: { expiresAt: number; records: ScreeningRecord[] } | null = null;
+
+const invalidateTitleAbstractQueueCache = () => {
+  titleAbstractQueueCache = null;
+};
+
 export type CreateScreeningRecordInput = {
   stage?: ScreeningStage;
   assignedStudyId?: string | null;
@@ -235,11 +287,45 @@ export const listScreeningRecords = async (stage: ScreeningStage = 'full_text'):
       throw new Error(`Failed to list screening records. Apply the screening migration first: ${error.message}`);
     }
 
-    rows.push(...((data ?? []) as ScreeningRecordRow[]));
+    rows.push(...((data ?? []) as unknown as ScreeningRecordRow[]));
     if (!data || data.length < pageSize) break;
   }
 
   return mapRows(rows);
+};
+
+const listTitleAbstractQueueRecords = async (): Promise<ScreeningRecord[]> => {
+  const now = Date.now();
+  if (titleAbstractQueueCache && titleAbstractQueueCache.expiresAt > now) {
+    return titleAbstractQueueCache.records;
+  }
+
+  const supabase = supabaseClient();
+  const rows: ScreeningRecordRow[] = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('screening_records')
+      .select(TITLE_ABSTRACT_QUEUE_SELECT)
+      .eq('stage', 'title_abstract')
+      .order('created_at', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list title/abstract records: ${error.message}`);
+    }
+
+    rows.push(...((data ?? []) as unknown as ScreeningRecordRow[]));
+    if (!data || data.length < pageSize) break;
+  }
+
+  const records = await mapRows(rows);
+  titleAbstractQueueCache = {
+    expiresAt: now + TITLE_ABSTRACT_QUEUE_CACHE_MS,
+    records,
+  };
+  return records;
 };
 
 const matchesTitleAbstractSearch = (record: ScreeningRecord, query: string) => {
@@ -280,6 +366,11 @@ const getTitleAbstractQueueCounts = (
   const statuses = records.map((record) => getTitleAbstractWorkStatus(record, reviewerProfileId));
   return {
     all: records.length,
+    myVotes: records.filter((record) =>
+      getTitleAbstractDecisions(record).some(
+        (decision) => decision.action !== 'resolver_decision' && decision.reviewerProfileId === reviewerProfileId,
+      )
+    ).length,
     needsYourVote: statuses.filter((status) => status === 'needs_your_vote').length,
     awaitingOther: statuses.filter((status) => status === 'awaiting_other_reviewer').length,
     resolver: statuses.filter((status) => status === 'needs_resolver').length,
@@ -307,7 +398,7 @@ export const listTitleAbstractQueuePage = async ({
   offset?: number;
   limit?: number;
 }): Promise<TitleAbstractQueuePage> => {
-  const records = await listScreeningRecords('title_abstract');
+  const records = await listTitleAbstractQueueRecords();
   const counts = getTitleAbstractQueueCounts(records, reviewerProfileId);
   const query = search.trim().toLowerCase();
   const safeOffset = Math.max(0, offset);
@@ -390,6 +481,10 @@ export const createScreeningRecord = async (input: CreateScreeningRecordInput): 
     throw new Error(`Failed to create screening record: ${error?.message ?? 'Unknown error'}`);
   }
 
+  if (payload.stage === 'title_abstract') {
+    invalidateTitleAbstractQueueCache();
+  }
+
   const [record] = await mapRows([data as ScreeningRecordRow]);
   return record;
 };
@@ -435,6 +530,10 @@ export const updateScreeningAiSuggestion = async (
     throw new Error(`Failed to update AI screening suggestion: ${error?.message ?? 'Unknown error'}`);
   }
 
+  if ((data as ScreeningRecordRow).stage === 'title_abstract') {
+    invalidateTitleAbstractQueueCache();
+  }
+
   const [record] = await mapRows([data as ScreeningRecordRow]);
   return record;
 };
@@ -459,6 +558,10 @@ export const updateScreeningRecordMetadata = async (
     throw new Error(`Failed to update screening record: ${error?.message ?? 'Unknown error'}`);
   }
 
+  if ((data as ScreeningRecordRow).stage === 'title_abstract') {
+    invalidateTitleAbstractQueueCache();
+  }
+
   const [record] = await mapRows([data as ScreeningRecordRow]);
   return record;
 };
@@ -475,6 +578,7 @@ export const markScreeningAiRunning = async (ids: string[]): Promise<void> => {
   if (error) {
     throw new Error(`Failed to mark screening records as running: ${error.message}`);
   }
+  invalidateTitleAbstractQueueCache();
 };
 
 export const saveScreeningDecision = async (

@@ -4,6 +4,7 @@ export type TitleAbstractDecision = 'include' | 'exclude' | 'flag';
 export type TitleAbstractDecisionAction = 'reviewer_vote' | 'resolver_decision';
 export type TitleAbstractResolution =
   | 'pending'
+  | 'flagged'
   | 'ready_for_full_text'
   | 'excluded'
   | 'needs_resolver'
@@ -11,6 +12,7 @@ export type TitleAbstractResolution =
 export type TitleAbstractWorkStatus =
   | 'needs_your_vote'
   | 'awaiting_other_reviewer'
+  | 'flagged'
   | 'ready_for_full_text'
   | 'excluded'
   | 'needs_resolver'
@@ -61,13 +63,16 @@ export const getTitleAbstractResolution = (record: ScreeningRecord): TitleAbstra
 
   const decisions = getTitleAbstractDecisions(record);
   const resolverDecision = decisions.find((decision) => decision.action === 'resolver_decision') ?? decisions[2];
-  if (resolverDecision && resolverDecision.decision !== 'flag') {
+  if (resolverDecision?.decision === 'flag') {
+    return 'flagged';
+  }
+  if (resolverDecision) {
     return resolverDecision.decision === 'include' ? 'ready_for_full_text' : 'excluded';
   }
 
   const reviewerVotes = decisions.filter((decision) => decision.action !== 'resolver_decision').slice(0, 2);
   if (reviewerVotes.some((decision) => decision.decision === 'flag')) {
-    return 'needs_resolver';
+    return 'flagged';
   }
   if (reviewerVotes.length < 2) {
     return 'pending';
