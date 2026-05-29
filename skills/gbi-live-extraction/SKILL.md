@@ -10,7 +10,8 @@ Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/revie
 ## Core Defaults
 
 - Treat requests to "update the process" after a paper review as requests to update this skill, not the app's user-facing instructions.
-- Extract Tabs `1-10` manually. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology`.
+- Extract Tabs `1-10` manually. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology` unless Abdel explicitly asks for Gemini in the current request.
+- For project AI functions, run locally from the current workspace and apply results to Supabase from that local workflow. Default to GPT-5.5 with medium reasoning when available; if unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the model used, and explain the substitution before applying results.
 - Prefer additive-only live updates. Do not overwrite nonblank values unless the user explicitly asks for a correction.
 - Default assignment profile is `AbdelRahman Babiker` (`00000000-0000-0000-0000-000000000001`). Assign every paper selected for extraction or batch review to that profile unless the user states otherwise.
 - Preserve existing live manual edits. If a selected paper is assigned to another profile, do not overwrite it silently; either skip it or reassign it only when the user explicitly asks for that paper/batch to be assigned to AbdelRahman Babiker.
