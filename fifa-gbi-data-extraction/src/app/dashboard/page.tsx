@@ -6,7 +6,7 @@ import { readActiveProfileSession } from '@/lib/session';
 import {
   getExtractionMetrics,
   getFullTextMetrics,
-  getTitleAbstractMetrics,
+  titleAbstractMetricsFromCounts,
   type WorkflowStageMetrics,
 } from '@/lib/workflow-metrics';
 
@@ -108,8 +108,8 @@ export default async function DashboardPage() {
     redirect('/profiles/select');
   }
 
-  const [titleAbstractRecords, fullTextRecords, papers] = await Promise.all([
-    mockDb.listScreeningRecords('title_abstract'),
+  const [titleAbstractCounts, fullTextRecords, papers] = await Promise.all([
+    mockDb.getTitleAbstractQueueCountsForReviewer(activeProfile.id),
     mockDb.listScreeningRecords('full_text'),
     mockDb.listPapers(),
   ]);
@@ -120,7 +120,7 @@ export default async function DashboardPage() {
       title: 'Title & Abstract Screening',
       href: '/title-abstract-screening',
       action: 'Continue Screening',
-      metrics: getTitleAbstractMetrics(titleAbstractRecords, activeProfile.id),
+      metrics: titleAbstractMetricsFromCounts(titleAbstractCounts),
       tone: 'navy',
       icon: 'documentSearch',
       metricLabels: ['Total Records', 'Screened', 'Progress'],

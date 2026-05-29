@@ -244,8 +244,14 @@ const mapRows = async (rows: ScreeningRecordRow[]): Promise<ScreeningRecord[]> =
 
 let titleAbstractQueueCache: { expiresAt: number; records: ScreeningRecord[] } | null = null;
 
+// Sidebar/dashboard counts are a full-table aggregate (~2s) and only change on
+// writes, so cache them per reviewer with a short TTL. Cleared on every write.
+const TITLE_ABSTRACT_COUNTS_CACHE_MS = 30_000;
+const titleAbstractCountsCache = new Map<string, { expiresAt: number; counts: TitleAbstractQueueCounts }>();
+
 const invalidateTitleAbstractQueueCache = () => {
   titleAbstractQueueCache = null;
+  titleAbstractCountsCache.clear();
 };
 
 export type CreateScreeningRecordInput = {
@@ -486,8 +492,8 @@ export const listTitleAbstractQueuePage = async ({
   const trimmedSearch = (search ?? '').trim();
   const supabase = supabaseClient();
 
-  // Fast path: pagination, filtering, search, and counts run entirely in Postgres.
-  const [listResult, totalResult, countsResult] = await Promise.all([
+  // Fast path: pagination + search run in Postgres; counts come from the cache.
+  const [listResult, totalResult] = await Promise.all([
     supabase.rpc('list_title_abstract_queue', {
       p_reviewer: reviewerProfileId,
       p_filter: filter,
@@ -500,16 +506,9 @@ export const listTitleAbstractQueuePage = async ({
       p_filter: filter,
       p_search: trimmedSearch,
     }),
-    supabase.rpc('get_title_abstract_queue_counts', {
-      p_reviewer: reviewerProfileId,
-    }),
   ]);
 
-  if (
-    isMissingQueueFunction(listResult.error) ||
-    isMissingQueueFunction(totalResult.error) ||
-    isMissingQueueFunction(countsResult.error)
-  ) {
+  if (isMissingQueueFunction(listResult.error) || isMissingQueueFunction(totalResult.error)) {
     return listTitleAbstractQueuePageInMemory({
       reviewerProfileId,
       filter,
@@ -525,25 +524,53 @@ export const listTitleAbstractQueuePage = async ({
   if (totalResult.error) {
     throw new Error(`Failed to count title/abstract records: ${totalResult.error.message}`);
   }
-  if (countsResult.error) {
-    throw new Error(`Failed to load title/abstract counts: ${countsResult.error.message}`);
-  }
 
   const rows = (listResult.data ?? []) as ScreeningRecordRow[];
   const records = await mapRows(rows);
   const filteredTotal = toCount(totalResult.data as number | string | null);
-  const countsRow = (Array.isArray(countsResult.data) ? countsResult.data[0] : countsResult.data) as
-    | TitleAbstractQueueCountsRow
-    | undefined;
+  const counts = await getTitleAbstractQueueCountsForReviewer(reviewerProfileId);
 
   return {
     records,
-    counts: mapTitleAbstractQueueCounts(countsRow),
+    counts,
     filteredTotal,
     offset: safeOffset,
     limit: safeLimit,
     hasMore: safeOffset + records.length < filteredTotal,
   };
+};
+
+// Cached per-reviewer sidebar/dashboard counts. Falls back to the in-memory
+// computation when the DB function is absent (migration not yet applied).
+export const getTitleAbstractQueueCountsForReviewer = async (
+  reviewerProfileId: string,
+): Promise<TitleAbstractQueueCounts> => {
+  const now = Date.now();
+  const cached = titleAbstractCountsCache.get(reviewerProfileId);
+  if (cached && cached.expiresAt > now) {
+    return cached.counts;
+  }
+
+  const { data, error } = await supabaseClient().rpc('get_title_abstract_queue_counts', {
+    p_reviewer: reviewerProfileId,
+  });
+
+  let counts: TitleAbstractQueueCounts;
+  if (isMissingQueueFunction(error)) {
+    const records = await listTitleAbstractQueueRecords();
+    counts = getTitleAbstractQueueCounts(records, reviewerProfileId);
+  } else if (error) {
+    throw new Error(`Failed to load title/abstract counts: ${error.message}`);
+  } else {
+    const row = (Array.isArray(data) ? data[0] : data) as TitleAbstractQueueCountsRow | undefined;
+    counts = mapTitleAbstractQueueCounts(row);
+  }
+
+  titleAbstractCountsCache.set(reviewerProfileId, {
+    expiresAt: now + TITLE_ABSTRACT_COUNTS_CACHE_MS,
+    counts,
+  });
+  return counts;
 };
 
 export const getScreeningRecord = async (id: string): Promise<ScreeningRecord | undefined> => {

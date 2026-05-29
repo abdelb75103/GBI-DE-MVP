@@ -27,6 +27,32 @@ export type WorkflowStageMetrics = {
 const percentage = (completed: number, total: number) =>
   total > 0 ? Math.round((completed / total) * 100) : 0;
 
+// Build the title/abstract stage metrics from precomputed queue counts
+// (DB aggregate) instead of loading every record. Mirrors getTitleAbstractMetrics.
+export const titleAbstractMetricsFromCounts = (counts: {
+  all: number;
+  ready: number;
+  excluded: number;
+  promoted: number;
+  needsYourVote: number;
+  resolver: number;
+}): WorkflowStageMetrics => {
+  const total = counts.all;
+  const completed = counts.ready + counts.excluded + counts.promoted;
+  return {
+    total,
+    completed,
+    remaining: Math.max(0, total - completed),
+    progress: percentage(completed, total),
+    primaryCount: counts.needsYourVote,
+    primaryLabel: 'Need your vote',
+    secondaryCount: counts.resolver,
+    secondaryLabel: 'Conflicts',
+    tertiaryCount: counts.promoted,
+    tertiaryLabel: 'Moved forward',
+  };
+};
+
 export const getTitleAbstractMetrics = (
   records: ScreeningRecord[],
   reviewerProfileId: string,

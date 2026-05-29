@@ -42,6 +42,7 @@ import {
   getScreeningRecord,
   listScreeningRecords,
   listTitleAbstractQueuePage,
+  getTitleAbstractQueueCountsForReviewer,
   markScreeningAiRunning,
   attachFullTextPdfToScreeningRecord,
   promoteScreeningRecord,
@@ -108,6 +109,7 @@ export const mockDb = {
 
   listScreeningRecords,
   listTitleAbstractQueuePage,
+  getTitleAbstractQueueCountsForReviewer,
   getScreeningRecord,
   createScreeningRecord,
   markScreeningAiRunning,
