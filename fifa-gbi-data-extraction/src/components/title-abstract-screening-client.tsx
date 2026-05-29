@@ -3,6 +3,7 @@
 import { ChangeEvent, ReactNode, UIEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
 
 import {
+  adjustTitleAbstractQueueCountsAfterDecision,
   getTitleAbstractDecisions,
   getTitleAbstractMetadata,
   getTitleAbstractResolution,
@@ -12,7 +13,8 @@ import {
   type TitleAbstractResolution,
   type TitleAbstractWorkStatus,
 } from '@/lib/screening/title-abstract-decisions';
-import { getNextTitleAbstractRecordId } from '@/lib/screening/title-abstract-navigation';
+import { removeCompletedTitleAbstractRecord } from '@/lib/screening/title-abstract-navigation';
+import { splitStructuredAbstract } from '@/lib/screening/title-abstract-sections';
 import type { ScreeningRecord } from '@/lib/types';
 
 type Props = {
@@ -272,10 +274,11 @@ export function TitleAbstractScreeningClient({
       return;
     }
 
+    const recordBeingSaved = selected;
     setDecision(nextDecision);
     startTransition(async () => {
-      const currentRecordId = selected.id;
-      const response = await fetch(`/api/title-abstract-screening/${selected.id}/decision`, {
+      const currentRecordId = recordBeingSaved.id;
+      const response = await fetch(`/api/title-abstract-screening/${recordBeingSaved.id}/decision`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ decision: nextDecision, decisionAction, note }),
@@ -289,8 +292,13 @@ export function TitleAbstractScreeningClient({
         setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision.' });
         return;
       }
-      setRecords((current) => current.map((record) => (record.id === payload.record?.id ? payload.record : record)));
-      setSelectedId(getNextTitleAbstractRecordId(recordsRef.current, currentRecordId));
+      const savedRecord = payload.record;
+      const nextQueue = removeCompletedTitleAbstractRecord(recordsRef.current, currentRecordId);
+      setRecords(nextQueue.records);
+      setSelectedId(nextQueue.selectedId);
+      setCounts((current) => adjustTitleAbstractQueueCountsAfterDecision(current, recordBeingSaved, savedRecord, currentReviewerId));
+      setFilteredTotal((current) => Math.max(0, current - 1));
+      setNextOffset((current) => Math.max(0, current - 1));
       setNote('');
       setDecision(null);
       setDecisionAction('reviewer_vote');
@@ -350,49 +358,24 @@ export function TitleAbstractScreeningClient({
             <ScreeningStat label="Promoted" value={counts.promoted} caption="Sent to full-text screening" tone="emerald" />
           </div>
 
-          <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-4 shadow-sm ring-1 ring-slate-200/50 backdrop-blur">
-            <div className="grid gap-5 lg:grid-cols-2">
-              <div>
-                <div className="flex flex-wrap items-end justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">My progress</p>
-                    <p className="mt-1 text-sm text-slate-600">
-                      <span className="font-semibold tabular-nums text-slate-800">{counts.myVotes}</span> of{' '}
-                      <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> references voted by you.
-                    </p>
-                  </div>
-                  <p className="text-2xl font-semibold tabular-nums text-[#0b3a70]">{personalProgressPercent}%</p>
-                </div>
-                <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-[#0b3a70] via-[#1e4f8a] to-sky-500 transition-[width] duration-700 ease-out"
-                    style={{ width: `${personalProgressPercent}%` }}
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="flex flex-wrap items-end justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Final outcomes</p>
-                    <p className="mt-1 text-sm text-slate-600">
-                      <span className="font-semibold tabular-nums text-slate-800">{completedCount}</span> of{' '}
-                      <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> references have a final outcome.
-                    </p>
-                  </div>
-                  <p className="text-2xl font-semibold tabular-nums text-[#0b3a70]">{progressPercent}%</p>
-                </div>
-                <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 transition-[width] duration-700 ease-out"
-                    style={{ width: `${progressPercent}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
-              <span>{counts.needsYourVote} need your vote</span>
-              <span>{counts.flagged} flagged</span>
-              <span>{counts.resolver} conflicts</span>
+          <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-3 shadow-sm ring-1 ring-slate-200/50 backdrop-blur sm:p-4">
+            <div className="grid gap-3 lg:grid-cols-2">
+              <ProgressTile
+                label="My progress"
+                percent={personalProgressPercent}
+                value={counts.myVotes}
+                total={counts.all}
+                caption="Records voted"
+                tone="navy"
+              />
+              <ProgressTile
+                label="Final outcomes"
+                percent={progressPercent}
+                value={completedCount}
+                total={counts.all}
+                caption="Records resolved"
+                tone="emerald"
+              />
             </div>
           </div>
         </div>
@@ -568,6 +551,7 @@ function ReferenceDetail({
   const resolution = getTitleAbstractResolution(record);
   const currentReviewerVote = decisions.find((item) => item.reviewerProfileId === currentReviewerId);
   const canResolve = resolution === 'needs_resolver';
+  const abstractSections = splitStructuredAbstract(record.abstract);
 
   return (
     <article className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">
@@ -603,9 +587,33 @@ function ReferenceDetail({
 
         <section className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 shadow-sm shadow-slate-900/[0.02]">
           <SectionEyebrow>Abstract</SectionEyebrow>
-          <p className="mt-3 whitespace-pre-wrap break-words text-[0.95rem] leading-7 text-slate-800">
-            {record.abstract?.trim() || 'No abstract was imported or found through the free metadata lookup. Screen from title and citation details, or retrieve metadata before final adjudication.'}
-          </p>
+          {abstractSections.length > 0 ? (
+            <div className="mt-3 space-y-3">
+              {abstractSections.map((section, index) => (
+                <div
+                  key={`${section.heading ?? 'abstract'}-${index}`}
+                  className={`rounded-xl border px-4 py-3 ${
+                    section.heading
+                      ? 'border-slate-200/80 bg-slate-50/80'
+                      : 'border-slate-100 bg-white'
+                  }`}
+                >
+                  {section.heading ? (
+                    <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0b3a70]">
+                      {section.heading}
+                    </p>
+                  ) : null}
+                  <p className="whitespace-pre-wrap break-words text-[0.95rem] leading-7 text-slate-800">
+                    {section.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-3 whitespace-pre-wrap break-words text-[0.95rem] leading-7 text-slate-800">
+              No abstract was imported or found through the free metadata lookup. Screen from title and citation details, or retrieve metadata before final adjudication.
+            </p>
+          )}
         </section>
 
         <AiRecommendationCard record={record} />
@@ -1059,6 +1067,7 @@ function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; mess
 }
 
 type ScreeningStatTone = 'navy' | 'indigo' | 'amber' | 'emerald';
+type ProgressTileTone = 'navy' | 'emerald';
 
 const SCREENING_STAT_TONES: Record<ScreeningStatTone, { value: string; gradient: string }> = {
   navy: {
@@ -1078,6 +1087,58 @@ const SCREENING_STAT_TONES: Record<ScreeningStatTone, { value: string; gradient:
     gradient: 'from-emerald-500/15 via-teal-300/10 to-emerald-200/20',
   },
 };
+
+const PROGRESS_TILE_TONES: Record<ProgressTileTone, { value: string; bar: string; surface: string }> = {
+  navy: {
+    value: 'text-[#0b3a70]',
+    bar: 'bg-[#0b3a70]',
+    surface: 'bg-slate-50/80',
+  },
+  emerald: {
+    value: 'text-emerald-700',
+    bar: 'bg-emerald-500',
+    surface: 'bg-emerald-50/50',
+  },
+};
+
+function ProgressTile({
+  label,
+  percent,
+  value,
+  total,
+  caption,
+  tone,
+}: {
+  label: string;
+  percent: number;
+  value: number;
+  total: number;
+  caption: string;
+  tone: ProgressTileTone;
+}) {
+  const styles = PROGRESS_TILE_TONES[tone];
+  return (
+    <div className={`rounded-xl border border-slate-200/80 p-4 ${styles.surface}`}>
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">{label}</p>
+          <p className="mt-2 text-sm font-medium text-slate-600">
+            <span className="font-semibold tabular-nums text-slate-900">{value}</span>
+            <span className="text-slate-400"> / </span>
+            <span className="tabular-nums">{total}</span> {caption.toLowerCase()}
+          </p>
+        </div>
+        <p className={`shrink-0 text-3xl font-semibold tracking-tight tabular-nums ${styles.value}`}>{percent}%</p>
+      </div>
+      <div className="mt-4 h-2 overflow-hidden rounded-full bg-white ring-1 ring-slate-200/70">
+        <div
+          className={`h-full rounded-full transition-[width] duration-700 ease-out ${styles.bar}`}
+          style={{ width: `${percent}%` }}
+        />
+      </div>
+    </div>
+  );
+}
 
 function ScreeningStat({
   label,

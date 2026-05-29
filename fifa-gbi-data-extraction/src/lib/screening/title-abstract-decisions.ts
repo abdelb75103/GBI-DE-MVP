@@ -27,6 +27,22 @@ export type TitleAbstractReviewerDecision = {
   action?: TitleAbstractDecisionAction;
 };
 
+export type TitleAbstractQueueCountsSnapshot = {
+  all: number;
+  myVotes: number;
+  needsYourVote: number;
+  awaitingOther: number;
+  resolver: number;
+  ready: number;
+  excluded: number;
+  promoted: number;
+  missingAbstract: number;
+  flagged: number;
+  aiInclude: number;
+  aiExclude: number;
+  aiNotRun: number;
+};
+
 type TitleAbstractMetadata = {
   titleAbstractDecisions?: TitleAbstractReviewerDecision[];
   titleAbstractResolution?: TitleAbstractResolution;
@@ -96,6 +112,53 @@ export const getTitleAbstractWorkStatus = (
   const resolution = getTitleAbstractResolution(record);
   if (resolution !== 'pending') return resolution;
   return hasTitleAbstractReviewerVoted(record, reviewerProfileId) ? 'awaiting_other_reviewer' : 'needs_your_vote';
+};
+
+const TITLE_ABSTRACT_STATUS_COUNT_KEYS: Record<TitleAbstractWorkStatus, keyof TitleAbstractQueueCountsSnapshot> = {
+  needs_your_vote: 'needsYourVote',
+  awaiting_other_reviewer: 'awaitingOther',
+  flagged: 'flagged',
+  ready_for_full_text: 'ready',
+  excluded: 'excluded',
+  needs_resolver: 'resolver',
+  promoted_to_full_text: 'promoted',
+};
+
+const clampTitleAbstractCount = (value: number) => Math.max(0, value);
+
+const hasFlaggedTitleAbstractVote = (record: ScreeningRecord) =>
+  getTitleAbstractDecisions(record).some((decision) => decision.decision === 'flag');
+
+export const adjustTitleAbstractQueueCountsAfterDecision = <TCounts extends TitleAbstractQueueCountsSnapshot>(
+  counts: TCounts,
+  beforeRecord: ScreeningRecord,
+  afterRecord: ScreeningRecord,
+  reviewerProfileId: string,
+): TCounts => {
+  const next = { ...counts };
+  const beforeStatus = getTitleAbstractWorkStatus(beforeRecord, reviewerProfileId);
+  const afterStatus = getTitleAbstractWorkStatus(afterRecord, reviewerProfileId);
+
+  if (beforeStatus !== afterStatus) {
+    const beforeKey = TITLE_ABSTRACT_STATUS_COUNT_KEYS[beforeStatus];
+    const afterKey = TITLE_ABSTRACT_STATUS_COUNT_KEYS[afterStatus];
+    next[beforeKey] = clampTitleAbstractCount(next[beforeKey] - 1) as TCounts[typeof beforeKey];
+    next[afterKey] = clampTitleAbstractCount(next[afterKey] + 1) as TCounts[typeof afterKey];
+  }
+
+  const beforeMyVote = hasTitleAbstractReviewerVoted(beforeRecord, reviewerProfileId);
+  const afterMyVote = hasTitleAbstractReviewerVoted(afterRecord, reviewerProfileId);
+  if (beforeMyVote !== afterMyVote) {
+    next.myVotes = clampTitleAbstractCount(next.myVotes + (afterMyVote ? 1 : -1)) as TCounts['myVotes'];
+  }
+
+  const beforeFlagged = hasFlaggedTitleAbstractVote(beforeRecord);
+  const afterFlagged = hasFlaggedTitleAbstractVote(afterRecord);
+  if (beforeFlagged !== afterFlagged && beforeStatus !== 'flagged' && afterStatus !== 'flagged') {
+    next.flagged = clampTitleAbstractCount(next.flagged + (afterFlagged ? 1 : -1)) as TCounts['flagged'];
+  }
+
+  return next;
 };
 
 export const applyTitleAbstractDecision = (

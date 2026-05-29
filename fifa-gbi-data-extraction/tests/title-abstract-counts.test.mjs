@@ -1,0 +1,58 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+
+import { adjustTitleAbstractQueueCountsAfterDecision } from '../src/lib/screening/title-abstract-decisions.ts';
+
+const baseCounts = {
+  all: 10,
+  myVotes: 0,
+  needsYourVote: 10,
+  awaitingOther: 0,
+  resolver: 0,
+  ready: 0,
+  excluded: 0,
+  promoted: 0,
+  missingAbstract: 0,
+  flagged: 0,
+  aiInclude: 0,
+  aiExclude: 0,
+  aiSystematicReview: 0,
+  aiNotRun: 0,
+};
+
+const recordWithDecisions = (decisions, metadata = {}) => ({
+  id: 'record-1',
+  metadata: {
+    ...metadata,
+    titleAbstractDecisions: decisions,
+  },
+});
+
+const reviewerVote = (reviewerProfileId, decision) => ({
+  reviewerProfileId,
+  decision,
+  decidedAt: '2026-05-29T00:00:00.000Z',
+  action: 'reviewer_vote',
+});
+
+test('moves the current reviewer from needs vote to awaiting other reviewer after first vote', () => {
+  const before = recordWithDecisions([]);
+  const after = recordWithDecisions([reviewerVote('reviewer-1', 'include')]);
+
+  const counts = adjustTitleAbstractQueueCountsAfterDecision(baseCounts, before, after, 'reviewer-1');
+
+  assert.equal(counts.myVotes, 1);
+  assert.equal(counts.needsYourVote, 9);
+  assert.equal(counts.awaitingOther, 1);
+});
+
+test('moves flagged votes into flagged counts instead of conflicts', () => {
+  const before = recordWithDecisions([]);
+  const after = recordWithDecisions([reviewerVote('reviewer-1', 'flag')]);
+
+  const counts = adjustTitleAbstractQueueCountsAfterDecision(baseCounts, before, after, 'reviewer-1');
+
+  assert.equal(counts.flagged, 1);
+  assert.equal(counts.resolver, 0);
+  assert.equal(counts.needsYourVote, 9);
+});
