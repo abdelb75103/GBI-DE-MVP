@@ -42,6 +42,7 @@ export type DedupeReviewStatus = 'clean' | 'duplicate' | 'possible' | 'needs_rev
 export type ScreeningStage = 'title_abstract' | 'full_text';
 export type ScreeningAiStatus = 'not_run' | 'running' | 'completed' | 'failed';
 export type ScreeningDecision = 'include' | 'exclude';
+export type ScreeningAiTargetTag = 'systematic_review';
 
 export interface PaperSession {
   paperId: string;
@@ -233,6 +234,7 @@ export interface ScreeningRecord {
   aiModel: string | null;
   aiCriteriaVersion: string | null;
   aiRawResponse?: unknown;
+  aiTargetTag: ScreeningAiTargetTag | null;
   aiError: string | null;
   aiReviewedAt: string | null;
   manualDecision: ScreeningDecision | null;

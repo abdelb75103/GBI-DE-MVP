@@ -958,6 +958,45 @@ export interface Database {
         };
         Returns: boolean;
       };
+      list_title_abstract_queue: {
+        Args: {
+          p_reviewer: string;
+          p_filter?: string;
+          p_search?: string;
+          p_offset?: number;
+          p_limit?: number;
+        };
+        Returns: Database['public']['Tables']['screening_records']['Row'][];
+      };
+      count_title_abstract_queue: {
+        Args: {
+          p_reviewer: string;
+          p_filter?: string;
+          p_search?: string;
+        };
+        Returns: number;
+      };
+      get_title_abstract_queue_counts: {
+        Args: {
+          p_reviewer: string;
+        };
+        Returns: {
+          all_count: number;
+          my_votes: number;
+          needs_your_vote: number;
+          awaiting_other: number;
+          resolver: number;
+          ready: number;
+          excluded_count: number;
+          promoted: number;
+          missing_abstract: number;
+          flagged: number;
+          ai_include: number;
+          ai_exclude: number;
+          ai_systematic_review: number;
+          ai_not_run: number;
+        }[];
+      };
     };
     Enums: {
       user_role: UserRole;

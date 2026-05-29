@@ -21,6 +21,7 @@ const FILTERS: TitleAbstractQueueFilter[] = [
   'flagged',
   'ai_include',
   'ai_exclude',
+  'ai_systematic_review',
   'ai_not_run',
 ];
 

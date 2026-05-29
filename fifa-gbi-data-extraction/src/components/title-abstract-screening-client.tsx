@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, ReactNode, UIEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
+import { ChangeEvent, ReactNode, UIEvent, memo, useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
 
 import {
   adjustTitleAbstractQueueCountsAfterDecision,
@@ -36,6 +36,7 @@ type QueueFilter =
   | 'flagged'
   | 'ai_include'
   | 'ai_exclude'
+  | 'ai_systematic_review'
   | 'ai_not_run';
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
@@ -52,6 +53,7 @@ type QueueCounts = {
   flagged: number;
   aiInclude: number;
   aiExclude: number;
+  aiSystematicReview: number;
   aiNotRun: number;
 };
 type TitleAbstractQueuePage = {
@@ -85,6 +87,7 @@ const EMPTY_COUNTS: QueueCounts = {
   flagged: 0,
   aiInclude: 0,
   aiExclude: 0,
+  aiSystematicReview: 0,
   aiNotRun: 0,
 };
 
@@ -147,6 +150,20 @@ export function TitleAbstractScreeningClient({
   const progressPercent = counts.all > 0 ? Math.round((completedCount / counts.all) * 100) : 0;
   const personalProgressPercent = counts.all > 0 ? Math.round((counts.myVotes / counts.all) * 100) : 0;
 
+  // Precompute each visible row's work status once per records change so the
+  // sidebar list does not recompute it on every keystroke/render.
+  const statusById = useMemo(() => {
+    const map = new Map<string, TitleAbstractWorkStatus>();
+    for (const record of records) {
+      map.set(record.id, getTitleAbstractWorkStatus(record, currentReviewerId));
+    }
+    return map;
+  }, [records, currentReviewerId]);
+
+  const handleSelectRecord = useCallback((id: string) => {
+    setSelectedId(id);
+  }, []);
+
   const fetchQueuePage = useCallback(async (offset: number, replace: boolean, signal?: AbortSignal) => {
     setIsLoadingQueue(true);
     setQueueError(null);
@@ -193,7 +210,7 @@ export function TitleAbstractScreeningClient({
           setQueueError(error instanceof Error ? error.message : 'Failed to load records.');
         }
       });
-    }, 250);
+    }, 400);
 
     return () => {
       controller.abort();
@@ -410,9 +427,9 @@ export function TitleAbstractScreeningClient({
               <ReferenceRow
                 key={record.id}
                 record={record}
-                active={selected?.id === record.id}
-                status={getTitleAbstractWorkStatus(record, currentReviewerId)}
-                onClick={() => setSelectedId(record.id)}
+                active={selectedId === record.id}
+                status={statusById.get(record.id) ?? getTitleAbstractWorkStatus(record, currentReviewerId)}
+                onSelect={handleSelectRecord}
               />
             ))}
             {records.length === 0 && !isLoadingQueue ? (
@@ -475,6 +492,7 @@ export function TitleAbstractScreeningClient({
               <div className="my-3 border-t border-slate-200" />
               <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} accent="emerald" />
               <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} accent="rose" />
+              <FilterButton label="AI systematic review" count={counts.aiSystematicReview} active={filter === 'ai_systematic_review'} onClick={() => handleFilterChange('ai_systematic_review')} accent="amber" />
               <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => handleFilterChange('ai_not_run')} />
             </div>
           </div>
@@ -484,22 +502,22 @@ export function TitleAbstractScreeningClient({
   );
 }
 
-function ReferenceRow({
+const ReferenceRow = memo(function ReferenceRow({
   record,
   active,
   status,
-  onClick,
+  onSelect,
 }: {
   record: ScreeningRecord;
   active: boolean;
   status: TitleAbstractWorkStatus;
-  onClick: () => void;
+  onSelect: (id: string) => void;
 }) {
   const decisions = getTitleAbstractDecisions(record);
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={() => onSelect(record.id)}
       className={`relative block w-full border-b border-slate-200 px-4 py-4 text-left transition ${
         active ? 'bg-white shadow-[inset_3px_0_0_0_#0b3a70]' : 'bg-transparent hover:bg-white/70'
       }`}
@@ -518,7 +536,7 @@ function ReferenceRow({
       </div>
     </button>
   );
-}
+});
 
 function ReferenceDetail({
   record,
@@ -674,6 +692,7 @@ function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
 
 function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
   const hasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
+  const targetLabel = record.aiTargetTag === 'systematic_review' ? 'Systematic review' : null;
   const label = record.aiStatus === 'running'
     ? 'Running'
     : record.aiStatus === 'failed'
@@ -709,9 +728,16 @@ function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
     <section className={`rounded-2xl border px-5 py-4 ${panelClasses}`}>
       <div className="flex items-center justify-between gap-3">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">AI recommendation</p>
-        <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold ${badgeClasses}`}>
-          {label}
-        </span>
+        <div className="flex flex-wrap justify-end gap-2">
+          {targetLabel ? (
+            <span className="inline-flex items-center rounded-full border border-amber-300 bg-white px-2.5 py-1 text-xs font-semibold text-amber-800">
+              {targetLabel}
+            </span>
+          ) : null}
+          <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold ${badgeClasses}`}>
+            {label}
+          </span>
+        </div>
       </div>
       {record.aiReason ? (
         <p className="mt-3 text-sm leading-6 text-slate-700">{record.aiReason}</p>

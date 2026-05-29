@@ -136,6 +136,13 @@ export const mapExtractionRow = (
   notes: null,
 });
 
+const mapScreeningAiTargetTag = (rawResponse: unknown): ScreeningRecord['aiTargetTag'] => {
+  if (!rawResponse || typeof rawResponse !== 'object') return null;
+  const response = rawResponse as { targetTag?: unknown; tags?: unknown };
+  if (response.targetTag === 'systematic_review') return 'systematic_review';
+  return null;
+};
+
 export const mapScreeningRecordRow = (
   row: ScreeningRecordRow,
   profileNames: Map<string, string> = new Map(),
@@ -169,6 +176,7 @@ export const mapScreeningRecordRow = (
   aiModel: row.ai_model ?? null,
   aiCriteriaVersion: row.ai_criteria_version ?? null,
   aiRawResponse: row.ai_raw_response,
+  aiTargetTag: mapScreeningAiTargetTag(row.ai_raw_response),
   aiError: row.ai_error ?? null,
   aiReviewedAt: row.ai_reviewed_at ?? null,
   manualDecision: row.manual_decision ?? null,

@@ -98,6 +98,7 @@ export default async function AiReviewMetricsPage() {
     completed: records.filter((record) => record.aiStatus === 'completed').length,
     include: records.filter((record) => record.aiSuggestedDecision === 'include').length,
     exclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
+    systematicReview: records.filter((record) => record.aiTargetTag === 'systematic_review').length,
     failed: records.filter((record) => record.aiStatus === 'failed').length,
   });
   const titleAbstractAi = screeningAiTotals(titleAbstractRecords);
@@ -253,7 +254,7 @@ function ScreeningAiCard({
   totals,
 }: {
   title: string;
-  totals: { total: number; completed: number; include: number; exclude: number; failed: number };
+  totals: { total: number; completed: number; include: number; exclude: number; systematicReview: number; failed: number };
 }) {
   const coverage = totals.total ? Math.round((totals.completed / totals.total) * 100) : 0;
   return (
@@ -267,7 +268,7 @@ function ScreeningAiCard({
           {totals.completed}/{totals.total}
         </span>
       </div>
-      <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+      <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs sm:grid-cols-4">
         <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-2 py-2 text-emerald-800">
           <p className="font-semibold">{totals.include}</p>
           <p>Include</p>
@@ -275,6 +276,10 @@ function ScreeningAiCard({
         <div className="rounded-xl border border-rose-200 bg-rose-50 px-2 py-2 text-rose-800">
           <p className="font-semibold">{totals.exclude}</p>
           <p>Exclude</p>
+        </div>
+        <div className="rounded-xl border border-amber-200 bg-amber-50 px-2 py-2 text-amber-800">
+          <p className="font-semibold">{totals.systematicReview}</p>
+          <p>Systematic</p>
         </div>
         <div className="rounded-xl border border-amber-200 bg-amber-50 px-2 py-2 text-amber-800">
           <p className="font-semibold">{totals.failed}</p>

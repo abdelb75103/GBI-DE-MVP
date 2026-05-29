@@ -92,6 +92,7 @@ export type TitleAbstractQueueFilter =
   | 'flagged'
   | 'ai_include'
   | 'ai_exclude'
+  | 'ai_systematic_review'
   | 'ai_not_run';
 
 export type TitleAbstractQueueCounts = {
@@ -107,6 +108,7 @@ export type TitleAbstractQueueCounts = {
   flagged: number;
   aiInclude: number;
   aiExclude: number;
+  aiSystematicReview: number;
   aiNotRun: number;
 };
 
@@ -355,6 +357,7 @@ const matchesTitleAbstractFilter = (
   if (filter === 'flagged') return decisions.some((item) => item.decision === 'flag');
   if (filter === 'ai_include') return record.aiSuggestedDecision === 'include';
   if (filter === 'ai_exclude') return record.aiSuggestedDecision === 'exclude';
+  if (filter === 'ai_systematic_review') return record.aiTargetTag === 'systematic_review';
   if (filter === 'ai_not_run') return record.aiStatus !== 'completed';
   return status === filter;
 };
@@ -381,7 +384,87 @@ const getTitleAbstractQueueCounts = (
     flagged: records.filter((record) => getTitleAbstractDecisions(record).some((item) => item.decision === 'flag')).length,
     aiInclude: records.filter((record) => record.aiSuggestedDecision === 'include').length,
     aiExclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
+    aiSystematicReview: records.filter((record) => record.aiTargetTag === 'systematic_review').length,
     aiNotRun: records.filter((record) => record.aiStatus !== 'completed').length,
+  };
+};
+
+type TitleAbstractQueueCountsRow = {
+  all_count: number | string | null;
+  my_votes: number | string | null;
+  needs_your_vote: number | string | null;
+  awaiting_other: number | string | null;
+  resolver: number | string | null;
+  ready: number | string | null;
+  excluded_count: number | string | null;
+  promoted: number | string | null;
+  missing_abstract: number | string | null;
+  flagged: number | string | null;
+  ai_include: number | string | null;
+  ai_exclude: number | string | null;
+  ai_systematic_review: number | string | null;
+  ai_not_run: number | string | null;
+};
+
+const toCount = (value: number | string | null | undefined): number => {
+  const parsed = Number(value ?? 0);
+  return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const mapTitleAbstractQueueCounts = (row?: TitleAbstractQueueCountsRow): TitleAbstractQueueCounts => ({
+  all: toCount(row?.all_count),
+  myVotes: toCount(row?.my_votes),
+  needsYourVote: toCount(row?.needs_your_vote),
+  awaitingOther: toCount(row?.awaiting_other),
+  resolver: toCount(row?.resolver),
+  ready: toCount(row?.ready),
+  excluded: toCount(row?.excluded_count),
+  promoted: toCount(row?.promoted),
+  missingAbstract: toCount(row?.missing_abstract),
+  flagged: toCount(row?.flagged),
+  aiInclude: toCount(row?.ai_include),
+  aiExclude: toCount(row?.ai_exclude),
+  aiSystematicReview: toCount(row?.ai_systematic_review),
+  aiNotRun: toCount(row?.ai_not_run),
+});
+
+// Postgres reports a missing RPC (migration not yet applied) with PGRST202 or a
+// 42883 "function does not exist" error. Detect it so we can fall back safely.
+const isMissingQueueFunction = (error: { code?: string; message?: string } | null): boolean => {
+  if (!error) return false;
+  if (error.code === 'PGRST202' || error.code === '42883') return true;
+  return /Could not find the function|function .* does not exist/i.test(error.message ?? '');
+};
+
+// In-memory fallback used only when the DB-side queue functions are absent.
+const listTitleAbstractQueuePageInMemory = async ({
+  reviewerProfileId,
+  filter,
+  search,
+  offset,
+  limit,
+}: {
+  reviewerProfileId: string;
+  filter: TitleAbstractQueueFilter;
+  search: string;
+  offset: number;
+  limit: number;
+}): Promise<TitleAbstractQueuePage> => {
+  const records = await listTitleAbstractQueueRecords();
+  const counts = getTitleAbstractQueueCounts(records, reviewerProfileId);
+  const query = search.trim().toLowerCase();
+  const filtered = records.filter((record) =>
+    matchesTitleAbstractFilter(record, filter, reviewerProfileId) &&
+    matchesTitleAbstractSearch(record, query)
+  );
+
+  return {
+    records: filtered.slice(offset, offset + limit),
+    counts,
+    filteredTotal: filtered.length,
+    offset,
+    limit,
+    hasMore: offset + limit < filtered.length,
   };
 };
 
@@ -398,23 +481,68 @@ export const listTitleAbstractQueuePage = async ({
   offset?: number;
   limit?: number;
 }): Promise<TitleAbstractQueuePage> => {
-  const records = await listTitleAbstractQueueRecords();
-  const counts = getTitleAbstractQueueCounts(records, reviewerProfileId);
-  const query = search.trim().toLowerCase();
   const safeOffset = Math.max(0, offset);
   const safeLimit = Math.min(150, Math.max(1, limit));
-  const filtered = records.filter((record) =>
-    matchesTitleAbstractFilter(record, filter, reviewerProfileId) &&
-    matchesTitleAbstractSearch(record, query)
-  );
+  const trimmedSearch = (search ?? '').trim();
+  const supabase = supabaseClient();
+
+  // Fast path: pagination, filtering, search, and counts run entirely in Postgres.
+  const [listResult, totalResult, countsResult] = await Promise.all([
+    supabase.rpc('list_title_abstract_queue', {
+      p_reviewer: reviewerProfileId,
+      p_filter: filter,
+      p_search: trimmedSearch,
+      p_offset: safeOffset,
+      p_limit: safeLimit,
+    }),
+    supabase.rpc('count_title_abstract_queue', {
+      p_reviewer: reviewerProfileId,
+      p_filter: filter,
+      p_search: trimmedSearch,
+    }),
+    supabase.rpc('get_title_abstract_queue_counts', {
+      p_reviewer: reviewerProfileId,
+    }),
+  ]);
+
+  if (
+    isMissingQueueFunction(listResult.error) ||
+    isMissingQueueFunction(totalResult.error) ||
+    isMissingQueueFunction(countsResult.error)
+  ) {
+    return listTitleAbstractQueuePageInMemory({
+      reviewerProfileId,
+      filter,
+      search: trimmedSearch,
+      offset: safeOffset,
+      limit: safeLimit,
+    });
+  }
+
+  if (listResult.error) {
+    throw new Error(`Failed to list title/abstract records: ${listResult.error.message}`);
+  }
+  if (totalResult.error) {
+    throw new Error(`Failed to count title/abstract records: ${totalResult.error.message}`);
+  }
+  if (countsResult.error) {
+    throw new Error(`Failed to load title/abstract counts: ${countsResult.error.message}`);
+  }
+
+  const rows = (listResult.data ?? []) as ScreeningRecordRow[];
+  const records = await mapRows(rows);
+  const filteredTotal = toCount(totalResult.data as number | string | null);
+  const countsRow = (Array.isArray(countsResult.data) ? countsResult.data[0] : countsResult.data) as
+    | TitleAbstractQueueCountsRow
+    | undefined;
 
   return {
-    records: filtered.slice(safeOffset, safeOffset + safeLimit),
-    counts,
-    filteredTotal: filtered.length,
+    records,
+    counts: mapTitleAbstractQueueCounts(countsRow),
+    filteredTotal,
     offset: safeOffset,
     limit: safeLimit,
-    hasMore: safeOffset + safeLimit < filtered.length,
+    hasMore: safeOffset + records.length < filteredTotal,
   };
 };
 
