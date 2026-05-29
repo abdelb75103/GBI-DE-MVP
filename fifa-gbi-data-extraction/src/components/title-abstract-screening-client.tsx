@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, ReactNode, UIEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
+import { ChangeEvent, ReactNode, UIEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
 
 import {
   getTitleAbstractDecisions,
@@ -12,6 +12,7 @@ import {
   type TitleAbstractResolution,
   type TitleAbstractWorkStatus,
 } from '@/lib/screening/title-abstract-decisions';
+import { getNextTitleAbstractRecordId } from '@/lib/screening/title-abstract-navigation';
 import type { ScreeningRecord } from '@/lib/types';
 
 type Props = {
@@ -124,12 +125,17 @@ export function TitleAbstractScreeningClient({
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const queueInitializedRef = useRef(false);
   const selectedIdRef = useRef(selectedId);
+  const recordsRef = useRef(records);
   const isAdmin = profileRole === 'admin';
 
-  const selected = records.find((record) => record.id === selectedId) ?? records[0] ?? null;
+  const selected = selectedId ? records.find((record) => record.id === selectedId) ?? null : null;
   useEffect(() => {
     selectedIdRef.current = selectedId;
   }, [selectedId]);
+
+  useEffect(() => {
+    recordsRef.current = records;
+  }, [records]);
 
   const completedCount = counts.ready + counts.excluded + counts.promoted;
   const progressPercent = counts.all > 0 ? Math.round((completedCount / counts.all) * 100) : 0;
@@ -244,23 +250,20 @@ export function TitleAbstractScreeningClient({
     });
   };
 
-  const saveDecision = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const saveDecision = (nextDecision: TitleAbstractDecision) => {
     if (!selected) return;
-    if (!decision) {
-      setNotice({ tone: 'error', message: 'Choose Include, Exclude, or Flag.' });
-      return;
-    }
-    if (decision === 'flag' && !note.trim()) {
+    if (nextDecision === 'flag' && !note.trim()) {
       setNotice({ tone: 'error', message: 'Add a note before flagging this reference.' });
       return;
     }
 
+    setDecision(nextDecision);
     startTransition(async () => {
+      const currentRecordId = selected.id;
       const response = await fetch(`/api/title-abstract-screening/${selected.id}/decision`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ decision, decisionAction, note }),
+        body: JSON.stringify({ decision: nextDecision, decisionAction, note }),
       });
       const payload = await response.json().catch(() => ({})) as {
         record?: ScreeningRecord;
@@ -272,13 +275,14 @@ export function TitleAbstractScreeningClient({
         return;
       }
       setRecords((current) => current.map((record) => (record.id === payload.record?.id ? payload.record : record)));
+      setSelectedId(getNextTitleAbstractRecordId(recordsRef.current, currentRecordId));
       setNote('');
       setDecision(null);
       setDecisionAction('reviewer_vote');
       const duplicateMessage = formatDuplicateWarningMessage(payload.duplicateWarnings ?? []);
       setNotice({
         tone: duplicateMessage ? 'neutral' : 'success',
-        message: duplicateMessage ? `Decision saved. ${duplicateMessage}` : 'Decision saved.',
+        message: duplicateMessage ? `Decision saved and advanced. ${duplicateMessage}` : 'Decision saved and advanced.',
       });
     });
   };
@@ -428,7 +432,7 @@ export function TitleAbstractScreeningClient({
             />
           ) : (
             <div className="grid h-full place-items-center px-6 py-16 text-sm text-slate-500">
-              Import references to begin screening.
+              {records.length > 0 ? 'No more loaded references in this queue.' : 'Import references to begin screening.'}
             </div>
           )}
         </main>
@@ -517,7 +521,7 @@ function ReferenceDetail({
   onChangeDecision: (next: TitleAbstractDecision | null) => void;
   onChangeDecisionAction: (next: TitleAbstractDecisionAction) => void;
   onChangeNote: (next: string) => void;
-  onSaveDecision: (event: FormEvent<HTMLFormElement>) => void;
+  onSaveDecision: (decision: TitleAbstractDecision) => void;
 }) {
   const decisions = getTitleAbstractDecisions(record);
   const metadata = getTitleAbstractMetadata(record);
@@ -579,7 +583,7 @@ function ReferenceDetail({
           onChangeDecision={onChangeDecision}
           onChangeDecisionAction={onChangeDecisionAction}
           onChangeNote={onChangeNote}
-          onSubmit={onSaveDecision}
+          onSaveDecision={onSaveDecision}
         />
 
         <section className="border-t border-slate-200/80 pt-5">
@@ -704,7 +708,7 @@ function DecisionPanel({
   onChangeDecision,
   onChangeDecisionAction,
   onChangeNote,
-  onSubmit,
+  onSaveDecision,
 }: {
   decision: TitleAbstractDecision | null;
   decisionAction: TitleAbstractDecisionAction;
@@ -715,14 +719,11 @@ function DecisionPanel({
   onChangeDecision: (next: TitleAbstractDecision | null) => void;
   onChangeDecisionAction: (next: TitleAbstractDecisionAction) => void;
   onChangeNote: (next: string) => void;
-  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  onSaveDecision: (decision: TitleAbstractDecision) => void;
 }) {
   const noteRequired = decision === 'flag';
   return (
-    <form
-      onSubmit={onSubmit}
-      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-    >
+    <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-[#0b3a70]" />
@@ -759,9 +760,39 @@ function DecisionPanel({
       ) : null}
 
       <div className="mt-3 grid grid-cols-3 gap-2">
-        <DecisionButton tone="include" active={decision === 'include'} onClick={() => onChangeDecision('include')} icon="✓" label="Include" />
-        <DecisionButton tone="exclude" active={decision === 'exclude'} onClick={() => onChangeDecision('exclude')} icon="✕" label="Exclude" />
-        <DecisionButton tone="flag" active={decision === 'flag'} onClick={() => onChangeDecision('flag')} icon="!" label="Flag" />
+        <DecisionButton
+          tone="include"
+          active={decision === 'include'}
+          disabled={isPending}
+          onClick={() => {
+            onChangeDecision('include');
+            onSaveDecision('include');
+          }}
+          icon="✓"
+          label={isPending && decision === 'include' ? 'Saving...' : 'Include'}
+        />
+        <DecisionButton
+          tone="exclude"
+          active={decision === 'exclude'}
+          disabled={isPending}
+          onClick={() => {
+            onChangeDecision('exclude');
+            onSaveDecision('exclude');
+          }}
+          icon="✕"
+          label={isPending && decision === 'exclude' ? 'Saving...' : 'Exclude'}
+        />
+        <DecisionButton
+          tone="flag"
+          active={decision === 'flag'}
+          disabled={isPending}
+          onClick={() => {
+            onChangeDecision('flag');
+            onSaveDecision('flag');
+          }}
+          icon="!"
+          label={isPending && decision === 'flag' ? 'Saving...' : 'Flag'}
+        />
       </div>
 
       <textarea
@@ -772,14 +803,7 @@ function DecisionPanel({
         className="mt-3 w-full resize-none rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-slate-400"
       />
 
-      <button
-        type="submit"
-        disabled={isPending || !decision}
-        className="mt-3 w-full rounded-xl bg-[#0b3a70] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#092f5f] disabled:cursor-not-allowed disabled:opacity-50"
-      >
-        {isPending ? 'Saving…' : decisionAction === 'resolver_decision' ? 'Save resolver decision' : 'Save decision'}
-      </button>
-    </form>
+    </section>
   );
 }
 
@@ -787,12 +811,14 @@ function DecisionButton({
   tone,
   active,
   onClick,
+  disabled,
   icon,
   label,
 }: {
   tone: TitleAbstractDecision;
   active: boolean;
   onClick: () => void;
+  disabled?: boolean;
   icon: string;
   label: string;
 }) {
@@ -801,7 +827,8 @@ function DecisionButton({
     <button
       type="button"
       onClick={onClick}
-      className={`flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-sm font-semibold transition ${palette}`}
+      disabled={disabled}
+      className={`flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60 ${palette}`}
     >
       <span aria-hidden className="text-sm leading-none">{icon}</span>
       {label}
