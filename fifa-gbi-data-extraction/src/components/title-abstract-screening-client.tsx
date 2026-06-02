@@ -2,6 +2,7 @@
 
 import { ChangeEvent, ReactNode, UIEvent, memo, useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
 
+import { FlagReasonModal } from '@/components/flag-reason-modal';
 import {
   adjustTitleAbstractQueueCountsAfterDecision,
   getTitleAbstractDecisions,
@@ -129,6 +130,8 @@ export function TitleAbstractScreeningClient({
   const [decision, setDecision] = useState<TitleAbstractDecision | null>(null);
   const [decisionAction, setDecisionAction] = useState<TitleAbstractDecisionAction>('reviewer_vote');
   const [note, setNote] = useState('');
+  const [flagReason, setFlagReason] = useState('');
+  const [isFlagReasonModalOpen, setIsFlagReasonModalOpen] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -284,10 +287,11 @@ export function TitleAbstractScreeningClient({
     });
   };
 
-  const saveDecision = (nextDecision: TitleAbstractDecision) => {
+  const saveDecision = (nextDecision: TitleAbstractDecision, nextNote = note) => {
     if (!selected) return;
-    if (nextDecision === 'flag' && !note.trim()) {
-      setNotice({ tone: 'error', message: 'Add a note before flagging this reference.' });
+    const trimmedNote = nextNote.trim();
+    if (nextDecision === 'flag' && !trimmedNote) {
+      setNotice({ tone: 'error', message: 'Add a reason before flagging this reference.' });
       return;
     }
 
@@ -298,7 +302,7 @@ export function TitleAbstractScreeningClient({
       const response = await fetch(`/api/title-abstract-screening/${recordBeingSaved.id}/decision`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ decision: nextDecision, decisionAction, note }),
+        body: JSON.stringify({ decision: nextDecision, decisionAction, note: trimmedNote }),
       });
       const payload = await response.json().catch(() => ({})) as {
         record?: ScreeningRecord;
@@ -317,6 +321,8 @@ export function TitleAbstractScreeningClient({
       setFilteredTotal((current) => Math.max(0, current - 1));
       setNextOffset((current) => Math.max(0, current - 1));
       setNote('');
+      setFlagReason('');
+      setIsFlagReasonModalOpen(false);
       setDecision(null);
       setDecisionAction('reviewer_vote');
       const duplicateMessage = formatDuplicateWarningMessage(payload.duplicateWarnings ?? []);
@@ -402,8 +408,8 @@ export function TitleAbstractScreeningClient({
       {queueError ? <Notice tone="error" message={queueError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="grid min-h-[calc(100vh-260px)] overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:grid-cols-[300px_minmax(0,1fr)_220px]">
-        <aside className="flex min-h-[420px] min-w-0 flex-col border-b border-slate-200/70 bg-slate-50/60 lg:min-h-0 lg:border-b-0 lg:border-r">
+      <section className="grid overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
+        <aside className="flex max-h-[70vh] min-h-[420px] min-w-0 flex-col border-b border-slate-200/70 bg-slate-50/60 lg:max-h-none lg:min-h-0 lg:border-b-0 lg:border-r">
           <div className="border-b border-slate-200 px-4 py-4">
             <div className="flex items-center justify-between gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">References</p>
@@ -453,7 +459,7 @@ export function TitleAbstractScreeningClient({
           </div>
         </aside>
 
-        <main className="flex min-h-[520px] min-w-0 flex-col bg-white lg:min-h-0">
+        <main className="flex max-h-[75vh] min-h-[520px] min-w-0 flex-col overflow-hidden bg-white lg:max-h-none lg:min-h-0">
           {selected ? (
             <ReferenceDetail
               record={selected}
@@ -465,6 +471,11 @@ export function TitleAbstractScreeningClient({
               onChangeDecision={setDecision}
               onChangeDecisionAction={setDecisionAction}
               onChangeNote={setNote}
+              onRequestFlag={() => {
+                setDecision('flag');
+                setFlagReason(note);
+                setIsFlagReasonModalOpen(true);
+              }}
               onSaveDecision={saveDecision}
             />
           ) : (
@@ -474,7 +485,7 @@ export function TitleAbstractScreeningClient({
           )}
         </main>
 
-        <aside className="flex min-h-[300px] min-w-0 flex-col border-t border-slate-200/70 bg-slate-50/40 lg:min-h-0 lg:border-l lg:border-t-0">
+        <aside className="flex max-h-[60vh] min-h-[300px] min-w-0 flex-col border-t border-slate-200/70 bg-slate-50/40 lg:max-h-none lg:min-h-0 lg:border-l lg:border-t-0">
           <div className="border-b border-slate-200/70 px-5 py-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Filters</p>
           </div>
@@ -498,6 +509,20 @@ export function TitleAbstractScreeningClient({
           </div>
         </aside>
       </section>
+
+      <FlagReasonModal
+        isOpen={isFlagReasonModalOpen}
+        title="Flag reference"
+        description="Give a quick reason why this reference is being flagged."
+        initialReason={flagReason}
+        isPending={isPending}
+        onCancel={() => {
+          setIsFlagReasonModalOpen(false);
+          setFlagReason('');
+          setDecision(null);
+        }}
+        onSubmit={(reason) => saveDecision('flag', reason)}
+      />
     </div>
   );
 }
@@ -548,6 +573,7 @@ function ReferenceDetail({
   onChangeDecision,
   onChangeDecisionAction,
   onChangeNote,
+  onRequestFlag,
   onSaveDecision,
 }: {
   record: ScreeningRecord;
@@ -559,6 +585,7 @@ function ReferenceDetail({
   onChangeDecision: (next: TitleAbstractDecision | null) => void;
   onChangeDecisionAction: (next: TitleAbstractDecisionAction) => void;
   onChangeNote: (next: string) => void;
+  onRequestFlag: () => void;
   onSaveDecision: (decision: TitleAbstractDecision) => void;
 }) {
   const decisions = getTitleAbstractDecisions(record);
@@ -646,6 +673,7 @@ function ReferenceDetail({
           onChangeDecision={onChangeDecision}
           onChangeDecisionAction={onChangeDecisionAction}
           onChangeNote={onChangeNote}
+          onRequestFlag={onRequestFlag}
           onSaveDecision={onSaveDecision}
         />
 
@@ -779,6 +807,7 @@ function DecisionPanel({
   onChangeDecision,
   onChangeDecisionAction,
   onChangeNote,
+  onRequestFlag,
   onSaveDecision,
 }: {
   decision: TitleAbstractDecision | null;
@@ -790,9 +819,9 @@ function DecisionPanel({
   onChangeDecision: (next: TitleAbstractDecision | null) => void;
   onChangeDecisionAction: (next: TitleAbstractDecisionAction) => void;
   onChangeNote: (next: string) => void;
+  onRequestFlag: () => void;
   onSaveDecision: (decision: TitleAbstractDecision) => void;
 }) {
-  const noteRequired = decision === 'flag';
   return (
     <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-center justify-between gap-3">
@@ -859,7 +888,7 @@ function DecisionPanel({
           disabled={isPending}
           onClick={() => {
             onChangeDecision('flag');
-            onSaveDecision('flag');
+            onRequestFlag();
           }}
           icon="!"
           label={isPending && decision === 'flag' ? 'Saving...' : 'Flag'}
@@ -869,7 +898,7 @@ function DecisionPanel({
       <textarea
         value={note}
         onChange={(event) => onChangeNote(event.target.value)}
-        placeholder={noteRequired ? 'Required note for flag' : 'Optional reviewer note'}
+        placeholder="Optional reviewer note"
         rows={2}
         className="mt-3 w-full resize-none rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-slate-400"
       />

@@ -18,6 +18,12 @@ Do not create, amend, rewrite, or push commits unless Abdel explicitly asks for 
 
 For very small cosmetic changes, such as font color, copy, spacing, labels, or similarly low-risk visual tweaks, do not run extended verification or deployment checks unless Abdel explicitly asks for verification. Make the focused edit and report the changed files so Abdel can review manually.
 
+## User Preference: Frontend Claude Handoff Scope
+
+Do not hand every frontend fix or UI change to terminal Claude. Handle routine frontend work directly in Codex, including bug fixes, modals, forms, copy, spacing, filters, scrolling, workflow adjustments, and constrained component polish.
+
+Use terminal Claude for larger frontend design work where a second design pass is materially useful, such as landing pages, new screens, major redesigns, brand or visual direction, complex interaction design, or broad UX polish.
+
 ## User Preference: Spreadsheet Editing
 
 Do not automatically open Excel or spreadsheet files after every workbook change unless Abdel explicitly asks to open the file in the current request. Make the edit, run only the necessary checks, and report the changed files.

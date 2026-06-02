@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 
+import { FlagReasonModal } from '@/components/flag-reason-modal';
+
 type FlagToggleButtonProps = {
   paperId: string;
   isFlagged: boolean;
@@ -12,6 +14,7 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [isReasonModalOpen, setIsReasonModalOpen] = useState(false);
 
   const handleClick = () => {
     if (isFlagged) {
@@ -34,11 +37,10 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
       return;
     }
 
-    const reason = window.prompt('Flag reason');
-    if (!reason) {
-      return;
-    }
+    setIsReasonModalOpen(true);
+  };
 
+  const submitFlagReason = (reason: string) => {
     startTransition(async () => {
       setError(null);
       const response = await fetch(`/api/papers/${paperId}/flag`, {
@@ -53,6 +55,7 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
         return;
       }
 
+      setIsReasonModalOpen(false);
       router.refresh();
     });
   };
@@ -72,6 +75,12 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
         {isFlagged ? 'Clear Flag' : 'Flag'}
       </button>
       {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
+      <FlagReasonModal
+        isOpen={isReasonModalOpen}
+        isPending={isPending}
+        onCancel={() => setIsReasonModalOpen(false)}
+        onSubmit={submitFlagReason}
+      />
     </div>
   );
 }

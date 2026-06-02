@@ -18,11 +18,20 @@ test('returns an empty selection when the saved record is the final loaded recor
   assert.equal(getNextTitleAbstractRecordId(records, 'record-2'), '');
 });
 
-test('removes the saved record and promotes the next record to the top of the queue', () => {
+test('removes the saved record while preserving queue order', () => {
   const records = [{ id: 'record-1' }, { id: 'record-2' }, { id: 'record-3' }, { id: 'record-4' }];
 
   const result = removeCompletedTitleAbstractRecord(records, 'record-2');
 
   assert.equal(result.selectedId, 'record-3');
-  assert.deepEqual(result.records.map((record) => record.id), ['record-3', 'record-1', 'record-4']);
+  assert.deepEqual(result.records.map((record) => record.id), ['record-1', 'record-3', 'record-4']);
+});
+
+test('returns an empty selection after removing the final record', () => {
+  const records = [{ id: 'record-1' }, { id: 'record-2' }];
+
+  const result = removeCompletedTitleAbstractRecord(records, 'record-2');
+
+  assert.equal(result.selectedId, '');
+  assert.deepEqual(result.records.map((record) => record.id), ['record-1']);
 });

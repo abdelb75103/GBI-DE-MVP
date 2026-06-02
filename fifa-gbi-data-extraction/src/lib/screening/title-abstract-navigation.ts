@@ -17,17 +17,7 @@ export const removeCompletedTitleAbstractRecord = <T extends { id: string }>(
   }
 
   const remaining = records.filter((record) => record.id !== completedRecordId);
-  const nextSelectedId = records[completedIndex + 1]?.id ?? remaining[0]?.id ?? '';
-  const nextSelected = remaining.find((record) => record.id === nextSelectedId);
-  if (!nextSelected) {
-    return { records: remaining, selectedId: '' };
-  }
+  const nextSelectedId = remaining[completedIndex]?.id ?? '';
 
-  return {
-    records: [
-      nextSelected,
-      ...remaining.filter((record) => record.id !== nextSelectedId),
-    ],
-    selectedId: nextSelectedId,
-  };
+  return { records: remaining, selectedId: nextSelectedId };
 };
