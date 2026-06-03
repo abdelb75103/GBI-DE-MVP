@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, ReactNode, UIEvent, memo, useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import { ChangeEvent, ReactNode, UIEvent, memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition } from 'react';
 
 import { FlagReasonModal } from '@/components/flag-reason-modal';
 import {
@@ -133,7 +133,7 @@ export function TitleAbstractScreeningClient({
   const [flagReason, setFlagReason] = useState('');
   const [isFlagReasonModalOpen, setIsFlagReasonModalOpen] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
-  const [detailScrollVersion, setDetailScrollVersion] = useState(0);
+  const [detailScrollTarget, setDetailScrollTarget] = useState({ recordId: '', version: 0 });
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const queueInitializedRef = useRef(false);
@@ -319,7 +319,10 @@ export function TitleAbstractScreeningClient({
       setRecords(nextQueue.records);
       setSelectedId(nextQueue.selectedId);
       if (nextQueue.shouldScrollSelectedRecordToTop) {
-        setDetailScrollVersion((current) => current + 1);
+        setDetailScrollTarget((current) => ({
+          recordId: nextQueue.scrollTargetId,
+          version: current.version + 1,
+        }));
       }
       setCounts((current) => adjustTitleAbstractQueueCountsAfterDecision(current, recordBeingSaved, savedRecord, currentReviewerId));
       setFilteredTotal((current) => Math.max(0, current - 1));
@@ -466,12 +469,13 @@ export function TitleAbstractScreeningClient({
         <main className="flex max-h-[75vh] min-h-[520px] min-w-0 flex-col overflow-hidden bg-white lg:max-h-none lg:min-h-0">
           {selected ? (
             <ReferenceDetail
+              key={selected.id}
               record={selected}
               currentReviewerId={currentReviewerId}
               decision={decision}
               decisionAction={decisionAction}
               note={note}
-              scrollVersion={detailScrollVersion}
+              scrollVersion={selected.id === detailScrollTarget.recordId ? detailScrollTarget.version : 0}
               isPending={isPending}
               onChangeDecision={setDecision}
               onChangeDecisionAction={setDecisionAction}
@@ -606,11 +610,19 @@ function ReferenceDetail({
   const canResolve = resolution === 'needs_resolver';
   const abstractSections = splitStructuredAbstract(record.abstract);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (scrollVersion > 0) {
-      detailRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+      const scrollToTop = () => {
+        if (!detailRef.current) return;
+        detailRef.current.scrollTop = 0;
+        detailRef.current.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      };
+
+      scrollToTop();
+      const frame = window.requestAnimationFrame(scrollToTop);
+      return () => window.cancelAnimationFrame(frame);
     }
-  }, [scrollVersion]);
+  }, [record.id, scrollVersion]);
 
   return (
     <article ref={detailRef} className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">

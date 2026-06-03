@@ -43,6 +43,7 @@ test('requests a top scroll when a decision advances to another loaded record', 
   const result = advanceAfterTitleAbstractDecision(records, 'record-1');
 
   assert.equal(result.selectedId, 'record-2');
+  assert.equal(result.scrollTargetId, 'record-2');
   assert.equal(result.shouldScrollSelectedRecordToTop, true);
 });
 
@@ -52,5 +53,6 @@ test('does not request a top scroll when a decision leaves no next record select
   const result = advanceAfterTitleAbstractDecision(records, 'record-1');
 
   assert.equal(result.selectedId, '');
+  assert.equal(result.scrollTargetId, '');
   assert.equal(result.shouldScrollSelectedRecordToTop, false);
 });
