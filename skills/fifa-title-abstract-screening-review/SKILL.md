@@ -12,13 +12,13 @@ Run the screening locally from the current workspace and write recommendations t
 
 ### Preferred End-to-End Runner
 
-Use the single local runner for bulk screening. It fetches eligible records, calls the model in sequential internal batches, validates every recommendation, checkpoints to disk, and writes each completed batch to Supabase when `--apply` is set. Do not split the work across chat messages or subagents unless Abdel explicitly asks for that again.
+Use the single local runner for bulk screening. It fetches eligible records, calls the model in sequential internal batches, validates every recommendation, applies deterministic guardrails from `scripts/title_abstract_screening_rules.mjs`, checkpoints to disk, and writes each completed batch to Supabase when `--apply` is set. Do not split the work across chat messages or subagents unless Abdel explicitly asks for that again.
 
 ```bash
 node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_screening_codex.mjs \
   --apply \
-  --provider auto \
-  --model gpt-5.4 \
+  --provider codex-cli \
+  --model gpt-5.5 \
   --reasoning medium \
   --batch-size 80 \
   --output /tmp/second-search-title-abstract-ai-codex.json
@@ -26,16 +26,31 @@ node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_sc
 
 Notes:
 
-- `--provider auto` uses the OpenAI Responses API when `OPENAI_API_KEY` is available, otherwise local `codex exec`.
+- `--provider codex-cli` is required. Direct API routing, auto routing, and Gemini are disabled for this project unless Abdel explicitly asks otherwise.
 - The command is resumable. Re-running it skips Supabase-completed records and uses the checkpoint file.
 - Keep console output minimal; use `--quiet` for long unattended runs.
-- Use `gpt-5.4` medium for straightforward title/abstract screening unless Abdel requests another model or QA shows quality problems. Use `gpt-5.5` medium when higher judgment is needed.
+- Use `gpt-5.5` medium when available. If it is unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the substitution in the audit output, and explain it before applying results.
 
 Check progress with:
 
 ```bash
 node skills/fifa-title-abstract-screening-review/scripts/report_second_search_ai_progress.mjs
 ```
+
+For targeted re-review of known screening records, use the same runner with `--force` and `--study-ids` rather than a custom wrapper:
+
+```bash
+node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_screening_codex.mjs \
+  --apply \
+  --force \
+  --provider codex-cli \
+  --model gpt-5.5 \
+  --reasoning medium \
+  --study-ids 4149,5325 \
+  --output /tmp/target-title-abstract-ai-codex.json
+```
+
+Numeric study IDs are normalized to `S####`. Use `--record-ids` only when targeting raw `screening_records.id` UUIDs.
 
 ### Manual Fallback
 
@@ -47,10 +62,10 @@ Use this only for small audits or recovery from malformed model output.
    node skills/fifa-title-abstract-screening-review/scripts/export_title_abstract_records.mjs --output /tmp/title-abstract-records.json
    ```
 
-2. Review each record against `references/eligibility.md`.
+2. Review each record against `references/eligibility.md` and `references/runtime-criteria.md`.
    - Be lenient at title/abstract stage.
    - Recommend `include` when the record plausibly may contain eligible football injury/illness epidemiology data.
-   - If the abstract is missing or too incomplete to support a title/abstract decision, recommend `undecided` unless the title/citation alone clearly excludes it.
+   - If the abstract is missing or too incomplete to support a title/abstract decision, recommend `undecided` unless the title/citation alone clearly supports inclusion or exclusion.
    - Recommend `exclude` only when the title/abstract/citation metadata clearly rules the paper out.
 
 3. Save recommendations using the schema in `references/output-schema.md`.
@@ -73,7 +88,23 @@ Use this only for small audits or recovery from malformed model output.
 - `include` with `targetTag: "systematic_review"`: systematic review, scoping review, evidence synthesis, or meta-analysis relevant to football/soccer injury or illness, kept for Abdel's systematic-review handling rather than standard primary extraction.
 - `exclude`: clearly ineligible. Provide a concise exclusion reason plus a direct quote from the title, abstract, DOI/source metadata, or citation fields that supports exclusion.
 - Missing abstract: default to `undecided` unless the title/citation alone clearly excludes it.
+- Title-only decisions are allowed when the title/citation is decisive. For example, clear American football or another wrong sport can be excluded, and a clear football/soccer injury surveillance title can be included or left `undecided` depending on how much evidence is present.
 - AI recommendations never create reviewer votes, never resolve conflicts, and never promote records.
+
+## Validation and Audit
+
+Use the Rayyan first-batch validation runner only when changing criteria, prompts, or deterministic rules. It is a benchmark against known human pass-through decisions, not the live screening workflow.
+
+```bash
+node skills/fifa-title-abstract-screening-review/scripts/validate_first_batch_rayyan_ai.mjs \
+  --sample-rate 0.1 \
+  --sample-index 0 \
+  --provider codex-cli \
+  --model gpt-5.5 \
+  --reasoning medium
+```
+
+Both the live runner and validation runner read `references/runtime-criteria.md` and use `scripts/title_abstract_screening_rules.mjs`; keep those shared files as the source of truth for reusable screening behavior.
 
 ## Supabase Fields
 
