@@ -148,7 +148,7 @@ export const getTitleAbstractProgressCounts = (
   return {
     ...metrics,
     awaitingOther: records.filter(
-      (record) => getTitleAbstractWorkStatus(record, reviewerProfileId) === 'awaiting_other_reviewer',
+      (record) => getTitleAbstractWorkStatus(record, reviewerProfileId) === 'awaiting_ai_recommendation',
     ).length,
     voted: records.filter((record) => getTitleAbstractDecisions(record).length > 0).length,
   };

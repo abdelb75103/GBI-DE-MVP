@@ -28,6 +28,7 @@ type Props = {
 type QueueFilter =
   | 'all'
   | 'needs_your_vote'
+  | 'awaiting_ai_recommendation'
   | 'awaiting_other_reviewer'
   | 'needs_resolver'
   | 'ready_for_full_text'
@@ -103,7 +104,8 @@ const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
 
 const STATUS_LABELS: Record<TitleAbstractWorkStatus, string> = {
   needs_your_vote: 'Needs my vote',
-  awaiting_other_reviewer: 'Awaiting other reviewer',
+  awaiting_ai_recommendation: 'Awaiting AI recommendation',
+  awaiting_other_reviewer: 'Awaiting AI recommendation',
   flagged: 'Flagged',
   ready_for_full_text: 'Ready for full text',
   excluded: 'Excluded',
@@ -502,7 +504,7 @@ export function TitleAbstractScreeningClient({
             <div className="space-y-1">
               <FilterButton label="All records" count={counts.all} active={filter === 'all'} onClick={() => handleFilterChange('all')} />
               <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => handleFilterChange('needs_your_vote')} accent="brand" />
-              <FilterButton label="Awaiting other" count={counts.awaitingOther} active={filter === 'awaiting_other_reviewer'} onClick={() => handleFilterChange('awaiting_other_reviewer')} />
+              <FilterButton label="Awaiting AI" count={counts.awaitingOther} active={filter === 'awaiting_ai_recommendation' || filter === 'awaiting_other_reviewer'} onClick={() => handleFilterChange('awaiting_ai_recommendation')} />
               <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => handleFilterChange('needs_resolver')} accent="amber" />
               <FilterButton label="Ready for full text" count={counts.ready} active={filter === 'ready_for_full_text'} onClick={() => handleFilterChange('ready_for_full_text')} accent="emerald" />
               <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => handleFilterChange('excluded')} accent="rose" />
@@ -565,7 +567,7 @@ const ReferenceRow = memo(function ReferenceRow({
         {[record.leadAuthor, record.year, record.journal].filter(Boolean).join(' · ') || 'Citation details pending'}
       </p>
       <div className="mt-2.5 flex items-center gap-2">
-        <VoteMarks decisions={decisions} />
+        <VoteMarks decisions={decisions} record={record} />
         <span className="text-[11px] font-medium text-slate-500">{STATUS_LABELS[status]}</span>
       </div>
     </button>
@@ -1081,6 +1083,7 @@ const FILTER_DOT_CLASSES: Record<'brand' | 'emerald' | 'rose' | 'amber', string>
 function StatusDot({ status }: { status: TitleAbstractWorkStatus }) {
   const classes: Record<TitleAbstractWorkStatus, string> = {
     needs_your_vote: 'bg-[#0b3a70]',
+    awaiting_ai_recommendation: 'bg-slate-300',
     awaiting_other_reviewer: 'bg-slate-300',
     flagged: 'bg-amber-500',
     ready_for_full_text: 'bg-emerald-500',
@@ -1091,16 +1094,62 @@ function StatusDot({ status }: { status: TitleAbstractWorkStatus }) {
   return <span aria-hidden className={`h-2 w-2 rounded-full ${classes[status]}`} />;
 }
 
-function VoteMarks({ decisions }: { decisions: ReturnType<typeof getTitleAbstractDecisions> }) {
-  const slots = [decisions[0], decisions[1]];
+type DecisionMark = {
+  key: string;
+  decision: TitleAbstractDecision | null;
+  label: string;
+};
+
+const getAiDecisionMark = (record: ScreeningRecord): DecisionMark => {
+  if (record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude') {
+    return {
+      key: 'ai',
+      decision: record.aiSuggestedDecision,
+      label: `AI ${record.aiSuggestedDecision}`,
+    };
+  }
+
+  const label = record.aiStatus === 'running'
+    ? 'AI running'
+    : record.aiStatus === 'failed'
+      ? 'AI failed'
+      : record.aiStatus === 'completed'
+        ? 'AI undecided'
+        : 'AI not run';
+
+  return {
+    key: 'ai',
+    decision: null,
+    label,
+  };
+};
+
+function VoteMarks({
+  decisions,
+  record,
+}: {
+  decisions: ReturnType<typeof getTitleAbstractDecisions>;
+  record: ScreeningRecord;
+}) {
+  const humanDecision = decisions.find((entry) => entry.action !== 'resolver_decision') ?? null;
+  const slots: DecisionMark[] = [
+    {
+      key: 'human',
+      decision: humanDecision?.decision ?? null,
+      label: humanDecision ? `Human ${humanDecision.decision}` : 'Human decision pending',
+    },
+    getAiDecisionMark(record),
+  ];
+
   return (
     <span className="flex items-center gap-1">
-      {slots.map((entry, index) => {
-        if (!entry) {
+      {slots.map((entry) => {
+        if (!entry.decision) {
           return (
             <span
-              key={index}
-              aria-hidden
+              key={entry.key}
+              aria-label={entry.label}
+              title={entry.label}
               className="h-4 w-4 rounded-full border-2 border-dashed border-slate-300 bg-white"
             />
           );
@@ -1108,8 +1157,9 @@ function VoteMarks({ decisions }: { decisions: ReturnType<typeof getTitleAbstrac
         const classes = VOTE_MARK_CLASSES[entry.decision];
         return (
           <span
-            key={index}
-            aria-hidden
+            key={entry.key}
+            aria-label={entry.label}
+            title={entry.label}
             className={`grid h-4 w-4 place-items-center rounded-full text-[9px] font-bold leading-none ${classes}`}
           >
             {entry.decision === 'include' ? '✓' : entry.decision === 'exclude' ? '✕' : '!'}

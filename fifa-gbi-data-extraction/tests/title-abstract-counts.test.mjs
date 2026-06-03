@@ -22,10 +22,18 @@ const baseCounts = {
 
 const recordWithDecisions = (decisions, metadata = {}) => ({
   id: 'record-1',
+  aiStatus: 'not_run',
+  aiSuggestedDecision: null,
   metadata: {
     ...metadata,
     titleAbstractDecisions: decisions,
   },
+});
+
+const recordWithAi = (decisions, aiSuggestedDecision) => ({
+  ...recordWithDecisions(decisions),
+  aiStatus: 'completed',
+  aiSuggestedDecision,
 });
 
 const reviewerVote = (reviewerProfileId, decision) => ({
@@ -35,7 +43,7 @@ const reviewerVote = (reviewerProfileId, decision) => ({
   action: 'reviewer_vote',
 });
 
-test('moves the current reviewer from needs vote to awaiting other reviewer after first vote', () => {
+test('moves the current reviewer from needs vote to awaiting AI after first vote without AI', () => {
   const before = recordWithDecisions([]);
   const after = recordWithDecisions([reviewerVote('reviewer-1', 'include')]);
 
@@ -44,6 +52,29 @@ test('moves the current reviewer from needs vote to awaiting other reviewer afte
   assert.equal(counts.myVotes, 1);
   assert.equal(counts.needsYourVote, 9);
   assert.equal(counts.awaitingOther, 1);
+});
+
+test('moves matching AI and human include into ready counts', () => {
+  const before = recordWithAi([], 'include');
+  const after = recordWithAi([reviewerVote('reviewer-1', 'include')], 'include');
+
+  const counts = adjustTitleAbstractQueueCountsAfterDecision(baseCounts, before, after, 'reviewer-1');
+
+  assert.equal(counts.myVotes, 1);
+  assert.equal(counts.needsYourVote, 9);
+  assert.equal(counts.ready, 1);
+  assert.equal(counts.awaitingOther, 0);
+});
+
+test('moves opposing AI and human decisions into conflict counts', () => {
+  const before = recordWithAi([], 'exclude');
+  const after = recordWithAi([reviewerVote('reviewer-1', 'include')], 'exclude');
+
+  const counts = adjustTitleAbstractQueueCountsAfterDecision(baseCounts, before, after, 'reviewer-1');
+
+  assert.equal(counts.myVotes, 1);
+  assert.equal(counts.needsYourVote, 9);
+  assert.equal(counts.resolver, 1);
 });
 
 test('moves flagged votes into flagged counts instead of conflicts', () => {

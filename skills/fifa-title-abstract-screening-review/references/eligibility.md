@@ -9,6 +9,7 @@ Eligible study types at full text include:
 - Prospective cohort studies, including descriptive surveillance and risk-factor studies.
 - Randomized controlled trials only when they contain eligible injury or illness epidemiology outcomes.
 - Panel-design studies such as weekly player self-report using the OSTRC questionnaire; these are included but reported separately.
+- Prospective, repeated, or surveillance self-report injury/health data. Self-report alone is not an exclusion.
 - Any language.
 - Regular seasonal competition, short-term tournaments such as the FIFA World Cup, and national or international club tournaments such as league cups and UEFA Champions League.
 - Systematic reviews during screening for reference-list checks.
@@ -24,6 +25,7 @@ Full-text exclusions include:
 - Non-competitive football such as recreational-only 5-a-side, football fitness, football as a medical intervention, and walking football.
 - Narrative reviews, commentaries, editorials, protocols, and case reports.
 - Retrospective cross-sectional or case-control studies unless the record may actually describe prospectively collected surveillance data.
+- One-time retrospective injury-history recall or cross-sectional injury-history association studies, including self-reported previous injury history, when they do not plausibly describe prospective or repeated surveillance.
 - Register-only studies such as ACL registers and hospital-record-only studies.
 - Publicly available data sources such as Transfermarkt.com and PremierInjuries.com.
 - Non-project injury/illness definitions such as injuries leading to hospitalization only.
@@ -42,10 +44,12 @@ Recommend `include` when any of these are plausible from the title/abstract/cita
 - Injury, illness, concussion, epidemiology, incidence, prevalence, burden, surveillance, injury/illness counts, exposure denominators, or observed injury/illness risk-factor outcomes are reported or plausibly present.
 - The abstract suggests player-level data that may contain a usable denominator after full-text review.
 - The article is mixed-sport or unclear, but the title/abstract/citation provides a concrete signal that football-specific subgroup data may exist.
+- Mixed sport alone is not an exclusion if football/soccer data may be extractable. If the abstract is unclear but soccer subgroup extraction is plausible, recommend `include` or `undecided`.
 - The abstract is very sparse but still indicates a plausible football/soccer injury or illness record.
 - Conference abstracts, supplement abstracts, or poster-style records when the supplied title/abstract/citation still gives a concrete football/soccer/futsal injury or illness epidemiology signal. These can be filtered later at full text if no usable full report exists.
 - Relevant football/soccer injury or illness reviews when they may be useful for reference-list checking, even if the abstract does not prove the review is systematic.
 - Return-to-play or return-to-sport records only when they also plausibly contain injury or illness surveillance data, injury/illness counts, incidence, burden, prevalence, exposure-denominator data, or comparable quantitative injury/illness outcomes. If that connection is unclear at title/abstract stage, include for full-text review.
+- Self-reported injury or health outcomes when the title/abstract suggests prospective, repeated, or surveillance collection, including weekly OSTRC-style reports.
 - Referee or match-official records when they plausibly contain football/soccer injury, illness, health-problem, or mental-health surveillance numbers. These may later be tagged separately as referee records rather than primary player records.
 - Mental-health, psychological-health, or injury-anxiety records in eligible football/soccer participants when the title/abstract/citation plausibly contains quantitative participant-health outcome data. Apply a slightly safer title/abstract threshold for these records because the mental-health evidence base is sparse.
 
@@ -59,6 +63,8 @@ Recommend `exclude` only when clearly supported by the title/abstract/citation:
 - Conference abstracts, supplement abstracts, posters, or narrative reviews only when they also lack a concrete football/soccer/futsal injury or illness epidemiology signal.
 - Pure return-to-play, rehabilitation, treatment, prognosis, imaging, or performance records when the supplied title/abstract/citation clearly lacks injury/illness surveillance data or extractable injury/illness numbers.
 - Studies that select only previously injured football/soccer players or patients and report post-injury functional outcomes, symptoms, rehabilitation response, treatment response, imaging findings, or return-to-function outcomes rather than surveillance incidence, prevalence, burden, rates, counts, frequency, or denominator data.
+- One-time cross-sectional or retrospective injury-history association records, even when the injury history is self-reported, when there is no prospective or repeated surveillance signal.
+- Downstream consequence records, such as imaging, white-matter hyperintensity, biomarker, neurocognitive, behavioral, or long-term sequelae studies after head impacts or injuries, when they do not report prevalence, incidence, burden, rates, exposure denominators, or surveillance of actual injuries/illnesses.
 - Pure attitude, knowledge, belief, awareness, perception, acceptability, or questionnaire-method studies, including mental-health-adjacent surveys, when they do not plausibly report direct injury, illness, mental-health prevalence, incidence, burden, counts, rates, frequency, or comparable participant-health outcome data.
 - Public-source-only media dataset with no player-level denominator.
 - Clearly not human players.

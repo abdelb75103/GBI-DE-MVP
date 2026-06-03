@@ -4,6 +4,8 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import process from 'node:process';
 
+import { finalizeTitleAbstractRecommendation } from './title_abstract_supabase_finalize.mjs';
+
 const require = createRequire(path.resolve(process.cwd(), 'fifa-gbi-data-extraction/package.json'));
 const { createClient } = require('@supabase/supabase-js');
 
@@ -153,6 +155,7 @@ for (const item of recommendations) {
   if (error) {
     throw new Error(`Failed to update ${item.recordId}: ${error.message}`);
   }
+  await finalizeTitleAbstractRecommendation(supabase, item.recordId, { quiet });
   if (!quiet) console.log(`updated ${item.recordId}: ${item.decision}`);
   appliedCount += 1;
 }
