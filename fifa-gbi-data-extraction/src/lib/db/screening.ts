@@ -88,6 +88,7 @@ export type TitleAbstractQueueFilter =
   | 'awaiting_ai_recommendation'
   | 'awaiting_other_reviewer'
   | 'needs_resolver'
+  | 'included'
   | 'ready_for_full_text'
   | 'excluded'
   | 'promoted_to_full_text'
@@ -369,6 +370,7 @@ const matchesTitleAbstractFilter = (
   if (filter === 'ai_systematic_review') return record.aiTargetTag === 'systematic_review';
   if (filter === 'ai_not_run') return record.aiStatus !== 'completed';
   if (filter === 'awaiting_other_reviewer') return status === 'awaiting_ai_recommendation';
+  if (filter === 'included') return status === 'ready_for_full_text' || status === 'promoted_to_full_text';
   return status === filter;
 };
 
@@ -494,6 +496,17 @@ export const listTitleAbstractQueuePage = async ({
   const safeOffset = Math.max(0, offset);
   const safeLimit = Math.min(150, Math.max(1, limit));
   const trimmedSearch = (search ?? '').trim();
+
+  if (filter === 'included') {
+    return listTitleAbstractQueuePageInMemory({
+      reviewerProfileId,
+      filter,
+      search: trimmedSearch,
+      offset: safeOffset,
+      limit: safeLimit,
+    });
+  }
+
   const rpcFilter = filter === 'awaiting_ai_recommendation' ? 'awaiting_other_reviewer' : filter;
   const supabase = supabaseClient();
 

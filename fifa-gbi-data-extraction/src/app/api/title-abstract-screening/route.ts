@@ -15,6 +15,7 @@ const FILTERS: TitleAbstractQueueFilter[] = [
   'awaiting_ai_recommendation',
   'awaiting_other_reviewer',
   'needs_resolver',
+  'included',
   'ready_for_full_text',
   'excluded',
   'promoted_to_full_text',

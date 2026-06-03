@@ -31,6 +31,7 @@ type QueueFilter =
   | 'awaiting_ai_recommendation'
   | 'awaiting_other_reviewer'
   | 'needs_resolver'
+  | 'included'
   | 'ready_for_full_text'
   | 'excluded'
   | 'promoted_to_full_text'
@@ -96,10 +97,10 @@ const EMPTY_COUNTS: QueueCounts = {
 const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
   pending: 'Pending',
   flagged: 'Flagged',
-  ready_for_full_text: 'Ready for full text',
+  ready_for_full_text: 'Included',
   excluded: 'Excluded',
   needs_resolver: 'Conflict',
-  promoted_to_full_text: 'Promoted',
+  promoted_to_full_text: 'Included',
 };
 
 const STATUS_LABELS: Record<TitleAbstractWorkStatus, string> = {
@@ -107,10 +108,10 @@ const STATUS_LABELS: Record<TitleAbstractWorkStatus, string> = {
   awaiting_ai_recommendation: 'Awaiting AI recommendation',
   awaiting_other_reviewer: 'Awaiting AI recommendation',
   flagged: 'Flagged',
-  ready_for_full_text: 'Ready for full text',
+  ready_for_full_text: 'Included',
   excluded: 'Excluded',
   needs_resolver: 'Conflict',
-  promoted_to_full_text: 'Promoted',
+  promoted_to_full_text: 'Included',
 };
 
 export function TitleAbstractScreeningClient({
@@ -152,7 +153,8 @@ export function TitleAbstractScreeningClient({
     recordsRef.current = records;
   }, [records]);
 
-  const completedCount = counts.ready + counts.excluded + counts.promoted;
+  const includedCount = counts.ready + counts.promoted;
+  const completedCount = includedCount + counts.excluded;
   const progressPercent = counts.all > 0 ? Math.round((completedCount / counts.all) * 100) : 0;
   const personalProgressPercent = counts.all > 0 ? Math.round((counts.myVotes / counts.all) * 100) : 0;
 
@@ -387,7 +389,7 @@ export function TitleAbstractScreeningClient({
             <ScreeningStat label="Total records" value={counts.all} caption="All imported references" tone="navy" />
             <ScreeningStat label="Needs my vote" value={counts.needsYourVote} caption="Awaiting your decision" tone="indigo" />
             <ScreeningStat label="Conflicts" value={counts.resolver} caption="Need a resolver" tone="amber" />
-            <ScreeningStat label="Promoted" value={counts.promoted} caption="Sent to full-text screening" tone="emerald" />
+            <ScreeningStat label="Included" value={includedCount} caption="Sent to full-text screening" tone="emerald" />
           </div>
 
           <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-3 shadow-sm ring-1 ring-slate-200/50 backdrop-blur sm:p-4">
@@ -506,11 +508,10 @@ export function TitleAbstractScreeningClient({
               <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => handleFilterChange('needs_your_vote')} accent="brand" />
               <FilterButton label="Awaiting AI" count={counts.awaitingOther} active={filter === 'awaiting_ai_recommendation' || filter === 'awaiting_other_reviewer'} onClick={() => handleFilterChange('awaiting_ai_recommendation')} />
               <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => handleFilterChange('needs_resolver')} accent="amber" />
-              <FilterButton label="Ready for full text" count={counts.ready} active={filter === 'ready_for_full_text'} onClick={() => handleFilterChange('ready_for_full_text')} accent="emerald" />
+              <FilterButton label="Included" count={includedCount} active={filter === 'included' || filter === 'ready_for_full_text' || filter === 'promoted_to_full_text'} onClick={() => handleFilterChange('included')} accent="emerald" />
               <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => handleFilterChange('excluded')} accent="rose" />
               <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => handleFilterChange('flagged')} accent="amber" />
               <FilterButton label="Missing abstract" count={counts.missingAbstract} active={filter === 'missing_abstract'} onClick={() => handleFilterChange('missing_abstract')} />
-              <FilterButton label="Promoted" count={counts.promoted} active={filter === 'promoted_to_full_text'} onClick={() => handleFilterChange('promoted_to_full_text')} accent="emerald" />
               <div className="my-3 border-t border-slate-200" />
               <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} accent="emerald" />
               <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} accent="rose" />
