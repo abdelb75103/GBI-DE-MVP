@@ -450,6 +450,156 @@ const runSelfTest = () => {
     throw new Error(`self-test failed: downstream RHI imaging consequence should exclude, got ${downstreamConsequence?.decision ?? 'null'}`);
   }
 
+  const publicSourceRtpRecord = {
+    id: 'r5',
+    assigned_study_id: 'S3676',
+    title: 'Do they really return to early? Investigating the causal effect of rehab time on injury risk after return to play in elite football.',
+    abstract: 'Previous time-loss injuries and match exposures of players currently playing in the European top leagues were collected from public sources and episodes (index injury-RTP-subsequent injury) constructed.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'mno',
+  };
+  const publicSourceRtp = preTriageRecord(publicSourceRtpRecord, 'self-test');
+  if (publicSourceRtp?.decision !== 'exclude') {
+    throw new Error(`self-test failed: public-source RTP/reinjury record should exclude, got ${publicSourceRtp?.decision ?? 'null'}`);
+  }
+
+  const economicRecord = {
+    id: 'r6',
+    assigned_study_id: 'S2016',
+    title: 'Return on Investment of Anterior Cruciate Ligament Injury-Prevention Programs in the United States.',
+    abstract: 'Cost-benefit analysis. Simulation of nationwide implementation of an injury-prevention program for US high school soccer players. Return on investment was calculated using the cost of ACL treatment prevented with IPP use and the cost of IPP implementation.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'pqr',
+  };
+  const economic = preTriageRecord(economicRecord, 'self-test');
+  if (economic?.decision !== 'exclude') {
+    throw new Error(`self-test failed: economic/ROI model should exclude, got ${economic?.decision ?? 'null'}`);
+  }
+
+  const performanceRecord = {
+    id: 'r7',
+    assigned_study_id: 'S1821',
+    title: 'Seasonal changes of body fat percentage in elite soccer players',
+    abstract: 'This longitudinal observational study assessed body fat percentage using skinfold measures at four time points. Excess body fat predisposes players to injury risk, but the study reports body fat percentage changes during the season.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'stu',
+  };
+  const performance = preTriageRecord(performanceRecord, 'self-test');
+  if (performance?.decision !== 'exclude') {
+    throw new Error(`self-test failed: performance/body-composition record should exclude, got ${performance?.decision ?? 'null'}`);
+  }
+
+  const policyEditorialRecord = {
+    id: 'r8',
+    assigned_study_id: 'S4672',
+    title: 'Concussion in football: the case for temporary concussion substitutions.',
+    abstract: null,
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'vwx',
+  };
+  const policyEditorial = preTriageRecord(policyEditorialRecord, 'self-test');
+  if (policyEditorial?.decision !== 'exclude') {
+    throw new Error(`self-test failed: policy/editorial title should exclude, got ${policyEditorial?.decision ?? 'null'}`);
+  }
+
+  const hipGroinPainRecord = {
+    id: 'r9',
+    assigned_study_id: 'S1273',
+    title: 'Association between Hip/Groin Pain and Hip ROM and Strength in Elite Female Soccer Players.',
+    abstract: 'Ten female elite soccer players with current longstanding hip and groin pain and twenty-five injury-free controls were included. Hip adductor and abductor isometric strength and range of motion were compared between groups.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'yz1',
+  };
+  const hipGroinPain = preTriageRecord(hipGroinPainRecord, 'self-test');
+  if (hipGroinPain?.decision !== 'exclude') {
+    throw new Error(`self-test failed: pain/ROM/strength case-control record should exclude, got ${hipGroinPain?.decision ?? 'null'}`);
+  }
+
+  const rtpScopingReviewRecord = {
+    id: 'r10',
+    assigned_study_id: 'S4657',
+    title: 'Which Criteria Determine Return-to-Play Decisions Following Hip and Groin Injuries in Soccer Players: A Scoping Review.',
+    abstract: 'This scoping review aimed to identify criteria used to guide return-to-play decisions following hip and groin injuries in soccer players, including clinical examination, strength assessment, functional testing and performance-based testing.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'rtp1',
+  };
+  const rtpScopingReview = preTriageRecord(rtpScopingReviewRecord, 'self-test');
+  if (rtpScopingReview?.decision !== 'exclude') {
+    throw new Error(`self-test failed: RTP criteria scoping review should exclude, got ${rtpScopingReview?.decision ?? 'null'}`);
+  }
+
+  const headAccelerationReviewRecord = {
+    id: 'r11',
+    assigned_study_id: 'S3910',
+    title: 'What Factors Influence Head Acceleration During a Purposeful Header in Soccer Players? A Systematic Review.',
+    abstract: 'Head acceleration is often used as a proxy measurement for concussion risk. This systematic review identified factors influencing head acceleration during a purposeful header in soccer players.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'head1',
+  };
+  const headAccelerationReview = preTriageRecord(headAccelerationReviewRecord, 'self-test');
+  if (headAccelerationReview?.decision !== 'exclude') {
+    throw new Error(`self-test failed: head-acceleration proxy systematic review should exclude, got ${headAccelerationReview?.decision ?? 'null'}`);
+  }
+
+  const covidTransfermarktRecord = {
+    id: 'r12',
+    assigned_study_id: 'S2229',
+    title: "COVID-19'un Avrupa Futbolu Üzerindeki Etkisi: Spor Yönetimi Perspektiflerinden Bir İnceleme.",
+    abstract: 'This study analyzed the effects of COVID-19 on European football from a sports management perspective using Transfermarkt data, case distributions, quarantine periods and missed matches.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'covid1',
+  };
+  const covidTransfermarkt = preTriageRecord(covidTransfermarktRecord, 'self-test');
+  if (covidTransfermarkt?.decision !== 'exclude') {
+    throw new Error(`self-test failed: Transfermarkt COVID management record should exclude, got ${covidTransfermarkt?.decision ?? 'null'}`);
+  }
+
+  const preventionProgramRecord = {
+    id: 'r13',
+    assigned_study_id: 'S1263',
+    title: 'Developing a data-driven multimodal injury and illness prevention programme in male professional football based on a risk management model: the IP2 NetWork.',
+    abstract: 'Workshops with medical and coaching staff from professional football clubs identified focus areas and priorities to develop team-specific injury and illness prevention programmes based on risk management.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'prev1',
+  };
+  const preventionProgram = preTriageRecord(preventionProgramRecord, 'self-test');
+  if (preventionProgram?.decision !== 'exclude') {
+    throw new Error(`self-test failed: prevention programme development without surveillance outcomes should exclude, got ${preventionProgram?.decision ?? 'null'}`);
+  }
+
+  const wellbeingRecord = {
+    id: 'r14',
+    assigned_study_id: 'S2435',
+    title: 'How passion shapes motivation and promotes well-being in young football players.',
+    abstract: 'A total of 390 male youth football players completed validated measures assessing harmonious and obsessive passion, motivation regulation, life satisfaction, and affect.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'well1',
+  };
+  const wellbeing = preTriageRecord(wellbeingRecord, 'self-test');
+  if (wellbeing?.decision !== 'include') {
+    throw new Error(`self-test failed: quantitative football well-being outcome should include, got ${wellbeing?.decision ?? 'null'}`);
+  }
+
   console.log('self-test passed');
 };
 

@@ -8,6 +8,9 @@ export const REASON_LABELS = {
   post_injury_functional_outcome_no_surveillance: 'Already-injured football/soccer population with post-injury functional, treatment, rehabilitation, or return-to-function outcomes rather than surveillance data.',
   retrospective_injury_history_no_surveillance: 'Cross-sectional retrospective injury-history association rather than prospective or repeated injury surveillance.',
   downstream_consequence_no_injury_surveillance: 'Downstream consequence, imaging, biomarker, or neurocognitive outcome rather than prevalence, incidence, or burden of actual injuries.',
+  economic_model_no_surveillance: 'Economic, cost-benefit, return-on-investment, or implementation model rather than a standalone injury, illness, or mental-health surveillance study.',
+  performance_or_biomechanics_no_surveillance: 'Performance, body-composition, biomechanics, strength, range-of-motion, or measurement record without extractable project outcome data.',
+  prevention_program_no_surveillance: 'Injury/illness prevention programme development or implementation record without extractable injury, illness, health-problem, or mental-health outcome surveillance.',
   attitude_survey_no_health_outcome_numbers: 'Attitude, knowledge, belief, awareness, perception, or questionnaire-method survey without direct injury, illness, or mental-health outcome numbers.',
   qualitative_reflection_no_surveillance: 'Qualitative reflection, experience, support, or demands record without direct injury, illness, mental-health, incidence, prevalence, burden, or exposure surveillance data.',
   wrong_sport_no_football_subgroup: 'Wrong sport or football code with no football/soccer/futsal/beach/para-football subgroup.',
@@ -51,6 +54,11 @@ export const sourceText = (record) => [
   record.url,
   record.pubmedId,
   record.pmcId,
+  record.metadata?.importRaw?.PT,
+  record.metadata?.importRaw?.KW,
+  record.metadata?.importRaw?.MH,
+  record.metadata?.importRaw?.OT,
+  record.metadata?.importRaw?.SO,
 ].filter(Boolean).join('\n');
 
 export const quoteAppearsInRecord = (record, quote) => {
@@ -80,6 +88,10 @@ export const firstAvailableQuote = (record, patterns = []) => {
 
 export const looksLikeSystematicReview = (record) => {
   const text = `${record.title ?? ''} ${record.abstract ?? ''}`;
+  const normalized = normalizeText(text);
+  const onlyRtpPerformanceOrProxy = /\b(return[- ]?to[- ]?(play|sport|performance)|rtp|rts|rehabilitation|rehab|strengthening exercise|motor control|head acceleration|head kinematic|heading|biomarker|cognitive function|brain changes?|mri|imaging)\b/.test(normalized)
+    && !/\b(incidence|prevalence|burden|epidemiolog|surveillance|exposure|denominator|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|reported all health problems|mental health|depression|anxiety|distress|burnout)\b/.test(normalized);
+  if (onlyRtpPerformanceOrProxy) return false;
   return /(systematic|scoping|umbrella|meta[- ]?analysis|evidence synthesis)/i.test(text)
     && /(soccer|football|futbol|fútbol|futsal|beach soccer|para football|blind football)/i.test(text)
     && /(injur|illness|concussion|hamstring|acl|return[- ]?to[- ]?(play|sport|competition)|epidemiolog|surveillance|health|pain)/i.test(text);
@@ -228,15 +240,19 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
   const surveillanceSignal = /\b(incidence|prevalence|burden|rate|rates|risk|epidemiolog|surveillance|count|counts|frequency|frequencies|exposure|denominator|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|person[- ]?time|ostr c|ostrc|prospective|cohort)\b/.test(text);
   const eligibleSurveillanceDataSignal = /\b(incidence|prevalence|burden|epidemiolog|surveillance|exposure|denominator|frequency|frequencies|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|person[- ]?time|per 1000|per 365 player-days|ostr c|ostrc|reported all health problems|weekly)\b/.test(text)
     || /\bprospective\b.{0,80}\b(cohort|surveillance|follow-up|follow up)\b/.test(text);
+  const injuryIllnessMentalHealthOutcomeSignal = /\b(injur\w*|illness|concussion|mtbi|head injur\w*|health problems?|mental health|psychological health|anxiety|depression|distress|burnout|wellbeing|well-being)\b/.test(text);
   const mentalHealthPossible = /\b(mental health|psychological|psychosocial|anxiety|depression|distress|stress|burnout|wellbeing|well-being|injury anxiety|sports injury anxiety)\b/.test(text);
+  const wellbeingOutcomePossible = /\b(life satisfaction|positive affect|negative affect|subjective well-being|subjective wellbeing|well-being|wellbeing)\b/.test(text)
+    && /\b(player|players|footballer|footballers|soccer)\b/.test(text);
   const attitudeOnlySurvey = /\b(attitude|attitudes|knowledge|belief|beliefs|awareness|perception|perceptions|acceptability|preference|preferences|questionnaire|survey)\b/.test(coreText)
     && !/\b(prevalence|incidence|burden|rate|rates|frequency|frequencies|count|counts|surveillance|exposure|denominator|injury anxiety|sports injury anxiety|mental health disorder|depression|anxiety symptoms|distress|burnout)\b/.test(text);
   const qualitativeReflection = /\b(reflection|reflections|experience|experiences|perspective|perspectives|interview|interviews|qualitative|support|demands|evolving demands|lived experience|stakeholder|narrative)\b/.test(coreText)
     && !/\b(prevalence|incidence|burden|rate|rates|frequency|frequencies|count|counts|surveillance|exposure|denominator|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|person[- ]?time|ostrc|reported all health problems|mental health disorder|depression|anxiety symptoms|distress|burnout|injury anxiety|sports injury anxiety)\b/.test(text);
   const systematicSignal = /\b(systematic review|scoping review|umbrella review|meta-analysis|metaanalysis|evidence synthesis)\b/.test(text);
   const protocol = /\b(protocol|study protocol|trial protocol)\b/.test(title);
-  const editorial = /\b(editorial|commentary|letter to the editor|opinion)\b/.test(title);
-  const publicMedia = /\b(transfermarkt|premierinjuries|public media|media reports?)\b/.test(coreText)
+  const editorial = /\b(editorial|commentary|letter to the editor|opinion|viewpoint|the case for)\b/.test(title)
+    || /\b(editorial|commentary|letter to the editor|opinion|viewpoint)\b/.test(text) && !eligibleSurveillanceDataSignal;
+  const publicMedia = /\b(transfermarkt|premierinjuries|public media|media reports?|public sources?)\b/.test(coreText)
     || /\bpublicly available\b/.test(coreText) && !/\b(exposure|rate|incidence|surveillance|prospective)\b/.test(coreText);
   const videoAnalysisNoExposure = /\b(video analysis|video-based|match footage|broadcast footage|publicly available|publicly obtained|public video|television broadcast)\b/.test(coreText)
     && /\b(potential head injury situation|potential head injury situations|head injury situation|head injury situations|head impact|visible signs|concussion substitution|medical assessment|aerial duel|aerial duels|event characteristic|event characteristics|characteristics)\b/.test(coreText)
@@ -245,6 +261,9 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
     && !mentalHealthPossible
     && !/\b(exposure|rate|incidence|player[- ]?hours|match[- ]?hours)\b/.test(text);
   const pureRtp = /\b(return to play|return-to-play|return to sport|return-to-sport|rtp|rts|rehabilitation|rehab|treatment|surgery|imaging|prognosis)\b/.test(title)
+    && !eligibleSurveillanceDataSignal;
+  const pureRtpReviewOrSurvey = /\b(return[- ]?to[- ]?(play|sport|performance)|rtp|rts|rehabilitation|rehab|strengthening exercise|motor control|hip and groin|hamstring)\b/.test(coreText)
+    && /\b(scoping review|systematic review|survey|criteria|criterion|practice|practices|decision-making|decision making|exercise|functional testing|strength assessment|clinical examination|performance-based testing)\b/.test(coreText)
     && !eligibleSurveillanceDataSignal;
   const alreadyInjuredSelection = /\b(previously injured|prior injur|history of injur|after injury|post-injury|postinjury|injured players|injured footballers|injured soccer players|acl reconstruction|aclr|anterior cruciate ligament reconstruction|postoperative|postoperatively|surgery|surgeries|surgical|graft failure|rerupture|re-rupture)\b/.test(coreText)
     || /\b(players|athletes|footballers|soccer players|participants|patients)\s+with\s+[^.]{0,100}\b(fractures?|injur(?:y|ies)|sprains?|strains?|ruptures?|tears?|concussions?|acl|pain)\b/.test(coreText)
@@ -260,9 +279,17 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
   const injuryEpidemiologyDataSignal = /\b(incidence|prevalence|epidemiolog|surveillance|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|person[- ]?time|per 1000|per 365 player-days|reported all health problems|weekly)\b/.test(text)
     || /\b(injur\w*|illness|concussion|mtbi|head injur\w*|health problems?)\b.{0,80}\b(burden|rate|rates)\b/.test(text)
     || /\b(burden|rate|rates)\b.{0,80}\b(injur\w*|illness|concussion|mtbi|head injur\w*|health problems?)\b/.test(text);
-  const downstreamConsequenceNoSurveillance = /\b(white matter hyperintensit|wmh\b|flair|mri|imaging|brain scan|neuroimaging|biomarker|p-tau|chronic traumatic encephalopathy|cte\b|lesion|lesions|gray matter|grey matter|neurocognitive|cognitive function|behavioral|behavioural|emotional|diagnostic consensus|neuroradiolog|alzheimer)\b/.test(coreText)
-    && /\b(repetitive head impact|rhi\b|remote history|history of exposure|long-term|long term|years of .*play|contact sports?|exposed to rhi|downstream|consequence|consequences)\b/.test(coreText)
+  const downstreamConsequenceNoSurveillance = /\b(white matter hyperintensit|wmh\b|flair|mri|imaging|brain scan|neuroimaging|biomarker|blood biomarkers?|troponin|p-tau|chronic traumatic encephalopathy|cte\b|lesion|lesions|gray matter|grey matter|cortical thickness|functional connectivity|neurocognitive|cognitive function|behavioral|behavioural|emotional|head acceleration|head kinematic|heading protocol|purposeful header|diagnostic consensus|neuroradiolog|alzheimer|parkinsonism|parkinson|neurodegenerative|substantia nigra|lewy body|tauopathy|neuropathology|neurological changes|corneal blink reflex|subconcussive)\b/.test(coreText)
+    && /\b(repetitive head impact|rhi\b|remote history|history of exposure|long-term|long term|years of .*play|contact sports?|exposed to rhi|downstream|consequence|consequences|heading|header|soccer game|cardiovascular risk|myocardial injury)\b/.test(coreText)
     && !injuryEpidemiologyDataSignal;
+  const economicOnlyNoSurveillance = /\b(return on investment|cost[- ]?benefit|cost[- ]?effectiveness|economic|financial|net monetary benefit|medical cost savings?|simulation|decision tree|health system perspective|payer|payers|profitability)\b/.test(coreText)
+    && !/\b(prospective|surveillance|incidence|prevalence|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|reported all health problems|weekly)\b/.test(text);
+  const performanceOrBiomechanicsNoSurveillance = /\b(body fat|body composition|skinfold|fitness|physical performance|biomechanic|head acceleration|head kinematic|purposeful header|range of motion|rom\b|strength|isometric|dynamometer|adductor|abductor|hip joint|bent knee fall-out|bkfo|measurement|anthropometric)\b/.test(coreText)
+    && !eligibleSurveillanceDataSignal;
+  const preventionProgramNoSurveillance = /\b(prevention programme|prevention program|injury and illness prevention|risk management model|focus areas|workshops|stakeholders|implementation)\b/.test(coreText)
+    && !/\b(incidence|prevalence|burden|rate|rates|player[- ]?hours|match[- ]?hours|athlete[- ]?exposures|reported all health problems|surveillance results)\b/.test(text);
+  const publicSourceRtpNoSurveillance = /\b(public sources?|publicly available|transfermarkt|premierinjuries)\b/.test(coreText)
+    && /\b(return[- ]?to[- ]?play|rtp|rehab(?:ilitation)? time|index injury|subsequent injury|recurrence|reinjury|re-injury)\b/.test(coreText);
 
   if (wrongFootballCode) {
     const quote = firstAvailableQuote(record, [/nfl|national football league|american football|gridiron|canadian football|australian rules|australian football|afl|gaelic football|rugby/i]);
@@ -279,8 +306,8 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
     return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'non_competitive_football', confidence: 0.82, ...quote }, modelLabel);
   }
 
-  if (publicMedia || registerOnly) {
-    const reasonCode = publicMedia ? 'public_media_dataset' : 'register_or_hospital_only';
+  if (publicMedia || publicSourceRtpNoSurveillance || registerOnly) {
+    const reasonCode = (publicMedia || publicSourceRtpNoSurveillance) ? 'public_media_dataset' : 'register_or_hospital_only';
     const quote = firstAvailableQuote(record, [/transfermarkt|premierinjuries|publicly available|register|registry|hospital|proportion|number of injuries|counts only/i]);
     return deterministicRecommendation(record, { decision: 'exclude', reasonCode, confidence: 0.78, ...quote }, modelLabel);
   }
@@ -295,9 +322,24 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
     return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'retrospective_injury_history_no_surveillance', confidence: 0.84, ...quote }, modelLabel);
   }
 
-  if (downstreamConsequenceNoSurveillance && soccerSignal) {
+  if (downstreamConsequenceNoSurveillance) {
     const quote = firstAvailableQuote(record, [/white matter hyperintensit|wmh|flair|mri|neuroimaging|biomarker|p-tau|chronic traumatic encephalopathy|repetitive head impact|rhi|neurocognitive|behavioral|behavioural/i]);
     return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'downstream_consequence_no_injury_surveillance', confidence: 0.84, ...quote }, modelLabel);
+  }
+
+  if (economicOnlyNoSurveillance && soccerSignal) {
+    const quote = firstAvailableQuote(record, [/return on investment|cost[- ]?benefit|cost[- ]?effectiveness|economic|financial|net monetary benefit|medical cost savings?|simulation|health system perspective|payer/i]);
+    return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'economic_model_no_surveillance', confidence: 0.86, ...quote }, modelLabel);
+  }
+
+  if (performanceOrBiomechanicsNoSurveillance && soccerSignal) {
+    const quote = firstAvailableQuote(record, [/body fat|body composition|skinfold|fitness|physical performance|biomechanic|head acceleration|head kinematic|purposeful header|range of motion|rom|strength|isometric|dynamometer|adductor|abductor|hip joint|bent knee fall-out|bkfo/i]);
+    return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'performance_or_biomechanics_no_surveillance', confidence: 0.84, ...quote }, modelLabel);
+  }
+
+  if (preventionProgramNoSurveillance && soccerSignal) {
+    const quote = firstAvailableQuote(record, [/prevention programme|prevention program|injury and illness prevention|risk management model|focus areas|workshops|stakeholders|implementation/i]);
+    return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'prevention_program_no_surveillance', confidence: 0.8, ...quote }, modelLabel);
   }
 
   if (postInjuryFunctionalOutcome && soccerSignal) {
@@ -305,8 +347,8 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
     return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'post_injury_functional_outcome_no_surveillance', confidence: 0.82, ...quote }, modelLabel);
   }
 
-  if (pureRtp && soccerSignal) {
-    const quote = firstAvailableQuote(record, [/return to play|return-to-play|return to sport|return-to-sport|rehabilitation|rehab|treatment|surgery|imaging|prognosis/i]);
+  if ((pureRtp || pureRtpReviewOrSurvey) && soccerSignal) {
+    const quote = firstAvailableQuote(record, [/return to play|return-to-play|return to sport|return-to-sport|return to performance|rehabilitation|rehab|treatment|surgery|imaging|prognosis|criteria|survey|scoping review|systematic review/i]);
     return deterministicRecommendation(record, { decision: 'exclude', reasonCode: 'pure_return_to_play_no_surveillance', confidence: 0.78, ...quote }, modelLabel);
   }
 
@@ -342,7 +384,7 @@ export const preTriageRecord = (record, modelLabel = 'codex-cli') => {
     }, modelLabel);
   }
 
-  if (soccerSignal && mentalHealthPossible) {
+  if (soccerSignal && (mentalHealthPossible || wellbeingOutcomePossible)) {
     return deterministicRecommendation(record, {
       decision: 'include',
       reasonCode: 'mental_health_possible_quantitative',

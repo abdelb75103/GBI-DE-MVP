@@ -360,7 +360,7 @@ export function TitleAbstractScreeningClient({
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6">
+    <div className="-mx-4 -my-8 flex w-[calc(100%+2rem)] max-w-none flex-col gap-6 md:mx-auto md:my-0 md:w-full md:max-w-screen-2xl">
       <section className="relative hidden overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 md:block lg:p-10">
         <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
         <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
@@ -434,7 +434,7 @@ export function TitleAbstractScreeningClient({
       {queueError ? <Notice tone="error" message={queueError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="relative grid h-[calc(100svh-7.5rem)] min-h-[520px] overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur md:h-auto md:min-h-0 lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
+      <section className="relative grid h-[calc(100svh-4.25rem)] min-h-[520px] overflow-hidden border-y border-slate-200/70 bg-white/85 md:h-auto md:min-h-0 md:rounded-3xl md:border md:shadow-xl md:ring-1 md:ring-slate-200/60 md:backdrop-blur lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
         <div className="pointer-events-none absolute inset-x-0 top-3 z-20 flex items-start justify-between px-3 md:hidden">
           <MobileDrawerButton
             label="Open references"
