@@ -43,6 +43,7 @@ type QueueFilter =
   | 'ai_not_run';
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+type MobileDrawer = 'references' | 'filters' | null;
 type QueueCounts = {
   all: number;
   myVotes: number;
@@ -130,6 +131,7 @@ export function TitleAbstractScreeningClient({
   const [search, setSearch] = useState('');
   const [isLoadingQueue, setIsLoadingQueue] = useState(false);
   const [queueError, setQueueError] = useState<string | null>(null);
+  const [mobileDrawer, setMobileDrawer] = useState<MobileDrawer>(null);
   const [decision, setDecision] = useState<TitleAbstractDecision | null>(null);
   const [decisionAction, setDecisionAction] = useState<TitleAbstractDecisionAction>('reviewer_vote');
   const [note, setNote] = useState('');
@@ -170,6 +172,7 @@ export function TitleAbstractScreeningClient({
 
   const handleSelectRecord = useCallback((id: string) => {
     setSelectedId(id);
+    setMobileDrawer(null);
   }, []);
 
   const fetchQueuePage = useCallback(async (offset: number, replace: boolean, signal?: AbortSignal) => {
@@ -238,6 +241,7 @@ export function TitleAbstractScreeningClient({
   };
 
   const handleFilterChange = (nextFilter: QueueFilter) => {
+    setMobileDrawer(null);
     if (nextFilter === filter) return;
     setFilter(nextFilter);
     setSelectedId('');
@@ -254,6 +258,17 @@ export function TitleAbstractScreeningClient({
       loadMoreRecords();
     }
   };
+
+  useEffect(() => {
+    if (!mobileDrawer) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileDrawer(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileDrawer]);
 
   const handleImport = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -346,7 +361,7 @@ export function TitleAbstractScreeningClient({
 
   return (
     <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
+      <section className="relative hidden overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 md:block lg:p-10">
         <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
         <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
         <div className="relative z-10 flex flex-col gap-5">
@@ -419,12 +434,51 @@ export function TitleAbstractScreeningClient({
       {queueError ? <Notice tone="error" message={queueError} /> : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="grid overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
-        <aside className="flex max-h-[70vh] min-h-[420px] min-w-0 flex-col border-b border-slate-200/70 bg-slate-50/60 lg:max-h-none lg:min-h-0 lg:border-b-0 lg:border-r">
+      <section className="relative grid h-[calc(100svh-7.5rem)] min-h-[520px] overflow-hidden rounded-3xl border border-slate-200/70 bg-white/85 shadow-xl ring-1 ring-slate-200/60 backdrop-blur md:h-auto md:min-h-0 lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
+        <div className="pointer-events-none absolute inset-x-0 top-3 z-20 flex items-start justify-between px-3 md:hidden">
+          <MobileDrawerButton
+            label="Open references"
+            onClick={() => setMobileDrawer('references')}
+          >
+            <ChevronRightIcon />
+          </MobileDrawerButton>
+          <MobileDrawerButton
+            label="Open filters"
+            onClick={() => setMobileDrawer('filters')}
+          >
+            <MenuIcon />
+          </MobileDrawerButton>
+        </div>
+
+        {mobileDrawer ? (
+          <button
+            type="button"
+            aria-label="Close mobile panel"
+            className="absolute inset-0 z-40 bg-slate-950/45 backdrop-blur-sm md:hidden"
+            onClick={() => setMobileDrawer(null)}
+          />
+        ) : null}
+
+        <aside
+          aria-label="References"
+          className={`absolute inset-y-0 left-0 z-50 flex h-full w-[86vw] max-w-[340px] min-w-0 flex-col border-r border-slate-200/70 bg-slate-50/95 shadow-2xl transition-transform duration-300 ease-out md:static md:z-auto md:h-auto md:max-h-[70vh] md:min-h-[420px] md:w-auto md:max-w-none md:translate-x-0 md:border-b md:border-r-0 md:bg-slate-50/60 md:shadow-none lg:max-h-none lg:min-h-0 lg:border-b-0 lg:border-r ${
+            mobileDrawer === 'references' ? 'translate-x-0' : '-translate-x-[calc(100%+1rem)]'
+          }`}
+        >
           <div className="border-b border-slate-200 px-4 py-4">
             <div className="flex items-center justify-between gap-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">References</p>
-              <span className="rounded-full bg-slate-900 px-2 py-0.5 text-[11px] font-semibold text-white">{counts.all}</span>
+              <div className="flex items-center gap-2">
+                <span className="rounded-full bg-slate-900 px-2 py-0.5 text-[11px] font-semibold text-white">{counts.all}</span>
+                <button
+                  type="button"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm md:hidden"
+                  aria-label="Close references"
+                  onClick={() => setMobileDrawer(null)}
+                >
+                  <CloseIcon />
+                </button>
+              </div>
             </div>
             <div className="relative mt-3">
               <span aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
@@ -470,7 +524,7 @@ export function TitleAbstractScreeningClient({
           </div>
         </aside>
 
-        <main className="flex max-h-[75vh] min-h-[520px] min-w-0 flex-col overflow-hidden bg-white lg:max-h-none lg:min-h-0">
+        <main className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden bg-white md:max-h-[75vh] md:min-h-[520px] lg:max-h-none lg:min-h-0">
           {selected ? (
             <ReferenceDetail
               key={selected.id}
@@ -498,9 +552,22 @@ export function TitleAbstractScreeningClient({
           )}
         </main>
 
-        <aside className="flex max-h-[60vh] min-h-[300px] min-w-0 flex-col border-t border-slate-200/70 bg-slate-50/40 lg:max-h-none lg:min-h-0 lg:border-l lg:border-t-0">
-          <div className="border-b border-slate-200/70 px-5 py-4">
+        <aside
+          aria-label="Filters"
+          className={`absolute inset-y-0 right-0 z-50 flex h-full w-[82vw] max-w-[300px] min-w-0 flex-col border-l border-slate-200/70 bg-slate-50/95 shadow-2xl transition-transform duration-300 ease-out md:static md:z-auto md:h-auto md:max-h-[60vh] md:min-h-[300px] md:w-auto md:max-w-none md:translate-x-0 md:border-l-0 md:border-t md:bg-slate-50/40 md:shadow-none lg:max-h-none lg:min-h-0 lg:border-l lg:border-t-0 ${
+            mobileDrawer === 'filters' ? 'translate-x-0' : 'translate-x-[calc(100%+1rem)]'
+          }`}
+        >
+          <div className="flex items-center justify-between gap-3 border-b border-slate-200/70 px-5 py-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Filters</p>
+            <button
+              type="button"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm md:hidden"
+              aria-label="Close filters"
+              onClick={() => setMobileDrawer(null)}
+            >
+              <CloseIcon />
+            </button>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
             <div className="space-y-1">
@@ -629,7 +696,7 @@ function ReferenceDetail({
 
   return (
     <article ref={detailRef} className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-5 py-7 sm:px-8 sm:py-8 xl:px-10">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-5 pb-7 pt-16 sm:px-8 sm:py-8 xl:px-10">
         <header className="pb-2">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-[#0b3a70] px-3 py-1 text-xs font-bold tracking-wide text-white">{record.assignedStudyId}</span>
@@ -733,6 +800,27 @@ function SectionEyebrow({ children }: { children: ReactNode }) {
       <span aria-hidden className="h-px w-5 bg-slate-300" />
       {children}
     </p>
+  );
+}
+
+function MobileDrawerButton({
+  label,
+  onClick,
+  children,
+}: {
+  label: string;
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/80 bg-white/95 text-[#0b3a70] shadow-lg shadow-slate-900/10 ring-1 ring-white/80 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0b3a70]/30 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/25"
+    >
+      {children}
+    </button>
   );
 }
 
@@ -1309,6 +1397,33 @@ function SearchIcon() {
     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <circle cx="7" cy="7" r="5" />
       <path d="m13.5 13.5-3-3" />
+    </svg>
+  );
+}
+
+function ChevronRightIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M6 3.5 10.5 8 6 12.5" />
+    </svg>
+  );
+}
+
+function MenuIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden>
+      <path d="M3 4h10" />
+      <path d="M3 8h10" />
+      <path d="M3 12h10" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden>
+      <path d="M4 4 12 12" />
+      <path d="M12 4 4 12" />
     </svg>
   );
 }
