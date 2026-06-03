@@ -14,7 +14,7 @@ import {
   type TitleAbstractResolution,
   type TitleAbstractWorkStatus,
 } from '@/lib/screening/title-abstract-decisions';
-import { removeCompletedTitleAbstractRecord } from '@/lib/screening/title-abstract-navigation';
+import { advanceAfterTitleAbstractDecision } from '@/lib/screening/title-abstract-navigation';
 import { splitStructuredAbstract } from '@/lib/screening/title-abstract-sections';
 import type { ScreeningRecord } from '@/lib/types';
 
@@ -133,6 +133,7 @@ export function TitleAbstractScreeningClient({
   const [flagReason, setFlagReason] = useState('');
   const [isFlagReasonModalOpen, setIsFlagReasonModalOpen] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
+  const [detailScrollVersion, setDetailScrollVersion] = useState(0);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const queueInitializedRef = useRef(false);
@@ -314,9 +315,12 @@ export function TitleAbstractScreeningClient({
         return;
       }
       const savedRecord = payload.record;
-      const nextQueue = removeCompletedTitleAbstractRecord(recordsRef.current, currentRecordId);
+      const nextQueue = advanceAfterTitleAbstractDecision(recordsRef.current, currentRecordId);
       setRecords(nextQueue.records);
       setSelectedId(nextQueue.selectedId);
+      if (nextQueue.shouldScrollSelectedRecordToTop) {
+        setDetailScrollVersion((current) => current + 1);
+      }
       setCounts((current) => adjustTitleAbstractQueueCountsAfterDecision(current, recordBeingSaved, savedRecord, currentReviewerId));
       setFilteredTotal((current) => Math.max(0, current - 1));
       setNextOffset((current) => Math.max(0, current - 1));
@@ -467,6 +471,7 @@ export function TitleAbstractScreeningClient({
               decision={decision}
               decisionAction={decisionAction}
               note={note}
+              scrollVersion={detailScrollVersion}
               isPending={isPending}
               onChangeDecision={setDecision}
               onChangeDecisionAction={setDecisionAction}
@@ -569,6 +574,7 @@ function ReferenceDetail({
   decision,
   decisionAction,
   note,
+  scrollVersion,
   isPending,
   onChangeDecision,
   onChangeDecisionAction,
@@ -581,6 +587,7 @@ function ReferenceDetail({
   decision: TitleAbstractDecision | null;
   decisionAction: TitleAbstractDecisionAction;
   note: string;
+  scrollVersion: number;
   isPending: boolean;
   onChangeDecision: (next: TitleAbstractDecision | null) => void;
   onChangeDecisionAction: (next: TitleAbstractDecisionAction) => void;
@@ -588,6 +595,7 @@ function ReferenceDetail({
   onRequestFlag: () => void;
   onSaveDecision: (decision: TitleAbstractDecision) => void;
 }) {
+  const detailRef = useRef<HTMLElement | null>(null);
   const decisions = getTitleAbstractDecisions(record);
   const metadata = getTitleAbstractMetadata(record);
   const linkedFullTextId = typeof metadata.titleAbstractPromotedRecordId === 'string'
@@ -598,8 +606,14 @@ function ReferenceDetail({
   const canResolve = resolution === 'needs_resolver';
   const abstractSections = splitStructuredAbstract(record.abstract);
 
+  useEffect(() => {
+    if (scrollVersion > 0) {
+      detailRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [scrollVersion]);
+
   return (
-    <article className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">
+    <article ref={detailRef} className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-5 py-7 sm:px-8 sm:py-8 xl:px-10">
         <header className="pb-2">
           <div className="flex flex-wrap items-center gap-2">

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import {
+  advanceAfterTitleAbstractDecision,
   getNextTitleAbstractRecordId,
   removeCompletedTitleAbstractRecord,
 } from '../src/lib/screening/title-abstract-navigation.ts';
@@ -34,4 +35,22 @@ test('returns an empty selection after removing the final record', () => {
 
   assert.equal(result.selectedId, '');
   assert.deepEqual(result.records.map((record) => record.id), ['record-1']);
+});
+
+test('requests a top scroll when a decision advances to another loaded record', () => {
+  const records = [{ id: 'record-1' }, { id: 'record-2' }, { id: 'record-3' }];
+
+  const result = advanceAfterTitleAbstractDecision(records, 'record-1');
+
+  assert.equal(result.selectedId, 'record-2');
+  assert.equal(result.shouldScrollSelectedRecordToTop, true);
+});
+
+test('does not request a top scroll when a decision leaves no next record selected', () => {
+  const records = [{ id: 'record-1' }];
+
+  const result = advanceAfterTitleAbstractDecision(records, 'record-1');
+
+  assert.equal(result.selectedId, '');
+  assert.equal(result.shouldScrollSelectedRecordToTop, false);
 });

@@ -21,3 +21,15 @@ export const removeCompletedTitleAbstractRecord = <T extends { id: string }>(
 
   return { records: remaining, selectedId: nextSelectedId };
 };
+
+export const advanceAfterTitleAbstractDecision = <T extends { id: string }>(
+  records: T[],
+  completedRecordId: string,
+): { records: T[]; selectedId: string; shouldScrollSelectedRecordToTop: boolean } => {
+  const nextQueue = removeCompletedTitleAbstractRecord(records, completedRecordId);
+
+  return {
+    ...nextQueue,
+    shouldScrollSelectedRecordToTop: Boolean(nextQueue.selectedId),
+  };
+};
