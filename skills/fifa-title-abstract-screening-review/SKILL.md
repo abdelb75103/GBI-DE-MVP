@@ -1,6 +1,6 @@
 # FIFA Title/Abstract Screening Review
 
-Use this skill when reviewing title/abstract screening records for FIFA GBI before full-text retrieval. It produces advisory AI recommendations only; reviewer votes remain decisive.
+Use this skill when reviewing title/abstract screening records for FIFA GBI before full-text retrieval. It writes the AI recommendation used as the first title/abstract decision; one human reviewer vote is the second decision.
 
 ## Model Rule
 
@@ -87,9 +87,12 @@ Use this only for small audits or recovery from malformed model output.
 - `include`: likely or possibly relevant. Provide a short rationale. Do not provide a source quote.
 - `include` with `targetTag: "systematic_review"`: systematic review, scoping review, evidence synthesis, or meta-analysis relevant to football/soccer injury or illness, kept for Abdel's systematic-review handling rather than standard primary extraction.
 - `exclude`: clearly ineligible. Provide a concise exclusion reason plus a direct quote from the title, abstract, DOI/source metadata, or citation fields that supports exclusion.
+- Self-reported data are not automatically ineligible. Include or leave undecided when the record plausibly uses prospective or repeated player-reported injury/health surveillance, such as weekly OSTRC-style reporting. Exclude one-time retrospective injury-history recall or cross-sectional injury-history association studies when they lack eligible surveillance, incidence, prevalence, burden, rate, or exposure-denominator data.
+- Mixed-sport records are not automatically ineligible when football/soccer subgroup data may be extractable. If unsure, let them proceed. Exclude downstream consequence records, such as imaging, biomarker, neurocognitive, behavioral, or long-term sequelae studies, when they do not report prevalence, incidence, burden, or rates of actual injuries/illnesses.
+- Exclude treatment, surgery, rehabilitation, return-to-play, or return-to-function cohorts that select players because they already have an injury and only report clinical, functional, complication, healing, or RTP outcomes.
 - Missing abstract: default to `undecided` unless the title/citation alone clearly excludes it.
 - Title-only decisions are allowed when the title/citation is decisive. For example, clear American football or another wrong sport can be excluded, and a clear football/soccer injury surveillance title can be included or left `undecided` depending on how much evidence is present.
-- AI recommendations never create reviewer votes, never resolve conflicts, and never promote records.
+- AI recommendations never create human reviewer votes. When the app/database migration for AI+human title/abstract screening is applied, an AI recommendation can finalize a record that already has one human vote: matching include decisions promote to full-text screening, matching exclude decisions exclude, and disagreement creates a conflict.
 
 ## Validation and Audit
 

@@ -27,9 +27,11 @@ import {
   applyTitleAbstractDecision,
   getTitleAbstractDecisions,
   getTitleAbstractMetadata,
+  getTitleAbstractResolution,
   getTitleAbstractWorkStatus,
   type TitleAbstractDecision,
   type TitleAbstractDecisionAction,
+  type TitleAbstractResolution,
 } from '@/lib/screening/title-abstract-decisions';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
@@ -83,6 +85,7 @@ const TITLE_ABSTRACT_QUEUE_SELECT = [
 export type TitleAbstractQueueFilter =
   | 'all'
   | 'needs_your_vote'
+  | 'awaiting_ai_recommendation'
   | 'awaiting_other_reviewer'
   | 'needs_resolver'
   | 'ready_for_full_text'
@@ -365,6 +368,7 @@ const matchesTitleAbstractFilter = (
   if (filter === 'ai_exclude') return record.aiSuggestedDecision === 'exclude';
   if (filter === 'ai_systematic_review') return record.aiTargetTag === 'systematic_review';
   if (filter === 'ai_not_run') return record.aiStatus !== 'completed';
+  if (filter === 'awaiting_other_reviewer') return status === 'awaiting_ai_recommendation';
   return status === filter;
 };
 
@@ -381,7 +385,7 @@ const getTitleAbstractQueueCounts = (
       )
     ).length,
     needsYourVote: statuses.filter((status) => status === 'needs_your_vote').length,
-    awaitingOther: statuses.filter((status) => status === 'awaiting_other_reviewer').length,
+    awaitingOther: statuses.filter((status) => status === 'awaiting_ai_recommendation' || status === 'awaiting_other_reviewer').length,
     resolver: statuses.filter((status) => status === 'needs_resolver').length,
     ready: statuses.filter((status) => status === 'ready_for_full_text').length,
     excluded: statuses.filter((status) => status === 'excluded').length,
@@ -490,20 +494,21 @@ export const listTitleAbstractQueuePage = async ({
   const safeOffset = Math.max(0, offset);
   const safeLimit = Math.min(150, Math.max(1, limit));
   const trimmedSearch = (search ?? '').trim();
+  const rpcFilter = filter === 'awaiting_ai_recommendation' ? 'awaiting_other_reviewer' : filter;
   const supabase = supabaseClient();
 
   // Fast path: pagination + search run in Postgres; counts come from the cache.
   const [listResult, totalResult] = await Promise.all([
     supabase.rpc('list_title_abstract_queue', {
       p_reviewer: reviewerProfileId,
-      p_filter: filter,
+      p_filter: rpcFilter,
       p_search: trimmedSearch,
       p_offset: safeOffset,
       p_limit: safeLimit,
     }),
     supabase.rpc('count_title_abstract_queue', {
       p_reviewer: reviewerProfileId,
-      p_filter: filter,
+      p_filter: rpcFilter,
       p_search: trimmedSearch,
     }),
   ]);
@@ -690,6 +695,10 @@ export const updateScreeningAiSuggestion = async (
   }
 
   const [record] = await mapRows([data as ScreeningRecordRow]);
+  if (record.stage === 'title_abstract' && update.status === 'completed' && getTitleAbstractDecisions(record).length > 0) {
+    const finalized = await finalizeTitleAbstractRecord(record, getTitleAbstractResolution(record), payload.ai_reviewed_at ?? undefined);
+    return finalized.record;
+  }
   return record;
 };
 
@@ -719,6 +728,66 @@ export const updateScreeningRecordMetadata = async (
 
   const [record] = await mapRows([data as ScreeningRecordRow]);
   return record;
+};
+
+const getTitleAbstractFinalDecisionEntry = (
+  record: ScreeningRecord,
+  resolution: TitleAbstractResolution,
+) => {
+  const decisions = getTitleAbstractDecisions(record);
+  const resolverDecision = decisions.find((decision) => decision.action === 'resolver_decision');
+  if (resolverDecision && resolution !== 'pending') return resolverDecision;
+  return decisions.find((decision) => decision.action !== 'resolver_decision');
+};
+
+const getTitleAbstractManualDecision = (resolution: TitleAbstractResolution): ScreeningDecision | null =>
+  resolution === 'ready_for_full_text'
+    ? 'include'
+    : resolution === 'excluded'
+      ? 'exclude'
+      : null;
+
+const getTitleAbstractExclusionReason = (record: ScreeningRecord) => {
+  const exclusionNotes = getTitleAbstractDecisions(record)
+    .filter((decision) => decision.decision === 'exclude')
+    .map((decision) => decision.note?.trim())
+    .filter((note): note is string => Boolean(note));
+
+  return Array.from(new Set(exclusionNotes)).join(' / ') || 'Excluded at title/abstract screening';
+};
+
+const finalizeTitleAbstractRecord = async (
+  record: ScreeningRecord,
+  resolution: TitleAbstractResolution = getTitleAbstractResolution(record),
+  decidedAt: string = new Date().toISOString(),
+): Promise<{ record: ScreeningRecord; duplicateWarnings: PromotionDuplicateWarning[] }> => {
+  const finalDecisionEntry = getTitleAbstractFinalDecisionEntry(record, resolution);
+  const manualDecision = getTitleAbstractManualDecision(resolution);
+  const finalProfileId = finalDecisionEntry?.reviewerProfileId ?? record.manualDecidedBy ?? record.createdBy ?? null;
+
+  const updated = await updateScreeningRecordMetadata(
+    record.id,
+    {
+      ...getTitleAbstractMetadata(record),
+      titleAbstractResolution: resolution,
+    },
+    {
+      manual_decision: manualDecision,
+      manual_reason: manualDecision === 'exclude' ? getTitleAbstractExclusionReason(record) : null,
+      manual_decided_by: finalProfileId,
+      manual_decided_at: finalDecisionEntry ? decidedAt : null,
+    },
+  );
+
+  if (resolution === 'ready_for_full_text' && finalProfileId) {
+    const promoted = await promoteTitleAbstractRecord(updated.id, finalProfileId);
+    return {
+      record: promoted.record,
+      duplicateWarnings: promoted.duplicateWarnings,
+    };
+  }
+
+  return { record: updated, duplicateWarnings: [] };
 };
 
 export const markScreeningAiRunning = async (ids: string[]): Promise<void> => {
@@ -841,40 +910,14 @@ export const saveTitleAbstractDecision = async (
     note: input.note,
   });
 
-  const manualDecision = next.resolution === 'ready_for_full_text'
-    ? 'include'
-    : next.resolution === 'excluded'
-      ? 'exclude'
-      : null;
-  const exclusionNotes = next.decisions
-    .filter((decision) => decision.decision === 'exclude')
-    .map((decision) => decision.note?.trim())
-    .filter((note): note is string => Boolean(note));
-
-  const updated = await updateScreeningRecordMetadata(
-    id,
-    {
+  const shadowRecord: ScreeningRecord = {
+    ...record,
+    metadata: {
       ...getTitleAbstractMetadata(record),
       titleAbstractDecisions: next.decisions,
-      titleAbstractResolution: next.resolution,
     },
-    {
-      manual_decision: manualDecision,
-      manual_reason: manualDecision === 'exclude' ? Array.from(new Set(exclusionNotes)).join(' / ') || 'Excluded at title/abstract screening' : null,
-      manual_decided_by: input.reviewerProfileId,
-      manual_decided_at: next.updatedAt,
-    },
-  );
-
-  if (next.resolution === 'ready_for_full_text') {
-    const promoted = await promoteTitleAbstractRecord(updated.id, input.reviewerProfileId);
-    return {
-      record: promoted.record,
-      duplicateWarnings: promoted.duplicateWarnings,
-    };
-  }
-
-  return { record: updated, duplicateWarnings: [] };
+  };
+  return finalizeTitleAbstractRecord(shadowRecord, next.resolution, next.updatedAt);
 };
 
 export const promoteTitleAbstractRecord = async (

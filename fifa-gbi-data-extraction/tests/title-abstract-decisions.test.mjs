@@ -6,8 +6,12 @@ import {
   getTitleAbstractWorkStatus,
 } from '../src/lib/screening/title-abstract-decisions.ts';
 
-const recordWithDecisions = (decisions) => ({
+const recordWithDecisions = (decisions, overrides = {}) => ({
+  aiStatus: 'not_run',
+  aiSuggestedDecision: null,
+  ...overrides,
   metadata: {
+    ...(overrides.metadata ?? {}),
     titleAbstractDecisions: decisions,
   },
 });
@@ -28,11 +32,66 @@ test('flagged title/abstract records resolve as flagged, not conflict', () => {
   assert.equal(getTitleAbstractWorkStatus(record, 'reviewer-2'), 'flagged');
 });
 
-test('only opposing include and exclude votes resolve as conflict', () => {
+test('matching AI and human include resolves as ready for full text', () => {
   const record = recordWithDecisions([
     reviewerVote('reviewer-1', 'include'),
-    reviewerVote('reviewer-2', 'exclude'),
-  ]);
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: 'include',
+  });
+
+  assert.equal(getTitleAbstractResolution(record), 'ready_for_full_text');
+  assert.equal(getTitleAbstractWorkStatus(record, 'reviewer-2'), 'ready_for_full_text');
+});
+
+test('matching AI and human exclude resolves as excluded', () => {
+  const record = recordWithDecisions([
+    reviewerVote('reviewer-1', 'exclude'),
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: 'exclude',
+  });
+
+  assert.equal(getTitleAbstractResolution(record), 'excluded');
+});
+
+test('opposing AI and human decisions resolve as conflict', () => {
+  const record = recordWithDecisions([
+    reviewerVote('reviewer-1', 'include'),
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: 'exclude',
+  });
 
   assert.equal(getTitleAbstractResolution(record), 'needs_resolver');
+});
+
+test('human vote without decisive AI stays pending awaiting AI', () => {
+  const record = recordWithDecisions([
+    reviewerVote('reviewer-1', 'include'),
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: null,
+  });
+
+  assert.equal(getTitleAbstractResolution(record), 'pending');
+  assert.equal(getTitleAbstractWorkStatus(record, 'reviewer-1'), 'awaiting_ai_recommendation');
+});
+
+test('resolver decision still overrides AI and human conflict', () => {
+  const resolverDecision = {
+    reviewerProfileId: 'resolver-1',
+    decision: 'include',
+    decidedAt: '2026-05-29T00:01:00.000Z',
+    action: 'resolver_decision',
+  };
+  const record = recordWithDecisions([
+    reviewerVote('reviewer-1', 'include'),
+    resolverDecision,
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: 'exclude',
+  });
+
+  assert.equal(getTitleAbstractResolution(record), 'ready_for_full_text');
 });

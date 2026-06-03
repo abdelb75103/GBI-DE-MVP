@@ -11,6 +11,7 @@ export type TitleAbstractResolution =
   | 'promoted_to_full_text';
 export type TitleAbstractWorkStatus =
   | 'needs_your_vote'
+  | 'awaiting_ai_recommendation'
   | 'awaiting_other_reviewer'
   | 'flagged'
   | 'ready_for_full_text'
@@ -59,6 +60,11 @@ const isReviewerDecision = (value: unknown): value is TitleAbstractReviewerDecis
   return Boolean(candidate.reviewerProfileId) && isDecision(candidate.decision) && Boolean(candidate.decidedAt);
 };
 
+const getDecisiveAiDecision = (record: ScreeningRecord): 'include' | 'exclude' | null =>
+  record.aiStatus === 'completed' && (record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude')
+    ? record.aiSuggestedDecision
+    : null;
+
 export const getTitleAbstractMetadata = (record: ScreeningRecord): TitleAbstractMetadata =>
   record.metadata && typeof record.metadata === 'object' && !Array.isArray(record.metadata)
     ? record.metadata as TitleAbstractMetadata
@@ -86,17 +92,21 @@ export const getTitleAbstractResolution = (record: ScreeningRecord): TitleAbstra
     return resolverDecision.decision === 'include' ? 'ready_for_full_text' : 'excluded';
   }
 
-  const reviewerVotes = decisions.filter((decision) => decision.action !== 'resolver_decision').slice(0, 2);
+  const reviewerVotes = decisions.filter((decision) => decision.action !== 'resolver_decision');
   if (reviewerVotes.some((decision) => decision.decision === 'flag')) {
     return 'flagged';
   }
-  if (reviewerVotes.length < 2) {
+  const humanDecision = reviewerVotes.find((decision) => decision.decision === 'include' || decision.decision === 'exclude');
+  if (!humanDecision) {
     return 'pending';
   }
-  const includes = reviewerVotes.filter((decision) => decision.decision === 'include').length;
-  const excludes = reviewerVotes.filter((decision) => decision.decision === 'exclude').length;
-  if (includes === 2) return 'ready_for_full_text';
-  if (excludes === 2) return 'excluded';
+  const aiDecision = getDecisiveAiDecision(record);
+  if (!aiDecision) {
+    return 'pending';
+  }
+  if (humanDecision.decision === aiDecision) {
+    return aiDecision === 'include' ? 'ready_for_full_text' : 'excluded';
+  }
   return 'needs_resolver';
 };
 
@@ -111,11 +121,12 @@ export const getTitleAbstractWorkStatus = (
 ): TitleAbstractWorkStatus => {
   const resolution = getTitleAbstractResolution(record);
   if (resolution !== 'pending') return resolution;
-  return hasTitleAbstractReviewerVoted(record, reviewerProfileId) ? 'awaiting_other_reviewer' : 'needs_your_vote';
+  return hasTitleAbstractReviewerVoted(record, reviewerProfileId) ? 'awaiting_ai_recommendation' : 'needs_your_vote';
 };
 
 const TITLE_ABSTRACT_STATUS_COUNT_KEYS: Record<TitleAbstractWorkStatus, keyof TitleAbstractQueueCountsSnapshot> = {
   needs_your_vote: 'needsYourVote',
+  awaiting_ai_recommendation: 'awaitingOther',
   awaiting_other_reviewer: 'awaitingOther',
   flagged: 'flagged',
   ready_for_full_text: 'ready',
@@ -194,10 +205,10 @@ export const applyTitleAbstractDecision = (
     );
     if (existingIndex >= 0) {
       decisions = reviewerVotes.map((decision, index) => (index === existingIndex ? nextDecision : decision));
-    } else if (reviewerVotes.length < 2) {
+    } else if (reviewerVotes.length < 1) {
       decisions = [...reviewerVotes, nextDecision];
     } else {
-      throw new Error('This record already has two reviewer votes. Use resolver mode for flagged or conflicting records.');
+      throw new Error('This record already has a human reviewer vote. Use resolver mode for flagged or conflicting records.');
     }
   }
 

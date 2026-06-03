@@ -462,7 +462,7 @@ function ScreeningRow({
                   isPending ? 'pointer-events-none opacity-60' : ''
                 }`}
               >
-                Upload full text
+                Attach PDF
               </label>
             </div>
           ) : null}

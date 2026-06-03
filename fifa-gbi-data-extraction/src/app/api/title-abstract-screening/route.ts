@@ -12,6 +12,7 @@ export const runtime = 'nodejs';
 const FILTERS: TitleAbstractQueueFilter[] = [
   'all',
   'needs_your_vote',
+  'awaiting_ai_recommendation',
   'awaiting_other_reviewer',
   'needs_resolver',
   'ready_for_full_text',

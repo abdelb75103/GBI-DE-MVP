@@ -5,6 +5,7 @@ import { spawn } from 'node:child_process';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import process from 'node:process';
+import { finalizeTitleAbstractRecommendation } from './title_abstract_supabase_finalize.mjs';
 import {
   compact,
   preTriageRecord,
@@ -310,6 +311,7 @@ const applyRecommendation = async (supabase, item) => {
     .eq('stage', 'title_abstract')
     .eq('metadata->>searchBatchLabel', options.batchLabel);
   if (error) throw new Error(`Failed to update ${item.studyId || item.recordId}: ${error.message}`);
+  await finalizeTitleAbstractRecommendation(supabase, item.recordId, { quiet: options.quiet });
 };
 
 const applyRecommendations = async (supabase, items) => {
@@ -402,6 +404,52 @@ const runSelfTest = () => {
   }
   const parsed = parseJson('```json\n{"recommendations":[]}\n```');
   if (!Array.isArray(parsed.recommendations)) throw new Error('self-test failed: fenced JSON parsing');
+
+  const metacarpalTreatmentRecord = {
+    id: 'r2',
+    assigned_study_id: 'S4075',
+    title: 'Early return to play after minimally invasive treatment of metacarpal fractures in elite football players.',
+    abstract: 'The study focused on return to play and complication rates. A total of 27 elite professional football athletes with metacarpal fractures were treated using closed reduction and crossed retrograde K-wire fixation. Clinical and functional outcomes were assessed using range of motion, grip strength, Visual Analog Scale for pain, DASH scores, time to return to training and competition, and radiographic healing.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'def',
+  };
+  const metacarpalTreatment = preTriageRecord(metacarpalTreatmentRecord, 'self-test');
+  if (metacarpalTreatment?.decision !== 'exclude') {
+    throw new Error(`self-test failed: already-injured treatment/RTP cohort should exclude, got ${metacarpalTreatment?.decision ?? 'null'}`);
+  }
+
+  const injuryHistoryRecord = {
+    id: 'r3',
+    assigned_study_id: 'S4720',
+    title: 'Association Between Injury History and Navicular Drop in Male Youth Soccer Players.',
+    abstract: 'This is a cross-sectional study. The study included 63 male youth soccer players. Participants self-reported their injury history. Binary logistic regression used injury history as the dependent variable and navicular drop as the independent variable.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'ghi',
+  };
+  const injuryHistory = preTriageRecord(injuryHistoryRecord, 'self-test');
+  if (injuryHistory?.decision !== 'exclude') {
+    throw new Error(`self-test failed: cross-sectional retrospective injury-history association should exclude, got ${injuryHistory?.decision ?? 'null'}`);
+  }
+
+  const downstreamConsequenceRecord = {
+    id: 'r4',
+    assigned_study_id: 'S1858',
+    title: 'Unique Pattern of White Matter Hyperintensities in Middle Age and Older Adults with History of Repetitive Head Impact Exposure',
+    abstract: 'Repetitive head impacts from contact sports can lead to long-term white matter injury visualized on FLAIR scans as white matter hyperintensities. Sources of RHI were American football, hockey, soccer, wrestling, field hockey, lacrosse, mixed martial arts, and rugby. Regression models examined years of American football play, controlling for age and vascular risk factors.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'jkl',
+  };
+  const downstreamConsequence = preTriageRecord(downstreamConsequenceRecord, 'self-test');
+  if (downstreamConsequence?.decision !== 'exclude') {
+    throw new Error(`self-test failed: downstream RHI imaging consequence should exclude, got ${downstreamConsequence?.decision ?? 'null'}`);
+  }
+
   console.log('self-test passed');
 };
 
