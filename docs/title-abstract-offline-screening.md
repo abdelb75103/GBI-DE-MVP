@@ -58,7 +58,7 @@ For Abdel's current reserved pack:
 https://fifa-gbi-data-extraction-amber.vercel.app/title-abstract-offline/ta-offline-2026-06-04T23-11-19-423Z-a3a83b66
 ```
 
-If prompted, select the AbdelRahman Babiker profile first, then return to the URL. Wait until the header says `Offline reload ready on this device.` before travelling.
+This URL is intentionally not behind profile selection. It serves the reserved pack as AbdelRahman Babiker's reviewer profile so the exported JSON imports under that reviewer id. Wait until the header says `Offline reload ready on this device.` before travelling.
 
 The older local `.html` transfer path is available as a fallback, but iOS Files/Quick Look can preview HTML without running JavaScript. If the title/abstract area is blank, the phone is previewing the file instead of running it as a browser app. Use the hosted URL instead.
 

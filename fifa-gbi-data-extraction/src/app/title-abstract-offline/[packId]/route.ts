@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { readActiveProfileSession } from '@/lib/session';
 import { createSupabaseServerClient } from '@/lib/supabase/clients';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
+const OFFLINE_REVIEWER_PROFILE_ID = '00000000-0000-0000-0000-000000000001';
+const OFFLINE_REVIEWER_NAME = 'AbdelRahman Babiker';
 const MAX_NOTE_CHARS = 500;
 const RESERVATION_KEY = 'titleAbstractOfflineReservation';
 const SELECT_COLUMNS = [
@@ -89,29 +90,38 @@ const buildHtml = (pack: unknown) => `<!doctype html>
   <style>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #0f172a; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100svh; background: #f8fafc; }
-    header { position: sticky; top: 0; z-index: 2; padding: max(12px, env(safe-area-inset-top)) 14px 10px; background: rgba(248,250,252,.96); border-bottom: 1px solid #e2e8f0; backdrop-filter: blur(12px); }
-    main { padding: 14px; max-width: 840px; margin: 0 auto; }
-    h1 { margin: 0; font-size: 16px; }
+    body { margin: 0; min-height: 100svh; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 48%, #f8fafc 100%); }
+    header { position: sticky; top: 0; z-index: 2; padding: max(12px, env(safe-area-inset-top)) 14px 12px; background: rgba(248,250,252,.97); border-bottom: 1px solid #e2e8f0; backdrop-filter: blur(12px); }
+    main { padding: 12px; max-width: 920px; margin: 0 auto; }
+    h1 { margin: 0; font-size: 16px; line-height: 1.2; color: #0b3a70; }
+    .header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .header-kicker { margin: 0 0 3px; color: #64748b; font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
     .meta, .small { color: #64748b; font-size: 12px; line-height: 1.35; }
+    .counter-pill { flex: 0 0 auto; border: 1px solid #bfdbfe; background: #eff6ff; color: #0b3a70; border-radius: 999px; padding: 6px 9px; font-size: 12px; font-weight: 800; }
     .bar { height: 8px; border-radius: 999px; background: #e2e8f0; overflow: hidden; margin-top: 10px; }
     .bar span { display: block; height: 100%; width: 0; background: #0b3a70; }
     .toolbar { display: flex; gap: 8px; margin-top: 10px; }
     button, select, textarea { font: inherit; }
-    button { border: 1px solid #cbd5e1; background: #fff; color: #0f172a; border-radius: 10px; padding: 10px 12px; font-weight: 700; }
+    button { border: 1px solid #cbd5e1; background: #fff; color: #0f172a; border-radius: 12px; padding: 10px 12px; font-weight: 800; }
     button.primary { background: #0b3a70; border-color: #0b3a70; color: white; }
-    button.include { background: #047857; border-color: #047857; color: white; }
-    button.exclude { background: #be123c; border-color: #be123c; color: white; }
-    button.flag { background: #b45309; border-color: #b45309; color: white; }
+    button.include { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+    button.exclude { background: #fff1f2; border-color: #fecdd3; color: #be123c; }
+    button.flag { background: #fffbeb; border-color: #fde68a; color: #b45309; }
     button:disabled { opacity: .45; }
-    .card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+    .card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 14px; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
     .record-nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; margin-bottom: 10px; }
     .record-nav button:last-child { justify-self: end; }
-    .badge { display: inline-flex; border-radius: 999px; padding: 4px 8px; background: #e0f2fe; color: #075985; font-size: 12px; font-weight: 800; }
-    .title { font-size: 20px; font-weight: 800; line-height: 1.2; margin: 12px 0 8px; }
+    .badge { display: inline-flex; border-radius: 999px; padding: 5px 10px; background: #0b3a70; color: white; font-size: 12px; font-weight: 800; }
+    .title { font-size: 22px; font-weight: 800; line-height: 1.18; margin: 12px 0 10px; letter-spacing: -.01em; }
     .citation { color: #475569; font-size: 13px; line-height: 1.4; }
-    .abstract { white-space: pre-wrap; line-height: 1.48; font-size: 15px; margin-top: 14px; }
-    .ai { margin-top: 14px; padding: 10px; border-radius: 10px; background: #f1f5f9; color: #334155; font-size: 13px; line-height: 1.4; }
+    .metadata-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border: 1px solid #e2e8f0; background: #e2e8f0; border-radius: 12px; margin: 12px 0; }
+    .metadata-item { min-width: 0; background: white; padding: 9px 10px; }
+    .metadata-label { display: block; color: #64748b; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .metadata-value { display: block; margin-top: 3px; color: #1e293b; font-size: 13px; font-weight: 650; overflow-wrap: anywhere; }
+    .section-label { display: flex; align-items: center; gap: 8px; margin: 16px 0 8px; color: #64748b; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .section-label::before { content: ""; width: 22px; height: 1px; background: #cbd5e1; }
+    .abstract { white-space: pre-wrap; line-height: 1.62; font-size: 15px; margin: 0; padding: 13px; border: 1px solid #e2e8f0; border-radius: 14px; background: #f8fafc; color: #1e293b; }
+    .ai { margin-top: 14px; padding: 12px; border-radius: 14px; border: 1px solid #e2e8f0; background: #f8fafc; color: #334155; font-size: 13px; line-height: 1.45; }
     .decision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
     textarea { width: 100%; min-height: 76px; margin-top: 10px; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; resize: vertical; }
     .notice { margin-top: 10px; color: #be123c; font-size: 13px; font-weight: 700; }
@@ -120,7 +130,7 @@ const buildHtml = (pack: unknown) => `<!doctype html>
     .export textarea { min-height: 180px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
     @media (max-width: 560px) {
       main { padding: 10px; }
-      .decision-grid { grid-template-columns: 1fr; }
+      .record-nav { grid-template-columns: 1fr minmax(86px, auto) 1fr; }
       .toolbar { display: grid; grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -128,7 +138,13 @@ const buildHtml = (pack: unknown) => `<!doctype html>
 <body>
   <noscript><div class="warning">This offline screening page needs JavaScript. If you see this, the file/page is being previewed instead of opened in a browser.</div></noscript>
   <header>
-    <h1>GBI offline title/abstract screening</h1>
+    <div class="header-row">
+      <div>
+        <p class="header-kicker">Offline Screening</p>
+        <h1>Title/Abstract Review</h1>
+      </div>
+      <div class="counter-pill" id="counterPill">0/0</div>
+    </div>
     <div class="meta" id="packMeta"></div>
     <div class="meta" id="cacheStatus">Checking offline cache...</div>
     <div class="warning" id="packWarning" hidden></div>
@@ -205,7 +221,7 @@ const buildHtml = (pack: unknown) => `<!doctype html>
       try {
         await navigator.serviceWorker.register('/title-abstract-offline-sw.js');
         await navigator.serviceWorker.ready;
-        const cache = await caches.open('gbi-title-abstract-offline-v1');
+        const cache = await caches.open('gbi-title-abstract-offline-v2');
         await cache.put(location.href, new Response('<!doctype html>\\n' + document.documentElement.outerHTML, {
           headers: { 'Content-Type': 'text/html; charset=utf-8' }
         }));
@@ -246,12 +262,24 @@ const buildHtml = (pack: unknown) => `<!doctype html>
       el('record').innerHTML = '<span class="badge">' + (record.studyId || record.recordId) + '</span>' +
         '<div class="title"></div>' +
         '<div class="citation"></div>' +
+        '<div class="metadata-strip">' +
+          '<div class="metadata-item"><span class="metadata-label">DOI</span><span class="metadata-value metadata-doi"></span></div>' +
+          '<div class="metadata-item"><span class="metadata-label">Year</span><span class="metadata-value metadata-year"></span></div>' +
+          '<div class="metadata-item"><span class="metadata-label">Author</span><span class="metadata-value metadata-author"></span></div>' +
+          '<div class="metadata-item"><span class="metadata-label">Journal</span><span class="metadata-value metadata-journal"></span></div>' +
+        '</div>' +
+        '<div class="section-label">Abstract</div>' +
         '<div class="abstract"></div>' +
         '<div class="ai"></div>';
       el('record').querySelector('.title').textContent = record.title || 'Untitled';
       el('record').querySelector('.citation').textContent = [record.leadAuthor, record.year, record.journal, record.doi].filter(Boolean).join(' · ') || 'No citation metadata';
+      el('record').querySelector('.metadata-doi').textContent = record.doi || '—';
+      el('record').querySelector('.metadata-year').textContent = record.year || '—';
+      el('record').querySelector('.metadata-author').textContent = record.leadAuthor || '—';
+      el('record').querySelector('.metadata-journal').textContent = record.journal || '—';
       el('record').querySelector('.abstract').textContent = record.abstract || 'No abstract imported.';
       el('record').querySelector('.ai').textContent = 'AI: ' + (record.aiSuggestedDecision || record.aiStatus || 'not run') + (record.aiReason ? ' - ' + record.aiReason : '');
+      el('counterPill').textContent = (index + 1) + '/' + PACK.records.length;
       document.querySelectorAll('[data-decision]').forEach((button) => { button.disabled = false; });
     }
     function setDecision(decision) {
@@ -380,24 +408,17 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Pack id is required.' }, { status: 400 });
   }
 
-  const profile = await readActiveProfileSession();
-  if (!profile) {
-    const redirectTo = new URL('/profiles/select', request.url);
-    redirectTo.searchParams.set('returnTo', request.nextUrl.pathname);
-    return NextResponse.redirect(redirectTo);
-  }
-
-  const rows = await fetchPackRows(packId, profile.id);
+  const rows = await fetchPackRows(packId, OFFLINE_REVIEWER_PROFILE_ID);
   if (rows.length === 0) {
-    return NextResponse.json({ error: 'No active offline records found for this pack and profile.' }, { status: 404 });
+    return NextResponse.json({ error: 'No active offline records found for this pack.' }, { status: 404 });
   }
 
   const html = buildHtml({
     schemaVersion: 1,
     packId,
     exportedAt: new Date().toISOString(),
-    reviewerProfileId: profile.id,
-    reviewerName: profile.fullName,
+    reviewerProfileId: OFFLINE_REVIEWER_PROFILE_ID,
+    reviewerName: OFFLINE_REVIEWER_NAME,
     reserved: true,
     records: rows.map(mapPackRecord),
   });

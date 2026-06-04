@@ -1,11 +1,19 @@
-const CACHE_NAME = 'gbi-title-abstract-offline-v1';
+const CACHE_NAME = 'gbi-title-abstract-offline-v2';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil((async () => {
+    const names = await caches.keys();
+    await Promise.all(
+      names
+        .filter((name) => name.startsWith('gbi-title-abstract-offline-') && name !== CACHE_NAME)
+        .map((name) => caches.delete(name)),
+    );
+    await self.clients.claim();
+  })());
 });
 
 self.addEventListener('fetch', (event) => {
@@ -16,9 +24,6 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
-    const cached = await cache.match(event.request);
-    if (cached) return cached;
-
     try {
       const response = await fetch(event.request);
       if (response.ok) {
@@ -26,6 +31,9 @@ self.addEventListener('fetch', (event) => {
       }
       return response;
     } catch {
+      const cached = await cache.match(event.request);
+      if (cached) return cached;
+
       const keys = await cache.keys();
       const fallback = keys
         .slice()
