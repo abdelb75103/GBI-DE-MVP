@@ -33,6 +33,7 @@ import {
   type TitleAbstractDecisionAction,
   type TitleAbstractResolution,
 } from '@/lib/screening/title-abstract-decisions';
+import { shouldHideFromNormalTitleAbstractQueue } from '@/lib/screening/title-abstract-offline';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
 export const TITLE_ABSTRACT_QUEUE_PAGE_SIZE = 50;
@@ -97,7 +98,8 @@ export type TitleAbstractQueueFilter =
   | 'ai_include'
   | 'ai_exclude'
   | 'ai_systematic_review'
-  | 'ai_not_run';
+  | 'ai_not_run'
+  | 'reserved_offline';
 
 export type TitleAbstractQueueCounts = {
   all: number;
@@ -114,6 +116,7 @@ export type TitleAbstractQueueCounts = {
   aiExclude: number;
   aiSystematicReview: number;
   aiNotRun: number;
+  reservedOffline: number;
 };
 
 export type TitleAbstractQueuePage = {
@@ -360,6 +363,9 @@ const matchesTitleAbstractFilter = (
   filter: TitleAbstractQueueFilter,
   reviewerProfileId: string,
 ) => {
+  const reservedForReviewer = shouldHideFromNormalTitleAbstractQueue(record, reviewerProfileId);
+  if (filter === 'reserved_offline') return reservedForReviewer;
+  if (reservedForReviewer) return false;
   if (filter === 'all') return true;
   const status = getTitleAbstractWorkStatus(record, reviewerProfileId);
   const decisions = getTitleAbstractDecisions(record);
@@ -378,10 +384,12 @@ const getTitleAbstractQueueCounts = (
   records: ScreeningRecord[],
   reviewerProfileId: string,
 ): TitleAbstractQueueCounts => {
-  const statuses = records.map((record) => getTitleAbstractWorkStatus(record, reviewerProfileId));
+  const reservedOffline = records.filter((record) => shouldHideFromNormalTitleAbstractQueue(record, reviewerProfileId)).length;
+  const normalRecords = records.filter((record) => !shouldHideFromNormalTitleAbstractQueue(record, reviewerProfileId));
+  const statuses = normalRecords.map((record) => getTitleAbstractWorkStatus(record, reviewerProfileId));
   return {
-    all: records.length,
-    myVotes: records.filter((record) =>
+    all: normalRecords.length,
+    myVotes: normalRecords.filter((record) =>
       getTitleAbstractDecisions(record).some(
         (decision) => decision.action !== 'resolver_decision' && decision.reviewerProfileId === reviewerProfileId,
       )
@@ -392,12 +400,13 @@ const getTitleAbstractQueueCounts = (
     ready: statuses.filter((status) => status === 'ready_for_full_text').length,
     excluded: statuses.filter((status) => status === 'excluded').length,
     promoted: statuses.filter((status) => status === 'promoted_to_full_text').length,
-    missingAbstract: records.filter((record) => !record.abstract?.trim()).length,
-    flagged: records.filter((record) => getTitleAbstractDecisions(record).some((item) => item.decision === 'flag')).length,
-    aiInclude: records.filter((record) => record.aiSuggestedDecision === 'include').length,
-    aiExclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
-    aiSystematicReview: records.filter((record) => record.aiTargetTag === 'systematic_review').length,
-    aiNotRun: records.filter((record) => record.aiStatus !== 'completed').length,
+    missingAbstract: normalRecords.filter((record) => !record.abstract?.trim()).length,
+    flagged: normalRecords.filter((record) => getTitleAbstractDecisions(record).some((item) => item.decision === 'flag')).length,
+    aiInclude: normalRecords.filter((record) => record.aiSuggestedDecision === 'include').length,
+    aiExclude: normalRecords.filter((record) => record.aiSuggestedDecision === 'exclude').length,
+    aiSystematicReview: normalRecords.filter((record) => record.aiTargetTag === 'systematic_review').length,
+    aiNotRun: normalRecords.filter((record) => record.aiStatus !== 'completed').length,
+    reservedOffline,
   };
 };
 
@@ -416,6 +425,7 @@ type TitleAbstractQueueCountsRow = {
   ai_exclude: number | string | null;
   ai_systematic_review: number | string | null;
   ai_not_run: number | string | null;
+  reserved_offline: number | string | null;
 };
 
 const toCount = (value: number | string | null | undefined): number => {
@@ -438,6 +448,7 @@ const mapTitleAbstractQueueCounts = (row?: TitleAbstractQueueCountsRow): TitleAb
   aiExclude: toCount(row?.ai_exclude),
   aiSystematicReview: toCount(row?.ai_systematic_review),
   aiNotRun: toCount(row?.ai_not_run),
+  reservedOffline: toCount(row?.reserved_offline),
 });
 
 // Postgres reports a missing RPC (migration not yet applied) with PGRST202 or a

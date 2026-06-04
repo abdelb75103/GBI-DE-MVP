@@ -18,6 +18,7 @@ const baseCounts = {
   aiExclude: 0,
   aiSystematicReview: 0,
   aiNotRun: 0,
+  reservedOffline: 0,
 };
 
 const recordWithDecisions = (decisions, metadata = {}) => ({

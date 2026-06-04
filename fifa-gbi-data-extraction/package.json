@@ -13,6 +13,9 @@
     "second-search:import": "node scripts/import-second-search-references.mjs",
     "second-search:restore-fuzzy": "node scripts/restore-second-search-fuzzy-removals.mjs",
     "second-search:audit": "node scripts/audit-second-search-import.mjs",
+    "title-abstract:offline-export": "node scripts/export-title-abstract-offline-pack.mjs",
+    "title-abstract:offline-import": "node scripts/import-title-abstract-offline-decisions.mjs",
+    "title-abstract:offline-release": "node scripts/release-title-abstract-offline-pack.mjs",
     "kb:sync": "node scripts/kb-sync.mjs",
     "kb:synthesize": "node scripts/kb-synthesize.mjs",
     "kb:check": "node scripts/kb-check.mjs"

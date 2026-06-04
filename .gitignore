@@ -50,6 +50,8 @@ Full Text - Data Extraaction/**/*.rdf
 /exports/
 /outputs/
 /fifa-gbi-data-extraction/covidence-import-results.csv
+/fifa-gbi-data-extraction/title-abstract-offline-*.html
+/fifa-gbi-data-extraction/title-abstract-offline-*.html.manifest.json
 
 # Temporary extraction artifacts
 .tmp-*

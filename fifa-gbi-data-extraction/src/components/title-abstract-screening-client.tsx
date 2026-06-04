@@ -40,7 +40,8 @@ type QueueFilter =
   | 'ai_include'
   | 'ai_exclude'
   | 'ai_systematic_review'
-  | 'ai_not_run';
+  | 'ai_not_run'
+  | 'reserved_offline';
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 type MobileDrawer = 'references' | 'filters' | null;
@@ -59,6 +60,7 @@ type QueueCounts = {
   aiExclude: number;
   aiSystematicReview: number;
   aiNotRun: number;
+  reservedOffline: number;
 };
 type TitleAbstractQueuePage = {
   records: ScreeningRecord[];
@@ -93,6 +95,7 @@ const EMPTY_COUNTS: QueueCounts = {
   aiExclude: 0,
   aiSystematicReview: 0,
   aiNotRun: 0,
+  reservedOffline: 0,
 };
 
 const RESOLUTION_LABELS: Record<TitleAbstractResolution, string> = {
@@ -584,6 +587,8 @@ export function TitleAbstractScreeningClient({
               <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} accent="rose" />
               <FilterButton label="AI systematic review" count={counts.aiSystematicReview} active={filter === 'ai_systematic_review'} onClick={() => handleFilterChange('ai_systematic_review')} accent="amber" />
               <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => handleFilterChange('ai_not_run')} />
+              <div className="my-3 border-t border-slate-200" />
+              <FilterButton label="Reserved offline" count={counts.reservedOffline} active={filter === 'reserved_offline'} onClick={() => handleFilterChange('reserved_offline')} />
             </div>
           </div>
         </aside>

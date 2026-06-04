@@ -995,6 +995,7 @@ export interface Database {
           ai_exclude: number;
           ai_systematic_review: number;
           ai_not_run: number;
+          reserved_offline: number;
         }[];
       };
     };

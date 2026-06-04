@@ -25,6 +25,7 @@ const FILTERS: TitleAbstractQueueFilter[] = [
   'ai_exclude',
   'ai_systematic_review',
   'ai_not_run',
+  'reserved_offline',
 ];
 
 const parseNumber = (value: string | null, fallback: number) => {

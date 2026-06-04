@@ -42,6 +42,7 @@ export type TitleAbstractQueueCountsSnapshot = {
   aiInclude: number;
   aiExclude: number;
   aiNotRun: number;
+  reservedOffline: number;
 };
 
 type TitleAbstractMetadata = {
