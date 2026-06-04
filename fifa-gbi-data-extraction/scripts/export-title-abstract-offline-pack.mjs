@@ -75,7 +75,11 @@ const outputPath = path.resolve(String(args.get('output') || `title-abstract-off
 const manifestPath = path.resolve(String(args.get('manifest') || `${outputPath}.manifest.json`));
 const apply = Boolean(args.get('apply'));
 const dryRunHtml = Boolean(args.get('dry-run-html'));
-const packId = String(args.get('pack-id') || `ta-offline-${new Date().toISOString().replace(/[:.]/g, '-')}-${crypto.randomUUID().slice(0, 8)}`);
+const existingPackId = String(args.get('existing-pack-id') || '').trim();
+const packId = String(existingPackId || args.get('pack-id') || `ta-offline-${new Date().toISOString().replace(/[:.]/g, '-')}-${crypto.randomUUID().slice(0, 8)}`);
+if (existingPackId && apply) {
+  throw new Error('--existing-pack-id rebuilds an already reserved pack and does not accept --apply.');
+}
 const supabase = createClient(supabaseUrl, serviceRoleKey, { auth: { persistSession: false } });
 
 const metadataObject = (metadata) => metadata && typeof metadata === 'object' && !Array.isArray(metadata) ? metadata : {};
@@ -219,10 +223,34 @@ const buildHtml = (pack) => `<!doctype html>
   <script>
     const PACK = ${htmlSafeJson(pack)};
     const storageKey = 'gbi-ta-offline:' + PACK.packId;
-    let state = JSON.parse(localStorage.getItem(storageKey) || '{}');
-    let index = Number(localStorage.getItem(storageKey + ':index') || 0);
+    const memoryStorage = new Map();
+    let browserStorageAvailable = true;
+    const storage = (() => {
+      try {
+        const testKey = storageKey + ':storage-test';
+        localStorage.setItem(testKey, '1');
+        localStorage.removeItem(testKey);
+        return localStorage;
+      } catch {
+        browserStorageAvailable = false;
+        return {
+          getItem: (key) => memoryStorage.has(key) ? memoryStorage.get(key) : null,
+          setItem: (key, value) => memoryStorage.set(key, String(value)),
+          removeItem: (key) => memoryStorage.delete(key),
+        };
+      }
+    })();
+    const parseStoredState = () => {
+      try {
+        return JSON.parse(storage.getItem(storageKey) || '{}');
+      } catch {
+        return {};
+      }
+    };
+    let state = parseStoredState();
+    let index = Number(storage.getItem(storageKey + ':index') || 0);
     const el = (id) => document.getElementById(id);
-    const save = () => localStorage.setItem(storageKey, JSON.stringify(state));
+    const save = () => storage.setItem(storageKey, JSON.stringify(state));
     const selectedRecord = () => PACK.records[index] || PACK.records[0];
     const completedCount = () => Object.values(state).filter((item) => item && item.decision).length;
     const backupInterval = 25;
@@ -234,13 +262,16 @@ const buildHtml = (pack) => `<!doctype html>
     }
     function render() {
       index = Math.min(Math.max(index, 0), PACK.records.length - 1);
-      localStorage.setItem(storageKey + ':index', String(index));
+      storage.setItem(storageKey + ':index', String(index));
       const record = selectedRecord();
       const decision = state[record.recordId] || {};
       el('packMeta').textContent = PACK.records.length + ' records · pack ' + PACK.packId + ' · ' + completedCount() + ' decided · ' + (PACK.reserved ? 'reserved' : 'not reserved');
       if (!PACK.reserved) {
         el('packWarning').hidden = false;
         el('packWarning').textContent = 'DRY RUN ONLY - this file is not reserved and decisions from it cannot be imported.';
+      } else if (!browserStorageAvailable) {
+        el('packWarning').hidden = false;
+        el('packWarning').textContent = 'Browser storage is unavailable for this file. Decisions work in this open page, but export JSON backups before leaving or reloading it.';
       }
       el('progressBar').style.width = PACK.records.length ? Math.round((completedCount() / PACK.records.length) * 100) + '%' : '0%';
       renderSelect();
@@ -374,6 +405,29 @@ const fetchCandidates = async () => {
   return selected;
 };
 
+const fetchExistingPackRecords = async () => {
+  const selected = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('screening_records')
+      .select(SELECT_COLUMNS)
+      .eq('stage', 'title_abstract')
+      .eq('metadata->titleAbstractOfflineReservation->>packId', existingPackId)
+      .eq('metadata->titleAbstractOfflineReservation->>reviewerProfileId', reviewerProfileId)
+      .order('created_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) throw new Error(`Failed to load existing offline pack ${existingPackId}: ${error.message}`);
+    selected.push(...(data ?? []).filter((record) => metadataObject(record.metadata)[RESERVATION_KEY]?.status === 'active'));
+    if (!data || data.length < pageSize) break;
+  }
+
+  return selected;
+};
+
 const writeManifest = async (content) => {
   await fs.writeFile(manifestPath, `${JSON.stringify(content, null, 2)}\n`, 'utf8');
 };
@@ -446,6 +500,30 @@ const reserveRecords = async (records, reviewer) => {
 };
 
 const reviewer = await loadReviewer();
+if (existingPackId) {
+  const existingRecords = await fetchExistingPackRecords();
+  if (existingRecords.length === 0) {
+    throw new Error(`No active records found for existing offline pack ${existingPackId}.`);
+  }
+
+  const pack = {
+    schemaVersion: 1,
+    packId,
+    exportedAt: new Date().toISOString(),
+    reviewerProfileId,
+    reviewerName: reviewer.full_name ?? '',
+    reserved: true,
+    records: existingRecords.map(mapPackRecord),
+  };
+
+  await fs.writeFile(outputPath, buildHtml(pack), 'utf8');
+  console.log(`Rebuilt existing reserved pack HTML with ${pack.records.length} records.`);
+  console.log(`Pack ID: ${packId}`);
+  console.log(`HTML: ${outputPath}`);
+  console.log('No database changes were made.');
+  process.exit(0);
+}
+
 const candidates = await fetchCandidates();
 if (candidates.length === 0) {
   throw new Error('No eligible title/abstract records found for offline reservation.');

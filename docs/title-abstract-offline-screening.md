@@ -34,6 +34,16 @@ The export script:
 
 Run the same command without `--apply` for a no-write eligibility count.
 
+To rebuild the phone HTML for an already reserved pack without changing the database:
+
+```bash
+cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
+npm run title-abstract:offline-export -- \
+  --reviewer-profile-id 00000000-0000-0000-0000-000000000001 \
+  --existing-pack-id <pack-id> \
+  --output /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/title-abstract-offline/gbi-title-abstract-offline.html
+```
+
 ## Use On Phone
 
 Move the generated `.html` file to the phone before travelling. AirDrop, iCloud Drive, Finder file sync, or another direct file transfer is fine.
@@ -48,7 +58,7 @@ On iPhone:
 
 No network is needed after the HTML file is on the phone. The phone does not need the deployed website to make decisions. The only prerequisites are the HTML pack file on the phone and a way to bring the exported JSON back when online.
 
-Phone browser storage is not a durable database. Export JSON backups periodically and before closing tabs, clearing browser data, changing phones, or updating iOS.
+Phone browser storage is not a durable database. Export JSON backups periodically and before closing tabs, clearing browser data, changing phones, or updating iOS. If the phone browser does not allow storage for the local file, the page will show a warning and decisions will still work in the open page, but they must be exported before leaving or reloading it.
 
 ## Import Decisions
 
