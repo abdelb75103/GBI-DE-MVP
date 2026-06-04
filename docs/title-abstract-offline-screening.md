@@ -46,17 +46,42 @@ npm run title-abstract:offline-export -- \
 
 ## Use On Phone
 
-Move the generated `.html` file to the phone before travelling. AirDrop, iCloud Drive, Finder file sync, or another direct file transfer is fine.
+Preferred path: open the hosted pack URL on the phone while online:
 
-On iPhone:
+```text
+https://fifa-gbi-data-extraction-amber.vercel.app/title-abstract-offline/<pack-id>
+```
 
-1. Open the HTML file from Files, or open it in Safari from the share sheet.
-2. Keep that same browser/file session for the trip.
+For Abdel's current reserved pack:
+
+```text
+https://fifa-gbi-data-extraction-amber.vercel.app/title-abstract-offline/ta-offline-2026-06-04T23-11-19-423Z-a3a83b66
+```
+
+If prompted, select the AbdelRahman Babiker profile first, then return to the URL. Wait until the header says `Offline reload ready on this device.` before travelling.
+
+The older local `.html` transfer path is available as a fallback, but iOS Files/Quick Look can preview HTML without running JavaScript. If the title/abstract area is blank, the phone is previewing the file instead of running it as a browser app. Use the hosted URL instead.
+
+On iPhone with the hosted URL:
+
+1. Open the hosted pack URL in Safari while on WiFi.
+2. Confirm the title/abstract content is visible.
+3. Confirm the header says `Offline reload ready on this device.`
+4. Put the phone into Airplane Mode and refresh once as a test.
+5. Keep that browser tab for the trip.
+6. Make include, exclude, or flag decisions.
+7. Every 25 decisions, use `Download JSON` or `Copy JSON` as a backup.
+8. At the end, tap `Export decisions`, then `Download JSON` or `Copy JSON`.
+
+For local HTML file fallback:
+
+1. Move the generated `.html` file to the phone before travelling. AirDrop, iCloud Drive, Finder file sync, or another direct file transfer is fine.
+2. Open it in a browser that actually runs local HTML JavaScript, not just a file preview.
 3. Make include, exclude, or flag decisions.
 4. Every 25 decisions, use `Download JSON` or `Copy JSON` as a backup.
 5. At the end, tap `Export decisions`, then `Download JSON` or `Copy JSON`.
 
-No network is needed after the HTML file is on the phone. The phone does not need the deployed website to make decisions. The only prerequisites are the HTML pack file on the phone and a way to bring the exported JSON back when online.
+No network is needed after the hosted page has loaded and cached on the phone, or after a working local HTML file has loaded. The only prerequisite after that is a way to bring the exported JSON back when online.
 
 Phone browser storage is not a durable database. Export JSON backups periodically and before closing tabs, clearing browser data, changing phones, or updating iOS. If the phone browser does not allow storage for the local file, the page will show a warning and decisions will still work in the open page, but they must be exported before leaving or reloading it.
 
