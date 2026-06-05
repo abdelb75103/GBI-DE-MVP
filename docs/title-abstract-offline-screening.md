@@ -77,7 +77,7 @@ For local HTML file fallback:
 
 1. Move the generated `.html` file to the phone before travelling. AirDrop, iCloud Drive, Finder file sync, or another direct file transfer is fine.
 2. Open it in a browser that actually runs local HTML JavaScript, not just a file preview.
-3. Make include, exclude, or flag decisions.
+3. Make include, exclude, or flag decisions. After each saved decision, the page advances to the next record and scrolls back to the top.
 4. Every 25 decisions, use `Download JSON` or `Copy JSON` as a backup.
 5. At the end, tap `Export decisions`, then `Download JSON` or `Copy JSON`.
 
@@ -106,6 +106,7 @@ npm run title-abstract:offline-import -- \
 ```
 
 The importer writes reviewer votes only. It does not rewrite existing human votes and does not add resolver decisions.
+If an include import is interrupted after the vote is saved but before the full-text placeholder is linked, rerun the same import command. The importer will recover the interrupted promotion instead of adding a second vote or duplicate placeholder.
 
 ## Release A Pack
 
@@ -116,9 +117,12 @@ cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
 npm run title-abstract:offline-release -- \
   --reviewer-profile-id 00000000-0000-0000-0000-000000000001 \
   --pack-id <pack-id> \
+  --decisions /path/to/decisions.json \
   --confirm-imported \
   --apply
 ```
+
+The `--decisions` file is required with `--confirm-imported`. Release checks that every decision in that JSON has already imported and that included records have finished full-text linking before it releases any remaining active reservations.
 
 If a pack was never used and should be discarded, use the explicit abandon path:
 
@@ -141,6 +145,7 @@ Before committing or deploying code changes, run:
 ```bash
 cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
 for f in tests/title-abstract-*.test.mjs; do node --experimental-strip-types "$f" || exit 1; done
+npm exec --yes tsx -- --test tests/title-abstract-*.test.mjs
 npm run lint
 npm run build
 ```

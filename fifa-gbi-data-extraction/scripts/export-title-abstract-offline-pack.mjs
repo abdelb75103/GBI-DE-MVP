@@ -310,8 +310,12 @@ const buildHtml = (pack) => `<!doctype html>
       save();
       refreshExport();
       const shouldRemindBackup = completedCount() > 0 && completedCount() % backupInterval === 0;
+      const shouldAdvance = index < PACK.records.length - 1;
       if (index < PACK.records.length - 1) index += 1;
       render();
+      if (shouldAdvance) {
+        requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
       if (shouldRemindBackup) {
         el('notice').textContent = 'Backup reminder: tap Download JSON or Copy JSON before continuing.';
       }

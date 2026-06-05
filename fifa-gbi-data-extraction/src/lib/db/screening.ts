@@ -33,7 +33,10 @@ import {
   type TitleAbstractDecisionAction,
   type TitleAbstractResolution,
 } from '@/lib/screening/title-abstract-decisions';
-import { shouldHideFromNormalTitleAbstractQueue } from '@/lib/screening/title-abstract-offline';
+import {
+  hasActiveTitleAbstractOfflineReservation,
+  shouldHideFromNormalTitleAbstractQueue,
+} from '@/lib/screening/title-abstract-offline';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
 export const TITLE_ABSTRACT_QUEUE_PAGE_SIZE = 50;
@@ -730,20 +733,31 @@ export const updateScreeningRecordMetadata = async (
   id: string,
   metadata: Record<string, unknown>,
   updates: Partial<Pick<ScreeningRecordUpdate, 'manual_decision' | 'manual_reason' | 'manual_decided_by' | 'manual_decided_at' | 'promoted_paper_id' | 'promoted_by' | 'promoted_at'>> = {},
+  expectedUpdatedAt?: string | null,
 ): Promise<ScreeningRecord> => {
-  const { data, error } = await supabaseClient()
+  let query = supabaseClient()
     .from('screening_records')
     .update({
       ...updates,
       metadata,
       updated_at: new Date().toISOString(),
     })
-    .eq('id', id)
+    .eq('id', id);
+
+  if (expectedUpdatedAt) {
+    query = query.eq('updated_at', expectedUpdatedAt);
+  }
+
+  const { data, error } = await query
     .select('*')
-    .single();
+    .maybeSingle();
 
   if (error || !data) {
-    throw new Error(`Failed to update screening record: ${error?.message ?? 'Unknown error'}`);
+    throw new Error(
+      expectedUpdatedAt && !data
+        ? 'Screening record changed before the decision could be saved. Reload and try again.'
+        : `Failed to update screening record: ${error?.message ?? 'Unknown error'}`,
+    );
   }
 
   if ((data as ScreeningRecordRow).stage === 'title_abstract') {
@@ -801,6 +815,7 @@ const finalizeTitleAbstractRecord = async (
       manual_decided_by: finalProfileId,
       manual_decided_at: finalDecisionEntry ? decidedAt : null,
     },
+    record.updatedAt,
   );
 
   if (resolution === 'ready_for_full_text' && finalProfileId) {
@@ -924,6 +939,9 @@ export const saveTitleAbstractDecision = async (
   }
   if (getTitleAbstractMetadata(record).titleAbstractPromotedRecordId) {
     throw new Error('This title/abstract record has already moved to full-text screening.');
+  }
+  if (hasActiveTitleAbstractOfflineReservation(record)) {
+    throw new Error('This title/abstract record is reserved for offline screening. Import or release the offline pack before recording an online decision.');
   }
 
   const next = applyTitleAbstractDecision(record, {

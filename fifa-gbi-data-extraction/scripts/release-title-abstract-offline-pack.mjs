@@ -53,9 +53,42 @@ const apply = Boolean(args.get('apply'));
 const confirmImported = Boolean(args.get('confirm-imported'));
 const abandon = Boolean(args.get('abandon'));
 const reportPath = args.get('report') ? path.resolve(String(args.get('report'))) : null;
+const decisionsPath = args.get('decisions') ? path.resolve(String(args.get('decisions'))) : null;
 const supabase = createClient(supabaseUrl, serviceRoleKey, { auth: { persistSession: false } });
 
 const metadataObject = (metadata) => metadata && typeof metadata === 'object' && !Array.isArray(metadata) ? metadata : {};
+
+const normalizeNote = (value) => String(value ?? '').trim();
+
+const loadDecisions = async () => {
+  if (!decisionsPath) return null;
+  const payload = JSON.parse(await fs.readFile(decisionsPath, 'utf8'));
+  if (!payload || typeof payload !== 'object') throw new Error('Decision JSON must be an object.');
+  if (payload.packId !== packId) throw new Error(`Decision JSON packId (${payload.packId}) does not match --pack-id (${packId}).`);
+  if (payload.reviewerProfileId !== reviewerProfileId) {
+    throw new Error(`Decision JSON reviewerProfileId (${payload.reviewerProfileId}) does not match --reviewer-profile-id (${reviewerProfileId}).`);
+  }
+  if (!Array.isArray(payload.decisions)) throw new Error('Decision JSON must contain decisions array.');
+  const decisions = new Map();
+  for (const decision of payload.decisions) {
+    if (!decision || typeof decision !== 'object' || typeof decision.recordId !== 'string') {
+      throw new Error('Decision JSON contains an invalid decision entry.');
+    }
+    if (!['include', 'exclude', 'flag'].includes(decision.decision)) {
+      throw new Error(`Decision JSON contains invalid decision value for ${decision.recordId}.`);
+    }
+    if (decisions.has(decision.recordId)) {
+      throw new Error(`Decision JSON contains a duplicate decision for ${decision.recordId}.`);
+    }
+    decisions.set(decision.recordId, {
+      recordId: decision.recordId,
+      decision: decision.decision,
+      note: normalizeNote(decision.note),
+      decidedAt: typeof decision.decidedAt === 'string' ? decision.decidedAt : null,
+    });
+  }
+  return decisions;
+};
 
 const loadReservedRows = async () => {
   const rows = [];
@@ -85,6 +118,8 @@ const allRows = await loadReservedRows();
 const rows = allRows.filter((row) => metadataObject(row.metadata)[RESERVATION_KEY]?.status === 'active');
 const completedCount = allRows.filter((row) => metadataObject(row.metadata)[RESERVATION_KEY]?.status === 'completed').length;
 const releasedCount = allRows.filter((row) => metadataObject(row.metadata)[RESERVATION_KEY]?.status === 'released').length;
+const decisionMap = await loadDecisions();
+const decisionRecordIds = decisionMap ? new Set(decisionMap.keys()) : null;
 
 if (apply && rows.length > 0 && !confirmImported && !abandon) {
   throw new Error('Refusing to release active reservations without --confirm-imported. Import decisions first, then rerun with --confirm-imported --apply to release unused records. If intentionally discarding an unused pack, pass --abandon --apply.');
@@ -92,6 +127,63 @@ if (apply && rows.length > 0 && !confirmImported && !abandon) {
 
 if (apply && rows.length > 0 && confirmImported && completedCount === 0 && !abandon) {
   throw new Error('Refusing to release because this pack has no completed imported decisions. Import decisions first. If intentionally discarding an unused pack, pass --abandon --apply instead.');
+}
+
+if (apply && confirmImported && !abandon) {
+  if (!decisionRecordIds) {
+    throw new Error('Pass --decisions /path/to/offline-decisions.json with --confirm-imported so release can verify every exported phone decision was imported.');
+  }
+  const allPackIds = new Set(allRows.map((row) => row.id));
+  const missingFromPack = [...decisionRecordIds].filter((recordId) => !allPackIds.has(recordId));
+  if (missingFromPack.length > 0) {
+    throw new Error(`Decision JSON contains ${missingFromPack.length} record(s) that are not in this offline pack reservation set.`);
+  }
+  const stillActiveDecisions = rows.filter((row) => decisionRecordIds.has(row.id));
+  if (stillActiveDecisions.length > 0) {
+    const examples = stillActiveDecisions.slice(0, 10).map((row) => row.assigned_study_id).join(', ');
+    throw new Error(`Refusing to release because ${stillActiveDecisions.length} decision(s) from the JSON are still active/not imported. Import them first. Examples: ${examples}`);
+  }
+  const notCompletedFromJson = allRows.filter((row) => {
+    if (!decisionRecordIds.has(row.id)) return false;
+    const metadata = metadataObject(row.metadata);
+    const reservation = metadataObject(metadata[RESERVATION_KEY]);
+    return reservation.status !== 'completed';
+  });
+  if (notCompletedFromJson.length > 0) {
+    const examples = notCompletedFromJson.slice(0, 10).map((row) => row.assigned_study_id).join(', ');
+    throw new Error(`Refusing to release because ${notCompletedFromJson.length} decision(s) from the JSON are not marked completed/imported. Examples: ${examples}`);
+  }
+  const mismatchedVotes = allRows.filter((row) => {
+    const exportedDecision = decisionMap.get(row.id);
+    if (!exportedDecision) return false;
+    const metadata = metadataObject(row.metadata);
+    const decisions = Array.isArray(metadata.titleAbstractDecisions) ? metadata.titleAbstractDecisions : [];
+    return !decisions.some((entry) =>
+      entry &&
+      typeof entry === 'object' &&
+      entry.action !== 'resolver_decision' &&
+      entry.reviewerProfileId === reviewerProfileId &&
+      entry.decision === exportedDecision.decision &&
+      normalizeNote(entry.note) === exportedDecision.note &&
+      (!exportedDecision.decidedAt || entry.decidedAt === exportedDecision.decidedAt)
+    );
+  });
+  if (mismatchedVotes.length > 0) {
+    const examples = mismatchedVotes.slice(0, 10).map((row) => row.assigned_study_id).join(', ');
+    throw new Error(`Refusing to release because ${mismatchedVotes.length} imported vote(s) do not match the supplied decision JSON. Examples: ${examples}`);
+  }
+  const incompletePromotions = allRows.filter((row) => {
+    if (!decisionRecordIds.has(row.id)) return false;
+    const metadata = metadataObject(row.metadata);
+    const reservation = metadataObject(metadata[RESERVATION_KEY]);
+    return reservation.status === 'completed' &&
+      metadata.titleAbstractResolution === 'ready_for_full_text' &&
+      !metadata.titleAbstractPromotedRecordId;
+  });
+  if (incompletePromotions.length > 0) {
+    const examples = incompletePromotions.slice(0, 10).map((row) => row.assigned_study_id).join(', ');
+    throw new Error(`Refusing to release because ${incompletePromotions.length} included decision(s) imported but are not linked to full text yet. Re-run the importer first. Examples: ${examples}`);
+  }
 }
 
 const released = [];
@@ -136,6 +228,34 @@ if (reportPath) {
     completedCount,
     previouslyReleasedCount: releasedCount,
     activeBeforeRelease: rows.length,
+    verifiedDecisionCount: decisionRecordIds?.size ?? null,
+    mismatchedVoteCount: decisionMap
+      ? allRows.filter((row) => {
+        const exportedDecision = decisionMap.get(row.id);
+        if (!exportedDecision) return false;
+        const metadata = metadataObject(row.metadata);
+        const decisions = Array.isArray(metadata.titleAbstractDecisions) ? metadata.titleAbstractDecisions : [];
+        return !decisions.some((entry) =>
+          entry &&
+          typeof entry === 'object' &&
+          entry.action !== 'resolver_decision' &&
+          entry.reviewerProfileId === reviewerProfileId &&
+          entry.decision === exportedDecision.decision &&
+          normalizeNote(entry.note) === exportedDecision.note &&
+          (!exportedDecision.decidedAt || entry.decidedAt === exportedDecision.decidedAt)
+        );
+      }).length
+      : null,
+    incompletePromotionCount: decisionRecordIds
+      ? allRows.filter((row) => {
+        if (!decisionRecordIds.has(row.id)) return false;
+        const metadata = metadataObject(row.metadata);
+        const reservation = metadataObject(metadata[RESERVATION_KEY]);
+        return reservation.status === 'completed' &&
+          metadata.titleAbstractResolution === 'ready_for_full_text' &&
+          !metadata.titleAbstractPromotedRecordId;
+      }).length
+      : null,
     abandon,
     released,
     skipped,

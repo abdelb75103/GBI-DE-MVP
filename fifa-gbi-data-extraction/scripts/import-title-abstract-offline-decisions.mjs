@@ -97,6 +97,14 @@ const reviewerHasVoted = (metadata, profileId) =>
 const hasAnyHumanVote = (metadata) =>
   getDecisions(metadata).some((decision) => decision.action !== 'resolver_decision');
 
+const matchingExistingReviewerVote = (decisions, decision, profileId) =>
+  decisions.find((entry) =>
+    entry.action !== 'resolver_decision' &&
+    entry.reviewerProfileId === profileId &&
+    entry.decision === decision.decision &&
+    (entry.note ?? '') === (decision.note || '')
+  );
+
 const normalizeDoi = (doi) => String(doi ?? '').trim().toLowerCase().replace(/^doi:\s*/i, '');
 
 const normalizeText = (text) => String(text ?? '')
@@ -109,6 +117,25 @@ const normalizeText = (text) => String(text ?? '')
 const sha256 = (value) => crypto.createHash('sha256').update(value).digest('hex');
 const duplicateKey = (title, author, year) => sha256(`${normalizeText(title)}|${normalizeText(author)}|${String(year ?? '').trim()}`);
 const titleFingerprint = (title) => normalizeText(title);
+const doiMatches = (doiA, doiB) => Boolean(doiA && doiB && normalizeDoi(doiA) === normalizeDoi(doiB));
+const calculateFuzzyTitleScore = (titleA, titleB) => {
+  const normalizedA = normalizeText(titleA);
+  const normalizedB = normalizeText(titleB);
+  if (!normalizedA || !normalizedB) return 0;
+
+  const tokensA = new Set(normalizedA.split(' ').filter((word) => word.length > 2));
+  const tokensB = new Set(normalizedB.split(' ').filter((word) => word.length > 2));
+  if (tokensA.size === 0 || tokensB.size === 0) return 0;
+
+  const intersection = new Set([...tokensA].filter((token) => tokensB.has(token)));
+  const union = new Set([...tokensA, ...tokensB]);
+  const jaccard = intersection.size / union.size;
+  const longer = normalizedA.length >= normalizedB.length ? normalizedA : normalizedB;
+  const shorter = normalizedA.length < normalizedB.length ? normalizedA : normalizedB;
+  const substringScore = longer.includes(shorter) ? (shorter.length / longer.length) * 100 : 0;
+  return Math.round(Math.max(jaccard * 100, substringScore));
+};
+const isFuzzyDuplicate = (score) => score >= 92;
 
 const findFullTextPromotionWarnings = async (record) => {
   const rows = [];
@@ -131,22 +158,41 @@ const findFullTextPromotionWarnings = async (record) => {
   return rows.flatMap((candidate) => {
     const candidateDoi = normalizeDoi(candidate.normalized_doi ?? candidate.doi);
     const candidateKey = duplicateKey(candidate.title, candidate.lead_author, candidate.year);
-    if (sourceDoi && candidateDoi && sourceDoi === candidateDoi) {
-      return [{
+    const fuzzyScore = calculateFuzzyTitleScore(record.title, candidate.title);
+    let reason = null;
+    let score = 0;
+    if (doiMatches(sourceDoi, candidateDoi)) {
+      reason = 'doi';
+      score = 100;
+    } else if (sourceKey === candidateKey) {
+      reason = 'title_author_year';
+      score = 100;
+    } else if (isFuzzyDuplicate(fuzzyScore)) {
+      reason = 'fuzzy_title';
+      score = fuzzyScore;
+    }
+    return reason
+      ? [{
+        matchedId: candidate.id,
         matchedStudyId: candidate.assigned_study_id,
         matchedTitle: candidate.title,
-        reason: 'doi',
-      }];
-    }
-    if (sourceKey === candidateKey) {
-      return [{
-        matchedStudyId: candidate.assigned_study_id,
-        matchedTitle: candidate.title,
-        reason: 'title_author_year',
-      }];
-    }
-    return [];
+        reason,
+        score,
+      }]
+      : [];
   });
+};
+
+const findExistingFullTextPromotion = async (record) => {
+  const { data, error } = await supabase
+    .from('screening_records')
+    .select('id, assigned_study_id, title')
+    .eq('stage', 'full_text')
+    .eq('metadata->>titleAbstractRecordId', record.id)
+    .order('created_at', { ascending: true })
+    .limit(1);
+  if (error) throw new Error(`Failed to check existing full-text promotion for ${record.assigned_study_id}: ${error.message}`);
+  return data?.[0] ?? null;
 };
 
 const loadReviewer = async () => {
@@ -187,6 +233,9 @@ const validatePayload = (payload) => {
     const note = String(decision.note ?? '').trim();
     if (decision.decision === 'flag' && !note) throw new Error(`Flag decision for ${decision.studyId ?? decision.recordId} requires a note.`);
     if (note.length > MAX_NOTE_CHARS) throw new Error(`Decision note for ${decision.studyId ?? decision.recordId} exceeds ${MAX_NOTE_CHARS} characters.`);
+    if (decision.decidedAt && Number.isNaN(Date.parse(decision.decidedAt))) {
+      throw new Error(`Decision ${index + 1} has invalid decidedAt timestamp.`);
+    }
     return {
       recordId: decision.recordId,
       studyId: decision.studyId ?? null,
@@ -203,12 +252,28 @@ const classifyDecision = async (decision, packId) => {
   if (!record) return { status: 'missing', decision, reason: 'Record not found.' };
   const metadata = metadataObject(record.metadata);
   const existingDecisions = getDecisions(metadata);
-  const reservation = metadata[RESERVATION_KEY];
+  const reservation = metadataObject(metadata[RESERVATION_KEY]);
   if (record.stage !== 'title_abstract') return { status: 'skipped', decision, record, reason: 'Record is no longer title_abstract.' };
   if (metadata.titleAbstractPromotedRecordId) return { status: 'skipped', decision, record, reason: 'Record already moved to full text.' };
-  if (!reservation || reservation.status !== 'active') return { status: 'skipped', decision, record, reason: 'Record does not have an active offline reservation.' };
+  if (!reservation.packId) return { status: 'skipped', decision, record, reason: 'Record does not have an offline reservation.' };
   if (reservation.packId !== packId) return { status: 'skipped', decision, record, reason: `Record is reserved to pack ${reservation.packId}, not ${packId}.` };
   if (reservation.reviewerProfileId !== reviewerProfileId) return { status: 'skipped', decision, record, reason: 'Record is reserved to another reviewer.' };
+  if (reservation.status !== 'active') {
+    const existingVote = matchingExistingReviewerVote(existingDecisions, decision, reviewerProfileId);
+    const resolution = getResolution(record, existingDecisions);
+    if (
+      reservation.status === 'completed' &&
+      existingVote &&
+      decision.decision === 'include' &&
+      resolution === 'ready_for_full_text'
+    ) {
+      return { status: 'recoverable_include', decision, record, reason: 'Include vote was imported but full-text promotion is not linked yet.' };
+    }
+    if (reservation.status === 'completed' && existingVote) {
+      return { status: 'skipped', decision, record, reason: 'Decision was already imported.' };
+    }
+    return { status: 'skipped', decision, record, reason: 'Record does not have an active offline reservation.' };
+  }
   if (reviewerHasVoted(metadata, reviewerProfileId)) return { status: 'skipped', decision, record, reason: 'Reviewer has already voted.' };
   if (hasAnyHumanVote(metadata)) return { status: 'skipped', decision, record, reason: 'Record already has a human reviewer vote.' };
   if (existingDecisions.length > 0) return { status: 'skipped', decision, record, reason: 'Record already has a title/abstract decision entry.' };
@@ -219,6 +284,16 @@ const classifyDecision = async (decision, packId) => {
 };
 
 const promoteTitleAbstractRecord = async (record, profileId) => {
+  const linkedId = metadataObject(record.metadata).titleAbstractPromotedRecordId;
+  if (typeof linkedId === 'string' && linkedId) {
+    return { id: linkedId, duplicateWarnings: [] };
+  }
+
+  const existingPromotion = await findExistingFullTextPromotion(record);
+  if (existingPromotion) {
+    return { id: existingPromotion.id, duplicateWarnings: [] };
+  }
+
   const now = new Date().toISOString();
   const sourceMetadata = metadataObject(record.metadata);
   const duplicateWarnings = await findFullTextPromotionWarnings(record);
@@ -263,8 +338,32 @@ const promoteTitleAbstractRecord = async (record, profileId) => {
   return { id: data.id, duplicateWarnings };
 };
 
+const linkTitleAbstractPromotion = async (record, fullTextRecordId, profileId) => {
+  const promotedMetadata = {
+    ...metadataObject(record.metadata),
+    titleAbstractPromotedRecordId: fullTextRecordId,
+    titleAbstractPromotedAt: new Date().toISOString(),
+    titleAbstractPromotedBy: profileId,
+  };
+  const { data: promoted, error: promoteUpdateError } = await supabase
+    .from('screening_records')
+    .update({ metadata: promotedMetadata, updated_at: new Date().toISOString() })
+    .eq('id', record.id)
+    .eq('updated_at', record.updated_at)
+    .select(SELECT_COLUMNS)
+    .maybeSingle();
+  if (promoteUpdateError) {
+    throw new Error(`Failed to mark ${record.assigned_study_id} as promoted: ${promoteUpdateError.message}`);
+  }
+  if (!promoted) {
+    throw new Error(`Full-text placeholder ${fullTextRecordId} exists, but ${record.assigned_study_id} changed before it could be linked. Re-run the importer after checking the record; if this repeats, manual repair is required.`);
+  }
+  return promoted;
+};
+
 const applyDecision = async ({ record, decision }, reviewer) => {
   const now = new Date().toISOString();
+  const decidedAt = decision.decidedAt || now;
   const metadata = metadataObject(record.metadata);
   const decisions = getDecisions(metadata).filter((entry) => entry.action !== 'resolver_decision').slice(0, 1);
   decisions.push({
@@ -272,7 +371,7 @@ const applyDecision = async ({ record, decision }, reviewer) => {
     reviewerName: reviewer.full_name ?? null,
     decision: decision.decision,
     note: decision.note || null,
-    decidedAt: now,
+    decidedAt,
     action: 'reviewer_vote',
   });
   const resolution = getResolution(record, decisions);
@@ -302,7 +401,7 @@ const applyDecision = async ({ record, decision }, reviewer) => {
       manual_decision: manualDecision,
       manual_reason: manualReason,
       manual_decided_by: finalDecision?.reviewerProfileId ?? reviewerProfileId,
-      manual_decided_at: finalDecision ? now : null,
+      manual_decided_at: finalDecision ? decidedAt : null,
       updated_at: now,
     })
     .eq('id', record.id)
@@ -325,28 +424,19 @@ const applyDecision = async ({ record, decision }, reviewer) => {
   }
   const promotion = await promoteTitleAbstractRecord(updated, reviewerProfileId);
   const fullTextRecordId = promotion.id;
-  const promotedMetadata = {
-    ...metadataObject(updated.metadata),
-    titleAbstractPromotedRecordId: fullTextRecordId,
-    titleAbstractPromotedAt: new Date().toISOString(),
-    titleAbstractPromotedBy: reviewerProfileId,
-  };
-  const { data: promoted, error: promoteUpdateError } = await supabase
-    .from('screening_records')
-    .update({ metadata: promotedMetadata, updated_at: new Date().toISOString() })
-    .eq('id', updated.id)
-    .eq('updated_at', updated.updated_at)
-    .select(SELECT_COLUMNS)
-    .maybeSingle();
-  if (promoteUpdateError) {
-    throw new Error(`Failed to mark ${record.assigned_study_id} as promoted: ${promoteUpdateError.message}`);
-  }
-  if (!promoted) {
-    // The full-text placeholder exists at this point; keep this failure loud so
-    // the title/abstract source can be manually linked instead of overwritten.
-    throw new Error(`Full-text placeholder ${fullTextRecordId} was created, but ${record.assigned_study_id} changed before it could be linked. Manual repair is required.`);
-  }
+  const promoted = await linkTitleAbstractPromotion(updated, fullTextRecordId, reviewerProfileId);
   return { record: promoted, resolution: 'promoted_to_full_text', fullTextRecordId, duplicateWarnings: promotion.duplicateWarnings };
+};
+
+const recoverIncludePromotion = async ({ record }) => {
+  const promotion = await promoteTitleAbstractRecord(record, reviewerProfileId);
+  const promoted = await linkTitleAbstractPromotion(record, promotion.id, reviewerProfileId);
+  return {
+    record: promoted,
+    resolution: 'promoted_to_full_text',
+    fullTextRecordId: promotion.id,
+    duplicateWarnings: promotion.duplicateWarnings,
+  };
 };
 
 const payload = JSON.parse(await fs.readFile(inputPath, 'utf8'));
@@ -365,7 +455,7 @@ const summary = classified.reduce((counts, item) => {
 console.log(`Pack ID: ${payload.packId}`);
 console.log(`Decisions in file: ${decisions.length}`);
 console.log(`Dry-run summary: ${JSON.stringify(summary)}`);
-for (const item of classified.filter((entry) => entry.status !== 'ready')) {
+for (const item of classified.filter((entry) => entry.status !== 'ready' && entry.status !== 'recoverable_include')) {
   console.log(`${item.status.toUpperCase()}: ${item.decision.studyId ?? item.decision.recordId} - ${item.reason}`);
 }
 
@@ -375,21 +465,29 @@ if (!apply) {
 }
 
 let applied = 0;
+let recovered = 0;
 let skippedDuringApply = 0;
-for (const item of classified.filter((entry) => entry.status === 'ready')) {
-  const result = await applyDecision(item, reviewer);
+for (const item of classified.filter((entry) => entry.status === 'ready' || entry.status === 'recoverable_include')) {
+  const result = item.status === 'recoverable_include'
+    ? await recoverIncludePromotion(item)
+    : await applyDecision(item, reviewer);
   if (result.skipped) {
     skippedDuringApply += 1;
     console.log(`SKIPPED: ${item.record.assigned_study_id} - ${result.reason}`);
     continue;
   }
-  applied += 1;
-  console.log(`APPLIED: ${item.record.assigned_study_id} -> ${item.decision.decision} (${result.resolution})`);
+  if (item.status === 'recoverable_include') {
+    recovered += 1;
+    console.log(`RECOVERED: ${item.record.assigned_study_id} -> linked full-text placeholder ${result.fullTextRecordId}`);
+  } else {
+    applied += 1;
+    console.log(`APPLIED: ${item.record.assigned_study_id} -> ${item.decision.decision} (${result.resolution})`);
+  }
   for (const warning of result.duplicateWarnings ?? []) {
-    console.log(`WARNING: ${item.record.assigned_study_id} may duplicate ${warning.matchedStudyId} by ${warning.reason}: ${warning.matchedTitle}`);
+    console.log(`WARNING: ${item.record.assigned_study_id} may duplicate ${warning.matchedStudyId} by ${warning.reason} (${warning.score}): ${warning.matchedTitle}`);
   }
 }
-console.log(`Applied ${applied} decisions. Skipped ${classified.length - applied}.`);
+console.log(`Applied ${applied} decisions. Recovered ${recovered} interrupted promotions. Skipped ${classified.length - applied - recovered}.`);
 if (skippedDuringApply > 0) {
   console.log(`Skipped during apply because records changed after classification: ${skippedDuringApply}.`);
 }
