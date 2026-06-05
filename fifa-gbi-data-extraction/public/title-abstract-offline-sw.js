@@ -1,4 +1,7 @@
 const CACHE_NAME = 'gbi-title-abstract-offline-v2';
+const STATIC_ASSETS = new Set([
+  '/images/University_College_Dublin_logo.svg.png',
+]);
 
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
@@ -18,6 +21,22 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
+  if (STATIC_ASSETS.has(url.pathname)) {
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE_NAME);
+      try {
+        const response = await fetch(event.request);
+        if (response.ok) await cache.put(event.request, response.clone());
+        return response;
+      } catch {
+        const cached = await cache.match(event.request);
+        if (cached) return cached;
+        throw new Error('Offline asset is not cached.');
+      }
+    })());
+    return;
+  }
+
   if (event.request.mode !== 'navigate' || !url.pathname.startsWith('/title-abstract-offline/')) {
     return;
   }

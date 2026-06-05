@@ -91,7 +91,16 @@ const buildHtml = (pack: unknown) => `<!doctype html>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #0f172a; }
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100svh; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 48%, #f8fafc 100%); }
-    header { position: sticky; top: 0; z-index: 2; padding: max(12px, env(safe-area-inset-top)) 14px 12px; background: rgba(248,250,252,.97); border-bottom: 1px solid #e2e8f0; backdrop-filter: blur(12px); }
+    .appbar { position: sticky; top: 0; z-index: 4; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 76px; padding: max(10px, env(safe-area-inset-top)) 20px 12px; border-bottom: 1px solid #e2e8f0; background: rgba(255,255,255,.98); backdrop-filter: blur(12px); }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .brand img { width: 48px; height: 48px; object-fit: contain; }
+    .brand-title { color: #0f172a; font-size: 20px; font-weight: 850; letter-spacing: -.01em; }
+    .menu-button { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; border: 1px solid #e2e8f0; background: white; color: #0f172a; box-shadow: 0 8px 24px rgba(15,23,42,.08); }
+    .menu-button span, .menu-button span::before, .menu-button span::after { display: block; width: 20px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .menu-button span { position: relative; }
+    .menu-button span::before { position: absolute; top: -7px; left: 0; }
+    .menu-button span::after { position: absolute; top: 7px; left: 0; }
+    header { padding: 14px 14px 12px; background: rgba(248,250,252,.97); }
     main { padding: 12px; max-width: 920px; margin: 0 auto; }
     h1 { margin: 0; font-size: 16px; line-height: 1.2; color: #0b3a70; }
     .header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
@@ -107,11 +116,21 @@ const buildHtml = (pack: unknown) => `<!doctype html>
     button.include { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
     button.exclude { background: #fff1f2; border-color: #fecdd3; color: #be123c; }
     button.flag { background: #fffbeb; border-color: #fde68a; color: #b45309; }
+    button.include.active { border-color: #10b981; background: #d1fae5; color: #065f46; box-shadow: 0 0 0 1px rgba(16,185,129,.18) inset; }
+    button.exclude.active { border-color: #f43f5e; background: #ffe4e6; color: #9f1239; box-shadow: 0 0 0 1px rgba(244,63,94,.18) inset; }
+    button.flag.active { border-color: #f59e0b; background: #fef3c7; color: #92400e; box-shadow: 0 0 0 1px rgba(245,158,11,.18) inset; }
     button:disabled { opacity: .45; }
     .card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 14px; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
-    .record-nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .record-nav { display: grid; grid-template-columns: 54px minmax(88px, auto) 54px; gap: 8px; align-items: center; justify-content: space-between; margin: 8px 0 12px; }
+    .record-nav button { display: inline-grid; place-items: center; width: 48px; height: 48px; padding: 0; border-radius: 999px; color: #0b3a70; font-size: 28px; line-height: 1; box-shadow: 0 8px 24px rgba(15,23,42,.08); }
+    .record-nav select { max-width: 120px; min-height: 42px; border: 1px solid #e2e8f0; border-radius: 14px; background: #fff; color: #0f172a; font-size: 13px; font-weight: 800; text-align: center; }
     .record-nav button:last-child { justify-self: end; }
+    .record-heading { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
     .badge { display: inline-flex; border-radius: 999px; padding: 5px 10px; background: #0b3a70; color: white; font-size: 12px; font-weight: 800; }
+    .status-pill { display: inline-flex; border: 1px solid #e2e8f0; border-radius: 999px; padding: 5px 11px; background: #f8fafc; color: #475569; font-size: 12px; font-weight: 850; }
+    .status-pill.include { border-color: #a7f3d0; background: #ecfdf5; color: #047857; }
+    .status-pill.exclude { border-color: #fecdd3; background: #fff1f2; color: #be123c; }
+    .status-pill.flag { border-color: #fde68a; background: #fffbeb; color: #b45309; }
     .title { font-size: 22px; font-weight: 800; line-height: 1.18; margin: 12px 0 10px; letter-spacing: -.01em; }
     .citation { color: #475569; font-size: 13px; line-height: 1.4; }
     .metadata-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border: 1px solid #e2e8f0; background: #e2e8f0; border-radius: 12px; margin: 12px 0; }
@@ -121,8 +140,29 @@ const buildHtml = (pack: unknown) => `<!doctype html>
     .section-label { display: flex; align-items: center; gap: 8px; margin: 16px 0 8px; color: #64748b; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
     .section-label::before { content: ""; width: 22px; height: 1px; background: #cbd5e1; }
     .abstract { white-space: pre-wrap; line-height: 1.62; font-size: 15px; margin: 0; padding: 13px; border: 1px solid #e2e8f0; border-radius: 14px; background: #f8fafc; color: #1e293b; }
-    .ai { margin-top: 14px; padding: 12px; border-radius: 14px; border: 1px solid #e2e8f0; background: #f8fafc; color: #334155; font-size: 13px; line-height: 1.45; }
+    .ai { margin-top: 14px; padding: 16px; border-radius: 16px; border: 1px solid #e2e8f0; background: #f8fafc; color: #334155; font-size: 14px; line-height: 1.5; }
+    .ai.exclude { border-color: #fecdd3; background: #fff7f8; }
+    .ai.include { border-color: #a7f3d0; background: #f0fdf4; }
+    .ai-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .ai-label, .decision-label, .notes-label { display: flex; align-items: center; gap: 8px; color: #475569; font-size: 11px; font-weight: 850; letter-spacing: .2em; text-transform: uppercase; }
+    .ai-pill { display: inline-flex; border-radius: 999px; border: 1px solid #e2e8f0; background: white; padding: 6px 11px; font-size: 12px; font-weight: 850; }
+    .ai-pill.exclude { border-color: #fecdd3; color: #be123c; }
+    .ai-pill.include { border-color: #a7f3d0; color: #047857; }
+    .ai-evidence { margin: 12px 0 0; padding: 12px; border: 1px solid #e2e8f0; border-radius: 13px; background: rgba(255,255,255,.86); color: #1e293b; font-weight: 650; }
     .decision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+    .decision-card { margin-top: 14px; border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; padding: 14px; box-shadow: 0 10px 26px rgba(15,23,42,.05); }
+    .decision-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .current-vote { color: #64748b; font-size: 12px; font-weight: 700; }
+    .current-vote strong { color: #0f172a; }
+    .reviewer-notes { margin-top: 18px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+    .reviewer-note-card { display: flex; align-items: center; gap: 12px; margin-top: 12px; border: 1px solid #e2e8f0; border-radius: 16px; background: #f8fafc; padding: 12px; }
+    .reviewer-note-card.include { border-color: #a7f3d0; background: #f0fdf4; }
+    .reviewer-note-card.exclude { border-color: #fecdd3; background: #fff7f8; }
+    .reviewer-note-card.flag { border-color: #fde68a; background: #fffbeb; }
+    .avatar { display: grid; place-items: center; flex: 0 0 auto; width: 42px; height: 42px; border-radius: 999px; background: #0b3a70; color: #fff; font-size: 12px; font-weight: 900; }
+    .reviewer-copy { min-width: 0; flex: 1; }
+    .reviewer-name { margin: 0; color: #0f172a; font-size: 14px; font-weight: 850; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .reviewer-note { margin: 4px 0 0; color: #64748b; font-size: 13px; }
     textarea { width: 100%; min-height: 76px; margin-top: 10px; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; resize: vertical; }
     .notice { margin-top: 10px; color: #be123c; font-size: 13px; font-weight: 700; }
     .warning { margin-top: 10px; border-radius: 10px; background: #fef3c7; color: #92400e; padding: 10px; font-size: 13px; font-weight: 800; }
@@ -130,12 +170,23 @@ const buildHtml = (pack: unknown) => `<!doctype html>
     .export textarea { min-height: 180px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
     @media (max-width: 560px) {
       main { padding: 10px; }
-      .record-nav { grid-template-columns: 1fr minmax(86px, auto) 1fr; }
+      .brand-title { font-size: 19px; }
+      .record-nav { grid-template-columns: 54px minmax(86px, auto) 54px; }
       .toolbar { display: grid; grid-template-columns: 1fr 1fr; }
     }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
 <body>
+  <div class="appbar">
+    <div class="brand">
+      <img src="/images/University_College_Dublin_logo.svg.png" alt="UCD">
+      <div class="brand-title">FIFA GBI</div>
+    </div>
+    <button class="menu-button" type="button" aria-label="Jump to export controls" onclick="document.getElementById('exportPanel')?.scrollIntoView({ behavior: 'smooth', block: 'start' })">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
   <noscript><div class="warning">This offline screening page needs JavaScript. If you see this, the file/page is being previewed instead of opened in a browser.</div></noscript>
   <header>
     <div class="header-row">
@@ -153,21 +204,28 @@ const buildHtml = (pack: unknown) => `<!doctype html>
   <main>
     <section class="card">
       <div class="record-nav">
-        <button id="prevBtn" type="button">Previous</button>
+        <button id="prevBtn" type="button"><span aria-hidden="true">‹</span><span class="sr-only">Previous</span></button>
         <select id="recordSelect" aria-label="Record"></select>
-        <button id="nextBtn" type="button">Next</button>
+        <button id="nextBtn" type="button"><span aria-hidden="true">›</span><span class="sr-only">Next</span></button>
       </div>
       <div id="record"></div>
-      <div class="decision-grid">
-        <button class="include" type="button" data-decision="include">Include</button>
-        <button class="exclude" type="button" data-decision="exclude">Exclude</button>
-        <button class="flag" type="button" data-decision="flag">Flag</button>
+      <div class="decision-card">
+        <div class="decision-head">
+          <div class="decision-label">Decision</div>
+          <div class="current-vote" id="currentVote">No vote yet</div>
+        </div>
+        <div class="decision-grid">
+          <button class="include" type="button" data-decision="include">✓ Include</button>
+          <button class="exclude" type="button" data-decision="exclude">× Exclude</button>
+          <button class="flag" type="button" data-decision="flag">! Flag</button>
+        </div>
+        <textarea id="note" maxlength="${MAX_NOTE_CHARS}" placeholder="Optional reviewer note"></textarea>
+        <div class="small"><span id="noteCount">0</span>/${MAX_NOTE_CHARS}</div>
+        <div class="notice" id="notice"></div>
       </div>
-      <textarea id="note" maxlength="${MAX_NOTE_CHARS}" placeholder="Optional note. Required for Flag."></textarea>
-      <div class="small"><span id="noteCount">0</span>/${MAX_NOTE_CHARS}</div>
-      <div class="notice" id="notice"></div>
+      <div class="reviewer-notes" id="reviewerNotes"></div>
     </section>
-    <section class="card export">
+    <section class="card export" id="exportPanel">
       <div class="toolbar">
         <button class="primary" id="exportBtn" type="button">Export decisions</button>
         <button id="copyBtn" type="button">Copy JSON</button>
@@ -259,7 +317,9 @@ const buildHtml = (pack: unknown) => `<!doctype html>
       el('note').value = decision.note || '';
       el('noteCount').textContent = String(el('note').value.length);
       el('notice').textContent = decision.decision ? 'Saved: ' + decision.decision : '';
-      el('record').innerHTML = '<span class="badge">' + (record.studyId || record.recordId) + '</span>' +
+      const statusLabel = decision.decision ? decision.decision[0].toUpperCase() + decision.decision.slice(1) : 'Reserved offline';
+      el('currentVote').innerHTML = decision.decision ? 'You voted <strong>' + statusLabel + '</strong>' : 'No vote yet';
+      el('record').innerHTML = '<div class="record-heading"><span class="badge">' + (record.studyId || record.recordId) + '</span><span class="status-pill"></span></div>' +
         '<div class="title"></div>' +
         '<div class="citation"></div>' +
         '<div class="metadata-strip">' +
@@ -270,7 +330,14 @@ const buildHtml = (pack: unknown) => `<!doctype html>
         '</div>' +
         '<div class="section-label">Abstract</div>' +
         '<div class="abstract"></div>' +
-        '<div class="ai"></div>';
+        '<div class="ai">' +
+          '<div class="ai-head"><div class="ai-label">AI Recommendation</div><span class="ai-pill"></span></div>' +
+          '<div class="ai-reason"></div>' +
+          '<blockquote class="ai-evidence" hidden></blockquote>' +
+        '</div>';
+      const statusPill = el('record').querySelector('.status-pill');
+      statusPill.textContent = statusLabel;
+      statusPill.className = 'status-pill' + (decision.decision ? ' ' + decision.decision : '');
       el('record').querySelector('.title').textContent = record.title || 'Untitled';
       el('record').querySelector('.citation').textContent = [record.leadAuthor, record.year, record.journal, record.doi].filter(Boolean).join(' · ') || 'No citation metadata';
       el('record').querySelector('.metadata-doi').textContent = record.doi || '—';
@@ -278,9 +345,36 @@ const buildHtml = (pack: unknown) => `<!doctype html>
       el('record').querySelector('.metadata-author').textContent = record.leadAuthor || '—';
       el('record').querySelector('.metadata-journal').textContent = record.journal || '—';
       el('record').querySelector('.abstract').textContent = record.abstract || 'No abstract imported.';
-      el('record').querySelector('.ai').textContent = 'AI: ' + (record.aiSuggestedDecision || record.aiStatus || 'not run') + (record.aiReason ? ' - ' + record.aiReason : '');
+      const aiTone = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude' ? record.aiSuggestedDecision : '';
+      const aiPanel = el('record').querySelector('.ai');
+      aiPanel.className = 'ai' + (aiTone ? ' ' + aiTone : '');
+      const aiPill = el('record').querySelector('.ai-pill');
+      aiPill.textContent = record.aiSuggestedDecision ? record.aiSuggestedDecision[0].toUpperCase() + record.aiSuggestedDecision.slice(1) : (record.aiStatus || 'Not run');
+      aiPill.className = 'ai-pill' + (aiTone ? ' ' + aiTone : '');
+      el('record').querySelector('.ai-reason').textContent = record.aiReason || 'No local title/abstract AI recommendation has been recorded yet.';
+      const aiEvidence = el('record').querySelector('.ai-evidence');
+      if (record.aiEvidenceQuote) {
+        aiEvidence.hidden = false;
+        aiEvidence.textContent = '“' + record.aiEvidenceQuote + '”' + (record.aiSourceLocation ? ' — ' + record.aiSourceLocation : '');
+      } else {
+        aiEvidence.hidden = true;
+        aiEvidence.textContent = '';
+      }
       el('counterPill').textContent = (index + 1) + '/' + PACK.records.length;
-      document.querySelectorAll('[data-decision]').forEach((button) => { button.disabled = false; });
+      document.querySelectorAll('[data-decision]').forEach((button) => {
+        button.disabled = false;
+        button.classList.toggle('active', decision.decision === button.dataset.decision);
+      });
+      renderReviewerNotes(record, decision);
+    }
+    function renderReviewerNotes(record, decision) {
+      if (!decision.decision) {
+        el('reviewerNotes').innerHTML = '<div class="notes-label">Reviewer Notes</div><div class="reviewer-note-card"><div class="avatar">AB</div><div class="reviewer-copy"><p class="reviewer-name">' + PACK.reviewerName + '</p><p class="reviewer-note">No vote recorded in this browser yet.</p></div></div>';
+        return;
+      }
+      const label = decision.decision[0].toUpperCase() + decision.decision.slice(1);
+      const note = decision.note || 'No note.';
+      el('reviewerNotes').innerHTML = '<div class="notes-label">Reviewer Notes</div><div class="reviewer-note-card ' + decision.decision + '"><div class="avatar">AB</div><div class="reviewer-copy"><p class="reviewer-name">' + PACK.reviewerName + '</p><p class="reviewer-note">' + note.replace(/[<>&]/g, (char) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[char])) + '</p></div><span class="status-pill ' + decision.decision + '">' + label + '</span></div>';
     }
     function setDecision(decision) {
       const record = selectedRecord();
