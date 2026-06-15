@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import {
+  getDefaultTitleAbstractDecisionAction,
   getTitleAbstractResolution,
   getTitleAbstractWorkStatus,
 } from '../src/lib/screening/title-abstract-decisions.ts';
@@ -94,4 +95,32 @@ test('resolver decision still overrides AI and human conflict', () => {
   });
 
   assert.equal(getTitleAbstractResolution(record), 'ready_for_full_text');
+});
+
+test('a third reviewer defaults to resolver mode for an AI-human conflict', () => {
+  const record = recordWithDecisions([
+    reviewerVote('reviewer-1', 'include'),
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: 'exclude',
+  });
+
+  assert.equal(getDefaultTitleAbstractDecisionAction(record, 'reviewer-2'), 'resolver_decision');
+});
+
+test('the original human reviewer defaults to their own vote for a conflict', () => {
+  const record = recordWithDecisions([
+    reviewerVote('reviewer-1', 'include'),
+  ], {
+    aiStatus: 'completed',
+    aiSuggestedDecision: 'exclude',
+  });
+
+  assert.equal(getDefaultTitleAbstractDecisionAction(record, 'reviewer-1'), 'reviewer_vote');
+});
+
+test('a reviewer defaults to their own vote outside conflict resolution', () => {
+  const record = recordWithDecisions([]);
+
+  assert.equal(getDefaultTitleAbstractDecisionAction(record, 'reviewer-2'), 'reviewer_vote');
 });

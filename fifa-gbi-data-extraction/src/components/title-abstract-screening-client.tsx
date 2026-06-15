@@ -5,6 +5,7 @@ import { ChangeEvent, ReactNode, UIEvent, memo, useCallback, useEffect, useLayou
 import { FlagReasonModal } from '@/components/flag-reason-modal';
 import {
   adjustTitleAbstractQueueCountsAfterDecision,
+  getDefaultTitleAbstractDecisionAction,
   getTitleAbstractDecisions,
   getTitleAbstractMetadata,
   getTitleAbstractResolution,
@@ -150,9 +151,17 @@ export function TitleAbstractScreeningClient({
   const isAdmin = profileRole === 'admin';
 
   const selected = selectedId ? records.find((record) => record.id === selectedId) ?? null : null;
+  const defaultDecisionAction = selected
+    ? getDefaultTitleAbstractDecisionAction(selected, currentReviewerId)
+    : 'reviewer_vote';
+
   useEffect(() => {
     selectedIdRef.current = selectedId;
   }, [selectedId]);
+
+  useLayoutEffect(() => {
+    setDecisionAction(defaultDecisionAction);
+  }, [selectedId, defaultDecisionAction]);
 
   useEffect(() => {
     recordsRef.current = records;

@@ -116,6 +116,15 @@ export const hasTitleAbstractReviewerVoted = (record: ScreeningRecord, reviewerP
     .filter((decision) => decision.action !== 'resolver_decision')
     .some((decision) => decision.reviewerProfileId === reviewerProfileId);
 
+export const getDefaultTitleAbstractDecisionAction = (
+  record: ScreeningRecord,
+  reviewerProfileId: string,
+): TitleAbstractDecisionAction =>
+  getTitleAbstractResolution(record) === 'needs_resolver'
+    && !hasTitleAbstractReviewerVoted(record, reviewerProfileId)
+    ? 'resolver_decision'
+    : 'reviewer_vote';
+
 export const getTitleAbstractWorkStatus = (
   record: ScreeningRecord,
   reviewerProfileId: string,
