@@ -1,6 +1,6 @@
 ---
 name: gbi-live-extraction
-description: Use the terminal-first workflow for staged manual-tab extraction in the FIFA GBI repo. Use this when extracting, reviewing, applying, QA-checking, or batch-processing paper data in the live Supabase-backed extraction site without using the UI.
+description: Use when extracting, reviewing, applying, QA-checking, or batch-processing FIFA GBI paper data.
 ---
 
 # GBI Live Extraction

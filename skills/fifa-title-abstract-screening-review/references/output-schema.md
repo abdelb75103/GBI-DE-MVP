@@ -2,6 +2,8 @@
 
 Write recommendations as JSON:
 
+These recommendations are AI review outputs only. They are not human votes, resolver decisions, or conflict adjudications.
+
 ```json
 {
   "criteriaVersion": "fifa-gbi-title-abstract-v1-2026-04-25",
@@ -29,9 +31,9 @@ Write recommendations as JSON:
 
 - `decision` must be `include`, `exclude`, or `undecided`.
 - `confidence` must be between `0` and `1`.
-- `include` recommendations must have `sourceQuote: null`, `sourceLocation: null`, and `exclusionReason: null`.
-- `undecided` recommendations must have `sourceQuote: null`, `sourceLocation: null`, and `exclusionReason: null`.
-- `exclude` recommendations must have non-empty `exclusionReason`, `sourceQuote`, and `sourceLocation`.
+- All recommendations must have `sourceQuote: null` and `sourceLocation: null`.
+- `include` and `undecided` recommendations must have `exclusionReason: null`.
+- `exclude` recommendations must have a non-empty, criteria-based `exclusionReason`.
 - `targetTag` must be `null` or `systematic_review`.
-- Systematic reviews, scoping reviews, evidence syntheses, and meta-analyses relevant to football/soccer injury or illness should use `decision: "include"` and `targetTag: "systematic_review"`.
-- `sourceQuote` for exclusions must come from the record metadata provided in the export, not from an inferred or external source.
+- Systematic reviews, scoping reviews, evidence syntheses, and meta-analyses relevant to football/soccer injury, illness, health-problem, or mental-health surveillance/epidemiology reference checking should use `decision: "include"` and `targetTag: "systematic_review"`.
+- Recommendation files must not contain human reviewer vote edits, resolver decisions, manual decision fields, or promotion instructions.

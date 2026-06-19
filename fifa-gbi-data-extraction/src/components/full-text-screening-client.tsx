@@ -1,7 +1,8 @@
 'use client';
 
-import { ChangeEvent, useMemo, useRef, useState, useTransition } from 'react';
+import { ChangeEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import {
   getReviewerDecisions,
@@ -10,24 +11,24 @@ import {
   isAwaitingFullTextPdf,
   type ScreeningWorkStatus,
 } from '@/lib/screening/reviewer-decisions';
+import {
+  buildFullTextQueueUrl,
+  buildFullTextReaderUrl,
+  getFullTextFilterLabel,
+  type FullTextQueueContext,
+  type FullTextQueueFilter,
+  type FullTextQueuePage,
+} from '@/lib/screening/full-text-queue';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
-  initialRecords: ScreeningRecord[];
+  initialQueue: FullTextQueuePage | null;
+  context: FullTextQueueContext;
   currentReviewerId: string;
   profileRole: 'admin' | 'extractor' | 'observer';
   loadError: string | null;
 };
 
-type QueueFilter =
-  | 'all'
-  | 'awaiting_pdf'
-  | 'needs_your_vote'
-  | 'awaiting_other_reviewer'
-  | 'ready_for_extraction'
-  | 'excluded'
-  | 'conflict'
-  | 'promoted';
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
 
 type CardTone = 'purple' | 'indigo' | 'sky' | 'amber' | 'emerald' | 'rose';
@@ -45,67 +46,48 @@ const MAX_FILE_BYTES = 20 * 1024 * 1024;
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 
 export function FullTextScreeningClient({
-  initialRecords,
+  initialQueue,
+  context,
   currentReviewerId,
   profileRole,
   loadError,
 }: Props) {
-  const [records, setRecords] = useState(initialRecords);
-  const [filter, setFilter] = useState<QueueFilter>('all');
-  const [search, setSearch] = useState('');
+  const router = useRouter();
+  const [searchInput, setSearchInput] = useState(context.search);
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const isAdmin = profileRole === 'admin';
-
-  const counts = useMemo(() => {
-    const noVotes = records.filter((record) => getReviewerDecisions(record).length === 0).length;
-    const oneVote = records.filter((record) => getReviewerDecisions(record).length === 1).length;
-    return {
-      all: records.length,
-      awaitingPdf: records.filter(isAwaitingFullTextPdf).length,
-      needsYourVote: records.filter((record) => getScreeningWorkStatus(record, currentReviewerId) === 'needs_your_vote').length,
-      awaitingOther: records.filter((record) => getScreeningWorkStatus(record, currentReviewerId) === 'awaiting_other_reviewer').length,
-      complete: records.filter((record) => {
-        const status = getScreeningWorkStatus(record, currentReviewerId);
-        return status === 'ready_for_extraction' || status === 'excluded' || status === 'promoted';
-      }).length,
-      conflicts: records.filter((record) => getScreeningResolution(record) === 'conflict').length,
-      noVotes,
-      oneVote,
-    };
-  }, [currentReviewerId, records]);
-  const progressPercent = counts.all > 0 ? Math.round((counts.complete / counts.all) * 100) : 0;
-
-  const filteredRecords = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    return records.filter((record) => {
-      const status = getScreeningWorkStatus(record, currentReviewerId);
-      if (filter !== 'all' && status !== filter) return false;
-      if (!query) return true;
-      return [
-        record.assignedStudyId,
-        record.title,
-        record.leadAuthor,
-        record.year,
-        record.journal,
-        record.doi,
-        record.originalFileName,
-        record.aiReason,
-      ]
-        .filter(Boolean)
-        .some((value) => String(value).toLowerCase().includes(query));
-    });
-  }, [currentReviewerId, records, filter, search]);
-
-  const refreshRecords = async () => {
-    const response = await fetch('/api/full-text-screening', { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error('Failed to refresh screening records');
-    }
-    const payload = (await response.json()) as { records: ScreeningRecord[] };
-    setRecords(payload.records ?? []);
+  const records = initialQueue?.records ?? [];
+  const counts = initialQueue?.counts ?? {
+    all: 0,
+    awaitingPdf: 0,
+    needsYourVote: 0,
+    awaitingOther: 0,
+    complete: 0,
+    conflicts: 0,
+    noVotes: 0,
+    oneVote: 0,
   };
+  const progressPercent = counts.all > 0 ? Math.round((counts.complete / counts.all) * 100) : 0;
+  const activeFilterLabel = getFullTextFilterLabel(context.filter);
+
+  const navigateQueue = useCallback((next: Partial<Pick<FullTextQueueContext, 'filter' | 'search' | 'page'>>) => {
+    startTransition(() => {
+      router.push(buildFullTextQueueUrl({
+        ...context,
+        ...next,
+        notice: null,
+      }));
+    });
+  }, [context, router]);
+
+  useEffect(() => {
+    const nextSearch = searchInput.trim();
+    if (nextSearch === context.search) return;
+    const timer = window.setTimeout(() => navigateQueue({ search: nextSearch, page: 1 }), 300);
+    return () => window.clearTimeout(timer);
+  }, [context.search, navigateQueue, searchInput]);
 
   const handleFilesSelected = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files ? Array.from(event.target.files) : [];
@@ -136,7 +118,7 @@ export function FullTextScreeningClient({
       }
 
       if (fileInputRef.current) fileInputRef.current.value = '';
-      await refreshRecords();
+      router.refresh();
       setNotice({
         tone: failures.length > 0 ? 'error' : 'success',
         message: failures.length > 0
@@ -171,7 +153,7 @@ export function FullTextScreeningClient({
         setNotice({ tone: 'error', message: payload.error ?? 'PDF attach failed' });
         return;
       }
-      await refreshRecords();
+      router.refresh();
       setNotice({ tone: 'success', message: `Attached ${file.name} to the full-text record.` });
     });
   };
@@ -232,7 +214,7 @@ export function FullTextScreeningClient({
               value={counts.awaitingPdf}
               detail="Included at title/abstract"
               tone="amber"
-              onClick={() => setFilter('awaiting_pdf')}
+              onClick={() => navigateQueue({ filter: 'awaiting_pdf', page: 1 })}
             />
             <QueueCard
               label="Screen studies"
@@ -240,14 +222,14 @@ export function FullTextScreeningClient({
               detail={`${counts.noVotes} no votes · ${counts.oneVote} one vote`}
               action="Continue screening"
               tone="indigo"
-              onClick={() => setFilter('needs_your_vote')}
+              onClick={() => navigateQueue({ filter: 'needs_your_vote', page: 1 })}
             />
             <QueueCard
               label="Awaiting other reviewer"
               value={counts.awaitingOther}
               detail="You have already voted"
               tone="sky"
-              onClick={() => setFilter('awaiting_other_reviewer')}
+              onClick={() => navigateQueue({ filter: 'awaiting_other_reviewer', page: 1 })}
             />
             <QueueCard
               label="Resolve conflicts"
@@ -255,21 +237,21 @@ export function FullTextScreeningClient({
               detail="Third decision is final"
               action="Continue"
               tone="amber"
-              onClick={() => setFilter('conflict')}
+              onClick={() => navigateQueue({ filter: 'conflict', page: 1 })}
             />
             <QueueCard
               label="Complete"
               value={counts.complete}
               detail="Included, excluded, or promoted"
               tone="emerald"
-              onClick={() => setFilter('ready_for_extraction')}
+              onClick={() => navigateQueue({ filter: 'ready_for_extraction', page: 1 })}
             />
             <QueueCard
               label="Total records"
               value={counts.all}
               detail="All full-text records"
               tone="purple"
-              onClick={() => setFilter('all')}
+              onClick={() => navigateQueue({ filter: 'all', page: 1 })}
             />
           </div>
 
@@ -300,14 +282,17 @@ export function FullTextScreeningClient({
       </section>
 
       {loadError ? <Notice tone="error" message={loadError} /> : null}
+      {context.notice === 'filter_empty' ? (
+        <Notice tone="neutral" message={`No more papers in “${activeFilterLabel}”.`} />
+      ) : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
       <section className="overflow-hidden rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
         <div className="border-b border-slate-200/70 bg-gradient-to-b from-white to-slate-50/40 px-5 py-4">
           <div className="grid gap-3 lg:grid-cols-[240px_minmax(0,1fr)]">
             <select
-              value={filter}
-              onChange={(event) => setFilter(event.target.value as QueueFilter)}
+              value={context.filter}
+              onChange={(event) => navigateQueue({ filter: event.target.value as FullTextQueueFilter, page: 1 })}
               className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none"
             >
               <option value="all">All records</option>
@@ -324,8 +309,8 @@ export function FullTextScreeningClient({
                 <SearchIcon />
               </span>
               <input
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
+                value={searchInput}
+                onChange={(event) => setSearchInput(event.target.value)}
                 placeholder="Search title, study ID, author, DOI..."
                 className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none"
               />
@@ -344,7 +329,7 @@ export function FullTextScreeningClient({
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200/60">
-              {filteredRecords.map((record) => (
+              {records.map((record, position) => (
                 <ScreeningRow
                   key={record.id}
                   record={record}
@@ -352,16 +337,90 @@ export function FullTextScreeningClient({
                   isAdmin={isAdmin}
                   isPending={isPending}
                   onAttachPdf={handleRecordPdfSelected}
+                  href={buildFullTextReaderUrl(record.id, context, position)}
                 />
               ))}
             </tbody>
           </table>
-          {filteredRecords.length === 0 ? (
-            <p className="p-10 text-center text-sm text-slate-500">No records match this view.</p>
+          {records.length === 0 ? (
+            <p className="p-10 text-center text-sm text-slate-500">No papers in “{activeFilterLabel}”.</p>
           ) : null}
         </div>
+        {initialQueue ? (
+          <QueuePagination
+            queue={initialQueue}
+            onPageChange={(page) => navigateQueue({ page })}
+            isPending={isPending}
+          />
+        ) : null}
       </section>
     </div>
+  );
+}
+
+function QueuePagination({
+  queue,
+  onPageChange,
+  isPending,
+}: {
+  queue: FullTextQueuePage;
+  onPageChange: (page: number) => void;
+  isPending: boolean;
+}) {
+  const firstPage = Math.max(1, Math.min(queue.page - 2, queue.totalPages - 4));
+  const visiblePages = Array.from(
+    { length: Math.min(5, queue.totalPages) },
+    (_, index) => firstPage + index,
+  );
+
+  return (
+    <nav
+      aria-label="Full-text screening queue pagination"
+      className="flex flex-col gap-3 border-t border-slate-200/70 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p className="text-sm text-slate-600" aria-live="polite">
+        {queue.filteredTotal > 0
+          ? `Showing ${queue.rangeStart}–${queue.rangeEnd} of ${queue.filteredTotal}`
+          : 'Showing 0 of 0'}
+      </p>
+      <div className="flex flex-wrap items-center gap-1.5">
+        <button
+          type="button"
+          disabled={queue.page === 1 || isPending}
+          onClick={() => onPageChange(queue.page - 1)}
+          aria-label="Previous queue page"
+          className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Previous
+        </button>
+        {visiblePages.map((page) => (
+          <button
+            key={page}
+            type="button"
+            onClick={() => onPageChange(page)}
+            disabled={isPending}
+            aria-label={`Queue page ${page}`}
+            aria-current={page === queue.page ? 'page' : undefined}
+            className={`grid h-8 min-w-8 place-items-center rounded-full border px-2 text-sm font-semibold ${
+              page === queue.page
+                ? 'border-[#0b3a70] bg-[#0b3a70] text-white'
+                : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
+            } disabled:cursor-not-allowed disabled:opacity-50`}
+          >
+            {page}
+          </button>
+        ))}
+        <button
+          type="button"
+          disabled={queue.page === queue.totalPages || isPending}
+          onClick={() => onPageChange(queue.page + 1)}
+          aria-label="Next queue page"
+          className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Next
+        </button>
+      </div>
+    </nav>
   );
 }
 
@@ -381,12 +440,14 @@ function ScreeningRow({
   isAdmin,
   isPending,
   onAttachPdf,
+  href,
 }: {
   record: ScreeningRecord;
   currentReviewerId: string;
   isAdmin: boolean;
   isPending: boolean;
   onAttachPdf: (recordId: string, event: ChangeEvent<HTMLInputElement>) => void;
+  href: string;
 }) {
   const resolution = getScreeningResolution(record);
   const reviewerDecisions = getReviewerDecisions(record);
@@ -403,7 +464,7 @@ function ScreeningRow({
     <tr className="group relative bg-white transition-colors duration-200 ease-out hover:bg-[#0b3a70]/[0.04]">
       <td className="relative max-w-[440px] py-4 pl-5 pr-5 align-middle">
         <span aria-hidden className={`absolute left-0 top-2 bottom-2 w-1 rounded-r-full ${STATUS_ACCENT[status]}`} />
-        <Link href={`/full-text-screening/${record.id}`} className="block pl-2">
+        <Link href={href} className="block pl-2">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold tracking-wide text-[#0b3a70]">{record.assignedStudyId}</span>
             <span className="text-xs text-slate-400">·</span>

@@ -28,7 +28,7 @@ export { expandCompactRecommendation, preTriageRecord };
 const DEFAULT_SOURCE_CSV = '/Users/abdelbabiker/Desktop/FIFA/ENTitle and Abstract Screening Results .csv';
 const DEFAULT_OUTPUT_ROOT = path.resolve(REPO_ROOT, 'outputs/title-abstract-validation/first-batch-rayyan-2026-06-02');
 const DEFAULT_CRITERIA_FILE = path.resolve(SKILL_DIR, 'references/runtime-criteria.md');
-const DEFAULT_CRITERIA_VERSION = 'fifa-gbi-title-abstract-v1.4-2026-06-02';
+const DEFAULT_CRITERIA_VERSION = 'fifa-gbi-title-abstract-v1.5-2026-06-08';
 export const DEFAULT_PROVIDER = 'codex-cli';
 
 export const resolveProvider = (value = DEFAULT_PROVIDER) => {
@@ -345,9 +345,9 @@ Criteria version: ${criteriaVersion}
 ${criteriaText}
 
 Return JSON only:
-[{"id":"record-id","d":"include|exclude|undecided","r":"reason_code","c":0.0,"t":["optional_tag"],"n":"short optional note","q":"exact quote for excludes","l":"Title|Abstract|Journal|Citation metadata"}]
+[{"id":"record-id","d":"include|exclude|undecided","r":"reason_code","c":0.0,"t":["optional_tag"],"n":"short optional note"}]
 
-For every exclude, q must be copied exactly from the supplied title, abstract, journal, authors, DOI, keywords, or sourceMetadata. For include/undecided, omit q/l or set them null. Use tag "referee" for referee/match-official records and "systematic_review" for systematic reviews retained for reference-list checks.
+For every exclude, the reason code and note must directly explain the eligibility rule that makes the supplied record ineligible. Do not return quote or source-location fields. Use tag "referee" for referee/match-official records and "systematic_review" for systematic reviews retained for reference-list checks.
 
 ${previousFailure ? `Previous output failed validation. Correct this problem: ${previousFailure}\n` : ''}
 

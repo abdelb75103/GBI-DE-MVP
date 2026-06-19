@@ -76,6 +76,12 @@ App-side Gemini integration (when explicitly requested):
 - `jsonrepair` used to handle malformed AI JSON responses
 - Gemini API key is stored per-user in the `settings` table, loaded via `use-gemini-api-key.ts` hook
 
+### AI Screening Integrity
+
+Human screening votes are immutable audit records. When re-reviewing title/abstract AI recommendations or applying updated criteria, update only the AI recommendation fields through the project workflow; do not edit `metadata.titleAbstractDecisions`, reviewer votes, resolver decisions, manual-review fields, or full-text promotion records.
+
+AI-vs-human disagreements are legitimate conflicts unless Abdel explicitly asks to resolve/adjudicate the exact records and approves the intended resolver decision. Never convert a conflict into a resolver decision just because the AI recommendation changed.
+
 ### Auth / Profiles
 
 No traditional auth — profile-based local identity. `ActiveProfileProvider` holds the active session context. Profile ID (UUID string) is stored as `updated_by` on extraction fields, not an enum.

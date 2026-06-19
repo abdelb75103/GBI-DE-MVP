@@ -16,6 +16,20 @@ Provided by: Ishanka Weerasekara
 - `20260526 Pubmed.nbib`
 - `20260526 updated search strategies IW.docx`
 
+## Strategy Document Scope
+
+The search strategy document in this folder contains the 2026 updated-search counts and also includes an `OLD SEARCH` section with the original 2024 counts for context. The updated-search reference files are the four 2026 database exports listed above.
+
+## Raw Reference File Counts
+
+| Source | Strategy/document count | Raw records in file | Status |
+| --- | ---: | ---: | --- |
+| Medline | 806 | 806 | Matches |
+| Embase | 1,054 | 1,054 | Matches; one record had no title and was omitted from parsed/importable references |
+| SportDiscus | 2,271 | 2,271 | Matches |
+| PubMed | 2,921 | 2,921 | Matches |
+| Total | 7,052 | 7,052 | Matches raw search-export counts |
+
 ## Final Import Counts
 
 | Metric | Count |

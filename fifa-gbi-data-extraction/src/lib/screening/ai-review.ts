@@ -100,18 +100,11 @@ export async function reviewFullTextScreeningRecord(
       rawText,
     );
   }
-  if (validated.data.suggestedDecision === 'exclude' && !validated.data.evidenceQuote?.trim()) {
-    throw new ScreeningAiParseError('AI full-text screening exclusion is missing a source quote.', rawText);
-  }
-  if (validated.data.suggestedDecision === 'exclude' && !validated.data.sourceLocation?.trim()) {
-    throw new ScreeningAiParseError('AI full-text screening exclusion is missing a source location.', rawText);
-  }
-
   return {
     suggestedDecision: validated.data.suggestedDecision,
     reason: validated.data.reason,
-    evidenceQuote: validated.data.suggestedDecision === 'exclude' ? validated.data.evidenceQuote ?? null : null,
-    sourceLocation: validated.data.suggestedDecision === 'exclude' ? validated.data.sourceLocation ?? null : null,
+    evidenceQuote: null,
+    sourceLocation: null,
     confidence: validated.data.confidence ?? null,
     model: usedModelName,
     criteriaVersion: SCREENING_CRITERIA_VERSION,
@@ -151,13 +144,10 @@ Return strict JSON with exactly:
 {
   "suggestedDecision": "include" | "exclude",
   "reason": "for include: short eligibility summary; for exclude: short audit-ready exclusion reason",
-  "evidenceQuote": "required only when suggestedDecision is exclude: short direct quote from the PDF defending the exclusion; null for include",
-  "sourceLocation": "required only when suggestedDecision is exclude: page/table/section hint; null for include",
   "confidence": number from 0 to 1
 }
 
-For Include recommendations, do not provide a source quote. Give only a concise reason explaining why full-text extraction should proceed.
-For Exclude recommendations, defend the exclusion with one short verbatim quote from the paper and a source location. If you cannot quote the paper for the exclusion, do not force a confident exclusion.
+Give a concise reason that directly explains why full-text extraction should proceed or which eligibility rule makes the paper ineligible. Do not return source quotes or source-location fields.
 
 Study ID: ${record.assignedStudyId}
 Title: ${record.title}

@@ -40,6 +40,8 @@ import {
 import {
   createScreeningRecord,
   getScreeningRecord,
+  findNextFullTextQueueRecordForReviewer,
+  listFullTextQueuePage,
   listScreeningRecords,
   listTitleAbstractQueuePage,
   getTitleAbstractQueueCountsForReviewer,
@@ -108,6 +110,8 @@ export const mockDb = {
   countPendingUploadQueueEntries,
 
   listScreeningRecords,
+  listFullTextQueuePage,
+  findNextFullTextQueueRecordForReviewer,
   listTitleAbstractQueuePage,
   getTitleAbstractQueueCountsForReviewer,
   getScreeningRecord,

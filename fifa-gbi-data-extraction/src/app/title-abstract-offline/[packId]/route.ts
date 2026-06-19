@@ -24,8 +24,6 @@ const SELECT_COLUMNS = [
   'ai_status',
   'ai_suggested_decision',
   'ai_reason',
-  'ai_evidence_quote',
-  'ai_source_location',
   'ai_confidence',
   'ai_raw_response',
   'metadata',
@@ -47,8 +45,6 @@ type Row = {
   ai_status: string | null;
   ai_suggested_decision: string | null;
   ai_reason: string | null;
-  ai_evidence_quote: string | null;
-  ai_source_location: string | null;
   ai_confidence: number | null;
   ai_raw_response: Record<string, unknown> | null;
   metadata: Record<string, unknown> | null;
@@ -74,8 +70,6 @@ const mapPackRecord = (record: Row) => ({
   aiStatus: record.ai_status,
   aiSuggestedDecision: record.ai_suggested_decision,
   aiReason: record.ai_reason,
-  aiEvidenceQuote: record.ai_evidence_quote,
-  aiSourceLocation: record.ai_source_location,
   aiConfidence: record.ai_confidence,
   aiTargetTag: record.ai_raw_response?.targetTag === 'systematic_review' ? 'systematic_review' : null,
   sourceUpdatedAt: record.updated_at,
@@ -148,7 +142,6 @@ const buildHtml = (pack: unknown) => `<!doctype html>
     .ai-pill { display: inline-flex; border-radius: 999px; border: 1px solid #e2e8f0; background: white; padding: 6px 11px; font-size: 12px; font-weight: 850; }
     .ai-pill.exclude { border-color: #fecdd3; color: #be123c; }
     .ai-pill.include { border-color: #a7f3d0; color: #047857; }
-    .ai-evidence { margin: 12px 0 0; padding: 12px; border: 1px solid #e2e8f0; border-radius: 13px; background: rgba(255,255,255,.86); color: #1e293b; font-weight: 650; }
     .decision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
     .decision-card { margin-top: 14px; border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; padding: 14px; box-shadow: 0 10px 26px rgba(15,23,42,.05); }
     .decision-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
@@ -333,7 +326,6 @@ const buildHtml = (pack: unknown) => `<!doctype html>
         '<div class="ai">' +
           '<div class="ai-head"><div class="ai-label">AI Recommendation</div><span class="ai-pill"></span></div>' +
           '<div class="ai-reason"></div>' +
-          '<blockquote class="ai-evidence" hidden></blockquote>' +
         '</div>';
       const statusPill = el('record').querySelector('.status-pill');
       statusPill.textContent = statusLabel;
@@ -352,14 +344,6 @@ const buildHtml = (pack: unknown) => `<!doctype html>
       aiPill.textContent = record.aiSuggestedDecision ? record.aiSuggestedDecision[0].toUpperCase() + record.aiSuggestedDecision.slice(1) : (record.aiStatus || 'Not run');
       aiPill.className = 'ai-pill' + (aiTone ? ' ' + aiTone : '');
       el('record').querySelector('.ai-reason').textContent = record.aiReason || 'No local title/abstract AI recommendation has been recorded yet.';
-      const aiEvidence = el('record').querySelector('.ai-evidence');
-      if (record.aiEvidenceQuote) {
-        aiEvidence.hidden = false;
-        aiEvidence.textContent = '“' + record.aiEvidenceQuote + '”' + (record.aiSourceLocation ? ' — ' + record.aiSourceLocation : '');
-      } else {
-        aiEvidence.hidden = true;
-        aiEvidence.textContent = '';
-      }
       el('counterPill').textContent = (index + 1) + '/' + PACK.records.length;
       document.querySelectorAll('[data-decision]').forEach((button) => {
         button.disabled = false;

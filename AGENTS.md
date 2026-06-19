@@ -37,3 +37,17 @@ Do not add explanatory sublines, subtitles, helper text, or instructional text i
 Do not use Gemini for AI screening, AI extraction, AI review, or other project AI functions unless Abdel explicitly asks for Gemini in the current request.
 
 Run project AI functions locally from the current workspace and apply results to the database from that local workflow. Default to GPT-5.5 with medium reasoning when available. If that exact model is unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the model used, and explain the substitution before applying results.
+
+## User Preference: AI Screening Decision Integrity
+
+Human screening votes are immutable audit records. Never change, replace, remove, or "restore" a human vote by editing `metadata.titleAbstractDecisions`, reviewer decision arrays, reviewer IDs/names, vote timestamps, or manual-review fields unless Abdel explicitly asks for that exact human-vote repair in the current request.
+
+When Abdel asks to update title/abstract AI screening decisions, re-review conflicts, apply updated criteria, or update AI recommendations, treat that as an AI recommendation update only. Use the project AI screening workflow to update `ai_*` fields and criteria/model audit fields. Do not add `resolver_decision` entries, do not resolve conflicts, do not promote to full text manually, and do not delete or create full-text placeholders unless Abdel explicitly approves the exact record-level resolver or promotion action.
+
+Legitimate AI-vs-human disagreements should remain conflicts. Report them as conflicts with the human vote, AI recommendation, and criteria-based reason. Only resolve conflicts when Abdel explicitly says to resolve/adjudicate the specific records and approves the exact intended decision for each affected record.
+
+## User Preference: Descriptive Audit and Backlog Tracking
+
+When creating or updating audits, backlogs, manifests, reports, or tracking files, make the scope and source context explicit in the file name and opening summary. Include the search/import wave when relevant, such as `original search`, `second search`, or `second updated search`, plus the workflow stage, date, and whether the file is a queue, dry run, upload log, unresolved backlog, or final audit.
+
+Do not use vague names like `new papers`, `missing PDFs`, or `current audit` unless the surrounding path and first lines make the exact dataset unambiguous. Tracking should clearly distinguish already uploaded/found records, records previously searched without success, newly promoted records still needing a first search, and records skipped because they already have a local or database PDF.

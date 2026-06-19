@@ -2,6 +2,14 @@
 
 Use this skill when reviewing title/abstract screening records for FIFA GBI before full-text retrieval. It writes the AI recommendation used as the first title/abstract decision; one human reviewer vote is the second decision.
 
+## Decision Integrity Rule
+
+Human reviewer votes are immutable audit records. This skill updates AI recommendations; it does not change human votes.
+
+Never edit, remove, replace, or "restore" entries in `metadata.titleAbstractDecisions` for human votes. Never add `action: "resolver_decision"` entries, manually resolve conflicts, manually promote title/abstract records to full-text screening, or delete full-text placeholders unless Abdel explicitly asks to adjudicate the exact records and approves the exact resolver/promotion action in the current request.
+
+When updated criteria change the AI view of a record, update the `ai_*` recommendation fields and leave any AI-vs-human disagreement as a conflict. Report the conflict with the human vote, AI recommendation, and criteria-based rationale.
+
 ## Model Rule
 
 Do not use Gemini for this workflow unless Abdel explicitly asks for Gemini in the current request.
@@ -52,6 +60,8 @@ node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_sc
 
 Numeric study IDs are normalized to `S####`. Use `--record-ids` only when targeting raw `screening_records.id` UUIDs.
 
+Targeted re-review is still AI-only. It must not be implemented with a custom Supabase script that edits `metadata.titleAbstractDecisions`, `manual_decision`, resolver decisions, or promotion metadata.
+
 ### Manual Fallback
 
 Use this only for small audits or recovery from malformed model output.
@@ -82,21 +92,25 @@ Use this only for small audits or recovery from malformed model output.
    node skills/fifa-title-abstract-screening-review/scripts/apply_recommendations_to_supabase.mjs --input /tmp/title-abstract-recommendations.json --apply
    ```
 
+Manual fallback applies AI recommendations only. If it creates or leaves conflicts, keep them as conflicts and report them; do not append resolver decisions.
+
 ## Decision Rules
 
-- Always keep the extraction endpoint in view: the goal is to send forward papers that may provide extractable FIFA GBI outcomes under the full inclusion criteria, including injury, illness, health-problem, and mental-health/psychological-health prevalence, incidence, burden, counts, rates, frequencies, exposure denominators, or comparable surveillance data. Do not narrow this to injury only, but do exclude records that do not plausibly provide extractable project outcomes.
-- `include`: likely or possibly relevant. Provide a short rationale. Do not provide a source quote.
-- `include` with `targetTag: "systematic_review"`: systematic review, scoping review, evidence synthesis, or meta-analysis relevant to football/soccer injury, illness, health-problem, or mental-health outcome reference checking, kept for Abdel's systematic-review handling rather than standard primary extraction. Do not include a review just because it is a systematic/scoping review; reviews about RTP criteria, rehabilitation exercises, performance tests, head-acceleration proxies, or other non-extractable topics should be excluded when they are unlikely to yield relevant references.
-- `exclude`: clearly ineligible. Provide a concise exclusion reason plus a direct quote from the title, abstract, DOI/source metadata, or citation fields that supports exclusion.
+- Always keep the extraction endpoint in view: the goal is to send forward papers that may provide actual extractable FIFA GBI outcomes under the full inclusion criteria, including injury, illness, health-problem, and mental-health/psychological-health prevalence, incidence, burden, counts, rates, frequencies, exposure denominators, repeated measurements, validated symptom/risk scale results, or comparable surveillance data. Do not narrow this to injury only, but do exclude records that do not plausibly provide extractable project outcomes.
+- `include`: likely or possibly relevant. Provide a short rationale.
+- `include` with `targetTag: "systematic_review"`: systematic review, scoping review, evidence synthesis, or meta-analysis specifically relevant to football/soccer injury, illness, health-problem, or mental-health surveillance/epidemiology reference checking, kept for Abdel's systematic-review handling rather than standard primary extraction. Do not include a review just because it is a systematic/scoping review; broad mixed-topic/mixed-sport reviews and reviews about prevention exercises, headgear/protective equipment, RTP criteria, rehabilitation exercises, performance tests, risk factors without epidemiology, head-acceleration proxies, mechanisms, imaging, or other non-extractable topics should be excluded.
+- `exclude`: clearly ineligible. Provide a concise, criteria-based exclusion reason. Do not provide a source quote or source location.
 - Self-reported data are not automatically ineligible. Include or leave undecided when the record plausibly uses prospective or repeated player-reported injury/health surveillance, such as weekly OSTRC-style reporting. Exclude one-time retrospective injury-history recall or cross-sectional injury-history association studies when they lack eligible surveillance, incidence, prevalence, burden, rate, or exposure-denominator data.
-- Mixed-sport records are not automatically ineligible when football/soccer subgroup data may be extractable. If unsure, let them proceed. Exclude downstream consequence records, such as imaging, biomarker, neurocognitive, behavioral, or long-term sequelae studies, when they do not report prevalence, incidence, burden, or rates of actual injuries/illnesses.
-- Exclude public-media/public-source-only datasets, economic/financial/return-on-investment models, policy/editorial pieces, and performance/body-composition/biomechanics/measurement-only studies when they are not standalone sources of extractable project outcomes.
-- Exclude treatment, surgery, rehabilitation, return-to-play, or return-to-function cohorts that select players because they already have an injury and only report clinical, functional, complication, healing, or RTP outcomes.
-- Exclude head-impact proxy, biomarker, imaging, cognitive-function, cardiac-troponin, head-acceleration, and similar downstream/consequence records when they do not report actual injury, illness, health-problem, or mental-health prevalence, incidence, burden, rates, frequencies, or surveillance denominators.
-- Include football/soccer well-being, affect, distress, anxiety, depression, burnout, or comparable psychological-health records when they plausibly contain quantitative participant-health outcome data, even if they are not injury-specific.
+- Retrospective analysis is allowed only when the supplied record clearly shows the underlying injury/illness/health-problem data were prospectively collected from current participating players/referees through team/competition surveillance. Exclude hospital-only, registry-only, national injury database, public-source, media-source, public-database, and retrospective league/database studies even when they report incidence, prevalence, epidemiology, or injury rates.
+- Mixed-sport and generic sport/athlete primary records are not automatically ineligible when football/soccer subgroup data may be extractable. Do not exclude solely because soccer/football is not explicitly named. If the record is not clearly a wrong sport/code and is not otherwise clearly ineligible, leave it `undecided`. Exclude broad mixed-topic reviews and downstream consequence records, such as imaging, biomarker, neurocognitive, behavioral, or long-term sequelae studies, when they do not report prevalence, incidence, burden, or rates of actual injuries/illnesses.
+- Exclude public-media/public-source-only datasets, hospital-only datasets, registry-only datasets, national injury databases, retrospective public/league/database datasets, economic/financial/return-on-investment models, policy/editorial pieces, and performance/body-composition/biomechanics/measurement-only studies when they are not standalone sources of prospectively collected project outcomes.
+- Exclude treatment, surgery, rehabilitation, return-to-play, or return-to-function cohorts that select players because they already have an injury and only report clinical, functional, complication, healing, reinjury-risk, or RTP outcomes.
+- Exclude cohorts selected because players have a prior, recent, current, or surgically treated injury, such as ACL reconstruction/rupture, rerupture, acute tears, fractures, dislocations, or chronic pain, unless the injury subgroup is clearly nested in prospective surveillance of a current participating cohort.
+- Exclude video-only public-video, broadcast-footage, match-footage, or video-analysis event/proxy records without an actual prospective injury dataset, including potential head injuries, suspected concussions, head collisions, headers, visible signs, medical-assessment behavior, injury mechanisms, and event characteristics, even when they report potential-event rates per match-hour. Also exclude head-impact proxy, biomarker, imaging, cognitive-function, cardiac-troponin, head-acceleration, and similar downstream/consequence records when they do not report actual injury, illness, health-problem, or mental-health prevalence, incidence, burden, rates, frequencies, or surveillance denominators.
+- Include football/soccer distress, anxiety, depression, burnout, eating-disorder, injury-anxiety, or comparable psychological-health records when they plausibly contain actual extractable participant-health outcome data, even if they are not injury-specific. Do not include broad motivation, passion, wellness, sleep, menstrual-performance, quality-of-life, imaging, biomarker, or general health-status records unless the health issue is defined with consensus football injury/illness/all-health-problem definitions or is clearly mappable to football health-problem surveillance and supplies extractable data.
 - Missing abstract: default to `undecided` unless the title/citation alone clearly excludes it.
 - Title-only decisions are allowed when the title/citation is decisive. For example, clear American football or another wrong sport can be excluded, and a clear football/soccer injury surveillance title can be included or left `undecided` depending on how much evidence is present.
-- AI recommendations never create human reviewer votes. When the app/database migration for AI+human title/abstract screening is applied, an AI recommendation can finalize a record that already has one human vote: matching include decisions promote to full-text screening, matching exclude decisions exclude, and disagreement creates a conflict.
+- AI recommendations never create, change, or delete human reviewer votes. Matching AI+human outcomes may be finalized by the approved app/workflow, and disagreement creates a conflict. A conflict remains a conflict until Abdel explicitly approves record-level adjudication.
 
 ## Validation and Audit
 
@@ -115,7 +129,7 @@ Both the live runner and validation runner read `references/runtime-criteria.md`
 
 ## Supabase Fields
 
-The apply script only updates:
+The AI recommendation workflow writes:
 
 - `ai_status`
 - `ai_suggested_decision`
@@ -129,5 +143,7 @@ The apply script only updates:
 - `ai_error`
 - `ai_reviewed_at`
 - `updated_at`
+
+Approved finalization code may update resolution/manual status for matching AI+human outcomes. It must not add resolver decisions or edit human vote entries. Custom scripts must not touch reviewer decisions, resolver decisions, or promotion metadata for AI re-review tasks.
 
 See `references/supabase-targets.md` for field details.

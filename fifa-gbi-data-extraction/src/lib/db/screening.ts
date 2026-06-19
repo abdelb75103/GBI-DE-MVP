@@ -37,6 +37,12 @@ import {
   hasActiveTitleAbstractOfflineReservation,
   shouldHideFromNormalTitleAbstractQueue,
 } from '@/lib/screening/title-abstract-offline';
+import {
+  buildFullTextQueuePage,
+  findNextFullTextQueueRecord,
+  type FullTextQueueContext,
+  type FullTextQueuePage,
+} from '@/lib/screening/full-text-queue';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
 export const TITLE_ABSTRACT_QUEUE_PAGE_SIZE = 50;
@@ -310,6 +316,32 @@ export const listScreeningRecords = async (stage: ScreeningStage = 'full_text'):
   }
 
   return mapRows(rows);
+};
+
+export const listFullTextQueuePage = async ({
+  reviewerProfileId,
+  context,
+}: {
+  reviewerProfileId: string;
+  context: FullTextQueueContext;
+}): Promise<FullTextQueuePage> => {
+  const records = await listScreeningRecords('full_text');
+  return buildFullTextQueuePage(records, reviewerProfileId, context);
+};
+
+export const findNextFullTextQueueRecordForReviewer = async ({
+  reviewerProfileId,
+  context,
+  completedRecordId,
+  position,
+}: {
+  reviewerProfileId: string;
+  context: FullTextQueueContext;
+  completedRecordId: string;
+  position: number;
+}): Promise<ScreeningRecord | null> => {
+  const records = await listScreeningRecords('full_text');
+  return findNextFullTextQueueRecord(records, reviewerProfileId, context, completedRecordId, position);
 };
 
 const listTitleAbstractQueueRecords = async (): Promise<ScreeningRecord[]> => {

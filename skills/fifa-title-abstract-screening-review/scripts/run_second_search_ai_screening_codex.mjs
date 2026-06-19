@@ -17,7 +17,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { jsonrepair } = require('jsonrepair');
 
 const SEARCH_BATCH_LABEL = 'Second search - Ishanka - 2026-05-26';
-const CRITERIA_VERSION = 'fifa-gbi-title-abstract-v1.4-2026-06-02';
+const CRITERIA_VERSION = 'fifa-gbi-title-abstract-v1.10-2026-06-15';
 const DEFAULT_PROVIDER = 'codex-cli';
 const DEFAULT_CRITERIA_FILE = path.resolve(process.cwd(), 'skills/fifa-title-abstract-screening-review/references/runtime-criteria.md');
 const DEFAULT_OUTPUT = '/tmp/second-search-title-abstract-ai-codex.json';
@@ -57,6 +57,7 @@ Options:
   --limit N                   Process only N pending records for a test run.
   --quiet                     Suppress progress lines except fatal errors.
   --force                     Re-review records even if Supabase has ai_status=completed.
+  --no-finalize               Apply AI fields only; do not update resolution/manual fields or promote records.
   --timeout-ms 600000         Per-model-call timeout in milliseconds.
   --self-test                 Run local validation tests without calling a model or Supabase.
 
@@ -80,6 +81,7 @@ const parseStudyIds = (value) => parseCsv(value)
 const options = {
   apply: asBoolean('apply'),
   force: asBoolean('force'),
+  noFinalize: asBoolean('no-finalize'),
   quiet: asBoolean('quiet'),
   selfTest: asBoolean('self-test'),
   provider: String(args.get('provider') || DEFAULT_PROVIDER),
@@ -109,21 +111,6 @@ const parseJson = (text) => {
   return JSON.parse(jsonrepair(fenced));
 };
 
-const missingAbstractRecommendation = (record) => ({
-  recordId: record.id,
-  studyId: record.assigned_study_id,
-  title: record.title,
-  decision: 'undecided',
-  reason: 'Cannot review from title/abstract because no abstract was imported or recovered.',
-  exclusionReason: null,
-  sourceQuote: null,
-  sourceLocation: null,
-  confidence: 0.2,
-  targetTag: null,
-  tags: ['missing_abstract'],
-  auditNotes: 'Deterministic rule: missing abstract marked undecided.',
-});
-
 const loadCriteriaText = () => readFileSync(options.criteriaFile, 'utf8');
 
 const buildPrompt = (records, previousFailure = '') => `You are doing title/abstract screening for the FIFA GBI review. Use local Codex reasoning only. Do not use Gemini or direct API calls. Use only the supplied records.
@@ -133,9 +120,9 @@ Criteria version: ${CRITERIA_VERSION}
 ${loadCriteriaText()}
 
 Return JSON only as a compact array:
-[{"id":"record-id","d":"include|exclude|undecided","r":"reason_code","c":0.0,"t":["optional_tag"],"n":"short optional note","q":"exact quote for excludes","l":"Title|Abstract|Journal|Citation metadata"}]
+[{"id":"record-id","d":"include|exclude|undecided","r":"reason_code","c":0.0,"t":["optional_tag"],"n":"short optional note"}]
 
-For every exclude, q must be copied exactly from the supplied title, abstract, journal, source label, DOI, or source id. For include/undecided, omit q/l or set them null. Use tag "referee" for referee/match-official records and "systematic_review" for systematic reviews retained for reference-list checks.
+For every exclude, the reason code and note must directly explain the eligibility rule that makes the supplied record ineligible. Do not return quote or source-location fields. Use tag "referee" for referee/match-official records and "systematic_review" for systematic reviews retained for reference-list checks.
 
 ${previousFailure ? `Previous output failed validation. Correct this problem: ${previousFailure}\n` : ''}
 Records:
@@ -293,8 +280,8 @@ const applyRecommendation = async (supabase, item) => {
     ai_status: 'completed',
     ai_suggested_decision: item.decision === 'undecided' ? null : item.decision,
     ai_reason: item.reason,
-    ai_evidence_quote: item.decision === 'exclude' ? item.sourceQuote : null,
-    ai_source_location: item.decision === 'exclude' ? item.sourceLocation : null,
+    ai_evidence_quote: null,
+    ai_source_location: null,
     ai_confidence: item.confidence,
     ai_model: `${options.model} (${options.reasoning}) via ${chooseProvider()}`,
     ai_criteria_version: CRITERIA_VERSION,
@@ -311,6 +298,7 @@ const applyRecommendation = async (supabase, item) => {
     .eq('stage', 'title_abstract')
     .eq('metadata->>searchBatchLabel', options.batchLabel);
   if (error) throw new Error(`Failed to update ${item.studyId || item.recordId}: ${error.message}`);
+  if (options.noFinalize) return;
   await finalizeTitleAbstractRecommendation(supabase, item.recordId, { quiet: options.quiet });
 };
 
@@ -357,8 +345,8 @@ const runSelfTest = () => {
   const record = {
     id: 'r1',
     assigned_study_id: 'S1',
-    title: 'Systematic review of hamstring injuries in soccer players',
-    abstract: 'This systematic review evaluates hamstring injuries in soccer players.',
+    title: 'Systematic review of hamstring injury incidence in soccer players',
+    abstract: 'This systematic review evaluates hamstring injury incidence and epidemiology in soccer players.',
     journal: 'Journal',
     doi: '10.1/example',
     source_label: 'source',
@@ -381,26 +369,24 @@ const runSelfTest = () => {
     decision: 'exclude',
     reason: 'Narrative review.',
     exclusionReason: 'Narrative review.',
-    sourceQuote: 'Systematic review of hamstring injuries in soccer players',
-    sourceLocation: 'Title',
+    sourceQuote: null,
+    sourceLocation: null,
     confidence: 0.7,
     targetTag: null,
     tags: [],
   }]);
   if (exclude[0].decision !== 'exclude') throw new Error('self-test failed: valid exclude rejected');
-  const repaired = validateModelOutput([record], [{
+  const quoteFree = validateModelOutput([record], [{
     recordId: 'r1',
     decision: 'exclude',
-    reason: 'Bad quote.',
-    exclusionReason: 'Bad quote.',
-    sourceQuote: 'not in the record',
-    sourceLocation: 'Abstract',
+    reason: 'Not eligible for primary extraction.',
+    exclusionReason: 'Not eligible for primary extraction.',
     confidence: 0.7,
     targetTag: null,
     tags: [],
   }]);
-  if (repaired[0].sourceQuote !== record.title || repaired[0].sourceLocation !== 'Title') {
-    throw new Error('self-test failed: invalid quote was not repaired to title');
+  if (quoteFree[0].sourceQuote !== null || quoteFree[0].sourceLocation !== null) {
+    throw new Error('self-test failed: exclusion evidence fields were not cleared');
   }
   const parsed = parseJson('```json\n{"recommendations":[]}\n```');
   if (!Array.isArray(parsed.recommendations)) throw new Error('self-test failed: fenced JSON parsing');
@@ -596,8 +582,113 @@ const runSelfTest = () => {
     source_record_id: 'well1',
   };
   const wellbeing = preTriageRecord(wellbeingRecord, 'self-test');
-  if (wellbeing?.decision !== 'include') {
-    throw new Error(`self-test failed: quantitative football well-being outcome should include, got ${wellbeing?.decision ?? 'null'}`);
+  if (wellbeing?.decision !== 'exclude') {
+    throw new Error(`self-test failed: broad passion/well-being outcome should exclude unless mappable to surveillance, got ${wellbeing?.decision ?? 'null'}`);
+  }
+
+  const formerFootballerRecord = {
+    id: 'r15',
+    assigned_study_id: 'S5393',
+    title: 'Prevalence of foot/ankle osteoarthritis and pain in retired male professional footballers compared to general population male controls: a cross-sectional study.',
+    abstract: 'Retired male professional footballers completed a post-career health questionnaire and examination for foot and ankle osteoarthritis and pain.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'former1',
+  };
+  const formerFootballer = preTriageRecord(formerFootballerRecord, 'self-test');
+  if (formerFootballer?.decision !== 'exclude') {
+    throw new Error(`self-test failed: retired/former footballer retrospective health data should exclude, got ${formerFootballer?.decision ?? 'null'}`);
+  }
+
+  const selectedAclRecord = {
+    id: 'r16',
+    assigned_study_id: 'S1242',
+    title: 'Concomitant Popliteomeniscal Fascicles Tears Are Found in 21% of Professional Soccer Players With Acute Anterior Cruciate Ligament Injuries.',
+    abstract: 'Professional soccer players with acute anterior cruciate ligament injuries underwent imaging and surgical assessment for concomitant tears.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'acl1',
+  };
+  const selectedAcl = preTriageRecord(selectedAclRecord, 'self-test');
+  if (selectedAcl?.decision !== 'exclude') {
+    throw new Error(`self-test failed: selected acute ACL injury cohort should exclude, got ${selectedAcl?.decision ?? 'null'}`);
+  }
+
+  const mriMappingRecord = {
+    id: 'r17',
+    assigned_study_id: 'S1654',
+    title: 'Influence of leg axis alignment on MRI T2* mapping of the knee in young professional soccer players',
+    abstract: 'MRI T2* mapping was used to assess knee cartilage in young professional soccer players.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'mri1',
+  };
+  const mriMapping = preTriageRecord(mriMappingRecord, 'self-test');
+  if (mriMapping?.decision !== 'exclude') {
+    throw new Error(`self-test failed: MRI/physical-status mapping without surveillance should exclude, got ${mriMapping?.decision ?? 'null'}`);
+  }
+
+  const interventionReviewRecord = {
+    id: 'r18',
+    assigned_study_id: 'S1048',
+    title: 'What exercise programme is the most appropriate to mitigate anterior cruciate ligament injury risk in football (soccer) players? A systematic review and network meta-analysis.',
+    abstract: 'This systematic review and network meta-analysis compared exercise programmes intended to mitigate ACL injury risk in soccer players.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'review1',
+  };
+  const interventionReview = preTriageRecord(interventionReviewRecord, 'self-test');
+  if (interventionReview?.decision !== 'exclude') {
+    throw new Error(`self-test failed: intervention-focused systematic review should exclude unless surveillance-relevant, got ${interventionReview?.decision ?? 'null'}`);
+  }
+
+  const headingExposureRecord = {
+    id: 'r19',
+    assigned_study_id: 'S1120',
+    title: 'Individualized monitoring of longitudinal heading exposure in soccer.',
+    abstract: 'This study monitored heading exposure in soccer players over time.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'heading1',
+  };
+  const headingExposure = preTriageRecord(headingExposureRecord, 'self-test');
+  if (headingExposure?.decision !== 'exclude') {
+    throw new Error(`self-test failed: heading-exposure proxy without health outcome should exclude, got ${headingExposure?.decision ?? 'null'}`);
+  }
+
+  const videoMechanismRecord = {
+    id: 'r20',
+    assigned_study_id: 'S1209',
+    title: 'Systematic video analysis of shoulder dislocations in professional male football (soccer): Injury mechanisms, situational and kinematic patterns.',
+    abstract: 'Video analysis described injury mechanisms, situational factors, and kinematic patterns for shoulder dislocations in professional soccer.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'video1',
+  };
+  const videoMechanism = preTriageRecord(videoMechanismRecord, 'self-test');
+  if (videoMechanism?.decision !== 'exclude') {
+    throw new Error(`self-test failed: video mechanism analysis without surveillance denominator should exclude, got ${videoMechanism?.decision ?? 'null'}`);
+  }
+
+  const geneticRiskRecord = {
+    id: 'r21',
+    assigned_study_id: 'S1536',
+    title: 'Impact of the COL1A1 (RS1107946) gene polymorphism on anterior cruciate ligament rupture in professional soccer players',
+    abstract: 'The DNA of professional soccer players was collected to evaluate allelic frequency and genetic susceptibility to ACL injuries.',
+    journal: 'Journal',
+    doi: '10.1/example',
+    source_label: 'source',
+    source_record_id: 'gene1',
+  };
+  const geneticRisk = preTriageRecord(geneticRiskRecord, 'self-test');
+  if (geneticRisk?.decision !== 'exclude') {
+    throw new Error(`self-test failed: genetic susceptibility proxy without surveillance should exclude, got ${geneticRisk?.decision ?? 'null'}`);
   }
 
   console.log('self-test passed');
@@ -641,11 +732,13 @@ for (const record of pending) {
   if (existing) {
     checkpointReady.push(existing);
   } else {
-    const deterministic = preTriageRecord(record, `${options.model} (${options.reasoning}) via ${chooseProvider()}`);
+    const deterministic = preTriageRecord(
+      record,
+      `${options.model} (${options.reasoning}) via ${chooseProvider()}`,
+      { deferMissingAbstract: true },
+    );
     if (deterministic) {
       toProcess.push({ type: 'deterministic', record, deterministic });
-    } else if (!record.abstract?.trim()) {
-      toProcess.push({ type: 'deterministic', record, deterministic: missingAbstractRecommendation(record) });
     } else {
       toProcess.push({ type: 'model', record });
     }

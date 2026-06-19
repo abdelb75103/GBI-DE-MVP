@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useMemo, useState, useTransition } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import {
   EXCLUSION_REASONS,
@@ -12,12 +13,19 @@ import {
   type FullTextDecisionAction,
   type ExclusionReason,
 } from '@/lib/screening/reviewer-decisions';
+import {
+  buildFullTextQueueUrl,
+  buildFullTextReaderUrl,
+  type FullTextQueueContext,
+} from '@/lib/screening/full-text-queue';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
   initialRecord: ScreeningRecord;
   currentReviewerId: string;
   profileRole: 'admin' | 'extractor' | 'observer';
+  queueContext: FullTextQueueContext;
+  queuePosition: number;
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
@@ -32,7 +40,14 @@ const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
 
-export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewerId, profileRole }: Props) {
+export function FullTextScreeningWorkspaceClient({
+  initialRecord,
+  currentReviewerId,
+  profileRole,
+  queueContext,
+  queuePosition,
+}: Props) {
+  const router = useRouter();
   const [record, setRecord] = useState(initialRecord);
   const [decisionAction, setDecisionAction] = useState<FullTextDecisionAction>('reviewer_vote');
   const [decision, setDecision] = useState<ScreeningDecision | null>(null);
@@ -42,6 +57,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
   const [isPending, startTransition] = useTransition();
   const isAdmin = profileRole === 'admin';
   const awaitingPdf = isAwaitingFullTextPdf(record);
+  const backToQueueUrl = buildFullTextQueueUrl({ ...queueContext, notice: null });
 
   const reviewerDecisions = useMemo(() => getReviewerDecisions(record), [record]);
   const resolution = getScreeningResolution(record);
@@ -165,14 +181,43 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
         : payload.promotedPaperId
           ? ' Promoted to extraction.'
           : '';
-      setNotice({
-        tone: payload.promotionError || duplicateMessage ? 'neutral' : 'success',
-        message: duplicateMessage
-          ? `${activeDecisionAction === 'consensus_resolution' ? 'Conflict resolution saved.' : 'Reviewer vote saved.'}${promotionMessage} ${duplicateMessage}`
-          : activeDecisionAction === 'consensus_resolution'
-            ? `Conflict resolution saved.${promotionMessage}`
-            : `Reviewer vote saved.${promotionMessage}`,
+      const savedMessage = duplicateMessage
+        ? `${activeDecisionAction === 'consensus_resolution' ? 'Conflict resolution saved.' : 'Reviewer vote saved.'}${promotionMessage} ${duplicateMessage}`
+        : activeDecisionAction === 'consensus_resolution'
+          ? `Conflict resolution saved.${promotionMessage}`
+          : `Reviewer vote saved.${promotionMessage}`;
+
+      const navigationParams = new URLSearchParams({
+        navigation: 'next',
+        completedRecordId: record.id,
+        filter: queueContext.filter,
+        page: String(queueContext.page),
+        position: String(queuePosition),
       });
+      if (queueContext.search) navigationParams.set('search', queueContext.search);
+
+      try {
+        const navigationResponse = await fetch(`/api/full-text-screening?${navigationParams.toString()}`, {
+          cache: 'no-store',
+        });
+        const navigationPayload = await navigationResponse.json().catch(() => ({})) as {
+          nextRecordId?: string | null;
+          error?: string;
+        };
+        if (!navigationResponse.ok) {
+          throw new Error(navigationPayload.error ?? 'Next paper lookup failed');
+        }
+        if (navigationPayload.nextRecordId) {
+          router.push(buildFullTextReaderUrl(navigationPayload.nextRecordId, queueContext, queuePosition));
+          return;
+        }
+        router.push(buildFullTextQueueUrl({ ...queueContext, notice: 'filter_empty' }));
+      } catch (error) {
+        setNotice({
+          tone: 'neutral',
+          message: `${savedMessage} Next paper lookup failed: ${error instanceof Error ? error.message : 'unknown error'}. Use Back to queue.`,
+        });
+      }
     });
   };
 
@@ -241,7 +286,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               </Link>
             ) : null}
             <Link
-              href="/full-text-screening"
+              href={backToQueueUrl}
               className="inline-flex items-center justify-center gap-1.5 rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
             >
               <span aria-hidden>←</span> Back to queue
@@ -324,7 +369,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               <div className="mt-3 inline-flex rounded-full border border-slate-200 bg-slate-50 p-0.5 text-xs font-semibold">
                 <button
                   type="button"
-                  disabled={!canChangeReviewerVote}
+                  disabled={isPending || !canChangeReviewerVote}
                   onClick={() => setDecisionAction('reviewer_vote')}
                   className={`rounded-full px-3 py-1 transition disabled:cursor-not-allowed disabled:opacity-40 ${
                     activeDecisionAction === 'reviewer_vote'
@@ -336,6 +381,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
                 </button>
                 <button
                   type="button"
+                  disabled={isPending}
                   onClick={() => setDecisionAction('consensus_resolution')}
                   className={`rounded-full px-3 py-1 transition ${
                     activeDecisionAction === 'consensus_resolution'
@@ -351,6 +397,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
             <div className="mt-4 grid grid-cols-2 gap-2.5">
               <button
                 type="button"
+                disabled={isPending}
                 onClick={() => setDecision('include')}
                 className={`group rounded-xl border px-4 py-3.5 text-sm font-semibold transition ${
                   decision === 'include'
@@ -365,6 +412,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
               </button>
               <button
                 type="button"
+                disabled={isPending}
                 onClick={() => setDecision('exclude')}
                 className={`group rounded-xl border px-4 py-3.5 text-sm font-semibold transition ${
                   decision === 'exclude'
@@ -382,6 +430,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
             {decision === 'exclude' ? (
               <div className="mt-3 space-y-2">
                 <select
+                  disabled={isPending}
                   value={reason}
                   onChange={(event) => setReason(event.target.value as ExclusionReason)}
                   className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:border-slate-400 focus:outline-none"
@@ -393,6 +442,7 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
                 </select>
                 {reason === 'Other' ? (
                   <input
+                    disabled={isPending}
                     value={otherReason}
                     onChange={(event) => setOtherReason(event.target.value)}
                     placeholder="Other exclusion reason"
@@ -439,12 +489,6 @@ export function FullTextScreeningWorkspaceClient({ initialRecord, currentReviewe
             ) : (
               <p className="mt-3 text-sm leading-relaxed text-slate-500">No AI recommendation has been recorded yet.</p>
             )}
-            {record.aiSuggestedDecision === 'exclude' && record.aiEvidenceQuote ? (
-              <blockquote className="mt-3 rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm leading-6 text-slate-700">
-                “{record.aiEvidenceQuote}”
-                {record.aiSourceLocation ? <footer className="mt-1 text-xs font-semibold text-slate-500">{record.aiSourceLocation}</footer> : null}
-              </blockquote>
-            ) : null}
             <p className="mt-3 text-[11px] leading-relaxed text-slate-500">Advisory only. Final eligibility depends on reviewer votes.</p>
           </div>
 

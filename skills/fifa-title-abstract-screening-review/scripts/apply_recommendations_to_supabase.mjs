@@ -54,6 +54,7 @@ const modelName = payload.model
   : 'codex-local-title-abstract-screening-skill';
 const apply = Boolean(args.get('apply'));
 const force = Boolean(args.get('force'));
+const noFinalize = Boolean(args.get('no-finalize'));
 const quiet = Boolean(args.get('quiet'));
 
 const validate = (item) => {
@@ -71,9 +72,7 @@ const validate = (item) => {
   if (item.decision === 'undecided' && (item.exclusionReason || item.sourceQuote || item.sourceLocation)) {
     return `${item.recordId}: undecided recommendations must not include exclusion quote/source fields.`;
   }
-  if (item.decision === 'exclude' && (!item.exclusionReason || !item.sourceQuote || !item.sourceLocation)) {
-    return `${item.recordId}: exclude recommendations require exclusionReason, sourceQuote, and sourceLocation.`;
-  }
+  if (item.decision === 'exclude' && !item.exclusionReason) return `${item.recordId}: exclude recommendations require exclusionReason.`;
   return null;
 };
 
@@ -130,8 +129,8 @@ for (const item of recommendations) {
     ai_status: 'completed',
     ai_suggested_decision: item.decision === 'undecided' ? null : item.decision,
     ai_reason: item.reason,
-    ai_evidence_quote: item.decision === 'exclude' ? item.sourceQuote : null,
-    ai_source_location: item.decision === 'exclude' ? item.sourceLocation : null,
+    ai_evidence_quote: null,
+    ai_source_location: null,
     ai_confidence: item.confidence,
     ai_model: modelName,
     ai_criteria_version: criteriaVersion,
@@ -155,7 +154,7 @@ for (const item of recommendations) {
   if (error) {
     throw new Error(`Failed to update ${item.recordId}: ${error.message}`);
   }
-  await finalizeTitleAbstractRecommendation(supabase, item.recordId, { quiet });
+  if (!noFinalize) await finalizeTitleAbstractRecommendation(supabase, item.recordId, { quiet });
   if (!quiet) console.log(`updated ${item.recordId}: ${item.decision}`);
   appliedCount += 1;
 }

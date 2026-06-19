@@ -850,7 +850,6 @@ function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
 }
 
 function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
-  const hasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
   const targetLabel = record.aiTargetTag === 'systematic_review' ? 'Systematic review' : null;
   const label = record.aiStatus === 'running'
     ? 'Running'
@@ -903,12 +902,6 @@ function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
       ) : (
         <p className="mt-3 text-sm leading-6 text-slate-500">No local title/abstract AI recommendation has been recorded yet.</p>
       )}
-      {hasDecision && record.aiSuggestedDecision === 'exclude' && record.aiEvidenceQuote ? (
-        <blockquote className="mt-3 rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm leading-6 text-slate-700">
-          “{record.aiEvidenceQuote}”
-          {record.aiSourceLocation ? <footer className="mt-1 text-xs font-semibold text-slate-500">{record.aiSourceLocation}</footer> : null}
-        </blockquote>
-      ) : null}
     </section>
   );
 }

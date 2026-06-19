@@ -38,9 +38,7 @@ const validateRecommendation = (item) => {
   if (item.decision !== 'exclude' && (item.exclusionReason || item.sourceQuote || item.sourceLocation)) {
     return `${item.studyId ?? item.recordId}: non-exclude decisions must not include exclusion quote fields.`;
   }
-  if (item.decision === 'exclude' && (!item.exclusionReason || !item.sourceQuote || !item.sourceLocation)) {
-    return `${item.studyId ?? item.recordId}: exclude requires exclusionReason, sourceQuote, and sourceLocation.`;
-  }
+  if (item.decision === 'exclude' && !item.exclusionReason) return `${item.studyId ?? item.recordId}: exclude requires exclusionReason.`;
   return null;
 };
 
