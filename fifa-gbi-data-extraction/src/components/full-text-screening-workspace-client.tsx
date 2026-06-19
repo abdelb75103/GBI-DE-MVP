@@ -26,6 +26,8 @@ type Props = {
   profileRole: 'admin' | 'extractor' | 'observer';
   queueContext: FullTextQueueContext;
   queuePosition: number;
+  previousRecordUrl: string | null;
+  nextRecordUrl: string | null;
 };
 
 type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
@@ -46,6 +48,8 @@ export function FullTextScreeningWorkspaceClient({
   profileRole,
   queueContext,
   queuePosition,
+  previousRecordUrl,
+  nextRecordUrl,
 }: Props) {
   const router = useRouter();
   const [record, setRecord] = useState(initialRecord);
@@ -277,6 +281,8 @@ export function FullTextScreeningWorkspaceClient({
             </div>
           </div>
           <div className="flex shrink-0 flex-wrap items-center gap-3">
+            <ReaderNavigationButton href={previousRecordUrl} direction="previous" />
+            <ReaderNavigationButton href={nextRecordUrl} direction="next" />
             {record.promotedPaperId ? (
               <Link
                 href={`/paper/${record.promotedPaperId}`}
@@ -579,6 +585,41 @@ export function FullTextScreeningWorkspaceClient({
 }
 
 type PillTone = 'indigo' | 'slate' | 'emerald' | 'rose' | 'amber' | 'sky';
+
+function ReaderNavigationButton({
+  href,
+  direction,
+}: {
+  href: string | null;
+  direction: 'previous' | 'next';
+}) {
+  const isPrevious = direction === 'previous';
+  const content = (
+    <>
+      {isPrevious ? <span aria-hidden>←</span> : null}
+      {isPrevious ? 'Previous' : 'Next'}
+      {!isPrevious ? <span aria-hidden>→</span> : null}
+    </>
+  );
+  const className = 'inline-flex whitespace-nowrap items-center justify-center gap-1.5 rounded-full border border-slate-200/70 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition';
+
+  if (!href) {
+    return (
+      <span
+        aria-disabled="true"
+        className={`${className} cursor-not-allowed opacity-40`}
+      >
+        {content}
+      </span>
+    );
+  }
+
+  return (
+    <Link href={href} className={`${className} hover:border-slate-300 hover:text-slate-900`}>
+      {content}
+    </Link>
+  );
+}
 
 const PILL_CLASSES: Record<PillTone, string> = {
   indigo: 'border-indigo-200/70 bg-indigo-50/80 text-indigo-700',

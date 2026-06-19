@@ -6,6 +6,7 @@ import {
   buildFullTextQueuePage,
   buildFullTextQueueUrl,
   buildFullTextReaderUrl,
+  findAdjacentFullTextQueueRecords,
   findNextFullTextQueueRecord,
   getFullTextFilterLabel,
   parseFullTextQueueContext,
@@ -107,6 +108,38 @@ test('returns fixed server-backed pages with filtered totals and clamped pages',
   assert.equal(page.records.length, 5);
   assert.equal(page.rangeStart, 41);
   assert.equal(page.rangeEnd, 45);
+});
+
+test('finds previous and next records in the active filtered queue across page boundaries', () => {
+  const records = Array.from({ length: 25 }, (_, index) => makeRecord(index + 1));
+
+  const adjacent = findAdjacentFullTextQueueRecords(records, reviewerId, {
+    filter: 'all', search: '', page: 2, notice: null,
+  }, 'record-21', 0);
+
+  assert.equal(adjacent.previous?.record.id, 'record-20');
+  assert.equal(adjacent.previous?.page, 1);
+  assert.equal(adjacent.previous?.position, 19);
+  assert.equal(adjacent.next?.record.id, 'record-22');
+  assert.equal(adjacent.next?.page, 2);
+  assert.equal(adjacent.next?.position, 1);
+});
+
+test('disables adjacent navigation at filtered queue boundaries', () => {
+  const records = [
+    makeRecord(1, { title: 'Hamstring one' }),
+    makeRecord(2, { title: 'Ankle paper' }),
+    makeRecord(3, { title: 'Hamstring two' }),
+  ];
+  const context = { filter: 'all', search: 'hamstring', page: 1, notice: null };
+
+  const first = findAdjacentFullTextQueueRecords(records, reviewerId, context, 'record-1', 0);
+  const last = findAdjacentFullTextQueueRecords(records, reviewerId, context, 'record-3', 1);
+
+  assert.equal(first.previous, null);
+  assert.equal(first.next?.record.id, 'record-3');
+  assert.equal(last.previous?.record.id, 'record-1');
+  assert.equal(last.next, null);
 });
 
 test('filters and searches before calculating the paged total', () => {

@@ -51,6 +51,17 @@ export type FullTextQueuePage = {
   rangeEnd: number;
 };
 
+export type FullTextQueueAdjacentRecord = {
+  record: ScreeningRecord;
+  page: number;
+  position: number;
+};
+
+export type FullTextQueueAdjacentRecords = {
+  previous: FullTextQueueAdjacentRecord | null;
+  next: FullTextQueueAdjacentRecord | null;
+};
+
 const FILTER_LABELS: Record<FullTextQueueFilter, string> = {
   all: 'All records',
   awaiting_pdf: 'Upload full text',
@@ -195,6 +206,34 @@ export const buildFullTextQueuePage = (
     totalPages,
     rangeStart: pageRecords.length > 0 ? offset + 1 : 0,
     rangeEnd: offset + pageRecords.length,
+  };
+};
+
+export const findAdjacentFullTextQueueRecords = (
+  records: ScreeningRecord[],
+  reviewerProfileId: string,
+  context: FullTextQueueContext,
+  currentRecordId: string,
+  fallbackPosition: number,
+): FullTextQueueAdjacentRecords => {
+  const filtered = filterFullTextQueueRecords(records, reviewerProfileId, context);
+  const fallbackIndex = (Math.max(1, context.page) - 1) * FULL_TEXT_QUEUE_PAGE_SIZE
+    + Math.max(0, Math.min(FULL_TEXT_QUEUE_PAGE_SIZE - 1, Math.trunc(fallbackPosition)));
+  const matchedIndex = filtered.findIndex((record) => record.id === currentRecordId);
+  const currentIndex = matchedIndex >= 0 ? matchedIndex : fallbackIndex;
+  const toAdjacentRecord = (index: number): FullTextQueueAdjacentRecord | null => {
+    const record = filtered[index];
+    if (!record) return null;
+    return {
+      record,
+      page: Math.floor(index / FULL_TEXT_QUEUE_PAGE_SIZE) + 1,
+      position: index % FULL_TEXT_QUEUE_PAGE_SIZE,
+    };
+  };
+
+  return {
+    previous: toAdjacentRecord(currentIndex - 1),
+    next: toAdjacentRecord(currentIndex + 1),
   };
 };
 

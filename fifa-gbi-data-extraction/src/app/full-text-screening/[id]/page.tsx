@@ -31,6 +31,26 @@ export default async function FullTextScreeningWorkspacePage({
   if (!record) {
     notFound();
   }
+  const adjacentRecords = await mockDb.findAdjacentFullTextQueueRecordsForReviewer({
+    reviewerProfileId: profile.id,
+    context: queueContext,
+    currentRecordId: record.id,
+    position: queuePosition,
+  });
+  const previousRecordUrl = adjacentRecords.previous
+    ? buildFullTextReaderUrl(
+        adjacentRecords.previous.record.id,
+        { ...queueContext, page: adjacentRecords.previous.page },
+        adjacentRecords.previous.position,
+      )
+    : null;
+  const nextRecordUrl = adjacentRecords.next
+    ? buildFullTextReaderUrl(
+        adjacentRecords.next.record.id,
+        { ...queueContext, page: adjacentRecords.next.page },
+        adjacentRecords.next.position,
+      )
+    : null;
 
   return (
     <FullTextScreeningWorkspaceClient
@@ -40,6 +60,8 @@ export default async function FullTextScreeningWorkspacePage({
       profileRole={profile.role}
       queueContext={queueContext}
       queuePosition={queuePosition}
+      previousRecordUrl={previousRecordUrl}
+      nextRecordUrl={nextRecordUrl}
     />
   );
 }

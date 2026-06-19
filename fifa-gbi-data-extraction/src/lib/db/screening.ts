@@ -39,7 +39,9 @@ import {
 } from '@/lib/screening/title-abstract-offline';
 import {
   buildFullTextQueuePage,
+  findAdjacentFullTextQueueRecords,
   findNextFullTextQueueRecord,
+  type FullTextQueueAdjacentRecords,
   type FullTextQueueContext,
   type FullTextQueuePage,
 } from '@/lib/screening/full-text-queue';
@@ -327,6 +329,21 @@ export const listFullTextQueuePage = async ({
 }): Promise<FullTextQueuePage> => {
   const records = await listScreeningRecords('full_text');
   return buildFullTextQueuePage(records, reviewerProfileId, context);
+};
+
+export const findAdjacentFullTextQueueRecordsForReviewer = async ({
+  reviewerProfileId,
+  context,
+  currentRecordId,
+  position,
+}: {
+  reviewerProfileId: string;
+  context: FullTextQueueContext;
+  currentRecordId: string;
+  position: number;
+}): Promise<FullTextQueueAdjacentRecords> => {
+  const records = await listScreeningRecords('full_text');
+  return findAdjacentFullTextQueueRecords(records, reviewerProfileId, context, currentRecordId, position);
 };
 
 export const findNextFullTextQueueRecordForReviewer = async ({

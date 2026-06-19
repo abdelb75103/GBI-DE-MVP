@@ -39,6 +39,7 @@ import {
 } from '@/lib/db/upload-queue';
 import {
   createScreeningRecord,
+  findAdjacentFullTextQueueRecordsForReviewer,
   getScreeningRecord,
   findNextFullTextQueueRecordForReviewer,
   listFullTextQueuePage,
@@ -111,6 +112,7 @@ export const mockDb = {
 
   listScreeningRecords,
   listFullTextQueuePage,
+  findAdjacentFullTextQueueRecordsForReviewer,
   findNextFullTextQueueRecordForReviewer,
   listTitleAbstractQueuePage,
   getTitleAbstractQueueCountsForReviewer,
