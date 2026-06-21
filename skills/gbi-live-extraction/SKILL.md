@@ -5,13 +5,13 @@ description: Use when extracting, reviewing, applying, QA-checking, or batch-pro
 
 # GBI Live Extraction
 
-Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/review-backlog.md`.
+When local scripts are explicitly requested, run them from `fifa-gbi-data-extraction/`. Track review state in `docs/review-backlog.md`.
 
 ## Core Defaults
 
 - Treat requests to "update the process" after a paper review as requests to update this skill, not the app's user-facing instructions.
 - Extract Tabs `1-10` manually. Do not use Gemini-generated passes for `studyDetails`, `participantCharacteristics`, `definitions`, `exposure`, `injuryOutcome`, `illnessOutcome`, `injuryTissueType`, `injuryLocation`, `illnessRegion`, or `illnessEtiology` unless Abdel explicitly asks for Gemini in the current request.
-- For project AI functions, run locally from the current workspace and apply results to Supabase from that local workflow. Default to GPT-5.5 with medium reasoning when available; if unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the model used, and explain the substitution before applying results.
+- For project AI functions, work inline in Codex chat by default and apply results from the current workspace workflow. Do not hand extraction work off to terminal scripts unless Abdel explicitly asks for that path. Default to GPT-5.5 with medium reasoning when available; if unavailable, use the closest suitable local Codex/OpenAI model with explicit reasoning, record the model used, and explain the substitution before applying results.
 - Prefer additive-only live updates. Do not overwrite nonblank values unless the user explicitly asks for a correction.
 - Default assignment profile is `AbdelRahman Babiker` (`00000000-0000-0000-0000-000000000001`). Assign every paper selected for extraction or batch review to that profile unless the user states otherwise.
 - Preserve existing live manual edits. If a selected paper is assigned to another profile, do not overwrite it silently; either skip it or reassign it only when the user explicitly asks for that paper/batch to be assigned to AbdelRahman Babiker.
@@ -31,8 +31,8 @@ Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/revie
 ## Workflow
 
 1. Prepare the paper.
-   - If available, run `bash -lc './scripts/terminal-extract.sh prep --paper <paperId|studyId>'`.
-   - If the script is missing, inspect the PDF/text directly, use repo schema/types as source of truth, and apply approved changes through direct Supabase writes.
+   - Inspect the PDF/text directly, use repo schema/types as source of truth, and prepare the work inline in Codex chat.
+   - Run `bash -lc './scripts/terminal-extract.sh prep --paper <paperId|studyId>'` only when Abdel explicitly asks for the terminal-extract workflow.
    - When selecting a "next available" paper, verify `assigned_to` first. `Available` means truly unassigned, not merely `uploaded`; assign selected papers to AbdelRahman Babiker before extraction unless instructed otherwise.
 2. Choose population rows before filling fields.
    - Use the strongest directly reported axis: study arm, sex, age group, competition level, team/region, season, surface, tournament phase, or another explicit cohort split.
@@ -40,18 +40,19 @@ Run commands from `fifa-gbi-data-extraction/`. Track review state in `docs/revie
    - If subgroup-only values exist and no pooled total is reported, do not invent a `Total` row.
    - Shared/global values go on the first row only; subgroup-specific values go on matching rows; blanks preserve row alignment.
 3. Extract manually.
-   - If available, run `bash -lc './scripts/terminal-extract.sh extract --paper <paperId|studyId> --tab <manual-tab> --guidance "<user instruction>"'`.
-   - If not available, stage values manually from the source text/PDF and live schema.
+   - Stage values manually from the source text/PDF and live schema in Codex chat by default.
+   - Run `bash -lc './scripts/terminal-extract.sh extract --paper <paperId|studyId> --tab <manual-tab> --guidance "<user instruction>"'` only when Abdel explicitly asks for the terminal-extract workflow.
 4. Review before apply.
-   - If available, run `bash -lc './scripts/terminal-extract.sh review --paper <paperId|studyId>'`.
+   - Review inline in Codex chat by default.
+   - Run `bash -lc './scripts/terminal-extract.sh review --paper <paperId|studyId>'` only when Abdel explicitly asks for the terminal-extract workflow.
    - Check Tabs `1-4` for every included paper, and Tabs `5-10` whenever compatible outcome, structured, illness, or mechanism data exists.
    - Before calling a paper ready, scan all results tables and usable figures for location, type/diagnosis/tissue, severity, mechanism/contact, incidence, burden, and CI values.
 5. Summarize and wait for explicit approval before applying.
    - State line mapping, additive vs corrective scope, source tables/figures scanned, derived/aggregated values, missing-but-checked items, and any reviewer caveats.
    - Never run `apply` without explicit approval.
 6. Apply approved changes.
-   - If available, run `bash -lc './scripts/terminal-extract.sh apply --paper <paperId|studyId>'`.
-   - If not available, apply through direct Supabase writes.
+   - Apply through direct Supabase writes by default.
+   - Run `bash -lc './scripts/terminal-extract.sh apply --paper <paperId|studyId>'` only when Abdel explicitly asks for the terminal-extract workflow.
    - Always dual-write structured rows: any value in `population_values` must have the matching newline-aligned `extraction_fields` value.
 7. Run the high-reasoning review gate.
    - Use `references/review-gate.md`.

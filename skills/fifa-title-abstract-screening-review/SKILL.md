@@ -14,13 +14,17 @@ When updated criteria change the AI view of a record, update the `ai_*` recommen
 
 Do not use Gemini for this workflow unless Abdel explicitly asks for Gemini in the current request.
 
-Run the screening locally from the current workspace and write recommendations to Supabase from the local workflow. Default to GPT-5.5 with medium reasoning when available. If GPT-5.5 medium is not available, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the model used, and explain the substitution before applying results.
+Default to in-chat Codex review for this workflow. Do not hand title/abstract screening work off to a terminal CLI runner unless Abdel explicitly asks for CLI usage or explicitly asks for that runner/script path. When writing recommendations to Supabase from a local workflow, default to GPT-5.5 with medium reasoning when available. If GPT-5.5 medium is not available, use the closest suitable local Codex/OpenAI model with explicit reasoning, record the model used, and explain the substitution before applying results.
 
 ## Workflow
 
-### Preferred End-to-End Runner
+### Preferred In-Chat Path
 
-Use the single local runner for bulk screening. It fetches eligible records, calls the model in sequential internal batches, validates every recommendation, applies deterministic guardrails from `scripts/title_abstract_screening_rules.mjs`, checkpoints to disk, and writes each completed batch to Supabase when `--apply` is set. Do not split the work across chat messages or subagents unless Abdel explicitly asks for that again.
+Use Codex chat directly for targeted records, small audits, spot checks, conflict teaching, criteria debugging, and other bounded review work. Read the record details, apply `references/eligibility.md` and `references/runtime-criteria.md`, and return structured AI recommendations inline. Only use a script when Abdel explicitly asks for the runner or explicitly asks for CLI/script execution.
+
+### Explicit Runner Path
+
+If Abdel explicitly asks for the local runner, use the single local entrypoint below. It fetches eligible records, calls the model in sequential internal batches, validates every recommendation, applies deterministic guardrails from `scripts/title_abstract_screening_rules.mjs`, checkpoints to disk, and writes each completed batch to Supabase when `--apply` is set.
 
 ```bash
 node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_screening_codex.mjs \
@@ -34,10 +38,10 @@ node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_sc
 
 Notes:
 
-- `--provider codex-cli` is required. Direct API routing, auto routing, and Gemini are disabled for this project unless Abdel explicitly asks otherwise.
+- `--provider codex-cli` is required only when Abdel explicitly wants the runner/script path. Direct API routing, auto routing, and Gemini are disabled for this project unless Abdel explicitly asks otherwise.
 - The command is resumable. Re-running it skips Supabase-completed records and uses the checkpoint file.
 - Keep console output minimal; use `--quiet` for long unattended runs.
-- Use `gpt-5.5` medium when available. If it is unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the substitution in the audit output, and explain it before applying results.
+- Use `gpt-5.5` medium when available. If it is unavailable, use the closest suitable local Codex/OpenAI model with explicit reasoning, record the substitution in the audit output, and explain it before applying results.
 
 Check progress with:
 
@@ -45,7 +49,7 @@ Check progress with:
 node skills/fifa-title-abstract-screening-review/scripts/report_second_search_ai_progress.mjs
 ```
 
-For targeted re-review of known screening records, use the same runner with `--force` and `--study-ids` rather than a custom wrapper:
+For targeted re-review of known screening records, stay in Codex chat unless Abdel explicitly asks for the runner. If he does, use the same entrypoint with `--force` and `--study-ids` rather than a custom wrapper:
 
 ```bash
 node skills/fifa-title-abstract-screening-review/scripts/run_second_search_ai_screening_codex.mjs \
@@ -62,9 +66,9 @@ Numeric study IDs are normalized to `S####`. Use `--record-ids` only when target
 
 Targeted re-review is still AI-only. It must not be implemented with a custom Supabase script that edits `metadata.titleAbstractDecisions`, `manual_decision`, resolver decisions, or promotion metadata.
 
-### Manual Fallback
+### Script Fallback
 
-Use this only for small audits or recovery from malformed model output.
+Use this only when Abdel explicitly wants a local file-based workflow instead of in-chat Codex review.
 
 1. Export candidate records from Supabase:
 
@@ -114,7 +118,7 @@ Manual fallback applies AI recommendations only. If it creates or leaves conflic
 
 ## Validation and Audit
 
-Use the Rayyan first-batch validation runner only when changing criteria, prompts, or deterministic rules. It is a benchmark against known human pass-through decisions, not the live screening workflow.
+Use the Rayyan first-batch validation runner only when Abdel explicitly wants that runner or when changing criteria, prompts, or deterministic rules and a runner-based benchmark is specifically needed. It is a benchmark against known human pass-through decisions, not the live screening workflow.
 
 ```bash
 node skills/fifa-title-abstract-screening-review/scripts/validate_first_batch_rayyan_ai.mjs \
