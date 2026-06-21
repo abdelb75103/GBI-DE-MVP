@@ -74,13 +74,26 @@ export function FullTextScreeningClient({
 
   const navigateQueue = useCallback((next: Partial<Pick<FullTextQueueContext, 'filter' | 'search' | 'page'>>) => {
     startTransition(() => {
-      router.push(buildFullTextQueueUrl({
+      const nextContext = {
         ...context,
         ...next,
         notice: null,
-      }));
+      };
+      if (
+        nextContext.filter === context.filter &&
+        nextContext.search === context.search &&
+        nextContext.page === context.page &&
+        nextContext.notice === context.notice
+      ) {
+        return;
+      }
+      router.replace(buildFullTextQueueUrl(nextContext), { scroll: false });
     });
   }, [context, router]);
+
+  useEffect(() => {
+    setSearchInput(context.search);
+  }, [context.search]);
 
   useEffect(() => {
     const nextSearch = searchInput.trim();
@@ -287,38 +300,62 @@ export function FullTextScreeningClient({
       ) : null}
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="overflow-hidden rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+      <section
+        aria-busy={isPending}
+        className="overflow-hidden rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur"
+      >
         <div className="border-b border-slate-200/70 bg-gradient-to-b from-white to-slate-50/40 px-5 py-4">
-          <div className="grid gap-3 lg:grid-cols-[240px_minmax(0,1fr)]">
-            <select
-              value={context.filter}
-              onChange={(event) => navigateQueue({ filter: event.target.value as FullTextQueueFilter, page: 1 })}
-              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none"
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="grid min-w-0 flex-1 gap-3 lg:grid-cols-[240px_minmax(0,1fr)]">
+              <select
+                value={context.filter}
+                disabled={isPending}
+                onChange={(event) => navigateQueue({ filter: event.target.value as FullTextQueueFilter, page: 1 })}
+                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <option value="all">All records</option>
+                <option value="awaiting_pdf">Upload full text</option>
+                <option value="needs_your_vote">Needs my vote</option>
+                <option value="awaiting_other_reviewer">Awaiting other reviewer</option>
+                <option value="ready_for_extraction">Included</option>
+                <option value="excluded">Excluded</option>
+                <option value="conflict">Conflicts</option>
+                <option value="promoted">Promoted to extraction</option>
+              </select>
+              <div className="relative">
+                <span aria-hidden className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                  <SearchIcon />
+                </span>
+                <input
+                  value={searchInput}
+                  disabled={isPending}
+                  onChange={(event) => setSearchInput(event.target.value)}
+                  placeholder="Search title, study ID, author, DOI..."
+                  className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+                />
+              </div>
+            </div>
+            <div
+              className={`inline-flex min-h-9 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                isPending
+                  ? 'border-sky-200 bg-sky-50 text-sky-700'
+                  : 'border-transparent bg-transparent text-slate-500'
+              }`}
+              aria-live="polite"
             >
-              <option value="all">All records</option>
-              <option value="awaiting_pdf">Upload full text</option>
-              <option value="needs_your_vote">Needs my vote</option>
-              <option value="awaiting_other_reviewer">Awaiting other reviewer</option>
-              <option value="ready_for_extraction">Included</option>
-              <option value="excluded">Excluded</option>
-              <option value="conflict">Conflicts</option>
-              <option value="promoted">Promoted to extraction</option>
-            </select>
-            <div className="relative">
-              <span aria-hidden className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                <SearchIcon />
-              </span>
-              <input
-                value={searchInput}
-                onChange={(event) => setSearchInput(event.target.value)}
-                placeholder="Search title, study ID, author, DOI..."
-                className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none"
-              />
+              {isPending ? (
+                <>
+                  <span aria-hidden className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-sky-200 border-t-sky-600" />
+                  Updating…
+                </>
+              ) : (
+                'Queue ready'
+              )}
             </div>
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className={`overflow-x-auto transition-opacity duration-200 ${isPending ? 'opacity-75' : 'opacity-100'}`}>
           <table className="w-full min-w-[860px] border-collapse text-left text-sm">
             <thead className="bg-slate-50/60 text-[11px] uppercase tracking-[0.18em] text-slate-500">
               <tr>

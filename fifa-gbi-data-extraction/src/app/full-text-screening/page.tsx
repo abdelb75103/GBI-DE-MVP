@@ -53,7 +53,6 @@ export default async function FullTextScreeningPage({
 
   return (
     <FullTextScreeningClient
-      key={`${context.filter}:${context.search}:${context.page}`}
       initialQueue={initialQueue}
       context={context}
       currentReviewerId={profile.id}
