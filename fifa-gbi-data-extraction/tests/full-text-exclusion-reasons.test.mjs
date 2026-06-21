@@ -15,3 +15,7 @@ test('uses exposure-first wording for the missing denominator exclusion reason',
 test('offers wrong study design as a full-text exclusion reason', () => {
   assert.match(source, /'Wrong study design'/);
 });
+
+test('offers wrong outcomes as a full-text exclusion reason', () => {
+  assert.match(source, /'Wrong outcomes'/);
+});
