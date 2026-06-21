@@ -18,6 +18,7 @@ import {
   buildFullTextReaderUrl,
   type FullTextQueueContext,
 } from '@/lib/screening/full-text-queue';
+import { MobilePdfViewer } from '@/components/mobile-pdf-viewer';
 import { isMentalHealthScreeningRecord } from '@/lib/screening/mental-health';
 import { useIsMobile } from '@/hooks/use-is-mobile';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
@@ -90,7 +91,7 @@ export function FullTextScreeningWorkspaceClient({
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
   const pdfDirectUrl = `/api/full-text-screening/${record.id}/file`;
-  const pdfUrl = isMobile ? `${pdfDirectUrl}#zoom=page-fit` : `${pdfDirectUrl}#view=FitH`;
+  const pdfUrl = `${pdfDirectUrl}#view=FitH`;
   const isMentalHealth = isMentalHealthScreeningRecord(record);
 
   const aiHasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
@@ -351,13 +352,19 @@ export function FullTextScreeningWorkspaceClient({
                   </div>
                 </div>
               ) : (
-                <iframe
-                  src={pdfUrl}
-                  className={`w-full flex-1 border-0 bg-white ${isMobile ? 'min-h-[78dvh] overflow-x-hidden' : 'h-full min-h-[calc(100vh-300px)]'}`}
-                  title={`${record.assignedStudyId} full text PDF`}
-                  allow="fullscreen"
-                  style={isMobile ? { touchAction: 'pan-y pinch-zoom' } : undefined}
-                />
+                isMobile ? (
+                  <MobilePdfViewer
+                    src={pdfDirectUrl}
+                    title={`${record.assignedStudyId} full text PDF`}
+                  />
+                ) : (
+                  <iframe
+                    src={pdfUrl}
+                    className="h-full min-h-[calc(100vh-300px)] w-full flex-1 border-0 bg-white"
+                    title={`${record.assignedStudyId} full text PDF`}
+                    allow="fullscreen"
+                  />
+                )
               )}
             </div>
           </div>
