@@ -19,3 +19,9 @@ test('offers wrong study design as a full-text exclusion reason', () => {
 test('offers wrong outcomes as a full-text exclusion reason', () => {
   assert.match(source, /'Wrong outcomes'/);
 });
+
+test('does not offer retired full-text exclusion reasons', () => {
+  assert.doesNotMatch(source, /'Review article for reference checking only'/);
+  assert.doesNotMatch(source, /'Full text unavailable'/);
+  assert.doesNotMatch(source, /'Non-English full text pending translation'/);
+});

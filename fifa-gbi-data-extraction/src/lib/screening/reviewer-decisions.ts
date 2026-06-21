@@ -10,9 +10,6 @@ export const EXCLUSION_REASONS = [
   'Biomechanical, performance, or intervention focus',
   'Wrong study design',
   'Ineligible retrospective or cross-sectional design',
-  'Review article for reference checking only',
-  'Full text unavailable',
-  'Non-English full text pending translation',
   'Other',
 ] as const;
 
