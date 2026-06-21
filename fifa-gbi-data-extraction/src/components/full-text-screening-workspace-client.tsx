@@ -19,6 +19,7 @@ import {
   type FullTextQueueContext,
 } from '@/lib/screening/full-text-queue';
 import { isMentalHealthScreeningRecord } from '@/lib/screening/mental-health';
+import { useIsMobile } from '@/hooks/use-is-mobile';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
@@ -60,6 +61,7 @@ export function FullTextScreeningWorkspaceClient({
   const [otherReason, setOtherReason] = useState('');
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
+  const isMobile = useIsMobile();
   const isAdmin = profileRole === 'admin';
   const awaitingPdf = isAwaitingFullTextPdf(record);
   const backToQueueUrl = buildFullTextQueueUrl({ ...queueContext, notice: null });
@@ -88,7 +90,7 @@ export function FullTextScreeningWorkspaceClient({
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
   const pdfDirectUrl = `/api/full-text-screening/${record.id}/file`;
-  const pdfUrl = `${pdfDirectUrl}#view=FitH`;
+  const pdfUrl = isMobile ? `${pdfDirectUrl}#zoom=page-fit` : `${pdfDirectUrl}#view=FitH`;
   const isMentalHealth = isMentalHealthScreeningRecord(record);
 
   const aiHasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
@@ -258,7 +260,7 @@ export function FullTextScreeningWorkspaceClient({
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6">
+    <div className={`mx-auto flex w-full max-w-screen-2xl flex-col gap-6 ${isMobile ? 'overflow-x-hidden' : ''}`}>
       <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-7">
         <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
         <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
@@ -306,7 +308,7 @@ export function FullTextScreeningWorkspaceClient({
 
       {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
 
-      <section className="grid min-h-[calc(100vh-220px)] overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl ring-1 ring-slate-200/60 lg:grid-cols-[minmax(0,1fr)_400px]">
+      <section className={`grid min-h-[calc(100vh-220px)] rounded-3xl border border-slate-200/70 bg-white shadow-xl ring-1 ring-slate-200/60 lg:grid-cols-[minmax(0,1fr)_400px] ${isMobile ? 'overflow-x-hidden' : 'overflow-hidden'}`}>
         <div className="flex min-w-0 flex-col border-b border-slate-200/70 bg-slate-50/40 lg:border-b-0 lg:border-r">
           <div className="flex items-center justify-between gap-3 px-5 pt-4 pb-3">
             <div>
@@ -324,8 +326,8 @@ export function FullTextScreeningWorkspaceClient({
               </a>
             ) : null}
           </div>
-          <div className="flex min-h-0 flex-1 px-3 pb-3">
-            <div className="flex min-h-[calc(100vh-300px)] w-full overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/60">
+          <div className={`flex min-h-0 flex-1 ${isMobile ? 'overflow-x-hidden px-0 pb-0' : 'px-3 pb-3'}`}>
+            <div className={`flex w-full bg-white ${isMobile ? 'min-h-[78dvh] overflow-x-hidden rounded-b-3xl' : 'min-h-[calc(100vh-300px)] overflow-hidden rounded-2xl shadow-sm ring-1 ring-slate-200/60'}`}>
               {awaitingPdf ? (
                 <div className="grid w-full place-items-center p-8 text-center">
                   <div className="max-w-md rounded-2xl border border-amber-200 bg-amber-50 p-6 text-amber-900">
@@ -351,9 +353,10 @@ export function FullTextScreeningWorkspaceClient({
               ) : (
                 <iframe
                   src={pdfUrl}
-                  className="h-full min-h-[calc(100vh-300px)] w-full flex-1 border-0 bg-white"
+                  className={`w-full flex-1 border-0 bg-white ${isMobile ? 'min-h-[78dvh] overflow-x-hidden' : 'h-full min-h-[calc(100vh-300px)]'}`}
                   title={`${record.assignedStudyId} full text PDF`}
                   allow="fullscreen"
+                  style={isMobile ? { touchAction: 'pan-y pinch-zoom' } : undefined}
                 />
               )}
             </div>
