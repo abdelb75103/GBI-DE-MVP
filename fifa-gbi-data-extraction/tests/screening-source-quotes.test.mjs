@@ -24,12 +24,15 @@ test('screening interfaces do not render AI source quotes or locations', () => {
 
 test('full-text AI review does not request or validate source quotes', () => {
   const aiReview = readProjectFile('src/lib/screening/ai-review.ts');
+  const criteria = readProjectFile('src/lib/screening/criteria.ts');
 
   assert.doesNotMatch(aiReview, /missing a source quote/i);
   assert.doesNotMatch(aiReview, /missing a source location/i);
   assert.doesNotMatch(aiReview, /direct quote from the PDF/i);
   assert.match(aiReview, /evidenceQuote: null/);
   assert.match(aiReview, /sourceLocation: null/);
+  assert.match(criteria, /cited reviews?, meta-analyses?, or review language that appears only in background discussion, comparison text, or the reference list do not make the current paper a review/i);
+  assert.match(aiReview, /Do not classify the current paper as a review just because the PDF cites prior reviews or meta-analyses/i);
 });
 
 test('title\/abstract persistence clears quote fields and does not require them', () => {

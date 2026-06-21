@@ -6,7 +6,7 @@ export const EXCLUSION_REASONS = [
   'No football-specific subgroup data',
   'No exposure reported (no usable denominator)',
   'Wrong outcomes',
-  'Public-source-only dataset',
+  'Public or otherwise ineligible data source',
   'Biomechanical, performance, or intervention focus',
   'Wrong study design',
   'Ineligible retrospective or cross-sectional design',

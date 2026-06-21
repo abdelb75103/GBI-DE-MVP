@@ -15,5 +15,7 @@ Exclude wrong sport, non-competitive/recreational-only contexts that do not meet
 
 Systematic reviews, narrative reviews, and literature reviews are not primary extraction studies. They may be retained outside the primary extraction stream for reference-list checking, but the full-text screening decision requested here must be Include only for primary eligible records and Exclude otherwise.
 
+Cited reviews, meta-analyses, or review language that appears only in background discussion, comparison text, or the reference list do not make the current paper a review. Judge review status from the paper's own study design, methods, and results, with priority on the title, abstract, and methods sections.
+
 If the evidence is insufficient to decide, choose Exclude only when a concrete exclusion reason is supported by the text. Otherwise use the most conservative decision supported by the PDF and explain uncertainty in the reason.
 `.trim();

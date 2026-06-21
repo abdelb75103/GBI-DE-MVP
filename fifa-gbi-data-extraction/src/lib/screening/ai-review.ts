@@ -148,6 +148,7 @@ Return strict JSON with exactly:
 }
 
 Give a concise reason that directly explains why full-text extraction should proceed or which eligibility rule makes the paper ineligible. Do not return source quotes or source-location fields.
+Do not classify the current paper as a review just because the PDF cites prior reviews or meta-analyses in the background, discussion, or references.
 
 Study ID: ${record.assignedStudyId}
 Title: ${record.title}
