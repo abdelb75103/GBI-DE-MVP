@@ -24,7 +24,6 @@ type PinchGesture = {
   startZoom: number;
 };
 
-const VIEWER_PADDING = 16;
 const PAGE_GAP = 12;
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 3;
@@ -90,7 +89,7 @@ export function MobilePdfViewer({ src, title }: MobilePdfViewerProps) {
 
     const observer = new ResizeObserver((entries) => {
       const nextWidth = entries[0]?.contentRect.width ?? 0;
-      setAvailableWidth(Math.max(Math.floor(nextWidth - VIEWER_PADDING * 2), 0));
+      setAvailableWidth(Math.max(Math.floor(nextWidth), 0));
     });
 
     observer.observe(viewport);
@@ -250,12 +249,12 @@ export function MobilePdfViewer({ src, title }: MobilePdfViewerProps) {
   return (
     <div
       ref={viewportRef}
-      className="min-h-[78dvh] w-full min-w-0 flex-1 overflow-auto bg-[#eef3f8] px-4 py-3"
+      className="h-[78dvh] w-full min-w-0 flex-1 overflow-auto bg-[#eef3f8] px-2 py-2"
       style={{ touchAction: 'pan-x pan-y' }}
       aria-label={title}
     >
       <div
-        className="mx-auto flex max-w-full flex-col items-center"
+        className="mx-auto flex flex-col items-center"
         style={{
           gap: `${PAGE_GAP}px`,
           width: typeof contentWidth === 'number' ? `${contentWidth}px` : contentWidth,

@@ -22,5 +22,6 @@ test('mobile PDF viewer renders pages with pdfjs and custom pinch zoom support',
   assert.match(mobileViewerSource, /touchmove/);
   assert.match(mobileViewerSource, /setZoom\(nextZoom\)/);
   assert.match(mobileViewerSource, /pageMetrics\.map/);
-  assert.match(mobileViewerSource, /className="min-h-\[78dvh\] w-full min-w-0 flex-1 overflow-auto/);
+  assert.match(mobileViewerSource, /className="h-\[78dvh\] w-full min-w-0 flex-1 overflow-auto/);
+  assert.match(mobileViewerSource, /className="mx-auto flex flex-col items-center"/);
 });
