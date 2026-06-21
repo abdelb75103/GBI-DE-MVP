@@ -18,6 +18,7 @@ import {
   buildFullTextReaderUrl,
   type FullTextQueueContext,
 } from '@/lib/screening/full-text-queue';
+import { isMentalHealthScreeningRecord } from '@/lib/screening/mental-health';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
@@ -88,6 +89,7 @@ export function FullTextScreeningWorkspaceClient({
   const displayTitle = cleanDisplayTitle(record.title);
   const pdfDirectUrl = `/api/full-text-screening/${record.id}/file`;
   const pdfUrl = `${pdfDirectUrl}#view=FitH`;
+  const isMentalHealth = isMentalHealthScreeningRecord(record);
 
   const aiHasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
   const aiDecisionLabel = record.aiStatus === 'running'
@@ -270,6 +272,7 @@ export function FullTextScreeningWorkspaceClient({
                 <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
                   {record.assignedStudyId}
                 </span>
+                {isMentalHealth ? <MentalHealthBadge /> : null}
                 <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl">{displayTitle}</h1>
                 <ResolutionBadge resolution={resolution} />
               </div>
@@ -581,6 +584,14 @@ export function FullTextScreeningWorkspaceClient({
         </form>
       </section>
     </div>
+  );
+}
+
+function MentalHealthBadge() {
+  return (
+    <span className="inline-flex items-center rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-fuchsia-700">
+      Mental Health
+    </span>
   );
 }
 

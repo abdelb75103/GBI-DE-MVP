@@ -19,6 +19,7 @@ import {
   type FullTextQueueFilter,
   type FullTextQueuePage,
 } from '@/lib/screening/full-text-queue';
+import { isMentalHealthScreeningRecord } from '@/lib/screening/mental-health';
 import type { ScreeningDecision, ScreeningRecord } from '@/lib/types';
 
 type Props = {
@@ -496,16 +497,18 @@ function ScreeningRow({
   const excludeVotes = reviewerDecisions.filter((d) => d.decision === 'exclude').length;
   const awaitingPdf = isAwaitingFullTextPdf(record);
   const uploadInputId = `full-text-upload-${record.id}`;
+  const isMentalHealth = isMentalHealthScreeningRecord(record);
 
   return (
     <tr className="group relative bg-white transition-colors duration-200 ease-out hover:bg-[#0b3a70]/[0.04]">
       <td className="relative max-w-[440px] py-4 pl-5 pr-5 align-middle">
         <span aria-hidden className={`absolute left-0 top-2 bottom-2 w-1 rounded-r-full ${STATUS_ACCENT[status]}`} />
         <Link href={href} className="block pl-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-bold tracking-wide text-[#0b3a70]">{record.assignedStudyId}</span>
             <span className="text-xs text-slate-400">·</span>
             <span className="text-xs text-slate-500">{authorLabel}</span>
+            {isMentalHealth ? <MentalHealthBadge /> : null}
           </div>
           <p className="mt-1 line-clamp-2 font-semibold leading-snug text-slate-900 transition group-hover:text-[#0b3a70]">{displayTitle}</p>
         </Link>
@@ -567,6 +570,14 @@ function ScreeningRow({
         </div>
       </td>
     </tr>
+  );
+}
+
+function MentalHealthBadge() {
+  return (
+    <span className="inline-flex items-center rounded-full border border-fuchsia-200 bg-fuchsia-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-fuchsia-700">
+      Mental Health
+    </span>
   );
 }
 

@@ -21,6 +21,12 @@ import {
   isAwaitingFullTextPdf,
   type FullTextDecisionAction,
 } from '@/lib/screening/reviewer-decisions';
+import {
+  MENTAL_HEALTH_TAG,
+  addMentalHealthTag,
+  hasMentalHealthTag,
+  isMentalHealthScreeningRecord,
+} from '@/lib/screening/mental-health';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
 import type { Paper, ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
 import {
@@ -258,6 +264,22 @@ const mapRows = async (rows: ScreeningRecordRow[]): Promise<ScreeningRecord[]> =
     rows.flatMap((row) => [row.created_by, row.manual_decided_by, row.promoted_by]),
   );
   return rows.map((row) => mapScreeningRecordRow(row, names));
+};
+
+const maybePersistMentalHealthTag = async (record: ScreeningRecord): Promise<ScreeningRecord> => {
+  if (record.stage !== 'full_text') {
+    return record;
+  }
+  if (hasMentalHealthTag(record.metadata) || !isMentalHealthScreeningRecord(record)) {
+    return record;
+  }
+
+  return updateScreeningRecordMetadata(
+    record.id,
+    addMentalHealthTag(record.metadata),
+    {},
+    record.updatedAt,
+  );
 };
 
 let titleAbstractQueueCache: { expiresAt: number; records: ScreeningRecord[] } | null = null;
@@ -770,7 +792,8 @@ export const updateScreeningAiSuggestion = async (
     invalidateTitleAbstractQueueCache();
   }
 
-  const [record] = await mapRows([data as ScreeningRecordRow]);
+  let [record] = await mapRows([data as ScreeningRecordRow]);
+  record = await maybePersistMentalHealthTag(record);
   if (record.stage === 'title_abstract' && update.status === 'completed' && getTitleAbstractDecisions(record).length > 0) {
     const finalized = await finalizeTitleAbstractRecord(record, getTitleAbstractResolution(record), payload.ai_reviewed_at ?? undefined);
     return finalized.record;
@@ -941,7 +964,8 @@ export const saveScreeningDecision = async (
     throw new Error(`Failed to save screening decision: ${error?.message ?? 'Unknown error'}`);
   }
 
-  const [record] = await mapRows([data as ScreeningRecordRow]);
+  let [record] = await mapRows([data as ScreeningRecordRow]);
+  record = await maybePersistMentalHealthTag(record);
   if (getScreeningResolution(record) !== 'ready_for_extraction') {
     return { record, duplicateWarnings: [] };
   }
@@ -1160,11 +1184,16 @@ export const promoteScreeningRecord = async (
   }
 
   const duplicateWarnings = await findExtractionPromotionWarnings(record);
+  const mentalHealthRecord = await maybePersistMentalHealthTag(record);
+  const shouldTagMentalHealth = isMentalHealthScreeningRecord(mentalHealthRecord);
+  const screeningMetadata = shouldTagMentalHealth
+    ? addMentalHealthTag(mentalHealthRecord.metadata)
+    : mentalHealthRecord.metadata;
 
   const { data: existingPaper, error: existingPaperError } = await supabaseClient()
     .from('papers')
-    .select('id')
-    .eq('assigned_study_id', record.assignedStudyId)
+    .select('id, status, metadata')
+    .eq('assigned_study_id', mentalHealthRecord.assignedStudyId)
     .maybeSingle();
 
   if (existingPaperError) {
@@ -1174,39 +1203,57 @@ export const promoteScreeningRecord = async (
   const paper = existingPaper
     ? { id: existingPaper.id }
     : await createPaper({
-    title: record.title,
-    extractedTitle: record.title,
-    leadAuthor: record.leadAuthor ?? undefined,
-    year: record.year ?? undefined,
-    journal: record.journal ?? undefined,
-    doi: record.doi ?? undefined,
-    normalizedDoi: record.normalizedDoi ?? undefined,
-    status: 'uploaded',
-    primaryFileSha256: record.fileSha256 ?? undefined,
-    originalFileName: record.originalFileName ?? record.fileName ?? undefined,
-    uploadedBy: record.createdBy ?? profileId,
-    assignedStudyId: record.assignedStudyId,
-    metadata: {
-      ...(record.metadata ?? {}),
-      screeningRecordId: record.id,
-      screeningStage: record.stage,
-      screeningDecision: record.manualDecision,
-      screeningDecisionReason: record.manualReason,
-      screeningPromotedAt: new Date().toISOString(),
-    },
-  });
+        title: mentalHealthRecord.title,
+        extractedTitle: mentalHealthRecord.title,
+        leadAuthor: mentalHealthRecord.leadAuthor ?? undefined,
+        year: mentalHealthRecord.year ?? undefined,
+        journal: mentalHealthRecord.journal ?? undefined,
+        doi: mentalHealthRecord.doi ?? undefined,
+        normalizedDoi: mentalHealthRecord.normalizedDoi ?? undefined,
+        status: shouldTagMentalHealth ? 'mental_health' : 'uploaded',
+        primaryFileSha256: mentalHealthRecord.fileSha256 ?? undefined,
+        originalFileName: mentalHealthRecord.originalFileName ?? mentalHealthRecord.fileName ?? undefined,
+        uploadedBy: mentalHealthRecord.createdBy ?? profileId,
+        assignedStudyId: mentalHealthRecord.assignedStudyId,
+        metadata: {
+          ...screeningMetadata,
+          screeningRecordId: mentalHealthRecord.id,
+          screeningStage: mentalHealthRecord.stage,
+          screeningDecision: mentalHealthRecord.manualDecision,
+          screeningDecisionReason: mentalHealthRecord.manualReason,
+          screeningPromotedAt: new Date().toISOString(),
+        },
+      });
 
-  if (!existingPaper && record.fileName && record.size && record.mimeType) {
+  if (existingPaper) {
+    const nextMetadata = shouldTagMentalHealth
+      ? addMentalHealthTag((existingPaper.metadata as Record<string, unknown> | null | undefined) ?? {})
+      : ((existingPaper.metadata as Record<string, unknown> | null | undefined) ?? {});
+    const nextStatus = shouldTagMentalHealth ? MENTAL_HEALTH_TAG : existingPaper.status;
+    await updatePaper(existingPaper.id, {
+      status: nextStatus,
+      metadata: {
+        ...nextMetadata,
+        screeningRecordId: mentalHealthRecord.id,
+        screeningStage: mentalHealthRecord.stage,
+        screeningDecision: mentalHealthRecord.manualDecision,
+        screeningDecisionReason: mentalHealthRecord.manualReason,
+        screeningPromotedAt: new Date().toISOString(),
+      },
+    });
+  }
+
+  if (!existingPaper && mentalHealthRecord.fileName && mentalHealthRecord.size && mentalHealthRecord.mimeType) {
     const storedFile = await attachFile({
       paperId: paper.id,
-      name: record.fileName,
-      originalFileName: record.originalFileName ?? record.fileName,
-      size: record.size,
-      mimeType: record.mimeType,
-      dataBase64: record.dataBase64,
-      storageBucket: record.storageBucket,
-      storageObjectPath: record.storageObjectPath,
-      fileSha256: record.fileSha256 ?? undefined,
+      name: mentalHealthRecord.fileName,
+      originalFileName: mentalHealthRecord.originalFileName ?? mentalHealthRecord.fileName,
+      size: mentalHealthRecord.size,
+      mimeType: mentalHealthRecord.mimeType,
+      dataBase64: mentalHealthRecord.dataBase64,
+      storageBucket: mentalHealthRecord.storageBucket,
+      storageObjectPath: mentalHealthRecord.storageObjectPath,
+      fileSha256: mentalHealthRecord.fileSha256 ?? undefined,
     });
 
     await updatePaper(paper.id, {
@@ -1219,6 +1266,7 @@ export const promoteScreeningRecord = async (
   const { data, error } = await supabaseClient()
     .from('screening_records')
     .update({
+      metadata: screeningMetadata,
       promoted_paper_id: paper.id,
       promoted_by: profileId,
       promoted_at: new Date().toISOString(),

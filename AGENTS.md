@@ -46,6 +46,18 @@ When Abdel asks to update title/abstract AI screening decisions, re-review confl
 
 Legitimate AI-vs-human disagreements should remain conflicts. Report them as conflicts with the human vote, AI recommendation, and criteria-based reason. Only resolve conflicts when Abdel explicitly says to resolve/adjudicate the specific records and approves the exact intended decision for each affected record.
 
+## User Preference: Follow Skills End-to-End
+
+When a repo or local skill clearly applies, follow that skill through its full default workflow instead of stopping at an intermediate artifact. If the skill includes later steps such as upload, database apply, audit logging, verification, or handoff, complete those steps unless Abdel explicitly asks to stop short.
+
+This does not override the approval rules above for visible external actions. If a skill includes an external upload or change that still needs explicit approval, pause only for that approval; otherwise, carry the skill to completion.
+
+## User Preference: Second Search Title/Abstract Freeze
+
+Title/abstract screening for the second search batch `Second search - Ishanka - 2026-05-26` is complete and should not be altered unless Abdel explicitly asks to reopen that stage.
+
+Do not rerun or update second-search title/abstract AI recommendations, criteria/model audit fields, offline packs, conflict handling, resolver state, or promotion state by default. If a new rule or edge case comes up for that batch, apply it in full-text screening instead unless Abdel explicitly says to change title/abstract screening.
+
 ## User Preference: Descriptive Audit and Backlog Tracking
 
 When creating or updating audits, backlogs, manifests, reports, or tracking files, make the scope and source context explicit in the file name and opening summary. Include the search/import wave when relevant, such as `original search`, `second search`, or `second updated search`, plus the workflow stage, date, and whether the file is a queue, dry run, upload log, unresolved backlog, or final audit.
