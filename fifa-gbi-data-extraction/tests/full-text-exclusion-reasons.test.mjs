@@ -1,9 +1,17 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
-import { EXCLUSION_REASONS } from '../src/lib/screening/reviewer-decisions.ts';
+const source = readFileSync(
+  new URL('../src/lib/screening/reviewer-decisions.ts', import.meta.url),
+  'utf8',
+);
 
 test('uses exposure-first wording for the missing denominator exclusion reason', () => {
-  assert.ok(EXCLUSION_REASONS.includes('No exposure reported (no usable denominator)'));
-  assert.ok(!EXCLUSION_REASONS.includes('No usable denominator'));
+  assert.match(source, /'No exposure reported \(no usable denominator\)'/);
+  assert.doesNotMatch(source, /'No usable denominator'/);
+});
+
+test('offers wrong study design as a full-text exclusion reason', () => {
+  assert.match(source, /'Wrong study design'/);
 });

@@ -7,6 +7,7 @@ export const EXCLUSION_REASONS = [
   'No exposure reported (no usable denominator)',
   'Public-source-only dataset',
   'Biomechanical, performance, or intervention focus',
+  'Wrong study design',
   'Ineligible retrospective or cross-sectional design',
   'Review article for reference checking only',
   'Full text unavailable',
