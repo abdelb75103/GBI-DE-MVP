@@ -250,7 +250,7 @@ export function MobilePdfViewer({ src, title }: MobilePdfViewerProps) {
   return (
     <div
       ref={viewportRef}
-      className="min-h-[78dvh] overflow-auto bg-[#eef3f8] px-4 py-3"
+      className="min-h-[78dvh] w-full min-w-0 flex-1 overflow-auto bg-[#eef3f8] px-4 py-3"
       style={{ touchAction: 'pan-x pan-y' }}
       aria-label={title}
     >
