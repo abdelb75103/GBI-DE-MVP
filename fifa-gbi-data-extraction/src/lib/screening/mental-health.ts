@@ -3,7 +3,7 @@ import type { Paper, ScreeningRecord } from '@/lib/types';
 export const MENTAL_HEALTH_TAG = 'mental_health';
 
 const MENTAL_HEALTH_SIGNAL_PATTERN =
-  /\b(?:mental health|mental ill-?health|psychological(?:-health)?|psychopatholog|depress(?:ion|ive)?|anx(?:iety|ious)?|stress|ptsd|post-traumatic stress|burnout|eating disorder|disordered eating|orthorexia|suicid(?:e|al)|reinjury anxiety|sport injury anxiety)\b/i;
+  /\b(?:mental health|mental ill-?health|common mental disorders?|psychological health|psychological-health|psychological distress|perceived stress|stress symptoms?|stress disorder|psychopatholog|depress(?:ion|ive)?|anx(?:iety|ious)?|ptsd|post-traumatic stress|burnout|eating disorder|disordered eating|orthorexia|suicid(?:e|al)|reinjury anxiety|sport injury anxiety)\b/i;
 
 const normalizeMetadataTags = (metadata: Record<string, unknown> | null | undefined): string[] => {
   if (!metadata || typeof metadata !== 'object' || Array.isArray(metadata)) {

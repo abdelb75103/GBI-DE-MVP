@@ -804,7 +804,7 @@ export const updateScreeningAiSuggestion = async (
 export const updateScreeningRecordMetadata = async (
   id: string,
   metadata: Record<string, unknown>,
-  updates: Partial<Pick<ScreeningRecordUpdate, 'manual_decision' | 'manual_reason' | 'manual_decided_by' | 'manual_decided_at' | 'promoted_paper_id' | 'promoted_by' | 'promoted_at'>> = {},
+  updates: Partial<Pick<ScreeningRecordUpdate, 'manual_decision' | 'manual_reason' | 'manual_decided_by' | 'manual_decided_at' | 'promoted_paper_id' | 'promoted_by' | 'promoted_at' | 'notes'>> = {},
   expectedUpdatedAt?: string | null,
 ): Promise<ScreeningRecord> => {
   let query = supabaseClient()

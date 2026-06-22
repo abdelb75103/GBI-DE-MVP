@@ -15,7 +15,12 @@ const screeningDbSource = readFileSync(
 
 test('mental-health helper recognizes direct psychological outcome signals and persists a metadata tag', () => {
   assert.match(mentalHealthHelperSource, /MENTAL_HEALTH_TAG = 'mental_health'/);
-  assert.match(mentalHealthHelperSource, /mental health|psychological|depress|anx|burnout|eating disorder/i);
+  const regexSource = mentalHealthHelperSource.match(/const MENTAL_HEALTH_SIGNAL_PATTERN =\s*\/(.+)\/i;/s)?.[1];
+  assert.ok(regexSource, 'expected mental-health regex source');
+  const mentalHealthPattern = new RegExp(regexSource, 'i');
+  assert.equal(mentalHealthPattern.test('psychological variables during preseason screening'), false);
+  assert.equal(mentalHealthPattern.test('Symptoms of common mental disorders in professional footballers'), true);
+  assert.equal(mentalHealthPattern.test('validated psychological distress outcomes in football players'), true);
   assert.match(mentalHealthHelperSource, /tags,\s*\n\s*}/);
 });
 

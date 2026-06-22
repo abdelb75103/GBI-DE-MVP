@@ -42,8 +42,25 @@ type DuplicateWarning = {
   score: number;
 };
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
+const REVIEW_COMMENT_MAX_CHARS = 2000;
+const FULL_TEXT_REVIEW_FLAGGED_KEY = 'fullTextReviewFlagged';
+const FULL_TEXT_REVIEW_UPDATED_AT_KEY = 'fullTextReviewUpdatedAt';
+const FULL_TEXT_REVIEW_UPDATED_BY_NAME_KEY = 'fullTextReviewUpdatedByName';
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
+
+const getFullTextReviewFlagged = (record: Pick<ScreeningRecord, 'metadata'>) =>
+  record.metadata?.[FULL_TEXT_REVIEW_FLAGGED_KEY] === true;
+
+const getFullTextReviewUpdatedAt = (record: Pick<ScreeningRecord, 'metadata'>) => {
+  const value = record.metadata?.[FULL_TEXT_REVIEW_UPDATED_AT_KEY];
+  return typeof value === 'string' && value.trim() ? value : null;
+};
+
+const getFullTextReviewUpdatedByName = (record: Pick<ScreeningRecord, 'metadata'>) => {
+  const value = record.metadata?.[FULL_TEXT_REVIEW_UPDATED_BY_NAME_KEY];
+  return typeof value === 'string' && value.trim() ? value : null;
+};
 
 export function FullTextScreeningWorkspaceClient({
   initialRecord,
@@ -62,6 +79,7 @@ export function FullTextScreeningWorkspaceClient({
   const [otherReason, setOtherReason] = useState('');
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
+  const [isReviewPending, startReviewTransition] = useTransition();
   const isMobile = useIsMobile();
   const isAdmin = profileRole === 'admin';
   const awaitingPdf = isAwaitingFullTextPdf(record);
@@ -90,9 +108,12 @@ export function FullTextScreeningWorkspaceClient({
     : canChangeReviewerVote);
   const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : null;
   const displayTitle = cleanDisplayTitle(record.title);
-  const pdfDirectUrl = `/api/full-text-screening/${record.id}/file`;
+  const pdfVersion = record.fileSha256 || String(record.size || '') || 'latest';
+  const pdfDirectUrl = `/api/full-text-screening/${record.id}/file?v=${encodeURIComponent(pdfVersion)}`;
   const pdfUrl = `${pdfDirectUrl}#view=FitH`;
   const isMentalHealth = isMentalHealthScreeningRecord(record);
+  const [reviewFlagged, setReviewFlagged] = useState(() => getFullTextReviewFlagged(initialRecord));
+  const [reviewComment, setReviewComment] = useState(initialRecord.notes ?? '');
 
   const aiHasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
   const aiDecisionLabel = record.aiStatus === 'running'
@@ -129,6 +150,16 @@ export function FullTextScreeningWorkspaceClient({
   const totalReviewerVotes = reviewerDecisions.length;
   const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;
   const excludeVotes = reviewerDecisions.filter((d) => d.decision === 'exclude').length;
+  const reviewUpdatedAt = getFullTextReviewUpdatedAt(record);
+  const reviewUpdatedByName = getFullTextReviewUpdatedByName(record);
+  const hasUnsavedReviewState =
+    reviewFlagged !== getFullTextReviewFlagged(record) || reviewComment !== (record.notes ?? '');
+
+  const syncRecord = (nextRecord: ScreeningRecord) => {
+    setRecord(nextRecord);
+    setReviewFlagged(getFullTextReviewFlagged(nextRecord));
+    setReviewComment(nextRecord.notes ?? '');
+  };
 
   const saveDecision = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -180,7 +211,7 @@ export function FullTextScreeningWorkspaceClient({
         setNotice({ tone: 'error', message: 'Failed to save decision' });
         return;
       }
-      setRecord(payload.record);
+      syncRecord(payload.record);
       setDecision(null);
       setReason('');
       setOtherReason('');
@@ -255,8 +286,35 @@ export function FullTextScreeningWorkspaceClient({
         setNotice({ tone: 'error', message: payload.error ?? 'PDF attach failed' });
         return;
       }
-      setRecord(payload.record);
+      syncRecord(payload.record);
       setNotice({ tone: 'success', message: `Attached ${file.name} to this full-text record.` });
+    });
+  };
+
+  const saveReviewState = () => {
+    const trimmedComment = reviewComment.trim();
+    if (trimmedComment.length > REVIEW_COMMENT_MAX_CHARS) {
+      setNotice({ tone: 'error', message: `Review comment must be ${REVIEW_COMMENT_MAX_CHARS} characters or fewer.` });
+      return;
+    }
+
+    startReviewTransition(async () => {
+      const response = await fetch(`/api/full-text-screening/${record.id}/review-state`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          flagged: reviewFlagged,
+          comment: trimmedComment,
+          updatedAt: record.updatedAt,
+        }),
+      });
+      const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
+      if (!response.ok || !payload.record) {
+        setNotice({ tone: 'error', message: payload.error ?? 'Failed to save review flag and comment.' });
+        return;
+      }
+      syncRecord(payload.record);
+      setNotice({ tone: 'success', message: reviewFlagged ? 'Flag and comment saved.' : 'Review comment saved.' });
     });
   };
 
@@ -509,6 +567,70 @@ export function FullTextScreeningWorkspaceClient({
               <p className="mt-3 text-sm leading-relaxed text-slate-500">No AI recommendation has been recorded yet.</p>
             )}
             <p className="mt-3 text-[11px] leading-relaxed text-slate-500">Advisory only. Final eligibility depends on reviewer votes.</p>
+          </div>
+
+          <div className="relative z-10 px-6 pt-3 pb-2">
+            <div className="rounded-2xl border border-indigo-100/80 bg-white/75 p-4 shadow-sm shadow-indigo-900/5 backdrop-blur-sm">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-900/60">Review flag</p>
+                  <p className="mt-1 text-xs text-slate-500">Mark this full text for follow-up and leave a persistent comment.</p>
+                </div>
+                {reviewUpdatedAt ? (
+                  <span className="text-[11px] text-slate-500">
+                    {reviewUpdatedByName ? `${reviewUpdatedByName} · ` : ''}
+                    {new Date(reviewUpdatedAt).toLocaleString()}
+                  </span>
+                ) : null}
+              </div>
+
+              <div className="mt-3 inline-flex rounded-full border border-slate-200 bg-slate-50 p-0.5 text-xs font-semibold">
+                <button
+                  type="button"
+                  disabled={isReviewPending}
+                  onClick={() => setReviewFlagged(false)}
+                  className={`rounded-full px-3 py-1 transition ${
+                    !reviewFlagged
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  Clear
+                </button>
+                <button
+                  type="button"
+                  disabled={isReviewPending}
+                  onClick={() => setReviewFlagged(true)}
+                  className={`rounded-full px-3 py-1 transition ${
+                    reviewFlagged
+                      ? 'bg-amber-100 text-amber-900 shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  Flag
+                </button>
+              </div>
+
+              <textarea
+                value={reviewComment}
+                disabled={isReviewPending}
+                onChange={(event) => setReviewComment(event.target.value)}
+                rows={4}
+                placeholder="Add a reviewer comment for follow-up, ambiguity, or anything that needs attention."
+                className="mt-3 w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-slate-400 focus:outline-none disabled:opacity-60"
+              />
+              <div className="mt-2 flex items-center justify-between gap-3">
+                <p className="text-[11px] text-slate-500">{reviewComment.trim().length}/{REVIEW_COMMENT_MAX_CHARS}</p>
+                <button
+                  type="button"
+                  disabled={isReviewPending || !hasUnsavedReviewState}
+                  onClick={saveReviewState}
+                  className="rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isReviewPending ? 'Saving…' : 'Save flag and comment'}
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="relative z-10 px-6 pt-3 pb-2">
