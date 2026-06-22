@@ -149,6 +149,9 @@ Return strict JSON with exactly:
 
 Give a concise reason that directly explains why full-text extraction should proceed or which eligibility rule makes the paper ineligible. Do not return source quotes or source-location fields.
 Do not classify the current paper as a review just because the PDF cites prior reviews or meta-analyses in the background, discussion, or references.
+Treat a missing usable denominator as decisive for exclusion at full-text screening for injury/illness epidemiology cohorts and case-only cohorts. Player counts, injury counts, sample counts, official medical reports, season labels, or analysed injury cases alone are not usable denominators for those injury/illness cohorts.
+For direct football mental-health, psychological-health, coping/help-seeking, or repeated well-being papers, do not require exposure hours or athlete-exposures when the current football participant-health outcome itself is the paper's primary focus. A clearly defined responding cohort, repeated questionnaire frame, or interview sample can be sufficient for inclusion into the mental-health handling lane.
+If current-season injuries come from club or team medical staff reports, do not exclude on the study-design label alone; if exposure is missing, the decisive reason is no usable denominator.
 
 Study ID: ${record.assignedStudyId}
 Title: ${record.title}
