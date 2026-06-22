@@ -16,6 +16,7 @@ Important distinction:
 - exposure collected in the study methods does not automatically make a paper usable for extraction
 - the paper must publish usable exposure totals, a time-based incidence/burden result, or enough reported information for a defensible derivation
 - if exposure was only collected operationally but not reported in a usable way in the paper, treat it as `no_exposure`
+- if the available source is only a conference abstract or abstract page, stop this workflow and exclude it as `Abstract` instead of treating it as a denominator failure
 
 ## Step-by-Step Procedure
 
@@ -58,6 +59,7 @@ Examples:
 - total/match/training exposure in hours
 - incidence per `1000` hours
 - burden per `1000` player-hours
+- published football-specific injury rates from league or club surveillance where the reporting channel is a league/database but the underlying data come from current-player medical surveillance
 
 Not enough on its own:
 - a methods statement saying exposure minutes or hours were collected, if the results do not publish usable totals or time-based incidence

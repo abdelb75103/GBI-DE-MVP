@@ -4,6 +4,7 @@ export const EXCLUSION_REASONS = [
   'Wrong sport',
   'Non-competitive or recreational-only context',
   'No football-specific subgroup data',
+  'Abstract',
   'No exposure reported (no usable denominator)',
   'Wrong outcomes',
   'Public or otherwise ineligible data source',

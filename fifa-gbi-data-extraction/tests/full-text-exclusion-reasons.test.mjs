@@ -22,6 +22,12 @@ test('uses exposure-first wording for the missing denominator exclusion reason',
   assert.doesNotMatch(source, /'No usable denominator'/);
 });
 
+test('offers abstract as a full-text exclusion reason', () => {
+  const source = readFileSync(reviewerDecisionsPath, 'utf8');
+
+  assert.match(source, /'Abstract'/);
+});
+
 test('offers wrong study design as a full-text exclusion reason', () => {
   const source = readFileSync(reviewerDecisionsPath, 'utf8');
 
