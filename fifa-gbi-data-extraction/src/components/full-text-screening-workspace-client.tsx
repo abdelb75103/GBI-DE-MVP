@@ -692,7 +692,6 @@ export function FullTextScreeningWorkspaceClient({
                   disabled={isReviewPending}
                   onChange={(event) => setReviewComment(event.target.value)}
                   rows={1}
-                  placeholder="Add a reviewer comment for follow-up, ambiguity, or anything that needs attention."
                   className="min-h-[44px] w-full resize-y rounded-[16px] border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-100 disabled:opacity-60"
                   style={{ maxHeight: '180px' }}
                 />
