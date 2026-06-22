@@ -154,6 +154,12 @@ export function FullTextScreeningWorkspaceClient({
   const reviewUpdatedByName = getFullTextReviewUpdatedByName(record);
   const hasUnsavedReviewState =
     reviewFlagged !== getFullTextReviewFlagged(record) || reviewComment !== (record.notes ?? '');
+  const reviewCardClasses = reviewFlagged
+    ? 'border-rose-200/80 bg-[linear-gradient(180deg,rgba(255,250,250,0.98),rgba(255,241,242,0.94))] shadow-rose-900/10'
+    : 'border-amber-200/80 bg-[linear-gradient(180deg,rgba(255,252,245,0.98),rgba(255,248,235,0.94))] shadow-amber-900/10';
+  const reviewAccentClasses = reviewFlagged
+    ? 'bg-rose-500'
+    : 'bg-amber-400';
 
   const syncRecord = (nextRecord: ScreeningRecord) => {
     setRecord(nextRecord);
@@ -570,70 +576,6 @@ export function FullTextScreeningWorkspaceClient({
           </div>
 
           <div className="relative z-10 px-6 pt-3 pb-2">
-            <div className="rounded-2xl border border-indigo-100/80 bg-white/75 p-4 shadow-sm shadow-indigo-900/5 backdrop-blur-sm">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-900/60">Review flag</p>
-                  <p className="mt-1 text-xs text-slate-500">Mark this full text for follow-up and leave a persistent comment.</p>
-                </div>
-                {reviewUpdatedAt ? (
-                  <span className="text-[11px] text-slate-500">
-                    {reviewUpdatedByName ? `${reviewUpdatedByName} · ` : ''}
-                    {new Date(reviewUpdatedAt).toLocaleString()}
-                  </span>
-                ) : null}
-              </div>
-
-              <div className="mt-3 inline-flex rounded-full border border-slate-200 bg-slate-50 p-0.5 text-xs font-semibold">
-                <button
-                  type="button"
-                  disabled={isReviewPending}
-                  onClick={() => setReviewFlagged(false)}
-                  className={`rounded-full px-3 py-1 transition ${
-                    !reviewFlagged
-                      ? 'bg-white text-slate-900 shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  Clear
-                </button>
-                <button
-                  type="button"
-                  disabled={isReviewPending}
-                  onClick={() => setReviewFlagged(true)}
-                  className={`rounded-full px-3 py-1 transition ${
-                    reviewFlagged
-                      ? 'bg-amber-100 text-amber-900 shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  Flag
-                </button>
-              </div>
-
-              <textarea
-                value={reviewComment}
-                disabled={isReviewPending}
-                onChange={(event) => setReviewComment(event.target.value)}
-                rows={4}
-                placeholder="Add a reviewer comment for follow-up, ambiguity, or anything that needs attention."
-                className="mt-3 w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-slate-400 focus:outline-none disabled:opacity-60"
-              />
-              <div className="mt-2 flex items-center justify-between gap-3">
-                <p className="text-[11px] text-slate-500">{reviewComment.trim().length}/{REVIEW_COMMENT_MAX_CHARS}</p>
-                <button
-                  type="button"
-                  disabled={isReviewPending || !hasUnsavedReviewState}
-                  onClick={saveReviewState}
-                  className="rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {isReviewPending ? 'Saving…' : 'Save flag and comment'}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative z-10 px-6 pt-3 pb-2">
             <div className="rounded-2xl border border-indigo-100/80 bg-white/70 p-4 shadow-sm shadow-indigo-900/5 backdrop-blur-sm">
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
@@ -667,7 +609,7 @@ export function FullTextScreeningWorkspaceClient({
           </div>
 
           {reviewerDecisions.length > 0 || exclusionReasonSummary ? (
-            <div className="relative z-10 px-6 pt-3 pb-7">
+            <div className="relative z-10 px-6 pt-3 pb-2">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-900/70">Reviewer history</p>
               <div className="mt-3 space-y-2">
                 {reviewerDecisions.map((item, index) => {
@@ -713,6 +655,70 @@ export function FullTextScreeningWorkspaceClient({
               ) : null}
             </div>
           ) : null}
+
+          <div className="relative z-10 px-6 pt-4 pb-7">
+            <div className={`relative overflow-hidden rounded-[24px] border p-4 shadow-md backdrop-blur-sm ${reviewCardClasses}`}>
+              <div aria-hidden className={`absolute left-0 top-5 h-8 w-1 rounded-r-full ${reviewAccentClasses}`} />
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 text-amber-700">
+                    <span aria-hidden className="text-xs leading-none">✎</span>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-800">Notes</p>
+                  </div>
+                  <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
+                    Leave a follow-up note here, or flag this full text when it needs attention.
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <button
+                    type="button"
+                    disabled={isReviewPending}
+                    onClick={() => setReviewFlagged((current) => !current)}
+                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold shadow-sm transition ${
+                      reviewFlagged
+                        ? 'border-rose-300 bg-rose-500 text-white shadow-rose-500/25 hover:bg-rose-600'
+                        : 'border-slate-200 bg-white/90 text-slate-700 hover:border-rose-200 hover:text-rose-700'
+                    } disabled:cursor-not-allowed disabled:opacity-50`}
+                  >
+                    <span aria-hidden className="text-sm leading-none">⚑</span>
+                    {reviewFlagged ? 'Flagged' : 'Flag'}
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-3 rounded-2xl border border-slate-200/80 bg-white/90 p-2.5 shadow-inner shadow-slate-900/[0.03]">
+                <textarea
+                  value={reviewComment}
+                  disabled={isReviewPending}
+                  onChange={(event) => setReviewComment(event.target.value)}
+                  rows={1}
+                  placeholder="Add a reviewer comment for follow-up, ambiguity, or anything that needs attention."
+                  className="min-h-[44px] w-full resize-y rounded-[16px] border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-100 disabled:opacity-60"
+                  style={{ maxHeight: '180px' }}
+                />
+              </div>
+
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div className="space-y-1">
+                  <p className="text-[11px] text-slate-500">{reviewComment.trim().length}/{REVIEW_COMMENT_MAX_CHARS}</p>
+                  {reviewUpdatedAt ? (
+                    <p className="text-[11px] leading-relaxed text-slate-500">
+                      {reviewUpdatedByName ? `${reviewUpdatedByName} · ` : ''}
+                      {new Date(reviewUpdatedAt).toLocaleString()}
+                    </p>
+                  ) : null}
+                </div>
+                <button
+                  type="button"
+                  disabled={isReviewPending || !hasUnsavedReviewState}
+                  onClick={saveReviewState}
+                  className="inline-flex items-center justify-center rounded-xl bg-[#1f6b57] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#1f6b57]/20 transition hover:bg-[#195847] disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isReviewPending ? 'Saving…' : 'Save note'}
+                </button>
+              </div>
+            </div>
+          </div>
         </form>
       </section>
     </div>
