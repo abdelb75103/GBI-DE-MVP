@@ -1,0 +1,863 @@
+The Sport Psychologist, 2026, 40, 33-45
+https://doi.org/10.1123/tsp.2024-0128
+© 2026 Human Kinetics, Inc.                                                                                                                       APPLIED RESEARCH
+
+
+
+
+                       A Mental Well-Being Screening Process in an Elite
+                                   Youth Football Academy
+ Séamus Harvey,1,2 Chin Wei Ong,1 James Hardy,1 Nichola Callow,1 Cassie Wood,3 Lorraine O’Malley,3
+                      Philippa McGregor,4 Jennie Killilea,3 and Cherrie Daley1
+              1
+               Department of Sport and Exercise Sciences, Institute for the Psychology of Elite Performance, Bangor University, Bangor, United Kingdom;
+          2
+              NetwellCASALA, School of Health and Science, Dundalk Institute of Technology, Dundalk, Ireland; 3Independent researcher, United Kingdom;
+                             4
+                               School of Sport, Exercise and Health Sciences, Loughborough University, Loughborough, United Kingdom
+
+     Previous research indicates that participation in academy football potentially poses mental well-being risks. Accordingly, we
+     developed a mental well-being screening process in an academy. We reviewed the mental well-being literature to understand how
+     the construct might be best conceptualized and assessed and to identify a brief, valid, and adolescent-friendly screening tool.
+     Keyes’s Mental Health Continuum-Short Form was deemed suitable due to its theoretical relevance and psychometric properties.
+     We adapted this questionnaire for use with academy players, editing items to enhance their applicability and removing irrelevant
+     items. Players, guided by staff members, then completed this measure and discussed their responses. Using the collected data, we
+     also tested its psychometric properties. The resulting screening process facilitates the detection and support of players at risk, an
+     understanding of the prevalence of good and poor mental well-being in this population, and an appreciation of the factors that
+     affect their mental well-being.
+
+     Keywords: soccer, female football, applied research, parallel modeling, Bayesian structural equation modeling
+
+      The world of academy football presents an almost magnetic                     ideally supported by a “coach developer” academy staff member
+appeal for young players (and other stakeholders such as parents),                  (as required in the highest rated academies). Licensed academies
+with the prospect of recruitment to an academy holding many                         are rated according to the quality of facilities they provide
+attractions (e.g., heightened social status, a sense of achievement,                (e.g., indoor and outdoor pitches, medical treatment areas, and
+and reinforced career ambitions; e.g., Newport et al., 2021; Sothern                classrooms), the number and expertise of staff they employ, and,
+& O’Gorman, 2021). In the right circumstances, attendance of a                      ultimately, how many senior players they produce. Thus, it is in
+professional football academy—one characterized by a long-term,                     their interests to recruit players with the most potential to excel and
+holistic, and personalized developmental focus—brings many                          to provide them with the best support possible. The highest rated
+beneﬁts, such as the development and maintenance of physical                        academies are designated as “Category 1”, followed by designa-
+and mental well-being, as well as the development of social and                     tions of Categories 2–4. The highest rated academies attain the
+educational skills (e.g., Ivarsson et al., 2015; Reverberi et al., 2020;            advantage of being allowed to recruit players from a wider
+Rongen et al., 2020). However, anecdotal and empirical evidence                     geographical area (e.g., nationally vs. locally) at younger ages
+indicate that participation in elite sport (Rice et al., 2016), including           and to have more contact time with them. Given the potential
+elite youth sport (Gulliver et al., 2012), elite youth football (Jensen             beneﬁts of a professional career and the potential avenue to success
+et al., 2018), and professional football (Gouttebarge et al., 2015),                academies provide, competition for places within academies is
+poses mental well-being risks.                                                      ﬁerce; in fact, academies employ registered scouts with an in-depth
+      Players formally join professional academies in England from                  knowledge of the game to identify young players with the most
+the age of nine (Premier League, 2011). Professional academies,                     potential to excel.
+licensed and overseen by the Premier League (2011), are man-                             While such settings offer high quality coaching and sport-
+dated to create elite environments that support young players’                      related support, they can also be intensive and highly specia-
+holistic development. Speciﬁcally, they must target young players’                  lized, leaving little time for development in other domains (e.g.,
+technical and tactical, physical, and psychological and social                      education), participation in other activities (e.g., socializing with
+development via the implementation of an age-speciﬁc games                          family and friends), and rest. Academy players face numerous
+program; sports science and medicine support; and education,                        stressors (e.g., demanding schedules, pressuring coaches and par-
+lifestyle, and welfare provision. Coaches and support staff (e.g.,                  ents, and deselection and the threat of release; Sothern &
+physiotherapists, psychologists, and teachers) must be appropri-                    O’Gorman, 2021) all before they have necessarily developed the
+ately qualiﬁed; for instance, coaches must maintain up-to-date                      coping skills to address these issues (Carr, 2015). Indeed, elite
+licenses and engage in continued professional development,                          youth athletes (Hill et al., 2016) and athletes in general (Arnold &
+                                                                                    Fletcher, 2012) encounter performance and personal, cultural and
+Ong      https://orcid.org/0000-0002-3003-0919
+                                                                                    team, leadership and personnel, and logistical and environmental
+Hardy      https://orcid.org/0000-0001-5264-7672                                    stressors (e.g., pressure to perform, injuries, and poor teammate
+Callow      https://orcid.org/0000-0003-3098-4824                                   relationships). Given the professionalization of academy football,
+Harvey (seamusanthonyharvey@icloud.com) is corresponding author,         https://   and the demands they face, players may prioritize their performance
+orcid.org/0000-0001-9076-3295                                                       standards at the expense of their mental well-being, especially if
+                                                                                                                                                                    33
+                                                                           Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+34     HARVEY ET AL.
+
+
+coaches and others of inﬂuence disregard or only pay lip service to         personal and environmental transitions and challenges during the
+the value of the latter (Christensen & Sørensen, 2009).                     course of a season (e.g., injury and deselection); and (c) inform and
+     Overall, research to date, while equivocal, indicates that young       evaluate the impact of action plans and interventions. An additional
+players may have at least an equal risk of experiencing poor mental         beneﬁt revolves around the normalization and appreciation of
+well-being as older players and the general population, if not more         mental well-being discussions and reﬂections. To implement this
+so (e.g., Ivarsson et al., 2021). For instance, 28% of elite youth          screening process, we undertook three initial steps: (a) to under-
+Danish and Swedish players report depressive symptoms, in                   stand how mental well-being is conceptualized (reported in Phase I
+comparison to 10% of elite senior players (Jensen et al., 2018).            of the present article); (b) to identify a screening tool that aligns
+Admittedly, mental well-being research in academy football is               with this conceptualization and, with adaptation, is suitable for
+sparse; the research that has been conducted among elite athletes in        completion by young players in an academy environment (reported
+general is also equivocal, with higher, lower, or similar prevalence        in Phase II); and (c) to test the validity and reliability of this adapted
+rates of poor mental well-being as in the general population                tool (reported in Phase III).
+reported across studies (e.g., Moesch et al., 2018; Rice et al.,                 The remainder of this paper not only describes these steps but
+2016). The recruitment of different populations, the use of different       also shares important aspects regarding how a mental well-being
+and generalized rather than context-speciﬁc assessment methods,             screening process might be implemented in other academy settings.
+and the stigma associated with mental well-being in sport likely            Furthermore, throughout this paper, we demonstrate the value of
+account for these ﬁndings. Nevertheless, in accordance with the             researchers and practitioners working together toward a common
+calls of different organizations (e.g., the International Society of        objective: to develop a screening process that is both empirically
+Sport Psychology; Schinke et al., 2018) and researchers (e.g.,              and practically robust. To date, researchers have typically failed to
+ Sothern & O’Gorman, 2021), this issue warrants investigation.              produce both empirically supported resources that practitioners can
+                                                                            readily adopt in situ (Collins et al., 2019), and given the skepticism
+                                                                            that practitioners often have of sport psychology, new approaches,
+Prioritizing Mental Well-Being Via                                          and outsiders (Eubank et al., 2014), it is little wonder that a
+a Screening Process                                                         research-practice divide remains.
+Football academies need to have proactive strategies that facilitate
+not just the development of their players’ performance standards but
+also the development and maintenance of their players’ mental well-                         Phase I: Conceptualization
+being. They should create environments in which mental well-being                             of Mental Well-being
+is treated as a core component of a culture of excellence, with an
+enshrined understanding that players are people ﬁrst and athletes           A review of the sport psychology literature reveals that while
+second, that support-seeking is normal and positive, and that, overall,     researchers have often inconsistently and ambiguously labeled,
+mental well-being is an issue that affects us all, worthy of de-            deﬁned, and measured mental well-being, two theoretically grounded
+stigmatization. Football academies must also enhance their players’         perspectives have come to the fore: hedonic and eudaimonic well-
+awareness that striving to develop and maintain their mental well-          being (Ryan & Deci, 2001). The hedonic perspective is based on the
+being alongside their performance standards is not superﬂuous or            principle that happiness (i.e., the presence and absence of positive
+contradictory; in fact, attending to one’s mental well-being and            and negative emotions, respectively) and life satisfaction (i.e., the
+performance standards may prove complementary. Indeed, Gerber               alignment between one’s actual life and wishes for how life should
+et al. (2018) report that in a sample of elite youth male and female        be) are key to one’s well-being (Diener et al., 1999). The eudaimonic
+athletes in Northwestern Switzerland, aged between 14 and 22 and            perspective comprises psychological (Ryff, 1989) and social well-
+representing a range of sports (e.g., football, handball, and volley-       being (Keyes, 1998) and is based on the principle that growth,
+ball), those with greater mental toughness when exposed to higher           reaching one’s potential, and full functioning in one’s personal and
+levels of perceived stress, as measured at the beginning of a 6-month       social lives, respectively, are key to one’s well-being. To elaborate,
+period, experienced lower burnout symptoms both concurrently and            psychological well-being includes six domains: (a) self-acceptance,
+6 months later, with similar trends observed for depressive symp-           (b) positive relations with others, (c) autonomy, (d) environmental
+toms. How we translate this principle into practice requires careful        mastery, (e) purpose in life, and (f) personal growth (Ryff, 1989).
+consideration. For instance, young players are often encouraged to          Social well-being includes ﬁve domains: (a) social acceptance,
+conceal their negative emotions on the pitch (Sothern & O’Gorman,           (b) social actualization, (c) social contribution, (d) social coherence,
+2021); it is imperative that if this approach is adopted, it is balanced    and (e) social integration (Keyes, 1998). While researchers in this
+with the provision of encouragement for players to express their            area have traditionally argued in favor of one perspective over the
+emotions in an appropriate way off the pitch. Good mental well-             other, there is now widespread acceptance that the hedonic and
+being is a resource that can facilitate their development both as           eudaimonic perspectives together capture the full essence of mental
+players and people, helping them to thrive and cope with football and       well-being and that a life rich in both likely contributes to the highest
+non-football demands as they arise.                                         levels of mental well-being (Henderson & Knight, 2012). Further-
+      Accordingly, we report on efforts to develop a mental well-           more, while hedonic and eudaimonic well-being are distinct con-
+being screening process, to be completed with players three times           structs, evidence indicates that they are correlated, complementary,
+per season, as one element of an overall strategy to protect and            and exert an inﬂuence on each other (e.g., Keyes et al., 2002).
+enhance players’ mental well-being within an English category one                In a review of the conceptualization of mental well-being in
+academy (i.e., considered to be an optimal development environ-             sport, Lundqvist (2011) recommended that researchers adopt both
+ment; Premier League, 2011). The potential beneﬁts of this process          the hedonic and eudaimonic perspectives as starting points from
+include an enhanced ability to: (a) identify, interpret, and preempt        which to consider and explore mental well-being. Lundqvist (2011)
+threats to players’ mental well-being; (b) capture and understand           also recommended that, given the intensity of competitive sport,
+changes in players’ mental well-being as they experience different          the importance of sport to competitive athletes, and the likely
+                                                             TSP Vol. 40, No. 1, 2026
+                                                                   Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+                                                                    MENTAL WELL-BEING SCREENING IN ACADEMY FOOTBALL                                        35
+
+
+impact of sport outcomes on athletes’ mental well-being, research-         hedonic and eudaimonic well-being—among the few if not the
+ers should consider mental well-being at not just a global level but       only measures alongside the MHC-SF to do so. They have also
+at a sport-speciﬁc level. For instance, academy players may thrive         been widely used in the general population (e.g., Lloyd & Devine,
+in one context but not in another (e.g., they may feel happy in            2012), sport (including elite sport; e.g., Nicholls et al., 2020), and
+school but not in football), with research indicating that general and     football (including elite football; e.g., Grimson et al., 2023 and elite
+sport mental well-being are correlated but distinct (e.g., Foster &        youth football; Abbott et al., 2019), with aspects of their psycho-
+Chow, 2019). Accordingly, we have adopted the perspective that             metric properties conﬁrmed in the aforementioned populations,
+academy players’ mental well-being comprises both their hedonic            including their internal consistency and concurrent validity. As one
+and eudaimonic well-being, not just at a global but also at a sport-       example, higher mental well-being scores, as captured with the
+speciﬁc level.                                                             shortened iteration, were negatively associated with depression,
+                                                                           anxiety, and stress in elite youth Danish football players (Kuettel
+                                                                           et al., 2021). However, concerns about whether the Warwick
+Phase II: Measurement of Mental Well-Being                                 Edinburg Mental Well-being Scale and its shortened iterations
+Despite growing interest in this area, theoretically relevant and          capture all aspects of hedonic and eudaimonic well-being (or align
+context-speciﬁc, psychometrically sound, and brief screening tools         with the stated conceptualization of mental well-being) meant that
+designed to assess elite (youth) athletes’ mental well-being are           we did not select them; for example, they measure a concept
+lacking (e.g., Rice et al., 2019). For instance, researchers and           referred to as “positive functioning,” incorporating issues such
+practitioners have typically used various tools with a weak theo-          as “energy,” “clear thinking,” and “autonomy,” which is close in
+retical rationale for doing so, employing measures of constructs           nature to but not the same as the concept of psychological well-
+that are related to mental well-being (e.g., self-esteem or burnout)       being (e.g., the domain of “purpose in life” is not speciﬁcally
+rather than measures of mental well-being itself, assessing only           addressed); they also measure a concept referred to as “interper-
+some aspects of mental well-being (e.g., positive and negative             sonal relationships,” which again is similar to but not the same as
+affect), and assessing mental well-being at a global level only,           the concept of social well-being. Furthermore, concerns about the
+ignoring it at a sport-speciﬁc level (Giles et al., 2020). Relatedly,      Warwick Edinburg Mental Well-being Scale’s and its shortened
+they have used measures developed for and validated in the general         iterations’ psychometric properties meant that we did not select
+population. The unique behaviors of and demands encountered by             them; for example, conﬁrmatory factor analyses have only tested
+young players in talent development pathways have not been                 a single mental well-being factor (and scoring system) rather
+accounted for (e.g., functional behaviors in this pathway, such            than factors comprising hedonic and eudaimonic well-being (e.g.,
+as intense physical training, may be considered maladaptive in             Stewart-Brown et al., 2009; Tennant et al., 2007), previous
+general life); the scoring norms, cut-off criteria, and ﬁndings in         research has raised concerns about the presence of gender bias
+support of these tools’ psychometric properties have not been              (e.g., Marmara et al., 2022) and the extent to which adolescents
+applicable; and the often lengthy nature and at times complex              misinterpret some items (e.g., Clarke et al, 2011), and few studies
+language of these tools means that they have proven unsuitable for         have conducted in-depth examinations of their psychometric prop-
+incorporation into busy schedules (e.g., Gouttebarge et al., 2019;         erties in sport (e.g., only internal consistency and concurrent
+Rice et al., 2019; VanderWeele et al., 2020).                              validity have been assessed).
+     It is in this context that we searched for a brief screening tool          The MHC-SF comprises 14 items designed to capture hedonic
+reﬂecting our stated conceptualization of mental well-being, to            and eudaimonic well-being: three items capture hedonic well-being;
+adapt it to enhance its suitability for regular completion by under-       six items capture psychological well-being, with one item per
+12 to under-23 male and female players in an academy environ-              dimension (e.g., self-acceptance, autonomy, and purpose in life);
+ment, and to test its psychometric properties and ensure the validity      and ﬁve items capture social well-being, with one item per dimen-
+and reliability of data collected from this sample. As noted by Giles      sion. An example item includes: “During the past month, how often
+et al. (2020), the development and use of conceptually sound,              did you feel happy?” The MHC-SF incorporates a 6-point Likert
+sport-speciﬁc, and practical (e.g., brief) and empirically robust          response scale: 0 (never), 1 (once or twice), 2 (about once a week),
+measures (e.g., with items that are unambiguous, speciﬁc to, and           3 (about two or three times a week), 4 (almost every day), and 5
+understood by the sample) are needed to more effectively support           (every day). Respondents are classiﬁed as “ﬂourishing” if they
+athletes’ well-being. After conducting a literature review (e.g., via      experience “every day” or “almost every day” at least one of the
+Google Scholar) and critiquing 22 measures in total, we deemed the         three indicators of hedonic well-being and at least six of the 11
+Mental Health Continuum-Short Form (MHC-SF; Keyes, 2006;                   indicators of eudaimonic well-being; they are classiﬁed as “lan-
+see Table S1 in Supplementary Material [available online]) as most         guishing” if they “never” experience or experience “once or twice”
+appropriate to adapt, given its theoretical alignment, the existing        at least one of the three indicators of hedonic and at least six of the
+evidence in support of its psychometric properties with adults and         11 indicators of eudaimonic well-being. If neither “ﬂourishing” nor
+adolescents across multiple countries, and its brief length                “languishing,” they are classiﬁed as demonstrating “moderate”
+(e.g., Foster & Chow, 2019; Lamers et al., 2011). Table S2 (see            mental well-being. Alternatively, respondents’ scores can be
+Supplementary Material [available online]) details a selection of          summed and range from 0 to 70 (Lamers et al., 2011).
+the other measures considered; but, sufﬁce to say, they failed to               The MHC-SF’s three subscales have demonstrated excellent
+meet the selection criteria alluded to above (e.g., their structure did    factorial validity (e.g., Foster & Chow, 2019), internal consistency,
+not align with the stated conceptualization of mental well-being,          and moderate test–retest reliability over 3 and 9 months, thus
+they contained too many items, and/or their validity and reliability       indicating their sensitivity to change (Lamers et al., 2011), albeit
+had yet to be tested in adolescents). For instance, the Warwick            concerns about missing data associated with and the factorial
+Edinburgh Mental Well-being Scale (Tennant et al., 2007) and its           validity of the social well-being subscale have emerged (Orpana
+shortened iterations (i.e., the Short Warwick Edinburgh Mental             et al., 2017). The MHC-SF has also demonstrated concurrent
+Well-being Scale; Stewart-Brown et al., 2009) capture aspects of           validity, with higher scores associated with higher self-esteem and
+                                                            TSP Vol. 40, No. 1, 2026
+                                                                  Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+36     HARVEY ET AL.
+
+
+feelings of autonomy (Lamers et al., 2011), as well as life satisfac-      Upon conclusion of this process, the academy’s under-12 through
+tion (Orpana et al., 2017). While use of this tool in sport is limited,    under-23 male and female players completed the adapted tool
+McFadden et al. (2016) and Foster and Chow (2019) have con-                three times during the 2018/2019 season (i.e., every 3 months
+ﬁrmed its psychometric properties across a variety of sports.              during the season), guided by an academy sport psychology
+McFadden et al. (2016) reported that the MHC-SF’s three sub-               practitioner as part of a consultative session in which both the
+scales demonstrated good internal consistency in a sample of 61            player and practitioner discussed the former’s responses. Follow-
+youth male hockey players in Canada aged between 13 and 18                 ing this ﬁrst season of use, and during the summer of 2019, we
+(Mage = 14.90), with Cronbach’s alpha values ranging from .83 to           reviewed our practitioners’ experiences of deploying the tool, our
+.85. Players’ mean MHC-SF scores (i.e., their overall scores on the        perceptions of its validity (e.g., relevance and clarity) and reliabil-
+scale) were also signiﬁcantly positively correlated with psycho-           ity, and our thoughts on how it could be further reﬁned. The
+logical needs satisfaction (r = .40), signiﬁcantly negatively corre-       resulting tool (i.e., used during and since the 2019/2020 season)
+lated with psychological needs dissatisfaction (r = −.43), and             and how it compares with the original version is a focus of the
+signiﬁcantly negatively correlated with depressive symptoms                present paper.
+(r = −.58), thus providing support for its concurrent validity.                 First, as the screening process would take place every 3 months
+Furthermore, linear regression analysis revealed that psychological        during the season, in alignment with the existing monitoring
+needs satisfaction (β = 0.47) and psychological needs dissatisfac-         process of players’ football performance standards and develop-
+tion (β = −0.44) signiﬁcantly predicted players’ mean MHC-SF               ment, we changed the items’ stems accordingly (from “During the
+scores (accounting for 21.7% and 19.7% of score variability,               past month” to “During the past three months”). In doing so, we
+respectively), albeit players’ age of sport specialization, level of       increased the likelihood that mental well-being screening would
+competition (e.g., recreational vs. elite), and hours spent playing        become a standard component of the overall player monitoring
+hockey per week did not signiﬁcantly predict their MHC-SF scores.          process in the academy, with players’ mental well-being consid-
+Foster and Chow (2019) reported that the MHC-SF’s subscales                ered as often, and hopefully considered as important, as any other
+demonstrated good internal consistency in a sample of 287 male             aspect of their development. Second, to ensure that the items were
+(n = 103, 35.9%) and female (n = 184, 64.1%) collegiate athletes           relevant to academy players’ experiences, developmentally appro-
+aged 18–25 (Mage = 19.64) representing 14 sports (e.g., track and          priate, and easily understood, we reﬁned the wording of the items
+ﬁeld/cross country, volleyball, and softball were most represented)        where necessary (e.g., “During the past month, how often did you
+in America, with Cronbach’s alpha values of .84, .83, and .85 for          feel that your life has a sense of direction or meaning to it?” was
+the hedonic, psychological, and social well-being subscales,               changed to “During the past three months, how often did you feel
+respectively. Foster and Chow (2019) also reported that hedonic            that you’ve known what you want to achieve?”). As part of this
+well-being was positively associated with physical quality of life         process, due to concerns about the abstract nature of the concept of
+(r = .35), as was social well-being (r = .39), thus providing some         and items designed to assess social well-being (e.g., “how often did
+additional support for the MHC-SF’s concurrent validity. They did          you feel that our society is a good place?”), existing doubts about
+not report upon the relationship between psychological well-being          the social well-being subscale’s psychometric properties (e.g., its
+and physical quality of life, nor the relationship between the MHC-        factorial validity; Orpana et al., 2017) and the fact that this
+SF scales and other measures included in their study (e.g.,                construct was already somewhat captured by two of the psycho-
+emotional role functioning, social role functioning, and vitality),        logical well-being dimensions (i.e., positive relations with others
+presumably because the MHC-SF’s psychometric properties was                and environmental mastery), we removed the social well-being
+not their main focus. Despite its limited use in sport, Lundqvist          subscale. Our decision to do so also meant that the tool is as brief as
+(2011) proposed that researchers use the MHC-SF as a starting              possible. The items produced a Flesch–Kincaid score of 73,
+point from which to explore this issue.                                    meaning that they are “fairly easy to read” for those as young
+                                                                           as 12 years old (Flesch, 1979). Third, to capture their global and
+A Context-Speciﬁc Screening Tool                                           football-speciﬁc mental well-being, the academy sport psychology
+                                                                           practitioners provided (verbal) prompts to the players, requesting
+Lundqvist (2011) and others (e.g., Henriksen et al., 2020) also            that they consider each item in relation to their off-pitch (i.e., non-
+proposed, however, that context-speciﬁc screening tools be devel-          football and on-pitch lives. Refer to the Appendix for a full list of
+oped, tested, and used to monitor athletes’ mental well-being.             items and prompts.
+While the MHC-SF is theoretically relevant, valid and reliable,                 To align the response scale with that incorporated in other
+and brief, an adapted tool that is attuned to the unique environment       monitoring tools used in the academy, we changed the scale from
+of academy football may capture young players’ mental well-being           incorporating six response options to seven (i.e., 1 = never; 2, 3,
+in a more comprehensive, accurate, and sensitive manner. During            and 4 = sometimes; 5, 6, and 7 = always). Furthermore, to enhance
+the summer of 2018, we formed a working group to discuss how the           the sensitivity of the screening tool in differentiating between
+MHC-SF could be adapted.1 The working group comprised a sport              players at risk, to develop scoring norms and cut-off criteria
+psychology PhD student (funded by the umbrella organization to             applicable to this population, and to facilitate ease and speed in
+which the academy belonged), an applied research manager, a                the reporting and interpretation of scores, we reﬁned the scoring
+human performance manager, four accredited sport and exercise              system. We created a more nuanced set of categories (i.e., “very
+scientists specializing in psychology (all employed by the acad-           high,” “high,” “moderate,” “low,” and “very low” well-being); we
+emy, the wider club, and/or the umbrella organization to which the         also determined players’ categorizations based upon a simple
+academy and club belonged), and two senior lecturers in sport              summation of their scores. Players who score between 3 and 4
+psychology (who supervised the aforementioned PhD student). We             on the hedonic well-being subscale are categorized as “very low,”
+evaluated and reﬁned the MHC-SF’s items, rating scale, and                 between 5 and 9 as “low,” between 10 and 14 as “moderate,”
+scoring system to enhance their relevance for academy players              between 15 and 19 as “high,” and between 20 and 21 as “very
+while retaining the tool’s conceptual structure as much as possible.       high”; players who score between 6 and 8 on the psychological
+                                                            TSP Vol. 40, No. 1, 2026
+                                                                  Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+                                                                   MENTAL WELL-BEING SCREENING IN ACADEMY FOOTBALL                                        37
+
+
+well-being subscale are categorized as “very low,” between 9 and          staff member then reads out the questions to the player and notes
+20 as “low,” between 21 and 27 as “moderate,” between 28 and 39           their verbal responses on the Likert scale; they also explain to the
+as “high,” and between 40 and 42 as “very high.” Rather than              player what the questions mean, if necessary. Furthermore, they
+calculating and reporting an overall mental well-being score, to          prompt the player to discuss their responses and the rationale
+maintain conceptual integrity and provide deeper insight, we chose        behind them and again, if necessary, help the player to consider
+to calculate and report players’ scores on the hedonic and psycho-        the issue and articulate their responses if they lack mental well-
+logical well-being subscales separately.                                  being literacy (cf. Giles et al., 2020). The staff member makes note
+     Last, we included two additional questions within the screen-        of the player’s responses. To mitigate concerns about administra-
+ing process, designed to supplement the adapted MHC-SF. The               tive precision, the staff member initiates the process using a
+ﬁrst captures players’ recent mood: “On a scale of 1 to 10, with 1        standardized script and refers to standardized prompts throughout.
+being low (negative mood) and 10 being high (positive mood), how          Refer to the Appendix for the introductory script and prompts,
+would you rate your mood during the past month?” This question,           respectively.
+due to the volatility of mood as a construct, incorporates a shorter           This combination of quantitative-based questionnaire comple-
+timescale to capture players’ mindsets at the time of the screening       tion and qualitative-based discussion reduces concerns about a sole
+process and thus provides insight as to how players’ current              reliance on screening tools, ensuring that players on the boundary
+thoughts and feelings may overtly impact upon their responses             of an at-risk categorization are less likely to fall through the gaps
+to questions concerning their mental well-being during the previ-         (cf. Moesch et al., 2018). This approach also facilitates the attain-
+ous three months (an issue that staff members can take into               ment of numeric understanding and a broader appreciation of
+consideration). It also facilitates the exploration, clariﬁcation, and    mental well-being issues in academy football, by providing oppor-
+better understanding of players’ responses to the previous items.         tunity for players to articulate their individual narratives without
+For instance, in response to the question “During the past three          being restricted to a Likert scale (cf. Henriksen et al., 2020). Last,
+months, how often did you feel happy?”, a player who has suffered         because staff who have an in-depth understanding of the demands
+a long-term injury may choose a lower option on the rating scale          of academy players’ lives on and off the pitch conduct this process,
+(e.g., 1 = Never, 2, 3, or 4 = Sometimes), while they may provide a       players may be more likely to open up about their thoughts,
+higher response to the mood question, if during the past month,           feelings, and/or mental well-being concerns. The fact that this
+they have come to terms with their injury and progressed in their         process occurs quite regularly, conducted by full-time academy
+rehabilitation—information that practitioners may ﬁnd useful in           staff who are available to talk at almost any time, means that a
+their efforts to support players. The second question—“Is there           trusting relationship can develop, with players thus more likely to
+anything else you would like to share or feel would be useful for us      seek support if needed, and staff more likely to develop their
+to know?”—was designed to encourage players to verbally articu-           understanding of the players in question.
+late their thoughts and feelings on their mental well-being, espe-
+cially if not already captured by (or addressed during the answering
+of) the previous questions; this question also facilitates the identi-      Phase III: Testing of the Adapted Mental
+ﬁcation and exploration of aspects of academy players’ mental                     Well-Being Screening Tool
+well-being not already captured by or considered for inclusion in
+the tool’s existing iteration.                                            As described in Phase II, we reﬁned the MHC-SF’s items, rating
+                                                                          scale, and scoring system to ensure that it is relevant to the
+Implementation of the Adapted Screening Tool                              experiences of, developmentally appropriate for, and understood
+                                                                          by academy footballers. While the outcome of this work provides
+Since its introduction, academy staff have conducted the mental           support for the tool’s face validity, we also wished to test whether
+well-being screening process three times per season with their male       data collected with our MHC-SF were empirically robust and
+and female under-12 to under-23 players. The regularity of this           provide support for its factorial validity, internal consistency,
+process means that changes in players’ mental well-being during           concurrent validity, and test–retest reliability. Although such tests
+the course of a season are more likely to be captured, under-             may appear overtly academic in nature, we conducted them in a
+stood, and addressed. A sport psychology practitioner (or a non-          manner that aligned with how the tool is used in practice. For
+performance staff member from the welfare, education, or athlete          instance, use of advanced modeling techniques allowed us to assess
+lifestyle departments who have been trained to conduct the screen-        the tool’s factorial validity in a manner aligned to its scoring
+ing) is present with the player during this process. To maximize          and utilization by practitioners. In the academy setting, players’
+player interest, engagement, and trust, the staff member initiates        hedonic and psychological well-being scores are easily attained
+this process by explaining its rationale and procedure: for example,      and interpreted by adding their scores on the hedonic and psycho-
+by explaining that the aim is to talk about how they are on and off       logical well-being items respectively; the items, rather than being
+the pitch and if they need support, that this is an opportunity for       weighted, contribute equally to the calculated scores. Thus, in our
+them to express themselves, and that unless safety concerns arise,        model (i.e., a parallel model; cf. McNeish & Wolf, 2020), the items
+their answers will remain conﬁdential and will not impact upon            designed to assess hedonic well-being were constrained to load
+team selection. This, along with the process being conducted by a         equally on a shared factor, as were the items designed to assess
+trusted non-performance staff member that players work with on a          psychological well-being. We did not implement a more traditional
+regular basis and with players assured that their participation is        congeneric model that is the norm in research, where items can load
+voluntary, is an important step to at least somewhat mitigate the         differently on factors depending upon the strength of their rela-
+potential for social desirability bias, given how concerned players       tionship with the latent variables in question. Even if empirically
+can be about managing impressions in an academy environment               justiﬁed, there are important practical considerations; for example,
+(Ong et al., 2018); admittedly, social desirability bias and/or           adopting such a model and a scoring system that reﬂects it, where a
+players’ feelings of pressure to participate may still exist. The         staff member has to assign a weighting to each item in order to
+                                                           TSP Vol. 40, No. 1, 2026
+                                                                 Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+38     HARVEY ET AL.
+
+
+calculate and interpret scores is impractical in a fast-paced academy             The model was estimated using the Markov chain Monte
+setting.                                                                     Carlo algorithm with the Gibbs sampler and two chains. Estima-
+                                                                             tion was performed with 100,000 iterations to ensure the conver-
+Method                                                                       gence and stability of estimates. The ﬁrst half of iterations were
+                                                                             discarded as burn-in iterations, with the second half used to form
+Participants                                                                 the posterior distribution. Model convergence was assessed with
+One hundred and eighty-ﬁve players registered with a Category 1              the potential scale reduction factor (PSRF) value, with a value of
+football academy during the 2019/2020 season, and recruited via              between 1.0 and 1.1 considered acceptable; a visual inspection of
+convenience sampling, participated in the mental well-being screen-          the trace plots for each parameter also provided an assessment of
+ing process in November and December 2019; the data collected at             the convergence and stability of estimates across chains (Gelman
+this time point enabled the examination of factorial validity, internal      et al., 2014). Model ﬁt was determined using the posterior
+consistency, concurrent validity, and test–retest reliability. The male      predictive p (PPP) value and its associated credibility intervals.
+players (n = 126) were registered with the under-12 (n = 15), -13            A PPP value larger than .05 and credibility intervals that incorpo-
+(n = 17), -14 (n = 21), -15 (n = 19), -16 (n = 16), -18 (n = 16), and -23    rated zero indicated acceptable ﬁt, while a PPP value close to .50
+(n = 22) teams; the female players (n = 59) were registered with the         and credibility intervals that centered on zero indicated excellent
+under-12 (n = 13), -14 (n = 16), -16 (n = 16), and -21 (n = 14) teams.       ﬁt (Gelman et al., 2014). The team that players were registered
+Of these players, data were also collected from 167—119 males and            with was identiﬁed as the cluster variable. This approach was
+48 females—in February and March 2020; the data collected at this            employed in all conducted Bayesian analyses (as described in
+time point enabled the test–retest reliability analysis. The male            more detail below).
+players were registered with the under-12 (n = 15), -13 (n = 17), -14             Second, the internal consistencies of the hedonic and psycho-
+(n = 21), -15 (n = 18), -16 (n = 15), -18 (n = 15), and -23 (n = 18)         logical well-being subscales were assessed using the Cronbach’s
+teams. The female players were registered with the under-12                  alpha formula within multilevel Bayesian correlation structure
+(n = 11), -14 (n = 14), -16 (n = 13), and -21 (n = 10) teams.                models in Mplus 8 (cf. Geldhof et al., 2014). Reliability coefﬁcients
+                                                                             greater than .70 have been described as indicative of acceptable
+Measures                                                                     internal consistency (Nunnally, 1967). Third, to facilitate our
+                                                                             understanding of concurrent validity, the relationship between
+The adapted MHC-SF, the single-item “mood rating” question, and              hedonic and psychological well-being and mood was examined.
+the “is there anything else you would like to share or feel would be         The aforementioned mBSEM model was expanded to include the
+useful for us to know?” question, as outlined in Phase II were used.         “mood” variable and an estimation of its correlation with the
+                                                                             hedonic and psychological well-being factors: the three hedonic
+Procedures                                                                   well-being items loaded equally on a common factor, as did the six
+We obtained institutional approval (Ethics Number: 0338, Bangor              psychological well-being items, and the correlation between the
+University), informed consent from players aged 18 and older, and            observed variable “mood” and the latent factors was speciﬁed.
+from parents/guardians of players aged 17 and younger to collect             Fourth, we calculated two-way mixed effects, absolute-agreement,
+data as part of standard player monitoring procedures and for                single measures intraclass correlation coefﬁcients (ICCs) to assess
+research purposes. Academy sport psychology practitioners and                our MHC-SF subscales’ test–retest reliability. At the 95% conﬁ-
+players held one-to-one in-person meetings in designated spaces              dence interval (CI), ICC values less than .50, between .50 and .75,
+(e.g., an ofﬁce, classroom, or dugout), during which the players             between .75 and .90, and greater than .90 are indicative of poor,
+were guided through the mental well-being screening process. This            moderate, good, and excellent reliability, respectively (Portney &
+process typically lasted 15–20 min.                                          Watkins, 2009).
+                                                                                  The data set collected in November and December 2019 and
+Data Analysis                                                                used in the factorial validity, internal consistency, and concurrent
+                                                                             validity analyses, contained ﬁve missing values (0.3%), with at
+First, due to the nested nature of our data we utilized multilevel
+                                                                             most, one missing value on any given item (0.5%). Five players had
+Bayesian structural equation modeling (mBSEM) in Mplus 8
+                                                                             missing values (2.7%), with at most one missing value per player.
+(Muthén & Muthén, 2017) to assess the hypothesized factorial
+                                                                             These values were assumed to be Missing Completely at Random
+structure of the adapted MHC-SF. Bayesian analysis, which is not
+                                                                             (MCAR; e.g., an item may have been inadvertently skipped), and
+dependent upon central limit theorem (or large sample theory), was
+                                                                             were dealt with by program default in Mplus 8 using a Bayesian
+employed as in the right circumstances it can facilitate model
+                                                                             method comparable to Full Information Maximum Likelihood
+identiﬁcation, aid convergence, and produce more accurate esti-
+                                                                             (Muthén & Muthén, 2017). The data set encompassing data
+mates than the more traditionally used maximum likelihood
+                                                                             collected in November and December 2019 and February and
+approach when used with small samples and few clusters (cf.
+                                                                             March 2020, used for test–retest reliability purposes, contained
+Depaoli & Clifton, 2015; McNeish & Stapleton, 2016). In order
+                                                                             eight missing values (0.3%), with at most two missing values on
+to test the MHC-SF’s two-factor structure in a manner consistent
+                                                                             any given item (1.2%). Eight players had missing values (4.8%),
+with its use in the ﬁeld we utilized parallel modeling; the three
+                                                                             with at most one missing value per player. These values were
+items designed to assess hedonic well-being were constrained to
+                                                                             assumed to be MCAR and were dealt with by program default in
+load equally on a shared (hedonic well-being) factor, and the six
+                                                                             SPSS Statistics 25 using listwise deletion.
+items assessing psychological well-being were constrained to load
+equally on a second shared (psychological well-being) factor. The
+                                                                             Results
+items’ unstandardized loadings were all constrained to 1, and
+within each factor the items’ error variances were constrained to            First, the mBSEM model employed to assess the factorial structure
+be equal. Although such modeling is restrictive, it has high ecolo-          of the adapted tool demonstrated stable convergence and accept-
+gical validity.                                                              able ﬁt (PPP = .05, 95% CI [−9.37, 118.79]). Stable PSRF values of
+                                                              TSP Vol. 40, No. 1, 2026
+                                                                    Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+                                                                  MENTAL WELL-BEING SCREENING IN ACADEMY FOOTBALL                                        39
+
+
+between 1.0 and 1.1 emerged after 400 iterations; a visual inspec-       (i.e., “ : : : how often did you feel you have had trusting relation-
+tion of the trace plots conﬁrmed this stable convergence. The            ships with people [staff and other players] at the club” and “ : : :
+standardized factor loadings were statistically signiﬁcant and mod-      how often did you feel conﬁdent to think/share your own ideas and
+erate to strong in magnitude for the items representing hedonic          opinions with others”); it is also reasonable to expect that any social
+(λ = 0.61, 95% CI [0.53, 0.69]) and psychological (λ = 0.50, 95%         well-being-related issues of concern would arise during the screen-
+CI [0.43, 0.56]) well-being. Consistent with theorizing (e.g., Keyes     ing process discussions between the academy staff members and
+et al., 2002), the hedonic and psychological well-being factors were     players. Nonetheless, research indicates that social connection is
+strongly positively related (r = .84, 95% CI [0.68, 0.97]). Second,      associated with positive health outcomes (e.g., Holt-Lunstad et al.,
+the multilevel Bayesian correlation structure models within which        2010), including mental health in adolescents (e.g., Jose et al.,
+the Cronbach’s alpha formula and the calculation of internal             2012). In fact, as individuals transition from childhood to adoles-
+consistency were included, also demonstrated stable convergence          cence, social connection to one’s peers becomes increasingly
+and good ﬁt (see Supplementary Material [available online]). The         important and impactful (e.g., Andrews et al., 2021), with greater
+Cronbach’s alpha coefﬁcients were .63 (95% CI [0.51, 0.72]) and          attention paid to one’s status amongst peers (e.g., Veenstra &
+.65 (95% CI [0.56, 0.72]) for the hedonic and psychological well-        Laninga-Wijnen, 2023). Consequently, moving forward, given the
+being subscales, respectively. Third, the expanded mBSEM model           importance of social well-being in adolescence, we may reﬂect
+employed to assess the relationship between the hedonic and              upon this decision, and whether the inclusion of more understand-
+psychological well-being factors and “mood” variable demon-              able items and/or more relatable aspects of social well-being for
+strated stable convergence and acceptable ﬁt (see Supplementary          academy players is warranted.
+Material [available online]). The relationship between the hedonic             Second, the mBSEM ﬁndings provided support for the tool’s
+well-being factor and “mood” was strongly positively related             factorial validity, albeit the tested model just met the criteria for
+(r = .74, 95% CI [0.61, 0.85]), as was the relationship between          acceptable ﬁt. The correlation between the hedonic and psycho-
+the psychological well-being factor and “mood” (r = .52, 95% CI          logical well-being factors was also strong but not excessively high
+[0.37, 0.66]). Last, the ICC coefﬁcients offered support for the 3-      to trigger concerns regarding discriminant validity (cf. DeVon
+month test–retest reliability of the hedonic (ICC = .64, 95% CI          et al., 2007); in other words, as theorized, the two well-being
+[0.54, 0.72]) and psychological (ICC = .70, 95% CI [0.61, 0.77])         factors were related but distinct.
+well-being subscales, respectively. In sum, the ﬁndings provide                Third, the Cronbach’s alpha values fell below commonly used
+some initial support that data collected with the adapted MHC-SF is      criterion (i.e., below .70), which was surprising given that our
+sufﬁciently valid and reliable to warrant its use in monitoring          measure was not brand new but instead represented an adaptation
+academy players’ mental well-being.                                      of an existing measure that had previously demonstrated strong
+                                                                         internal consistency and thus warranted use. However, it has been
+                                                                         recognized that Cronbach’s alpha values are likely artiﬁcially low
+                         Discussion                                      when subscales constitute less than 10 items (e.g., Herman, 2015),
+Young players may face considerable challenges in professional           and we note that the current values fare well against more
+football academies (e.g., performance-related, team-related, and         contemporary standards. Researchers have described Cronbach’s
+personal stressors), and while some may thrive, others may strug-        alpha values as low as .45 as sufﬁcient and acceptable, .58 as
+gle. They need support in a form that targets not just their             satisfactory, and .61 as moderate (cf. Taber, 2018); we also note
+performance standards but also their mental well-being. Here,            that Nunnally (1967) did not explicitly specify how reliability
+we report on the three-phased development of a mental well-being         should be assessed (e.g., via the calculation of Cronbach’s alpha
+screening process for male and female academy players. Building          values) and thus their original recommendations about reliability
+on previous attempts, we ensured that this process, and the              values did not speciﬁcally pertain to Cronbach’s alpha values.
+underpinning screening tool, is theoretically grounded and con-          Furthermore, given the design of the items, from a conceptual
+text-relevant, developmentally appropriate and user-friendly, and        perspective, one may not expect high Cronbach’s alpha values. On
+empirically robust.                                                      both subscales, each item purposefully represents a distinct domain
+                                                                         (e.g., the psychological well-being subscale comprises items de-
+                                                                         signed to measure six unique domains, such as self-acceptance,
+The Adapted Mental Well-Being Screening Tool                             positive relations with others, and purpose in life). In such in-
+Regarding our adapted screening tool, ﬁve points are worthy of           stances high internal consistency values are unreasonable to expect
+comment. First, our literature review and subsequent discussions         (cf. Berger & Hänze, 2015). Nevertheless, we must acknowledge
+regarding how mental well-being could best be conceptualized and         that researchers using previous iterations of the MHC-SF, with the
+assessed provided sound underpinning for the selection and adap-         same number of items per subscale and the same distinct domains,
+tation of the MHC-SF. This ultimately provided support for the           have reported no issues with internal consistency (e.g., Foster &
+adapted tool’s face validity, scoring method (i.e., the simple           Chow, 2019). As such, while the present internal consistency
+summation of players’ ratings), and associated categorization            values are not excessively low and hold promise, and the use of
+system (i.e., the increased number of categories enhancing our           mBSEM controls for error in our analyses, the adapted tool perhaps
+ability to differentiate between players and identity those at risk).    requires further reﬁnement.
+However, we must also acknowledge that in excluding the social                 Fourth, the mBSEM ﬁndings revealed a positive correlation
+well-being subscale items, due to concerns about their abstract          between the hedonic and psychological well-being factors and the
+nature and how well academy players could understand them, as            “mood” variable, providing support for the adapted tool’s concur-
+well as concerns about their psychometric properties, we failed to       rent validity. Given the emotion-oriented component of hedonic
+measure mental well-being in its full theoretical conceptualization.     well-being, it is little wonder that a stronger relationship emerged
+On the other hand, players’ social well-being was already some-          between this variable and mood than between psychological well-
+what measured via two of the psychological well-being items              being and mood.
+                                                          TSP Vol. 40, No. 1, 2026
+                                                                Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+40     HARVEY ET AL.
+
+
+     Last, consistent with previous research (Lamers et al., 2011),       ﬁndings of congeneric models (McNeish & Wolf, 2020). The same
+our adapted tool demonstrated moderate test–retest reliability over       principle is true when comparing the calculation of omega coefﬁ-
+a 3-month period. These ﬁndings provide support for the stability         cients with Cronbach’s alpha coefﬁcients to determine a scale’s
+of data collected, as well as being suggestive that the tool is           internal consistency, given that the omega formula accounts for
+sufﬁciently sensitive to change during a football season.                 unequal factor loadings while the Cronbach’s alpha formula as-
+     To summarize, the ﬁndings offer some initial support for the         sumes tau equivalence (Raykov, 1997). Consequently, we would
+adapted tool but also hint at the beneﬁt of continued reﬁnement, as       likely have attained improved ﬁt indices and internal consistency
+is typical during the process of measure validation. On the balance       coefﬁcients if we had tested a congeneric model and implemented
+of evidence, however, we believe there is sufﬁcient support for its       the omega formula, respectively. However, such an approach
+continued use. In fact, to assess the replicability of the ﬁndings, we    would have undermined the integrity of our research philosophy,
+recompleted the factorial validity, discriminant validity, internal       to align with the practicalities of the applied setting. The academy’s
+consistency, and concurrent validity analyses using the data col-         staff need to be able to easily calculate and interpret players’ scores,
+lected at the second time point (i.e., in February and March 2020);       as facilitated by a summed-scoring approach that is justiﬁed.
+the ﬁndings of these analyses (detailed in the Supplementary              Researchers and practitioners often inadvertently falsely justify
+Material [available online]) were similar to those already reported       their calculation of summed or averaged scores by citing the
+on and provided support for the conclusions reached. Of course, the       ﬁndings of previous studies that tested a questionnaire’s factorial
+standard limitations of self-report measures may apply (e.g., social      structure using a congeneric model. This “bait-and-switch” tactic is
+desirability bias or recall error), but the fact that this screening      inappropriate because the model employed in practice is incongru-
+process incorporates a discussion with skilled staff members who          ent with the model tested. By testing a parallel model, we obtained
+know the players well helps to mitigate such potential concerns.          relevant empirical evidence that supports the scoring method in
+                                                                          practice.
+Bridging the Research-Practice Divide                                          As stated, the summed-scoring method facilitates the quick
+                                                                          and easy interpretation of players’ mental well-being. In fact,
+The development of the described mental well-being screening              following the completion of each screening phase, we analyze
+process demonstrates the value of researchers and practitioners           and summarize the players’ ratings and comments and develop a
+working together. We created a process that is practically and            report on each team for relevant academy staff members (e.g.,
+empirically robust, pending further reﬁnement. For instance, to           coaches, psychologists, and welfare staff). This report, using a
+ensure its sustainability in the academy setting (Daley et al., 2020),    dashboard approach to convey as much information as clearly as
+we considered issues that researchers might not typically attend to,      possible (cf. Giles et al., 2020), presents the team’s hedonic and
+such as players’ schedules, stafﬁng resources, and alignment with         psychological well-being categorizations using a color-coded
+existing monitoring processes. We also considered issues that             mechanism, information regarding on which items the team scored
+practitioners might typically be less focused on, such as the             highest and lowest, the team’s mood, and a summary of the players’
+theoretical relevance, developmental appropriateness, and validity        comments (see an example of an anonymized mock report in
+and reliability of the collected data. The outcomes of this process,      Figure S1 in Supplementary Material [available online]). A cursory
+for researchers, mean that using the collected quantitative and           assessment of the players’ comments reveals that they tend to speak
+qualitative data, we can develop a better understanding of mental         about performance-related issues (e.g., performance-related pres-
+well-being in academy football and evaluate evidence-informed             sure, training intensity, and injury), environmental issues (e.g.,
+interventions. Conversely, for practitioners, it means that we can        relationships with teammates and staff and the academy’s behav-
+accurately assess academy players’ mental well-being, identify            ioral standards), and off-pitch issues (e.g., balancing school- and
+those at risk, and intervene in a timely fashion. The introduction of     football-related responsibilities, travel, and rest) inﬂuencing their
+this process into the academy setting also represents another step in     mental well-being. Relevant academy staff members use the re-
+creating a supportive environment in which mental well-being is           ports to proactively monitor their players’ mental well-being,
+treated as a core component of a culture of excellence. As players’       inform their provision of support to players (e.g., they adjust
+mental well-being is considered and assessed with due diligence, as       players’ schedules during intense periods such as academic ex-
+often as their performance standards, it helps combat the percep-         aminations), and develop their understanding of mental well-being
+tion, perhaps held by some staff members and players alike, that          in this population and the factors that tend to inﬂuence it. We also
+they are athletes ﬁrst and children or adolescents second. The            create a separate report on each team for speciﬁc staff members
+implementation of this highly visible support option facilitates          (e.g., psychologists) to highlight players whose ratings and/or
+regular mental well-being discussions and sends the message that          comments are of concern (e.g., if a player reports “low” or “very
+such discussions, reﬂections, and help-seeking are positive and           low” hedonic and/or psychological well-being). These reports have
+normal.                                                                   helped to shape various processes that are aimed at prioritizing
+     While collaboration between researchers and practitioners is         players’ mental well-being. For example, at an individual level, it is
+evidently beneﬁcial, it also requires pragmatism. For instance, we        now more common for staff to initiate normalized conversations
+tested a parallel rather than a more traditional congeneric model         with players around their mental well-being, based on the insight
+(McNeish & Wolf, 2020). With a parallel model, the items are              provided by the mental well-being reports.
+constrained to associate equally with the latent variables and to              To ensure that all players can access and beneﬁt from our tool,
+contribute the same amount of information to the measured con-            we have translated it for players for whom English is not their ﬁrst
+structs, thus aligning with the adapted tool’s scoring method. With       language and trained multilingual staff members can conduct the
+a congeneric model, item loadings and error variances are uniquely        screening process to ensure that all information is transmitted as
+estimated to reﬂect their optimal weighting. It is widely recognized      intended (cf. Maurice et al., 2021). Staff have also taken a more
+that optimally weighted scores are more reliable than summed              proactive approach at a team level, with mental well-being being
+scores, and thus, researchers traditionally test and implement the        more prominent on the agendas of multidisciplinary team meetings.
+                                                           TSP Vol. 40, No. 1, 2026
+                                                                 Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+                                                                      MENTAL WELL-BEING SCREENING IN ACADEMY FOOTBALL                                        41
+
+
+For instance, the mental well-being screening data is employed in            mental illness. The concept of mental health comprises not just the
+conjunction with group case formulation to provide a valuable                presence of mental well-being but also the absence of mental illness
+player perspective that complements the collective observations              (Keyes et al., 2002). For instance, players may languish in their
+drawn from various staff members (i.e., Ong et al., 2018). This has          mental well-being while being free of mental illness; the causes,
+helped to improve the accuracy and effectiveness of grading and              symptoms, consequences, and resolutions may also differ depend-
+addressing player concerns.                                                  ing upon whether their mental well-being or illness is of concern.
+                                                                             Capturing the full conceptualization of players’ mental health could
+Future Directions                                                            provide invaluable information for researchers and practitioners
+                                                                             alike. Of course, we would need to consider whether the potential
+We, as researchers and practitioners, can continue to work together          beneﬁts attained from this expanded process would be worth it,
+to further achieve the described research and applied beneﬁts. This          given the resources required to implement it in an applied setting
+might involve the reﬁnement of our adapted version of the MHC-               and the beneﬁts already derived from the more streamlined process
+SF, testing the validity and reliability of the tool’s (scoring method       currently in place (i.e., the collection of quantitative data with the
+and) categorization system (e.g., by assessing the relationship              mental well-being tool, combined with the collection of qualitative
+between players’ [scores and] categorizations and relevant external          data from the discussions between players and staff).
+criteria, such as quality of life), and assessing the generalizability of
+the tool (and screening process) via implementation (and testing) in         Concluding Remarks
+other football academies or sporting environments (e.g., in senior
+sport). All in all, we can continue to prospectively collect longitu-        Researchers and practitioners have an obligation as part of a wider
+dinal data to learn about the prevalence of good or poor mental              duty of care to safeguard academy players’ mental well-being.
+well-being in academy players, their mental well-being trajectories          Only with collaboration will we achieve this and build a strong
+during the course of and between seasons, the factors that inﬂuence          evidence base upon which to derive philosophies, policies, and
+their mental well-being, and the consequences of it. Such in-depth           interventions. Furthermore, only when we publicly share our work
+longitudinal investigations should allow us to explore mental well-          will we learn from each other and maximize our efforts, especially
+being in a way that few studies have done. For instance, achieving           given the paucity of high quality research conducted in the domain
+familiarity with academy players’ regular patterns of mental well-           of elite sport (Rice et al., 2016), including academy football. While
+being and exploring the impact and interplay of various protective           a desire to maintain a competitive edge is reasonable, the public
+and risk factors (e.g., personality, social support, and exposure to         dissemination of research ﬁndings should be encouraged in this
+challenges and setbacks such as deselection, injury, and school-             instance; academy players’ mental well-being is too important an
+work difﬁculties) may provide invaluable information to pinpoint             issue to allow this to inhibit our efforts. Breslin et al. (2019) deﬁned
+when players are at risk and how to intervene (Kuettel &                     mental health in sport as “a state of well-being in which those
+Larsen, 2019).                                                               involved in competitive sport can realize their purpose and poten-
+     Although beyond the scope of the present study, two note-               tial, can cope with competitive sport demands and normal life
+worthy issues to explore are players’ age and gender. First, little if       stressors, can work productively and fruitfully, can act autono-
+any mental well-being research has moved beyond grouping all                 mously according to their personal values, are able to make a
+athletes under a certain age (e.g., under-23) into a single category,        contribution to their community and feel they can seek support
+whereas there is likely value in now focusing on more speciﬁc age            when required” (p. 4). We must use any and all available means to
+groups (Poucher et al., 2021). Within English academy football,              help players to achieve this state. We believe that the screening
+three phases of development exist—foundation (i.e., under-9 to -             process outlined in this paper can help to lay the foundations for
+11), youth development (i.e., under-12 to -16), and professional             this and can contribute to the creation of academy environments
+development (i.e., under-18 to -23)—and this sport-speciﬁc cate-             that foster sustainable high performance in players on and off
+gorization might lend itself to more in-depth study. Second, elite           the pitch.
+female athletes’ mental well-being has received scant attention
+(Kuettel & Larsen, 2019), even though those who compete in                                                       Notes
+power-based and/or contact sports such as football, where success
+requires muscular development that clashes with societal determi-            1. It is worth noting that Foster and Chow (2019) have developed another
+nations of the feminine ideal, may face unique challenges in                 adaptation of the MHC-SF, namely the Sport MHC-SF, for assessing
+relation to body image (Perry et al., 2021).                                 athletes’ mental well-being. They altered each item so that it speciﬁcally
+     The continued quantitative and qualitative investigation of             measures sport rather than global mental well-being. For instance, they
+academy players’ mental well-being will not only produce ﬁndings             changed “During the past month, how often did you feel happy?” to “ : : :
+that underpin a more thorough numeric understanding and broader              how often did you feel happy in sport?” Foster and Chow (2019) conﬁrmed
+appreciation of this issue and how to intervene but will also                the psychometric properties of the Sport MHC-SF, albeit the results of their
+advance our conceptualization of mental well-being in this setting,          conﬁrmatory factor analysis only displayed marginally reasonable model
+and how to measure it. This will ultimately lead to the reﬁnement of         ﬁt. Post hoc analysis revealed that the model would have demonstrated
+the screening tool: the reﬁnement of dimensions that are currently           adequate ﬁt if correlated error terms with the social well-being subscale
+captured and/or the formal integration of new dimensions that                were speciﬁed, thus indicating that the items on this subscale, which
+underpin mental well-being in academy football, the importance of            assessed the quality of relationships within one’s team or sport, received
+which are not yet known. Moving forward, we will also consider               similar scores and were perhaps redundant. Their tool has since been used
+how the screening process as a whole can be enhanced. For                    and its psychometric properties conﬁrmed (i.e., factorial validity, internal
+instance, we may consider whether players’ overall mental health             consistency, and concurrent validity) in subsequent studies, including with
+can be more accurately assessed by supplementing the collection of           a sample of Italian athletes, among them professional cyclists (Bertollo
+data on their mental well-being with the collection of data on their         et al., 2021). However, Foster and Chow’s (2019) paper was published
+
+                                                              TSP Vol. 40, No. 1, 2026
+                                                                    Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+42      HARVEY ET AL.
+
+
+after our adaptation of the MHC-SF was complete and so did not inform                   Validated for teenage school students in England and Scotland. A
+our thinking. It is also possible that our version captures academy players’            mixed methods assessment. BMC Public Health, 11, Article 487.
+mental well-being with greater precision, given that, as shall be described,            https://doi.org/10.1186/1471-2458-11-487
+it was altered with academy players in mind (i.e., vs. altered for and used        Collins, D., MacNamara, Á., & Cruickshank, A. (2019). Research and
+with athletes aged 18–25 across different sports), its validity and reliability         practice in talent identiﬁcation and development—Some thoughts on
+were tested using academy players’ data (including via a parallel factorial             the state of play. Journal of Applied Sport Psychology, 31(3), 340–
+model that reﬂected the scoring system in practice vs. a typical congeneric             351. https://doi.org/10.1080/10413200.2018.1475430
+model that accommodated different relationships between the items and              Daley, C., Ong, C.W., & McGregor, P. (2020). Applied psychology in
+factor score), and it was integrated into an academy’s monitoring system                academy soccer settings: A systems-led approach. In J. Dixon, J.B.
+and used repeatedly (vs. used during a one-off capturing of mental well-                Barker, R.C. Thelwell, & I. Mitchell (Eds.), The psychology of soccer
+being as is often the case). Furthermore, it is possible that our version not           (pp. 172–188). Routledge. https://doi.org/10.4324/9781003005568
+only captures academy players’ sport-speciﬁc mental well-being with                Depaoli, S., & Clifton, J.P. (2015). A Bayesian approach to multilevel
+greater precision but also their global mental well-being with greater                  structural equation modeling with continuous and dichotomous out-
+precision, as part of a person-centered holistic approach to screening. As              comes. Structural Equation Modeling: A Multidisciplinary Journal,
+shall be described, our version’s items do not speciﬁcally pertain to sport             22(3), 327–351. https://doi.org/10.1080/10705511.2014.937849
+but instead pertain to one’s general mental well-being, with discussions           DeVon, H.A., Block, M.E., Moyle-Wright, P., Ernst, D.M., Hayden, S.J.,
+between staff members and players during the screening process allowing                 Lazzara, D.J., Savoy, S.M., & Kostas-Polston, E. (2007). A psycho-
+for an in-depth exploration of their well-being across contexts (e.g., in               metric toolbox for testing validity and reliability. Journal of Nursing
+football, in school, and at home).                                                      Scholarship, 39(2), 155–164. https://doi.org/10.1111/j.1547-5069.
+                                                                                        2007.00161.x
+                                                                                   Diener, E., Suh, E.M., Lucas, R.E., & Smith, H.L. (1999). Subjective well-
+                             References                                                 being: Three decades of progress. Psychological Bulletin, 125(2),
+                                                                                        276–302. https://doi.org/10.1037/0033-2909.125.2.276
+Abbott, W., Brownless, T.E., Harper, L.D., Naughton, R.J., Richardson,             Eubank, M., Nesti, M., & Cruickshank, A. (2014). Understanding high
+     A., & Clifford, T. (2019). A season long investigation into the effects            performing sport environments: Impact for the professional training
+     of injury, match selection and training load on mental wellbeing in                and supervision of sport psychologists. Sport and Exercise Psychol-
+     professional under 23 soccer players: A team case study. European                  ogy Review, 10(2), 30–36. https://doi.org/10.53841/bpssepr.2014.10.
+     Journal of Sport Science, 19(9), 1250–1256. https://doi.org/10.1080/               2.30
+     17461391.2019.1600586                                                         Flesch, R.F. (1979). How to write plain English: A book for lawyers and
+Andrews, J.L., Ahmed, S.P., & Blakemore, S.-J. (2021). Navigating the                   consumers. Harper & Row.
+     social environment in adolescence: The role of social brain develop-          Foster, B.J., & Chow, G.M. (2019). Development of the Sport Mental
+     ment. Biological Psychiatry, 89(2), 109–118. https://doi.org/10.                   Health Continuum—Short Form (Sport MHC-SF). Journal of Clini-
+     1016/j.biopsych.2020.09.012                                                        cal Sport Psychology, 13(4), 593–608. https://doi.org/10.1123/jcsp.
+Arnold, R., & Fletcher, D. (2012). A research synthesis and taxonomic                   2017-0057
+     classiﬁcation of the organizational stressors encountered by sport            Geldhof, G.J., Preacher, K.J., & Zyphur, M.J. (2014). Reliability estima-
+     performers. Journal of Sport and Exercise Psychology, 34(3), 397–                  tion in a multilevel conﬁrmatory factor analysis framework. Psycho-
+     429. https://doi.org/10.1123/jsep.34.3.397                                         logical Methods, 19(1), 72–91. https://doi.org/10.1037/a0032138
+Berger, R., & Hänze, M. (2015). Impact of expert teaching quality no               Gelman, A., Carlin, J.B., Stern, H.S., Dunston, D.B., Vehtari, A., & Rubin,
+     novice academic performance in the jigsaw cooperative learning                     D.B. (2014). Bayesian data analysis (3rd ed.). CRC Press, Taylor &
+     method. International Journal of Science Education, 37(2), 294–                    Francis Group.
+     320. https://doi.org/10.1080/09500693.2014.985757                             Gerber, M., Best, S., Meerstetter, F., Walter, M., Ludyga, S., Brand, S.,
+Bertollo, M., Forzini, F., Biondi, S., Di Liborio, M.D., Vaccaro, M.G.,                 Bianchi, R., Madigan, D.J., Isoard-Gautheur, S., & Gustafsson, H.
+     Georgiadis, E., & Conti, C. (2021). How does a sport psychological                 (2018). Effects of stress and mental toughness on burnout and
+     intervention help professional cyclists to cope with their mental health           depressive symptoms: A prospective study with young elite athletes.
+     during the COVID-19 lockdown? Frontiers in Psychology, 12,                         Journal of Science and Medicine in Sport, 21(12), 1200–1205. https://
+     Article 607152. https://doi.org/10.3389/fpsyg.2021.607152                          doi.org/10.1016/j.jsams.2018.05.018
+Breslin, G., Smith, A., Donohue, B., Donnelly, P., Shannon, S., Haughey,           Giles, S., Fletcher, D., Arnold, R., Ashﬁeld, A., & Harrison, J. (2020).
+     T.J., Vella, S.A., Swann, C., Cotterill, S., MacIntyre, T., Rogers, T., &          Measuring well-being in sport performers: Where are we now and
+     Leavey, G. (2019). International consensus statement on the psycho-                how do we progress? Sports Medicine, 50(7), 1255–1270. https://doi.
+     social and policy-related approaches to mental health awareness                    org/10.1007/s40279-020-01274-z
+     programmmes in sport. BMJ Open Sport & Exercise Medicine, 5,                  Gouttebarge, V., Castaldelli-Maia, J.M., Gorczynski, P., Hainline, B.,
+     Article e000585. https://doi.org/10.1136/bmsem-2019-000585                         Hitchcock, M.E., Kerkhoffs, G.M., Rice, S.M., & Reardon, C.L.
+Carr, A. (2015). The handbook of child and adolescent clinical psychol-                 (2019). Occurrence of mental health symptoms and disorders in
+     ogy: A contextual approach (3rd ed.). Routledge. https://doi.org/10.               current and former elite athletes: A systematic review and meta-
+     4324/9781315744230                                                                 analysis. British Journal of Sports Medicine, 53(11), 700–706.
+Christensen, M.K., & Sørensen, J.K. (2009). Sport or school? Dreams and                 https://doi.org/10.1136/bjsports-2019-100671
+     dilemmas for talented young Danish football players. European                 Gouttebarge, V., Frings-Dresen, M.H.W., & Sluiter, J.K. (2015). Mental
+     Physical Education Review, 15(1), 115–133. https://doi.org/10.                     and psychosocial health among current and former professional
+     1177/1356336X09105214                                                              footballers. Occupations Medicine, 65(3), 190–196. https://doi.org/
+Clarke, A., Friede, T., Putz, R., Ashdown, J., Martin, S., Blake, A., Adi,              10.1093/occmed/kqu202
+     Y., Parkinson, J., Flynn, P., Platt, S., & Stewart-Brown, S.                  Grimson, S., Brickley, G., Smeeton, N.J., Abbott, W., & Brett, A. (2023).
+     (2011). Warwick-Edinburgh Mental Well-being Scale (WEMWBS):                        The effects of injury, contextual math factors and training load upon
+
+                                                                   TSP Vol. 40, No. 1, 2026
+                                                                          Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+                                                                          MENTAL WELL-BEING SCREENING IN ACADEMY FOOTBALL                                        43
+
+
+      psychological wellbeing in English Premier League soccer players           Lamers, S.M.A., Westerhof, G.J., Bohlmeijer, E.T., ten Klooster, P.M., &
+      via season-long tracking. European Journal of Sport Science, 23(8),             Keyes, C.L.M. (2011). Evaluating the psychometric properties of the
+      1687–1695. https://doi.org/10.1080/17461391.2022.2125834                        Mental Health Continuum-Short Form (MHC-SF). Journal of Clini-
+Gulliver, A., Grifﬁths, K.M., & Christensen, H. (2012). Barriers and                  cal Psychology, 67(1), 99–110. https://doi.org/10.1002/jclp.20741
+      facilitators to mental health help-seeking for youth elite athletes: A     Lloyd, K., & Devine, P. (2012). Psychometric properties of the Warwick-
+      qualitative study. BMC Psychiatry, 12, Article 157. https://doi.org/10.         Edinburgh Mental Well-being Scale (WEMWBS) in Northern Ire-
+      1186/1471-244X-12-157                                                           land. Journal of Mental Health, 21(3), 257–263. https://doi.org/10.
+Henderson, L.W., & Knight, T. (2012). Integrating the hedonic and                     3109/09638237.2012.670883
+      eudaimonic perspectives to more comprehensively understand well-           Lundqvist, C. (2011). Well-being in competitive sports—The feel-good
+      being and pathways to wellbeing. International Journal of Wellbeing,            factor? A review of conceptual considerations of well-being. Inter-
+      2(3), 196–221. https://doi.org/10.5502/ijw.v2i3.3                               national Review of Sport and Exercise Psychology, 4(2), 109–127.
+Henriksen, K., Schinke, R., Moesch, K., McCann, S., Parham, W.D.,                     https://doi.org/10.1080/1750984X.2011.584067
+      Larsen, C.H., & Terry, P. (2020). Consensus statement on improving         Marmara, J., Zarate, D., Vassallo, J., Patton, R., & Stavropoulos, V.
+      the mental health of high performance athletes. International Journal           (2022). Warwick Edinburgh Mental Well-being Scale (WEMWBS):
+      of Sport and Exercise Psychology, 18(5), 553–560. https://doi.org/10.           Measurement invariance across genders and item response theory
+      1080/1612197X.2019.1570473                                                      examination. BMC Psychology, 10(1), Article 31. https://doi.org/10.
+Herman, B.C. (2015). The inﬂuence of global warming science views and                 1186/s40359-022-00720-z
+      sociocultural factors on willingness to mitigate global warming.           Maurice, J., Devonport, T.J., & Knight, C.J. (2021). Toward improved
+      Science Education, 99(1), 1–38. https://doi.org/10.1002/sce.21136               triadic functioning: Exploring the interactions and adaptations of
+Hill, A., MacNamara, Á., Collins, D., & Rodgers, S. (2016). Examining                 coaches, parents and athletes in professional academy soccer through
+      the role of mental health and clinical issues within talent develop-            the adversity of COVID-19. Frontiers in Psychology, 12, Article
+      ment. Frontiers in Psychology, 6, Article 2042. https://doi.org/10.             609631. https://doi.org/10.3389/fpsyg.2021.609631
+      3389/fpsyg.2015.02042                                                      McFadden, T., Bean, C., Fortier, M., & Post, C. (2016). Investigating the
+Holt-Lunstad, J., Smith, T.B., & Layton, J.B. (2010). Social relationships            inﬂuence of youth hockey specialization on psychological needs (dis)
+      and mortality risk: A meta-analytic review. PLoS Medicine, 7(7),                satisfaction, mental health, and mental illness. Cogent Psychology,
+      Article e1000316. https://doi.org/10.1371/journal.pmed.1000316                  3(1), Article 1157975. https://doi.org/10.1080/23311908.2016.
+Ivarsson, A., McCall, A., Mutch, S., Giuliani, A., Bassetto, R., & Fanchini,          1157975
+      M. (2021). Mental health and well-being during COVID-19 lock-              McNeish, D., & Stapleton, L.M. (2016). Modeling clustered data with very
+      down: A survey case report of high-level male and female players of             few clusters. Multivariate Behavioral Research, 51(4), 495–518.
+      an Italian Serie A football club. Science and Medicine in Football, 5(,         https://doi.org/10.1080/00273171.2016.1167008
+      70–75. https://doi.org/10.1080/24733938.2021.1962540                       McNeish, D., & Wolf, M.G. (2020). Thinking twice about sum scores.
+Ivarsson, A., Stenling, A., Fallby, J., Johnson, U., Borg, E., & Johansson,           Behavior Research Methods, 52(6), 2287–2305. https://doi.org/10.
+      G. (2015). The predictive ability of the talent development environ-            3758/s13428-020-01398-0
+      ment on youth elite football players’ well-being: A person-centered        Moesch, K., Kenttä, G., Kleinert, J., Quignon-Fleuret, C., Cecil, S., &
+      approach. Psychology of Sport and Exercise, 16(1), 15–23. https://              Bertollo, M. (2018). FEPSAC position statement: Mental health
+      doi.org/10.1016/j.psychsport.2014.09.006                                        disorders in elite athletes and models of service provision. Psychology
+Jensen, S.N., Ivarsson, A., Fallby, J., Dankers, S., & Elbe, A.-M. (2018).            of Sport and Exercise, 38, 61–71. https://doi.org/10.1016/j.psychsport.
+      Depression in Danish and Swedish elite football players and its                 2018.05.013
+      relation to perfectionism and anxiety. Psychology of Sport and             Muthén, L., & Muthén, B. (2017). Mplus user’s guide (8th ed.). Muthén &
+      Exercise, 36, 147–155. https://doi.org/10.1016/j.psychsport.2018.               Muthén.
+      02.008                                                                     Newport, R.A., Knight, C.J., & Love, T.D. (2021). The youth football
+Jose, P.E., Ryan, N., & Pryor, J. (2012). Does social connectedness                   journey: Parents’ experiences and recommendations for support.
+      promote a greater sense of well-being in adolescence over time?                 Qualitative Research in Sport, Exercise and Health, 13(6), 1006–
+      Journal of Research on Adolescence, 22(2), 235–251. https://doi.org/            1026. https://doi.org/10.1080/2159676X.2020.1833966
+      10.1111/j.1532-7795.2012.00783.x                                           Nicholls, A.R., Madigan, D.J., Fairs, L.R.W., & Bailey, R. (2020). Mental
+Keyes, C.L.M. (1998). Social well-being. Social Psychology Quarterly,                 health and psychological well-being among professional rugby lea-
+      61(2), 121–140. https://doi.org/10.2307/2787065                                 gue players from the UK. BMJ Open Sport & Exercise Medicine, 6,
+Keyes, C.L.M. (2006). The subjective well-being of America’s youth:                   Article e000711. https://doi.org/10.1136/bmjsem-2019-000711
+      Toward a comprehensive assessment. Adolescent & Family Health,             Nunnally, J.C. (1967). Psychometric theory. McGraw-Hill.
+      41(1), 3–11.                                                               Ong, C.W., McGregor, P., & Daley, C. (2018). The boy behind the
+Keyes, C.L.M., Shmotkin, D., & Ryff, C.D. (2002). Optimizing well-                    bravado: Player advanced safety and support in a professional football
+      being: The empirical encounter of two traditions. Journal of Person-            academy setting. Sport and Exercise Psychology Review, 14(1), 65–
+      ality and Social Psychology, 82(6), 1007–1022. https://doi.org/10.              79. https://doi.org/10.53841/bpssepr.2018.14.1.65
+      1037/0022-3514.82.6.1007                                                   Orpana, H., Vachon, J., Dykxhoorn, J., & Jayaraman, G. (2017). Measur-
+Kuettel, A., Durand-Bush, N., & Larsen, C.H. (2021). Mental health                    ing positive mental health in Canada: Construct validation of the
+      proﬁles of Danish youth soccer players: The inﬂuence of gender and              Mental Health Continuum-Short Form. Health Promotion and
+      career development. Journal of Clinical Sport Psychology, 16(3),                Chronic Disease Prevention in Canada: Research, Policy and Prac-
+      276–293. https://doi.org/10.1123/jcsp.2021-0035                                 tice, 37(4), 123–130. https://doi.org/10.24095/hpcdp.37.4.03
+Kuettel, A., & Larsen, C.H. (2019). Risk and protective factors for mental       Perry, C., Champ, F.M., Macbeth, J., & Spandler, H. (2021). Mental health
+      health in elite athletes: A scoping review. International Review of             and elite female athletes. A scoping review. Psychology of Sport and
+      Sport and Exercise Psychology, 13(1), 231–265. https://doi.org/10.              Exercise, 56, Article 101961. https://doi.org/10.1016/j.psychsport.
+      1080/1750984X.2019.1689574                                                      2021.101961
+
+                                                                 TSP Vol. 40, No. 1, 2026
+                                                                        Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+44     HARVEY ET AL.
+
+
+Portney, L.G., Watkins, M.P. (2009). Foundations of clinical research:        Schinke, R.J., Stambulova, N.B., Si, G., & Moore, Z. (2018). International
+     Applications to practice (3rd ed.). Prentice Hall.                           society of sport psychology position stand: Athletes’ mental health,
+Poucher, Z.A., Tamminen, K.A., Kerr, G., & Cairney, J. (2021). A                  performance, and development. International Journal of Sport and
+     commentary on mental health research in elite sport. Journal of              Exercise Psychology, 16(6), 622–639. https://doi.org/10.1080/16121
+     Applied Sport Psychology, 33(1), 60–82. https://doi.org/10.1080/             97X.2017.1295557
+     10413200.2019.1668496                                                    Sothern, N.A., & O’Gorman, J. (2021). Exploring the mental health and
+Premier League. (2011). Elite player performance plan.                            wellbeing of professional academy footballers in England. Soccer &
+Raykov, T. (1997). Estimation of composite reliability for congeneric             Society, 22(6), 641–654. https://doi.org/10.1080/14660970.2021.
+     measures. Applied Psychological Measurement, 21(2), 173–184.                 1952693
+     https://doi.org/10.1177/01466216970212006                                Stewart-Brown, S., Tennant, A., Tennant, R., Platt, S., Parkinson, J., &
+Reverberi, E, D’Angelo, C., Littlewood, M.A., & Gozzoli, C.F. (2020).             Weich, S. (2009). Internal construct validity of the Warwick-Edin-
+     Youth football players’ psychological well-being: The key role of            burgh Mental Well-being Scale (WEMWBS): A Rasch analysis using
+     relationships. Frontiers in Psychology, 11, Article 567776. https://         data from the Scottish Health Education Population Survey. Health
+     doi.org/10.3389/fpsyg.2020.567776                                            and Quality of Life Outcomes, 7(1), Article 15. https://doi.org/10.
+Rice, S.M., Gwyther, K., Santesteban-Echarri, O., Baron, D., Gorczynski,          1186/1477-7525-7-15
+     P., Gouttebarge, V., Reardon, C.L., Hitchcock, M.E., Hainline, B., &     Taber, K.S. (2018). The use of Cronbach’s Alpha when developing and
+     Purcell, R. (2019). Determinants of anxiety in elite athletes: A             reporting research instruments in science education. Research in
+     systematic review and meta-analysis. British Journal of Sports               Science Education, 48(6), 1273–1296. https://doi.org/10.1007/s111
+     Medicine, 53(11), 722–730. https://doi.org/10.1136/bjsports-2019-            65-016-9602-2
+     100620                                                                   Tennant, R., Hiller, L., Fishwick, R., Platt, S., Joseph, S., Weich, S.,
+Rice, S.M., Purcell, R., De Silva, S., Mawren, D., McGorry, P.D., &               Parkinson, J., Secker, J., & Stewart-Brown, S. (2007). The Warwick-
+     Parker, A.G. (2016). The mental health of elite athletes: A narrative        Edinburgh Mental Well-being Scale (WEMWBS): Development and
+     systematic review. Sports Medicine, 46(9), 1333–1353. https://doi.           UK validation. Health and Quality of Life Outcomes, 5(1), Article 63.
+     org/10.1007/s40279-016-0492-2                                                https://doi.org/10.1186/1477-7525-5-63
+Rongen, F., McKenna, J., Cobley, S., Tee, J.C., & Till, K. (2020).            VanderWeele, T.J., Trudel-Fitzgerald, C., Allin, P., Farrelly, C., Fletcher,
+     Psychosocial outcomes associated with soccer academy involvement:            G., Frederick, D.E., Hall, J., Helliwell, J.F., Kim, E.S., Lauinger,
+     Longitudinal comparisons against aged matched school pupils. Jour-           W.A., Lee, M.T., Lyubomirsky, S., Margolis, S., McNeely, E., Tay,
+     nal of Sports Sciences, 38(11–12), 1387–1398. https://doi.org/10.            L., Viswanath, V., Weziak-Bialowolska, D., & Kubzansky, L.D.
+     1080/02640414.2020.1778354                                                   (2020). Brief well-being assessments, or nothing at all?. Preventive
+Ryan, R.M., & Deci, E.L. (2001). On happiness and human potentials: A             Medicine, 135, Article 106095. https://doi.org/10.1016/j.ypmed.
+     review of research on hedonic and eudaimonic well-being. Annual              2020.106095
+     Review of Psychology, 52(1), 141–166. https://doi.org/10.1146/           Veenstra, R., & Laninga-Wijnen, L. (2023). The prominence of peer
+     annurev.psych.52.1.141                                                       interactions, relationships, and networks in adolescence and early
+Ryff, C.D. (1989). Happiness is everything, or is it? Explorations on the         adulthood. In L.J. Crockett, G. Carlo, & J.E. Schulenberg (Eds.), APA
+     meaning of psychological well-being. Journal of Personality and              handbook of adolescent and young development (pp. 225–241).
+     Social Psychology, 57(6), 1069–1081. https://doi.org/10.1037/0022-           American Psychological Association. https://doi.org/10.1037/0000
+     3514.57.6.1069                                                               298-014
+
+
+
+
+                                                               TSP Vol. 40, No. 1, 2026
+                                                                     Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+                                                                      MENTAL WELL-BEING SCREENING IN ACADEMY FOOTBALL                                        45
+
+
+                                                                  Appendix
+
+
+
+Table A1      Adapted Mental Health Continuum-Short Form
+Introduction to screening process: Today is a chat about you. We’re interested to see how things are going and if there’s
+anything we can do to help. There are no right or wrong answers to anything we talk about; it would be good if you could be as
+honest as possible. It’s an opportunity for you to talk about anything you want to talk about. If we talk about something that you
+would like to remain confidential, please let me know. This is usually fine; the only time I must tell another member of staff is if
+I’m concerned about your safety or someone else’s safety.
+During the past 3 months,
+how often did you feel : : : 1 = Never 2 3 4 = Sometimes 5 6 7 = Always Prompt
+1. Happy                                                                                      Does being involved in football make you happy?
+                                                                                              What about things at home and at school? Is there
+                                                                                              anything you can think of that might stop you feeling
+                                                                                              happy?
+2. You have had trusting re-                                                                  How long have you been at the club? Is there anyone
+   lationships with people                                                                    you get on particularly well with (staff or players)? If
+   (staff and other players) at                                                               you had a problem, is there someone at the club you
+   the club                                                                                   would want to talk to, or you feel you could trust to
+                                                                                              talk to? Who are your “go to” people (try and
+                                                                                              identify at least one member of staff they feel they
+                                                                                              could talk to)?
+3. You have been challenged                                                                   When I say challenged, I mean experiences that have
+   to develop as a person                                                                     happened to you that can be both negative and
+                                                                                              positive that you’ve learnt from. Apart from
+                                                                                              improving as a footballer, what else do you think you
+                                                                                              are learning by being here? Have you learnt anything
+                                                                                              that you can take into the next part of the season?
+4. Interested in your day-to-                                                                 When you wake up, do you usually look forward to
+   day activities                                                                             the day ahead? You’re in bed and the alarm rings,
+                                                                                              you lie there thinking ahead to your day, what are
+                                                                                              your thoughts?
+5. Pleased with who you are as                                                                Have you felt proud of yourself for what you’re
+   a person                                                                                   achieving? You drag/leap out of bed; you go to the
+                                                                                              bathroom and look in the mirror; what do you see?
+6. That you’ve known what                                                                     What direction do you want your life to go in? Do
+   you want to achieve                                                                        you feel like it is going that direction?
+7. You managed your                                                                           What responsibilities do you have and how do you
+   responsibilities well                                                                      feel you manage them? Football can be about
+                                                                                              improving and developing as a person. Have you
+                                                                                              been given responsibilities recently that you think is
+                                                                                              helping you to become a better player/person? How
+                                                                                              do you think you have managed this?
+8. Conﬁdent to think/share                                                                    Would you describe yourself as a conﬁdent person?
+   your own ideas and opi-                                                                    Do you feel like you can share your opinion in
+   nions with others                                                                          analysis/meetings with coaches?
+9. Satisﬁed with how things                                                                   Is there anything you can think of that’s holding you
+   are going                                                                                  back?
+On a scale of 1 to 10, with 1 being low (negative mood) and 10 being high (positive mood), how would you rate your mood during the past month?
+Is there anything else you would like to share or feel would be useful for us to know?
+
+
+
+
+                                                              TSP Vol. 40, No. 1, 2026
+                                                                    Brought to you by UNIVERSITY COLLEGE DUBLIN | Unauthenticated | Downloaded 06/23/26 11:06 AM UTC
+

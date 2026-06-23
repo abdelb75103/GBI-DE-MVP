@@ -1,0 +1,48 @@
+{
+  "scope": "systematic review relevance v8 live apply audit",
+  "generatedAt": "2026-06-23T15:34:08.029Z",
+  "input": "fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/gpt-5-5-systematic-review-relevance-v8-live-recommendations-2026-06-23.json",
+  "preApplySnapshot": "fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/gpt-5-5-systematic-review-relevance-v8-pre-apply-live-snapshot-2026-06-23.json",
+  "rowCount": 4,
+  "mismatches": [],
+  "protectedStoredChanges": [],
+  "generatedDerivedChanges": [],
+  "verified": [
+    {
+      "studyId": "S4615",
+      "decision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning; systematic-review relevance pass)",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "taResolution": "ready_for_full_text",
+      "hasStoragePath": true,
+      "hasSha": true
+    },
+    {
+      "studyId": "S4741",
+      "decision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning; systematic-review relevance pass)",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "taResolution": "ready_for_full_text",
+      "hasStoragePath": true,
+      "hasSha": true
+    },
+    {
+      "studyId": "S4734",
+      "decision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning; systematic-review relevance pass)",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "taResolution": "ready_for_full_text",
+      "hasStoragePath": true,
+      "hasSha": true
+    },
+    {
+      "studyId": "S5434",
+      "decision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning; systematic-review relevance pass)",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "taResolution": "ready_for_full_text",
+      "hasStoragePath": true,
+      "hasSha": true
+    }
+  ]
+}

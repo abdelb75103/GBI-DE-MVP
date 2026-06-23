@@ -1,0 +1,381 @@
+{
+  "scope": "second search full-text AI review GPT-5.5 medium live apply audit",
+  "generatedAt": "2026-06-23T13:55:18.103Z",
+  "input": "fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/gpt-5-5-full-text-ai-review-live-recommendations-2026-06-23.json",
+  "preApplySnapshot": "fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/gpt-5-5-full-text-ai-review-pre-apply-live-snapshot-2026-06-23.json",
+  "rowCount": 35,
+  "counts": {
+    "include": 17,
+    "exclude": 17,
+    "unsure": 1
+  },
+  "models": [
+    "GPT-5.5 (Codex CLI, medium reasoning)"
+  ],
+  "criteriaVersions": [
+    "fifa-gbi-full-text-v7-2026-06-22"
+  ],
+  "mismatches": [],
+  "protectedStoredChanges": [],
+  "generatedDerivedChanges": [
+    {
+      "studyId": "S4741",
+      "recordId": "42a3245d-5296-4c0b-bf4b-879d8ad38004",
+      "field": "ta_resolution",
+      "before": "needs_resolver",
+      "after": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4716",
+      "recordId": "9e5e91eb-8ca0-4b03-bf75-26fde13404ee",
+      "field": "ta_resolution",
+      "before": "ready_for_full_text",
+      "after": "needs_resolver"
+    },
+    {
+      "studyId": "S4734",
+      "recordId": "a23b77aa-f863-472c-89cd-d528e43ff468",
+      "field": "ta_resolution",
+      "before": "needs_resolver",
+      "after": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4845",
+      "recordId": "ef3bc0eb-8a5e-4c33-adca-614e066bf0e4",
+      "field": "ta_resolution",
+      "before": "ready_for_full_text",
+      "after": "needs_resolver"
+    },
+    {
+      "studyId": "S5434",
+      "recordId": "aaa3d984-1a3f-4bae-8e9f-fecfb0f769b1",
+      "field": "ta_resolution",
+      "before": "needs_resolver",
+      "after": "ready_for_full_text"
+    },
+    {
+      "studyId": "S1903",
+      "recordId": "711a9cb7-0ae2-49d8-a2b0-ec03d2901a5f",
+      "field": "ta_resolution",
+      "before": "ready_for_full_text",
+      "after": "needs_resolver"
+    }
+  ],
+  "verified": [
+    {
+      "studyId": "S4615",
+      "recordId": "77378df9-a158-410e-850c-f3c79b9c52bd",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S5113",
+      "recordId": "e3a3ff25-34d9-4148-91d1-d6e373a0cb5b",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S1628",
+      "recordId": "da4537a8-3d3a-4d61-99d0-9d4a27eb1c6b",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4687",
+      "recordId": "8131df24-4cfa-467e-80f9-228a3b57d6a7",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S2599",
+      "recordId": "ec566072-8756-4cc5-be13-aaebbeef9b7e",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S5049",
+      "recordId": "82d3ed3a-c735-405d-b816-c6314ce5d97b",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4296",
+      "recordId": "aa8ff33a-14bb-45e0-90b2-828d82b50527",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4005",
+      "recordId": "704e2938-8aad-40f2-9ee7-69524f7d5000",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4811",
+      "recordId": "73b6e3ec-34fc-4b6e-9f71-d3c9838cfc8b",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S4788",
+      "recordId": "b5564f3d-4cac-4199-9003-575a40747143",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4994",
+      "recordId": "342ece5d-92f2-4be6-809b-6e41581fa2fb",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S3972",
+      "recordId": "58dfa88c-4311-47fe-a7aa-70cafeb7b4eb",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S1964",
+      "recordId": "abae01c9-e28d-4c7d-8bf5-16e28b0daf06",
+      "decision": "unsure",
+      "writtenDecision": null,
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "pending"
+    },
+    {
+      "studyId": "S2138",
+      "recordId": "540a19b9-b86c-433e-b501-940b4fb28ec9",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S4850",
+      "recordId": "2def3902-570d-448f-b1ce-c6eff919bb4f",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S4846",
+      "recordId": "d16254ba-7ba8-4e7f-87a3-5b80df3353ab",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S3850",
+      "recordId": "90b86aaa-b8f1-4362-b75e-8941dcc08dde",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S3873",
+      "recordId": "2ab4ea70-cd92-4b06-bea6-26d543cdf03b",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4757",
+      "recordId": "8548c2bc-cd50-4c82-8607-2fc7c887a019",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S3953",
+      "recordId": "c0555d73-2b98-4647-bfe0-4886eb86a275",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S5218",
+      "recordId": "e1aff9af-5161-4b9c-8cdc-9b9211942632",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4741",
+      "recordId": "42a3245d-5296-4c0b-bf4b-879d8ad38004",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S1069",
+      "recordId": "48c4e13b-2f79-4ee8-8873-ef24a96c3909",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S2238",
+      "recordId": "6ac825a8-5b97-4f77-acf8-5da1b603809f",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4800",
+      "recordId": "408f6cba-55a1-419e-a14e-33d10c24b8dd",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S1196",
+      "recordId": "126c3b72-c9d0-4025-a742-36ec787ebf32",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S2009",
+      "recordId": "7c725881-6d7e-456b-bd5d-98858166b95f",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4637",
+      "recordId": "565401cf-fae7-490d-a7b1-b7fe152ad742",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S4716",
+      "recordId": "9e5e91eb-8ca0-4b03-bf75-26fde13404ee",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S4734",
+      "recordId": "a23b77aa-f863-472c-89cd-d528e43ff468",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S4845",
+      "recordId": "ef3bc0eb-8a5e-4c33-adca-614e066bf0e4",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S1132",
+      "recordId": "14b3e10c-9ea1-4474-8f21-34961fcc4d41",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S5434",
+      "recordId": "aaa3d984-1a3f-4bae-8e9f-fecfb0f769b1",
+      "decision": "include",
+      "writtenDecision": "include",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "ready_for_full_text"
+    },
+    {
+      "studyId": "S1903",
+      "recordId": "711a9cb7-0ae2-49d8-a2b0-ec03d2901a5f",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    },
+    {
+      "studyId": "S4659",
+      "recordId": "fed5221c-e61b-4216-b97b-c9e61af1d020",
+      "decision": "exclude",
+      "writtenDecision": "exclude",
+      "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "taResolution": "needs_resolver"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "scope": "Live full-text screening PDF upload for validated awaiting-PDF retrieval batch",
+  "sourceBatch": "awaiting-pdf-2026-06-23",
+  "appliedAt": "2026-06-23T11:14:20.897Z",
+  "target": "Supabase screening_records and papers storage bucket",
+  "protectedFieldsUntouched": [
+    "manual decisions",
+    "reviewer votes",
+    "resolver decisions",
+    "promotion state",
+    "extraction tables",
+    "assignments"
+  ],
+  "results": [
+    {
+      "studyId": "S4615",
+      "recordId": "77378df9-a158-410e-850c-f3c79b9c52bd",
+      "status": "uploaded_verified",
+      "objectPath": "21db59ec-c531-4b4d-ad14-f234071b40b8/1782213232830-001_S4615_Pakarinen_O_2025.pdf",
+      "fileName": "001_S4615_Pakarinen_O_2025.pdf",
+      "size": 344575,
+      "expectedHash": "1e6aa71b30f2aec318f08682c09eda3b051281c07722323325b77d43e95461b0",
+      "storedHash": "1e6aa71b30f2aec318f08682c09eda3b051281c07722323325b77d43e95461b0"
+    },
+    {
+      "studyId": "S5113",
+      "recordId": "e3a3ff25-34d9-4148-91d1-d6e373a0cb5b",
+      "status": "uploaded_verified",
+      "objectPath": "d5a71ae6-f27d-4ee4-87e1-7cb7974d501f/1782213234246-004_S5113_Duda_H_2026.pdf",
+      "fileName": "004_S5113_Duda_H_2026.pdf",
+      "size": 765522,
+      "expectedHash": "a0bea631a9ecceded45a6d5e7bc9213d74d4166aaa93904f4054a4d5a05cf572",
+      "storedHash": "a0bea631a9ecceded45a6d5e7bc9213d74d4166aaa93904f4054a4d5a05cf572"
+    },
+    {
+      "studyId": "S1628",
+      "recordId": "da4537a8-3d3a-4d61-99d0-9d4a27eb1c6b",
+      "status": "uploaded_verified",
+      "objectPath": "962b1b71-620e-4120-9e16-c4c36d45a187/1782213235139-005_S1628_Zargari_M._2024.pdf",
+      "fileName": "005_S1628_Zargari_M._2024.pdf",
+      "size": 2246985,
+      "expectedHash": "4235d7efcd45d1b67dfcd3b2a97d041a6ce38967f4581df44519f41d5cdca69f",
+      "storedHash": "4235d7efcd45d1b67dfcd3b2a97d041a6ce38967f4581df44519f41d5cdca69f"
+    },
+    {
+      "studyId": "S4687",
+      "recordId": "8131df24-4cfa-467e-80f9-228a3b57d6a7",
+      "status": "uploaded_verified",
+      "objectPath": "cc57dc7e-13da-47e2-aeb4-6445e787e6c7/1782213236190-010_S4687_Kremen_TJ_Jr_2026.pdf",
+      "fileName": "010_S4687_Kremen_TJ_Jr_2026.pdf",
+      "size": 144140,
+      "expectedHash": "05723f963a417826baaaf7e3b21a000747033d92f8e5b30364a6b26c32ff2341",
+      "storedHash": "05723f963a417826baaaf7e3b21a000747033d92f8e5b30364a6b26c32ff2341"
+    },
+    {
+      "studyId": "S2599",
+      "recordId": "ec566072-8756-4cc5-be13-aaebbeef9b7e",
+      "status": "uploaded_verified",
+      "objectPath": "5bc91497-37fc-48f4-ab16-4150283de7a8/1782213236894-013_S2599_Badier_Nolwenn_2025.pdf",
+      "fileName": "013_S2599_Badier_Nolwenn_2025.pdf",
+      "size": 1237066,
+      "expectedHash": "c138347a9638109e6452725d92d33d94c304421a8912ba1a06c6d57c12141fee",
+      "storedHash": "c138347a9638109e6452725d92d33d94c304421a8912ba1a06c6d57c12141fee"
+    },
+    {
+      "studyId": "S5049",
+      "recordId": "82d3ed3a-c735-405d-b816-c6314ce5d97b",
+      "status": "uploaded_verified",
+      "objectPath": "87a77e3e-9fd9-4ecb-9065-01dea09aa430/1782213238026-024_S5049_Pranji_T_2026.pdf",
+      "fileName": "024_S5049_Pranji_T_2026.pdf",
+      "size": 654077,
+      "expectedHash": "0cccda5215281a37a0882670b208c7d35f072c9ff6f857dcc7d5de8c4a96d4c8",
+      "storedHash": "0cccda5215281a37a0882670b208c7d35f072c9ff6f857dcc7d5de8c4a96d4c8"
+    },
+    {
+      "studyId": "S4296",
+      "recordId": "aa8ff33a-14bb-45e0-90b2-828d82b50527",
+      "status": "uploaded_verified",
+      "objectPath": "2ff1fa67-bd0d-4db3-bb8c-b03eadbe3664/1782213238803-026_S4296_Sobrinho_GMR_2026.pdf",
+      "fileName": "026_S4296_Sobrinho_GMR_2026.pdf",
+      "size": 1370867,
+      "expectedHash": "bc8905dc239246940f9a74b17dcb6e7e2b193af1bda17d3be71e7a901df19c0d",
+      "storedHash": "bc8905dc239246940f9a74b17dcb6e7e2b193af1bda17d3be71e7a901df19c0d"
+    },
+    {
+      "studyId": "S4005",
+      "recordId": "704e2938-8aad-40f2-9ee7-69524f7d5000",
+      "status": "uploaded_verified",
+      "objectPath": "4d8a507d-3e8c-490b-89c5-4a3588539f31/1782213239507-031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf",
+      "fileName": "031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf",
+      "size": 969845,
+      "expectedHash": "29c26164c2565acd6aedf9603b6c07260497169bd8d488747767c76d3b21fd5b",
+      "storedHash": "29c26164c2565acd6aedf9603b6c07260497169bd8d488747767c76d3b21fd5b"
+    },
+    {
+      "studyId": "S4811",
+      "recordId": "73b6e3ec-34fc-4b6e-9f71-d3c9838cfc8b",
+      "status": "uploaded_verified",
+      "objectPath": "85bc87ec-7dc7-4630-b963-1b51a7ea688c/1782213240253-036_S4811_Kekelekis_A_2025.pdf",
+      "fileName": "036_S4811_Kekelekis_A_2025.pdf",
+      "size": 1590519,
+      "expectedHash": "11ba0a0006e2cd23577282c93cfc47c05b2a33c550f353ecf42c913bf3016eec",
+      "storedHash": "11ba0a0006e2cd23577282c93cfc47c05b2a33c550f353ecf42c913bf3016eec"
+    },
+    {
+      "studyId": "S4788",
+      "recordId": "b5564f3d-4cac-4199-9003-575a40747143",
+      "status": "uploaded_verified",
+      "objectPath": "d33d17d3-41dd-4452-afa2-739a5acb3dd3/1782213240987-045_S4788_Schwarz_E_2025.pdf",
+      "fileName": "045_S4788_Schwarz_E_2025.pdf",
+      "size": 959056,
+      "expectedHash": "980f0dced4695357f85c6c0e8333829f2b2952f913ec53732cf129e9bfe8bf02",
+      "storedHash": "980f0dced4695357f85c6c0e8333829f2b2952f913ec53732cf129e9bfe8bf02"
+    },
+    {
+      "studyId": "S4994",
+      "recordId": "342ece5d-92f2-4be6-809b-6e41581fa2fb",
+      "status": "uploaded_verified",
+      "objectPath": "4d678b25-2dc4-4af5-bdde-b3023ed7a432/1782213241795-059_S4994_Moreira_A_2025.pdf",
+      "fileName": "059_S4994_Moreira_A_2025.pdf",
+      "size": 255153,
+      "expectedHash": "063abd5b3e1ea6e90355a000793f86e65130e5fe5a4f0373b65cfbc8bfc79048",
+      "storedHash": "063abd5b3e1ea6e90355a000793f86e65130e5fe5a4f0373b65cfbc8bfc79048"
+    },
+    {
+      "studyId": "S3972",
+      "recordId": "58dfa88c-4311-47fe-a7aa-70cafeb7b4eb",
+      "status": "uploaded_verified",
+      "objectPath": "dfc6ba55-1cbf-426c-9ed8-ad20b0438e25/1782213242461-064_S3972_Fousekis_A_2025.pdf",
+      "fileName": "064_S3972_Fousekis_A_2025.pdf",
+      "size": 3218481,
+      "expectedHash": "eda1070856feb43ac89883af1064bf4b19c991e91b04d9f8b1c059e81ec98f1d",
+      "storedHash": "eda1070856feb43ac89883af1064bf4b19c991e91b04d9f8b1c059e81ec98f1d"
+    },
+    {
+      "studyId": "S1964",
+      "recordId": "abae01c9-e28d-4c7d-8bf5-16e28b0daf06",
+      "status": "uploaded_verified",
+      "objectPath": "967ed0c7-52b9-418e-a9fc-2e77aaf88e0b/1782213243523-065_S1964_Antonopoulos_Konstantinos_2025.pdf",
+      "fileName": "065_S1964_Antonopoulos_Konstantinos_2025.pdf",
+      "size": 740968,
+      "expectedHash": "ebd2b978123d4ec30853f4cb9cffdd242be3a2458d57970503c101f64d2616aa",
+      "storedHash": "ebd2b978123d4ec30853f4cb9cffdd242be3a2458d57970503c101f64d2616aa"
+    },
+    {
+      "studyId": "S2138",
+      "recordId": "540a19b9-b86c-433e-b501-940b4fb28ec9",
+      "status": "uploaded_verified",
+      "objectPath": "bb6d0ad6-bcad-43a2-95fc-b68c339878d9/1782213244066-078_S2138_Llurda-Almuzara_Luis_2026.pdf",
+      "fileName": "078_S2138_Llurda-Almuzara_Luis_2026.pdf",
+      "size": 504153,
+      "expectedHash": "8c236b44444d9c32442d94e5bebb344f72cc0465721ebe0aafa78963d3223136",
+      "storedHash": "8c236b44444d9c32442d94e5bebb344f72cc0465721ebe0aafa78963d3223136"
+    },
+    {
+      "studyId": "S4850",
+      "recordId": "2def3902-570d-448f-b1ce-c6eff919bb4f",
+      "status": "uploaded_verified",
+      "objectPath": "897631e9-31e5-437b-8849-077a7f403908/1782213244571-079_S4850_Wilkerson_GB_2025.pdf",
+      "fileName": "079_S4850_Wilkerson_GB_2025.pdf",
+      "size": 1549632,
+      "expectedHash": "c8260f3266b6befad223ab3fa755b323fc3b1a96e8e04bdbf390f2cf70dcb9c5",
+      "storedHash": "c8260f3266b6befad223ab3fa755b323fc3b1a96e8e04bdbf390f2cf70dcb9c5"
+    },
+    {
+      "studyId": "S4846",
+      "recordId": "d16254ba-7ba8-4e7f-87a3-5b80df3353ab",
+      "status": "uploaded_verified",
+      "objectPath": "9a114dd8-f8a8-4bb2-ae59-fe7bbd30a631/1782213245335-085_S4846_Vassis_K_2025.pdf",
+      "fileName": "085_S4846_Vassis_K_2025.pdf",
+      "size": 3167685,
+      "expectedHash": "07e8f5453dc1fff9c5c74f80fb791995e4d24818ee554b5e289f0a945a73e56b",
+      "storedHash": "07e8f5453dc1fff9c5c74f80fb791995e4d24818ee554b5e289f0a945a73e56b"
+    },
+    {
+      "studyId": "S3850",
+      "recordId": "90b86aaa-b8f1-4362-b75e-8941dcc08dde",
+      "status": "uploaded_verified",
+      "objectPath": "ec40ed54-8df2-4c91-a0a8-58801cc79864/1782213246281-086_S3850_Song_JY_2025.pdf",
+      "fileName": "086_S3850_Song_JY_2025.pdf",
+      "size": 1384660,
+      "expectedHash": "7a7ff0d37f8fd2f659db095380fd72f6a7250df01cc0f8ce7e4f26c883ab5660",
+      "storedHash": "7a7ff0d37f8fd2f659db095380fd72f6a7250df01cc0f8ce7e4f26c883ab5660"
+    },
+    {
+      "studyId": "S3873",
+      "recordId": "2ab4ea70-cd92-4b06-bea6-26d543cdf03b",
+      "status": "uploaded_verified",
+      "objectPath": "0b3c5810-e6c4-4b71-ba26-3da0041a72fc/1782213247080-090_S3873_Garc_a-Naveira_A_2026.pdf",
+      "fileName": "090_S3873_Garc_a-Naveira_A_2026.pdf",
+      "size": 564229,
+      "expectedHash": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572",
+      "storedHash": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572"
+    },
+    {
+      "studyId": "S4757",
+      "recordId": "8548c2bc-cd50-4c82-8607-2fc7c887a019",
+      "status": "uploaded_verified",
+      "objectPath": "e85e0961-efa5-45a4-884b-9e2f205d0375/1782213247733-093_S4757_Murillo-Ortiz_2025.pdf",
+      "fileName": "093_S4757_Murillo-Ortiz_2025.pdf",
+      "size": 3641768,
+      "expectedHash": "66cede4c511411cf07fb87e2e8b8a1f28190358117a5d922d40cabb7fb5cea5d",
+      "storedHash": "66cede4c511411cf07fb87e2e8b8a1f28190358117a5d922d40cabb7fb5cea5d"
+    },
+    {
+      "studyId": "S3953",
+      "recordId": "c0555d73-2b98-4647-bfe0-4886eb86a275",
+      "status": "uploaded_verified",
+      "objectPath": "7af9abfd-51df-456e-a95d-0fd971b70f65/1782213248608-104_S3953_Liveris_NI_2025.pdf",
+      "fileName": "104_S3953_Liveris_NI_2025.pdf",
+      "size": 4909325,
+      "expectedHash": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980",
+      "storedHash": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980"
+    },
+    {
+      "studyId": "S5218",
+      "recordId": "e1aff9af-5161-4b9c-8cdc-9b9211942632",
+      "status": "uploaded_verified",
+      "objectPath": "5064b798-3dad-4197-ad85-4f7e8d6d7231/1782213250370-107_S5218_Witko_J_2026.pdf",
+      "fileName": "107_S5218_Witko_J_2026.pdf",
+      "size": 257454,
+      "expectedHash": "dac92c3012cad97f921f43044fd1fdcbd004b08ee0a3ab51827c31d88015b87e",
+      "storedHash": "dac92c3012cad97f921f43044fd1fdcbd004b08ee0a3ab51827c31d88015b87e"
+    },
+    {
+      "studyId": "S4741",
+      "recordId": "42a3245d-5296-4c0b-bf4b-879d8ad38004",
+      "status": "uploaded_verified",
+      "objectPath": "7cd7bcbc-4b82-45ab-97be-84ee0f6fe467/1782213250855-110_S4741_Hoveidaei_AH_2025.pdf",
+      "fileName": "110_S4741_Hoveidaei_AH_2025.pdf",
+      "size": 958000,
+      "expectedHash": "11592084540a8b628160ce7f0bbb7a5efc85baef915ec65964b0a0d7277388da",
+      "storedHash": "11592084540a8b628160ce7f0bbb7a5efc85baef915ec65964b0a0d7277388da"
+    },
+    {
+      "studyId": "S1069",
+      "recordId": "48c4e13b-2f79-4ee8-8873-ef24a96c3909",
+      "status": "uploaded_verified",
+      "objectPath": "a8a542aa-7eb8-4e5d-9beb-1465b6382b51/1782213251465-114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf",
+      "fileName": "114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf",
+      "size": 401003,
+      "expectedHash": "8b0580b04cc948996156049f475150bbcbf887ca69074f221a2310dd61602ab6",
+      "storedHash": "8b0580b04cc948996156049f475150bbcbf887ca69074f221a2310dd61602ab6"
+    },
+    {
+      "studyId": "S2238",
+      "recordId": "6ac825a8-5b97-4f77-acf8-5da1b603809f",
+      "status": "uploaded_verified",
+      "objectPath": "329f3156-2e0d-4e8c-837b-306711ad2a64/1782213252054-115_S2238_Frazer_Rebekka_2024.pdf",
+      "fileName": "115_S2238_Frazer_Rebekka_2024.pdf",
+      "size": 1151187,
+      "expectedHash": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3",
+      "storedHash": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3"
+    },
+    {
+      "studyId": "S4800",
+      "recordId": "408f6cba-55a1-419e-a14e-33d10c24b8dd",
+      "status": "uploaded_verified",
+      "objectPath": "c4de5a65-ec42-480a-8b42-b130b72aa47f/1782213253006-124_S4800_Ogawa_T_2025.pdf",
+      "fileName": "124_S4800_Ogawa_T_2025.pdf",
+      "size": 593363,
+      "expectedHash": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361",
+      "storedHash": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361"
+    },
+    {
+      "studyId": "S1196",
+      "recordId": "126c3b72-c9d0-4025-a742-36ec787ebf32",
+      "status": "uploaded_verified",
+      "objectPath": "485cad63-0297-4863-bff3-e276aa3b6bc5/1782213253634-131_S1196_Sales_Alexandre_Moreira_2024.pdf",
+      "fileName": "131_S1196_Sales_Alexandre_Moreira_2024.pdf",
+      "size": 571339,
+      "expectedHash": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323",
+      "storedHash": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323"
+    },
+    {
+      "studyId": "S2009",
+      "recordId": "7c725881-6d7e-456b-bd5d-98858166b95f",
+      "status": "uploaded_verified",
+      "objectPath": "5524085e-5684-457e-9cb3-cbe9284955ca/1782213254261-133_S2009_Nordback_Panu_H._2025.pdf",
+      "fileName": "133_S2009_Nordback_Panu_H._2025.pdf",
+      "size": 659852,
+      "expectedHash": "67fc47b3b97360ea4ed633f32025dc9caccc74702dafd98b47755fec4a0472a7",
+      "storedHash": "67fc47b3b97360ea4ed633f32025dc9caccc74702dafd98b47755fec4a0472a7"
+    },
+    {
+      "studyId": "S4637",
+      "recordId": "565401cf-fae7-490d-a7b1-b7fe152ad742",
+      "status": "uploaded_verified",
+      "objectPath": "87c6ac66-51d6-4a6a-af89-3ec77c7c16d6/1782213254897-141_S4637_Takei_S_2025.pdf",
+      "fileName": "141_S4637_Takei_S_2025.pdf",
+      "size": 1140447,
+      "expectedHash": "ebff950cdf195db3deb5b894df0fb713941cb51d8ae453bb21cffbaa92e92be7",
+      "storedHash": "ebff950cdf195db3deb5b894df0fb713941cb51d8ae453bb21cffbaa92e92be7"
+    },
+    {
+      "studyId": "S4716",
+      "recordId": "9e5e91eb-8ca0-4b03-bf75-26fde13404ee",
+      "status": "uploaded_verified",
+      "objectPath": "e0ba1477-be2a-4c70-b338-04c01bc5567c/1782213255583-146_S4716_S_nchez-Ruiz_R_2025.pdf",
+      "fileName": "146_S4716_S_nchez-Ruiz_R_2025.pdf",
+      "size": 505891,
+      "expectedHash": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874",
+      "storedHash": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874"
+    },
+    {
+      "studyId": "S4734",
+      "recordId": "a23b77aa-f863-472c-89cd-d528e43ff468",
+      "status": "uploaded_verified",
+      "objectPath": "81956ec3-074a-4731-86fe-6c870eb0d8a6/1782213256244-147_S4734_Wang_Y_2025.pdf",
+      "fileName": "147_S4734_Wang_Y_2025.pdf",
+      "size": 4558935,
+      "expectedHash": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277",
+      "storedHash": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277"
+    },
+    {
+      "studyId": "S4845",
+      "recordId": "ef3bc0eb-8a5e-4c33-adca-614e066bf0e4",
+      "status": "uploaded_verified",
+      "objectPath": "c00a05c7-5c5f-48f2-b8e8-0129923bf64e/1782213257723-148_S4845_Martins_F_2025.pdf",
+      "fileName": "148_S4845_Martins_F_2025.pdf",
+      "size": 336996,
+      "expectedHash": "0d1c7950c65ad2ac92af29d0bcfe7f9ba8e0495daac0dc09ac61d603dd14b701",
+      "storedHash": "0d1c7950c65ad2ac92af29d0bcfe7f9ba8e0495daac0dc09ac61d603dd14b701"
+    },
+    {
+      "studyId": "S1132",
+      "recordId": "14b3e10c-9ea1-4474-8f21-34961fcc4d41",
+      "status": "uploaded_verified",
+      "objectPath": "f52909b0-cd86-451b-a131-43af8b9b6e38/1782213258202-150_S1132_Mohammadi_Haniyeh_2024.pdf",
+      "fileName": "150_S1132_Mohammadi_Haniyeh_2024.pdf",
+      "size": 733307,
+      "expectedHash": "7fe50d366857ce93336a483ff90f7f7ed99e7894a2c6b88b5477e5c0f187f491",
+      "storedHash": "7fe50d366857ce93336a483ff90f7f7ed99e7894a2c6b88b5477e5c0f187f491"
+    },
+    {
+      "studyId": "S5434",
+      "recordId": "aaa3d984-1a3f-4bae-8e9f-fecfb0f769b1",
+      "status": "uploaded_verified",
+      "objectPath": "c935db7b-d307-414d-b8bd-6271e92e0c61/1782213258805-156_S5434_Eser_C_2025.pdf",
+      "fileName": "156_S5434_Eser_C_2025.pdf",
+      "size": 1610201,
+      "expectedHash": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015",
+      "storedHash": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015"
+    },
+    {
+      "studyId": "S1903",
+      "recordId": "711a9cb7-0ae2-49d8-a2b0-ec03d2901a5f",
+      "status": "uploaded_verified",
+      "objectPath": "97b4fb64-4817-49ac-af52-64ba22b92c9d/1782213259546-170_S1903_Harvey_S_amus_2026.pdf",
+      "fileName": "170_S1903_Harvey_S_amus_2026.pdf",
+      "size": 348129,
+      "expectedHash": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c",
+      "storedHash": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c"
+    },
+    {
+      "studyId": "S4659",
+      "recordId": "fed5221c-e61b-4216-b97b-c9e61af1d020",
+      "status": "uploaded_verified",
+      "objectPath": "540efa5c-1adc-4b50-a150-1f27221a7c8c/1782213260297-178_S4659_Ortiz-S_nchez_D_2026.pdf",
+      "fileName": "178_S4659_Ortiz-S_nchez_D_2026.pdf",
+      "size": 515412,
+      "expectedHash": "259b4da8ab3214330e106cba88f91828c0cf28361c6015c95280b6395d808641",
+      "storedHash": "259b4da8ab3214330e106cba88f91828c0cf28361c6015c95280b6395d808641"
+    }
+  ]
+}

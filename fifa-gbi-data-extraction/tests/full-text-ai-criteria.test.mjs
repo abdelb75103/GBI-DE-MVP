@@ -52,3 +52,37 @@ test('full-text AI criteria treat season-long club medical records without expos
     /no usable denominator rather than .*retrospective\/cross-sectional/i,
   );
 });
+
+test('full-text AI criteria retain relevant systematic reviews for reference checking only', () => {
+  assert.match(
+    criteriaSource,
+    /retain relevant football-specific systematic reviews/i,
+  );
+  assert.match(
+    criteriaSource,
+    /not primary extraction studies/i,
+  );
+  assert.match(
+    criteriaSource,
+    /exclude .*reviews limited to prevention exercises, rehabilitation, return-to-play, performance tests, mechanisms, imaging, or proxy outcomes/i,
+  );
+});
+
+test('full-text AI criteria allow only bounded paper-derivable denominators', () => {
+  assert.match(
+    criteriaSource,
+    /complete at-risk frame/i,
+  );
+  assert.match(
+    criteriaSource,
+    /fully specified activity schedule/i,
+  );
+  assert.match(
+    criteriaSource,
+    /cohort mean exposure value multiplied by explicit participant count/i,
+  );
+  assert.match(
+    criteriaSource,
+    /do not calculate exposure during screening/i,
+  );
+});

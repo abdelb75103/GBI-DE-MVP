@@ -1,0 +1,188 @@
+# Awaiting full-text PDF retrieval - 2026-06-23
+
+Scope: 179 live website full-text screening records marked awaiting PDF, ordered by created_at descending.
+Downloaded and title-validated: 35
+No matching accessible PDF found: 144
+
+## Downloaded
+- #1 S4615: Association of Peak Height Velocity and Skeletal Maturity to Injury Incidence in Male Elite Adolescent Football (Soccer) Players-A Systematic Review. — 001_S4615_Pakarinen_O_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12277657
+- #4 S5113: The Impact of Rational Warm-Up on Physical Preparation and Injury Prevention in Young Footballers: A Longitudinal Study. — 004_S5113_Duda_H_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12842329
+- #5 S1628: Comparative analysis of sport-related concussion: how do 8- to 12-year-old athletes differ from 13- to 17-year-old athletes? — 005_S1628_Zargari_M._2024.pdf — https://thejns.org/downloadpdf/view/journals/j-neurosurg-pediatr/34/6/article-p549.pdf
+- #10 S4687: Epidemiology and Incidence of Surgically Treated ACL Injuries in Division I Collegiate Athletes. — 010_S4687_Kremen_TJ_Jr_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC13033838
+- #13 S2599: Menstrual cycle or hormonal contraceptive related symptoms in elite female athletes from retrospective self-questionnaires and daily monitoring: impact on well-being and objective performance metrics. — 013_S2599_Badier_Nolwenn_2025.pdf — https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1693190/pdf
+- #24 S5049: Injury Epidemiology in Elite U17 Football Players: A Prospective Study Across Six Competitive Seasons. — 024_S5049_Pranji_T_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC13117052
+- #26 S4296: Prevalence and Levels of Symptoms of Anxiety, Depression and Suicidal Ideation Amongst Elite Male Soccer Players: An Age- and Education-Matched Controlled Study. — 026_S4296_Sobrinho_GMR_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC13026680
+- #31 S4005: Eating Disorders Risk Assessment and Body Esteem among Amateur and Professional Football Players. — 031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf — https://europepmc.org/api/getPdf?pmcid=PMC11013787
+- #36 S4811: Hamstring Strain Injury Risk in Soccer: An Exploratory, Hypothesis-Generating Prediction Model. — 036_S4811_Kekelekis_A_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12641714
+- #45 S4788: Associations between injury occurrence and environmental temperatures in the Australian and German professional football leagues. — 045_S4788_Schwarz_E_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC11756877
+- #59 S4994: Concussions in Portuguese Professional Football: A Preliminary Epidemiological Study. — 059_S4994_Moreira_A_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12563299
+- #64 S3972: Week-by-Week Predictive Value of External Load Ratios on Injury Risk in Professional Soccer: A Logistic Regression and ROC Curve Analysis Approach. — 064_S3972_Fousekis_A_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12654017
+- #65 S1964: Greek translation and cross-cultural adaptation of the Oslo Sports Trauma Research Center Questionnaires on overuse injuries and health problems. — 065_S1964_Antonopoulos_Konstantinos_2025.pdf — https://www.cosmin.nl/wp-content/uploads/COSMIN-study-designing-checklist_final.pdf
+- #78 S2138: Preseason Range-of-Motion and Motor-Performance Asymmetries in Elite Male Youth Soccer Players in Spain. — 078_S2138_Llurda-Almuzara_Luis_2026.pdf — https://journals.humankinetics.com/downloadpdf/view/journals/jsr/35/2/article-p142.pdf
+- #79 S4850: Perceptual Decision Efficiency Is Modifiable and Associated with Decreased Musculoskeletal Injury Risk Among Female College Soccer Players. — 079_S4850_Wilkerson_GB_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12293226
+- #85 S4846: Injury Pattern According to Player Position in Male Amateur Football Players in Greece: A Retrospective Study. — 085_S4846_Vassis_K_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12428947
+- #86 S3850: Orbitofrontal Gray-White Interface Injury and the Association of Soccer Heading With Verbal Learning. — 086_S3850_Song_JY_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12447236
+- #90 S3873: Injury History and Mental Health Indicators in Young Soccer Players: A Cross-Sectional Study. — 090_S3873_Garc_a-Naveira_A_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC13117117
+- #93 S4757: Power Indices Through Rotational Inertial Devices for Lower Extremity Profiling and Injury Risk Stratification in Professional Soccer Players: A Cross-Sectional Study. — 093_S4757_Murillo-Ortiz_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12249273
+- #104 S3953: Interdependent Effect of Intrinsic Risk Factors on Non-Contact Lower Limb Injuries in Male Football Players: A Structural Equation Modeling Approach. — 104_S3953_Liveris_NI_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12842751
+- #107 S5218: Menstrual Cycle Characteristics and Injury History in Adult Amateur Female Football Players: A Cross-Sectional Study Using Selected LEAF-Q Items. — 107_S5218_Witko_J_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC13026316
+- #110 S4741: Stress fracture risk factors in soccer players: A systematic review. — 110_S4741_Hoveidaei_AH_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12140768
+- #114 S1069: Musculoskeletal Pain, Mood, and Sports Injury in Wheelchair Power Soccer Players. — 114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf — https://journals.humankinetics.com/downloadpdf/view/journals/jsr/33/3/article-p161.pdf
+- #115 S2238: Commonly Used Indicators of Low Energy Availability Risk Fail to Identify Female Amateur Soccer Players With Measured Low Energy Availability During Preseason. — 115_S2238_Frazer_Rebekka_2024.pdf — https://journals.humankinetics.com/downloadpdf/view/journals/ijsnem/34/6/article-p387.pdf
+- #124 S4800: Incidence of Hamstring Injury and Analysis of Risk Factors for Reinjury in Japanese Professional Football Players. — 124_S4800_Ogawa_T_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12639208
+- #131 S1196: INCREASED INCIDENCE OF INJURIES IN THE SAO PAULO SOCCER CHAMPIONSHIP POST-PANDEMIC. — 131_S1196_Sales_Alexandre_Moreira_2024.pdf — https://www.scielo.br/j/aob/a/j5K7HwStyhLdLYg4cTbg4vf/?lang=en&format=pdf
+- #133 S2009: Illnesses and Diseases Constitute a Quarter of Medical Conditions in an Under-21 National Football Team. — 133_S2009_Nordback_Panu_H._2025.pdf — https://journals.humankinetics.com/downloadpdf/view/journals/jsr/34/6/article-p651.pdf
+- #141 S4637: Characteristics of Plantar Pressure Distribution During Running and Musculoskeletal Factors Associated With Jones Fracture in Young Female Soccer Players: A Prospective Study. — 141_S4637_Takei_S_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12069956
+- #146 S4716: Competitive Anxiety, Sports Injury, and Playing Category in Youth Soccer Players. — 146_S4716_S_nchez-Ruiz_R_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12384764
+- #147 S4734: Comparative Effectiveness of Multi-Component, Exercise-Based Interventions for Preventing Soccer-Related Musculoskeletal Injuries: A Systematic Review and Meta-Analysis. — 147_S4734_Wang_Y_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC11988859
+- #148 S4845: Machine Learning-Based Prediction of Muscle Injury Risk in Professional Football: A Four-Year Longitudinal Study. — 148_S4845_Martins_F_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12653399
+- #150 S1132: Evaluation of the Value of the Y-Balance Test to Predict Lower Limb Injuries in Professional Male Footballers. — 150_S1132_Mohammadi_Haniyeh_2024.pdf — https://journals.humankinetics.com/downloadpdf/view/journals/jsr/33/1/article-p33.pdf
+- #156 S5434: The Impact of the FIFA 11+ Neuromuscular Training Programme on Ankle Injury Reduction in Football Players: A Systematic Review and Meta-Analysis. — 156_S5434_Eser_C_2025.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12371935
+- #170 S1903: A Mental Well-Being Screening Process in an Elite Youth Football Academy. — 170_S1903_Harvey_S_amus_2026.pdf — https://journals.humankinetics.com/downloadpdf/view/journals/tsp/40/1/article-p33.pdf
+- #178 S4659: Epidemiology of Anterior Cruciate Ligament Injuries in the Top 5 European Football (Soccer) Leagues. — 178_S4659_Ortiz-S_nchez_D_2026.pdf — https://europepmc.org/api/getPdf?pmcid=PMC12775263
+
+## Not found
+- #2 S4402: Non-modifiable and modifiable factors affecting anxiety and depressive symptoms in young athletes.
+- #3 S5032: Injury prediction model for lower-limb sports injuries: A novel machine learning-based approach.
+- #6 S2923: The effect of 12 times training of the FIFA 11+ on fundamental movements in football academy athletes aged 14-17 as an effort to prevent injury.
+- #7 S1372: Sports-Related Pure Orbital Blowout Fractures in Japan: Differences in Demographic and Clinical Characteristics between Sports.
+- #8 S5096: Match schedule variability, not volume, is associated with severe muscle injury in elite football.
+- #9 S859: Differences in Overuse Injuries in Gender-Comparable Sports: A Nationally Representative Sample of High School Athletes.
+- #11 S3025: Multidimensional sport competitive anxiety among women football players according to playing position.
+- #12 S951: Reduced Match Exposure in the Previous 2 Matches Accounts for Hamstring Muscle Injury Incidence in Professional Football Players.
+- #14 S1316: Mitigating the Risks of Lower Extremity Injuries in Soccer: A Comprehensive Analysis of Lower Extremity Injury Rates in Soccer Between 2014 and 2023.
+- #15 S3106: Sleep Duration and Sleep Quality as Season-Long Predictors of Ratings of Perceived Exertion and Psychological Well-Being in Female Soccer Athletes.
+- #16 S2893: Anterior cruciate ligament injury incidence in male and female soccer players: A longitudinal study over six consecutive seasons.
+- #17 S1226: Injury Characteristics Among Japanese International Athletes: Report on the Pre-competition Medical Check-Up Data of the Japanese Olympic Committee.
+- #18 S2820: FIFA'S Medical Research Centre Program Exercise Prevent Football Athlete Injury Among Unimuda Sorong.
+- #19 S1368: Epidemiology of Sports Injuries Among High School Athletes in the United States: Data From 2015 to 2019.
+- #20 S1303: Epidemiology of Sports-Related Concussion in Japanese University Soccer Players.
+- #21 S2814: Incidence and burden of 671 injuries in professional women footballers: time to focus on context-specific injury risk reduction strategies.
+- #22 S1938: High-Load Strength Training Reduces Injury Incidence and Injury Burden and Improves Physical Fitness in Young Highly Trained Soccer Players.
+- #23 S892: The Acute: Chronic Workload Ratio and Injury Risk in Semiprofessional Football Players.
+- #25 S2206: Comparative Effects of 2 Different Frequencies of Resistance Training in an Integral Periodization Approach on High-Intensity Actions and Noncontact Injuries in Young Trained Soccer Players.
+- #27 S3922: Injuries in Argentinian football: an epidemiological study of six professional clubs of second-division during the 2022 season.
+- #28 S877: Epidemiology of lateral ankle sprain focusing on indirect contact mechanism in male and female soccer players: An 18.5-month cohort study.
+- #29 S2474: Epidemiology of football-related injuries in young male football players. An additional analysis of data from a cluster-randomised controlled trial.
+- #30 S1231: Predictors of Risk of Muscle Injury in Non-Professional Soccer Players: An Ambispective Cohort Study.
+- #32 S1605: Incidence of injuries per 1000 hours of refereeing or training in soccer referees: A mini-review
+- #33 S2147: Health problems in top-level female football players: a four-season prospective study in the Finnish top football league.
+- #34 S2257: Understanding Longitudinal Muscle Injury Trends in Youth Football: Insights from U9 to U13 Players.
+- #35 S2400: Are muscle injury incidence and ACTN3 R577X associated with playing positions in professional soccer players?
+- #37 S1798: The Injury Incident Rate of Anterior Cruciate Ligament Injuries in Male Professional Football Players: A Systematic Review
+- #38 S2273: Elite football players achieve pre-injury running performance despite MRI lesions after return to play without increased risk of recurrence.
+- #39 S1555: Epidemiological analysis of injuries in soccer referees: A systematic review
+- #40 S3631: From classical models to attention-based transformers: A comparative study of injury prediction pipelines in female varsity soccer.
+- #41 S2087: Beyond the cheers of soccer-skating through the mind of football players with reference to football clubs in Ahmedabad, India.
+- #42 S4669: Impact of Injury on Anxiety, Depression, and Quality of Life in Youth Soccer Players.
+- #43 S4608: Injury Patterns in an Elite Men's Futsal Club: A Nine-Season Cohort Study.
+- #44 S2391: A Higher Thigh Muscle Injury Incidence in Professional Male Soccer Players Returning to Play After Anterior Cruciate Ligament Reconstruction: Analysis of 110 Cases From the UEFA Elite Club Injury Study.
+- #46 S1109: The effects of jump training on measures of physical performance, lower extremities injury incidence and burden in highly trained male soccer players.
+- #47 S5306: Co-designing a year-round injury surveillance system: longitudinal monitoring for a small-nation football team (PhD Academy Award).
+- #48 S4634: ACL injuries in professional football (soccer): Women face higher risk, later surgical care and longer time loss compared to men.
+- #49 S2382: Risk of Low Energy Availability in New Zealand National Team and U20 Female Football Representatives.
+- #50 S4619: Epidemiology of injuries and illnesses in national team male beach soccer players: a prospective seven-year cohort study.
+- #51 S1106: Decrease in aerial challenges after revision of goal kick rules in Japan Professional Soccer League: explorative study of the possibility of a risk reduction for head injury, concussion, and brain damage by a rule revision.
+- #52 S1389: The Impact of Injury on Career Progression in Elite Youth Football-Findings at 10 Years.
+- #53 S2520: Association between high-intensity running and muscle-tendon injuries in professional Brazilian soccer players.
+- #54 S1419: Factors Associated With a Lateral Ankle Sprain in Young Female Soccer Players: A Prospective Cohort Study.
+- #55 S1805: Epidemiology of Hip, Thigh, and Knee Injuries Across NCAA Division I Soccer Players
+- #56 S3313: Analysis of musculoskeletal injuries in elite female soccer players: Cohort study in one Brazilian team.
+- #57 S3933: Injuries Following COVID-19 Infection in Academy-level Male Youth Soccer Players.
+- #58 S1899: Mental Health Symptoms of Amateur Association Football Referees: A Cross-Sectional Study.
+- #60 S3841: The FIFA 11+ injury prevention program reduces the incidence of lower extremity injuries in football players: a systematic review and meta-analysis.
+- #61 S2031: Effectiveness of FIFA 11+ Injury Prevention Programs in Reducing Head and Neck Injuries, Including Concussion, Among Soccer Players: A Systematic Review and Meta-Analysis.
+- #62 S1027: Quantifying the impact of the coronavirus 2019 pandemic on youth sports-related injuries in the USA.
+- #63 S2631: Illness, the overlooked research topic for time-loss in women's football – a scoping review.
+- #66 S3577: Is limb asymmetry an intrinsic risk factor for time-loss groin injury in professional male soccer players?
+- #67 S763: Snooze it or Lose it: Understanding Sleep Disturbance and Injuries in Soccer and Basketball Student-Athletes.
+- #68 S2020: Perfil psicológico de futbolistas: análisis de variables y constructos.
+- #69 S1230: Perceptual Response Training for Reduction of Injury Risk Among High School Girls' Soccer Players.
+- #70 S3915: A session-by-session analysis of psychological and external workload demands prior to muscle-tendon injuries in Brazilian professional soccer players: a pilot study.
+- #71 S1771: Sleep Consistency as a Risk Factor for Lower Extremity Injuries in Division I Soccer Athletes
+- #72 S1183: Hip Muscle Strength Ratios Predicting Groin Injury in Male Soccer Players Using Machine Learning and Multivariate Analysis-A Prospective Cohort Study.
+- #73 S1916: DESAFIOS NO FUTEBOL FEMININO: PERFIL DAS ATLETAS E ANÁLISE DAS LESÕES TRAUMATO-ORTOPÉDICAS.
+- #74 S1103: A Thirteen-Year Analysis of Facial Fractures among Professional Soccer Players.
+- #75 S1472: Sustainable Football: Physical Profile, Training Load, Risk Factors and Injuries in Swedish Elite Football
+- #76 S1182: Prevalence of lower limb pain and disability in football, hockey, and floorball players.
+- #77 S2280: Does accumulated physical load in different time windows affect hamstring injuries in elite football players?
+- #80 S1384: Mental Health in First- and Second-Division Soccer Players: A Cross-Sectional Study.
+- #81 S3337: Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season Prospective Cohort Study.
+- #82 S1815: Comparison of Injuries Sustained on Grass and Artificial Turf by USL1 Mens Soccer Team. Part 1: Match Related Injuries
+- #83 S3518: Longitudinal study of mental health in an elite soccer club: Depression and anxiety symptoms across a competitive season.
+- #84 S1320: Anterior Cruciate Ligament Ruptures in Russian Premier League Soccer Players During the 2010 to 2021/2022 Competitive Seasons: The Epidemiology and Details of Return to Sports.
+- #87 S1842: Sleep Consistency as a Predictor for Increased Risk of Injuries in Division I Athletes
+- #88 S1939: The Association Between Psychosocial Factors and Reported Injuries Among Youth Grassroot Soccer Players.
+- #89 S3978: Pre-Participation Reaction Time and Concussion Risk among Middle School Female Soccer Players.
+- #91 S2203: Knee and ACL injury rates in NCAA soccer players: an epidemiological study of 10 consecutive seasons.
+- #92 S3852: Physical and Mental Well-Being in Former Collegiate Soccer Athletes.
+- #94 S3487: Shoulder injuries in amateur soccer players. An exploratory cross-sectional survey.
+- #95 S2234: Injuries in elite football (soccer) academy: A 4-year observational cohort study of five categories and 515 players.
+- #96 S2949: ASSOCIAÇÃO ENTRE LESÕES MUSCULARES DE JOGADORES DE FUTEBOL COM A CARGA DE TREINAMENTO E DE JOGOS.
+- #97 S2330: Sport-related concussion in Brazilian professional soccer: A four-year prospective epidemiological analysis.
+- #98 S3892: Injury incidence and prevention beliefs in Brazilian amateur soccer: a cross-sectional study.
+- #99 S3486: Drop jump vertical kinetics identify male youth soccer players at greater risk of non-contact knee injury.
+- #100 S1832: An overview of the management of injury and illness along with referral pattern in Indonesian Football Clubs
+- #101 S2876: 男子高校生サッカー選手における2年間の傷害調査 ─鼠径部痛予防プログラム実施の有無が鼠径部痛に与える影響─.
+- #102 S2752: Anatomic Risk Factors for Initial and Secondary Noncontact Anterior Cruciate Ligament Injury: A Prospective Cohort Study in 880 Female Elite Handball and Soccer Players.
+- #103 S2236: Analysis of Psychological and Sleep Quality Characteristics of Young and Adult Para-Athletes with Cerebral Palsy During Competitive Period.
+- #105 S2962: Acute:chronic workload ratio of professional soccer players preceding hamstring muscle injuries: a 2-season retrospective study.
+- #106 S2284: Beyond Contact: Epidemiology of Concussion Incidence in Women's Collegiate Sports, 2016–2022.
+- #108 S2496: Risk Factors of Ankle Sprain in Soccer Players: A Systematic Review and Meta-Analysis.
+- #109 S755: Secondary injury prevention reduces hamstring strain and time-loss groin injury burdens in male professional football.
+- #111 S4629: Epidemiology of Sport Injury Among Korean Male Youth Soccer Players: A Prospective Cohort Study.
+- #112 S3745: Risk Factors For Groin Injuries In Collegiate Soccer Players: 3042.
+- #113 S2450: A multidimensional prediction model for overtraining risk in youth soccer players: Integrating physiological and psychological markers.
+- #116 S1855: Comparison of Injuries Sustained on Grass and Artificial Turf by USL1 Mens Soccer Team. Part 2: Total Athlete Expos
+- #117 S2371: Sports Injury Patterns and Economic Consequences Before and During the COVID‐19 Pandemic: A Comprehensive Study of Norwegian Sports From 2017 to 2020 Using Insurance Data.
+- #118 S2202: Injuries and risk factors in men's beach soccer: Japanese national championships 2013–2023.
+- #119 S2357: Increased anterior pelvic tilt angle elevates the risk of hamstring injuries in soccer player.
+- #120 S1942: What Are the Consequences of Hamstring Injuries on Soccer Players' Match Running Performance? A Systematic Review.
+- #121 S3996: Effect of the FIFA 11+ on anterior cruciate ligament injury incidence rates in collegiate female football players over three consecutive seasons.
+- #122 S789: External Training Loads and Soft-Tissue Injury Occurrence During Congested Versus Noncongested Periods in Football.
+- #123 S1233: Injuries in Female Futsal Players: A Systematic Review.
+- #125 S2287: Effect of COVID-19 on Injury Incidence and Severity in Professional Female Football Players: A Cohort Prospective Study.
+- #126 S2264: The Socioeconomic Cost of Anterior Cruciate Ligament Injuries and Lateral Ankle Sprains in Amateur Football and Basketball.
+- #127 S2788: MEDICAL DECISION SUPPORT FOR FOOTBALL PLAYERS BASED ON MACHINE LEARNING HISTORICAL INJURY DATA.
+- #128 S4692: Characteristics of musculoskeletal injuries in youth football: a prospective study.
+- #129 S1105: 'Benched' the effect of the COVID-19 lockdown on injury incidence in sub-elite football in Australia: a retrospective population study using injury insurance records.
+- #130 S1665: Incidence and intrinsic risk factors of hamstring strain injuries among Malaysian footballers: a cohort study of 81 professional footballers
+- #132 S2587: Knee Mechanics, Strength and Flexibility: Assessing Injury Risk in Female Adolescent Soccer Players.
+- #134 S1252: Spontaneous Headshake after a Kinematic Event (SHAAKE): Evaluating the Utility of a Potential New Sign in the Diagnosis of Concussion.
+- #135 S4732: The Effects of Adherence to the FIFA 11+ Program on Injury Risk in Soccer Players: A Systematic Review and Meta-analysis.
+- #136 S3620: The Influence of Running Demands in Hamstring Injury in Elite Male Soccer Players. A Comparison Between Injured and Uninjured Players.
+- #137 S4562: Injuries and Illnesses in National Team Male Futsal Players: A Prospective Seven-Year Cohort Study.
+- #138 S3935: One competitive season of injuries in professional football: a retrospective study from a Portuguese first league team.
+- #139 S1967: Can We Predict Adductor Strain? A Predictive Analysis of a Major League Soccer (MLS) Cohort Spanning from 2019 to 2022.
+- #140 S4804: Predictive modeling of injury risk based on body composition and physical fitness performance tests in professional football: A four-year study.
+- #142 S2301: Official match time underestimates injury incidence in football and beach soccer compared with futsal.
+- #143 S1680: Relationships between internal workload and injury incidence in elite youth soccer players
+- #144 S2038: Effectiveness of the FIFA 11+ injury prevention programs in reducing acute lower back injury among soccer players: A systematic review and meta-analysis.
+- #145 S5004: Incidence of injury and illness at the Paris 2024 Paralympic Games: post-pandemic trends and sport-specific risks.
+- #149 S1889: Musculoskeletal injuries in professional soccer players: A study of 2 consecutive seasons in a Tunisian football team
+- #151 S4715: Association Between Body Composition and Non-Contact Muscle Injury Risk in Elite Soccer Players: A Cox Proportional Hazards Model Analysis.
+- #152 S3343: Impact of time of day on modifiable risk factors for hamstring injury in semi-professional football referees.
+- #153 S1529: The Impact of Anterior Cruciate Ligament Tear on Player Performance and Longevity in la Liga League Soccer Players
+- #154 S1941: The Protective Effect of Preseason Running Workload Against In-Season Hamstring Strain Injuries in Elite Soccer Players.
+- #155 S3342: Injury epidemiology in Australian women's professional football.
+- #157 S2043: آیا نشاانرهاای مهتبط با بار داخ لی و خارجی تمهین و مساابه یک عامل خطه آسایب بهای بازیکنان فوتبال است؟ یک مطالع در لیگ بهته خ لیجفارس
+- #158 S2823: Influence of the External Workload on Calf Muscle Strain Injuries in Professional Football Players: A Pilot Study.
+- #159 S2078: Futbolcularda Ruminasyonun Psikolojik Sağlamlık Üzerindeki Yordayıcı Rolü.
+- #160 S1537: The Relationship between Injury Risk and Cognitive Function in Adolescent Football Players
+- #161 S5505: Effect of maturation on overuse knee injury prevalence: A cross-sectional study of youth football players in Japan.
+- #162 S5520: Sport specialization, injury and illness: a prospective study of elite female adolescent soccer players.
+- #163 S5499: Nutritional intake, sports nutrition knowledge and energy availability in recreational female football players.
+- #164 S5526: Position-Specific Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season, Prospective Cohort Study.
+- #165 S3740: Epidemiology Of Soccer-Related Injuries Treated At The United States Emergency Departments Between 2014 And 2023: 2052.
+- #166 S5508: The Effects of Motor Imagery on Balance and on the Fear of Re-Injury in Professional Football Players with Ankle Sprain.
+- #167 S5491: Effects of Mid-Season Camp Period Loading on Sports Injury Anxiety and Physical Performance of Professional Male Soccer Players
+- #168 S1060: ACTN3 XX Genotype Negatively Affects Running Performance and Increases Muscle Injury Incidence in LaLiga Football Players.
+- #169 S1789: In Vivo Detection of Pathology at the Depths of Cortical Sulci in Sports Repetitive Head Impacts
+- #171 S2204: Training Load, Mileage, and Perceived Exertion as a Predictive Model of Injury and Illness in Women's Soccer.
+- #172 S2991: Injury occurrence in college men's football team --Survey results of the 2021 season--.
+- #173 S803: Psychosocial Factors Associated With Lower Extremity Reinjury Risk in Soccer Players: Contribution of Self-Confidence and Reinjury Anxiety.
+- #174 S1950: Injuries in Female Soccer Athletes: Risk of Injury Across Different Phases of the Menstrual Cycle.
+- #175 S3923: Injury incidence, prevalence, and burden in an Argentinian male youth soccer academy: one-season descriptive study.
+- #176 S4370: Understanding how athlete engagement is associated with adolescent mental health: Evidence from a longitudinal football study.
+- #177 S2470: The Football Association Injury and Illness Surveillance Study: The Incidence, Burden, and Severity of Injuries in English Women's Domestic Football—A 5‐Year Prospective Cohort Study.
+- #179 S3588: Predictive models of injury risk in male professional football players: a systematic review.

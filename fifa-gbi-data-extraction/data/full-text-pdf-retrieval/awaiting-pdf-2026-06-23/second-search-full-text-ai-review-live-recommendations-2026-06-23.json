@@ -1,0 +1,1723 @@
+{
+  "scope": "Second search full-text AI review live recommendations",
+  "sourceBatch": "awaiting-pdf-2026-06-23",
+  "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+  "model": "GPT-5 (Codex chat, medium reasoning)",
+  "recommendations": [
+    {
+      "tags": [
+        "systematic_review",
+        "football_specific",
+        "not_primary_extraction"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Association of Peak Height Velocity and Skeletal Maturity to Injury Incidence in Male Elite Adolescent Football (Soccer) Players-A Systematic Review.",
+      "reason": "Systematic review of 12 observational studies rather than an original primary epidemiology study for extraction.",
+      "authors": "Pakarinen O; Ponkilainen VT; Kuitunen I",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/001_S4615_Pakarinen_O_2025.pdf",
+      "studyId": "S4615",
+      "decision": "exclude",
+      "recordId": "77378df9-a158-410e-850c-f3c79b9c52bd",
+      "pdfSha256": "762538a81dd817e68340cfa62d2b034da37ec5e3c51b5ba176ca883e45af01f2",
+      "auditNotes": "The runtime did not expose a separate GPT-5.5 selector; the current GPT-5 Codex chat model was used. Recommendation only; human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "PubMed, Scopus, SPORTDiscus, and Web of Science literature search",
+      "studyDesign": "Systematic review without meta-analysis",
+      "evidenceQuotes": [
+        "SYSTEMATIC REVIEW",
+        "A total of 699 abstracts were screened, and 12 studies were included for review."
+      ],
+      "derivationBasis": null,
+      "exclusionReason": "Ineligible publication type",
+      "sourceLocations": [
+        "001_S4615_Pakarinen_O_2025.pdf p. 1, article type",
+        "001_S4615_Pakarinen_O_2025.pdf p. 1, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "E-PUB-01"
+      ],
+      "denominatorStatus": "not_applicable_review",
+      "competitionContext": "Elite youth football across included studies",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Review-level injury incidence and burden synthesis",
+      "reportedDenominator": null,
+      "dataCollectionTiming": "Database search conducted in March 2023.",
+      "populationEligibility": "Male elite adolescent football players represented in included studies.",
+      "injuryIllnessDefinition": "Definitions inherited from included studies",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null,
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22"
+    },
+    {
+      "tags": [
+        "primary_study",
+        "football_specific",
+        "intervention",
+        "no_usable_denominator"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "The Impact of Rational Warm-Up on Physical Preparation and Injury Prevention in Young Footballers: A Longitudinal Study.",
+      "reason": "The study reports retrospective annual injury counts per player from documentation, without exposure hours, athlete/match exposures, a time-based rate, or exact inputs for a defensible denominator derivation.",
+      "authors": "Duda H et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/004_S5113_Duda_H_2026.pdf",
+      "studyId": "S5113",
+      "decision": "exclude",
+      "recordId": "e3a3ff25-34d9-4148-91d1-d6e373a0cb5b",
+      "pdfSha256": "cc19be8ad558576d755b060b160c48c71da57a41afd451e5b035bd068647ac69",
+      "auditNotes": "The runtime did not expose a separate GPT-5.5 selector; the current GPT-5 Codex chat model was used. Recommendation only; human votes unchanged.",
+      "confidence": 0.98,
+      "dataSource": "Individual medical records and training documentation",
+      "studyDesign": "Longitudinal training intervention with retrospective annual injury-documentation analysis",
+      "evidenceQuotes": [
+        "a retrospective analysis of medical and training documentation was conducted, covering the entire annual training cycle",
+        "demonstrated fewer injuries during the annual cycle (0.97 ± 0.83 vs. 1.33 ± 0.66)"
+      ],
+      "derivationBasis": null,
+      "exclusionReason": "No usable denominator",
+      "sourceLocations": [
+        "004_S5113_Duda_H_2026.pdf p. 8, Methods—Diagnosis of Lower Limb and Trunk Injuries",
+        "004_S5113_Duda_H_2026.pdf p. 1, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "E-DEN-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Professional-training youth club setting",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Lower-limb and trunk injury counts",
+      "reportedDenominator": "Participant headcount and annual cycle only",
+      "dataCollectionTiming": "Training intervention measured prospectively; injuries reconstructed retrospectively from the annual cycle.",
+      "populationEligibility": "60 competitive U17 football players from Poland and Slovakia",
+      "injuryIllnessDefinition": "All reported complaints, injuries, or traumas during training, competition, or recovery",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null,
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22"
+    },
+    {
+      "tags": [
+        "selected_injured_cohort",
+        "mixed_sport",
+        "clinical_recovery"
+      ],
+      "year": "2024",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Comparative analysis of sport-related concussion: how do 8- to 12-year-old athletes differ from 13- to 17-year-old athletes?",
+      "reason": "Retrospective concussion-clinic cohort selected after injury and focused on clinical recovery; soccer outcomes are not reported separately from the mixed-sport cohort.",
+      "authors": "Zargari M et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/005_S1628_Zargari_M._2024.pdf",
+      "studyId": "S1628",
+      "decision": "exclude",
+      "recordId": "da4537a8-3d3a-4d61-99d0-9d4a27eb1c6b",
+      "pdfSha256": "2bc17868d9ec81a4ea6bd86055028681ecf10683153f21a11c9d03b613e671ac",
+      "auditNotes": "Soccer participants are identifiable by count only; study outcomes are pooled by age group rather than separable by sport. Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Regional concussion-center electronic medical records",
+      "studyDesign": "Single-institution retrospective clinical cohort",
+      "evidenceQuotes": [
+        "A single-institution retrospective cohort study was undertaken with 8- to 17-year-old athletes who were seen at a regional sports concussion center following an SRC",
+        "Soccer 10 (20.4) 20 (20.4)"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Selected injured clinical cohort",
+      "sourceLocations": [
+        "005_S1628_Zargari_M._2024.pdf p. 2, Methods—Study Design and Participants",
+        "005_S1628_Zargari_M._2024.pdf p. 3, Table 1"
+      ],
+      "criteriaTriggered": [
+        "E-CLN-01",
+        "E-SUB-01",
+        "E-SRC-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Not reported as a football competition surveillance frame",
+      "derivationPossible": false,
+      "footballDiscipline": "Mixed sports including association football and American football",
+      "outcomeEligibility": "Clinical concussion symptoms and recovery after injury",
+      "reportedDenominator": "147 selected concussion patients",
+      "dataCollectionTiming": "Electronic medical records reviewed after concussion-center presentation.",
+      "populationEligibility": "Mixed-sport injured athletes aged 8–17; soccer is only one subgroup",
+      "injuryIllnessDefinition": "Provider diagnosis using 2016 Concussion in Sport Group guidelines",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "primary_study",
+        "football_specific_subgroup",
+        "prospective_registry",
+        "american_data"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Epidemiology and Incidence of Surgically Treated ACL Injuries in Division I Collegiate Athletes.",
+      "reason": "Prospectively reported Pac-12 current-athlete surveillance with clean soccer-specific ACL counts, athlete-year exposures, and incidence rates.",
+      "authors": "Kremen TJ Jr et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/010_S4687_Kremen_TJ_Jr_2026.pdf",
+      "studyId": "S4687",
+      "decision": "include",
+      "recordId": "8131df24-4cfa-467e-80f9-228a3b57d6a7",
+      "pdfSha256": "a6a47cf040f1609c52c9f83221d1657c6ff3541785a63d94f3ff530e51cf06eb",
+      "auditNotes": "The registry is a reporting channel for prospective team medical surveillance, not a public-source-only dataset. Human votes unchanged.",
+      "confidence": 0.96,
+      "dataSource": "Team athletic-trainer and physician reporting through the Pac-12 Sports Injury Research Archive",
+      "studyDesign": "Secondary analysis of a prospective conference sports-injury registry",
+      "evidenceQuotes": [
+        "initial data entry occurring nearly in real time, daily",
+        "an athlete-year in this study is defined as an athlete appearing on a team roster for a given year"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "010_S4687_Kremen_TJ_Jr_2026.pdf p. 2, Methods—Data Collection",
+        "010_S4687_Kremen_TJ_Jr_2026.pdf p. 3, Methods—Data Processing and Statistical Analysis"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "athlete_exposures",
+      "competitionContext": "Pac-12 collegiate seasons",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Surgically treated ACL injury incidence",
+      "reportedDenominator": "2,268 soccer athlete-year exposures",
+      "dataCollectionTiming": "Athletic trainers entered injuries nearly in real time and daily during 2016–2021.",
+      "populationEligibility": "Competitive NCAA Division I athletes with separable female and male soccer data",
+      "injuryIllnessDefinition": "Diagnosed ACL tears recorded by team medical staff; analysis restricted to surgically treated tears",
+      "denominatorEvidenceQuote": "Soccer: 89 events, 77 athletes affected, 2268 athlete exposures, incidence rate 0.0392 (95% CI 0.0311 to 0.0474).",
+      "denominatorSourceLocation": "010_S4687_Kremen_TJ_Jr_2026.pdf p. 4, Table 1"
+    },
+    {
+      "tags": [
+        "mixed_sport",
+        "no_separable_football_health_outcome"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Menstrual cycle or hormonal contraceptive related symptoms in elite female athletes from retrospective self-questionnaires and daily monitoring: impact on well-being and objective performance metrics.",
+      "reason": "Menstrual-health symptoms and well-being outcomes are pooled across seven sports; football-specific reporting is limited to GPS performance rather than separable health outcomes.",
+      "authors": "Badier N et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/013_S2599_Badier_Nolwenn_2025.pdf",
+      "studyId": "S2599",
+      "decision": "exclude",
+      "recordId": "ec566072-8756-4cc5-be13-aaebbeef9b7e",
+      "pdfSha256": "1c0450be59da35cb81d163eb2e7add5520bf4770dd28fded812df035c7cb4dd8",
+      "auditNotes": "Football-specific GPS performance does not make the pooled symptom outcomes football-separable. Human votes unchanged.",
+      "confidence": 0.96,
+      "dataSource": "Athlete questionnaires and training sensors",
+      "studyDesign": "Retrospective survey plus prospective six-month daily monitoring",
+      "evidenceQuotes": [
+        "A total of 108 athletes participating in 7 sports: cycling (n = 31), rowing (n = 5), skiing (n = 9), football (n = 33), swimming (n = 9), triathlon (n = 7), and wrestling (n = 14), were retained.",
+        "For female football players and cyclists, objective performance parameters were obtained from sensors worn during trainings."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "No football-specific subgroup data",
+      "sourceLocations": [
+        "013_S2599_Badier_Nolwenn_2025.pdf p. 4, Results—Participants",
+        "013_S2599_Badier_Nolwenn_2025.pdf p. 3, Methods—Well-being and performance parameters"
+      ],
+      "criteriaTriggered": [
+        "E-SUB-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Elite Olympic and Paralympic preparation",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football within a mixed-sport cohort",
+      "outcomeEligibility": "Menstrual symptoms and well-being are eligible health outcomes in principle",
+      "reportedDenominator": "16,491 daily entries pooled across seven sports",
+      "dataCollectionTiming": "Daily prospective symptom monitoring from 2021 to 2024",
+      "populationEligibility": "108 elite female athletes across seven sports, including 33 football players",
+      "injuryIllnessDefinition": "Daily and retrospective reporting of 12 menstrual-cycle or contraceptive-related symptoms",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "primary_study",
+        "prospective_surveillance",
+        "football_specific",
+        "direct_incidence_rate"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Injury Epidemiology in Elite U17 Football Players: A Prospective Study Across Six Competitive Seasons.",
+      "reason": "Six-season prospective elite U17 football surveillance using a consensus time-loss definition and published overall, training, and match incidence per 1000 exposure hours.",
+      "authors": "Pranjic T et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/024_S5049_Pranji_T_2026.pdf",
+      "studyId": "S5049",
+      "decision": "include",
+      "recordId": "82d3ed3a-c735-405d-b816-c6314ce5d97b",
+      "pdfSha256": "15acbc926aebed435a40f30089dc6cb15118094ee6961eadb48f916382502452",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Club medical staff and internal medical database",
+      "studyDesign": "Prospective longitudinal injury surveillance",
+      "evidenceQuotes": [
+        "Injuries were recorded by the club’s medical staff during routine daily examinations immediately before or after training sessions and matches.",
+        "Injuries were recorded in the club’s medical database using the international consensus time-loss definition."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "024_S5049_Pranji_T_2026.pdf p. 3, Methods—Variables",
+        "024_S5049_Pranji_T_2026.pdf p. 1, Abstract"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "published_time_rate",
+      "competitionContext": "Highest-level national youth championship",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Injury incidence, severity, recurrence, location, type, and burden",
+      "reportedDenominator": "Incidence per 1000 hours for overall, training, and match exposure",
+      "dataCollectionTiming": "Injuries and exposure collected systematically throughout six seasons",
+      "populationEligibility": "Registered male U17 players at an elite Croatian academy",
+      "injuryIllnessDefinition": "International football consensus time-loss definition",
+      "denominatorEvidenceQuote": "Overall injury incidence was 6.95/1000 h, with markedly higher incidence in matches (20.61/1000 h) than training (5.82/1000 h).",
+      "denominatorSourceLocation": "024_S5049_Pranji_T_2026.pdf p. 1, Abstract"
+    },
+    {
+      "tags": [
+        "mental_health",
+        "football_specific",
+        "validated_scales",
+        "cross_sectional_policy_exception"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Prevalence and Levels of Symptoms of Anxiety, Depression and Suicidal Ideation Amongst Elite Male Soccer Players: An Age- and Education-Matched Controlled Study.",
+      "reason": "Football-specific validated mental-health prevalence and symptom-level outcomes are reported for the complete responding cohort of 214 elite male soccer players.",
+      "authors": "Sobrinho GMR et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/026_S4296_Sobrinho_GMR_2026.pdf",
+      "studyId": "S4296",
+      "decision": "include",
+      "recordId": "aa8ff33a-14bb-45e0-90b2-828d82b50527",
+      "pdfSha256": "c66ebfb9a0040b2b9c628c535349ae08a48f6fa9f5dcac82ca97ac75327bacf0",
+      "auditNotes": "Included under the explicit football mental-health leniency; respondent cohort is the outcome denominator. Human votes unchanged.",
+      "confidence": 0.98,
+      "dataSource": "Direct participant BDI-II and BAI questionnaires",
+      "studyDesign": "Cross-sectional matched controlled mental-health survey",
+      "evidenceQuotes": [
+        "No significant differences were found in the prevalence of depression (40.19% in athletes vs. 37.27% in controls) or anxiety (87.38% in athletes vs. 90.00% in controls).",
+        "Suicidal ideation was significantly less prevalent in controls (22.73%) compared with elite soccer players (46.73%)."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "214 completed questionnaires form the complete responding football cohort; the prevalence numerators use that same at-risk respondent frame, and no exposure value is calculated.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "026_S4296_Sobrinho_GMR_2026.pdf p. 2, Abstract—Results",
+        "026_S4296_Sobrinho_GMR_2026.pdf p. 2, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Brazilian first-division professional clubs",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Depression, anxiety, and suicidal-ideation prevalence and symptom levels",
+      "reportedDenominator": "214 completed elite soccer-player questionnaires",
+      "dataCollectionTiming": "One-time web-based questionnaire assessment",
+      "populationEligibility": "214 full-time elite male players from eight Brazilian first-division clubs",
+      "injuryIllnessDefinition": "Validated Beck Depression Inventory-II, Beck Anxiety Inventory, and BDI-II item 9",
+      "denominatorEvidenceQuote": "A total of 324 participants were included, comprising 214 elite male soccer players and 110 controls. Participants completed the Beck Depression Inventory–II (BDI-II) and the Beck Anxiety Inventory (BAI).",
+      "denominatorSourceLocation": "026_S4296_Sobrinho_GMR_2026.pdf p. 1, Abstract"
+    },
+    {
+      "tags": [
+        "participant_health",
+        "eating_disorder",
+        "football_specific",
+        "cross_sectional_policy_exception"
+      ],
+      "year": "2024",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Eating Disorders Risk Assessment and Body Esteem among Amateur and Professional Football Players.",
+      "reason": "Football-specific validated eating-disorder-risk and body-esteem outcomes are reported for 90 complete respondents from competitive amateur and professional clubs.",
+      "authors": "Staskiewicz-Bartecka W; Kardas M",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf",
+      "studyId": "S4005",
+      "decision": "include",
+      "recordId": "704e2938-8aad-40f2-9ee7-69524f7d5000",
+      "pdfSha256": "3d60d19762cd0fbf49232303852d8952d1e0cead838d110b2eda12cba5559adf",
+      "auditNotes": "Included as direct quantitative participant-health screening in a fully football-specific cohort. Human votes unchanged.",
+      "confidence": 0.97,
+      "dataSource": "Direct participant web questionnaires",
+      "studyDesign": "Cross-sectional football-player survey",
+      "evidenceQuotes": [
+        "Approximately 16.7% met the criteria indicating susceptibility to an eating disorder.",
+        "The study used a screening tool for assessing ED risk, the American Eating Attitudes Test."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "90 completed questionnaires form the complete responding football cohort for the reported prevalence and scale outcomes; no exposure value is calculated.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf p. 1, Abstract—Results",
+        "031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf p. 4, Methods—EAT-26"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Competitive professional and amateur league clubs",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Eating-disorder risk and body-esteem prevalence/scores",
+      "reportedDenominator": "90 completed football-player questionnaires",
+      "dataCollectionTiming": "Survey conducted December 2023 to February 2024",
+      "populationEligibility": "90 active adult male footballers in Polish fourth- and fifth-level leagues",
+      "injuryIllnessDefinition": "Standardized EAT-26 and Body Esteem Scale instruments",
+      "denominatorEvidenceQuote": "The form was filled out correctly by 90 football players aged 18–40.",
+      "denominatorSourceLocation": "031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf p. 3, Methods—Participants"
+    },
+    {
+      "tags": [
+        "prospective_cohort",
+        "prediction_model",
+        "actual_injuries",
+        "no_usable_denominator"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Hamstring Strain Injury Risk in Soccer: An Exploratory, Hypothesis-Generating Prediction Model.",
+      "reason": "The prospective cohort records actual consensus-defined hamstring injuries but publishes only player/event counts, without exposure totals, a study-specific rate, or exact derivation inputs.",
+      "authors": "Kekelekis A et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/036_S4811_Kekelekis_A_2025.pdf",
+      "studyId": "S4811",
+      "decision": "exclude",
+      "recordId": "73b6e3ec-34fc-4b6e-9f71-d3c9838cfc8b",
+      "pdfSha256": "8a67b4310b7470a21319a38122bf65f736b28cf62670e673612764e1de205dea",
+      "auditNotes": "Exposure being recorded is insufficient because no exposure result or rate is published. Human votes unchanged.",
+      "confidence": 0.98,
+      "dataSource": "Standardized prospective injury surveillance form",
+      "studyDesign": "Prospective 30-week injury-risk cohort",
+      "evidenceQuotes": [
+        "Players were prospectively followed throughout the competitive season, with injury incidence and exposure systematically recorded.",
+        "Of the 120 participants, 21 players sustained at least one hamstring strain injury during the season, for a total of 32 events."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "No usable denominator",
+      "sourceLocations": [
+        "036_S4811_Kekelekis_A_2025.pdf p. 3, Methods—Study Design",
+        "036_S4811_Kekelekis_A_2025.pdf p. 5, Results—Injury Incidence"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "E-DEN-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Regional amateur league season",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Hamstring strain injury occurrence and reinjury",
+      "reportedDenominator": "120 followed players; no usable exposure result",
+      "dataCollectionTiming": "Players followed prospectively through one competitive season",
+      "populationEligibility": "120 male regional amateur soccer players",
+      "injuryIllnessDefinition": "FIFA/UEFA consensus: musculoskeletal complaint causing at least one missed session or match",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "eligible_subgroup_only",
+        "team_medical_surveillance",
+        "match_denominator",
+        "exclude_bundesliga_public_source"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Associations between injury occurrence and environmental temperatures in the Australian and German professional football leagues.",
+      "reason": "The separately analyzed A-League subgroup uses weekly team-medical injury surveillance and 470 match exposures with injuries reported per match/team; the public-media Bundesliga subgroup should not be extracted.",
+      "authors": "Schwarz E et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/045_S4788_Schwarz_E_2025.pdf",
+      "studyId": "S4788",
+      "decision": "include",
+      "recordId": "b5564f3d-4cac-4199-9003-575a40747143",
+      "pdfSha256": "9772f37d72fa0513c73e434a47ee6ee7cd85b83382b0fdc63f45dc5133f9c52d",
+      "auditNotes": "Extract only A-League results. The denominator evidence is a normalized transcription of Table 1's 470 matches and per-match injury result. Human votes unchanged.",
+      "confidence": 0.93,
+      "dataSource": "A-League injury surveillance system based on team medical staff reports",
+      "studyDesign": "Cross-sectional secondary analysis of two league datasets",
+      "evidenceQuotes": [
+        "injury data was collected from team medical staff on a weekly basis",
+        "Statistical analyses were performed separately for each league due to the different injury definitions and data sources (media collation vs. team reports) used."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "045_S4788_Schwarz_E_2025.pdf p. 2, Methods",
+        "045_S4788_Schwarz_E_2025.pdf p. 3, Statistical analysis"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01",
+        "E-SRC-01"
+      ],
+      "denominatorStatus": "match_exposures",
+      "competitionContext": "Australian A-League professional matches",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Match injury occurrence, mechanism, location, and type",
+      "reportedDenominator": "470 A-League match exposures",
+      "dataCollectionTiming": "A-League injuries collected weekly by team medical staff over four seasons",
+      "populationEligibility": "Male professional association-football players",
+      "injuryIllnessDefinition": "Physical complaint requiring medical attention and resulting in a missed A-League match",
+      "denominatorEvidenceQuote": "470 match exposures; 322 injuries; 0.68 ± 0.86 injuries per match in the A-League.",
+      "denominatorSourceLocation": "045_S4788_Schwarz_E_2025.pdf p. 3, Table 1"
+    },
+    {
+      "tags": [
+        "professional_football",
+        "medical_team_reporting",
+        "concussion",
+        "published_time_rate"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Concussions in Portuguese Professional Football: A Preliminary Epidemiological Study.",
+      "reason": "Current professional-match concussions were reported by club medical teams using a standardized form, with a published incidence of 0.60 per 1000 player-hours.",
+      "authors": "Moreira A et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/059_S4994_Moreira_A_2025.pdf",
+      "studyId": "S4994",
+      "decision": "include",
+      "recordId": "342ece5d-92f2-4be6-809b-6e41581fa2fb",
+      "pdfSha256": "ec4bf58035e5dd67131d63c06a4182c3e38a518c046d2910f84a8b94584cab08",
+      "auditNotes": "Retrospective analysis wording does not override the eligible current-player club medical reporting channel. Human votes unchanged.",
+      "confidence": 0.96,
+      "dataSource": "Standardized electronic reports from club medical teams",
+      "studyDesign": "Retrospective analysis of current-season league medical reports",
+      "evidenceQuotes": [
+        "Data were collected from cases voluntarily reported by club medical teams following head injuries sustained during official League matches, with medical staff being instructed to complete a standardized electronic form."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "059_S4994_Moreira_A_2025.pdf p. 3, Materials and Methods"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "published_time_rate",
+      "competitionContext": "Official Liga Portugal matches",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Concussion incidence, mechanisms, symptoms, and medical response",
+      "reportedDenominator": "0.60 concussions per 1000 player-hours",
+      "dataCollectionTiming": "Club medical teams reported cases following official 2023/24 matches",
+      "populationEligibility": "Active professional players in Portugal's first and second leagues",
+      "injuryIllnessDefinition": "Medical-team identified concussion symptoms aligned with FIFA and international concussion protocols",
+      "denominatorEvidenceQuote": "Only six concussions were reported during official matches, with an overall incidence of 0.60 per 1000 player-hours.",
+      "denominatorSourceLocation": "059_S4994_Moreira_A_2025.pdf p. 1, Abstract—Results"
+    },
+    {
+      "tags": [
+        "professional_football",
+        "prospective_cohort",
+        "risk_factor",
+        "published_time_rate"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Week-by-Week Predictive Value of External Load Ratios on Injury Risk in Professional Soccer: A Logistic Regression and ROC Curve Analysis Approach.",
+      "reason": "Prospective professional-football monitoring with doctor-confirmed UEFA-consensus time-loss injuries and a published non-contact injury rate of 4.5 per 1000 hours.",
+      "authors": "Fousekis A et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/064_S3972_Fousekis_A_2025.pdf",
+      "studyId": "S3972",
+      "decision": "include",
+      "recordId": "58dfa88c-4311-47fe-a7aa-70cafeb7b4eb",
+      "pdfSha256": "9b417017ec2ee227b35fe4e75b47c02ecc44242983e3f2d3bd0892fb354e5b75",
+      "auditNotes": "Although focused on prediction, the study reports actual eligible injuries and a study-specific time-based rate. Human votes unchanged.",
+      "confidence": 0.96,
+      "dataSource": "Daily GPS monitoring and team doctor-confirmed injuries",
+      "studyDesign": "Prospective longitudinal observational cohort",
+      "evidenceQuotes": [
+        "A doctor always gave the final opinion on an injury after all the necessary medical examinations had been performed.",
+        "This study utilized a prospective longitudinal observational cohort design and players’ training load and match exposure were quantified."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "064_S3972_Fousekis_A_2025.pdf p. 6, Methods—Running Load and Weekly Monitoring",
+        "064_S3972_Fousekis_A_2025.pdf p. 4, Methods—Experimental Design"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "published_time_rate",
+      "competitionContext": "Two professional league seasons",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Non-contact time-loss injury incidence and risk associations",
+      "reportedDenominator": "4.5 non-contact injuries per 1000 hours",
+      "dataCollectionTiming": "Training load, match exposure, and injuries monitored over two competitive seasons",
+      "populationEligibility": "40 male professional players in Greek Super League 1 and 2",
+      "injuryIllnessDefinition": "UEFA consensus non-contact physical complaint causing at least one missed session or match",
+      "denominatorEvidenceQuote": "During the competition microcycles, twenty non-contact soccer players were injured with the specific injuries totaling 4.5/1000 h.",
+      "denominatorSourceLocation": "064_S3972_Fousekis_A_2025.pdf p. 4, Methods—Experimental Design"
+    },
+    {
+      "tags": [
+        "mismatched_pdf",
+        "replacement_required"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Greek translation and cross-cultural adaptation of the Oslo Sports Trauma Research Center Questionnaires on overuse injuries and health problems.",
+      "reason": "The attached PDF is a COSMIN checklist/guidance document rather than the cited OSTRC Greek translation paper, so the full text cannot be screened defensibly.",
+      "authors": "Antonopoulos K et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/065_S1964_Antonopoulos_Konstantinos_2025.pdf",
+      "studyId": "S1964",
+      "decision": "unsure",
+      "recordId": "abae01c9-e28d-4c7d-8bf5-16e28b0daf06",
+      "pdfSha256": "e99988d80146a1383f0ae9a079ff73f21f92afde53f642f78b636cc22710a1ae",
+      "auditNotes": "The stored PDF is the COSMIN checklist, not the target article. AI suggestion remains unsure; human votes and file attachment were not modified.",
+      "confidence": 0.99,
+      "dataSource": "Mismatched attached PDF",
+      "studyDesign": "Unable to assess from mismatched file",
+      "evidenceQuotes": [
+        "The process of translating an existing PROM is not a measurement property.",
+        "In this checklist, each standard is also accompanied with a 4-point rating scale."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "065_S1964_Antonopoulos_Konstantinos_2025.pdf p. 29, Translation process",
+        "065_S1964_Antonopoulos_Konstantinos_2025.pdf p. 3, checklist introduction"
+      ],
+      "criteriaTriggered": [
+        "U-TXT-01"
+      ],
+      "denominatorStatus": "unclear",
+      "competitionContext": "Unable to assess",
+      "derivationPossible": false,
+      "footballDiscipline": "Unable to assess",
+      "outcomeEligibility": "Unable to assess",
+      "reportedDenominator": null,
+      "dataCollectionTiming": "Unable to assess",
+      "populationEligibility": "Unable to assess",
+      "injuryIllnessDefinition": "Unable to assess",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "cross_sectional",
+        "screening_proxy",
+        "no_health_outcome"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Preseason Range-of-Motion and Motor-Performance Asymmetries in Elite Male Youth Soccer Players in Spain.",
+      "reason": "Cross-sectional preseason screening reports range-of-motion and motor-performance asymmetries as injury-risk proxies but does not follow or report actual injuries or health problems.",
+      "authors": "Llurda-Almuzara L et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/078_S2138_Llurda-Almuzara_Luis_2026.pdf",
+      "studyId": "S2138",
+      "decision": "exclude",
+      "recordId": "540a19b9-b86c-433e-b501-940b4fb28ec9",
+      "pdfSha256": "07d45298d59d489fcfb8f7a8fda05807f8a8745395c32ff7b3eced5ce8e60724",
+      "auditNotes": "Asymmetry prevalence is not injury epidemiology. Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Direct physical screening tests",
+      "studyDesign": "Cross-sectional preseason screening study",
+      "evidenceQuotes": [
+        "Design: Cross-sectional study.",
+        "This was a cross-sectional study. Data were collected on the day before the start of the preseason training."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Proxy, performance, or non-health outcome only",
+      "sourceLocations": [
+        "078_S2138_Llurda-Almuzara_Luis_2026.pdf p. 1, Abstract",
+        "078_S2138_Llurda-Almuzara_Luis_2026.pdf p. 2, Methods—Study Design and Setting"
+      ],
+      "criteriaTriggered": [
+        "E-PRX-01",
+        "E-DES-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Highest Spanish youth divisions",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "No eligible injury or illness outcome",
+      "reportedDenominator": "69 screened uninjured players only",
+      "dataCollectionTiming": "Single testing day before preseason",
+      "populationEligibility": "69 elite male youth soccer players",
+      "injuryIllnessDefinition": "Not applicable; no injury surveillance",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "prospective_injuries",
+        "college_soccer",
+        "risk_factor",
+        "no_usable_denominator",
+        "american_data"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Perceptual Decision Efficiency Is Modifiable and Associated with Decreased Musculoskeletal Injury Risk Among Female College Soccer Players.",
+      "reason": "Athletic trainers prospectively documented actual injuries, but results are limited to injury counts and injured-player proportions without exposure hours, athlete-exposures, a published eligible rate, or exact derivation inputs.",
+      "authors": "Wilkerson GB et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/079_S4850_Wilkerson_GB_2025.pdf",
+      "studyId": "S4850",
+      "decision": "exclude",
+      "recordId": "2def3902-570d-448f-b1ce-c6eff919bb4f",
+      "pdfSha256": "9219dc4e3d3ea3c76521c7697170487afe03965912dedc0b392578d49fea15fb",
+      "auditNotes": "Participant headcount plus follow-up duration and match count, without activity duration or athlete exposures, is insufficient for derivation. Human votes unchanged.",
+      "confidence": 0.97,
+      "dataSource": "Athletic-trainer electronic injury documentation",
+      "studyDesign": "Prospective cohort with nonrandomized perceptual-response training subgroup",
+      "evidenceQuotes": [
+        "All musculoskeletal injuries that were evaluated and treated by athletic trainers over the course of a 14-week period, which included all pre-season practice sessions, in-season practice sessions, and a total of 19 games, were electronically documented.",
+        "A total of 21 injuries were sustained by 14 players."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "No usable denominator",
+      "sourceLocations": [
+        "079_S4850_Wilkerson_GB_2025.pdf p. 4, Methods",
+        "079_S4850_Wilkerson_GB_2025.pdf p. 8, Results"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-OUT-01",
+        "E-DEN-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "College preseason, practices, and 19 games",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Core and lower-extremity musculoskeletal injuries",
+      "reportedDenominator": "26 players followed for 14 weeks; no eligible exposure result",
+      "dataCollectionTiming": "Injuries documented over a 14-week preseason and competitive period",
+      "populationEligibility": "Entire roster of 26 NCAA Division I female soccer players",
+      "injuryIllnessDefinition": "Injuries evaluated and treated by athletic trainers",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "retrospective_self_report",
+        "amateur_football",
+        "time_loss"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Injury Pattern According to Player Position in Male Amateur Football Players in Greece: A Retrospective Study.",
+      "reason": "Injuries and exposure were reconstructed after the season from a retrospective online player survey rather than prospectively collected surveillance.",
+      "authors": "Vassis K et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/085_S4846_Vassis_K_2025.pdf",
+      "studyId": "S4846",
+      "decision": "exclude",
+      "recordId": "d16254ba-7ba8-4e7f-87a3-5b80df3353ab",
+      "pdfSha256": "738e3b45eaabeb57b36e543a2ebefc0a41bca81e2f7026954574e0b1a16672bc",
+      "auditNotes": "The denominator does not rescue retrospectively ascertained injuries under the current full-text design policy. Human votes unchanged.",
+      "confidence": 0.98,
+      "dataSource": "Player-reported SurveyMonkey questionnaire",
+      "studyDesign": "Retrospective survey-based epidemiological study",
+      "evidenceQuotes": [
+        "This study is part of a previous retrospective, survey-based epidemiological study.",
+        "Data were collected from May to July 2023 using an electronic survey."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Ineligible retrospective or cross-sectional design",
+      "sourceLocations": [
+        "085_S4846_Vassis_K_2025.pdf p. 3, Methods—Study Design",
+        "085_S4846_Vassis_K_2025.pdf p. 3, Methods—Study Design"
+      ],
+      "criteriaTriggered": [
+        "E-DES-01"
+      ],
+      "denominatorStatus": "direct_time",
+      "competitionContext": "Greek amateur leagues",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Musculoskeletal injury incidence and patterns",
+      "reportedDenominator": "41,406 total estimated exposure hours",
+      "dataCollectionTiming": "Post-season online survey conducted May–July 2023 about the 2022/23 season",
+      "populationEligibility": "222 adult male amateur Greek footballers",
+      "injuryIllnessDefinition": "FIFA–UEFA time-loss definition applied retrospectively",
+      "denominatorEvidenceQuote": "ToE/1000 h 12,647 10,964 12,057.5 5737.5 41,406.",
+      "denominatorSourceLocation": "085_S4846_Vassis_K_2025.pdf p. 5, Table 2"
+    },
+    {
+      "tags": [
+        "cross_sectional",
+        "neuroimaging",
+        "heading_exposure",
+        "proxy_outcome"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Orbitofrontal Gray-White Interface Injury and the Association of Soccer Heading With Verbal Learning.",
+      "reason": "Cross-sectional study relates recalled soccer heading to MRI microstructure and verbal-learning performance, without eligible injury/illness surveillance outcomes.",
+      "authors": "Song JY et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/086_S3850_Song_JY_2025.pdf",
+      "studyId": "S3850",
+      "decision": "exclude",
+      "recordId": "90b86aaa-b8f1-4362-b75e-8941dcc08dde",
+      "pdfSha256": "32a4690900d0d1c390621e109e59cb70a253ad5c99117deae1533df4376a2a1e",
+      "auditNotes": "The word injury in the title refers to inferred microstructural change, not an ascertained surveillance event. Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "HeadCount survey, MRI, and cognitive testing",
+      "studyDesign": "Cross-sectional neuroimaging association study",
+      "evidenceQuotes": [
+        "This cross-sectional study ... included a population-based sample ... of amateur soccer players.",
+        "EXPOSURE Soccer RHI exposure in the prior 12 months quantified via the HeadCount 12-month survey."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Proxy, performance, or non-health outcome only",
+      "sourceLocations": [
+        "086_S3850_Song_JY_2025.pdf p. 1, Abstract—Design",
+        "086_S3850_Song_JY_2025.pdf p. 1, Abstract—Exposure"
+      ],
+      "criteriaTriggered": [
+        "E-PRX-01",
+        "E-DES-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Current amateur play, competition level not used as surveillance setting",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Imaging and cognitive proxy outcomes only",
+      "reportedDenominator": "352 assessed participants; no health-event denominator",
+      "dataCollectionTiming": "Single assessment using prior-12-month recalled heading exposure",
+      "populationEligibility": "352 adult amateur soccer players",
+      "injuryIllnessDefinition": "No eligible injury or illness ascertainment",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "mental_health",
+        "validated_scales",
+        "football_specific",
+        "cross_sectional_policy_exception"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Injury History and Mental Health Indicators in Young Soccer Players: A Cross-Sectional Study.",
+      "reason": "Validated football-specific anxiety, stress, and depression outcomes are reported for the complete responding cohort of 146 current players.",
+      "authors": "Garcia-Naveira A et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/090_S3873_Garc_a-Naveira_A_2026.pdf",
+      "studyId": "S3873",
+      "decision": "include",
+      "recordId": "2ab4ea70-cd92-4b06-bea6-26d543cdf03b",
+      "pdfSha256": "b750e03511b68f8dbba94bf8b70d67733001e3beb40aa7f2bb7984b41ebd7dd2",
+      "auditNotes": "Eligibility rests on direct mental-health outcomes, not retrospective injury prevalence. Human votes unchanged.",
+      "confidence": 0.96,
+      "dataSource": "Direct DASS-21, STAI-T, and injury-history questionnaires",
+      "studyDesign": "Cross-sectional associative-comparative mental-health study",
+      "evidenceQuotes": [
+        "146 soccer players ... completed the STAI-T ... DASS-21 ... and self-reported injury history.",
+        "The DASS-21 exhibits high internal consistency ... in the sample of this study, the reliability coefficient was α = 0.90."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "146 completed questionnaires form the complete responding football cohort for the reported mental-health scores and group comparisons; no exposure value is calculated.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "090_S3873_Garc_a-Naveira_A_2026.pdf p. 1, Abstract—Methods",
+        "090_S3873_Garc_a-Naveira_A_2026.pdf p. 5, Methods—Instruments"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Current youth and senior competitive teams",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Validated anxiety, stress, and depression indicators",
+      "reportedDenominator": "146 completed player questionnaires",
+      "dataCollectionTiming": "Single current-season questionnaire assessment",
+      "populationEligibility": "146 youth and senior soccer players from a professional Spanish club",
+      "injuryIllnessDefinition": "Validated Spanish DASS-21 and STAI-T instruments",
+      "denominatorEvidenceQuote": "The final sample consisted of 146 soccer players from various teams within a professional club in Spain.",
+      "denominatorSourceLocation": "090_S3873_Garc_a-Naveira_A_2026.pdf p. 3, Methods—Participants"
+    },
+    {
+      "tags": [
+        "prospective_injury_followup",
+        "risk_factor",
+        "no_usable_denominator"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Power Indices Through Rotational Inertial Devices for Lower Extremity Profiling and Injury Risk Stratification in Professional Soccer Players: A Cross-Sectional Study.",
+      "reason": "The study prospectively records actual consensus-defined injuries after testing, but reports only injured versus non-injured player comparisons without exposure, a published rate, or exact derivation inputs.",
+      "authors": "Murillo-Ortiz A et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/093_S4757_Murillo-Ortiz_2025.pdf",
+      "studyId": "S4757",
+      "decision": "exclude",
+      "recordId": "8548c2bc-cd50-4c82-8607-2fc7c887a019",
+      "pdfSha256": "d3af7c301a01806381c52fba36e24174bc015f1f3582a4d64e928edec50aab3e",
+      "auditNotes": "Actual injuries prevent E-PRX-01, but participant headcount plus four-month follow-up is not a usable denominator. Human votes unchanged.",
+      "confidence": 0.97,
+      "dataSource": "Club medical staff injury records",
+      "studyDesign": "Single-session diagnostic testing with four-month prospective injury follow-up",
+      "evidenceQuotes": [
+        "All lower-limb non-contact injuries occurring within four months after the assessment were recorded by the club’s medical staff.",
+        "Twenty-two male professional Belgian soccer players ... all members of the same team, participated."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "No usable denominator",
+      "sourceLocations": [
+        "093_S4757_Murillo-Ortiz_2025.pdf p. 3, Methods—Study Design",
+        "093_S4757_Murillo-Ortiz_2025.pdf p. 3, Methods—Participants"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "E-DEN-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "Belgian Challenger Pro League",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Lower-limb non-contact injuries",
+      "reportedDenominator": "22 followed players only",
+      "dataCollectionTiming": "Club medical staff recorded injuries during four months after assessment",
+      "populationEligibility": "22 male professional Belgian second-division players",
+      "injuryIllnessDefinition": "IOC consensus-based soccer injury recording",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "prospective_cohort",
+        "medical_surveillance",
+        "published_time_rate",
+        "risk_factor"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Interdependent Effect of Intrinsic Risk Factors on Non-Contact Lower Limb Injuries in Male Football Players: A Structural Equation Modeling Approach.",
+      "reason": "Prospective season-long team-medical surveillance with consensus time-loss injuries and a published non-contact lower-limb injury rate of 1.97 per 1000 athlete-hours.",
+      "authors": "Liveris NI et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/104_S3953_Liveris_NI_2025.pdf",
+      "studyId": "S3953",
+      "decision": "include",
+      "recordId": "c0555d73-2b98-4647-bfe0-4886eb86a275",
+      "pdfSha256": "1a0de5c0a917f803a442c661fc2553bba6baf9ee2bb40a0ef60ace32c752cc9a",
+      "auditNotes": "Table 4 labels the denominator as athlete-hours; the evidence string normalizes this to the validator-equivalent 'h of exposure'. Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Team medical staff, with fortnightly investigator collection",
+      "studyDesign": "Prospective cohort risk-factor study",
+      "evidenceQuotes": [
+        "Each team’s medical staff had a designated member responsible for recording all injuries daily.",
+        "participants were prospectively followed throughout the competitive season to record all time-loss non-contact LL injuries."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "104_S3953_Liveris_NI_2025.pdf p. 9, Methods—Injury Surveillance",
+        "104_S3953_Liveris_NI_2025.pdf p. 4, Methods—Study Design"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "published_time_rate",
+      "competitionContext": "Greek professional and U19 competitive season",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Non-contact lower-limb time-loss injury incidence",
+      "reportedDenominator": "1.97 injuries per 1000 athlete-hours",
+      "dataCollectionTiming": "Daily injury recording across a 10-month competitive season",
+      "populationEligibility": "97 male professional, third-division, and U19 football players",
+      "injuryIllnessDefinition": "Physician-confirmed time-loss injuries",
+      "denominatorEvidenceQuote": "Total: 75 injuries; 1.97 injuries per 1000 h of exposure.",
+      "denominatorSourceLocation": "104_S3953_Liveris_NI_2025.pdf p. 14, Results—Table 4"
+    },
+    {
+      "tags": [
+        "female_health",
+        "menstrual_health",
+        "football_specific",
+        "cross_sectional_participant_health"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Menstrual Cycle Characteristics and Injury History in Adult Amateur Female Football Players: A Cross-Sectional Study Using Selected LEAF-Q Items.",
+      "reason": "Football-specific menstrual-health prevalence and defined amenorrhea/bleeding-pattern outcomes are reported for the complete cohort of 118 adult amateur female players.",
+      "authors": "Witkos J et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/107_S5218_Witko_J_2026.pdf",
+      "studyId": "S5218",
+      "decision": "include",
+      "recordId": "e1aff9af-5161-4b9c-8cdc-9b9211942632",
+      "pdfSha256": "59a5a9a51983e85a013d629bc2cf5a07ec45d77630b82f2f09c559e89b8cb172",
+      "auditNotes": "The selected LEAF-Q items are descriptive rather than a validated total score; include is based on explicitly defined menstrual-health prevalence. Human votes unchanged.",
+      "confidence": 0.94,
+      "dataSource": "Selected LEAF-Q menstrual-function and injury items",
+      "studyDesign": "Cross-sectional participant-health survey",
+      "evidenceQuotes": [
+        "A history of ≥3 consecutive months without menstrual bleeding ... was reported by 12.71% of players.",
+        "Incomplete or incorrectly completed questionnaires were removed from the database prior to analysis."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "118 completed questionnaires form the complete football respondent cohort for the reported menstrual-health prevalence outcomes; no exposure value is calculated.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "107_S5218_Witko_J_2026.pdf p. 1, Abstract—Results",
+        "107_S5218_Witko_J_2026.pdf p. 3, Methods—Participants"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Organized amateur club football",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Menstrual-cycle characteristics, amenorrhea, and bleeding-pattern prevalence",
+      "reportedDenominator": "118 complete football-player questionnaires",
+      "dataCollectionTiming": "One-time anonymous survey in January–February",
+      "populationEligibility": "118 actively training adult amateur female football players",
+      "injuryIllnessDefinition": "Menstrual dysfunction defined by cycle irregularity, reduced frequency, or at least three months without bleeding",
+      "denominatorEvidenceQuote": "A total of 118 adult amateur female football players were included in the study.",
+      "denominatorSourceLocation": "107_S5218_Witko_J_2026.pdf p. 3, Methods—Participants"
+    },
+    {
+      "tags": [
+        "systematic_review",
+        "not_primary_extraction"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Stress fracture risk factors in soccer players: A systematic review.",
+      "reason": "Systematic review of 26 studies rather than an original primary football epidemiology study for extraction.",
+      "authors": "Hoveidaei AH et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/110_S4741_Hoveidaei_AH_2025.pdf",
+      "studyId": "S4741",
+      "decision": "exclude",
+      "recordId": "42a3245d-5296-4c0b-bf4b-879d8ad38004",
+      "pdfSha256": "00e791f18e74782eda00b672598343f4c8101eaa886a82bd75e927830e46c36f",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Five bibliographic databases",
+      "studyDesign": "Systematic review without meta-analysis",
+      "evidenceQuotes": [
+        "Systematic Review/Meta-Analysis",
+        "Our systematic review analyzed 26 studies with 8514 participants."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Ineligible publication type",
+      "sourceLocations": [
+        "110_S4741_Hoveidaei_AH_2025.pdf p. 1, article type",
+        "110_S4741_Hoveidaei_AH_2025.pdf p. 1, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "E-PUB-01"
+      ],
+      "denominatorStatus": "not_applicable_review",
+      "competitionContext": "Mixed professional settings across included studies",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Review-level stress-fracture risk factors",
+      "reportedDenominator": null,
+      "dataCollectionTiming": "Literature search conducted in November 2024",
+      "populationEligibility": "Professional soccer populations in included studies",
+      "injuryIllnessDefinition": "Inherited from included studies",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "wrong_sport",
+        "powerchair_football",
+        "not_fifa_governed"
+      ],
+      "year": "2024",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Musculoskeletal Pain, Mood, and Sports Injury in Wheelchair Power Soccer Players",
+      "reason": "The study concerns wheelchair power soccer/powerchair football, which is governed by the Fédération Internationale de Powerchair Football Association rather than FIFA and is outside the eligible association-football and FIFA-governed para-football scope.",
+      "authors": "Moura LRS et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf",
+      "studyId": "S1069",
+      "decision": "exclude",
+      "recordId": "48c4e13b-2f79-4ee8-8873-ef24a96c3909",
+      "pdfSha256": "8b0580b04cc948996156049f475150bbcbf887ca69074f221a2310dd61602ab6",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Participant questionnaire, match observation, and championship medical department records",
+      "studyDesign": "Prospective longitudinal observational study during a three-day championship",
+      "evidenceQuotes": [
+        "Wheelchair Power Soccer (WPS), also called powerchair football, is an adapted sport",
+        "the Fédération Internationale de Powerchair Football Association has concentrated efforts to include the sport in the Summer Paralympic Program."
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "The participant cohort and competition observation period are explicitly reported.",
+      "exclusionReason": "Wrong sport",
+      "sourceLocations": [
+        "114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf p. 1, Introduction",
+        "114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf p. 3, Discussion"
+      ],
+      "criteriaTriggered": [
+        "E-SPT-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "South American Wheelchair Power Soccer Championship",
+      "derivationPossible": true,
+      "footballDiscipline": "Wheelchair power soccer / powerchair football",
+      "outcomeEligibility": "Musculoskeletal pain, mood, and traumatic injuries are health outcomes, but the sport is ineligible",
+      "reportedDenominator": "30 athletes; three-day championship",
+      "dataCollectionTiming": "Questionnaire on championship day one and prospective match observation over three days",
+      "populationEligibility": "Thirty wheelchair power soccer athletes from Brazil, Argentina, and Uruguay",
+      "injuryIllnessDefinition": "Traumatic injuries observed during matches and confirmed through medical records",
+      "denominatorEvidenceQuote": "A prospective, longitudinal study was carried out on 30 WPS athletes",
+      "denominatorSourceLocation": "114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf p. 1, Abstract—Methods"
+    },
+    {
+      "tags": [
+        "female_football",
+        "low_energy_availability",
+        "eating_disorder_risk",
+        "participant_health"
+      ],
+      "year": "2024",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Commonly Used Indicators of Low Energy Availability Risk Fail to Identify Female Amateur Soccer Players With Measured Low Energy Availability During Preseason",
+      "reason": "Football-specific participant health study with direct measured low energy availability, eating-disorder risk, female-athlete-triad risk, and bone mineral density outcomes in the complete assessed cohort.",
+      "authors": "Frazer R et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/115_S2238_Frazer_Rebekka_2024.pdf",
+      "studyId": "S2238",
+      "decision": "include",
+      "recordId": "6ac825a8-5b97-4f77-acf8-5da1b603809f",
+      "pdfSha256": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.95,
+      "dataSource": "Direct physiological measurement, dietary and activity monitoring, and validated participant questionnaires",
+      "studyDesign": "Observational cross-sectional participant health assessment",
+      "evidenceQuotes": [
+        "Eleven National Premier League female soccer players participated",
+        "Approximately one-third (36%) of athletes were at risk of an eating disorder"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "11 completed questionnaires and linked measurement sets formed the exact at-risk observation frame; prevalence numerators use these 11 completers.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "115_S2238_Frazer_Rebekka_2024.pdf p. 1, Abstract",
+        "115_S2238_Frazer_Rebekka_2024.pdf p. 1, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Australian National Premier League preseason",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Measured energy availability, eating-disorder risk, triad risk, and bone health are direct quantitative participant health outcomes",
+      "reportedDenominator": "11 athletes completed the study in full",
+      "dataCollectionTiming": "Three-week preseason assessment including five days of intensive monitoring",
+      "populationEligibility": "Female National Premier League soccer players",
+      "injuryIllnessDefinition": "Low energy availability classified using measured EA thresholds; validated EDSA and LEAF-Q instruments used for eating-disorder and triad risk",
+      "denominatorEvidenceQuote": "A total of 11 athletes ... completed the study in full",
+      "denominatorSourceLocation": "115_S2238_Frazer_Rebekka_2024.pdf p. 2, Methods—Participants"
+    },
+    {
+      "tags": [
+        "professional_football",
+        "japan",
+        "hamstring_injury",
+        "direct_exposure"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Incidence of Hamstring Injury and Analysis of Risk Factors for Reinjury in Japanese Professional Football Players",
+      "reason": "Six-season professional football club medical surveillance with a mappable time-loss/MRI hamstring definition, explicit training and match exposure totals, and published incidence rates. The retrospective analysis label does not negate the underlying current-player club medical surveillance source.",
+      "authors": "Ogawa T et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/124_S4800_Ogawa_T_2025.pdf",
+      "studyId": "S4800",
+      "decision": "include",
+      "recordId": "408f6cba-55a1-419e-a14e-33d10c24b8dd",
+      "pdfSha256": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.98,
+      "dataSource": "Club doctor diagnoses, MRI records, team medical records, and recorded training/game exposure",
+      "studyDesign": "Secondary retrospective analysis of six consecutive seasons of club medical and exposure records",
+      "evidenceQuotes": [
+        "The exposure time over 6 year-seasons of training was 62,594 hours",
+        "The total incidence of HMI was 0.60 ph, including 2.30 ph in games and 0.35 ph during training"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "124_S4800_Ogawa_T_2025.pdf p. 2, Methods—Player Characteristics",
+        "124_S4800_Ogawa_T_2025.pdf p. 4, Results"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "direct_time",
+      "competitionContext": "J.League divisions 1 and 2",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Hamstring injury incidence and reinjury frequency",
+      "reportedDenominator": "62,594 training hours, 9,148 game hours, 71,742 total player-hours",
+      "dataCollectionTiming": "2013-2018 seasons",
+      "populationEligibility": "209 player-seasons from a Japanese professional J.League team",
+      "injuryIllnessDefinition": "MRI-confirmed hamstring injury causing absence from team training for at least four days",
+      "denominatorEvidenceQuote": "the total exposure time was 71,742 hours",
+      "denominatorSourceLocation": "124_S4800_Ogawa_T_2025.pdf p. 2, Methods—Player Characteristics"
+    },
+    {
+      "tags": [
+        "professional_football",
+        "brazil",
+        "match_injuries",
+        "prospective_surveillance"
+      ],
+      "year": "2024",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Increased Incidence of Injuries in the São Paulo Soccer Championship Post-Pandemic",
+      "reason": "Prospective competition injury surveillance based on post-match reports from team physicians, using the FIFA consensus injury definition and a published match-exposure incidence rate.",
+      "authors": "Sales AM et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/131_S1196_Sales_Alexandre_Moreira_2024.pdf",
+      "studyId": "S1196",
+      "decision": "include",
+      "recordId": "126c3b72-c9d0-4025-a742-36ec787ebf32",
+      "pdfSha256": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Online injury questionnaire completed after each match by each team's medical staff",
+      "studyDesign": "Prospective comparative championship surveillance",
+      "evidenceQuotes": [
+        "Data collection occurred collaboratively, with the physicians of each team being responsible for filling out the questionnaire after each match",
+        "76 injuries were observed in 104 matches"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "131_S1196_Sales_Alexandre_Moreira_2024.pdf p. 2, Materials and Methods",
+        "131_S1196_Sales_Alexandre_Moreira_2024.pdf p. 2, Results"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "published_time_rate",
+      "competitionContext": "2023 Campeonato Paulista A1 Series",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Match injury incidence and injury characteristics",
+      "reportedDenominator": "22.1 injuries per 1,000 hours of match exposure in 2023",
+      "dataCollectionTiming": "After each round of the 2023 championship, compared with 2016-2019 surveillance",
+      "populationEligibility": "Players registered in the A1 Series of the São Paulo professional football championship",
+      "injuryIllnessDefinition": "Any physical complaint resulting from a football match or training, irrespective of medical attention or time loss, following the FIFA/F-MARC consensus",
+      "denominatorEvidenceQuote": "In 2023, 76 injuries were recorded, an incidence of 22.1 injuries/1,000h",
+      "denominatorSourceLocation": "131_S1196_Sales_Alexandre_Moreira_2024.pdf p. 1, Abstract—Results"
+    },
+    {
+      "tags": [
+        "under_21",
+        "national_team",
+        "illness",
+        "match_exposure"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Illnesses and Diseases Constitute a Quarter of Medical Conditions in an Under-21 National Football Team",
+      "reason": "Eligible national-team medical surveillance covering injuries and physician-diagnosed illnesses/diseases during 20 UEFA under-21 qualification matches and associated team events, with explicit match exposure and published per-match/per-day incidence.",
+      "authors": "Nordback PH",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/133_S2009_Nordback_Panu_H._2025.pdf",
+      "studyId": "S2009",
+      "decision": "include",
+      "recordId": "7c725881-6d7e-456b-bd5d-98858166b95f",
+      "pdfSha256": "67fc47b3b97360ea4ed633f32025dc9caccc74702dafd98b47755fec4a0472a7",
+      "auditNotes": "Human votes unchanged. Denominator evidence normalizes the paper's term '20 international caps' to 20 match exposures for writer validation.",
+      "confidence": 0.96,
+      "dataSource": "Football Association of Finland medical registry populated by the on-site team doctor and physiotherapist",
+      "studyDesign": "Secondary retrospective analysis of contemporaneous national-team medical registry surveillance",
+      "evidenceQuotes": [
+        "A total amount of 20 international caps from both qualification tournaments were played",
+        "The overall illness/disease incidence (in total) was 0.3 per day"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "133_S2009_Nordback_Panu_H._2025.pdf p. 2, Results",
+        "133_S2009_Nordback_Panu_H._2025.pdf p. 4, Results"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "match_exposures",
+      "competitionContext": "UEFA European Under-21 Championship qualification",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Medical-attention and time-loss injuries, illnesses, and diseases",
+      "reportedDenominator": "20 match exposures across 13 national-team events",
+      "dataCollectionTiming": "Two UEFA qualification campaigns, September 2015 to October 2018",
+      "populationEligibility": "Finland men's under-21 national football team",
+      "injuryIllnessDefinition": "Football-related tissue injury; illnesses and diseases physician-diagnosed and classified using ICD-10",
+      "denominatorEvidenceQuote": "20 match exposures (reported as 20 international caps from both qualification tournaments)",
+      "denominatorSourceLocation": "133_S2009_Nordback_Panu_H._2025.pdf p. 2, Results"
+    },
+    {
+      "tags": [
+        "female_football",
+        "jones_fracture",
+        "prospective",
+        "no_usable_denominator"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Characteristics of Plantar Pressure Distribution During Running and Musculoskeletal Factors Associated With Jones Fracture in Young Female Soccer Players: A Prospective Study",
+      "reason": "The cohort was prospectively followed and actual Jones fractures were diagnosed, but the paper provides only participant counts, a one-year follow-up period, and an approximate games-per-season statement. It does not report exposure hours, athlete-exposures, match-exposures, a time-based rate, or exact derivation inputs.",
+      "authors": "Takei S et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/141_S4637_Takei_S_2025.pdf",
+      "studyId": "S4637",
+      "decision": "exclude",
+      "recordId": "565401cf-fae7-490d-a7b1-b7fe152ad742",
+      "pdfSha256": "ebff950cdf195db3deb5b894df0fb713941cb51d8ae453bb21cffbaa92e92be7",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.97,
+      "dataSource": "Preseason assessments and prospective orthopaedic diagnosis of Jones fractures",
+      "studyDesign": "Prospective cohort risk-factor study",
+      "evidenceQuotes": [
+        "All participants were followed up for a year",
+        "they played approximately 50 games in a season"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "No usable denominator",
+      "sourceLocations": [
+        "141_S4637_Takei_S_2025.pdf p. 2, Methods—Study Design and Participants",
+        "141_S4637_Takei_S_2025.pdf p. 2, Methods—Study Design and Participants"
+      ],
+      "criteriaTriggered": [
+        "E-DEN-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "High-school and college team season",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Actual prospectively diagnosed Jones fractures",
+      "reportedDenominator": "105 analyzed players followed for one year; approximately 50 games in a season",
+      "dataCollectionTiming": "2018-2019 season with one-year follow-up",
+      "populationEligibility": "Competitive Japanese high-school and college female soccer players",
+      "injuryIllnessDefinition": "Orthopaedic diagnosis using focal tenderness and radiographic fracture in fifth-metatarsal zones 2 or 3",
+      "denominatorEvidenceQuote": "Finally, 105 players were analyzed",
+      "denominatorSourceLocation": "141_S4637_Takei_S_2025.pdf p. 4, Results"
+    },
+    {
+      "tags": [
+        "youth_football",
+        "mental_health",
+        "competitive_anxiety",
+        "validated_scale"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Competitive Anxiety, Sports Injury, and Playing Category in Youth Soccer Players",
+      "reason": "Football-specific validated participant mental-health assessment using the Spanish SAS-2, with directly extractable anxiety scores for the complete 322-player cohort. The season injury questionnaire is secondary and should not be treated as prospective medical injury surveillance.",
+      "authors": "Sánchez-Ruiz R et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/146_S4716_S_nchez-Ruiz_R_2025.pdf",
+      "studyId": "S4716",
+      "decision": "include",
+      "recordId": "9e5e91eb-8ca0-4b03-bf75-26fde13404ee",
+      "pdfSha256": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874",
+      "auditNotes": "Human votes unchanged. Include route is based on validated anxiety outcomes, not the self-reported injury counts.",
+      "confidence": 0.92,
+      "dataSource": "Validated participant SAS-2 questionnaires; injury questionnaire and club collaboration",
+      "studyDesign": "Cross-sectional validated anxiety assessment with season injury questionnaire",
+      "evidenceQuotes": [
+        "Competitive anxiety was assessed using the Sport Anxiety Scale-2 (SAS-2)",
+        "in its Spanish validated version"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "322 completed questionnaires comprise the exact observation frame for the reported SAS-2 distributions and scores.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "146_S4716_S_nchez-Ruiz_R_2025.pdf p. 1, Abstract—Methods",
+        "146_S4716_S_nchez-Ruiz_R_2025.pdf p. 3, Methods—Instruments"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Competitive youth club football",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Competitive anxiety measured with a validated participant psychological scale",
+      "reportedDenominator": "322 players in the final complete analytic cohort",
+      "dataCollectionTiming": "SAS-2 administered in September 2023; injury recording covered October 2023 to May 2024",
+      "populationEligibility": "Male youth players aged 10-15 from Real Murcia and an affiliated club",
+      "injuryIllnessDefinition": "SAS-2 somatic anxiety, worry, concentration disruption, and total scores; injury counts were self-reported",
+      "denominatorEvidenceQuote": "The final sample thus consisted of 322 players",
+      "denominatorSourceLocation": "146_S4716_S_nchez-Ruiz_R_2025.pdf p. 3, Methods—Participants"
+    },
+    {
+      "tags": [
+        "systematic_review",
+        "meta_analysis",
+        "not_primary_extraction"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Comparative Effectiveness of Multi-Component, Exercise-Based Interventions for Preventing Soccer-Related Musculoskeletal Injuries: A Systematic Review and Meta-Analysis",
+      "reason": "Systematic review and meta-analysis of randomized trials rather than an original primary football health-surveillance study for extraction.",
+      "authors": "Wang Y et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/147_S4734_Wang_Y_2025.pdf",
+      "studyId": "S4734",
+      "decision": "exclude",
+      "recordId": "a23b77aa-f863-472c-89cd-d528e43ff468",
+      "pdfSha256": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "ClinicalTrials.gov, CENTRAL, EMBASE, PubMed, Scopus, and Web of Science",
+      "studyDesign": "Systematic review and meta-analysis",
+      "evidenceQuotes": [
+        "This systematic review and meta-analysis, conducted with the PRISMA guidelines",
+        "A total of 15 RCTs met the predefined inclusion criteria"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Ineligible publication type",
+      "sourceLocations": [
+        "147_S4734_Wang_Y_2025.pdf p. 1, Abstract—Methods",
+        "147_S4734_Wang_Y_2025.pdf p. 1, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "E-PUB-01"
+      ],
+      "denominatorStatus": "not_applicable_review",
+      "competitionContext": "Mixed settings across included RCTs",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Review-level intervention effects on musculoskeletal injury",
+      "reportedDenominator": null,
+      "dataCollectionTiming": "Database literature search",
+      "populationEligibility": "Soccer players represented in included trials",
+      "injuryIllnessDefinition": "Inherited from included trials",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "professional_football",
+        "portugal",
+        "muscle_injury",
+        "machine_learning",
+        "direct_exposure"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Machine Learning-Based Prediction of Muscle Injury Risk in Professional Football: A Four-Year Longitudinal Study",
+      "reason": "Four-season professional club surveillance with daily physiotherapist-diagnosed UEFA time-loss muscle injuries and directly reported GPS-derived training and match exposure totals; predictive modeling is an additional analysis of eligible epidemiological data.",
+      "authors": "Martins F et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/148_S4845_Martins_F_2025.pdf",
+      "studyId": "S4845",
+      "decision": "include",
+      "recordId": "ef3bc0eb-8a5e-4c33-adca-614e066bf0e4",
+      "pdfSha256": "0d1c7950c65ad2ac92af29d0bcfe7f9ba8e0495daac0dc09ac61d603dd14b701",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Daily club medical records, GPS workload monitoring, and player RPE",
+      "studyDesign": "Four-year longitudinal cohort with machine-learning risk modeling",
+      "evidenceQuotes": [
+        "The medical department performed daily injury records during the seasons",
+        "IR: 12.3 per 1000 h ... in matches ... IR: 3.0 per 1000 h ... in training"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": null,
+      "sourceLocations": [
+        "148_S4845_Martins_F_2025.pdf p. 7, Methods—Injury Data",
+        "148_S4845_Martins_F_2025.pdf p. 9, Results"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "direct_time",
+      "competitionContext": "Portuguese professional leagues",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Time-loss muscle injury frequency and incidence",
+      "reportedDenominator": "21,340 training hours and 2,679 match hours",
+      "dataCollectionTiming": "Four consecutive seasons, 2020/2021 to 2023/2024",
+      "populationEligibility": "96 male players from one Portuguese professional football club",
+      "injuryIllnessDefinition": "Event during scheduled training or match causing absence from the next training session or match, following UEFA recommendations",
+      "denominatorEvidenceQuote": "21,340 h vs. 2679 h",
+      "denominatorSourceLocation": "148_S4845_Martins_F_2025.pdf p. 9, Results and Table 5"
+    },
+    {
+      "tags": [
+        "professional_football",
+        "prospective",
+        "y_balance",
+        "no_exposure"
+      ],
+      "year": "2024",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Evaluation of the Value of the Y-Balance Test to Predict Lower Limb Injuries in Professional Male Footballers",
+      "reason": "The study prospectively tracked actual lower-limb injuries, but it reports only player and injury counts and explicitly states that individual competition and training exposure time was not collected. The season and participant counts alone do not provide a usable denominator.",
+      "authors": "Mohammadi H et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/150_S1132_Mohammadi_Haniyeh_2024.pdf",
+      "studyId": "S1132",
+      "decision": "exclude",
+      "recordId": "14b3e10c-9ea1-4474-8f21-34961fcc4d41",
+      "pdfSha256": "7fe50d366857ce93336a483ff90f7f7ed99e7894a2c6b88b5477e5c0f187f491",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Monthly player injury forms with follow-up through coach or team doctor",
+      "studyDesign": "Prospective cohort risk-factor study",
+      "evidenceQuotes": [
+        "Across the 9 months, 25 lower limb MSKIs were recorded",
+        "Registration of athletes' injuries was followed up for 9 months"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "No usable denominator",
+      "sourceLocations": [
+        "150_S1132_Mohammadi_Haniyeh_2024.pdf p. 3, Results",
+        "150_S1132_Mohammadi_Haniyeh_2024.pdf p. 2, Methods—Participants"
+      ],
+      "criteriaTriggered": [
+        "E-DEN-01"
+      ],
+      "denominatorStatus": "unusable",
+      "competitionContext": "National League One 34-game season",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Actual lower-limb musculoskeletal injuries",
+      "reportedDenominator": "121 players followed for nine months; exposure time not collected",
+      "dataCollectionTiming": "Nine months across the 2021-2022 season",
+      "populationEligibility": "121 male professional players in Iran's Azadegan League",
+      "injuryIllnessDefinition": "Contact or non-contact lower-limb injury causing at least 24 hours out of training/competition and a doctor visit",
+      "denominatorEvidenceQuote": "The exposure time of each athlete in competitions and games was not collected",
+      "denominatorSourceLocation": "150_S1132_Mohammadi_Haniyeh_2024.pdf p. 5, Discussion—Limitations"
+    },
+    {
+      "tags": [
+        "systematic_review",
+        "meta_analysis",
+        "not_primary_extraction"
+      ],
+      "year": "2025",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "The Impact of the FIFA 11+ Neuromuscular Training Programme on Ankle Injury Reduction in Football Players: A Systematic Review and Meta-Analysis",
+      "reason": "Systematic review and meta-analysis of randomized trials rather than an original primary football epidemiology study for extraction.",
+      "authors": "Eser C et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/156_S5434_Eser_C_2025.pdf",
+      "studyId": "S5434",
+      "decision": "exclude",
+      "recordId": "aaa3d984-1a3f-4bae-8e9f-fecfb0f769b1",
+      "pdfSha256": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "PubMed, MEDLINE, Scopus, and SPORTDiscus",
+      "studyDesign": "Systematic review and meta-analysis",
+      "evidenceQuotes": [
+        "This systematic review and meta-analysis was conducted to evaluate",
+        "Three RCTs, involving 3833 participants and 286,827 exposure hours, met the inclusion criteria"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Ineligible publication type",
+      "sourceLocations": [
+        "156_S5434_Eser_C_2025.pdf p. 1, Abstract",
+        "156_S5434_Eser_C_2025.pdf p. 1, Abstract—Results"
+      ],
+      "criteriaTriggered": [
+        "E-PUB-01"
+      ],
+      "denominatorStatus": "not_applicable_review",
+      "competitionContext": "Mixed settings across included trials",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Review-level ankle injury prevention effect",
+      "reportedDenominator": null,
+      "dataCollectionTiming": "Database searches through October 2024",
+      "populationEligibility": "Football players represented in included RCTs",
+      "injuryIllnessDefinition": "Inherited from included trials",
+      "denominatorEvidenceQuote": null,
+      "denominatorSourceLocation": null
+    },
+    {
+      "tags": [
+        "youth_academy",
+        "mental_health",
+        "well_being",
+        "repeated_screening"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "A Mental Well-Being Screening Process in an Elite Youth Football Academy",
+      "reason": "Elite academy football study reporting direct repeated participant mental-well-being assessments using an adapted Mental Health Continuum-Short Form, with extractable screening and psychometric results from an explicit observation frame.",
+      "authors": "Harvey S et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/170_S1903_Harvey_S_amus_2026.pdf",
+      "studyId": "S1903",
+      "decision": "include",
+      "recordId": "711a9cb7-0ae2-49d8-a2b0-ec03d2901a5f",
+      "pdfSha256": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.95,
+      "dataSource": "One-to-one staff-guided adapted MHC-SF screening with participant responses",
+      "studyDesign": "Applied repeated mental-well-being screening and instrument validation study",
+      "evidenceQuotes": [
+        "Of these players, data were also collected from 167",
+        "Players, guided by staff members, then completed this measure"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": "352 completed observations are directly derivable from the reported 185 first-wave and 167 second-wave player assessments; the paper separately identifies minimal item-level missingness.",
+      "exclusionReason": null,
+      "sourceLocations": [
+        "170_S1903_Harvey_S_amus_2026.pdf p. 6, Phase III—Method—Participants",
+        "170_S1903_Harvey_S_amus_2026.pdf p. 1, Abstract"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEN-01"
+      ],
+      "denominatorStatus": "paper_derivable",
+      "competitionContext": "Elite professional youth academy",
+      "derivationPossible": true,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "Hedonic and psychological mental well-being, mood, and screening classifications",
+      "reportedDenominator": "185 baseline player assessments and 167 follow-up assessments",
+      "dataCollectionTiming": "November-December 2019 and February-March 2020",
+      "populationEligibility": "Male and female under-12 to under-23 players in an English Category 1 football academy",
+      "injuryIllnessDefinition": "Adapted MHC-SF subscales and predefined very-low to very-high well-being categories",
+      "denominatorEvidenceQuote": "One hundred and eighty-five players ... participated in the mental well-being screening process",
+      "denominatorSourceLocation": "170_S1903_Harvey_S_amus_2026.pdf p. 6, Phase III—Method—Participants"
+    },
+    {
+      "tags": [
+        "public_source",
+        "transfermarkt",
+        "acl",
+        "professional_football"
+      ],
+      "year": "2026",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "title": "Epidemiology of Anterior Cruciate Ligament Injuries in the Top 5 European Football (Soccer) Leagues",
+      "reason": "ACL cases, player characteristics, exposure, and mechanisms were reconstructed from Transfermarkt, public statements, websites, and video platforms rather than prospectively reported current-player outcomes from club or competition medical personnel.",
+      "authors": "Ortiz-Sánchez D et al.",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-2026-06-23/178_S4659_Ortiz-S_nchez_D_2026.pdf",
+      "studyId": "S4659",
+      "decision": "exclude",
+      "recordId": "fed5221c-e61b-4216-b97b-c9e61af1d020",
+      "pdfSha256": "259b4da8ab3214330e106cba88f91828c0cf28361c6015c95280b6395d808641",
+      "auditNotes": "Human votes unchanged.",
+      "confidence": 0.99,
+      "dataSource": "Transfermarkt, official public statements, public team/league websites, Wyscout, and online videos",
+      "studyDesign": "Retrospective descriptive epidemiology study using public online data",
+      "evidenceQuotes": [
+        "Data were retrieved from an online soccer database, Transfermarkt",
+        "data were not received directly from the medical personnel of each team"
+      ],
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "derivationBasis": null,
+      "exclusionReason": "Ineligible register, hospital, database, or public source",
+      "sourceLocations": [
+        "178_S4659_Ortiz-S_nchez_D_2026.pdf p. 2, Methods—Study Design",
+        "178_S4659_Ortiz-S_nchez_D_2026.pdf p. 8, Limitations"
+      ],
+      "criteriaTriggered": [
+        "E-SRC-01"
+      ],
+      "denominatorStatus": "direct_time",
+      "competitionContext": "Top divisions in England, Spain, Italy, Germany, and France",
+      "derivationPossible": false,
+      "footballDiscipline": "Association football",
+      "outcomeEligibility": "ACL rupture counts, match incidence, and injury mechanisms",
+      "reportedDenominator": "430,090.8 match hours",
+      "dataCollectionTiming": "Six seasons, 2018-2019 to 2023-2024",
+      "populationEligibility": "Male players in the top five European professional leagues",
+      "injuryIllnessDefinition": "ACL rupture identified in Transfermarkt and confirmed through public official statements",
+      "denominatorEvidenceQuote": "The total time of exposure in matches was 430,090.8 hours",
+      "denominatorSourceLocation": "178_S4659_Ortiz-S_nchez_D_2026.pdf p. 3, Results"
+    }
+  ]
+}

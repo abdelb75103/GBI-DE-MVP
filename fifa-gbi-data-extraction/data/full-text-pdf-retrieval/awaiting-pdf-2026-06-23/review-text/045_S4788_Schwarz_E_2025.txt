@@ -1,0 +1,544 @@
+  Original Research Article
+                                                                                                            ISEE E NVIRONMENTAL
+                                                                                                                 EPIDEMIOLOGY
+
+Associations between injury occurrence and
+environmental temperatures in the Australian and
+German professional football leagues
+Edgar Schwarz a,b,*, Rob Duffield b, Donna Luc, Hugh Fullagar                                        , Karen aus der Fünten
+                                                                                                   b,d                              a
+                                                                                                                                     , Sabrina Skorski       a
+                                                                                                                                                              ,
+Tobias Trößa, Abed Hadjia, Tim Meyer a
+
+
+
+  Abstract: A cross-sectional analysis was performed to investigate associations between environmental temperatures and injury
+  occurrence in two professional male football (soccer) leagues. Data from seven seasons of the German Bundesliga (2142 matches)
+  and four seasons of the Australian A-League (470 matches) were included. Injuries were collated via media reports for the Bundesliga
+  and via team staff reports in the A-League and comprised injury incidence, mechanisms (contact, noncontact), locations (e.g., ankle,
+  knee, and thigh), and types (e.g., muscle and tendon, joint and ligament). Weather data included ambient air temperature (tempera-
+  ture or T) and wet bulb globe temperature (WBGT), which were collected from online sources retrospectively. Generalized linear mixed
+  models were analyzed to examine associations between temperature or WBGT and injury occurrence for each league, respectively.
+  Additionally, matches were grouped into categories of 5°C temperature steps to compare for injury occurrence. Results showed
+  no relationship existed between either temperature or WBGT and any injury occurrence, mechanisms, locations or types for the
+  Bundesliga (P > 0.10). A trend for an increase in injury occurrence in higher WBGT existed in the A-League (P = 0.05). Comparisons
+  between 5°C temperature categories showed no significant differences for injury occurrence for either temperature or WBGT in either
+  League (P > 0.05). Within the observed temperature ranges (−11.2 to 37.1°C T; −12.2 to 29.6°C WBGT) environmental temperature
+  had no relationship with the rate or type of injury occurrence in professional football. Nevertheless, the number of matches at extreme
+  heat within this study was limited and other factors (e.g., playing intensity, season stage, ground conditions) likely co-influence the
+  relationship with injuries.
+  Keywords: Epidemiology; Heat; Team sport; Thermoregulation; WBGT
+
+
+
+a
+ Saarland University, Institute of Sports and Preventive Medicine, Campus Geb B8           Introduction
+2, Saarbrücken, Germany; bUniversity of Technology Sydney, Faculty of Health,              Injuries in football (soccer) are common and remain the biggest
+School of Sport, Exercise and Rehabilitation, Ultimo, NSW, Australia; cUniversity of
+                                                                                           concern for player health and performance, as well as for team
+New South Wales, Kensington, NSW, Australia; dReykjavik University, Department
+of Sport Science, Reykjavik, Iceland.
+                                                                                           performance.1,2 The risk of injury is generally higher in football
+                                                                                           compared to other workforces, and occupational health and
+This research did not receive any specific grants from funding agencies, but E.S.
+                                                                                           safety strategies need to focus on reducing this risk and explore
+receives a scholarship from the DFL.
+                                                                                           associated factors.3 The risk of injury is generally influenced by
+The German “Bundesliga” data were collated from publicly available media
+                                                                                           both intrinsic (e.g., joint flexibility, previous injury, or muscular
+sources, but the Australian “A-League” data was shared by the league’s
+organization and researchers had to agree to not share the data outside the
+                                                                                           fatigue) and extrinsic (e.g., environmental conditions, pitch sur-
+research group. Therefore, the data are only available upon reasonable request to          face, playing schedule, or fouls) risk factors.4 Although environ-
+the corresponding author.                                                                  mental conditions have been proposed as an external risk factor
+An example code showing how the different models (generalized linear model,
+                                                                                           for injury,4 the relationship between injury occurrence and envi-
+zero-inflated generalized linear model, generalized mixed linear model, zero-              ronmental temperature lacks epidemiological insight in foot-
+inflated generalized mixed linear model) were calculated for overall injury                ball. Nevertheless, initial concerns have led to the Fédération
+occurrence in the Bundesliga is attached as a supplementary file; http://links.lww.        Internationale de Football Association (FIFA) and other profes-
+com/EE/A322. Further code regarding data-organization or collation of weather              sional leagues to introduce heat policies.5
+data can be shared upon reasonable request to the corresponding author.                       Recently, there are growing concerns around playing football
+Ethical approval was granted by the Ethics Committee of the Faculty for Human              in hot environmental conditions.6,7 Exercising in hotter tem-
+and Business Sciences of Saarland University (Ref No.: 23-14).                             peratures leads to an earlier onset and higher levels of fatigue,8
+        Supplemental digital content is available through direct URL citations in          which in football typically translates to a reduction in running
+        the HTML and PDF versions of this article (www.environepidem.com).                 performance.9 Alongside physical performance changes, there
+*Corresponding Author. Address: Saarland University, Institute of
+Sports and Preventive Medicine, Campus Geb B8 2, Saarbrücken,
+Germany. E-mail: edgar.schwarz@uni-saarland.de (E. Schwarz).                               What this study adds
+Copyright © 2025 The Authors. Published by Wolters Kluwer Health, Inc. on                  This study is the first to investigate associations between injury
+behalf of The Environmental Epidemiology. All rights reserved. This is an open             occurrence and environmental conditions in association foot-
+access article distributed under the Creative Commons Attribution License 4.0
+                                                                                           ball. Overall, 2101 injuries in 2612 matches were observed
+(CCBY), which permits unrestricted use, distribution, and reproduction in any
+medium, provided the original work is properly cited.
+                                                                                           across two professional leagues. Of those investigated leagues,
+                                                                                           one showed no relationship between injury occurrence and
+Environmental Epidemiology (2025) 9:e364
+                                                                                           environmental temperatures, the other demonstrated a small
+Received 30 September, 2024; Accepted 11 December, 2024                                    relationship between more injuries and higher wet bulb globe
+Published online 22 January 2025                                                           temperature. Therefore, further investigation, including more
+DOI: 10.1097/EE9.0000000000000364                                                          observations at higher temperatures, is needed.
+                                                                                       1
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                       Environmental Epidemiology
+
+
+are expected impairments to cognitive function10 and technical             and more data on environmental and contextual aspects (e.g.,
+match play when football is played in the heat.11,12 The earlier           stage of the season, congested periods, playing styles, match
+onset of fatigue and reduced physical and cognitive perfor-                characteristics) were required to investigate a possible influ-
+mance in higher temperatures are hypothesized to lead to an                ence on injury risk based on environmental temperature.26,27
+increased susceptibility to injury.10,13,14 In the general public as       Accordingly, this study aimed to explore relationships between
+well as in different occupational fields, this has resulted in an          match environmental temperatures and injury occurrence in
+increased number of acute and unintentional injuries in hotter             football (soccer), by analyzing a large number of observations
+environmental temperatures, although the potential mechanisms              from two professional leagues from different continents, repre-
+of this relationship are still under investigation.13,15,16 It was         senting a range of different climates. We hypothesize that injury
+hypothesized that a number of factors associated with hotter               occurrence increases when match temperature is higher.
+conditions, such as changes in cognitive performance, impaired
+balance, more risky behavior, increased muscle fatigue, dehy-
+dration, and poorer sleep quality, could influence the increased           Methods
+injury occurrence.13,17 In laboratory studies, hyperthermia-               Data of 2612 matches of male professional football (soccer)
+induced fatigue decreased attention and increased errors in                were obtained. This included all 2142 matches, over seven
+complex tasks,18 potentially leading to errors in planning and             seasons (2014–2021) of the German “Bundesliga” (BL), and
+performing movement strategies, such as, tackles or landings in            470 of 624 matches, over four seasons (2016–2020) of the
+football. Furthermore, there is an impaired coordination, espe-            Australian “A-League” (AL). In the AL, one team was located
+cially proprioception,19 dynamic and static postural stability,            outside Australia, in Wellington, New Zealand. The BL dataset
+and balance.14,20 For example, a combination of hypohydra-                 was built on open-source data used in previous research.29,30 It
+tion and hyperthermia has been shown to lead to more landing               involved scouting multiple online and social media sources to
+and balance errors and higher center-of-pressure and elliptical            detect and describe injuries. The injury definition for the BL data
+sways during a dynamic balance test.14 Finally, there is also a            was based on Fuller et al:31 when a player could not fully par-
+tendency to take more risky decisions in hotter temperatures.21            ticipate in at least 1 day of training or competition. If a player
+Despite the hypothesized nature of these mechanisms insights               had to stop exercise because of injury but returned the next day,
+from larger epidemiological investigations on this relationship            this counted as a time loss of zero days and was not included,
+of environmental temperature with injury in football remain                as these types of injury were insufficiently reported by media
+scarce. While football federations and teams are concerned                 and clubs.29,30 The AL data set was based on anonymized data
+about the effect of environmental conditions on match techni-              used in previous research.32 In the AL, injuries were defined as
+cal and physical performance,9,11 there should also be a concern           “any physical complaint requiring medical attention resulting in
+about the injury risk in such conditions.6                                 a missed AL match” (also adopted from Fuller et al)31 and had
+   The few existing epidemiological studies investigating the              been obtained based on injury surveillance system within the
+relationship between environmental conditions and injuries in              league, where injury data was collected from team medical staff
+football have shown different injury rates in teams located in             on a weekly basis. Due to the different data sources, leagues
+warmer compared to those in colder regions.22–24 A study                   were analyzed separately, and no grouped analysis was per-
+in Swedish women’s football found a higher prevalence of inju-             formed, though using two available data sources from different
+ries in colder regions.22 In European professional men’s football,         leagues and continents provides larger and wider insights on the
+a similar overall trend was observed, though anterior cruciate             influence of temperature on injury occurrence. Ethical approval
+ligament injuries were more frequent in warmer regions.24 In               was granted by the Ethics Committee of the Faculty for Human
+contrast, overall injuries were higher in teams based in hotter            and Business Sciences of Saarland University (Ref No.: 23-14).
+environments in Australian Rules football.23 As these varying                 Injuries for both leagues were further classified by mechanism
+results are based on a dichotomous regional categorization, and            (contact versus noncontact), where contact injuries resulted
+no actual weather data was recorded, the differences observed              from physical contact with another player or object, and non-
+could be resulting from different competition structures, differ-          contact injuries occurred without any interaction with outside
+ences in training and nutritional habits, different playing styles         forces.33 Injury locations and types were classified according
+and levels, different medical support systems, as well as the              to the Orchard Sports Injury Classification System (OSICS).31
+different climates, or a combination of factors.22–24 Due to this          Grouping the head and neck, upper limbs, and trunk injuries,
+methodology, previous studies rarely describe the relationship             and adding heat illnesses, this resulted in nine distinct injury
+between environmental temperature and injury rates and fur-                locations (head and neck, upper limbs, trunk, hip/groin, thigh,
+ther investigation as an extrinsic injury risk factor is required.         knee, lower leg/Achilles tendon, ankle, foot/toe), six different
+   Although in the general public, injury occurrence seems to              injury types (muscle and tendon, joint [nonbone] and ligament,
+increase with higher environmental temperatures,13,15,16 this              contusions, fractures and bone stress, lacerations and skin
+association was reversed in track and field athletes, especially           lesions, central/peripheral nervous system), as well as heat ill-
+regarding muscle injuries in sprint disciplines.25 In team sports,         nesses. Injuries were aggregated to overall counts and by sub-
+only two studies in rugby have reported match and training                 groups (mechanism, location, and type) across both leagues
+temperatures alongside injury occurrence.26,27 Both reported               for each match and reported as injuries per match. Although
+no significant relationships between injuries and the recorded             reporting injuries per 1000 match-hours is the more common ,
+weather conditions, which ranged from ambient air temperature              the data was reported as injuries occurring per match per team,
+(temperature or “T”) and relative humidity to wind chill tem-              due to the lack of specific player exposure data. The limitations
+perature. None of these studies has investigated wet bulb globe            associated with this method should be recognized.34
+temperature (WBGT) a “feels-like temperature” combining the                   Environmental conditions in the form of temperature and
+influence of temperature and relative humidity but also solar              WBGT were collated retrospectively for each match. The use,
+radiation and wind speed, that is often used in sport federations          advantages, and disadvantages of WBGT have been described
+heat policies.28 These previous studies in Rugby suggested play-           extensively in previous research.28,35,36 Despite its widespread
+ing style and match intensity, as well as ground conditions, as            use, the black globe temperature (radiative heat gain) and
+potential extrinsic risk factors of greater importance than the            natural wet bulb temperature (evaporative heat loss) measure-
+environmental conditions.26,27 Furthermore, physical demands               ments are criticized as not representing human thermoregula-
+change in different parts of the playing season, while climatic            tion, thereby underestimating heat stress in many settings.28,37
+conditions change according to the seasons. Therefore, suggest-            It should also be mentioned that WBGT is a heat stress index
+ing that multiple factors could all influence injury occurrence            and is not validated for colder conditions. Therefore, to
+                                                                       2
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                        www.environmentalepidemiology.com
+
+
+interpret the effects of colder environments on injury occur-               Results
+rence, temperature was also used in our analyses. Although                  As outlined in Table 1, 2101 injuries (BL: n = 1779, AL: n =
+more modern and sophisticated thermal indexes exist,37,38                   322) were reported from 2612 matches, resulting in 0.83 ±
+WBGT remains widely used, especially in sports federation                   0.97 injuries per match in the BL and 0.68 ± 0.86 injuries per
+heat policies. Specifically, this index is also used in the heat pol-       match in the AL. Contact (BL: n = 881 [49.5%]; AL: n = 148
+icy introduced by FIFA, which recommends the use of drinking                [46.1%]) and noncontact injuries (BL: n = 898 [50.5%]; AL: n =
+breaks at 32°C WBGT.5                                                       174 [54.2%]), are similarly distributed within both leagues. The
+   For BL matches, weather data were obtained from Meteostat.               lower limbs are the most common injury location (BL: n = 1417
+net.39 This is an open-source service, providing hourly meteo-              [79.7%]; AL: n = 264 [82.2%]). Muscle and tendon injuries are
+rological data for any given coordinates. Data is obtained as a             the most frequent injury type (BL: n = 855 [48.1%]; AL: n =
+weighted interpolation depending on the distance and elevation              140 [43.6%]). Data on specific injury mechanisms, locations
+difference from the four closest weather stations to a geological           and types per match are reported in Table 1 for each league
+location. They provide the following data: temperature, relative            separately. Table 1 also shows the environmental conditions for
+humidity, dew point, wind speed, air pressure, total precipita-             both leagues. Although maximum values are similar, a larger
+tion, and the current weather condition. Based on this, WBGT                proportion of the BL matches is played in colder conditions. The
+can be estimated in a variety of ways according to previous                 number of matches above thresholds implemented by respective
+research.35 We used the estimation developed by Liljegren et al.36          governing bodies is minimal in both leagues, with 27 matches
+This is validated and reliable in different environmental settings          (11 in BL, 16 in AL) above 26°C WBGT or 31°C T, two matches
+and is described as the best estimate for WBGT from different               (zero in BL, two in AL) above 28°C WBGT and none above
+methods.40 The R code needed to implement these calculations                32°C WBGT).
+has been provided and used in previous research.41 Wind speed
+was assumed to be a minimum of 1 m/s, as moving players gen-
+erate airflow of at least equivalent to that. Solar radiation was           Bundesliga
+estimated using the solar angle at the time and location of the
+match.42 As Meteostat.net provides hourly data, two time points             In BL there is no significant relationship between temperature
+(the kick-off time and one hour later) were used per match and              or WBGT and injury occurrence (Figure 1; P > 0.83). Table 2
+averaged. If the match did not start at a full hour but at 15 or 30         shows the GLMMs using temperature or WBGT to predict injury
+minutes past the hour, the previous full hour was used as a start-          occurrence. There are only marginal differences in the outcomes
+ing point and the following hour as a second time point. For AL             of using temperature and WBGT. Second, the ‘null-hypothesis
+matches, environmental conditions were provided by UBIMET.                  model’ (i.e., injuries occur randomly) performs similar, indicat-
+com.43 This commercial provider uses artificial intelligence and            ing that the random model is equally successful in predicting
+data input from multiple weather stations, radar, and satellite             injuries than models using temperature or WBGT as predictors.
+data to estimate meteorological data at given ground locations.             When reported based on injury subcategories of mechanism,
+They provide temperature, relative humidity, solar radiation,               type, or location, no significant relationship (P ≥ 0.10) is evi-
+and WBGT measurements for the starting times of the first                   dent for any GLMM with either temperature or WBGT. Results
+and second half, which were then averaged to create one value
+per match. To validate the WBGT data based on Meteostat.net
+data, the WBGT estimation method used for the BL data was                    Table 1.
+also performed with the AL data. As internal validation, results            Descriptive summary of environmental conditions and injury
+were then compared to the WBGT reported from UBIMET.com.                    occurrences per match in 4 seasons of A-League and 7 seasons
+There was a very good linear association (correlation coefficient           of Bundesliga
+r = 0.93).
+                                                                            Variable                               A-League            Bundesliga
+   Both temperature and WBGT were used for the analysis.
+They were treated as continuous variables to investigate rela-              Number of matches                         470                  2142
+tionships between environmental conditions and injury occur-                Number of seasons                          4                     7
+rence. Additionally, matches were categorized into groups of                Mean temperature (oC)                  21.0 ± 5.3          11.0 ± 7.2
+5°C temperature increments, resulting in nine WBGT groups                   Temperature range (°C)              7.6–37.1 (∆29.5)   −11.2 to 34.3 (∆45.5)
+(from −15 to 30°C) and 10 temperature groups (−15 to 35°C)                  Mean WBGT (°C)                         18.1 ± 4.2           9.4 ± 6.0
+in the BL and five WBGT groups (5–30°C) and six temperature                 WBGT range (°C)                     6.2–29.6 (∆23.4)   −12.2 to 26.3 (∆38.5)
+                                                                            Total number of injuries                  322                  1779
+groups (5–35°C) in the AL.
+                                                                            Number of injuries per match          0.68 ± 0.86          0.83 ± 0.97
+   Statistical analyses were performed separately for each league
+                                                                            Noncontact                            0.36 ± 0.61          0.42 ± 0.68
+due to the different injury definitions and data sources (media
+                                                                            Contact                               0.32 ± 0.58          0.41 ± 0.69
+collation vs. team reports) used. Any over- or underreporting
+                                                                            Muscle and tendon                     0.29 ± 0.54          0.38 ± 0.67
+of injuries by one given reporting method would influence all
+                                                                            Joint (nonbone) and ligament          0.16 ± 0.43          0.16 ± 0.40
+matches regardless of the environmental conditions and there-
+                                                                            Contusion                             0.04 ± 0.20          0.15 ± 0.40
+fore not alter the relationship between temperature and injuries
+                                                                            Fractures and bone stress             0.04 ± 0.21          0.04 ± 0.21
+within a league. Further, separate analyses do not conflate accli-
+                                                                            Laceration and skin lesion            0.00 ± 0.07          0.01 ± 0.11
+matization and local exposures of the players given the different
+                                                                            Central/peripheral nervous system     0.06 ± 0.28          0.04 ± 0.21
+temperature ranges regularly encountered by players in their
+                                                                            Heat illness                          0.01 ± 0.08          0.00 ± 0.00
+respective leagues. To analyze the relationship of environmental
+                                                                            Head and neck                         0.05 ± 0.25          0.06 ± 0.26
+conditions and injury, generalized linear mixed effects models
+                                                                            Upper limbs                           0.02 ± 0.16          0.03 ± 0.17
+(GLMM) were used, with specified zero-inflated Poisson distri-
+                                                                            Trunk                                 0.04 ± 0.20          0.05 ± 0.23
+bution of the injury data and a random effect of the observed
+                                                                            Hip/groin                             0.06 ± 0.25          0.08 ± 0.28
+match. Additionally, for the separate temperature categories in
+                                                                            Thigh                                 0.22 ± 0.47          0.21 ± 0.48
+5°C steps, differences between categories were determined by
+                                                                            Knee                                  0.12 ± 0.35          0.11 ± 0.34
+one-way analysis of variance (ANOVA) with Tukey’s Honest
+                                                                            Lower leg/achilles tendon             0.07 ± 0.25          0.08 ± 0.28
+Significant Difference post-hoc test. Analysis was performed
+                                                                            Ankle                                 0.06 ± 0.28          0.12 ± 0.37
+with R Studio 2022.07.1 using R version 4.2.1 stats, jtools, glm-
+                                                                            Foot/toe                              0.03 ± 0.18          0.05 ± 0.23
+mTMB, MuMIn & performance libraries. Statistical significance
+                                                                            Lower Limbs (overall)                 0.57 ± 0.79          0.66 ± 0.87
+was defined at a level of 5% or less for the α-error (P < 0.05).
+                                                                        3
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                                   Environmental Epidemiology
+
+
+
+
+Figure 1. Results of generalized linear mixed models between overall injuries in each league, wet bulb globe temperature (WBGT) and temperature (T). Each
+dot represents one match, while the black line shows the regression line, with the 95% CI (gray band); A, relationship between injuries and temperature in the
+Bundesliga. B, relationship between injuries and temperature in the A-League. C, relationship between injuries and WBGT in the Bundesliga. D, relationship
+between injuries and WBGT in the A-League.
+
+
+
+ Table 2.
+Performance of the generalized linear mixed effects models (GLMMs), comparing the “Null”-model to models using temperature (T)
+or wet bulb globe temperature (WBGT) as independent factor to predict overall injury occurrence
+
+                                Coeff           AIC              BIC              Deviance         RMSE              LL             marg. R2          P value
+Bundesliga
+Inj ~ 1 + (1 | Match)                          5230.4          5247.4             5224.4           0.83           −2612.2
+Inj ~ T + (1 | Match)           0.00           5232.4          5255.0             5224.4           0.83           −2612.2             0.00              0.97
+Inj ~ WBGT + (1 | Match)        0.00           5232.3          5255.0             5224.3           0.83           −2612.2             0.00              0.81
+A-League
+Inj ~ 1 + (1 | Match)                          1044.3          1056.8             1038.3           0.76            −519.2
+Inj ~ T + (1 | Match)           0.02           1043.8          1060.4             1035.8           0.76            −517.9             0.008             0.11
+Inj ~ WBGT + (1 | Match)        0.03           1042.4          1059.0             1034.4           0.76            −517.2             0.009             0.05
+
+
+
+of the GLMMs for overall injuries and 5oC subcategories are                        injuries in higher WBGT is observed for all lower body injuries
+presented in Table 3, with no significant differences (P ≥ 0.37)                   combined (0.03; 95 CI = 0.00, 0.06; R2 = 0.01; β = 0.13, 95 CI =
+in overall injury occurrence or any injury subcategories existing                  −0.00, 0.27; P = 0.06) and thigh injuries specifically (0.05; 95
+for either of the temperature or WBGT (Figure 2). As the trends                    CI = 0.00, 0.10; R2= 0.01; β = 0.20, 95 CI = −0.01, 0.42; P =
+of the subcategories followed those of the overall injuries, their                 0.06). Further, small effect sizes are observed for noncontact (β =
+results are not specifically displayed or visualized here. Of note,                0.13), hip and groin (β = 0.16), and injuries of the lower leg and
+no heat illness events are reported in the data set.                               Achilles tendon (β = 0.17) that occur more often when WBGT
+                                                                                   is higher, but none of these effects are significant (P > 0.05;
+                                                                                   Figure 3). Similar findings exist for temperature in the models,
+A-League                                                                           with GLMM outcomes for overall injuries and selected subcate-
+In the AL there are 0.03 (95 CI = 0.00, 0.06) more injuries per                    gories reported in Table 3. Finally, there are three heat illnesses in
+1°C WBGT increase, though it is only describing a small effect                     the data set, occurring at 22°C, 25°C, and 29°C WBGT.
+(estimated coefficient [β] = 0.12, 95 CI = 0.00, 0.24; P = 0.05)
+and a neglectable amount of explained variance (R2 = 0.01). This
+association is not significant and lower when temperature is used                  Discussion
+as a predictor for injuries, which then increases by 0.02 per 1°C                  This study was the first to investigate the relationship of
+temperature increase (95 CI = 0.00, 0.04; R2 = 0.01; β = 0.10,                     environmental match temperatures (T and WBGT) on injury
+95 CI = −0.02, 0.21; P = 0.11). A similar tendency toward more                     occurrence in professional football. Regardless of whether
+                                                                              4
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                                                             www.environmentalepidemiology.com
+
+
+ Table 3.
+Association between injuries (overall and selected subcategories) and environmental conditions, showing the mean and standard
+deviation (Mean ± SD), as well as the estimate and 95% confidence interval (Estimate (95%CI)
+
+                                                                   Temperature                                                                 Wet-bulb globe temperature
+                                         Estimate                        β                    R  2
+                                                                                                                               Estimate                        β                    R2
+                Mean ± SD                (95% CI)                     (95% CI)              (marg.)        P value             (95% CI)                     (95% CI)              (marg.)   P value
+                                                                                            Overall injuries
+Overall
+BL             0.83 ± 0.97         −0.00 (−0.01, 0.01)          −0.00 (−0.05, 0.05)           0.00             0.98      −0.00 (−0.01, 0.01)          −0.00 (−0.06, 0.04)           0.00     0.81
+AL             0.68 ± 0.87          0.02 (−0.00, 0.04)           0.10 (−0.02, 0.21)           0.01             0.11       0.03 (0.00, 0.06)            0.12 (0.00, 0.24)            0.01     0.05
+Mechanism
+Contact
+BL             0.41 ± 0.69           0.01 (−0.01, 0.02)           0.04 (−0.04, 0.11)          0.00             0.35        0.00 (−0.01, 0.02)           0.02 (−0.05, 0.10)          0.00     0.55
+AL             0.32 ± 0.58           0.01 (−0.02, 0.05)           0.07 (−0.10, 0.24)          0.00             0.44        0.02 (−0.02, 0.06)           0.09 (−0.08, 0.26)          0.00     0.32
+Noncontact
+BL             0.42 ± 0.68         −0.01 (−0.02, 0.01)          −0.04 (−0.11, 0.03)           0.00             0.29      −0.01 (−0.02, 0.01)          −0.04 (−0.11, 0.04)           0.00     0.32
+AL             0.36 ± 0.61          0.02 (−0.01, 0.05)           0.10 (−0.06, 0.26)           0.00             0.23       0.03 (−0.01, 0.07)           0.13 (−0.04, 0.29)           0.01     0.13
+                                                                                             Type of injury
+Muscle and tendon
+BL            0.40 ± 0.67     −0.01 (−0.02, 0.00)               −0.05 (−0.12, 0.03)           0.00             0.21      −0.01 (−0.02, 0.00)          −0.05 (−0.12, 0.03)           0.00     0.23
+AL            0.29 ± 0.54      0.01 (−0.02, 0.05)                0.07 (−0.09, 0.24)           0.00             0.39       0.02 (−0.02, 0.06)           0.09 (−0.08, 0.26)           0.00     0.30
+Joint (non-bone) and ligament
+BL            0.16 ± 0.40      0.01 (−0.01, 0.02)                0.06 (−0.05, 0.16)           0.00             0.30        0.01 (−0.01, 0.03)           0.05 (−0.05, 0.16)          0.00     0.30
+AL            0.16 ± 0.43     −0.01 (−0.06, 0.03)               −0.06 (−0.31, 0.18)           0.00             0.61        0.00 (−0.05, 0.06)           0.01 (−0.23, 0.26)          0.00     0.92
+                                                                                   Location of injury (lower limbs)
+Lower limbs overall
+BL           0.66 ± 0.87             0.00 (−0.01, 0.01)           0.00 (−0.06, 0.06)          0.00             0.96      −0.00 (−0.01, 0.01)            0.00 (−0.06, 0.05)          0.00     0.84
+AL           0.57 ± 0.79             0.02 (−0.01, 0.04)           0.10 (−0.03, 0.23)          0.00             0.15       0.03 (−0.00, 0.06)            0.13 (−0.00, 0.27)          0.01     0.06
+Hip/groin
+BL           0.08 ± 0.28             0.01 (−0.03, 0.04)           0.04 (−0.21, 0.30)          0.00             0.73        0.01 (−0.03, 0.05)           0.05 (−0.21, 0.31)          0.00     0.70
+AL           0.06 ± 0.25             0.03 (−0.10, 0.16)           0.15 (−0.55, 0.85)          0.00             0.67        0.04 (−0.13, 0.21)           0.16 (−0.56, 0.88)          0.00     0.66
+Thigh
+BL           0.21 ± 0.48           −0.01 (−0.02, 0.00)          −0.08 (−0.19, 0.02)           0.00             0.13      −0.01 (−0.03, 0.00)          −0.09 (−0.19, 0.02)           0.00     0.10
+AL           0.22 ± 0.47            0.03 (−0.01, 0.07)           0.15 (−0.05, 0.36)           0.01             0.14       0.05 (−0.00, 0.10)           0.20 (−0.01, 0.42)           0.01     0.06
+Knee
+BL           0.11 ± 0.34            0.01 (−0.01, 0.03)           0.08 (−0.08, 0.24)           0.00             0.32        0.01 (−0.01, 0.03)           0.07 (−0.09, 0.23)          0.00     0.38
+AL           0.12 ± 0.35           −0.01 (−0.07, 0.06)          −0.04 (−0.36, 0.29)           0.00             0.83        0.02 (−0.06, 0.09)           0.07 (−0.25, 0.40)          0.00     0.65
+Lower leg/achilles tendon
+BL           0.08 ± 0.28           −0.01 (−0.04, 0.02)          −0.07 (−0.27, 0.13)           0.00             0.30      −0.01 (−0.05, 0.02)          −0.08 (−0.28, 0.12)           0.00     0.46
+AL           0.07 ± 0.25            0.03 (−0.04, 0.09)           0.14 (−0.21, 0.48)           0.00             0.44       0.04 (−0.11, 0.19)           0.17 (−0.47, 0.82)           0.00     0.60
+Ankle
+BL           0.07 ± 0.28             0.01 (−0.03, 0.05)           0.07 (−0.21, 0.35)          0.00             0.64        0.01 (−0.04, 0.06)           0.07 (−0.21, 0.35)          0.00     0.64
+AL           0.06 ± 0.28             0.02 (−0.13, 0.17)           0.09 (−0.70, 0.89)          0.00             0.82        0.02 (−0.18, 0.20)           0.06 (−0.75, 0.87)          0.00     0.88
+Foot/toe
+BL           0.05 ± 0.23            0.03 (−0.02, 0.08)           0.22 (−0.14, 0.59)           0.00            0.23        0.03 (−0.03, 0.09)           0.20 (−0.17, 0.57)           0.00     0.30
+AL           0.03 ± 0.18           −0.01 (−0.22, 0.20)          −0.06 (−1.18, 1.05)           0.00            0.91       −0.03 (−0.29, 0.23)          −0.14 (−1.24, 0.96)           0.00     0.80
+Standardized estimate and 95% confidence interval (β [95% CI]), the marginal R2 (R2 [marg.]) and P value for generalized linear mixed models in the Bundesliga (BL) and A-League (AL).
+
+
+temperature or WBGT was considered, environmental tem-                                                   temperatures.10,20,44 It further contrasts with research from occu-
+peratures were largely unrelated to the overall number of inju-                                          pational industries that reported an increase of acute injuries
+ries, injury mechanism, location or type; however, there was a                                           in industrialized settings when workers are exposed to hotter
+tendency toward a small effect of more injuries occurring in                                             conditions.13 Although the potential mechanisms of this rela-
+higher WBGT in the AL. When comparing matches in classifi-                                               tionship are still under investigation, this was hypothesized to
+cation of 5°C temperature or WBGT increments there were no                                               be the result of changes in cognitive performance, impaired bal-
+differences between any of the injury subcategories in either                                            ance, more risky behavior, increased muscle fatigue, dehydra-
+league.                                                                                                  tion, and poorer sleep quality.13 In the specific setting of outdoor
+   In the AL, the influence of WBGT on the overall injury                                                team sports, this association is yet to be confirmed. As previous
+occurrence tended towards significance (P = 0.05), indicating                                            studies in rugby suggest, sport-specific factors might mitigate or
+that when WBGT increased by 1°C, there was an increase of                                                mask the effects of heat exposure, that are found in other set-
+0.03 injuries per match (for all 22 players combined). However,                                          tings. These could include adjustments of playing intensity and
+the effect size and explained variance were minimal, leading                                             style in the heat, influence of weather on ground conditions, and
+to an inconclusive interpretation of this relationship. In the                                           systematically differing demands in various parts of the football
+BL there were no associations between either temperature or                                              season.26,27 For example, it has been shown that players decrease
+WBGT and injury outcome variables. The lack of a clear rela-                                             running distances and playing intensity when playing in hotter
+tionship between hot environmental temperatures (temperature                                             environments, reducing their risk of hyperthermia and thermal
+or WBGT) and increased injuries contrasts with our hypoth-                                               fatigue.9,45 Nevertheless, it has also been shown, that high core
+esis of an increased injury rate due to premature fatigue and                                            temperatures can be reached in football players despite reduc-
+impairments in, coordinative and cognitive function in hotter                                            tions in running distances, but also without noticeable health
+                                                                                                     5
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                             Environmental Epidemiology
+
+
+
+
+Figure 2. Mean injury-occurrence per match (gray bar) and 95% confidence interval (black line) in different temperature (T) and wet bulb globe tempera-
+ture (WBGT) zones (The small number on the bars indicating the number of observed matches in each category. A, injuries in 5°C temperature steps in the
+Bundesliga. B, injuries in 5°C temperature steps in the A-League. C, injuries in 5°C WBGT steps in the Bundesliga. D, injuries in 5°C WBGT steps in the
+A-League).
+
+
+adversities.46 By decreasing playing intensities in hotter condi-             (25.7–27.8°C WBGT) and 84 at moderate risk (22.3–25.6°C) for
+tions, the effects of higher heat stress might be mitigated, reduc-           heat illnesses according to American College of Sports Medicine
+ing the effects on cognitive and coordinative capacities shown                categories.47 In line with the relevant governing body heat policy
+in laboratory or occupational settings. Lower playing intensities             guidelines, 16 matches contained an additional short drinking
+have further been shown to lead to less injuries, for example,                break in each half when WBGT was higher than 26°C or tem-
+when comparing training to matches.1,29 Additionally, higher                  perature was above 31°C. Previous research proposed that for
+temperatures and humidity lead to softer ground conditions,                   practical topics related to exercising in the heat, using WBGT
+which have been linked to a lower injury occurrence,26 possi-                 may not be advantageous over using temperature.28 The current
+bly counteracting an increase in injuries caused by the effects               data also revealed only small differences in the models using
+of heat.                                                                      temperature or WBGT. However, it needs to be considered that
+   The environmental conditions in these two leagues represent                WBGT was estimated based on data from weather stations and
+a wide range of conditions that may also be observed in many                  a WBGT measurement on the field of play may be more advan-
+other settings around the world. Nevertheless, some competi-                  tageous compared to obtaining only temperature. Nevertheless,
+tions will be held in hotter conditions due to their scheduling in            given the additional difficulties in measuring WBGT (e.g., need
+the hotter summer months (e.g., national tournaments, includ-                 for expensive equipment and trained staff), the consideration
+ing youth competitions, European competition qualification                    of appropriate environmental measures to enact heat policies
+matches, and preseason matches). In the BL, the exposure to                   or interventions remains for ongoing research and discussion.
+heat remained rare due to the off-season period over the sum-                 Especially in leagues lacking resources, the use of WBGT might
+mer and mostly cold-to-mild climates during playing months.                   not be applicable. Furthermore, previous publications pointed
+There were no matches at extreme risk (>27.9°C WBGT), four                    toward limitations of WBGT in describing high humidity cli-
+at high risk (25.7–27.8°C WBGT) and 40 at moderate risk                       mates, underestimating the actual heat stress posed onto play-
+(22.3–25.6°C) for heat-illnesses according to American College                ers.49 Of note, two of the three observed heat illnesses in the
+of Sports Medicine guidelines.47 In the AL, the overall distribu-             current study were reported in a moderate WBGT of ~22°C and
+tion of matches indicated hotter temperatures compared to the                 temperature of ~25°C, but high relative humidity of more than
+BL, which is understandable given that in Australia, in general               65%.
+warmer temperatures are recorded compared to Germany and                         Despite this novel investigation, some limitations require con-
+it is a summer-based competition. However, the scheduling of                  sideration when interpreting the findings. First, the retrospec-
+many matches after 5pm may explain the reduced exposure to                    tive approach to capture environmental conditions was the best
+extreme environmental temperatures.48 There were four matches                 available method for this study. An estimation of the WBGT
+kicked off at extreme risk(>27.9°C WBGT), five at high risk                   based on basic meteorological data,36 with assumptions for solar
+                                                                          6
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                                www.environmentalepidemiology.com
+
+
+
+
+Figure 3. Results of generalized linear mixed models between wet bulb globe temperature (WBGT) specific injury subcategories in the A-League. Each dot
+represents one match, while the black line shows the regression line, with the 95% CI (gray band). A, overall lower body injuries. B, noncontact injuries. C, thigh
+injuries. D, lower leg and achilles tendon injuries.
+
+
+radiation and wind speed, was used. Although this method has                        Conflicts of interest statement
+been shown to give reliable estimates,35 on-site measurements                       The present results do not constitute endorsement by either
+would have been preferable and should be encouraged in the                          of the two involved leagues. The results of the study are pre-
+future. Especially solar radiation and air flow may differ locally                  sented clearly, honestly, and without fabrication, falsification,
+inside football stadiums and their accuracy would benefit most                      or inappropriate data manipulation. E.S. receives a scholar-
+from a measurement at the athletes field of play. Another limita-                   ship from the “Deutsche Fußball Liga GmbH” (DFL) that
+tion involves the collation of injury data from different leagues,                  is operating the German BL. T.M. is head of a DFL working
+using different data sources, which prevents the comparison                         group entitled “Medicine in Professional Football” and chair-
+between or the collation of BL and AL data. However, any over-                      man of the medical committees of the German FA (DFB) and
+or underreporting of injuries by one given method would be                          the European football confederation (UEFA). R.D. is Head of
+influencing all matches, regardless of the environmental condi-                     Research & Development at Football Australia. D.L. is the
+tions, therefore also not altering the investigated association.                    Injury Surveillance Officer at Football Australia. There were no
+To conclude, the retrospective approach to collate weather data                     further conflicts of interest. Other authors declare that they have
+and inclusion of different leagues allowed for the investigation                    no conflicts of interest with regard to the content of this report.
+of a large amount of observed match data, accepting that this
+resulted in a less standardized data collection. Another limita-
+tion was the low number of matches in extreme heat conditions,                      ACKNOWLEDGMENTS
+as well as an inability to include variables such as acclimatiza-
+                                                                                    The authors thank Football Australia for sharing the
+tion, stage of the season, prior exposure etc., which were not
+                                                                                    A-League injury reports and the DFL for funding the PhD
+available. Therefore, further investigations of more extreme
+                                                                                    scholarship of ES.
+conditions may be warranted to account for further confound-
+ing factors.
+   In conclusion, there was no significant relationship between                     References
+environmental temperatures and injury occurrence in male                            1.   Hägglund M, Waldén M, Magnusson H, Kristenson K, Bengtsson H,
+professional football matches within the observed temperature                            Ekstrand J. Injuries affect team performance negatively in professional
+range. This relationship may be co-influenced by altered play-                           football: an 11-year follow-up of the UEFA Champions League injury
+ing intensities and ground conditions in changing temperatures.                          study. Br J Sports Med. 2013;47:738–742.
+Both leagues had a low exposure to challenging hot environ-                         2.   Lu D, McCall A, Jones M, et al. The financial and performance cost
+mental conditions, likely due to scheduling matches outside the                          of injuries to teams in Australian professional soccer. J Sci Med Sport.
+                                                                                         2021;24:463–467.
+hottest periods of the year or day. With increasing global tem-
+                                                                                    3.   Drawer S, Fuller C. Evaluating the level of injury in English profes-
+peratures, this strategy may be applied by football governing                            sional football using a risk based assessment process. Br J Sports Med.
+bodies, to ensure the occupational health and safety of football                         2002;36:446–451.
+players, as the effects of matches in hotter conditions, multiple                   4.   Dvorak J, Junge A, Chomiak J, et al. Risk factor analysis for injuries
+consecutive heat exposures or abrupt changes from cool to hot                            in football players. possibilities for a prevention program. Am J Sports
+environments on injury occurrence remain to be investigated.                             Med. 2000;28:69–74.
+
+                                                                                7
+Schwarz et al. • Environmental Epidemiology (2025) 9:e364                                                                          Environmental Epidemiology
+
+
+5.  Brown H, Chalmers S, Topham T, et al. Efficacy of the FIFA cooling                26. Gabbett T, Minbashian A, Finch C. Influence of environmental and
+    break heat policy during an intermittent treadmill football simulation in             ground conditions on injury risk in rugby league. J Sci Med Sport.
+    hot conditions in trained males. Br J Sports Med. 2024;58:1044–1051.                  2007;10:211–218.
+    doi: 10.1136/bjsports-2024-108131.                                                27. Lee A, Garraway W. The influence of environmental factors on rugby
+6. Gouttebarge V, Duffield R, den Hollander S, Maughan R. Protective                      football injuries. J Sports Sci. 2000;18:91–95.
+    guidelines and mitigation strategies for hot conditions in professional           28. Brocherie F, Millet G. Is the wet-bulb globe temperature (WBGT) index
+    football: starting 11 Hot Tips for consideration. BMJ Open Sport Exerc                relevant for exercise in the heat? Sports Med. 2015;45:1619–1621.
+    Med. 2023;9:e001608.                                                              29. aus der Fünten K, Tröß T, Hadji A, Beaudouin F, Steendahl IB, Meyer T.
+7. Nassis G, Girard O, Chiampas GT, Krustup P, Racinais S. In-match                       Epidemiology of football injuries of the German Bundesliga: a media-
+    strategies to mitigate the effect of heat on football (soccer) players’               based, prospective analysis over 7 consecutive seasons. Sports Med
+    health and performance. Br J Sports Med. 2024;58:572–573. doi:                        Open. 2023;9:20. doi: 10.1186/s40798-023-00563-x.
+    10.1136/bjsports-2023-107907.                                                     30. Krutsch W, Memmel C, Alt V, et al. Timing return-to-competition: a pro-
+8. Nybo L, Rasmussen P, Sawka MN. Performance in the heat – physio-                       spective registration of 45 different types of severe injuries in Germany’s
+    logical factors of importance for hyperthermia-induced fatigue. Compr                 highest football league. Arch Orthop Trauma Surg. 2022;142:455–463.
+    Physiol. 2014;4:657–689.                                                          31. Fuller C, Ekstrand J, Junge A, et al. Consensus statement on injury defi-
+9. Draper G, Wright MD, Ishida A, Chesterton P, Portas M, Atkinson G.                     nitions and data collection procedures in studies of football (soccer)
+    Do environmental temperatures and altitudes affect physical outputs of                injuries. Br J Sports Med. 2006;40:193–201.
+    elite football athletes in match conditions? A systematic review of the           32. Lu D, McCall A, Jones M, Duffield R. The relationship between team-
+    ‘real world’ studies. Sci Med Footb. 2022;7:81–92.                                    level and league-level injury rate, type and location in a professional
+10. Schmit C, Hausswirth C, LeMeur Y, Duffield R. Cognitive Functioning                   football league. J Sci Med Sport. 2022;25:564–568.
+    and heat strain: performance responses and protective strategies. Sports          33. Alentorn-Geli E, Myer GD, Silvers HJ, et al. Prevention of non-contact
+    Med. 2017;47:1289–1302.                                                               anterior cruciate ligament injuries in soccer players. Part 1: mecha-
+11. Zhou C, Hopkins WG, Mao W, Calvo AL, Liu H. Match performance                         nisms of injury and underlying risk factors. Knee Surg Sports Traumatol
+    of soccer teams in the Chinese super league – effects of situational and              Arthrosc. 2009;17:705–729.
+    environmental factors. Int J Environ Res Public Health. 2019;16:4238.             34. Stoviz S, Shrier I. Injury rates in team sport events: tackling challenges in
+12. Chmura P, Liu H, Andrzejewski M, et al. Is there meaningful influence                 assessing exposure time. Br J Sports Med. 2012;46:960–963.
+    from situational and environmental factors on the physical and techni-            35. Lemke B, Kjellstrom T. Calculating workplace WBGT from mete-
+    cal activity of elite football players? Evidence from the data of 5 consec-           orological data: a tool for climate change assessment. Ind Health.
+    utive seasons of the German Bundesliga. PLoS One. 2021;16:e0247771.                   2012;50:267–278.
+13. Spector J, Masuda YJ, Wolff NH, Calkins M, Seixas N. Heat exposure                36. Liljegren J, Carhart RA, Lawday P, Tschopp S, Sharp R. Modelling the
+    and occupational injuries: review of the literature and implications.                 wet bulb globe temperature using standard meteorological measure-
+    Curr Environ Health Rep. 2019;6:286–296.                                              ments. J Occup Environ Hyg. 2008;5:645–655.
+14. Distefano L, Casa D, Vansumeren M, et al. Hypohydration and hyper-                37. Blazejczyk K, Epstein Y, Jendritzky G, Staiger H, Tinz B. Comparison of
+    thermia impair neuromuscular control after exercise. Med Sci Sports                   UTCI to selected thermal indicies. Int J Biometeorol. 2012;56:515–535.
+    Exerc. 2013;45:1166–1173.                                                         38. Jendritzky G, de Dear R, Havenith G. UTCI - Why another thermal
+15. Otte im Kampe E, Kovats S, Hajat S. Impact of high ambient tempera-                   index? Int J Biometeorol. 2012;56:421–428.
+    ture on unintentional injuries in high-income countries: a narrative sys-         39. Meteostat.net. The Weather’s Record Keeper. Available at: https://meteo-
+    tematic literature review. BMJ Open. 2016;6:e010399.                                  stat.net/en/. Accessed 4 May 2023.
+16. Martínez-Solanas E, López-Ruiz M, Wellenius G, et al. Evaluation of               40. Patel T, Mullen SP, Santee WR. Comparison of methods for estimating
+    the impact of ambient temperatures on occupational injuries in Spain.                 wet-bulb globe temperature index from standard meteorological mea-
+    Environ Health Perspect. 2018;126:067002. doi: 10.1289/EHP2590.                       surements. Mil Med. 2013;178:926–933.
+17. Fogleman M, Fakhrzadeh L, Bernard TE. The relationship between out-               41. HeatStress. Casanueva, A; 2019. Available at: https://zenodo.org/
+    door thermal conditions and acute injury in an aluminum smelter. Int J                records/3264930. Accessed 4 May 2023.
+    Ind Ergon. 2005;35:47–55.                                                         42. Duffie J, Beckman W. Solar Engineering of Thermal Processes. 4th ed.
+18. Gaoua N, Racinais S, Grantham J, Massioui FE. Alterations in cogni-                   John Wiley & Sons, Inc.; 2013.
+    tive performance during passive hyperthermia are task dependent. Int J            43. UBIMET GmbH. UBIMET WEATHER MATTERS. Available at: https://
+    Hyperthermia. 2011;27:1–9.                                                            www.ubimet.com/en/. Accessed 4 May 2023.
+19. Ingersoll C, Knight KL, Merrick MA. Sensory perception of the foot and            44. Racinais S, Ihsan M, Périard JD. Neural and Muscular Funtion in the
+    ankle following therapeutic applications of heat and cold. J Athl Train.              Heat. In: Périard J, Racinais S, ed. Heat Stress in Sport and Exercise
+    1992;27:231–234.                                                                      Thermophysiology of Health and Performance. Springer; 2019:
+20. Mtibaa K, Thomson A, Nichols D, Hautier C, Racinais S. Hyperthermia-                  67–88.
+    induced neural alterations impair proprioception and balance. Med Sci             45. Schwarz E, Duffield R, Novak A, Görres T, Meyer T. Associations
+    Sports Exerc. 2018;50:46–53.                                                          between match running performance and environmental tempera-
+21. Syndicus M, Wiese BS, van Treeck C. In the heat and noise of the moment:              tures in 4 professional football leagues. Int J Sports Physiol Perform.
+    effects on risky decision making. Environ Behav. 2018;50:3–27.                        2024;20:109–119. doi: 10.1123/ijspp.2024-0248.
+22. Jacobson I, Tegner Y. Injuries among female football players – with spe-          46. Mohr M, Nybo L, Grantham J, Racinais S. Physiological responses
+    cial emphasis on regional differences. Adv Physiother. 2006;8:66–74.                  and physical performance during football in the heat. PLoS One.
+23. Orchard J, Seward H. Epidemiology of injuries in the Australian football              2012;7:e39202.
+    league, seasons 1997-2000. Br J Sports Med. 2002;36:39–44.                        47. Roberts W, Armstrong E, Sawka M, Yeargin S, Heled Y, O’Connor F.
+24. Waldén M, Hägglund M, Orchard J, Kristenson K, Ekstrand J. Regional                   ACSM expert consensus statement on exertional heat illness: recog-
+    differences in injury incidence in European professional football. Scand              nition, management, and return to activity. Curr Sports Med Rep.
+    J Med Sci Sports. 2013;23:424–430.                                                    2023;20:470–484.
+25. Edouard P, Dandrieux P, Klöwer M, et al. Association between feels-               48. Hosokawa Y, Grundstein AJ, Casa DJ. Exertional heat illness extreme
+    like temperatures and injury risk during international outdoor ath-                   heat considerations in international football venues: the utility of clima-
+    letic championships: a prospective cohort study on 29 579 athlete                     tologic data in decision making. J Athl Train. 2018;53:860–865.
+    starts during 10 championships. Br J Sports Med. 2024;59:36–47. doi:              49. Budd G. Wet Bulb Globe Temperature (WBGT) – its history and its lim-
+    10.1136/bjsports-2023-108050.                                                         itations. J Sci Med Sport. 2008;11:20–32.
+
+
+
+
+                                                                                  8
+

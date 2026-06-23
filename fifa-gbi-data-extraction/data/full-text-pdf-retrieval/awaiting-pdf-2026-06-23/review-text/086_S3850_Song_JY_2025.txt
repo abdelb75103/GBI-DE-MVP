@@ -1,0 +1,801 @@
+Original Investigation | Neurology
+
+Orbitofrontal Gray-White Interface Injury and the Association of Soccer Heading
+With Verbal Learning
+Joan Y. Song, MS; Roman Fleysher, PhD; Kenny Ye, PhD; Mimi Kim, ScD; Walter F. Stewart, PhD; Molly E. Zimmerman, PhD;
+Richard B. Lipton, MD; Michael L. Lipton, MD, PhD
+
+
+
+Abstract                                                                                                                Key Points
+                                                                                                                        Question Is the orbitofrontal gray
+IMPORTANCE Sport-related repetitive head impacts (RHIs) are linked to structural and functional
+                                                                                                                        matter–white matter interface (GWI) a
+brain changes and may be associated with risk for neurodegenerative disease. However, the locus of
+                                                                                                                        locus of injury due to repetitive head
+RHI-associated pathology that leads to adverse cognitive performance has yet to be characterized
+                                                                                                                        impacts (RHIs) among soccer players,
+in vivo.
+                                                                                                                        and does it mediate RHI associations
+                                                                                                                        with poorer verbal learning?
+OBJECTIVE To examine whether orbitofrontal gray matter–white matter interface (GWI)
+microstructure is associated with soccer RHI and whether it mediates the association of RHI with                        Findings In this cross-sectional study of
+cognitive performance.                                                                                                  RHI in 352 adult amateur soccer players,
+                                                                                                                        greater RHI exposure was associated
+DESIGN, SETTING, AND PARTICIPANTS This cross-sectional study, performed at Albert Einstein                              with attenuation of orbitofrontal GWI
+College of Medicine and Columbia University Irving Medical Center, included a population-based                          fractional anisotropy slope sharpness,
+sample from the greater New York City area of amateur soccer players aged 18 to 55 years who played                     and orbitofrontal fractional anisotropy
+for at least 5 years, currently played at least 6 months per year, and were fluent in English. Exclusion                slope mediated the association between
+criteria consisted of schizophrenia, bipolar disorder, current substance use disorder, any drug use                     RHI and International Shopping List
+within 30 days, and any contraindication to magnetic resonance imaging. Data were collected from                        Task score.
+November 11, 2013, to December 28, 2015, and analyses were performed from April 1 through
+                                                                                                                        Meaning These findings suggest that
+December 4, 2024.
+                                                                                                                        soccer RHI-related consequences are
+                                                                                                                        specific to orbitofrontal GWI, where
+EXPOSURE Soccer RHI exposure in the prior 12 months quantified via the HeadCount 12-
+                                                                                                                        disruption plays a mediating role in the
+month survey.
+                                                                                                                        adverse association of RHI with
+                                                                                                                        cognitive performance.
+MAIN OUTCOME AND MEASURES Slope of diffusion magnetic resonance imaging metrics
+(fractional anisotropy [FA], axial diffusivity, orientation dispersion index, and intracellular volume
+fraction) across the GWI was computed for each of 6 cerebral regions (cingulate, orbitofrontal,                     + Supplemental content
+frontal, temporal, parietal, and occipital). The GWI slope association with RHI and with International              Author affiliations and article information are
+Shopping List (ISL) immediate recall task performance, which is associated with RHI, were examined.                 listed at the end of this article.
+
+Mediation analyses tested for the mechanistic role of GWI slope in the RHI and ISL association.
+
+
+RESULTS In 352 adult amateur soccer players aged 18 to 53 years (243 [69.0%] male; mean [SD]
+age, 25.6 [7.5] years), greater RHI exposure was associated with a less steep FA slope across the
+orbitofrontal GWI (estimate, 0.000001; P < .001). The orbitofrontal FA slope measure mediated the
+association of RHI with ISL performance (indirect effect estimate, −0.000064; P = .006).
+
+
+CONCLUSIONS AND RELEVANCE In this cross-sectional study of soccer RHI, the orbitofrontal GWI
+emerged as a specific site of soccer RHI-related consequences, with FA slope suggesting that GWI
+microstructural disruption plays a mediating role in the association of greater RHI exposure with
+poorer verbal learning task performance.
+
+JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461
+
+
+
+   Open Access. This is an open access article distributed under the terms of the CC-BY License.
+
+JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                 September 18, 2025          1/13
+JAMA Network Open | Neurology                                                       Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+Introduction
+Repetitive head impacts (RHIs) in sport are a growing concern given evidence that repeated low-level
+impacts, even in the absence of diagnosed concussion, lead to adverse effects and increased risk for
+neurodegenerative disease.1 Soccer is the most popular sport worldwide2 and, in part due to the
+practice of heading (ie, intentionally hitting the ball with the head), may be the greatest source of
+RHI.3 Soccer heading has been associated, in an exposure-dependent manner, with central nervous
+system symptoms, adverse changes to brain microstructure measured with diffusion magnetic
+resonance imaging (dMRI), and worse cognitive function.4-14 Chronic traumatic encephalopathy
+(CTE), a neurodegenerative disease associated with RHI, has been identified in both former
+professional and young adult amateur soccer players.15,16 However, some studies have not found a
+clear link between heading and adverse outcomes, particularly in the acute time frame.17,18 For
+example, Kontos et al11 found no conclusive evidence linking heading to adverse outcomes in their
+meta-analysis of cognitive function, symptoms, and balance. However, they acknowledged that
+heterogeneity across studies diminished the power of the meta-analysis to identify salient effects.
+These limitations underscore the need for further research to understand the association of heading
+with adverse effects.
+     The cortical gray matter–white matter interface (GWI) is known to be susceptible to trauma,
+based on biomechanical modeling,19 histological evidence in animals20-24 and humans,25 and MRI
+findings in animals26 and human patients with traumatic brain injury (TBI).27-32 Specific to RHI, finite
+element modeling has identified the orbitofrontal region, a well-known injury predilection site in
+TBI,33 as the site of greatest tissue strain from soccer heading.34 American football players exhibited
+postmortem astrogliosis at the GWI despite absence of other pathology, including CTE.25 In vivo GWI
+neuroinflammation has been identified in RHI-exposed military personnel using positron emission
+tomography.35 These studies implicate the GWI as a probable locus of RHI-associated brain
+pathology.
+     Despite its potential importance as a site of injury from RHI, the GWI is routinely excluded from
+dMRI analyses due to potential partial volume effects and misregistration. Prior studies thus leave a
+critical gap in our understanding of GWI vulnerability. Our group developed a method that exploits
+the marked difference in diffusion anisotropy between gray matter and white matter at the GWI.36,37
+Rather than measuring magnitude of diffusion parameters at a discrete region of interest, our group
+profiled the spatial transition of dMRI microstructural measures across the GWI, recapitulating
+expected aging effects.
+     Our group previously reported, among young adult soccer athletes, exposure-dependent
+associations of RHI with lower fractional anisotropy (FA) slope in deep white matter regions and, in
+parallel, with lower performance on cognitive tests.38-40 However, to our knowledge, no study to
+date has tested the mediating role of dMRI or any imaging measure in the association of RHI with
+cognitive performance.
+     This study tested the hypothesis that attenuation of the normally sharp microstructural
+transition at the orbitofrontal GWI, a location of shear force trauma during RHI, mediates associations
+of prior 12-month soccer heading with poorer verbal learning among adult amateur players. We
+quantified the sharpness of the GWI microstructural profile to identify microstructural injury and its
+mediation of the RHI and verbal learning association.
+
+
+
+Methods
+Study Participants
+In this cross-sectional study, we analyzed dMRI and cognitive performance in adult amateur soccer
+players from the New York City area. The Albert Einstein College of Medicine and Columbia University
+institutional review boards approved the study. Data were collected from November 11, 2013, to
+December 28, 2015, and analyses were performed from April 1 through December 4, 2024.
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                            September 18, 2025     2/13
+JAMA Network Open | Neurology                                                       Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+Participants were recruited via advertisement and social media, and interested respondents were
+screened for eligibility. All participants gave written informed consent. This study followed the
+Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) reporting
+guideline.
+     Inclusion criteria were ages 18 to 55 years, amateur soccer play for 5 years or longer, current play
+at least 6 months per year, and fluency in English. The original study40 was designed to assess the
+effect of prior RHI. Inclusion criteria were specified a priori to identify participants with substantial
+prior and current active play while ensuring a broad pool of potential participants. Exclusion criteria
+were schizophrenia, bipolar disorder, known neurological disorders such as dementia and migraine,
+prior moderate or severe TBI, acute (within 3 months) or persistent symptomatic concussion (mild
+TBI), current substance use disorder, illicit drug use within 30 days, and contraindication to MRI.40
+Participants were excluded if they reported illicit drug use (including cannabis, illegal in New York
+during the study period) or tested positive on urine drug screening for cannabis, amphetamines,
+barbiturates, benzodiazepines, cocaine, 3-4 methylenedioxymethamphetamine, opiates, or
+phencyclidine. Psychiatric and substance use exclusions were designed to minimize conditions that
+could confound cognitive performance. The TBI exclusions were implemented to avoid structural
+abnormalities that could interfere with image processing. The MRI contraindication exclusion was
+implemented for participant safety. Study procedures have been reported in detail.38,39,41-43
+Collection of demographic information is detailed in eMethods 1 in Supplement 1.
+     Race and ethnicity data, although not a focus of this study, were collected to characterize the
+diversity and representativeness of the sample and were required by the funding agencies. Options
+self-identified by participants included American Indian or Alaska Native, Asian, Black or African
+American, Native Hawaiian or Pacific Islander, or White. Ethnicity was self-identified as Hispanic or
+non-Hispanic.
+
+
+RHI Exposure
+RHI exposure was defined as the number of soccer headings over the prior 12 months, estimated
+using HeadCount, a structured survey validated in multiple independent cohorts against sideline
+observation and daily RHI reporting.44-46 The HeadCount survey uses a series of questions on soccer
+play and RHI designed and calibrated to account for variations in play year-round and to capture RHI
+from sources other than soccer heading.44,45 Due to the skew of RHI, we performed a sensitivity
+analysis in which RHI rank was the exposure variable. Ties in the rank list were handled by taking the
+mean ordered rank; for example, if the first 15 values were tied, these 15 values were assigned rank 8.
+
+
+Image Acquisition and Processing
+3T MRI, including diffusion tensor imaging and/or neurite orientation dispersion and density imaging
+(DTI/NODDI), was performed and underwent standard preprocessing. Details are provided in
+eMethods 2 in Supplement 1.
+
+
+GWI Characterization
+Sharpness of DTI/NODDI metric transition at GWI was characterized by the slope of their profile
+(eFigure 1 in Supplement 1). We calculated FA, axial diffusivity (AD), orientation dispersion index
+(ODI), and intracellular volume fraction (ICVF) slope aggregated across 6 brain regions (cingulate,
+frontal, occipital, orbitofrontal, parietal, and temporal), as previously reported in healthy aging
+(Figure 1).36,37 The GWI slope calculation is detailed in eMethods 3 in Supplement 1.
+
+
+Cognitive Performance
+We focused on the International Shopping List (ISL) test (immediate recall) of verbal learning and
+memory administered using CogState battery47,48 and associated with soccer RHI in this soccer
+cohort.40 A list of 12 words was read aloud to the participant, who was immediately asked to freely
+recall the words. The outcome measure was the total number of correct responses across 3 trials.
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                            September 18, 2025     3/13
+JAMA Network Open | Neurology                                                        Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+Other CogState performance measures (ISL delayed recall task, One Back Test, Two Back Test,
+Card Identification Task, and Groton Maze Task) were administered but not associated with
+soccer RHI (eTable 1 in Supplement 1), as previously reported,40,43 and therefore were not tested
+for mediation.
+
+
+Statistical Analysis
+GWI Slope and RHI Association
+Calculations were performed using R, version 4.1.1 (R Project for Statistical Computing).49 We fit the
+following linear model to the slope of each diffusion metric (FA, AD, ODI, or ICVF):
+Yi = β0 + β1Hi + β2Ci + e1i, where Yi denotes the GWI slope for participant I, β0 denotes the intercept
+that would represent the mean GWI slope measure in the context of the covariates but no RHI
+exposure, Hi denotes 12-month RHI at the time of imaging, coefficient β1 denotes the independent
+association of RHI with GWI slope, and e1i is a random error term. Biological sex (as a binary variable),
+age, and lifetime concussion (a categorical variable of 0, 1, or ⱖ2) were included as covariates in
+vector Ci, with corresponding vector of coefficients β2. To account for multiple comparisons (6
+regions for each of 4 diffusion metrics), we applied the Bonferroni method (P = .05/24), considering
+2-sided P = .002 as our threshold for statistical significance. Post-hoc analyses of interaction effects
+and additional covariates are detailed in eMethods 4 in Supplement 1.
+
+
+Mediation Analysis
+To evaluate whether GWI slope mediates the association of RHI with ISL immediate recall score
+within this cohort,40 we applied the framework of Baron and Kenny.50 We fit the following 2
+additional regression models: ISLi = γ0 + γ1Hi + γ2Ci + e2i and ISLi = δ0 + δ1Hi + δ2Yi + δ3Ci + e3i,
+where ISLi denotes the cognitive outcome for participant I; Hi and Yi are as defined in the previous
+paragraph; Ci represents a vector of covariates as defined in the previous paragraph and includes
+biological sex (as a binary variable), age (as a continuous variable), and lifetime concussion (a
+categorical variable–0, 1, 2+); γ0 and δ0 are the intercepts in each model, respectively; γ1 quantifies
+the association of RHI (Hi) with ISL after adjusting for Ci (ie, total effect of RHI on ISL), while δ1
+denotes the same association but further controlling for the effect of the mediator Yi (ie, direct effect
+of RHI); δ2 quantifies the association between Yi and ISLi after accounting for Hi and Ci; γ2 and δ3
+correspond to the independent effects of the covariates in each model, respectively; and e2i and e3i
+are random error terms.
+     Mediation by GWI slope (Yi) was calculated from these 2 equations, where the indirect effect of
+the association of RHI with cognitive outcomes, mediated through GWI slope, was computed as
+β1 × δ2, and significance was determined using the Sobel test.51 Since the mediation analysis focused
+on just 1 mediator (orbitofrontal GWI FA slope), no adjustment was made for multiple testing, and
+2-sided P = .05 was our threshold for statistical significance.
+
+
+
+
+Figure 1. Lobar Segmentation
+
+
+                                                                                                 Orbitofrontal
+                                                                                                 Frontal
+                                                                                                 Temporal
+                                                                                                 Cingulate
+                                                                                                 Parietal
+                                                                                                 Occipital
+
+                                                                                                                 Includes voxels 5 mm from Freesurfer 7–defined
+                                                                                                                 orbitofrontal gray matter–white matter interface (GWI)
+                                                                                                                 in white matter and 5 mm from GWI in gray matter.
+                                                                                                                 Reproduced from Song et al.37
+
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                              September 18, 2025      4/13
+JAMA Network Open | Neurology                                                        Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+Results
+We included 352 amateur soccer players (median age, 23.0 years [range, 18.0-53.0 years]; mean [SD]
+age, 25.6 [7.5] years; 109 [31.0%] female and 243 [69.0%] male) from the New York City area. Of the
+314 soccer players who identified their race, 1 (3.2%) was American Indian or Alaska Native; 62
+(19.7%), Black or African American; 5 (1.6%), Native Hawaiian or Other Pacific Islander; and 228
+(72.6%), White. Of the 336 who identified their ethnicity, 82 (24.4%) were Hispanic. Estimates of RHI
+exposure ranged from 0 to 22 838 in the past 12 months, with a median of 677.5. Age, biological sex,
+race, ethnicity, years of education, and concussion history did not differ significantly by RHI exposure
+level (Table 1).
+
+
+GWI Slope Associations With RHI
+Using the regression model, greater RHI was associated with less sharp FA slope at the GWI in the
+orbitofrontal region (estimate, 0.000001; P < .001) while accounting for age, biological sex, and
+prior concussion (Table 2 and Figure 2). No associations were observed for other regions (Table 2
+and eFigure 2 in Supplement 1). FA slope was associated with age, as previously reported,37 and was
+not associated with biological sex or concussion history (eTable 2 in Supplement 1). There were no
+significant interactions of biological sex and RHI or age and RHI (eTable 3 in Supplement 1). In
+sensitivity analyses to account for extreme RHI values, RHI rank was associated with less sharp
+orbitofrontal GWI FA slope (estimate, 0.000023; P = .001) (Table 2, Figure 2, and eFigure 3 in
+Supplement 1). RHI exposure was not associated with ODI slope, AD slope, or ICVF slope for any of
+the 6 regions (eTables 4-6 in Supplement 1). Additional covariates (ie, educational level, self-reported
+
+
+
+
+Table 1. Study Sample Demographic Characteristics by RHI Exposure Quartilea
+
+                                Participantsb
+                                1st Quartile      2nd Quartile        3rd Quartile        4th Quartile
+Characteristic                  (n = 88)          (n = 88)            (n = 88)            (n = 88)
+Age, median (range), y          27 (18-53)        24 (18-50)          22 (18-52)          21 (18-38)
+Biological sex
+   Male                         47/88 (53.4)      59/88 (67.0)        70/88 (79.5)        67/88 (76.1)
+   Female                       41/88 (46.6)      29/88 (33.0)        18/88 (20.5)        21/88 (23.9)
+Educational attainment,         16 (7-20)         16 (12-20)          15 (10-20)          15 (12-19)
+median (range), y
+Race
+   American Indian or           0/79              0/80                1/82 (1.2)          0/73
+   Alaska Native
+   Asian                        3/79 (3.8)        4/80 (5.0)          7/82 (8.5)          4/73 (5.5)
+   Black or African American    7/79 (8.9)        16/80 (20.0)        16/82 (19.5)        23/73 (31.5)
+   Native Hawaiian or           1/79 (1.3)        1/80 (1.3)          1/82 (1.2)          2/73 (4.1)
+   Pacific Islander
+   White                        68/79 (86.1)      59/80 (73.8)        57/82 (69.5)        44/73 (60.3)
+   Declined to answer           9                 8                   6                   15
+Ethnicity
+   Hispanic                     12/85 (14.1)      19/85 (21.2)        24/84 (28.6)        27/81 (33.3)
+   Non-Hispanic                 73/85 (85.9)      66/85 (77.6)        60/84 (71.4)        54/81 (66.7)
+   Declined to answer           3                 3                   4                   7                      Abbreviations: ISL, International Shopping List; RHI,
+12-mo RHI count,                104               486                 1147                3133                   repetitive head injury.
+median (range)                  (0-287)           (296-677)           (678-1863)          (1877-22 838)          a
+                                                                                                                     Quartile 1 was rank 8.0 to 88.0; quartile 2, 89.5 to
+Concussions, No.                                                                                                     176.0; quartile 3, 177.0 to 264.0; and quartile 4,
+   0                            57                54                  56                  55                         265.5 to 352.0.
+                                                                                                                 b
+   1                            17                17                  15                  10                         Data are presented as number/total number
+   ≥2                           14                17                  17                  23                         (percentage) of participants unless otherwise
+                                                                                                                     indicated.
+ISL immediate recall task,      27.1 (3.8)        26.5 (3.7)          25.5 (3.8)          25.4 (3.9)
+No. correct across 3 trials,                                                                                     c
+                                                                                                                     The ISL test is described in the Cognitive
+mean (SD)c
+                                                                                                                     Performance subsection of the Methods section.
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                 September 18, 2025         5/13
+JAMA Network Open | Neurology                                                                                                            Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+medical history, alcohol use, and depression and anxiety symptoms) were not statistically significant
+(eTables 7 and 8 in Supplement 1).
+
+
+Orbitofrontal GWI FA Slope and Mediation of the Association of RHI
+With Cognitive Performance
+Using regression models, total effect for the association of RHI exposure with ISL immediate recall
+task scores was significant (estimate, γ1 = 0.000188; P = .05) (Figure 3). The indirect effect for the
+association of RHI with ISL performance, mediated through orbitofrontal FA slope, was significant
+(estimate, γ1 × δ2 = −0.000064; P = .006), while the direct effect for the association of RHI with ISL
+immediate recall performance was not significant (estimate, δ1 = −0.000122; P = .20) (Figure 3).
+Thus, orbitofrontal FA slope mediated the association of greater RHI with poorer immediate recall ISL
+
+
+Table 2. Linear Model Results for Fractional Anisotropy Slopea
+
+                                              12-mo RHI count                                                          12-mo RHI rank
+Region                                        β1                                 P valueb                              β1                          P valueb
+Cingulate                                     −0.0000002                         .49                                   −0.000001                   .87
+Frontal                                       0.0000006                          .03                                   0.000011                    .08
+                                                                                                                                                                     Abbreviation: RHI, repetitive head injury.
+Occipital                                     0.0000004                          .30                                   0.000013                    .10
+                                                                                                                                                                     a
+                                                                                                                                                                         Linear models were fit to both 12-month RHI count
+Orbitofrontal                                 0.000001                           <.001                                 0.000023                    .001
+                                                                                                                                                                         and 12-month RHI rank. β1 Refers to the estimate of
+Parietal                                      0.00000001                         .63                                   0.000006                    .38
+                                                                                                                                                                         RHI association with fractional anisotropy slope.
+Temporal                                      0.0000005                          .02                                   0.000010                    .05               b
+                                                                                                                                                                         P < .002 was considered statistically significant.
+
+
+
+Figure 2. Orbitofrontal Adjusted Fractional Anisotropy (FA) Slope vs Repetitive Head Impacts (RHI)
+
+     A RHI count                                                                             B              RHI rank
+                     –0.100                                                                                 –0.100
+
+
+
+
+                     –0.125                                                                                 –0.125
+
+
+
+
+ Adjusted FA slope                                                                      Adjusted FA slope
+                     –0.150                                                                                 –0.150
+
+
+
+
+                     –0.175                                                                                 –0.175
+
+
+
+
+                                                                                                                                                                     A, The association between orbitofrontal region FA
+                     –0.200                                                                                 –0.200
+                                                                                                                                                                     slope and RHI count (β1 = 0.000001; P < .001). B, The
+                              0    5000     10 000   15 000   20 000    25 000                                         0        100        200           300   400   association between orbitofrontal region FA slope and
+                                          12-mo RHI count                                                                          12-mo RHI rank                    RHI rank (β1 = 0.000023; P = .001).
+
+
+
+Figure 3. Orbitofrontal Fractional Anisotropy (FA) Slope Mediation Analysis                                                                                          γ1 Is the estimate of direct total effect of the association
+                                                                                                                                                                     of repetitive head impact (RHI) with International Shop-
+                                                                          γ1 = –0.000188
+                                       12-mo RHI                                                                       ISL immediate recall task score               ping List (ISL) (outcome measure); δ1 is the indirect ef-
+                                                                              P = .05
+                                                                                                                                                                     fect of the association of RHI with ISL; δ2 is the estimate
+                                                                                                                                                                     of orbitofrontal FA slope effect on ISL; β1 is the estimate
+                                                                       Orbitofrontal FA slope                                                                        of RHI effect on orbitofrontal FA slope (mediator); and
+                                     β1 = 0.000001                                                                                 δ2 = –62.8                        β1 × δ2 is the indirect effect of orbitofrontal FA slope
+                                         P <.001                                                                                    P <.001                          (mediator) on ISL (outcome measure). All regression
+                                                                          δ1 = –0.000122                                                                             coefficients reported are from equations shown in the
+                                       12-mo RHI                                                                       ISL immediate recall task score
+                                                                              P = .20                                                                                Statistical Analysis subsection of the Methods section.
+
+
+
+                     JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                                                   September 18, 2025           6/13
+JAMA Network Open | Neurology                                                       Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+task score (Figure 3), consistent with a mechanistic role of GWI slope in the adverse RHI-ISL
+association. Age, biological sex, and concussion history were accounted for in the models.
+
+
+
+Discussion
+In this cross-sectional study, high RHI exposure was associated with blunting of the naturally sharp
+microstructural transition at the orbitofrontal GWI but not in other regions. This pattern indicates
+specific susceptibility of the orbitofrontal GWI to RHI effects, consistent with finite element models
+that localize the greatest tissue strain during soccer heading to the orbitofrontal region.34 Also
+notable is that the floor of the anterior cranial fossa, on which the orbitofrontal region rests, is located
+in line with the approximate soccer ball trajectory during heading.34 The orbitofrontal findings may
+therefore reflect a contrecoup injury by which brain acceleration leads to impact of orbitofrontal
+cortex on the irregular surface of the floor of the anterior cranial fossa.
+     Concentration of RHI effects at the GWI was consistent with shear force effects that arise due
+to tissue density differences and consequent differences in acceleration of white and gray matter at
+the GWI.19 Susceptibility of the GWI to shear force trauma is supported by numerous lines of
+evidence, including the location of microhemorrhage in TBI,28,33 postmortem histology localizing
+astrogliosis to the GWI after RHI in sheep24 and pigs,21-23 and postmortem studies of RHI-exposed
+athletes and veterans.25,52 Furthermore, TBI-induced astrogliosis in rats is linked to changes in
+cortical gray matter FA,53 linking astrogliosis near the GWI with FA. In the present study, attenuation
+of FA slope sharpness in association with RHI exposure could have occurred due to astrogliosis and
+white matter myelin perturbations at the GWI.
+     We failed to reject our null hypotheses for the association of RHI with the GWI slope of other
+diffusion metrics (AD, ODI, and ICVF). FA slope may detect the microstructural features of
+RHI-associated injury, which other metrics do not. Alternatively, if effects of RHI on other diffusion
+metrics are of lower magnitude, it is possible that we did not have sufficient power to detect these
+associations. Power for assessment of NODDI metrics in this study was limited by a somewhat small
+sample size (338 vs 352 usable datasets), although this difference in sample may not fully explain
+the results. We note that prior studies of RHI have overwhelmingly reported an association of RHI
+with FA, with few studies reporting on other diffusion metrics.14 This difference in detection by
+diffusion MRI metrics underscores that while all derive from the same MRI signal, different metrics
+capture different biophysical features of diffusion that, in turn, reflect different microstructural
+characteristics of tissue. ODI, for example, estimates the angular variability of neurites in each voxel,
+which may not be sensitive to loss of myelin and axons known to occur in injury contexts.
+     Prior dMRI studies of RHI have generally used region or tract of interest or voxel-wise analyses
+to extract average measures of diffusion metrics from lobar and deep white matter,14,40,54 typically
+excluding gray matter and juxtacortical white matter voxels, including the GWI, from analysis due to
+concerns for partial volume effects, misregistration, or low signal-to-noise ratio. To date,
+RHI-associated changes to GWI microstructure may have gone undetected or underestimated with
+in vivo imaging. The present study used an approach that is not limited by and accounts for potential
+partial volume effects (see below) on individual voxels near the GWI. Because the GWI slope measure
+is determined in each individual, it does not depend on image registration across individuals or to a
+template. This approach enables the investigation of RHI-related brain tissue changes that have
+previously been inaccessible in vivo.
+     We found that lower orbitofrontal GWI sharpness (lower slope of FA) was associated with
+poorer performance on the ISL immediate recall task. For the ISL immediate recall task, the
+participant listens to a list of words read aloud and then recites as many as they can recall to the
+examiner. Importantly, the ISL uses a list of words linked by context (a grocery shopping list). The ISL
+is typically conceptualized as the first step in a verbal memory task, which is completed with delayed
+recall after 20 minutes.47,55 The orbitofrontal region, however, is not considered a key substrate of
+verbal learning and memory functions. Because the orbitofrontal region is implicated in executive
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                            September 18, 2025     7/13
+JAMA Network Open | Neurology                                                       Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+function, planning, strategy, and attention, it is plausible that effective planning and verbal learning
+strategies depend on orbitofrontal functions.56 It is also plausible that orbitofrontal GWI injury leads
+to poorer learning strategies, in turn reflected in lower ISL score.
+     Identification of brain injury mechanisms and in vivo detection in humans is a priority of current
+research. Prior studies38-40 have reported associations of soccer RHI with dMRI and with cognitive
+performance. Although RHI is independently associated with both brain structure (imaging) and
+brain function, these 2 distinct associations do not establish that the structural changes mediate the
+association between RHI and objective cognitive performance. Identifying such a causal link would
+point more specifically to the mechanism driving adverse cognitive effects of RHI. We performed
+mediation analysis to assess whether GWI microstructure effects mediated the association between
+RHI and cognitive performance. Our result supports the mechanistic role of orbitofrontal GWI
+FA slope.
+     Future studies should investigate this in vivo mechanistic indicator. Clinical research could use
+dMRI GWI findings to identify RHI exposure levels linked to functional effects and to inform
+protective interventions. In this study, the cognitive effects mediated by dMRI were significant but
+did not reach a magnitude that reflected clinical impairment. Future longitudinal studies could probe
+domains, such as occupational, social, or academic functioning, to assess the impact on current or
+future functioning in these contexts. Translational studies could explore mechanisms underlying GWI
+diffusion effects to develop therapies and use the GWI slope as a proxy end point in preclinical and
+human studies. While further investigation is needed, these findings suggest that GWI slope may
+serve as a promising in vivo marker of RHI-related pathology, offering potential clinical utility in the
+detection of pathologic change that could ultimately be associated with current dysfunction or
+future disorders such as CTE. Clinical implementation to identify specific patient groups will require
+future studies, potentially including comparison with postmortem findings and or animal models,
+and identification of specific thresholds that would indicate presence of pathology or clinical features
+of disease.
+
+
+Limitations
+This study has some limitations. The possibility of bias due to partial volume effects cannot be
+entirely excluded. However, our approach mitigated the impact of potential voxel-level partial
+volume effects near the GWI by not relying on intensity at any given voxel. Instead, we computed
+change of the diffusion parameter across multiple voxels along linear trajectories spanning the GWI.
+The polynomial fit used to derive the slope incorporated the variance of the diffusion metric at each
+distance from the GWI, ensuring accurate propagation of residual noise. While error levels are low,36
+this fitting method helps maintain robustness in the presence of minor noise. Thus, the dMRI signal
+slope variations that we observed primarily reflect diffusion differences across the GWI, without bias
+due to partial volume effects from individual voxels near the GWI.
+     If GWI slope depended on the precise anatomic GWI location based on segmentation and
+parcellation, misregistration could be a significant concern. Our method, however, did not solely rely
+on an anatomic localization of the GWI. The GWI defined by FreeSurfer brain imaging software,
+version 7.0.6 (Laboratory for Computational Neuroimaging at the Athinoula A. Martinos Center for
+Biomedical Imaging), was used to bin voxels to generate the GWI profile (eFigure 1 in Supplement),
+which was self-organizing. The GWI slope calculation was mainly driven by the long linear segment of
+the GWI profile in the vicinity of the FreeSurfer-defined GWI, making it insensitive to shifts from
+misregistration. In this way, our method was self-organizing and more robust than other GWI region
+of interest studies that have placed the region of interest adjacent to the GWI and relied heavily on a
+presumption of exact registration of the GWI in each individual brain.31,32
+     Our exposure measurement was based on self-report and has been validated in multiple studies
+to reliably rank players with respect to relative heading exposure.44,45 The survey was not designed
+to quantify absolute number or characterize the severity of individual impacts. The estimates of
+ranked headings across players were suited to our context, which addresses a biological hypothesis
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                           September 18, 2025     8/13
+JAMA Network Open | Neurology                                                          Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+on the way greater amounts of heading will manifest in neuroimaging and cognitive performance. We
+acknowledge that future studies aimed at validating exposure thresholds, particularly for use in risk
+mitigation strategies, should further assess whether the exposure measure can reliably and
+reproducibly capture absolute exposure levels.
+     The RHI count data were right-skewed, in part due to some participants engaging in frequent
+soccer heading drills, which involve numerous high-repetition sets across multiple practice days per
+week. Moreover, our sensitivity analysis showed a linear association with RHI rank that reduced the
+need for precise RHI counts. While RHI estimates prior to the 12-month period during which we
+estimated RHI are not available for this cohort, our team showed in a previous study that age of first
+exposure to soccer RHI did not moderate the adverse association of RHI with outcomes.57 Future
+studies can address the role of cumulative lifetime exposure.
+     Participants were not active in other collision sports during the study. Although prior contact
+sport exposure cannot be excluded, it would be unlikely to systematically covary with the study
+measures.
+     We did not include formal performance validity testing. While it is possible that suboptimal
+engagement contributed to performance, the distribution of performance in the sample in our study
+suggests that this was not the case.
+     While key neurological conditions, such as dementia and moderate-to-severe TBI, acute (within
+3 months) or persistent symptomatic concussion (mild TBI) were excluded, residual confounding by
+unmeasured factors, including family history of neurological disease, which was not assessed,
+remains possible. We performed post-hoc analysis assessing potential confounders (ie, educational
+level, self-reported medical history, alcohol use, and depression and anxiety symptoms), and none
+were found to be significant. Future studies incorporating genetic or familial risk factors may further
+clarify individual susceptibility. DTI, while sensitive, lacks specificity and must be considered in
+context, as it was applied in the present study.
+     Last, 31.0% of the total cohort was female, which may limit the generalizability of findings.
+However, the cohort reflects the predominantly male amateur player population in New York and, in
+fact, oversampled female players.
+
+
+
+Conclusions
+In this cross-sectional study of adult amateur soccer players, we found that RHI due to soccer
+heading was associated, in an exposure-dependent fashion, with attenuation of the normally sharp
+microstructural transition at the cortical GWI of the orbitofrontal region. This imaging feature in turn
+mediated the previously reported adverse association38,40 of greater RHI with worse performance
+on the ISL immediate recall task. Future studies of soccer RHI should use cognitive tests optimized to
+test orbitofrontal function, such as executive function, and explore the GWI measure as a tool to
+characterize mechanisms of adverse RHI effects in vivo.
+
+
+
+
+ARTICLE INFORMATION
+Accepted for Publication: July 17, 2025.
+Published: September 18, 2025. doi:10.1001/jamanetworkopen.2025.32461
+Open Access: This is an open access article distributed under the terms of the CC-BY License. © 2025 Song JY
+et al. JAMA Network Open.
+Corresponding Author: Michael L. Lipton, MD, PhD, Department of Radiology, Columbia University Irving Medical
+Center, 530 W 166th St, New York, NY 10032 (mll2219@cumc.columbia.edu).
+Author Affiliations: Dominick P. Purpura Department of Neuroscience, Albert Einstein College of Medicine, Bronx,
+New York (Song); Department of Radiology, Columbia University Irving Medical Center, New York, New York
+(Fleysher, M. L. Lipton); Department of Epidemiology and Population Health, Albert Einstein College of Medicine,
+Bronx, New York (Ye, Kim, R. B. Lipton); Medcurio Inc, Oakland, California (Stewart); Department of Psychology,
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                              September 18, 2025     9/13
+JAMA Network Open | Neurology                                                               Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+Fordham University, Bronx, New York (Zimmerman); Saul R. Korey Department of Neurology, Albert Einstein
+College of Medicine and Montefiore Medical Center, Bronx, New York (R. B. Lipton); Department of Biomedical
+Engineering, Columbia University, New York, New York (M. L. Lipton).
+Author Contributions: Dr M. L. Lipton had full access to all of the data in the study and takes responsibility for the
+integrity of the data and the accuracy of the data analysis.
+Concept and design: Song, Fleysher, M. L. Lipton.
+Acquisition, analysis, or interpretation of data: All authors.
+Drafting of the manuscript: Song, Fleysher, Kim, M. L. Lipton.
+Critical review of the manuscript for important intellectual content: All authors.
+Statistical analysis: Song, Ye, Kim, M. L. Lipton.
+Obtained funding: M. L. Lipton.
+Administrative, technical, or material support: Fleysher, Zimmerman, M. L. Lipton.
+Supervision: Fleysher, Ye, Zimmerman, M. L. Lipton.
+Conflict of Interest Disclosures: Dr R. B. Lipton reported receiving research grants from AbbVie (Allergan),
+Biohaven, ElectroCore, Eli Lilly, the US Food and Drug Administration, Lundbeck, Pfizer, and Teva; serving on the
+editorial board of Neurology; being senior advisor for Headache; being an associate editor for Cephalalgia;
+reviewing for the National Institute on Aging and the National Institute of Neurological Disorders and Stroke;
+holding stock and stock options in Axon, Biohaven Holdings, CoolTech, and Manistee; serving as a consultant,
+being an advisory board member, or receiving honoraria from AbbVie (Allergan), American Academy of Neurology,
+American Headache Society, Amgen, Axon, Axsome, Biohaven, Biovision, Boston Scientific, Clexio, Dr. Reddy’s
+(Promius), Electrocore, Eli Lilly, eNeura Therapeutics, Equinox, GlaxoSmithKline, Grifols, Karuna, Lundbeck (Alder),
+Manistee, Pfizer, Satsuma, Scilex, ShiraTronics, Supernus, Teva, Tonix, and Trigemina; and receiving royalties from
+Oxford Press University for Wolff’s Headache and Other Head Pain 7th and 8th editions, Wiley, and Informa. Dr M.
+L. Lipton reported receiving royalties from Springer Publishers, personal fees for serving as an expert witness,
+nonfinancial research support from GE, and personal fees from serving on a medical advisory board for bioMérieux
+outside the submitted work and having a patent for EZ-MAP quantitative image processing issued. No other
+disclosures were reported.
+Data Sharing Statement: See Supplement 2.
+
+REFERENCES
+1. Daneshvar DH, Nair ES, Baucom ZH, et al. Leveraging football accelerometer data to quantify associations
+between repetitive head impacts and chronic traumatic encephalopathy in males. Nat Commun. 2023;14(1):3470.
+doi:10.1038/s41467-023-39183-0
+2. Fédération Internationale de Football Association (FIFA). Big count. FIFA Magazine; 2007:10-15.
+3. Spiotta AM, Bartsch AJ, Benzel EC. Heading in soccer: dangerous play? Neurosurgery. 2012;70(1):1-11. doi:10.
+1227/NEU.0b013e31823021b2
+4. Rodrigues AC, Lasmar RP, Caramelli P. Effects of soccer heading on brain structure and function. Front Neurol.
+2016;7:38. doi:10.3389/fneur.2016.00038
+5. Maher ME, Hutchison M, Cusimano M, Comper P, Schweizer TA. Concussions and heading in soccer: a review of
+the evidence of incidence, mechanisms, biomarkers and neurocognitive outcomes. Brain Inj. 2014;28(3):271-285.
+doi:10.3109/02699052.2013.865269
+6. Webbe FM, Ochs SR. Recency and frequency of soccer heading interact to decrease neurocognitive
+performance. Appl Neuropsychol. 2003;10(1):31-41. doi:10.1207/S15324826AN1001_5
+7. Rutherford A, Stephens R, Potter D, Fernie G. Neuropsychological impairment as a consequence of football
+(soccer) play and football heading: preliminary analyses and report on university footballers. J Clin Exp
+Neuropsychol. 2005;27(3):299-319. doi:10.1080/13803390490515504
+8. Matser JT, Kessels AG, Lezak MD, Troost J. A dose-response relation of headers and concussions with cognitive
+impairment in professional soccer players. J Clin Exp Neuropsychol. 2001;23(6):770-774. doi:10.1076/jcen.23.6.
+770.1029
+9. Matser JT, Kessels AG, Jordan BD, Lezak MD, Troost J. Chronic traumatic brain injury in professional soccer
+players. Neurology. 1998;51(3):791-796. doi:10.1212/WNL.51.3.791
+10. Matser EJ, Kessels AG, Lezak MD, Jordan BD, Troost J. Neuropsychological impairment in amateur soccer
+players. JAMA. 1999;282(10):971-973. doi:10.1001/jama.282.10.971
+11. Kontos AP, Braithwaite R, Chrisman SPD, et al. Systematic review and meta-analysis of the effects of football
+heading. Br J Sports Med. 2017;51(15):1118-1124. doi:10.1136/bjsports-2016-096276
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                  September 18, 2025      10/13
+JAMA Network Open | Neurology                                                                Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+12. Rutherford A, Stephens R, Potter D. The neuropsychology of heading and head trauma in Association Football
+(soccer): a review. Neuropsychol Rev. 2003;13(3):153-179. doi:10.1023/A:1025525613477
+13. Kirkendall DT, Garrett WE Jr. Heading in soccer: integral skill or grounds for cognitive dysfunction? J Athl Train.
+2001;36(3):328-333.
+14. Koerte IK, Wiegand TLT, Bonke EM, Kochsiek J, Shenton ME. Diffusion imaging of sport-related repetitive head
+impacts-a systematic review. Neuropsychol Rev. 2023;33(1):122-143. doi:10.1007/s11065-022-09566-z
+15. Howarth NE, Ji C, Batten J, et al. Neurodegenerative disease and association football (NDAF): systematic
+review and meta-analysis. Int J Environ Res Public Health. 2025;22(5):806. doi:10.3390/ijerph22050806
+16. McKee AC, Mez J, Abdolmohammadi B, et al. Neuropathologic and clinical findings in young contact sport
+athletes exposed to repetitive head impacts. JAMA Neurol. 2023;80(10):1037-1050. doi:10.1001/jamaneurol.
+2023.2907
+17. McCunn R, Beaudouin F, Stewart K, Meyer T, MacLean J. Heading in football: incidence, biomechanical
+characteristics and the association with acute cognitive function—a three-part systematic review. Sports Med.
+2021;51(10):2147-2163. doi:10.1007/s40279-021-01492-z
+18. Snowden T, Reid H, Kennedy S, et al. Heading in the right direction: a critical review of studies examining the
+effects of heading in soccer players. J Neurotrauma. 2021;38(2):169-188.
+19. Fagan BT, Satapathy SS, Rutledge JN, Kornguth SE. Simulation of the strain amplification in sulci due to blunt
+impact to the head. Front Neurol. 2020;11:998. doi:10.3389/fneur.2020.00998
+20. Ross DT, Meaney DF, Sabol MK, Smith DH, Gennarelli TA. Distribution of forebrain diffuse axonal injury
+following inertial closed head injury in miniature swine. Exp Neurol. 1994;126(2):291-299. doi:10.1006/exnr.
+1994.1067
+21. Cullen DK, Harris JP, Browne KD, et al. A porcine model of traumatic brain injury via head rotational
+acceleration. Methods Mol Biol. 2016;1462:289-324. doi:10.1007/978-1-4939-3816-2_17
+22. Smith DH, Cecil KM, Meaney DF, et al. Magnetic resonance spectroscopy of diffuse brain trauma in the pig.
+J Neurotrauma. 1998;15(9):665-674. doi:10.1089/neu.1998.15.665
+23. Smith DH, Chen XH, Xu BN, McIntosh TK, Gennarelli TA, Meaney DF. Characterization of diffuse axonal
+pathology and selective hippocampal damage following inertial brain trauma in the pig. J Neuropathol Exp Neurol.
+1997;56(7):822-834. doi:10.1097/00005072-199756070-00009
+24. Ackermans NL, Varghese M, Williams TM, et al. Evidence of traumatic brain injury in headbutting bovids. Acta
+Neuropathol. 2022;144(1):5-26. doi:10.1007/s00401-022-02427-2
+25. Babcock KJ, Abdolmohammadi B, Kiernan PT, et al. Interface astrogliosis in contact sport head impacts and
+military blast exposure. Acta Neuropathol Commun. 2022;10(1):52. doi:10.1186/s40478-022-01358-z
+26. Stemper BD, Shah AS, Pintar FA, et al. Head rotational acceleration characteristics influence behavioral and
+diffusion tensor imaging outcomes following concussion. Ann Biomed Eng. 2015;43(5):1071-1088. doi:10.1007/
+s10439-014-1171-9
+27. Petrie EC, Cross DJ, Yarnykh VL, et al. Neuroimaging, behavioral, and psychological sequelae of repetitive
+combined blast/impact mild traumatic brain injury in Iraq and Afghanistan war veterans. J Neurotrauma. 2014;31
+(5):425-436. doi:10.1089/neu.2013.2952
+28. Hähnel S, Stippich C, Weber I, et al. Prevalence of cerebral microhemorrhages in amateur boxers as detected
+by 3T MR imaging. AJNR Am J Neuroradiol. 2008;29(2):388-391. doi:10.3174/ajnr.A0799
+29. Honda E, Tokunaga T, Oshima Y, et al. MRI findings of closed head injury in children; with special reference to
+the effect of central shearing force [in Japanese]. No Shinkei Geka. 1992;20(3):235-242.
+30. Thatcher RW, Camacho M, Salazar A, Linden C, Biver C, Clarke L. Quantitative MRI of the gray-white matter
+distribution in traumatic brain injury. J Neurotrauma. 1997;14(1):1-14. doi:10.1089/neu.1997.14.1
+31. Palacios EM, Sala-Llonch R, Junque C, et al. White matter/gray matter contrast changes in chronic and diffuse
+traumatic brain injury. J Neurotrauma. 2013;30(23):1991-1994. doi:10.1089/neu.2012.2836
+32. Pankatz L, Rojczyk P, Seitz-Holland J, et al. Adverse outcome following mild traumatic brain injury is associated
+with microstructure alterations at the gray and white matter boundary. J Clin Med. 2023;12(16):5415. doi:10.3390/
+jcm12165415
+33. Gentry LR, Godersky JC, Thompson B. MR imaging of head trauma: review of the distribution and
+radiopathologic features of traumatic lesions. AJR Am J Roentgenol. 1988;150(3):663-672. doi:10.2214/ajr.
+150.3.663
+34. Perkins RA, et al. Assessment of brain injury biomechanics in soccer heading using finite element analysis.
+Brain Multiphys. 2022;3:100052. doi:10.1016/j.brain.2022.100052
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                    September 18, 2025     11/13
+JAMA Network Open | Neurology                                                                Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+35. Edlow BL, Tseng CJ, Gilmore N, et al. Neuroinflammation at the gray-white matter interface in active-duty U.S.
+special operations forces. Neurotrauma Rep. 2024;5(1):1205-1211. doi:10.1089/neur.2024.0116
+36. Fleysher R, Lipton ML. Profiling diffusion at the grey matter-white matter interface (GWI) to reveal unique
+microstructural features: proof of concept in aging. Paper presented at: 2021 ISMRM & SMRT Annual Meeting &
+Exhibition. May 15-20, 2021; virtual meeting. Accessed October 10, 2021. https://archive.ismrm.org/2021/
+1701.html
+37. Song JY, Fleysher R, Ye K, et al. Characterizing the microstructural transition at the gray matter-white matter
+interface: implementation and demonstration of age-associated differences. Neuroimage. 2025;306:121019. doi:
+10.1016/j.neuroimage.2025.121019
+38. Levitch CF, Zimmerman ME, Lubin N, et al. Recent and long-term soccer heading exposure is differentially
+associated with neuropsychological function in amateur players. J Int Neuropsychol Soc. 2018;24(2):147-155. doi:
+10.1017/S1355617717000790
+39. Strauss SB, Fleysher R, Ifrah C, et al. Framing potential for adverse effects of repetitive subconcussive impacts
+in soccer in the context of athlete and non-athlete controls. Brain Imaging Behav. 2021;15(2):882-895. doi:10.
+1007/s11682-020-00297-4
+40. Lipton ML, Kim N, Zimmerman ME, et al. Soccer heading is associated with white matter microstructural and
+cognitive abnormalities. Radiology. 2013;268(3):850-857. doi:10.1148/radiol.13130545
+41. Rubin TG, Catenaccio E, Fleysher R, et al. MRI-defined white matter microstructural alteration associated with
+soccer heading is more extensive in women than men. Radiology. 2018;289(2):478-486. doi:10.1148/radiol.
+2018180217
+42. Hunter LE, Ifrah C, Zimmerman ME, et al. Heading and unintentional head impacts have opposing associations
+with patient reported outcomes in amateur soccer players. Res Sports Med. 2018;26(4):390-400. doi:10.1080/
+15438627.2018.1492396
+43. Hunter LE, Freudenberg-Hua Y, Davies P, et al. Associations of apolipoprotein E ε4 genotype and ball heading
+with verbal memory in amateur soccer players. JAMA Neurol. 2020;77(4):419-426. doi:10.1001/jamaneurol.
+2019.4828
+44. Catenaccio E, Caccese J, Wakschlag N, et al. Validation and calibration of HeadCount, a self-report measure for
+quantifying heading exposure in soccer players. Res Sports Med. 2016;24(4):416-425. doi:10.1080/15438627.
+2016.1234472
+45. Lipton ML, Ifrah C, Stewart WF, et al. Validation of HeadCount-2w for estimation of two-week heading:
+comparison to daily reporting in adult amateur player. J Sci Med Sport. 2018;21(4):363-367. doi:10.1016/j.jsams.
+2017.08.008
+46. Sandmo SB, Gooijers J, Seer C, et al. Evaluating the validity of self-report as a method for quantifying heading
+exposure in male youth soccer. Res Sports Med. 2021;29(5):427-439. doi:10.1080/15438627.2020.1853541
+47. Stricker NH, Lundt ES, Albertson SM, et al. Diagnostic and Prognostic accuracy of the CogState Brief Battery
+and Auditory Verbal Learning Test in preclinical Alzheimer’s disease and incident mild cognitive impairment:
+implications for defining subtle objective cognitive impairment. J Alzheimers Dis. 2020;76(1):261-274. doi:10.
+3233/JAD-200087
+48. Maruff P, Thomas E, Cysique L, et al. Validity of the CogState brief battery: relationship to standardized tests
+and sensitivity to cognitive impairment in mild traumatic brain injury, schizophrenia, and AIDS dementia complex.
+Arch Clin Neuropsychol. 2009;24(2):165-178. doi:10.1093/arclin/acp010
+49. R. Version 4.11. R Project for Statistical Computing. 2022. Accessed September 10, 2022. https://www.R-
+project.org/
+50. Baron RM, Kenny DA. The moderator-mediator variable distinction in social psychological research:
+conceptual, strategic, and statistical considerations. J Pers Soc Psychol. 1986;51(6):1173-1182. doi:10.1037/0022-
+3514.51.6.1173
+51. Neiheisel JR. The SAGE Encyclopedia of Communication Research Methods. SAGE Publications; 2017.
+52. Shively SB, Horkayne-Szakaly I, Jones RV, Kelly JP, Armstrong RC, Perl DP. Characterisation of interface
+astroglial scarring in the human brain after blast exposure: a post-mortem case series. Lancet Neurol. 2016;15(9):
+944-953. doi:10.1016/S1474-4422(16)30057-6
+53. Budde MD, Janes L, Gold E, Turtzo LC, Frank JA. The contribution of gliosis to diffusion tensor anisotropy and
+tractography following traumatic brain injury: validation in the rat using Fourier analysis of stained tissue sections.
+Brain. 2011;134(Pt 8):2248-2260. doi:10.1093/brain/awr161
+54. Smith SM, Jenkinson M, Johansen-Berg H, et al. Tract-based spatial statistics: voxelwise analysis of multi-
+subject diffusion data. Neuroimage. 2006;31(4):1487-1505. doi:10.1016/j.neuroimage.2006.02.024
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                    September 18, 2025     12/13
+JAMA Network Open | Neurology                                                              Orbitofrontal Gray-White Interface Injury in Soccer Heading and Verbal Learning
+
+
+55. Thompson TA, Wilson PH, Snyder PJ, et al. Sensitivity and test-retest reliability of the international shopping
+list test in assessing verbal learning and memory in mild Alzheimer’s disease. Arch Clin Neuropsychol. 2011;26
+(5):412-424. doi:10.1093/arclin/acr039
+56. Rolls ET. The functions of the orbitofrontal cortex. Brain Cogn. 2004;55(1):11-29. doi:10.1016/S0278-2626
+(03)00277-X
+57. Charney MF, Ye KQ, Fleysher R, et al. Age of first exposure to soccer heading: associations with cognitive,
+clinical, and imaging outcomes in the Einstein Soccer Study. Front Neurol. 2023;14:1042707. doi:10.3389/fneur.
+2023.1042707
+
+
+SUPPLEMENT 1.
+eMethods 1. Race and Ethnicity
+eMethods 2. Scanning Procedure
+eMethods 3. Computation of GWI Slope
+eMethods 4. Post-Hoc Analysis
+eFigure 1. Schematic for Slope of FA Calculation in 1 Region for 1 Participant
+eFigure 2. Adjusted FA Slope vs 12-mo RHI Count
+eFigure 3. Sensitivity Analysis: Adjusted FA Slope vs 12-mo RHI Rank
+eTable 1. CogState Battery Linear Associations With 12-mo RHI
+eTable 2. Detailed Linear Model Results for FA Slope With Covariate Effect Estimates
+eTable 3. Linear Model Results for Orbitofrontal FA Slope With Interaction Effects
+eTable 4. Linear Model Results for ICVF Slope
+eTable 5. Linear Model Results for ODI Slope
+eTable 6. Linear Model Results for AD Slope
+eTable 7. Additional Study Demographic Characteristics
+eTable 8. Post-Hoc Analysis: Linear Model Results for Orbitofrontal FA Slope Association RHI With Additional
+Covariate Effect Estimates
+
+
+SUPPLEMENT 2.
+Data Sharing Statement
+
+
+
+
+   JAMA Network Open. 2025;8(9):e2532461. doi:10.1001/jamanetworkopen.2025.32461 (Reprinted)                                                  September 18, 2025     13/13
+

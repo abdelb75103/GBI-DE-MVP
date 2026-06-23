@@ -1,0 +1,866 @@
+Article
+
+Perceptual Decision Efficiency Is Modifiable and Associated with
+Decreased Musculoskeletal Injury Risk Among Female College
+Soccer Players
+Gary B. Wilkerson 1, * , Alejandra J. Gullion 2 , Katarina L. McMahan 2 , Lauren T. Brooks 2 , Marisa A. Colston 1 ,
+Lynette M. Carlson 1 , Jennifer A. Hogg 1 and Shellie N. Acocello 1
+
+                                         1   Department of Health & Human Performance, University of Tennessee at Chattanooga,
+                                             Chattanooga, TN 37403, USA; marisa-colston@utc.edu (M.A.C.); lynette-carlson@utc.edu (L.M.C.);
+                                             jennifer-hogg@utc.edu (J.A.H.); shellie-acocello@utc.edu (S.N.A.)
+                                         2   Graduate Athletic Training Education Program, University of Tennessee at Chattanooga,
+                                             Chattanooga, TN 37403, USA; gmn283@mocs.utc.edu (A.J.G.); tlt381@mocs.utc.edu (K.L.M.);
+                                             zmz916@mocs.utc.edu (L.T.B.)
+                                         *   Correspondence: gary-wilkerson@utc.edu
+
+                                         Abstract
+                                         Background: Prevention and clinical management of musculoskeletal injuries have his-
+                                         torically focused on the assessment and training of modifiable physical factors, but per-
+                                         ceptual decision-making has only recently been recognized as a potentially important
+                                         capability. Immersive virtual reality (VR) systems can measure the speed, accuracy, and
+                                         consistency of body movements corresponding to stimulus–response instructions for the
+                                         completion of a forced-choice task. Methods: A cohort of 26 female college soccer play-
+                                         ers (age 19.5 ± 1.3 years) included 10 players who participated in a baseline assessment,
+                                         10 perceptual-response training (PRT) sessions, a post-training assessment that preceded
+                                         the first soccer practice, and a post-season assessment. The remaining 16 players completed
+                                         an assessment prior to the team’s first pre-season practice session, and a post-season assess-
+                                         ment. The assessments and training sessions involved left- or right-directed neck rotation,
+Academic Editor: Haruo Nakayama          arm reach, and step-lunge reactions to 40 presentations of different types of horizontally
+Received: 3 June 2025
+                                         moving visual stimuli. The PRT program included 4 levels of difficulty created by changes
+Revised: 30 June 2025                    in initial stimulus location, addition of distractor stimuli, and increased movement speed,
+Accepted: 2 July 2025                    with ≥90% response accuracy used as the criterion for training progression. Perceptual
+Published: 4 July 2025                   latency (PL) was defined as the time elapsed from stimulus appearance to initiation of neck
+Citation: Wilkerson, G.B.; Gullion,      rotation toward a peripheral virtual target. The speed–accuracy tradeoff was represented
+A.J.; McMahan, K.L.; Brooks, L.T.;       by Rate Correct per Second (RCS) of PL, and inconsistency across trials derived from their
+Colston, M.A.; Carlson, L.M.; Hogg,
+                                         standard deviation for PL was represented by intra-individual variability (IIV). Perceptual
+J.A.; Acocello, S.N. Perceptual
+                                         Decision Efficiency (PDE) represented the ratio of RCS to IIV, which provided a single value
+Decision Efficiency Is Modifiable and
+Associated with Decreased
+                                         representing speed, accuracy, and consistency. Statistical procedures included the bivariate
+Musculoskeletal Injury Risk Among        correlation between RCS and IIV, dependent t-test comparisons of pre- and post-training
+Female College Soccer Players. Brain     metrics, repeated measures analysis of variance for group X session pre- to post-season
+Sci. 2025, 15, 721. https://doi.org/     comparisons, receiver operating characteristic analysis, and Kaplan–Meier time to injury
+10.3390/brainsci15070721
+                                         event analysis. Results: Statistically significant (p < 0.05) results were found for pre- to
+Copyright: © 2025 by the authors.        post-training change, and pre-season to post-season group differences, for RCS, IIV, and
+Licensee MDPI, Basel, Switzerland.       PDE. An inverse logarithmic relationship was found between RCS and IIV (Spearman’s
+This article is an open access article
+                                         Rho = −0.795). The best discriminator between injured and non-injured statuses was
+distributed under the terms and
+                                         PDE ≤ 21.6 (93% Sensitivity; 42% Specificity; OR = 9.29). Conclusions: The 10-session PRT
+conditions of the Creative Commons
+Attribution (CC BY) license
+                                         program produced significant improvement in perceptual decision-making that appears
+(https://creativecommons.org/            to provide a transfer benefit, as the PDE metric provided good prospective prediction of
+licenses/by/4.0/).                       musculoskeletal injury.
+
+
+Brain Sci. 2025, 15, 721                                                                                   https://doi.org/10.3390/brainsci15070721
+Brain Sci. 2025, 15, 721                                                                                             2 of 18
+
+
+
+                           Keywords: virtual reality; perceptual decision-making; performance enhancement; injury
+                           prevention; cognitive training
+
+
+
+
+                           1. Introduction
+                                 Competitive advantages in sports and the avoidance of sport-related injury are widely
+                           recognized to be heavily dependent on physical performance capabilities, including muscu-
+                           lar strength, power, endurance, speed, and flexibility, but the neural efficiency of cog-
+                           nitive processes has not historically been recognized as a fundamental factor that is
+                           modifiable [1–4]. Reaction time, or response time (RT), is widely viewed as a valid be-
+                           havioral indicator of brain processing speed [5], but rapid muscle responses to sensory
+                           inputs only have value when they contribute to effective (i.e., correct) goal-directed ac-
+                           tions [6,7]. Perceptual decision-making is defined as the process of discriminating between
+                           sensory stimuli for selection of a response among alternative options [8], which represents a
+                           higher order cognitive process than the generation of simple reactive responses to environ-
+                           mental stimuli. In fact, sport performance can be conceptualized as a series of perceptual
+                           decisions that are made under rapidly changing environmental conditions [9], and the
+                           impairment of perceptual decision-making appears to increase injury susceptibility [10].
+                           Given the importance of cognitive processes, the practical challenges to realize the potential
+                           benefits of enhanced neural efficiency is the identification of the best performance metrics
+                           for its assessment and a training method that will produce beneficial adaptations [11–13].
+                                 Virtual reality (VR) provides a means to control the timing, movement patterns, and
+                           forms of successive visual stimuli presented within an immersive head-mounted display,
+                           and to precisely quantify the amount of time that elapses until the expression of a given
+                           decision through the initiation of a specified stimulus–response movement [14]. Ideally, the
+                           design of testing and training procedures should reflect current understanding of neural
+                           mechanisms associated with perceptual decision-making [15,16]. Although brain–behavior
+                           relationships are exceedingly complex, numerous studies have provided evidence that the
+                           drift–diffusion computational model of decision-making provides a valid representation
+                           of the distinct neural processes of sensory evidence accumulation and adjustments in a
+                           decision threshold [7,17–26]. Moment-to-moment variation in the signal-to-noise ratio of
+                           accumulating evidence (i.e., diffusion) is transmitted from the middle temporal area to
+                           the lateral intraparietal sulcus, which drives its rate of neuronal firing toward a decision
+                           threshold (i.e., drift). A separate neural circuit involving the medial prefrontal cortex and
+                           the subthalamic nucleus monitors the amount of evidence needed to avoid an incorrect
+                           decision, with an upward or downward adjustment of the decision threshold to optimize
+                           the speed–accuracy tradeoff for subsequent decisions [20]. Behavioral manifestations of
+                           these neural processes can be approximated by metrics derived from a two-alternative,
+                           forced-choice task [27], which may be optimized within an immersive VR environment.
+                                 Perceptual latency (PL) has previously been defined as the time that elapses from
+                           visual stimulus appearance to the earliest detectable initiation of a movement response (i.e.,
+                           six degrees of angular displacement of the neck toward a peripherally located response tar-
+                           get), which estimates the duration of the perceptual decision-making process and excludes
+                           the time required for full execution of a movement response [28]. The intra-individual
+                           variability (IIV) of the elapsed decision time across trials (i.e., trial-to-trial inconsistency)
+                           is believed to be an indicator of a suboptimal signal-to-noise ratio [26]. An elevated IIV
+                           and a low signal-to-noise ratio are believed to result from interrelationships among intrin-
+                           sic neural dynamics [8,29–32], stochastic neuronal spiking activity [7,33,34], attentional
+                           lapses [35–39], microstructural disruption of white matter tracts [40–42], fluctuations in
+Brain Sci. 2025, 15, 721                                                                                            3 of 18
+
+
+
+                           synchronization of neural signals [43–45], or alterations in functional connectivity between
+                           and within brain networks [46–48]. The findings of previous research suggest that IIV
+                           may be viewed as a behavioral efficiency index to represent an individual’s perceptual
+                           decision-making capability [38]. Thus, a high IIV across successive trials would be an
+                           indicator of low neural efficiency [34].
+                                 The Rate Correct per Second (RCS) of the elapsed perceptual decision-making time
+                           for all trials provides a VR metric representing the speed–accuracy tradeoff with a sin-
+                           gle value [49], which reflects the neural mechanism responsible for setting the decision
+                           threshold [22,25]. Although drift–diffusion evidence accumulation and decision thresh-
+                           old adjustments are distinct processes, high-quality sensory inputs could be expected to
+                           produce a faster drift rate and fewer incorrect decisions, and interactions across multiple
+                           decisions made in close succession could be expected to produce an inverse correlation
+                           between the respective behavioral manifestations represented by RCS and IIV [50]. If so, a
+                           Perceptual Decision Efficiency (PDE) metric derived from the ratio of RCS to IIV for neck
+                           PL would provide a single value representing decision speed, accuracy, and consistency.
+                                 Some research evidence has demonstrated that VR training can improve behavioral
+                           metrics associated with neurophysiological mechanisms underlying perceptual decision-
+                           making [51–53], but relatively little evidence of the transfer to real-world benefits from such
+                           training currently exists [13]. In principle, a perceptual decision-making task that progres-
+                           sively becomes more difficult should elicit neuroplastic adaptations within neural circuits
+                           that improve performance capabilities [1,2,54]. Arguably, the most important transfer
+                           effect for athletes would be a reduction in injury incidence [55]. Female soccer players are
+                           among athletes with the greatest level of exposure to injury risk, which may be increased
+                           by repetitive sub-concussive head impacts associated with heading or their combined
+                           effect with a history of concussion [56–58]. Accordingly, the purposes of this study were
+                           to: (1) assess the magnitude of improvement in neck PL performance metrics following
+                           a total of 10 VR perceptual response training sessions completed within a 10-day period
+                           prior to the initiation of pre-season practice sessions for a group of 10 college women’s
+                           soccer players; (2) compare the incidence of musculoskeletal sprain, strain, or overuse
+                           injury among a cohort of 26 college women’s soccer players (10 trained and 16 untrained)
+                           over a 14-week period of practice sessions and games; and (3) evaluate the relationships
+                           among VR metrics that may advance the understanding of brain processes controlling
+                           observable goal-directed behavior. The novel aspect of this study is the derivation of a
+                           composite VR metric that is expected to be prospectively associated with the likelihood for
+                           musculoskeletal injury occurrence.
+
+                           2. Materials and Methods
+                           2.1. Participants and Institutional Review Board Statement
+                                A total of 26 college women’s soccer players (19.5 ± 1.3 years, 1.68 ± 0.06 m,
+                           63.57 ± 6.75 kg), who comprised the entire roster of an NCAA Division I team, partic-
+                           ipated in the study. As members of a collegiate team roster, each athlete provided consent
+                           and authorization for access to protected health information for research purposes. All
+                           procedures were approved by the Institutional Review Board of the University of Ten-
+                           nessee at Chattanooga (#23-052 approved on 8 May 2023). The study complied with the
+                           Declaration of Helsinki (DoH)—Ethical Principles for Medical Research Involving Human
+                           Participants (1964) and its latest amendments adopted by the 75th General Assembly of the
+                           World Medical Association (WMA) in Finland on 19 October 2024. The only exclusionary
+                           criterion was an injury-related impairment that limited the ability to perform rapid arm
+                           reaching and single-step lunging movements.
+Brain Sci. 2025, 15, 721                                                                                             4 of 18
+
+
+
+                           2.2. Procedures
+                                 Prior to participation in a baseline VR test, each player completed an electronic ver-
+                           sion of the Global Well-Being Index [59], which recorded introspective ratings of their
+                           current statuses pertaining to: (1) general pain/discomfort (headaches, neck pain, non-
+                           specific body discomfort), (2) sleep-related problems (trouble falling asleep, sleeping less, fa-
+                           tigue/drowsiness), (3) mood-related problems (nervousness/anxiety, sadness/depression,
+                           irritability/stress), (4) musculoskeletal problems during activities of daily living (aching
+                           discomfort, joint stiffness, muscle spasms/tightness), and (5) high-intensity performance
+                           limitations (running speed, explosive power, endurance). A positive response within a
+                           category triggered follow-up queries to rate frequency, temporal recency, and severity.
+                           The sum of the 0–10 values for each of the five categories yielded a 0–50 introspective
+                           dysfunction rating (i.e., a high score indicating suboptimal well-being). Self-reported life-
+                           time histories of concussion and musculoskeletal sprains and strains sustained during the
+                           previous 12-month period were also documented by the selection of response options on
+                           the electronic survey administered through the REDCap (Research Electronic Data Capture)
+                           system [60]. All musculoskeletal injuries that were evaluated and treated by athletic train-
+                           ers over the course of a 14-week period, which included all pre-season practice sessions,
+                           in-season practice sessions, and a total of 19 games, were electronically documented.
+                                 A convenience cohort of 10 players who were physically present two weeks prior to
+                           the start of the pre-season practice sessions participated in a baseline VR test of perceptual
+                           decision-making, followed by 10 perceptual response training (PRT) sessions scheduled
+                           on consecutive days. Each VR session (i.e., testing and training) involved 40 trials of neck
+                           rotation, arm reaching, and single-step lower extremity lunging movements in response
+                           to light blue visual stimuli that moved horizontally across the black background of the
+                           head-mounted display. The baseline test corresponded to the initial difficulty level for
+                           PRT, which presented a single stimulus per trial that indicated the correct left or right
+                           directional response for hand controller movement to a peripherally located virtual target:
+                           (1) a horizontally moving circle dictated a movement response in the same direction as that
+                           of the circle, whereas (2) a horizontally moving ring dictated a movement response in the
+                           direction opposite that of the ring.
+                                 A transition to a greater level of task difficulty was made for the next PRT session
+                           that followed a correct response rate of 90 percent or greater (≥36/40). Each of the three
+                           progressively higher difficulty levels included two distractor stimuli (circles, rings, or one
+                           of each). The two highest difficulty levels introduced variability in the initial location of the
+                           target stimulus in relation to the distractor stimuli, and the highest difficulty level increased
+                           the movement speed of the stimuli. The 10 players who completed the PRT program
+                           performed a follow-up VR test that corresponded to the difficulty level of the baseline test
+                           on the day after the tenth training session. The remaining 16 players who did not train
+                           completed the baseline VR test 1–3 days prior to the first pre-season practice session. Thus,
+                           the follow-up tests for the 10 training group (TG) players and the baseline tests for the 16
+                           untrained comparison group (CG) players were designated as pre-season tests, which were
+                           compared to post-season tests administered at the end of the 14-week period of practice
+                           sessions and games. Figure 1 presents a flowchart that depicts the sequence of VR testing
+                           and training.
+                                 The immersive VR system (PICO Neo3 Pro Eye, PICO Immersive, Ltd., Mountain
+                           View, CA, USA) quantified the amount of time that elapsed from the stimulus appear-
+                           ance to the initiation of movement toward a peripheral virtual target (i.e., PL) for eye
+                           displacement (6 degrees), neck rotation (6 degrees), arm reaching with the hand controller
+                           (10 cm), and lower extremity single-step lunging (10 cm). Response time (RT) for the same
+                           movements quantified the amount of time elapsed from the stimulus presentation to the
+Brain Sci. 2025, 15, 721                                                                                                 5 of 18
+
+
+
+                           maximum extent of horizontal displacement toward the virtual target (Figure 2). Further
+                           details of the immersive VR testing procedures and the rationale for the derivation of
+                           the various performance metrics have been presented in previous reports [28,52,53,59,61].
+                           The prospective associations with musculoskeletal injury have been documented for arm
+                           RT [59], as well as arm RCS-RT and arm IIV-RT [53]. The VR metric that demonstrated the
+                           strongest retrospective association with concussion history among college wrestlers was
+                           neck IIV-PL [52], which may provide a more isolated representation of cognitive function
+                           than arm IIV-RT. Among the various VR metrics, test–retest reliability was greatest for neck
+                           mean-PL (ICC = 0.922) and neck IIV-PL (ICC = 0.836) over three measurement sessions on
+                           consecutive days [28]. The same dataset was subsequently used to calculate values for neck
+                           RCS-PL (ICC = 0.916) and neck PDE (ICC = 0.842).
+
+
+
+
+                           Figure 1. Flowchart depicting the time course of assessments, training, and injury surveillance.
+
+                           2.3. Data Analysis
+                                The predictive modeling of the potential benefit of immersive VR training for injury
+                           prevention was the focus of this study, rather than the testing of specific hypotheses. Ac-
+                           cordingly, the statistical significance of a given test result was based on α < 0.05, without
+                           adjustments for multiple comparisons. Group comparisons for potentially confounding
+                           factors utilized chi-square tests for count data and Fischer’s exact test for binary categoriza-
+                           tions. A Mann–Whitney test was used to compare 0–50 introspective dysfunction ratings
+                           between groups.
+                                The Shapiro–Wilk test was used to assess the distribution normality of each neck
+                           PL metric for each measurement session, and natural log transformation was applied to
+                           improve the normality of positively skewed data. Original and log-transformed data were
+                           analyzed by dependent t-tests for TG pre- and post-training comparisons, as well as group
+                           X session repeated measures analysis of variance for pre- and post-season assessments.
+                           Cohen’s d quantified the effect size associated with the dependent t-test results (≥0.2 small,
+                           ≥0.5 medium, ≥0.8 large), whereas partial eta-squared quantified the effect size for the
+                           group X session results (≥0.01 small, ≥0.06 medium, ≥0.14 large) [62].
+Brain Sci. 2025, 15, 721                                                                                                   6 of 18
+
+
+
+
+                           Figure 2. Depiction of time intervals derived from angular (neck rotation) and translatory (arm
+                           reaching) displacements of body segments toward a virtual target located beyond the peripheral field
+                           of view of the immersive virtual reality headset display, including definitions of performance metrics.
+                           The illustration photo is reproduced with permission from Ref. [59].
+
+                                Bivariate regression curve estimation was used to evaluate an expected relationship
+                           between IIV and RCS. Receiver operating characteristic analysis was used to identify an
+                           optimal cut point for the binary classification of musculoskeletal injury risk, which was
+                           evaluated for its discriminatory value by calculation of its sensitivity, specificity, and odds
+                           ratio (OR). The magnitude of the OR (≥1.32 small, ≥2.38 medium, ≥4.70 large) was used
+                           to qualitatively assess the effect of the binary risk classification [63]. The cut point classifier
+                           found to provide the best discrimination was subsequently used in a Kaplan–Meier time to
+                           event analysis. All analyses were performed using SPSS Version 29.0 (Armonk, NY, USA).
+
+                           3. Results
+                                The median age of the TG was 18 years (range 18–21) compared with 20 years for the
+                           CG (range 18–22), which was a statistically significant age difference (p = 0.024). No signifi-
+                           cant differences were found for lifetime history of concussion (p = 0.701), musculoskeletal
+                           injury in the prior year (p = 0.422), attention deficit hyperactivity disorder (p = 0.508), learn-
+                           ing disability (p > 0.999), number of games as a starter (p = 0.468), or number of games
+                           played (p = 0.610). Neither was there any significant difference between the 0–50 introspec-
+                           tive dysfunction rating between the groups (p = 0.938), nor for any of the 0–10 sub-scores
+                           for the five problem categories of the Global Well-Being Index.
+Brain Sci. 2025, 15, 721                                                                                                    7 of 18
+
+
+
+                                     To ensure that a total of 10 training sessions were completed by each TG player,
+                                those who were unavailable on a given day due to schedule conflicts participated in two
+                                consecutive 40-trial sessions on the following day. An unknown technology malfunction
+                                resulted in the corruption of data for one participant’s post-training assessment, which was
+                                imputed with TG mean values for each post-training VR metric. A knee injury sustained
+                                by one CG player precluded performance of the post-season assessment. The missing data
+                                was imputed with CG mean values for each post-season VR metric.
+                                     Natural log (Loge ) transformation marginally improved the distribution normality
+                                of the neck PL metrics for majority of the test sessions. Results are provided for both
+                                the original (untransformed) data and Loge data analyzed by dependent t-tests for TG
+                                pre- and post-training comparisons (Tables 1 and 2), as well as group (TG versus CG)
+                                X session (pre- versus post-season) repeated measures analysis of variance procedures
+                                (Tables 3–5). The results for the analyses of Loge data present geometric means (i.e.,
+                                back-transformations of Loge values approximating median values for pre- and post-
+                                training data and group X session data). Post hoc power values for the original and
+                                Loge -transformed data group differences were both 1.000 for Perceptual Decision Efficiency,
+                                both 0.998 for Rate Correct per Second, and 0.997 (original data) and 1.000 (transformed
+                                data) for Intra-Individual Variability.
+
+                                Table 1. Distribution Skew and Shapiro–Wilk Result (S-W p) and Pre- to Post-Training Change in
+                                Original (Untransformed) Metrics for Neck Perceptual Latency among Players in Training Group.
+
+                                       Distribution Skew (S-W p)                   Mean (Std Dev)                 Difference
+       Virtual Reality Metric         Pre-Training      Post-Training      Pre-Training       Post-Training        p        d
+          Rate Correct
+                                     −0.327 (0.813)      1.013 (0.309)       1.47 (0.45)        2.11 (0.44)      0.012     1.00
+           per Second
+        Intra-Individual
+                                      0.243 (0.484)     2.880 (<0.001)      0.544 (0.312)     0.106 (0.046)      0.002     1.34
+           Variability
+  Perceptual Decision Efficiency      1.025 (0.024)      0.169 (0.181)       4.75 (4.41)       22.30 (8.13)     <0.001     1.75
+
+
+                                Table 2. Distribution Skew and Shapiro–Wilk Result (S-W p) and Pre- to Post-Training Change in Nat-
+                                ural Log-Transformed (Loge ) Metrics for Neck Perceptual Latency among Players in Training Group.
+
+                                       Distribution Skew (S-W p)              Geometric Mean (Loge )              Difference
+       Virtual Reality Metric         Pre-Training      Post-Training      Pre-Training       Post-Training        p        d
+          Rate Correct
+                                     −0.932 (0.367)      0.280 (0.692)       1.40 (0.34)        2.07 (0.73)      0.013     0.98
+           per Second
+        Intra-Individual
+                                     −0.607 (0.003)     2.372 (<0.001)     0.448 (−0.80)      0.101 (−2.30)     <0.001     1.77
+           Variability
+  Perceptual Decision Efficiency      0.065 (0.530)     −1.885 (0.008)       3.12 (1.14)       20.60 (3.03)     <0.001     1.57
+
+
+                                      Figure 3A–C presents graphic depictions of the changes in neck PL metrics across all
+                                testing sessions that include labels for the original untransformed mean values. Figure 4
+                                illustrates an inverse logarithmic relationship between RCS-PL and IIV-PL (Spearman’s
+                                Rho = −0.795; p < 0.001), which supports the validity of the PDE metric as a highly infor-
+                                mative indicator of perceptual decision-making performance. Among the TG players, a
+                                change in the ratio of neck mean-PL to arm mean-RT from 0.49 to 0.46 indicates a reduction
+                                in the duration of the perceptual decision-making component of the time that elapsed from
+                                stimulus appearance to maximum arm displacement toward the virtual target. Arm mean
+                                movement time (mean-MT = mean-RT − mean-PL) improved by 20% (0.727 s to 0.580 s),
+                                whereas neck mean-PL improved by 30% (0.705 to 0.493 s).
+Brain Sci. 2025, 15, 721                                                                                                     8 of 18
+
+
+
+                                 Table 3. Distribution Skew and Shapiro–Wilk Result (S-W p) for Original (Untransformed) and Log-
+                                 Transformed (Loge ) Neck Perceptual Latency Metrics for Pre-Season and Post-Season Assessments.
+
+                                          Distribution Skew (S-W p)                        Distribution Skew (S-W p)
+                                                Original Data                                      Loge Data
+                                       Pre-Season              Post-Season              Pre-Season                Post-Season
+     Virtual Reality Metric
+                                      Skew (S-W p)            Skew (S-W p)             Skew (S-W p)              Skew (S-W p)
+          Rate Correct
+                                       0.711 (0.389)           0.301 (0.849)           −0.114 (0.981)            −0.108 (0.934)
+           per Second
+        Intra-Individual
+                                       0.892 (0.001)           0.786 (0.012)            0.128 (0.016)            −0.144 (0.032)
+           Variability
+       Perceptual Decision
+                                       0.927 (0.001)           1.099 (<0.001)          −0.153 (0.082)            0.122 (0.128)
+            Efficiency
+
+
+                                 Table 4. Pre- to Post-Season Change in Original (Untransformed) Immersive Virtual Reality Metrics
+                                 for Neck Perceptual Latency among Players in Training Group (TG) versus Comparison Group (CG).
+
+                                                                                        Group X Session             Group
+                                                             Mean (Std Dev)
+                                                                                          Interaction              Difference
+        Virtual Reality Metric           Group         Pre-Season      Post-Season          p           ηp 2       p        ηp 2
+                                           TG          22.31 (3.02)     12.71 (2.54)
+   Perceptual Decision Efficiency                                                         0.017     0.216        <0.001    0.717
+                                           CG           4.23 (1.11)      4.39 (1.48)
+              Rate Correct                 TG           2.11 (0.72)     2.03 (0.70)
+               per Second                                                                 0.063     0.137        <0.001    0.510
+                                           CG           1.39 (0.29)      1.64 (0.49)
+            Intra-Individual               TG          0.106 (0.046)   0.204 (0.174)
+               Variability                                                                0.147     0.085        <0.001    0.503
+                                           CG          0.516 (0.279)   0.438 (0.232)
+
+
+                                 Table 5. Pre- to Post-Season Change in Natural Log-Transformed (Loge ) Immersive Virtual Reality
+                                 Metrics for Neck Perceptual Latency among Players in Training Group (TG) versus Comparison
+                                 Group (CG).
+
+                                                                                          Group X Session            Group
+                                                          Geometric Mean (Loge )
+                                                                                            Interaction             Difference
+        Virtual Reality Metric           Group          Pre-Season      Post-Season             p        ηp 2          p     ηp 2
+                                           TG           20.60 (3.03)     12.71 (2.54)
+   Perceptual Decision Efficiency                                                          0.038         0.168    <0.001    0.680
+                                           CG            3.06 (1.12)      4.39 (1.48)
+              Rate Correct                 TG            2.07 (0.73)      2.03 (0.70)
+               per Second                                                                  0.038         0.168    <0.001    0.511
+                                           CG            1.34 (0.29)      1.64 (0.49)
+            Intra-Individual               TG          0.101 (−2.30)    0.160 (−1.83)
+                                                                                           0.073         0.128    <0.001    0.653
+               Variability                 CG          0.437 (−0.83)    0.374 (−0.98)
+
+
+                                      A total of 21 injuries were sustained by 14 players (i.e., 2 players sustained 3 injuries,
+                                 3 players sustained 2 injuries, and 9 players sustained a single injury), each of which
+                                 involved the core or lower extremity: 3 low back, 3 groin/hip, 3 thigh, 6 knee, and 6 lower
+                                 leg injuries. Group membership did not demonstrate a strong association with injury
+                                 incidence, which was 63% (10/16) among CG players compared with 40% (4/10) among
+                                 TG players (OR = 2.50). However, receiver operating characteristic analysis identified pre-
+                                 season values for neck RCS-PL ≤ 1.64 (79% Sensitivity; 58% Specificity; OR = 6.67) and
+                                 neck IIV-PL ≥ 0.134 (79% Sensitivity; 50% Specificity; OR = 3.67) as better predictors of a
+                                 core or lower extremity injury. The best discriminator between injured versus non-injured
+                                 status was PDE ≤ 21.6 (93% Sensitivity; 42% Specificity; OR = 9.29). Among players who
+                                 exhibited a high pre-season level of PDE (>21.6), 100% (6/6) were in the TG, and their
+Brain Sci. 2025, 15, 721                                                                                                   9 of 18
+
+
+
+                           negative predictive value (i.e., injury avoidance) was 83% (5/6). Figure 5 presents a Kaplan–
+                           Meier time to event comparison of cumulative injury occurrences for 20 players with a
+                           pre-season PDE of ≤ 21.6 versus the 6 players with a pre-season PDE of > 21.6 (Mantel–Cox
+                           Log Rank p = 0.059).
+
+
+
+
+                           Figure 3. Pre- to post-training (i.e., pre-season) and post-season changes in (A) Rate Correct per Sec-
+                           ond, (B) Intra-Individual Variability, and (C) Perceptual Decision Efficiency for training group (solid
+                           lines) and pre- to post-season changes for comparison (no training) group (dashed lines). Numerical
+                           values are means derived from original (untransformed) data and error bars define corresponding
+                           95% confidence intervals for the mean values. All pre- to post-training changes and group differences
+                           for pre-season and post-season were statistically significant (p < 0.05).
+Brain Sci. 2025, 15, 721                                                                                                   10 of 18
+
+
+
+
+                           Figure 4. Inverse logarithmic correlation (curved solid line) between the Rate Correct per Second
+                           (RCS) and Intra-Individual Variability (IIV) performance metrics for neck perceptual latency at
+                           baseline (Spearman’s Rho = −0.795; p < 0.001). White circles identify baseline (pre-training) values
+                           for the 10 training group players and Xs identify baseline (pre-season) values for 16 untrained players.
+                           Dashed lines identify cut points for RCS (≤1.64) and IIV (≥0.134) that prospectively discriminate
+                           players who sustained an injury from those who remained uninjured for the entire season. Black
+                           circles identify post-training (pre-season) values for the 10 training group players.
+
+
+
+
+                           Figure 5. Kaplan–Meier depiction of musculoskeletal injury incidence (first injury event) across
+                           a 14-week period. A marginally significant difference (Mantel–Cox Log Rank p = 0.059) was doc-
+                           umented between players categorized as low versus high performers on the basis of pre-season
+                           Perceptual Decision Efficiency (PDE ≤ 21.6 versus > 21.6).
+Brain Sci. 2025, 15, 721                                                                                           11 of 18
+
+
+
+                           4. Discussion
+                           4.1. Interpretation of the Study Findings
+                                  Each of this study’s specified purposes were achieved. To the extent that behavioral
+                           measurements of speed, accuracy, and consistency of perceptual responses provide valid
+                           estimates of specific brain processes, our findings may represent a substantial advance in
+                           the current understanding of brain–behavior relationships [9,21]. The evidence provided by
+                           this study, combined with that derived from previous studies that we have cited, strongly
+                           suggest that the training-induced adaptations in goal-directed behavioral performance
+                           correspond to favorable neuroplastic changes in the brain circuits involved in perceptual
+                           decision-making. Because prolonged or incorrect perceptual decision-making responses
+                           have been associated with injury occurrences [10], the performance improvements observed
+                           after the completion of the 10-session PRT program suggest that this cognitive injury risk
+                           factor is modifiable. Although we did not acquire neuroimaging or electrophysiological
+                           measurements of brain signals, the theoretical links between our RCS and IIV behavioral
+                           metrics and specific elements of the well-validated drift–diffusion model of perceptual
+                           decision-making appear to provide a remarkable degree of explanatory detail about the
+                           nature of brain–behavior relationships [23,64].
+                                  Two key characteristics of brain processes underlying perceptual decision-making
+                           that are not widely recognized outside the neuroscience discipline include the following:
+                           (1) The presentation of identical sensory stimuli do not generate exactly the same responses
+                           from moment to moment [65]. (2) Although the neural activity involved in movement
+                           preparation occurs at the same time as the neural activity associated with the accumulation
+                           of decision-related sensory evidence [9], movement is not initiated until after an adjustable
+                           threshold has been crossed and a decision has been made [21,66]. Both of these phenomena
+                           are influenced by constant fluctuations of transient brain states [32,67,68], which correspond
+                           to different functional connectivity patterns among key brain networks [29]. The default
+                           mode network (DMN), which includes the medial prefrontal cortex and posterior cingulate
+                           cortex, is active during periods of inattentiveness to the external world and a relatively
+                           greater internal focus of the mental state [69]. The salience network (SN), which includes
+                           the anterior insula and dorsal anterior cingulate cortex, maintains functional connectivity
+                           with the DMN during an inattentive state, whereas a transition to functional connectivity
+                           of the SN with the frontoparietal network (FPN) establishes a task-optimal state that
+                           facilitates sensory evidence accumulation and reduces the IIV of responses to environmental
+                           stimuli [69].
+                                  Inefficient decoupling of the SN from the DMN is believed to create attention lapses
+                           that adversely affect both within-trial sensory evidence accumulation and the consistency
+                           (i.e., low IIV) of responses across multiple trials [17,36,38]. Depending on somewhat
+                           differing definitions in the literature, the FPN is synonymous with, or closely matches, both
+                           the executive control network and the dorsal attention network (DAN). Key components of
+                           the FPN include the dorsolateral prefrontal cortex and the posterior parietal cortex, which
+                           are structurally connected by the dorsal branch of the superior longitudinal fasciculus (SLF-
+                           1). The SLF-1 includes white matter projections to specific components of the DAN that
+                           include the lateral intraparietal sulcus, the frontal eye field, and the premotor cortex, which
+                           each have roles in both sensory evidence accumulation and motor preparation [18]. The SN
+                           is synonymous with, or closely matches, the ventral attention network (VAN) that couples
+                           with the DAN and suppresses the DMN when activated [29]. Both structural and functional
+                           magnetic resonance imaging acquired from the same individuals have demonstrated that
+                           SLF-1 volume is associated with the rate of sensory evidence accumulation (i.e., drift rate)
+                           and that functional connectivity of the premotor cortex within the DAN is associated with
+                           more efficient transformation of sensory inputs into motor responses [18].
+Brain Sci. 2025, 15, 721                                                                                            12 of 18
+
+
+
+                                To convert our behavioral data into components that best align with those of the
+                           drift–diffusion model, a criterion is needed to separate the decision-making process from
+                           the execution of the chosen directional neuromuscular response. Because a perceptual-
+                           motor response is not initiated until after a decision has been made [21], the onset of
+                           eye, neck, arm, or whole-body movement can be used to define the end of the perceptual
+                           decision-making process [70,71]. Extremely rapid multidirectional eye movements are
+                           required to detect moving visual stimuli of different types and different locations across the
+                           visual field of view, whereas body segments exhibit unidirectional movements toward a
+                           chosen response target [72]. Hand controller sensors provide a precise quantification of the
+                           location and speed of the arm-reaching response endpoint, but the hand controller position
+                           between trial initiation and the onset of a chosen response can be highly variable. The
+                           need to maintain the head in a forward-facing neutral position for optimal visualization
+                           of both the left and right peripheral fields on the VR headset display provides a highly
+                           reproducible starting position of the neck, which is followed by a required unidirectional
+                           rotational movement of the neck to visualize a virtual response target located beyond
+                           the peripheral limit of the initial field of view. Sensors within the VR headset track the
+                           angular position within the transverse plane and the speed of angular displacement, which
+                           demonstrate a sudden increase in the rate of neck rotation beyond six degrees. Thus,
+                           subtraction of the total perceptual-motor response time (i.e., visual stimulus appearance to
+                           hand controller response endpoint) from PL (i.e., visual stimulus appearance to six degrees
+                           of neck rotation) may provide the most precise estimate of movement time (MT) for motor
+                           response execution. The comparison of metrics derived from these PL and MT intervals
+                           may be found beneficial to distinguish between perceptual versus motor impairment as a
+                           primary source of dysfunction [16].
+                                The use of neck PL to estimate the duration of the perceptual decision-making process
+                           does not exclude the amount of time required for encoding and transmitting a neural signal
+                           from the retina to the lateral intraparietal sulcus for the initiation of the evidence accumula-
+                           tion process, which is estimated to require approximately 200 ms [25,67]. Additionally, the
+                           amount of time that elapses between the end of the perceptual decision-making process
+                           and the generation of the efferent motor output has been estimated to be approximately
+                           80 ms [73], but the duration of this interval is likely to vary on the basis of pre-motor
+                           movement planning efficiency [66,72]. Non-decision time derived from the analyses of
+                           electroencephalography signals or directly recorded neuronal activity can clearly provide
+                           precise measurements of perceptual decision time, which is overestimated by behavioral
+                           data [26]. Despite this limitation, the RCS and IIV values calculated for the behaviorally
+                           estimated neck PL interval demonstrated a strong natural logarithmic correlation that sug-
+                           gests they provide a highly meaningful representation of distinct and interrelated neural
+                           processes underlying perceptual decision-making. Numerous aspects of brain function
+                           exhibit natural logarithmic organization, including the range of axon diameters, circuit
+                           synaptic strengths, neurotransmitter concentrations, and the power spectral density of neu-
+                           ronal signal frequencies [65]. Thus, a strong theoretical rationale supports our development
+                           of the PDE metric as a representation of the combination of perceptual response speed and
+                           accuracy (i.e., RCS) with performance inconsistency across trials (i.e., IIV).
+                                Large magnitudes of post-training improvements in PDE and its constituent RCS and
+                           IIV components were observed, along with substantial retention over a 14-week period
+                           that did not include any training sessions. An important consideration for the investment
+                           of time and resources in any type of training program is evidence supporting its transfer
+                           effect to real-world benefit. We found pre-season PDE was a strong prospective predictor
+                           of core or lower extremity occurrence, which suggests that the PRT program reduced
+                           susceptibility. The median pre-training PDE value for the 10 players in the TG was 3.00
+Brain Sci. 2025, 15, 721                                                                                         13 of 18
+
+
+
+                           and the maximum was 12.90. The median pre-season PDE value for the 16 players in the
+                           CG was 2.86 and the maximum was 15.26. Counterfactual reasoning supports the idea that
+                           fewer injuries might have been sustained among CG players if they had participated in
+                           the pre-season PRT program, and that injury occurrences might have been greater among
+                           the 6 players who demonstrated a pre-season PDE ≥ 21.6, each of whom were in the TG, if
+                           they had not received the benefit of training. Consistent with the view of elevated IIV as a
+                           behavioral manifestation of brain dysfunction [17], and reduced IIV as an early marker of
+                           training benefit [74], the natural log-transformed IIV metric demonstrated the largest pre-
+                           to post-training effect size.
+
+                           4.2. Limitations
+                                The primary limitation of this study was a lack of neurophysiological measurements
+                           of perceptual-motor processes that could provide direct evidence of correspondence with
+                           our behavioral metrics. Other limitations include its modest cohort number and lack of
+                           randomized assignment of participants to experimental and control groups, both of which
+                           precluded rigorous control of potentially confounding factors. For example, one of the
+                           untrained players demonstrated the second-highest value for Rate Correct per Second
+                           (Figure 4), which is presumably attributable to either an innate perceptual capability or
+                           some prior experience that developed a favorable adaptation not demonstrated by the
+                           other untrained players. Relationships between the VR metrics, responsiveness to the
+                           VR training program, and the association of the Perceptual Decision Efficiency metric
+                           with musculoskeletal injury incidence may differ for other sex-, age-, and sport-specific
+                           athlete populations.
+
+                           4.3. Future Research
+                                Acute and chronic stress are known to interact with mood disorders, sleep disruption,
+                           and mild traumatic brain injury to adversely affect autonomic, immune, endocrine, and
+                           metabolic processes that can interfere with perceptual decision-making [75]. The possible
+                           cumulative effects of multiple sport-related concussions and repetitive sub-concussive
+                           head impacts are a major concern for the long-term brain health of soccer players [57,58,76],
+                           which have also been documented to elevate risk for musculoskeletal injuries [77]. Despite
+                           the resolution of post-concussion clinical symptoms, the ability to simultaneously extract
+                           goal-relevant sensory information and to suppress irrelevant environmental stimuli can
+                           be a persistent impairment that is not detected by standard clinical assessments [78].
+                           Regardless of sport-related concussion history, brief periods of activity that impose complex
+                           perceptual-motor demands can result in a breakdown in decision-related sensorimotor
+                           integration [10,79]. More research is needed to better develop resilience to such breakdowns,
+                           which may result from the improved integration of long-term memory with sensory inputs
+                           and motor planning [11].
+                                Skilled sport performance results from a series of perceptual decisions involving the
+                           extraction of relevant sensory information that is integrated with the planning and execu-
+                           tion of effective motor responses as a sequence of events rapidly unfold [72]. Increasingly,
+                           training for the optimization of perceptual-motor performance is becoming recognized
+                           as an important contributor to both enhanced performance capabilities and injury resis-
+                           tance [4,13,80]. The design of an appropriate training activity should incorporate both
+                           perceptual challenges and movement responses to promote neuroplastic modifications in
+                           the bidirectional circuits transmitting information between decision-making and motor
+                           planning processes, which can produce faster movement responses and maximize transfer
+                           to performance in a competitive sport environment [12,71,81]. Accordingly, the immersive
+                           VR task that we used was not designed to maximize the realism of a specific sport simula-
+Brain Sci. 2025, 15, 721                                                                                                        14 of 18
+
+
+
+                                  tion (i.e., physical fidelity), which can be ineffective or counterproductive for behavioral
+                                  adaptation [82]. The utilization of an immersive task that incorporated the basic elements
+                                  of the neurophysiological mechanisms underlying perceptual-motor performance (i.e.,
+                                  psychological fidelity) provides the most likely explanation for the results we observed
+                                  among the female soccer players who participated in the PRT program [16]. Future research
+                                  might assess far-transfer of training benefit through the comparison of post-training VR
+                                  metrics to coaches’ ratings of on-field performance during competitive events.
+
+                                  5. Conclusions
+                                       The findings of this study support the use of the PDE metric as a single value for
+                                  the representation of a combination of perceptual decision speed, accuracy, and consis-
+                                  tency, each of which is clearly modifiable through appropriately designed cognitive–motor
+                                  training activities. Furthermore, counterfactual reasoning suggests that the 10-session PRT
+                                  program we administered through immersive VR provided a beneficial reduction in the
+                                  risk of musculoskeletal injury.
+
+                                  Author Contributions: Conceptualization, G.B.W., L.M.C., M.A.C. and S.N.A.; methodology, G.B.W.
+                                  and M.A.C.; formal analysis, G.B.W. and M.A.C.; investigation, A.J.G., K.L.M. and L.T.B.; resources,
+                                  G.B.W.; data curation, A.J.G., K.L.M. and L.T.B.; writing—original draft preparation, G.B.W.; writing—
+                                  review and editing, A.J.G., K.L.M., L.T.B., M.A.C., L.M.C., J.A.H. and S.N.A.; visualization, G.B.W.;
+                                  supervision, G.B.W., L.M.C. and M.A.C.; project administration, G.B.W., L.M.C. and M.A.C. All
+                                  authors have read and agreed to the published version of the manuscript.
+
+                                  Funding: This research received no external funding.
+
+                                  Institutional Review Board Statement: The study was conducted in accordance with the Declaration
+                                  of Helsinki and approved by the Institutional Review Board of the University of Tennessee at
+                                  Chattanooga (IRB #23-052: Cumulative Database for Predictive Modeling of Sport Injury Risk and
+                                  Documentation of Risk Reduction through Training, date of approval 8 May 2023).
+
+                                  Informed Consent Statement: As members of a collegiate team roster, each athlete provided consent
+                                  and authorization for access to protected health information for research purposes.
+
+                                  Data Availability Statement: The data presented in this study are available from the corresponding
+                                  author upon institutional approval. The data are not publicly available, due to an institutional
+                                  restriction on the release of data. A specific request from an individual who possesses research
+                                  credentials must be reviewed and approved.
+
+                                  Acknowledgments: The authors sincerely appreciate the valuable contribution of Caroline Bass,
+                                  MEd, ATC who documented injury occurrences.
+
+                                  Conflicts of Interest: The lead author (G.B.W.) currently serves as a consultant to REACT Neuro,
+                                  which provided the immersive virtual reality system used for the acquisition of the study data. This
+                                  relationship did not affect the authenticity and objectivity of the experimental results of this work.
+                                  The company had no role in the design of the study, analyses, interpretation of data, writing the
+                                  manuscript, or the decision to publish the results. None of the other authors declare any conflicts
+                                  of interest.
+
+References
+1.    Crivelli, D.; Balconi, M. Neuroassessment in sports: An integrative approach for performance and potential evaluation in athletes.
+      Front. Psychol. 2022, 13, 747852. [CrossRef]
+2.    Gokeler, A.; McKeon, P.O.; Hoch, M.C. Shaping the functional task environment in sports injury rehabilitation: A framework to
+      integrate perceptual-cognitive training in rehabilitation. Athl. Train. Sports Health Care 2020, 12, 283–292. [CrossRef]
+3.    Hatfield, B.D.; Jaquess, K.J.; Lo, L.C.; Oh, H. The cognitive and affective neuroscience of superior athletic performance. In
+      Handbook of Sport Psychology, 4th ed.; Tenenbaum, G., Eckland, R., Eds.; John Wiley & Sons: Hoboken, NJ, USA, 2020.
+Brain Sci. 2025, 15, 721                                                                                                             15 of 18
+
+
+
+4.    Müller, S.; Gabbett, T.; McNeil, D. Reducing injury risk and improving skill: How a psycho-perceptual-motor approach can
+      benefit high-performance sport. Sports Health 2023, 15, 315–317. [CrossRef] [PubMed]
+5.    Churchill, N.W.; Hutchison, M.G.; Graham, S.J.; Schweizer, T.A. Brain function associated with reaction time after sport-related
+      concussion. Brain Imaging Behav. 2021, 15, 1508–1517. [CrossRef]
+6.    Forstmann, B.U.; Ratcliff, R.; Wagenmakers, E.-J. Sequential sampling models in cognitive neuroscience: Advantages, applications,
+      and extensions. Ann. Rev. Psychol. 2016, 67, 641–666. [CrossRef]
+7.    Myers, C.E.; Interian, A.; Moustafa, A.A. A practical introduction to using the drift diffusion model of decision-making in
+      cognitive psychology, neuroscience, and health sciences. Front. Psychol. 2022, 13, 1039172. [CrossRef] [PubMed]
+8.    Boucher, P.O.; Wang, T.; Carceroni, L.; Kane, G.; Shenoy, K.V.; Chandrasekaran, C. Initial conditions combine with sensory
+      evidence to induce decision-related dynamics in premotor cortex. Nat. Commun. 2023, 14, 6510. [CrossRef]
+9.    Gallivan, J.P. A motor-oriented organization of human ventral visual cortex? J. Neurosci. 2014, 34, 3119–3121. [CrossRef]
+10.   Gokeler, A.; Tosarelli, F.; Buckthorpe, M.; Della Villa, F. Neurocognitive errors and noncontact anterior cruciate ligament injuries
+      in professional male soccer players. J. Athl. Train. 2024, 59, 262–269. [CrossRef]
+11.   Cardoso, F.d.S.L.; Neves, J.A.; Roca, A.; Teoldo, I. The association between perceptual-cognitive processes and response time in
+      decision making in young soccer players. J. Sports Sci. 2021, 39, 926–935. [CrossRef]
+12.   van Maarseveen, M.J.; Oudejans, R.R.; Mann, D.L.; Savelsbergh, G.J. Perceptual-cognitive skill and the in situ performance of
+      soccer players. Q. J. Exp. Psychol. 2018, 71, 455–470. [CrossRef] [PubMed]
+13.   Walton, C.C.; Keegan, R.J.; Martin, M.; Hallock, H. The potential role for cognitive training in sport: More research needed. Front.
+      Psychol. 2018, 9, 1121. [CrossRef]
+14.   Cossich, V.R.; Carlgren, D.; Holash, R.J.; Katz, L. Technological breakthroughs in sport: Current practice and future potential of
+      artificial intelligence, virtual reality, augmented reality, and modern data visualization in performance analysis. Appl. Sci. 2023,
+      13, 12965. [CrossRef]
+15.   Chang, Y. Reorganization and plastic changes of the human brain associated with skill learning and expertise. Front. Hum.
+      Neurosci. 2014, 8, 35. [CrossRef] [PubMed]
+16.   Müller, S.; Dekker, E.; Morris-Binelli, K.; Piggott, B.; Hoyne, G.; Christensen, W.; Fadde, P.; Zaichkowsky, L.; Brenton, J.; Hambrick,
+      D.Z. Attributes of expert anticipation should Inform the design of virtual reality simulators to accelerate learning and transfer of
+      skill. Sports Med. 2023, 53, 301–309. [CrossRef]
+17.   Mansouri, F.A.; Buckley, M.J.; Tanaka, K. Mapping causal links between prefrontal cortical regions and intra-individual behavioral
+      variability. Nat. Commun. 2024, 15, 140. [CrossRef]
+18.   Brosnan, M.B.; Sabaroedin, K.; Silk, T.; Genc, S.; Newman, D.P.; Loughnane, G.M.; Fornito, A.; O’Connell, R.G.; Bellgrove, M.A.
+      Evidence accumulation during perceptual decisions in humans varies as a function of dorsal frontoparietal organization. Nat.
+      Hum. Behav. 2020, 4, 844–855. [CrossRef]
+19.   Domenech, P.; Dreher, J.-C. Decision threshold modulation in the human brain. J. Neurosci. 2010, 30, 14305–14317. [CrossRef]
+20.   Herz, D.M.; Zavala, B.A.; Bogacz, R.; Brown, P. Neural correlates of decision thresholds in the human subthalamic nucleus. Curr.
+      Biol. 2016, 26, 916–920. [CrossRef]
+21.   Khilkevich, A.; Lohse, M.; Low, R.; Orsolic, I.; Bozic, T.; Windmill, P.; Mrsic-Flogel, T.D. Brain-wide dynamics linking sensation to
+      action during decision-making. Nature 2024, 634, 890–900. [CrossRef]
+22.   Lo, C.-C.; Xiao-Jing, W. Cortico-basal ganglia circuit mechanism for a decision threshold in reaction time tasks. Nat. Neurosci.
+      2006, 9, 956. [CrossRef] [PubMed]
+23.   O’Connell, R.G.; Shadlen, M.N.; Wong-Lin, K.; Kelly, S.P. Bridging neural and computational viewpoints on perceptual decision-
+      making. Trends Neurosci. 2018, 41, 838–852. [CrossRef]
+24.   Stine, G.M.; Trautmann, E.M.; Jeurissen, D.; Shadlen, M.N. A neural mechanism for terminating decisions. Neuron 2023, 111,
+      2601–2613.e5. [CrossRef]
+25.   Shadlen, M.N.; Kiani, R. Decision making as a window on cognition. Neuron 2013, 80, 791–806. [CrossRef] [PubMed]
+26.   van Vugt, M.K.; Simen, P.; Nystrom, L.; Holmes, P.; Cohen, J.D. Lateralized readiness potentials reveal properties of a neural
+      mechanism for implementing a decision threshold. PLoS ONE 2014, 9, e90943. [CrossRef] [PubMed]
+27.   Bogacz, R.; Brown, E.; Moehlis, J.; Holmes, P.; Cohen, J.D. The physics of optimal decision making: A formal analysis of models of
+      performance in two-alternative forced-choice tasks. Psychol. Rev. 2006, 113, 700–765. [CrossRef]
+28.   Wilkerson, G.B.; Lansey, J.C.; Noblett, C.N.; Sarris, C.E. Test-retest reliability of immersive virtual reality measures of perceptual-
+      motor performance. Percept. Mot. Ski. 2023, 130, 2484–2504. [CrossRef]
+29.   Cai, W.; Warren, S.L.; Duberg, K.; Pennington, B.; Hinshaw, S.P.; Menon, V. Latent brain state dynamics distinguish behavioral
+      variability, impaired decision-making, and inattention. Mol. Psychiatry 2021, 26, 4944–4957. [CrossRef]
+30.   Mennes, M.; Zuo, X.-N.; Kelly, C.; Di Martino, A.; Zang, Y.-F.; Biswal, B.; Castellanos, F.X.; Milham, M.P. Linking inter-individual
+      differences in neural activation and behavior to intrinsic brain dynamics. Neuroimage 2011, 54, 2950–2959. [CrossRef]
+Brain Sci. 2025, 15, 721                                                                                                              16 of 18
+
+
+
+31.   Najafi, F.; Churchland, A.K. Perceptual decision-making: A field in the midst of a transformation. Neuron 2018, 100, 453–462.
+      [CrossRef]
+32.   Weilnhammer, V.; Stuke, H.; Standvoss, K.; Sterzer, P. Sensory processing in humans and mice fluctuates between external and
+      internal modes. PLoS Biol. 2023, 21, e3002410. [CrossRef] [PubMed]
+33.   Aihara, T.; Kitajo, K.; Nozaki, D.; Yamamoto, Y. How does stochastic resonance work within the human brain?—Psychophysics of
+      internal and external noise. Chem. Phys. 2010, 375, 616–624. [CrossRef]
+34.   Duffy, J.S.; Bellgrove, M.A.; Murphy, P.R.; O’Connell, R.G. Disentangling sources of variability in decision-making. Nat. Rev.
+      Neurosci. 2025, 26, 247–262. [CrossRef]
+35.   Gazzellini, S.; Napolitano, A.; Bauleo, G.; Bisozzi, E.; Lispi, M.L.; Ardu, E.; Castelli, E.; Benso, F. Time–frequency analyses of
+      reaction times and theta/beta EEG ratio in pediatric patients with traumatic brain injury: A preliminary study. Dev. Neurorehabilit.
+      2017, 20, 393–407. [CrossRef]
+36.   Gbadeyan, O.; Teng, J.; Prakash, R.S. Predicting response time variability from task and resting-state functional connectivity in
+      the aging brain. Neuroimage 2022, 250, 118890. [CrossRef]
+37.   Kelly, A.C.; Uddin, L.Q.; Biswal, B.B.; Castellanos, F.X.; Milham, M.P. Competition between functional brain networks mediates
+      behavioral variability. Neuroimage 2008, 39, 527–537. [CrossRef]
+38.   Perri, R.L.; Di Russo, F. Executive functions and performance variability measured by event-related potentials to understand the
+      neural bases of perceptual decision-making. Front. Hum. Neurosci. 2017, 11, 556. [CrossRef] [PubMed]
+39.   Weissman, D.H.; Roberts, K.; Visscher, K.; Woldorff, M. The neural bases of momentary lapses in attention. Nat. Neurosci. 2006, 9,
+      971. [CrossRef]
+40.   Fjell, A.M.; Westlye, L.T.; Amlien, I.K.; Walhovd, K.B. Reduced white matter integrity is related to cognitive instability. J. Neurosci.
+      2011, 31, 18060–18072. [CrossRef]
+41.   Maia, P.D.; Kutz, J.N. Reaction time impairments in decision-making networks as a diagnostic marker for traumatic brain injuries
+      and neurological diseases. J. Comput. Neurosci. 2017, 42, 323–347. [CrossRef]
+42.   McCormick, E.M.; Kievit, R.A. Poorer white matter microstructure predicts slower and more variable reaction time performance:
+      Evidence for a neural noise hypothesis in a large lifespan cohort. J. Neurosci. 2023, 43, 3557–3566. [CrossRef] [PubMed]
+43.   Daniel, E.; Meindertsma, T.; Arazi, A.; Donner, T.H.; Dinstein, I. The relationship between trial-by-trial variability and oscillations
+      of cortical population activity. Sci. Rep. 2019, 9, 16901. [CrossRef] [PubMed]
+44.   Khamechian, M.B.; Daliri, M.R.; Treue, S.; Esghaei, M. Coupled oscillations orchestrate selective information transmission in
+      visual cortex. PNAS Nexus 2024, 3, 288. [CrossRef] [PubMed]
+45.   Khamechian, M.B.; Daliri, M.R. Frequency modulation of cortical rhythmicity governs behavioral variability, excitability and
+      synchrony of neurons in the visual cortex. Sci. Rep. 2022, 12, 20914. [CrossRef]
+46.   Antonakakis, M.; Dimitriadis, S.I.; Zervakis, M.; Papanicolaou, A.C.; Zouridakis, G. Aberrant whole-brain transitions and
+      dynamics of spontaneous network microstates in mild traumatic brain injury. Front. Comput. Neurosci. 2020, 13, 90. [CrossRef]
+47.   Antonakakis, M.; Dimitriadis, S.I.; Zervakis, M.; Micheloyannis, S.; Rezaie, R.; Babajani-Feremi, A.; Zouridakis, G.; Papanicolaou,
+      A.C. Altered cross-frequency coupling in resting-state MEG after mild traumatic brain injury. Int. J. Psychophysiol. 2016, 102, 1–11.
+      [CrossRef]
+48.   Wong, J.K.; Churchill, N.W.; Graham, S.J.; Baker, A.J.; Schweizer, T.A. Altered connectivity of default mode and executive control
+      networks among female patients with persistent post-concussion symptoms. Brain Inj. 2023, 37, 147–148. [CrossRef]
+49.   Vandierendonck, A. A comparison of methods to combine speed and accuracy measures of performance: A rejoinder on the
+      binning procedure. Behav. Res. Methods 2017, 49, 653–673. [CrossRef]
+50.   He, B.J.; Zempel, J.M. Average is optimal: An inverted-U relationship between trial-to-trial brain activity and behavioral
+      performance. PLoS Comput. Biol. 2013, 9, e1003348. [CrossRef]
+51.   Richlan, F.; Weiß, M.; Kastner, P.; Braid, J. Virtual training, real effects: A narrative review on sports performance enhancement
+      through interventions in virtual reality. Front. Psychol. 2023, 14, 1240790. [CrossRef]
+52.   Wilkerson, G.B.; Fleming, L.R.; Adams, V.P.; Petty, R.J.; Carlson, L.M.; Hogg, J.A.; Acocello, S.N. Assessment and training of
+      perceptual-motor function: Performance of college wrestlers associated with history of concussion. Brain Sci. 2024, 14, 68.
+      [CrossRef] [PubMed]
+53.   Wilkerson, G.B.; Mether, K.S.; Perrin, Z.A.; Emberton, S.L.; Carlson, L.M.; Hogg, J.A.; Acocello, S.N. Perceptual response training
+      for reduction of injury risk among high school girls’ soccer players. Brain Sci. 2024, 14, 1091. [CrossRef] [PubMed]
+54.   Faubert, J.; Sidebottom, L. Perceptual-cognitive training of athletes. J. Clin. Sport. Psychol. 2012, 6, 85–102. [CrossRef]
+55.   Avedesian, J.M.; Forbes, W.; Covassin, T.; Dufek, J.S. Influence of cognitive performance on musculoskeletal injury risk: A
+      systematic review. Am. J. Sports Med. 2022, 50, 554–562. [CrossRef]
+56.   Kakavas, G.; Malliaropoulos, N.; Skarpas, G.; Forelli, F. The impact of concussions on neuromuscular control and anterior cruciate
+      ligament injury risk in female soccer players: Mechanisms and prevention—A narrative review. J. Clin. Med. 2025, 14, 3199.
+      [CrossRef]
+Brain Sci. 2025, 15, 721                                                                                                           17 of 18
+
+
+
+57.   Kwiatkowski, A.; Weidler, C.; Habel, U.; Coverdale, N.S.; Hirad, A.A.; Manning, K.Y.; Rauscher, A.; Bazarian, J.J.; Cook, D.J.; Li,
+      D.K. Uncovering the hidden effects of repetitive subconcussive head impact exposure: A mega-analytic approach characterizing
+      seasonal brain microstructural changes in contact and collision sports athletes. Hum. Brain Mapp. 2024, 45, e26811. [CrossRef]
+58.   Shamloo, F.; Kon, M.; Ritter, E.; Sereno, A.B. Quantifying the magnitude and longevity of the effect of repetitive head impacts
+      in adolescent soccer players: Deleterious effect of long headers extend beyond a month. Neurotrauma Rep. 2023, 4, 267–275.
+      [CrossRef] [PubMed]
+59.   Wilkerson, G.B.; Wynn, K.R.; Dill, P.W.; Acocello, S.; Carlson, L.M.; Hogg, J. Concussion history and virtual reality metrics predict
+      core or lower extremity injury occurrence among high school athletes. Front. Sports Act. Living 2024, 6, 1374772. [CrossRef]
+      [PubMed]
+60.   Patridge, E.F.; Bardyn, T.P. Research electronic data capture (REDCap). J. Med. Libr. Assoc. 2018, 106, 142. [CrossRef]
+61.   Wilkerson, G.B.; Colston, M.A.; Acocello, S.N.; Hogg, J.A.; Carlson, L.M. Subtle impairments of perceptual-motor function and
+      well-being are detectable among military cadets and college athletes with self-reported history of concussion. Front. Sports Act.
+      Living 2023, 5, 1046572. [CrossRef]
+62.   Lakens, D. Calculating and reporting effect sizes to facilitate cumulative science: A practical primer for t-tests and ANOVAs.
+      Front. Psychol. 2013, 4, 863. [CrossRef] [PubMed]
+63.   Olivier, J.; May, W.L.; Bell, M.L. Relative effect sizes for measures of risk. Commun. Stat. Theory Methods 2017, 46, 6774–6781.
+      [CrossRef]
+64.   O’Connell, R.G.; Kelly, S.P. Neurophysiology of human perceptual decision-making. Ann. Rev. Neurosci. 2021, 44, 495–516.
+      [CrossRef] [PubMed]
+65.   Buzsaki, G. The Brain from Inside Out; Oxford University Press: New York, NY, USA, 2019.
+66.   Churchland, M.M.; Afshar, A.; Shenoy, K.V. A central source of movement variability. Neuron 2006, 52, 1085–1096. [CrossRef]
+67.   Churchland, A.K.; Kiani, R.; Chaudhuri, R.; Wang, X.-J.; Pouget, A.; Shadlen, M.N. Variance as a signature of neural computations
+      during decision making. Neuron 2011, 69, 818–831. [CrossRef] [PubMed]
+68.   Medina, J.M.; Díaz, J.A. A random multiplicative model of Piéron’s law and choice reaction times. Phys. A 2021, 564, 125500.
+      [CrossRef]
+69.   Kucyi, A.; Esterman, M.; Capella, J.; Green, A.; Uchida, M.; Biederman, J.; Gabrieli, J.D.; Valera, E.M.; Whitfield-Gabrieli, S.
+      Prediction of stimulus-independent and task-unrelated thought from functional brain networks. Nat. Commun. 2021, 12, 1793.
+      [CrossRef]
+70.   Ratcliff, R.; McKoon, G. The diffusion decision model: Theory and data for two-choice decision tasks. Neural Comput. 2008, 20,
+      873–922. [CrossRef]
+71.   Selen, L.P.; Shadlen, M.N.; Wolpert, D.M. Deliberation in the motor system: Reflex gains track evolving evidence leading to a
+      decision. J. Neurosci. 2012, 32, 2276–2286. [CrossRef]
+72.   Gallivan, J.P.; Chapman, C.S.; Wolpert, D.M.; Flanagan, J.R. Decision-making in sensorimotor control. Nat. Rev. Neurosci. 2018, 19,
+      519–534. [CrossRef]
+73.   Resulaj, A.; Kiani, R.; Wolpert, D.M.; Shadlen, M.N. Changes of mind in decision-making. Nature 2009, 461, 263–266. [CrossRef]
+      [PubMed]
+74.   Cubillo, A.; Hermes, H.; Berger, E.; Winkel, K.; Schunk, D.; Fehr, E.; Hare, T.A. Intra-individual variability in task performance
+      after cognitive training is associated with long-term outcomes in children. Dev. Sci. 2023, 26, e13252. [CrossRef] [PubMed]
+75.   Peters, A.; McEwen, B.S.; Friston, K. Uncertainty and stress: Why it causes diseases and how it is mastered by the brain. Prog.
+      Neurobiol. 2017, 156, 164–188. [CrossRef] [PubMed]
+76.   Crasta, J.E.; Nebel, M.B.; Svingos, A.; Tucker, R.N.; Chen, H.W.; Busch, T.; Caffo, B.S.; Stephens, J.; Suskauer, S.J. Rethinking
+      recovery in adolescent concussions: Network-level functional connectivity alterations associated with motor deficits. Hum. Brain
+      Mapp. 2023, 44, 3271–3282. [CrossRef]
+77.   Lempke, L.B.; Lynall, R.C. The state of the science for potential contributors to musculoskeletal injury following concussion:
+      Mechanisms, gaps, and clinical considerations. Musculoskelet. Sci. Pract. 2025, 75, 103219. [CrossRef]
+78.   Dolman, K.E.; Staines, R.S.; Mughal, S.; Brown, K.E.; Meehan, S.K.; Staines, W.R. Long-term effects of concussion on attention,
+      sensory gating and motor learning. Exp. Brain Res. 2025, 243, 30. [CrossRef]
+79.   Hayes, K.D.; Khan, M.E.; Graham, K.R.; Staines, W.R.; Meehan, S.K. Persistent adaptations in sensorimotor interneuron circuits in
+      the motor cortex with a history of sport-related concussion. Exp. Brain Res. 2025, 243, 5. [CrossRef]
+80.   Wilke, J.; Groneberg, D.; Banzer, W.; Giesche, F. Perceptual–cognitive function and unplanned athletic movement task performance:
+      A systematic review. Int. J. Environ. Res. Public Health 2020, 17, 7481. [CrossRef]
+Brain Sci. 2025, 15, 721                                                                                                          18 of 18
+
+
+
+81.   Müller, S.; Vallence, A.-M.; Winstein, C. Investigation of perceptual-motor behavior across the expert athlete to disabled patient
+      skill continuum can advance theory and practical application. J. Mot. Behav. 2018, 50, 697–707. [CrossRef]
+82.   Harris, D.J.; Bird, J.M.; Smart, P.A.; Wilson, M.R.; Vine, S.J. A framework for the testing and validation of simulated environments
+      in experimentation and training. Front. Psychol. 2020, 11, 605. [CrossRef]
+
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

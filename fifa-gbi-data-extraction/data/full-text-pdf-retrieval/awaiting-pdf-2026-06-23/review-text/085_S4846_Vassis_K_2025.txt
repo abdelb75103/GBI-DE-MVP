@@ -1,0 +1,1541 @@
+Article
+
+Injury Pattern According to Player Position in Male Amateur
+Football Players in Greece: A Retrospective Study
+Konstantinos Vassis 1, * , Ioannis Misiris 2 , Spyridon Plakias 3 , Athanasios Siouras 4 , Savvas Spanos 1 ,
+Eleftherios Giamouridis 1 , Zacharias Dimitriadis 5 , Dimitrios Tsaopoulos 6 and Ioannis A. Poulis 1
+
+                                          1   Human Performance and Rehabilitation Laboratory, Faculty of Physiotherapy, School of Health Sciences,
+                                              University of Thessaly, 35132 Lamia, Greece; sspanos@uth.gr (S.S.); leuteris16@gmail.com (E.G.);
+                                              ipoulis@uth.gr (I.A.P.)
+                                          2   “Physio’clock” Advanced Physiotherapy Center, 41223 Larissa, Greece; ioannis.misiris@gmail.com
+                                          3   Department of Physical Education and Sport Science, University of Thessaly, 42100 Trikala, Greece;
+                                              spyros_plakias@yahoo.gr
+                                          4   Department of Computer Science and Biomedical Informatics, School of Science, University of Thessaly,
+                                              35132 Lamia, Greece; athsiour@gmail.com
+                                          5   Health Assessment and Quality of Life Research Laboratory (HAQL Lab), School of Health Sciences,
+                                              University of Thessaly, 41110 Lamia, Greece; zdimitriadis@uth.gr
+                                          6   Center for Research and Technology Hellas, Institute for Bio-Economy & Agri-Technology,
+                                              60361 Volos, Greece; d.tsaopoulos@certh.gr
+                                          *   Correspondence: konstantinosvass@gmail.com
+
+
+                                          Abstract
+                                          Background: Football has a high injury risk due to speed and contact, and injury patterns
+                                          may vary by playing position. Positional roles affect physical and physiological demands
+                                          and may influence injury characteristics. Although this has been examined in professionals,
+                                          data from amateur players are scarce. This study examined the incidence, type, and severity
+                                          of injuries among amateur footballers in Greece with respect to playing position. Methods:
+                                          A retrospective epidemiological study analyzed musculoskeletal injuries in 222 amateur
+                                          male football players during the 2022–2023 season. Data were collected via a CHERRIES-
+                                          compliant online survey (SurveyMonkey® ) from May to July 2023. Eligible participants
+Academic Editor: Giovanni Merolla         were active male athletes aged ≥18 years competing in amateur Greek leagues. Injuries
+Received: 29 July 2025
+                                          were defined according to the FIFA–UEFA consensus and expressed as incidence rates
+Revised: 1 September 2025                 per 1000 h of exposure. Statistical analyses used SPSS v25 with significance at p < 0.05.
+Accepted: 5 September 2025                Results: Among players (mean age: 25.3 ± 5.7 years), injury prevalence ranged from 65.1%
+Published: 7 September 2025               (DFs) to 79.3% (GKs) with no significant association between playing position and injury
+Citation: Vassis, K.; Misiris, I.;        risk (p = 0.379). Injury incidence ranged from 4.5 to 5.7 per 1000 h, highest among MFs.
+Plakias, S.; Siouras, A.; Spanos, S.;     Incidence rates ranged between 1.33 and 2.74 injuries/1000 h in matches versus 1.33 to
+Giamouridis, E.; Dimitriadis, Z.;         2.09/1000 h in training, with DFs, FWs, and MFs more prone to match injuries, whereas
+Tsaopoulos, D.; Poulis, I.A. Injury
+                                          GKs had slightly higher training rates; however, the number of injuries did not significantly
+Pattern According to Player Position in
+Male Amateur Football Players in
+                                          differ between games and training across positions (χ2 = 5.21, p = 0.517). Muscle strains
+Greece: A Retrospective Study. J. Clin.   and lower-limb injuries predominated. Injury severity differed significantly by position
+Med. 2025, 14, 6320. https://doi.org/     (p = 0.001), but injury type and mechanism did not. Conclusions: GKs and MFs showed
+10.3390/jcm14176320                       the highest prevalence and incidence, but position was not linked to overall risk. Severity
+Copyright: © 2025 by the authors.         differences highlight the need for position-specific prevention strategies.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article    Keywords: amateur soccer; injury patterns; player position; injury incidence;
+distributed under the terms and           musculoskeletal injuries
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+
+
+
+
+J. Clin. Med. 2025, 14, 6320                                                                                     https://doi.org/10.3390/jcm14176320
+J. Clin. Med. 2025, 14, 6320                                                                                             2 of 27
+
+
+
+                               1. Introduction
+                                     Football is the most widely practiced sport globally, yet it is inherently complex and
+                               carries a significant risk of injury as extensively documented in the literature [1]. This injury
+                               risk poses a notable socioeconomic burden on elite, youth, and recreational players alike [2].
+                               Recent studies highlight that modern football’s increasing pace demands superior physical
+                               performance from players, who face substantial metabolic and biomechanical challenges
+                               during matches [3]. The contemporary football landscape is characterized by a growing
+                               number of matches each season, often exceeding 70 [4], which adds both physical and
+                               mental strain on players [5]. The UEFA Elite Club Injury Study revealed a 2.5-fold increase
+                               in training and match time between the 2001/2002 and 2013/2014 seasons, indicating a
+                               marked rise in workload [6]. As football evolves, players are likely to experience even
+                               higher speeds and denser periods of high-intensity efforts in the future [5].
+                                     Given these conditions, football is the sport with the highest number of injuries and
+                               the highest injury rate per unit of exposure. Injuries occur during football games and
+                               practices due to the combination of high speeds and full contact [7]. According to a recent
+                               systematic review [8], injury incidence rates in professional football players (adult athletes)
+                               reach 7.75 (5.45–10.03), 3.97 (2.63–5.33), and 30.64 (19.36–40.92) injuries per 1000 h of total,
+                               training and match exposure, respectively. For amateur football players, the respective
+                               rates are 7.89 (4.94–10.84), 3.22 (1.82–4.62), and 17.56 (11.41–23.71) injuries per 1000 h of
+                               exposure. It is also well established that injury risk is significantly higher during matches
+                               than training for both professional and amateur players, with match incidence reported as
+                               7.8-times higher among professionals and 5.4-times higher among amateurs [8].
+                                     A soccer team comprises 11 players who have different playing positions depending
+                               on their location on the pitch and different tactical roles during matches [9]. Positional role
+                               appears to influence total energy expenditure in a match, suggesting that players in differ-
+                               ent positions experience varying physical, physiological, and bioenergetic demands [10–12].
+                               Previous research indicates that central defenders and strikers generally cover the least
+                               distance during games, whereas central midfielders tend to cover the most distance [13,14].
+                               Conversely, wide players, including both attackers and defenders, record the greatest
+                               distances in terms of sprinting and high-intensity running, whereas central players cover
+                               the least [15]. The number of accelerations by playing positions follows a similar pattern,
+                               with wide-field players accelerating significantly more than central players [16,17]. Ad-
+                               ditionally, the functional demands related to different football player positions are also
+                               significant [18–20]. These role-related demands are further mirrored in the anthropometric
+                               differences observed among different soccer player positions; notably, forwards typically
+                               have a lower body weight and adiposity compared to goalkeepers and defenders [21,22].
+                                     As different roles are associated with varying intensity during match play [23] and ex-
+                               perience a different combination of anticipated or non-anticipated movement patterns [24],
+                               playing position may act as an independent risk factor for injury. The recent literature ex-
+                               plores a potential relationship between playing position and injury incidence. Leventer et al.
+                               (2016) [25] in their six-season media-based analysis among elite football players in the first
+                               division Bundesliga, report that wide midfielders have the highest match injury rate and
+                               central DFs the highest training injury incidence rate. Other studies have documented a
+                               higher prevalence of injuries in MFs [26] and FWs [27], with lower limbs being the main
+                               anatomical locations for these injuries. However, there are divergences in their types, with
+                               some studies highlighting muscle damages [28–30], while others point to joint and tendon
+                               injuries [31] as more frequent. Interestingly, GKs, who engage in less running but more ball
+                               reaching and collisions, show a higher rate of upper-extremity, trunk, and head injuries [32].
+                                     While the epidemiology of football injuries has been extensively examined in pro-
+                               fessional settings, research involving amateur players is remarkably limited with regard
+J. Clin. Med. 2025, 14, 6320                                                                                           3 of 27
+
+
+
+                               to injuries and their association with playing position. Only a few studies have focused
+                               on this population. Hunt and Fulford (1990) [33], in a hospital-based sample of English
+                               amateur footballers, found that most injuries involved the lower limbs and were more
+                               frequent among central DFs and FWs, but their data were limited to players who attended
+                               an emergency department and did not account for exposure or injury mechanisms. More
+                               recently, Onaka et al. (2017) [34] in Brazil, in a mixed sample of professionals and amateurs,
+                               reported a higher frequency of injuries among forwards, mostly knee and ankle injuries
+                               caused by contact, but did not focus exclusively on amateur athletes and used only sim-
+                               ple counts rather than standardized definitions or incidence rates. Similarly, Bello et al.
+                               (2020) [35] in Nigeria studied 118 amateur players and reported that most injuries involved
+                               the knee and ankle, yet no statistically significant association with playing position was
+                               found, and exposure-based rates, injury severity, and preventive aspects were not con-
+                               sidered. Overall, these studies present important methodological limitations: they do
+                               not use the current FIFA–UEFA consensus definitions, do not quantify exposure or injury
+                               incidence, classify positions only broadly, and do not analyze in depth the injury type,
+                               severity, mechanisms, or prevention strategies. The present study aims to address these
+                               gaps by applying standardized definitions and exposure-based calculations to systemati-
+                               cally examine incidence, prevalence, location, type, severity, and mechanisms of injuries
+                               according to playing position and by discussing prevention strategies in a large, exclusively
+                               amateur, male population in Greece over an entire competitive season.
+                                     Despite the limited evidence available, it is clear that injury patterns in amateur
+                               football cannot be directly extrapolated from professional settings. Amateur players differ
+                               in training volume, fitness, and access to medical care, which may influence both the risk
+                               and the mechanisms of injury [36]. Building on this gap, the present study retrospectively
+                               investigates injuries in a large cohort of male amateur football players in Greece during
+                               a full competitive season. Using standardized FIFA–UEFA definitions and exposure-
+                               based calculations, we analyze sthe incidence and prevalence of injuries, detailing their
+                               causes, types, locations, and severity, and examining how these factors vary across playing
+                               positions. These findings aim to provide a comprehensive understanding of position-
+                               specific injury patterns at the amateur level and contribute to more targeted training and
+                               prevention strategies.
+
+                               2. Materials and Methods
+                               2.1. Study Design
+                                    This study is part of a previous retrospective, survey-based epidemiological study
+                               investigating musculoskeletal injuries among amateur male football players in Greece
+                               during the 2022–2023 competitive season [37]. The study protocol was approved by the
+                               Ethical Committee of the Faculty of Physiotherapy, University of Thessaly (542/3-5-2023),
+                               and complied with the Declaration of Helsinki. Data were collected from May to July
+                               2023 using an electronic survey on the SurveyMonkey® platform [37]. The study used the
+                               SurveyMonkey® platform (https://www.surveymonkey.com/) and followed the Greek
+                               version of the Checklist for Reporting Results of Internet E-Surveys (CHERRIES) [38],
+                               recommended by the EQUATOR Network (www.equator-network.org) for web surveys.
+
+                               2.2. Population/Participants
+                                    The sample comprised 222 male amateur footballers from the Greek Football As-
+                               sociation amateur leagues (A, B, and C categories) over the season 2022–2023. Conve-
+                               nience and snowball sampling were used [39,40]. Eligible participants were male ath-
+                               letes over 18 actively competing in an amateur Greek football team; those under 18, in
+                               academies/development teams, or injured outside football were excluded.
+J. Clin. Med. 2025, 14, 6320                                                                                             4 of 27
+
+
+
+                               2.3. Sample Calculation
+                                    Sample size was determined using the formula “n = (z2 × p × (1 − p))/e2 ”, where
+                               z = 1.96 (95% confidence), p is the estimated proportion, and e is the margin of error.
+                               Based on an estimated 406,655 athletes in Greece [41], a 50% injury prevalence [42], a 95%
+                               confidence level, and a 7% margin of error, a minimum of 196 participants was required.
+
+                               2.4. Data Collection Procedures and Definitions
+                                     This study followed the international FIFA–UEFA consensus on football injury def-
+                               initions and data collection [43–45], updated to address onset, recurrence, and illness
+                               registration [46]. Injuries were defined by time-loss and further classified by severity, loca-
+                               tion, and type [47–49]. Injury incidence was calculated as injuries per 1000 h of exposure
+                               (match, training, and total) over the 2022–2023 season, with 95% CIs using following the
+                               formulas of Knowles et al. (2006) [50]. Training exposure was estimated by multiplying
+                               weekly sessions by session duration over 32 weeks, while match exposure was based on
+                               the reported number of games played (×90 min).
+
+                               2.5. Statistical Analysis
+                                    Raw data were transferred to Microsoft Excel 2021 (Microsoft Corp., Redmond, WA,
+                               USA), and statistical analyses were performed using SPSS version 25.0 (SPSS, Inc., Chicago,
+                               IL, USA) for Windows. Quantitative variables are presented as means ± standard de-
+                               viations, and qualitative variables as percentages with 95% confidence intervals. The
+                               Kolmogorov–Smirnov test checked data normality; normally distributed variables are re-
+                               ported as the mean ± SD, and non-normally distributed variables as the median (IQR). All
+                               p-values were two-tailed at the 95% confidence level, with significance set at 0.05. Injuries
+                               are given as proportions (percent of total number of injuries) and incidence per 1000 h, with
+                               95% confidence intervals. Effect sizes for Chi-square comparisons were also calculated [51].
+                               The Phi Coefficient was applied for 2 × 2 tables, and Cramer’s V for larger tables. For
+                               comparisons between groups, one-way ANOVA followed by Bonferroni post hoc tests was
+                               used for parametric data, while Kruskal–Wallis tests with Dunn’s post hoc analyses were
+                               applied for non-parametric data.
+
+                               3. Results
+                                     A total of 222 amateur football players aged 18 to 44 years (mean age: 25.25 ± 5.74 years)
+                               were included in the study and categorized into four groups based on their playing positions:
+                               defenders (DF; N = 63), forwards (FW; N = 61), midfielders (MF; N = 69), and goalkeepers
+                               (GK; N = 29). Demographic, anthropometric data and athletes’ profiles are summarized in
+                               Table 1. Statistically significant differences were observed in weight (p = 0.028) and height
+                               (p = 0.008), with GKs showing a higher weight than MFs (p = 0.025) and GKs being taller than
+                               MFs (p = 0.005) and FWs (p = 0.033). MFs had fewer training sessions per week compared
+                               to GKs (p = 0.036) and DFs (p = 0.033). Additionally, GKs had the lowest training exposure,
+                               showing significant differences with MFs (p = 0.035) and DFs (p = 0.003).
+                                     Table 2 provides an in-depth overview of the players’ general characteristics, organized
+                               by position. It includes details such as the amateur league category in which they compete,
+                               their leg dominance, the nature of physical effort in their work, and the type of playing
+                               surface. Additionally, the table offers insights into their participation in other forms of
+                               exercise, frequency of healthcare visits, passive recovery routines, number of training
+                               sessions, and the availability of a physical therapist or trainer during team practices.
+J. Clin. Med. 2025, 14, 6320                                                                                                                                                                                              5 of 27
+
+
+
+                                         Table 1. Demographic, anthropometric data and athletes’ profiles per playing position.
+
+                               Defenders (DF) (N = 63)                 Forwards (FW) (N = 61)                  Midfielders (MF) (N = 69)                  Goalkeepers (GK) (N = 29)                   Total (N = 222)
+       N = 222              Range                                   Range                                     Range                                     Range                                  Range
+                                              Mean     Stdv                         Mean        Stdv                            Mean     Stdv                            Mean        Stdv                        Mean     Stdv
+                          (Min–Max)                               (Min–Max)                                 (Min–Max)                                 (Min–Max)                              (Min–Max)
+     Age (years)            26 (18–44)         25.6     6.48       22 (18–40)        25.26      5.74         19 (18–37)         25.41    5.28           17 (18–35)        24.07      5.21      26 (18–44)        25.25    5.74
+                                                                                                                                                                                 ⸣
+    Height (cm) ‡         28 (168–196)        179.35    6.82     29 (164–193)       178.33      5.89       23 (167–190)        177.67    5.54         15 (174–189)      181.76 £     3.92    32 (164–196)        178.86   5.96
+    Weight (kg) ‡           39 (56–95)        76.75     8.54      49 (56–105)        75.1        9.3         35 (59–94)        74.59 *   7.53          46 (64–110)        80.02      9.71     54 (56–110)        76.05    8.75
+                               10.7                                   9.67                                      9.62                                       11.47                                  12.28
+    BMI (kg/m2 )                              23.83     2.05                        23.57       2.26                            23.63      2.1                            24.19      2.48                        23.74    2.18
+                          (18.71–29.41)                          (18.52–28.19)                             (19.44–29.07)                              (19.32–30.79)                          (18.52–30.79)
+     Exp (years)            25 (1–26)          8.6      6.26        19 (1–20)        8.4        5.86         21 (1–22)           8.57    5.71            27 (1–28)        9.25       7.21       49 (1–50)         8.93    6.88
+    Sessions/wk
+                               4 (2–6)         3.44     1.01        4 (2–6)          3.9        1.32          5 (1–6)          3.23 #§   1.14            4 (2–6)          3.76       1.06       5 (1–6)           3.53    1.13
+       (days) ‡
+   Duration (min)          90 (30–120)         84.29   16.48      90 (30–120)        81.39      16.76       90 (30–120)         77.39    13.76        75 (45–120)         81.21      16.29   90 (30–120)          80.95   15.86
+   Rest/wk (days)            4 (1–5)            2.36   0.95         5 (0–5)           2.41       1.18         5 (0–5)           2.51      1.09          3 (1–4)            2.29       0.91     5 (0–5)             2.39   1.01
+    TrE/1000 h #                          10,736                                  9152                                     9272 † ⁑                                    4920                                  34,080
+     ME/1000 h                             1911                                   1812                                      2785.5                                    817.5                                   7326
+     ToE/1000 h                           12,647                                 10,964                                    12,057.5                                   5737.5                                 41,406
+                                         BMI = body mass index; Stdv = standard deviation; Min = minimum; Max = maximum; TrE/1000 h = training exposure/1000 h; ME/1000 h = match exposure/1000 h; ToE/1000 h = total
+                                         exposure/1000 h; Exp = experience; Sessions/wk = training sessions/week; Duration = training duration; Rest/wk = rest days/week; * p = 0.025 vs. GK; ⁑ p = 0.035 vs. GK; † p = 0.003 vs.
+                                                                                                                                  ⸣
+                                         DF; ‡ p < 0.05 among groups; # p = 0.036 vs. GK; § p = 0.033 vs. DF; £ p = 0.005 vs. MF; p = 0.033 vs. FW.
+J. Clin. Med. 2025, 14, 6320                                                                                                             6 of 27
+
+
+
+                               Table 2. General characteristics and playing profiles of amateur football players in Greece. The values
+                               in the table are presented as numbers (percentages).
+
+                                      N = 222            DF (N = 63)           FW (N = 61)           MF (N = 69)          GK (N = 29)
+                                Amateur league category
+                                A League                   41 (65.1)             40 (65.6)             45 (65.2)             17 (58.6)
+                                B League                   18 (28.6)             16 (26.2)             15 (21.7)              8 (27.6)
+                                C League                    4 (6.3)               5 (8.2)               9 (13)               4 (13.8)
+                                Leg dominance
+                                Left                        12 (19)               14 (23)              16 (23.2)             4 (13.8)
+                                Right                      45 (71.4)             45 (73.8)             48 (69.6)             22 (75.9)
+                                Both                        6 (9.5)               2 (3.3)               5 (7.2)              3 (10.3)
+                                Type of physical effort that work involves
+                                Sedentary                  20 (31.7)             22 (36.1)              29 (42)              10 (34.5)
+                                Standing and
+                                                           20 (31.7)             17 (27.9)              20 (29)              7 (24.1)
+                                walking
+                                Standing,
+                                walking, and               15 (23.8)             16 (26.2)             15 (21.7)             7 (24.1)
+                                lifting
+                                Other                      8 (12.7)               6 (9.8)               5 (7.2)              5 (17.2)
+                                Type of surface
+                                Synthetic/artificial
+                                                           31 (49.2)             24 (39.3)             27 (39.1)             12 (41.4)
+                                turf
+                                Natural grass              32 (50.8)             35 (57.4)              40 (58)              16 (55.2)
+                                Dirt surface                 0 (0)                2 (3.3)               1 (1.4)               1 (3.4)
+                                Don’t know                   0 (0)                 0 (0)                1 (1.4)                0 (0)
+                                Engagement in any other form of exercise beyond football
+                                Yes                         34 (54)              37 (60.7)             35 (50.7)             18 (62.1)
+                                No                          29 (46)              24 (39.3)             34 (49.3)             11 (37.9)
+                                Regularly visit a healthcare professional
+                                Yes                        21 (33.3)             22 (36.1)             18 (26.1)               9 (31)
+                                No                         42 (66.7)             39 (63.9)             51 (73.9)              20 (69)
+                                Healthcare professional specialty *
+                                Physiotherapist            13 (61.9)             12 (54.5)             10 (55.6)             5 (55.6)
+                                Nutritionist                 0 (0)                 2 (9.1)               0 (0)               1 (11.1)
+                                Doctor                      5 (23.8)              6 (27.3)             6 (33.3)              3 (33.3)
+                                Other                      3 (14.3)                 2 (9)              2 (11.1)                0 (0)
+                                Total                      21 (100)              22 (100)              18 (100)              9 (100)
+                                Passive recovery
+                                Yes                        26 (41.3)             17 (27.9)             17 (24.6)             17 (24.6)
+                                No                         37 (58.7)             44 (72.1)             52 (75.4)             52 (75.4)
+                                Number of training sessions in the 2022–2023 season
+                                Number                     27 (42.9)             22 (36.1)             26 (37.7)             12 (41.4)
+                                Don’t know                 36 (57.1)             39 (63.9)             43 (62.3)             17 (58.6)
+                                Physical therapist presence at the team’s training sessions
+                                Yes                        13 (20.6)             16 (26.2)               9 (13)              4 (13.8)
+                                No                         50 (79.4)             45 (73.8)              60 (87)              25 (86.2)
+                                Trainer present at the team’s training sessions
+                                Yes                        32 (50.8)             32 (52.5)             35 (50.7)             13 (44.8)
+                                No                         31 (49.2)             29 (47.5)             34 (49.3)             16 (55.2)
+                               DF = defender; FW = forward; MF = midfielder; GK = goalkeeper. * Participants could choose up to two answers.
+J. Clin. Med. 2025, 14, 6320                                                                                               7 of 27
+
+
+
+                               3.1. Prevalence of Injuries
+                                     Table 3 provides an overview of the injury incidence, characteristics, and treatment
+                               among amateur football players during the 2022–2023 season. Forty-one DFs experienced
+                               at least one injury, resulting in an incidence proportion of 65.1% (95% CI: 53–77%). Similarly,
+                               41 FWs reported injuries, with an incidence proportion of 67.2% (95% CI: 55–79%). MFs
+                               had a higher injury rate, with 52 players affected, corresponding to an incidence proportion
+                               of 75.4% (95% CI: 65–86%). Goalkeepers (GKs) showed the highest injury proportion,
+                               with 23 injured players reflecting 79.3% (95% CI: 65–94%). Despite these variations, there
+                               was no statistically significant association between player position and the likelihood
+                               of experiencing at least one injury during the 2022–2023 season (χ2 = 3.08, p = 0.379,
+                               Phi = 0.118). Over 80% of DFs, FWs, and MFs, along with approximately 70% of GKs,
+                               sought medical attention for their injuries, with physiotherapy being the most common
+                               treatment. Across all positions, treatment typically included rest and electric stimulation,
+                               with other therapies like massage and ice therapy also used. Most players, except GKs,
+                               were immediately removed from play following their injury. Additionally, a considerable
+                               number of players sustained recurrent injuries at the same site during the 2022–2023 season,
+                               with early recurrences being common. No statistically significant differences were found
+                               between playing positions.
+
+                               Table 3. Injury incidence, characteristics and treatment among amateur football players during the
+                               2022–2023 football season. The values in the table are presented as numbers (percentages).
+
+                                                N = 222                      DF             FW           MF             GK
+                                At least one injury in the football season 2022–2023
+                                Yes                                        41 (65.1)     41 (67.2)     52 (75.4)     23 (79.3)
+                                No                                         22 (34.9)     20 (32.8)     17 (24.6)     6 (20.7)
+                                Removal from play
+                                Immediately                                22 (53.7)     22 (53.7)     25 (48.1)     5 (21.7)
+                                Later                                      13 (31.7)     10 (24.4)     12 (23.1)     6 (26.1)
+                                Not at all                                  6 (14.6)      9 (22)       15 (28.8)     12 (52.2)
+                                Visit a healthcare professional—rehabilitation specialist
+                                Yes                                        37 (90.2)     36 (87.8)     43 (82.7)     16 (69.6)
+                                No                                          4 (9.8)      5 (12.2)      9 (17.3)      7 (30.4)
+                                Kind of healthcare professional *
+                                Doctor                                     10 (24.4)     11 (26.8)     11 (21.2)      6 (26.1)
+                                Physiotherapist                            24 (58.5)      25 (61)      29 (55.8)     11 (47.8)
+                                Other                                       4 (9.8)        0 (0)        3 (5.8)       1 (4.3)
+                                Treatment followed *
+                                Physiotherapy                              32 (86.5)     30 (83.3)     38 (88.4)     11 (68.8)
+                                Rest                                       14 (37.8)     17 (47.2)     12 (27.9)     7 (43.8)
+                                Medication                                  6 (16.2)      3 (8.3)       6 (14)       2 (12.5)
+                                Injections                                   2 (5.4)      2 (5.6)        0 (0)         0 (0)
+                                Surgery                                      1 (2.7)      2 (5.6)        3 (7)         0 (0)
+                                Other                                       1 (2.7)       2 (5.6)       1 (2.3)        0 (0)
+                                Physio intervention
+                                Kinisiotape                                 6 (16.2)     5 (13.9)      7 (16.3)        1 (6.3)
+                                Electrical stimulation                     23 (62.2)     22 (61.1)     29 (67.4)       8 (50)
+                                Massage                                    22 (59.5)     19 (52.8)     27 (62.8)      6 (37.5)
+                                Ultrasound                                 16 (43.2)      9 (25)       19 (44.2)      2 (12.5)
+                                Ice                                        19 (51.4)     16 (44.4)     18 (41.9)      5 (31.3)
+                                Kinesiotherapy exercises                   17 (45.9)     19 (52.8)     24 (55.8)      2 (12.5)
+                                Other                                        3 (8.1)      1 (2.8)      5 (11.6)        1 (6.3)
+J. Clin. Med. 2025, 14, 6320                                                                                                          8 of 27
+
+
+
+                               Table 3. Cont.
+
+                                                  N = 222                          DF             FW              MF              GK
+                                Injury to the same body location within the preceding year (2021–2022)
+                                Yes                                              16 (39)        13 (31.7)       14 (26.9)        6 (26.1)
+                                No                                               25 (61)        28 (68.3)       38 (73.1)       17 (73.9)
+                                Injury to the same body location within the current season (2022–2023) (recurrent injury)
+                                Yes                                               9 (22)         8 (19.5)       11 (21.2)        4 (17.4)
+                                No                                               32 (78)        33 (80.5)       41 (78.8)       19 (82.6)
+                                Happened
+                                Within 2 months after returning from
+                                                                                 4 (9.8)        7 (17.1)        8 (15.4)         3 (13)
+                                the index injury
+                                2–12 months after returning from the
+                                                                                 4 (9.8)          0 (0)          3 (5.8)         1 (4.3)
+                                index injury
+                                >12 months after returning from the
+                                                                                 3 (7.3)         1 (2.4)          0 (0)          1 (4.3)
+                                index injury
+                                Additional injury/ies during the 2022–2023 season
+                                Yes                                             12 (29.3)       12 (29.3)       18 (34.6)       7 (30.4)
+                                No                                              29 (70.7)       29 (70.7)       34 (65.4)       16 (69.6)
+                               DF = defender; FW = forward; MF = midfielder; GK = goalkeeper. * Participants could choose up to two answers.
+
+
+                               3.2. Injury Rate
+                                    Aside from reporting at least one injury, players were also asked about any additional
+                               injuries they had. During the 2022–2023 season, a total of 220 injuries were recorded,
+                               resulting in an overall injury rate of 5.3 injuries/1000 h (95% CI: 4.61–6.01) [37]. DFs
+                               experienced 57 injuries over 12,647 h, with an overall incidence of 4.5 injuries/1000 h (95%
+                               CI: 3.34–5.68), MFs sustained the most injuries (73 injuries) over 12,057.5 h, resulting in
+                               an overall incidence of 5.7 injuries/1000 h (95% CI: 4.37–7.07). FWs reported 59 injuries
+                               across 10,964 h, with an overall incidence of 5.4 injuries/1000 h (95% CI: 4.01–6.75), and
+                               GKs accounted for 31 injuries over 5737.5 h, with an overall incidence of 5.4 injuries/1000 h
+                               (95% CI: 3.5–7.31). The distribution of the total numbers of injuries among amateur football
+                               players during the 2022–2023 season are presented in Supplementary Materials File S1.
+
+                               3.3. Injuries in Matches vs. Training Sessions
+                                     An analysis of the athletes’ most recent injuries revealed that the number of injuries
+                               did not significantly differ between games and training across the various playing positions
+                               (χ2 = 5.21, p = 0.517, Cramer’s V = 0.129) (Figure 1). However, the data suggest that DF, FW,
+                               and MF players are more prone to injuries during games compared to training. Specifi-
+                               cally, DF players were 1.11-times more likely to be injured in games (21 injuries, 51.2% IR
+                               1.66 injuries/1000 h, 95% CI: 0.95–2.37) compared to training (19 injuries, 46.3% IR 1.50 in-
+                               juries/1000 h, 95% CI: 0.83–2.18). Similarly, FW players were 1.6-times more likely to sustain
+                               injuries during games (24 injuries, 58.5% IR 2.19 injuries/1000 h, 95% CI: 1.31–3.06) com-
+                               pared to training (15 injuries, 36.6% IR 1.37 injuries/1000 h, 95% CI: 1.31–3.06). MF players
+                               had the highest risk, being 2.06-times more likely to be injured during games (33 injuries,
+                               63.5% IR 2.74 injuries/1000 h, 95% CI: 1.80–3.67) compared to training (16 injuries, 30.8% IR
+                               1.33 injuries/1000 h, 95% CI: 0.68–1.98). In contrast, GK players were 1.09-times more likely
+                               to be injured during training (12 injuries, 52.2% IR 2.09 injuries/1000 h, 95% CI: 0.91–3.27)
+                               than in games (11 injuries, 47.8% IR 1.92 injuries/1000 h, 95% CI: 0.78–3.05).
+J. Clin. Med. 2025, 14, 6320                                                                                                                               9 of 27
+
+
+
+
+                                                                               Match vs. Training Injuries
+                                                        60
+
+
+
+
+                                    Percentages (%)
+                                                        50
+
+                                                        40
+
+                                                        30
+
+                                                        20
+
+                                                        10
+
+                                                          0
+                                                                      % DF                  % FW              % MF                 % GK
+                                                                      DF (N=41)            FW (N=41)        MF (N=52)           GK (N=23)
+                    During a match                                     51.2                  58.5              63.5                 47.8
+                            Μatch                                     21 (51.2)             24 (58.5)        33 (63.5)           11 (47.8)
+                    During a training session                          46.3                  36.6              30.8                 52.2
+                            Τraining session                          19 (46.3)             15 (36.6)        16 (30.8)           12 (52.2)
+                    Don't know                                         2.4                   4.9                5.8                    1
+                            Don't know                                 1 (2.4)               2 (4.9)          3 (5.8)               0 (0)
+
+
+                                                      Figure 1. Injury proportion during matches and training sessions; DF = defender; FW = forward;
+                                                      MF = midfielder; GK = goalkeeper.
+
+                                                      3.4. Severity
+                                                           In terms of injury severity of the most recent injury (Figure 2), DFs experienced 46.3%
+                                                      minor injuries (19 injuries, IR 1.5 injuries/1000 h, 95% CI: 0.83–2.18) and 34.1% moderate
+                                                      injuries (14 injuries, IR 1.1 injuries/1000 h, 95% CI: 0.53–1.69). FWs had a higher proportion
+                                                      of moderate injuries at 46.3% (19 injuries, IR 1.73 injuries/1000 h, 95% CI: 0.95–2.51), while
+                                                      minor injuries comprised 17.1% (7 injuries, IR 0.64 injuries/1000 h, 95% CI: 0.17–1.11). MFs
+                                                      reported 28.8% moderate injuries (15 injuries, IR 1.24, injuries/1000 h, 95% CI: 0.61–1.87)
+                                                      and 21.2% major injuries (11 injuries, IR 0.91 injuries/1000 h, 95% CI: 0.37–1.45). GKs
+                                                      had 39.1% minor injuries (9 injuries, IR 1.57 injuries/1000 h, 95% CI: 0.54–2.59) and 34.8%
+                                                      moderate injuries (8 injuries, IR 1.39 injuries/1000 h, 95% CI: 0.43–2.36). Injury severity
+                                                      significantly varied by player position (χ2 = 44.42, p = 0.001, Cramer’s V = 0.307), with a
+                                                      notable difference between DFs and MFs (p = 0.013).
+
+
+                                                                                      Severity
+        >180 days
+      91-180 days
+       29-90 days
+        8-28 days
+         4-7 days
+         1-3 days
+           0 days
+                        0                                10                    20               30              40                50                60
+
+                             0 days                       1-3 days                 days
+                                                                              4-7 days            days
+                                                                                            8-28 days    29-90 days
+                                                                                                         29-90   days 91-180
+                                                                                                                      91-180 days
+                                                                                                                               days >180
+                                                                                                                                    >180 days
+                                                                                                                                          days
+      DF (N=41)
+         (N=63)               0 0(0)                        3 3
+                                                              (7.3)           19 19
+                                                                                  (46.3)     14 14
+                                                                                                (34.1)     3 3(7.3)      1 1
+                                                                                                                           (2.4)      11(2.4)
+      FW (N=41)
+          (N=61)             1 (2.4)
+                                1                           2 (4.9)
+                                                               2               7 (17.1)
+                                                                                   7         19 (46.3)
+                                                                                                19         5 (12.2)
+                                                                                                               5         4 (9.8)
+                                                                                                                            4         3 (7.3)
+                                                                                                                                        3
+      MF (N=52)
+          (N=69)             6 6
+                              (11.5)                       7 7
+                                                             (13.5)            5 5(9.6)      15 15
+                                                                                                (28.8)    11 11
+                                                                                                              (21.2)     1 1
+                                                                                                                           (1.9)     7 7
+                                                                                                                                       (13.5)
+      GK (N=23)
+          (N=29)              0 0(0)                       4 4
+                                                             (17.4)            9 9
+                                                                                 (39.1)      8 8
+                                                                                               (34.8)      2 2(8.7)       0 0(0)       00(0)
+
+                                                      Figure 2. Severity of injuries. 0 days = slight injuries; 1–3 days = minimal injuries; 4–7 days = minor/mild
+                                                      injuries; 8–28 days = moderate injuries; 28 days and <8 weeks = major injuries; ≥8 weeks = severe injuries;
+                                                      DF = defender; FW = forward; MF = midfielder; GK = goalkeeper.
+J. Clin. Med. 2025, 14, 6320                                                                                            10 of 27
+
+
+
+                               3.5. Injured Body Locations
+                                     In this study, the most common injury locations varied by player position; however,
+                               there were no statistically significant differences between positions (χ2 = 57.68, p = 0.054,
+                               Cramer’s V = 0.350). DFs frequently sustained injuries to the posterior thigh (hamstrings)
+                               (10 injuries, 24.4%, IR 0.79 injuries/1000 h, 95% CI: 0.3–1.28), followed by foot/toe injuries
+                               (8 injuries, 19.5%, IR 0.63 injuries/1000 h, 95% CI: 0.19–1.07). FWs were primarily affected
+                               by injuries to the inner thigh (adductors) (7 injuries, 17.1%, IR 0.64 injuries/1000 h, 95%
+                               CI: 0.17–1.11), with additional significant injuries occurring in the hip/groin (6 injuries,
+                               14.6%, IR 0.55 injuries/1000 h, 95% CI: 0.11–0.99) and abdomen (6 injuries, 14.6%, IR
+                               0.55 injuries/1000 h, 95% CI: 0.11–0.99). MFs most commonly experienced knee injuries
+                               (12 injuries, 23.1%, IR 0.99 injuries/1000 h, 95% CI: 0.43–1.56), followed by inner thigh
+                               injuries (9 injuries, 17.3%, IR 0.75 injuries/1000 h, 95% CI: 0.26–1.23). GKs predominantly
+                               suffered from posterior thigh injuries (5 injuries, 21.7%, IR 0.87 injuries/1000 h, 95% CI:
+                               0.11–1.64), along with inner thigh injuries (4 injuries, 17.4%, IR 0.7 injuries/1000 h, 95% CI:
+                               0.01–1.38) and shoulder/clavicle injuries (4 injuries, 17.4%, IR 0.7 injuries/1000 h, 95% CI:
+                               0.01–1.38) (Figure 3).
+
+
+
+
+                               Figure 3. Injured body locations. DF = defender; FW = forward; MF = midfielder; GK = goal-
+                               keeper; HD = head; SH/CV = shoulder/clavicle; EL = elbow; WR/FG/TH = wrist/finger(s)/thumb;
+                               BK = back; ABD = abdomen; LBK = lower back; PL = pelvis; HP/GR = hip/groin;
+                               THA—QUAD = thigh (anterior)—quadriceps; THP—HS = thigh (posterior)—hamstrings; THI—
+                               ADD = thigh (inner)—adductors; KN = knee; TBA = tibia (anterior); TBP—SH. AT = tibia (posterior)—
+                               shank. Achilles tendon; FT/TO = foot/toe.
+
+                                    Lower-limb injuries were predominant across all positions, accounting for nearly 80%
+                               of injuries among DFs (33 injuries, 80.5%, IR 2.61, 95% CI: 1.72–3.5) and FWs (32 injuries,
+                               80%, IR 2.92, 95% CI: 1.91–3.93). MFs experienced the highest proportion of lower-limb
+                               injuries at 86.5% (45 injuries, IR 3.73, 95% CI: 2.64–4.82). GKs, however, had a lower percent-
+                               age of lower-limb injuries, at 63.6% (14 injuries, IR 2.44, 95% CI: 1.16–3.72) (Supplementary
+                               Materials File S2).
+
+                               3.6. Injury Type
+                                     Regarding the type of injuries, strains were the most common across all player
+                               positions (Figure 4). DFs had the highest incidence of strains (16 injuries, 39%, IR
+                               1.27 injuries/1000 h, 95% CI: 0.65–1.89), followed by sprains (8 injuries, 19.5%, IR
+                               0.63 injuries/1000 h, 95% CI: 0.19–1.07). DFs were 2.02-times more likely to suffer
+                               strains than sprains. FWs were approximately 2.7-times more likely to suffer strains
+                               (20 injuries, 48.8%, IR 1.82 injuries/1000 h, 95% CI: 1.02–2.62) than overuse injuries
+                               (7 injuries, 17.1%, IR 0.64 injuries/1000 h, 95% CI: 0.17–1.11). While strains were the
+                               most common, overuse injuries occurred more frequently than sprains (6 injuries, 14.6%,
+J. Clin. Med. 2025, 14, 6320                                                                                            11 of 27
+
+
+
+                               IR 0.55 injuries/1000 h, 95% CI: 0.11–0.99). For MFs, strains were predominant (24 injuries,
+                               46.2%, IR 1.99 injuries/1000 h, 95% CI: 1.19–2.79), with other types of injuries (7 injuries,
+                               13.5%, IR 0.58 injuries/1000 h, 95% CI: 0.15–1.01) and sprains (6 injuries, 11.5%, IR
+                               0.5 injuries/1000 h, 95% CI: 0.1–0.9) occurring less frequently. MFs were approximately
+                               4-times more likely to suffer strains than sprains, and strains were 3.4-times more common
+                               than other types of injuries. Sprains were slightly less frequent compared to other injury
+                               types. GKs primarily sustained muscle strains, accounting for 30.4% of injuries (7 injuries,
+                               IR 1.22 injuries per 1000 h, 95% CI: 0.32–2.12), followed by sprains at 17.4% (4 injuries, IR
+                               0.7 injuries per 1000 h, 95% CI: 0.01–1.38) and contusions. The likelihood of goalkeepers ex-
+                               periencing strains was 1.74-times higher compared to sprains or contusions. There was no
+                               statistically significant difference between the injury type and player positions (χ2 = 19.51,
+                               p = 0.552, Cramer’s V = 0.204).
+
+                               3.7. Injury Mechanisms
+                                     Running or sprinting was the most common cause among DFs (14 injuries, 34.1%, IR
+                               1.11 injuries/1000 h, 95% CI: 0.53–1.69), with overuse mechanisms being the second most fre-
+                               quent (6 injuries, 14.6%, IR 0.47 injuries/1000 h, 95% CI: 0.09–0.85). Similarly, FWs most of-
+                               ten sustained injuries while running or sprinting (17 injuries, 41.5%, IR 1.55 injuries/1000 h,
+                               95% CI: 0.81–2.29), followed by overuse (8 injuries, 19.5%, IR 0.46 injuries/1000 h, 95% CI:
+                               0.22–1.24) and unknown mechanisms (6 injuries, 14.6%, IR 0.55, 95% CI: 0.11–0.99). For
+                               MFs, running or sprinting was also the leading injury mechanism (15 injuries, 28.8%, IR
+                               1.24 injuries/1000 h, 95% CI: 0.61–1.87). In contrast, GKs most frequently sustained injuries
+                               due to falling (5 injuries, 21.7%, IR 0.87 injuries/1000 h, 95% CI: 0.11–1.64), followed by
+                               locking and collisions (4 injuries, 17.4%, IR 0.7 injuries/1000 h, 95% CI: 0.01–1.38) (Figure 5;
+                               Supplementary Materials File S2).
+                                     The analysis of injuries revealed varying distributions of non-contact and contact
+                               injuries among different player positions. For DFs, non-contact injuries comprised 31.7%
+                               of all injuries (13 injuries, IR 1.03 injuries/1000 h, 95%CI: 0.47–1.59), while contact in-
+                               juries accounted for 26.8% (11 injuries, IR 0.87 injuries/1000 h, 95% CI: 0.36–1.38). FWs
+                               showed a similar pattern, with non-contact injuries making up 31.7% (23 injuries, IR
+                               2.1 injuries/1000 h, 95% CI: 0.22–1.24) and contact injuries 26.8% (13 injuries, IR 1.19 in-
+                               juries/1000 h, 95% CI: 0.54–1.83). Among MFs, non-contact injuries were more prevalent
+                               at 32.6% (17 injuries, IR 1.41 injuries/1000 h, 95% CI: 0.74–2.08) compared to 19.1% for
+                               contact injuries (10 injuries, IR 0.83 injuries/1000 h, 95% CI: 0.32–1.34). In contrast, GKs
+                               exhibited a higher incidence of contact injuries, which constituted 65.2% of their total
+                               injuries (15 injuries, IR 2.61 injuries/1000 h, 95% CI: 1.29–3.94), while non-contact injuries
+                               were 30.3% (7 injuries, IR 1.22, 95% CI: 0.32–2.12) (Supplementary Materials File S2).
+
+                               3.8. Characteristics of Reported Additional Injuries
+                                    The analysis did not show a statistically significant effect of playing position on the
+                               occurrence of additional injuries (χ2 = 0.431, p = 0.934, Cramer’s V = 0.052). The majority
+                               of athletes in each position did not experience additional injuries. Among positions, MFs
+                               had the highest rate of additional injuries (34.6%), while DFs and FWs had the lowest rate
+                               (29.3%). Most of these injuries occurred during matches for all positions, except for FWs,
+                               who had a higher incidence of injuries during training sessions (50%). Table 4 provides
+                               data on additional injuries sustained by players during the 2022–2023 season, including
+                               the occurrence of injuries, their timing (match or training), removal from play, time off
+                               football, healthcare visits, treatments followed, and types of physiotherapy interventions
+                               across different player positions. Figure 6 presents the injury distribution of the additional
+                               injuries athletes reported.
+J. Clin. Med. 2025, 14, 6320                                                                                                                                                             12 of 27
+
+
+
+                                                                                                          Injury Type
+                                 Overuse          12.2            17.1          9.6       8.7
+
+                                    Other       7.3 2.4       13.5
+
+                               Dislocation    4.9 7.3 3.8 8.7
+
+                                 Fracture     2.42.4   7.7        13
+
+                               Contusion         9.8       4.9 3.8       17.4
+
+                        Tendinopathy          4.9 2.4 3.8 4.3
+
+                                    Strain                        39                                         48.8                              46.2                       30.4
+
+                                   Sprain              19.5              14.6          11.5        17.4
+                                                       Sprain
+                                                       Sprain              Strain
+                                                                           Strain             Tendinopathy
+                                                                                              Tendinopathy          Contusion
+                                                                                                                     Contusion    Fracture
+                                                                                                                                   Fracture    Dislocation
+                                                                                                                                                Dislocation   Other
+                                                                                                                                                                Other       Overuse
+                                                                                                                                                                             Overuse
+                                        DF
+                                         DF            8 19.5
+                                                         (19.5)            1639(39)               24.9
+                                                                                                    (4.9)              49.8
+                                                                                                                          (9.8)     12.4
+                                                                                                                                       (2.4)       4.9
+                                                                                                                                                   2 (4.9)     7.3
+                                                                                                                                                                3 (7.3)      12.2
+                                                                                                                                                                              5 (12.2)
+                                        FW
+                                        FW             6 14.6
+                                                         (14.6)           2048.8
+                                                                              (48.8)              12.4
+                                                                                                    (2.4)              24.9
+                                                                                                                          (4.9)     12.4
+                                                                                                                                       (2.4)       7.3(7.3)
+                                                                                                                                                   3           2.4(2.4)
+                                                                                                                                                                1            17.1
+                                                                                                                                                                              7 (17.1)
+                                        MF
+                                        MF             6 11.5
+                                                         (11.5)           2446.2
+                                                                              (46.2)              23.8
+                                                                                                    (3.8)              23.8
+                                                                                                                          (3.8)     47.7
+                                                                                                                                       (7.7)       3.8(3.8)
+                                                                                                                                                   2          13.5
+                                                                                                                                                               7 (13.5)       9.6(9.6)
+                                                                                                                                                                               5
+                                         GK
+                                        GK             4 17.4
+                                                         (17.4)           730.4
+                                                                             (30.4)               14.3
+                                                                                                    (4.3)             417.4
+                                                                                                                         (17.4)      313(13)       2
+                                                                                                                                                   8.7(8.7)      0 (0)
+                                                                                                                                                               0.3             2
+                                                                                                                                                                              8.7(8.7)
+
+                                      Figure 4. Injury type. DF = defender; FW = forward; MF = midfielder; GK = goalkeeper.
+J. Clin. Med. 2025, 14, 6320                                                                                              13 of 27
+
+
+
+
+                               Figure 5. Injury mechanism. DF = defender; FW = forward; MF = midfielder; GK = goalkeeper;
+                               Tckl = tackling; Tckld Opp = tackled by opponents; Run/Spr = running/sprint; Fall = falling;
+                               Shot = shooting; Drbl = dribbling; Lock = locking; Jump = jumping; Land = landing; Head = heading;
+                               Turn/Rot = turning/rotation; Coll = collision; Ovr = overuse; Unk Mech = unknown mechanism;
+                               Oth = other.
+
+                               Table 4. Additional Injuries during 2022–23 season.
+
+                                                                       DF              FW             MF              GK
+                                                                     N (%)            N (%)          N (%)           N (%)
+                                Additional Injury/ies during the 2022–23 season
+                                Yes                                 12 (29.3)        12 (29.3)      18 (34.6)       7 (30.4)
+                                No                                  29 (70.7)        29 (70.7)      34 (65.4)       16 (69.6)
+                                Additional injuries occurred
+                                During a match                       8 (66.7)        5 (41.7)       12 (66.7)       3 (42.9)
+                                During a training session             3 (25)          6 (50)         4 (22.2)       2 (28.6)
+                                Don’t know                            1 (8.3)         1 (8.3)        2 (11.1)       2 (28.6)
+                                Removal from play
+                                Immediately                          4 (33.3)         6 (50)         9 (50)         1 (14.3)
+                                Later                                5 (41.7)        2 (16.7)       4 (22.2)        2 (28.6)
+                                Not at all                            3 (25)         4 (33.3)       5 (27.8)        4 (57.1)
+                                Stop football due to injury (days)
+                                0 days                                1 (8.3)        2 (16.7)        1 (5.6)        2 (28.6)
+                                1–3 days                             2 (16.7)         1 (8.3)       4 (22.2)        1 (14.3)
+                                4–7 days                              3 (25)          3 (25)        5 (27.8)        3 (42.9)
+                                8–28 days                             6 (50)          3 (25)        6 (33.3)        1 (14.3)
+                                29–90 days                             0 (0)          3 (25)        2 (11.1)          0 (0)
+                                Visit a healthcare professional—rehabilitation specialist
+                                Yes                                   9 (75)         10 (83.3)      15 (83.3)       5 (71.4)
+                                No                                    3 (25)          2 (16.7)       3 (16.7)       2 (28.6)
+                                Kind of healthcare professional *
+                                Doctor                               1 (11.1)         1 (10)          3 (20)         2 (40)
+                                Physiotherapist                      2 (22.2)         1 (10)         4 (26.7)        1 (20)
+                                Other                                9 (100)         10 (100)       11 (73.3)        4 (80)
+                                Treatment followed *
+                                Physiotherapy                        9 (100)          9 (90)        12 (80)          3 (60)
+                                Rest                                 6 (66.7)         6 (60)         9 (60)          2 (40)
+                                Medication                           5 (55.6)         1 (10)        2 (13.3)         1 (20)
+                                Injections                             0 (0)           0 (0)         1 (6.7)          0 (0)
+                                Surgery                                0 (0)           0 (0)        1 (6.7)           0 (0)
+                                Other                                2 (22.2)         1 (10)          0 (0)           0 (0)
+J. Clin. Med. 2025, 14, 6320                                                                                                14 of 27
+
+
+
+                               Table 4. Cont.
+
+                                                                        DF              FW              MF              GK
+                                                                      N (%)           N (%)            N (%)           N (%)
+                                Physio Intervension
+                                Kinesiotape                          1 (11.1)          1 (10)          3 (20)          1 (20)
+                                Electrical stimulation               8 (88.9)          5 (50)         8 (53.3)         3 (60)
+                                Massage                              5 (55.6)          4 (40)          9 (60)          2 (40)
+                                Ultrasound                           1 (11.1)          3 (30)          6 (40)          2 (40)
+                                Ice                                  4 (44.4)          3 (30)          9 (60)          2 (40)
+                                Kinesiotherapy-Exercises             6 (66.7)          5 (50)         7 (46.7)          0 (0)
+                                Other                                  0 (0)           1 (10)         2 (13.3)         1 (20)
+                               DF = Defenders; FW = Forwards; MF = Midfielders; GK = Goalkeepers. * Participants could choose up to
+                               two answers.
+
+
+
+
+                               Figure 6. Injured body locations of additional injuries. DF = defender; FW = forward;
+                               MF = midfielder; GK = goalkeeper; HD = head; FC = Face; SH/CV = shoulder/clavicle; EL = elbow;
+                               WR/FG/TH = wrist/finger(s)/thumb; BK = back; ABD = abdomen; LBK = lower back; PL = pelvis;
+                               HP/GR = hip/groin; THA—QUAD = thigh (anterior)—quadriceps; THP—HS = thigh (posterior)—
+                               hamstrings; THI—ADD = thigh (inner)—adductors; KN = knee; TBA = tibia (anterior); TBP—SH.
+                               AT = tibia (posterior)—shank. Achilles tendon; FT/TO = foot/toe.
+
+                                    DFs exhibited a higher frequency of injuries to the posterior thigh (41.7%) and the
+                               hip/groin area (16.7%) (Figure 6). FWs experienced more injuries to the foot/toe (33.3%)
+                               and the anterior thigh and knee (16.7% each). MFs showed a broader variety of injuries,
+                               with the most common being the adductors (22.2%) followed by the anterior and posterior
+                               thigh (16.7% each). GKs most frequently sustained injuries to the posterior and inner thigh
+                               (28.6% each), as well as to the head (14.3%). Strains were the most common additional injury
+                               across all positions, with MFs reporting nine injuries (50.0%, IR 0.75, 95% CI: 0.26–1.23),
+                               DFs seven injuries (58.3%, IR 0.55, 95% CI: 0.14–0.96), FWs five injuries (41.7%, IR 0.46, CI:
+                               0.06–0.86), and GKs four injuries (57.1%, IR 0.70, 95% CI: 0.01–1.38). Overuse injuries were
+                               mainly reported among MFs (4 injuries, 22.2%, IR 0.33, 95% CI: 0.01–0.66), with minimal
+                               occurrences in other positions. The characteristics of the reported additional injuries with
+                               corresponding injury rates are presented in Supplementary Materials File S3.
+
+                               3.9. Prevention
+                                    Figure 7 provides data on the participation of players in ergometric tests during the
+                               2022–2023 season, categorized by playing position. Overall, participation in such tests was
+                               low across all groups, though DFs and GKs demonstrated relatively higher engagement
+                               (30.2% and 31%, respectively), compared to FWs and MFs. Notably, MFs exhibited the
+J. Clin. Med. 2025, 14, 6320                                                                                                   15 of 27
+
+
+
+                                    highest participation in endurance assessments (108.3%), but the lowest in change-of-
+                                    direction (COD) tests (25%). FWs had the highest involvement in speed testing (57.1%),
+                                    while goalkeepers showed the lowest participation in strength and speed assessments. DFs
+                                    demonstrated a more balanced distribution across test types, with greater emphasis on
+                                    endurance and speed evaluations. These differences may reflect positional demands or
+                                    training emphasis within amateur teams.
+
+
+                                                        Ergometric Tests
+                       Other
+
+       Body composition
+
+                  Flexibility
+
+                       Speed
+
+                   Reaction
+
+                        COD
+
+                    Strength
+
+                Endurance
+
+                   VO2max
+
+                                0              20                  40                 60              80              100
+                                                                                                                 Body
+                 VO2max Endurance Strength               COD            Reaction      Speed      Flexibility Body
+                                                                                                              compositio Other
+                    VO2max      Endurance    Strength    COD        Reaction        Speed    Flexibility            n    Other
+                                                                                                          composition
+          GKDF 33.3
+               6 (31.6)          66.7
+                                 15 (78.9)   722.2
+                                               (36.8)   3 11.1
+                                                          (15.8)            11.1
+                                                                        6 (31.6)        22.2 6 (31.6)
+                                                                                   6 (31.6)         11.1 5 (26.3) 33.3 2 (10.5)
+                                                                                                                             11.1
+          MFFW 425
+                 (28.6)         108.3
+                                 12 (85.7)   441.7
+                                               (28.6)   5 25
+                                                          (35.7)             25
+                                                                        5 (35.7)         25 4 (28.6)
+                                                                                   8 (57.1)         33.3 8 (57.1) 41.7 1 (7.1)8.3
+          FWMF 3  (25)
+               28.6             13 (108.3)
+                                 85.7        528.6
+                                               (41.7)    335.7
+                                                           (25)          3 (25)
+                                                                            35.7    3 (25)
+                                                                                        57.1 4 (33.3)
+                                                                                                    28.6 5 (41.7) 57.1 1 (8.3)7.1
+          DFGK 3 (33.3)
+               31.6              6 (66.7)
+                                 78.9        236.8
+                                               (22.2)   1 15.8
+                                                          (11.1)        1 (11.1)
+                                                                            31.6   2 (22.2)
+                                                                                        31.6  1 (11.1)
+                                                                                                    31.6    3  (33.3)
+                                                                                                                  26.3  1 (11.1)
+                                                                                                                             10.5
+
+                                    Figure 7. Distribution of ergometric tests performed by playing position; DF = defender;
+                                    FW = forward; MF = midfielder; GK = goalkeeper.
+
+                                         Table 5 illustrates players’ awareness and application of specific injury prevention
+                                    exercises by playing position. Awareness levels were generally high across all positions,
+                                    with goalkeepers showing the highest awareness—96.6% knew the Nordic hamstring and
+                                    front plank exercises, and 100% were familiar with the Copenhagen adductor exercise.
+                                    DFs and MFs also demonstrated strong awareness, particularly for core and groin-focused
+                                    exercises such as the front plank and Copenhagen adductor. FWs had slightly lower levels
+                                    of knowledge, though still reported good familiarity with key prevention exercises.
+                                         In terms of implementation, GKs and MFs demonstrated the highest overall engage-
+                                    ment in injury prevention exercises. GKs most frequently reported using these exercises
+                                    both in-season and pre-season (51.7%), followed by substantial use in the pre-season alone
+                                    (31%). Similarly, MFs predominantly used them during both periods (42%) or exclusively
+                                    in the pre-season (34.8%). DFs reported a more even distribution, with 49.2% performing
+                                    injury prevention in-season and 30.2% across both periods. FWs were more variable, but a
+                                    considerable portion reported regular use both in-season and pre-season (42.6%).
+J. Clin. Med. 2025, 14, 6320                                                                                                16 of 27
+
+
+
+                               Table 5. Players’ awareness and application of specific injury prevention exercises across playing
+                               positions during the season.
+
+                                                      Knowledge                            Use for Injury Prevention
+                                                                           Nordic Hamstring Exercise
+                                 N = 222
+                                                   Yes            No          In-Season         Pre-Season    Both        None
+                                    DF          56 (88.9)      7 (11.1)         2 (3.2)          19 (30.2)   31 (49.2)   11 (17.5)
+                                    FW          51 (83.6)      10 (16.4)        1 (1.6)          18 (29.5)   26 (42.6)   16 (26.2)
+                                    MF          61 (88.4)       8 (11.6)        2 (2.9)          24 (34.8)    29 (42)    14 (20.3)
+                                    GK          28 (96.6)        1 (3.4)        2 (6.9)           9 (31)     15 (51.7)    3 (10.3)
+                                                                                 Reverse Nordic
+                                    DF           46 (73)        17 (27)          0 (0)           19 (30.2)   21 (33.3)   23 (36.5)
+                                    FW          37 (60.7)      24 (39.3)        1 (1.6)          15 (24.6)   20 (32.8)    25 (41)
+                                    MF          50 (72.5)      19 (27.5)        2 (2.9)          19 (27.5)   21 (30.4)   27 (39.1)
+                                    GK          22 (75.9)       7 (24.1)        1 (3.4)          5 (17.2)    12 (41.4)   11 (37.9)
+                                                                                      Lunges
+                                    DF          63 (100)         0 (0)          7 (11.1)         11 (17.5)   44 (69.8)    1 (1.6)
+                                    FW          59 (96.7)       2 (3.3)         7 (11.5)         10 (16.4)   39 (63.9)    5 (8.2)
+                                    MF          63 (91.3)       6 (8.7)          4 (5.8)         16 (23.2)   45 (65.2)    4 (5.8)
+                                    GK          29 (100)         0 (0)           1 (3.4)         6 (20.7)    21 (72.4)    1 (3.4)
+                                                                               Side plank exercise
+                                    DF          60 (95.2)       3 (4.8)         3 (4.8)          13 (20.6)   44 (69.8)   3 (4.8)
+                                    FW          57 (93.4)       4 (6.6)         4 (6.6)          16 (26.2)   34 (55.7)   7 (11.5)
+                                    MF          67 (97.1)       2 (2.9)         2 (2.9)          13 (18.8)    49 (71)     5 (7.2)
+                                    GK          28 (96.6)       1 (3.4)         2 (6.9)          4 (13.8)    22 (75.9)    1 (3.4)
+                                                                              Front plank exercise
+                                    DF          63 (100)         0 (0)          3 (4.8)          14 (22.2)   45 (71.4)    1 (1.6)
+                                    FW          59 (96.7)       2 (3.3)         4 (6.6)          15 (24.6)    36 (59)     6 (9.8)
+                                    MF          65 (94.2)       4 (5.8)         1 (1.4)          14 (20.3)   50 (72.5)    4 (5.8)
+                                    GK          29 (100)         0 (0)          2 (6.9)          4 (13.8)    22 (75.9)    1 (3.4)
+                                                                          Copenhagen adductor exercise
+                                    DF          44 (69.8)      19 (30.2)        2 (3.2)           12 (19)    26 (41.3)   23 (36.5)
+                                    FW          52 (85.2)       9 (14.8)        5 (8.2)          18 (29.5)   22 (36.1)   16 (26.2)
+                                    MF          52 (75.4)      17 (24.6)        4 (5.8)          14 (20.3)   23 (33.3)   28 (40.6)
+                                    GK          27 (93.1)        2 (6.9)        2 (6.9)          6 (20.7)    14 (48.3)    7 (24.1)
+                               DF = defender; FW = forward; MF = midfielder; GK = goalkeeper.
+
+
+                               4. Discussion
+                                    This study investigated the epidemiology of injuries in amateur football players in
+                               Greece, focusing on the role of playing position in injury incidence, characteristics, severity,
+                               location, and mechanisms. The findings confirm that amateur football players, regardless
+                               of position, are at a high risk of injury, with positional role influencing not only injury type
+                               but also severity and mechanism.
+                                    Previous research examining the influence of playing position on injury risk in male
+                               football has produced inconsistent results. Several studies report a higher prevalence
+                               of injuries among FWs [27,31,34,52–66], while others indicate that MFs are more prone
+                               to injuries [26,56–58], and a few emphasize DFs as the most vulnerable group [59–62].
+                               Some work, such as Mallo (2012) [66], highlighted that both FWs and central DFs share
+                               a similar high risk of injury, whereas other investigations noted that GKs are either the
+                               most frequently injured players [63] or, conversely, at the lowest risk overall [54,55,64].
+                               Moreover, Aoki et al. (2012) [64] pointed out that, despite their generally lower injury
+J. Clin. Med. 2025, 14, 6320                                                                                            17 of 27
+
+
+
+                               rates, goalkeepers are particularly susceptible to head, face, and upper-extremity injuries
+                               because of the unique demands of their role [53,65,67]. In our study of amateur Greek
+                               footballers, we also found no statistically significant association between playing posi-
+                               tion and injury risk. Although GKs demonstrated the highest injury prevalence (79.3%),
+                               followed by MFs (75.4%), FWs (67.2%), and DFs (65.1%), these differences did not reach
+                               statistical significance. When exposure was considered, injury incidence was highest
+                               in MFs (5.7 injuries/1000 h), followed by FWs and GKs (both 5.4 injuries/1000 h) and
+                               DFs (4.5 injuries/1000 h). These results align with studies that reported no meaning-
+                               ful positional differences [26,52,55,60,62,63,65,66,68,69] and contrast with others that have
+                               identified a clear association between position and injury occurrence [27,54,58,59,64]. The
+                               lack of consistent patterns across studies likely reflects differences in study populations,
+                               competitive levels, and injury definitions. Overall, our findings suggest that in amateur
+                               male football, injury risk may not be strongly influenced by playing position, supporting
+                               the need for prevention strategies that target all players irrespective of field role.
+                                     This discrepancy between injury prevalence and incidence observed in our study
+                               highlights the importance of distinguishing between these two complementary measures.
+                               Prevalence reflects the proportion of players who sustained at least one injury during
+                               the season, without taking into account the total exposure time or number of injuries
+                               per individual. In contrast, injury incidence (injuries per 1000 h of exposure) adjusts for
+                               exposure and provides a more accurate estimate of the frequency of injuries during play
+                               and training. Consequently, GKs in our cohort showed the highest prevalence, meaning
+                               that a larger proportion of goalkeepers experienced at least one injury, whereas MFs
+                               exhibited the highest incidence because of their greater cumulative exposure and the high
+                               physical demands of their position. Similar patterns, where prevalence and incidence
+                               identify different at-risk groups, have been described in previous injury surveillance work
+                               (e.g., [33,40,44]). These differences emphasize that both metrics should be considered when
+                               interpreting injury risk and designing prevention strategies in football.
+                                     A possible explanation for the absence of significant differences in injury incidence
+                               between playing positions in our study may lie in the evolving nature of modern football,
+                               where positional roles are increasingly dynamic [5,70,71]. Players frequently alternate
+                               between offensive and defensive responsibilities throughout a match, regardless of their
+                               primary role. For example, fullbacks often function as attackers during ball possession
+                               phases but revert to defensive duties when possession is lost. Similarly, FWs and DFs are re-
+                               quired to perform both attacking and defending tasks, increasing their overall physical load
+                               and exposure to high-intensity actions such as sprints, accelerations, and frequent direc-
+                               tional changes, all of which elevate the risk of intrinsic injuries like muscle strains [23,72].
+                               Regarding GKs, the relatively small sample size of players in this position could limit
+                               the statistical power needed to detect significant differences in injury prevalence or rates
+                               compared to field players.
+
+                               4.1. Injuries During Matches vs. Training
+                                     In the present study, no statistically significant differences were found in the num-
+                               ber of injuries between matches and training sessions across different playing positions.
+                               Nevertheless, certain trends emerged: players, irrespective of position, were more likely to
+                               sustain injuries during matches than during training. MFs exhibited the highest relative
+                               risk, being 2.06-times more likely to be injured during matches than training, followed by
+                               FWs (1.6 times). This finding aligns partially with existing literature, which presents mixed
+                               results regarding the relationship between playing position and injury risk in matches ver-
+                               sus training. While some studies focus exclusively on match injuries [3,27,54,55,61,69,73],
+                               reporting higher injury rates in FWs and DFs during match play [61,69,73], others exam-
+J. Clin. Med. 2025, 14, 6320                                                                                            18 of 27
+
+
+
+                               ining both match and training injuries [26,59,62,74,75] report no significant influence of
+                               playing position on injury occurrence. The current results, though not statistically signif-
+                               icant, highlight that amateur players—similar to professionals—are generally at higher
+                               injury risk during competitive play.
+
+                               4.2. Injured Body Locations
+                                    Lower-limb injuries predominated across all positions in the current study, confirming
+                               previous reports in both professional and amateur football [6,26,33,34,56,76]. This distribu-
+                               tion reflects the physical demands of football, which primarily involve lower-limb actions
+                               such as sprinting, kicking, and directional changes [6,26,76]. While no statistically signifi-
+                               cant positional differences were observed regarding injury location, certain trends were
+                               identified. DFs more frequently sustained posterior thigh (hamstring) and foot/toe injuries,
+                               likely due to frequent tackling, sudden decelerations, and rapid directional changes. FWs
+                               exhibited a higher prevalence of inner thigh (adductor), hip/groin, and abdominal injuries,
+                               possibly reflecting the high demands of sprinting, shooting, and explosive movements.
+                               MFs, who typically cover the greatest distances and perform constant multidirectional
+                               movements, showed a higher incidence of knee injuries, followed by adductor injuries. GKs
+                               predominantly sustained posterior thigh, inner thigh (adductor), and shoulder/clavicle
+                               injuries, which may be attributed to repetitive jumping, diving, and falls inherent to their
+                               specialized role.
+
+                               4.3. Upper-Limb Injuries
+                                     Upper-limb injuries are generally uncommon in football, as the sport predominantly
+                               involves lower-limb activity. When such injuries do occur, they typically involve short
+                               periods of morbidity and removal from play [77]. However, GKs represent a notable
+                               exception, sustaining upper-limb injuries at significantly higher rates than outfield players—
+                               up to five-times more frequently, as reported in previous studies [33,34,64]. These injuries
+                               often result from repetitive hand use, ball interceptions, falls, and collisions, commonly
+                               affecting the wrist, hand, and shoulder joints, with an average absence of approximately
+                               three weeks [34]. In the present study, GKs exhibited a higher, though not statistically
+                               significant, tendency for upper-limb injuries compared to field players, consistent with
+                               the literature. Interestingly, DFs also showed a relatively higher occurrence of upper-limb
+                               injuries than other outfield positions, likely related to falls during defensive actions and
+                               aerial duels—a finding supported by Hunt & Fulford (1990) [33]. Additionally, although
+                               head and neck injuries were infrequent, they were reported mainly in DFs and FWs,
+                               possibly due to their involvement in physical contact and aerial challenges, as similarly
+                               noted by Forsythe et al. (2022) [56]. Overall, these findings highlight the distinct injury risk
+                               profile of GKs regarding upper-limb injuries, while also suggesting that DFs may face a
+                               greater risk than previously assumed.
+
+                               4.4. Injury Type
+                                    The present study found that muscle injuries were the most common type of injury
+                               across all playing positions among amateur football players in Greece, with MFs being
+                               the most affected. Specifically, MFs were approximately 3.4-times more likely to sustain
+                               muscle strains compared to other types of injuries, although no statistically significant
+                               differences in injury type were observed between positions. These findings are in line
+                               with previous research, which consistently identifies muscle injuries as the predominant
+                               injury type in football. Onaka et al. (2017) [34] reported that muscle injuries, particularly
+                               affecting the back muscles, were more frequent among advanced MFs, while hamstring
+                               strains were common among wingers and FWs. Conversely, Arliani et al. (2011) [78]
+                               found no significant association between playing position and injury type, although muscle
+J. Clin. Med. 2025, 14, 6320                                                                                           19 of 27
+
+
+
+                               strains were the most frequent injury across nearly all positions except GKs. Similarly,
+                               Chahla et al. (2018) [52] described varied injury profiles across positions, noting a higher
+                               occurrence of muscular injuries in FWs and a broader variety of injury types—including
+                               contusions and tendon injuries—among DFs. Reis et al. (2015) [57] and Carling et al.
+                               (2010) [27] further support the role of playing position as a contributing factor in injury
+                               type distribution, with wingbacks and central forwards showing increased susceptibility to
+                               muscle and tendon injuries. More recently, Thema et al. (2025) [79] confirmed that mid-
+                               fielders exhibited the highest frequency of soft-tissue injuries among sub-elite male players,
+                               reinforcing the positional trend observed in the present study. Overall, the predominance
+                               of muscle strains in this study, particularly among MFs, aligns with the majority of existing
+                               literature and underscores the importance of position-specific injury prevention strategies
+                               in amateur football.
+                                     The positional distribution of muscle injuries observed in this study likely reflects
+                               the differing physical and biomechanical demands associated with each role on the field.
+                               MFs, who demonstrated the highest proportion of muscle strains, typically act as the link
+                               between defensive and attacking phases of play. This role requires constant movement,
+                               frequent directional changes, and rapid transitions, all of which increase stress on muscles,
+                               tendons, and joints, potentially predisposing these players to soft-tissue injuries [79,80].
+                               Similarly, FWs—who also exhibited a high incidence of muscle injuries—engage in repeated
+                               accelerations, decelerations, and sprinting actions, movements known to overload muscular
+                               structures [9,23]. These patterns are consistent with prior studies noting that FWs and wing
+                               players perform the highest number of sprints per match, due to their dual offensive and
+                               defensive responsibilities during play [9,23]. In contrast, DFs in the present study sustained
+                               a relatively broader variety of injuries, possibly due to their involvement in tackling and
+                               aerial duels rather than continuous high-speed running [23]. The lower severity of injuries
+                               in DFs could also be linked to their generally lower sprinting demands during matches [23].
+                               Overall, the injury profiles identified in this study appear to be closely associated with the
+                               unique physical and tactical demands placed on players according to their positional role.
+
+                               4.5. Injury Severity
+                                     Injury severity in relation to playing position remains an underexplored area in football
+                               injury research. While numerous studies have focused on injury incidence per position,
+                               few have assessed whether the severity of injuries varies depending on the player’s role on
+                               the field. To our knowledge, only a limited number of studies [55,57,60,65] have examined
+                               this aspect, often as a secondary outcome. Most of these studies prioritized identifying
+                               which positions are more frequently injured, overlooking how severe those injuries tend to
+                               be. This represents an important gap in the literature, as understanding injury severity is
+                               essential for developing targeted, position-specific prevention and rehabilitation strategies.
+                               Considering the differing physical demands, movement patterns, and exposure to contact
+                               situations across playing positions, it is plausible that not only injury incidence but also
+                               injury severity may be influenced by positional role.
+                                     The existing literature presents mixed findings. Paulo (2017) [55] and Dauty et al.
+                               (2011) [60] found no significant differences in injury severity between positions, while
+                               Reis et al. (2015) [57] reported a significant association, with DFs sustaining less severe
+                               injuries and FWs more moderate to severe injuries. Le Gall et al. (2006) [65] identified
+                               GKs as sustaining the highest percentage of moderate and major injuries, though without
+                               statistical significance.
+                                     In contrast, the present study demonstrated that injury severity varied significantly
+                               according to playing position (p = 0.001), contributing novel data to this underexplored area.
+                               DFs and GKs predominantly sustained minor and moderate injuries, while FWs exhibited
+J. Clin. Med. 2025, 14, 6320                                                                                            20 of 27
+
+
+
+                               a higher proportion of moderate injuries. MFs experienced the highest proportion of major
+                               injuries, suggesting that their role imposes greater physical demands and increases the
+                               risk of severe injuries. The lower injury severity in DFs may be explained by their reduced
+                               sprinting and overall physical load [23,57]), while the greater severity observed in FWs
+                               and MFs likely reflects their exposure to repeated high-intensity efforts, accelerations, and
+                               multidirectional movements. MFs’ constant involvement in both offensive and defensive
+                               phases, combined with high running volumes, may explain their susceptibility to more
+                               severe injuries. Collectively, these findings emphasize the importance of including injury
+                               severity in epidemiological analyses, as positional role appears to influence not only injury
+                               incidence but also the severity of injuries sustained. These findings partially align with those
+                               of Reis et al. [57], who linked the lower severity of injuries in defenders to their reduced
+                               sprinting demands and lower cumulative physical loads during matches. Similarly, the
+                               higher severity observed in forwards and midfielders in the present study may reflect
+                               the more intense physical demands and high-volume, high-intensity movements inherent
+                               in their roles. Forwards are often required to perform repeated maximal sprints and
+                               accelerations, while midfielders combine continuous running with frequent changes of
+                               direction and involvement in both attacking and defensive phases. These biomechanical
+                               and physiological demands may explain their greater susceptibility to more severe injuries.
+
+                               4.6. Injury Mechanisms
+                                    Injury mechanism analysis revealed that most injuries among DFs, FWs, and MFs
+                               were non-contact in nature, predominantly resulting from running or sprinting actions.
+                               This reflects the high physical demands and repeated high-intensity efforts required by
+                               these positions during matches. Conversely, GKs sustained most of their injuries through
+                               contact mechanisms, such as falls, collisions, and physical contact with other players—
+                               an observation consistent with the specific biomechanical and functional demands of
+                               their role. The literature examining injury mechanisms in relation to playing position is
+                               scarce. Onaka et al. (2017) [34], using a different classification system, reported that trauma
+                               represented the main cause of sports injuries across all positions. However, their findings
+                               did not differentiate between contact and non-contact mechanisms per positional role. The
+                               current results underline the importance of considering injury mechanisms alongside injury
+                               type and severity, as understanding how injuries occur in relation to positional demands
+                               can inform the design of targeted preventive interventions.
+
+                               4.7. Injury Prevention Awareness and Practices
+                                     The present study found a generally high level of awareness regarding key injury
+                               prevention exercises among amateur football players across all positions, with GKs demon-
+                               strating the highest awareness rates. Notably, over 95% of GKs were familiar with widely
+                               recommended exercises such as the Nordic hamstring, front plank, and Copenhagen ad-
+                               ductor exercises. DFs and MFs also exhibited strong awareness, particularly for core and
+                               groin-focused routines. Although FWs showed slightly lower levels of familiarity, their
+                               awareness remained relatively high overall.
+                                     In terms of practical application, the data revealed variation in when players incorpo-
+                               rate injury prevention exercises into their routines. GKs and MFs were the most consistent
+                               users, with a significant proportion reporting the use of these exercises during both the
+                               pre-season and in-season periods. DFs showed a similar trend, although their use was
+                               more heavily concentrated during the season. FWs were more variable in timing, with
+                               some relying primarily on pre-season routines.
+                                     These findings align with previous research suggesting that awareness of injury
+                               prevention strategies does not always translate into consistent practice, particularly in
+J. Clin. Med. 2025, 14, 6320                                                                                            21 of 27
+
+
+
+                               amateur settings where structured support and supervision may be limited [81,82]. The
+                               variability observed between positions could be influenced by differences in coaching
+                               emphasis, access to physiotherapy guidance, or perceived injury risk. For instance, GKs
+                               may have more individualized training and supervision, which can facilitate both greater
+                               awareness and more structured injury prevention routines [82].
+                                     Furthermore, the high awareness of exercises such as the Copenhagen adductor and
+                               Nordic hamstring—both of which have been shown to reduce muscle injury risk [83–86]—
+                               indicates positive dissemination of evidence-based strategies even at the amateur level.
+                               However, inconsistent application across time periods and positions suggests that addi-
+                               tional education and implementation support may be needed to ensure injury prevention
+                               programs are not only known but also consistently followed throughout the season [87,88].
+                                     Given the generally high awareness but variable implementation of injury prevention
+                               exercises observed in this study, there is a clear need for more structured and consistent
+                               integration of such programs into amateur football training routines. Coaches, fitness train-
+                               ers, and club staff should be educated on the value of evidence-based prevention strategies
+                               and encouraged to include them as a standard component of both pre-season and in-season
+                               practice [87,88]. Position-specific approaches may also be beneficial, as physical demands
+                               vary among roles. For instance, MFs—who experience high workloads—may benefit from
+                               programs emphasizing eccentric strength and endurance, while GKs may require routines
+                               focused on upper body control and joint stability [84,85]. Additionally, increased use of
+                               ergometric testing could help to identify individual physical deficiencies and allow for
+                               more tailored prevention strategies [82,89]. Since DFs and GKs showed relatively higher
+                               participation in ergometric assessments, similar practices could be promoted among other
+                               positions to enhance injury risk profiling and program targeting [90].
+
+                               4.8. Limitations
+                                     The present study has several limitations that should be considered when interpreting
+                               its findings. Its retrospective design, based on self-reported questionnaire data, may have
+                               introduced recall bias and reduced accuracy, as players might lack detailed knowledge of
+                               their injuries, unlike assessments performed by qualified medical professionals. Because
+                               exposure hours were estimated from self-reported numbers and durations of training
+                               sessions and matches, small inaccuracies in recall may have influenced the calculated
+                               incidence rates. No sensitivity analysis was performed to examine the robustness of these
+                               estimates, and the results should therefore be interpreted with caution. Moreover, the
+                               retrospective nature of the study restricts the ability to accurately estimate injury incidence,
+                               since exposure times were derived from participants’ recollections. The absence of medical
+                               examinations potentially led to underreporting or misclassification of injuries compared
+                               to prospective studies with clinical diagnoses. Data were collected at the end of a single
+                               competitive season, limiting the ability to analyze injury trends over longer periods or
+                               across multiple seasons.
+                                     Further limitations relate to the data on injury prevention practices. The self-reported
+                               nature of awareness and exercise use may be subject to recall or social desirability bias,
+                               particularly if players overstated their engagement. Moreover, while the study documented
+                               whether players used specific exercises and during which periods, it did not assess fre-
+                               quency, intensity, or quality of execution—factors that are critical to the actual effectiveness
+                               of prevention strategies. Although data were collected on prevention exercises and recovery
+                               strategies, no analysis was conducted to examine their potential impact on injury outcomes.
+                               This was due to the retrospective design, self-reported data, and the relatively small number
+                               of players adopting specific methods (e.g., Nordic hamstring exercise). Additionally, the
+                               study did not distinguish whether implementation was athlete-led or guided by coaches
+J. Clin. Med. 2025, 14, 6320                                                                                            22 of 27
+
+
+
+                               or staff, which may influence adherence. The study did not control for several potential
+                               confounders, such as fitness level, detailed injury history, medical care access, type of field,
+                               playing style, and match load. These factors could influence injury risk and may partly
+                               explain differences between playing positions. Moreover, the analyses were descriptive
+                               and did not employ multivariable regression models to adjust for potential confounders,
+                               which may limit the interpretation of certain associations.
+                                     Beyond methodological considerations, limitations also arise when comparing the
+                               present findings to the existing literature. Different studies adopt inconsistent definitions of
+                               playing positions, making direct comparison of position-specific injury patterns challeng-
+                               ing. An additional limitation of the present work is that the analysis classified players only
+                               into four broad positional categories (GKs, DFs, MFs, FWs). However, previous research
+                               has demonstrated substantial differences in duties and physical demands between players
+                               occupying wide versus central roles within the same line (e.g., central DFs versus full-backs,
+                               or central MFs versus wide MFs) [70]. Furthermore, other authors emphasize that there
+                               may even be meaningful differences in roles and demands among players who share the
+                               same nominal position, such as between different types of central MFs [91,92]. Furthermore,
+                               many studies evaluate only match-related injuries, neglecting injuries sustained during
+                               training, which constitute a substantial proportion of football injuries. Some studies fail to
+                               report whether their incidence rates are based on total (match and training) exposure time
+                               or omit exposure time definitions altogether. A further complication is the inconsistency
+                               in reported outcomes: some studies focus on injury prevalence, while others report injury
+                               incidence rates, which reflect injury risk per hours of play and are therefore more suitable
+                               for risk comparisons. Additionally, several previous studies investigate youth populations,
+                               where biological maturation affects injury patterns, limiting their comparability with adult
+                               amateur players. Finally, due to the scarcity of research involving amateur footballers, com-
+                               parisons in this study often relied on professional-level data, despite the clear differences
+                               in training conditions, match load, and medical support between these two populations.
+                               Variations in injury classification systems and failure to report position-specific incidence
+                               rates, as opposed to general injury proportions, further hinder direct comparison with
+                               existing evidence.
+                                     The use of online convenience and snowball sampling methods may have introduced
+                               selection bias, restricting the representativeness of the sample and limiting the generaliz-
+                               ability of the findings to all amateur footballers in Greece. Furthermore, the sample size
+                               calculation employed a 7% margin of error rather than the conventional 5%, reflecting
+                               practical constraints, and although the required minimum was exceeded, the estimates
+                               should still be interpreted with caution. The study did not include comprehensive so-
+                               cioeconomic data, nor did it prospectively track lifestyle factors such as sleep or recovery
+                               practices. Although survey questions on healthcare access, recovery, and rehabilitation
+                               provided a general descriptive overview, these aspects should be examined in more detail
+                               in future studies.
+
+                               4.9. Future Implications
+                                     Building on these findings, amateur football stakeholders—including coaches, club
+                               staff, and governing bodies—should prioritize the integration of structured, evidence-based
+                               injury prevention programs throughout the season. Exercises such as the Nordic hamstring
+                               and Copenhagen adductor should be consistently applied and adapted to the specific
+                               demands of each playing position. Emphasis should also be placed on player education
+                               and coach-led implementation, particularly in settings with limited access to medical or
+                               performance professionals.
+J. Clin. Med. 2025, 14, 6320                                                                                                    23 of 27
+
+
+
+                                    National and regional football associations could support this effort through standard-
+                               ized guidelines, educational initiatives, and greater use of accessible technologies—such
+                               as mobile apps or wearable devices—to monitor training load and adherence in real time.
+                               From a research perspective, future studies should employ prospective, longitudinal de-
+                               signs with objective injury surveillance and standardized definitions to improve data
+                               accuracy and comparability. Expanding this research across diverse amateur populations
+                               will help to tailor interventions to the unique needs of grassroots football and enhance
+                               player safety and performance at all levels.
+
+                               5. Conclusions
+                                     While injury prevalence and injury rates varied across positions—with GKs exhibiting
+                               the highest prevalence and MFs the highest rate—no statistically significant association
+                               was found between playing position and overall injury risk among male amateur football
+                               players in Greece. Muscle injuries, particularly in the lower limbs, were the most common
+                               across all positions, with MFs and FWs showing a higher tendency toward severe and recur-
+                               rent injuries. Although players demonstrated high awareness of evidence-based prevention
+                               exercises, such as the Nordic hamstring and Copenhagen adductor, their implementation
+                               varied across positions and training phases. These findings suggest that injury risk in
+                               amateur football is influenced more by overall physical demands and training exposure
+                               than by fixed positional roles. Position-sensitive but broadly applied prevention strategies,
+                               implemented consistently throughout the season, may be more effective in reducing in-
+                               jury burden. Future research using prospective methods and objective injury tracking is
+                               recommended to validate these trends and inform more targeted interventions.
+
+                               Supplementary Materials: The following supporting information can be downloaded at: https:
+                               //www.mdpi.com/article/10.3390/jcm14176320/s1, File S1: Distribution of injuries among amateur
+                               football players during the 2022–2023 Season; File S2: Injury types, body locations and mechanisms
+                               with corresponding injury rates among amateur football players in Greece; File S3: Injury types, body
+                               locations and mechanisms with corresponding injury rates of additional injuries among amateur
+                               football players in Greece.
+
+                               Author Contributions: Conceptualization: K.V. and I.M.; Methodology: K.V. and I.A.P.; Validation:
+                               I.A.P. and S.S.; Formal analysis: K.V. and A.S.; Data collection: K.V., I.M., and E.G.; Data curation:
+                               K.V., A.S., and S.P.; Writing—original draft preparation: K.V.; Writing—review and editing: S.P., S.S.,
+                               I.A.P., Z.D., and D.T.; Visualization: K.V., A.S., and S.P.; Supervision: I.A.P., Z.D., and D.T.; Project
+                               administration: I.A.P. All authors have read and agreed to the published version of the manuscript.
+
+                               Funding: This research received no external funding.
+
+                               Institutional Review Board Statement: This study was conducted in accordance with the Declaration
+                               of Helsinki, and approved by the Ethics Committee of the Faculty of Physiotherapy, University of
+                               Thessaly (Ethic code: 542/3-5-2023, date 3 May 2023).
+
+                               Informed Consent Statement: All potential participants must be given the opportunity to provide
+                               informed consent before taking part in a research project. However, a signed consent form is not
+                               always necessary. In studies involving electronic questionnaires, which typically pose minimal risk
+                               to participants, ethics and review boards generally accept the act of completing the questionnaire as
+                               sufficient evidence of consent. Therefore, the first page of the questionnaire included an information
+                               statement and a declaration reading, “By entering the survey, I confirm that I have read the provided
+                               information and agree to participate.” Consent was indicated when participants clicked the “Go
+                               to Survey” button. Additionally, the information sheet and the ethics approval were available in
+                               PDF format for participants to read and download, allowing them to retain a copy for their records
+                               without the need for a physical signature.
+J. Clin. Med. 2025, 14, 6320                                                                                                          24 of 27
+
+
+
+                                   Data Availability Statement: The data presented in this study are available on request from the
+                                   corresponding author.
+
+                                   Acknowledgments: We extend our sincere gratitude to all participants who contributed to this study.
+
+                                   Conflicts of Interest: The authors declare no conflicts of interest.
+
+                                   Abbreviations
+                                   The following abbreviations are used in this manuscript:
+
+                                   DF     Defenders
+                                   FW     Forwards
+                                   MF     Midfielders
+                                   GK     Goalkeepers
+
+References
+1.    Pfirrmann, D.; Herbst, M.; Ingelfinger, P.; Simon, P.; Tug, S. Analysis of Injury Incidences in Male Professional Adult and Elite
+      Youth Soccer Players: A Systematic Review. J. Athl. Train. 2016, 51, 410–424. [CrossRef] [PubMed]
+2.    Eirale, C.; Gillogly, S.; Singh, G.; Chamari, K. Injury & Illness Epidemiology in Soccer—Effects of Global Geographical Differences—
+      A Call for Standardized & Consistent Research Studies. Biol. Sport 2017, 34, 249–254. [CrossRef]
+3.    Della Villa, F.; Mandelbaum, B.R.; Lemak, L.J. The Effect of Playing Position on Injury Risk in Male Soccer Players: Systematic
+      Review of the Literature and Risk Considerations for Each Playing Position. Am. J. Orthop. 2018, 47, 1–11. [CrossRef]
+4.    Football FIFPRO Players Worldwide. Football’s Schedule Is Getting Busier, Cutting Players Recovery Time 2019. Available online:
+      https://www.fifpro.org/en/supporting-players/health-and-performance/player-workload/at-the-limit-report (accessed on 4
+      May 2025).
+5.    Nassis, G.P.; Massey, A.; Jacobsen, P.; Brito, J.; Randers, M.B.; Castagna, C.; Mohr, M.; Krustrup, P. Elite Football of 2030 Will
+      Not Be the Same as That of 2020: Preparing Players, Coaches, and Support Staff for the Evolution. Scand. J. Med. Sci. Sport 2020,
+      30, 962–964. [CrossRef]
+6.    Ekstrand, J.; Waldén, M.; Hägglund, M. Hamstring Injuries Have Increased by 4% Annually in Men’s Professional Football, since
+      2001: A 13-Year Longitudinal Analysis of the UEFA Elite Club Injury Study. Br. J. Sports Med. 2016, 50, 731–737. [CrossRef]
+7.    Gurau, T.V.; Gurau, G.; Musat, C.L.; Voinescu, D.C.; Anghel, L.; Onose, G.; Munteanu, C.; Onu, I.; Iordan, D.A. Epidemiology of
+      Injuries in Professional and Amateur Football Men (Part II). J. Clin. Med. 2023, 12, 6293. [CrossRef]
+8.    Gurau, T.V.; Gurau, G.; Voinescu, D.C.; Anghel, L.; Onose, G.; Iordan, D.A.; Munteanu, C.; Onu, I.; Musat, C.L. Epidemiology of
+      Injuries in Men’s Professional and Amateur Football (Part I). J. Clin. Med. 2023, 12, 5569. [CrossRef]
+9.    Hall, E.C.R.; Larruskain, J.; Gil, S.M.; Lekue, J.A.; Baumert, P.; Rienzi, E.; Moreno, S.; Tannure, M.; Murtagh, C.F.; Ade, J.D.; et al.
+      Playing Position and the Injury Incidence Rate in Male Academy Soccer Players. J. Athl. Train. 2022, 57, 696–703. [CrossRef]
+10.   Di Salvo, V.; Pigozzi, F. Physical Training of Football Players Based on Their Positional Rules in the Team: Effects on Performance-
+      Related Factors. J. Sports Med. Phys. Fit. 1998, 38, 294–297.
+11.   Reilly, T. Energetics of High-Intensity Exercise (Soccer) with Particular Reference to Fatigue. J. Sports Sci. 1997, 15, 257–263.
+      [CrossRef] [PubMed]
+12.   Domene, Á.M. Evaluation of Movement and Physiological Demands of Full-Back and Center-Back Soccer Players Using Global
+      Positioning Systems. J. Hum. Sport Exerc. 2013, 8, 1015–1028. [CrossRef]
+13.   Dellal, A.; Owen, A.; Wong, D.P.; Krustrup, P.; van Exsel, M.; Mallo, J. Technical and Physical Demands of Small vs. Large Sided
+      Games in Relation to Playing Position in Elite Soccer. Hum. Mov. Sci. 2012, 31, 957–969. [CrossRef]
+14.   Gaudino, P.; Iaia, F.M.; Alberti, G.; Strudwick, A.J.; Atkinson, G.; Gregson, W. Monitoring Training in Elite Soccer Players:
+      Systematic Bias between Running Speed and Metabolic Power Data. Int. J. Sports Med. 2013, 34, 963–968. [CrossRef]
+15.   Carling, C. Interpreting Physical Performance in Professional Soccer Match-Play: Should We Be More Pragmatic in Our Approach?
+      Sports Med. 2013, 43, 655–663. [CrossRef]
+16.   Dalen, T.; JØrgen, I.; Gertjan, E.; Havard, H.G.; Ulrik, W. Player Load, Acceleration, and Deceleration during Forty-Five
+      Competitive Matches of Elite Soccer. J. Strength Cond. Res. 2016, 30, 351–359. [CrossRef]
+17.   Ingebrigtsen, J.; Dalen, T.; Hjelde, G.H.; Drust, B.; Wisløff, U. Acceleration and Sprint Profiles of a Professional Elite Football Team
+      in Match Play. Eur. J. Sports Sci. 2015, 15, 101–110. [CrossRef]
+18.   Di Salvo, V.; Baron, R.; Tschan, H.; Calderon Montero, F.J.; Bachl, N.; Pigozzi, F. Performance Characteristics According to Playing
+      Position in Elite Soccer. Int. J. Sports Med. 2007, 28, 222–227. [CrossRef] [PubMed]
+J. Clin. Med. 2025, 14, 6320                                                                                                             25 of 27
+
+
+
+19.   Coelho, D.B.; Mortimer, L.Á.; Condessa, L.A.; Morandi, R.F.; Oliveira, B.M.; Marins, J.C.B.; Soares, D.D.; Garcia, E.S. Intensidade
+      De Jogos De Futebol De Uma Competição Real E Entre Jogadores De Diferentes Posições Táticas. Rev. Bras. Cineantropometria
+      Desempenho Hum. 2011, 13, 341–347. [CrossRef]
+20.   Bastos, F.N.; Vanderlei, F.M.; Vanderlei, L.C.M.; Júnior, J.N.; Pastre, C.M. Investigation of Characteristics and Risk Factors of
+      Sports Injuries in Young Soccer Players: A Retrospective Study. Int. Arch. Med. 2013, 6, 4. [CrossRef]
+21.   Reilly, T.; Bangsbo, J.; Franks, A. Anthropometric and Physiological Predispositions for Elite Soccer. J. Sports Sci. 2000, 18, 669–683.
+      [CrossRef] [PubMed]
+22.   Noh, J.W.; Kim, M.Y.; Lee, L.K.; Park, B.S.; Yang, S.M.; Jeon, H.J.; Lee, W.D.; Kim, J.H.; Lee, J.U.; Kwak, T.Y.; et al. Somatotype and
+      Body Composition Analysis of Korean Youth Soccer Players According to Playing Position for Sports Physiotherapy Research. J.
+      Phys. Ther. Sci. 2015, 27, 1013–1017. [CrossRef]
+23.   Di Salvo, V.; Gregson, W.; Atkinson, G.; Tordoff, P.; Drust, B. Analysis of High Intensity Activity in Premier League Soccer. Int. J.
+      Sports Med. 2009, 30, 205–212. [CrossRef] [PubMed]
+24.   Brophy, R.H.; Stepan, J.G.; Silvers, H.J.; Mandelbaum, B.R. Defending Puts the Anterior Cruciate Ligament at Risk During Soccer:
+      A Gender-Based Analysis. Sports Health 2015, 7, 244–249. [CrossRef] [PubMed]
+25.   Leventer, L.; Eek, F.; Hofstetter, S.; Lames, M. Injury Patterns among Elite Football Players: A Media-Based Analysis over 6
+      Seasons with Emphasis on Playing Position. Int. J. Sports Med. 2016, 37, 898–908. [CrossRef]
+26.   Morgan, B.E.; Oberlander, M.A. An Examination of Injuries in Major League Soccer. The Inaugural Season. Am. J. Sports Med.
+      2001, 29, 426–430. [CrossRef]
+27.   Carling, C.; Orhant, E.; Legall, F. Match Injuries in Professional Soccer: Inter-Seasonal Variation and Effects of Competition Type,
+      Match Congestion and Positional Role. Int. J. Sports Med. 2010, 31, 271–276. [CrossRef]
+28.   Waldén, M.; Hägglund, M.; Ekstrand, J. Injuries in Swedish Elite Football—A Prospective Study on Injury Definitions, Risk for
+      Injury and Injury Pattern during 2001. Scand. J. Med. Sci. Sports 2005, 15, 118–125. [CrossRef] [PubMed]
+29.   Agel, J.; Evans, T.A.; Dick, R.; Putukian, M.; Marshall, S.W. Descriptive Epidemiology of Collegiate Men’s Soccer Injuries: National
+      Collegiate Athletic Association Injury Surveillance System, 1988–1989 Through 2002–2003. J. Athl. Train. 2007, 42, 270–277.
+30.   Brito, J.; Malina, R.M.; Seabra, A.; Massada, J.L.; Soares, J.M.; Krustrup, P.; Rebelo, A. Injuries in Portuguese Youth Soccer Players
+      during Training and Match Play. J. Athl. Train. 2012, 47, 191–197. [CrossRef]
+31.   de Lira, C.A.B.; Silva, F.R.; Waszczuk-Junior, S.; Andrade, M.d.S.; Montagner, P.C.; Borin, J.P. Descriptive Epidemiology of Injuries
+      in a Brazilian Premier League Soccer Team. Open Access J. Sports Med. 2013, 4, 171–174. [CrossRef]
+32.   Kristenson, K.; Waldén, M.; Ekstrand, J.; Hägglund, M. Lower Injury Rates for Newcomers to Professional Soccer: A Prospective
+      Cohort Study over 9 Consecutive Seasons. Am. J. Sports Med. 2013, 41, 1419–1425. [CrossRef]
+33.   Hunt, M.; Fulford, S. Amateur Soccer: Injuries in Relation to Field Position. Br. J. Sports Med. 1990, 24, 265. [CrossRef]
+34.   Onaka, G.M.; Gaspar, J.J., Jr.; Graças, D.D.; Barbosa, F.S.S.; Martinez, P.F.; de Oliveira-Junior, S.A. Sports Injuries in Soccer
+      According to Tactical Position: A Retrospective Survey. Fisioter. Mov. 2017, 30, 249–257. [CrossRef]
+35.   Bello, B.; Sa’Ad, U.B.; Ibrahim, A.A.; Mamuda, A.A. Pattern and Risk Factors of Sport Injuries among Amateur Football Players
+      in Kano, Nigeria. Hum. Mov. 2020, 21, 61–68. [CrossRef]
+36.   Anne-Marie van Beijsterveldt, A.M.C.; Stubbe, J.H.; Schmikli, S.L.; Van De Port, I.G.L.; Backx, F.J.G. Differences in Injury Risk and
+      Characteristics between Dutch Amateur and Professional Soccer Players. J. Sci. Med. Sport 2015, 18, 145–149. [CrossRef]
+37.   Vassis, K.; Misiris, I.; Siouras, A.; Spanos, S.; Kasiotis, F.; Dimitriadis, Z.; Tsaopoulos, D.; Poulis, I.A. Retrospective Epidemiological
+      Study on Musculoskeletal Injuries in Amateur Football Athletes in Greece. Int. J. Perform. Anal. Sport 2024, 25, 768–789. [CrossRef]
+38.   Vassis, K.; Maliousis, I.; Spanos, S.; Poulis, I.A. Improving the Quality of Greek Web Surveys: Adaptation of the Checklist for
+      Reporting Results of Internet e-Surveys in Greek Language. Int. J. Clin. Trials 2023, 10, 279–281. [CrossRef]
+39.   Elliott, M.N.; Haviland, A.M. Use of a Web-Based Convenience Sample to Supplement a Probability Sample. Surv. Methodol. 2007,
+      33, 211–215.
+40.   Byrne, M. Sampling for Qualitative Research. AORN J. 2001, 73, 494–498. [CrossRef] [PubMed]
+41.   Hellenic Statistical Authority Hellenic Football Federation: Amateur Football Data Analysis.                              Available online:
+      https://www.epo.gr/media/files/MEDIA_EPO/HFF_AMATEUR_FOOTBALL_DATA_ANALYSIS_FINAL_DEC_2021
+      A_$\upPhi$A$\protect\protect\unhbox\voidb@x\hbox{$\Sigma$}$H.pdf (accessed on 1 March 2023).
+42.   Kekelekis, A.; Kounali, Z.; Kofotolis, N.; Clemente, F.M.; Kellis, E. Epidemiology of Injuries in Amateur Male Soccer Players: A
+      Prospective One-Year Study. Healthcare 2023, 11, 352. [CrossRef]
+43.   Ekstrand, J.; Hägglund, M.; Waldén, M. Injury Incidence and Injury Patterns in Professional Football: The UEFA Injury Study. Br.
+      J. Sports Med. 2011, 45, 553–558. [CrossRef]
+44.   Fuller, C.W.; Ekstrand, J.; Junge, A.; Andersen, T.E.; Bahr, R.; Dvorak, J.; Hägglund, M.; McCrory, P.; Meeuwisse, W.H. Consensus
+      Statement on Injury Definitions and Data Collection Procedures in Studies of Football (Soccer) Injuries. Br. J. Sports Med. 2006,
+      40, 193–201. [CrossRef] [PubMed]
+J. Clin. Med. 2025, 14, 6320                                                                                                              26 of 27
+
+
+
+45.   Hägglund, M.; Waldén, M.; Bahr, R.; Ekstrand, J. Methods for Epidemiological Study of Injuries to Professional Football Players:
+      Developing the UEFA Model. Br. J. Sports Med. 2005, 39, 340–346. [CrossRef] [PubMed]
+46.   Waldén, M.; Mountjoy, M.; McCall, A.; Serner, A.; Massey, A.; Tol, J.L.; Bahr, R.; D’Hooghe, M.; Bittencourt, N.; Della Villa, F.; et al.
+      Football-Specific Extension of the IOC Consensus Statement: Methods for Recording and Reporting of Epidemiological Data on
+      Injury and Illness in Sport 2020. Br. J. Sports Med. 2023, 57, 1341–1350. [CrossRef] [PubMed]
+47.   Til, L.; Orchard, J.; Rae, K. El Sistema de Clasificación y Codificación OSICS-10 Traducido Del Inglés. Apunt. Med. l’Esport 2008,
+      43, 109–112. [CrossRef]
+48.   Ekstrand, J.; Krutsch, W.; Spreco, A.; Van Zoest, W.; Roberts, C.; Meyer, T.; Bengtsson, H. Time before Return to Play for the Most
+      Common Injuries in Professional Football: A 16-Year Follow-up of the UEFA Elite Club Injury Study. Br. J. Sports Med. 2020,
+      54, 421–426. [CrossRef]
+49.   Szymski, D.; Krutsch, V.; Achenbach, L.; Gerling, S.; Pfeifer, C.; Alt, V.; Krutsch, W.; Loose, O. Epidemiological Analysis of Injury
+      Occurrence and Current Prevention Strategies on International Amateur Football Level during the UEFA Regions Cup 2019. Arch.
+      Orthop. Trauma Surg. 2022, 142, 271–280. [CrossRef]
+50.   Knowles, S.B.; Marshall, S.W.; Guskiewicz, K.M. Issues in Estimating Risks and Rates in Sports Injury Research. J. Athl. Train.
+      2006, 41, 207–215.
+51.   Fritz, C.O.; Morris, P.E.; Richler, J.J. Effect Size Estimates: Current Use, Calculations, and Interpretation. J. Exp. Psychol. Gen. 2012,
+      141, 2–18. [CrossRef]
+52.   Chahla, J.; Sherman, B.; Cinque, M.; Miranda, A.; Garrett, W.E.; Chiampas, G.; O’Malley, H.; Gerhardt, M.B.; Mandelbaum,
+      B.R. Epidemiological Findings of Soccer Injuries During the 2017 Gold Cup. Orthop. J. Sports Med. 2018, 6, 2325967118791754.
+      [CrossRef]
+53.   Price, R.J.; Hawkins, R.D.; Hulse, M.A.; Hodson, A. The Football Association Medical Research Programme: An Audit of Injuries
+      in Academy Youth Football. Br. J. Sports Med. 2004, 38, 466–471. [CrossRef]
+54.   Andersen, T.E.; Larsen, O.; Tenga, A.; Engebretsen, L.; Bahr, R. Football Incident Analysis: A New Video Based Method to
+      Describe Injury Mechanisms in Professional Football. Br. J. Sports Med. 2003, 37, 226–232. [CrossRef]
+55.   Paulo, L. Orthopaedics Injuries in Male Professional Football Players in Brazil: A Prospective Comparison between Two Divisions.
+      Muscles Ligaments Tendons J. 2017, 7, 524. [CrossRef]
+56.   Forsythe, B.; Knapik, D.M.; Crawford, M.D.; Diaz, C.C.; Hardin, D.; Gallucci, J.; Silvers-Granelli, H.J.; Mandelbaum, B.R.; Lemak,
+      L.; Putukian, M.; et al. Incidence of Injury for Professional Soccer Players in the United States: A 6-Year Prospective Study of
+      Major League Soccer. Orthop. J. Sports Med. 2022, 10, 23259671211055136. [CrossRef]
+57.   Reis, G.F.; Santos, T.R.T.; Lasmar, R.C.P.; Oliveira, O.; Lopes, R.F.F.; Fonseca, S.T. Sports Injuries Profile of a First Division Brazilian
+      Soccer Team: A Descriptive Cohort Study. Braz. J. Phys. Ther. 2015, 19, 390–397. [CrossRef]
+58.   Deehan, D.J.; Bell, K.; McCaskie, A.W. Adolescent Musculoskeletal Injuries in a Football Academy. J. Bone Jt. Surg.—Ser. B 2007,
+      89, 5–8. [CrossRef]
+59.   Sorate, B.A.; Singh, P. Injury Risk in Male Football Players with Special Reference to the Playing Position. Injury 2019, 4, 18–20.
+60.   Dauty, M.; Collon, S. Incidence of Injuries in French Professional Soccer Players. Int. J. Sports Med. 2011, 32, 965–969. [CrossRef]
+      [PubMed]
+61.   Peterson, L.; Junge, A.; Chomiak, J.; Graf-Baumann, T.; Dvorak, J. Incidence of Football Injuries and Complaints in Different Age
+      Groups and Skill-Level Groups. Am. J. Sports Med. 2000, 28, S51–S57. [CrossRef] [PubMed]
+62.   Shalaj, I.; Tishukaj, F.; Bachl, N.; Tschan, H.; Wessner, B.; Csapo, R. Injuries in Professional Male Football Players in Kosovo: A
+      Descriptive Epidemiological Study. BMC Musculoskelet. Disord. 2016, 17, 338. [CrossRef] [PubMed]
+63.   Ostojic, S.M. Comparing Sports Injuries in Soccer: Influence of a Positional Role. Res. Sports Med. 2003, 11, 203–208. [CrossRef]
+64.   Aoki, H.; O’Hata, N.; Kohno, T.; Morikawa, T.; Seki, J. A 15-Year Prospective Epidemiological Account of Acute Traumatic Injuries
+      during Official Professional Soccer League Matches in Japan. Am. J. Sports Med. 2012, 40, 1006–1014. [CrossRef]
+65.   Le Gall, F.; Carling, C.; Reilly, T.; Vandewalle, H.; Church, J.; Rochcongar, P. Incidence of Injuries in Elite French Youth Soccer
+      Players: A 10-Season Study. Am. J. Sports Med. 2006, 34, 928–938. [CrossRef] [PubMed]
+66.   Mallo, J.; Dellal, A. Injury Risk in Professional Football Players with Special Reference to the Playing Position and Training
+      Periodization. J. Sports Med. Phys. Fit. 2012, 52, 631–638.
+67.   Ekstrand, J.; Hägglund, M.; Törnqvist, H.; Kristenson, K.; Bengtsson, H.; Magnusson, H.; Waldén, M. Upper Extremity Injuries in
+      Male Elite Football Players. Knee Surg. Sports Traumatol. Arthrosc. 2013, 21, 1626–1632. [CrossRef] [PubMed]
+68.   Nilsson, M.; Hägglund, M.; Ekstrand, J.; Waldén, M. Head and Neck Injuries in Professional Soccer. Clin. J. Sports Med. 2013,
+      23, 255–260. [CrossRef]
+69.   Timpka, T.; Risto, O.; Björmsjö, M. Boys Soccer League Injuries: A Community-Based Study of Time-Loss from Sports Participation
+      and Long-Term Sequelae. Eur. J. Public Health 2008, 18, 19–24. [CrossRef]
+J. Clin. Med. 2025, 14, 6320                                                                                                        27 of 27
+
+
+
+70.   Sarmento, H.; Martinho, D.V.; Gouveia, É.R.; Afonso, J.; Chmura, P.; Field, A.; Savedra, N.O.; Oliveira, R.; Praça, G.; Silva, R.;
+      et al. The Influence of Playing Position on Physical, Physiological, and Technical Demands in Adult Male Soccer Matches: A
+      Systematic Scoping Review with Evidence Gap Map. Sports Med. 2024, 54, 2841–2864. [CrossRef]
+71.   Ju, W.; Doran, D.; Hawkins, R.; Evans, M.; Laws, A.; Bradley, P.S. Contextualised High-Intensity Running Profiles of Elite Football
+      Players with Reference to General and Specialised Tactical Roles. Biol. Sport 2023, 40, 291–301. [CrossRef]
+72.   Inklaar, H.; Bol, E.; Schmikli, S.L.; Mosterd, W.L. Injuries in Male Soccer Players: Team Risk Analysis. Int. J. Sports Med. 1996,
+      17, 229–234. [CrossRef]
+73.   Hawkins, R.D.; Fuller, C.W. A Prospective Epidemiological Study of Injuries in Four English Professional Football Clubs. Br. J.
+      Sports Med. 1999, 33, 196–203. [CrossRef]
+74.   Cloke, D.; Moore, O.; Shah, T.; Rushton, S.; Shirley, M.D.F.; Deehan, D.J. Thigh Muscle Injuries in Youth Soccer: Predictors of
+      Recovery. Am. J. Sports Med. 2012, 40, 433–439. [CrossRef] [PubMed]
+75.   Mallo, J.; González, P.; Veiga, S.; Navarro, E. Injury Incidence in a Spanish Sub-Elite Professional Football Team: A Prospective
+      Study during Four Consecutive Seasons. J. Sports Sci. Med. 2011, 10, 731–736.
+76.   Ekstrand, J.; Hägglund, M.; Kristenson, K.; Magnusson, H.; Waldén, M. Fewer Ligament Injuries but No Preventive Effect on
+      Muscle Injuries and Severe Injuries: An 11-Year Follow-up of the UEFA Champions League Injury Study. Br. J. Sports Med. 2013,
+      47, 732–737. [CrossRef]
+77.   Manning, M.R.; Levy, R.S. Soccer. Phys. Med. Rehabil. Clin. N. Am. 2006, 17, 677–695. [CrossRef]
+78.   Arliani, G.G.; Belangero, P.S.; Runco, J.L.; Cohen, M. The Brazilian Football Association (CBF) Model for Epidemiological Studies
+      on Professional Soccer Player Injuries. Clinics 2011, 66, 1707–1712. [CrossRef]
+79.   Thema, M.T.; Jacobs, S.; Van Den Berg, L.; Strauss, A.; Mahlangu, M.P. The Role of Playing Position in Soccer Injury Characteristics:
+      Evidence from Sub-Elite Athletes. Front. Sports Act. Living 2025, 7, 1542300. [CrossRef]
+80.   Fonseca, S.T.; Souza, T.R.; Ocarino, J.M.; Gonçalves, G.P.; Bittencourt, N.F. Applied Biomechanics of Soccer. In Athletic and Sport
+      Issues in Musculoskeletal Rehabilitation; Saunders: St. Louis, MO, USA, 2011; pp. 287–306.
+81.   Bahr, R.; Thorborg, K.; Ekstrand, J. Evidence-Based Hamstring Injury Prevention Is Not Adopted by the Majority of Champions
+      League or Norwegian Premier League Football Teams: The Nordic Hamstring Survey. Br. J. Sports Med. 2015, 49, 1466–1471.
+      [CrossRef] [PubMed]
+82.   Bangsbo, J.; Mohr, M.; Krustrup, P. Physical and Metabolic Demands of Training and Match-Play in the Elite Football Player. J.
+      Sports Sci. 2006, 24, 665–674. [CrossRef] [PubMed]
+83.   Van Dyk, N.; Behan, F.P.; Whiteley, R. Including the Nordic Hamstring Exercise in Injury Prevention Programmes Halves the Rate
+      of Hamstring Injuries: A Systematic Review and Meta-Analysis of 8459 Athletes. Br. J. Sports Med. 2019, 53, 1362–1370. [CrossRef]
+84.   Petersen, J.; Thorborg, K.; Nielsen, M.B.; Budtz-Jørgensen, E.; Hölmich, P. Preventive Effect of Eccentric Training on Acute
+      Hamstring Injuries in Men’s Soccer: A Cluster-Randomized Controlled Trial. Am. J. Sports Med. 2011, 39, 2296–2303. [CrossRef]
+      [PubMed]
+85.   Harøy, J.; Clarsen, B.; Wiger, E.G.; Øyen, M.G.; Serner, A.; Thorborg, K.; Hölmich, P.; Andersen, T.E.; Bahr, R. The Adductor
+      Strengthening Programme Prevents Groin Problems among Male Football Players: A Cluster-Randomised Controlled Trial. Br. J.
+      Sports Med. 2019, 53, 150–157. [CrossRef]
+86.   Ishøi, L.; Thorborg, K. Copenhagen Adduction Exercise Can Increase Eccentric Strength and Mitigate the Risk of Groin Problems:
+      But How Much Is Enough! Br. J. Sports Med. 2021, 55, 1066–1067. [CrossRef] [PubMed]
+87.   Soligard, T.; Myklebust, G.; Steffen, K.; Holme, I.; Silvers, H.; Bizzini, M.; Junge, A.; Dvorak, J.; Bahr, R.; Andersen, T.E.
+      Comprehensive Warm-up Programme to Prevent Injuries in Young Female Footballers: Cluster Randomised Controlled Trial.
+      BMJ 2008, 337, a2469. [CrossRef]
+88.   Bizzini, M.; Dvorak, J. FIFA 11+: An Effective Programme to Prevent Football Injuries in Various Player Groups Worldwide—A
+      Narrative Review. Br. J. Sports Med. 2015, 49, 577–579. [CrossRef]
+89.   Impellizzeri, F.M.; Rampinini, E.; Marcora, S.M. Physiological Assessment of Aerobic Training in Soccer. J. Sports Sci. 2005,
+      23, 583–592. [CrossRef]
+90.   O’Brien, J.; Finch, C.F. The Implementation of Musculoskeletal Injury-Prevention Exercise Programmes in Team Ball Sports: A
+      Systematic Review Employing the RE-AIM Framework. Sports Med. 2014, 44, 1305–1318. [CrossRef] [PubMed]
+91.   Plakias, S.; Moustakidis, S.; Kokkotis, C.; Papalexi, M.; Tsatalas, T.; Giakas, G.; Tsaopoulos, D. Identifying Soccer Players’ Playing
+      Styles: A Systematic Review. J. Funct. Morphol. Kinesiol. 2023, 8, 104. [CrossRef]
+92.   Plakias, S. Running Performance Profiles of Different Types of Central Midfielders in Soccer. Trends Sport Sci. 2025, 32, 23–30.
+
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

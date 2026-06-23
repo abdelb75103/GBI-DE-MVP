@@ -1,0 +1,990 @@
+{
+  "scope": "Second search full-text AI review live apply audit",
+  "sourceBatch": "awaiting-pdf-2026-06-23",
+  "workflowStage": "full-text screening AI recommendation",
+  "verifiedAt": "2026-06-23T12:36:41.785Z",
+  "target": "Supabase screening_records AI fields and papers storage bucket",
+  "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+  "model": "GPT-5 (Codex chat, medium reasoning)",
+  "recordCount": 35,
+  "decisionCounts": {
+    "exclude": 17,
+    "include": 17,
+    "unsure": 1
+  },
+  "protectedFieldsChecked": [
+    "manual_decision",
+    "manual_reason",
+    "manual_decided_by",
+    "metadata.titleAbstractDecisions",
+    "metadata.fullTextDecisions",
+    "metadata.resolver_decision",
+    "metadata.resolverDecision",
+    "metadata.manualReview"
+  ],
+  "issues": {
+    "missingRows": [],
+    "aiNotCompleted": [],
+    "wrongCriteria": [],
+    "wrongModel": [],
+    "missingReason": [],
+    "missingEvidence": [],
+    "missingRaw": [],
+    "aiErrors": [],
+    "protectedChanges": [],
+    "storageFailures": [],
+    "concurrentExternalProtectedChanges": [
+      {
+        "studyId": "S4615",
+        "id": "77378df9-a158-410e-850c-f3c79b9c52bd",
+        "before": {
+          "manual_decision": null,
+          "manual_reason": null,
+          "manual_decided_by": null,
+          "titleAbstractDecisions": [
+            {
+              "note": null,
+              "action": "reviewer_vote",
+              "decision": "exclude",
+              "decidedAt": "2026-06-15T16:55:37.309Z",
+              "reviewerName": "AbdelRahman Babiker",
+              "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+            },
+            {
+              "note": null,
+              "action": "resolver_decision",
+              "decision": "include",
+              "decidedAt": "2026-06-19T13:08:52.670Z",
+              "reviewerName": "Dr. Nicol van Dyk",
+              "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+            }
+          ],
+          "fullTextDecisions": null,
+          "resolver_decision": null,
+          "resolverDecision": null,
+          "manualReview": null
+        },
+        "after": {
+          "manual_decision": null,
+          "manual_reason": null,
+          "manual_decided_by": "00000000-0000-0000-0000-000000000001",
+          "titleAbstractDecisions": [
+            {
+              "note": null,
+              "action": "reviewer_vote",
+              "decision": "exclude",
+              "decidedAt": "2026-06-15T16:55:37.309Z",
+              "reviewerName": "AbdelRahman Babiker",
+              "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+            },
+            {
+              "note": null,
+              "action": "resolver_decision",
+              "decision": "include",
+              "decidedAt": "2026-06-19T13:08:52.670Z",
+              "reviewerName": "Dr. Nicol van Dyk",
+              "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+            }
+          ],
+          "fullTextDecisions": [
+            {
+              "reason": "Wrong study design",
+              "decision": "exclude",
+              "decidedAt": "2026-06-23T12:27:36.328135+00:00",
+              "reviewerName": "AbdelRahman Babiker",
+              "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+            }
+          ],
+          "resolver_decision": null,
+          "resolverDecision": null,
+          "manualReview": null
+        },
+        "classification": "concurrent_human_activity_not_written_by_ai_workflow",
+        "note": "A human full-text exclude vote appeared during the AI review run. It was preserved and agrees with the AI exclude recommendation."
+      }
+    ]
+  },
+  "records": [
+    {
+      "studyId": "S4615",
+      "recordId": "77378df9-a158-410e-850c-f3c79b9c52bd",
+      "title": "Association of Peak Height Velocity and Skeletal Maturity to Injury Incidence in Male Elite Adolescent Football (Soccer) Players-A Systematic Review.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Systematic review of 12 observational studies rather than an original primary epidemiology study for extraction.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.145+00:00",
+      "evidenceQuote": "SYSTEMATIC REVIEW",
+      "sourceLocation": "001_S4615_Pakarinen_O_2025.pdf p. 1, article type",
+      "storageObjectPath": "21db59ec-c531-4b4d-ad14-f234071b40b8/1782213232830-001_S4615_Pakarinen_O_2025.pdf",
+      "pdfHash": "1e6aa71b30f2aec318f08682c09eda3b051281c07722323325b77d43e95461b0"
+    },
+    {
+      "studyId": "S5113",
+      "recordId": "e3a3ff25-34d9-4148-91d1-d6e373a0cb5b",
+      "title": "The Impact of Rational Warm-Up on Physical Preparation and Injury Prevention in Young Footballers: A Longitudinal Study.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "The study reports retrospective annual injury counts per player from documentation, without exposure hours, athlete/match exposures, a time-based rate, or exact inputs for a defensible denominator derivation.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.35+00:00",
+      "evidenceQuote": "a retrospective analysis of medical and training documentation was conducted, covering the entire annual training cycle",
+      "sourceLocation": "004_S5113_Duda_H_2026.pdf p. 8, Methods—Diagnosis of Lower Limb and Trunk Injuries",
+      "storageObjectPath": "d5a71ae6-f27d-4ee4-87e1-7cb7974d501f/1782213234246-004_S5113_Duda_H_2026.pdf",
+      "pdfHash": "a0bea631a9ecceded45a6d5e7bc9213d74d4166aaa93904f4054a4d5a05cf572"
+    },
+    {
+      "studyId": "S1628",
+      "recordId": "da4537a8-3d3a-4d61-99d0-9d4a27eb1c6b",
+      "title": "Comparative analysis of sport-related concussion: how do 8- to 12-year-old athletes differ from 13- to 17-year-old athletes?",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Retrospective concussion-clinic cohort selected after injury and focused on clinical recovery; soccer outcomes are not reported separately from the mixed-sport cohort.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.446+00:00",
+      "evidenceQuote": "A single-institution retrospective cohort study was undertaken with 8- to 17-year-old athletes who were seen at a regional sports concussion center following an SRC",
+      "sourceLocation": "005_S1628_Zargari_M._2024.pdf p. 2, Methods—Study Design and Participants",
+      "storageObjectPath": "962b1b71-620e-4120-9e16-c4c36d45a187/1782213235139-005_S1628_Zargari_M._2024.pdf",
+      "pdfHash": "4235d7efcd45d1b67dfcd3b2a97d041a6ce38967f4581df44519f41d5cdca69f"
+    },
+    {
+      "studyId": "S4687",
+      "recordId": "8131df24-4cfa-467e-80f9-228a3b57d6a7",
+      "title": "Epidemiology and Incidence of Surgically Treated ACL Injuries in Division I Collegiate Athletes.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Prospectively reported Pac-12 current-athlete surveillance with clean soccer-specific ACL counts, athlete-year exposures, and incidence rates.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.564+00:00",
+      "evidenceQuote": "Soccer: 89 events, 77 athletes affected, 2268 athlete exposures, incidence rate 0.0392 (95% CI 0.0311 to 0.0474).",
+      "sourceLocation": "010_S4687_Kremen_TJ_Jr_2026.pdf p. 4, Table 1",
+      "storageObjectPath": "cc57dc7e-13da-47e2-aeb4-6445e787e6c7/1782213236190-010_S4687_Kremen_TJ_Jr_2026.pdf",
+      "pdfHash": "05723f963a417826baaaf7e3b21a000747033d92f8e5b30364a6b26c32ff2341"
+    },
+    {
+      "studyId": "S2599",
+      "recordId": "ec566072-8756-4cc5-be13-aaebbeef9b7e",
+      "title": "Menstrual cycle or hormonal contraceptive related symptoms in elite female athletes from retrospective self-questionnaires and daily monitoring: impact on well-being and objective performance metrics.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Menstrual-health symptoms and well-being outcomes are pooled across seven sports; football-specific reporting is limited to GPS performance rather than separable health outcomes.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.599+00:00",
+      "evidenceQuote": "A total of 108 athletes participating in 7 sports: cycling (n = 31), rowing (n = 5), skiing (n = 9), football (n = 33), swimming (n = 9), triathlon (n = 7), and wrestling (n = 14), were retained.",
+      "sourceLocation": "013_S2599_Badier_Nolwenn_2025.pdf p. 4, Results—Participants",
+      "storageObjectPath": "5bc91497-37fc-48f4-ab16-4150283de7a8/1782213236894-013_S2599_Badier_Nolwenn_2025.pdf",
+      "pdfHash": "c138347a9638109e6452725d92d33d94c304421a8912ba1a06c6d57c12141fee"
+    },
+    {
+      "studyId": "S5049",
+      "recordId": "82d3ed3a-c735-405d-b816-c6314ce5d97b",
+      "title": "Injury Epidemiology in Elite U17 Football Players: A Prospective Study Across Six Competitive Seasons.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Six-season prospective elite U17 football surveillance using a consensus time-loss definition and published overall, training, and match incidence per 1000 exposure hours.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.702+00:00",
+      "evidenceQuote": "Overall injury incidence was 6.95/1000 h, with markedly higher incidence in matches (20.61/1000 h) than training (5.82/1000 h).",
+      "sourceLocation": "024_S5049_Pranji_T_2026.pdf p. 1, Abstract",
+      "storageObjectPath": "87a77e3e-9fd9-4ecb-9065-01dea09aa430/1782213238026-024_S5049_Pranji_T_2026.pdf",
+      "pdfHash": "0cccda5215281a37a0882670b208c7d35f072c9ff6f857dcc7d5de8c4a96d4c8"
+    },
+    {
+      "studyId": "S4296",
+      "recordId": "aa8ff33a-14bb-45e0-90b2-828d82b50527",
+      "title": "Prevalence and Levels of Symptoms of Anxiety, Depression and Suicidal Ideation Amongst Elite Male Soccer Players: An Age- and Education-Matched Controlled Study.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Football-specific validated mental-health prevalence and symptom-level outcomes are reported for the complete responding cohort of 214 elite male soccer players.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.767+00:00",
+      "evidenceQuote": "A total of 324 participants were included, comprising 214 elite male soccer players and 110 controls. Participants completed the Beck Depression Inventory–II (BDI-II) and the Beck Anxiety Inventory (BAI).",
+      "sourceLocation": "026_S4296_Sobrinho_GMR_2026.pdf p. 1, Abstract",
+      "storageObjectPath": "2ff1fa67-bd0d-4db3-bb8c-b03eadbe3664/1782213238803-026_S4296_Sobrinho_GMR_2026.pdf",
+      "pdfHash": "bc8905dc239246940f9a74b17dcb6e7e2b193af1bda17d3be71e7a901df19c0d"
+    },
+    {
+      "studyId": "S4005",
+      "recordId": "704e2938-8aad-40f2-9ee7-69524f7d5000",
+      "title": "Eating Disorders Risk Assessment and Body Esteem among Amateur and Professional Football Players.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Football-specific validated eating-disorder-risk and body-esteem outcomes are reported for 90 complete respondents from competitive amateur and professional clubs.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.848+00:00",
+      "evidenceQuote": "The form was filled out correctly by 90 football players aged 18–40.",
+      "sourceLocation": "031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf p. 3, Methods—Participants",
+      "storageObjectPath": "4d8a507d-3e8c-490b-89c5-4a3588539f31/1782213239507-031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf",
+      "pdfHash": "29c26164c2565acd6aedf9603b6c07260497169bd8d488747767c76d3b21fd5b"
+    },
+    {
+      "studyId": "S4811",
+      "recordId": "73b6e3ec-34fc-4b6e-9f71-d3c9838cfc8b",
+      "title": "Hamstring Strain Injury Risk in Soccer: An Exploratory, Hypothesis-Generating Prediction Model.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "The prospective cohort records actual consensus-defined hamstring injuries but publishes only player/event counts, without exposure totals, a study-specific rate, or exact derivation inputs.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:25.931+00:00",
+      "evidenceQuote": "Players were prospectively followed throughout the competitive season, with injury incidence and exposure systematically recorded.",
+      "sourceLocation": "036_S4811_Kekelekis_A_2025.pdf p. 3, Methods—Study Design",
+      "storageObjectPath": "85bc87ec-7dc7-4630-b963-1b51a7ea688c/1782213240253-036_S4811_Kekelekis_A_2025.pdf",
+      "pdfHash": "11ba0a0006e2cd23577282c93cfc47c05b2a33c550f353ecf42c913bf3016eec"
+    },
+    {
+      "studyId": "S4788",
+      "recordId": "b5564f3d-4cac-4199-9003-575a40747143",
+      "title": "Associations between injury occurrence and environmental temperatures in the Australian and German professional football leagues.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "The separately analyzed A-League subgroup uses weekly team-medical injury surveillance and 470 match exposures with injuries reported per match/team; the public-media Bundesliga subgroup should not be extracted.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.047+00:00",
+      "evidenceQuote": "470 match exposures; 322 injuries; 0.68 ± 0.86 injuries per match in the A-League.",
+      "sourceLocation": "045_S4788_Schwarz_E_2025.pdf p. 3, Table 1",
+      "storageObjectPath": "d33d17d3-41dd-4452-afa2-739a5acb3dd3/1782213240987-045_S4788_Schwarz_E_2025.pdf",
+      "pdfHash": "980f0dced4695357f85c6c0e8333829f2b2952f913ec53732cf129e9bfe8bf02"
+    },
+    {
+      "studyId": "S4994",
+      "recordId": "342ece5d-92f2-4be6-809b-6e41581fa2fb",
+      "title": "Concussions in Portuguese Professional Football: A Preliminary Epidemiological Study.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Current professional-match concussions were reported by club medical teams using a standardized form, with a published incidence of 0.60 per 1000 player-hours.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.128+00:00",
+      "evidenceQuote": "Only six concussions were reported during official matches, with an overall incidence of 0.60 per 1000 player-hours.",
+      "sourceLocation": "059_S4994_Moreira_A_2025.pdf p. 1, Abstract—Results",
+      "storageObjectPath": "4d678b25-2dc4-4af5-bdde-b3023ed7a432/1782213241795-059_S4994_Moreira_A_2025.pdf",
+      "pdfHash": "063abd5b3e1ea6e90355a000793f86e65130e5fe5a4f0373b65cfbc8bfc79048"
+    },
+    {
+      "studyId": "S3972",
+      "recordId": "58dfa88c-4311-47fe-a7aa-70cafeb7b4eb",
+      "title": "Week-by-Week Predictive Value of External Load Ratios on Injury Risk in Professional Soccer: A Logistic Regression and ROC Curve Analysis Approach.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Prospective professional-football monitoring with doctor-confirmed UEFA-consensus time-loss injuries and a published non-contact injury rate of 4.5 per 1000 hours.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.268+00:00",
+      "evidenceQuote": "During the competition microcycles, twenty non-contact soccer players were injured with the specific injuries totaling 4.5/1000 h.",
+      "sourceLocation": "064_S3972_Fousekis_A_2025.pdf p. 4, Methods—Experimental Design",
+      "storageObjectPath": "dfc6ba55-1cbf-426c-9ed8-ad20b0438e25/1782213242461-064_S3972_Fousekis_A_2025.pdf",
+      "pdfHash": "eda1070856feb43ac89883af1064bf4b19c991e91b04d9f8b1c059e81ec98f1d"
+    },
+    {
+      "studyId": "S1964",
+      "recordId": "abae01c9-e28d-4c7d-8bf5-16e28b0daf06",
+      "title": "Greek translation and cross-cultural adaptation of the Oslo Sports Trauma Research Center Questionnaires on overuse injuries and health problems.",
+      "aiStatus": "completed",
+      "decision": "unsure",
+      "reason": "The attached PDF is a COSMIN checklist/guidance document rather than the cited OSTRC Greek translation paper, so the full text cannot be screened defensibly.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.304+00:00",
+      "evidenceQuote": "The process of translating an existing PROM is not a measurement property.",
+      "sourceLocation": "065_S1964_Antonopoulos_Konstantinos_2025.pdf p. 29, Translation process",
+      "storageObjectPath": "967ed0c7-52b9-418e-a9fc-2e77aaf88e0b/1782213243523-065_S1964_Antonopoulos_Konstantinos_2025.pdf",
+      "pdfHash": "ebd2b978123d4ec30853f4cb9cffdd242be3a2458d57970503c101f64d2616aa"
+    },
+    {
+      "studyId": "S2138",
+      "recordId": "540a19b9-b86c-433e-b501-940b4fb28ec9",
+      "title": "Preseason Range-of-Motion and Motor-Performance Asymmetries in Elite Male Youth Soccer Players in Spain.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Cross-sectional preseason screening reports range-of-motion and motor-performance asymmetries as injury-risk proxies but does not follow or report actual injuries or health problems.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.345+00:00",
+      "evidenceQuote": "Design: Cross-sectional study.",
+      "sourceLocation": "078_S2138_Llurda-Almuzara_Luis_2026.pdf p. 1, Abstract",
+      "storageObjectPath": "bb6d0ad6-bcad-43a2-95fc-b68c339878d9/1782213244066-078_S2138_Llurda-Almuzara_Luis_2026.pdf",
+      "pdfHash": "8c236b44444d9c32442d94e5bebb344f72cc0465721ebe0aafa78963d3223136"
+    },
+    {
+      "studyId": "S4850",
+      "recordId": "2def3902-570d-448f-b1ce-c6eff919bb4f",
+      "title": "Perceptual Decision Efficiency Is Modifiable and Associated with Decreased Musculoskeletal Injury Risk Among Female College Soccer Players.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Athletic trainers prospectively documented actual injuries, but results are limited to injury counts and injured-player proportions without exposure hours, athlete-exposures, a published eligible rate, or exact derivation inputs.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.397+00:00",
+      "evidenceQuote": "All musculoskeletal injuries that were evaluated and treated by athletic trainers over the course of a 14-week period, which included all pre-season practice sessions, in-season practice sessions, and a total of 19 games, were electronically documented.",
+      "sourceLocation": "079_S4850_Wilkerson_GB_2025.pdf p. 4, Methods",
+      "storageObjectPath": "897631e9-31e5-437b-8849-077a7f403908/1782213244571-079_S4850_Wilkerson_GB_2025.pdf",
+      "pdfHash": "c8260f3266b6befad223ab3fa755b323fc3b1a96e8e04bdbf390f2cf70dcb9c5"
+    },
+    {
+      "studyId": "S4846",
+      "recordId": "d16254ba-7ba8-4e7f-87a3-5b80df3353ab",
+      "title": "Injury Pattern According to Player Position in Male Amateur Football Players in Greece: A Retrospective Study.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Injuries and exposure were reconstructed after the season from a retrospective online player survey rather than prospectively collected surveillance.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.442+00:00",
+      "evidenceQuote": "ToE/1000 h 12,647 10,964 12,057.5 5737.5 41,406.",
+      "sourceLocation": "085_S4846_Vassis_K_2025.pdf p. 5, Table 2",
+      "storageObjectPath": "9a114dd8-f8a8-4bb2-ae59-fe7bbd30a631/1782213245335-085_S4846_Vassis_K_2025.pdf",
+      "pdfHash": "07e8f5453dc1fff9c5c74f80fb791995e4d24818ee554b5e289f0a945a73e56b"
+    },
+    {
+      "studyId": "S3850",
+      "recordId": "90b86aaa-b8f1-4362-b75e-8941dcc08dde",
+      "title": "Orbitofrontal Gray-White Interface Injury and the Association of Soccer Heading With Verbal Learning.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Cross-sectional study relates recalled soccer heading to MRI microstructure and verbal-learning performance, without eligible injury/illness surveillance outcomes.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.47+00:00",
+      "evidenceQuote": "This cross-sectional study ... included a population-based sample ... of amateur soccer players.",
+      "sourceLocation": "086_S3850_Song_JY_2025.pdf p. 1, Abstract—Design",
+      "storageObjectPath": "ec40ed54-8df2-4c91-a0a8-58801cc79864/1782213246281-086_S3850_Song_JY_2025.pdf",
+      "pdfHash": "7a7ff0d37f8fd2f659db095380fd72f6a7250df01cc0f8ce7e4f26c883ab5660"
+    },
+    {
+      "studyId": "S3873",
+      "recordId": "2ab4ea70-cd92-4b06-bea6-26d543cdf03b",
+      "title": "Injury History and Mental Health Indicators in Young Soccer Players: A Cross-Sectional Study.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Validated football-specific anxiety, stress, and depression outcomes are reported for the complete responding cohort of 146 current players.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.513+00:00",
+      "evidenceQuote": "The final sample consisted of 146 soccer players from various teams within a professional club in Spain.",
+      "sourceLocation": "090_S3873_Garc_a-Naveira_A_2026.pdf p. 3, Methods—Participants",
+      "storageObjectPath": "0b3c5810-e6c4-4b71-ba26-3da0041a72fc/1782213247080-090_S3873_Garc_a-Naveira_A_2026.pdf",
+      "pdfHash": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572"
+    },
+    {
+      "studyId": "S4757",
+      "recordId": "8548c2bc-cd50-4c82-8607-2fc7c887a019",
+      "title": "Power Indices Through Rotational Inertial Devices for Lower Extremity Profiling and Injury Risk Stratification in Professional Soccer Players: A Cross-Sectional Study.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "The study prospectively records actual consensus-defined injuries after testing, but reports only injured versus non-injured player comparisons without exposure, a published rate, or exact derivation inputs.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.541+00:00",
+      "evidenceQuote": "All lower-limb non-contact injuries occurring within four months after the assessment were recorded by the club’s medical staff.",
+      "sourceLocation": "093_S4757_Murillo-Ortiz_2025.pdf p. 3, Methods—Study Design",
+      "storageObjectPath": "e85e0961-efa5-45a4-884b-9e2f205d0375/1782213247733-093_S4757_Murillo-Ortiz_2025.pdf",
+      "pdfHash": "66cede4c511411cf07fb87e2e8b8a1f28190358117a5d922d40cabb7fb5cea5d"
+    },
+    {
+      "studyId": "S3953",
+      "recordId": "c0555d73-2b98-4647-bfe0-4886eb86a275",
+      "title": "Interdependent Effect of Intrinsic Risk Factors on Non-Contact Lower Limb Injuries in Male Football Players: A Structural Equation Modeling Approach.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Prospective season-long team-medical surveillance with consensus time-loss injuries and a published non-contact lower-limb injury rate of 1.97 per 1000 athlete-hours.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.568+00:00",
+      "evidenceQuote": "Total: 75 injuries; 1.97 injuries per 1000 h of exposure.",
+      "sourceLocation": "104_S3953_Liveris_NI_2025.pdf p. 14, Results—Table 4",
+      "storageObjectPath": "7af9abfd-51df-456e-a95d-0fd971b70f65/1782213248608-104_S3953_Liveris_NI_2025.pdf",
+      "pdfHash": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980"
+    },
+    {
+      "studyId": "S5218",
+      "recordId": "e1aff9af-5161-4b9c-8cdc-9b9211942632",
+      "title": "Menstrual Cycle Characteristics and Injury History in Adult Amateur Female Football Players: A Cross-Sectional Study Using Selected LEAF-Q Items.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Football-specific menstrual-health prevalence and defined amenorrhea/bleeding-pattern outcomes are reported for the complete cohort of 118 adult amateur female players.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.603+00:00",
+      "evidenceQuote": "A total of 118 adult amateur female football players were included in the study.",
+      "sourceLocation": "107_S5218_Witko_J_2026.pdf p. 3, Methods—Participants",
+      "storageObjectPath": "5064b798-3dad-4197-ad85-4f7e8d6d7231/1782213250370-107_S5218_Witko_J_2026.pdf",
+      "pdfHash": "dac92c3012cad97f921f43044fd1fdcbd004b08ee0a3ab51827c31d88015b87e"
+    },
+    {
+      "studyId": "S4741",
+      "recordId": "42a3245d-5296-4c0b-bf4b-879d8ad38004",
+      "title": "Stress fracture risk factors in soccer players: A systematic review.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Systematic review of 26 studies rather than an original primary football epidemiology study for extraction.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.635+00:00",
+      "evidenceQuote": "Systematic Review/Meta-Analysis",
+      "sourceLocation": "110_S4741_Hoveidaei_AH_2025.pdf p. 1, article type",
+      "storageObjectPath": "7cd7bcbc-4b82-45ab-97be-84ee0f6fe467/1782213250855-110_S4741_Hoveidaei_AH_2025.pdf",
+      "pdfHash": "11592084540a8b628160ce7f0bbb7a5efc85baef915ec65964b0a0d7277388da"
+    },
+    {
+      "studyId": "S1069",
+      "recordId": "48c4e13b-2f79-4ee8-8873-ef24a96c3909",
+      "title": "Musculoskeletal Pain, Mood, and Sports Injury in Wheelchair Power Soccer Players.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "The study concerns wheelchair power soccer/powerchair football, which is governed by the Fédération Internationale de Powerchair Football Association rather than FIFA and is outside the eligible association-football and FIFA-governed para-football scope.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.746+00:00",
+      "evidenceQuote": "A prospective, longitudinal study was carried out on 30 WPS athletes",
+      "sourceLocation": "114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf p. 1, Abstract—Methods",
+      "storageObjectPath": "a8a542aa-7eb8-4e5d-9beb-1465b6382b51/1782213251465-114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf",
+      "pdfHash": "8b0580b04cc948996156049f475150bbcbf887ca69074f221a2310dd61602ab6"
+    },
+    {
+      "studyId": "S2238",
+      "recordId": "6ac825a8-5b97-4f77-acf8-5da1b603809f",
+      "title": "Commonly Used Indicators of Low Energy Availability Risk Fail to Identify Female Amateur Soccer Players With Measured Low Energy Availability During Preseason.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Football-specific participant health study with direct measured low energy availability, eating-disorder risk, female-athlete-triad risk, and bone mineral density outcomes in the complete assessed cohort.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.784+00:00",
+      "evidenceQuote": "A total of 11 athletes ... completed the study in full",
+      "sourceLocation": "115_S2238_Frazer_Rebekka_2024.pdf p. 2, Methods—Participants",
+      "storageObjectPath": "329f3156-2e0d-4e8c-837b-306711ad2a64/1782213252054-115_S2238_Frazer_Rebekka_2024.pdf",
+      "pdfHash": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3"
+    },
+    {
+      "studyId": "S4800",
+      "recordId": "408f6cba-55a1-419e-a14e-33d10c24b8dd",
+      "title": "Incidence of Hamstring Injury and Analysis of Risk Factors for Reinjury in Japanese Professional Football Players.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Six-season professional football club medical surveillance with a mappable time-loss/MRI hamstring definition, explicit training and match exposure totals, and published incidence rates. The retrospective analysis label does not negate the underlying current-player club medical surveillance source.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.827+00:00",
+      "evidenceQuote": "the total exposure time was 71,742 hours",
+      "sourceLocation": "124_S4800_Ogawa_T_2025.pdf p. 2, Methods—Player Characteristics",
+      "storageObjectPath": "c4de5a65-ec42-480a-8b42-b130b72aa47f/1782213253006-124_S4800_Ogawa_T_2025.pdf",
+      "pdfHash": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361"
+    },
+    {
+      "studyId": "S1196",
+      "recordId": "126c3b72-c9d0-4025-a742-36ec787ebf32",
+      "title": "INCREASED INCIDENCE OF INJURIES IN THE SAO PAULO SOCCER CHAMPIONSHIP POST-PANDEMIC.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Prospective competition injury surveillance based on post-match reports from team physicians, using the FIFA consensus injury definition and a published match-exposure incidence rate.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.852+00:00",
+      "evidenceQuote": "In 2023, 76 injuries were recorded, an incidence of 22.1 injuries/1,000h",
+      "sourceLocation": "131_S1196_Sales_Alexandre_Moreira_2024.pdf p. 1, Abstract—Results",
+      "storageObjectPath": "485cad63-0297-4863-bff3-e276aa3b6bc5/1782213253634-131_S1196_Sales_Alexandre_Moreira_2024.pdf",
+      "pdfHash": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323"
+    },
+    {
+      "studyId": "S2009",
+      "recordId": "7c725881-6d7e-456b-bd5d-98858166b95f",
+      "title": "Illnesses and Diseases Constitute a Quarter of Medical Conditions in an Under-21 National Football Team.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Eligible national-team medical surveillance covering injuries and physician-diagnosed illnesses/diseases during 20 UEFA under-21 qualification matches and associated team events, with explicit match exposure and published per-match/per-day incidence.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.885+00:00",
+      "evidenceQuote": "20 match exposures (reported as 20 international caps from both qualification tournaments)",
+      "sourceLocation": "133_S2009_Nordback_Panu_H._2025.pdf p. 2, Results",
+      "storageObjectPath": "5524085e-5684-457e-9cb3-cbe9284955ca/1782213254261-133_S2009_Nordback_Panu_H._2025.pdf",
+      "pdfHash": "67fc47b3b97360ea4ed633f32025dc9caccc74702dafd98b47755fec4a0472a7"
+    },
+    {
+      "studyId": "S4637",
+      "recordId": "565401cf-fae7-490d-a7b1-b7fe152ad742",
+      "title": "Characteristics of Plantar Pressure Distribution During Running and Musculoskeletal Factors Associated With Jones Fracture in Young Female Soccer Players: A Prospective Study.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "The cohort was prospectively followed and actual Jones fractures were diagnosed, but the paper provides only participant counts, a one-year follow-up period, and an approximate games-per-season statement. It does not report exposure hours, athlete-exposures, match-exposures, a time-based rate, or exact derivation inputs.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.912+00:00",
+      "evidenceQuote": "Finally, 105 players were analyzed",
+      "sourceLocation": "141_S4637_Takei_S_2025.pdf p. 4, Results",
+      "storageObjectPath": "87c6ac66-51d6-4a6a-af89-3ec77c7c16d6/1782213254897-141_S4637_Takei_S_2025.pdf",
+      "pdfHash": "ebff950cdf195db3deb5b894df0fb713941cb51d8ae453bb21cffbaa92e92be7"
+    },
+    {
+      "studyId": "S4716",
+      "recordId": "9e5e91eb-8ca0-4b03-bf75-26fde13404ee",
+      "title": "Competitive Anxiety, Sports Injury, and Playing Category in Youth Soccer Players.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Football-specific validated participant mental-health assessment using the Spanish SAS-2, with directly extractable anxiety scores for the complete 322-player cohort. The season injury questionnaire is secondary and should not be treated as prospective medical injury surveillance.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.945+00:00",
+      "evidenceQuote": "The final sample thus consisted of 322 players",
+      "sourceLocation": "146_S4716_S_nchez-Ruiz_R_2025.pdf p. 3, Methods—Participants",
+      "storageObjectPath": "e0ba1477-be2a-4c70-b338-04c01bc5567c/1782213255583-146_S4716_S_nchez-Ruiz_R_2025.pdf",
+      "pdfHash": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874"
+    },
+    {
+      "studyId": "S4734",
+      "recordId": "a23b77aa-f863-472c-89cd-d528e43ff468",
+      "title": "Comparative Effectiveness of Multi-Component, Exercise-Based Interventions for Preventing Soccer-Related Musculoskeletal Injuries: A Systematic Review and Meta-Analysis.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Systematic review and meta-analysis of randomized trials rather than an original primary football health-surveillance study for extraction.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:26.977+00:00",
+      "evidenceQuote": "This systematic review and meta-analysis, conducted with the PRISMA guidelines",
+      "sourceLocation": "147_S4734_Wang_Y_2025.pdf p. 1, Abstract—Methods",
+      "storageObjectPath": "81956ec3-074a-4731-86fe-6c870eb0d8a6/1782213256244-147_S4734_Wang_Y_2025.pdf",
+      "pdfHash": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277"
+    },
+    {
+      "studyId": "S4845",
+      "recordId": "ef3bc0eb-8a5e-4c33-adca-614e066bf0e4",
+      "title": "Machine Learning-Based Prediction of Muscle Injury Risk in Professional Football: A Four-Year Longitudinal Study.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Four-season professional club surveillance with daily physiotherapist-diagnosed UEFA time-loss muscle injuries and directly reported GPS-derived training and match exposure totals; predictive modeling is an additional analysis of eligible epidemiological data.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:27.016+00:00",
+      "evidenceQuote": "21,340 h vs. 2679 h",
+      "sourceLocation": "148_S4845_Martins_F_2025.pdf p. 9, Results and Table 5",
+      "storageObjectPath": "c00a05c7-5c5f-48f2-b8e8-0129923bf64e/1782213257723-148_S4845_Martins_F_2025.pdf",
+      "pdfHash": "0d1c7950c65ad2ac92af29d0bcfe7f9ba8e0495daac0dc09ac61d603dd14b701"
+    },
+    {
+      "studyId": "S1132",
+      "recordId": "14b3e10c-9ea1-4474-8f21-34961fcc4d41",
+      "title": "Evaluation of the Value of the Y-Balance Test to Predict Lower Limb Injuries in Professional Male Footballers.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "The study prospectively tracked actual lower-limb injuries, but it reports only player and injury counts and explicitly states that individual competition and training exposure time was not collected. The season and participant counts alone do not provide a usable denominator.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:27.048+00:00",
+      "evidenceQuote": "The exposure time of each athlete in competitions and games was not collected",
+      "sourceLocation": "150_S1132_Mohammadi_Haniyeh_2024.pdf p. 5, Discussion—Limitations",
+      "storageObjectPath": "f52909b0-cd86-451b-a131-43af8b9b6e38/1782213258202-150_S1132_Mohammadi_Haniyeh_2024.pdf",
+      "pdfHash": "7fe50d366857ce93336a483ff90f7f7ed99e7894a2c6b88b5477e5c0f187f491"
+    },
+    {
+      "studyId": "S5434",
+      "recordId": "aaa3d984-1a3f-4bae-8e9f-fecfb0f769b1",
+      "title": "The Impact of the FIFA 11+ Neuromuscular Training Programme on Ankle Injury Reduction in Football Players: A Systematic Review and Meta-Analysis.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "Systematic review and meta-analysis of randomized trials rather than an original primary football epidemiology study for extraction.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:27.072+00:00",
+      "evidenceQuote": "This systematic review and meta-analysis was conducted to evaluate",
+      "sourceLocation": "156_S5434_Eser_C_2025.pdf p. 1, Abstract",
+      "storageObjectPath": "c935db7b-d307-414d-b8bd-6271e92e0c61/1782213258805-156_S5434_Eser_C_2025.pdf",
+      "pdfHash": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015"
+    },
+    {
+      "studyId": "S1903",
+      "recordId": "711a9cb7-0ae2-49d8-a2b0-ec03d2901a5f",
+      "title": "A Mental Well-Being Screening Process in an Elite Youth Football Academy.",
+      "aiStatus": "completed",
+      "decision": "include",
+      "reason": "Elite academy football study reporting direct repeated participant mental-well-being assessments using an adapted Mental Health Continuum-Short Form, with extractable screening and psychometric results from an explicit observation frame.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:27.096+00:00",
+      "evidenceQuote": "One hundred and eighty-five players ... participated in the mental well-being screening process",
+      "sourceLocation": "170_S1903_Harvey_S_amus_2026.pdf p. 6, Phase III—Method—Participants",
+      "storageObjectPath": "97b4fb64-4817-49ac-af52-64ba22b92c9d/1782213259546-170_S1903_Harvey_S_amus_2026.pdf",
+      "pdfHash": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c"
+    },
+    {
+      "studyId": "S4659",
+      "recordId": "fed5221c-e61b-4216-b97b-c9e61af1d020",
+      "title": "Epidemiology of Anterior Cruciate Ligament Injuries in the Top 5 European Football (Soccer) Leagues.",
+      "aiStatus": "completed",
+      "decision": "exclude",
+      "reason": "ACL cases, player characteristics, exposure, and mechanisms were reconstructed from Transfermarkt, public statements, websites, and video platforms rather than prospectively reported current-player outcomes from club or competition medical personnel.",
+      "criteriaVersion": "fifa-gbi-full-text-v7-2026-06-22",
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "reviewedAt": "2026-06-23T12:35:27.124+00:00",
+      "evidenceQuote": "The total time of exposure in matches was 430,090.8 hours",
+      "sourceLocation": "178_S4659_Ortiz-S_nchez_D_2026.pdf p. 3, Results",
+      "storageObjectPath": "540efa5c-1adc-4b50-a150-1f27221a7c8c/1782213260297-178_S4659_Ortiz-S_nchez_D_2026.pdf",
+      "pdfHash": "259b4da8ab3214330e106cba88f91828c0cf28361c6015c95280b6395d808641"
+    }
+  ],
+  "storage": [
+    {
+      "studyId": "S4615",
+      "objectPath": "21db59ec-c531-4b4d-ad14-f234071b40b8/1782213232830-001_S4615_Pakarinen_O_2025.pdf",
+      "status": "verified",
+      "expectedHash": "1e6aa71b30f2aec318f08682c09eda3b051281c07722323325b77d43e95461b0",
+      "storedHash": "1e6aa71b30f2aec318f08682c09eda3b051281c07722323325b77d43e95461b0",
+      "size": 344575
+    },
+    {
+      "studyId": "S5113",
+      "objectPath": "d5a71ae6-f27d-4ee4-87e1-7cb7974d501f/1782213234246-004_S5113_Duda_H_2026.pdf",
+      "status": "verified",
+      "expectedHash": "a0bea631a9ecceded45a6d5e7bc9213d74d4166aaa93904f4054a4d5a05cf572",
+      "storedHash": "a0bea631a9ecceded45a6d5e7bc9213d74d4166aaa93904f4054a4d5a05cf572",
+      "size": 765522
+    },
+    {
+      "studyId": "S1628",
+      "objectPath": "962b1b71-620e-4120-9e16-c4c36d45a187/1782213235139-005_S1628_Zargari_M._2024.pdf",
+      "status": "verified",
+      "expectedHash": "4235d7efcd45d1b67dfcd3b2a97d041a6ce38967f4581df44519f41d5cdca69f",
+      "storedHash": "4235d7efcd45d1b67dfcd3b2a97d041a6ce38967f4581df44519f41d5cdca69f",
+      "size": 2246985
+    },
+    {
+      "studyId": "S4687",
+      "objectPath": "cc57dc7e-13da-47e2-aeb4-6445e787e6c7/1782213236190-010_S4687_Kremen_TJ_Jr_2026.pdf",
+      "status": "verified",
+      "expectedHash": "05723f963a417826baaaf7e3b21a000747033d92f8e5b30364a6b26c32ff2341",
+      "storedHash": "05723f963a417826baaaf7e3b21a000747033d92f8e5b30364a6b26c32ff2341",
+      "size": 144140
+    },
+    {
+      "studyId": "S2599",
+      "objectPath": "5bc91497-37fc-48f4-ab16-4150283de7a8/1782213236894-013_S2599_Badier_Nolwenn_2025.pdf",
+      "status": "verified",
+      "expectedHash": "c138347a9638109e6452725d92d33d94c304421a8912ba1a06c6d57c12141fee",
+      "storedHash": "c138347a9638109e6452725d92d33d94c304421a8912ba1a06c6d57c12141fee",
+      "size": 1237066
+    },
+    {
+      "studyId": "S5049",
+      "objectPath": "87a77e3e-9fd9-4ecb-9065-01dea09aa430/1782213238026-024_S5049_Pranji_T_2026.pdf",
+      "status": "verified",
+      "expectedHash": "0cccda5215281a37a0882670b208c7d35f072c9ff6f857dcc7d5de8c4a96d4c8",
+      "storedHash": "0cccda5215281a37a0882670b208c7d35f072c9ff6f857dcc7d5de8c4a96d4c8",
+      "size": 654077
+    },
+    {
+      "studyId": "S4296",
+      "objectPath": "2ff1fa67-bd0d-4db3-bb8c-b03eadbe3664/1782213238803-026_S4296_Sobrinho_GMR_2026.pdf",
+      "status": "verified",
+      "expectedHash": "bc8905dc239246940f9a74b17dcb6e7e2b193af1bda17d3be71e7a901df19c0d",
+      "storedHash": "bc8905dc239246940f9a74b17dcb6e7e2b193af1bda17d3be71e7a901df19c0d",
+      "size": 1370867
+    },
+    {
+      "studyId": "S4005",
+      "objectPath": "4d8a507d-3e8c-490b-89c5-4a3588539f31/1782213239507-031_S4005_Sta_kiewicz-Bartecka_W_2024.pdf",
+      "status": "verified",
+      "expectedHash": "29c26164c2565acd6aedf9603b6c07260497169bd8d488747767c76d3b21fd5b",
+      "storedHash": "29c26164c2565acd6aedf9603b6c07260497169bd8d488747767c76d3b21fd5b",
+      "size": 969845
+    },
+    {
+      "studyId": "S4811",
+      "objectPath": "85bc87ec-7dc7-4630-b963-1b51a7ea688c/1782213240253-036_S4811_Kekelekis_A_2025.pdf",
+      "status": "verified",
+      "expectedHash": "11ba0a0006e2cd23577282c93cfc47c05b2a33c550f353ecf42c913bf3016eec",
+      "storedHash": "11ba0a0006e2cd23577282c93cfc47c05b2a33c550f353ecf42c913bf3016eec",
+      "size": 1590519
+    },
+    {
+      "studyId": "S4788",
+      "objectPath": "d33d17d3-41dd-4452-afa2-739a5acb3dd3/1782213240987-045_S4788_Schwarz_E_2025.pdf",
+      "status": "verified",
+      "expectedHash": "980f0dced4695357f85c6c0e8333829f2b2952f913ec53732cf129e9bfe8bf02",
+      "storedHash": "980f0dced4695357f85c6c0e8333829f2b2952f913ec53732cf129e9bfe8bf02",
+      "size": 959056
+    },
+    {
+      "studyId": "S4994",
+      "objectPath": "4d678b25-2dc4-4af5-bdde-b3023ed7a432/1782213241795-059_S4994_Moreira_A_2025.pdf",
+      "status": "verified",
+      "expectedHash": "063abd5b3e1ea6e90355a000793f86e65130e5fe5a4f0373b65cfbc8bfc79048",
+      "storedHash": "063abd5b3e1ea6e90355a000793f86e65130e5fe5a4f0373b65cfbc8bfc79048",
+      "size": 255153
+    },
+    {
+      "studyId": "S3972",
+      "objectPath": "dfc6ba55-1cbf-426c-9ed8-ad20b0438e25/1782213242461-064_S3972_Fousekis_A_2025.pdf",
+      "status": "verified",
+      "expectedHash": "eda1070856feb43ac89883af1064bf4b19c991e91b04d9f8b1c059e81ec98f1d",
+      "storedHash": "eda1070856feb43ac89883af1064bf4b19c991e91b04d9f8b1c059e81ec98f1d",
+      "size": 3218481
+    },
+    {
+      "studyId": "S1964",
+      "objectPath": "967ed0c7-52b9-418e-a9fc-2e77aaf88e0b/1782213243523-065_S1964_Antonopoulos_Konstantinos_2025.pdf",
+      "status": "verified",
+      "expectedHash": "ebd2b978123d4ec30853f4cb9cffdd242be3a2458d57970503c101f64d2616aa",
+      "storedHash": "ebd2b978123d4ec30853f4cb9cffdd242be3a2458d57970503c101f64d2616aa",
+      "size": 740968
+    },
+    {
+      "studyId": "S2138",
+      "objectPath": "bb6d0ad6-bcad-43a2-95fc-b68c339878d9/1782213244066-078_S2138_Llurda-Almuzara_Luis_2026.pdf",
+      "status": "verified",
+      "expectedHash": "8c236b44444d9c32442d94e5bebb344f72cc0465721ebe0aafa78963d3223136",
+      "storedHash": "8c236b44444d9c32442d94e5bebb344f72cc0465721ebe0aafa78963d3223136",
+      "size": 504153
+    },
+    {
+      "studyId": "S4850",
+      "objectPath": "897631e9-31e5-437b-8849-077a7f403908/1782213244571-079_S4850_Wilkerson_GB_2025.pdf",
+      "status": "verified",
+      "expectedHash": "c8260f3266b6befad223ab3fa755b323fc3b1a96e8e04bdbf390f2cf70dcb9c5",
+      "storedHash": "c8260f3266b6befad223ab3fa755b323fc3b1a96e8e04bdbf390f2cf70dcb9c5",
+      "size": 1549632
+    },
+    {
+      "studyId": "S4846",
+      "objectPath": "9a114dd8-f8a8-4bb2-ae59-fe7bbd30a631/1782213245335-085_S4846_Vassis_K_2025.pdf",
+      "status": "verified",
+      "expectedHash": "07e8f5453dc1fff9c5c74f80fb791995e4d24818ee554b5e289f0a945a73e56b",
+      "storedHash": "07e8f5453dc1fff9c5c74f80fb791995e4d24818ee554b5e289f0a945a73e56b",
+      "size": 3167685
+    },
+    {
+      "studyId": "S3850",
+      "objectPath": "ec40ed54-8df2-4c91-a0a8-58801cc79864/1782213246281-086_S3850_Song_JY_2025.pdf",
+      "status": "verified",
+      "expectedHash": "7a7ff0d37f8fd2f659db095380fd72f6a7250df01cc0f8ce7e4f26c883ab5660",
+      "storedHash": "7a7ff0d37f8fd2f659db095380fd72f6a7250df01cc0f8ce7e4f26c883ab5660",
+      "size": 1384660
+    },
+    {
+      "studyId": "S3873",
+      "objectPath": "0b3c5810-e6c4-4b71-ba26-3da0041a72fc/1782213247080-090_S3873_Garc_a-Naveira_A_2026.pdf",
+      "status": "verified",
+      "expectedHash": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572",
+      "storedHash": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572",
+      "size": 564229
+    },
+    {
+      "studyId": "S4757",
+      "objectPath": "e85e0961-efa5-45a4-884b-9e2f205d0375/1782213247733-093_S4757_Murillo-Ortiz_2025.pdf",
+      "status": "verified",
+      "expectedHash": "66cede4c511411cf07fb87e2e8b8a1f28190358117a5d922d40cabb7fb5cea5d",
+      "storedHash": "66cede4c511411cf07fb87e2e8b8a1f28190358117a5d922d40cabb7fb5cea5d",
+      "size": 3641768
+    },
+    {
+      "studyId": "S3953",
+      "objectPath": "7af9abfd-51df-456e-a95d-0fd971b70f65/1782213248608-104_S3953_Liveris_NI_2025.pdf",
+      "status": "verified",
+      "expectedHash": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980",
+      "storedHash": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980",
+      "size": 4909325
+    },
+    {
+      "studyId": "S5218",
+      "objectPath": "5064b798-3dad-4197-ad85-4f7e8d6d7231/1782213250370-107_S5218_Witko_J_2026.pdf",
+      "status": "verified",
+      "expectedHash": "dac92c3012cad97f921f43044fd1fdcbd004b08ee0a3ab51827c31d88015b87e",
+      "storedHash": "dac92c3012cad97f921f43044fd1fdcbd004b08ee0a3ab51827c31d88015b87e",
+      "size": 257454
+    },
+    {
+      "studyId": "S4741",
+      "objectPath": "7cd7bcbc-4b82-45ab-97be-84ee0f6fe467/1782213250855-110_S4741_Hoveidaei_AH_2025.pdf",
+      "status": "verified",
+      "expectedHash": "11592084540a8b628160ce7f0bbb7a5efc85baef915ec65964b0a0d7277388da",
+      "storedHash": "11592084540a8b628160ce7f0bbb7a5efc85baef915ec65964b0a0d7277388da",
+      "size": 958000
+    },
+    {
+      "studyId": "S1069",
+      "objectPath": "a8a542aa-7eb8-4e5d-9beb-1465b6382b51/1782213251465-114_S1069_Moura_Ligia_Raianne_da_Silva_2024.pdf",
+      "status": "verified",
+      "expectedHash": "8b0580b04cc948996156049f475150bbcbf887ca69074f221a2310dd61602ab6",
+      "storedHash": "8b0580b04cc948996156049f475150bbcbf887ca69074f221a2310dd61602ab6",
+      "size": 401003
+    },
+    {
+      "studyId": "S2238",
+      "objectPath": "329f3156-2e0d-4e8c-837b-306711ad2a64/1782213252054-115_S2238_Frazer_Rebekka_2024.pdf",
+      "status": "verified",
+      "expectedHash": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3",
+      "storedHash": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3",
+      "size": 1151187
+    },
+    {
+      "studyId": "S4800",
+      "objectPath": "c4de5a65-ec42-480a-8b42-b130b72aa47f/1782213253006-124_S4800_Ogawa_T_2025.pdf",
+      "status": "verified",
+      "expectedHash": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361",
+      "storedHash": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361",
+      "size": 593363
+    },
+    {
+      "studyId": "S1196",
+      "objectPath": "485cad63-0297-4863-bff3-e276aa3b6bc5/1782213253634-131_S1196_Sales_Alexandre_Moreira_2024.pdf",
+      "status": "verified",
+      "expectedHash": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323",
+      "storedHash": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323",
+      "size": 571339
+    },
+    {
+      "studyId": "S2009",
+      "objectPath": "5524085e-5684-457e-9cb3-cbe9284955ca/1782213254261-133_S2009_Nordback_Panu_H._2025.pdf",
+      "status": "verified",
+      "expectedHash": "67fc47b3b97360ea4ed633f32025dc9caccc74702dafd98b47755fec4a0472a7",
+      "storedHash": "67fc47b3b97360ea4ed633f32025dc9caccc74702dafd98b47755fec4a0472a7",
+      "size": 659852
+    },
+    {
+      "studyId": "S4637",
+      "objectPath": "87c6ac66-51d6-4a6a-af89-3ec77c7c16d6/1782213254897-141_S4637_Takei_S_2025.pdf",
+      "status": "verified",
+      "expectedHash": "ebff950cdf195db3deb5b894df0fb713941cb51d8ae453bb21cffbaa92e92be7",
+      "storedHash": "ebff950cdf195db3deb5b894df0fb713941cb51d8ae453bb21cffbaa92e92be7",
+      "size": 1140447
+    },
+    {
+      "studyId": "S4716",
+      "objectPath": "e0ba1477-be2a-4c70-b338-04c01bc5567c/1782213255583-146_S4716_S_nchez-Ruiz_R_2025.pdf",
+      "status": "verified",
+      "expectedHash": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874",
+      "storedHash": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874",
+      "size": 505891
+    },
+    {
+      "studyId": "S4734",
+      "objectPath": "81956ec3-074a-4731-86fe-6c870eb0d8a6/1782213256244-147_S4734_Wang_Y_2025.pdf",
+      "status": "verified",
+      "expectedHash": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277",
+      "storedHash": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277",
+      "size": 4558935
+    },
+    {
+      "studyId": "S4845",
+      "objectPath": "c00a05c7-5c5f-48f2-b8e8-0129923bf64e/1782213257723-148_S4845_Martins_F_2025.pdf",
+      "status": "verified",
+      "expectedHash": "0d1c7950c65ad2ac92af29d0bcfe7f9ba8e0495daac0dc09ac61d603dd14b701",
+      "storedHash": "0d1c7950c65ad2ac92af29d0bcfe7f9ba8e0495daac0dc09ac61d603dd14b701",
+      "size": 336996
+    },
+    {
+      "studyId": "S1132",
+      "objectPath": "f52909b0-cd86-451b-a131-43af8b9b6e38/1782213258202-150_S1132_Mohammadi_Haniyeh_2024.pdf",
+      "status": "verified",
+      "expectedHash": "7fe50d366857ce93336a483ff90f7f7ed99e7894a2c6b88b5477e5c0f187f491",
+      "storedHash": "7fe50d366857ce93336a483ff90f7f7ed99e7894a2c6b88b5477e5c0f187f491",
+      "size": 733307
+    },
+    {
+      "studyId": "S5434",
+      "objectPath": "c935db7b-d307-414d-b8bd-6271e92e0c61/1782213258805-156_S5434_Eser_C_2025.pdf",
+      "status": "verified",
+      "expectedHash": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015",
+      "storedHash": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015",
+      "size": 1610201
+    },
+    {
+      "studyId": "S1903",
+      "objectPath": "97b4fb64-4817-49ac-af52-64ba22b92c9d/1782213259546-170_S1903_Harvey_S_amus_2026.pdf",
+      "status": "verified",
+      "expectedHash": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c",
+      "storedHash": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c",
+      "size": 348129
+    },
+    {
+      "studyId": "S4659",
+      "objectPath": "540efa5c-1adc-4b50-a150-1f27221a7c8c/1782213260297-178_S4659_Ortiz-S_nchez_D_2026.pdf",
+      "status": "verified",
+      "expectedHash": "259b4da8ab3214330e106cba88f91828c0cf28361c6015c95280b6395d808641",
+      "storedHash": "259b4da8ab3214330e106cba88f91828c0cf28361c6015c95280b6395d808641",
+      "size": 515412
+    }
+  ],
+  "protectedFieldVerification": {
+    "unchangedRecordCount": 34,
+    "concurrentExternalChanges": [
+      {
+        "studyId": "S4615",
+        "id": "77378df9-a158-410e-850c-f3c79b9c52bd",
+        "before": {
+          "manual_decision": null,
+          "manual_reason": null,
+          "manual_decided_by": null,
+          "titleAbstractDecisions": [
+            {
+              "note": null,
+              "action": "reviewer_vote",
+              "decision": "exclude",
+              "decidedAt": "2026-06-15T16:55:37.309Z",
+              "reviewerName": "AbdelRahman Babiker",
+              "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+            },
+            {
+              "note": null,
+              "action": "resolver_decision",
+              "decision": "include",
+              "decidedAt": "2026-06-19T13:08:52.670Z",
+              "reviewerName": "Dr. Nicol van Dyk",
+              "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+            }
+          ],
+          "fullTextDecisions": null,
+          "resolver_decision": null,
+          "resolverDecision": null,
+          "manualReview": null
+        },
+        "after": {
+          "manual_decision": null,
+          "manual_reason": null,
+          "manual_decided_by": "00000000-0000-0000-0000-000000000001",
+          "titleAbstractDecisions": [
+            {
+              "note": null,
+              "action": "reviewer_vote",
+              "decision": "exclude",
+              "decidedAt": "2026-06-15T16:55:37.309Z",
+              "reviewerName": "AbdelRahman Babiker",
+              "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+            },
+            {
+              "note": null,
+              "action": "resolver_decision",
+              "decision": "include",
+              "decidedAt": "2026-06-19T13:08:52.670Z",
+              "reviewerName": "Dr. Nicol van Dyk",
+              "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+            }
+          ],
+          "fullTextDecisions": [
+            {
+              "reason": "Wrong study design",
+              "decision": "exclude",
+              "decidedAt": "2026-06-23T12:27:36.328135+00:00",
+              "reviewerName": "AbdelRahman Babiker",
+              "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+            }
+          ],
+          "resolver_decision": null,
+          "resolverDecision": null,
+          "manualReview": null
+        },
+        "classification": "concurrent_human_activity_not_written_by_ai_workflow",
+        "note": "A human full-text exclude vote appeared during the AI review run. It was preserved and agrees with the AI exclude recommendation."
+      }
+    ],
+    "workflowProtectedFieldWrites": 0
+  }
+}

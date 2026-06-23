@@ -1,0 +1,722 @@
+Article
+
+Concussions in Portuguese Professional Football: A Preliminary
+Epidemiological Study
+André Moreira 1,2, *, Filipe Froes 1,2 , Gonçalo Vaz 1 , Alexandre Fernandes 2 , Basil Ribeiro 2 , Frank Mederos 2 ,
+Gabriel Nogueira 2 , Hugo Almeida 2 , Pedro Caetano 2 , Pedro Prata 2 , Ana Teixeira 3 and Reinaldo Teixeira 3
+
+                                           1   Health Department, Liga Portugal, 4250-540 Porto, Portugal
+                                           2   Liga Portugal Concussion Working Group, 4250-540 Porto, Portugal
+                                           3   Liga Portugal, 4250-540 Porto, Portugal
+                                           *   Correspondence: andre.moreira@ligaportugal.pt
+
+                                           Abstract
+                                           Introduction: Concussions are a growing concern in professional football due to their poten-
+                                           tial short- and long-term neurological consequences. Despite increasing global awareness,
+                                           data on the epidemiology and clinical management of concussions in Portuguese football
+                                           remain scarce. This preliminary exploratory study aimed to characterize the incidence,
+                                           mechanisms, symptomatology, and medical response to concussions in Portugal’s Profes-
+                                           sional Football Leagues during the 2023/2024 season, based on reported cases. Methods:
+                                           A retrospective observational analysis was conducted on head injuries reported by club
+                                           medical teams during official matches in Liga Portugal First and Second Leagues. Col-
+                                           lected variables included player position, time of injury, mechanism, symptoms, medical
+                                           interventions and hospital referral. Results: Only six concussions were reported during
+                                           official matches, with an overall incidence of 0.60 per 1000 player-hours. Most occurred in
+                                           defenders, primarily due to head-to-head collisions, followed by ball impact, falls, and max-
+                                           illofacial trauma. Injuries were more frequent during the final third of matches. Common
+                                           symptoms included loss of consciousness, headache, and amnesia. Half of the players were
+                                           referred to hospital care and underwent cranial CT scans. Among all variables analyzed, a
+                                           statistically significant association was found between mechanism of injury and occurrence
+                                           of amnesia (p = 0.014), with non-head-to-head impacts more frequently associated with
+Academic Editor: Basavaraj S. Balapal
+                                           amnesia. However, given the extremely limited sample size, this finding should be inter-
+Received: 27 August 2025                   preted with extreme caution and requires replication in larger cohorts. Conclusions: This
+Revised: 26 September 2025
+                                           preliminary study suggests that defenders face a higher risk of head injuries, particularly
+Accepted: 29 September 2025
+                                           from head-to-head impacts occurring late in matches. The prevalence of severe symptoms
+Published: 8 October 2025
+                                           and the potential association between non-head-to-head impacts and amnesia highlight
+Citation: Moreira, A.; Froes, F.; Vaz,
+                                           the need for more robust injury surveillance systems and underscore the importance of
+G.; Fernandes, A.; Ribeiro, B.; Mederos,
+F.; Nogueira, G.; Almeida, H.; Caetano,
+                                           improved sideline assessment and return-to-play protocols. The findings emphasize the ur-
+P.; Prata, P.; et al. Concussions in       gent need for comprehensive, standardized reporting mechanisms for concussions. Further
+Portuguese Professional Football: A        research should explore long-term neurological effects and the effectiveness of preven-
+Preliminary Epidemiological Study.         tive measures such as rule modifications, protective measures, and enhanced concussion
+Diseases 2025, 13, 332. https://
+                                           management protocols, supported by more extensive and systematically collected data.
+doi.org/10.3390/diseases13100332
+
+Copyright: © 2025 by the authors.          Keywords: concussion; traumatic brain injury; football; epidemiology; player safety
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+                                           1. Introduction
+Attribution (CC BY) license
+(https://creativecommons.org/                  Concussions have become a major concern in professional sports, particularly in high-
+licenses/by/4.0/).                         contact disciplines such as football (soccer). A concussion, classified as a mild traumatic
+
+
+Diseases 2025, 13, 332                                                                                      https://doi.org/10.3390/diseases13100332
+Diseases 2025, 13, 332                                                                                         2 of 13
+
+
+
+                         brain injury (TBI), occurs due to biomechanical forces transmitted to the head, result-
+                         ing in a temporary disruption of brain function [1,2]. These injuries present immediate
+                         and short-term symptoms, including confusion, dizziness, and memory impairment, but
+                         can also contribute to long-term neurological consequences, such as cognitive decline,
+                         emotional instability, and an increased risk of neurodegenerative diseases like chronic
+                         traumatic encephalopathy (CTE) [2–11]. Despite being a globally celebrated sport, football
+                         exposes players to frequent head impacts, making concussions a significant risk at all
+                         competitive levels.
+                               In professional football, headers, aerial duels, and accidental collisions are common,
+                         creating an environment where concussions frequently occur but often go unreported or
+                         mismanaged [12]. Cultural factors, such as the emphasis on toughness and perseverance,
+                         may discourage players from reporting symptoms, thereby increasing the risk of recurrent
+                         injuries and long-term damage [13]. Moreover, players may intentionally minimize or
+                         conceal symptoms out of fear of being removed from training sessions or match play,
+                         further complicating timely diagnosis and appropriate management [14,15]. These concerns
+                         underscore the need for rigorous epidemiological studies to better understand the incidence
+                         and management of concussions in professional football, where the intensity of competition
+                         and pressure to perform further elevate the risks [16].
+                               Several international studies have analyzed concussion prevalence in football, with
+                         findings varying based on region, competition level, and study methodology. Pfister et al.
+                         estimated concussion incidence in professional football to range between 0.4 and 1.2 per
+                         1000 player-hours, a significant figure considering the number of matches played annu-
+                         ally [17]. Research from the English Premier League (EPL) has shown an increasing trend
+                         in concussion rates, with higher occurrences during matches compared to training ses-
+                         sions [18]. However, despite growing evidence, European football still lacks standardized
+                         concussion protocols, particularly regarding player education, assessment methods, and
+                         return-to-play guidelines, which are crucial for ensuring player safety [13].
+                               In Portugal, football holds immense cultural and social importance, with thousands
+                         of professional players competing at the highest levels. However, despite the sport’s
+                         prominence, there is a lack of systematic research on the epidemiology of concussions in
+                         Portuguese professional football. While international studies provide valuable insights,
+                         country-specific data remains scarce, particularly in smaller footballing nations. This
+                         knowledge gap raises concerns regarding the adequacy of current injury management
+                         protocols and whether Portuguese clubs adhere to the latest international concussion
+                         guidelines, such as those proposed by FIFA and the International Concussion in Sport
+                         Group (ICSG) [1].
+                               This study conducts a detailed epidemiological analysis of concussions in professional
+                         football in Portugal during the 2023/2024 season. The primary objective is to determine
+                         the incidence, risk factors, and outcomes associated with concussions among players in
+                         Portugal’s professional football Leagues. Analyzing concussion patterns in the Portuguese
+                         League is crucial for making evidence-based decisions that enhance player health and
+                         safety while minimizing long-term neurological consequences.
+                               Given the increasing international research on sports-related concussions, this study
+                         has the potential to contribute valuable data to the global understanding of concussions
+                         in football. Ultimately, this study seeks to enhance player safety in professional football
+                         by providing an epidemiological foundation for improved concussion management. The
+                         data generated can support the development of targeted interventions that prioritize player
+                         welfare while maintaining the integrity and competitiveness of the sport.
+Diseases 2025, 13, 332                                                                                           3 of 13
+
+
+
+                         2. Materials and Methods
+                               This is a retrospective, observational study focusing on concussions sustained by
+                         active professional football players in Portugal’s First and Second Leagues official matches
+                         reported during the 2023/2024 season. These leagues collectively comprise 36 clubs (18 in
+                         the First League and 18 in the Second League), involving approximately 1000 registered
+                         athletes at the start of the season.
+                               Liga Portugal prioritizes player welfare, and the head team physician of each club
+                         maintains exclusive clinical autonomy regarding player health decisions on the field. Ref-
+                         erees are explicitly instructed to immediately interrupt play upon suspicion of a player
+                         sustaining a concussion, allowing the medical team sufficient time to conduct a thorough
+                         on-field assessment. This protocol is in full alignment with the international standards
+                         which mandates the immediate and permanent removal of any player displaying a visi-
+                         ble sign of concussion to prevent the risk of further injury. The timeframe for a player’s
+                         return-to-play is not defined in the competition regulations but is determined as an individ-
+                         ualized clinical decision by the head team physician. This decision is strictly guided by the
+                         latest FIFA Concussion Protocol and international standards, which require a structured,
+                         symptom-limited graduated return to play progression and final medical clearance.
+                               Data were collected from cases voluntarily reported by club medical teams following
+                         head injuries sustained during official League matches, with medical staff being instructed
+                         to complete a standardized electronic form. This form was designed to capture detailed
+                         and specific information about each concussion, ensuring uniformity and reliability in
+                         reporting. The following data were collected for each concussion event: competition (First
+                         or Second League), player’s position on the field, minute of occurrence, mechanism of
+                         injury (e.g., head-to-head contact, fall, object impact), signs and symptoms (e.g., dizziness,
+                         confusion, loss of consciousness), removal from match (whether the player was taken out
+                         of the game), immobilization (use of cervical collar or other immobilization techniques),
+                         evacuation to hospital (if the player was transported to a hospital) and diagnostic imaging
+                         prescribed at hospital.
+                               Head injuries analyzed in this study were those sustained during official Liga Portugal
+                         first and second league matches, where medical staff identified concussion-related symp-
+                         toms and players underwent medical evaluation either during or after the match. Injuries
+                         were excluded if they occurred outside official matches or if they were not suspected to be
+                         concussion related.
+                               Conducted in accordance with the Declaration of Helsinki, this study relied on
+                         anonymized and voluntarily reported data. Strict confidentiality measures were applied,
+                         ensuring that no individual player or club was identifiable in the analysis.
+                               A descriptive statistical approach was applied to analyze incidence rates, injury mech-
+                         anisms, positional risk factors, and clinical outcomes. The concussion incidence rate was
+                         calculated as the number of concussions per 1000 player-hours [7]. Continuous variables
+                         (e.g., time of injury) were presented as mean ± standard deviation (SD), while categorical
+                         variables (e.g., injury mechanism, symptoms) were expressed as absolute and relative
+                         frequencies (%). Comparisons between groups (e.g., positional differences, match timing)
+                         were analyzed using chi-square tests for categorical variables and t-tests or Mann–Whitney
+                         U tests for continuous variables, depending on data distribution. Statistical significance
+                         was set at p < 0.05. All analyses were conducted using SPSS Statistics Version 31.0 (IBM
+                         Corp., Armonk, NY, USA).
+Diseases 2025, 13, 332                                                                                              4 of 13
+
+
+
+                         3. Results
+                         3.1. Incidence of Concussions
+                              During the 2023/2024 season of Liga Portugal first and second leagues, a total of only
+                         six concussion cases were reported by club medical teams, underscoring the preliminary
+                         nature of these findings. The overall concussion incidence rate, calculated as the number of
+                         concussions per 1000 player-hours, was 0.60. When analyzed separately, the incidence rate
+                         was 0.60 per 1000 player-hours in both Liga Portugal first and second leagues.
+
+                         3.2. Player Position and Concussion Occurrence
+                              Defensive players accounted for 83.3% of all concussion cases (5 out of 6), while the
+                         remaining 16.7% occurred in attacking players (1 out of 6). No concussions were reported
+                         among midfielders. These proportions, while suggestive, must be interpreted with extreme
+                         caution given the very small total number of reported cases.
+
+                         3.3. Mechanism of Injury
+                               The most common injury mechanism was head-to-head collision (50%), including
+                         impacts with opponents and teammates. The remaining cases resulted from impact of the
+                         ball (17%), head impact against the ground (17%), and maxillofacial trauma due to a kick to
+                         the upper jaw (17%).
+
+                         3.4. Minute of Occurrence
+                              The mean time of concussion occurrence was the 75th minute, with injuries recorded
+                         between the 40th and 91st minutes. The majority (67%) of cases occurred after the
+                         75th minute.
+
+                         3.5. Clinical Symptoms and Medical Response
+                              The most frequently reported symptoms were loss of consciousness (67%), headache
+                         (67%), and amnesia (33%). One player (17%) experienced disorientation/confusion. Fol-
+                         lowing medical assessment, 50% of the concussed players were removed from play and
+                         referred to the hospital for further evaluation, where cranial CT scans were performed in
+                         these cases. Among these, one player also underwent a cervical CT scan. The remaining
+                         50% were also removed from the field of play and monitored by the team medical staff but
+                         did not require hospital referral.
+
+                         3.6. Relationship Between Competition Level and Symptom Severity
+                               The analysis examined whether there was an association between the competition
+                         level (First League vs. Second League) and symptom severity. Cases were categorized
+                         as severe (loss of consciousness + amnesia) or mild (headache + disorientation + visual
+                         disturbances). Among the three concussions recorded in First League, all (100%) were
+                         classified as severe, while in Second League, two cases (67%) were severe, and one (33%)
+                         was mild. Statistical analysis (Chi-square test, p = 0.500) showed no significant association
+                         between competition level and symptom severity (Table 1). However, it is crucial to note
+                         that the small sample size significantly limits the statistical power to detect true associations,
+                         if they exist.
+Diseases 2025, 13, 332                                                                                                       5 of 13
+
+
+
+                         Table 1. Relationship Between Competition Level and Symptom Severity.
+
+                                                                                                       Symptom Severity
+                                                                                                      Mild            Severe
+                                                                       Count                                    0                3
+                                              First League
+                                                                       % within Competição                  0.0%         100.0%
+                          Competition
+                                                                       Count                                    1                2
+                                              Second League
+                                                                       % within Competição                  33.3%            66.7%
+                                                                       Count                                    1                5
+                          Total
+                                                                       % within Competição                  16.7%            83.3%
+
+
+                         3.7. Distribution of Concussions by Player Position
+                               Regarding player position, defenders accounted for five (83%) of the six reported
+                         concussions, while the remaining case (17%) involved a forward. Symptom severity distri-
+                         bution within each position showed that four (80%) of the concussions among defenders
+                         were classified as severe, while the single case in a forward was also severe (Table 2). Statis-
+                         tical analysis (p = 0.833) indicated no significant association between player position and
+                         symptom severity. Nonetheless, it is imperative to acknowledge that the limited number
+                         of cases in this study substantially compromises the statistical power required to identify
+                         true associations.
+
+                         Table 2. Distribution of Concussions by Player Position.
+
+                                                                                                Symptom Severity
+                                                                                             Mild                   Severe
+                                                                  Count                                 1                        4
+                                              Defenders           % within Player
+                                                                                                    20.0%                    80.0%
+                                                                  Position
+                          Player Position
+                                                                  Count                                 0                        1
+                                              Forward             % within Player
+                                                                                                    0.0%                 100.0%
+                                                                  Position
+                                                                  Count                                 1                        5
+                          Total                                   % within Player
+                                                                                                    16.7%                    83.3%
+                                                                  Position
+
+
+                         3.8. Match Timing and Concussion Occurrence
+                              Concussions occurred between the 40th and 91st minutes of play, with an average
+                         occurrence at the 75th minute. The majority (5 out of 6, or 83%) took place in the final third
+                         of the match, while only one (17%) happened during the middle phase (Table 3). Symptom
+                         severity did not significantly differ based on the moment of injury (p = 0.833), meaning
+                         there was no statistical association between match timing and concussion severity. Yet,
+                         the exploratory nature of this study, constrained by its reduced sample size, mandates
+                         extreme caution in interpreting these findings, as the absence of significance might reflect a
+                         limitation in power rather than a true absence of effect.
+Diseases 2025, 13, 332                                                                                                     6 of 13
+
+
+
+                         Table 3. Match Timing and Concussion Occurrence.
+
+                                                                                                       Symptom Severity
+                                                                                                       Mild            Severe
+                                                                         Count                                 0                1
+                                          Middle third of the match
+                                                                         % within Match Timing            0.0%           100.0%
+                          Match Timing
+                                                                         Count                                 1                4
+                                          Final third of the match
+                                                                         % within Match Timing           20.0%            80.0%
+                                                                         Count                                 1                5
+                          Total
+                                                                         % within Match Timing           16.7%            83.3%
+
+
+                         3.9. Mechanism of Injury and Hospital Referral
+                              Injury mechanisms varied, with head-to-head collisions accounting for three cases
+                         (50%), while the remaining three resulted from head impacts against the ground (1 case),
+                         another player’s body (1 case), or the ball (1 case). Medical response data indicated that half
+                         of the players (3 out of 6) were evacuated to the hospital, where all underwent cranial CT
+                         scans, and one received a cervical CT scan (Table 4). However, statistical testing found no
+                         significant relationship between injury mechanism and hospital referral (p = 0.400). When
+                         grouping head-to-head collisions separately from other mechanisms, analysis still did not
+                         reveal a significant association with the need for hospitalization (p = 0.500). However, the
+                         diminutive N precludes the formulation of definitive conclusions regarding the presence
+                         or absence of certain associations, underscoring that these results should be considered
+                         indicative rather than conclusive.
+
+                         Table 4. Mechanism of Injury and Hospital Referral.
+
+                                                                                                         Hospital Referral
+                                                                                                          No             Yes
+
+                                              Head-to-head collision      Count                                    2            0
+                                              with an opponent            % within Hospital Referral      66.7%            0.0%
+
+                                              Head-to-head collision      Count                                    0            1
+                                              with a teammate             % within Hospital Referral          0.0%        33.3%
+                          Mechanism of        Head impacts against        Count                                    0            1
+                          Injury              another player’s body       % within Hospital Referral          0.0%        33.3%
+
+                                              Head impacts against the    Count                                    0            1
+                                              ball                        % within Hospital Referral          0.0%        33.3%
+
+                                              Head impacts against the    Count                                    1            0
+                                              ground                      % within Hospital Referral      33.3%            0.0%
+                                                                          Count                                    3            3
+                          Total
+                                                                          % within Hospital Referral      100.0%         100.0%
+
+
+                         3.10. Relationship Between Injury Mechanism and Symptom Severity
+                              The most common mechanism among severe cases was head-to-head collisions (40%),
+                         while impacts against another player’s body, the ball, or the ground accounted for 60%
+                         (Table 5). Among concussed players experiencing amnesia, all cases resulted from mecha-
+                         nisms other than head-to-head collisions. This was the only variable where a statistically
+                         significant association was found (p = 0.014), suggesting that amnesia might be more asso-
+                         ciated with non-head-to-head impacts (Table 6). For other symptoms, including headache
+                         (p = 0.200), loss of consciousness (p = 0.500), disorientation (p = 0.233), and visual distur-
+                         bances (p = 0.333), there was no statistical association between the injury mechanism and
+Diseases 2025, 13, 332                                                                                                                    7 of 13
+
+
+
+                         symptom occurrence. Nonetheless, given the extremely limited sample size, this findings
+                         must be interpreted with caution.
+
+                         Table 5. Injury Mechanism and Symptom Severity.
+
+                                                                                                                      Symptom Severity
+                                                                                                                       Mild           Severe
+
+                                                  Head-to-head collision with      Count                                       1                 1
+                                                  an opponent                      % within Symptom Severity           100.0%           20.0%
+
+                                                  Head-to-head collision with a    Count                                       0                 1
+                                                  teammate                         % within Symptom Severity                0.0%        20.0%
+
+                                                  Head impacts against             Count                                       0                 1
+                          Mechanism of
+                          Injury                  another player’s body            % within Symptom Severity                0.0%        20.0%
+                                                                                   Count                                       0                 1
+                                                  Head impacts against the ball
+                                                                                   % within Symptom Severity                0.0%        20.0%
+
+                                                  Head impacts against the         Count                                       0                 1
+                                                  ground                           % within Symptom Severity                0.0%        20.0%
+                                                                                   Count                                       1                 5
+                          Total
+                                                                                   % within Symptom Severity            16.7%           83.3%
+
+
+                         Table 6. Chi-Square Tests.
+
+                                                                             Asymptotic
+                                                                                             Exact Sig.        Exact Sig.             Point
+                                                     Value         df        Significance
+                                                                                             (2-Sided)         (1-Sided)           Probability
+                                                                              (2-Sided)
+                          Pearson Chi-Square            6000            1           0.014          0.100             0.050
+                          Continuity Correction         2667            1           0.102
+                          Likelihood Ratio              8318            1           0.004          0.100             0.050
+                          Fisher’s Exact Test                                                      0.100             0.050
+                          Linear-by-Linear
+                                                        5000            1           0.025          0.100             0.050                0.050
+                          Association
+                          N of Valid Cases                   6
+
+
+                         3.11. Player Position and Injury Mechanism
+                              All cases of head-to-head collisions occurred among defenders, whereas 66.7% of
+                         concussions from other mechanisms involved defenders, and 33.3% involved forwards
+                         (Table 7). Although this suggests that defenders may be at increased risk of sustaining
+                         head-to-head collisions, statistical analysis did not confirm a significant association. Given
+                         the restricted sample, statistical inferences are limited, and the replication of these results
+                         in studies with greater statistical power is fundamental to confirm any observed trends.
+
+                         Table 7. Association Between Player Position and Injury Mechanism.
+
+                                                                                         Head-to-Head             Other Head Impacts
+                                                                                     (% Within Mechanism)        (% Within Mechanism)
+                                                                                                          3                                 2
+                                                       Defenders
+                                                                                                     100.0%                             66.7%
+                          Player position
+                                                                                                                                            1
+                                                       Forwards                                            0
+                                                                                                                                        33.3%
+
+
+                         4. Discussion
+                              This study offers a preliminary epidemiological overview of concussion events in
+                         Portuguese professional football and contributes to the growing body of literature address-
+                         ing sports-related concussion within elite male athletes. Crucially, the present findings
+                         are based on a severely limited sample of reported cases, which represents a significant
+Diseases 2025, 13, 332                                                                                            8 of 13
+
+
+
+                         methodological constraint. Therefore, while these preliminary data suggest important
+                         trends regarding injury mechanisms, player roles, match timing, clinical presentation, and
+                         medical response, they must be interpreted with caution. The primary value of this study
+                         lies in identifying initial patterns and highlighting critical areas for future, more robust
+                         research. Although the sample limitations, the findings reveal important trends regard-
+                         ing the injury mechanisms, player roles most affected, timing within the match, clinical
+                         presentation, and medical response.
+                               The predominance of concussions among defenders (83%) aligns with existing liter-
+                         ature indicating that defensive players are more frequently involved in aerial duels and
+                         high-contact scenarios, such as heading challenges and last-minute clearances [19,20]. This
+                         supports previous studies identifying defenders and defensive midfielders as high-risk due
+                         to their frequent involvement in aerial duels, high-speed challenges, and physically intense
+                         interactions. Some studies also identified defensive midfielders and goalkeepers as dispro-
+                         portionately affected, reinforcing the idea that tactical roles and on-field responsibilities
+                         directly influence exposure to concussive impacts [18,21].
+                               The incidence rate observed in this study (0.60 per 1000 player-hours) is compara-
+                         ble to values reported in recent prospective studies in professional football [21]. Such
+                         similarities suggest a commonality in the biomechanical and tactical conditions that predis-
+                         pose players to concussions, despite possible differences in injury-reporting practices and
+                         medical infrastructure.
+                               The low incidence rate observed in this preliminary study warrants prudence, as it
+                         could be an indicator of underreporting rather than a true reflection of concussion frequency.
+                         This interpretation is consistent with global literature, which documents the high prevalence
+                         of underreporting across male contact sports. This phenomenon is often driven by complex
+                         factors, including athlete culture, fear of professional exclusion, and a poor awareness
+                         of subtle symptoms. Furthermore, a methodological limitation is the exclusive reliance
+                         on official match reports. Considering that training exposure in professional football
+                         is typically four to five times greater than match exposure, the true overall concussion
+                         incidence could be underestimated.
+                               Notably, some studies have pointed out the variability of concussion incidence across
+                         age groups, competition levels, and countries, often attributing the differences to underre-
+                         porting and the lack of a standard definition or diagnostic approach [17]. Moreover, the
+                         analysis did not reveal statistically significant associations between competition level (First
+                         vs. Second League) and symptom severity, although First League cases were all classified
+                         as severe.
+                               The analysis of injury mechanisms showed that head-to-head collision was the most
+                         frequent mechanism (50%). Importantly, these incidents involving defenders are not
+                         restricted to collisions with opposing players during general play; they primarily occur
+                         during aerial duels (e.g., set pieces and crosses), which includes the risk of teammate-to-
+                         teammate collisions while contesting the same ball. This supports previous findings where
+                         accidental head-to-head contact is a leading cause of concussions, often occurring during
+                         contested headers [17]. This nuance is crucial for developing targeted prevention strategies
+                         for set-piece scenarios.
+                               Notably, our analysis identified a statistically significant association between non-head-
+                         to-head impacts (such as falls or collisions with the ground or ball) and the occurrence of
+                         amnesia (p = 0.014). This observation tentatively suggests that while these mechanisms may
+                         be perceived as “lower risk,” they can lead to significant neurophysiological effects [22].
+                         However, it is imperative to reiterate that, due to the limited sample size and the retrospec-
+                         tive nature of data collection, this finding should be considered exploratory. The current
+                         literature underlines the importance of not overlooking these mechanisms and explains
+Diseases 2025, 13, 332                                                                                            9 of 13
+
+
+
+                         how even low-threshold biomechanical forces can disrupt cerebral metabolic homeostasis,
+                         leading to significant clinical outcomes [4,23].
+                              A noteworthy pattern was the timing of concussions, with the majority (83%) oc-
+                         curring in the final third of matches. This is likely related to increased fatigue, reduced
+                         neuromuscular control, and elevated competitive intensity late in the game, all of which
+                         may heighten susceptibility to injury [24,25]. This temporal pattern aligns with previous
+                         evidence that links physical and mental fatigue with an increased risk of injury [26]. Some
+                         authors highlighted the physiological decline in neuromuscular performance as matches
+                         progress, particularly in positions requiring constant high-intensity efforts [27]. The fa-
+                         tigue hypothesis is further supported by other studies, who observed similar clustering of
+                         injuries late in matches across multiple seasons [28].
+                              Symptomatically, loss of consciousness and headache were most common, reported
+                         in 67% of cases, and 50% of all concussed players were referred to hospital settings for
+                         further evaluation. The consistent use of cranial CT scans highlights a cautious diagnostic
+                         approach. Half of the concussed players were referred to hospital settings for further evalu-
+                         ation. Despite international consensus statements, uniform implementation of concussion
+                         protocols remains a challenge [1].
+                              A key point of this preliminary study concerns the absence of standardized data
+                         regarding the return-to-play duration. While the methodological section details that the
+                         decision is strictly an individualized clinical clearance guided by the latest FIFA and
+                         international protocols, there is no standardized registry of the recovery time or the specific
+                         progression for each case. Consequently, we were unable to perform an epidemiological
+                         analysis on the average recovery time or identify potential predictors of protracted recovery,
+                         highlighting a crucial area for future data collection improvement.
+                              The literature is increasingly pointing to the long-term implications of sports-related
+                         concussion, including cognitive decline, mood disorders, and neurodegenerative diseases
+                         such as chronic traumatic encephalopathy. Moreover, one study has shown that athletes
+                         with previous concussions have a significantly increased risk of sustaining further muscu-
+                         loskeletal injuries, suggesting lingering neuromotor or cognitive deficits that compromise
+                         postural control or reaction time [29]. This risk is exacerbated by premature return-to-
+                         play decisions, particularly in the absence of objective recovery markers [30,31]. Despite
+                         these risks, return-to-play times in some settings have been reported as shorter than those
+                         recommended in international guidelines, which may reflect a more permissive or inconsis-
+                         tent clinical culture. This underscores the need for structured education and centralized
+                         concussion management systems [32,33].
+                              Another critical point is the underuse of neurocognitive testing and baseline screen-
+                         ing. While SCAT tools offer a structured framework for acute assessment, longer-term
+                         monitoring—especially of memory, attention, and processing speed—requires preseason
+                         baselines and post-injury comparisons. Incorporating such tools into club protocols could
+                         help better determine readiness for return-to-play and reduce recurrence risk [34–38].
+                              While our retrospective data cannot evaluate individual susceptibility factors, the high
+                         prevalence of head-to-head collisions during aerial duels points toward the importance of
+                         considering fatigue of the neck musculature. Current research suggests that neck strength
+                         and timely muscle activation can be protective against concussion [39]. Future prospective
+                         studies should incorporate baseline neck strength assessments and explore the role of
+                         neck-specific training programs in mitigating concussion risk.
+                              Beyond the acute incidents reported, this study underscores the necessity of consider-
+                         ing the issue of repeated sub-concussive head impacts, particularly those resulting from
+                         routine heading of the ball. Although such impacts may not cause immediate symptoms,
+                         the cumulative effect is a growing concern in the literature due to its potential link to
+Diseases 2025, 13, 332                                                                                           10 of 13
+
+
+
+                         long-term neurocognitive impairment [40]. A comprehensive concussion protocol must
+                         therefore consider both acute symptomatic injuries and the cumulative biomechanical load
+                         associated with high-volume head impacts
+                              Given the small sample size and the inherent limitations of reported retrospective
+                         data, these findings are exploratory and should be validated in larger, prospective datasets.
+                         The primary methodological limitation of this preliminary study is the low number of
+                         reported concussions, which inherently results in weak statistical power. Consequently,
+                         any observational findings related to the timing of injuries (e.g., occurrence in the second
+                         half), positional differences (e.g., defenders vs. forwards), or mechanisms of injury should
+                         be interpreted strictly as possible trends rather than conclusive statistical evidence.
+                              Taken together, the findings strongly underscore the urgent need for improved concus-
+                         sion awareness, systematic sideline assessment protocols, and consistent medical decision-
+                         making regarding player removal and return to play. The current data powerfully reinforce
+                         calls for educational interventions targeting medical teams, coaches, and players alike
+                         to foster a culture that prioritizes neurological health over short-term performance. Fi-
+                         nally, future research must urgently address the current severe gaps in injury reporting
+                         and monitoring.
+                              Future research should move beyond retrospective analysis to adopt prospective,
+                         multi-season methodologies to achieve higher statistical power and capture the true inci-
+                         dence rate. Specifically, we endorse the need for studies that incorporate the use of impartial
+                         observers and objective measures to monitor collisions during both training and match
+                         play. This approach provides a more accurate, comprehensive assessment of concussion
+                         incidence, exposure, and recovery times in professional football.
+                              The Consensus statement on injury definitions and data collection procedures in stud-
+                         ies of football injuries provides a framework for consistent injury definitions and data
+                         collection in football, which would help generate more reliable epidemiological data [35].
+                         The creation of a national registry of head injuries in professional football—aligned with
+                         FIFA, UEFA, and ICSG guidelines—would represent a fundamental step forward in both
+                         surveillance and player protection, mitigating the limitations observed in this prelimi-
+                         nary study.
+
+                         5. Conclusions
+                               This study provides one of the first preliminary epidemiological insights into concus-
+                         sion events in Portuguese Professional Football Leagues, highlighting relevant patterns in
+                         injury mechanisms, player positions, symptom severity, and medical response. However,
+                         it is critical to emphasize that these findings are based on a limited sample of reported
+                         cases, which prevents any definitive conclusions or broad generalizations. Crucially, due to
+                         the low number of incidents, the findings should be viewed as preliminary trends. Nev-
+                         ertheless, the exploratory findings suggest that defenders are disproportionately affected,
+                         likely due to their frequent involvement in aerial challenges and direct physical contact.
+                         Head-to-head collisions appear to be the leading mechanism of injury, and the prevalence
+                         of severe symptoms—such as loss of consciousness and amnesia—underscores the clinical
+                         relevance of these events, even within this constrained dataset.
+                               The observation that most concussions occurred in the final third of matches suggests a
+                         potential influence of fatigue and match intensity on concussion risk. These results reinforce
+                         the importance of implementing robust, evidence-based guidelines for the assessment and
+                         management of concussions in football.
+                               Considering evidence suggesting an increased risk of subsequent injury following con-
+                         cussion, and the potential for long-term cognitive consequences such as chronic traumatic
+                         encephalopathy, this study highlights the importance of extending concussion manage-
+Diseases 2025, 13, 332                                                                                                               11 of 13
+
+
+
+                                  ment beyond the acute phase. It is crucial to adopt a culture of safety that includes player
+                                  education, adherence to international guidelines, and long-term follow-up. Establishing
+                                  an injury surveillance system based on standardized definitions and procedures will be
+                                  essential for improving data reliability and facilitating international comparisons.
+                                       Future studies are urgently needed to expand the sample size significantly, incorpo-
+                                  rate video analysis, and assess long-term outcomes. In parallel, educational programs
+                                  targeting players, coaches, and medical staff are essential to promote a culture of safety
+                                  and ensure that concussion symptoms are consistently recognized, promptly reported, and
+                                  systematically managed, both acutely and in long-term follow-up.
+
+                                  Author Contributions: Conceptualization, A.M., F.F., G.V., A.F., B.R., F.M., G.N., H.A., P.C. and P.P.;
+                                  methodology, A.M., F.F. and G.V.; software, A.M.; validation, A.M. and B.R.; formal analysis, A.M.
+                                  and B.R.; investigation, A.M., F.F., G.V., A.F., B.R., F.M., G.N., H.A., P.C. and P.P.; resources, A.T. and
+                                  R.T.; data curation, A.M.; writing—original draft preparation, A.M.; writing—review and editing,
+                                  A.M., F.F., G.V., A.F., B.R., F.M., G.N., H.A., P.C. and P.P.; visualization, A.T. and R.T.; supervision,
+                                  A.M., A.T. and R.T.; project administration, R.T. All authors have read and agreed to the published
+                                  version of the manuscript.
+
+                                  Funding: This research received no external funding.
+
+                                  Institutional Review Board Statement: This study was conducted in accordance with the Declaration
+                                  of Helsinki and was approved by the Ethics and the Data Protection Center of Liga Portugal (approved
+                                  on 6 February 2023—Reference No. 012.00/2023), which verified and ensured compliance with ethical
+                                  principles and data confidentiality. All data were encrypted prior to analysis at the statistical office,
+                                  where each participant was assigned a unique identifier. These identifiers eliminated the possibility
+                                  of tracing the participants’ identities, in full conformity with national and European regulations on
+                                  data management.
+
+                                  Informed Consent Statement: Informed consent was obtained from all subjects involved in the study.
+
+                                  Data Availability Statement: The data presented in this study are available on request from the
+                                  corresponding author. The data are not publicly available due to privacy and ethical restrictions.
+
+                                  Acknowledgments: The authors would like to express their sincere gratitude to all club physicians
+                                  from the Liga Portugal First and Second Leagues who participated in this study. Their valuable
+                                  collaboration made this research possible.
+
+                                  Conflicts of Interest: The authors declare no conflicts of interest.
+
+References
+1.    McCrory, P.; Meeuwisse, W.; Dvořák, J.; Aubry, M.; Bailes, J.; Broglio, S.; Cantu, R.C.; Cassidy, D.; Echemendia, R.J.; Castellani,
+      R.J.; et al. Consensus statement on concussion in sport-the 5th international conference on concussion in sport held in Berlin,
+      October 2016. Br. J. Sports Med. 2017, 51, 838–847. [CrossRef]
+2.    Giza, C.C.; Hovda, D.A. The new neurometabolic cascade of concussion. Neurosurgery 2014, 75 (Suppl. S4), S24–S33. [CrossRef]
+      [PubMed]
+3.    McAllister, T.; McCrea, M. Long-Term cognitive and neuropsychiatric consequences of repetitive concussion and head-impact
+      exposure. J. Athl. Train. 2017, 52, 309–317. [CrossRef] [PubMed]
+4.    Guskiewicz, K.M.; Marshall, S.W.; Bailes, J.; McCrea, M.; Cantu, R.C.; Randolph, C.; Jordan, B.D. Association between recurrent
+      concussion and late-life cognitive impairment in retired professional football players. Neurosurgery 2005, 57, 719–726; discussion
+      719–726. [CrossRef] [PubMed]
+5.    Baragi, V.M.; Gattu, R.; Trifan, G.; Woodard, J.L.; Meyers, K.; Halstead, T.S.; Hipple, E.; Haacke, E.M.; Benson, R.R. Neuroimaging
+      Markers for Determining Former American Football Players at Risk for Alzheimer’s Disease. Neurotrauma Rep. 2022, 3, 398.
+      [CrossRef]
+6.    Daneshvar, D.H.; Nair, E.S.; Baucom, Z.H.; Rasch, A.; Abdolmohammadi, B.; Uretsky, M.; Saltiel, N.; Shah, A.; Jarnagin, J.;
+      Baugh, C.M.; et al. Leveraging football accelerometer data to quantify associations between repetitive head impacts and chronic
+      traumatic encephalopathy in males. Nat. Commun. 2023, 14, 3470. [CrossRef]
+7.    Greenwald, B.D.; Ambrose, A.F.; Armstrong, G.P. Mild brain injury. Rehabil. Res. Pract. 2012, 2012, 469475. [CrossRef]
+Diseases 2025, 13, 332                                                                                                                  12 of 13
+
+
+
+8.    McKee, A.C.; Stein, T.D.; Huber, B.R.; Crary, J.F.; Bieniek, K.; Dickson, D.; Alvarez, V.E.; Cherry, J.D.; Farrell, K.; Butler, M.; et al.
+      Chronic traumatic encephalopathy (CTE): Criteria for neuropathological diagnosis and relationship to repetitive head impacts.
+      Acta Neuropathol. 2023, 145, 371–394. [CrossRef]
+9.    Neal, J.; Hutchings, P.B.; Phelps, C.; Williams, D. Football and Dementia: Understanding the Link. Front. Psychiatry 2022, 13,
+      849876. [CrossRef]
+10.   Ramsay, D.; Miller, A.; Baykeens, B.; Hassan, H.; Gentleman, S. Football (Soccer) as a Probable Cause of Long-Term Neurological
+      Impairment and Neurodegeneration: A Narrative Review of the Debate. Cureus 2023, 15, e34279. [CrossRef]
+11.   Terpstra, A.R.; Vasquez, B.P.; Colella, B.; Tartaglia, M.C.; Tator, C.H.; Mikulis, D.; Davis, K.D.; Wennberg, R.; Green, R.E.A.
+      Comprehensive Neuropsychiatric and Cognitive Characterization of Former Professional Football Players: Implications for
+      Neurorehabilitation. Front. Neurol. 2019, 10, 712. [CrossRef]
+12.   Delaney, J.S.; Lacroix, V.J.; Leclerc, S.; Johnston, K.M. Concussions among university football and soccer players. Clin. J. Sport
+      Med. 2002, 12, 331–338. [CrossRef]
+13.   Williams, S.; Trewartha, G.; Kemp, S.; Stokes, K. A meta-analysis of injuries in senior men’s professional Rugby Union. Sports
+      Med. 2013, 43, 1043–1055. [CrossRef]
+14.   Delaney, J.S.; Caron, J.G.; Correa, J.A.; Bloom, G.A. Why Professional Football Players Chose Not to Reveal Their Concussion
+      Symptoms During a Practice or Game. Clin. J. Sport Med. 2018, 28, 1–12. [CrossRef] [PubMed]
+15.   Chrisman, S.P.D.; Quitiquit, C.; Rivara, F.P. Qualitative Study of Barriers to Concussive Symptom Reporting in High School
+      Athletics. J. Adolesc. Health 2012, 52, 330. [CrossRef] [PubMed]
+16.   Hawkins, R.D.; Hulse, M.A.; Wilkinson, C.; Hodson, A.; Gibson, M. The association football medical research programme: An
+      audit of injuries in professional football. Br. J. Sports Med. 2001, 35, 43–47. [CrossRef] [PubMed]
+17.   Pfister, T.; Pfister, K.; Hagel, B.; Ghali, W.A.; Ronksley, P.E. The incidence of concussion in youth sports: A systematic review and
+      meta-analysis. Br. J. Sports Med. 2016, 50, 292–297. [CrossRef]
+18.   Andersen, T.E.; Arnason, A.; Engebretsen, L.; Bahr, R. Mechanisms of head injuries in elite football. Br. J. Sports Med. 2004, 38,
+      690–696. [CrossRef]
+19.   Worrall, H.; Podvin, C.; Althoff, C.; Chung, J.S.; Sugimoto, D.; Stokes, M.; Radel, L.C.; Cullum, C.M.; Miller, S.M.; Jones,
+      J.C. Position comparison of sport-related concussions in female youth soccer players. Physician Sportsmed. 2024, 52, 325–332.
+      [CrossRef]
+20.   Thema, M.T.; Jacobs, S.; van den Berg, L.; Strauss, A.; Mahlangu, M.P. The role of playing position in soccer injury characteristics:
+      Evidence from sub-elite athletes. Front. Sports Act. Living 2025, 7, 1542300. [CrossRef]
+21.   Fernandes, G.C.A.M.; Lima, E.B.S.; Lara, P.H.S.; Gandolfi, A.C.C.; Pagura, J.R.; Arliani, G.G.; Cohen, M. Sport-related concussion
+      in Brazilian professional soccer: A four-year prospective epidemiological analysis. Sports Med. Health Sci. 2024, 7, 224–229.
+      [CrossRef] [PubMed]
+22.   Reynolds, B.B.; Patrie, J.; Henry, E.J.; Goodkin, H.P.; Broshek, D.K.; Wintermark, M.; Druzgal, T.J. Quantifying Head Impacts in
+      Collegiate Lacrosse. Am. J. Sports Med. 2016, 44, 2947–2956. [CrossRef] [PubMed]
+23.   Iverson, G.L.; Gardner, A.J.; McCrory, P.; Zafonte, R.; Castellani, R.J. A critical review of chronic traumatic encephalopathy.
+      Neurosci. Biobehav. Rev. 2015, 56, 276–293. [CrossRef] [PubMed]
+24.   Beaudouin, F.; der Fünten, K.A.; Tröß, T.; Reinsberger, C.; Meyer, T. Time Trends of Head Injuries Over Multiple Seasons in
+      Professional Male Football (Soccer). Sports Med. Int. Open 2019, 3, E6–E11. [CrossRef]
+25.   Fousekis, A.; Fousekis, K.; Fousekis, G.; Gkrilias, P.; Michailidis, Y.; Mandroukas, A.; Metaxas, T. Assessment of Injury Risk in
+      Professional Soccer Players: A Long-Term Study. Appl. Sci. 2025, 15, 5039. [CrossRef]
+26.   Le Mansec, Y.; Pageaux, B.; Nordez, A.; Dorel, S.; Jubeau, M. Mental fatigue alters the speed and the accuracy of the ball in table
+      tennis. J. Sports Sci. 2018, 36, 2751–2759. [CrossRef]
+27.   Rampinini, E.; Impellizzeri, F.M.; Castagna, C.; Coutts, A.J.; Wisløff, U. Technical performance during soccer matches of the
+      Italian Serie A league: Effect of fatigue and competitive level. J. Sci. Med. Sport 2009, 12, 227–233. [CrossRef]
+28.   Ekstrand, J.; Hägglund, M.; Waldén, M. Injury incidence and injury patterns in professional football: The UEFA injury study. Br. J.
+      Sports Med. 2011, 45, 553–558. [CrossRef]
+29.   Nordström, A.; Nordström, P.; Ekstrand, J. Sports-related concussion increases the risk of subsequent injury by about 50% in elite
+      male football players. Br. J. Sports Med. 2014, 48, 1447–1450. [CrossRef]
+30.   Omalu, B.I.; DeKosky, S.T.; Minster, R.L.; Kamboh, M.I.; Hamilton, R.L.; Wecht, C.H. Chronic traumatic encephalopathy in a
+      National Football League player. Neurosurgery 2005, 57, 128–134; discussion 128–134. [CrossRef]
+31.   McKee, A.C.; Cantu, R.C.; Nowinski, C.J.; Hedley-Whyte, E.T.; Gavett, B.E.; Budson, A.E.; Santini, V.E.; Lee, H.S.; Kubilus, C.A.;
+      Stern, R.A. Chronic traumatic encephalopathy in athletes: Progressive tauopathy after repetitive head injury. J. Neuropathol. Exp.
+      Neurol. 2009, 68, 709–735. [CrossRef]
+32.   Reurink, G.; Goudswaard, G.J.; Tol, J.L.; Almusa, E.; Moen, M.H.; Weir, A.; Verhaar, J.A.; Hamilton, B.; Maas, M. MRI observations
+      at return to play of clinically recovered hamstring injuries. Br. J. Sports Med. 2014, 48, 1370–1376. [CrossRef] [PubMed]
+Diseases 2025, 13, 332                                                                                                              13 of 13
+
+
+
+33.   Schneider, K.J. Sport-Related Concussion: Optimizing Treatment Through Evidence-Informed Practice. J. Orthop. Sports Phys.
+      Ther. 2016, 46, 613–616. [CrossRef]
+34.   Echemendia, R.J.; Meeuwisse, W.; McCrory, P.; Davis, G.A.; Putukian, M.; Leddy, J.; Makdissi, M.; Sullivan, S.J.; Broglio, S.P.;
+      Raftery, M.; et al. The Sport Concussion Assessment Tool 5th Edition (SCAT5): Background and rationale. Br. J. Sports Med. 2017,
+      51, 848–850. [CrossRef] [PubMed]
+35.   Fuller, C.W.; Ekstrand, J.; Junge, A.; Andersen, T.E.; Bahr, R.; Dvorak, J.; Hägglund, M.; McCrory, P.; Meeuwisse, W.H. Consensus
+      statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Br. J. Sports Med. 2006, 40,
+      193–201. [CrossRef] [PubMed]
+36.   Goodwin, G.J.; John, S.E.; Donohue, B.; Keene, J.; Kuwabara, H.C.; Maietta, J.E.; Kinsora, T.F.; Ross, S.; Allen, D.N. Changes in
+      ImPACT Cognitive Subtest Networks Following Sport-Related Concussion. Brain Sci. 2023, 13, 177. [CrossRef]
+37.   Patricios, J.; Schneider, G.M.; van Ierssel, J.; Purcell, L.K.; Davis, G.A.; Echemendia, R.J.; Frémont, P.; Fuller, G.W.; Herring, S.;
+      Harmon, K.G.; et al. Sport Concussion Office Assessment Tool-6. Br. J. Sports Med. 2023, 57, 651–667. [CrossRef]
+38.   Pratile, T.; Marshall, C.; DeMatteo, C. Examining how time from sport-related concussion to initial assessment predicts return-to-
+      play clearance. Physician Sportsmed. 2022, 50, 132–140. [CrossRef] [PubMed]
+39.   Collins, C.L.; Fletcher, E.N.; Fields, S.K.; Kluchurosky, L.; Rohrkemper, M.K.; Comstock, R.D.; Cantu, R.C. Neck strength: A
+      protective factor reducing risk for concussion in high school sports. J. Prim. Prev. 2014, 35, 309–319. [CrossRef]
+40.   Mez, J.; Daneshvar, D.H.; Kiernan, P.T.; Abdolmohammadi, B.; Alvarez, V.E.; Huber, B.R.; Alosco, M.L.; Solomon, T.M.; Nowinski,
+      C.J.; McHale, L.; et al. Clinicopathological Evaluation of Chronic Traumatic Encephalopathy in Players of American Football.
+      JAMA 2017, 318, 360–370. [CrossRef]
+
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

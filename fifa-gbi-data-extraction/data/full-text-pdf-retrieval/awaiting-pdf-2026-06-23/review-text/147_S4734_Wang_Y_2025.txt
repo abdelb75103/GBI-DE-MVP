@@ -1,0 +1,1085 @@
+Systematic Review
+
+Comparative Effectiveness of Multi-Component, Exercise-Based
+Interventions for Preventing Soccer-Related Musculoskeletal
+Injuries: A Systematic Review and Meta-Analysis
+Yucheng Wang 1 , Zhanyi Zhou 1 , Zixiang Gao 2, *                      and Yaodong Gu 1, *
+
+                                         1   Faculty of Sports Science, Ningbo University, Ningbo 315211, China; 2411040024@nbu.edu.cn (Y.W.);
+                                             zhouzhanyi630@hotmail.com (Z.Z.)
+                                         2   Human Performance Laboratory, Faculty of Kinesiology, University of Calgary, Calgary, AB T2N 1N4, Canada
+                                         *   Correspondence: zixiang.gao@ucalgary.ca (Z.G.); guyaodong@hotmail.com (Y.G.); Tel.: +86-574-8760020 (Y.G.)
+
+
+                                         Abstract: Background: Soccer is a high-intensity sport characterized by a considerable inci-
+                                         dence of injuries, particularly among professional male players, with injury rates ranging
+                                         from 5.9 to 9.6 per 1000 player-hours. Lower limb injuries, including those affecting the
+                                         knee, ankle, hip/groin, and hamstring muscles, are particularly prevalent. Additionally, a
+                                         history of prior injuries may exacerbate the risk of recurrence. In response to these concerns,
+                                         various injury prevention programs have been developed and implemented, targeting
+                                         different genders and age groups. Methods: This systematic review and meta-analysis, con-
+                                         ducted with the PRISMA guidelines, critically evaluated randomized RCTs across diverse
+                                         genders and age groups to assess the efficacy of multi-component exercise-based injury
+                                         prevention programs in reducing musculoskeletal injuries among soccer players. Com-
+                                         prehensive searches were conducted in ClinicalTrials.gov, CENTRAL, EMBASE, PubMed,
+                                         Scopus, and Web of Science, with no language restrictions applied. Results: A total of
+                                         15 RCTs met the predefined inclusion criteria. The intervention programs were found to
+                                         be significantly effective in reducing lower limb injuries, with a pooled RR of 0.73 (95%
+                                         CI: 0.63 to 0.84, p = 0.035). Subgroup analyses further revealed a significant reduction in
+Academic Editors: Scott Cheatham,        the incidence of hamstring, knee, and ankle injuries following the implementation of these
+Russell T. Baker and Emilie Miley        programs. Conclusions: Multi-component exercise-based injury prevention programs
+Received: 6 January 2025                 demonstrate considerable efficacy in reducing musculoskeletal injuries in soccer players,
+Revised: 22 March 2025                   spanning various age groups and genders. These findings underscore the potential of such
+Accepted: 27 March 2025                  programs in professional soccer injury management and highlight their importance in the
+Published: 29 March 2025                 development of comprehensive injury prevention strategies.
+Citation: Wang, Y.; Zhou, Z.; Gao, Z.;
+Gu, Y. Comparative Effectiveness of      Keywords: soccer; injury prevention; musculoskeletal injuries; systematic review;
+Multi-Component, Exercise-Based          meta-analysis
+Interventions for Preventing
+Soccer-Related Musculoskeletal
+Injuries: A Systematic Review and
+Meta-Analysis. Healthcare 2025, 13,
+765. https://doi.org/10.3390/
+                                         1. Introduction
+healthcare13070765                             In professional men’s soccer, injuries are frequent, occurring at rates of 5.9 to 9.6
+Copyright: © 2025 by the authors.        per 1000 player-hours [1,2]. The sport’s fast-paced actions, like sprints, quick stops, and
+Licensee MDPI, Basel, Switzerland.       sudden turns, heighten the risk of muscle and joint injuries. Prolonged or repeated injuries
+This article is an open access article   can shorten careers, with studies showing that injuries account for up to 30% of early
+distributed under the terms and          retirements [3]. As such, recent studies have aimed to identify specific muscles and joints
+conditions of the Creative Commons
+                                         that may be of high risk in this population. Gibbs [4] found that quadriceps muscle strain is
+Attribution (CC BY) license
+(https://creativecommons.org/
+                                         relatively common during sprinting or powerful kicking movements, primarily occurring
+licenses/by/4.0/).                       during the eccentric contraction phase. In this phase, the muscle undergoes passive
+
+
+Healthcare 2025, 13, 765                                                                                  https://doi.org/10.3390/healthcare13070765
+Healthcare 2025, 13, 765                                                                                            2 of 15
+
+
+
+                           lengthening while simultaneously generating tension to control the movement, requiring it
+                           to withstand a high mechanical load, increasing the risk of muscle fiber injury. Saw et al. [5]
+                           noted hamstring injuries often occur during deceleration as the muscle stretches to slow
+                           movement. Elliott et al. [6] highlighted calf muscles, especially the gastrocnemius and
+                           soleus, as frequently injured during kicking and pivoting. Gaulrapp et al. [7] reported ankle
+                           sprains as a major issue during high-impact actions like landing or sharp turns, accounting
+                           for a significant share of soccer injuries. Other studies have indicated that the knee, ankle,
+                           and other lower limb joints have a high incidence of injuries [8–10].
+                                 Although the precise mechanisms underlying these injury patterns remain incom-
+                           pletely understood, evidence indicates that a history of previous injuries substantially
+                           increases the probability of future injury occurrence. Consistent with epidemiological
+                           patterns reported in soccer athletes, current findings corroborate the predominance of liga-
+                           mentous involvement specific to knee (i.e., 17–23%) [11] and ankle injuries (i.e., 20–28%) [12].
+                           The observed hamstring injury prevalence of 12–15% (i.e., annual incidence) aligns with
+                           established risk ratios ranging from a 2.5 to 3.8 fold-increase, likely attributable to the
+                           cumulative effect of high-velocity eccentric loading during sprint cycles [13]. Meanwhile,
+                           previous studies have indicated that the injury rate among amateur athletes is generally
+                           lower than that of professional players [14–16].
+                                 In addition to non-contact injuries, contact-related injuries also play a significant role
+                           in the injury profile of soccer players. These injuries occur during physical contact with
+                           other players, such as tackles, and contribute to the overall injury burden in the sport.
+                           The rate of contact-related injuries varies, but studies have shown that they are a major
+                           cause of injuries in both professional and amateur soccer [17]. Improving physical capacity,
+                           including strength, flexibility, and stability, can reduce the likelihood of both contact and
+                           non-contact injuries. In contact sports like soccer, stronger muscles are better able to absorb
+                           impacts, which helps prevent injuries caused by sudden physical confrontations [18,19].
+                                 However, strengthening muscles alone is not sufficient to fully mitigate injury risks
+                           as multiple factors contribute to both contact and non-contact injuries. Addressing these
+                           risks requires a more comprehensive approach that enhances various physical attributes es-
+                           sential for injury prevention. Multi-component exercise-based injury prevention programs
+                           outperform traditional single-focus training by integrating diverse exercises that improve
+                           overall health, athletic performance, muscle balance, flexibility, and stability, effectively
+                           reducing injury risks across all genders and age groups in soccer [20–25]. Soligard et al. [17]
+                           introduced multi-component exercise-based injury prevention programs combining dif-
+                           ferent exercise types to reduce injury risks. This approach improves physical capacities
+                           like strength, flexibility, balance, and proprioception, which enhances overall function and
+                           reduces injuries. By addressing issues such as muscle imbalances, poor neuromuscular
+                           control, and joint instability, these programs target key injury causes. Examples include:
+                           (1) Strength training, which builds muscle resilience to prevent strains [18]; (2) Balance
+                           exercises, which enhance joint stability and proprioception, reducing sprains [19]; and
+                           (3) Plyometric drills, which improve force absorption and distribution, lowering overuse
+                           injury risks.
+                                 However, isolated training often overlooks the synergistic effects among various
+                           physical qualities. During physical activity, qualities such as strength, balance, and proprio-
+                           ception interact with each other and are all indispensable. For instance, if proprioception of
+                           the knee joint is excellent but the hip muscles are weak, knee stability may not be effectively
+                           supported. Conversely, individuals with strong hip muscles but without good propriocep-
+                           tive input cannot fully utilize the incoming sensory information to appropriately regulate
+                           and output movement. Therefore, isolated training fails to fully activate the synergistic
+                           effects of the body’s various components, whereas multi-component exercise-based injury
+Healthcare 2025, 13, 765                                                                                             3 of 15
+
+
+
+                           prevention programs can enhance multiple physical qualities through the integration of
+                           various exercises, promoting better coordination and development of all physical abilities.
+                           By combining these exercises, athletes’ musculoskeletal systems are strengthened, allowing
+                           them to better adapt to the demands of physical activity [26]. By integrating strength, bal-
+                           ance, and plyometric exercises, these programs offer a multi-layered preventive approach
+                           that supports passive structures while enhancing active neuromuscular control, ultimately
+                           increasing overall resilience against injuries.
+                                Despite the development of injury prevention programs, there is a lack of meta-
+                           analyses covering randomized controlled trials (RCTs) across genders and age groups.
+                           Additionally, research on programs targeting lower limb function and musculoskeletal
+                           injury risk in soccer players is limited. As such, the lack of literature demonstrates the
+                           need for more studies to guide evidence-based practices, reduce injury rates, and enhance
+                           player health and longevity. The aim of this systematic review and meta-analysis was to
+                           investigate the effects of injury prevention strategies and provide unique insights into the
+                           role of tailored interventions, offering a deeper understanding of how specific strategies
+                           can be optimized for various populations (i.e., age groups and gender groups).
+
+                           2. Materials and Methods
+                           2.1. Search Strategy and Selection Criteria
+                                In conducting this systematic review and meta-analysis, we adhered to the PRISMA
+                           guidelines [27] and it has been registered in PROSPERO (CRD42024625910). A compre-
+                           hensive search was performed across multiple databases, including ClinicalTrials.gov,
+                           CENTRAL, EMBASE, PubMed, Scopus, and Web of Science. The search terms included
+                           “soccer”, or “football”, combined with terms related to injury prevention, such as “injury
+                           prevention”, “warm-up program”, or “neuromuscular program”. The search was con-
+                           ducted from the inception of the databases up to 29 October 2024, with no restrictions on
+                           language. This study did not require ethical approval because this study was a systematic
+                           review and meta-analysis.
+
+                           2.2. Study Screening and Data Extraction
+                                The following studies were included if they met the inclusion criteria: (1) Studies that
+                           focused on multi-component injury prevention programs that included at least two distinct
+                           types of exercise, such as strength training, balance exercises, flexibility exercises, and
+                           plyometric drills; (2) Programs that aimed to improve physical capacities related to injury
+                           prevention, including muscle strength, joint stability, flexibility, and proprioception; (3) The
+                           intervention specifically targeted injury prevention rather than rehabilitation; (4) The study
+                           involved soccer players (both professional and amateur athletes) from various age groups
+                           and genders; (5) The study reported one of the following outcomes: the number of any
+                           lower limb injuries, including knee, ankle, and hamstring injuries.
+                                The exclusion criteria were as follows: (1) Studies that involved participants who were
+                           not soccer players or those from other sports or non-athlete populations; (2) Research that
+                           focused on rehabilitation rather than injury prevention; (3) Studies that did not integrate at
+                           least two exercise modalities or included only one type of exercise component; (4) Non-
+                           randomized RCTs, case reports, reviews, and animal studies.
+                                To ensure the completeness of the study and the reliability of the results, two reviewers
+                           independently extracted the following items from the included studies: (1) First author,
+                           publication year, age, the proportion of sample size for each group; (2) Interventions and
+                           control groups; (3) Outcomes, including lower extremity injuries, knee injuries, ankle
+                           injuries and hamstring injuries.
+Healthcare 2025, 13, 765                                                                                          4 of 15
+
+
+
+                               Any disagreements were resolved through consensus, and if necessary, a third reviewer
+                           made the final decision. If essential data were missing or unavailable in the published
+                           sources, we contacted the authors twice to request the required information.
+
+                           2.3. Risk of Bias Assessment and Quality Evaluation
+                                 The risk of bias in the included studies was assessed by two independent researchers,
+                           Reviewer 1 and Reviewer 2 (Y.W. and Z.Z.), who were blinded to the study details, using
+                           the Cochrane Risk of Bias Tool (ROB 2.0) [28,29]. The assessment was conducted across
+                           the following five dimensions: (1) Bias from the randomization process; (2) Bias due to
+                           deviations from intended interventions; (3) Bias from missing outcome data; (4) Bias in out-
+                           come measurement; and (5) Bias in the selection of reported results. This process involved
+                           comparing the primary outcomes of the included studies with those of the current system-
+                           atic review and network meta-analysis. Subsequently, the results were verified by a third
+                           reviewer (Z.G.) to ensure consistency and accuracy. The risk of bias for each included trial
+                           was assessed following the guidelines in the Cochrane Handbook for Systematic Reviews
+                           of Interventions [30]. Each domain was evaluated using the standardized 5-step process
+                           of the Cochrane Risk of Bias Tool (ROB 2.0): (1) Articulating bias sources; (2) Developing
+                           domain-specific criteria; (3) Implementing risk judgment (“Low”, “Some concerns”, or
+                           “High”) based on reporting completeness; (4) Substantiating judgments with evidence an-
+                           chors; and (5) Formulating domain-level conclusions. The bias domains evaluated included
+                           sequence generation, allocation concealment, blinding of outcome assessment, complete-
+                           ness of outcome data, potential selective reporting, and other possible sources of bias. Each
+                           domain was categorized as either “low risk” or “high risk” or “some concerns” based on its
+                           potential impact on the study’s results. When a domain’s impact was considered likely, we
+                           examined whether the reported details were unclear or insufficient [31]. The two reviewers
+                           independently performed the risk of bias assessment, and any discrepancies were resolved
+                           through consultation with the third reviewer.
+
+                           2.4. Data Extraction and Administration
+                                For each eligible study, three reviewers independently extracted the data using a
+                           standardized form, following the methods of Thorborg et al. [32]. These data included
+                           fundamental study details, design characteristics, participant demographics, intervention
+                           components, and measured outcomes. The reviewers then compared their extracted data to
+                           ensure consistency. Any discrepancies were discussed, and if necessary, a fourth reviewer
+                           (Y.G.) was involved; final decisions were determined by a majority vote. Primary outcome
+                           data for each study were subsequently organized and recorded in Microsoft Excel (Microsoft
+                           365, Version 2309; Microsoft Corporation, Redmond, WA, USA).
+
+                           2.5. Data Analysis
+                                 The primary outcome measure was the incidence of lower limb injuries, while knee,
+                           ankle, and hamstring injuries were analyzed as secondary outcomes. These injuries were
+                           selected due to their high prevalence in soccer, where they are frequently cited in the
+                           literature as major contributors to musculoskeletal injuries [33–37]. Previous studies have
+                           highlighted knee and ankle injuries—particularly sprains and ligament strains—as common
+                           occurrences. These injuries often result from the sport’s physical demands, including rapid
+                           direction changes, jumping, and landing [4,5,7]. Hamstring injuries are also prevalent,
+                           especially during high-speed running or sudden deceleration, which places excessive
+                           strain on that muscle group [6,10]. Given their high incidence and significant impact on
+                           players’ performance and career longevity, these injuries were identified as key outcomes
+                           for this analysis.
+                           prevalent, especially during high-speed running or sudden deceleration, which places ex-
+                           cessive strain on that muscle group [6,10]. Given their high incidence and significant im-
+Healthcare 2025, 13, 765   pact on players’ performance and career longevity, these injuries were identified as 5key            of 15
+                           outcomes for this analysis.
+                                 Because all included studies were RCTs, the outcomes, including the number of ex-
+                           tremity Because
+                                     injuries,allhamstring
+                                                  included injuries,
+                                                             studies were    RCTs, the
+                                                                       knee injuries,      outcomes,
+                                                                                         and             including
+                                                                                              ankle injuries   werethe   numberasof
+                                                                                                                     expressed
+                           risk ratios (RR) with 95% confidence intervals (CIs). All statistical analyses were per-as
+                             extremity   injuries,  hamstring   injuries,  knee  injuries, and  ankle   injuries were  expressed
+                             risk ratios
+                           formed        (RR)
+                                     using      with 95%
+                                             RevMan        confidence
+                                                        software        intervals
+                                                                  (version         (CIs). All statistical
+                                                                             5.4; Cochrane                analyses
+                                                                                              Collaboration,       were
+                                                                                                                2020),    performed
+                                                                                                                       STATA    16,
+                             using  RevMan       software  (version   5.4; Cochrane     Collaboration,    2020), STATA
+                           and R (version 4.3.0; R Core Team, 2023) [38]. Egger’s test was used to assess potential       16, and R
+                             (version 4.3.0;
+                           publication    bias,R with
+                                                 Corestatistical
+                                                       Team, 2023)  [38]. Egger’s
+                                                                 significance       test
+                                                                               set at p <was
+                                                                                          0.05used
+                                                                                               [39],toand
+                                                                                                       assess  potential
+                                                                                                           funnel        publication
+                                                                                                                  plot asymmetry
+                             bias, with  statistical significance set at p < 0.05  [39], and funnel   plot  asymmetry
+                           was visually inspected to further evaluate potential bias in the included studies [40].      was visually
+                             inspected to further evaluate potential bias in the included studies [40].
+                           2.6. Research Data Time Limitations
+                             2.6. Research Data Time Limitations
+                                 In this systematic review and meta-analysis, the included studies were assessed for
+                                  In this systematic review and meta-analysis, the included studies were assessed for
+                           their relevance and quality. The oldest study included in this review dates back to 2008. It
+                             their relevance and quality. The oldest study included in this review dates back to 2008. It
+                           is important to note that no specific time restrictions were applied to the studies included
+                             is important to note that no specific time restrictions were applied to the studies included
+                           in this review. However, a broad range of studies was considered to ensure comprehen-
+                             in this review. However, a broad range of studies was considered to ensure comprehensive
+                           sive coverage of the available evidence on multi-component exercise-based injury preven-
+                             coverage of the available evidence on multi-component exercise-based injury prevention
+                           tion programs in soccer.
+                             programs in soccer.
+                                 While the inclusion of studies from the past decade provides a more current under-
+                                  While the inclusion of studies from the past decade provides a more current under-
+                           standing of injury prevention interventions, the absence of a time restriction allows for
+                             standing of injury prevention interventions, the absence of a time restriction allows for
+                           the inclusion of earlier studies that may still oﬀer valuable insights. Future research could
+                             the inclusion of earlier studies that may still offer valuable insights. Future research could
+                           benefit from narrowing the inclusion criteria to studies conducted within a specific time
+                             benefit from narrowing the inclusion criteria to studies conducted within a specific time
+                           frame to account for advances in training methods and injury prevention strategies.
+                             frame to account for advances in training methods and injury prevention strategies.
+
+                           3.3.Results
+                                Results
+                           3.1.
+                            3.1.Literature
+                                  LiteratureIdentification
+                                              Identification
+                                 WeWe initiallyidentified
+                                      initially   identified8944
+                                                               8944records.
+                                                                      records.After
+                                                                                 Afterremoving
+                                                                                         removingduplicates
+                                                                                                    duplicatesand andexcluding
+                                                                                                                       excludingcase
+                                                                                                                                   case
+                           reports
+                            reportsandandreview
+                                            reviewarticles,
+                                                    articles,2545
+                                                               2545articles
+                                                                     articlesremained.
+                                                                               remained.Based
+                                                                                            Basedonontitles and
+                                                                                                       titles andabstracts screening,
+                                                                                                                   abstracts screening,
+                           we
+                            weevaluated
+                                 evaluated 75    full-text articles
+                                              75 full-text  articlesforforeligibility,
+                                                                            eligibility, with
+                                                                                       with    15 meeting
+                                                                                            15 meeting        the inclusion
+                                                                                                          the inclusion       criteria.
+                                                                                                                        criteria. These
+                           These
+                            resultsresults  are illustrated
+                                      are illustrated         in Figure
+                                                       in Figure   1.      1.
+
+
+                                      Identification Phase                     Citations excluded (n=1679) after
+                                                                                 screening by Title & Abstract
+
+                                     Literature Identified
+                                                                                Citations assessed for eligibility
+
+                              Citations from Databases (n=8944)
+
+                                                                                  Citations excluded due to:
+                                Citations removed: Duplicates,              • Single-arm studies (n=45)
+                              reviews, and case reports (n=6399)            • Animal studies (n=23)
+                                                                            • Studies with insufficient data (n=32)
+                                                                            • Other reasons (n=15)
+                                     Literature Screening
+
+
+
+                                 Citations screened (n=2545)                  Records included in review (n=15)
+
+                            Figure 1. Flow chart of the included studies.
+                           Figure 1. Flow chart of the included studies.
+                            3.2. Demographic and Study Characteristics
+                                 All fifteen included studies were RCTs [17,19,24–26,41–50]. Of these, fourteen ex-
+                            amined predominantly Caucasian populations, and one focused on an Asian population.
+                            Thirteen studies investigated adolescent populations, while two included participants
+                            with an average age over thirty. Five studies enrolled only female soccer teams, eight
+Healthcare 2025, 13, 765                                                                                                               6 of 15
+
+
+
+                                     enrolled only male teams, and one included mixed-gender teams. These characteristics are
+                                     summarized in Table 1.
+
+                                     Table 1. Basic characteristics of the studies.
+
+      Study           Publication Years    Age (Years)    Males (%)     Females (%)    Intervention (n)     Control (n)       Outcomes
+                                                                                                                                 Lower
+  Soligard et al.                                                                     General FIFA 11+ 2      Routine
+                            2008            15.4 ± 0.7         0            100                                                extremity
+       [17]                                                                           times/week (1055)    training (837)
+                                                                                                                                injuries
+                                                                                        General prevent
+                                                                                      injury and enhance
+  Gilchrist et al.                                                                                            Routine
+                            2008              19.9             0            100       performance (PEP)                      Knee injuries
+       [43]                                                                                                training (852)
+                                                                                           program 3
+                                                                                       times/week (583)
+                                                                                                                                  Lower
+                                                                                                                                extremity
+   Steffen et al.                                                                      General FIFA 11        Routine
+                            2008            15.4 ± 0.8         0            100                                               injuries, knee
+       [48]                                                                                (1073)          training (947)
+                                                                                                                             injuries, ankle
+                                                                                                                                 injuries
+                                                                                                                                  Lower
+   Emery and                                                                           Neuro-muscular                           extremity
+                                                                                                              Routine
+   Meeuwisse                2010            17.2 ± 1.1         0            100       training program                        injuries, knee
+                                                                                                           training (364)
+     [41]                                                                                    (380)                           injuries, ankle
+                                                                                                                                 injuries
+                                                                                            General
+   Waldén et al.                                                                                               Routine
+                            2012            14 ± 0.2           0            100        neuro-muscular                        Knee injuries
+      [50]                                                                                                 training (2085)
+                                                                                        training (2479)
+                                                                                                                                  Lower
+                                                                                                                                extremity
+  Owoeye et al.                                                                       General FIFA 11+ 2      Routine
+                            2014            17.6 ± 1         100             0                                                injuries, knee
+     [47]                                                                             times/week (212)     training (204)
+                                                                                                                             injuries, ankle
+                                                                                                                                 injuries
+  Hammes et al.                                                                                               Routine
+                            2015            44.4 ± 7.7       100             0          FIFA 11+ (158)                       Knee injuries
+     [44]                                                                                                  training (125)
+                                                                                                                                 Lower
+                                                                                       Neuro-muscular
+                                                                                                              Routine          extremity
+ Finch et al. [42]          2016            33.4 ± 4.5       100             0        training program
+                                                                                                           training (364)    injuries, knee
+                                                                                             (380)
+                                                                                                                                injuries
+  van der Horst                                                                       Nordic hamstring        Routine         Hamstring
+                            2021            24.5 ± 3.8       100             0
+    et al. [24]                                                                        exercise (292)      training (287)       injuries
+     Silvers-                                                                         General FIFA 11+
+                                                                                                              Routine
+  Granelli et al.           2017            21.5 ± 1.5       100             0        2–3 times/week                         Knee injuries
+                                                                                                           training (850)
+       [19]                                                                                 (675)
+   Rössler et al.                                                                                              Routine       Knee injuries,
+                            2018            10.7 ± 1.4       NA             NA         FIFA 11+ (2066)
+       [25]                                                                                                training (1829)   ankle injuries
+   van de Hoef                                                                        Bounding exercise        Routine         Hamstring
+                            2019            23.4 ± 4.5       100             0
+    et al. [49]                                                                         program (171)       training (229)       injuries
+                                                                                                                                  Lower
+                                                                                                                                extremity
+                                                                                                              Routine
+ Zarei et al. [26]          2020            12.2 ± 1.8       100             0          FIFA 11+ (443)                        injuries, knee
+                                                                                                           training (519)
+                                                                                                                             injuries, ankle
+                                                                                                                                 injuries
+                                                                                         The Nordic                               Lower
+   Hasebe et al.                                                                                              Routine
+                            2020            16.5 ± 0.6       100             0        hamstring exercise                        extremity
+      [45]                                                                                                 training (103)
+                                                                                            (153)                                injuries
+                                                                                                                                  Lower
+                                                                                       Neuro-muscular                           extremity
+   Hilska et al.                                                                                              Routine
+                            2021            12.3 ± 1.2        81             19       training program                        injuries, knee
+       [46]                                                                                                training (730)
+                                                                                             (673)                           injuries, ankle
+                                                                                                                                 injuries
+
+
+                                     3.3. Risk of Bias
+                                          A comprehensive risk-of-bias assessment was performed for all included RCTs. The
+                                     results indicated a low risk of bias in the domains of random sequence generation and
+                                     incomplete outcome data, suggesting high quality regarding both the randomization
+                                     process and the management of missing data.
+                                          In contrast, moderate risks of bias emerged in allocation concealment, participant
+                                     and personnel blinding, and outcome assessment blinding. These moderate risks could
+Healthcare 2025, 13, 765                                                                                                          7 of 15
+
+
+
+                                    compromise the internal validity of the findings, as inadequate blinding may introduce
+                                    both performance bias and detection bias.
+                                          Concerning other sources of bias, a potentially high risk was identified, possibly
+   Healthcare 2025, 13, x FOR PEER REVIEW                                                                                     7 of 16
+                                    reflecting issues in study design, execution, analysis, or reporting that could systematically
+                                    skew the results. Of the included studies, eight were classified as low risk of bias, one as
+                                    high risk, and six showed some risk of bias in specific domains. These variations must
+                                    beconsidered
+                                       considered when     interpreting the
+                                                    when interpreting    the overall
+                                                                              overallfindings.
+                                                                                      findings.AAsummary
+                                                                                                  summaryofofthese
+                                                                                                                these assessments
+                                                                                                                    assessments is is
+                                       presented  in Figure
+                                    presented in Figure 2.   2.
+
+
+
+
+                                Figure 2. Overall
+                                   Figure         bias
+                                          2. Overall   chart
+                                                     bias    and
+                                                          chart  bias
+                                                                and   by by
+                                                                    bias studies [17,19,24–26,41–50].
+                                                                            studies [17,19,24–26,41–50].
+                                3.4. Lower Extremity Injuries
+                                   3.4. Lower Extremity Injuries
+                                      Eight RCTs evaluated the effectiveness of intervention programs in reducing lower
+                                extremityEight  RCTsamong
+                                            injuries  evaluated   theplayers
+                                                              soccer   eﬀectiveness   of intervention
+                                                                              (Table S1).  As illustratedprograms
+                                                                                                           in Figurein3,reducing     lower
+                                                                                                                         the interven-
+                                   extremity   injuries among    soccer  players  (Table  S1). As  illustrated   in Figure
+                                tion group experienced 703 injuries among 5072 participants, whereas the control group       3, the  inter-
+                                   vention943
+                                recorded     group   experienced
+                                               injuries among 5011  703 injuries among
+                                                                      participants.         5072 RR
+                                                                                     The pooled   participants,   whereas
+                                                                                                      was 0.73 (95%   CI: 0.63thetocontrol
+                                                                                                                                    0.84,
+                                   group   recorded   943 injuries  among    5011  participants.  The   pooled   RR  was   0.73
+                                p = 0.035), indicating a statistically significant reduction in lower extremity injuries for      (95%
+                                                                                                                                     theCI:
+                                   0.63 to 0.84,
+                                intervention      p = 0.035),
+                                               group.   Theseindicating   a statistically
+                                                               findings suggest    that thesignificant
+                                                                                             implementedreduction   in lower
+                                                                                                             intervention       extremity
+                                                                                                                            programs
+                                   injuries for the intervention  group.   These  findings   suggest  that
+                                effectively decreased injury incidence compared with standard practice.    the implemented      interven-
+                                   tion programs eﬀectively decreased injury incidence compared with standard practice.
+
+
+
+
+                                   Figure 3. Forest plot of the lower extremity injuries [17,26,41,42,45–48].
+                                 vention group experienced 703 injuries among 5072 participants, whereas the control
+                                 group recorded 943 injuries among 5011 participants. The pooled RR was 0.73 (95% CI:
+                                 0.63 to 0.84, p = 0.035), indicating a statistically significant reduction in lower extremity
+Healthcare 2025, 13, 765         injuries for the intervention group. These findings suggest that the implemented interven-
+                                                                                                                          8 of 15
+                                 tion programs eﬀectively decreased injury incidence compared with standard practice.
+
+
+
+
+Healthcare 2025, 13, x FOR PEER REVIEW                                                                                                8 of 16
+
+
+
+
+                                       Four RCTs examined the impact of intervention programs on hamstring injuries in
+                                 soccer players (Table S2). As shown in Figure 4, the intervention group reported 51 ham-
+                                 string injuries among 1722 participants, whereas the control group reported 62 injuries
+                                 among 1518 participants. The pooled RR was 0.77 (95% CI: 0.37 to 1.61, p = 0.028), indicat-
+                                 ing a statistically significant reduction in hamstring injuries for the intervention group
+                                 compared with the control group.
+                                 FigureHowever,
+                                         3.
+                                 Figure 3.  Forest it
+                                            Forest  plotisof
+                                                    plot    important
+                                                          of the
+                                                             the lower to
+                                                                 lower       note that
+                                                                        extremity
+                                                                        extremity       the 95% CI
+                                                                                  injuries
+                                                                                  injuries            crosses one (0.37 to 1.61), which
+                                                                                           [17,26,41,42,45–48].
+                                                                                           [17,26,41,42,45–48].
+                                 means that the true eﬀect could be as large as a 61% increase in risk or as small as a 63%
+                                 3.5. Hamstring
+                                 3.5. Hamstring Injuries
+                                                    Injuries
+                                 reduction     in risk.   Although the p-value suggests statistical significance (p = 0.028), the
+                                 wideFour
+                                        range RCTs   examined
+                                                 of the CI         the some
+                                                             implies   impact of  intervention
+                                                                              uncertainty        programs
+                                                                                            about the         on eﬀect
+                                                                                                        precise  hamstring    injuries
+                                                                                                                         size. This    in soc-
+                                                                                                                                     may   in-
+                                 cer  players   (Table  S2).  As  shown    in Figure 4, the  intervention    group  reported
+                                 dicate that while there is a trend toward a reduction in hamstring injuries, further studies  51 hamstring
+                                 injuries
+                                 with       among
+                                        larger       1722sizes or
+                                                 sample      participants,
+                                                                      more whereas     the control
+                                                                              homogeneous            group are
+                                                                                               populations    reported
+                                                                                                                   needed62 to
+                                                                                                                            injuries  among
+                                                                                                                                confirm   the
+                                 1518                                                                              p
+                                 robustness and consistency of this eﬀect. These results highlight the importance of inter-a
+                                       participants.      The   pooled   RR   was 0.77  (95%   CI: 0.37  to  1.61,   = 0.028),  indicating
+                                 statistically
+                                 preting        significant
+                                           statistical         reduction
+                                                         significance     in hamstring
+                                                                         with  caution, injuries   for the
+                                                                                         particularly       intervention
+                                                                                                        when CIs           group
+                                                                                                                     are wide     compared
+                                                                                                                                and  include
+                                 with  the   control  group.
+                                 the possibility of no eﬀect or even a harmful eﬀect.
+
+
+
+
+                                 Figure 4. Forest plot of the hamstring injuries [17,24,45,49].
+
+                                       However,
+                                 3.6. Knee         it is important to note that the 95% CI crosses one (0.37 to 1.61), which means
+                                            Injuries
+                                 that the
+                                       Thirteen RCTscould
+                                          true  effect          be as large
+                                                          evaluated         as a 61% increase
+                                                                       the eﬀectiveness         in risk or as
+                                                                                          of intervention     small as on
+                                                                                                            programs    a 63%
+                                                                                                                           kneereduction
+                                                                                                                                  injuries
+                                 in risk. Although      the  p-value  suggests   statistical significance  (p = 0.028),
+                                 among soccer players (Table S3). As shown in Figure 5, the intervention group experi-  the  wide   range
+                                 of the  CI  implies    some   uncertainty   about   the precise  effect size. This  may
+                                 enced 313 knee injuries out of 10,642 participants, whereas the control group experienced indicate   that
+                                 while  there
+                                 488 knee      is a trend
+                                            injuries        toward
+                                                       out of  10,297a participants.
+                                                                        reduction in hamstring
+                                                                                      The pooledinjuries,
+                                                                                                    RR wasfurther   studies
+                                                                                                             0.67 (95%        withtolarger
+                                                                                                                         CI: 0.54     0.84,
+                                 sample   sizes
+                                 p = 0.014).     or more   homogeneous      populations    are needed   to confirm  the  robustness    and
+                                 consistency of this effect. These results highlight the importance of interpreting statistical
+                                 significance
+                                 3.7.           with caution, particularly when CIs are wide and include the possibility of no
+                                      Ankle Injuries
+                                 effect or even a harmful effect.
+                                       Eight RCTs assessed sports intervention programs on ankle injuries in soccer players
+                                 (Table S4). As shown in Figure 6, the intervention group experienced 252 ankle injuries
+                                 among 6307 participants, while the control group reported 323 ankle injuries among 5856
+                                 participants. The pooled RR was 0.70 (95% CI: 0.57 to 0.86, p = 0.0173).
+
+                                 3.8. Publication Bias Assessment
+                                     A funnel plot is a graphical tool for detecting publication bias, where asymmetry or
+                                 missing data can indicate potential bias. Figure 7 presents the funnel plots for evaluated
+Healthcare 2025, 13, 765                                                                                                  9 of 15
+
+
+
+                                 3.6. Knee Injuries
+                                        Thirteen RCTs evaluated the effectiveness of intervention programs on knee injuries
+                                   among soccer players (Table S3). As shown in Figure 5, the intervention group experienced
+Healthcare 2025, 13, x FOR PEER REVIEW
+                                   313 knee injuries out of 10,642 participants, whereas the control group experienced 4889 of 16
+                                                                                                                            knee
+                                   injuries out of 10,297 participants. The pooled RR was 0.67 (95% CI: 0.54 to 0.84, p = 0.014).
+
+
+
+
+Healthcare 2025, 13, x FOR PEER REVIEW                                                                                   9 of 16
+
+
+
+
+                                 Figure
+                                 Figure 5.
+                                        5. Forest
+                                           Forest plot
+                                                  plot of
+                                                       of the
+                                                          the knee
+                                                              knee injuries
+                                                                   injuries [17,19,26,41–48,50].
+                                                                            [17,19,26,41–48,50].
+
+                                 3.7. Ankle Injuries
+                                      Eight RCTs assessed sports intervention programs on ankle injuries in soccer players
+                                 (Table S4). As shown in Figure 6, the intervention group experienced 252 ankle injuries
+                                 among 6307 participants, while the control group reported 323 ankle injuries among
+                                 5856 participants.
+                                 Figure 5. Forest     Thethe
+                                                  plot of  pooled
+                                                             knee RR   was 0.70
+                                                                 injuries         (95% CI: 0.57 to 0.86, p = 0.0173).
+                                                                          [17,19,26,41–48,50].
+
+
+
+
+                                 Figure 6. Forest plot of the ankle injuries [17,26,41,45–48].
+
+
+
+
+                                 Figure
+                                 Figure 6.
+                                        6. Forest
+                                           Forest plot
+                                                  plot of
+                                                       of the
+                                                          the ankle
+                                                              ankle injuries [17,26,41,45–48].
+                                                                    injuries [17,26,41,45–48].
+Healthcare 2025, 13, 765                                                                                                        10 of 15
+
+
+
+                           3.8. Publication Bias Assessment
+                                A funnel plot is a graphical tool for detecting publication bias, where asymmetry or
+                           missing data can indicate potential bias. Figure 7 presents the funnel plots for evaluated
+                           outcomes, labeled A, B, C, and D. Except for one study, all studies on lower extremity
+                           injuries appear within the corresponding funnel plot, and separate funnel plots are provided
+                           for hamstring, knee, and ankle injuries. The overall symmetry of these plots suggests a
+                           minimal
+                           Figure     risk ofplot
+                                  6. Forest    publication   bias.
+                                                  of the ankle injuries [17,26,41,45–48].
+
+
+
+
+                                   7. Funnel
+                           Figure 7.
+                           Figure     Funnel plots
+                                              plotsofofthe
+                                                        theoutcomes.
+                                                            outcomes.(A) Lower
+                                                                       (A)     extremity
+                                                                           Lower         injuries;
+                                                                                  extremity        (B) hamstring
+                                                                                            injuries;            injuries;
+                                                                                                       (B) hamstring       (C) knee
+                                                                                                                      injuries; (C)
+                           injuries; (D) ankle injuries.
+                           knee injuries; (D) ankle injuries.
+
+                                 Further assessment using Egger’s test yielded p-values of 0.395 for lower extremity
+                           4. Discussion
+                           injuries, 0.359 for hamstring injuries, 0.629 for knee injuries, and 0.674 for ankle injuries.
+                                  This systematic review and meta-analysis provided a comprehensive synthesis of the
+                            4.  Discussion
+                           existing   evidence on the eﬀectiveness of multi-component exercise-based injury preven-
+                           tion programs     in soccer.
+                                  This systematic        Theand
+                                                     review   results  underscoreprovided
+                                                                   meta-analysis      the significant   impact of these
+                                                                                               a comprehensive              programs
+                                                                                                                     synthesis   of the
+                           in  reducing
+                            existing      the on
+                                      evidence incidence
+                                                     the of   musculoskeletal
+                                                          ffectiveness            injuries among soccer
+                                                                         of multi-component                  players,
+                                                                                                 exercise-based         regardless
+                                                                                                                   injury  preventionof
+                           age   or  gender.  The  pooled   data  from   the included    RCTs  reveal   a substantial
+                           programs in soccer. The results underscore the significant impact of these programs in        reduction   in
+                           lower
+                            reducinglimbthe
+                                         injuries,  hamstring
+                                            incidence    of      injuries,
+                                                            musculoskeletal kneeinjuries
+                                                                                  injuries, and
+                                                                                           among  ankle  injuries,
+                                                                                                     soccer         highlighting
+                                                                                                             players,   regardlessthe of
+                           eﬃcacy     of preventive    measures     in soccer   injury   management.      These
+                            age or gender. The pooled data from the included RCTs reveal a substantial reduction  findings   are  con-
+                           sistent
+                            in lower with those
+                                       limb       reported
+                                             injuries,       by other
+                                                        hamstring       researchers
+                                                                     injuries,  knee [51].  Theand
+                                                                                      injuries,   results
+                                                                                                      ankleof this study align
+                                                                                                              injuries,           with
+                                                                                                                         highlighting
+                           previous
+                            the efficacy of preventive measures in soccer injury management. These findings im-
+                                       meta-analyses,     which   have   shown    a reduction   in  injury  risk  following   the   are
+                           plementation
+                            consistent      of those
+                                         with   exercise-based
+                                                       reported by prevention    programs.
+                                                                      other researchers       TheThe
+                                                                                            [51].   pooled    RRofofthis
+                                                                                                        results       0.73study
+                                                                                                                            for lower
+                                                                                                                                 align
+                           limb
+                           with injuries
+                                   previousismeta-analyses,
+                                                slightly lower which
+                                                                  than thehaveinjury
+                                                                                 shown incidence   rate ratios
+                                                                                           a reduction           reported
+                                                                                                          in injury          in other
+                                                                                                                      risk following
+                           the implementation of exercise-based prevention programs. The pooled RR of 0.73 for
+                           lower limb injuries is slightly lower than the injury incidence rate ratios reported in other
+                           studies, which may be attributable to the inclusion of a more diverse participant pool
+                           and a wider range of injury prevention programs [52,53]. Although multi-component
+                           exercise-based interventions are generally effective, our meta-analysis results suggest that
+                           the efficacy of these interventions may vary across different body regions and injury types,
+                           further highlighting the potential of multi-component intervention programs in preventing
+                           musculoskeletal injuries in soccer players.
+Healthcare 2025, 13, 765                                                                                           11 of 15
+
+
+
+                                 Increased muscle strength helps improve overall body stability and resilience. In
+                           contact sports, strong muscles can effectively absorb external impacts, reducing soft tissue
+                           injuries caused by excessive stretching or twisting [54,55]. Improved joint stability enhances
+                           the strength of muscles around the joint, protecting against sprains in the knee or ankle.
+                           It also improves the athlete’s joint control, reducing the likelihood of injuries [56,57].
+                           This suggests that certain components of the programs, such as strength and plyometric
+                           exercises, may also contribute to the reduction of contact injuries by improving functional
+                           stability and enhancing the ability to absorb external forces.
+                                 In female soccer athletes, a noticeable reduction in the occurrence of knee, ankle,
+                           and hip/groin injuries was observed, with reductions ranging from 15% to 17% for knee
+                           injuries, 17% to 22% for ankle injuries, and 25% to 29% for hip/groin injuries. However,
+                           further research must be conducted to enhance the accuracy and reliability of these find-
+                           ings. Notably, the observed reductions in injury rates for female athletes were lower than
+                           those documented in male athletes, where the reductions were more substantial, with
+                           knee injuries decreasing by 32% to 58%, ankle injuries by 30% to 60%, and hip/groin
+                           injuries by 47%. The discrepancies in injury reduction effectiveness between sexes warrant
+                           further investigation to identify underlying factors and refine injury prevention strategies
+                           accordingly [19,32,47].
+                                 While the current study focused on isokinetic quadriceps strength assessment, it
+                           is noteworthy that recent evidence challenges the clinical validity of isolated strength
+                           metrics in injury prediction [58]. Particularly in soccer athletes, the multifactorial nature
+                           of lower limb injuries necessitates an integrated evaluation encompassing neuromuscular
+                           control, movement asymmetry, and sport-specific fatigue patterns [59]. This methodological
+                           consideration will be prioritized in our forthcoming prospective cohort study design.
+                                 The analysis revealed variations in the effectiveness of prevention programs across
+                           different sexes and age groups. The reduced injury risk observed in children and youth,
+                           as compared to senior and veteran players, may reflect the relative novelty of preventive
+                           measures in younger populations and the potential for greater adherence and benefit. These
+                           findings highlight the need for tailored prevention strategies that take into account the
+                           specific physiological and biomechanical characteristics of different age groups [60].
+
+                           5. Strengths and Limitations
+                                This review and meta-analysis makes several key contributions to soccer injury pre-
+                           vention. It provides a comprehensive summary of RCTs across different genders and age
+                           groups, filling a gap in the current literature. The study’s rigorous methodology, following
+                           PRISMA guidelines, strengthens the reliability of its conclusions. A major finding is the
+                           strong evidence that multi-component exercise-based injury prevention programs reduce
+                           musculoskeletal injuries, particularly in the lower limbs, hamstrings, knees, and ankles.
+                           These results highlight the importance of such programs in professional soccer, potentially
+                           shifting injury management strategies. The study’s broad applicability to various demo-
+                           graphic groups offers valuable insights for coaches, athletic trainers, and policymakers.
+                           However, there are some limitations: the variability across studies may affect the results,
+                           and the exclusion of non-RCT designs limits the scope. Also, the generalizability may
+                           be limited due to a focus on specific populations. The long-term adherence and effec-
+                           tiveness of the programs were not fully assessed, and while publication bias was found
+                           to be non-significant, it cannot be completely ruled out. Future studies should address
+                           these limitations by incorporating more targeted multicenter RCTs, evaluating long-term
+                           effectiveness, and broadening the coverage of diverse populations.
+                                Publication bias is a critical factor to consider in systematic reviews and meta-analyses.
+                           In this study, we assessed publication bias and found no significant evidence of bias.
+Healthcare 2025, 13, 765                                                                                                          12 of 15
+
+
+
+                                  Although these statistical tests suggest that publication bias is unlikely to significantly
+                                  affect our findings, we recognize that these methods are not foolproof, and bias cannot be
+                                  entirely excluded. Factors such as selective reporting, language bias, or the tendency for
+                                  positive results to be published more frequently could still contribute to subtle biases in
+                                  the literature. Additionally, the ability of statistical tests to detect publication bias may be
+                                  limited by small sample sizes or incomplete reporting in the studies included. Thus, while
+                                  our analysis suggests minimal bias, caution is warranted, and potential unaccounted biases
+                                  should be considered when interpreting the results. Future studies could benefit from more
+                                  comprehensive sensitivity analyses to further assess the impact of publication bias [61–64].
+
+                                  6. Conclusions
+                                       In conclusion, this systematic review and meta-analysis provides compelling evidence
+                                  supporting the incorporation of multi-component exercise-based injury prevention pro-
+                                  grams into routine soccer training protocols. These interventions effectively reduce the
+                                  risk of musculoskeletal injuries, thereby promoting musculoskeletal health and injury pre-
+                                  vention among soccer players. The flexibility of these programs allows for customization
+                                  according to the specific needs of individual players and teams, promoting both the overall
+                                  health and performance of soccer athletes. The integration of such preventive measures
+                                  into standard training practices holds significant potential for improving long-term player
+                                  safety and contributing to the sustainability of high performance in the sport.
+
+                                  Supplementary Materials: The following supporting information can be downloaded at: https://
+                                  www.mdpi.com/article/10.3390/healthcare13070765/s1, Table S1: Lower extremity injuries; Table S2:
+                                  Hamstring injuries; Table S3: Knee injuries; Table S4: Ankle injuries. References [17,19,24–26,41–50]
+                                  are cited in the supplementary materials.
+
+                                  Author Contributions: Y.W. designed the study and wrote the original draft. Z.Z. conducted
+                                  the literature searches and screening process. Z.G. evaluated the quality of the included studies
+                                  and extracted data. Y.W. utilized the software and analyzed the data. Y.G. rated the studies for
+                                  methodological quality and provided professional guidance. All authors have read and agreed to the
+                                  published version of the manuscript.
+
+                                  Funding: This study was sponsored by the Ningbo Key R&D Program (Grant No. 2022Z196); the
+                                  Ningbo Natural Science Foundation (Grant Nos. 20221JCGY010532, 20221JCGY010607); the Public
+                                  Welfare Science & Technology Project of Ningbo, China (Grant No. 2021S134); and the Zhejiang
+                                  Rehabilitation Medical Association Scientific Research Special Fund (Grant No. ZKKY2023001).
+
+                                  Institutional Review Board Statement: Not applicable.
+
+                                  Informed Consent Statement: Not applicable.
+
+                                  Data Availability Statement: The data that support the findings of this study are available on
+                                  reasonable request from the corresponding author. The data are not publicly available due to privacy
+                                  or ethical restrictions.
+
+                                  Acknowledgments: Thanks to all the authors for their assistance in writing the paper.
+
+                                  Conflicts of Interest: The authors declare no conflict of interest.
+
+References
+1.    aus der Fünten, K.; Faude, O.; Lensch, J.; Meyer, T. Injury characteristics in the German professional male soccer leagues after a
+      shortened winter break. J. Athl. Train. 2014, 49, 786–793. [CrossRef] [PubMed]
+2.    van Beijsterveldt, A.M.; Stubbe, J.H.; Schmikli, S.L.; van de Port, I.G.; Backx, F.J. Differences in injury risk and characteristics
+      between Dutch amateur and professional soccer players. J. Sci. Med. Sport 2015, 18, 145–149. [CrossRef] [PubMed]
+Healthcare 2025, 13, 765                                                                                                              13 of 15
+
+
+
+3.     Isleem, N.; Naseralallah, L.; Koraysh, S.; Abu Ghalyoun, A.; Alnaimi, S.; Pallivalapila, A.; Al Hail, M. Disaster preparedness
+       amongst emergency pharmacists for the FIFA World Cup Qatar 2022™: A cross-sectional survey. Risk Manag. Healthc. Policy 2023,
+      16, 573–583. [CrossRef] [PubMed]
+4.     Gibbs, N. Common rugby league injuries. Recommendations for treatment and preventative measures. Sports Med. 1994, 18,
+       438–450. [CrossRef]
+5.     Saw, R.; Finch, C.F.; Samra, D.; Baquie, P.; Cardoso, T.; Hope, D.; Orchard, J.W. Injuries in Australian Rules Football: An overview
+       of injury rates, patterns, and mechanisms across all levels of play. Sports Health 2018, 10, 208–216. [CrossRef]
+6.     Elliott, M.C.; Zarins, B.; Powell, J.W.; Kenyon, C.D. Hamstring muscle strains in professional football players: A 10-year review.
+      Am. J. Sports Med. 2011, 39, 843–850. [CrossRef]
+7.     Gaulrapp, H.; Becker, A.; Walther, M.; Hess, H. Injuries in women’s soccer: A 1-year all players prospective field study of the
+      women’s Bundesliga (German premier league). Clin. J. Sport Med. 2010, 20, 264–271. [CrossRef]
+8.     Montalvo, A.M.; Schneider, D.K.; Silva, P.L.; Yut, L.; Webster, K.E.; Riley, M.A.; Kiefer, A.W.; Doherty-Restrepo, J.L.; Myer, G.D.
+      ‘What’s my risk of sustaining an ACL injury while playing football (soccer)?’ A systematic review with meta-analysis. Br. J. Sports
+       Med. 2019, 53, 1333–1340. [CrossRef]
+9.     Dick, R.W. Is there a gender difference in concussion incidence and outcomes? Br. J. Sports Med. 2009, 43, i46–i50. [CrossRef]
+10.    Prien, A.; Grafe, A.; Rössler, R.; Junge, A.; Verhagen, E. Epidemiology of head injuries focusing on concussions in team contact
+       sports: A systematic review. Sports Med. 2018, 48, 953–969. [CrossRef]
+11.    Lubberts, B.; D’Hooghe, P.; Bengtsson, H.; DiGiovanni, C.W.; Calder, J.; Ekstrand, J. Epidemiology and return to play following
+       isolated syndesmotic injuries of the ankle: A prospective cohort study of 3677 male professional footballers in the UEFA Elite
+       Club Injury Study. Br. J. Sports Med. 2019, 53, 959–964. [CrossRef] [PubMed]
+12.    McCall, A.; Carling, C.; Davison, M.; Nedelec, M.; Le Gall, F.; Berthoin, S.; Dupont, G. Injury risk factors, screening tests and
+      preventative strategies: A systematic review of the evidence that underpins the perceptions and practices of 44 football (soccer)
+       teams from various premier leagues. Br. J. Sports Med. 2015, 49, 583–589. [CrossRef] [PubMed]
+13.    Patricios, J.S.; Schneider, K.J.; Dvorak, J.; Ahmed, O.H.; Blauwet, C.; Cantu, R.C.; Davis, G.A.; Echemendia, R.J.; Makdissi,
+       M.; McNamee, M.; et al. Consensus statement on concussion in sport: The 6th International Conference on Concussion in
+       Sport–Amsterdam, October 2022. Br. J. Sports Med. 2023, 57, 695–711. [CrossRef]
+14.    Herrero, H.; Salinero, J.J.; Del Coso, J. Injuries among Spanish male amateur soccer players: A retrospective population study. Am.
+       J. Sports Med. 2014, 42, 78–85. [CrossRef]
+15.    Peterson, L.; Junge, A.; Chomiak, J.; Graf-Baumann, T.; Dvorak, J. Incidence of football injuries and complaints in different age
+       groups and skill-level groups. Am. J. Sports Med. 2000, 28, S51–S57. [CrossRef]
+16.    van Beijsterveldt, A.M.; van de Port, I.G.; Krist, M.R.; Schmikli, S.L.; Stubbe, J.H.; Frederiks, J.E.; Backx, F.J. Effectiveness of an
+       injury prevention programme for adult male amateur soccer players: A cluster-randomised controlled trial. Br. J. Sports Med.
+       2012, 46, 1114–1118.
+17.    Soligard, T.; Myklebust, G.; Steffen, K.; Holme, I.; Silvers, H.; Bizzini, M.; Junge, A.; Dvorak, J.; Bahr, R.; Andersen, T.E.
+       Comprehensive warm-up programme to prevent injuries in young female footballers: Cluster randomised controlled trial. BMJ
+       2008, 337, a2469. [CrossRef] [PubMed]
+18.    Ekstrand, J.; Hägglund, M.; Waldén, M. Injury incidence and injury patterns in professional football: The UEFA injury study. Br. J.
+      Sports Med. 2011, 45, 553–558. [CrossRef]
+19.    Silvers-Granelli, H.J.; Bizzini, M.; Arundale, A.; Mandelbaum, B.R.; Snyder-Mackler, L. Does the FIFA 11+ injury prevention
+      program reduce the incidence of ACL injury in male soccer players? Clin. Orthop. Relat. Res. 2017, 475, 2447–2455. [CrossRef]
+20.    Obërtinca, R.; Hoxha, I.; Meha, R.; Lama, A.; Bimbashi, A.; Kuqi, D.; Shabani, B.; Meyer, T.; Der Fünten, K.A. Efficacy of
+       multi-component exercise-based injury prevention programs on injury risk among footballers of all age groups: A systematic
+       review and meta-analysis. Sports Med. 2023, 53, 837–848. [CrossRef]
+21.    Robles-Palazón, F.J.; Blázquez-Rincón, D.; López-Valenciano, A.; Comfort, P.; López-López, J.A.; Ayala, F. A systematic review and
+       network meta-analysis on the effectiveness of exercise-based interventions for reducing the injury incidence in youth team-sport
+      players. Part 1: An analysis by classical training components. Ann. Med. 2024, 56, 2408457. [CrossRef] [PubMed]
+22.    Fanchini, M.; Steendahl, I.B.; Impellizzeri, F.M.; Pruna, R.; Dupont, G.; Coutts, A.J.; Meyer, T.; McCall, A. Exercise-based strategies
+       to prevent muscle injury in elite footballers: A systematic review and best evidence synthesis. Sports Med. 2020, 50, 1653–1666.
+       [CrossRef]
+23.    Faude, O.; Rommers, N.; Rössler, R. Exercise-based injury prevention in football. Ger. J. Exerc. Sport Res. 2018, 48, 157–168.
+       [CrossRef]
+24.    van der Horst, N.; Hoef, S.V.; Otterloo, P.V.; Klein, M.; Brink, M.; Backx, F. Effective but not adhered to: How can we improve
+       adherence to evidence-based hamstring injury prevention in amateur football? Clin. J. Sport Med. 2021, 31, 42–48. [CrossRef]
+Healthcare 2025, 13, 765                                                                                                                 14 of 15
+
+
+
+25.   Rössler, R.; Junge, A.; Bizzini, M.; Verhagen, E.; Chomiak, J.; Aus der Fünten, K.; Meyer, T.; Dvorak, J.; Lichtenstein, E.; Beaudouin,
+      F.; et al. A multinational cluster randomised controlled trial to assess the efficacy of ‘11+ Kids’: A warm-up programme to prevent
+      injuries in children’s football. Sports Med. 2018, 48, 1493–1504. [CrossRef]
+26.   Zarei, M.; Abbasi, H.; Namazi, P.; Asgari, M.; Rommers, N.; Rössler, R. The 11+ kids warm-up programme to prevent injuries in
+      young Iranian male high-level football (soccer) players: A cluster-randomised controlled trial. J. Sci. Med. Sport 2020, 23, 469–474.
+      [CrossRef] [PubMed]
+27.   Liberati, A.; Altman, D.G.; Tetzlaff, J.; Mulrow, C.; Gøtzsche, P.C.; Ioannidis, J.P.; Clarke, M.; Devereaux, P.J.; Kleijnen, J.; Moher, D.
+      The PRISMA statement for reporting systematic reviews and meta-analyses of studies that evaluate healthcare interventions:
+      Explanation and elaboration. BMJ 2009, 339, b2700. [CrossRef]
+28.   Stewart, L.A.; Clarke, M.; Rovers, M.; Riley, R.D.; Simmonds, M.; Stewart, G.; Tierney, J.F.; PRISMA-IPD Development Group.
+      Preferred reporting items for a systematic review and meta-analysis of individual participant data: The PRISMA-IPD statement.
+      JAMA 2015, 313, 1657–1665. [CrossRef]
+29.   Higgins, J.P.; Savović, J.; Page, M.J.; Elbers, R.G.; Sterne, J.A. Assessing risk of bias in a randomized trial. In Cochrane Handbook for
+      Systematic Reviews of Interventions, 2nd ed.; Higgins, J.P.T., Thomas, J., Chandler, J., Cumpston, M., Li, T., Page, M.J., Welch, V.A.,
+      Eds.; The Cochrane Collaboration: London, UK, 2019. [CrossRef]
+30.   Higgins, J.P.T.; Green, S. (Eds.) Cochrane Handbook for Systematic Reviews of Interventions: Cochrane Book Series; The Cochrane
+      Collaboration: London, UK, 2008. [CrossRef]
+31.   da Costa, B.R.; Beckett, B.; Diaz, A.; Resta, N.M.; Johnston, B.C.; Egger, M.; Jüni, P.; Armijo-Olivo, S. Effect of standardized
+      training on the reliability of the Cochrane risk of bias assessment tool: A prospective study. Syst. Rev. 2017, 6, 44. [CrossRef]
+32.   Thorborg, K.; Krommes, K.K.; Esteve, E.; Clausen, M.B.; Bartels, E.M.; Rathleff, M.S. Effect of specific exercise-based football
+      injury prevention programmes on the overall injury rate in football: A systematic review and meta-analysis of the FIFA 11 and
+      11+ programmes. Br. J. Sports Med. 2017, 51, 562–571. [CrossRef]
+33.   Biz, C.; Nicoletti, P.; Baldin, G.; Bragazzi, N.L.; Crimì, A.; Ruggieri, P. Hamstring strain injury (HSI) prevention in professional
+      and semi-professional football teams: A systematic review and meta-analysis. Int. J. Environ. Res. Public Health 2021, 18, 8272.
+      [CrossRef]
+34.   Arnason, A.; Sigurdsson, S.B.; Gudmundsson, A.; Holme, I.; Engebretsen, L.; Bahr, R. Risk factors for injuries in football. Am. J.
+      Sports Med. 2004, 32, 5S–16S. [CrossRef]
+35.   López-Valenciano, A.; Ruiz-Pérez, I.; Garcia-Gómez, A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of
+      injuries in professional football: A systematic review and meta-analysis. Br. J. Sports Med. 2020, 54, 711–718. [CrossRef] [PubMed]
+36.   Ekstrand, J.; Hägglund, M.; Waldén, M. Epidemiology of muscle injuries in professional football (soccer). Am. J. Sports Med. 2011,
+      39, 1226–1232. [CrossRef] [PubMed]
+37.   Bisciotti, G.N.; Chamari, K.; Cena, E.; Bisciotti, A.; Bisciotti, A.; Corsini, A.; Volpi, P. Anterior cruciate ligament injury risk factors
+      in football. J. Sports Med. Phys. Fitness 2019, 59, 1724–1738. [CrossRef]
+38.   Crossley, K.M.; Patterson, B.E.; Culvenor, A.G.; Bruder, A.M.; Mosler, A.B.; Mentiplay, B.F. Making football safer for women: A
+      systematic review and meta-analysis of injury prevention programmes in 11773 female football (soccer) players. Br. J. Sports Med.
+      2020, 54, 1089–1098. [CrossRef] [PubMed]
+39.   Egger, M.; Davey Smith, G.; Schneider, M.; Minder, C. Bias in meta-analysis detected by a simple, graphical test. BMJ 1997, 315,
+      629–634. [CrossRef]
+40.   Peters, J.L.; Sutton, A.J.; Jones, D.R.; Abrams, K.R.; Rushton, L. Contour-enhanced meta-analysis funnel plots help distinguish
+      publication bias from other causes of asymmetry. J. Clin. Epidemiol. 2008, 61, 991–996. [CrossRef]
+41.   Emery, C.A.; Meeuwisse, W.H. The effectiveness of a neuromuscular prevention strategy to reduce injuries in youth soccer: A
+      cluster-randomised controlled trial. Br. J. Sports Med. 2010, 44, 555–562. [CrossRef]
+42.   Finch, C.F.; Twomey, D.M.; Fortington, L.V.; Doyle, T.L.; Elliott, B.C.; Akram, M.; Lloyd, D.G. Preventing Australian football
+      injuries with a targeted neuromuscular control exercise programme: Comparative injury rates from a training intervention
+      delivered in a clustered randomised controlled trial. Inj. Prev. 2016, 22, 123–128. [CrossRef]
+43.   Gilchrist, J.; Mandelbaum, B.R.; Melancon, H.; Ryan, G.W.; Silvers, H.J.; Griffin, L.Y.; Watanabe, D.S.; Dick, R.W.; Dvorak, J. A
+      randomized controlled trial to prevent noncontact anterior cruciate ligament injury in female collegiate soccer players. Am. J.
+      Sports Med. 2008, 36, 1476–1483. [CrossRef] [PubMed]
+44.   Hammes, D.; aus der Fünten, K.; Kaiser, S.; Frisen, E.; Bizzini, M.; Meyer, T. Injury prevention in male veteran football players—A
+      randomised controlled trial using “FIFA 11+”. J. Sports Sci. 2015, 33, 873–881. [CrossRef] [PubMed]
+45.   Hasebe, Y.; Akasaka, K.; Otsudo, T.; Tachibana, Y.; Hall, T.; Yamamoto, M. Effects of nordic hamstring exercise on hamstring
+      injuries in high school soccer players: A randomized controlled trial. Int. J. Sports Med. 2020, 41, 154–160. [CrossRef]
+46.   Hilska, M.; Leppänen, M.; Vasankari, T.; Aaltonen, S.; Kannus, P.; Parkkari, J.; Steffen, K.; Kujala, U.M.; Konttinen, N.; Räisänen,
+      A.M.; et al. Neuromuscular training warm-up prevents acute noncontact lower extremity injuries in children’s soccer: A cluster
+      randomized controlled trial. Orthop. J. Sports Med. 2021, 9, 23259671211005769. [CrossRef]
+Healthcare 2025, 13, 765                                                                                                             15 of 15
+
+
+
+47.   Owoeye, O.B.; Akinbo, S.R.; Tella, B.A.; Olawale, O.A. Efficacy of the FIFA 11+ warm-up programme in male youth football: A
+      cluster randomised controlled trial. J. Sports Sci. Med. 2014, 13, 321–328. [PubMed]
+48.   Steffen, K.; Myklebust, G.; Olsen, O.E.; Holme, I.; Bahr, R. Preventing injuries in female youth football—A cluster-randomized
+      controlled trial. Scand. J. Med. Sci. Sports 2008, 18, 605–614. [CrossRef]
+49.   van de Hoef, P.A.; Brink, M.S.; Huisstede, B.M.A.; van Smeden, M.; de Vries, N.; Goedhart, E.A.; Gouttebarge, V.; Backx, F.J.G.
+      Does a bounding exercise program prevent hamstring injuries in adult male soccer players?—A cluster-RCT. Scand. J. Med. Sci.
+      Sports 2019, 29, 515–523. [CrossRef]
+50.   Waldén, M.; Atroshi, I.; Magnusson, H.; Wagner, P.; Hägglund, M. Prevention of acute knee injuries in adolescent female football
+      players: Cluster randomised controlled trial. BMJ 2012, 344, e3042. [CrossRef]
+51.   Riley, R.D.; Higgins, J.P.; Deeks, J.J. Interpretation of random effects meta-analyses. BMJ 2011, 342, d549. [CrossRef]
+52.   Nouni-Garcia, R.; Carratala-Munuera, C.; Orozco-Beltran, D.; Lopez-Pineda, A.; Asensio-Garcia, M.R.; Gil-Guillen, V.F. Clinical
+      benefit of the FIFA 11 programme for the prevention of hamstring and lateral ankle ligament injuries among amateur soccer
+      players. Inj. Prev. 2018, 24, 149–154. [CrossRef]
+53.   Lindblom, H.; Carlfjord, S.; Hägglund, M. Adoption and use of an injury prevention exercise program in female football: A
+      qualitative study among coaches. Scand. J. Med. Sci. Sports 2018, 28, 1295–1303. [CrossRef] [PubMed]
+54.   Huck, C.J. Effects of supervised resistance training on fitness and functional strength in patients succeeding bariatric surgery. J.
+      Strength Cond. Res. 2015, 29, 589–595. [CrossRef]
+55.   Darragi, M.; Zouhal, H.; Bousselmi, M.; Karamti, H.M.; Clark, C.C.T.; Laher, I.; Hackney, A.C.; Granacher, U.; Zouita, A.B.M.
+      Effects of in-season strength training on physical fitness and injury prevention in North African elite young female soccer players.
+      Sports Med. Open 2024, 10, 94. [CrossRef] [PubMed]
+56.   Sadeghi, M.; Alizadeh, M.H.; Minoonejad, H. Acute effects of Nordic hamstring exercise on hip and knee joints proprioception. J.
+      Bodyw. Mov. Ther. 2024, 39, 382–389. [CrossRef]
+57.   Rosenbaum, D.; Kamps, N.; Bosch, K.; Thorwesten, L.; Völker, K.; Eils, E. The influence of external ankle braces on subjective and
+      objective parameters of performance in a sports-related agility course. Knee Surg. Sports Traumatol. Arthrosc. 2005, 13, 419–425.
+      [CrossRef] [PubMed]
+58.   van Melick, N.; van der Weegen, W.; van der Horst, N. Quadriceps and hamstrings strength reference values for athletes with and
+      without anterior cruciate ligament reconstruction who play popular pivoting sports, including soccer, basketball, and handball: A
+      scoping review. J. Orthop. Sports Phys. Ther. 2022, 52, 142–155. [CrossRef] [PubMed]
+59.   van Dyk, N.; Bahr, R.; Whiteley, R.; Tol, J.L.; Kumar, B.D.; Hamilton, B.; Farooq, A.; Witvrouw, E. Hamstring and quadriceps
+      isokinetic strength deficits are weak risk factors for hamstring strain injuries: A 4-year cohort study. Am. J. Sports Med. 2016, 44,
+      1789–1795. [CrossRef]
+60.   Hoffman, D.T.; Dwyer, D.B.; Bowe, S.J.; Clifton, P.; Gastin, P.B. Is injury associated with team performance in elite Australian
+      football? 20 years of player injury and team performance data that include measures of individual player value. Br. J. Sports Med.
+      2020, 54, 475–479. [CrossRef]
+61.   Montori, V.M.; Swiontkowski, M.F.; Cook, D.J. Methodologic issues in systematic reviews and meta-analyses. Clin. Orthop. Relat.
+      Res. 2003, 413, 43–54. [CrossRef]
+62.   Higgins, J.P.; Ramsay, C.; Reeves, B.C.; Deeks, J.J.; Shea, B.; Valentine, J.C.; Tugwell, P.; Wells, G. Issues relating to study design
+      and risk of bias when including non-randomized studies in systematic reviews on the effects of interventions. Res. Synth. Methods
+      2013, 4, 12–25. [CrossRef]
+63.   Thornton, A.; Lee, P. Publication bias in meta-analysis: Its causes and consequences. J. Clin. Epidemiol. 2000, 53, 207–216.
+      [CrossRef] [PubMed]
+64.   Song, F.; Parekh, S.; Hooper, L.; Loke, Y.K.; Ryder, J.; Sutton, A.J.; Hing, C.; Kwok, C.S.; Pang, C.; Harvey, I. Dissemination and
+      publication of research findings: An updated review of related biases. Health Technol. Assess. 2010, 14, 1–193. [CrossRef] [PubMed]
+
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

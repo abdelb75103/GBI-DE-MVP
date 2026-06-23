@@ -38,6 +38,12 @@ Do not use Gemini for AI screening, AI extraction, AI review, or other project A
 
 Run project AI functions locally from the current workspace and apply results to the database from that local workflow. Default to GPT-5.5 with medium reasoning when available. If that exact model is unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the model used, and explain the substitution before applying results.
 
+## User Preference: Full-Text Derivable Denominators
+
+For full-text screening, treat a denominator as `paper_derivable` when the paper reports cohort-level inputs that can be multiplied into a study total without extra assumptions, such as mean match minutes times explicit participant count, as long as the numerator is cohort-wide and the at-risk frame is clear.
+
+When using this rule, record the exact reported inputs and note if the implied total is approximate because the published mean is rounded. Do not exclude solely because the paper reports a cohort mean instead of the multiplied total.
+
 ## User Preference: AI Screening Decision Integrity
 
 Human screening votes are immutable audit records. Never change, replace, remove, or "restore" a human vote by editing `metadata.titleAbstractDecisions`, reviewer decision arrays, reviewer IDs/names, vote timestamps, or manual-review fields unless Abdel explicitly asks for that exact human-vote repair in the current request.
@@ -45,6 +51,16 @@ Human screening votes are immutable audit records. Never change, replace, remove
 When Abdel asks to update title/abstract AI screening decisions, re-review conflicts, apply updated criteria, or update AI recommendations, treat that as an AI recommendation update only. Use the project AI screening workflow to update `ai_*` fields and criteria/model audit fields. Do not add `resolver_decision` entries, do not resolve conflicts, do not promote to full text manually, and do not delete or create full-text placeholders unless Abdel explicitly approves the exact record-level resolver or promotion action.
 
 Legitimate AI-vs-human disagreements should remain conflicts. Report them as conflicts with the human vote, AI recommendation, and criteria-based reason. Only resolve conflicts when Abdel explicitly says to resolve/adjudicate the specific records and approves the exact intended decision for each affected record.
+
+When Abdel asks to update AI recommendations and the local workflow produces corrected recommendation artifacts, do not stop at local JSON/Markdown or local review outputs unless he explicitly asks for a local-only or dry-run result. Carry the same AI recommendation update through the live project apply path as well, updating the web app/database AI fields and then verifying the written values. This applies only to AI recommendation fields and does not permit manual-vote, resolver, or human-decision edits.
+
+## User Preference: Local Corrections Must Reach Live Records
+
+When Abdel asks to correct, replace, refresh, or re-review a paper or screening record that already backs the live app/website, do not stop at a local file swap, local JSON, local Markdown, or local review note unless he explicitly says `local-only`, `dry-run`, or otherwise asks to stop short.
+
+By default, carry the correction through to the live record in the same task. This includes the matching live PDF/storage object when the paper file itself was corrected, and the matching live `ai_*` fields when the AI recommendation was corrected. After writing live changes, verify the stored file hash/path and the written AI fields.
+
+This default does not permit changing human votes, resolver decisions, or other protected manual-review fields without explicit approval for that exact action.
 
 ## User Preference: Follow Skills End-to-End
 

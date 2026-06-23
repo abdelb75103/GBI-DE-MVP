@@ -1,0 +1,1039 @@
+COSMIN Study Design checklist for Patient-reported
+outcome measurement instruments
+Version July 2019
+
+
+
+
+Lidwine B Mokkink
+Cecilia AC Prinsen
+Donald L Patrick
+Jordi Alonso
+Lex M Bouter
+Henrica CW de Vet
+Caroline B Terwee
+
+
+
+
+Contact
+L.B. Mokkink, PhD
+Department of Epidemiology and Biostatistics
+Amsterdam Public Health research institute
+Amsterdam University Medical Centers, location VUmc
+P.O. box 7057
+1007 MB Amsterdam
+The Netherlands
+Website: www.cosmin.nl
+E-mail: w.mokkink@amsterdamumc.nl
+Table of Content
+
+List of abbreviations                                                             2
+Instructions                                                                      3
+General recommendation for the design of a study on measurement properties        4
+Content Validity                                                                  6
+Structural validity                                                               9
+Internal consistency                                                             11
+Cross-cultural validity\measurement invariance                                   13
+Measurement error and Reliability                                                15
+Criterion validity                                                               17
+Hypotheses testing for construct validity                                        19
+Responsiveness                                                                   22
+Translation process                                                              29
+References                                                                       32
+
+
+
+
+List of abbreviations
+
+CTT:            classical test theory
+IRT/Rasch:      Item Response Theory and Rasch analyses
+NA:             not applicable
+Original CC:    original COSMIN checklist 1
+PROM:           patient-reported outcome measure
+RoB:            Risk of Bias; it refers to the COSMIN Risk of Bias checklist 2
+
+
+
+
+                                                    2
+Instructions
+
+The COSMIN Study Design checklist is recommended for designing studies to evaluate
+measurement properties of existing patient-reported outcome measures (PROMs). It can be
+used by researchers and clinicians or other professionals who are designing a study to
+evaluate measurement properties of an existing PROM, or by e.g. scientific committees and
+medical ethics committees who are appraising protocols of studies on measurement
+properties, or by reviewers for scientific journals that will publish study protocols of studies
+on measurement properties of PROMs.
+
+The COSMIN Study Design checklist is based on the original version of the COSMIN checklist 1
+3, as well as on the recently developed COSMIN Risk of Bias checklist for PROMs 2. Decisions
+
+on adaptations were made based on iterative discussions by the COSMIN steering
+committee, both at face-to-face meetings (LM, CP, HdV and CT) and by email discussions
+(entire COSMIN steering committee, i.e. all authors).
+
+The COSMIN Study Design checklist consists of ten boxes. The first box, i.e. General
+recommendations for designing a study on a measurement properties, is relevant for all
+studies. It contains general standards which should be considered in the design of a study on
+any measurement property. The remaining boxes contain standards for specific studies on
+each of the nine measurement properties, i.e. content validity, structural validity, internal
+consistency, cross-cultural validity\measurement invariance, reliability, measurement error,
+criterion validity, hypotheses testing for construct validity, and responsiveness 2 4. In
+addition, we provide standards for translating an existing PROM in the box Translation
+process.
+
+In this checklist, each standard is also accompanied with a 4-point rating scale. This rating
+scale is based on the COSMIN Risk of Bias checklist 2. The 4-point rating scale is added for
+illustrative purposes to better understand the consequences of choices made in the design
+of a study for the methodological quality of the study; it is not intended to be used to
+actually provide an overall rating (i.e. based on the worst-score counts principle) for your
+study design. The purpose of this checklist is only to check whether all important issues are
+considered when designing a study on measurement properties. Details on how to design
+and analyse these studies are described in the book Measurement in Medicine 5. A
+clarification and explanation of most of the individual standards can be found in the user
+manuals (www.cosmin.nl) accompanying the COSMIN Risk of Bias checklist 6 7. References,
+e.g. for sample size requirements, are also provided in the COSMIN user manuals 6 7.
+
+Standards refer to potential risk of bias issues, reporting issues, or sample size issues. In this
+document for each standard a justification is added, referring to the number of the box
+(number between brackets refer to number of the specific standard in the specific box) from
+the COSMIN Risk of Bias checklist 2 (RoB), or the original COSMIN checklist 1 (CC); or by
+indicating that the standard is about sample size or it is a newly added standard.
+
+
+
+
+                                                3
+General recommendation for the design of a study on measurement properties
+
+The box General recommendations for designing a study on measurement properties is relevant for all studies on measurement properties. The aim of a
+study evaluating a measurement property of a PROM is to investigate (one or more aspects of) the quality of the PROM at issue. These studies require a
+clear research aim (i.e. referring to the measurement properties of interest), a clear description of the PROM and a clear description of the study population.
+The quality of a PROM should be determined in the target population in which the PROM will be used, because the results of studies on measurement
+properties depend on the sample included in the study.
+
+General recommendations for the design of a study on
+measurement properties
+
+Research aim                                                      very good             adequate             doubtful           inadequate         justification
+1 Provide a clear research aim, including (1) the name       Research aim clearly                                          Research aim not                 New
+   and version of the PROM, (2) the target population,       described                                                     clearly described
+   and (3) the measurement properties of interest
+
+PROM
+2 Provide a clear description of the construct to be         Construct clearly                                             Construct not clearly     RoB Box 1
+   measured                                                  described                                                     described
+
+3   Provide a clear description of the development process Development                                   Development                                 RoB Box 1
+    of the PROM, including a description of the target     process clearly                               process clearly
+    population for which the PROM was developed            described                                     described
+
+
+4   The origin of the construct should be clear: provide a   Origin of the                               Origin of the                               RoB Box 1
+    theory, conceptual framework (i.e. reflective or         construct clear                             construct not
+    formative model) or disease model used or clear                                                      clear
+    rationale to define the construct to be measured
+5   Provide a clear description of the structure of the   Structure and                                                                 Structure and                RoB Box 1
+    PROM (i.e. the number of items and subscales included scoring algorithm                                                             scoring algorithm
+    in the PROM, instructions given and response options) clearly described                                                             not clearly described
+    and its scoring algorithm
+
+6   Provide a clear description of existing evidence on the         Existing evidence on                            Existing evidence                                      New
+    quality of the PROM                                             the quality of the                              on the quality of
+                                                                    PROM clearly                                    the PROM not
+                                                                    described                                       clearly described
+
+7   Provide a clear description of the context of use*              Context of use                                  Context of use                                   RoB Box 1
+                                                                    clearly described                               not clearly
+                                                                                                                    described
+Target population
+8 Provide a clear description of in- and exclusion criteria         In- and exclusion                                                   In- and exclusion         Characteristic
+    to select patients, e.g. in terms of disease condition          criteria for patients                                               criteria for patients          of study
+    and characteristics like age, gender, language or               clearly described                                                   not clearly described      population 6
+    country, and setting (e.g. general population, primary
+    care or hospital/rehabilitation care)
+
+9   Provide a clear description of the method used to               Method for patient                             Method of                                               New
+    select the patients for the study (e.g. convenience,            selection clearly                              patient selection
+    consecutive, or random)                                         described                                      not clearly
+                                                                                                                   described
+10 Describe whether the selected sample is representing             Study sample            Assumable that the     Unclear whether      Study will not be            RoB Box 1
+   the target population in which the PROM will be used             representing the        study sample is        the study sample     performed in a
+   in terms of age, gender, important disease                       target population       representing the       is representing      sample representing
+   characteristics (e.g. severity, status, duration)                clearly described       target population, but the target           the target
+                                                                                            not clearly described population            population
+
+* The context of use refers to the intended application of the PROM (e.g. for research or clinical practice), to a specific setting for which the PROM was developed (e.g. for
+use in a hospital or at home) or to a specific administration mode (e.g. paper or computer‐administered). If the PROM was developed for use across multiple contexts, this
+should be described.
+
+
+
+                                                                                        5
+Content Validity
+
+Content validity of existing PROMs can be assessed by asking patients and professionals about the relevance, comprehensiveness and comprehensibility of
+the items, response options, and instructions. In the box on content validity, standards are given for studies on content validity in which patients are
+involved, as well as studies in which professionals are involved.
+
+Content validity
+
+                                                    very good             adequate                 doubtful                 inadequate           NA      Justification
+Design requirements
+1 From the perspective of the patients: use     Widely recognized    Only quantitative       Not clear if patients   Method used are not                 RoB Box 2
+   an appropriate method for assessing          or well justified    (survey) method(s)      will be asked           appropriate or patients             (1, 8, 15)
+   (1) the relevance of each item for the       method for           will be used or         whether each item       will not be asked about
+   patients’ experience with the condition,     qualitative          assumable that the      is relevant AND         the relevance,
+                                                research will be     method used will be     comprehensible          comprehensiveness or
+   AND
+                                                used to assess the   appropriate but not     AND whether items       comprehensibility of all
+   (2) the comprehensiveness of the PROM,       three aspects        clearly described,      together are            items
+   AND (3) the comprehensibility of the PROM                         but all three aspects   comprehensive, or
+   instructions, items, response options, and                        will be assessed        doubtful whether
+   recall period                                                                             the method will be
+                                                                                             appropriate
+
+2 From the perspective of professionals: use    Widely recognized    Only quantitative       Not clear if            Method used are not       Not        RoB Box 2
+  an appropriate method for assessing           or well justified    (survey) method(s)      professionals will be   appropriate or            applicable (22, 27)
+  (1) the relevance of each item for the        method for           will be used or         asked whether each      professionals will not be
+  construct of interest, AND                    qualitative          assumable that the      item is relevant        asked about the
+                                                research will be     method used will be     AND items together      relevance or
+  (2) the comprehensiveness of the PROM
+                                                used to assess the   appropriate but not     are comprehensive,      comprehensiveness of all
+                                                two aspects          clearly described,      or doubtful             items
+                                                                     but both aspects        whether the
+                                                                     will be assessed        method will be
+                                                                                             appropriate
+
+
+
+
+                                                                                6
+3 Include professionals from all relevant        Professionals       Assumable that                 Doubtful whether                           Not        RoB Box 2
+  disciplines                                    from all required   professionals from all         professionals from all                     applicable (28, 23)
+                                                 disciplines will    required disciplines will      required disciplines will be
+                                                 be included         be included, but not           included or relevant
+                                                                     clearly described              professionals will not be
+                                                                                                    included
+4 Evaluate each item in an appropriate number                                                                                                             RoB Box 2
+  of patients or professionals                                                                                                                            (2, 9, 16,
+  For qualitative studies                        ≥7                  4-6                            <4 or not clear                                       24, 29)
+  For quantitative (survey) studies              ≥50                 30 - 49                        <30 or not clear
+
+
+5 Use skilled group moderators or interviewers   Skilled group       Group moderators or            Not clear if group                         Not        RoB Box 2
+                                                 moderators or       interviewers have limited      moderators or                              applicable (3, 10, 17)
+                                                 interviewers will   experience or will be          interviewers will be trained
+                                                 be used             trained specifically for the   or group moderators
+                                                                     study                          /interviewers are not
+                                                                                                    trained and have no
+                                                                                                    experience
+
+6 Base the group meetings or interviews on an    Appropriate         Assumable that the topic       Not clear if a topic guide                 Not        RoB Box 2
+  appropriate topic or interview guide           topic or            or interview guide will be     will be used or doubtful if                applicable (4, 11, 18)
+                                                 interview guide     appropriate, but not           topic or interview guide
+                                                 will be used        clearly described              will be appropriate or no
+                                                                                                    guide used
+
+7 Record and transcribe verbatim the group       All group           Assumable that all group       Not clear if all group         No          Not        RoB Box 2
+  meetings or interviews                         meetings or         meetings or interviews         meetings or interviews will    recording   applicable (5, 12, 19)
+                                                 interviews will     will be recorded and           be recorded and                and no
+                                                 be recorded and     transcribed verbatim, but      transcribed verbatim or        notes
+                                                 transcribed         not clearly described          recordings will not be
+                                                 verbatim                                           transcribed verbatim or
+                                                                                                    only notes will be made
+                                                                                                    during the group meetings/
+                                                                                                    interviews
+
+
+
+                                                                                7
+Analyses
+8 Use an appropriate approach to analyse the       A widely           Assumable that the          Not clear what approach        Approach                 RoB Box 2
+  data                                             recognized or      approach will be            will be used or doubtful       not                      (6, 13, 20,
+                                                   well justified     appropriate, but not        whether the approach will      appropriate              25, 30)
+                                                   approach will be   clearly described           be appropriate
+                                                   used
+9 Involve at least two researchers in the analysis At least two       Assumable that at least     Not clear if two researchers                 Not        RoB Box 2
+                                                   researchers will   two researchers will be     will be included in the                      applicable (7, 14, 21,
+                                                   be involved in     involved in the analysis,   analysis or only one                                    26, 31)
+                                                   the analysis       but not clearly described   researcher will be involved
+                                                                                                  in the analysis
+
+
+
+
+                                                                               8
+Structural validity
+A PROM can be based on a reflective or on a formative model 8-10. A reflective model is a model in which all items are a manifestation of the same
+underlying construct. These items are called effect indicators and are expected to be highly correlated and interchangeable. In a formative model – its
+counterpart – the items together form the construct. These items do not need to be correlated. It should be described in the protocol whether the PROM is
+based on a reflective or a formative model. Structural validity is only relevant for PROMs that are based on a reflective model.
+When the aim of the study is to assess the structural validity of a multidimensional PROM, a factor analysis should be performed on the whole scale.
+However, when the aim is to additionally assess unidimensionality of subscales, a factor analysis could also be performed on each subscale separately.
+
+Structural validity
+                                                          very good             adequate             Doubtful             inadequate         NA       Justification
+Statistical methods
+1 For CTT: perform confirmatory factor analysis      Confirmatory factor    Exploratory                                No exploratory    Not          RoB Box 3
+                                                     analysis will be       common factor                              or confirmatory   applicable   (1)
+                                                     performed              analysis will be                           factor analysis
+                                                                            performed                                  will be
+                                                                                                                       performed
+
+2 For CTT: provide clear information on how the      Clear information                          Clear information on Unclear how the     Not          Original CC
+  factor analysis will be performed, e.g. software   on the performance                         some of the aspects analysis will be     applicable
+  program, method of estimation, whether and         of the analysis is                         for performing the   performed
+  how assumptions will be checked, rotation          provided                                   analysis is provided
+  method, criteria for model fit.
+3 For IRT/Rasch: choose a model that fits to the     Chosen model fits      Assumable that      Doubtful if the        Chosen model      Not          RoB Box 3
+  research question                                  well to the research   the chosen model    chosen model fits      does not fit to   applicable   (2)
+                                                     question               fits well to the    well to the research   the research
+                                                                            research question   question               question
+
+4 For IRT/Rasch: provide clear information on how Clear information                             Clear information on Unclear how the     Not          Original CC
+  the IRT or Rasch analysis will be performed, e.g. on the performance                          some of the aspects analysis will be     applicable
+  software program, which IRT or Rasch model        of the analysis is                          for performing the    performed
+  used, method of estimation, whether and how described                                         analysis is described
+  assumptions will be checked, criteria for model
+  fit.
+
+
+                                                                                9
+5 Perform the analysis in a sample with an         FA: 7 times number   FA: at least 5 times FA: 5 times number   FA: < 5 times     RoB Box 3
+  appropriate number of patients (taking into      of items and ≥100    number of items      of items but <100    number of items   (3)
+  account expected number of missing values)                            and ≥100 OR at
+                                                                        least 6 times
+                                                                        number of items
+                                                                        but <100
+
+                                                   Rasch/1PL models:    Rasch/1PL models: Rasch/1PL models:       Rasch/1PL
+                                                   ≥ 200 patients       100-199 patients  50-99 patients          models: < 50
+                                                                                                                  patients
+
+                                                   2PL parametric IRT   2PL parametric IRT   2PL parametric IRT   2PL parametric
+                                                   models OR Mokken     models OR            models OR Mokken     IRT models OR
+                                                   scale analysis:      Mokken scale         scale analysis:      Mokken scale
+                                                   ≥ 1000 patients      analysis: 500-999    250-499 patients     analysis: < 250
+                                                                        patients                                  patients
+
+6 Provide a clear description of how missing items The way missing                           The way missing                        Original CC
+  will be handled                                  items will be                             items will be
+                                                   handled is clearly                        handled is not
+                                                   described                                 clearly described
+
+
+
+
+                                                                           10
+Internal consistency
+
+Like structural validity, internal consistency is only relevant for PROMs based on a reflective model. Furthermore, internal consistency should be assessed
+for unidimensional (sub)scales. Therefore, unidimensionality or structural validity using e.g. factor analysis should be assessed for each scale or subscale in
+the study or evidence for structural validity obtained in a previous study in a sample from a comparable target population should be available.
+
+Internal consistency
+                                                           very good         adequate            doubtful             inadequate            NA      Justification
+Design requirements
+1 Check whether a scale or a subscale is             Evidence provided                  Unclear whether each       the scale or                     RoB Box 4
+  unidimensional                                     that each scale or                 scale or subscale is       subscale is NOT                  (1)
+                                                     subscale is                        unidimensional             unidimensional
+                                                     unidimensional
+
+2 Perform the analysis in a sample with an           ≥100 patients           50-99      30-49 patients             <30 patients                     Sample size
+  appropriate number of patients (taking into                                patients
+  account expected number of missing values)
+
+3 Provide a clear description of how missing         The way missing items              The way missing items                                       Original CC
+  items will be handled                              will be handled is                 will be handled is not
+                                                     clearly described                  clearly described
+Statistical methods
+4 For continuous scores: calculate Cronbach’s   Cronbach’s alpha, or                    Only item-total            No Cronbach’s       Not          RoB Box 4
+   alpha or Omega for each unidimensional scale Omega will be                           correlations will be       alpha and no        applicable   (2)
+   or subscale                                  calculated                              calculated                 item-total
+                                                                                                                   correlations will
+                                                                                                                   be calculated
+
+5 For dichotomous scores: calculate Cronbach’s Cronbach’s alpha or                      Only item-total            No Cronbach’s      Not           RoB Box 4
+  alpha or KR-20 for each unidimensional scale or KR-20 will be                         correlations will be       alpha or KR-20     applicable    (3)
+  subscale                                        calculated                            calculated                 and no item-
+                                                                                                                   total correlations
+                                                                                                                   will be calculated
+
+
+
+
+                                                                               11
+6 For IRT-based scores: calculate standard error    SE(θ) or reliability        SE(θ) or           Not          RoB Box 4
+  of theta (SE (θ)) or reliability coefficient of   coefficient will be         reliability        applicable   (4)
+  estimated latent trait value (index of (subject   calculated                  coefficient will
+  or item) separation) for each unidimensional                                  NOT be
+                                                                                calculated
+  scale or subscale
+
+
+
+
+                                                                           12
+Cross-cultural validity\measurement invariance
+This measurement property aims to investigate whether items of a PROM behaves similarly in different populations, for example in different ethnicity or
+language groups, different gender or age groups or different disease populations. Therefore, data is needed from multiple groups (e.g. multiple language
+groups).
+
+Cross-cultural validity\Measurement
+invariance
+                                                    very good                 adequate              doubtful          inadequate           NA   Justification
+Design requirements
+1 Provide a clear description of the group      The group             Assumable how the                         The group variable(s)           RoB Box 5
+  variable(s), including dichotomization or     variable(s) is/are    group variable will be                    is/are not clearly              (1)
+  categorization                                clearly described     dichotomized or                           described
+                                                                      categorized but not
+                                                                      clearly described
+2 Provide a clear description of the relevant   Relevant                                                        Relevant characteristics        RoB Box 5
+  characteristics of the patients that should   characteristics are                                             are clearly described           (2)
+  be similar in both subgroups, such as         clearly described
+  demographic or disease characteristics
+3 Perform the analysis in a sample with an      Regression         150-199 patients per        100-149 patients <100 patients per group         RoB Box 5
+  appropriate number of patients (taking        analyses or        group                       per group                                        (3)
+  into account expected number of missing       IRT/Rasch based
+  values)                                       analyses: ≥200                                                  OR
+                                                patients per group OR                          OR
+                                                                                                                <5 times number of
+                                                OR                5 times number of items      5 times number   items
+                                                                  and ≥100 OR 5-7 times        of items but
+                                                MGCFA*: 7 times number of items but            <100 patients
+                                                number of items   <100
+                                                and ≥100 patients patients
+
+
+
+
+                                                                                 13
+Statistical methods
+4 For CTT: perform a multi-group confirmatory factor       MGCFA will be                                      No confirmatory Not          RoB Box 5
+   analysis (MGCFA)                                        performed                                          factor analysis   applicable (2)
+                                                                                                              will be performed
+
+5 For CTT: provide clear information on how the factor     Clear information on        Clear information      Unclear how the    Not        RoB Box 5
+  analysis will be performed, e.g. software program,       the performance of          on some of the         analysis will be   applicable (2)
+  method of estimation, criteria for model fit, and        the analysis is             aspects for            performed
+  whether and how assumptions were checked                 provided                    performing the
+                                                                                       analysis is provided
+6 For IRT/Rasch: perform differential item functioning     DIF will be performed                              DIF will not be    Not          RoB Box 5
+  (DIF) analyses                                                                                              performed          applicable   (2)
+7 For IRT/Rasch: provide clear information on how the      Clear information on        Clear information      Unclear how the    Not          RoB Box 5
+  IRT or Rasch analysis will be performed, e.g. software   the performance of          on some of the         analysis will be   applicable   (2)
+  program, which IRT or Rasch model used, method of        the analysis is             aspects for            performed
+  estimation, criteria for model fit, whether and how      provided                    performing the
+                                                                                       analysis is provided
+  assumptions were checked
+8 Provide a clear description of how missing items will    The way missing items       The way missing                                        Original
+  be handled                                               will be handled is          items will be                                          CC
+                                                           clearly described           handled is not
+                                                                                       clearly described
+
+
+
+
+                                                                                  14
+Measurement error and reliability
+
+Measurement error and reliability can be calculated based on the same study design and data collection. Basically, two measurements are needed in a
+group of people who are all assumed to be stable on the construct to be measured. As the design and the data collected can be used for both measurement
+properties, we present the standards in one box. Only the statistical parameters are different. We strongly encourage researchers who use such a design to
+report measurement error in addition to a reliability parameter.
+
+Measurement error and reliability
+                                                       very good            adequate                 doubtful               inadequate        NA   Justification
+Design requirements
+1 Use at least two measurements                     At least two                                                       Only one                    Original CC
+                                                    measurements                                                       measurement
+
+2 Ensure that the administrations will be           Independent       Assumable that the   Doubtful whether the measurements NOT                   New
+  independent                                       measurements      measurements will be measurements will be independent
+                                                                      independent          independent
+
+3 Ensure that the patients will be stable in the Patients will be     Assumable that          Unclear if patients will Patients will NOT be        RoB Box 6/7
+  interim period on the construct to be measured stable (evidence     patients will be stable be stable                stable                      (1)
+                                                    provided)
+
+4 Use an appropriate time interval between the Time interval                                  Doubtful whether         Time interval NOT           RoB Box 6/7
+  two measurements, which is long enough to       appropriate                                 time interval is         appropriate                 (2)
+  prevent recall, and short enough to ensure that                                             appropriate or time
+  patients remain stable                                                                      interval is not stated
+
+5 Ensure that the test conditions will be similar   Test conditions   Assumable that test     Unclear if test          Test conditions will        RoB Box 6/7
+  for the measurements (e.g. type of                similar (evidence conditions similar      conditions will be       NOT be similar              (3)
+  administration, environment, instructions)        provided)                                 similar
+
+6 Perform the analysis in a sample with an          ≥100 patients     50-99 patients          30-49 patients           <30 patients                Sample size
+  appropriate number of patients (taking into
+  account expected number of missing values)
+
+
+
+                                                                              15
+Statistical methods for measurement error
+7 For continuous scores: calculate the           SEM, SDC, or LoA will     SEM or SDC will be                                 SEM will be          Not appli- RoB Box 7
+    Standard Error of Measurement (SEM),         be calculated, and        calculated, but model                              calculated based on cable       (4)
+    Smallest Detectable Change (SDC) or          model or formula is       or formula of the SEM                              Cronbach’s alpha, or
+    Limits of Agreement (LoA)                    clearly described*        or SDC is not                                      on SD from another
+                                                                           described or not                                   population
+                                                                           optimal**
+
+8   For dichotomous/nominal/ordinal              % positive and            % agreement will be                                % agreement will    Not        RoB Box 7
+    scores: calculate the percentage             negative agreement        calculated                                         not be calculated   applicable (5)
+    (positive and negative) agreement            will be calculated
+
+
+9   Provide a clear description of how           The way missing items                               The way missing items                                    Original CC
+    missing items will be handled                will be handled is                                  will be handled is not
+                                                 clearly described                                   clearly described
+
+Statistical methods for reliability
+7 For continuous scores: calculate an            ICC will be calculated,   ICC will be calculated,   Pearson or Spearman No ICC or Pearson or Not        RoB Box 6
+    intraclass correlation coefficient (ICC)     and model or formula      but model or formula      correlation coefficient Spearman         applicable (4)
+                                                 of the ICC is clearly     of the ICC not            will be calculated      correlations
+                                                 described*                described or not                                  calculated
+                                                                           optimal**
+8   For dichotomous/nominal/ordinal              Kappa will be                                                                No kappa will be    Not        RoB Box 6
+    scores: calculate kappa                      calculated                                                                   calculated          applicable (5)
+
+9   For ordinal scores: calculate a              Weighted Kappa                                    Unweighted Kappa                                Not        RoB Box 6
+    weighted kappa                               calculated and                                    will be calculated or                           applicable (6, 7)
+                                                 weighting scheme is                               not described if Kappa
+                                                 described                                         will be weighted
+10 Provide a clear description of how            The way missing items                             The way missing items                                      Original CC
+    missing items will be handled                will be handled  is                               will be handled  is not
+                                                 clearly described                                 clearly described
+* The model (i.e. one-way random effect model or two-way random or mixed effect model), type (i.e. for single or multiple measurement) and definition (i.e. for
+consistency or absolute agreement) of the ICC that will be calculated is appropriately chosen and described (see 11); ** ICC formula does not correspond to the research
+question
+
+
+                                                                                      16
+Criterion validity
+As PROMs measure constructs that can only be reported by the patients themselves, no gold standards exists for these measures. The only exception is the
+long version when investigating a short version of the same PROM.
+
+Criterion validity
+                                                         very good             adequate             doubtful           inadequate           NA       Justification
+Design requirements
+1 Describe whether the proposed criterion can Criterion can be            No evidence           Unclear whether     Criterion can NOT               Original CC
+  be considered as a reasonable ‘gold standard’ considered an             provided, but         the criterion can   be considered an
+                                                   adequate ‘gold         assumable that the    be considered an    adequate ‘gold
+                                                   standard’ (evidence    criterion can be      adequate ‘gold      standard’
+                                                   provided)              considered an         standard’
+                                                                          adequate ‘gold
+                                                                          standard’
+
+2 Perform the analysis in a sample with an         ≥ 50 patients in the   30-50 patients in the <30 patients in                                     Sample size
+  appropriate number of patients (taking into      smallest group         smallest group        biggest group
+  account expected number of missing values)
+
+3 Use an appropriate time schedule for             PROM and gold          PROM and gold         PROM and gold       PROM and gold                    New
+  assessments of the PROM of interest and          standard will be       standard not          standard will not   standard will not
+  ‘gold standard’                                  administered at the    administered at the   be administered     be administered at
+                                                   same time              same time, but        at the same         the same time, and
+                                                                          assumable that        time, but unclear   patients are
+                                                                          patient will not      if patients will    expected to change
+                                                                          change in the         changed
+                                                                          interim period
+Statistical methods
+4 For continuous scores: calculate correlations,   Correlations or AUC                                              Correlations or      Not        RoB Box 8 (1)
+   or the area under the receiver operating        will be calculated                                               AUC will NOT be      applicable
+   curve                                                                                                            calculated
+
+
+
+
+                                                                              17
+5 For dichotomous scores: determine sensitivity Sensitivity and                                     Sensitivity and        Not        RoB Box 8 (2)
+  and specificity                               specificity will be                                 specificity will NOT   applicable
+                                                   determined                                       be determined
+
+6 Provide a clear description of how missing       The way missing items        The way missing                                       Original CC
+  items will be handled                            will be handled is           items will be
+                                                   clearly described            handled is not
+                                                                                clearly described
+
+AUC = Area under the Receiver Operator Curve (ROC) curve
+
+
+
+
+                                                                           18
+Hypotheses testing for construct validity
+
+As no ‘gold standards’ exist for PROMs, the commonly used way to investigate validity of PROMs is to test hypotheses about 1) expected relationships with
+other outcomes measures of good quality (Part A), and/or 2) expected differences between relevant groups (Part B). It is of major importance to define
+hypotheses in advance when assessing construct validity of a PROM, to enable the authors to draw unbiased conclusions after data collection and analyses.
+
+Hypotheses testing for construct validity
+
+A. Comparison with other outcome
+measurement instruments (convergent validity)
+                                                            very good                 adequate             doubtful               inadequate         NA Justification
+Design requirements
+1 Formulate hypotheses about expected               Hypotheses formulated                             Hypotheses vague       Unclear what is             Original CC
+  relationships between the PROM under study        including the expected                            or not formulated      expected
+  and other outcome measurement                     direction and magnitude                           but possible to
+  instrument(s)                                     of the correlations stated                        deduce what was
+                                                                                                      expected
+2 Provide a clear description of the construct(s)   Construct(s) measured by                                                 Construct(s) measured       RoB Box 9a
+  measured by the comparator instrument(s)          the comparator                                                           by the comparator           (1)
+                                                    instrument(s) is/are                                                     instrument(s) is/are
+                                                    clearly described                                                        not clearly described
+
+
+
+3 Use comparator instrument(s) with sufficient      Sufficient measurement       Sufficient           Some information       No information on the       RoB Box 9a
+  measurement properties                            properties of the            measurement          on measurement         measurement                 (2)
+                                                    comparator instrument(s)     properties of the    properties (or a       properties of the
+                                                    in a population similar to   comparator           reference to a study   comparator
+                                                    the study population         instrument(s) but    on measurement         instrument(s), or
+                                                                                 not sure if these    properties) of the     evidence of
+                                                                                 apply to the study   comparator             insufficient
+                                                                                 population           instrument(s) in any   measurement
+                                                                                                      study population       properties of the
+                                                                                                                             comparator
+                                                                                                                             instrument(s)
+
+
+                                                                                 19
+4 Perform the analysis in a sample with an       ≥100 patients                50-99 patients       30-49 patients        <30 patients               Sample size
+  appropriate number of patients (taking into
+  account expected number of missing values)
+5 Use an appropriate time schedule for           PROM and comparison          PROM and             PROM and              PROM and comparison        New
+  assessments of the PROM of interest and        instrument(s) will be        comparison           comparison            instrument(s) will not
+  comparison instruments                         administered at the same     instrument(s) not    instrument(s) will    be administered at the
+                                                 time                         administered at      not be administered   same time, and
+                                                                              the same time, but   at the same time,     patients are expected
+                                                                              assumable that       but unclear if        to change
+                                                                              patient will not     patients will
+                                                                              change in the        changed
+                                                                              interim period
+Statistical methods
+6 Use statistical methods that are appropriate   Statistical methods will     Assumable that      Statistical methods    Statistical methods will   RoB Box 9a
+   for the hypotheses to be tested               be appropriate               statistical methods will not be optimal    NOT be appropriate         (3)
+                                                                              will be appropriate
+
+7 Provide a clear description of how missing     The way missing items                             The way missing                                  Original CC
+  items will be handled                          will be handled is clearly                        items will be
+                                                 described                                         handled is not
+                                                                                                   clearly described
+
+
+
+
+                                                                              20
+B. Comparison between subgroups (discriminative or
+known-groups validity)
+                                                                 very good                 adequate             doubtful            inadequate      NA   Justification
+Design requirements
+1 Formulate hypotheses regarding mean differences        Hypotheses formulated                              Hypotheses           Unclear what was        Original CC
+  between subgroups                                      including the expected                             vague or not         expected
+                                                         directions and magnitude                           formulated but
+                                                         of the mean differences                            possible to
+                                                         stated                                             deduce what
+                                                                                                            was expected
+
+2 Provide an adequate description of important         Adequate description of        Adequate              Poor of no                                   RoB Box 9b
+  characteristics of the subgroups, such as disease or the important                  description of most   description of                               (5)
+  demographic characteristics                          characteristics of the         of the important      the important
+                                                         subgroups                    characteristics of    characteristics of
+                                                                                      the subgroups         the subgroups
+
+3 Perform the analysis in a sample with an               ≥100 patients per group      50-99 patients per    30-49 patients       <30 patients per        Sample size
+  appropriate number of patients (taking into                                         group                 per group            group
+  account expected number of missing values)
+
+Statistical methods
+4 Use statistical methods that are appropriate for the Statistical methods will be    Assumable that        Statistical      Statistical                 RoB Box 9b
+   hypotheses to be tested                             appropriate                    statistical methods   methods will not methods will NOT            (6)
+                                                                                      will be appropriate   be optimal       be appropriate
+
+5 Provide a clear description of how missing items       The way missing items will                         The way missing                              Original CC
+  will be handled                                        be handled is clearly                              items will be
+                                                         described                                          handled is not
+                                                                                                            clearly described
+
+
+
+
+                                                                               21
+Responsiveness
+
+Responsiveness is considered to indicate longitudinal validity. When a ‘gold standard’ is available, the criterion approach Part A of this box can be used.
+When testing hypotheses about change scores of PROMs compared to other outcome measurement instruments, Part B can be used; for comparison of
+changes scores of PROMs between subgroups Part C can be used; and when testing hypotheses about expected change scores of PROMs before and after
+intervention, Part D can be used. It is of major importance to define hypotheses in advance when assessing responsiveness of a PROM, to enable the
+authors to draw unbiased conclusions after data collection and analyses.
+
+Responsiveness
+
+A. Criterion approach (i.e. comparison to a ‘gold
+standard’)
+                                                        very good             adequate              doubtful            inadequate         NA   Justification
+Design requirement
+1 The proposed criterion can be considered as a Criterion can be       No evidence provided,    Unclear whether     Criterion can NOT be        Original CC
+  reasonable ‘gold standard’                    considered an          but assumable that the   the criterion can   considered an
+                                                    adequate ‘gold     criterion can be         be considered an    adequate ‘gold
+                                                    standard’          considered an adequate   adequate ‘gold      standard’
+                                                    (evidence          ‘gold standard’          standard’
+                                                    provided)
+2 Use an appropriate time schedule for              PROM and gold      PROM and gold            PROM and gold       PROM and gold               New
+  assessments of the PROM of interest and the       standard will be   standard not             standard will not   standard will not be
+  gold standard                                     administered at    administered at the      be administered     administered at the
+                                                    the same time at   same time, but           at the same         same time, and
+                                                    all occasions      assumable that patient   time, but unclear   patients are
+                                                                       will not change in the   if patients will    expected to change
+                                                                       interim period at all    changed
+                                                                       occasions
+3 Use an appropriate time interval between first Time interval will                                                 Time interval will          New
+  and second measurements                        be appropriate                                                     NOT be appropriate
+
+
+
+
+                                                                              22
+4 Describe anything likely to occur in the interim Anything likely to                                Unclear or NOT                                       Original CC
+  period (e.g. intervention, in case of            occur during the                                  described what
+  progressive disease, other relevant events)      interim period (e.g.                              will likely to
+                                                    treatment) is                                    occur during the
+                                                    adequately                                       interim period
+                                                    described
+
+5 Ensure that a proportion of the patients is       Part of the patients   NO evidence provided,     Unclear if part of Patients will likely              Original CC
+  likely to change (i.e. improvement or             is likely to change    but assumable that part   the patients will NOT change
+  deterioration) on the construct to be             (evidence              of the patients will      change
+  measured                                          provided)              change
+
+6 Perform the analysis in a sample with an          ≥50 patients in the 30-50 patients in the        <30 patients in                                      Sample size
+  appropriate number of patients (taking into       smallest group         smallest group            biggest group
+  account expected number of missing values)
+
+Statistical methods
+7 For continuous scores: calculate correlations Correlations or                                                          Correlations or AUC    Not        RoB Box
+   between change scores, or the area under the AUC will be                                                              will NOT be            applicable 10a (1)
+   Receiver Operator Curve (ROC) curve (AUC)    calculated                                                               calculated
+
+8 For dichotomous scales: calculate sensitivity     Sensitivity and                                                      Sensitivity and        Not        RoB Box
+  and specificity (changed versus not changed)      specificity will be                                                  specificity will NOT   applicable 10a (2)
+                                                    calculated                                                           be calculated
+
+9 Provide a clear description of how missing        The way missing                                  The way missing                                      Original CC
+  items will be handled                             items will be                                    items will be
+                                                    handled is clearly                               handled is not
+                                                    described                                        clearly described
+
+
+
+
+                                                                                  23
+B. Construct approach (i.e. hypotheses
+testing; comparison with other outcome
+measurement instruments)
+                                                    very good                adequate                 doubtful             inadequate         NA   Justification
+Design requirements
+1 Formulate hypotheses about expected         Hypotheses will be                                Hypotheses vague or Unclear what is                Original CC
+    relationships between the change scores   formulated including                              will not be formulated expected
+    on the PROM under study and (change       the expected direction                            but possible to
+    scores on) other outcome measurement      and magnitude of the                              deduce what was
+                                              correlations stated                               expected
+    instrument(s)
+2 Provide a clear description of the          Constructs measured                                                      Constructs                  RoB Box 10b
+    construct(s) measured by the comparator   by the comparator                                                        measured by the             (4)
+    instrument(s)                             instrument(s) is/are                                                     comparator
+                                              clearly described                                                        instrument(s) is/are
+                                                                                                                       not clearly
+                                                                                                                       described
+
+3   Provide information that the              Sufficient measurement   Sufficient               Some information on    No information on           RoB Box 10b
+    measurement properties of the             properties of the        measurement              measurement            the measurement             (5)
+    comparator instrument(s) are sufficient   comparator               properties of the        properties (or a       properties of the
+                                              instrument(s) in a       comparator               reference to a study   comparator
+                                              population similar to    instrument(s) but not    on measurement         instrument(s), or
+                                              the study population     sure if these apply to   properties) of the     evidence of
+                                                                       the study population     comparator             insufficient
+                                                                                                instrument(s) in any   measurement
+                                                                                                study population       properties of the
+                                                                                                                       comparator
+
+
+
+
+                                                                            24
+4   Use an appropriate time schedule for          PROM and comparison        PROM and                  PROM and                   PROM and               New
+    assessments of PROM of interest and           instrument will be         comparison                comparison                 comparison
+    comparison instruments                        administered at the        instrument not            instrument will not be     instrument will not
+                                                  same time at all           administered at the       administered at the        be administered at
+                                                  occasions                  same time, but            same time, but             the same time, and
+                                                                             assumable that            unclear if patients will   patients are
+                                                                             patient will not          changed                    expected to change
+                                                                             change in the interim
+                                                                             period at all occasions
+5   Use an appropriate time interval between Time interval                                                                        Time interval NOT      New
+    first and second measurements            appropriate                                                                          appropriate
+
+6   Describe anything likely to occur in the      Anything likely to occur                             Unclear or NOT                                    Original CC
+    interim period (e.g. intervention, other      during the interim                                   described what will
+    relevant events)                              period (e.g. treatment)                              likely to occur during
+                                                  is adequately described                              the interim period
+
+7   Ensure that a proportion of the patients is Part of the patients is      NO evidence            Unclear if part of the        Patients will likely   Original CC
+    likely to change (i.e. improvement or       likely to change             provided, but          patients will change          NOT change
+    deterioration) on the construct to be       (evidence provided)          assumable that part of
+    measured                                                                 the patients will
+                                                                             change
+8   Perform the analysis in a sample with an      ≥100 patients              50-99 patients         30-49 patients                <30 patients           Sample size
+    appropriate number of patients (taking
+    into account expected number of missing
+    values)
+
+Statistical methods
+9 Ensure that the statistical methods are         Statistical methods are    Assumable that          Statistical methods          Statistical methods    RoB Box 10b
+    adequate for the hypotheses to be tested      appropriate                statistical methods are are not optimal              are NOT                (6)
+                                                                             appropriate                                          appropriate
+
+10 Provide a clear description of how missing The way missing items                                    The way missing items                             Original CC
+   items will be handled                      will be handled is                                       will be handled is not
+                                                  clearly described                                    clearly described
+
+
+                                                                                  25
+C. Construct approach: (i.e. hypotheses testing:
+comparison between subgroups)
+                                                               very good                 adequate                 doubtful         inadequate     NA   Justification
+Design requirements
+1 Formulate hypotheses regarding differences           Hypotheses formulated                                Hypotheses vague      Unclear what         Original CC
+   between change scores of subgroups a priori (i.e.   including the expected                               or not formulated     was expected
+   before data collection)                             differences between                                  but possible to
+                                                       change scores stated                                 deduce what was
+                                                                                                            expected
+
+2 Provide an adequate description about important Adequate description of          Adequate                 Poor or no                                 RoB Box
+  characteristics of the subgroups, such as disease or the important               description of most      description of the                         10c (8)
+  demographic characteristics                          characteristics of the      of the important         important
+                                                       subgroups                   characteristics of the   characteristics of
+                                                                                   subgroups                the subgroups
+
+3 Use an appropriate time interval between first and Time interval appropriate                                                    Time interval        New
+  second administration of the measurement                                                                                        NOT
+                                                                                                                                  appropriate
+4 Describe anything likely to occur in the interim     Anything likely to occur                             Unclear or NOT                             Original CC
+  period (e.g. intervention, progressive disease,      during the interim period                            described what will
+  other relevant events)                               (e.g. treatment) is                                  likely to occur
+                                                       adequately described                                 during the interim
+                                                                                                            period
+
+5 Ensure that a proportion of the patients is likely to Part of the patients is NO evidence                 Unclear if part of    Patients will        Original CC
+  change (i.e. improvement or deterioration) on the likely to change (evidence provided, but                the patients will     likely NOT
+  construct to be measured                              provided)               assumable that part         change                change
+                                                                                   of the patients will
+                                                                                   change
+
+6 Perform the analysis in a sample with an             ≥100 patients               50-99 patients           30-49 patients        <30 patients         Sample size
+  appropriate number of patients (taking into
+  account expected number of missing values)
+
+
+                                                                             26
+Statistical methods
+7 Ensure that the statistical methods are adequate for Statistical methods are          Assumable that      Statistical           Statistical         RoB Box
+   the hypotheses to be tested                         appropriate                      statistical methods methods are not       methods are         10c (9)
+                                                                                        are appropriate     optimal               NOT
+                                                                                                                                  appropriate
+
+8 Provide a clear description of how missing items will The way missing items will be                       The way missing                           Original
+  be handled                                            handled is clearly described                        items will be                             CC
+                                                                                                            handled is not
+                                                                                                            clearly described
+
+
+
+
+D. Construct approach: (i.e. hypotheses testing:
+before and after intervention)
+                                                               very good            adequate            doubtful                inadequate      NA   Justification
+Design requirements
+1 Formulate challenging hypotheses regarding            Hypotheses formulated                      Hypotheses vague      Unclear what was            Original CC
+  expected changes before and after intervention a      including the expected                     or not formulated     expected
+  priori (i.e. before data collection)                  changes stated                             but possible to
+                                                                                                   deduce what was
+                                                                                                   expected
+2 Provide an adequate description of the                Adequate description of                    Poor description of   NO description of           RoB Box
+  intervention to allow replication, including how      the intervention                           the intervention      the intervention            10d (11)
+  and when they will be administered
+3 Use an appropriate time interval between first and    Time interval appropriate                                        Time interval NOT           New
+  second administration                                                                                                  appropriate
+4 Describe anything likely to occur in the interim      Anything likely to occur                   Unclear or NOT                                    Original CC
+  period (e.g. intervention, progressive disease,       during the interim period                  described what will
+  other relevant events) is adequately                  (e.g. treatment) is                        likely to occur
+                                                        adequately described                       during the interim
+                                                                                                   period
+
+
+
+
+                                                                              27
+5 Ensure that a proportion of the patients is likely to Part of the patients is          NO evidence    Unclear if part of    Patients will likely   Original CC
+  change (i.e. improvement or deterioration) on the likely to change                     provided, but  the patients will     NOT change
+  construct to be measured                              (evidence provided)              assumable that change
+                                                                                         part of the
+                                                                                         patients will
+                                                                                         change
+
+6 Perform the analysis in a sample with an                ≥100 patients                  50-99 patients   30-49 patients      <30 patients           Sample size
+  appropriate number of patients (taking into
+  account expected number of missing values)
+
+Statistical methods
+7 Ensure that the statistical methods are adequate        Statistical methods are        Assumable that Statistical methods   Statistical methods    RoB Box
+   for the hypotheses to be tested                        appropriate                    statistical    are not optimal       are NOT appropriate    10d (12)
+                                                                                         methods are
+                                                                                         appropriate
+
+8 Provide a clear description of how missing items        The way missing items                           The way missing                            Original CC
+  will be handled                                         will be handled is clearly                      items will be
+                                                          described                                       handled is not
+                                                                                                          clearly described
+
+
+
+
+                                                                                    28
+Translation process
+
+The process of translating an existing PROM is not a measurement property. Rather, it is part of the development phase of a new version of a PROM.
+However, a good translation process will likely result in a more valid version of the PROM in the translated language. In this translation box standards are
+provided to assess the quality of the translation process. When the cross-cultural validity of a translated PROM will be tested subsequently, we refer to the
+box Cross-cultural validity\measurement invariance using the group variable ‘language’.
+
+Translation process
+                                                              very good           adequate                 doubtful                  inadequate         Justification
+Design requirements
+1 Describe both the original language in which the     Original language,                                                        Source language will   Original CC
+    PROM was developed, the source language (if        source language and                                                       NOT be described
+    different from the original language) and the      target language will be
+    language in which the PROM will be translated      described
+
+2   Ensure that the items will be translated forward   Multiple forward and      Multiple forward     One forward and one        Only a forward         Original CC
+    and backward                                       multiple backward         translations but one backward translation       translation
+                                                       translations              backward translation
+
+3   Ensure that both forward translators have a        Both forward                                     Only one of the          Both forward           Original CC
+    mother tongue in the target language in which      translators have a                               forward translators a    translators don’t
+    the PROM will be translated                        mother tongue in the                             mother tongue in the     have a mother
+                                                       target language in                               target language in       tongue in the target
+                                                       which the PROM will be                           which the PROM will      language
+                                                       translated                                       be translated
+
+4   Ensure that one of the forward translators has     One of the forward        Unclear what           Both forward                                    Original CC
+    expertise in the diseases involved, and in the     translators has           expertise of both      translators are either
+    construct measured by the PROM; the other          expertise on disease      forward translators    both experts with
+    forward translators is naïve on the construct      and construct to be       with respect to        respect to disease or
+                                                       measured, other           disease or construct   construct, or both
+    measured by the PROM
+                                                       translator is naïve                              naïve with respect to
+                                                                                                        disease or construct
+
+
+
+
+                                                                                 29
+5   Ensure that both backward translators have a      Both forward                                      Only one of the           Both forward           Original CC
+    mother tongue in the original or source           translators have a                                forward translators a     translators don’t
+    language                                          mother tongue in the                              mother tongue in the      have a mother
+                                                      source language in                                source language in        tongue in the source
+                                                      which the PROM will be                            which the PROM will       language
+                                                      translated                                        be translated
+
+6   Ensure that both backward translators are naïve Both backward             Unclear if both                                                            New
+    in the disease involved and the construct to be translators will be naïve backward translators
+    measured                                        in the disease involved   will be naïve in the
+                                                      and the construct to be disease involved and
+                                                      measured                the construct to be
+                                                                              measured
+
+7   Ensure that the translators will work             Translators will work     Assumable that the      Unclear whether           Translators will NOT   Original CC
+    independently from each other                     independent               translators will work   translators will work     work independent
+                                                                                independent             independent
+
+8   Provide a clear description on how differences    Adequate description      Poorly or NOT                                                            Original CC
+    between the original and translated versions will of how differences        described how
+    be resolved                                       between translators       differences between
+                                                      will be resolved          translators will be
+                                                                                resolved
+
+9   Ensure that the translation will be reviewed by a Translation will be       Translation will NOT                                                     Original CC
+    committee (including the original developers of reviewed by a               be reviewed by
+    the PROM)                                         committee (involving      (such) a committee
+                                                      other people than the
+                                                      translators, e.g. the
+                                                      original developers)
+
+10 Write a feedback report of the translation         Feedback report will be                           No feedback report will                          New
+   process                                            written                                           be written
+
+
+
+
+                                                                                30
+11 Perform a pilot study (e.g. cognitive interview     Widely recognized or       Only quantitative        Not clear if patients will   Method used are not RoB Box 1
+   study) to check (1) the relevance of each item      well justified method      (survey) method(s)       be asked whether each        appropriate or
+   for the patients’ experience with the condition,    for qualitative research   will be used or          item is relevant AND         patients will not be
+   AND                                                 will be used to assess     assumable that the       comprehensible AND           asked about the
+                                                       the three aspects          method used will be      whether items                relevance,
+   (2) the comprehensiveness of the PROM, AND
+                                                                                  appropriate but not      together are                 comprehensiveness
+   (3) the comprehensibility of the PROM                                          clearly described, but   comprehensive, or            or comprehensibility
+   instructions, items, response options, and recall                              all three aspects will   doubtful whether the         of all items
+   period                                                                         be assessed              method will be
+                                                                                                           appropriate
+
+12 Perform the pilot study in a patient population     The study will be          Assumable that the       Doubtful whether the         Study will NOT be     RoB Box 1
+   representing the target population                  performed in a sample      study will be            study will be                performed in a
+                                                       representing the target    performed in a           performed in a sample        sample representing
+                                                       population                 sample representing      representing the target      the target population
+                                                                                  the target population    population
+
+
+
+
+                                                                                  31
+References
+
+1. Mokkink LB, Terwee CB, Patrick DL, et al. The COSMIN checklist for assessing the
+        methodological quality of studies on measurement properties of health status
+        measurement instruments: an international Delphi study. Qual Life Res
+        2010;19(4):539-49. doi: 10.1007/s11136-010-9606-8 [doi]
+2. Mokkink LB, de Vet HCW, Prinsen CAC, et al. COSMIN Risk of Bias checklist for systematic
+        reviews of Patient-Reported Outcome Measures. Qual Life Res 2018;27(5):1171-79.
+        doi: 10.1007/s11136-017-1765-4
+3. Terwee CB, Mokkink LB, Knol DL, et al. Rating the methodological quality in systematic
+        reviews of studies on measurement properties: a scoring system for the COSMIN
+        checklist. Qual Life Res 2012;21(4):651-57. doi: 10.1007/s11136-011-9960-1 [doi]
+4. Prinsen CAC, Mokkink LB, Bouter LM, et al. COSMIN guideline for systematic reviews of
+        patient-reported outcome measures. Qual Life Res 2018;27(5):1147-57. doi:
+        10.1007/s11136-018-1798-3
+5. de Vet HC, Terwee CB, Mokkink L, et al. Measurement in Medicine: a practical guide:
+        Cambridge University Press 2010.
+6. Mokkink LB, Vet HC, Prinsen CA, et al. COSMIN methodology for systematic reviews of
+        Patient‐Reported Outcome Measures (PROMs) - user manual 2018. Available from:
+        www.cosmin.nl.
+7. Terwee CB, Prinsen CA, de Vet HCW, et al. COSMIN methodology for assessing the content
+        validity of Patient-Reported Outcome Measures (PROMs). User manual., 2018.
+        Available from: www.cosmin.nl.
+8. Fayers PM, Hand DJ. Factor analysis, causal indicators and quality of life. Qual Life Res
+        1997;6(2):139-50.
+9. Fayers PM, Hand DJ, Bjordal K, et al. Causal indicators in quality of life research. Qual Life
+        Res 1997;6(5):393-406.
+10. Streiner DL. Being inconsistent about consistency: when coefficient alpha does and
+        doesn't matter. J Pers Assess 2007;80:217-22.
+11. McGraw KOW, S.P. Forming inferences about some intraclass correlation coefficients.
+        Psychological Methods 1996;1:30-46.
+

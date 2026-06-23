@@ -15,7 +15,9 @@ const buildBaseHeaders = (record: Awaited<ReturnType<typeof mockDb.getScreeningR
   const fileName = sanitizeFileName(record?.fileName || record?.title || 'full-text.pdf');
   const headers = new Headers();
   headers.set('Accept-Ranges', 'bytes');
-  headers.set('Cache-Control', 'private, max-age=3600');
+  headers.set('Cache-Control', 'private, no-store, max-age=0, must-revalidate');
+  headers.set('Pragma', 'no-cache');
+  headers.set('Expires', '0');
   headers.set('Content-Disposition', `inline; filename="${fileName}"; filename*=UTF-8''${encodeURIComponent(fileName)}`);
   headers.set('Content-Type', record?.mimeType || 'application/pdf');
   headers.set('X-Content-Type-Options', 'nosniff');
