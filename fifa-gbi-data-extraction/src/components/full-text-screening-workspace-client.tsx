@@ -17,6 +17,7 @@ import {
   buildFullTextQueueUrl,
   buildFullTextReaderUrl,
   type FullTextQueueContext,
+  type FullTextReviewerProgress,
 } from '@/lib/screening/full-text-queue';
 import { MobilePdfViewer } from '@/components/mobile-pdf-viewer';
 import { isMentalHealthScreeningRecord } from '@/lib/screening/mental-health';
@@ -29,6 +30,7 @@ type Props = {
   profileRole: 'admin' | 'extractor' | 'observer';
   queueContext: FullTextQueueContext;
   queuePosition: number;
+  reviewerProgress: FullTextReviewerProgress;
   previousRecordUrl: string | null;
   nextRecordUrl: string | null;
 };
@@ -68,6 +70,7 @@ export function FullTextScreeningWorkspaceClient({
   profileRole,
   queueContext,
   queuePosition,
+  reviewerProgress,
   previousRecordUrl,
   nextRecordUrl,
 }: Props) {
@@ -334,6 +337,20 @@ export function FullTextScreeningWorkspaceClient({
             <span className="inline-flex items-center rounded-full bg-indigo-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
               Full-text screening
             </span>
+            <div className="max-w-xl">
+              <div className="flex items-center justify-between gap-3 text-xs font-semibold text-slate-600">
+                <span>Your screening progress</span>
+                <span className="tabular-nums text-slate-800">
+                  {reviewerProgress.completed}/{reviewerProgress.total} papers · {reviewerProgress.percent}%
+                </span>
+              </div>
+              <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/70">
+                <div
+                  className="h-full rounded-full bg-[#0b3a70] transition-[width] duration-500 ease-out"
+                  style={{ width: `${reviewerProgress.percent}%` }}
+                />
+              </div>
+            </div>
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">

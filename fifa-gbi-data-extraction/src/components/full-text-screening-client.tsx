@@ -57,6 +57,7 @@ export function FullTextScreeningClient({
   const [searchInput, setSearchInput] = useState(context.search);
   const [notice, setNotice] = useState<Notice>(null);
   const [isPending, startTransition] = useTransition();
+  const [isUploadPending, setIsUploadPending] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const isAdmin = profileRole === 'admin';
   const records = initialQueue?.records ?? [];
@@ -103,39 +104,44 @@ export function FullTextScreeningClient({
     const files = event.target.files ? Array.from(event.target.files) : [];
     if (files.length === 0) return;
 
-    startTransition(async () => {
+    setIsUploadPending(true);
+    void (async () => {
       const failures: string[] = [];
       let successCount = 0;
-      for (const file of files) {
-        if (!file.name.toLowerCase().endsWith('.pdf')) {
-          failures.push(`${file.name}: not a PDF`);
-          continue;
-        }
-        if (file.size > MAX_FILE_BYTES) {
-          failures.push(`${file.name}: exceeds 20 MB`);
-          continue;
+      try {
+        for (const file of files) {
+          if (!file.name.toLowerCase().endsWith('.pdf')) {
+            failures.push(`${file.name}: not a PDF`);
+            continue;
+          }
+          if (file.size > MAX_FILE_BYTES) {
+            failures.push(`${file.name}: exceeds 20 MB`);
+            continue;
+          }
+
+          const data = new FormData();
+          data.set('file', file);
+          const response = await fetch('/api/full-text-screening/uploads', { method: 'POST', body: data });
+          if (!response.ok) {
+            const payload = (await response.json().catch(() => ({}))) as { error?: string };
+            failures.push(`${file.name}: ${payload.error ?? 'upload failed'}`);
+            continue;
+          }
+          successCount += 1;
         }
 
-        const data = new FormData();
-        data.set('file', file);
-        const response = await fetch('/api/full-text-screening/uploads', { method: 'POST', body: data });
-        if (!response.ok) {
-          const payload = (await response.json().catch(() => ({}))) as { error?: string };
-          failures.push(`${file.name}: ${payload.error ?? 'upload failed'}`);
-          continue;
-        }
-        successCount += 1;
+        if (fileInputRef.current) fileInputRef.current.value = '';
+        router.refresh();
+        setNotice({
+          tone: failures.length > 0 ? 'error' : 'success',
+          message: failures.length > 0
+            ? `Uploaded ${successCount}; ${failures.length} failed. ${failures.slice(0, 2).join(' | ')}`
+            : `Uploaded ${successCount} PDF${successCount === 1 ? '' : 's'} to screening.`,
+        });
+      } finally {
+        setIsUploadPending(false);
       }
-
-      if (fileInputRef.current) fileInputRef.current.value = '';
-      router.refresh();
-      setNotice({
-        tone: failures.length > 0 ? 'error' : 'success',
-        message: failures.length > 0
-          ? `Uploaded ${successCount}; ${failures.length} failed. ${failures.slice(0, 2).join(' | ')}`
-          : `Uploaded ${successCount} PDF${successCount === 1 ? '' : 's'} to screening.`,
-      });
-    });
+    })();
   };
 
   const handleRecordPdfSelected = (recordId: string, event: ChangeEvent<HTMLInputElement>) => {
@@ -198,10 +204,10 @@ export function FullTextScreeningClient({
                 <label
                   htmlFor="full-text-upload"
                   className={`group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(11,58,112,0.55)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#082f5d] ${
-                    isPending ? 'pointer-events-none opacity-70' : ''
+                    isUploadPending ? 'pointer-events-none opacity-70' : ''
                   }`}
                 >
-                  {isPending ? (
+                  {isUploadPending ? (
                     <>
                       <span aria-hidden className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
                       Uploading…

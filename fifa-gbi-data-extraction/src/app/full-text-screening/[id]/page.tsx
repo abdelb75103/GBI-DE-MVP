@@ -37,6 +37,9 @@ export default async function FullTextScreeningWorkspacePage({
     currentRecordId: record.id,
     position: queuePosition,
   });
+  const reviewerProgress = await mockDb.getFullTextReviewerProgressForReviewer({
+    reviewerProfileId: profile.id,
+  });
   const previousRecordUrl = adjacentRecords.previous
     ? buildFullTextReaderUrl(
         adjacentRecords.previous.record.id,
@@ -60,6 +63,7 @@ export default async function FullTextScreeningWorkspacePage({
       profileRole={profile.role}
       queueContext={queueContext}
       queuePosition={queuePosition}
+      reviewerProgress={reviewerProgress}
       previousRecordUrl={previousRecordUrl}
       nextRecordUrl={nextRecordUrl}
     />

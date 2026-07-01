@@ -47,9 +47,11 @@ import {
   buildFullTextQueuePage,
   findAdjacentFullTextQueueRecords,
   findNextFullTextQueueRecord,
+  getFullTextReviewerProgress,
   type FullTextQueueAdjacentRecords,
   type FullTextQueueContext,
   type FullTextQueuePage,
+  type FullTextReviewerProgress,
 } from '@/lib/screening/full-text-queue';
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
@@ -351,6 +353,15 @@ export const listFullTextQueuePage = async ({
 }): Promise<FullTextQueuePage> => {
   const records = await listScreeningRecords('full_text');
   return buildFullTextQueuePage(records, reviewerProfileId, context);
+};
+
+export const getFullTextReviewerProgressForReviewer = async ({
+  reviewerProfileId,
+}: {
+  reviewerProfileId: string;
+}): Promise<FullTextReviewerProgress> => {
+  const records = await listScreeningRecords('full_text');
+  return getFullTextReviewerProgress(records, reviewerProfileId);
 };
 
 export const findAdjacentFullTextQueueRecordsForReviewer = async ({

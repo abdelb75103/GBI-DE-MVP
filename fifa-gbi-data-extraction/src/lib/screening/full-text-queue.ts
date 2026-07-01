@@ -7,6 +7,7 @@ import {
 import type { ScreeningRecord } from '../types.ts';
 
 export const FULL_TEXT_QUEUE_PAGE_SIZE = 20;
+export const FULL_TEXT_SCREENING_REVIEW_TOTAL = 386;
 
 export const FULL_TEXT_QUEUE_FILTERS = [
   'all',
@@ -60,6 +61,12 @@ export type FullTextQueueAdjacentRecord = {
 export type FullTextQueueAdjacentRecords = {
   previous: FullTextQueueAdjacentRecord | null;
   next: FullTextQueueAdjacentRecord | null;
+};
+
+export type FullTextReviewerProgress = {
+  completed: number;
+  total: number;
+  percent: number;
 };
 
 const FILTER_LABELS: Record<FullTextQueueFilter, string> = {
@@ -183,6 +190,22 @@ const getFullTextQueueCounts = (records: ScreeningRecord[], reviewerProfileId: s
     conflicts: statuses.filter((status) => status === 'conflict').length,
     noVotes: decisions.filter((items) => items.length === 0).length,
     oneVote: decisions.filter((items) => items.length === 1).length,
+  };
+};
+
+export const getFullTextReviewerProgress = (
+  records: ScreeningRecord[],
+  reviewerProfileId: string,
+): FullTextReviewerProgress => {
+  const completed = records.filter((record) =>
+    getReviewerDecisions(record).some((decision) => decision.reviewerProfileId === reviewerProfileId)
+  ).length;
+  const total = FULL_TEXT_SCREENING_REVIEW_TOTAL;
+
+  return {
+    completed,
+    total,
+    percent: total > 0 ? Math.round((completed / total) * 100) : 0,
   };
 };
 
