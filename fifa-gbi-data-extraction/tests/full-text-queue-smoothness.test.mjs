@@ -33,3 +33,12 @@ test('full-text queue shows an in-place updating state instead of a hard refresh
   assert.match(clientSource, /Updating…/);
   assert.match(clientSource, /disabled=\{isPending\}/);
 });
+
+test('full-text queue search stays editable while results update', () => {
+  const clientSource = readProjectFile('src/components/full-text-screening-client.tsx');
+  const [beforeSearchPlaceholder, afterSearchPlaceholder = ''] = clientSource.split('placeholder="Search title, study ID, author, DOI..."');
+  const searchInput = `${beforeSearchPlaceholder.slice(beforeSearchPlaceholder.lastIndexOf('<input'))}${afterSearchPlaceholder.slice(0, afterSearchPlaceholder.indexOf('/>') + 2)}`;
+
+  assert.doesNotMatch(searchInput, /disabled=\{isPending\}/);
+  assert.match(clientSource, /setTimeout\(\(\) => navigateQueue\(\{ search: nextSearch, page: 1 \}\), 600\)/);
+});

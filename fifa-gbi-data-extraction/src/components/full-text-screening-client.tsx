@@ -93,13 +93,9 @@ export function FullTextScreeningClient({
   }, [context, router]);
 
   useEffect(() => {
-    setSearchInput(context.search);
-  }, [context.search]);
-
-  useEffect(() => {
     const nextSearch = searchInput.trim();
     if (nextSearch === context.search) return;
-    const timer = window.setTimeout(() => navigateQueue({ search: nextSearch, page: 1 }), 300);
+    const timer = window.setTimeout(() => navigateQueue({ search: nextSearch, page: 1 }), 600);
     return () => window.clearTimeout(timer);
   }, [context.search, navigateQueue, searchInput]);
 
@@ -329,10 +325,9 @@ export function FullTextScreeningClient({
                 </span>
                 <input
                   value={searchInput}
-                  disabled={isPending}
                   onChange={(event) => setSearchInput(event.target.value)}
                   placeholder="Search title, study ID, author, DOI..."
-                  className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+                  className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none"
                 />
               </div>
             </div>
