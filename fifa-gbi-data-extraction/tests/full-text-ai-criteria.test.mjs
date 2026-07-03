@@ -86,3 +86,29 @@ test('full-text AI criteria allow only bounded paper-derivable denominators', ()
     /do not calculate exposure during screening/i,
   );
 });
+
+test('full-text AI criteria do not infer athlete-exposures from ambiguous session or row counts', () => {
+  assert.match(
+    criteriaSource,
+    /training sessions, matches, dataset rows, samples, or observations/i,
+  );
+  assert.match(
+    criteriaSource,
+    /each count is one athlete participating in one session or match/i,
+  );
+  assert.match(
+    criteriaSource,
+    /ambiguous session count, or conflicting row totals is not an athlete-exposure/i,
+  );
+});
+
+test('full-text AI criteria do not accept player-seasons or cumulative proportions as injury exposure', () => {
+  assert.match(
+    criteriaSource,
+    /player-seasons, athlete headcounts, follow-up seasons, and cumulative injury proportions do not replace exposure hours/i,
+  );
+  assert.match(
+    criteriaSource,
+    /precise exposure time was unavailable.*exclude for no usable denominator/is,
+  );
+});

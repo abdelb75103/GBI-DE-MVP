@@ -1,0 +1,37 @@
+{
+  "scope": "Second search - Ishanka - S4608 full-text AI re-review final audit - 2026-07-03",
+  "verifiedAt": "2026-07-03T14:34:57Z",
+  "studyId": "S4608",
+  "recordId": "f020ba34-2112-4686-bb95-ee5a3d300188",
+  "title": "Injury Patterns in an Elite Men's Futsal Club: A Nine-Season Cohort Study.",
+  "result": "ai_recommendation_corrected_live",
+  "aiStatus": "completed",
+  "aiSuggestedDecision": "exclude",
+  "aiReason": "The study reports injury counts and cumulative injury proportions using 671 player-seasons, but it does not report training or match exposure hours, athlete-exposures, match-exposures, a study-specific time rate, or exact derivation inputs. The paper explicitly states that precise exposure time was unavailable and that exposure data are needed to define injury incidence and burden accurately.",
+  "aiEvidenceQuote": "Although precise exposure time was not available, senior athletes participated in a higher number of training sessions and total games.",
+  "aiSourceLocation": "PDF p. 8, Discussion",
+  "aiConfidence": 0.99,
+  "aiModel": "GPT-5 (Codex chat, medium reasoning)",
+  "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "aiReviewedAt": "2026-07-03T14:34:57.146Z",
+  "exclusionReason": "No usable denominator",
+  "denominatorStatus": "unusable",
+  "humanFullTextVotes": [
+    {
+      "decision": "exclude",
+      "reason": "No exposure reported (no usable denominator)",
+      "decidedAt": "2026-07-03T13:46:26.238761Z",
+      "reviewerName": "AbdelRahman Babiker",
+      "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+    }
+  ],
+  "aiHumanAlignment": "aligned_exclude",
+  "protectedHumanFieldsModified": false,
+  "storageBucket": "papers",
+  "storageObjectPath": "b6202d07-e530-43a7-9e2f-25fefeb88582/1782767796282-27022821-9046658860007966-pdf.pdf",
+  "databasePdfSha256": "a3afe482ae3928f8cd0f5c01bbd5cc17bcd8426c34c0f3c8312a348a94e1e6b0",
+  "downloadedStorageSha256": "a3afe482ae3928f8cd0f5c01bbd5cc17bcd8426c34c0f3c8312a348a94e1e6b0",
+  "storageHashVerified": true,
+  "safeguard": "Project and skill criteria now explicitly reject player-seasons, athlete headcounts, follow-up seasons, and cumulative injury proportions as substitutes for accepted injury exposure denominators.",
+  "projectCriteriaTestsPassed": 7
+}

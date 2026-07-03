@@ -5,6 +5,8 @@ description: Use when extracting, reviewing, applying, QA-checking, or batch-pro
 
 # GBI Live Extraction
 
+Default project path: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction`.
+
 When local scripts are explicitly requested, run them from `fifa-gbi-data-extraction/`. Track review state in `docs/review-backlog.md`.
 
 ## Core Defaults
@@ -36,7 +38,6 @@ When local scripts are explicitly requested, run them from `fifa-gbi-data-extrac
 
 1. Prepare the paper.
    - Inspect the PDF/text directly, use repo schema/types as source of truth, and prepare the work inline in Codex chat.
-   - Run `bash -lc './scripts/terminal-extract.sh prep --paper <paperId|studyId>'` only when Abdel explicitly asks for the terminal-extract workflow.
    - When selecting a "next available" paper, verify `assigned_to` first. `Available` means truly unassigned, not merely `uploaded`; assign selected papers to AbdelRahman Babiker before extraction unless instructed otherwise.
 2. Choose population rows before filling fields.
    - Use the strongest directly reported axis: study arm, sex, age group, competition level, team/region, season, surface, tournament phase, or another explicit cohort split.
@@ -45,10 +46,8 @@ When local scripts are explicitly requested, run them from `fifa-gbi-data-extrac
    - Shared/global values go on the first row only; subgroup-specific values go on matching rows; blanks preserve row alignment.
 3. Extract manually.
    - Stage values manually from the source text/PDF and live schema in Codex chat by default.
-   - Run `bash -lc './scripts/terminal-extract.sh extract --paper <paperId|studyId> --tab <manual-tab> --guidance "<user instruction>"'` only when Abdel explicitly asks for the terminal-extract workflow.
 4. Review before apply.
    - Review inline in Codex chat by default.
-   - Run `bash -lc './scripts/terminal-extract.sh review --paper <paperId|studyId>'` only when Abdel explicitly asks for the terminal-extract workflow.
    - Check Tabs `1-4` for every included paper, and Tabs `5-10` whenever compatible outcome, structured, illness, or mechanism data exists.
    - Before calling a paper ready, scan all results tables and usable figures for location, type/diagnosis/tissue, severity, mechanism/contact, incidence, burden, and CI values.
 5. Summarize and wait for explicit approval before applying.
@@ -56,7 +55,6 @@ When local scripts are explicitly requested, run them from `fifa-gbi-data-extrac
    - Never run `apply` without explicit approval.
 6. Apply approved changes.
    - Apply through direct Supabase writes by default.
-   - Run `bash -lc './scripts/terminal-extract.sh apply --paper <paperId|studyId>'` only when Abdel explicitly asks for the terminal-extract workflow.
    - Always dual-write structured rows: any value in `population_values` must have the matching newline-aligned `extraction_fields` value.
 7. Run the high-reasoning review gate.
    - Use `references/review-gate.md`.

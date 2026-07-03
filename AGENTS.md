@@ -20,6 +20,8 @@ Commits intended for GitHub/Vercel deployment must use the GitHub-linked author 
 
 Pushes to `main` should trigger the production deployment, while other branches should trigger previews. After pushing, verify that GitHub associates the commit author with `abdelb75103` and that the commit receives a Vercel status. The GitHub integration currently reports deployments from `abdelrahmans-projects/fifa-gbi-data-extraction`; this checkout's `fifa-gbi-data-extraction/.vercel/project.json` points to the separate `abdel-babikers-projects` project, so do not use that local link to judge or trigger the GitHub production deployment.
 
+If Vercel reports `Git author ... must have access to the project`, treat it as GitHub-author/Vercel-team access failure rather than a build failure. Confirm the commit maps to `abdelb75103` and that this account can access the connected `abdelrahmans-projects` Vercel project; do not work around it by deploying through the checkout's separate local Vercel link.
+
 ## User Preference: Small Cosmetic Changes
 
 For very small cosmetic changes, such as font color, copy, spacing, labels, or similarly low-risk visual tweaks, do not run extended verification or deployment checks unless Abdel explicitly asks for verification. Make the focused edit and report the changed files so Abdel can review manually.

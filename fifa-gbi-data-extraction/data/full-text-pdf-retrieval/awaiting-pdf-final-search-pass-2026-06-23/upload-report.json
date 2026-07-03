@@ -1,0 +1,4699 @@
+[
+  {
+    "studyId": "S4402",
+    "recordId": "0c02788a-3e78-4054-945e-5f28fe036039",
+    "title": "Non-modifiable and modifiable factors affecting anxiety and depressive symptoms in young athletes.",
+    "doi": "10.1080/00913847.2025.2466415",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2025.2466415",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/00913847.2025.2466415"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2466415",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2466415"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12748205/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12748205/pdf/fpsyg-16-1713901.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://hdl.handle.net/11449/304334",
+        "result": "html_no_pdf",
+        "finalUrl": "https://repositorio.unesp.br/entities/publication/8af2cc82-ec36-4c46-94d3-cea5cd988808"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39934987",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39934987/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2466415",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2466415"
+      },
+      {
+        "source": "semantic-scholar-url",
+        "url": "https://www.semanticscholar.org/paper/ceffb96357b0e23c5f5247247e72d1cdfa4763eb",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.semanticscholar.org/paper/ceffb96357b0e23c5f5247247e72d1cdfa4763eb"
+      },
+      {
+        "source": "duckduckgo-result",
+        "url": "https://colab.ws/articles/10.1080%2F00913847.2025.2466415",
+        "result": 403,
+        "finalUrl": "https://colab.ws/articles/10.1080%2F00913847.2025.2466415"
+      },
+      {
+        "source": "duckduckgo-result",
+        "url": "https://www.bohrium.com/en/paper-details/non-modifiable-and-modifiable-factors-affecting-anxiety-and-depressive-symptoms-in-young-athletes/1212251296753516545-2000000",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.bohrium.com/en/paper-details/non-modifiable-and-modifiable-factors-affecting-anxiety-and-depressive-symptoms-in-young-athletes/1212251296753516545-2000000"
+      },
+      {
+        "source": "duckduckgo-result",
+        "url": "https://www.booksci.cn/literature/143400854.htm",
+        "result": 404,
+        "finalUrl": "https://www.booksci.cn/literature/143400854.htm"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5032",
+    "recordId": "740bb94c-02ce-48fa-8c00-07fd4035a26f",
+    "title": "Injury prediction model for lower-limb sports injuries: A novel machine learning-based approach.",
+    "doi": "10.1016/j.jcot.2025.103114",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jcot.2025.103114",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0976566225002127"
+      },
+      {
+        "source": "ncbi-idconv-pmc",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12301836/pdf/",
+        "result": 403,
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12301836/pdf/"
+      },
+      {
+        "source": "pubmed-elink-pmc",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12660672/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12660672/pdf/41598_2025_Article_26344.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40735069",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40735069/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0976566225002127",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0976566225002127"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5096",
+    "recordId": "0ed9081d-98b6-4318-92ce-56706041f927",
+    "title": "Match schedule variability, not volume, is associated with severe muscle injury in elite football.",
+    "doi": "10.1080/00913847.2026.2657258",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2026.2657258",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/00913847.2026.2657258"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2026.2657258",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2026.2657258"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286698/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286698/pdf/BJR-15-2046-3758.156.BJR-2025-0216.R4.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286081/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286081/pdf/jmir-v28-e89276.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286185/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286185/pdf/pone.0328609.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286201/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286201/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286152/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286152/pdf/"
+      },
+      {
+        "source": "openalex-pdf",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2026.2657258?needAccess=true",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2026.2657258?needAccess=true"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41943936",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41943936/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2026.2657258",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00913847.2026.2657258"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3106",
+    "recordId": "6c34391b-b156-48f8-9aa3-4e97b3f70b2c",
+    "title": "Sleep Duration and Sleep Quality as Season-Long Predictors of Ratings of Perceived Exertion and Psychological Well-Being in Female Soccer Athletes.",
+    "doi": "10.1519/JSC.0000000000005166",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1519/JSC.0000000000005166",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1519/JSC.0000000000005166"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13035501/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13035501/pdf/fpsyg-17-1770781.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12500648/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12500648/pdf/fphys-16-1663657.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1519/jsc.0000000000005166",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1519/jsc.0000000000005166"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40493649",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40493649/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1519/JSC.0000000000005166",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1519/JSC.0000000000005166"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2814",
+    "recordId": "a70f53eb-d96a-43de-ad54-33ba9950e126",
+    "title": "Incidence and burden of 671 injuries in professional women footballers: time to focus on context-specific injury risk reduction strategies.",
+    "doi": "10.1080/15438627.2024.2367199",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2024.2367199",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2024.2367199"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2024.2367199",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2024.2367199"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12490306/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12490306/pdf/JBS-42-4-55773.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11859290/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11859290/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38898686",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38898686/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2024.2367199",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/15438627.2024.2367199"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S892",
+    "recordId": "2a4b2c9e-4620-4619-8682-e1de653df90a",
+    "title": "The Acute: Chronic Workload Ratio and Injury Risk in Semiprofessional Football Players.",
+    "doi": "10.1055/a-2282-0024",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1055/a-2282-0024",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1055/a-2282-0024"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112162/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112162/pdf/JHK-101-217225.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002794/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002794/pdf/fpubh-14-1798241.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "http://dx.doi.org/10.1055/a-2282-0024",
+        "result": 403,
+        "finalUrl": "http://dx.doi.org/10.1055/a-2282-0024"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38442910",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38442910/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "http://www.thieme-connect.de/DOI/DOI?10.1055/a-2282-0024",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/DOI/DOI?10.1055/a-2282-0024"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2282-0024.pdf",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2282-0024.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2206",
+    "recordId": "5ac45489-3e60-43a7-a305-8b5af5c0860d",
+    "title": "Comparative Effects of 2 Different Frequencies of Resistance Training in an Integral Periodization Approach on High-Intensity Actions and Noncontact Injuries in Young Trained Soccer Players.",
+    "doi": "10.1123/ijspp.2024-0518",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1123/ijspp.2024-0518",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1123/ijspp.2024-0518"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40840554",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40840554/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.humankinetics.com/view/journals/ijspp/20/10/article-p1363.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/view/journals/ijspp/20/10/article-p1363.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.humankinetics.com/downloadpdf/journals/ijspp/20/10/article-p1363.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/downloadpdf/journals/ijspp/20/10/article-p1363.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3922",
+    "recordId": "a22493fd-76e7-4763-b198-87d154c57337",
+    "title": "Injuries in Argentinian football: an epidemiological study of six professional clubs of second-division during the 2022 season.",
+    "doi": "10.1080/00913847.2025.2568379",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2025.2568379",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/00913847.2025.2568379"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2568379",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2568379"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9737509/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9737509/pdf/main.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41017628",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41017628/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2568379",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2568379"
+      },
+      {
+        "source": "semantic-scholar-url",
+        "url": "https://www.semanticscholar.org/paper/33da6cbc2e66b55845ec87e70d02e9c4f02db575",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.semanticscholar.org/paper/33da6cbc2e66b55845ec87e70d02e9c4f02db575"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S877",
+    "recordId": "4ed3d413-dcb6-4952-b423-3394092cfe0c",
+    "title": "Epidemiology of lateral ankle sprain focusing on indirect contact mechanism in male and female soccer players: An 18.5-month cohort study.",
+    "doi": "10.1016/j.injury.2024.111699",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.injury.2024.111699",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0020138324004054"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12484822/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12484822/pdf/41598_2025_Article_21143.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38970925",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38970925/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0020138324004054",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0020138324004054"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2474",
+    "recordId": "3d484c07-73a4-49fb-a424-f4a045dfd246",
+    "title": "Epidemiology of football-related injuries in young male football players. An additional analysis of data from a cluster-randomised controlled trial.",
+    "doi": "10.1080/24733938.2024.2369545",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2024.2369545",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2024.2369545"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2024.2369545",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2024.2369545"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38922821",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38922821/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2024.2369545",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2024.2369545"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1605",
+    "recordId": "9e0c9d14-2206-4dfe-aaa6-6147f3756fbd",
+    "title": "Incidence of injuries per 1000 hours of refereeing or training in soccer referees: A mini-review",
+    "doi": "10.1016/j.apunsm.2024.100455",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.apunsm.2024.100455",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2666506924000233"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628465/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628465/pdf/40279_2025_Article_2326.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doaj.org/article/d46fffc4021e44628d393965f19cc1de",
+        "result": 403,
+        "finalUrl": "https://doaj.org/article/d46fffc4021e44628d393965f19cc1de"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S2666506924000233",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2666506924000233"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2147",
+    "recordId": "f6990526-96e8-44b0-be42-cfde5a0d882c",
+    "title": "Health problems in top-level female football players: a four-season prospective study in the Finnish top football league.",
+    "doi": "10.1080/24733938.2025.2524175",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2025.2524175",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2025.2524175"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2524175",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2524175"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13070141/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13070141/pdf/10.1177_00368504261428994.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40642898",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40642898/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "http://urn.fi/URN:NBN:fi:jyu-202509016839",
+        "result": "html_no_pdf",
+        "finalUrl": "https://jyx.jyu.fi/jyx/Record/jyx_123456789_105106"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2524175",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2524175"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2400",
+    "recordId": "3937c67d-ee9a-4750-9df9-a9af2bae0895",
+    "title": "Are muscle injury incidence and ACTN3 R577X associated with playing positions in professional soccer players?",
+    "doi": "10.1007/s11332-025-01334-9",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1007/s11332-025-01334-9",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-025-01334-9?error=cookies_not_supported&code=281388bd-0963-47d3-9ebb-245af969f345"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13143716/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13143716/pdf/fcvm-13-1746819.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112168/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112168/pdf/JHK-101-218100.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112171/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112171/pdf/JHK-101-218951.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13026431/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13026431/pdf/ijms-27-02533.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804879/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11804879/pdf/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://link.springer.com/10.1007/s11332-025-01334-9",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-025-01334-9?error=cookies_not_supported&code=63dcad6d-3011-4b3c-9266-0b233aeb4fb2"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11332-025-01334-9.pdf",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-025-01334-9?error=cookies_not_supported&code=c5a979ab-3a66-45fc-b55a-71f9766f1178"
+      },
+      {
+        "source": "semantic-scholar-url",
+        "url": "https://www.semanticscholar.org/paper/0c26cedb70579cd34b52f104fa39f8b4cc730bfb",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.semanticscholar.org/paper/0c26cedb70579cd34b52f104fa39f8b4cc730bfb"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1798",
+    "recordId": "ad082cca-95e7-4edf-be16-cef7e5f5f2e8",
+    "title": "The Injury Incident Rate of Anterior Cruciate Ligament Injuries in Male Professional Football Players: A Systematic Review",
+    "doi": "10.1016/j.physio.2024.04.324",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.physio.2024.04.324",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0031940624003572"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/JEO2-13-e70775.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13283770/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13283770/pdf/CD001256.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13272697/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13272697/pdf/40798_2026_Article_1043.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270782/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270782/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268157/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268157/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "http://dx.doi.org/10.1016/j.physio.2024.04.324",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0031940624003572"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0031940624003572",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0031940624003572"
+      },
+      {
+        "source": "semantic-scholar-url",
+        "url": "https://www.semanticscholar.org/paper/2485fc48d16c8d27aab5dc14c4bab4146808def6",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.semanticscholar.org/paper/2485fc48d16c8d27aab5dc14c4bab4146808def6"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2273",
+    "recordId": "d743e988-7a6c-48b7-8f2d-67792ed148c3",
+    "title": "Elite football players achieve pre-injury running performance despite MRI lesions after return to play without increased risk of recurrence.",
+    "doi": "10.1080/15438627.2025.2517225",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2025.2517225",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2025.2517225"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2025.2517225",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2025.2517225"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/JEO2-13-e70775.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/12911_2026_Article_3615.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13151382/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13151382/pdf/12891_2026_Article_9737.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12624254/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12624254/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12988397/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12988397/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40492469",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40492469/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2025.2517225",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/15438627.2025.2517225"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1555",
+    "recordId": "6a9d4f5b-8f97-4c57-8d2b-876561c00a25",
+    "title": "Epidemiological analysis of injuries in soccer referees: A systematic review",
+    "doi": "10.1016/j.apunsm.2024.100464",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.apunsm.2024.100464",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2666506924000324"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628465/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628465/pdf/40279_2025_Article_2326.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doaj.org/article/b1f371cbeecf454abd93b6f0144a5630",
+        "result": 403,
+        "finalUrl": "https://doaj.org/article/b1f371cbeecf454abd93b6f0144a5630"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S2666506924000324",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2666506924000324"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3631",
+    "recordId": "bd2af6fc-e05b-4d1c-ad10-dc160fcbeb66",
+    "title": "From classical models to attention-based transformers: A comparative study of injury prediction pipelines in female varsity soccer.",
+    "doi": "10.1016/j.jbiomech.2026.113278",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jbiomech.2026.113278",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026001338"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026001338",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0021929026001338"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2087",
+    "recordId": "afb3d520-8fe0-4273-b232-34aa257eb0ec",
+    "title": "Beyond the cheers of soccer-skating through the mind of football players with reference to football clubs in Ahmedabad, India.",
+    "doi": "10.1080/14660970.2025.2538050",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/14660970.2025.2538050",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/14660970.2025.2538050"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/14660970.2025.2538050",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/14660970.2025.2538050"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/14660970.2025.2538050",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/14660970.2025.2538050"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4669",
+    "recordId": "00724ea5-0f5a-4862-92bd-ecbbcefb352c",
+    "title": "Impact of Injury on Anxiety, Depression, and Quality of Life in Youth Soccer Players.",
+    "doi": "10.1097/JSM.0000000000001401",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001401",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001401"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13282561/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13282561/pdf/HBM-47-e70584.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280274/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280274/pdf/44192_2026_Article_468.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281432/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281432/pdf/13102_2026_Article_1695.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13276873/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13276873/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270550/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270550/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001401",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001401"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41489726",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41489726/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001401",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001401"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4608",
+    "recordId": "f020ba34-2112-4686-bb95-ee5a3d300188",
+    "title": "Injury Patterns in an Elite Men's Futsal Club: A Nine-Season Cohort Study.",
+    "doi": "10.1055/a-2764-2503",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1055/a-2764-2503",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1055/a-2764-2503"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41435847",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41435847/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "http://www.thieme-connect.de/DOI/DOI?10.1055/a-2764-2503",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/DOI/DOI?10.1055/a-2764-2503"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2764-2503.pdf",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2764-2503.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2391",
+    "recordId": "742345e9-7ebc-439a-bf27-508f4c75b340",
+    "title": "A Higher Thigh Muscle Injury Incidence in Professional Male Soccer Players Returning to Play After Anterior Cruciate Ligament Reconstruction: Analysis of 110 Cases From the UEFA Elite Club Injury Study.",
+    "doi": "10.1177/03635465251353213",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1177/03635465251353213",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1177/03635465251353213"
+      },
+      {
+        "source": "sage-pdf-pattern",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1177/03635465251353213",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/pdf/10.1177/03635465251353213"
+      },
+      {
+        "source": "sage-epdf-pattern",
+        "url": "https://journals.sagepub.com/doi/epdf/10.1177/03635465251353213",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/epdf/10.1177/03635465251353213"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40624968",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40624968/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.sagepub.com/doi/10.1177/03635465251353213",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/10.1177/03635465251353213"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1109",
+    "recordId": "55550352-a452-4cb3-9b7e-ba307c8a8f1b",
+    "title": "The effects of jump training on measures of physical performance, lower extremities injury incidence and burden in highly trained male soccer players.",
+    "doi": "10.1080/15438627.2022.2079989",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2022.2079989",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2022.2079989"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2022.2079989",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2022.2079989"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274447/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274447/pdf/jssm-25-405.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12037537/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12037537/pdf/10.1177_19417381251333417.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12489078/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12489078/pdf/41598_2025_Article_10652.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11302152/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11302152/pdf/medscimonit-30-e944627.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10742471/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10742471/pdf/healthcare-11-03195.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/35616245",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/35616245/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2022.2079989",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/15438627.2022.2079989"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5306",
+    "recordId": "ed78f98e-7e13-47b0-a14e-89a7f3fc75a7",
+    "title": "Co-designing a year-round injury surveillance system: longitudinal monitoring for a small-nation football team (PhD Academy Award).",
+    "doi": "10.1136/bjsports-2026-111700",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1136/bjsports-2026-111700",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1136/bjsports-2026-111700"
+      },
+      {
+        "source": "bmj-full-pdf-pattern",
+        "url": "https://bjsm.bmj.com/content/bjsports-2026-111700.full.pdf",
+        "result": 403,
+        "finalUrl": "https://bjsm.bmj.com/content/bjsports-2026-111700.full.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41951349",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41951349/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://bjsm.bmj.com/lookup/doi/10.1136/bjsports-2026-111700",
+        "result": 403,
+        "finalUrl": "https://bjsm.bmj.com/lookup/doi/10.1136/bjsports-2026-111700"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4634",
+    "recordId": "086de593-cc8e-480f-89ea-7bee3e63aa52",
+    "title": "ACL injuries in professional football (soccer): Women face higher risk, later surgical care and longer time loss compared to men.",
+    "doi": "10.1002/ksa.70160",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1002/ksa.70160",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1002/ksa.70160"
+      },
+      {
+        "source": "wiley-pdfdirect-pattern",
+        "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ksa.70160",
+        "result": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ksa.70160"
+      },
+      {
+        "source": "wiley-pdf-pattern",
+        "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70160",
+        "result": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70160"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13219932/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13219932/pdf/10.1177_20552076261452411.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13070141/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13070141/pdf/10.1177_00368504261428994.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12996464/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12996464/pdf/12178_2026_Article_10021.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12847663/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12847663/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12820797/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12820797/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41182134",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41182134/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70160",
+        "result": 403,
+        "finalUrl": "https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70160"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://esskajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70160",
+        "result": 403,
+        "finalUrl": "https://esskajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70160"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2382",
+    "recordId": "3692c38c-7d1b-4f61-85c9-52abc92e800a",
+    "title": "Risk of Low Energy Availability in New Zealand National Team and U20 Female Football Representatives.",
+    "doi": "10.1123/wspaj.2023-0041",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1123/wspaj.2023-0041",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1123/wspaj.2023-0041"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11540992/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11540992/pdf/pan-2024-0022.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11225636/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11225636/pdf/RSSN_21_2366427.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11064333/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11064333/pdf/12883_2024_Article_3653.pdf"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.humankinetics.com/view/journals/wspaj/32/1/article-wspaj.2023-0041.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/view/journals/wspaj/32/1/article-wspaj.2023-0041.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.humankinetics.com/downloadpdf/journals/wspaj/32/1/article-wspaj.2023-0041.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/downloadpdf/journals/wspaj/32/1/article-wspaj.2023-0041.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4619",
+    "recordId": "463bb848-1b41-4596-9d99-e1025cd50f94",
+    "title": "Epidemiology of injuries and illnesses in national team male beach soccer players: a prospective seven-year cohort study.",
+    "doi": "10.1080/24733938.2025.2567671",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2025.2567671",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2025.2567671"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2567671",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2567671"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12948335/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12948335/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41017654",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41017654/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2567671",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2567671"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1106",
+    "recordId": "3acfc663-5887-4f53-8f1d-2ca58a9d7630",
+    "title": "Decrease in aerial challenges after revision of goal kick rules in Japan Professional Soccer League: explorative study of the possibility of a risk reduction for head injury, concussion, and brain damage by a rule revision.",
+    "doi": "10.1080/24733938.2022.2142274",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2022.2142274",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2022.2142274"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2022.2142274",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2022.2142274"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163735/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163735/pdf/healthcare-14-01200.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13124859/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13124859/pdf/40279_2026_Article_2405.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10613686/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10613686/pdf/fpsyg-14-1244404.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36315233",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/36315233/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2022.2142274",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2022.2142274"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2520",
+    "recordId": "85db6461-a9f2-4b06-87ad-9bc561a431ff",
+    "title": "Association between high-intensity running and muscle-tendon injuries in professional Brazilian soccer players.",
+    "doi": "10.21134/eurjhm.2025.54.4",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.21134/eurjhm.2025.54.4",
+        "result": 500,
+        "finalUrl": "https://doi.org/10.21134/eurjhm.2025.54.4"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/40279_2026_Article_2404.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13214925/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13214925/pdf/jfmk-11-00170.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/sports-14-00199.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13117052/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13117052/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13113348/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13113348/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doaj.org/article/bc7b2effe56444d4bed8ef0cc405040f",
+        "result": 403,
+        "finalUrl": "https://doaj.org/article/bc7b2effe56444d4bed8ef0cc405040f"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://eurjhm.com/index.php/eurjhm/article/view/952",
+        "result": 500,
+        "finalUrl": "https://eurjhm.com/index.php/eurjhm/article/view/952"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1805",
+    "recordId": "686dd4e2-2a78-4d7e-8c47-5c8bd629975c",
+    "title": "Epidemiology of Hip, Thigh, and Knee Injuries Across NCAA Division I Soccer Players",
+    "doi": "10.1097/JSM.0000000000001211",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38436935",
+        "result": 404,
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38436935"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001211"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3313",
+    "recordId": "dd022591-078c-424c-8c2a-4938ab01d500",
+    "title": "Analysis of musculoskeletal injuries in elite female soccer players: Cohort study in one Brazilian team.",
+    "doi": "10.1016/j.ptsp.2025.02.009",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.ptsp.2025.02.009",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X25000392"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/JEO2-13-e70775.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280357/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280357/pdf/41598_2026_Article_49793.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274447/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274447/pdf/jssm-25-405.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268421/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268421/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40056726",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40056726/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X25000392",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X25000392"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3933",
+    "recordId": "20f9933d-9625-494f-bec7-c07abc1a46c8",
+    "title": "Injuries Following COVID-19 Infection in Academy-level Male Youth Soccer Players.",
+    "doi": "10.1097/BPO.0000000000002845",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/BPO.0000000000002845",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/BPO.0000000000002845"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/sports-14-00199.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/bpo.0000000000002845",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/bpo.0000000000002845"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39494787",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39494787/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/BPO.0000000000002845",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/BPO.0000000000002845"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1899",
+    "recordId": "aeb3790f-3077-43d7-9ee7-360f08eedace",
+    "title": "Mental Health Symptoms of Amateur Association Football Referees: A Cross-Sectional Study.",
+    "doi": "10.1123/jcsp.2022-0018",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1123/jcsp.2022-0018",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1123/jcsp.2022-0018"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628492/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12628492/pdf/40279_2025_Article_2315.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12519685/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12519685/pdf/bmjsem-11-4.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12352424/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12352424/pdf/peerj-13-19790.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12152025/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12152025/pdf/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.humankinetics.com/view/journals/jcsp/18/2/article-p199.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/view/journals/jcsp/18/2/article-p199.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.humankinetics.com/downloadpdf/journals/jcsp/18/2/article-p199.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/downloadpdf/journals/jcsp/18/2/article-p199.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3841",
+    "recordId": "513799f3-203b-4e3e-93fe-0dfde3f2beee",
+    "title": "The FIFA 11+ injury prevention program reduces the incidence of lower extremity injuries in football players: a systematic review and meta-analysis.",
+    "doi": "10.23736/S0022-4707.24.15910-5",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.23736/S0022-4707.24.15910-5",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/S0022-4707.24.15910-5"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12979756/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12979756/pdf/40798_2026_Article_985.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12194256/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12194256/pdf/jfmk-10-00216.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12077248/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12077248/pdf/cureus-0017-00000082232.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11860710/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11860710/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.23736/s0022-4707.24.15910-5",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/s0022-4707.24.15910-5"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39360984",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39360984/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.minervamedica.it/index2.php?show=R40Y2025N01A0117",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/index2.php?show=R40Y2025N01A0117"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://www.minervamedica.it/pdf.php?cod=R40Y2025N01A0117",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/pdf.php?cod=R40Y2025N01A0117"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2031",
+    "recordId": "3c86d46f-fb0e-4640-b135-57288ca8382a",
+    "title": "Effectiveness of FIFA 11+ Injury Prevention Programs in Reducing Head and Neck Injuries, Including Concussion, Among Soccer Players: A Systematic Review and Meta-Analysis.",
+    "doi": "10.1123/pes.2023-0187",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1123/pes.2023-0187",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1123/pes.2023-0187"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163735/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163735/pdf/healthcare-14-01200.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11860710/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11860710/pdf/sports-13-00039.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39481367",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39481367/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.humankinetics.com/view/journals/pes/37/4/article-p403.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/view/journals/pes/37/4/article-p403.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.humankinetics.com/downloadpdf/journals/pes/37/4/article-p403.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/downloadpdf/journals/pes/37/4/article-p403.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1027",
+    "recordId": "5c8143c9-d34d-4028-b765-2a31fead5626",
+    "title": "Quantifying the impact of the coronavirus 2019 pandemic on youth sports-related injuries in the USA.",
+    "doi": "10.1097/BPB.0000000000001096",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/BPB.0000000000001096",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/BPB.0000000000001096"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12925345/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12925345/pdf/main.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/bpb.0000000000001096",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/bpb.0000000000001096"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37278275",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/37278275/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/BPB.0000000000001096",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/BPB.0000000000001096"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2631",
+    "recordId": "8c8a13af-76cb-412c-8d12-aa3cf1ccfd8c",
+    "title": "Illness, the overlooked research topic for time-loss in women's football – a scoping review.",
+    "doi": "10.1080/15438627.2024.2428603",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2024.2428603",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2024.2428603"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2024.2428603",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2024.2428603"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/sports-14-00199.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13141259/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13141259/pdf/13102_2026_Article_1664.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12513872/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12513872/pdf/40279_2025_Article_2258.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12223562/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12223562/pdf/fspor-07-1583467.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11467081/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11467081/pdf/40279_2024_Article_2074.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39545699",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39545699/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2024.2428603",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/15438627.2024.2428603"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3577",
+    "recordId": "87cce841-271c-407c-8d09-418c5814eadb",
+    "title": "Is limb asymmetry an intrinsic risk factor for time-loss groin injury in professional male soccer players?",
+    "doi": "10.1016/j.ptsp.2024.11.008",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.ptsp.2024.11.008",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X24001275"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268157/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268157/pdf/pone.0351121.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13235686/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13235686/pdf/peerj-14-21319.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13215229/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13215229/pdf/JHK-102-204377.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13113348/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13113348/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39644706",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39644706/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X24001275",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X24001275"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S763",
+    "recordId": "e7e5be67-ba5d-48bc-aacd-5741da10e022",
+    "title": "Snooze it or Lose it: Understanding Sleep Disturbance and Injuries in Soccer and Basketball Student-Athletes.",
+    "doi": "10.1097/JSM.0000000000001250",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001250",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001250"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13272085/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13272085/pdf/fpsyg-17-1847782.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12840606/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12840606/pdf/healthcare-14-00236.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12339549/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12339549/pdf/fpsyg-16-1604783.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12002490/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12002490/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001250",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001250"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38980669",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38980669/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001250",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001250"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2020",
+    "recordId": "60af9ffb-ee5a-45ab-a137-fdf27c428f0c",
+    "title": "Perfil psicológico de futbolistas: análisis de variables y constructos.",
+    "doi": null,
+    "status": "uploaded_verified",
+    "tried": [
+      {
+        "source": "crossref-title-url",
+        "url": "https://doi.org/10.6018/cpd.648741",
+        "result": "pdf",
+        "finalUrl": "https://revistas.um.es/cpd/article/download/648741/387251"
+      }
+    ],
+    "rejected": [],
+    "sourceUrl": "https://revistas.um.es/cpd/article/download/648741/387251",
+    "fileName": "S2020-perfil-psicologico-de-futbolistas-analisis-de-variables-y-constructos.pdf",
+    "localPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-final-search-pass-2026-06-23/files/S2020-perfil-psicologico-de-futbolistas-analisis-de-variables-y-constructos.pdf",
+    "size": 805030,
+    "sha256": "1bf3c08218f4f7fa73816f492ce2079d411164eb8bcd824a7d9ec15e34355247",
+    "validation": {
+      "doiMatch": false,
+      "exactTitleMatch": true,
+      "titleTokenCoverage": 1
+    },
+    "objectPath": "dbd8f681-3ad1-45b1-8ffc-fb54c5d57f0e/1782233355098-S2020-perfil-psicologico-de-futbolistas-analisis-de-variables-y-constructos.pdf",
+    "verified": true
+  },
+  {
+    "studyId": "S3915",
+    "recordId": "693da7b8-8a97-4196-a238-60519317fdc6",
+    "title": "A session-by-session analysis of psychological and external workload demands prior to muscle-tendon injuries in Brazilian professional soccer players: a pilot study.",
+    "doi": "10.1080/00913847.2025.2452153",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2025.2452153",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/00913847.2025.2452153"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2452153",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2452153"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39789978",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39789978/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2452153",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2452153"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1771",
+    "recordId": "af1438e8-9138-4a0f-b518-22bb87305758",
+    "title": "Sleep Consistency as a Risk Factor for Lower Extremity Injuries in Division I Soccer Athletes",
+    "doi": "10.1097/JSM.0000000000001211",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38436935",
+        "result": 404,
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38436935"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001211"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1916",
+    "recordId": "e7f4d204-768b-4ed8-90ee-e12e3cca4f3c",
+    "title": "DESAFIOS NO FUTEBOL FEMININO: PERFIL DAS ATLETAS E ANÁLISE DAS LESÕES TRAUMATO-ORTOPÉDICAS.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [],
+    "rejected": []
+  },
+  {
+    "studyId": "S1103",
+    "recordId": "e608ffd7-5072-4d7b-8db4-fb706f265811",
+    "title": "A Thirteen-Year Analysis of Facial Fractures among Professional Soccer Players.",
+    "doi": "10.1055/a-1996-7595",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1055/a-1996-7595",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1055/a-1996-7595"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12656666/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12656666/pdf/sports-13-00392.pdf"
+      },
+      {
+        "source": "openalex-pdf",
+        "url": "https://escholarship.org/uc/item/61n4q5jw",
+        "result": 403,
+        "finalUrl": "https://escholarship.org/uc/item/61n4q5jw"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36509105",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/36509105/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "http://www.thieme-connect.de/DOI/DOI?10.1055/a-1996-7595",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/DOI/DOI?10.1055/a-1996-7595"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-1996-7595.pdf",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-1996-7595.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1472",
+    "recordId": "6ea564d5-0a18-412a-aefa-51fe6ed2f4ea",
+    "title": "Sustainable Football: Physical Profile, Training Load, Risk Factors and Injuries in Swedish Elite Football",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274209/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274209/pdf/13102_2026_Article_1719.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260500/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260500/pdf/44192_2026_Article_494.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/40279_2026_Article_2404.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7619124/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7619124/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13216490/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13216490/pdf/"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1182",
+    "recordId": "7b8aa5f1-a386-4485-af48-edead5fea943",
+    "title": "Prevalence of lower limb pain and disability in football, hockey, and floorball players.",
+    "doi": "10.3233/BMR-230048",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.3233/BMR-230048",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.3233/BMR-230048"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13216490/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13216490/pdf/fspor-08-1753340.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12540047/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12540047/pdf/main.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12234338/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12234338/pdf/fendo-16-1530067.pdf"
+      },
+      {
+        "source": "openalex-pdf",
+        "url": "https://content.iospress.com/download/journal-of-back-and-musculoskeletal-rehabilitation/bmr230048?id=journal-of-back-and-musculoskeletal-rehabilitation%2Fbmr230048",
+        "result": 403,
+        "finalUrl": "https://content.iospress.com/download/journal-of-back-and-musculoskeletal-rehabilitation/bmr230048?id=journal-of-back-and-musculoskeletal-rehabilitation%2Fbmr230048"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.3233/bmr-230048",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.3233/bmr-230048"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37661868",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/37661868/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.medra.org/servlet/aliasResolver?alias=iospress&doi=10.3233/BMR-230048",
+        "result": 403,
+        "finalUrl": "https://www.medra.org/servlet/aliasResolver?alias=iospress&doi=10.3233/BMR-230048"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2280",
+    "recordId": "aa45d3f1-e1b0-40ac-814c-fec93aee1e8e",
+    "title": "Does accumulated physical load in different time windows affect hamstring injuries in elite football players?",
+    "doi": "10.1080/15438627.2025.2468799",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2025.2468799",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2025.2468799"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2025.2468799",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2025.2468799"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/JEO2-13-e70775.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12492344/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12492344/pdf/JBS-42-4-56156.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12421611/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12421611/pdf/bmjsem-11-3.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39976375",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39976375/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2025.2468799",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/15438627.2025.2468799"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3337",
+    "recordId": "f2f7d034-7d8f-4113-b270-a2eb2ecead80",
+    "title": "Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season Prospective Cohort Study.",
+    "doi": "10.1097/JSM.0000000000001288",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001288",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001288"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001288",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001288"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39745278",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39745278/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001288",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001288"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1815",
+    "recordId": "1b266873-bb94-472e-b868-6eafe355aded",
+    "title": "Comparison of Injuries Sustained on Grass and Artificial Turf by USL1 Mens Soccer Team. Part 1: Match Related Injuries",
+    "doi": "10.1097/JSM.0000000000001211",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38436935",
+        "result": 404,
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38436935"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001211"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3518",
+    "recordId": "39897a43-8be2-4c3b-b5bc-6e3deab9792b",
+    "title": "Longitudinal study of mental health in an elite soccer club: Depression and anxiety symptoms across a competitive season.",
+    "doi": "10.1016/j.psychsport.2025.102868",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.psychsport.2025.102868",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1469029225000676"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13236492/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13236492/pdf/fpsyg-17-1832383.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12392049/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12392049/pdf/SMS-35-e70125.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40354866",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40354866/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1469029225000676",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1469029225000676"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1842",
+    "recordId": "6677c3b0-c20f-4c5f-aabd-1b43b514b909",
+    "title": "Sleep Consistency as a Predictor for Increased Risk of Injuries in Division I Athletes",
+    "doi": "10.1097/JSM.0000000000001211",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001211"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38436935",
+        "result": 404,
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38436935"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001211",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001211"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3978",
+    "recordId": "7611344c-3f67-446c-bcdd-a04fd599378e",
+    "title": "Pre-Participation Reaction Time and Concussion Risk among Middle School Female Soccer Players.",
+    "doi": "10.1016/j.jpeds.2026.115036",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jpeds.2026.115036",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0022347626000648"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13119781/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13119781/pdf/sports-14-00133.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12582918/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12582918/pdf/fspor-07-1650463.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11592295/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11592295/pdf/brainsci-14-01091.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10763903/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10763903/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9924603/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9924603/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41692230",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41692230/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0022347626000648",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0022347626000648"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2203",
+    "recordId": "623ff11c-6078-4433-90c4-d3e000631bc6",
+    "title": "Knee and ACL injury rates in NCAA soccer players: an epidemiological study of 10 consecutive seasons.",
+    "doi": "10.1080/24733938.2025.2476479",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2025.2476479",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2025.2476479"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2476479",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2476479"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13216500/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13216500/pdf/fnut-13-1813030.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12875792/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12875792/pdf/aoj-11-10.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12840749/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12840749/pdf/healthcare-14-00174.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12795778/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12795778/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12759145/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12759145/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40104846",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40104846/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pure.amsterdamumc.nl/en/publications/be040ccd-5116-45a3-983e-d327b32bf35e",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pure.amsterdamumc.nl/en/publications/knee-and-acl-injury-rates-in-ncaa-soccer-players-an-epidemiologic/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://biblio.vub.ac.be/vubir/(ff549878-84f2-4cf8-a541-7d62362b2019).html",
+        "result": "html_no_pdf",
+        "finalUrl": "https://biblio.vub.ac.be/iguana/www.main.cls?surl=search&p=e0de136e-cba4-11e8-a223-005056b658d1"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2476479",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2476479"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3852",
+    "recordId": "ffd1d938-6680-4278-a3cd-4c526b797ba0",
+    "title": "Physical and Mental Well-Being in Former Collegiate Soccer Athletes.",
+    "doi": "10.14423/SMJ.0000000000001849",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.14423/SMJ.0000000000001849",
+        "result": "html_no_pdf",
+        "finalUrl": "http://sma.org/southern-medical-journal/article/physical-and-mental-well-being-in-former-collegiate-soccer-athletes/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284853/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284853/pdf/nihms-2171135.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280274/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280274/pdf/44192_2026_Article_468.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281432/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281432/pdf/13102_2026_Article_1695.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13253276/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13253276/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13246342/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13246342/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.14423/smj.0000000000001849",
+        "result": "html_no_pdf",
+        "finalUrl": "http://sma.org/southern-medical-journal/article/physical-and-mental-well-being-in-former-collegiate-soccer-athletes/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40663127",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40663127/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "http://sma.org/southern-medical-journal/article/physical-and-mental-well-being-in-former-collegiate-soccer-athletes",
+        "result": "html_no_pdf",
+        "finalUrl": "http://sma.org/southern-medical-journal/article/physical-and-mental-well-being-in-former-collegiate-soccer-athletes/"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3487",
+    "recordId": "098895f0-71df-475e-9138-6f74acb2a632",
+    "title": "Shoulder injuries in amateur soccer players. An exploratory cross-sectional survey.",
+    "doi": "10.1016/j.ptsp.2025.02.004",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.ptsp.2025.02.004",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X25000343"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210993/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210993/pdf/sports-14-00213.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13200619/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13200619/pdf/peerj-14-21327.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12894665/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12894665/pdf/41598_2026_Article_35724.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12850624/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12850624/pdf/KSA-34-724.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12802025/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12802025/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39954552",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39954552/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://hdl.handle.net/2158/1424744",
+        "result": 500,
+        "finalUrl": "https://hdl.handle.net/2158/1424744"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X25000343",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X25000343"
+      },
+      {
+        "source": "semantic-scholar-url",
+        "url": "https://www.semanticscholar.org/paper/3000e596a13532b6cf162db5c8b5143377aa7298",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.semanticscholar.org/paper/3000e596a13532b6cf162db5c8b5143377aa7298"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2234",
+    "recordId": "a55cc400-14a1-4527-a066-4121dea66f8c",
+    "title": "Injuries in elite football (soccer) academy: A 4-year observational cohort study of five categories and 515 players.",
+    "doi": "10.1177/17479541241232765",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1177/17479541241232765",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1177/17479541241232765"
+      },
+      {
+        "source": "sage-pdf-pattern",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1177/17479541241232765",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/pdf/10.1177/17479541241232765"
+      },
+      {
+        "source": "sage-epdf-pattern",
+        "url": "https://journals.sagepub.com/doi/epdf/10.1177/17479541241232765",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/epdf/10.1177/17479541241232765"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13191186/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13191186/pdf/10.1177_21925682261435811.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12457634/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12457634/pdf/40520_2025_Article_3119.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10323075/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10323075/pdf/11606_2023_Article_8226.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10587315/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10587315/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5661480/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5661480/pdf/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.sagepub.com/doi/10.1177/17479541241232765",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/10.1177/17479541241232765"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2949",
+    "recordId": "35b47d20-cf6f-4304-aa88-8b3974494818",
+    "title": "ASSOCIAÇÃO ENTRE LESÕES MUSCULARES DE JOGADORES DE FUTEBOL COM A CARGA DE TREINAMENTO E DE JOGOS.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [],
+    "rejected": []
+  },
+  {
+    "studyId": "S3892",
+    "recordId": "a088b1ca-fde7-4d27-8270-fe82fae767d9",
+    "title": "Injury incidence and prevention beliefs in Brazilian amateur soccer: a cross-sectional study.",
+    "doi": "10.1080/09593985.2025.2517837",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/09593985.2025.2517837",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/09593985.2025.2517837"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/09593985.2025.2517837",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/09593985.2025.2517837"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280357/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280357/pdf/41598_2026_Article_49793.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13244847/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13244847/pdf/13102_2026_Article_1769.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13230000/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13230000/pdf/fspor-08-1776533.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13221697/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13221697/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40491051",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40491051/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/09593985.2025.2517837",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/09593985.2025.2517837"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2876",
+    "recordId": "44f40572-81b3-498d-8e66-25b27251169b",
+    "title": "男子高校生サッカー選手における2年間の傷害調査 ─鼠径部痛予防プログラム実施の有無が鼠径部痛に与える影響─.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286698/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286698/pdf/BJR-15-2046-3758.156.BJR-2025-0216.R4.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286673/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286673/pdf/10-1055-a-2854-0796.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286521/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286521/pdf/resprot-v15-e91522.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286654/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286654/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286524/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286524/pdf/"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2962",
+    "recordId": "14f058f3-327d-42f1-ac93-889837ade331",
+    "title": "Acute:chronic workload ratio of professional soccer players preceding hamstring muscle injuries: a 2-season retrospective study.",
+    "doi": "10.1007/s11332-023-01127-y",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1007/s11332-023-01127-y",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-023-01127-y?error=cookies_not_supported&code=5936ddd5-d079-4d42-93b6-52e9e4018a9f"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12884896/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12884896/pdf/JBS-43-56510.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "http://dx.doi.org/10.1007/s11332-023-01127-y",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-023-01127-y?error=cookies_not_supported&code=e030592e-5bf9-4808-9871-00e00353588a"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://link.springer.com/10.1007/s11332-023-01127-y",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-023-01127-y?error=cookies_not_supported&code=e11c0339-7098-4fab-93b2-37ad8e540951"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11332-023-01127-y.pdf",
+        "result": "html_no_pdf",
+        "finalUrl": "https://link.springer.com/article/10.1007/s11332-023-01127-y?error=cookies_not_supported&code=9de8195f-d417-4f14-a419-841e7f1a29c0"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2284",
+    "recordId": "550d4d94-776b-49ff-b483-f37217e1e244",
+    "title": "Beyond Contact: Epidemiology of Concussion Incidence in Women's Collegiate Sports, 2016–2022.",
+    "doi": "10.4085/1062-6050-0290.25",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.4085/1062-6050-0290.25",
+        "result": "html_no_pdf",
+        "finalUrl": "https://nata.kglmeridian.com/view/journals/attr/61/5/article-p364.xml"
+      },
+      {
+        "source": "ncbi-idconv-pmc",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198210/pdf/",
+        "result": 403,
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198210/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42181781",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/42181781/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198210/",
+        "result": 403,
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198210/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://nata.kglmeridian.com/view/journals/attr/61/5/article-p364.xml",
+        "result": "html_no_pdf",
+        "finalUrl": "https://nata.kglmeridian.com/view/journals/attr/61/5/article-p364.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://nata.kglmeridian.com/downloadpdf/journals/attr/61/5/article-p364.xml",
+        "result": 404,
+        "finalUrl": "https://nata.kglmeridian.com/downloadpdf/journals/attr/61/5/article-p364.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S755",
+    "recordId": "fa0ed9e0-e5c2-49c1-b59d-368f9949d7a1",
+    "title": "Secondary injury prevention reduces hamstring strain and time-loss groin injury burdens in male professional football.",
+    "doi": "10.1016/j.ptsp.2024.08.003",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.ptsp.2024.08.003",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X24000877"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13113348/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13113348/pdf/bioengineering-13-00473.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12129639/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12129639/pdf/ijspt_2025_20_6_138472.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39182345",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39182345/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X24000877",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1466853X24000877"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4629",
+    "recordId": "48eb4f7a-f33f-470b-ae47-26314ab34d14",
+    "title": "Epidemiology of Sport Injury Among Korean Male Youth Soccer Players: A Prospective Cohort Study.",
+    "doi": "10.1123/pes.2024-0118",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1123/pes.2024-0118",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1123/pes.2024-0118"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13243044/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13243044/pdf/fphys-17-1840665.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41569819",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41569819/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.humankinetics.com/view/journals/pes/aop/article-10.1123-pes.2024-0118/article-10.1123-pes.2024-0118.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/view/journals/pes/aop/article-10.1123-pes.2024-0118/article-10.1123-pes.2024-0118.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.humankinetics.com/downloadpdf/journals/pes/aop/article-10.1123-pes.2024-0118/article-10.1123-pes.2024-0118.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/downloadpdf/journals/pes/aop/article-10.1123-pes.2024-0118/article-10.1123-pes.2024-0118.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3745",
+    "recordId": "6c6f590f-0842-4b93-b76e-00b0b2a50cf1",
+    "title": "Risk Factors For Groin Injuries In Collegiate Soccer Players: 3042.",
+    "doi": "10.1249/01.mss.0001159396.81662.a3",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1249/01.mss.0001159396.81662.a3",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1249/01.mss.0001159396.81662.a3"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1249/01.mss.0001159396.81662.a3",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1249/01.mss.0001159396.81662.a3"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2450",
+    "recordId": "63f8b791-8189-4aec-8bd1-6276bf1fca9c",
+    "title": "A multidimensional prediction model for overtraining risk in youth soccer players: Integrating physiological and psychological markers.",
+    "doi": "10.1080/02640414.2025.2521211",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/02640414.2025.2521211",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/02640414.2025.2521211"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/02640414.2025.2521211",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/02640414.2025.2521211"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13205505/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13205505/pdf/diagnostics-16-01448.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12657369/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12657369/pdf/fspor-07-1691779.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40545715",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40545715/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/02640414.2025.2521211",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/02640414.2025.2521211"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1855",
+    "recordId": "68eba66e-6f29-49ee-9a2b-c364826dde7c",
+    "title": "Comparison of Injuries Sustained on Grass and Artificial Turf by USL1 Mens Soccer Team. Part 2: Total Athlete Expos",
+    "doi": "10.1097/JSM.0000000000001212",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001212",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001212"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001212",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001212"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38436933",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/38436933/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001212",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/JSM.0000000000001212"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2371",
+    "recordId": "e78024e7-06cc-4c1a-b051-d0fa2b48c9de",
+    "title": "Sports Injury Patterns and Economic Consequences Before and During the COVID‐19 Pandemic: A Comprehensive Study of Norwegian Sports From 2017 to 2020 Using Insurance Data.",
+    "doi": "10.1111/sms.70155",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1111/sms.70155",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1111/sms.70155"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12961573/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12961573/pdf/SMS-36-e70237.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41111152",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41111152/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://portal.findresearcher.sdu.dk/da/publications/41bbbdde-fd00-4ffd-9329-2183d792cfc3",
+        "result": "html_no_pdf",
+        "finalUrl": "https://portal.findresearcher.sdu.dk/da/publications/sports-injury-patterns-and-economic-consequences-before-and-durin/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/sms.70155",
+        "result": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/10.1111/sms.70155"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/sms.70155",
+        "result": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/sms.70155"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2202",
+    "recordId": "7161b666-61dd-45d4-af13-e4c4e3131b12",
+    "title": "Injuries and risk factors in men's beach soccer: Japanese national championships 2013–2023.",
+    "doi": "10.1080/24733938.2025.2558580",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2025.2558580",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2025.2558580"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2558580",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2025.2558580"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40926328",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40926328/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pasteur.hal.science/pasteur-05289066",
+        "result": "pdf",
+        "finalUrl": "https://pasteur.hal.science/public/GUIDE_OPEN_ACCESS_EN.pdf"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2558580",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2025.2558580"
+      }
+    ],
+    "rejected": [
+      {
+        "url": "https://pasteur.hal.science/public/GUIDE_OPEN_ACCESS_EN.pdf",
+        "reason": "weak_text_match",
+        "coverage": 0.125,
+        "doiMatch": false,
+        "exactTitleMatch": false,
+        "sha256": "60934a014d41f0a5ffb67e298b2c78d4f4b77902f0b59b316947cdf4e5e064ac"
+      }
+    ]
+  },
+  {
+    "studyId": "S2357",
+    "recordId": "8103fe39-878c-4c9a-89db-9bdafced70e6",
+    "title": "Increased anterior pelvic tilt angle elevates the risk of hamstring injuries in soccer player.",
+    "doi": "10.1080/15438627.2024.2430662",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2024.2430662",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2024.2430662"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2024.2430662",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2024.2430662"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11902693/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11902693/pdf/sensors-25-01518.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39570099",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39570099/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2024.2430662",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/15438627.2024.2430662"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3996",
+    "recordId": "315e7ffc-cf9f-4ca8-8a3c-b5540a037214",
+    "title": "Effect of the FIFA 11+ on anterior cruciate ligament injury incidence rates in collegiate female football players over three consecutive seasons.",
+    "doi": "10.23736/S0022-4707.25.17071-0",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.23736/S0022-4707.25.17071-0",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/S0022-4707.25.17071-0"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.23736/s0022-4707.25.17071-0",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/s0022-4707.25.17071-0"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41757625",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41757625/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.minervamedica.it/index2.php?show=R40Y2026N03A0400",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/index2.php?show=R40Y2026N03A0400"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://www.minervamedica.it/pdf.php?cod=R40Y2026N03A0400",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/pdf.php?cod=R40Y2026N03A0400"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S789",
+    "recordId": "f349e4cb-7a92-4a9c-b6f7-d198b17ba497",
+    "title": "External Training Loads and Soft-Tissue Injury Occurrence During Congested Versus Noncongested Periods in Football.",
+    "doi": "10.1123/ijspp.2024-0058",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1123/ijspp.2024-0058",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1123/ijspp.2024-0058"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002794/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13002794/pdf/fpubh-14-1798241.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12868231/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12868231/pdf/fspor-07-1605750.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39142646",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39142646/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.humankinetics.com/view/journals/ijspp/19/10/article-p1068.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/view/journals/ijspp/19/10/article-p1068.xml"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.humankinetics.com/downloadpdf/journals/ijspp/19/10/article-p1068.xml",
+        "result": 403,
+        "finalUrl": "https://journals.humankinetics.com/downloadpdf/journals/ijspp/19/10/article-p1068.xml"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2264",
+    "recordId": "25cf9ce9-8e7f-4483-951f-471d0c9229c5",
+    "title": "The Socioeconomic Cost of Anterior Cruciate Ligament Injuries and Lateral Ankle Sprains in Amateur Football and Basketball.",
+    "doi": "10.4085/1062-6050-0487.24",
+    "status": "uploaded_verified",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.4085/1062-6050-0487.24",
+        "result": "pdf",
+        "finalUrl": "https://nata.kglmeridian.com/downloadpdf/view/journals/attr/60/11/article-p806.pdf"
+      }
+    ],
+    "rejected": [],
+    "sourceUrl": "https://nata.kglmeridian.com/downloadpdf/view/journals/attr/60/11/article-p806.pdf",
+    "fileName": "S2264-the-socioeconomic-cost-of-anterior-cruciate-ligament-injuries-and-lateral-ankle-sprains-in-amateur-football-an.pdf",
+    "localPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-final-search-pass-2026-06-23/files/S2264-the-socioeconomic-cost-of-anterior-cruciate-ligament-injuries-and-lateral-ankle-sprains-in-amateur-football-an.pdf",
+    "size": 561752,
+    "sha256": "e7b491bfc6dd61b046027c2924809ba2d33b4a3ff56a97c30dfba1ac02ec6bd0",
+    "validation": {
+      "doiMatch": true,
+      "exactTitleMatch": true,
+      "titleTokenCoverage": 1
+    },
+    "objectPath": "b1b02a7f-7565-4bd5-a2da-5359048f5940/1782234792464-S2264-the-socioeconomic-cost-of-anterior-cruciate-ligament-injuries-and-lateral-ankle-sprains-in-amateur-football-an.pdf",
+    "verified": true
+  },
+  {
+    "studyId": "S2788",
+    "recordId": "35d38972-ad04-4299-87e2-e96f517e2ee2",
+    "title": "MEDICAL DECISION SUPPORT FOR FOOTBALL PLAYERS BASED ON MACHINE LEARNING HISTORICAL INJURY DATA.",
+    "doi": "10.15366/rimcafd2024.96.029",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.15366/rimcafd2024.96.029",
+        "result": 404,
+        "finalUrl": "https://doi.org/10.15366/rimcafd2024.96.029"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281061/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281061/pdf/fcogn-03-1505549.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/12911_2026_Article_3615.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13262898/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13262898/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260091/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260091/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260243/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260243/pdf/"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4692",
+    "recordId": "02cf607a-e470-49dc-9190-5453fb5ca1f8",
+    "title": "Characteristics of musculoskeletal injuries in youth football: a prospective study.",
+    "doi": "10.1080/00913847.2026.2626298",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2026.2626298",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/00913847.2026.2626298"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2026.2626298",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2026.2626298"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284853/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284853/pdf/nihms-2171135.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13285521/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13285521/pdf/13102_2026_Article_1726.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284677/pdf/JEO2-13-e70775.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13283770/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13283770/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13282827/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13282827/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41631707",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41631707/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2026.2626298",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00913847.2026.2626298"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1105",
+    "recordId": "d0d7d548-ce72-444f-a5d5-bfc035d2397a",
+    "title": "'Benched' the effect of the COVID-19 lockdown on injury incidence in sub-elite football in Australia: a retrospective population study using injury insurance records.",
+    "doi": "10.1080/24733938.2022.2143551",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/24733938.2022.2143551",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/24733938.2022.2143551"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2022.2143551",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/24733938.2022.2143551"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11564296/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11564296/pdf/402_2024_Article_5531.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11184301/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11184301/pdf/main.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36327493",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/36327493/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://vuir.vu.edu.au/48973/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://vuir.vu.edu.au/48973/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://ro.uow.edu.au/test2021/7398",
+        "result": "html_no_pdf",
+        "finalUrl": "https://ro.uow.edu.au/test2021/7398"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/24733938.2022.2143551",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/24733938.2022.2143551"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1665",
+    "recordId": "597f993e-556c-408a-a91d-bc778b0fb1db",
+    "title": "Incidence and intrinsic risk factors of hamstring strain injuries among Malaysian footballers: a cohort study of 81 professional footballers",
+    "doi": "10.23736/S0393-3660.24.05540-2",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.23736/S0393-3660.24.05540-2",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/S0393-3660.24.05540-2"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12798131/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12798131/pdf/moj-19-010.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12457634/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12457634/pdf/40520_2025_Article_3119.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11781153/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11781153/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11370934/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11370934/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11258891/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11258891/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.23736/s0393-3660.24.05540-2",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/s0393-3660.24.05540-2"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.minervamedica.it/index2.php?show=R22Y2025N01A0039",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/index2.php?show=R22Y2025N01A0039"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://www.minervamedica.it/pdf.php?cod=R22Y2025N01A0039",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/pdf.php?cod=R22Y2025N01A0039"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4732",
+    "recordId": "705cebc9-385c-4d9f-9cd0-877393d5a0ac",
+    "title": "The Effects of Adherence to the FIFA 11+ Program on Injury Risk in Soccer Players: A Systematic Review and Meta-analysis.",
+    "doi": "10.1177/03635465261434222",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1177/03635465261434222",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1177/03635465261434222"
+      },
+      {
+        "source": "sage-pdf-pattern",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1177/03635465261434222",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/pdf/10.1177/03635465261434222"
+      },
+      {
+        "source": "sage-epdf-pattern",
+        "url": "https://journals.sagepub.com/doi/epdf/10.1177/03635465261434222",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/epdf/10.1177/03635465261434222"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41981827",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41981827/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.sagepub.com/doi/10.1177/03635465261434222",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/10.1177/03635465261434222"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3620",
+    "recordId": "0cc79789-3246-4bb9-ba90-6ab4e7b34d14",
+    "title": "The Influence of Running Demands in Hamstring Injury in Elite Male Soccer Players. A Comparison Between Injured and Uninjured Players.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284120/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284120/pdf/fbioe-14-1767092.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/12911_2026_Article_3615.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/40279_2026_Article_2404.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13248003/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13248003/pdf/SMS-36-e70317.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13243745/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13243745/pdf/SAJP-82-2281.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4562",
+    "recordId": "9d9166eb-77f6-40a9-9277-869b5526094a",
+    "title": "Injuries and Illnesses in National Team Male Futsal Players: A Prospective Seven-Year Cohort Study.",
+    "doi": "10.1097/PHM.0000000000002983",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/PHM.0000000000002983",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/PHM.0000000000002983"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12948335/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12948335/pdf/KSA-34-1107.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5500865/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5500865/pdf/nihms872646.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/phm.0000000000002983",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/phm.0000000000002983"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41961474",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41961474/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/PHM.0000000000002983",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1097/PHM.0000000000002983"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3935",
+    "recordId": "f97b6a12-2493-4979-bd14-37548bf0f726",
+    "title": "One competitive season of injuries in professional football: a retrospective study from a Portuguese first league team.",
+    "doi": "10.1080/00913847.2025.2581560",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2025.2581560",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/00913847.2025.2581560"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2581560",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2025.2581560"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13262898/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13262898/pdf/jfmk-11-00204.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13217384/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13217384/pdf/JBS-43-57299.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13178925/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13178925/pdf/pone.0348716.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13081155/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13081155/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13057381/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13057381/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41143691",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41143691/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2581560",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/00913847.2025.2581560"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4804",
+    "recordId": "12871a22-d62c-4884-9d98-77fb2a70bfdf",
+    "title": "Predictive modeling of injury risk based on body composition and physical fitness performance tests in professional football: A four-year study.",
+    "doi": "10.1080/02640414.2026.2673250",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/02640414.2026.2673250",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/02640414.2026.2673250"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/02640414.2026.2673250",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/02640414.2026.2673250"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13265563/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13265563/pdf/fspor-08-1815789.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13155614/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13155614/pdf/pone.0348776.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12980880/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12980880/pdf/fspor-08-1651135.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12755415/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12755415/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12638576/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12638576/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42132279",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/42132279/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/02640414.2026.2673250",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/02640414.2026.2673250"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2301",
+    "recordId": "8baedac0-1335-4613-8246-8bc819e38d83",
+    "title": "Official match time underestimates injury incidence in football and beach soccer compared with futsal.",
+    "doi": "10.1002/ksa.70114",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1002/ksa.70114",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1002/ksa.70114"
+      },
+      {
+        "source": "wiley-pdfdirect-pattern",
+        "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ksa.70114",
+        "result": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ksa.70114"
+      },
+      {
+        "source": "wiley-pdf-pattern",
+        "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70114",
+        "result": 403,
+        "finalUrl": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70114"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9965087/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9965087/pdf/ijerph-20-03353.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41123575",
+        "result": "pdf",
+        "finalUrl": "https://www.the-aiff.com/media/uploads/2024/11/Beach-Soccer-Laws-of-the-Game-2024-25.pdf"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70114",
+        "result": 403,
+        "finalUrl": "https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70114"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://esskajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70114",
+        "result": 403,
+        "finalUrl": "https://esskajournals.onlinelibrary.wiley.com/doi/pdf/10.1002/ksa.70114"
+      }
+    ],
+    "rejected": [
+      {
+        "url": "https://www.the-aiff.com/media/uploads/2024/11/Beach-Soccer-Laws-of-the-Game-2024-25.pdf",
+        "reason": "weak_text_match",
+        "coverage": 0.42857142857142855,
+        "doiMatch": false,
+        "exactTitleMatch": false,
+        "sha256": "218b800b0b0bb9ebdcd95fcb178ba1ce17f55b31edc97f72a48c257b5d591a50"
+      }
+    ]
+  },
+  {
+    "studyId": "S1680",
+    "recordId": "f50ba0da-dbe7-4b6e-a67c-cb4fa8307747",
+    "title": "Relationships between internal workload and injury incidence in elite youth soccer players",
+    "doi": "10.1016/j.jts.2023.09.007",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jts.2023.09.007",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X23001195"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280357/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280357/pdf/41598_2026_Article_49793.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274445/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13274445/pdf/jssm-25-446.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270782/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270782/pdf/13018_2026_Article_6825.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263937/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260332/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260332/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "http://dx.doi.org/10.1016/j.jts.2023.09.007",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X23001195"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X23001195",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X23001195"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2038",
+    "recordId": "aa611106-5a12-4470-8a09-de7a2cbc576f",
+    "title": "Effectiveness of the FIFA 11+ injury prevention programs in reducing acute lower back injury among soccer players: A systematic review and meta-analysis.",
+    "doi": "10.1177/17479541251364112",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1177/17479541251364112",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1177/17479541251364112"
+      },
+      {
+        "source": "sage-pdf-pattern",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1177/17479541251364112",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/pdf/10.1177/17479541251364112"
+      },
+      {
+        "source": "sage-epdf-pattern",
+        "url": "https://journals.sagepub.com/doi/epdf/10.1177/17479541251364112",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/epdf/10.1177/17479541251364112"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13053740/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13053740/pdf/main.pdf"
+      },
+      {
+        "source": "openalex-pdf",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1177/17479541251364112?download=true",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/pdf/10.1177/17479541251364112?download=true"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.sagepub.com/doi/10.1177/17479541251364112",
+        "result": 403,
+        "finalUrl": "https://journals.sagepub.com/doi/10.1177/17479541251364112"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5004",
+    "recordId": "b8413eab-37de-4e06-b7c1-4d2dd06af84c",
+    "title": "Incidence of injury and illness at the Paris 2024 Paralympic Games: post-pandemic trends and sport-specific risks.",
+    "doi": "10.1136/bjsports-2025-111086",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1136/bjsports-2025-111086",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1136/bjsports-2025-111086"
+      },
+      {
+        "source": "bmj-full-pdf-pattern",
+        "url": "https://bjsm.bmj.com/content/bjsports-2025-111086.full.pdf",
+        "result": 403,
+        "finalUrl": "https://bjsm.bmj.com/content/bjsports-2025-111086.full.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42103446",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/42103446/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://bjsm.bmj.com/lookup/doi/10.1136/bjsports-2025-111086",
+        "result": 403,
+        "finalUrl": "https://bjsm.bmj.com/lookup/doi/10.1136/bjsports-2025-111086"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1889",
+    "recordId": "04f52bd2-5693-42a5-b159-86aabbc757ef",
+    "title": "Musculoskeletal injuries in professional soccer players: A study of 2 consecutive seasons in a Tunisian football team",
+    "doi": "10.1016/j.jts.2024.08.003",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jts.2024.08.003",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X24001153"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X24001153",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0762915X24001153"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4715",
+    "recordId": "244810ab-38bd-4774-a811-372ffda7d1f7",
+    "title": "Association Between Body Composition and Non-Contact Muscle Injury Risk in Elite Soccer Players: A Cox Proportional Hazards Model Analysis.",
+    "doi": "10.1080/02701367.2026.2636253",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/02701367.2026.2636253",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/02701367.2026.2636253"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/02701367.2026.2636253",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/02701367.2026.2636253"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12954491/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12954491/pdf/JBS-43-56934.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12864895/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12864895/pdf/41598_2025_Article_34468.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12813025/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12813025/pdf/froh-06-1725259.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11787231/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11787231/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7983270/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7983270/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41931755",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41931755/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/02701367.2026.2636253",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/full/10.1080/02701367.2026.2636253"
+      },
+      {
+        "source": "semantic-scholar-url",
+        "url": "https://www.semanticscholar.org/paper/0c9da00ed74933fc339b54cc23fe87c51dc2d26a",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.semanticscholar.org/paper/0c9da00ed74933fc339b54cc23fe87c51dc2d26a"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3343",
+    "recordId": "04fd20d5-af75-460f-bca3-fd15a49d90d6",
+    "title": "Impact of time of day on modifiable risk factors for hamstring injury in semi-professional football referees.",
+    "doi": "10.1080/07420528.2025.2490494",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/07420528.2025.2490494",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/07420528.2025.2490494"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/07420528.2025.2490494",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/07420528.2025.2490494"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268950/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13268950/pdf/fphys-17-1832044.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13210608/pdf/sports-14-00199.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12982011/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12982011/pdf/JOR-44-0.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12841393/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12841393/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12770882/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12770882/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40304309",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40304309/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://portal.findresearcher.sdu.dk/da/publications/06e2ad0d-27f6-49f8-8bb4-0bfc7adcac87",
+        "result": "html_no_pdf",
+        "finalUrl": "https://portal.findresearcher.sdu.dk/da/publications/impact-of-time-of-day-on-modifiable-risk-factors-for-hamstring-in/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/07420528.2025.2490494",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1529",
+    "recordId": "fa4687a7-4a98-4713-92b9-f3de32980f3d",
+    "title": "The Impact of Anterior Cruciate Ligament Tear on Player Performance and Longevity in la Liga League Soccer Players",
+    "doi": "10.1055/s-0044-1791985",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1055/s-0044-1791985",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1055/s-0044-1791985"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12922245/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12922245/pdf/43019_2026_Article_304.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12701112/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12701112/pdf/40798_2025_Article_962.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39471976",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39471976/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "http://www.thieme-connect.de/DOI/DOI?10.1055/s-0044-1791985",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/DOI/DOI?10.1055/s-0044-1791985"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/s-0044-1791985.pdf",
+        "result": 403,
+        "finalUrl": "http://www.thieme-connect.de/products/ejournals/pdf/10.1055/s-0044-1791985.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3342",
+    "recordId": "73178759-5537-4a69-8ff5-e36d7ed8191c",
+    "title": "Injury epidemiology in Australian women's professional football.",
+    "doi": "10.1016/j.jsams.2024.11.012",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jsams.2024.11.012",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1440244024005875"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281061/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281061/pdf/fcogn-03-1505549.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13283770/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13283770/pdf/CD001256.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13264276/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13264276/pdf/peerj-14-21218.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260091/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260091/pdf/40279_2026_Article_2418.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260053/pdf/40279_2026_Article_2404.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39701838",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39701838/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1440244024005875",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1440244024005875"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2043",
+    "recordId": "fef6387c-61b0-4a5a-8c13-9cb03c75168d",
+    "title": "آیا نشاانرهاای مهتبط با بار داخ لی و خارجی تمهین و مساابه یک عامل خطه آسایب بهای بازیکنان فوتبال است؟ یک مطالع در لیگ بهته خ لیجفارس",
+    "doi": null,
+    "status": "not_found",
+    "tried": [],
+    "rejected": []
+  },
+  {
+    "studyId": "S2078",
+    "recordId": "df10f81c-558d-4a7d-8a95-f1d65bbbe774",
+    "title": "Futbolcularda Ruminasyonun Psikolojik Sağlamlık Üzerindeki Yordayıcı Rolü.",
+    "doi": "10.53025/sportive",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.53025/sportive",
+        "result": 404,
+        "finalUrl": "https://doi.org/10.53025/sportive"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1537",
+    "recordId": "54d235b3-d31d-408e-a165-046004d60e14",
+    "title": "The Relationship between Injury Risk and Cognitive Function in Adolescent Football Players",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286177/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286177/pdf/pone.0351208.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284853/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13284853/pdf/nihms-2171135.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286436/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13286436/pdf/medi-105-e49444.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281061/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13281061/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13282561/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13282561/pdf/"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5505",
+    "recordId": "adf27091-d2e3-46ad-aa25-17f01066b1cc",
+    "title": "Effect of maturation on overuse knee injury prevalence: A cross-sectional study of youth football players in Japan.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11401679/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11401679/pdf/ijspt_2024_19_6_117952.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5520",
+    "recordId": "05432016-9b3e-42f6-a046-e40fba34c0d3",
+    "title": "Sport specialization, injury and illness: a prospective study of elite female adolescent soccer players.",
+    "doi": "10.23736/S0022-4707.25.17535-X",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.23736/S0022-4707.25.17535-X",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/S0022-4707.25.17535-X"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.23736/s0022-4707.25.17535-x",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.23736/s0022-4707.25.17535-x"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41569547",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41569547/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.minervamedica.it/index2.php?show=R40Y2026N05A0642",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/index2.php?show=R40Y2026N05A0642"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://www.minervamedica.it/pdf.php?cod=R40Y2026N05A0642",
+        "result": 403,
+        "finalUrl": "https://www.minervamedica.it/pdf.php?cod=R40Y2026N05A0642"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5499",
+    "recordId": "763b6bb7-da26-4d43-b2c1-417043f75801",
+    "title": "Nutritional intake, sports nutrition knowledge and energy availability in recreational female football players.",
+    "doi": "10.1080/15438627.2025.2520528",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/15438627.2025.2520528",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/15438627.2025.2520528"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2025.2520528",
+        "result": 403,
+        "finalUrl": "https://www.tandfonline.com/doi/pdf/10.1080/15438627.2025.2520528"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12526266/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12526266/pdf/nutrients-17-03102.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40525351",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40525351/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/15438627.2025.2520528",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5526",
+    "recordId": "564b957d-7c38-4e4f-8e90-b6cbc59a51b3",
+    "title": "Position-Specific Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season, Prospective Cohort Study.",
+    "doi": "10.1097/JSM.0000000000001453",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1097/JSM.0000000000001453",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/JSM.0000000000001453"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://doi.org/10.1097/jsm.0000000000001453",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1097/jsm.0000000000001453"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41888070",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41888070/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1097/JSM.0000000000001453",
+        "result": "pdf",
+        "finalUrl": "https://cdn-tp2.mozu.com/16833-m1/cms/files/Author-Document.pdf?_mzts=636519775710000000"
+      }
+    ],
+    "rejected": [
+      {
+        "url": "https://cdn-tp2.mozu.com/16833-m1/cms/files/Author-Document.pdf?_mzts=636519775710000000",
+        "reason": "weak_text_match",
+        "coverage": 0,
+        "doiMatch": false,
+        "exactTitleMatch": false,
+        "sha256": "6151241a983a9b95480cfc22ab5fca6a685b11392bed325382c2ff81304d3cfe"
+      }
+    ]
+  },
+  {
+    "studyId": "S3740",
+    "recordId": "6848dc33-a813-42dc-aeaf-6920e48ab4e0",
+    "title": "Epidemiology Of Soccer-Related Injuries Treated At The United States Emergency Departments Between 2014 And 2023: 2052.",
+    "doi": "10.1249/01.mss.0001160708.82823.9b",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1249/01.mss.0001160708.82823.9b",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1249/01.mss.0001160708.82823.9b"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.lww.com/10.1249/01.mss.0001160708.82823.9b",
+        "result": 403,
+        "finalUrl": "https://journals.lww.com/10.1249/01.mss.0001160708.82823.9b"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5508",
+    "recordId": "6f56eb1f-5884-4ef3-82de-c132624bfc6e",
+    "title": "The Effects of Motor Imagery on Balance and on the Fear of Re-Injury in Professional Football Players with Ankle Sprain.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11401679/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11401679/pdf/ijspt_2024_19_6_117952.pdf"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S5491",
+    "recordId": "a3c64bd7-e11d-4c58-88df-902b85030023",
+    "title": "Effects of Mid-Season Camp Period Loading on Sports Injury Anxiety and Physical Performance of Professional Male Soccer Players",
+    "doi": null,
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12852990/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12852990/pdf/fphys-16-1678971.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11547566/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11547566/pdf/nutrients-16-03731.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11258891/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11258891/pdf/12919_2024_Article_297.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788005/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788005/pdf/"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9924557/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9924557/pdf/"
+      },
+      {
+        "source": "crossref-title-url",
+        "url": "https://doi.org/10.1016/j.jbmt.2024.04.030",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1360859224002183"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S1789",
+    "recordId": "1d85bf13-8c57-4545-9edc-da72d23bc8c6",
+    "title": "In Vivo Detection of Pathology at the Depths of Cortical Sulci in Sports Repetitive Head Impacts",
+    "doi": "10.1089/neu.2024.41112.abstracts",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1089/neu.2024.41112.abstracts",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1089/neu.2024.41112.abstracts"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12419363/pdf/",
+        "result": 403,
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12419363/pdf/"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39172936",
+        "result": 404,
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39172936"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://journals.sagepub.com/doi/10.1089/neu.2024.41112.abstracts",
+        "result": "html_no_pdf",
+        "finalUrl": "https://journals.sagepub.com/doi/10.1089/neu.2024.41112.abstracts"
+      },
+      {
+        "source": "crossref-pdf-link",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1089/neu.2024.41112.abstracts",
+        "result": "html_no_pdf",
+        "finalUrl": "https://journals.sagepub.com/action/cookieAbsent"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S2991",
+    "recordId": "ec0ddc7b-a418-4098-9529-1e462ca4f5c2",
+    "title": "Injury occurrence in college men's football team --Survey results of the 2021 season--.",
+    "doi": null,
+    "status": "not_found",
+    "tried": [],
+    "rejected": []
+  },
+  {
+    "studyId": "S1950",
+    "recordId": "5a435578-ee08-403a-8621-abe59a74e344",
+    "title": "Injuries in Female Soccer Athletes: Risk of Injury Across Different Phases of the Menstrual Cycle.",
+    "doi": "10.1080/02701367.2025.2515968",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/02701367.2025.2515968",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1080/02701367.2025.2515968"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/02701367.2025.2515968",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40586819",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/40586819/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/02701367.2025.2515968",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3923",
+    "recordId": "41776afb-5b2a-40b4-aa08-427a48f46dab",
+    "title": "Injury incidence, prevalence, and burden in an Argentinian male youth soccer academy: one-season descriptive study.",
+    "doi": "10.1080/00913847.2024.2425265",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1080/00913847.2024.2425265",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      },
+      {
+        "source": "taylor-francis-pdf-pattern",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/00913847.2024.2425265",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12913351/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12913351/pdf/40279_2025_Article_2340.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39487716",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39487716/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2024.2425265",
+        "result": "html_no_pdf",
+        "finalUrl": "https://www.tandfonline.com/action/cookieAbsent"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S4370",
+    "recordId": "c16cb39b-8f42-43f6-8387-2e2bda29025f",
+    "title": "Understanding how athlete engagement is associated with adolescent mental health: Evidence from a longitudinal football study.",
+    "doi": "10.1016/j.jad.2025.120933",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1016/j.jad.2025.120933",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0165032725023754"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13024103/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13024103/pdf/behavsci-16-00346.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41421619",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/41421619/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S0165032725023754",
+        "result": "html_no_pdf",
+        "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0165032725023754"
+      }
+    ],
+    "rejected": []
+  },
+  {
+    "studyId": "S3588",
+    "recordId": "d32d2300-2a60-4bfb-8bc0-b6135000cc8e",
+    "title": "Predictive models of injury risk in male professional football players: a systematic review.",
+    "doi": "10.1136/ip-2024-045322",
+    "status": "not_found",
+    "tried": [
+      {
+        "source": "doi-resolver",
+        "url": "https://doi.org/10.1136/ip-2024-045322",
+        "result": 403,
+        "finalUrl": "https://doi.org/10.1136/ip-2024-045322"
+      },
+      {
+        "source": "bmj-full-pdf-pattern",
+        "url": "https://bjsm.bmj.com/content/ip-2024-045322.full.pdf",
+        "result": 403,
+        "finalUrl": "https://bjsm.bmj.com/content/ip-2024-045322.full.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13141215/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13141215/pdf/bmjsem-12-2.pdf"
+      },
+      {
+        "source": "pmc-esearch",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653399/pdf/",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653399/pdf/jcm-14-08039.pdf"
+      },
+      {
+        "source": "openalex-landing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39721730",
+        "result": "html_no_pdf",
+        "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/39721730/"
+      },
+      {
+        "source": "crossref-primary-url",
+        "url": "https://injuryprevention.bmj.com/lookup/doi/10.1136/ip-2024-045322",
+        "result": 403,
+        "finalUrl": "https://injuryprevention.bmj.com/lookup/doi/10.1136/ip-2024-045322"
+      }
+    ],
+    "rejected": []
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "scope": "Second search - Ishanka - full-text AI review for one newly received PDF - 2026-06-30",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "model": "GPT-5 (Codex chat, medium reasoning; GPT-5.5 not exposed in this session)",
+  "generatedAt": "2026-06-30T15:55:00Z",
+  "recommendations": [
+    {
+      "recordId": "35d38972-ad04-4299-87e2-e96f517e2ee2",
+      "studyId": "S2788",
+      "title": "MEDICAL DECISION SUPPORT FOR FOOTBALL PLAYERS BASED ON MACHINE LEARNING HISTORICAL INJURY DATA.",
+      "authors": "Jinhua Fang; Ting Xiang",
+      "year": "2024",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/ishanka-inbox-2026-06-28/downloads/27034089_9046388280007966.pdf",
+      "pdfFileName": "27034089_9046388280007966.pdf",
+      "pdfSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+      "decision": "include",
+      "skipped": false,
+      "criteriaTriggered": ["I-DES-01", "I-POP-01", "I-SET-01", "I-OUT-01", "I-DEF-01", "I-DEN-01", "I-PUB-01"],
+      "exclusionReason": null,
+      "reason": "Prospective youth soccer training surveillance recorded actual time-loss non-contact injuries across a complete set of player training-session observations, providing an eligible athlete-exposure denominator despite the paper's machine-learning prediction aim.",
+      "studyDesign": "Prospective injury-risk cohort and prediction study",
+      "dataCollectionTiming": "Player load data and injuries were recorded continuously across 23 weeks as training sessions progressed.",
+      "populationEligibility": "Youth professional soccer players",
+      "footballDiscipline": "Association football (11-a-side)",
+      "competitionContext": "Youth professional soccer training program",
+      "dataSource": "Wearable training monitoring with injuries documented by medical personnel",
+      "outcomeEligibility": "Actual non-contact time-loss injuries",
+      "injuryIllnessDefinition": "Non-contact tissue injury causing the player to miss at least the second day of training after injury",
+      "denominatorStatus": "athlete_exposures",
+      "reportedDenominator": "927 player training-session observations over 23 weeks",
+      "denominatorEvidenceQuote": "A total of 927 training sessions were recorded over a 23-week period",
+      "denominatorSourceLocation": "PDF p. 6, Section 3.1 Data collection",
+      "derivationPossible": false,
+      "derivationBasis": null,
+      "evidenceQuotes": [
+        "each player wore his or her own acquisition device during each training session",
+        "A total of 927 training sessions were recorded over a 23-week period",
+        "During the 23-week period, the medical personnel documented all non-contact injuries",
+        "This dataset had 21 non-contact injuries"
+      ],
+      "sourceLocations": ["PDF p. 6, Section 3.1 Data collection"],
+      "model": "GPT-5 (Codex chat, medium reasoning; GPT-5.5 not exposed in this session)",
+      "confidence": 0.91,
+      "tags": ["primary_study", "football_specific", "injury_prediction", "athlete_exposures"],
+      "auditNotes": "The paper does not clearly state the participant headcount, but the 927 recorded player-session observations form the complete unconditioned at-risk frame used to label subsequent-session injury outcomes. No exposure total was calculated during screening."
+    }
+  ]
+}

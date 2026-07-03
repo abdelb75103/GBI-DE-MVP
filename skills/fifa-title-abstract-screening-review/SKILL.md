@@ -1,3 +1,8 @@
+---
+name: fifa-title-abstract-screening-review
+description: Use when reviewing FIFA GBI title/abstract screening records for AI include, exclude, or unsure recommendations before full-text retrieval.
+---
+
 # FIFA Title/Abstract Screening Review
 
 Use this skill when reviewing title/abstract screening records for FIFA GBI before full-text retrieval. It writes the AI recommendation used as the first title/abstract decision; one human reviewer vote is the second decision.

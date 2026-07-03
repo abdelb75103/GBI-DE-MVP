@@ -1,0 +1,51 @@
+{
+  "scope": "Second search - Ishanka - S4668 and S2788 screening re-review final audit - 2026-07-03",
+  "verifiedAt": "2026-07-03T14:27:57Z",
+  "records": [
+    {
+      "studyId": "S4668",
+      "recordId": "3ed7d61b-4344-4bd2-8738-48dfe59f014b",
+      "stage": "title_abstract",
+      "result": "already_excluded_no_change",
+      "aiStatus": "completed",
+      "aiSuggestedDecision": "exclude",
+      "aiReason": "Subjective load, affect, and sleep monitoring without injury/illness outcomes.",
+      "manualDecision": "exclude",
+      "manualDecidedAt": "2026-06-14T23:12:50.065Z",
+      "fullTextRecordPresent": false,
+      "protectedHumanFieldsModified": false,
+      "auditNote": "The live record was already excluded at title/abstract screening by both AI and Abdel's human vote. No PDF or promoted full-text record exists, so no update was required."
+    },
+    {
+      "studyId": "S2788",
+      "recordId": "35d38972-ad04-4299-87e2-e96f517e2ee2",
+      "stage": "full_text",
+      "result": "ai_recommendation_corrected_live",
+      "aiStatus": "completed",
+      "aiSuggestedDecision": "exclude",
+      "aiReason": "The prediction paper reports 21 injury labels and an ambiguous total of 927 training sessions, while separately stating that each constructed dataset contained 954 data. It does not report participant count, player-hours, athlete-exposures, match-exposures, a study-specific time rate, or explicitly establish that each session/row is one player-session in the complete at-risk frame. The session count cannot be assumed to be an athlete-exposure.",
+      "aiEvidenceQuote": "A total of 927 training sessions were recorded over a 23-week period",
+      "aiSourceLocation": "PDF p. 6, Section 3.1 Data collection",
+      "aiConfidence": 0.94,
+      "aiModel": "GPT-5 (Codex chat, medium reasoning)",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "aiReviewedAt": "2026-07-03T14:27:57.158Z",
+      "exclusionReason": "No usable denominator",
+      "denominatorStatus": "unusable",
+      "humanFullTextVotes": [],
+      "protectedHumanFieldsModified": false,
+      "storageBucket": "papers",
+      "storageObjectPath": "aea3cf53-f40b-431a-84ef-a6e913a33a4a/1782831216454-27034089-9046388280007966-pdf.pdf",
+      "databasePdfSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+      "downloadedStorageSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+      "storageHashVerified": true
+    }
+  ],
+  "safeguards": {
+    "criteriaClarification": "Session, match, dataset-row, sample, or observation counts are not athlete-exposures without an explicit one-athlete-per-participation mapping and a complete unconditioned at-risk frame.",
+    "projectRegressionTest": "full-text AI criteria do not infer athlete-exposures from ambiguous session or row counts",
+    "writerRegressionFix": "The Supabase writer now inherits the recommendation file's top-level criteriaVersion and defaults to the current v8 version instead of obsolete v6.",
+    "writerTestsPassed": 21,
+    "projectCriteriaTestsPassed": 6
+  }
+}

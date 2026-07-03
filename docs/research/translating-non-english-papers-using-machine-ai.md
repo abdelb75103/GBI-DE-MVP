@@ -2,7 +2,7 @@
 
 Date: 2026-04-24
 
-Status updates: 2026-04-27, 2026-04-30
+Status updates: 2026-04-27, 2026-04-30, 2026-06-24
 
 ## Direction for This Review
 
@@ -112,6 +112,37 @@ Extraction caveat:
 - The original PDF remains the source of truth.
 - Recreated English tables should be used as extraction aids only.
 - Papers `#418`, `#720`, `#719`, `#565`, and `#710` are flagged `needs_table_spot_check` because the original PDFs expose more detected grid tables than the translated-table rendering count.
+
+## June 24, 2026 Current Full-Text Screening Update
+
+Scope: second updated search, full-text screening, current live records with non-English language metadata or existing translation metadata.
+
+Output folder:
+
+- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/outputs/full-text-screening-translations/2026-06-24-current-full-text-screening`
+
+Audit files:
+
+- `second-updated-search-full-text-translation-final-audit.md`
+- `second-updated-search-full-text-translation-final-verification.json`
+- `second-updated-search-full-text-translation-upload-results.json`
+
+Result:
+
+- `18` current non-English full-text screening records identified.
+- `11` were already translated before this run.
+- `1` newly translated/uploaded/verified record: `S2020` Spanish.
+- `12` total records are now marked `translatedFullText`.
+- `6` remain unresolved because no source PDF is attached: `S1916`, `S2043`, `S2078`, `S2876`, `S2949`, `S2991`.
+- `S2020` upload file: `S2020-english-translation-plus-original.pdf`.
+- `S2020` SHA-256: `bc5b6d77760edb6208b39e547912633004819edb5897c19e6d54042abc79010f`.
+- Screening decisions and manual-decision fields were verified unchanged.
+
+Operational lesson:
+
+- Do not ask `codex exec` to write long translation files directly; it can stall without creating output.
+- Preferred current workflow: extract text, split by page ranges, translate chunks with `codex exec -m gpt-5.5 -s read-only --output-last-message`, assemble locally, render the translation PDF, append the complete original PDF, upload, then verify SHA/page counts/manual fields.
+- Do not call Claude/Opus for routine translation fallback unless Abdel explicitly asks, or Codex/OpenAI is unavailable and the substitution is reported before use.
 
 ## Practical Screening Hierarchy
 

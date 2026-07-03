@@ -1,0 +1,47 @@
+{
+  "scope": "Second search - Ishanka - S4608 full-text AI re-review and live correction - 2026-07-03",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "generatedAt": "2026-07-03T14:34:45Z",
+  "recommendations": [
+    {
+      "recordId": "f020ba34-2112-4686-bb95-ee5a3d300188",
+      "studyId": "S4608",
+      "title": "Injury Patterns in an Elite Men's Futsal Club: A Nine-Season Cohort Study.",
+      "authors": "Carles Miñarro; Bernat de Pablo Marquez; Lore Zumeta-Olaskoaga; Dai Sugimoto; Gil Rodas; Marti Casals",
+      "year": "2025",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/ishanka-inbox-2026-06-28/downloads/27022821_9046658860007966.pdf",
+      "pdfSha256": "a3afe482ae3928f8cd0f5c01bbd5cc17bcd8426c34c0f3c8312a348a94e1e6b0",
+      "decision": "exclude",
+      "criteriaTriggered": ["E-DEN-01"],
+      "exclusionReason": "No usable denominator",
+      "reason": "The study reports injury counts and cumulative injury proportions using 671 player-seasons, but it does not report training or match exposure hours, athlete-exposures, match-exposures, a study-specific time rate, or exact derivation inputs. The paper explicitly states that precise exposure time was unavailable and that exposure data are needed to define injury incidence and burden accurately.",
+      "studyDesign": "Retrospective nine-season cohort from one elite futsal club",
+      "dataCollectionTiming": "Injuries were extracted retrospectively from club electronic medical records covering the 2014/2015 to 2022/2023 seasons.",
+      "populationEligibility": "214 male elite futsal players across youth and senior categories",
+      "footballDiscipline": "Futsal",
+      "competitionContext": "Single elite club across six competitive categories and nine seasons",
+      "dataSource": "Club electronic medical records systematically maintained by club medical staff",
+      "outcomeEligibility": "1,043 time-loss injuries with descriptive injury patterns and cumulative injury proportions",
+      "injuryIllnessDefinition": "Time-loss injury definitions based on IOC and UEFA consensus guidance",
+      "denominatorStatus": "unusable",
+      "reportedDenominator": "671 player-seasons used for cumulative injury proportions; no training or match exposure time",
+      "denominatorEvidenceQuote": "Although precise exposure time was not available, senior athletes participated in a higher number of training sessions and total games.",
+      "denominatorSourceLocation": "PDF p. 8, Discussion",
+      "derivationPossible": false,
+      "derivationBasis": null,
+      "evidenceQuotes": [
+        "Although precise exposure time was not available, senior athletes participated in a higher number of training sessions and total games.",
+        "Availability of data concerning exposure (training and match hours) will also allow to be more accurate in defining injury incidence and injury burden.",
+        "This resulted in a total of 671 player-seasons"
+      ],
+      "sourceLocations": [
+        "PDF p. 8, Discussion and limitations",
+        "PDF p. 3, Methods—Study design"
+      ],
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "confidence": 0.99,
+      "tags": ["primary_study", "futsal", "no_usable_denominator"],
+      "auditNotes": "Corrects the prior AI include that treated player-seasons and cumulative injury proportions as a usable exposure denominator. The existing human full-text vote is exclude for no exposure; it must remain unchanged."
+    }
+  ]
+}

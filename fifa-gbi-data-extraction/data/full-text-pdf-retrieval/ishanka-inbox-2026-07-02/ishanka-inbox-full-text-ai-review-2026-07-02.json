@@ -1,0 +1,53 @@
+{
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "generatedAt": "2026-07-02T12:00:00Z",
+  "recommendations": [
+    {
+      "recordId": "597f993e-556c-408a-a91d-bc778b0fb1db",
+      "covidenceId": null,
+      "studyId": "S1665",
+      "title": "Incidence and intrinsic risk factors of hamstring strain injuries among Malaysian footballers: a cohort study of 81 professional footballers",
+      "authors": "Muhammad Y. Yunus; Ahmad H. Shushami; Alston Choong; Mohamad A. Azwan",
+      "year": "2025",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/ishanka-inbox-2026-07-02/downloads/9045919210007966.pdf",
+      "pdfSha256": "60ab6626735471770a427226307bbd244052f4d8e92a06c5268a326925fbc5b4",
+      "decision": "include",
+      "criteriaTriggered": ["I-DES-01", "I-POP-01", "I-SET-01", "I-OUT-01", "I-DEF-01", "I-DEN-01", "I-PUB-01"],
+      "exclusionReason": null,
+      "reason": "Include: prospective cohort of Malaysian professional association footballers during the 2023 Malaysian Football League, with team physician/physiotherapist injury surveillance, time-loss hamstring strain outcomes, and direct exposure-hour denominators for total, match, and training incidence.",
+      "studyDesign": "Prospective cohort",
+      "dataCollectionTiming": "Preseason assessments were followed by injury surveillance throughout the 2023 Malaysian Football League season.",
+      "populationEligibility": "81 Malaysian professional male footballers from senior, U23, and U20 teams in a single professional club.",
+      "footballDiscipline": "Association football",
+      "competitionContext": "2023 Malaysian Football League season, including training and match exposure.",
+      "dataSource": "Team physician and/or team physiotherapist injury reports using FIFA F-MARC consensus injury data collection methods.",
+      "outcomeEligibility": "Hamstring strain injury incidence and severity/time-loss surveillance.",
+      "injuryIllnessDefinition": "Time-loss posterior-thigh strained-muscle injury, with severity classified by days absent from training and matches.",
+      "denominatorStatus": "direct_time",
+      "reportedDenominator": "Total exposure 24,147.5 h; match exposure 1,072.5 h; training exposure 23,075 h.",
+      "denominatorEvidenceQuote": "Exposure (h): Total 24147.5; Match 1072.5; Training 23075.",
+      "denominatorSourceLocation": "9045919210007966.pdf p. 7, Table V",
+      "derivationPossible": false,
+      "derivationBasis": null,
+      "evidenceQuotes": [
+        "This was a prospective cohort study of 81 Malaysian professional footballers",
+        "This study was conducted throughout 2023 Malaysian Football League.",
+        "Data collection was conducted based on the method proposed by the Injury Consensus Group, which was established under the Fédération Internationale de Football Association Medical Assessment and Research Centre",
+        "All injuries during training and competition reported by the footballers to either team physician and/or team physiotherapist, will be recorded",
+        "The injury incidence is reported as the number of injuries per 1000 player hours, including match and training injury incidence.",
+        "Exposure (h): Total 24147.5; Match 1072.5; Training 23075."
+      ],
+      "sourceLocations": [
+        "9045919210007966.pdf p. 5, Materials and methods - Study design",
+        "9045919210007966.pdf p. 4, Abstract - Methods",
+        "9045919210007966.pdf p. 5, Injury surveillance",
+        "9045919210007966.pdf p. 6, Statistical analysis",
+        "9045919210007966.pdf p. 7, Table V"
+      ],
+      "model": "GPT-5 via Codex in-chat full-text screening skill (medium-equivalent reasoning); GPT-5.5 unavailable in current Codex tooling",
+      "confidence": 0.96,
+      "tags": ["primary_study", "football_specific", "professional_players", "second_search", "direct_time_denominator"],
+      "auditNotes": "OCR was generated from image-only article pages using macOS Vision after pdftotext only captured delivery-note text. The abstract OCR reported 0.91/1000 h, but Table V and discussion report 0.62/1000 h; this discrepancy does not affect eligibility because direct exposure hours and study-specific rates are present."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "scope": "Second search - Ishanka - S2788 full-text AI re-review and live correction - 2026-07-03",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "generatedAt": "2026-07-03T14:26:51Z",
+  "recommendations": [
+    {
+      "recordId": "35d38972-ad04-4299-87e2-e96f517e2ee2",
+      "studyId": "S2788",
+      "title": "MEDICAL DECISION SUPPORT FOR FOOTBALL PLAYERS BASED ON MACHINE LEARNING HISTORICAL INJURY DATA.",
+      "authors": "Jinhua Fang; Ting Xiang",
+      "year": "2024",
+      "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/ishanka-inbox-2026-06-28/downloads/27034089_9046388280007966.pdf",
+      "pdfSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+      "decision": "exclude",
+      "criteriaTriggered": ["E-DEN-01"],
+      "exclusionReason": "No usable denominator",
+      "reason": "The prediction paper reports 21 injury labels and an ambiguous total of 927 training sessions, while separately stating that each constructed dataset contained 954 data. It does not report participant count, player-hours, athlete-exposures, match-exposures, a study-specific time rate, or explicitly establish that each session/row is one player-session in the complete at-risk frame. The session count cannot be assumed to be an athlete-exposure.",
+      "studyDesign": "Longitudinal machine-learning injury prediction study",
+      "dataCollectionTiming": "Training-load data and non-contact injuries were recorded over 23 weeks, but the paper does not clearly define the participant cohort or the denominator unit.",
+      "populationEligibility": "Youth professional soccer players; participant count not reported",
+      "footballDiscipline": "Association football",
+      "competitionContext": "Youth professional soccer training program; competitive frame not clearly specified",
+      "dataSource": "Wearable training-load monitoring and injuries documented by medical personnel",
+      "outcomeEligibility": "Twenty-one non-contact injury labels used for prediction",
+      "injuryIllnessDefinition": "Non-contact tissue injury causing the player to miss at least the second day of training after injury",
+      "denominatorStatus": "unusable",
+      "reportedDenominator": null,
+      "denominatorEvidenceQuote": "A total of 927 training sessions were recorded over a 23-week period",
+      "denominatorSourceLocation": "PDF p. 6, Section 3.1 Data collection",
+      "derivationPossible": false,
+      "derivationBasis": null,
+      "evidenceQuotes": [
+        "A total of 927 training sessions were recorded over a 23-week period",
+        "each training dataset included 954 data",
+        "This dataset had 21 non-contact injuries"
+      ],
+      "sourceLocations": [
+        "PDF pp. 6-7, Sections 3.1-3.2"
+      ],
+      "model": "GPT-5 (Codex chat, medium reasoning)",
+      "confidence": 0.94,
+      "tags": ["primary_study", "football_specific", "injury_prediction", "no_usable_denominator"],
+      "auditNotes": "Re-review corrected the prior unsupported classification of 927 ambiguous training sessions as athlete-exposures. Full-text inspection found no participant count, direct exposure total, published time rate, or explicit one-player-per-session mapping; the paper also reports a conflicting 954-row total. No human vote or resolver field may be changed."
+    }
+  ]
+}

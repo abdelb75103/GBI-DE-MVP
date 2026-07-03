@@ -1,0 +1,473 @@
+{
+  "scope": "Ishanka Gmail Inbox full-text AI review",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "model": "GPT-5.5 (Codex CLI, medium reasoning)",
+  "generatedAt": "2026-06-29T21:16:25.337Z",
+  "recommendations": [
+    {
+      "recordId": "85db6461-a9f2-4b06-87ad-9bc561a431ff",
+      "studyId": "S2520",
+      "title": "Association between high-intensity running and muscle-tendon injuries in professional Brazilian soccer players.",
+      "pdfFileName": "10.21134_eurjhm.2025.54.4.pdf",
+      "pdfSha256": "8a2da770fea3194bd74db8e1d95539607c1470f8cf509ba7428607092596754d",
+      "decision": "exclude",
+      "skipped": false,
+      "reason": "Professional soccer injury-risk analysis selected only injured players/injury weeks and did not provide an unconditioned at-risk denominator for epidemiologic extraction.",
+      "confidence": 0.88,
+      "exclusionReason": "No usable denominator",
+      "denominatorStatus": "unusable",
+      "studyDesign": "retrospective descriptive longitudinal injury-risk analysis",
+      "populationEligibility": "professional Brazilian male soccer players, eligible sport/population",
+      "outcomeEligibility": "muscle-tendon injuries recorded with IOC definition, eligible outcome",
+      "reportedDenominator": null,
+      "evidenceQuotes": [
+        "finally 15 players participated",
+        "23 muscle-tendon injuries",
+        "the week before the injury occurred"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "E-DEN-01"
+      ]
+    },
+    {
+      "recordId": "ec0ddc7b-a418-4098-9529-1e462ca4f5c2",
+      "studyId": "S2991",
+      "title": "Injury occurrence in college men's football team --Survey results of the 2021 season--.",
+      "pdfFileName": "32_135.pdf",
+      "pdfSha256": "a25c354f67cf643937a1f46e6e0b80ff26082d615c7614a4cd76635ddfdcf594",
+      "decision": "include",
+      "skipped": false,
+      "reason": "College soccer team injury surveillance reports football injuries, FIFA definition, exposure time, and injury rates per 1000 player-hours.",
+      "confidence": 0.96,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "season injury surveillance/descriptive epidemiology",
+      "populationEligibility": "44 university soccer top-team players in 2021 season",
+      "outcomeEligibility": "time-loss football injuries and disorders by site/type/severity",
+      "reportedDenominator": "total ET 13,453 hours; match 905 hours; training 12,548 hours; rates per 1,000 player-hours",
+      "evidenceQuotes": [
+        "44 players",
+        "exposure time was 13,543 hours",
+        "3.0/1,000ph"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "0cc79789-3246-4bb9-ba90-6ab4e7b34d14",
+      "studyId": "S3620",
+      "title": "The Influence of Running Demands in Hamstring Injury in Elite Male Soccer Players. A Comparison Between Injured and Uninjured Players.",
+      "pdfFileName": "EBSCO-FullText-06_28_2026.pdf",
+      "pdfSha256": "5f140e1c92e68c5e3ebeafc500c5bf0da6f815fddc36493890168fd93fa9e9e5",
+      "decision": null,
+      "skipped": true,
+      "reason": "PDF notice prohibits AI/ML use, so the text was not read or used for review.",
+      "confidence": null,
+      "exclusionReason": "AI/ML use prohibited by PDF notice",
+      "denominatorStatus": "not_assessed",
+      "studyDesign": "not assessed",
+      "populationEligibility": "not assessed",
+      "outcomeEligibility": "not assessed",
+      "reportedDenominator": null,
+      "evidenceQuotes": [],
+      "criteriaTriggered": [
+        "AI_RESTRICTED_SKIP"
+      ]
+    },
+    {
+      "recordId": "315e7ffc-cf9f-4ca8-8a3c-b5540a037214",
+      "studyId": "S3996",
+      "title": "Effect of the FIFA 11+ on anterior cruciate ligament injury incidence rates in collegiate female football players over three consecutive seasons.",
+      "pdfFileName": "R40Y2026N03A0400.pdf",
+      "pdfSha256": "6c1de0828dd3bf056a8a26a105915533ab2dbea2403c8b75aa950cc0d1cf96d3",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Non-randomized controlled football injury-prevention study reports ACL injury incidence rates per 1000 player-hours in collegiate female football players.",
+      "confidence": 0.97,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "secondary analysis of non-randomized controlled trial",
+      "populationEligibility": "Kanto University Women's Football Association Division 1 players",
+      "outcomeEligibility": "MRI-diagnosed ACL injuries during football practices or matches",
+      "reportedDenominator": "ACL injury IR per 1000 player-hours, with intervention/control player-hour tables",
+      "evidenceQuotes": [
+        "IR per 1000 PH",
+        "ACL injuries occurred during football practices or matches",
+        "763 collegiate female football players"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "2a4b2c9e-4620-4619-8682-e1de653df90a",
+      "studyId": "S892",
+      "title": "The Acute: Chronic Workload Ratio and Injury Risk in Semiprofessional Football Players.",
+      "pdfFileName": "a-2282-0024.pdf",
+      "pdfSha256": "639528c6df1642eea86d5b19eb5cd88fcc112226b1f0bb47bdf3de6966d1c519",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Prospective semiprofessional soccer cohort records training/match exposure and reports non-contact injury incidence per 1000 hours.",
+      "confidence": 0.94,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "prospective observational workload-injury cohort",
+      "populationEligibility": "17 Spanish Third Division football players, outfield only",
+      "outcomeEligibility": "time-loss non-contact football injuries",
+      "reportedDenominator": "non-contact injury incidence 5.91 per 1000 hours of practice; session durations recorded",
+      "evidenceQuotes": [
+        "17 football players",
+        "prospective longitudinal study",
+        "5.91 per 1,000 hours"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "f349e4cb-7a92-4a9c-b6f7-d198b17ba497",
+      "studyId": "S789",
+      "title": "External Training Loads and Soft-Tissue Injury Occurrence During Congested Versus Noncongested Periods in Football.",
+      "pdfFileName": "ijspp-article-p1068.pdf",
+      "pdfSha256": "eb51736fa7ae1f5c05b662dc193d719c0f443f2b18fe8dfa45adf8b104270ba3",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Professional football cohort over two seasons reports soft-tissue injury rates and burdens per 1000 hours for congested and noncongested periods.",
+      "confidence": 0.97,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "two-season professional team surveillance/load cohort",
+      "populationEligibility": "33 Portuguese Liga I professional football players",
+      "outcomeEligibility": "medical-attention and time-loss soft-tissue injuries using IOC football extension",
+      "reportedDenominator": "soft-tissue injury rates 3.9 and 3.2 injuries per 1000 hours",
+      "evidenceQuotes": [
+        "33 professional football players",
+        "3.9 and 3.2 injuries per 1000 hours",
+        "IOC consensus method"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "5ac45489-3e60-43a7-a305-8b5af5c0860d",
+      "studyId": "S2206",
+      "title": "Comparative Effects of 2 Different Frequencies of Resistance Training in an Integral Periodization Approach on High-Intensity Actions and Noncontact Injuries in Young Trained Soccer Players.",
+      "pdfFileName": "ijspp-article-p1363.pdf",
+      "pdfSha256": "a6b4fd4cfaf4cd0d87044f432c67a205cf2bd775e972c8a16f12dc7220336b2b",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Youth soccer intervention study prospectively records noncontact injuries; the season-long activity schedule and participant counts provide paper-derivable exposure inputs.",
+      "confidence": 0.82,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "two-group quasi-experimental season intervention",
+      "populationEligibility": "U-19 professional academy soccer players in Spain",
+      "outcomeEligibility": "club medical staff-recorded noncontact injuries and severity",
+      "reportedDenominator": "18 and 22 players; 45 microcycles; four 75-min training days, one 90-min match, and resistance sessions per microcycle",
+      "evidenceQuotes": [
+        "45 microcycles throughout the season",
+        "4 training days (75 min per session)",
+        "1 competitive match (90 min)"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "00724ea5-0f5a-4862-92bd-ecbbcefb352c",
+      "studyId": "S4669",
+      "title": "Impact of Injury on Anxiety, Depression, and Quality of Life in Youth Soccer Players.",
+      "pdfFileName": "impact_of_injury_on_anxiety,_depression,_and.361.pdf",
+      "pdfSha256": "edb84c443e032c7c2f5c0937044e68121363d64ff76a70846f214a33b18b2d0c",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Cross-sectional elite youth soccer study reports direct participant mental-health and quality-of-life outcomes with a clear responding soccer-athlete denominator.",
+      "confidence": 0.9,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "cross-sectional online survey",
+      "populationEligibility": "668 ECNL youth soccer athletes aged 13-19",
+      "outcomeEligibility": "validated anxiety, depression, and quality-of-life scores by injury status",
+      "reportedDenominator": "668 completed surveys; injury-status counts reported",
+      "evidenceQuotes": [
+        "668 ECNL soccer athletes",
+        "General Anxiety Disorder-7",
+        "Patient Health Questionnaire-9"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEN-01",
+        "mental-health leniency"
+      ]
+    },
+    {
+      "recordId": "f2f7d034-7d8f-4113-b270-a2eb2ecead80",
+      "studyId": "S3337",
+      "title": "Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season Prospective Cohort Study.",
+      "pdfFileName": "injury_patterns_in_academy_level_male_youth_soccer.12.pdf",
+      "pdfSha256": "6796f5fd23e0cb23fb9263139538d7ccb46aa538611412d1e241b25bfd3a0913",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Three-season prospective academy soccer cohort reports time-loss injury epidemiology with total exposure hours and rates per 1000 hours.",
+      "confidence": 0.98,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "3-season prospective cohort injury surveillance",
+      "populationEligibility": "male youth MLS/developmental academy soccer players, U12-U19",
+      "outcomeEligibility": "time-loss injuries categorized using football injury consensus definitions",
+      "reportedDenominator": "90,890 total hours; pooled injury rate 3.64 per 1000 hours",
+      "evidenceQuotes": [
+        "90,890 total hours",
+        "331 injury events",
+        "3.64/1000 hours"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "aeb3790f-3077-43d7-9ee7-360f08eedace",
+      "studyId": "S1899",
+      "title": "Mental Health Symptoms of Amateur Association Football Referees: A Cross-Sectional Study.",
+      "pdfFileName": "jcsp-article-p199.pdf",
+      "pdfSha256": "256045133bdf72590fdb85aaf1ac738e1fd548a44e39535d1b9bca59189eea81",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Eligible football referees study reports direct validated mental-health symptom prevalence using the responding referee cohort as denominator.",
+      "confidence": 0.93,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "cross-sectional anonymous online survey",
+      "populationEligibility": "1,279 Turkish amateur association football referees",
+      "outcomeEligibility": "PHQ-9, GAD-7, and PSS-10 depression/anxiety/stress symptoms",
+      "reportedDenominator": "1,279 respondents; prevalence categories for depression, anxiety, and stress",
+      "evidenceQuotes": [
+        "1,279 referees participated",
+        "PHQ-9, GAD-7, and PSS-10",
+        "36.1%, 26.2%, and 45.2%"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01 referee",
+        "I-OUT-01",
+        "I-DEN-01",
+        "mental-health leniency"
+      ]
+    },
+    {
+      "recordId": "48eb4f7a-f33f-470b-ae47-26314ab34d14",
+      "studyId": "S4629",
+      "title": "Epidemiology of Sport Injury Among Korean Male Youth Soccer Players: A Prospective Cohort Study.",
+      "pdfFileName": "pes-article-10.1123-pes.2024-0118.pdf",
+      "pdfSha256": "1f500dd3654f65704a959d913647cc2082fb4807e1bc6d1d20e556acd4e0a0d6",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Prospective youth soccer injury surveillance reports medical-attention/time-loss injuries, exposure minutes, incidence rates, and injury burden per 1000 hours.",
+      "confidence": 0.98,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "1-year prospective epidemiological cohort",
+      "populationEligibility": "100 Korean male U-15 soccer players",
+      "outcomeEligibility": "soccer injuries collected by medical staff under consensus definitions",
+      "reportedDenominator": "total exposure 243.05 hours per player; overall IR 5.76 per 1000 hours",
+      "evidenceQuotes": [
+        "100 youth soccer players",
+        "Data on injury characteristics",
+        "5.76 per 1000 hours"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "564b957d-7c38-4e4f-8e90-b6cbc59a51b3",
+      "studyId": "S5526",
+      "title": "Position-Specific Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season, Prospective Cohort Study.",
+      "pdfFileName": "position_specific_injury_patterns_in_academy_level.392.pdf",
+      "pdfSha256": "01052cf881f71a2a5db258d07a5e7f992ef1114084b05560736b160989d513ff",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Academy soccer cohort reports position-specific time-loss injury incidence per person-year with eligible injury definitions and population.",
+      "confidence": 0.9,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "3-season retrospective cohort from injury registry",
+      "populationEligibility": "male MLS Next/developmental academy soccer players",
+      "outcomeEligibility": "time-loss injuries categorized by Fuller and IOC consensus statements",
+      "reportedDenominator": "position-specific injuries per person-year; 201 athletes and 260 injuries",
+      "evidenceQuotes": [
+        "260 injuries were recorded",
+        "201 athletes",
+        "1.29 injuries per person-year"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ]
+    },
+    {
+      "recordId": "3692c38c-7d1b-4f61-85c9-52abc92e800a",
+      "studyId": "S2382",
+      "title": "Risk of Low Energy Availability in New Zealand National Team and U20 Female Football Representatives.",
+      "pdfFileName": "wspaj-article-wspaj.2023-0041.pdf",
+      "pdfSha256": "845cd6b540a42f8805a624d265557a25374ffb86baeb6957d9647e31a34b49b8",
+      "decision": "include",
+      "skipped": false,
+      "reason": "International female football cohort reports direct health outcome prevalence/risk of low energy availability using validated symptom questionnaire and respondent denominator.",
+      "confidence": 0.86,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "cross-sectional online survey",
+      "populationEligibility": "New Zealand national and U20 female football players",
+      "outcomeEligibility": "low energy availability/REDs risk, menstrual status, mood and sleep measures",
+      "reportedDenominator": "22 respondents; 13 at risk of low energy availability",
+      "evidenceQuotes": [
+        "Twenty-two members",
+        "59.1% (n = 13)",
+        "LEAF-Q score ≥8"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-OUT-01",
+        "I-DEN-01",
+        "participant-health outcome"
+      ]
+    },
+    {
+      "recordId": "f50ba0da-dbe7-4b6e-a67c-cb4fa8307747",
+      "studyId": "S1680",
+      "title": "Relationships between internal workload and injury incidence in elite youth soccer players",
+      "pdfFileName": "27022769_9046077030007966.pdf",
+      "pdfSha256": "dc11e2eb31b77cc4e8a21c751705b452db5d0f35841eb5d9a9f7c5fff61a92e7",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Elite youth soccer workload-injury cohort reports football injuries, total practice exposure hours, and injury incidence per 1000 hours.",
+      "confidence": 0.97,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "retrospective observational cohort using season workload and medical injury records",
+      "populationEligibility": "45 male elite youth football academy players aged 15-24 from a professional training centre",
+      "outcomeEligibility": "time-loss football injuries recorded by the club doctor during the season",
+      "reportedDenominator": "12,360 total practice hours; injury incidence 5.50 per 1000 practice hours",
+      "evidenceQuotes": [
+        "45 joueurs pour l’étude",
+        "temps de pratique global était de 12 360 heures",
+        "incidence des blessures ... 5,50 pour 1000 heures"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "model": "GPT-5 (Codex chat, medium reasoning; GPT-5.5 CLI not exposed in this session)"
+    },
+    {
+      "recordId": "04f52bd2-5693-42a5-b159-86aabbc757ef",
+      "studyId": "S1889",
+      "title": "Musculoskeletal injuries in professional soccer players: A study of 2 consecutive seasons in a Tunisian football team",
+      "pdfFileName": "27022775_9046160360007966.pdf",
+      "pdfSha256": "b6ab0799dfb87f5223fc3b0c1b6f2cd7cbe62c76588a0f0a7afeedb72c636c33",
+      "decision": "exclude",
+      "skipped": false,
+      "reason": "Professional football muscle-injury case series reports player and injury counts but explicitly states that exposure time and incidence were not reported.",
+      "confidence": 0.96,
+      "exclusionReason": "No usable denominator",
+      "denominatorStatus": "unusable",
+      "studyDesign": "prospective descriptive pilot study of indirect muscle injuries in one professional team",
+      "populationEligibility": "40 professional Tunisian football players followed over two seasons",
+      "outcomeEligibility": "team physician-diagnosed indirect muscle injuries by site, grade, and timing",
+      "reportedDenominator": null,
+      "evidenceQuotes": [
+        "suivi 40 joueurs ... pendant 2 saisons",
+        "23 parmi 19 joueurs",
+        "nous n’avons pas rapporté d’exposition à la pratique ni d’incidence"
+      ],
+      "criteriaTriggered": [
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "E-DEN-01"
+      ],
+      "model": "GPT-5 (Codex chat, medium reasoning; GPT-5.5 CLI not exposed in this session)"
+    },
+    {
+      "recordId": "f020ba34-2112-4686-bb95-ee5a3d300188",
+      "studyId": "S4608",
+      "title": "Injury Patterns in an Elite Men's Futsal Club: A Nine-Season Cohort Study.",
+      "pdfFileName": "27022821_9046658860007966.pdf",
+      "pdfSha256": "a3afe482ae3928f8cd0f5c01bbd5cc17bcd8426c34c0f3c8312a348a94e1e6b0",
+      "decision": "include",
+      "skipped": false,
+      "reason": "Elite futsal club surveillance reports time-loss injuries over nine seasons with player-season denominators and injury incidence proportions.",
+      "confidence": 0.95,
+      "exclusionReason": null,
+      "denominatorStatus": "usable",
+      "studyDesign": "nine-season retrospective cohort injury surveillance from club medical records",
+      "populationEligibility": "214 male elite futsal players across youth and senior categories, a FIFA-governed football discipline",
+      "outcomeEligibility": "time-loss injuries classified by IOC/UEFA consensus definitions with tissue, body region, severity, and context",
+      "reportedDenominator": "214 unique players; 671 player-seasons; injury incidence proportions by season/category",
+      "evidenceQuotes": [
+        "214 male athletes ... 671 player-seasons",
+        "1,043 time-loss injuries",
+        "injury incidence proportion by season and category"
+      ],
+      "criteriaTriggered": [
+        "I-DES-01",
+        "I-POP-01",
+        "I-SET-01",
+        "I-OUT-01",
+        "I-DEF-01",
+        "I-DEN-01"
+      ],
+      "model": "GPT-5 (Codex chat, medium reasoning; GPT-5.5 CLI not exposed in this session)"
+    }
+  ]
+}

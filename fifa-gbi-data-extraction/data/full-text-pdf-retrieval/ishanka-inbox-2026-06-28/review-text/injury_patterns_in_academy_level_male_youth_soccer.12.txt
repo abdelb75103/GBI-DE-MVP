@@ -1,0 +1,493 @@
+   Original Research
+
+
+
+
+Injury Patterns in Academy-Level Male Youth
+Soccer Players: A 3-Season Prospective
+Cohort Study
+Thomas M. Munro, MD,* McKenna C. Noe, BS,* Shannon R. Margherio, PT, OCS,* Brian R. Lee, PhD, MPH,† and
+Brian S. Harvey, DO*
+
+
+  Abstract
+  Objective: To report injury epidemiology in youth male academy-level athletes in the United States. Design: An observational
+  study on injury occurrences and playing time over the 2019 to 2020, 2020 to 2021, and 2021 to 2022 soccer seasons. Setting:
+  Data collected from a single midwestern soccer academy in the United States in partnership with a tertiary care level I pediatric heath
+  institution. Patients: All male youth athletes to have enrolled and participated in the developmental academy during any of the 3
+  studied seasons. Interventions: None. This was an observational study. Main Outcome Measures: Injury rate (incidence
+  per 1000 playing hours), type, location, mechanism (noncontact vs contact), severity, and mode of play (match vs training) in which
+  the injury was sustained. Results: Overall rate of injury was 3.64 per 1000 h exposure. Injuries of moderate severity (8-28 days of
+  missed playing time) were most common. When stratified by team, injury rates were highest in the U15 (5.15/1000 h) and lowest in
+  the U12 (0.87/1000 h). Most injuries involved muscles of the lower extremities. Conclusions: Among male youth academy-level
+  soccer athletes in the United States, older players tended to sustain injuries at a higher rate than younger. The lower extremity was
+  the most common injury location, and muscle injuries and most common type. Concussions remain common in this population,
+  accounting for nearly a 10th of all athletic injuries. Clinical Relevance: Injury epidemiology data from this study add to the
+  growing worldwide pool of data from youth, male, academy-level soccer athletes that will augment development of injury prevention
+  interventions.
+  Key Words: youth, male, soccer, academy-level, injury epidemiology, United States
+  (Clin J Sport Med 2025;35:482–488)
+
+
+
+INTRODUCTION                                                                      increased likelihood of developing future orthopedic
+                                                                                  comorbidities.14,15
+For decades, soccer (football) has reigned as the most popular
+                                                                                     These costs and negative health ramifications have rein-
+sport in the world. In 2006, an estimated 270 million people
+                                                                                  forced the dual mission of sports medicine providers to both
+worldwide played soccer at some level.1 In 2020, the Sport
+and Fitness Industry Association Participation Report found                       treat and prevent athletic injuries. The keystone prerequisite to
+that 17.8 million Americans participated in organized                             preventing athletic injuries is establishment of an epidemio-
+soccer—second only in sport participation to organized                            logical record of injuries that can be used to deduce factors and
+basketball.2 As of 2022, approximately 8% of all children                         mechanisms contributing to injury occurrence.16 With this
+ages 6 to 12 and 7.1% of children ages 13 to 17 who reside in                     knowledge, measures to prevent athletic injury can be
+the United States participate in organized soccer.3                               developed and their true efficacy investigated. We know from
+   As with all athletic endeavors, widespread participation has                   injury epidemiology studies that injury patterns and risk
+led to a significant number of sports-related injuries. These                     factors differ according to environmental factors such as
+injuries have negative consequences including healthcare-                         geographic region17,18 and level of competition19 and in-
+associated cost burdens,4–6 losses of team revenue,7,8 provo-                     dividual athlete factors like age,20,21 developmental
+cation of athlete mental health crises,9,10 predisposition to                     maturity,22–24 and sex.19 Abundant injury and recovery data
+further injuries,11 persistent symptoms,12 curtailed individual                   from adult members of club and national soccer teams25–32
+career potential,13 dropout from sport participation,12 and                       have sustained the research, development, and testing of
+                                                                                  numerous such initiatives shown to decrease risk of injury in
+                                                                                  these populations.33–35 Although implementation of these
+Submitted for publication March 22, 2024; accepted September 28, 2024.
+                                                                                  initiatives—most of which pertain to the practice of specific
+From the *Department of Orthopaedic Surgery and Sports Medicine, Children’s
+                                                                                  exercises that build injury resistance (so-called “prehabilita-
+Mercy, Kansas City, Missouri; and †Department of Health Outcomes and Health
+Services Research, Children’s Mercy, Kansas City, Missouri.                       tion”) in athletes—may be expected to be of some value in
+The authors report no conflicts of interest.                                      populations not included in these original studies, our ability
+Corresponding Author: Brian Harvey, DO, Department of Orthopedic Surgery and
+                                                                                  to understand factors predisposing to injury and evaluate the
+Sports Medicine at Children’s Mercy Hospital, Sports Medicine Center at Village   efficacy of injury prevention initiatives in less-studied pop-
+West 1801, North 98th St, Kansas City, KS 66111 (bsharvey@cmh.edu).               ulations remains limited. This limitation holds especially true
+Copyright © 2025 Wolters Kluwer Health, Inc. All rights reserved.                 for youth academy-level athletes, whose higher fitness levels,
+http://dx.doi.org/10.1097/JSM.0000000000001288                                    greater training times, propensity to “play up or down” as
+
+T.M. Munro et al. (2025)                                                                                                          Clin J Sport Med
+
+
+      Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+Volume 35
+            ·   Number 4
+                           ·   July 2025                                                                                                  www.cjsportmed.com
+
+
+a member of a neighboring team-age bracket, and participa-                A multivariable Poisson model using age group (ie, U12-U19
+tion amid a mix of amateur- and professional-level athletes               cohort) and season as independent factors was used to
+make their injury risk profiles substantially different from              ascertain whether differences in injury rates were significantly
+those of age-matched recreational athletes. Although young                different; dummy coding was employed, using U12 and the
+male soccer players are among the most frequently in-                     2019 to 2020 season as the reference categories. Two-tailed
+jured,21,22 reports of injury epidemiology and injury pre-                analyses with significance cutoff of 0.05 were used through-
+vention efforts in youth academy-level male soccer players                out. All analyses were completed using Python software
+remain sparse,36–38 especially with respect to athletes in the            (Python Software Foundation. Python software Statistics for
+United States.19                                                          Windows, Version 3.9.7. Beaverton, OR).
+   This descriptive epidemiological study of injury patterns by              Ethical Considerations: This study involving human
+team age in academy-level male youth soccer players in the                participants was approved by the (INSTITUTION
+United States will add to our growing knowledge of the injury             REDACTED) human investigation committee (IRB), study
+landscape in this understudied population, aiding our un-                 ID number 2353. The (INSTITUTION REDACTED) IRB
+derstanding of which injuries represent the most fruitful                 determined that this study meets the criteria for an Exempt
+targets for future interventions and allowing us to evaluate the          Determination under 45 CFR 46.104 (d) category 4 (iii) and
+efficacy of these initiatives.                                            Waiver of HIPAA Authorization under 45 CFR
+                                                                          164.512(i) 2(ii).
+METHODS
+This was an IRB-approved prospective cohort study involving               RESULTS
+athletes of a single youth US male soccer academy over the                Injury Rate
+course of the 2019 to 2020, 2020 to 2021, and 2021 to 2022
+sport seasons. The soccer academy was classified as a regional            Over the 3 seasons in this study, the U12-U19 athletes saw
+developmental academy for the 2019 to 2020 season before                  a combined playing exposure time of 90,890 total hours and
+transitioning to a Major League Soccer Next academy                       331 injury events with a resultant pooled injury rate of 3.64/
+thereafter. Teams ranged from under 12 to under 19 years                  1000 hours. Injury rates varied substantially for each team in
+of age (U12, U13, U14, U15, U17, and U19, where “U”                       each soccer season: the 2020 to 2021 U12 team had the lowest
+denotes age of players under the adjacent number in years).               injury rate (0.58/1000 hours) and the 2019 to 2020 U15 team
+Injury data for each athlete spanned from the time of joining             the highest (6.27/1000 h). Although the overall single-season
+the team to the time of release from it. Only time-loss injuries          injury rate for the pooled U12-U19 groups was similar
+(injuries that resulted in missing participation in team training         between the 2019 to 2020 and 2020 to 2021 soccer seasons, it
+or matches) were recorded. Injuries that occurred outside of              was significantly lower in the 2021 to 2022 season (P 5 0.020)
+team training or matches were excluded.                                   (Table 1). Three-season pooled injury rates were highest
+   Athletic trainers recorded injury event data daily and were            among the U15 (5.15/1000 h) and U19 (5.10/1000 h) groups
+taught in a preseason education session how to fill out                   and lowest among the U12 (0.87/1000 h). Furthermore, 3-
+a custom injury spreadsheet, which was subsequently stored in             season pooled injury rate ratios for each of the U13, U14, U15,
+REDCap. A physical therapist would categorize the injuries                U17, and U19 groups all differed significantly from that of the
+that was reviewed by the team physicians. Injury categoriza-              U12 group baseline (Table 1). Average training/match hours
+tion followed the guidelines of Fuller et al39 Consensus                  per player did not seem to be related to injury incidence
+Statement on Injury Definitions and Data Collection Proce-                (Table 2, Figure 1). Ad rem, the U17 athletes, who underwent
+dures in Studies of Football (soccer) Injuries. If a player
+sustained injury to multiple anatomic structures during
+a single injury event, it was documented as 1 injury with                  TABLE 1. Comparison of Injury Rates by Team,
+                                                                                    Adjusting for Soccer Season, Using
+multiple diagnoses. Injury type, location, severity, mechanism
+                                                                                    a Multivariable Poisson Model
+(contact or non-contact), and mode of play (training or match)
+in which the injury was sustained were documented. Injury                                                  IRR                    P                  95% CI
+severity was classified according to number of days missed                Team
+from full participation. Severe injuries were defined as those               U12                        Reference                —                     —
+leading to a loss of participation of more than 28 days,                     U13                           2.42                0.010*              1.24-4.73
+moderate as loss of 8 to 28 days, mild 4 to 7 days, and minimal
+                                                                             U14                           3.28              ,0.001*               1.75-6.14
+1 to 3 days. If a player recovered outside of the soccer season
+and the exact date for return to full participation was not                  U15                           5.60              ,0.001*              3.08-10.19
+available, the team medical staff provided an estimated time to              U17                           5.17              ,0.001*               2.91-9.18
+recovery based on the injury diagnosis. Total hours were                     U19                           5.54              ,0.001*               3.07-9.98
+determined through the summation of training time and                     Season
+match time.
+   Injury incidence rates (hereafter called “injury rates”) were             2019-2020                  Reference                —                     —
+compared across groups (U12-U19 cohorts), and overall                        2020-2021                     0.98                0.870               0.74-1.28
+characteristics (mechanism, severity, mode of play, location,                2021-2022                     0.70                0.020*              0.52-0.95
+and type) are reported. Categorical data were presented as                 Age group and season were used as independent factors to ascertain whether differences
+proportions (percentages) and analyzed with Fisher exact                   in injury rates were significantly different. Dummy coding was employed, using U12 and
+tests. Injury rates were calculated by dividing injury counts by           the 2019 to 2020 season as the reference categories. “IRR” indicates incidence rate ratio.
+                                                                           “CI” indicates confidence interval. Asterisks indicate statistical significance.
+training/match hours and then standardizing per 1000 hours.
+
+                                                                    483
+
+ Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+T.M. Munro et al. (2025)                                                                                                                         Clin J Sport Med
+
+
+
+ TABLE 2. Player and Injury Metrics for Each                                                     noncontact mechanisms (32/84, 38.1%) (n 5 1 injury
+          Team From 2019 to 2022                                                                 mechanism was not available). Accordingly, only 29.1%
+                                                                                                 (72/247) of injuries sustained during training sessions had
+Group        Season         Players      Injuries     Total Hours        Injury Rate
+                                                                                                 contact mechanisms, whereas 68.8% (170/247) were due to
+U12        2019-2020           12            3          1903.12             1.58                 noncontact means (n 5 5 injury mechanisms were not
+           2020-2021           20            3          5130.12             0.58                 available). Table 3 displays a summary of the injury data for
+           2021-2022           29            7          7882.75             0.89                 each team by mechanism, severity, mode of play, and location
+               Total           61           13         14 915.99            0.87                 of injury.
+                                                                                                    Injuries to the lower extremity were most common (247/
+U13        2019-2020           16           11          2463.25             4.47
+                                                                                                 331, 74.6%). Within this region, the most common injury
+           2020-2021           22            9          4220.50             2.13                 locations were the thigh (67/331, 20%), hip/groin (53/331,
+           2021-2022           18            5          4719.38             1.06                 16%), knee (43/331, 13%), ankle (42/331, 12.7%), and foot/
+               Total           56           25         11 403.13            2.19                 toe (28/331, 8.5%). Of note, head/face injuries were also
+U14        2019-2020           17            6          2725.83              2.2                 common, accounting for more than 10% (35/331) of the
+                                                                                                 injuries in this study (Table 3).
+           2020-2021           24           19          5715.92             3.32
+                                                                                                    With respect to injury type, muscle injuries (ruptures, tears,
+           2021-2022           21           15          4807.83             3.12                 strains, and/or cramps) were most common (131/338, 38.8%)
+               Total           62           40         13 249.58            3.02                 followed by ligament injuries/sprains (64/338, 18.9%),
+U15        2019-2020           21           16          2553.83             6.27                 contusions/bruises (34/338, 10.1%), and concussions (30/
+           2020-2021           21           26          5083.83             5.11
+                                                                                                 338, 8.9%) (Table 2). The U15 and U17 groups experienced
+                                                                                                 73.3% of the concussions reported with a steep drop off in the
+           2021-2022           21           20          4404.58             4.54                 U19 group (6.7%) (Table 4). The U12 group experiencing the
+               Total           63           62         12 042.24            5.15                 largest percentage of concussions (3/15; 20%) and the U15
+U17        2019-2020           30           21          5107.67             4.11                 and U17 groups experiencing the most overall concussions (9/
+           2020-2021           36           56          9713.00             5.77                 63 14.2% and 13/118; 11.0%) (Table 4). The U15 and U17
+                                                                                                 groups also had the highest rate of concussions/1000 hours
+           2021-2022           34           38          9559.00             3.98
+                                                                                                 (Table 5). The U19 group experienced 75% of the total
+               Total          100          115         24 379.67            4.72                 meniscal or cartilage injuries found in this study (6/8 with
+U19        2019-2020           14           21          3131.33             6.71                 a rate of 0.4/1000 hours) (Table 4). “Other bone injuries” (a
+           2020-2021           23           38          6407.50             5.93                 term used to denote apophysitis of a stress reaction, but not
+           2021-2022           18           17          5360.67             3.17                 avulsion fractures) were substantially more common in the
+                                                                                                 U13 and U14 groups (22.5%-24.0%) than in the others
+               Total           55           76         14 899.50            5.10
+                                                                                                 (2.6%-6.7%) (Table 4). The U13 and U14 groups also
+Overall 2019-2022             397          331         90 890.11            3.64                 experienced the highest rate/1000 hours of “other bone
+ Player numbers are estimates that were derived from starting roster numbers at the              injuries” (Table 5).
+ beginning of the season. They do not account for individuals who played up or down for
+ some matches or those who departed from or joined the teams later in the year. Total
+ hours were determined through the summation of training time and match time. Training
+ time 5 number of training sessions for each athlete 3 average training time. Match time         DISCUSSION
+ 5 total number of matches 3 total match time (U12: 60 min; U13: 70 min; U14-U15: 80
+ min; U17-19: 90 min) 3 the number of players per match (U12-U13: 9 players; U14-U19:            Implementation of successful injury prevention strategies is
+ 11 players).                                                                                    predicated upon understanding the injury epidemiology of the
+                                                                                                 target population. Although there is a growing pool of male
+                                                                                                 academy-level youth soccer injury data from nations outside
+the most training/match hours per player in each of the 3
+                                                                                                 the United States, those data remain limited within the
+studied soccer seasons, had only the third-highest 3-season
+                                                                                                 United States. Our report of injury occurrences and character-
+pooled injury rate.
+                                                                                                 istics in male youth soccer players across 3 seasons at a US
+                                                                                                 Major League Soccer developmental academy provides help-
+Injury Characteristics                                                                           ful injury epidemiology data in this unique and understudied
+                                                                                                 athlete population.
+The most common injury severity was moderate (41.4%),
+followed by severe (24.5%), mild (20.5%), and minimal
+(13.6%). No “career ending” injuries occurred. We found
+that most injuries occurred during training sessions (74.6%)                                     Injury Rate
+rather than in matches (25.4%), but the injury rate was higher                                   We found injury rates to vary significantly according to team-
+during matches than training time (training injury rate median                                   age and soccer season. Whereas U12 athletes had the lowest
+of 3.0; mean of 2.8, absolute range of 0.6-5; match injury rate:                                 overall injury incidence rate across all 3 studied seasons, the
+median of 13.4, mean of 12.7, absolute range of 0-38.3).                                         highest rates occurred among the U19 and U15 teams, in turn,
+Overall, injuries were more likely to result from noncontact                                     depending on the season. Overall youth soccer injury
+mechanisms (61.0%) than contact (37.2%). U12 athletes                                            incidence rates reported in the literature vary considerably
+were the only group to experience more contact injuries                                          (with reports varying from 0.5 to 19.4 injuries per 1000 hours
+(53.8%) than noncontact (46.2%), although the number of                                          of exposure).40,41 Our injury incidence ranged from the lowest
+injuries in this cohort was relatively small (n 5 13). Within                                    of 0.58/1000 hours (U12 2020-2021 season) to the highest of
+matches, the proportion of injuries resulting from contact                                       6.71 (U19 in the 2019-2020 season) with an overall U12-U19
+mechanisms (51/84, 60.7%) was higher than that of                                                pooled 3-season injury incidence of 3.7/1000 hours, which is
+
+                                                                                           484
+
+      Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+Volume 35
+            ·   Number 4
+                            ·   July 2025                                                                                        www.cjsportmed.com
+
+
+
+
+Figure 1. A, Average training/match hours per player and (B) injury rate per 1000 training/match hours for each team.
+
+
+
+consistent with injury rates on the lower end of the established                      In this study, each of the U14-U19 teams was found to have
+incidence spectrum. Specifically, for male academy-level                           significantly increased incidence of injury rates compared with
+youth soccer athletes, our overall incidence of 3.7/1000 is                        the U12 cohort. Although previous reports have differed
+similar to previously reported studies in this cohort.19,20                        regarding the age of male youth soccer athletes most at risk for
+
+ TABLE 3
+                                                                  Overall      U12          U13         U14         U15          U17         U19
+Column 1                                    Column 2            (N 5 331)    (N 5 13)     (N 5 25)    (N 5 40)    (N 5 62)    (N 5 115)   (N 5 76)
+Mechanism of injury, n (%)                  Noncontact          202 (61.0)   6 (46.2)     20 (80.0)   26 (65.0)   38 (61.3)   67 (58.3)   45 (59.2)
+                                              Contact           123 (37.2)   7 (53.8)     5 (20.0)    14 (35.0)   24 (38.7)   44 (38.3)   29 (38.2)
+                                             Not listed          6 (1.8)      0 (0.0)      0 (0.0)     0 (0.0)     0 (0.0)     4 (3.5)     2 (2.6)
+Injury severity, n (%)                 Moderate (8-28 d)        137 (41.4)   5 (38.5)     15 (60.0)   13 (32.5)   31 (50.0)   46 (40.0)   27 (35.5)
+                                        Severe (.28 d)          81 (24.5)    2 (15.4)     4 (16.0)    6 (15.0)    15 (24.2)   33 (28.7)   21 (27.6)
+                                            Mild (4-7 d)        68 (20.5)    3 (23.1)     3 (12.0)    15 (37.5)   8 (12.9)    23 (20.0)   16 (21.1)
+                                        Minimal (1-3 d)         45 (13.6)    3 (23.1)     3 (12.0)    6 (15.0)    8 (12.9)    13 (11.3)   12 (15.8)
+Mode of play, n (%)                    Training (academy)       242 (73.1)   12 (92.3)    20 (80.0)   31 (77.5)   41 (66.1)   85 (73.9)   53 (69.7)
+                                              Match             84 (25.4)     1 (7.7)     5 (20.0)    9 (22.5)    21 (33.9)   29 (25.2)   19 (25.0)
+                                  Training (academy advanced)    5 (1.5)      0 (0.0)      0 (0.0)     0 (0.0)     0 (0.0)     1 (0.9)     4 (5.3)
+Location of injury, n (%)                      Thigh            67 (20.2)     0 (0.0)     9 (36.0)    6 (15.0)    13 (21.0)   18 (15.7)   21 (27.6)
+                                             Hip/groin          53 (16.0)    3 (23.1)      2 (8.0)    4 (10.0)    9 (14.5)    22 (19.1)   13 (17.1)
+                                               Knee             43 (13.0)    2 (15.4)     6 (24.0)    6 (15.0)    8 (12.9)    14 (12.2)    7 (9.2)
+                                               Ankle            42 (12.7)     0 (0.0)      1 (4.0)     3 (7.5)    7 (11.3)    16 (13.9)   15 (19.7)
+                                            Head/face           35 (10.6)    4 (30.8)      1 (4.0)     3 (7.5)    9 (14.5)    14 (12.2)    4 (5.3)
+                                             Foot/toe            28 (8.5)    3 (23.1)     4 (16.0)    9 (22.5)     2 (3.2)     7 (6.1)     3 (3.9)
+                                   Lower back/pelvis/sacrum      24 (7.3)     0 (0.0)      1 (4.0)    4 (10.0)    7 (11.3)     8 (7.0)     4 (5.3)
+                                    Lower leg/Achilles tendon    12 (3.6)     0 (0.0)      0 (0.0)     2 (5.0)     3 (4.8)     4 (3.5)     3 (3.9)
+                                        Shoulder/clavicle        12 (3.6)     0 (0.0)      0 (0.0)     2 (5.0)     1 (1.6)     3 (2.6)     6 (7.9)
+                                       Hand/finger/thumb         8 (2.4)      0 (0.0)      0 (0.0)     1 (2.5)     3 (4.8)     4 (3.5)     0 (0.0)
+                                               Wrist             3 (0.9)      0 (0.0)      0 (0.0)     0 (0.0)     0 (0.0)     3 (2.6)     0 (0.0)
+                                             Forearm             1 (0.3)      0 (0.0)      1 (4.0)     0 (0.0)     0 (0.0)     0 (0.0)     0 (0.0)
+                                         Knee, foot/toe          1 (0.3)      1 (7.7)      0 (0.0)     0 (0.0)     0 (0.0)     0 (0.0)     0 (0.0)
+                                    Sternum/ribs/upper back      1 (0.3)      0 (0.0)      0 (0.0)     0 (0.0)     0 (0.0)     1 (0.9)     0 (0.0)
+                                            Thigh, knee          1 (0.3)      0 (0.0)      0 (0.0)     0 (0.0)     0 (0.0)     1 (0.9)     0 (0.0)
+
+
+
+                                                                             485
+
+  Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+T.M. Munro et al. (2025)                                                                                                                                               Clin J Sport Med
+
+
+
+ TABLE 4. Injury Type Across Pooled and Individual U12-U19 Team Cohorts
+Type of Injury, n (%)                      Overall (N 5 338) U12 (N 5 15) U13 (N 5 25) U14 (N 5 40) U15 (N 5 63) U17 (N 5 118)                                           U19 (N 5 77)
+Muscle rupture/tear/strain/cramps               131 (38.8)               4 (26.7)            11 (44.0)           13 (32.5)            26 (41.3)         47 (39.8)          30 (39.0)
+Ligament injury/sprain                           64 (18.9)                0 (0.0)             1 (4.0)              3 (7.5)            12 (19.0)         26 (22.0)          22 (28.6)
+Contusion/bruise                                 34 (10.1)               4 (26.7)             1 (4.0)             6 (15.0)             5 (7.9)           11 (9.3)           7 (9.1)
+Concussion                                        30 (8.9)               3 (20.0)             1 (4.0)              2 (5.0)            9 (14.3)          13 (11.0)           2 (2.6)
+Other bone injury                                 24 (7.1)                1 (6.7)             6 (24.0)            9 (22.5)             2 (3.2)           4 (3.4)            2 (2.6)
+Apophysitis                                       17 (5.0)
+Stress reaction                                    4 (1.2)
+Medial tibial stress syndrome                      2 (0.6)
+Ankle posterior impingement                        1 (0.3)
+Fracture                                          19 (5.6)               2 (13.3)             3 (12.0)             2 (5.0)             5 (7.9)           6 (5.1)            1 (1.3)
+Dislocation/subluxation                           13 (3.8)                0 (0.0)             1 (4.0)              2 (5.0)             1 (1.6)           5 (4.2)            4 (5.2)
+Tendon injury                                     11 (3.3)                0 (0.0)             1 (4.0)              1 (2.5)             2 (3.2)           6 (5.1)            1 (1.3)
+Lesion of meniscus or cartilage                    8 (2.4)                0 (0.0)             0 (0.0)              1 (2.5)             1 (1.6)           0 (0.0)            6 (7.8)
+Abrasion/laceration                                2 (0.6)                0 (0.0)             0 (0.0)              1 (2.5)             0 (0.0)           0 (0.0)            1 (1.3)
+Other injuries                                     2 (0.6)                1 (6.7)             0 (0.0)              0 (0.0)             0 (0.0)           0 (0.0)            1 (1.3)
+ The larger sample size in this table (n 5 338) compared with Table 3 (n 5 331) is due to the 7 injury events from which stemmed .1 injury type.
+
+
+injuries, there is evidence to suggest that incidence rates                                         severe (.28 days’ time loss). This finding is contrary to the
+increase as the young soccer athlete approaches puberty (;14-                                       findings in the 2013 systematic review of Faude et al,41 in
+15 years of age), then plateau shortly afterward through the                                        which minimal to mild (,7 days) injuries were the most
+remainder of adolescence.42,43 Our data largely support this                                        common. It is possible that these injuries were not captured as
+trend. We found injury rate to rise sequentially in each of the                                     they were shorter in duration, but as these academy athletes
+U12-U15 age cohorts before leveling off in the U17 and U19                                          were tightly regulated, it is less likely that this would occur
+groups.                                                                                             when compared with the general community. These findings
+                                                                                                    were mostly consistent across all 6 age groups individually,
+                                                                                                    with moderate injuries always the highest percentage (except
+Pattern of Time Loss Injuries
+                                                                                                    in U14 where it was second) and severe injuries the second
+In our data, the most common injury severity was moderate                                           most prevalent in most age groups (except in U12 and U14
+(8-28 days’ time loss) with the second most common being                                            where it was third) (Table 1).
+
+
+ TABLE 5. Subgroup Analysis of Selected Injury Types Across Individual U12-U19 Team Cohorts
+Injury                                        Team             Train/Match Hours                Frequency              Rate (100 0h)                IRR (95% CI)                 P
+Concussion                                     U12                    14 916                            3                    0.20                     Reference                —
+                                               U13                    11 403                            1                    0.09                  0.44 (0.05-4.19)          0.472
+                                               U14                    13 250                            2                    0.15                  0.75 (0.13-4.49)          0.753
+                                               U15                    12 042                            9                    0.75                 3.72 (1.01-13.73)          0.049*
+                                               U17                    24 380                          13                     0.53                  2.65 (0.76-9.30)          0.128
+                                               U19                    14 900                            2                    0.13                  0.67 (0.11-3.99)          0.658
+Lesion of meniscus/cartilage                   U12                    14 916                            0                    0.00                        —                     —
+                                               U13                    11 403                            0                    0.00                        —                     —
+                                               U14                    13 250                            1                    0.08                        —                     —
+                                               U15                    12 042                            1                    0.08                        —                     —
+                                               U17                    24 380                            0                    0.00                        —                     —
+                                               U19                    14 900                            6                    0.40                        —                     —
+Other bone injury                              U12                    14 916                            1                    0.07                     Reference                —
+                                               U13                    11 403                            6                    0.53                 7.85 (0.94-65.19)          0.056
+                                               U14                    13 250                            9                    0.68                 10.13 (1.28-79.97)         0.028*
+                                               U15                    12 042                            2                    0.17                 2.48 (0.22-27.32)          0.459
+                                               U17                    24 380                            4                    0.16                 2.45 (0.27-21.90)          0.423
+                                               U19                    14 900                            2                    0.13                 2.00 (0.18-22.08)          0.571
+ “IRR” indicates Incidence Rate Ratio. “CI” indicates Confidence Interval. “H” indicates Hours. Asterisks indicate statistical significance.
+
+
+                                                                                              486
+
+      Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+Volume 35
+            ·   Number 4
+                           ·   July 2025                                                                                        www.cjsportmed.com
+
+
+   We found that the total number of injuries overall occurred           a given age. Thus, age-based models carry limitations when
+more frequently in training. However, when total playing time            trying to scrutinize data for growth-related risk of injury
+was taken into account, injury incidence rate was higher                 development. Using peak height velocity or pubertal matura-
+during matches than during training. This finding is consistent          tion stages would potentially result in more specific growth-
+with previously reported injury incidences in youth soccer               related injury risk stratification. The data presented do not
+athletes, with match time being a higher risk period for injury          stratify injury risk based on a player playing up or playing
+occurrence.21,40,44,45 A focus on interventions that could               down, although our data do still capture the total playing time
+decrease the high risk injury period that is match time would            of each of these athletes in the injury/1000 hours. The Poisson
+likely be beneficial to a developmental academy athlete.                 model in this study does not include any random-effect
+Noncontact injuries (60.7%) were more common than                        specifications. We acknowledge that a certain level of
+contact injuries (38.1%), which is consistent with previous              correlation by team may be present in the data because of
+studies.38 Player safety rules that decrease contact injuries in         this. Injuries were reported and recorded by the soccer
+soccer are important as contact injuries do make up a good               academy’s internal athletic training staff, such that errors
+percent of total injury burden, but from our results a larger            may have been made and less severe injuries may have been
+benefit may occur with interventions that attempt to reduce              missed, especially if an athlete sought outside medical
+the risk on noncontact injuries.                                         evaluation and/or care for minor injuries that they sub-
+                                                                         sequently recovered quickly from and did not report to the
+                                                                         team. It is critical to recognize that our study timeframe
+Injury Type and Location
+                                                                         included the COVID-19 pandemic, which could have had
+Muscle injuries were found to be the most common injury                  a multitude of unseen impacts. Future studies of youth soccer
+type, with ligament injuries being the second most common.               injury epidemiology in the United States should include other
+The thigh was found to be the most commonly injured                      geographic locations, levels of competition, female players,
+location followed closely by the hip/groin, knee, and ankle.             and an analysis of injury by other important player character-
+This finding is consistent with other previous studies on elite          istics, such as position.
+soccer players in these age groups.19,20,45 The lower extremity,            Injury epidemiology data have been shown to vary
+as the most commonly injured region in general, corresponds              substantially across geography, player age, sex, and level of
+well with the expected norm of soccer injuries.41 Bone injury            competition, among other factors. Epidemiology-guided
+(most commonly reported due to apophysitis) had the largest              interventions, which have the power to preventively decrease
+proportion of injury burden in the expected populations of the           the incidence of injuries in soccer players, are most effective
+U13 (24.0%) and U14 age groups (22.5%).20 Interventions                  when they target the injury risk factors of the groups they were
+aimed at reducing the risk of such injuries would likely be most         designed for. The data presented in this study suggest that
+beneficial early on in the career of the developmental academy           certain age groups may be more likely to sustain specific
+athlete. About 75% of the meniscal and cartilage injuries                injuries, allowing providers to focus on age-based preventive
+occurred in the U19 group. It would follow that interventions            strategies in youth developmental soccer athletes. We hope the
+to reduce these significant injury occurrences would likely be           injury epidemiology data in this study help augment un-
+best targeted toward the older developmental academy                     derstanding of the injury patterns and injury risk factors
+athlete. Head/face injuries accounted for more than 10%                  among elite male youth soccer players in the United States,
+(35/331) of the injuries in this study with concussions                  informing future preventive interventions to decrease athletic
+representing 86% of the head/face injuries (30/35). Interest-            injuries in this population.
+ingly, the U15 and U17 groups experienced most of the
+concussions (22/30) and the highest rate/1000 hours (0.75/
+1000 hours and 0.53/1000 hours, respectively), but the U12               ACKNOWLEDGMENTS
+group experienced the largest percent of concussion burden               The authors would like to thank Kurt Andrews, Karan
+with 20% of their injuries being from a concussion (3/15).               Padmakumar, Peyton Jensen, Monique Prebensen, Caroline
+Interventions to reduce concussion risk would likely be                  Maher, Rene Arroyo-Cano, Issac Gomez, and the rest of the
+beneficial at all ages, as concussion plays a significant impact         sport medicine staff who assessed the players and recorded the
+at both ends of the age spectrum in our study.                           data making this research possible.
+
+Limitations and Future Studies                                           References
+                                                                         1. Fédération    Internationale     de     Football      Association     (FIFA)
+This study is limited to male, adolescent soccer athletes in                Communications Division. FIFA Big Count, 2006: 270 million people
+a single regional soccer academy setting within the United-                 active in football [FIFA web site]. Available at: http://www.fifa.com/
+States. There exists a lack of baseline information on injury               media/news/y52007/m55/news5fifa-big-count-2006-270-million-
+epidemiology in our specific study group. There should be                   people-active-football-529882.html. Accessed February 9, 2024.
+considerable hesitance to generalize the results reported                2. Walker C. Soccer has overtaken ice hockey to become the fourth most
+                                                                            popular sport in the US [DailyMail web site]; 2021. Available at: https://
+outside of our specified age groups, to the female sex, to                  www.dailymail.co.uk/sport/sportsnews/article-10253507/Soccer-
+soccer participants outside of academy-level participation,                 overtaken-ice-hockey-fourth-popular-sport-US.html. Accessed February
+and to alternative geographic locations. Inclusion of such                  9, 2024.
+variables would be of benefit in future studies. We used age-            3. Project Play Aspen Institute State of Play 2023. Participation trends
+                                                                            [project play web site]. Available at: https://projectplay.org/state-of-play-
+defined teams as a proxy for age in distinguishing between the              2023/participation. Accessed February 9, 2024.
+cohorts of this study. Although age is a useful parameter, there         4. Gebert A, Gerber M, Puhse U, et al. Costs resulting from nonprofessional
+is considerable variation in developmental maturity among                   soccer injuries in Switzerland: a detailed analysis. J Sport Health Sci. 2020;
+individuals, and even within the same individual over a year at             9:240–247.
+
+
+                                                                   487
+
+ Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+T.M. Munro et al. (2025)                                                                                                                             Clin J Sport Med
+
+
+ 5. Aaron DJ, LaPorte RL. 14 physical activity, adolescence, and health: an                26. Junge A, Dvorak J. Injury surveillance in the world football tournaments
+    epidemiological perspective. Exerc Sport Sci Rev. 1997;25:391–406.                         1998-2012. Br J Sports Med. 2013;47:782–788.
+ 6. Pulici L, Certa D, Zago M, et al. Injury burden in professional European               27. Hagglund M, Walden M, Ekstrand J. Injury incidence and distribution in
+    football (soccer): systematic review, meta-analysis, and economic                          elite football--a prospective study of the Danish and the Swedish top
+    Considerations. Clin J Sport Med. 2022;33:450–457.                                         divisions. Scand J Med Sci Sports. 2005;15:21–28.
+ 7. Orchard JW. On the value of team medical staff: can the “Moneyball”                    28. Mayhew L, Johnson MI, Francis P, et al. Incidence of injury in adult elite
+    approach be applied to injuries in professional football?. Br J Sports Med.                women’s football: a systematic review and meta-analysis. BMJ Open
+    2009;43:963–965.                                                                           Sport Exerc Med. 2021;7:e001094.
+ 8. Eliakim E, Morgulev E, Lidor R, et al. Estimation of injury costs: financial           29. Hassabi M, Mohammad-Javad Mortazavi S, Giti MR, et al. Injury profile
+    damage of English Premier League teams’ underachievement due to                            of a professional soccer team in the premier league of Iran. Asian J Sports
+    injuries. BMJ Open Sport Exerc Med. 2020;6:e000675.                                        Med. 2010;1:201–208.
+ 9. Haraldsdottir K, Watson AM. Psychosocial impacts of sports-related                     30. Aoki H, O’Hata N, Kohno T, et al. A 15-year prospective epidemiological
+    injuries in adolescent athletes. Curr Sports Med Rep. 2021;20:104–108.                     account of acute traumatic injuries during official professional soccer
+10. Edison BR, Christino MA, Rizzone KH. Athletic identity in youth athletes:                  league matches in Japan. Am J Sports Med. 2012;40:1006–1014.
+    a systematic review of the literature. Int J Environ Res Public Health.                31. Timmins RG, Bourne MN, Shield AJ, et al. Short biceps femoris fascicles
+    2021;18:7331.                                                                              and eccentric knee flexor weakness increase the risk of hamstring injury in
+11. Fulton J, Wright K, Kelly M, et al. Injury risk is altered by previous injury:             elite football (soccer): a prospective cohort study. Br J Sports Med. 2016;
+    a systematic review of the literature and presentation of causative                        50:1524–1535.
+    neuromuscular factors. Int J Sports Phys Ther. 2014;9:583–595.                         32. Jacobson I, Tegner Y. Injuries among Swedish female elite football
+12. Edouard P, Mosser C, Chapon J, et al. Understanding the first injury in                    players: a prospective population study. Scand J Med Sci Sports. 2007;17:
+    athletics and its effect on dropout from sport: an online survey on                        84–91.
+    544 high-level youth and junior athletics (track and field) athletes. BMJ              33. Jimenez-Rubio S, Raya-Gonzalez J, Lobo-Trivino D, et al. The impact of
+    Open Sport Exerc Med. 2024;10:e001767.                                                     a multicomponent training program on physical fitness and joint injuries
+13. Yang SX, Cheng S, Su DL. Sports injury and stressor-related disorder in                    in Spanish male professional soccer players. J Sports Sci. 2024;41:
+    competitive athletes: a systematic review and a new framework. Burns                       1934–1943.
+    Trauma. 2022;10:tkac017.                                                               34. Duran-Custodio R, Castillo D, Raya-Gonzalez J, et al. Is a maximal
+14. Bullock GS, Collins GS, Peirce N, et al. Playing sport injured is associated               strength-training program effective on physical fitness, injury incidence,
+    with osteoarthritis, joint pain and worse health-related quality of life:                  and injury burden in semi-professional soccer players? A randomized
+    a cross-sectional study. BMC Musculoskelet Disord. 2020;21:111.                            controlled trial. Healthcare (Basel). 2023;11:3195.
+15. Carbone A, Rodeo S. Review of current understanding of post-traumatic                  35. Croisier JL, Ganteaume S, Binet J, et al. Strength imbalances and
+    osteoarthritis resulting from sports injuries. J Orthop Res. 2017;35:                      prevention of hamstring injury in professional soccer players:
+    397–405.                                                                                   a prospective study. Am J Sports Med. 2008;36:1469–1475.
+16. van Mechelen W, Hlobil H, Kemper HC. Incidence, severity, aetiology                    36. Sadigursky D, Braid JA, De Lira DNL, et al. The FIFA 111 injury
+    and prevention of sports injuries. A review of concepts. Sports Med. 1992;                 prevention program for soccer players: a systematic review. BMC Sports
+    14:82–99.                                                                                  Sci Med Rehabil. 2017;9:18.
+17. Walden M, Hagglund M, Orchard J, et al. Regional differences in injury                 37. Veith S, Whalan M, Gibson N, et al. Injury incidence and burden differ
+    incidence in European professional football. Scand J Med Sci Sports.                       between season phases in male academy football (soccer) players. J Sports
+    2013;23:424–430.                                                                           Sci. 2024;41:1753–1761.
+18. Yoon YS, Chai M, Shin DW. Football injuries at Asian tournaments. Am J                 38. Lemes IR, Pinto RZ, Lage VN, et al. Do exercise-based prevention
+    Sports Med. 2004;32(1 suppl):36S–42S.                                                      programmes reduce non-contact musculoskeletal injuries in football
+19. Robles-Palazon FJ, Lopez-Valenciano A, De Ste Croix M, et al.                              (soccer)? A systematic review and meta-analysis with 13 355 athletes and
+    Epidemiology of injuries in male and female youth football players:                        more than 1 million exposure hours. Br J Sports Med. 2021;55:
+    a systematic review and meta-analysis. J Sport Health Sci. 2022;11:                        1170–1178.
+    681–695.                                                                               39. Fuller CW, Ekstrand J, Junge A, et al. Consensus statement on injury
+20. Light N, Johnson A, Williams S, et al. Injuries in youth football and the                  definitions and data collection procedures in studies of football (soccer)
+    relationship to player maturation: an analysis of time-loss injuries during                injuries. Br J Sports Med. 2006;40:193–201.
+    four seasons in an English elite male football academy. Scand J Med Sci                40. Watson A, Mjaanes JM, Council On Sports M, et al. Soccer injuries in
+    Sports. 2021;31:1324–1334.                                                                 children and adolescents. Pediatrics. 2019;144:e20192759.
+21. Pfirrmann D, Herbst M, Ingelfinger P, et al. Analysis of injury incidences             41. Faude O, Rossler R, Junge A. Football injuries in children and adolescent
+    in male professional adult and elite youth soccer players: a systematic                    players: are there clues for prevention? Sports Med. 2013;43:819–837.
+    review. J Athl Train. 2016;51:410–424.                                                 42. Ruf L, Altmann S, Graf F, et al. Injury incidence, severity, and burden in
+22. Prieto-Gonzalez P, Martinez-Castillo JL, Fernandez-Galvan LM, et al.                       elite youth soccer players - a 3-year prospective study. J Sci Med Sport.
+    Epidemiology of sports-related injuries and associated risk factors in                     2022;25:737–742.
+    adolescent athletes: an injury surveillance. Int J Environ Res Public                  43. Rossler R, Junge A, Chomiak J, et al. Soccer injuries in players aged 7 to
+    Health. 2021;18:4857.                                                                      12 years: a descriptive epidemiological study over 2 seasons. Am J Sports
+23. Rommers N, Rossler R, Goossens L, et al. Risk of acute and overuse                         Med. 2016;44:309–317.
+    injuries in youth elite soccer players: body size and growth matter. J Sci             44. Khodaee M, Currie DW, Asif IM, et al. Nine-year study of US high school
+    Med Sport. 2020;23:246–251.                                                                soccer injuries: data from a national sports injury surveillance programme.
+24. Adirim TA, Cheng TL. Overview of injuries in the young athlete. Sports                     Br J Sports Med. 2017;51:185–193.
+    Med. 2003;33:75–81.                                                                    45. Mandorino M, Figueiredo AJ, Gjaka M, et al. Injury incidence and risk
+25. Junge A, Dvorak J. Football injuries during the 2014 FIFA world cup. Br J                  factors in youth soccer players: a systematic literature review. Part I:
+    Sports Med. 2015;49:599–602.                                                               epidemiological analysis. Biol Sport. 2023;40:3–25.
+
+
+
+
+                                                                                     488
+
+      Copyright © 2025 Wolters Kluwer Health, Inc. Unauthorized reproduction of this article is prohibited.
+

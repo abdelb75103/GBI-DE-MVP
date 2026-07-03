@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full-text PDFs still needed — second pass (64)</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#f4f5f7;color:#1a1a1a}
+  header{position:sticky;top:0;background:#1f2933;color:#fff;padding:14px 20px;z-index:10}
+  header h1{margin:0;font-size:17px}
+  header .sub{font-size:13px;opacity:.8;margin-top:3px}
+  #search{margin-top:10px;width:100%;max-width:480px;padding:8px 10px;border:none;border-radius:6px;font-size:14px}
+  .wrap{max-width:880px;margin:0 auto;padding:16px}
+  .card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:12px 14px;margin-bottom:10px}
+  .top{display:flex;gap:10px;align-items:center;font-size:12px;color:#52606d;margin-bottom:4px}
+  .num{background:#e4e7eb;border-radius:4px;padding:1px 7px;font-weight:600}
+  .sid{font-weight:700;color:#1f2933}
+  .ref{margin-left:auto;text-align:right}
+  .title{font-size:15px;font-weight:600;line-height:1.35;margin:2px 0 6px}
+  .doi{font-size:13px;margin-bottom:6px}
+  .doi code{background:#f0f2f4;padding:1px 5px;border-radius:4px}
+  .muted{color:#9aa5b1}
+  .links a{font-size:13px;color:#1066d6;text-decoration:none;font-weight:600}
+  .links a:hover{text-decoration:underline}
+  .hidden{display:none}
+</style></head>
+<body>
+<header>
+  <h1>Full-text PDFs still needed — second pass</h1>
+  <div class="sub">64 papers · generated 2026-06-25 · source: second-pass-candidates.json (S2400 excluded, found via cache)</div>
+  <input id="search" placeholder="Filter by title, study ID, DOI, journal…" oninput="filt()">
+</header>
+<div class="wrap" id="list">
+
+  <div class="card">
+    <div class="top"><span class="num">1</span><span class="sid">S1027</span><span class="ref">Journal of Pediatric Orthopaedics, Part B · 2024</span></div>
+    <div class="title">Quantifying the impact of the coronavirus 2019 pandemic on youth sports-related injuries in the USA.</div>
+    <div class="doi">DOI: <code>10.1097/BPB.0000000000001096</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/BPB.0000000000001096" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Quantifying+the+impact+of+the+coronavirus+2019+pandemic+on+youth+sports-related+injuries+in+the+USA." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">2</span><span class="sid">S1103</span><span class="ref">Facial Plastic Surgery · 2024</span></div>
+    <div class="title">A Thirteen-Year Analysis of Facial Fractures among Professional Soccer Players.</div>
+    <div class="doi">DOI: <code>10.1055/a-1996-7595</code></div>
+    <div class="links"><a href="http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-1996-7595.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1055/a-1996-7595" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=A+Thirteen-Year+Analysis+of+Facial+Fractures+among+Professional+Soccer+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">3</span><span class="sid">S1182</span><span class="ref">Journal of Back &amp; Musculoskeletal Rehabilitation · 2024</span></div>
+    <div class="title">Prevalence of lower limb pain and disability in football, hockey, and floorball players.</div>
+    <div class="doi">DOI: <code>10.3233/BMR-230048</code></div>
+    <div class="links"><a href="https://doi.org/10.3233/BMR-230048" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Prevalence+of+lower+limb+pain+and+disability+in+football,+hockey,+and+floorball+players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">4</span><span class="sid">S1529</span><span class="ref">Journal of Knee Surgery · 2024</span></div>
+    <div class="title">The Impact of Anterior Cruciate Ligament Tear on Player Performance and Longevity in la Liga League Soccer Players</div>
+    <div class="doi">DOI: <code>10.1055/s-0044-1791985</code></div>
+    <div class="links"><a href="http://www.thieme-connect.de/products/ejournals/pdf/10.1055/s-0044-1791985.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1055/s-0044-1791985" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=The+Impact+of+Anterior+Cruciate+Ligament+Tear+on+Player+Performance+and+Longevity+in+la+Liga+League+Soccer+Players" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">5</span><span class="sid">S1555</span><span class="ref">Apunts Sports Medicine · 2024</span></div>
+    <div class="title">Epidemiological analysis of injuries in soccer referees: A systematic review</div>
+    <div class="doi">DOI: <code>10.1016/j.apunsm.2024.100464</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.apunsm.2024.100464" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Epidemiological+analysis+of+injuries+in+soccer+referees:+A+systematic+review" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">6</span><span class="sid">S1605</span><span class="ref">Apunts Sports Medicine · 2024</span></div>
+    <div class="title">Incidence of injuries per 1000 hours of refereeing or training in soccer referees: A mini-review</div>
+    <div class="doi">DOI: <code>10.1016/j.apunsm.2024.100455</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.apunsm.2024.100455" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Incidence+of+injuries+per+1000+hours+of+refereeing+or+training+in+soccer+referees:+A+mini-review" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">7</span><span class="sid">S1665</span><span class="ref">Gazzetta Medica Italiana Archivio per le Scienze Mediche · 2024</span></div>
+    <div class="title">Incidence and intrinsic risk factors of hamstring strain injuries among Malaysian footballers: a cohort study of 81 professional footballers</div>
+    <div class="doi">DOI: <code>10.23736/S0393-3660.24.05540-2</code></div>
+    <div class="links"><a href="https://doi.org/10.23736/S0393-3660.24.05540-2" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Incidence+and+intrinsic+risk+factors+of+hamstring+strain+injuries+among+Malaysian+footballers:+a+cohort+study+of+81+professional+footballers" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">8</span><span class="sid">S1680</span><span class="ref">Journal de Traumatologie du Sport · 2024</span></div>
+    <div class="title">Relationships between internal workload and injury incidence in elite youth soccer players</div>
+    <div class="doi">DOI: <code>10.1016/j.jts.2023.09.007</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jts.2023.09.007" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Relationships+between+internal+workload+and+injury+incidence+in+elite+youth+soccer+players" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">9</span><span class="sid">S1771</span><span class="ref">Clinical Journal of Sport Medicine · 2024</span></div>
+    <div class="title">Sleep Consistency as a Risk Factor for Lower Extremity Injuries in Division I Soccer Athletes</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001211</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001211" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Sleep+Consistency+as+a+Risk+Factor+for+Lower+Extremity+Injuries+in+Division+I+Soccer+Athletes" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">10</span><span class="sid">S1789</span><span class="ref">Journal of Neurotrauma · 2024</span></div>
+    <div class="title">In Vivo Detection of Pathology at the Depths of Cortical Sulci in Sports Repetitive Head Impacts</div>
+    <div class="doi">DOI: <code>10.1089/neu.2024.41112.abstracts</code></div>
+    <div class="links"><a href="https://journals.sagepub.com/doi/pdf/10.1089/neu.2024.41112.abstracts" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1089/neu.2024.41112.abstracts" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=In+Vivo+Detection+of+Pathology+at+the+Depths+of+Cortical+Sulci+in+Sports+Repetitive+Head+Impacts" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">11</span><span class="sid">S1798</span><span class="ref">Physiotherapy (United Kingdom) · 2024</span></div>
+    <div class="title">The Injury Incident Rate of Anterior Cruciate Ligament Injuries in Male Professional Football Players: A Systematic Review</div>
+    <div class="doi">DOI: <code>10.1016/j.physio.2024.04.324</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.physio.2024.04.324" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=The+Injury+Incident+Rate+of+Anterior+Cruciate+Ligament+Injuries+in+Male+Professional+Football+Players:+A+Systematic+Review" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">12</span><span class="sid">S1805</span><span class="ref">Clinical Journal of Sport Medicine · 2024</span></div>
+    <div class="title">Epidemiology of Hip, Thigh, and Knee Injuries Across NCAA Division I Soccer Players</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001211</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001211" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Epidemiology+of+Hip,+Thigh,+and+Knee+Injuries+Across+NCAA+Division+I+Soccer+Players" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">13</span><span class="sid">S1815</span><span class="ref">Clinical Journal of Sport Medicine · 2024</span></div>
+    <div class="title">Comparison of Injuries Sustained on Grass and Artificial Turf by USL1 Mens Soccer Team. Part 1: Match Related Injuries</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001211</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001211" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Comparison+of+Injuries+Sustained+on+Grass+and+Artificial+Turf+by+USL1+Mens+Soccer+Team.+Part+1:+Match+Related+Injuries" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">14</span><span class="sid">S1842</span><span class="ref">Clinical Journal of Sport Medicine · 2024</span></div>
+    <div class="title">Sleep Consistency as a Predictor for Increased Risk of Injuries in Division I Athletes</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001211</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001211" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Sleep+Consistency+as+a+Predictor+for+Increased+Risk+of+Injuries+in+Division+I+Athletes" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">15</span><span class="sid">S1855</span><span class="ref">Clinical Journal of Sport Medicine · 2024</span></div>
+    <div class="title">Comparison of Injuries Sustained on Grass and Artificial Turf by USL1 Mens Soccer Team. Part 2: Total Athlete Expos</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001212</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001212" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Comparison+of+Injuries+Sustained+on+Grass+and+Artificial+Turf+by+USL1+Mens+Soccer+Team.+Part+2:+Total+Athlete+Expos" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">16</span><span class="sid">S1889</span><span class="ref">Journal de Traumatologie du Sport · 2024</span></div>
+    <div class="title">Musculoskeletal injuries in professional soccer players: A study of 2 consecutive seasons in a Tunisian football team</div>
+    <div class="doi">DOI: <code>10.1016/j.jts.2024.08.003</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jts.2024.08.003" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Musculoskeletal+injuries+in+professional+soccer+players:+A+study+of+2+consecutive+seasons+in+a+Tunisian+football+team" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">17</span><span class="sid">S1899</span><span class="ref">Journal of Clinical Sport Psychology · 2024</span></div>
+    <div class="title">Mental Health Symptoms of Amateur Association Football Referees: A Cross-Sectional Study.</div>
+    <div class="doi">DOI: <code>10.1123/jcsp.2022-0018</code></div>
+    <div class="links"><a href="https://journals.humankinetics.com/downloadpdf/journals/jcsp/18/2/article-p199.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1123/jcsp.2022-0018" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Mental+Health+Symptoms+of+Amateur+Association+Football+Referees:+A+Cross-Sectional+Study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">18</span><span class="sid">S1916</span><span class="ref">Revista Brasileira de Futsal e Futebol · 2025</span></div>
+    <div class="title">DESAFIOS NO FUTEBOL FEMININO: PERFIL DAS ATLETAS E ANÁLISE DAS LESÕES TRAUMATO-ORTOPÉDICAS.</div>
+    <div class="doi muted">No DOI</div>
+    <div class="links"><a href="https://scholar.google.com/scholar?q=DESAFIOS+NO+FUTEBOL+FEMININO:+PERFIL+DAS+ATLETAS+E+ANÁLISE+DAS+LESÕES+TRAUMATO-ORTOPÉDICAS." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">19</span><span class="sid">S2031</span><span class="ref">Pediatric Exercise Science · 2025</span></div>
+    <div class="title">Effectiveness of FIFA 11+ Injury Prevention Programs in Reducing Head and Neck Injuries, Including Concussion, Among Soccer Players: A Systematic Review and Meta-Analysis.</div>
+    <div class="doi">DOI: <code>10.1123/pes.2023-0187</code></div>
+    <div class="links"><a href="https://journals.humankinetics.com/downloadpdf/journals/pes/37/4/article-p403.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1123/pes.2023-0187" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Effectiveness+of+FIFA+11++Injury+Prevention+Programs+in+Reducing+Head+and+Neck+Injuries,+Including+Concussion,+Among+Soccer+Players:+A+Systematic+Review+and+Meta-Analysis." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">20</span><span class="sid">S2038</span><span class="ref">International Journal of Sports Science &amp; Coaching · 2025</span></div>
+    <div class="title">Effectiveness of the FIFA 11+ injury prevention programs in reducing acute lower back injury among soccer players: A systematic review and meta-analysis.</div>
+    <div class="doi">DOI: <code>10.1177/17479541251364112</code></div>
+    <div class="links"><a href="https://journals.sagepub.com/doi/pdf/10.1177/17479541251364112" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1177/17479541251364112" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Effectiveness+of+the+FIFA+11++injury+prevention+programs+in+reducing+acute+lower+back+injury+among+soccer+players:+A+systematic+review+and+meta-analysis." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">21</span><span class="sid">S2043</span><span class="ref">Research in Sport Rehabilitation · 2025</span></div>
+    <div class="title">آیا نشاانرهاای مهتبط با بار داخ لی و خارجی تمهین و مساابه یک عامل خطه آسایب بهای بازیکنان فوتبال است؟ یک مطالع در لیگ بهته خ لیجفارس</div>
+    <div class="doi muted">No DOI</div>
+    <div class="links"><a href="https://scholar.google.com/scholar?q=آیا+نشاانرهاای+مهتبط+با+بار+داخ+لی+و+خارجی+تمهین+و+مساابه+یک+عامل+خطه+آسایب+بهای+بازیکنان+فوتبال+است؟+یک+مطالع+در+لیگ+بهته+خ+لیجفارس" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">22</span><span class="sid">S2078</span><span class="ref">Journal of Sportive · 2026</span></div>
+    <div class="title">Futbolcularda Ruminasyonun Psikolojik Sağlamlık Üzerindeki Yordayıcı Rolü.</div>
+    <div class="doi">DOI: <code>10.53025/sportive</code></div>
+    <div class="links"><a href="https://doi.org/10.53025/sportive" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Futbolcularda+Ruminasyonun+Psikolojik+Sağlamlık+Üzerindeki+Yordayıcı+Rolü." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">23</span><span class="sid">S2206</span><span class="ref">International Journal of Sports Physiology &amp; Performance · 2025</span></div>
+    <div class="title">Comparative Effects of 2 Different Frequencies of Resistance Training in an Integral Periodization Approach on High-Intensity Actions and Noncontact Injuries in Young Trained Soccer Players.</div>
+    <div class="doi">DOI: <code>10.1123/ijspp.2024-0518</code></div>
+    <div class="links"><a href="https://journals.humankinetics.com/downloadpdf/journals/ijspp/20/10/article-p1363.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1123/ijspp.2024-0518" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Comparative+Effects+of+2+Different+Frequencies+of+Resistance+Training+in+an+Integral+Periodization+Approach+on+High-Intensity+Actions+and+Noncontact+Injuries+in+Young+Trained+Soccer+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">24</span><span class="sid">S2234</span><span class="ref">International Journal of Sports Science &amp; Coaching · 2024</span></div>
+    <div class="title">Injuries in elite football (soccer) academy: A 4-year observational cohort study of five categories and 515 players.</div>
+    <div class="doi">DOI: <code>10.1177/17479541241232765</code></div>
+    <div class="links"><a href="https://journals.sagepub.com/doi/pdf/10.1177/17479541241232765" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1177/17479541241232765" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Injuries+in+elite+football+(soccer)+academy:+A+4-year+observational+cohort+study+of+five+categories+and+515+players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">25</span><span class="sid">S2284</span><span class="ref">Journal of Athletic Training (KnowledgeWorks Global, Ltd) · 2026</span></div>
+    <div class="title">Beyond Contact: Epidemiology of Concussion Incidence in Women&#x27;s Collegiate Sports, 2016–2022.</div>
+    <div class="doi">DOI: <code>10.4085/1062-6050-0290.25</code></div>
+    <div class="links"><a href="https://nata.kglmeridian.com/downloadpdf/journals/attr/61/5/article-p364.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.4085/1062-6050-0290.25" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Beyond+Contact:+Epidemiology+of+Concussion+Incidence+in+Women&#x27;s+Collegiate+Sports,+2016–2022." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">26</span><span class="sid">S2301</span><span class="ref">Knee Surgery, Sports Traumatology, Arthroscopy · 2025</span></div>
+    <div class="title">Official match time underestimates injury incidence in football and beach soccer compared with futsal.</div>
+    <div class="doi">DOI: <code>10.1002/ksa.70114</code></div>
+    <div class="links"><a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ksa.70114" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1002/ksa.70114" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Official+match+time+underestimates+injury+incidence+in+football+and+beach+soccer+compared+with+futsal." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">27</span><span class="sid">S2382</span><span class="ref">Women in Sport &amp; Physical Activity Journal · 2024</span></div>
+    <div class="title">Risk of Low Energy Availability in New Zealand National Team and U20 Female Football Representatives.</div>
+    <div class="doi">DOI: <code>10.1123/wspaj.2023-0041</code></div>
+    <div class="links"><a href="https://journals.humankinetics.com/downloadpdf/journals/wspaj/32/1/article-wspaj.2023-0041.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1123/wspaj.2023-0041" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Risk+of+Low+Energy+Availability+in+New+Zealand+National+Team+and+U20+Female+Football+Representatives." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">28</span><span class="sid">S2520</span><span class="ref">European Journal of Human Movement · 2025</span></div>
+    <div class="title">Association between high-intensity running and muscle-tendon injuries in professional Brazilian soccer players.</div>
+    <div class="doi">DOI: <code>10.21134/eurjhm.2025.54.4</code></div>
+    <div class="links"><a href="https://doi.org/10.21134/eurjhm.2025.54.4" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Association+between+high-intensity+running+and+muscle-tendon+injuries+in+professional+Brazilian+soccer+players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">29</span><span class="sid">S2788</span><span class="ref">International Journal of Medicine &amp; Science of Physical Activity &amp; Sport / Revista Internacional de Medicina y Ciencias de la Actividad Física y del Deporte · 2024</span></div>
+    <div class="title">MEDICAL DECISION SUPPORT FOR FOOTBALL PLAYERS BASED ON MACHINE LEARNING HISTORICAL INJURY DATA.</div>
+    <div class="doi">DOI: <code>10.15366/rimcafd2024.96.029</code></div>
+    <div class="links"><a href="https://doi.org/10.15366/rimcafd2024.96.029" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=MEDICAL+DECISION+SUPPORT+FOR+FOOTBALL+PLAYERS+BASED+ON+MACHINE+LEARNING+HISTORICAL+INJURY+DATA." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">30</span><span class="sid">S2991</span><span class="ref">Japanese Journal of Clinical Sports Medicine / Nihon Rinsho Supotsu · 2024</span></div>
+    <div class="title">Injury occurrence in college men&#x27;s football team --Survey results of the 2021 season--.</div>
+    <div class="doi muted">No DOI</div>
+    <div class="links"><a href="https://scholar.google.com/scholar?q=Injury+occurrence+in+college+men&#x27;s+football+team+--Survey+results+of+the+2021+season--." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">31</span><span class="sid">S3106</span><span class="ref">Journal of Strength &amp; Conditioning Research · 2025</span></div>
+    <div class="title">Sleep Duration and Sleep Quality as Season-Long Predictors of Ratings of Perceived Exertion and Psychological Well-Being in Female Soccer Athletes.</div>
+    <div class="doi">DOI: <code>10.1519/JSC.0000000000005166</code></div>
+    <div class="links"><a href="https://doi.org/10.1519/JSC.0000000000005166" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Sleep+Duration+and+Sleep+Quality+as+Season-Long+Predictors+of+Ratings+of+Perceived+Exertion+and+Psychological+Well-Being+in+Female+Soccer+Athletes." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">32</span><span class="sid">S3313</span><span class="ref">Physical Therapy in Sport · 2025</span></div>
+    <div class="title">Analysis of musculoskeletal injuries in elite female soccer players: Cohort study in one Brazilian team.</div>
+    <div class="doi">DOI: <code>10.1016/j.ptsp.2025.02.009</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.ptsp.2025.02.009" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Analysis+of+musculoskeletal+injuries+in+elite+female+soccer+players:+Cohort+study+in+one+Brazilian+team." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">33</span><span class="sid">S3337</span><span class="ref">Clinical Journal of Sport Medicine · 2025</span></div>
+    <div class="title">Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season Prospective Cohort Study.</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001288</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001288" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Injury+Patterns+in+Academy-Level+Male+Youth+Soccer+Players:+A+3-Season+Prospective+Cohort+Study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">34</span><span class="sid">S3342</span><span class="ref">Journal of Science &amp; Medicine in Sport · 2025</span></div>
+    <div class="title">Injury epidemiology in Australian women&#x27;s professional football.</div>
+    <div class="doi">DOI: <code>10.1016/j.jsams.2024.11.012</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jsams.2024.11.012" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Injury+epidemiology+in+Australian+women&#x27;s+professional+football." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">35</span><span class="sid">S3487</span><span class="ref">Physical Therapy in Sport · 2025</span></div>
+    <div class="title">Shoulder injuries in amateur soccer players. An exploratory cross-sectional survey.</div>
+    <div class="doi">DOI: <code>10.1016/j.ptsp.2025.02.004</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.ptsp.2025.02.004" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Shoulder+injuries+in+amateur+soccer+players.+An+exploratory+cross-sectional+survey." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">36</span><span class="sid">S3518</span><span class="ref">Psychology of Sport &amp; Exercise · 2025</span></div>
+    <div class="title">Longitudinal study of mental health in an elite soccer club: Depression and anxiety symptoms across a competitive season.</div>
+    <div class="doi">DOI: <code>10.1016/j.psychsport.2025.102868</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.psychsport.2025.102868" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Longitudinal+study+of+mental+health+in+an+elite+soccer+club:+Depression+and+anxiety+symptoms+across+a+competitive+season." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">37</span><span class="sid">S3577</span><span class="ref">Physical Therapy in Sport · 2025</span></div>
+    <div class="title">Is limb asymmetry an intrinsic risk factor for time-loss groin injury in professional male soccer players?</div>
+    <div class="doi">DOI: <code>10.1016/j.ptsp.2024.11.008</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.ptsp.2024.11.008" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Is+limb+asymmetry+an+intrinsic+risk+factor+for+time-loss+groin+injury+in+professional+male+soccer+players?" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">38</span><span class="sid">S3588</span><span class="ref">Injury Prevention (1353-8047) · 2025</span></div>
+    <div class="title">Predictive models of injury risk in male professional football players: a systematic review.</div>
+    <div class="doi">DOI: <code>10.1136/ip-2024-045322</code></div>
+    <div class="links"><a href="https://bjsm.bmj.com/content/ip-2024-045322.full.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1136/ip-2024-045322" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Predictive+models+of+injury+risk+in+male+professional+football+players:+a+systematic+review." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">39</span><span class="sid">S3620</span><span class="ref">Journal of Sport Pedagogy &amp; Research · 2025</span></div>
+    <div class="title">The Influence of Running Demands in Hamstring Injury in Elite Male Soccer Players. A Comparison Between Injured and Uninjured Players.</div>
+    <div class="doi muted">No DOI</div>
+    <div class="links"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13284120/pdf/" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=The+Influence+of+Running+Demands+in+Hamstring+Injury+in+Elite+Male+Soccer+Players.+A+Comparison+Between+Injured+and+Uninjured+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">40</span><span class="sid">S3631</span><span class="ref">Journal of Biomechanics · 2026</span></div>
+    <div class="title">From classical models to attention-based transformers: A comparative study of injury prediction pipelines in female varsity soccer.</div>
+    <div class="doi">DOI: <code>10.1016/j.jbiomech.2026.113278</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jbiomech.2026.113278" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=From+classical+models+to+attention-based+transformers:+A+comparative+study+of+injury+prediction+pipelines+in+female+varsity+soccer." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">41</span><span class="sid">S3740</span><span class="ref">Medicine &amp; Science in Sports &amp; Exercise · 2025</span></div>
+    <div class="title">Epidemiology Of Soccer-Related Injuries Treated At The United States Emergency Departments Between 2014 And 2023: 2052.</div>
+    <div class="doi">DOI: <code>10.1249/01.mss.0001160708.82823.9b</code></div>
+    <div class="links"><a href="https://doi.org/10.1249/01.mss.0001160708.82823.9b" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Epidemiology+Of+Soccer-Related+Injuries+Treated+At+The+United+States+Emergency+Departments+Between+2014+And+2023:+2052." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">42</span><span class="sid">S3745</span><span class="ref">Medicine &amp; Science in Sports &amp; Exercise · 2025</span></div>
+    <div class="title">Risk Factors For Groin Injuries In Collegiate Soccer Players: 3042.</div>
+    <div class="doi">DOI: <code>10.1249/01.mss.0001159396.81662.a3</code></div>
+    <div class="links"><a href="https://doi.org/10.1249/01.mss.0001159396.81662.a3" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Risk+Factors+For+Groin+Injuries+In+Collegiate+Soccer+Players:+3042." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">43</span><span class="sid">S3841</span><span class="ref">The Journal of sports medicine and physical fitness · 2025</span></div>
+    <div class="title">The FIFA 11+ injury prevention program reduces the incidence of lower extremity injuries in football players: a systematic review and meta-analysis.</div>
+    <div class="doi">DOI: <code>10.23736/S0022-4707.24.15910-5</code></div>
+    <div class="links"><a href="https://doi.org/10.23736/S0022-4707.24.15910-5" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=The+FIFA+11++injury+prevention+program+reduces+the+incidence+of+lower+extremity+injuries+in+football+players:+a+systematic+review+and+meta-analysis." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">44</span><span class="sid">S3852</span><span class="ref">Southern medical journal · 2025</span></div>
+    <div class="title">Physical and Mental Well-Being in Former Collegiate Soccer Athletes.</div>
+    <div class="doi">DOI: <code>10.14423/SMJ.0000000000001849</code></div>
+    <div class="links"><a href="https://doi.org/10.14423/SMJ.0000000000001849" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Physical+and+Mental+Well-Being+in+Former+Collegiate+Soccer+Athletes." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">45</span><span class="sid">S3933</span><span class="ref">Journal of pediatric orthopedics · 2025</span></div>
+    <div class="title">Injuries Following COVID-19 Infection in Academy-level Male Youth Soccer Players.</div>
+    <div class="doi">DOI: <code>10.1097/BPO.0000000000002845</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/BPO.0000000000002845" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Injuries+Following+COVID-19+Infection+in+Academy-level+Male+Youth+Soccer+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">46</span><span class="sid">S3978</span><span class="ref">The Journal of pediatrics · 2026</span></div>
+    <div class="title">Pre-Participation Reaction Time and Concussion Risk among Middle School Female Soccer Players.</div>
+    <div class="doi">DOI: <code>10.1016/j.jpeds.2026.115036</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jpeds.2026.115036" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Pre-Participation+Reaction+Time+and+Concussion+Risk+among+Middle+School+Female+Soccer+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">47</span><span class="sid">S3996</span><span class="ref">The Journal of sports medicine and physical fitness · 2026</span></div>
+    <div class="title">Effect of the FIFA 11+ on anterior cruciate ligament injury incidence rates in collegiate female football players over three consecutive seasons.</div>
+    <div class="doi">DOI: <code>10.23736/S0022-4707.25.17071-0</code></div>
+    <div class="links"><a href="https://doi.org/10.23736/S0022-4707.25.17071-0" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Effect+of+the+FIFA+11++on+anterior+cruciate+ligament+injury+incidence+rates+in+collegiate+female+football+players+over+three+consecutive+seasons." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">48</span><span class="sid">S4370</span><span class="ref">Journal of affective disorders · 2026</span></div>
+    <div class="title">Understanding how athlete engagement is associated with adolescent mental health: Evidence from a longitudinal football study.</div>
+    <div class="doi">DOI: <code>10.1016/j.jad.2025.120933</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jad.2025.120933" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Understanding+how+athlete+engagement+is+associated+with+adolescent+mental+health:+Evidence+from+a+longitudinal+football+study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">49</span><span class="sid">S4562</span><span class="ref">American journal of physical medicine &amp; rehabilitation · 2026</span></div>
+    <div class="title">Injuries and Illnesses in National Team Male Futsal Players: A Prospective Seven-Year Cohort Study.</div>
+    <div class="doi">DOI: <code>10.1097/PHM.0000000000002983</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/PHM.0000000000002983" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Injuries+and+Illnesses+in+National+Team+Male+Futsal+Players:+A+Prospective+Seven-Year+Cohort+Study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">50</span><span class="sid">S4608</span><span class="ref">International journal of sports medicine · 2025</span></div>
+    <div class="title">Injury Patterns in an Elite Men&#x27;s Futsal Club: A Nine-Season Cohort Study.</div>
+    <div class="doi">DOI: <code>10.1055/a-2764-2503</code></div>
+    <div class="links"><a href="http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2764-2503.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1055/a-2764-2503" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Injury+Patterns+in+an+Elite+Men&#x27;s+Futsal+Club:+A+Nine-Season+Cohort+Study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">51</span><span class="sid">S4629</span><span class="ref">Pediatric exercise science · 2026</span></div>
+    <div class="title">Epidemiology of Sport Injury Among Korean Male Youth Soccer Players: A Prospective Cohort Study.</div>
+    <div class="doi">DOI: <code>10.1123/pes.2024-0118</code></div>
+    <div class="links"><a href="https://journals.humankinetics.com/downloadpdf/journals/pes/aop/article-10.1123-pes.2024-0118/article-10.1123-pes.2024-0118.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1123/pes.2024-0118" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Epidemiology+of+Sport+Injury+Among+Korean+Male+Youth+Soccer+Players:+A+Prospective+Cohort+Study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">52</span><span class="sid">S4634</span><span class="ref">Knee surgery, sports traumatology, arthroscopy : official journal of the ESSKA · 2025</span></div>
+    <div class="title">ACL injuries in professional football (soccer): Women face higher risk, later surgical care and longer time loss compared to men.</div>
+    <div class="doi">DOI: <code>10.1002/ksa.70160</code></div>
+    <div class="links"><a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ksa.70160" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1002/ksa.70160" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=ACL+injuries+in+professional+football+(soccer):+Women+face+higher+risk,+later+surgical+care+and+longer+time+loss+compared+to+men." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">53</span><span class="sid">S4669</span><span class="ref">Clinical journal of sport medicine : official journal of the Canadian Academy of Sport Medicine · 2026</span></div>
+    <div class="title">Impact of Injury on Anxiety, Depression, and Quality of Life in Youth Soccer Players.</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001401</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001401" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Impact+of+Injury+on+Anxiety,+Depression,+and+Quality+of+Life+in+Youth+Soccer+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">54</span><span class="sid">S4732</span><span class="ref">The American journal of sports medicine · 2026</span></div>
+    <div class="title">The Effects of Adherence to the FIFA 11+ Program on Injury Risk in Soccer Players: A Systematic Review and Meta-analysis.</div>
+    <div class="doi">DOI: <code>10.1177/03635465261434222</code></div>
+    <div class="links"><a href="https://journals.sagepub.com/doi/pdf/10.1177/03635465261434222" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1177/03635465261434222" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=The+Effects+of+Adherence+to+the+FIFA+11++Program+on+Injury+Risk+in+Soccer+Players:+A+Systematic+Review+and+Meta-analysis." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">55</span><span class="sid">S5004</span><span class="ref">British journal of sports medicine · 2026</span></div>
+    <div class="title">Incidence of injury and illness at the Paris 2024 Paralympic Games: post-pandemic trends and sport-specific risks.</div>
+    <div class="doi">DOI: <code>10.1136/bjsports-2025-111086</code></div>
+    <div class="links"><a href="https://bjsm.bmj.com/content/bjsports-2025-111086.full.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1136/bjsports-2025-111086" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Incidence+of+injury+and+illness+at+the+Paris+2024+Paralympic+Games:+post-pandemic+trends+and+sport-specific+risks." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">56</span><span class="sid">S5306</span><span class="ref">British journal of sports medicine · 2026</span></div>
+    <div class="title">Co-designing a year-round injury surveillance system: longitudinal monitoring for a small-nation football team (PhD Academy Award).</div>
+    <div class="doi">DOI: <code>10.1136/bjsports-2026-111700</code></div>
+    <div class="links"><a href="https://bjsm.bmj.com/content/bjsports-2026-111700.full.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1136/bjsports-2026-111700" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Co-designing+a+year-round+injury+surveillance+system:+longitudinal+monitoring+for+a+small-nation+football+team+(PhD+Academy+Award)." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">57</span><span class="sid">S5491</span><span class="ref">clinicaltrials.gov · 2024</span></div>
+    <div class="title">Effects of Mid-Season Camp Period Loading on Sports Injury Anxiety and Physical Performance of Professional Male Soccer Players</div>
+    <div class="doi muted">No DOI</div>
+    <div class="links"><a href="https://doi.org/10.1016/j.jbmt.2024.04.030" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Effects+of+Mid-Season+Camp+Period+Loading+on+Sports+Injury+Anxiety+and+Physical+Performance+of+Professional+Male+Soccer+Players" target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">58</span><span class="sid">S5520</span><span class="ref">The Journal of sports medicine and physical fitness · 2026</span></div>
+    <div class="title">Sport specialization, injury and illness: a prospective study of elite female adolescent soccer players.</div>
+    <div class="doi">DOI: <code>10.23736/S0022-4707.25.17535-X</code></div>
+    <div class="links"><a href="https://doi.org/10.23736/S0022-4707.25.17535-X" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Sport+specialization,+injury+and+illness:+a+prospective+study+of+elite+female+adolescent+soccer+players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">59</span><span class="sid">S5526</span><span class="ref">Clinical journal of sport medicine : official journal of the Canadian Academy of Sport Medicine · 2026</span></div>
+    <div class="title">Position-Specific Injury Patterns in Academy-Level Male Youth Soccer Players: A 3-Season, Prospective Cohort Study.</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001453</code></div>
+    <div class="links"><a href="https://cdn-tp2.mozu.com/16833-m1/cms/files/Author-Document.pdf?_mzts=636519775710000000" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1097/JSM.0000000000001453" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Position-Specific+Injury+Patterns+in+Academy-Level+Male+Youth+Soccer+Players:+A+3-Season,+Prospective+Cohort+Study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">60</span><span class="sid">S755</span><span class="ref">Physical Therapy in Sport · 2024</span></div>
+    <div class="title">Secondary injury prevention reduces hamstring strain and time-loss groin injury burdens in male professional football.</div>
+    <div class="doi">DOI: <code>10.1016/j.ptsp.2024.08.003</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.ptsp.2024.08.003" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Secondary+injury+prevention+reduces+hamstring+strain+and+time-loss+groin+injury+burdens+in+male+professional+football." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">61</span><span class="sid">S763</span><span class="ref">Clinical Journal of Sport Medicine · 2024</span></div>
+    <div class="title">Snooze it or Lose it: Understanding Sleep Disturbance and Injuries in Soccer and Basketball Student-Athletes.</div>
+    <div class="doi">DOI: <code>10.1097/JSM.0000000000001250</code></div>
+    <div class="links"><a href="https://doi.org/10.1097/JSM.0000000000001250" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Snooze+it+or+Lose+it:+Understanding+Sleep+Disturbance+and+Injuries+in+Soccer+and+Basketball+Student-Athletes." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">62</span><span class="sid">S789</span><span class="ref">International journal of sports physiology &amp; performance · 2024</span></div>
+    <div class="title">External Training Loads and Soft-Tissue Injury Occurrence During Congested Versus Noncongested Periods in Football.</div>
+    <div class="doi">DOI: <code>10.1123/ijspp.2024-0058</code></div>
+    <div class="links"><a href="https://journals.humankinetics.com/downloadpdf/journals/ijspp/19/10/article-p1068.xml" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1123/ijspp.2024-0058" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=External+Training+Loads+and+Soft-Tissue+Injury+Occurrence+During+Congested+Versus+Noncongested+Periods+in+Football." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">63</span><span class="sid">S877</span><span class="ref">Injury · 2024</span></div>
+    <div class="title">Epidemiology of lateral ankle sprain focusing on indirect contact mechanism in male and female soccer players: An 18.5-month cohort study.</div>
+    <div class="doi">DOI: <code>10.1016/j.injury.2024.111699</code></div>
+    <div class="links"><a href="https://doi.org/10.1016/j.injury.2024.111699" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=Epidemiology+of+lateral+ankle+sprain+focusing+on+indirect+contact+mechanism+in+male+and+female+soccer+players:+An+18.5-month+cohort+study." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+  <div class="card">
+    <div class="top"><span class="num">64</span><span class="sid">S892</span><span class="ref">International Journal of Sports Medicine · 2024</span></div>
+    <div class="title">The Acute: Chronic Workload Ratio and Injury Risk in Semiprofessional Football Players.</div>
+    <div class="doi">DOI: <code>10.1055/a-2282-0024</code></div>
+    <div class="links"><a href="http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2282-0024.pdf" target="_blank" rel="noopener">URL ↗</a> &nbsp;|&nbsp; <a href="https://doi.org/10.1055/a-2282-0024" target="_blank" rel="noopener">DOI ↗</a> &nbsp;|&nbsp; <a href="https://scholar.google.com/scholar?q=The+Acute:+Chronic+Workload+Ratio+and+Injury+Risk+in+Semiprofessional+Football+Players." target="_blank" rel="noopener">Scholar ↗</a></div>
+  </div>
+</div>
+<script>
+function filt(){
+  var q=document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(function(c){
+    c.classList.toggle('hidden', q && c.textContent.toLowerCase().indexOf(q)<0);
+  });
+}
+</script>
+</body></html>

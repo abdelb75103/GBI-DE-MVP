@@ -1,0 +1,21 @@
+{
+  "scope": "Second search - Ishanka - one newly received full-text PDF live upload and AI recommendation apply - 2026-06-30",
+  "recordId": "35d38972-ad04-4299-87e2-e96f517e2ee2",
+  "studyId": "S2788",
+  "title": "MEDICAL DECISION SUPPORT FOR FOOTBALL PLAYERS BASED ON MACHINE LEARNING HISTORICAL INJURY DATA.",
+  "localPdf": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/ishanka-inbox-2026-06-28/downloads/27034089_9046388280007966.pdf",
+  "storageBucket": "papers",
+  "storageObjectPath": "aea3cf53-f40b-431a-84ef-a6e913a33a4a/1782831216454-27034089-9046388280007966-pdf.pdf",
+  "localSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+  "storedSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+  "downloadedSha256": "ee971820a684d438c015ba7a21e06b5ecada10ca9851353601d1897121578718",
+  "hashVerified": true,
+  "storageDownloadVerified": true,
+  "aiStatus": "completed",
+  "aiSuggestedDecision": "include",
+  "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "aiModel": "GPT-5 (Codex chat, medium reasoning; GPT-5.5 not exposed in this session)",
+  "aiError": null,
+  "humanFullTextVotes": [],
+  "protectedHumanFieldsModified": false
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "studyId": "S4402",
+    "recordId": "0c02788a-3e78-4054-945e-5f28fe036039",
+    "title": "Non-modifiable and modifiable factors affecting anxiety and depressive symptoms in young athletes.",
+    "doi": "10.1080/00913847.2025.2466415",
+    "status": "ready",
+    "matchMethod": "doi",
+    "titleTokenCoverage": 1,
+    "sha256": "a29bae1cddd9201f2c7df59a5faff891d0be2416e62987612a30492a3c2d01ca",
+    "size": 1177784,
+    "sourceUrl": "local-zotero-import:Non-modifiable and modifiable factors affecting anxiety and depressive symptoms in young athletes.pdf",
+    "localPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/atlas-ucd-session-2026-06-24/dry-run-stage/files/S4402-non-modifiable-and-modifiable-factors-affecting-anxiety-and-depressive-symptoms-in-young-athletes.pdf"
+  },
+  {
+    "studyId": "S5032",
+    "recordId": "740bb94c-02ce-48fa-8c00-07fd4035a26f",
+    "title": "Injury prediction model for lower-limb sports injuries: A novel machine learning-based approach.",
+    "doi": "10.1016/j.jcot.2025.103114",
+    "status": "ready",
+    "matchMethod": "doi",
+    "titleTokenCoverage": 1,
+    "sha256": "d020d1927b93299b14fa06f33508d16a9624f127c6a31d19536ebc24c1f62a04",
+    "size": 2541346,
+    "sourceUrl": "local-zotero-import:PIIS0976566225002127.pdf",
+    "localPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/atlas-ucd-session-2026-06-24/dry-run-stage/files/S5032-injury-prediction-model-for-lower-limb-sports-injuries-a-novel-machine-learning-based-approach.pdf"
+  }
+]

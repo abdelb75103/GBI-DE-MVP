@@ -127,9 +127,20 @@ const cachedPdfs = () => {
 const localPdfs = () => {
   const paths = [];
   const walk = (directory) => {
-    for (const name of fs.readdirSync(directory)) {
+    let names;
+    try {
+      names = fs.readdirSync(directory);
+    } catch {
+      return;
+    }
+    for (const name of names) {
       const filePath = path.join(directory, name);
-      const stat = fs.statSync(filePath);
+      let stat;
+      try {
+        stat = fs.statSync(filePath);
+      } catch {
+        continue;
+      }
       if (stat.isDirectory()) walk(filePath);
       else if (stat.isFile() && name.toLowerCase().endsWith('.pdf')) paths.push(filePath);
     }
