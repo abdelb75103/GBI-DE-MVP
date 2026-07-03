@@ -16,11 +16,13 @@ Do not create, amend, rewrite, or push commits unless Abdel explicitly asks for 
 
 ## GitHub/Vercel Auto-Deploy Identity
 
-Commits intended for GitHub/Vercel deployment must use the GitHub-linked author `abdelb75103 <210773581+abdelb75103@users.noreply.github.com>`. Before committing, verify the repository-local `git config user.name` and `git config user.email`; set those exact repository-local values if they differ.
+This GitHub repository is private. Vercel therefore deploys a Git commit only when its GitHub author is linked through Vercel Login Connections to a Vercel user who has access to the connected production project. For a Pro team the author must be a team member; for a Hobby team the author must be the team owner.
 
-Pushes to `main` should trigger the production deployment, while other branches should trigger previews. After pushing, verify that GitHub associates the commit author with `abdelb75103` and that the commit receives a Vercel status. The GitHub integration currently reports deployments from `abdelrahmans-projects/fifa-gbi-data-extraction`; this checkout's `fifa-gbi-data-extraction/.vercel/project.json` points to the separate `abdel-babikers-projects` project, so do not use that local link to judge or trigger the GitHub production deployment.
+The production Git integration targets `abdelrahmans-projects/fifa-gbi-data-extraction` on Vercel team `AbdelRahman's projects` (`team_kOe7GN58FtvUNS0tsG7aGYww`). The checkout's `fifa-gbi-data-extraction/.vercel/project.json` and the local Vercel CLI login `abdelbabiker-3247` point to the separate `abdel-babikers-projects` team, so do not use that local link to judge or trigger the GitHub production deployment.
 
-If Vercel reports `Git author ... must have access to the project`, treat it as GitHub-author/Vercel-team access failure rather than a build failure. Confirm the commit maps to `abdelb75103` and that this account can access the connected `abdelrahmans-projects` Vercel project; do not work around it by deploying through the checkout's separate local Vercel link.
+As verified by private-repository test commit `3aff09c`, GitHub correctly maps `abdelb75103 <210773581+abdelb75103@users.noreply.github.com>` to GitHub user `abdelb75103`, but Vercel currently rejects that author because the linked Vercel user lacks access to the production team. Do not assume this author can auto-deploy until access is fixed. The preferred fix is to grant the Vercel user linked to `abdelb75103` access to `AbdelRahman's projects` and confirm the GitHub Login Connection; otherwise use the existing production-team owner/member's linked GitHub identity only after Abdel identifies and approves it. Never guess or spoof an author identity.
+
+Before a deployment commit, verify repository visibility, the repository-local `user.name`/`user.email`, GitHub's mapped author login, and that login's production-team membership. Pushes to `main` should then create production deployments; other branches should create previews. After every push, verify the GitHub Vercel status. If it says `Git author ... must have access to the project`, report the access failure and request/approve team access rather than deploying through the unrelated local Vercel project.
 
 ## User Preference: Small Cosmetic Changes
 
