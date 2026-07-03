@@ -1,0 +1,655 @@
+{
+  "scope": "Second search temporary extraction bridge and first two live extraction batches, final repaired state",
+  "sourceBatch": "Second search - Ishanka - 2026-05-26",
+  "generatedAt": "2026-07-03T22:17:01.494Z",
+  "extractedPendingReview": [
+    "S707",
+    "S712",
+    "S755",
+    "S759",
+    "S789",
+    "S817",
+    "S859",
+    "S877",
+    "S892",
+    "S933"
+  ],
+  "eligibilityFailedFlagged": [
+    "S826"
+  ],
+  "repairsApplied": [
+    "Preserved punctuation in structured population values",
+    "Applied and persisted source-specific population labels",
+    "Completed absent Tabs 1-4 fields as not_reported",
+    "Filled S707 bibliographic fields from the linked live paper record",
+    "Added compensating cleanup for partial temporary bridge failures"
+  ],
+  "protectedScreeningFieldsChanged": false,
+  "records": [
+    {
+      "studyId": "S707",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "2d2f9f54-6035-4fa3-8e0b-e7523ef4763b",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "16e9a026-94ef-43b2-84d1-13942b509f2f",
+        "fileSha256": "6879d7ac6adc922116206d0ae79ec79fab8a8d778b6d46fd71310d95233c7192",
+        "storageBucket": "papers",
+        "storageObjectPath": "550be674-c46d-44fc-8a41-0be1d4886ea9/1781617144432-S707-injury-surveillance-in-spanish-professional-female-soccer-players-a-three-season-retrospective-study.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "047a4e7e-584c-44a0-84c5-855b73563510",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T15:29:24.832369+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "6879d7ac6adc922116206d0ae79ec79fab8a8d778b6d46fd71310d95233c7192",
+        "storageBucket": "papers",
+        "storageObjectPath": "550be674-c46d-44fc-8a41-0be1d4886ea9/1781617144432-S707-injury-surveillance-in-spanish-professional-female-soccer-players-a-three-season-retrospective-study.pdf"
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 39,
+        "studyId": "S707",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 18,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S712",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "611ef79b-a7bc-4cc0-84ee-786a5bad5f04",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "c472a4cd-970d-41c3-b964-d141ce0d40e4",
+        "fileSha256": "453dfd0b5356aff3fb5d730cbfa162e7c0c5272745efc132e810f2036bc222d5",
+        "storageBucket": "papers",
+        "storageObjectPath": "cc09017b-e252-471f-b521-d6930df5cd7a/1781618628523-S712-injury-surveillance-of-head-and-neck-injuries-with-a-special-focus-on-sport-related-concussions-eight-seasons-observatio.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "a10ae064-6b7c-4dd6-9ffb-258fc816e248",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T14:35:50.386489+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "453dfd0b5356aff3fb5d730cbfa162e7c0c5272745efc132e810f2036bc222d5",
+        "storageBucket": "papers",
+        "storageObjectPath": "cc09017b-e252-471f-b521-d6930df5cd7a/1781618628523-S712-injury-surveillance-of-head-and-neck-injuries-with-a-special-focus-on-sport-related-concussions-eight-seasons-observatio.pdf"
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 45,
+        "studyId": "S712",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 24,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S755",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "67088f33-195b-4211-96de-cf4b5073ed31",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "84666212-d723-4057-a678-53a3283ddcb4",
+        "fileSha256": "03b704196854b8abfb494510c6888b3fe299b28edc95ceb5254c39913a58a574",
+        "storageBucket": "papers",
+        "storageObjectPath": "bb7064e0-d994-476a-a1c7-ebfa1f63f8d2/1782407073680-S755-secondary-injury-prevention-reduces-hamstring-strain-and-time-loss-groin-injury-burdens-in-male-professional-f.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Control period",
+          "Intervention period"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "fa0ed9e0-e5c2-49c1-b59d-368f9949d7a1",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "Claude Opus 4.8 (high reasoning)",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T19:53:13.397921+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "03b704196854b8abfb494510c6888b3fe299b28edc95ceb5254c39913a58a574",
+        "storageBucket": "papers",
+        "storageObjectPath": "bb7064e0-d994-476a-a1c7-ebfa1f63f8d2/1782407073680-S755-secondary-injury-prevention-reduces-hamstring-strain-and-time-loss-groin-injury-burdens-in-male-professional-f.pdf"
+      },
+      "extraction": {
+        "tabCount": 5,
+        "fieldCount": 37,
+        "studyId": "S755",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 2,
+        "populationValueCount": 28,
+        "populationLabels": [
+          "Control period",
+          "Intervention period"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S759",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "689c9f4d-6195-47f3-82c2-d65b997ae883",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "4857f998-7859-4326-8105-981cff0c13ef",
+        "fileSha256": "27dcdaa2e372b90984c3e1639e4906fb3a57ceaa4deb5e0e830c51ab31656d87",
+        "storageBucket": "papers",
+        "storageObjectPath": "ec17320f-1d91-4a08-b650-f6bed68a8646/1781618438167-S759-mental-health-of-young-talented-football-players-in-an-african-context-a-cross-sectional-observational-study.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "e6d4524e-d6cf-4b29-af2d-c18d284ec643",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "GPT-5 Codex chat reasoning",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v3-2026-06-21",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:59:22.282418+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "27dcdaa2e372b90984c3e1639e4906fb3a57ceaa4deb5e0e830c51ab31656d87",
+        "storageBucket": "papers",
+        "storageObjectPath": "ec17320f-1d91-4a08-b650-f6bed68a8646/1781618438167-S759-mental-health-of-young-talented-football-players-in-an-african-context-a-cross-sectional-observational-study.pdf"
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 33,
+        "studyId": "S759",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 10,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S789",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "01759518-4b75-469f-bd1f-67106b97473f",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "8be21d5f-b022-459c-857f-a3a0a89e01d0",
+        "fileSha256": "eb51736fa7ae1f5c05b662dc193d719c0f443f2b18fe8dfa45adf8b104270ba3",
+        "storageBucket": "papers",
+        "storageObjectPath": "4b2b165e-d22b-44f5-afd0-cb9a604bf5c6/1782725303696-ijspp-article-p1068-pdf.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Congested periods",
+          "Noncongested periods"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "f349e4cb-7a92-4a9c-b6f7-d198b17ba497",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": null,
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-29T10:39:30.177492+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "eb51736fa7ae1f5c05b662dc193d719c0f443f2b18fe8dfa45adf8b104270ba3",
+        "storageBucket": "papers",
+        "storageObjectPath": "4b2b165e-d22b-44f5-afd0-cb9a604bf5c6/1782725303696-ijspp-article-p1068-pdf.pdf"
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 49,
+        "studyId": "S789",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 2,
+        "populationValueCount": 50,
+        "populationLabels": [
+          "Congested periods",
+          "Noncongested periods"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S817",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "550f1352-1bff-4592-9a94-f4987b44cf92",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "5c4e012f-ddd6-46fe-86db-fb894bcf23c5",
+        "fileSha256": "275a29aeb5e284b12bb5bead704fae0eb1716afcd8b00f52dd4a6751101b2684",
+        "storageBucket": "papers",
+        "storageObjectPath": "3ee69bab-b60b-442b-840e-2b1d1a89acf5/1780951887602-S817-increased-rate-of-injuries-to-the-anterior-cruciate-ligament-in-amateur-soccer-players-after-the-covid-19-pandemic-lockd.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "All levels, pre-COVID",
+          "All levels, post-COVID",
+          "Professional, pre-COVID",
+          "Professional, post-COVID",
+          "Semi-professional, pre-COVID",
+          "Semi-professional, post-COVID",
+          "Amateur, pre-COVID",
+          "Amateur, post-COVID"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "ffc907c5-a0c2-4a06-8e6f-b75db8d8136c",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T18:38:40.550191+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "275a29aeb5e284b12bb5bead704fae0eb1716afcd8b00f52dd4a6751101b2684",
+        "storageBucket": "papers",
+        "storageObjectPath": "3ee69bab-b60b-442b-840e-2b1d1a89acf5/1780951887602-S817-increased-rate-of-injuries-to-the-anterior-cruciate-ligament-in-amateur-soccer-players-after-the-covid-19-pandemic-lockd.pdf"
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 41,
+        "studyId": "S817",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 8,
+        "populationValueCount": 79,
+        "populationLabels": [
+          "All levels, pre-COVID",
+          "All levels, post-COVID",
+          "Professional, pre-COVID",
+          "Professional, post-COVID",
+          "Semi-professional, pre-COVID",
+          "Semi-professional, post-COVID",
+          "Amateur, pre-COVID",
+          "Amateur, post-COVID"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S826",
+      "expectedOutcome": "eligibility_failed_flagged",
+      "paper": {
+        "id": "ba0bc5db-6ecb-4f66-8bdd-c15e39a9a035",
+        "status": "flagged",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": "No football-specific subgroup denominator",
+        "primaryFileId": "1a9e6da7-492b-4c3e-bbf9-db5595e6618f",
+        "fileSha256": "52ff549f1701779d3e1b748135a4097b47e85ace94ee07921758e0a9f084af4e",
+        "storageBucket": "papers",
+        "storageObjectPath": "159763e8-b015-4f42-bafb-22bd1950b66a/1781804954601-S826-does-neuromuscular-training-reduce-the-risk-of-lower-extremity-musculoskeletal-injury-in-high-school-female-at.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": null,
+        "populationHashPresent": false
+      },
+      "screening": {
+        "id": "9bbcf95b-4d45-4048-b790-54859dd34852",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "gpt-5-codex",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-22",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:50:53.810652+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "52ff549f1701779d3e1b748135a4097b47e85ace94ee07921758e0a9f084af4e",
+        "storageBucket": "papers",
+        "storageObjectPath": "159763e8-b015-4f42-bafb-22bd1950b66a/1781804954601-S826-does-neuromuscular-training-reduce-the-risk-of-lower-extremity-musculoskeletal-injury-in-high-school-female-at.pdf"
+      }
+    },
+    {
+      "studyId": "S859",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "547e0209-91df-4895-a7ae-a217630fdbbb",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "fdb5559b-b437-4e7b-bca3-c2c96a1cb230",
+        "fileSha256": "c6e2aab4b3141cd064f7d8768c5d99cdf7da00c2262dcd92342808be78644091",
+        "storageBucket": "papers",
+        "storageObjectPath": "9c7f4516-e828-4458-a84e-2e2a1f87e18f/1782231589428-S859-differences-in-overuse-injuries-in-gender-comparable-sports-a-nationally-representative-sample-of-high-school-.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Male",
+          "Female"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "cbc85937-29c9-4347-a21d-8e682889911b",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "gpt-5.5 (medium) via codex-cli",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-24T12:05:33.556891+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "c6e2aab4b3141cd064f7d8768c5d99cdf7da00c2262dcd92342808be78644091",
+        "storageBucket": "papers",
+        "storageObjectPath": "9c7f4516-e828-4458-a84e-2e2a1f87e18f/1782231589428-S859-differences-in-overuse-injuries-in-gender-comparable-sports-a-nationally-representative-sample-of-high-school-.pdf"
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 41,
+        "studyId": "S859",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 2,
+        "populationValueCount": 32,
+        "populationLabels": [
+          "Male",
+          "Female"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S877",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "c8dec2f9-0fc8-4c32-9355-cecdc6eb8777",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "ff8e723c-218b-420d-97f1-318a80aa947d",
+        "fileSha256": "2af524c698401fcd3d11a8b7f728ccb5cc7e7b5bc1baa5a0cf70e057464792a3",
+        "storageBucket": "papers",
+        "storageObjectPath": "5914d2e5-90d7-49f6-a546-73af56cdb4c7/1782407080035-S877-epidemiology-of-lateral-ankle-sprain-focusing-on-indirect-contact-mechanism-in-male-and-female-soccer-players-.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "4ed3d413-dcb6-4952-b423-3394092cfe0c",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "Claude Opus 4.8 (high reasoning)",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T19:45:03.896538+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "2af524c698401fcd3d11a8b7f728ccb5cc7e7b5bc1baa5a0cf70e057464792a3",
+        "storageBucket": "papers",
+        "storageObjectPath": "5914d2e5-90d7-49f6-a546-73af56cdb4c7/1782407080035-S877-epidemiology-of-lateral-ankle-sprain-focusing-on-indirect-contact-mechanism-in-male-and-female-soccer-players-.pdf"
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 44,
+        "studyId": "S877",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 3,
+        "populationValueCount": 54,
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S892",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "d35de425-8a61-415c-8717-a5805f9d0b95",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "aa97b9b5-8dfd-403f-a5d8-0668c22b5d57",
+        "fileSha256": "639528c6df1642eea86d5b19eb5cd88fcc112226b1f0bb47bdf3de6966d1c519",
+        "storageBucket": "papers",
+        "storageObjectPath": "b3331760-4eb3-4f58-911f-75c14938777c/1782725302973-a-2282-0024-pdf.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "2a4b2c9e-4620-4619-8682-e1de653df90a",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": null,
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-29T10:29:19.11425+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "639528c6df1642eea86d5b19eb5cd88fcc112226b1f0bb47bdf3de6966d1c519",
+        "storageBucket": "papers",
+        "storageObjectPath": "b3331760-4eb3-4f58-911f-75c14938777c/1782725302973-a-2282-0024-pdf.pdf"
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 36,
+        "studyId": "S892",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 15,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationMetadataMatches": true
+      }
+    },
+    {
+      "studyId": "S933",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "f3780250-32ef-41bd-aaf8-71320771364a",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "05d674da-08f0-444e-85ec-af978ffb2247",
+        "fileSha256": "8c1139adde058fb33b137d321de08a231b5b001ea1ca56603158e69d20c5a6e3",
+        "storageBucket": "papers",
+        "storageObjectPath": "e6cfb2e9-de57-4852-a1f8-060283797a4c/1781617299160-S933-predicting-injuries-in-elite-female-football-players-with-global-positioning-system-and-multiomics-data.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "screening": {
+        "id": "c5df207a-cfc5-4175-9934-7b37c4806e5e",
+        "stage": "full_text",
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "humanDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T20:58:52.845001+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending",
+        "fileSha256": "8c1139adde058fb33b137d321de08a231b5b001ea1ca56603158e69d20c5a6e3",
+        "storageBucket": "papers",
+        "storageObjectPath": "e6cfb2e9-de57-4852-a1f8-060283797a4c/1781617299160-S933-predicting-injuries-in-elite-female-football-players-with-global-positioning-system-and-multiomics-data.pdf"
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 45,
+        "studyId": "S933",
+        "studyIdMatches": true,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 24,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationMetadataMatches": true
+      }
+    }
+  ]
+}

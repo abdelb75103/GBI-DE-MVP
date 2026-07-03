@@ -139,6 +139,12 @@ export default async function PaperWorkspace({
 
   const file = paper.primaryFileId ? await mockDb.getFile(paper.primaryFileId) : undefined;
   const notes = await mockDb.listNotes(paper.id);
+  const isTemporaryExtraction = paper.metadata?.temporaryExtractionPromotion === true;
+  const eligibilityStatus = paper.flagReason
+    ? 'Flagged'
+    : isTemporaryExtraction
+      ? 'Pending second reviewer'
+      : 'Existing extraction record';
   const extractions = await mockDb.listExtractions(paper.id);
   const extractionMap = new Map(extractions.map((extraction) => [extraction.tab, extraction] as const));
   const tabPayload = extractionTabs.map((tab) => {
@@ -252,6 +258,33 @@ export default async function PaperWorkspace({
                     ) : (
                       <p className="mt-3 text-sm text-slate-500">File metadata will be available after upload.</p>
                     )}
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Eligibility check</p>
+                    <div className={`mt-3 rounded-2xl p-4 shadow-sm ring-1 ${
+                      paper.flagReason
+                        ? 'bg-rose-50/80 ring-rose-200/70'
+                        : isTemporaryExtraction
+                          ? 'bg-amber-50/80 ring-amber-200/70'
+                          : 'bg-slate-50/80 ring-slate-200/70'
+                    }`}>
+                      <p className={`text-sm font-semibold ${
+                        paper.flagReason
+                          ? 'text-rose-800'
+                          : isTemporaryExtraction
+                            ? 'text-amber-800'
+                            : 'text-slate-700'
+                      }`}>
+                        {eligibilityStatus}
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-slate-600">
+                        {paper.flagReason
+                          ? paper.flagReason
+                          : isTemporaryExtraction
+                            ? 'AI and one human reviewer include. Confirm eligibility before extracting; flag criteria failures first.'
+                            : 'No temporary screening bridge is attached to this record.'}
+                      </p>
+                    </div>
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Flags</p>

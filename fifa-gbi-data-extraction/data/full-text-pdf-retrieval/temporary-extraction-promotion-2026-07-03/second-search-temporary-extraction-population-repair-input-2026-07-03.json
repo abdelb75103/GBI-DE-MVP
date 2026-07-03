@@ -1,0 +1,39 @@
+{
+  "scope": "Second search temporary extraction population repair and Tabs 1-4 completion, 2026-07-03",
+  "papers": [
+    {
+      "studyId": "S707",
+      "populationLabels": ["Total"],
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Medina-Porqueres I",
+          "yearOfPublication": "2024",
+          "journal": "Injury",
+          "doi": "10.1016/j.injury.2024.111922"
+        }
+      }
+    },
+    {"studyId": "S712", "populationLabels": ["Total"], "fields": {}},
+    {"studyId": "S755", "populationLabels": ["Control period", "Intervention period"], "fields": {}},
+    {"studyId": "S759", "populationLabels": ["Total"], "fields": {}},
+    {"studyId": "S789", "populationLabels": ["Congested periods", "Noncongested periods"], "fields": {}},
+    {
+      "studyId": "S817",
+      "populationLabels": [
+        "All levels, pre-COVID",
+        "All levels, post-COVID",
+        "Professional, pre-COVID",
+        "Professional, post-COVID",
+        "Semi-professional, pre-COVID",
+        "Semi-professional, post-COVID",
+        "Amateur, pre-COVID",
+        "Amateur, post-COVID"
+      ],
+      "fields": {}
+    },
+    {"studyId": "S859", "populationLabels": ["Male", "Female"], "fields": {}},
+    {"studyId": "S877", "populationLabels": ["Total", "Male", "Female"], "fields": {}},
+    {"studyId": "S892", "populationLabels": ["Total"], "fields": {}},
+    {"studyId": "S933", "populationLabels": ["Total"], "fields": {}}
+  ]
+}

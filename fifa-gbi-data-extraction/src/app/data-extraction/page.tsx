@@ -5,6 +5,11 @@ import { DashboardContributors } from '@/components/dashboard-contributors';
 import { DashboardProgressVisual } from '@/components/dashboard-progress-visual';
 import { ExportControls } from '@/components/export-controls';
 import { PapersDashboardClient } from '@/components/papers-dashboard-client';
+import {
+  filterDataExtractionPapers,
+  getDataExtractionBatchFilter,
+  type DataExtractionBatchFilter,
+} from '@/lib/data-extraction-batch-filter';
 import { formatDateTimeUTC } from '@/lib/format';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
@@ -19,14 +24,26 @@ import {
 
 export const dynamic = 'force-dynamic';
 
-export default async function DataExtractionPage() {
+type DataExtractionPageProps = {
+  searchParams?: Promise<{ batch?: string | string[] }>;
+};
+
+const BATCH_FILTER_LINKS: Array<{ value: DataExtractionBatchFilter; label: string; href: string }> = [
+  { value: 'total', label: 'Total', href: '/data-extraction' },
+  { value: 'first', label: 'First search', href: '/data-extraction?batch=first' },
+  { value: 'second', label: 'Second search', href: '/data-extraction?batch=second' },
+];
+
+export default async function DataExtractionPage({ searchParams }: DataExtractionPageProps) {
   const activeProfile = await readActiveProfileSession();
   if (!activeProfile) {
     redirect('/profiles/select');
   }
 
+  const resolvedSearchParams = searchParams ? await searchParams : {};
+  const batchFilter = getDataExtractionBatchFilter(resolvedSearchParams.batch);
   const isAdmin = activeProfile?.role === 'admin';
-  const papers = await mockDb.listPapers();
+  const papers = filterDataExtractionPapers(await mockDb.listPapers(), batchFilter);
   const countablePapers = papers.filter((paper) => !isDashboardCountExcludedStatus(paper.status));
   const tablePapers = papers.filter((paper) => paper.status !== 'archived');
   const dashboardTablePapers = isAdmin ? papers : tablePapers;
@@ -156,6 +173,24 @@ export default async function DataExtractionPage() {
                 </div>
               ) : null}
             </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {BATCH_FILTER_LINKS.map((option) => {
+              const active = batchFilter === option.value;
+              return (
+                <Link
+                  key={option.value}
+                  href={option.href}
+                  className={`inline-flex items-center justify-center rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ease-out ${
+                    active
+                      ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-10px_rgba(11,58,112,0.6)] ring-1 ring-[#0b3a70]/40'
+                      : 'border border-slate-300 bg-white text-slate-800 shadow-sm ring-1 ring-slate-200 hover:border-[#0b3a70]/40 hover:bg-slate-50 hover:text-[#0b3a70] hover:ring-[#0b3a70]/30'
+                  }`}
+                >
+                  {option.label}
+                </Link>
+              );
+            })}
           </div>
           <div className={`grid gap-4 sm:grid-cols-2 ${isAdmin ? 'xl:grid-cols-4' : 'xl:grid-cols-3'}`}>
             <StatCard

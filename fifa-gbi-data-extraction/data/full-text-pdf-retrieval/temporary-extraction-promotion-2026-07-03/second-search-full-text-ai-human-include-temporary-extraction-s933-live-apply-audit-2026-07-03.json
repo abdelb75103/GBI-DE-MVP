@@ -1,0 +1,52 @@
+{
+  "scope": "Second search temporary extraction bridge for AI include plus one human include",
+  "mode": "apply",
+  "generatedAt": "2026-07-03T21:30:45.557Z",
+  "selectionRule": {
+    "searchBatch": "Second search - Ishanka - 2026-05-26",
+    "aiStatus": "completed",
+    "aiSuggestedDecision": "include",
+    "humanIncludeVotes": 1,
+    "humanExcludeVotes": 0,
+    "manualDecision": null,
+    "promotedPaperId": null,
+    "hasAttachedFile": true,
+    "limit": 10
+  },
+  "selected": [
+    {
+      "studyId": "S933",
+      "screeningRecordId": "c5df207a-cfc5-4175-9934-7b37c4806e5e",
+      "title": "Predicting Injuries in Elite Female Football Players With Global-Positioning-System and Multiomics Data.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "8c1139adde058fb33b137d321de08a231b5b001ea1ca56603158e69d20c5a6e3",
+      "storageBucket": "papers",
+      "storageObjectPath": "e6cfb2e9-de57-4852-a1f8-060283797a4c/1781617299160-S933-predicting-injuries-in-elite-female-football-players-with-global-positioning-system-and-multiomics-data.pdf",
+      "before": {
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-21T20:58:52.845001+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "f3780250-32ef-41bd-aaf8-71320771364a",
+      "createdFileId": "05d674da-08f0-444e-85ec-af978ffb2247",
+      "applied": true,
+      "after": {
+        "manualDecision": null,
+        "promotedPaperId": null,
+        "fullTextResolution": "pending"
+      }
+    }
+  ],
+  "skippedBeforeLimit": [],
+  "protectedScreeningFieldsChanged": false
+}

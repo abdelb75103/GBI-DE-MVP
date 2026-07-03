@@ -6,6 +6,25 @@ export type ParsedPopulationGroup = {
   values: Record<string, string | null>;
 };
 
+export const createPopulationSignature = (groups: ParsedPopulationGroup[]): string | null => {
+  if (!groups.length) {
+    return null;
+  }
+  const normalised = groups
+    .map((group) => ({
+      position: group.position,
+      label: group.label,
+      values: Object.keys(group.values)
+        .sort()
+        .reduce<Record<string, string | null>>((acc, key) => {
+          acc[key] = group.values[key] ?? null;
+          return acc;
+        }, {}),
+    }))
+    .sort((a, b) => a.position - b.position);
+  return JSON.stringify(normalised);
+};
+
 const POPULATION_FIELD_IDS = new Set([
   'ageCategory',
   'sex',
@@ -34,15 +53,7 @@ const shouldIncludeField = (fieldId: string) =>
   POPULATION_FIELD_IDS.has(fieldId) || isMetricField(fieldId) || isInjuryOrIllnessField(fieldId);
 
 const sanitizeValue = (raw: string): string => {
-  const trimmed = raw.trim();
-  if (!trimmed) {
-    return '';
-  }
-  const legacyMatch = trimmed.match(/^(.+?)\s*[:\-–-]\s*(.+)$/);
-  if (legacyMatch) {
-    return legacyMatch[2].trim();
-  }
-  return trimmed;
+  return raw.trim();
 };
 
 export function derivePopulationGroups(fields: ExtractionFieldResult[]): ParsedPopulationGroup[] {

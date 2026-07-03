@@ -1,6 +1,10 @@
 import crypto from 'node:crypto';
 
-import { derivePopulationGroups, type ParsedPopulationGroup } from '@/lib/extraction/populations';
+import {
+  createPopulationSignature,
+  derivePopulationGroups,
+  type ParsedPopulationGroup,
+} from '@/lib/extraction/populations';
 import { mapExtractionRow } from '@/lib/db/mappers';
 import { normalizeRowMetadata, supabaseClient } from '@/lib/db/shared';
 import type { ExtractionFieldMetric, ExtractionFieldResult } from '@/lib/types';
@@ -44,25 +48,6 @@ export const shouldSyncPopulations = (fieldId: string): boolean => {
   return false;
 };
 
-const createPopulationSignature = (groups: ParsedPopulationGroup[]): string | null => {
-  if (!groups.length) {
-    return null;
-  }
-  const normalised = groups
-    .map((group) => ({
-      position: group.position,
-      label: group.label,
-      values: Object.keys(group.values)
-        .sort()
-        .reduce<Record<string, string | null>>((acc, key) => {
-          acc[key] = group.values[key] ?? null;
-          return acc;
-        }, {}),
-    }))
-    .sort((a, b) => a.position - b.position);
-  return JSON.stringify(normalised);
-};
-
 export const syncPopulationSlices = async (paperId: string) => {
   try {
     const supabase = supabaseClient();
@@ -93,6 +78,14 @@ export const syncPopulationSlices = async (paperId: string) => {
     }
 
     const groups: ParsedPopulationGroup[] = derivePopulationGroups(allFields);
+    const savedLabels = Array.isArray(metadata.populationLabels)
+      ? metadata.populationLabels.filter((label): label is string => typeof label === 'string' && Boolean(label.trim()))
+      : [];
+    groups.forEach((group, index) => {
+      if (savedLabels[index]) {
+        group.label = savedLabels[index];
+      }
+    });
     const groupsByPosition = new Map<number, ParsedPopulationGroup>();
     groups.forEach((group) => groupsByPosition.set(group.position, group));
 
