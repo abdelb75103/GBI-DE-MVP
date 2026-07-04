@@ -55,7 +55,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'No references with titles were found in this file.' }, { status: 400 });
   }
 
-  const existingTitleAbstract = await mockDb.listScreeningRecords('title_abstract');
+  const existingTitleAbstract = await mockDb.listScreeningDuplicateCandidates('title_abstract');
   const existing = existingTitleAbstract.map((record) => ({
     title: record.title,
     leadAuthor: record.leadAuthor,

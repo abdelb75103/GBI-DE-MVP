@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
 import { formatDateTimeUTC } from '@/lib/format';
-import type { Paper, PaperDuplicate } from '@/lib/types';
+import type { DedupePaperSummary, PaperDuplicate } from '@/lib/types';
 
 type Props = {
   initialDuplicates: PaperDuplicate[];
-  papers: Paper[];
+  papers: DedupePaperSummary[];
 };
 
 type ActionState = { message: string; tone: 'neutral' | 'error' | 'success' };
@@ -30,7 +30,7 @@ const reasonCopy: Record<string, string> = {
 
 export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
   const [duplicates, setDuplicates] = useState<PaperDuplicate[]>(initialDuplicates);
-  const [papersState, setPapersState] = useState<Paper[]>(papers);
+  const [papersState, setPapersState] = useState<DedupePaperSummary[]>(papers);
   const [isScanning, setIsScanning] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [archivingId, setArchivingId] = useState<string | null>(null);
@@ -55,9 +55,9 @@ export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
 
   const refreshPapers = async () => {
     try {
-      const res = await fetch('/api/papers', { cache: 'no-store' });
+      const res = await fetch('/api/papers?view=dedupe', { cache: 'no-store' });
       if (!res.ok) throw new Error(await res.text());
-      const data = (await res.json()) as { papers: Paper[] };
+      const data = (await res.json()) as { papers: DedupePaperSummary[] };
       setPapersState(data.papers ?? papersState);
     } catch (error) {
       console.error('Failed to refresh papers', error);
@@ -174,7 +174,7 @@ export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
     const paperA = paperMap.get(row.paperIdA);
     const paperB = paperMap.get(row.paperIdB);
 
-    const parseTime = (paper?: Paper) => {
+    const parseTime = (paper?: DedupePaperSummary) => {
       if (!paper) return Number.NaN;
       const t = new Date(paper.createdAt).getTime();
       if (!Number.isNaN(t)) return t;

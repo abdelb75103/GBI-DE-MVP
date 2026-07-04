@@ -15,9 +15,11 @@ import {
   supabaseClient,
 } from '@/lib/db/shared';
 import type { Paper, PaperSession, PaperStatus, DedupeReviewStatus } from '@/lib/types';
+import type { DedupePaperSummary } from '@/lib/types';
 import type { PaperInsert, PaperRow, PaperUpdate } from '@/lib/db/types';
 import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '@/lib/dedupe';
 import { generateAssignedStudyId } from '@/lib/db/study-ids';
+import type { ExtractionMetricPaper } from '@/lib/workflow-metrics';
 
 const BATCHED_IN_QUERY_SIZE = 100;
 
@@ -36,6 +38,100 @@ export const DATA_EXTRACTION_PAPER_SELECT = [
   'search_batch_label:metadata->>searchBatchLabel',
   'paper_notes(count)',
 ].join(',');
+
+type ExtractionMetricPaperRow = {
+  status: PaperStatus;
+  flag_reason: string | null;
+  assigned_to: string | null;
+};
+
+type DedupePaperRow = {
+  id: string;
+  assigned_study_id: string;
+  title: string;
+  status: PaperStatus;
+  original_file_name: string | null;
+  uploaded_at: string;
+  updated_at: string;
+};
+
+export type DuplicateCheckPaper = {
+  id: string;
+  assignedStudyId: string;
+  title: string;
+  extractedTitle: string | null;
+  normalizedDoi: string | null;
+  doi: string | null;
+  duplicateKeyV2: string | null;
+  primaryFileSha256: string | null;
+  originalFileName: string | null;
+  leadAuthor: string | null;
+  year: string | null;
+};
+
+type DuplicateCheckPaperRow = {
+  id: string;
+  assigned_study_id: string;
+  title: string;
+  extracted_title: string | null;
+  normalized_doi: string | null;
+  doi: string | null;
+  duplicate_key_v2: string | null;
+  primary_file_sha256: string | null;
+  original_file_name: string | null;
+  lead_author: string | null;
+  year: string | null;
+};
+
+const EXTRACTION_METRIC_PAPER_SELECT = 'status,flag_reason,assigned_to';
+
+const DEDUPE_PAPER_SELECT = [
+  'id',
+  'assigned_study_id',
+  'title',
+  'status',
+  'original_file_name',
+  'uploaded_at',
+  'updated_at',
+].join(',');
+
+const DUPLICATE_CHECK_PAPER_SELECT = [
+  'id',
+  'assigned_study_id',
+  'title',
+  'extracted_title',
+  'normalized_doi',
+  'doi',
+  'duplicate_key_v2',
+  'primary_file_sha256',
+  'original_file_name',
+  'lead_author',
+  'year',
+].join(',');
+
+const mapDedupePaperRow = (row: DedupePaperRow): DedupePaperSummary => ({
+  id: row.id,
+  assignedStudyId: row.assigned_study_id ?? '',
+  title: row.title,
+  status: row.status,
+  originalFileName: row.original_file_name ?? null,
+  createdAt: row.uploaded_at,
+  updatedAt: row.updated_at,
+});
+
+const mapDuplicateCheckPaperRow = (row: DuplicateCheckPaperRow): DuplicateCheckPaper => ({
+  id: row.id,
+  assignedStudyId: row.assigned_study_id ?? '',
+  title: row.title,
+  extractedTitle: row.extracted_title ?? null,
+  normalizedDoi: row.normalized_doi ?? null,
+  doi: row.doi ?? null,
+  duplicateKeyV2: row.duplicate_key_v2 ?? null,
+  primaryFileSha256: row.primary_file_sha256 ?? null,
+  originalFileName: row.original_file_name ?? null,
+  leadAuthor: row.lead_author ?? null,
+  year: row.year ?? null,
+});
 
 export const listDataExtractionPapers = async (): Promise<DataExtractionPaperSummary[]> => {
   const supabase = supabaseClient();
@@ -64,6 +160,85 @@ export const listDataExtractionPapers = async (): Promise<DataExtractionPaperSum
     .filter((id): id is string => id !== null);
   const assigneeNames = await listProfileNamesById(assignedToIds);
   return rows.map((row) => mapDataExtractionPaperRow(row, assigneeNames));
+};
+
+export const listExtractionMetricPapers = async (): Promise<ExtractionMetricPaper[]> => {
+  const supabase = supabaseClient();
+  const rows: ExtractionMetricPaperRow[] = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('papers')
+      .select(EXTRACTION_METRIC_PAPER_SELECT)
+      .order('uploaded_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list extraction metric papers: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as ExtractionMetricPaperRow[];
+    rows.push(...batch);
+    if (batch.length < pageSize) break;
+  }
+
+  return rows.map((row) => ({
+    status: row.status,
+    flagReason: row.flag_reason ?? null,
+    assignedTo: row.assigned_to ?? null,
+  }));
+};
+
+export const listDedupePapers = async (): Promise<DedupePaperSummary[]> => {
+  const supabase = supabaseClient();
+  const rows: DedupePaperRow[] = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('papers')
+      .select(DEDUPE_PAPER_SELECT)
+      .order('uploaded_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list dedupe papers: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as DedupePaperRow[];
+    rows.push(...batch);
+    if (batch.length < pageSize) break;
+  }
+
+  return rows.map(mapDedupePaperRow);
+};
+
+export const listDuplicateCheckPapers = async (): Promise<DuplicateCheckPaper[]> => {
+  const supabase = supabaseClient();
+  const rows: DuplicateCheckPaperRow[] = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('papers')
+      .select(DUPLICATE_CHECK_PAPER_SELECT)
+      .order('uploaded_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list duplicate-check papers: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as DuplicateCheckPaperRow[];
+    rows.push(...batch);
+    if (batch.length < pageSize) break;
+  }
+
+  return rows.map(mapDuplicateCheckPaperRow);
 };
 
 export const listPapers = async (): Promise<Paper[]> => {

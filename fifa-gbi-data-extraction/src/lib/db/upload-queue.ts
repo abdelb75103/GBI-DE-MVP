@@ -3,6 +3,34 @@ import type { UploadQueueInsert, UploadQueueRow } from '@/lib/db/types';
 import type { UploadQueueItem } from '@/lib/types';
 import type { UploadQueueStatus } from '@/lib/supabase/types';
 
+const UPLOAD_QUEUE_PAGE_SIZE = 1000;
+const UPLOAD_QUEUE_LIST_SELECT = [
+  'id',
+  'status',
+  'title',
+  'extracted_title',
+  'lead_author',
+  'journal',
+  'year',
+  'doi',
+  'normalized_doi',
+  'duplicate_key_v2',
+  'title_fingerprint',
+  'metadata',
+  'storage_bucket',
+  'storage_object_path',
+  'file_name',
+  'original_file_name',
+  'mime_type',
+  'size',
+  'file_sha256',
+  'created_at',
+  'created_by',
+  'approved_at',
+  'approved_by',
+  'paper_id',
+].join(',');
+
 const mapQueueRow = (row: UploadQueueRow, profileNames: Map<string, string>): UploadQueueItem => {
   const createdByName = row.created_by ? profileNames.get(row.created_by) : undefined;
   const approvedByName = row.approved_by ? profileNames.get(row.approved_by) : undefined;
@@ -123,17 +151,30 @@ export const listUploadQueueEntries = async (
   status: UploadQueueStatus = 'pending',
 ): Promise<UploadQueueItem[]> => {
   const supabase = supabaseClient();
-  const query = supabase.from('paper_upload_queue').select('*').order('created_at', { ascending: true });
-  if (status) {
-    query.eq('status', status);
-  }
-  const { data, error } = await query;
+  const rows: UploadQueueRow[] = [];
 
-  if (error) {
-    throw new Error(`Failed to list upload queue entries: ${error.message}`);
+  for (let from = 0; ; from += UPLOAD_QUEUE_PAGE_SIZE) {
+    const query = supabase
+      .from('paper_upload_queue')
+      .select(UPLOAD_QUEUE_LIST_SELECT)
+      .order('created_at', { ascending: true })
+      .order('id', { ascending: true })
+      .range(from, from + UPLOAD_QUEUE_PAGE_SIZE - 1);
+
+    if (status) {
+      query.eq('status', status);
+    }
+
+    const { data, error } = await query;
+    if (error) {
+      throw new Error(`Failed to list upload queue entries: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as UploadQueueRow[];
+    rows.push(...batch);
+    if (batch.length < UPLOAD_QUEUE_PAGE_SIZE) break;
   }
 
-  const rows = (data ?? []) as UploadQueueRow[];
   const profileIds = Array.from(
     new Set(
       rows

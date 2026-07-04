@@ -82,6 +82,11 @@ export interface Paper {
   activeSession: PaperSession | null;
 }
 
+export type DedupePaperSummary = Pick<
+  Paper,
+  'id' | 'assignedStudyId' | 'title' | 'status' | 'originalFileName' | 'createdAt' | 'updatedAt'
+>;
+
 export interface StoredFile {
   id: string;
   paperId: string;

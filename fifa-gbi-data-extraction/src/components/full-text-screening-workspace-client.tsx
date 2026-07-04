@@ -730,7 +730,7 @@ export function FullTextScreeningWorkspaceClient({
                   onClick={saveReviewState}
                   className="inline-flex items-center justify-center rounded-xl bg-[#1f6b57] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#1f6b57]/20 transition hover:bg-[#195847] disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {isReviewPending ? 'Saving…' : 'Save note'}
+                  {isReviewPending ? 'Saving…' : 'Save flag and comment'}
                 </button>
               </div>
             </div>

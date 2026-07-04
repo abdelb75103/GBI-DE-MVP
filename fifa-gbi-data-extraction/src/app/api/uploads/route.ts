@@ -53,7 +53,7 @@ export async function POST(request: Request) {
 
   // Check for duplicates before processing the file
   const [existingPapers, pendingUploads] = await Promise.all([
-    mockDb.listPapers(),
+    mockDb.listDuplicateCheckPapers(),
     mockDb.listUploadQueueEntries(),
   ]);
   

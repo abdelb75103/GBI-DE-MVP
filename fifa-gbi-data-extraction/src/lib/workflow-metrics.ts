@@ -9,7 +9,7 @@ import {
   getTitleAbstractWorkStatus,
 } from '@/lib/screening/title-abstract-decisions';
 import { isProgressCompletedStatus } from '@/lib/status-groups';
-import type { Paper, ScreeningRecord } from '@/lib/types';
+import type { PaperStatus, ScreeningRecord } from '@/lib/types';
 
 export type WorkflowStageMetrics = {
   total: number;
@@ -22,6 +22,12 @@ export type WorkflowStageMetrics = {
   secondaryLabel: string;
   tertiaryCount: number;
   tertiaryLabel: string;
+};
+
+export type ExtractionMetricPaper = {
+  status: PaperStatus;
+  flagReason: string | null;
+  assignedTo: string | null;
 };
 
 const percentage = (completed: number, total: number) =>
@@ -119,7 +125,7 @@ export const getFullTextMetrics = (
   };
 };
 
-export const getExtractionMetrics = (papers: Paper[]): WorkflowStageMetrics => {
+export const getExtractionMetrics = (papers: ExtractionMetricPaper[]): WorkflowStageMetrics => {
   const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
   const completed = visiblePapers.filter((paper) => isProgressCompletedStatus(paper.status)).length;
   const active = visiblePapers.filter((paper) => paper.assignedTo && !isProgressCompletedStatus(paper.status)).length;

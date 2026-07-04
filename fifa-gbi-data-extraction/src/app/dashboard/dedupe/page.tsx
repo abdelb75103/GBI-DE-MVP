@@ -12,7 +12,7 @@ export default async function DedupeDashboardPage() {
     redirect('/dashboard');
   }
 
-  const [duplicates, papers] = await Promise.all([mockDb.listPaperDuplicates(), mockDb.listPapers()]);
+  const [duplicates, papers] = await Promise.all([mockDb.listPaperDuplicates(), mockDb.listDedupePapers()]);
 
   return (
     <div className="space-y-6">

@@ -4,7 +4,7 @@ import { Buffer } from 'node:buffer';
 import { mapScreeningRecordRow } from '@/lib/db/mappers';
 import { generateAssignedStudyId } from '@/lib/db/study-ids';
 import { supabaseClient } from '@/lib/db/shared';
-import { createPaper, listPapers, updatePaper } from '@/lib/db/papers';
+import { createPaper, listDuplicateCheckPapers, updatePaper } from '@/lib/db/papers';
 import { attachFile, uploadFileToStorage } from '@/lib/db/files';
 import {
   calculateFuzzyTitleScore,
@@ -28,7 +28,12 @@ import {
   isMentalHealthScreeningRecord,
 } from '@/lib/screening/mental-health';
 import type { ScreeningRecordInsert, ScreeningRecordRow, ScreeningRecordUpdate } from '@/lib/db/types';
-import type { Paper, ScreeningDecision, ScreeningRecord, ScreeningStage } from '@/lib/types';
+import type {
+  ScreeningAiStatus,
+  ScreeningDecision,
+  ScreeningRecord,
+  ScreeningStage,
+} from '@/lib/types';
 import {
   applyTitleAbstractDecision,
   getTitleAbstractDecisions,
@@ -56,7 +61,51 @@ import {
 
 const AWAITING_FULL_TEXT_PDF_SENTINEL = Buffer.from('awaiting-full-text-pdf').toString('base64');
 export const TITLE_ABSTRACT_QUEUE_PAGE_SIZE = 50;
+const SCREENING_PAGE_SIZE = 1000;
 const TITLE_ABSTRACT_QUEUE_CACHE_MS = 30_000;
+const FULL_TEXT_QUEUE_SELECT = [
+  'id',
+  'stage',
+  'assigned_study_id',
+  'title',
+  'abstract',
+  'lead_author',
+  'journal',
+  'year',
+  'doi',
+  'normalized_doi',
+  'source_label',
+  'source_record_id',
+  'storage_bucket',
+  'storage_object_path',
+  'file_name',
+  'original_file_name',
+  'mime_type',
+  'size',
+  'file_sha256',
+  'ai_status',
+  'ai_suggested_decision',
+  'ai_reason',
+  'ai_evidence_quote',
+  'ai_source_location',
+  'ai_confidence',
+  'ai_model',
+  'ai_criteria_version',
+  'ai_error',
+  'ai_reviewed_at',
+  'manual_decision',
+  'manual_reason',
+  'manual_decided_by',
+  'manual_decided_at',
+  'promoted_paper_id',
+  'promoted_by',
+  'promoted_at',
+  'created_by',
+  'created_at',
+  'updated_at',
+  'metadata',
+  'notes',
+].join(',');
 const TITLE_ABSTRACT_QUEUE_SELECT = [
   'id',
   'stage',
@@ -166,6 +215,53 @@ type DuplicateCandidate = {
   normalizedDoi?: string | null;
 };
 
+export type ScreeningDuplicateCandidate = {
+  id: string;
+  assignedStudyId: string;
+  title: string;
+  leadAuthor: string | null;
+  year: string | null;
+  doi: string | null;
+  normalizedDoi: string | null;
+  fileSha256: string | null;
+};
+
+type ScreeningDuplicateCandidateRow = {
+  id: string;
+  assigned_study_id: string;
+  title: string;
+  lead_author: string | null;
+  year: string | null;
+  doi: string | null;
+  normalized_doi: string | null;
+  file_sha256: string | null;
+};
+
+export type ScreeningAiTotals = {
+  total: number;
+  completed: number;
+  include: number;
+  exclude: number;
+  systematicReview: number;
+  failed: number;
+};
+
+type ScreeningAiMetricRow = {
+  stage: ScreeningStage;
+  ai_status: ScreeningAiStatus;
+  ai_suggested_decision: ScreeningDecision | null;
+  ai_target_tag: string | null;
+};
+
+type ProjectedSelectQuery = {
+  order: (column: string, options: { ascending: boolean }) => ProjectedSelectQuery;
+  range: (from: number, to: number) => Promise<{ data: unknown[] | null; error: { message: string } | null }>;
+};
+
+type ProjectedTable = {
+  select: (columns: string) => ProjectedSelectQuery;
+};
+
 const findPromotionDuplicateWarnings = (
   source: Pick<ScreeningRecord, 'title' | 'leadAuthor' | 'year' | 'doi' | 'normalizedDoi'>,
   candidates: DuplicateCandidate[],
@@ -208,7 +304,7 @@ const findPromotionDuplicateWarnings = (
 };
 
 const findFullTextPromotionWarnings = async (record: ScreeningRecord): Promise<PromotionDuplicateWarning[]> => {
-  const fullTextRecords = await listScreeningRecords('full_text');
+  const fullTextRecords = await listScreeningDuplicateCandidates('full_text');
   return findPromotionDuplicateWarnings(
     record,
     fullTextRecords
@@ -227,10 +323,10 @@ const findFullTextPromotionWarnings = async (record: ScreeningRecord): Promise<P
 };
 
 const findExtractionPromotionWarnings = async (record: ScreeningRecord): Promise<PromotionDuplicateWarning[]> => {
-  const papers = await listPapers();
+  const papers = await listDuplicateCheckPapers();
   return findPromotionDuplicateWarnings(
     record,
-    papers.map((paper: Paper) => ({
+    papers.map((paper) => ({
       id: paper.id,
       assignedStudyId: paper.assignedStudyId,
       title: paper.extractedTitle ?? paper.title,
@@ -266,6 +362,121 @@ const mapRows = async (rows: ScreeningRecordRow[]): Promise<ScreeningRecord[]> =
     rows.flatMap((row) => [row.created_by, row.manual_decided_by, row.promoted_by]),
   );
   return rows.map((row) => mapScreeningRecordRow(row, names));
+};
+
+const mapScreeningDuplicateCandidateRow = (
+  row: ScreeningDuplicateCandidateRow,
+): ScreeningDuplicateCandidate => ({
+  id: row.id,
+  assignedStudyId: row.assigned_study_id,
+  title: row.title,
+  leadAuthor: row.lead_author,
+  year: row.year,
+  doi: row.doi,
+  normalizedDoi: row.normalized_doi,
+  fileSha256: row.file_sha256,
+});
+
+const emptyScreeningAiTotals = (): ScreeningAiTotals => ({
+  total: 0,
+  completed: 0,
+  include: 0,
+  exclude: 0,
+  systematicReview: 0,
+  failed: 0,
+});
+
+const countScreeningAiRows = (rows: ScreeningAiMetricRow[]): ScreeningAiTotals => {
+  const totals = emptyScreeningAiTotals();
+  totals.total = rows.length;
+  rows.forEach((row) => {
+    if (row.ai_status === 'completed') totals.completed += 1;
+    if (row.ai_status === 'failed') totals.failed += 1;
+    if (row.ai_suggested_decision === 'include') totals.include += 1;
+    if (row.ai_suggested_decision === 'exclude') totals.exclude += 1;
+    if (row.ai_target_tag === 'systematic_review') totals.systematicReview += 1;
+  });
+  return totals;
+};
+
+const listFullTextQueueRecords = async (): Promise<ScreeningRecord[]> => {
+  const supabase = supabaseClient();
+  const rows: ScreeningRecordRow[] = [];
+
+  for (let from = 0; ; from += SCREENING_PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from('screening_records')
+      .select(FULL_TEXT_QUEUE_SELECT)
+      .eq('stage', 'full_text')
+      .order('created_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + SCREENING_PAGE_SIZE - 1);
+
+    if (error) {
+      throw new Error(`Failed to list full-text queue records: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as ScreeningRecordRow[];
+    rows.push(...batch);
+    if (batch.length < SCREENING_PAGE_SIZE) break;
+  }
+
+  return mapRows(rows);
+};
+
+export const listFullTextMetricRecords = listFullTextQueueRecords;
+
+export const listScreeningDuplicateCandidates = async (
+  stage: ScreeningStage,
+): Promise<ScreeningDuplicateCandidate[]> => {
+  const supabase = supabaseClient();
+  const rows: ScreeningDuplicateCandidateRow[] = [];
+
+  for (let from = 0; ; from += SCREENING_PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from('screening_records')
+      .select('id,assigned_study_id,title,lead_author,year,doi,normalized_doi,file_sha256')
+      .eq('stage', stage)
+      .order('created_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + SCREENING_PAGE_SIZE - 1);
+
+    if (error) {
+      throw new Error(`Failed to list screening duplicate candidates: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as ScreeningDuplicateCandidateRow[];
+    rows.push(...batch);
+    if (batch.length < SCREENING_PAGE_SIZE) break;
+  }
+
+  return rows.map(mapScreeningDuplicateCandidateRow);
+};
+
+export const getScreeningAiTotalsByStage = async (): Promise<Record<ScreeningStage, ScreeningAiTotals>> => {
+  const supabase = supabaseClient();
+  const rows: ScreeningAiMetricRow[] = [];
+
+  for (let from = 0; ; from += SCREENING_PAGE_SIZE) {
+    const { data, error } = await (supabase.from('screening_records') as unknown as ProjectedTable)
+      .select('stage,ai_status,ai_suggested_decision,ai_target_tag:ai_raw_response->>targetTag')
+      .order('created_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + SCREENING_PAGE_SIZE - 1);
+
+    if (error) {
+      throw new Error(`Failed to load screening AI metrics: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as ScreeningAiMetricRow[];
+    rows.push(...batch);
+    if (batch.length < SCREENING_PAGE_SIZE) break;
+  }
+
+  return {
+    title_abstract: countScreeningAiRows(rows.filter((row) => row.stage === 'title_abstract')),
+    full_text: countScreeningAiRows(rows.filter((row) => row.stage === 'full_text')),
+  };
 };
 
 const maybePersistMentalHealthTag = async (record: ScreeningRecord): Promise<ScreeningRecord> => {
@@ -323,22 +534,22 @@ export type CreateScreeningRecordInput = {
 export const listScreeningRecords = async (stage: ScreeningStage = 'full_text'): Promise<ScreeningRecord[]> => {
   const supabase = supabaseClient();
   const rows: ScreeningRecordRow[] = [];
-  const pageSize = 1000;
 
-  for (let from = 0; ; from += pageSize) {
+  for (let from = 0; ; from += SCREENING_PAGE_SIZE) {
     const { data, error } = await supabase
       .from('screening_records')
       .select('*')
       .eq('stage', stage)
       .order('created_at', { ascending: false })
-      .range(from, from + pageSize - 1);
+      .order('id', { ascending: false })
+      .range(from, from + SCREENING_PAGE_SIZE - 1);
 
     if (error) {
       throw new Error(`Failed to list screening records. Apply the screening migration first: ${error.message}`);
     }
 
     rows.push(...((data ?? []) as unknown as ScreeningRecordRow[]));
-    if (!data || data.length < pageSize) break;
+    if (!data || data.length < SCREENING_PAGE_SIZE) break;
   }
 
   return mapRows(rows);
@@ -351,7 +562,7 @@ export const listFullTextQueuePage = async ({
   reviewerProfileId: string;
   context: FullTextQueueContext;
 }): Promise<FullTextQueuePage> => {
-  const records = await listScreeningRecords('full_text');
+  const records = await listFullTextQueueRecords();
   return buildFullTextQueuePage(records, reviewerProfileId, context);
 };
 
@@ -360,7 +571,7 @@ export const getFullTextReviewerProgressForReviewer = async ({
 }: {
   reviewerProfileId: string;
 }): Promise<FullTextReviewerProgress> => {
-  const records = await listScreeningRecords('full_text');
+  const records = await listFullTextQueueRecords();
   return getFullTextReviewerProgress(records, reviewerProfileId);
 };
 
@@ -375,7 +586,7 @@ export const findAdjacentFullTextQueueRecordsForReviewer = async ({
   currentRecordId: string;
   position: number;
 }): Promise<FullTextQueueAdjacentRecords> => {
-  const records = await listScreeningRecords('full_text');
+  const records = await listFullTextQueueRecords();
   return findAdjacentFullTextQueueRecords(records, reviewerProfileId, context, currentRecordId, position);
 };
 
@@ -390,7 +601,7 @@ export const findNextFullTextQueueRecordForReviewer = async ({
   completedRecordId: string;
   position: number;
 }): Promise<ScreeningRecord | null> => {
-  const records = await listScreeningRecords('full_text');
+  const records = await listFullTextQueueRecords();
   return findNextFullTextQueueRecord(records, reviewerProfileId, context, completedRecordId, position);
 };
 
@@ -402,22 +613,22 @@ const listTitleAbstractQueueRecords = async (): Promise<ScreeningRecord[]> => {
 
   const supabase = supabaseClient();
   const rows: ScreeningRecordRow[] = [];
-  const pageSize = 1000;
 
-  for (let from = 0; ; from += pageSize) {
+  for (let from = 0; ; from += SCREENING_PAGE_SIZE) {
     const { data, error } = await supabase
       .from('screening_records')
       .select(TITLE_ABSTRACT_QUEUE_SELECT)
       .eq('stage', 'title_abstract')
       .order('created_at', { ascending: false })
-      .range(from, from + pageSize - 1);
+      .order('id', { ascending: false })
+      .range(from, from + SCREENING_PAGE_SIZE - 1);
 
     if (error) {
       throw new Error(`Failed to list title/abstract records: ${error.message}`);
     }
 
     rows.push(...((data ?? []) as unknown as ScreeningRecordRow[]));
-    if (!data || data.length < pageSize) break;
+    if (!data || data.length < SCREENING_PAGE_SIZE) break;
   }
 
   const records = await mapRows(rows);
@@ -1127,20 +1338,17 @@ export const attachFullTextPdfToScreeningRecord = async (
 
   const fileSha256 = computeFileSha256(input.buffer);
   const [existingScreening, existingPapers] = await Promise.all([
-    listScreeningRecords('full_text'),
-    supabaseClient().from('papers').select('id, assigned_study_id, title, primary_file_sha256'),
+    listScreeningDuplicateCandidates('full_text'),
+    listDuplicateCheckPapers(),
   ]);
 
   const existingScreeningMatch = existingScreening.find((candidate) => candidate.id !== id && candidate.fileSha256 === fileSha256);
   if (existingScreeningMatch) {
     throw new Error(`Duplicate screening PDF detected in ${existingScreeningMatch.assignedStudyId}.`);
   }
-  if (existingPapers.error) {
-    throw new Error(`Failed to check extraction duplicates: ${existingPapers.error.message}`);
-  }
-  const existingPaperMatch = (existingPapers.data ?? []).find((paper) => paper.primary_file_sha256 === fileSha256);
+  const existingPaperMatch = existingPapers.find((paper) => paper.primaryFileSha256 === fileSha256);
   if (existingPaperMatch) {
-    throw new Error(`PDF already exists in extraction as ${existingPaperMatch.assigned_study_id}.`);
+    throw new Error(`PDF already exists in extraction as ${existingPaperMatch.assignedStudyId}.`);
   }
 
   const storageInfo = await uploadFileToStorage(input.buffer, input.fileName, 'papers');

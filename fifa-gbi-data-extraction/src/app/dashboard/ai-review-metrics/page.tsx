@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import { extractionFieldDefinitions, extractionTabMeta } from '@/lib/extraction/schema';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
-import type { ExtractionTab, ScreeningRecord } from '@/lib/types';
+import type { ExtractionTab } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,8 +17,10 @@ export default async function AiReviewMetricsPage() {
 
   let decisions: Awaited<ReturnType<typeof mockDb.listAiReviewDecisions>> = [];
   let loadError: string | null = null;
-  let titleAbstractRecords: ScreeningRecord[] = [];
-  let fullTextRecords: ScreeningRecord[] = [];
+  let screeningAiByStage: Awaited<ReturnType<typeof mockDb.getScreeningAiTotalsByStage>> = {
+    title_abstract: { total: 0, completed: 0, include: 0, exclude: 0, systematicReview: 0, failed: 0 },
+    full_text: { total: 0, completed: 0, include: 0, exclude: 0, systematicReview: 0, failed: 0 },
+  };
   let screeningLoadError: string | null = null;
   try {
     decisions = await mockDb.listAiReviewDecisions();
@@ -26,10 +28,7 @@ export default async function AiReviewMetricsPage() {
     loadError = error instanceof Error ? error.message : String(error);
   }
   try {
-    [titleAbstractRecords, fullTextRecords] = await Promise.all([
-      mockDb.listScreeningRecords('title_abstract'),
-      mockDb.listScreeningRecords('full_text'),
-    ]);
+    screeningAiByStage = await mockDb.getScreeningAiTotalsByStage();
   } catch (error) {
     screeningLoadError = error instanceof Error ? error.message : String(error);
   }
@@ -93,16 +92,8 @@ export default async function AiReviewMetricsPage() {
     return a.name.localeCompare(b.name);
   });
 
-  const screeningAiTotals = (records: ScreeningRecord[]) => ({
-    total: records.length,
-    completed: records.filter((record) => record.aiStatus === 'completed').length,
-    include: records.filter((record) => record.aiSuggestedDecision === 'include').length,
-    exclude: records.filter((record) => record.aiSuggestedDecision === 'exclude').length,
-    systematicReview: records.filter((record) => record.aiTargetTag === 'systematic_review').length,
-    failed: records.filter((record) => record.aiStatus === 'failed').length,
-  });
-  const titleAbstractAi = screeningAiTotals(titleAbstractRecords);
-  const fullTextAi = screeningAiTotals(fullTextRecords);
+  const titleAbstractAi = screeningAiByStage.title_abstract;
+  const fullTextAi = screeningAiByStage.full_text;
 
   return (
     <div className="space-y-8">

@@ -31,8 +31,8 @@ export async function POST(request: Request) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const fileSha256 = computeFileSha256(buffer);
   const [existingScreening, existingPapers] = await Promise.all([
-    mockDb.listScreeningRecords('full_text'),
-    mockDb.listPapers(),
+    mockDb.listScreeningDuplicateCandidates('full_text'),
+    mockDb.listDuplicateCheckPapers(),
   ]);
   const existingScreeningMatch = existingScreening.find((record) => record.fileSha256 === fileSha256);
   if (existingScreeningMatch) {

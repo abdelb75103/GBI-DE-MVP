@@ -110,8 +110,8 @@ export default async function DashboardPage() {
 
   const [titleAbstractCounts, fullTextRecords, papers] = await Promise.all([
     mockDb.getTitleAbstractQueueCountsForReviewer(activeProfile.id),
-    mockDb.listScreeningRecords('full_text'),
-    mockDb.listPapers(),
+    mockDb.listFullTextMetricRecords(),
+    mockDb.listExtractionMetricPapers(),
   ]);
 
   const firstName = extractFirstName(activeProfile.fullName);

@@ -1,9 +1,8 @@
 import crypto from 'node:crypto';
 
 import { supabaseClient } from '@/lib/db/shared';
-import { mapPaperRow } from '@/lib/db/mappers';
-import type { Paper, PaperDuplicate } from '@/lib/types';
-import type { FileRow, PaperRow, PaperDuplicateRow } from '@/lib/db/types';
+import type { PaperDuplicate } from '@/lib/types';
+import type { FileRow, PaperDuplicateRow } from '@/lib/db/types';
 import {
   calculateFilenameScore,
   calculateFuzzyTitleScore,
@@ -11,14 +10,54 @@ import {
   normalizeDoi,
 } from '@/lib/dedupe';
 
-type PaperWithDedupe = Paper & {
+type PaperWithDedupe = {
+  id: string;
+  assignedStudyId: string;
+  title: string;
   extractedTitle: string | null;
   normalizedDoi: string | null;
+  doi: string | null;
   duplicateKeyV2: string | null;
   primaryFileSha256: string | null;
-  titleFingerprint: string | null;
   originalFileName: string | null;
+  primaryFileId: string | null;
+  leadAuthor: string | null;
+  year: string | null;
 };
+
+type DedupeScanPaperRow = {
+  id: string;
+  assigned_study_id: string | null;
+  title: string;
+  extracted_title: string | null;
+  normalized_doi: string | null;
+  doi: string | null;
+  duplicate_key_v2: string | null;
+  primary_file_sha256: string | null;
+  original_file_name: string | null;
+  primary_file_id: string | null;
+  lead_author: string | null;
+  year: string | null;
+};
+
+type DedupeScanFileRow = Pick<FileRow, 'id' | 'original_file_name' | 'name'>;
+
+const DEDUPE_SCAN_PAPER_SELECT = [
+  'id',
+  'assigned_study_id',
+  'title',
+  'extracted_title',
+  'normalized_doi',
+  'doi',
+  'duplicate_key_v2',
+  'primary_file_sha256',
+  'original_file_name',
+  'primary_file_id',
+  'lead_author',
+  'year',
+].join(',');
+
+const PAGE_SIZE = 1000;
 
 const keyIgnoreOrder = (a: string, b: string) => (a < b ? `${a}:${b}` : `${b}:${a}`);
 const keyOrdered = (a: string, b: string) => `${a}:${b}`;
@@ -28,14 +67,25 @@ const canonicalKey = (a: string, b: string) => keyOrdered(...canonicalPair(a, b)
 
 const makePairKey = (a: string, b: string) => keyIgnoreOrder(a, b);
 
-const hydratePapers = (rows: PaperRow[]): PaperWithDedupe[] => {
-  return rows.map((row) => mapPaperRow(row, 0)) as PaperWithDedupe[];
-};
+const hydratePapers = (rows: DedupeScanPaperRow[]): PaperWithDedupe[] => rows.map((row) => ({
+  id: row.id,
+  assignedStudyId: row.assigned_study_id ?? '',
+  title: row.title,
+  extractedTitle: row.extracted_title ?? null,
+  normalizedDoi: row.normalized_doi ?? null,
+  doi: row.doi ?? null,
+  duplicateKeyV2: row.duplicate_key_v2 ?? null,
+  primaryFileSha256: row.primary_file_sha256 ?? null,
+  originalFileName: row.original_file_name ?? null,
+  primaryFileId: row.primary_file_id ?? null,
+  leadAuthor: row.lead_author ?? null,
+  year: row.year ?? null,
+}));
 
 const pickTitle = (paper: PaperWithDedupe) =>
   paper.extractedTitle ?? paper.title ?? paper.originalFileName ?? paper.assignedStudyId;
 
-const pickFilename = (paper: PaperWithDedupe, files: Record<string, FileRow | undefined>) => {
+const pickFilename = (paper: PaperWithDedupe, files: Record<string, DedupeScanFileRow | undefined>) => {
   const primaryFile = files[paper.primaryFileId ?? ''];
   const name = primaryFile?.original_file_name ?? primaryFile?.name ?? paper.originalFileName ?? paper.title;
   return name ?? '';
@@ -43,13 +93,24 @@ const pickFilename = (paper: PaperWithDedupe, files: Record<string, FileRow | un
 
 export const listPaperDuplicates = async (): Promise<PaperDuplicate[]> => {
   const supabase = supabaseClient();
-  const { data, error } = await supabase.from('paper_duplicates').select('*').order('detected_at', { ascending: false });
+  const rows: PaperDuplicateRow[] = [];
 
-  if (error) {
-    throw new Error(`Failed to list duplicate candidates: ${error.message}`);
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from('paper_duplicates')
+      .select('*')
+      .order('detected_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (error) {
+      throw new Error(`Failed to list duplicate candidates: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as PaperDuplicateRow[];
+    rows.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
   }
-
-  const rows = (data ?? []) as PaperDuplicateRow[];
 
   return rows.map((row) => ({
     id: row.id,
@@ -90,22 +151,47 @@ export const resolvePaperDuplicate = async (
 
 export const scanForDuplicates = async (): Promise<PaperDuplicate[]> => {
   const supabase = supabaseClient();
-  const { data: paperRows, error: papersError } = await supabase.from('papers').select('*');
-  if (papersError) {
-    throw new Error(`Failed to load papers for dedupe scan: ${papersError.message}`);
+  const paperRows: DedupeScanPaperRow[] = [];
+
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from('papers')
+      .select(DEDUPE_SCAN_PAPER_SELECT)
+      .order('uploaded_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (error) {
+      throw new Error(`Failed to load papers for dedupe scan: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as DedupeScanPaperRow[];
+    paperRows.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
   }
-  const papers = hydratePapers((paperRows ?? []) as PaperRow[]);
+  const papers = hydratePapers(paperRows);
 
   if (papers.length === 0) {
     return [];
   }
 
   // Load files for filename/hash comparison
-  const { data: fileRows, error: filesError } = await supabase.from('paper_files').select('*');
-  if (filesError) {
-    throw new Error(`Failed to load files for dedupe scan: ${filesError.message}`);
+  const fileRowsTyped: DedupeScanFileRow[] = [];
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from('paper_files')
+      .select('id,original_file_name,name')
+      .order('id', { ascending: false })
+      .range(from, from + PAGE_SIZE - 1);
+
+    if (error) {
+      throw new Error(`Failed to load files for dedupe scan: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as DedupeScanFileRow[];
+    fileRowsTyped.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
   }
-  const fileRowsTyped = (fileRows ?? []) as FileRow[];
   const fileMap = Object.fromEntries(fileRowsTyped.map((row) => [row.id, row]));
 
   // Existing duplicate records for status preservation

@@ -1,3 +1,4 @@
+import { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 import { mockDb } from '@/lib/mock-db';
@@ -7,8 +8,10 @@ import { generateDuplicateKeyV2, normalizeDoi, generateTitleFingerprint } from '
 
 export const runtime = 'nodejs';
 
-export async function GET() {
-  const papers = await mockDb.listPapers();
+export async function GET(request: NextRequest) {
+  const papers = request.nextUrl.searchParams.get('view') === 'dedupe'
+    ? await mockDb.listDedupePapers()
+    : await mockDb.listPapers();
 
   return NextResponse.json({ papers });
 }
