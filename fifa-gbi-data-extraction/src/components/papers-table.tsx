@@ -8,10 +8,10 @@ import { AssignmentBadge } from '@/components/assignment-badge';
 import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { StatusPill } from '@/components/status-pill';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
-import type { Paper } from '@/lib/types';
+import type { DataExtractionPaperSummary } from '@/lib/data-extraction-batch-filter';
 
 type PapersTableProps = {
-  papers: Paper[];
+  papers: DataExtractionPaperSummary[];
   canBulkExport?: boolean;
   isAdmin?: boolean;
 };
@@ -32,7 +32,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
   const menuRefs = useRef(new Map<string, HTMLDivElement>());
   void _isAdmin;
 
-  const getAssignmentStatus = (paper: Paper) => {
+  const getAssignmentStatus = (paper: DataExtractionPaperSummary) => {
     if (paper.status === 'archived') {
       return 'duplicate' as const;
     }

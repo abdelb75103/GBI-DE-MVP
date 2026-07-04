@@ -4,10 +4,11 @@ import { useMemo, useState } from 'react';
 
 import { PapersTable } from '@/components/papers-table';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
-import type { Paper, PaperStatus } from '@/lib/types';
+import type { DataExtractionPaperSummary } from '@/lib/data-extraction-batch-filter';
+import type { PaperStatus } from '@/lib/types';
 
 type PapersDashboardClientProps = {
-  papers: Paper[];
+  papers: DataExtractionPaperSummary[];
   canBulkExport?: boolean;
   isAdmin?: boolean;
 };

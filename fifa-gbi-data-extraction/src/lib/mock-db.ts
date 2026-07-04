@@ -4,6 +4,7 @@ import {
   endPaperSession,
   getPaper,
   heartbeatPaperSession,
+  listDataExtractionPapers,
   listPapers,
   startPaperSession,
   toggleFlag,
@@ -60,6 +61,7 @@ import {
 export { PaperSessionConflictError };
 
 export const mockDb = {
+  listDataExtractionPapers,
   listPapers,
   getPaper,
   createPaper,

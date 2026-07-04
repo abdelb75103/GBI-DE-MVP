@@ -1,5 +1,11 @@
 import crypto from 'node:crypto';
 
+import {
+  mapDataExtractionPaperRow,
+  type DataExtractionPaperRow,
+  type DataExtractionPaperSummary,
+} from '@/lib/data-extraction-batch-filter';
+import { listProfileNamesById } from '@/lib/db/ai-review-decisions';
 import { mapPaperRow } from '@/lib/db/mappers';
 import {
   PaperSessionConflictError,
@@ -14,6 +20,51 @@ import { generateDuplicateKeyV2, generateTitleFingerprint, normalizeDoi } from '
 import { generateAssignedStudyId } from '@/lib/db/study-ids';
 
 const BATCHED_IN_QUERY_SIZE = 100;
+
+export const DATA_EXTRACTION_PAPER_SELECT = [
+  'id',
+  'assigned_study_id',
+  'title',
+  'status',
+  'lead_author',
+  'journal',
+  'year',
+  'doi',
+  'flag_reason',
+  'assigned_to',
+  'search_batch:metadata->>searchBatch',
+  'search_batch_label:metadata->>searchBatchLabel',
+  'paper_notes(count)',
+].join(',');
+
+export const listDataExtractionPapers = async (): Promise<DataExtractionPaperSummary[]> => {
+  const supabase = supabaseClient();
+  const rows: DataExtractionPaperRow[] = [];
+  const pageSize = 1000;
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('papers')
+      .select(DATA_EXTRACTION_PAPER_SELECT)
+      .order('uploaded_at', { ascending: false })
+      .order('id', { ascending: false })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to list data-extraction papers: ${error.message}`);
+    }
+
+    const batch = (data ?? []) as unknown as DataExtractionPaperRow[];
+    rows.push(...batch);
+    if (batch.length < pageSize) break;
+  }
+
+  const assignedToIds = rows
+    .map((row) => row.assigned_to)
+    .filter((id): id is string => id !== null);
+  const assigneeNames = await listProfileNamesById(assignedToIds);
+  return rows.map((row) => mapDataExtractionPaperRow(row, assigneeNames));
+};
 
 export const listPapers = async (): Promise<Paper[]> => {
   const supabase = supabaseClient();
