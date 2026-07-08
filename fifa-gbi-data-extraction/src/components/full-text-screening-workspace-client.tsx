@@ -43,11 +43,21 @@ type DuplicateWarning = {
   reason: string;
   score: number;
 };
+type FullTextReviewNote = {
+  id: string;
+  body: string;
+  createdAt: string;
+  createdByName?: string | null;
+  updatedAt?: string | null;
+  updatedByName?: string | null;
+  legacy?: boolean;
+};
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
 const REVIEW_COMMENT_MAX_CHARS = 2000;
 const FULL_TEXT_REVIEW_FLAGGED_KEY = 'fullTextReviewFlagged';
 const FULL_TEXT_REVIEW_UPDATED_AT_KEY = 'fullTextReviewUpdatedAt';
 const FULL_TEXT_REVIEW_UPDATED_BY_NAME_KEY = 'fullTextReviewUpdatedByName';
+const FULL_TEXT_REVIEW_NOTES_KEY = 'fullTextReviewNotes';
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
 
@@ -62,6 +72,36 @@ const getFullTextReviewUpdatedAt = (record: Pick<ScreeningRecord, 'metadata'>) =
 const getFullTextReviewUpdatedByName = (record: Pick<ScreeningRecord, 'metadata'>) => {
   const value = record.metadata?.[FULL_TEXT_REVIEW_UPDATED_BY_NAME_KEY];
   return typeof value === 'string' && value.trim() ? value : null;
+};
+
+const isFullTextReviewNote = (value: unknown): value is FullTextReviewNote => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+  const candidate = value as Partial<FullTextReviewNote>;
+  return typeof candidate.id === 'string' &&
+    typeof candidate.body === 'string' &&
+    typeof candidate.createdAt === 'string';
+};
+
+const getFullTextReviewNotes = (record: Pick<ScreeningRecord, 'metadata' | 'notes' | 'updatedAt'>): FullTextReviewNote[] => {
+  const stored = record.metadata?.[FULL_TEXT_REVIEW_NOTES_KEY];
+  const notes = Array.isArray(stored) ? stored.filter(isFullTextReviewNote) : [];
+  if (!record.notes?.trim()) return notes;
+  return [
+    ...notes,
+    {
+      id: '__legacy_notes__',
+      body: record.notes.trim(),
+      createdAt: record.updatedAt,
+      legacy: true,
+    },
+  ];
+};
+
+const getExtractionReturnReason = (record: Pick<ScreeningRecord, 'metadata'>) => {
+  const extractionReturn = record.metadata?.extractionReturn;
+  if (!extractionReturn || typeof extractionReturn !== 'object' || Array.isArray(extractionReturn)) return null;
+  const reason = (extractionReturn as { reason?: unknown }).reason;
+  return typeof reason === 'string' && reason.trim() ? reason.trim() : null;
 };
 
 export function FullTextScreeningWorkspaceClient({
@@ -116,7 +156,8 @@ export function FullTextScreeningWorkspaceClient({
   const pdfUrl = `${pdfDirectUrl}#view=FitH`;
   const isMentalHealth = isMentalHealthScreeningRecord(record);
   const [reviewFlagged, setReviewFlagged] = useState(() => getFullTextReviewFlagged(initialRecord));
-  const [reviewComment, setReviewComment] = useState(initialRecord.notes ?? '');
+  const [reviewComment, setReviewComment] = useState('');
+  const [editingNoteId, setEditingNoteId] = useState<string | null>(null);
 
   const aiHasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
   const aiDecisionLabel = record.aiStatus === 'running'
@@ -153,10 +194,14 @@ export function FullTextScreeningWorkspaceClient({
   const totalReviewerVotes = reviewerDecisions.length;
   const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;
   const excludeVotes = reviewerDecisions.filter((d) => d.decision === 'exclude').length;
+  const reviewNotes = useMemo(() => getFullTextReviewNotes(record), [record]);
+  const editingNote = editingNoteId ? reviewNotes.find((note) => note.id === editingNoteId) ?? null : null;
+  const extractionReturnReason = getExtractionReturnReason(record);
   const reviewUpdatedAt = getFullTextReviewUpdatedAt(record);
   const reviewUpdatedByName = getFullTextReviewUpdatedByName(record);
   const hasUnsavedReviewState =
-    reviewFlagged !== getFullTextReviewFlagged(record) || reviewComment !== (record.notes ?? '');
+    reviewFlagged !== getFullTextReviewFlagged(record) ||
+    (editingNote ? reviewComment.trim() !== editingNote.body.trim() : reviewComment.trim().length > 0);
   const reviewCardClasses = reviewFlagged
     ? 'border-rose-200/80 bg-[linear-gradient(180deg,rgba(255,250,250,0.98),rgba(255,241,242,0.94))] shadow-rose-900/10'
     : 'border-amber-200/80 bg-[linear-gradient(180deg,rgba(255,252,245,0.98),rgba(255,248,235,0.94))] shadow-amber-900/10';
@@ -167,7 +212,8 @@ export function FullTextScreeningWorkspaceClient({
   const syncRecord = (nextRecord: ScreeningRecord) => {
     setRecord(nextRecord);
     setReviewFlagged(getFullTextReviewFlagged(nextRecord));
-    setReviewComment(nextRecord.notes ?? '');
+    setReviewComment('');
+    setEditingNoteId(null);
   };
 
   const saveDecision = (event: FormEvent<HTMLFormElement>) => {
@@ -306,6 +352,10 @@ export function FullTextScreeningWorkspaceClient({
       setNotice({ tone: 'error', message: `Review comment must be ${REVIEW_COMMENT_MAX_CHARS} characters or fewer.` });
       return;
     }
+    if (editingNoteId && !trimmedComment) {
+      setNotice({ tone: 'error', message: 'Edited note cannot be empty. Delete it instead.' });
+      return;
+    }
 
     startReviewTransition(async () => {
       const response = await fetch(`/api/full-text-screening/${record.id}/review-state`, {
@@ -314,6 +364,8 @@ export function FullTextScreeningWorkspaceClient({
         body: JSON.stringify({
           flagged: reviewFlagged,
           comment: trimmedComment,
+          noteAction: editingNoteId ? 'edit' : trimmedComment ? 'add' : 'none',
+          noteId: editingNoteId,
           updatedAt: record.updatedAt,
         }),
       });
@@ -323,7 +375,39 @@ export function FullTextScreeningWorkspaceClient({
         return;
       }
       syncRecord(payload.record);
-      setNotice({ tone: 'success', message: reviewFlagged ? 'Flag and comment saved.' : 'Review comment saved.' });
+      setNotice({ tone: 'success', message: editingNoteId ? 'Note updated.' : trimmedComment ? 'Note saved.' : 'Flag saved.' });
+    });
+  };
+
+  const editReviewNote = (note: FullTextReviewNote) => {
+    setEditingNoteId(note.id);
+    setReviewComment(note.body);
+  };
+
+  const cancelReviewNoteEdit = () => {
+    setEditingNoteId(null);
+    setReviewComment('');
+  };
+
+  const deleteReviewNote = (note: FullTextReviewNote) => {
+    startReviewTransition(async () => {
+      const response = await fetch(`/api/full-text-screening/${record.id}/review-state`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          flagged: reviewFlagged,
+          noteAction: 'delete',
+          noteId: note.id,
+          updatedAt: record.updatedAt,
+        }),
+      });
+      const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
+      if (!response.ok || !payload.record) {
+        setNotice({ tone: 'error', message: payload.error ?? 'Failed to delete note.' });
+        return;
+      }
+      syncRecord(payload.record);
+      setNotice({ tone: 'success', message: 'Note deleted.' });
     });
   };
 
@@ -600,6 +684,9 @@ export function FullTextScreeningWorkspaceClient({
                   <div className="mt-2">
                     <ResolutionBadge resolution={resolution} />
                   </div>
+                  {extractionReturnReason ? (
+                    <p className="mt-2 max-w-[18rem] text-xs leading-relaxed text-slate-600">{extractionReturnReason}</p>
+                  ) : null}
                 </div>
                 <div className="min-w-0 text-right">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-900/60">Reviewer votes</p>
@@ -683,7 +770,7 @@ export function FullTextScreeningWorkspaceClient({
                     <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-800">Notes</p>
                   </div>
                   <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
-                    Leave a follow-up note here, or flag this full text when it needs attention.
+                    Save follow-up notes as separate entries, or flag this full text when it needs attention.
                   </p>
                 </div>
                 <div className="shrink-0">
@@ -709,6 +796,7 @@ export function FullTextScreeningWorkspaceClient({
                   disabled={isReviewPending}
                   onChange={(event) => setReviewComment(event.target.value)}
                   rows={1}
+                  placeholder={editingNote ? 'Edit saved note' : 'Add a new note'}
                   className="min-h-[44px] w-full resize-y rounded-[16px] border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-100 disabled:opacity-60"
                   style={{ maxHeight: '180px' }}
                 />
@@ -716,7 +804,10 @@ export function FullTextScreeningWorkspaceClient({
 
               <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div className="space-y-1">
-                  <p className="text-[11px] text-slate-500">{reviewComment.trim().length}/{REVIEW_COMMENT_MAX_CHARS}</p>
+                  <p className="text-[11px] text-slate-500">
+                    {editingNote ? 'Editing saved note · ' : ''}
+                    {reviewComment.trim().length}/{REVIEW_COMMENT_MAX_CHARS}
+                  </p>
                   {reviewUpdatedAt ? (
                     <p className="text-[11px] leading-relaxed text-slate-500">
                       {reviewUpdatedByName ? `${reviewUpdatedByName} · ` : ''}
@@ -730,8 +821,54 @@ export function FullTextScreeningWorkspaceClient({
                   onClick={saveReviewState}
                   className="inline-flex items-center justify-center rounded-xl bg-[#1f6b57] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#1f6b57]/20 transition hover:bg-[#195847] disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {isReviewPending ? 'Saving…' : 'Save flag and comment'}
+                  {isReviewPending ? 'Saving…' : editingNote ? 'Update note' : reviewComment.trim() ? 'Save note' : 'Save flag'}
                 </button>
+                {editingNote ? (
+                  <button
+                    type="button"
+                    disabled={isReviewPending}
+                    onClick={cancelReviewNoteEdit}
+                    className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    Cancel
+                  </button>
+                ) : null}
+              </div>
+
+              <div className="mt-4 space-y-2">
+                {reviewNotes.length > 0 ? (
+                  reviewNotes.map((note) => (
+                    <div key={note.id} className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 text-sm shadow-sm shadow-slate-900/[0.03]">
+                      <p className="whitespace-pre-wrap leading-relaxed text-slate-800">{note.body}</p>
+                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-[11px] text-slate-500">
+                          {note.createdByName ? `${note.createdByName} · ` : ''}
+                          {new Date(note.updatedAt ?? note.createdAt).toLocaleString()}
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            disabled={isReviewPending}
+                            onClick={() => editReviewNote(note)}
+                            className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            disabled={isReviewPending}
+                            onClick={() => deleteReviewNote(note)}
+                            className="rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700 transition hover:border-rose-300 hover:bg-rose-100 disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <p className="rounded-2xl border border-dashed border-slate-200 bg-white/60 px-3 py-3 text-sm text-slate-500">No saved notes yet.</p>
+                )}
               </div>
             </div>
           </div>

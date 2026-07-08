@@ -55,6 +55,7 @@ type ScreeningMetadata = {
   fullTextDecisionAudit?: FullTextDecisionAuditEntry[];
   fullTextResolution?: ScreeningResolution;
   awaitingFullTextPdf?: boolean;
+  extractionReturn?: { status?: unknown } | null;
   [key: string]: unknown;
 };
 
@@ -96,6 +97,10 @@ export const isAwaitingFullTextPdf = (record: ScreeningRecord): boolean => {
 export const getScreeningResolution = (record: ScreeningRecord): ScreeningResolution => {
   if (record.promotedPaperId) {
     return 'promoted';
+  }
+  const metadata = record.metadata as ScreeningMetadata;
+  if (metadata.extractionReturn?.status === 'excluded') {
+    return 'excluded';
   }
   if (isAwaitingFullTextPdf(record)) {
     return 'awaiting_pdf';
