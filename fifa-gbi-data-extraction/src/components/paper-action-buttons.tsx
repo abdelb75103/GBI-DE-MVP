@@ -5,16 +5,18 @@ import { useWorkspaceSave } from '@/components/workspace-save-manager';
 
 type PaperActionButtonsProps = {
   readOnly?: boolean;
+  backHref?: string;
 };
 
-export function PaperActionButtons({ readOnly = false }: PaperActionButtonsProps) {
+export function PaperActionButtons({ readOnly = false, backHref = '/data-extraction' }: PaperActionButtonsProps) {
   const { hasUnsavedChanges, isPending, handleSave } = useWorkspaceSave();
 
   if (readOnly) {
     return (
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Link
-          href="/data-extraction"
+          href={backHref}
+          scroll
           className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
         >
           ← Back to Data Extraction
@@ -94,7 +96,8 @@ export function PaperActionButtons({ readOnly = false }: PaperActionButtonsProps
         )}
       </button>
       <Link
-        href="/data-extraction"
+        href={backHref}
+        scroll
         className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
       >
         ← Back to Data Extraction

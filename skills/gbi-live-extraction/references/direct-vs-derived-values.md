@@ -33,6 +33,6 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 
 ## Related Field Rules
 
-- Do not treat the use of a medical-attention or time-loss definition alone as evidence that separate medical-attention and time-loss count fields should be filled.
+- Do not treat the use of a `medical attention` or `time loss` definition alone as evidence that separate medical-attention and time-loss count fields should be filled.
 - Only fill those separate count fields when the paper reports separate counts.
 - Treat acute/traumatic onset as `injuryModeAcuteSudden` and overuse onset as `injuryModeRepetitiveGradual` only when the paper explicitly frames the mechanisms that way.

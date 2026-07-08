@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { DashboardContributors } from '@/components/dashboard-contributors';
 import { DashboardProgressVisual } from '@/components/dashboard-progress-visual';
@@ -47,6 +47,13 @@ export function DataExtractionDashboardClient({
 }: DataExtractionDashboardClientProps) {
   const searchParams = useSearchParams();
   const batchFilter = getDataExtractionBatchFilter(searchParams.get('batch'));
+
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0 });
+    }
+  }, []);
+
   const filteredPapers = useMemo(
     () => filterDataExtractionPapers(papers, batchFilter),
     [papers, batchFilter],

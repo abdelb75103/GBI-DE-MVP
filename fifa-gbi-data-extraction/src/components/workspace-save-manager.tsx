@@ -270,7 +270,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
         // Navigate if there was a pending navigation
         if (shouldNavigate && pendingNavigation) {
           const url = new URL(pendingNavigation);
-          router.push(url.pathname);
+          router.push(`${url.pathname}${url.search}`, { scroll: true });
           setPendingNavigation(null);
         } else {
           router.refresh();
@@ -396,7 +396,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
                       setShowModal(false);
                       if (pendingNavigation) {
                         const url = new URL(pendingNavigation);
-                        router.push(url.pathname);
+                        router.push(`${url.pathname}${url.search}`, { scroll: true });
                         setPendingNavigation(null);
                       } else {
                         // Go back if browser back was pressed

@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { PapersTable } from '@/components/papers-table';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
@@ -18,15 +19,92 @@ type AssignmentFilter = 'all' | 'available' | 'mine';
 const isUnavailableForAssignment = (status: PaperStatus) =>
   status === 'archived' || status === 'uefa_master_extraction';
 
+const PAPER_STATUSES: PaperStatus[] = [
+  'uploaded',
+  'processing',
+  'extracted',
+  'flagged',
+  'qa_review',
+  'archived',
+  'mental_health',
+  'uefa',
+  'no_exposure',
+  'fifa_data',
+  'aspetar_asprev',
+  'american_data',
+  'systematic_review',
+  'referee',
+  'retrospective_substudy_analysis',
+  'uefa_master_extraction',
+];
+
+const parsePaperStatus = (value: string | null) =>
+  value && PAPER_STATUSES.includes(value as PaperStatus) ? (value as PaperStatus) : 'all';
+
+type DashboardFilterParams = {
+  assignment: AssignmentFilter;
+  status: PaperStatus | 'all';
+  assignee: string;
+  flagged: boolean | 'all';
+  notes: boolean | 'all';
+  q: string;
+};
+
 export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = false }: PapersDashboardClientProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { profile } = useActiveProfileState();
-  const [assignmentFilter, setAssignmentFilter] = useState<AssignmentFilter>('all');
-  const [statusFilter, setStatusFilter] = useState<PaperStatus | 'all'>('all');
-  const [userFilter, setUserFilter] = useState<string>('all');
-  const [flaggedFilter, setFlaggedFilter] = useState<boolean | 'all'>('all');
-  const [notesFilter, setNotesFilter] = useState<boolean | 'all'>('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [assignmentFilter, setAssignmentFilter] = useState<AssignmentFilter>(
+    searchParams.get('assignment') === 'available' || searchParams.get('assignment') === 'mine'
+      ? (searchParams.get('assignment') as AssignmentFilter)
+      : 'all',
+  );
+  const [statusFilter, setStatusFilter] = useState<PaperStatus | 'all'>(parsePaperStatus(searchParams.get('status')));
+  const [userFilter, setUserFilter] = useState<string>(searchParams.get('assignee') || 'all');
+  const [flaggedFilter, setFlaggedFilter] = useState<boolean | 'all'>(
+    searchParams.get('flagged') === 'yes' ? true : searchParams.get('flagged') === 'no' ? false : 'all',
+  );
+  const [notesFilter, setNotesFilter] = useState<boolean | 'all'>(
+    searchParams.get('notes') === 'yes' ? true : searchParams.get('notes') === 'no' ? false : 'all',
+  );
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+
+  const replaceFilterParams = (overrides: Partial<DashboardFilterParams>) => {
+    const values: DashboardFilterParams = {
+      assignment: assignmentFilter,
+      status: statusFilter,
+      assignee: userFilter,
+      flagged: flaggedFilter,
+      notes: notesFilter,
+      q: searchQuery,
+      ...overrides,
+    };
+    const next = new URLSearchParams(searchParams.toString());
+
+    if (values.assignment === 'all') next.delete('assignment');
+    else next.set('assignment', values.assignment);
+
+    if (values.status === 'all') next.delete('status');
+    else next.set('status', values.status);
+
+    if (values.assignee === 'all') next.delete('assignee');
+    else next.set('assignee', values.assignee);
+
+    if (values.flagged === 'all') next.delete('flagged');
+    else next.set('flagged', values.flagged ? 'yes' : 'no');
+
+    if (values.notes === 'all') next.delete('notes');
+    else next.set('notes', values.notes ? 'yes' : 'no');
+
+    const queryText = values.q.trim();
+    if (queryText) next.set('q', queryText);
+    else next.delete('q');
+
+    const query = next.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  };
 
   // Get unique assignees for user filter dropdown
   const uniqueAssignees = useMemo(() => {
@@ -122,6 +200,14 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     setFlaggedFilter('all');
     setNotesFilter('all');
     setSearchQuery('');
+    replaceFilterParams({
+      assignment: 'all',
+      status: 'all',
+      assignee: 'all',
+      flagged: 'all',
+      notes: 'all',
+      q: '',
+    });
   };
 
   const renderSearchControl = (className = 'xl:col-span-2') => (
@@ -134,7 +220,11 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         type="text"
         placeholder="Title, author, ID, DOI..."
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        onChange={(e) => {
+          const value = e.target.value;
+          setSearchQuery(value);
+          replaceFilterParams({ q: value });
+        }}
         className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
       />
     </div>
@@ -149,7 +239,11 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         <select
           id="status-filter"
           value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value as PaperStatus | 'all')}
+          onChange={(e) => {
+            const value = e.target.value as PaperStatus | 'all';
+            setStatusFilter(value);
+            replaceFilterParams({ status: value });
+          }}
           className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All Statuses</option>
@@ -178,7 +272,11 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         <select
           id="user-filter"
           value={userFilter}
-          onChange={(e) => setUserFilter(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value;
+            setUserFilter(value);
+            replaceFilterParams({ assignee: value });
+          }}
           className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All Users</option>
@@ -197,7 +295,12 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         <select
           id="flagged-filter"
           value={flaggedFilter === 'all' ? 'all' : flaggedFilter ? 'yes' : 'no'}
-          onChange={(e) => setFlaggedFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')}
+          onChange={(e) => {
+            const value = e.target.value;
+            const nextValue = value === 'all' ? 'all' : value === 'yes';
+            setFlaggedFilter(nextValue);
+            replaceFilterParams({ flagged: nextValue });
+          }}
           className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All</option>
@@ -213,7 +316,12 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
         <select
           id="notes-filter"
           value={notesFilter === 'all' ? 'all' : notesFilter ? 'yes' : 'no'}
-          onChange={(e) => setNotesFilter(e.target.value === 'all' ? 'all' : e.target.value === 'yes')}
+          onChange={(e) => {
+            const value = e.target.value;
+            const nextValue = value === 'all' ? 'all' : value === 'yes';
+            setNotesFilter(nextValue);
+            replaceFilterParams({ notes: nextValue });
+          }}
           className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
         >
           <option value="all">All</option>
@@ -262,7 +370,10 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
             <button
               key={option.value}
               type="button"
-              onClick={() => setAssignmentFilter(option.value)}
+              onClick={() => {
+                setAssignmentFilter(option.value);
+                replaceFilterParams({ assignment: option.value });
+              }}
               className={`group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ease-out ${
                 active
                   ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-10px_rgba(11,58,112,0.6)] ring-1 ring-[#0b3a70]/40'

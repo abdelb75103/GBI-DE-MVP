@@ -129,7 +129,7 @@ const aiFieldDefinitions: ExtractionFieldDefinition[] = [
   {
     id: 'injuryDefinition',
     label: 'Injury Definition',
-    description: 'Definition used for injury. Return standardized value: "medical attention" | "time-loss" | "medical attention or time-loss" only.',
+    description: 'Definition used for injury. Return standardized value: "physical complaint" | "all complaints" | "time loss" | "medical attention", with qualifying scope in brackets.',
     tab: 'definitions',
   },
   {

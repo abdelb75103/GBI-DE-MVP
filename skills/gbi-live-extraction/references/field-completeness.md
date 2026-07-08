@@ -19,6 +19,7 @@ Use this reference when checking core metadata, participant fields, definitions,
 - Always verify `leadAuthor`, `title`, `yearOfPublication`, `journal`, `doi` if present, and `studyDesign`.
 - Format `leadAuthor` as `Surname Initials`, not surname only.
 - Preserve `studyId` as the app-assigned value; when writing directly to Supabase, restore it to `papers.assigned_study_id` if needed.
+- For `studyDesign`, keep retrospective observational/cohort wording when the paper uses it; if the underlying collection was prospective, append `[prospective data]`.
 
 ## Participants
 
@@ -36,12 +37,12 @@ Use this reference when checking core metadata, participant fields, definitions,
 
 - Treat Tabs `3-4` as mandatory extraction work.
 - Check `injuryDefinition`, `illnessDefinition`, `incidenceDefinition`, `burdenDefinition`, `severityDefinition`, `recurrenceDefinition`, `mechanismReporting`, `seasonLength`, `numberOfSeasons`, `exposureMeasurementUnit`, `totalExposure`, `matchExposure`, and `trainingExposure`.
-- Normalize `injuryDefinition` to `physical complaint`, `medical attention`, or `time-loss` when defensible.
-- Preserve combined definitions as short combinations, such as `medical attention or time-loss`.
+- Normalize `injuryDefinition` to one label: `physical complaint`, `all complaints`, `time loss`, or `medical attention`.
+- Put qualifying scope in brackets after the label, e.g. `time loss [>3 days]` or `time loss [hamstring injuries only]`.
 - If injury-definition wording is ambiguous but defensible, choose the closest canonical label and record the ambiguity in the backlog.
 - `incidenceDefinition` must state the denominator frame whenever incidence, rate, prevalence, or burden is extracted.
 - Prefer concise denominator text such as `per 1000 player-hours`, `per 1000 athlete-exposures`, `per 100 players`, `per player-season`, or `per training day`.
-- `mechanismReporting` should name the injury reporter role, such as `Medical Staff`, `Coach`, or `Player-selfreported`; do not replace it with the exposure logger.
+- `mechanismReporting` should name the reporter category, such as `medical staff`, `former staff`, `coach`, or `player self-report`; do not use a named person or replace it with the exposure logger.
 - If the paper reports non-hour denominators such as athlete-exposures, player-months, player-days, or match-minutes, still fill exposure using the direct denominator and set `exposureMeasurementUnit` to the closest supported value or `other`.
 
 ## Sparse And Companion Papers

@@ -50,6 +50,7 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 
 - If the paper explicitly reports key diagnoses such as concussion or anterior cruciate ligament injury, populate the matching structured row or diagnosis row instead of leaving it blank.
 - Do not duplicate a diagnosis in the free-text `injury diagnosis` row when that same condition is already captured in a structured row.
+- For specific-injury cohorts, do not fill most-common diagnosis, type, or location with the target injury itself unless the paper reports a broader injury mix.
 
 ## CI Rule
 
@@ -60,8 +61,8 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 
 ## Definitions Rule
 
-- Normalize `injuryDefinition` to `physical complaint`, `medical attention`, or `time-loss` whenever the paper allows a clean standardization.
-- If the source uses a combined injury definition, preserve the combination in shortest accurate form, for example `medical attention or time-loss`.
+- Normalize `injuryDefinition` to one label: `physical complaint`, `all complaints`, `time loss`, or `medical attention`.
+- Put qualifying scope in brackets after the label, e.g. `time loss [>3 days]` or `time loss [hamstring injuries only]`.
 - If the paper's wording is ambiguous, workflow-based, or not fully formalized, choose the closest defensible standardized label and record the ambiguity in the backlog note.
 - Whenever any incidence, prevalence, burden, or rate field is extracted, make sure `incidenceDefinition` states the denominator frame explicitly.
 - Prefer forms such as `per 1000 player-hours`, `per 1000 athlete-exposures`, `per 100 players`, `per player-season`, or `per training day`.

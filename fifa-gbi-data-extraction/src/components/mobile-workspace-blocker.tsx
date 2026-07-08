@@ -6,6 +6,7 @@ import { useIsMobile } from '@/hooks/use-is-mobile';
 
 type MobileWorkspaceBlockerProps = {
   children: React.ReactNode;
+  backHref?: string;
   breakpoint?: number;
 };
 
@@ -13,7 +14,11 @@ type MobileWorkspaceBlockerProps = {
  * Prevents editing-heavy workspace views from loading on small screens.
  * Displays a friendly message instead of rendering the workspace.
  */
-export function MobileWorkspaceBlocker({ children, breakpoint = 1024 }: MobileWorkspaceBlockerProps) {
+export function MobileWorkspaceBlocker({
+  children,
+  backHref = '/data-extraction',
+  breakpoint = 1024,
+}: MobileWorkspaceBlockerProps) {
   const isMobile = useIsMobile(breakpoint);
 
   if (isMobile) {
@@ -28,7 +33,8 @@ export function MobileWorkspaceBlocker({ children, breakpoint = 1024 }: MobileWo
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
-            href="/data-extraction"
+            href={backHref}
+            scroll
             className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
           >
             ← Back to data extraction

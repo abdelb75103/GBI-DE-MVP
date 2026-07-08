@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { AssignmentBadge } from '@/components/assignment-badge';
 import { FlagToggleButton } from '@/components/flag-toggle-button';
@@ -20,6 +20,8 @@ const PAGE_SIZE = 20;
 
 export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = false }: PapersTableProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { profile } = useActiveProfileState();
   const [isPending, startTransition] = useTransition();
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -56,6 +58,9 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
   const visiblePapers = papers.slice(startIndex, endIndex);
   const hasPreviousPage = currentPageSafe > 1;
   const hasNextPage = currentPageSafe < totalPages;
+  const currentQuery = searchParams.toString();
+  const returnTo = `${pathname}${currentQuery ? `?${currentQuery}` : ''}`;
+  const getPaperHref = (paperId: string) => `/paper/${paperId}?returnTo=${encodeURIComponent(returnTo)}`;
 
   const toggleAll = () => {
     setSelected((prev) => {
@@ -203,7 +208,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                       <span className="text-[11px] text-slate-500">{paper.year}</span>
                     </div>
                     <Link
-                      href={`/paper/${paper.id}`}
+                      href={getPaperHref(paper.id)}
                       className="text-base font-semibold text-slate-900 underline-offset-2 hover:text-indigo-700 hover:underline"
                     >
                       {paper.title}
@@ -225,7 +230,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
 
                 <div className="mt-4 flex flex-wrap items-center gap-2">
                   <Link
-                    href={`/paper/${paper.id}`}
+                    href={getPaperHref(paper.id)}
                     className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-700"
                   >
                     Open paper
@@ -376,7 +381,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                         </div>
                         <div className="flex flex-col gap-1">
                           <Link
-                            href={`/paper/${paper.id}`}
+                            href={getPaperHref(paper.id)}
                             className="line-clamp-2 text-sm font-semibold text-slate-900 underline-offset-2 hover:text-indigo-700 hover:underline"
                           >
                             {paper.title}
@@ -435,7 +440,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                               type="button"
                               onClick={() => {
                                 setMenuOpenFor(null);
-                                router.push(`/paper/${paper.id}`);
+                                router.push(getPaperHref(paper.id));
                               }}
                               className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
                             >

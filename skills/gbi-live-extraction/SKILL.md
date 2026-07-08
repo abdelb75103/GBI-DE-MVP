@@ -68,8 +68,11 @@ When local scripts are explicitly requested, run them from `fifa-gbi-data-extrac
 
 - Format `leadAuthor` as `Surname Initials`, e.g. `Zebis MK`.
 - Standardize `fifaDiscipline` to schema-supported values such as `Association football (11-a-side)`, `Futsal`, `Beach soccer`, or `Para football`.
-- Normalize `injuryDefinition` to `physical complaint`, `medical attention`, `time-loss`, or the shortest accurate combined label.
+- Keep `studyDesign` faithful to the paper's design label; if collection was prospective but analysis/design is retrospective observational/cohort, append `[prospective data]`.
+- Normalize `injuryDefinition` to `physical complaint`, `all complaints`, `time loss`, or `medical attention`; put limits such as `[>3 days]` or `[hamstring injuries only]` after the label.
+- For reporter fields such as `mechanismReporting`, use category labels such as `medical staff`, `former staff`, `coach`, or `player self-report`, not named/specific people.
 - Make `incidenceDefinition` denominator-explicit whenever any incidence, prevalence, rate, or burden metric is extracted.
+- For specific-injury cohorts, leave `injuryMostCommonDiagnosis`, `injuryMostCommonType`, and `injuryMostCommonLocation` blank unless the paper reports a broader injury mix; do not echo the target injury as the most common item.
 - Use the shortest accurate value; do not paste full prose definitions when the schema label already gives context.
 - Preserve reported `95% CI` values in dedicated CI fields where available, otherwise inline as `estimate (lower - upper)`.
 - Do not put burden metrics into raw days-out severity fields unless the paper reports total/mean/median days lost for that exact row.

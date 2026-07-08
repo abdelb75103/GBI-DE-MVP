@@ -19,15 +19,24 @@ import { MobileWorkspaceBlocker } from '@/components/mobile-workspace-blocker';
 
 export const dynamic = 'force-dynamic';
 
+const firstSearchParam = (value: string | string[] | undefined) => Array.isArray(value) ? value[0] : value;
+
+const getDataExtractionBackHref = (returnTo?: string) =>
+  returnTo === '/data-extraction' || returnTo?.startsWith('/data-extraction?')
+    ? returnTo
+    : '/data-extraction';
+
 export default async function PaperWorkspace({
   params,
   searchParams,
 }: {
   params: Promise<{ paperId: string }>;
-  searchParams: Promise<{ conflict?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { paperId } = await params;
-  const { conflict } = await searchParams;
+  const rawSearchParams = await searchParams;
+  const conflict = firstSearchParam(rawSearchParams.conflict);
+  const backHref = getDataExtractionBackHref(firstSearchParam(rawSearchParams.returnTo));
   
   const profile = await readActiveProfileSession();
   if (!profile) {
@@ -70,7 +79,8 @@ export default async function PaperWorkspace({
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-4">
               <Link
-                href="/data-extraction"
+                href={backHref}
+                scroll
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
               >
                 ← Back to Data Extraction
@@ -108,7 +118,8 @@ export default async function PaperWorkspace({
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-4">
               <Link
-                href="/data-extraction"
+                href={backHref}
+                scroll
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
               >
                 ← Back to Data Extraction
@@ -131,7 +142,11 @@ export default async function PaperWorkspace({
     if (error instanceof PaperSessionConflictError && !isAdmin) {
       // If we get a conflict, redirect with error message
       // On reload, the conflict parameter will be checked first to show error immediately
-      redirect(`/paper/${paperId}?conflict=true`);
+      const conflictParams = new URLSearchParams({ conflict: 'true' });
+      if (backHref !== '/data-extraction') {
+        conflictParams.set('returnTo', backHref);
+      }
+      redirect(`/paper/${paperId}?${conflictParams}`);
     }
     // For other errors, log and continue (the UI will handle it)
     console.error('[PaperWorkspace] Failed to start session:', error);
@@ -171,7 +186,7 @@ export default async function PaperWorkspace({
     : null;
 
   return (
-    <MobileWorkspaceBlocker>
+    <MobileWorkspaceBlocker backHref={backHref}>
       <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>
         <div className="extraction-workspace-page space-y-10">
           {isReadOnly && (
@@ -213,7 +228,8 @@ export default async function PaperWorkspace({
               </div>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href="/data-extraction"
+                  href={backHref}
+                  scroll
                   className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
                 >
                   Back to data extraction
@@ -323,7 +339,7 @@ export default async function PaperWorkspace({
               </div>
             </div>
 
-            <PaperActionButtons readOnly={isReadOnly} />
+            <PaperActionButtons readOnly={isReadOnly} backHref={backHref} />
           </div>
         </div>
       </WorkspaceSaveManager>
