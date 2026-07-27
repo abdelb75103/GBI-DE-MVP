@@ -1,0 +1,41 @@
+{
+  "artifactType": "UEFA ECIS master population metadata repair live audit",
+  "date": "2026-07-27",
+  "trigger": "Independent PDF-refresh review found a stale 19-row populationHash after the earlier S5151 additive reconciliation.",
+  "scope": "Metadata-only correction to protect the 20-row master from an unnecessary future population rebuild.",
+  "preApplyAuditPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/uefa-master-population-metadata-repair-pre-apply-2026-07-27.json",
+  "write": {
+    "papersRowsUpdated": 1,
+    "metadataKeysUpdated": [
+      "populationHash",
+      "populationLabels",
+      "populationMetadataReconciledAt"
+    ],
+    "extractionFields": 0,
+    "populationGroups": 0,
+    "populationValues": 0,
+    "paperFiles": 0,
+    "storageObjects": 0,
+    "screeningRecords": 0,
+    "screeningVotes": 0
+  },
+  "integrityGate": {
+    "result": "passed",
+    "findings": [],
+    "populationHashRows": 20,
+    "populationLabelCount": 20,
+    "s5151Label": "S5151 ECIS men 2022/23 World Cup-season all injuries",
+    "extractionDataUnchanged": true,
+    "primaryPdfUnchanged": true,
+    "statusPreserved": true,
+    "assignmentPreserved": true
+  },
+  "independentAcceptanceReview": {
+    "profile": "sol_xhigh",
+    "result": "passed",
+    "blockers": [],
+    "liveEvidence": "populationHash exactly matches the canonical 20-row extraction signature; populationLabels matches all 20 live labels; S5151 has zero dual-write mismatches; extraction/population and PDF hashes remained unchanged."
+  },
+  "rollback": "Restore existingMetadata on the same paper row; no extraction or population row restoration is required.",
+  "readyFor": "Human methodology review"
+}

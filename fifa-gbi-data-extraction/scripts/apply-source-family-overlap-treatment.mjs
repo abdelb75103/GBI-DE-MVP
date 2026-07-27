@@ -24,7 +24,7 @@ function resolveArgumentPath(value, fallback) {
 const DATA_DIR = resolveArgumentPath(argumentValue('--data-dir'), DEFAULT_DATA_DIR);
 const INPUT_PATH = resolveArgumentPath(
   argumentValue('--input'),
-  path.join(DEFAULT_DATA_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
+  path.join(DATA_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
 );
 const PRE_APPLY_PATH = resolveArgumentPath(
   argumentValue('--snapshot'),

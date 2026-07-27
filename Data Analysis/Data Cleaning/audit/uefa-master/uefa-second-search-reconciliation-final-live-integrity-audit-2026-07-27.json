@@ -1,0 +1,157 @@
+{
+  "artifactType": "UEFA ECIS/WECIS second-search focused live reconciliation audit",
+  "date": "2026-07-27",
+  "scope": "UEFA-ECIS-MASTER additive S5151 row and versioned PDF only",
+  "sourceCoverage": {
+    "S1091": "Full PDF, DOI, article identity, Table 2, and live file metadata compared with S112.",
+    "S5151": "Full PDF, methods, results, Table 1, Table 2, figures, discussion, and limitations scanned.",
+    "S4839": "Full PDF, methods, Figure 1, Table 1 continuation, Table 2, discussion, and limitations scanned.",
+    "S2391": "Full PDF, methods, exposure definition, Tables 1-4, discussion, and limitations scanned.",
+    "S5338": "Live title/source metadata checked; retained outside ECIS/WECIS as a UEFA tournament paper."
+  },
+  "ledgerDecisions": {
+    "S1091": {
+      "classification": "duplicate alias",
+      "family": "WECIS women",
+      "canonical_source": "S112",
+      "doi": "10.1136/bjsports-2023-107133",
+      "period": "2018/2019-2021/2022",
+      "handling": "Do not create another WECIS extraction or master row; retain S112 as source-of-truth.",
+      "overlap_decision": "The title, DOI, article pagination, 1,527 injuries, 463 injured players, and Table 2 values match S112. The PDF hash differs only because it is a separate downloaded rendition.",
+      "local_pdf_sha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+      "canonical_pdf_sha256": "4fe9a740511e157af1d270dcd15e0a8096248a7b8e63f091e98414d05b1bf824"
+    },
+    "S5151": {
+      "classification": "included supplement",
+      "family": "ECIS men",
+      "canonical_source": "S200",
+      "doi": "10.1136/bmjsem-2025-002772",
+      "period": "2022/23",
+      "handling": "Add one directly supported 2022/23 season row to UEFA-ECIS-MASTER without changing or extending the S200 anchor denominator.",
+      "overlap_decision": "The season is later than S200 (ending 2018/19) and S043 (ending 2021/22). Only direct full-season values are retained; historical comparator, World Cup subgroup, and unpooled muscle-rate contrasts remain audit-only.",
+      "direct_supported_values": {
+        "sampleSizePlayers": "913",
+        "numberOfTeams": "29",
+        "observationDuration": "2022/23",
+        "numberOfSeasons": "1",
+        "totalExposure": "176790",
+        "injuryTotalCount": "1123",
+        "injuryIncidenceTraining": "3.5 (95% CI 3.2-3.9)",
+        "injuryIncidenceMatch": "21.1 (95% CI 19.5-22.9)",
+        "injuryTimeLossTotal": "26418"
+      },
+      "local_pdf_sha256": "569a6530a1d2e0185b7149582314e6dd8b200f4b2f7401239e80eb951d939a2a"
+    },
+    "S4839": {
+      "classification": "audit-only",
+      "family": "ECIS men",
+      "canonical_source": "S043",
+      "doi": "10.1136/bmjsem-2024-002182",
+      "period": "2019/20-2022/23",
+      "handling": "Keep outside the live master; use a separate risk-factor workspace if team-season communication and prevention associations are needed.",
+      "overlap_decision": "This 14-team substudy reports 54 observed team-season burden/predictor pairs and team-specific burden values, not a directly pooled programme-wide hamstring incidence or burden. Importing its rows would overlap the S043 ECIS hamstring cohort and mix a risk-factor denominator into the master.",
+      "local_pdf_sha256": "5201ad56e31f1a16f34cd41132d815cb9dbf303eea2eb424232102be0958d4df"
+    },
+    "S2391": {
+      "classification": "audit-only",
+      "family": "ECIS men",
+      "canonical_source": "S401",
+      "doi": "10.1177/03635465251353213",
+      "period": "2001-2022",
+      "handling": "Keep outside the live master; use a separate prognosis workspace if ACL reconstruction return-to-play comparisons are needed.",
+      "overlap_decision": "The analysis nests 110 ACL reconstruction cases within 5,447 ECIS players and compares thigh, hamstring, and quadriceps incidence before/after return to play. Adding these subgroup rates to the master would double-count the ECIS cohort and mix prognosis contrasts with the programme rows.",
+      "local_pdf_sha256": "a2d780d73fe1319a015d1839b4927acd1e52c02df14804077c042f967ecc3d0b"
+    },
+    "S5338": {
+      "classification": "separate workspace",
+      "family": "UEFA tournament",
+      "canonical_source": null,
+      "period": "UEFA EURO tournament",
+      "handling": "Keep outside UEFA-ECIS-MASTER and WECIS; extract only in its own tournament workspace if eligible.",
+      "overlap_decision": "UEFA branding does not make a tournament cohort part of the longitudinal elite-club ECIS/WECIS programme."
+    }
+  },
+  "stagedRow": {
+    "label": "S5151 ECIS men 2022/23 World Cup-season all injuries",
+    "position": 19,
+    "sourceStudyId": "S5151",
+    "fields": {
+      "studyId": "UEFA-ECIS-MASTER",
+      "sex": "male - 2022/23 World Cup-season supplement",
+      "sampleSizePlayers": "913",
+      "numberOfTeams": "29",
+      "observationDuration": "2022/23",
+      "numberOfSeasons": "1",
+      "totalExposure": "176790",
+      "injuryTotalCount": "1123",
+      "injuryIncidenceTraining": "3.5 (95% CI 3.2-3.9)",
+      "injuryIncidenceMatch": "21.1 (95% CI 19.5-22.9)",
+      "injuryTimeLossTotal": "26418"
+    }
+  },
+  "protectedScreening": {
+    "preApplyHash": "e519f6c020fdd4d9f02f33f1ccb10a7ed222a559fcf030600add6ed9f69daae7",
+    "postApplyHash": "e519f6c020fdd4d9f02f33f1ccb10a7ed222a559fcf030600add6ed9f69daae7",
+    "postApplyUnchanged": true,
+    "screeningWrites": 0,
+    "resolverWrites": 0,
+    "promotionWrites": 0
+  },
+  "applyResult": {
+    "populationGroupId": "79c27466-b867-4be4-a24b-2be366abbffb",
+    "insertedPopulationValues": 11,
+    "updatedExtractionFields": 11,
+    "refreshedPrimaryFile": {
+      "id": "19fa2bf0-aa8f-45c5-91bc-35143100e303",
+      "storageObjectPath": "aa1999a9-8e71-4435-b5ae-a53d7546e14d/1785160728517-UEFA_ECIS_Men_Master_Extraction.pdf",
+      "sha256": "7effd081c1afac526fe7e24236eb6ca02821558d6da8ea3194abfa6d0f91004c",
+      "size": 28954
+    },
+    "priorStorageObjectRetained": true
+  },
+  "integrityGate": {
+    "result": "passed",
+    "findings": [],
+    "exactMasterMembership": {
+      "expectedRows": 20,
+      "liveRows": 20,
+      "s5151Position": 19
+    },
+    "sourceToLiveFieldTransferMismatches": 0,
+    "populationLayoutMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "sourceHashMatchesLivePaper": true,
+    "studyIdMatchesAssignedStudyId": true,
+    "assignmentPreserved": true,
+    "statusPreserved": true,
+    "sourceFileAttached": true,
+    "protectedScreeningUnchanged": true,
+    "protectedScreeningHash": "e519f6c020fdd4d9f02f33f1ccb10a7ed222a559fcf030600add6ed9f69daae7"
+  },
+  "rollback": {
+    "preApplyAuditPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/uefa-second-search-reconciliation-pre-apply-live-snapshot-2026-07-27.json",
+    "priorStorageObjectRetained": true,
+    "priorPrimaryFileId": "19fa2bf0-aa8f-45c5-91bc-35143100e303",
+    "priorPrimaryFileSha256": "83eed53e214b5c005a3e8cf4229bdb629d2e227eac81f06bd4695d63af881fcc",
+    "priorStorageObjectPath": "aa1999a9-8e71-4435-b5ae-a53d7546e14d/1779115044473-UEFA_ECIS_Men_Master_Extraction.pdf"
+  },
+  "nonDestructiveRetention": {
+    "unusedVersionedStorageObject": "aa1999a9-8e71-4435-b5ae-a53d7546e14d/1785160659317-UEFA_ECIS_Men_Master_Extraction.pdf",
+    "reason": "The first versioned upload completed before paper_files rejected a second row under its one-file-per-paper constraint.",
+    "livePrimaryStorageObject": "aa1999a9-8e71-4435-b5ae-a53d7546e14d/1785160728517-UEFA_ECIS_Men_Master_Extraction.pdf",
+    "cleanupPerformed": false
+  },
+  "independentAcceptanceReview": {
+    "profile": "sol_xhigh",
+    "result": "passed",
+    "blockers": [],
+    "liveDataConclusion": "Exactly 20 groups, 11 directly supported S5151 values in both storage layers, unchanged 19-row prefixes, preserved S112 and S200 records, and unchanged protected screening state.",
+    "safetyCorrection": "The older full-rebuild helper now refuses execution before connecting unless an explicit destructive flag and an existing rollback snapshot are supplied.",
+    "postCorrectionVerification": "Syntax, JSON parsing, destructive-default refusal, measured dual-write checks, snapshot validation, and the read-only live integrity gate passed.",
+    "residuals": [
+      "The rollback argument checks file existence but does not yet validate snapshot JSON structure or target compatibility.",
+      "The attached PDF retains the earlier S200 'only denominator' wording; the source audit and generator now use the clearer historical-anchor wording."
+    ]
+  },
+  "readyFor": "Human extraction review"
+}

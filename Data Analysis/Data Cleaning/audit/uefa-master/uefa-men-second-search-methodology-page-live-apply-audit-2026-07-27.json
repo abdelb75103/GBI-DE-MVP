@@ -1,0 +1,99 @@
+{
+  "artifactType": "UEFA ECIS men second-search methodology page live apply audit",
+  "date": "2026-07-27",
+  "scope": "Append one methodology page and refresh the live master PDF only",
+  "methodologyConclusion": {
+    "includedSupplement": "S5151",
+    "auditOnly": [
+      "S4839",
+      "S2391"
+    ],
+    "separateWorkspace": [
+      "S5338"
+    ],
+    "womensBoundaryCheck": "S1091 duplicate alias of S112",
+    "masterAnchor": "S200 remains the historical all-injury ECIS men anchor for overlapping periods."
+  },
+  "localAudit": {
+    "artifactType": "UEFA ECIS men second-search methodology appendix local build audit",
+    "date": "2026-07-27",
+    "input": {
+      "path": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/UEFA_ECIS_Men_Master_Extraction.pre-methodology-appendix.7effd081c1af.pdf",
+      "sha256": "7effd081c1afac526fe7e24236eb6ca02821558d6da8ea3194abfa6d0f91004c",
+      "pages": 11
+    },
+    "appendix": {
+      "path": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/UEFA_ECIS_Men_Second_Search_Methodology_Addendum.pdf",
+      "pages": 1,
+      "content": {
+        "includedSupplement": "S5151",
+        "auditOnly": [
+          "S4839",
+          "S2391"
+        ],
+        "separateWorkspace": [
+          "S5338"
+        ],
+        "womensBoundaryCheck": "S1091 duplicate alias of S112",
+        "clarification": "S200 is the historical all-injury ECIS men anchor for overlapping periods."
+      }
+    },
+    "output": {
+      "path": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/output/pdf/UEFA_ECIS_Men_Master_Extraction.pdf",
+      "sha256": "068f6701500025720e386390f79a23473803aa17bcb695e135abcde9684fa7e6",
+      "pages": 12,
+      "existingPageSignaturesPreserved": true
+    },
+    "readyFor": "Visual QA before live PDF-only refresh"
+  },
+  "preApplyAuditPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/uefa-men-second-search-methodology-page-pre-apply-live-snapshot-2026-07-27.json",
+  "applyResult": {
+    "objectPath": "aa1999a9-8e71-4435-b5ae-a53d7546e14d/1785165913352-UEFA_ECIS_Men_Master_Extraction.pdf",
+    "fileId": "19fa2bf0-aa8f-45c5-91bc-35143100e303",
+    "appliedAt": "2026-07-27T15:25:13.352Z",
+    "pdfSha256": "068f6701500025720e386390f79a23473803aa17bcb695e135abcde9684fa7e6",
+    "pages": 12,
+    "size": 32667
+  },
+  "integrityGate": {
+    "result": "passed",
+    "findings": [],
+    "pdfHashMatchesLivePaper": true,
+    "sourceFileAttached": true,
+    "extractionDataUnchanged": true,
+    "exactMasterMembership": {
+      "expectedRows": 20,
+      "liveRows": 20
+    },
+    "assignmentPreserved": true,
+    "statusPreserved": true,
+    "protectedScreeningUnchanged": true,
+    "protectedScreeningHash": "e519f6c020fdd4d9f02f33f1ccb10a7ed222a559fcf030600add6ed9f69daae7"
+  },
+  "rollback": {
+    "priorPrimaryFileSha256": "7effd081c1afac526fe7e24236eb6ca02821558d6da8ea3194abfa6d0f91004c",
+    "priorStorageObjectPath": "aa1999a9-8e71-4435-b5ae-a53d7546e14d/1785160728517-UEFA_ECIS_Men_Master_Extraction.pdf",
+    "localBackupPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/UEFA_ECIS_Men_Master_Extraction.pre-methodology-appendix.7effd081c1af.pdf",
+    "localBackupSha256": "7effd081c1afac526fe7e24236eb6ca02821558d6da8ea3194abfa6d0f91004c"
+  },
+  "writes": {
+    "storageObjectsUploaded": 1,
+    "paperFilesRowsUpdated": 1,
+    "papersRowsUpdated": 1,
+    "extractionFields": 0,
+    "populationGroups": 0,
+    "populationValues": 0,
+    "screeningRecords": 0,
+    "screeningVotes": 0
+  },
+  "independentAcceptanceReview": {
+    "profile": "sol_xhigh",
+    "result": "passed",
+    "blockers": [],
+    "pdfEvidence": "The 11 predecessor pages and final pages 1-11 rendered byte-identically at 200 dpi; page 12 matched the standalone addendum and had no clipping or readability defect.",
+    "liveEvidence": "The live paper, paper_files row and downloaded object match SHA-256 068f6701500025720e386390f79a23473803aa17bcb695e135abcde9684fa7e6. Extraction/population and protected-screening hashes remained unchanged.",
+    "followUpCorrection": "A stale 19-row population metadata signature discovered during review was corrected to 20 canonical rows and 20 saved labels without changing extraction data or the PDF.",
+    "populationMetadataAuditPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/uefa-master-population-metadata-repair-live-audit-2026-07-27.json"
+  },
+  "readyFor": "Human methodology review"
+}

@@ -1,0 +1,32 @@
+{
+  "artifactType": "UEFA ECIS men second-search methodology appendix local build audit",
+  "date": "2026-07-27",
+  "input": {
+    "path": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/UEFA_ECIS_Men_Master_Extraction.pre-methodology-appendix.7effd081c1af.pdf",
+    "sha256": "7effd081c1afac526fe7e24236eb6ca02821558d6da8ea3194abfa6d0f91004c",
+    "pages": 11
+  },
+  "appendix": {
+    "path": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Data Analysis/Data Cleaning/audit/uefa-master/UEFA_ECIS_Men_Second_Search_Methodology_Addendum.pdf",
+    "pages": 1,
+    "content": {
+      "includedSupplement": "S5151",
+      "auditOnly": [
+        "S4839",
+        "S2391"
+      ],
+      "separateWorkspace": [
+        "S5338"
+      ],
+      "womensBoundaryCheck": "S1091 duplicate alias of S112",
+      "clarification": "S200 is the historical all-injury ECIS men anchor for overlapping periods."
+    }
+  },
+  "output": {
+    "path": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/output/pdf/UEFA_ECIS_Men_Master_Extraction.pdf",
+    "sha256": "068f6701500025720e386390f79a23473803aa17bcb695e135abcde9684fa7e6",
+    "pages": 12,
+    "existingPageSignaturesPreserved": true
+  },
+  "readyFor": "Visual QA before live PDF-only refresh"
+}
