@@ -1,0 +1,93 @@
+{
+  "artifactType": "S4775 participant age-category line-label correction input with rollback",
+  "scope": "S4775 only; label Participant Characteristics ageCategory on all 16 existing population rows",
+  "source": {
+    "basis": "User-requested reviewer-facing line labels aligned to the existing overall Match/Training and Table 5 age-by-setting population layout",
+    "derivation": "No numeric data derived; labels only"
+  },
+  "rollbackEvidence": {
+    "capturedAt": "2026-07-14T16:01:00Z",
+    "paperId": "c8852567-f3c5-4f5c-b77e-aa5db9b3df22",
+    "studyId": "S4775",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "ageCategoryFieldRowId": "f4833ab4-27be-4a3d-9c0c-6e394ca02bba",
+    "priorAgeCategory": "U11-U18 (9-17 years)",
+    "populationLabels": [
+      "Match",
+      "Training",
+      "U11 Match",
+      "U11 Training",
+      "U12 Match",
+      "U12 Training",
+      "U13 Match",
+      "U13 Training",
+      "U14 Match",
+      "U14 Training",
+      "U15 Match",
+      "U15 Training",
+      "U16 Match",
+      "U16 Training",
+      "U18 Match",
+      "U18 Training"
+    ]
+  },
+  "rollbackPayload": {
+    "papers": [
+      {
+        "studyId": "S4775",
+        "populationLabels": [
+          "Match",
+          "Training",
+          "U11 Match",
+          "U11 Training",
+          "U12 Match",
+          "U12 Training",
+          "U13 Match",
+          "U13 Training",
+          "U14 Match",
+          "U14 Training",
+          "U15 Match",
+          "U15 Training",
+          "U16 Match",
+          "U16 Training",
+          "U18 Match",
+          "U18 Training"
+        ],
+        "fields": {
+          "participantCharacteristics": {
+            "ageCategory": "U11-U18 (9-17 years)"
+          }
+        }
+      }
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S4775",
+      "populationLabels": [
+        "Match",
+        "Training",
+        "U11 Match",
+        "U11 Training",
+        "U12 Match",
+        "U12 Training",
+        "U13 Match",
+        "U13 Training",
+        "U14 Match",
+        "U14 Training",
+        "U15 Match",
+        "U15 Training",
+        "U16 Match",
+        "U16 Training",
+        "U18 Match",
+        "U18 Training"
+      ],
+      "fields": {
+        "participantCharacteristics": {
+          "ageCategory": "U11-U18 (9-17 years) - match\nU11-U18 (9-17 years) - training\nU11 - match\nU11 - training\nU12 - match\nU12 - training\nU13 - match\nU13 - training\nU14 - match\nU14 - training\nU15 - match\nU15 - training\nU16 - match\nU16 - training\nU18 - match\nU18 - training"
+        }
+      }
+    }
+  ]
+}

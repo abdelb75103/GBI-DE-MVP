@@ -1,0 +1,36 @@
+{
+  "papers": [
+    {
+      "studyId": "S859",
+      "populationLabels": ["Male", "Female"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryMedicalAttentionCount": null,
+          "injuryTimeLossCount": null
+        }
+      },
+      "note": "S859 Batch 002 cleanup corrected on 2026-07-08. Removed mirrored medical-attention/time-loss count fields because the source does not report separate soccer-specific medical-attention or time-loss count rows beyond the headline overuse totals. Event-type rows remain unchecked for extraction because the clean soccer-specific split is not printed as direct counts in the main tables."
+    },
+    {
+      "studyId": "S877",
+      "populationLabels": ["Total", "Male", "Female"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryTimeLossCount": null,
+          "injuryRecurrentTotal": "3"
+        }
+      },
+      "note": "S877 Batch 002 cleanup corrected on 2026-07-08. Kept the directly reported pooled recurrent count of 3 second injuries from the results text. Removed mirrored time-loss count because the paper does not report a separate time-loss-count field beyond the headline LAS counts."
+    },
+    {
+      "studyId": "S892",
+      "populationLabels": ["Total"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryTimeLossCount": null
+        }
+      },
+      "note": "S892 Batch 002 cleanup corrected on 2026-07-08. Removed mirrored time-loss count because the paper does not report a separate time-loss-count field beyond the headline injury total. Non-contact injury incidence 5.91 per 1000 h remains checked but not forced into a generic field because the schema has no non-contact incidence field."
+    }
+  ]
+}

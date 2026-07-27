@@ -23,6 +23,16 @@ const AUDIT_PATH = path.join(
   'analysis-and-source-export-live-verification-2026-07-27.json',
 );
 
+function argumentValues(name) {
+  return process.argv.flatMap((value, index) => (
+    value === name && process.argv[index + 1] ? [process.argv[index + 1]] : []
+  ));
+}
+
+function resolveArgumentPath(value) {
+  return path.resolve(process.cwd(), value);
+}
+
 for (const line of fs.readFileSync(path.join(APP_ROOT, '.env.local'), 'utf8').split(/\r?\n/)) {
   const match = line.match(/^([A-Z0-9_]+)=(.*)$/);
   if (match) process.env[match[1]] = match[2].replace(/^['"]|['"]$/g, '');
@@ -128,21 +138,32 @@ function mergeRowPolicies(inputs) {
   return [...byStudyId.values()];
 }
 
-const sourceTreatmentInput = readJson(
-  path.join(AUDIT_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
-);
-const tournamentTreatmentInput = readJson(
-  path.join(TOURNAMENT_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
-);
-const sourceRowInput = readJson(
-  path.join(AUDIT_DIR, 'analysis-row-treatment-input-2026-07-27.json'),
-);
-const tournamentRowInput = readJson(
-  path.join(TOURNAMENT_DIR, 'analysis-tournament-row-treatment-input-2026-07-27.json'),
-);
+const treatmentInputPaths = argumentValues('--treatment-input').map(resolveArgumentPath);
+const rowInputPaths = argumentValues('--row-input').map(resolveArgumentPath);
+const omitRowInputs = process.argv.includes('--no-row-inputs');
+const auditPathArgument = argumentValues('--audit')[0];
+const outputAuditPath = auditPathArgument ? resolveArgumentPath(auditPathArgument) : AUDIT_PATH;
+const treatmentInputs = (
+  treatmentInputPaths.length > 0
+    ? treatmentInputPaths
+    : [
+        path.join(AUDIT_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
+        path.join(TOURNAMENT_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
+      ]
+).map(readJson);
+const rowInputs = (
+  omitRowInputs
+    ? []
+    : rowInputPaths.length > 0
+    ? rowInputPaths
+    : [
+        path.join(AUDIT_DIR, 'analysis-row-treatment-input-2026-07-27.json'),
+        path.join(TOURNAMENT_DIR, 'analysis-tournament-row-treatment-input-2026-07-27.json'),
+      ]
+).map(readJson);
 
-const treatments = mergePapers([sourceTreatmentInput, tournamentTreatmentInput]);
-const rowPolicies = mergeRowPolicies([sourceRowInput, tournamentRowInput]);
+const treatments = mergePapers(treatmentInputs);
+const rowPolicies = mergeRowPolicies(rowInputs);
 const studyIds = treatments.map((paper) => paper.studyId);
 const expectedIncludedStudyIds = treatments
   .filter((paper) => (
@@ -390,7 +411,8 @@ const audit = {
   rowChecks,
 };
 
-fs.writeFileSync(AUDIT_PATH, `${JSON.stringify(audit, null, 2)}\n`);
+fs.mkdirSync(path.dirname(outputAuditPath), { recursive: true });
+fs.writeFileSync(outputAuditPath, `${JSON.stringify(audit, null, 2)}\n`);
 console.log(JSON.stringify({
   result: audit.result,
   requestedPaperCount: audit.requestedPaperCount,
@@ -401,5 +423,5 @@ console.log(JSON.stringify({
   sourceCsvDataRowCount: audit.sourceCsvDataRowCount,
   rowCheckCount: audit.rowChecks.length,
   exportHashes: audit.exportHashes,
-  auditPath: AUDIT_PATH,
+  auditPath: outputAuditPath,
 }, null, 2));

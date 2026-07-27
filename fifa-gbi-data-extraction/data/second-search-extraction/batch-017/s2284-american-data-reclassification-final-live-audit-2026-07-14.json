@@ -1,0 +1,88 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; S2284 american_data reclassification, live extraction, and focused integrity gate; 2026-07-14",
+  "classification": {
+    "result": "eligible primary football study; not american_data",
+    "rationale": "Pac-12 HAP/CAP is a conference-specific registry across Pac-12 institutions, not U.S. High School RIO, the NCAA Injury Surveillance Program, or national U.S. surveillance. The source explicitly distinguishes its Pac-12 athlete-year analysis from prior NCAA athlete-exposure studies and reports a clean women's soccer subgroup.",
+    "sourceType": "Pac-12 Health Analytics Program/CARE-Affiliated Program conference sports-injury registry"
+  },
+  "paper": {
+    "studyId": "S2284",
+    "status": "processing",
+    "flagReason": null,
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "assignmentName": "AbdelRahman Babiker",
+    "reviewState": "pending_review",
+    "reviewedComplete": false
+  },
+  "batchMembership": ["S2234", "S2254", "S2259", "S2264", "S2284"],
+  "population": {
+    "count": 7,
+    "labels": [
+      "All seasons",
+      "2016-2017 athletic season",
+      "2017-2018 athletic season",
+      "2018-2019 athletic season",
+      "2019-2020 athletic season",
+      "2020-2021 athletic season",
+      "2021-2022 athletic season"
+    ]
+  },
+  "sourceCoverage": {
+    "scanned": [
+      "title/abstract and Key Points",
+      "Introduction",
+      "Methods",
+      "Results",
+      "Table 1",
+      "Table 2",
+      "contact-level Figure",
+      "Discussion and limitations",
+      "references"
+    ],
+    "sourceSha256": "c284984b4099c6fd06de039ddcca1c3be5d429b7d229f3250905d6ee480377f9",
+    "sourceAttached": true
+  },
+  "appliedHighlights": {
+    "soccerConcussionCounts": "182 / 34 / 36 / 39 / 17 / 40 / 16",
+    "soccerIncidencePer100AthleteYears": "11.03 / 20.61 / 17.06 / 13.18 / 5.52 / 12.20 / 4.68",
+    "soccerIncidence95Ci": "9.61-12.63 / 15.14-27.41 / 12.59-22.72 / 9.79-17.50 / 3.47-8.66 / 9.08-16.18 / 2.90-7.46",
+    "reportedFieldCountIncludingStudyId": 23,
+    "notReportedCoreFieldCount": 11,
+    "populationValueCount": 40
+  },
+  "intentionalBlanksAndCaveats": [
+    "Soccer athlete-years were not printed and were not back-calculated from the count and rate.",
+    "The printed 14,486 athlete-years and 815 unique athletes are all-sport totals and were not copied to the soccer subgroup.",
+    "The exact soccer team count, soccer-specific player count, and soccer-specific age were not reported; the source only establishes that soccer had more than 5 represented teams.",
+    "The contact-class Figure pools multiple sports and was not mapped to soccer.",
+    "Soccer-specific illness, severity, recurrence, mechanism, location, burden, match/training, and time-loss metrics were absent; the authors state that concussion mechanism was not directly assessed."
+  ],
+  "apply": {
+    "writtenFieldCount": 34,
+    "skippedFields": [],
+    "unknownFields": [],
+    "populationGroups": 7,
+    "populationValues": 40,
+    "postApplyCorrectionRequired": false
+  },
+  "integrityGate": {
+    "result": "pass; ready for human review; not reviewed_complete",
+    "fieldEqualityMismatches": [],
+    "populationGroupMismatches": [],
+    "structuredDualWriteMismatches": [],
+    "studyIdMatchesAssignedStudyId": true,
+    "assignmentAndStatusCorrect": true,
+    "batchMembershipPreserved": true,
+    "backlogRowUpdated": true,
+    "sourceAttachmentPreserved": true,
+    "protectedHashBefore": "6f907c93392c31caf3a2639a732d915401bc3f7fd9a6c4e7f1fbc2696be358f3",
+    "protectedHashAfter": "6f907c93392c31caf3a2639a732d915401bc3f7fd9a6c4e7f1fbc2696be358f3",
+    "protectedScreeningStateUnchanged": true,
+    "humanFullTextVotes": [
+      {"voteOrder": 1, "reviewer": "AbdelRahman Babiker", "decision": "include"},
+      {"voteOrder": 2, "reviewer": "Dr. Nicol van Dyk", "decision": "include"}
+    ],
+    "resolverDecisionPresent": false,
+    "promotionState": "ready_for_extraction"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "artifactType": "Backlog 2 Batch 028 final live integrity audit",
+  "scope": "Fixed membership S4703, S2991, S3923, S3951, S4715 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-028/second-search-extraction-batch-028-input-2026-07-14.json",
+  "fixedMembership": ["S4703", "S2991", "S3923", "S3951", "S4715"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached primary PDF was inspected once after a successful SHA-256 comparison against its live papers.primary_file_sha256 value. S2991 used the live merged translated-first/original-second PDF and its original Japanese table pages were checked.",
+    "fieldValidation": {
+      "stagedFieldCount": 296,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S4703": ["Total", "Male", "Female"],
+        "S2991": ["Total", "Match", "Training"],
+        "S3923": ["Total", "U14", "U15", "U16", "U17", "U18", "U20", "Reserve"],
+        "S3951": [],
+        "S4715": []
+      }
+    },
+    "classification": {
+      "S3951": "No direct total at-risk denominator or injury rate; rounded group mean match minutes cannot be multiplied into a derived exposure total. Flagged No exposure - exclude.",
+      "S4715": "Exposure minutes enter recurrent-event Cox models, but the attached paper prints no total denominator or injury rate and its referenced supplement is absent. Flagged No exposure - exclude.",
+      "S4703": "Eligible professional-league registry under the explicit league-surveillance exception because it reports direct football-specific match-exposure rates."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only field writes with core-tab completion, structured population sync, required S2991 translation-provenance note, and two approved denominator-exclusion status updates",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S4703": 47,
+      "S2991": 66,
+      "S3923": 195
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S3951": {
+        "status": "flagged",
+        "flagReason": "No exposure - exclude"
+      },
+      "S4715": {
+        "status": "flagged",
+        "flagReason": "No exposure - exclude"
+      }
+    },
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S2991", "S3923", "S3951", "S4703", "S4715"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "translationProvenanceNotesVerified": 1,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "fullTextVotesVerified": 10,
+      "protectedSignatureChanges": 0,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "028",
+      "updatedRows": ["S4703", "S2991", "S3923", "S3951", "S4715"]
+    },
+    "papers": [
+      {
+        "studyId": "S4703",
+        "status": "processing",
+        "populationLabels": ["Total", "Male", "Female"],
+        "populationCount": 3,
+        "liveFieldCount": 47,
+        "populationValueCount": 55,
+        "primaryFileSha256": "067d06b834a583912e395aa630def6767cd4373f238eefa7da1cdd9985dd3bdc"
+      },
+      {
+        "studyId": "S2991",
+        "status": "processing",
+        "populationLabels": ["Total", "Match", "Training"],
+        "populationCount": 3,
+        "liveFieldCount": 66,
+        "populationValueCount": 55,
+        "primaryFileSha256": "cf2f6a09794bbfda2505687eadd04e401d80ec02e328cdb16a9ecca30f0612bb"
+      },
+      {
+        "studyId": "S3923",
+        "status": "processing",
+        "populationLabels": ["Total", "U14", "U15", "U16", "U17", "U18", "U20", "Reserve"],
+        "populationCount": 8,
+        "liveFieldCount": 195,
+        "populationValueCount": 268,
+        "primaryFileSha256": "05ff5273c5643736b3aa6f2221c8d192d79583951da14d5d323d05f70c0f0715"
+      },
+      {
+        "studyId": "S3951",
+        "status": "flagged",
+        "flagReason": "No exposure - exclude",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "2e7edab66c326467081b2643951bd925294a396c9497c02a4b26c27026fd8f89"
+      },
+      {
+        "studyId": "S4715",
+        "status": "flagged",
+        "flagReason": "No exposure - exclude",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "63e8a74624bd072317ee9eef7cc32208fe55a766ecd065045cf12b92c13d8a88"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "S4703": "Primary PDF pp. 1-8; methods, Tables 1-5, Figures 1-3, results, illness sections, discussion and limitations swept. Rounded location percentages were checked but not converted to counts.",
+    "S2991": "Merged translated-first/original-second PDF pp. 1-21; Tables 1-5, Figures 1-3 and both language sections swept. Original tables support the staged 13,453-hour total.",
+    "S3923": "Primary PDF pp. 1-10; Tables 1-3 and Figures 1-3 swept. Exact Table 3 values superseded risk-matrix estimation.",
+    "S3951": "Primary PDF pp. 1-11; methods, Tables 1-3, flowchart, results/discussion and denominator evidence checked before exclusion.",
+    "S4715": "Primary PDF pp. 1-10; methods, Tables 1-3, Figures 1-3, results/discussion and denominator evidence checked before exclusion; referenced supplement absent."
+  },
+  "caveats": {
+    "S4703": "Only exact leading-diagnosis structured rows were saved because Tables 2-3 list the ten most frequent diagnoses rather than an exhaustive type distribution. Figure 2 percentages were not converted. Raw match exposure is omitted, but direct registry rates retain eligibility.",
+    "S2991": "Original Table 1 reports 13,453 hours while the English abstract reports 13,543; the original table controls. Four unknown-mechanism injuries have no matching generic outcome field.",
+    "S3923": "Total exposure is a transparent sum of seven disjoint direct age rows. Subgroup training counts were not derived by subtraction. Combined hip/groin and bone-contusion/other-bone rows lack clean schema mappings.",
+    "S3951": "True denominator exclusion retained in the fixed batch; no extraction fields or populations were created.",
+    "S4715": "True denominator exclusion retained in the fixed batch; no extraction fields or populations were created."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "human extraction review for S4703, S2991 and S3923; exclusion review for S3951 and S4715"
+}

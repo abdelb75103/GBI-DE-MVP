@@ -1,0 +1,422 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 020; manual primary-PDF extraction; additive-only; 2026-07-13",
+  "model": "GPT-5 local Codex (GPT-5.5 medium was not selectable in this workspace)",
+  "fixedBatchMembership": ["S2668", "S2813", "S2823", "S2824", "S2826"],
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "Each attached primary PDF was hash-verified and swept once for methods, results, every table, and usable figure.",
+      "Population layouts use the strongest directly reported axis; pooled metrics remain on the first row where subgroup values are unavailable.",
+      "Tabs 1-4 are staged for every included paper; Tabs 5-10 are staged only where the source and schema support direct values.",
+      "No exposure, count, burden, or incidence value was back-calculated. Transparent sums are identified in the paper notes.",
+      "All staged structured metrics use canonical field IDs and will be dual-written through population sync."
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S2668",
+      "populationLabels": ["Total", "College men", "College women", "High-school men", "High-school women"],
+      "note": "Batch 020 manual primary-PDF extraction. Abstract, methods/definitions, results, and Tables 1-7 were checked (article pp. 123-127). Population rows retain the reported total plus college/high-school by sex groups. Table 2 match totals are transparent sums of the six reported match-time rows; no match exposure was back-calculated. Tables 3-4 provide directly mapped location and injury-type counts/incidence; lower-leg values transparently combine the directly reported lower-leg and Achilles-tendon rows, without summed CIs. Illness Table 7 reports college/high-school rather than sex-specific values, so illness metrics remain pooled on Total. The source uses the generic term environmental factors; it cannot be safely assigned to the exercise versus non-exercise etiology rows.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2668",
+          "leadAuthor": "Wang J",
+          "title": "A prospective epidemiologic study of injuries and illnesses in the football matches of the 14th National Student Games of China.",
+          "yearOfPublication": "2025",
+          "journal": "Science and Medicine in Football",
+          "doi": "10.1080/24733938.2024.2388824",
+          "studyDesign": "prospective observational tournament surveillance"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "China",
+          "levelOfPlay": "student football tournament",
+          "sex": "mixed\nmale\nfemale\nmale\nfemale",
+          "ageCategory": "13-24 years\n18-24 years\n18-24 years\n13-18 years\n13-18 years",
+          "sampleSizePlayers": "760\n220\n160\n180\n200",
+          "numberOfTeams": "38\n11\n8\n9\n10",
+          "observationDuration": "10-17 July 2021 (8-day tournament)"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint [tissue damage or derangement of normal physical function from rapid or repetitive kinetic energy]",
+          "illnessDefinition": "physical complaint [health complaint or disorder not considered an injury]",
+          "incidenceDefinition": "injury per 1000 player-hours; illness per 1000 player-days",
+          "severityDefinition": "days to return to full practice and match participation: 0; 1-3; 4-7; 8-28; 29-90; 91-180; >180 days",
+          "mechanismReporting": "team medical doctor"
+        },
+        "exposure": {
+          "seasonLength": "8 days",
+          "numberOfSeasons": "1 tournament",
+          "exposureMeasurementUnit": "player-hours (injury); player-days (illness)"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "122\n53\n23\n29\n17",
+          "injuryTeamsCompletedStudy": "38\n11\n8\n9\n10",
+          "injuryMatchCount": "101\n36\n22\n27\n16",
+          "injuryTrainingCount": "21\n17\n1\n2\n1",
+          "injuryIncidenceOverall": "38.9\n58.4\n34.9\n39.1\n20.2",
+          "injuryIncidenceCi95": "35.4-42.4\n51.9-64.9\n27.3-42.5\n32.0-46.2\n13.8-27.4",
+          "injuryMostCommonType": "contusion/haematoma/bruise (38; 31%)\ncontusion/haematoma/bruise (13; 25%)\ncontusion/haematoma/bruise (11; 48%)\nsprain and contusion/haematoma/bruise (8 each; 28%)\ncontusion/haematoma/bruise (6; 35%)",
+          "injuryMostCommonLocation": "ankle and thigh (23 each; 19%)\nknee (11; 21%)\nankle (6; 26%)\nthigh (7; 24%)\nthigh (5; 29%)",
+          "injuryMostCommonSeverity": "0 days (63; 52%)\n0 days (26; 49%)\n0 days (15; 65%)\n1-3 days (14; 48%)\n0 days (13; 76%)",
+          "injuryModeRepetitiveGradual": "15\n10\n3\n2\n0",
+          "injuryModeRepetitiveSudden": "25\n11\n2\n7\n5",
+          "injuryModeAcuteSudden": "13\n7\n2\n4\n0",
+          "injuryContact": "49\n12\n12\n14\n11",
+          "injuryNonContact": "13\n7\n2\n4\n0",
+          "injuryCumulativeRepetitive": "40\n21\n5\n9\n5",
+          "injuryRecurrentTotal": "5\n4\n1\n0\n0"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "32",
+          "illnessIncidenceOverall": "10.2",
+          "illnessIncidenceCi95": "9.5-10.9",
+          "illnessMostCommonSystem": "gastrointestinal (17; 53%)",
+          "illnessMostCommonEtiology": "environmental factors (24; 69%)",
+          "illnessMostCommonSeverity": "1-3 days (20; 63%)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_joint_sprain_prevalence": "29\n14\n5\n8\n2",
+          "injuryTissueType_joint_sprain_incidence": "9.2 (8.3-9.8)\n15.4 (13.9-16.9)\n7.6 (6.9-8.3)\n10.8 (9.5-12.1)\n2.4 (2.0-2.8)",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "2\n0\n2\n0\n0",
+          "injuryTissueType_ligament_joint_capsule_incidence": "0.6 (0.5-0.7)\n0\n3.0 (2.6-3.4)\n0\n0",
+          "injuryTissueType_muscle_injury_prevalence": "19\n5\n4\n9\n1",
+          "injuryTissueType_muscle_injury_incidence": "6.1 (5.4-6.8)\n5.5 (5.1-5.9)\n6.1 (5.4-6.8)\n12.1 (10.8-13.4)\n1.2 (1.1-1.3)",
+          "injuryTissueType_superficial_contusion_prevalence": "38\n13\n11\n8\n6",
+          "injuryTissueType_superficial_contusion_incidence": "12.1 (11.0-13.3)\n14.3 (13.2-15.5)\n16.7 (13.4-20.0)\n10.8 (9.5-12.1)\n7.3 (6.4-8.2)",
+          "injuryTissueType_tendinopathy_prevalence": "1\n1\n0\n0\n0",
+          "injuryTissueType_tendinopathy_incidence": "0.3 (0.2-0.3)\n1.1 (1.0-1.2)\n0\n0\n0",
+          "injuryTissueType_cartilage_synovium_bursa_prevalence": "4\n4\n0\n0\n0",
+          "injuryTissueType_cartilage_synovium_bursa_incidence": "1.2 (1.1-1.3)\n4.4 (4.2-4.8)\n0\n0\n0",
+          "injuryTissueType_laceration_prevalence": "7\n4\n0\n1\n2",
+          "injuryTissueType_laceration_incidence": "2.2 (2.0-2.5)\n4.4 (4.2-4.8)\n0\n1.3 (1.2-1.4)\n2.4 (2.0-2.8)"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "5\n1\n1\n2\n1",
+          "injuryLocation_head_prevalence": "4\n1\n0\n2\n1",
+          "injuryLocation_neck_prevalence": "1\n0\n1\n0\n0",
+          "injuryLocation_upper_limb_overall_prevalence": "11\n9\n0\n2\n0",
+          "injuryLocation_upper_limb_overall_incidence": "3.5 (2.8-4.2)\n9.9 (8.9-10.9)\n0\n2.7 (2.3-3.1)\n0",
+          "injuryLocation_shoulder_prevalence": "6\n5\n0\n1\n0",
+          "injuryLocation_shoulder_incidence": "1.9 (1.6-2.2)\n5.5 (5.1-5.9)\n0\n1.3 (1.2-1.4)\n0",
+          "injuryLocation_wrist_prevalence": "2\n1\n0\n1\n0",
+          "injuryLocation_wrist_incidence": "0.6 (0.5-0.7)\n1.1 (1.0-1.2)\n0\n1.3 (1.2-1.4)\n0",
+          "injuryLocation_hand_prevalence": "3\n3\n0\n0\n0",
+          "injuryLocation_chest_prevalence": "1\n1\n0\n0\n0",
+          "injuryLocation_lumbosacral_prevalence": "8\n2\n3\n2\n1",
+          "injuryLocation_lumbosacral_incidence": "2.6 (2.1-3.1)\n2.2 (2.1-2.3)\n4.5 (3.9-5.1)\n2.7 (2.3-3.1)\n1.2 (1.1-1.3)",
+          "injuryLocation_abdomen_prevalence": "1\n0\n1\n0\n0",
+          "injuryLocation_hip_prevalence": "3\n2\n1\n0\n0",
+          "injuryLocation_hip_incidence": "0.9 (0.8-1.0)\n2.2 (2.1-2.3)\n1.5 (1.3-1.7)\n0\n0",
+          "injuryLocation_groin_prevalence": "8\n2\n0\n5\n1",
+          "injuryLocation_groin_incidence": "2.6 (2.1-3.1)\n2.2 (2.1-2.3)\n0\n6.7 (5.9-7.5)\n1.2 (1.1-1.3)",
+          "injuryLocation_thigh_prevalence": "23\n7\n4\n7\n5",
+          "injuryLocation_thigh_incidence": "7.3 (5.8-8.8)\n7.7 (7.1-8.5)\n6.1 (5.4-6.8)\n9.4 (7.2-11.6)\n6.1 (4.9-7.4)",
+          "injuryLocation_knee_prevalence": "17\n11\n4\n1\n1",
+          "injuryLocation_knee_incidence": "5.4 (5.1-5.7)\n12.1 (10.9-13.3)\n6.1 (5.4-6.8)\n1.3 (1.2-1.4)\n1.2 (1.1-1.3)",
+          "injuryLocation_lower_limb_overall_prevalence": "93\n38\n18\n23\n14",
+          "injuryLocation_lower_limb_overall_incidence": "29.7 (26.4-33.0)\n41.9 (35.2-48.6)\n27.3 (21.2-33.4)\n31.0 (24.8-37.2)\n17.0 (12.9-21.1)",
+          "injuryLocation_lower_leg_prevalence": "11\n4\n2\n2\n3",
+          "injuryLocation_ankle_prevalence": "23\n8\n6\n6\n3",
+          "injuryLocation_ankle_incidence": "7.3 (5.8-8.8)\n8.8 (8.0-9.0)\n9.1 (7.9-10.2)\n8.1 (7.8-9.4)\n3.6 (2.9-4.3)",
+          "injuryLocation_foot_prevalence": "8\n4\n1\n2\n1",
+          "injuryLocation_foot_incidence": "2.6 (2.1-3.1)\n4.4 (4.2-4.8)\n1.5 (1.3-1.7)\n2.7 (2.3-3.1)\n1.2 (1.1-1.3)"
+        },
+        "illnessRegion": {
+          "illnessRegion_gastrointestinal_prevalence": "17",
+          "illnessRegion_respiratory_prevalence": "8",
+          "illnessRegion_dental_prevalence": "1",
+          "illnessRegion_thermoregulatory_prevalence": "5"
+        }
+      }
+    },
+    {
+      "studyId": "S2813",
+      "populationLabels": ["Total"],
+      "note": "Batch 020 manual primary-PDF extraction. Methods, Tables 1-5, and Figures 1-3 were checked (article pp. 26-33). This is a single pooled youth-professional cohort; Figure 2's age bars were not used because its visual totals are not fully reconcilable with the printed 62-event total and it provides no age-specific exposure. Direct total, match/training, incidence, burden, severity, and recurrence data are retained. The printed total exposure (99,224 h) differs by 22 h from the printed match-plus-training sum (99,246 h); both direct source values are retained and not reconciled. The GRSI-specific diagnoses do not have one-to-one structured schema rows, so their direct total is retained in the generic injury-diagnosis structured row rather than forced into a narrower tissue category.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2813",
+          "leadAuthor": "Juch EEAE",
+          "title": "Growth-related sports injuries among young male professional football players in the Netherlands: a prospective cohort study concerning injury incidence, severity and burden.",
+          "yearOfPublication": "2025",
+          "journal": "Science and Medicine in Football",
+          "doi": "10.1080/24733938.2023.2261399",
+          "studyDesign": "prospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Netherlands",
+          "levelOfPlay": "youth professional academy",
+          "sex": "male",
+          "ageCategory": "10-18 years (U11-U18)",
+          "meanAge": "13.78 ± 2.52",
+          "sampleSizePlayers": "813",
+          "numberOfTeams": "6 academies",
+          "observationDuration": "2021-2022 season"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [or time loss; any football-related physical complaint]",
+          "incidenceDefinition": "time-loss injuries per 1000 player-hours",
+          "burdenDefinition": "injury incidence times days to full participation, per 1000 player-hours",
+          "severityDefinition": "none 0 days; slight 1-3; minor 4-7; moderate 8-28; major >28 days",
+          "recurrenceDefinition": "same type and site after return to full participation",
+          "mechanismReporting": "club physical therapist or team doctor"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "99224",
+          "matchExposure": "12866",
+          "trainingExposure": "86380"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "62",
+          "injuryMatchCount": "9",
+          "injuryTrainingCount": "53",
+          "injuryIncidenceOverall": "0.62",
+          "injuryIncidenceMatch": "0.70",
+          "injuryIncidenceTraining": "0.61",
+          "injuryTimeLossTotal": "3280",
+          "injuryTimeLossMean": "55",
+          "injuryBurden": "33.89",
+          "injuryMostCommonDiagnosis": "Morbus Sever and Morbus Osgood-Schlatter (22 each)",
+          "injuryMostCommonType": "Morbus Sever and Morbus Osgood-Schlatter (22 each)",
+          "injuryMostCommonLocation": "apophysitis of the lower extremity (85.2%)",
+          "injuryMostCommonSeverity": "major (>28 days; 34, 57.6%)",
+          "injuryModeRepetitiveGradual": "39",
+          "injuryModeAcuteSudden": "9",
+          "injuryRecurrenceRate": "20.6%"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "growth-related sports injury (GRSI)",
+          "injuryTissueType_injury_diagnosis_prevalence": "62",
+          "injuryTissueType_injury_diagnosis_incidence": "0.62",
+          "injuryTissueType_injury_diagnosis_burden": "33.89",
+          "injuryTissueType_injury_diagnosis_severityMeanDays": "mean 55"
+        }
+      }
+    },
+    {
+      "studyId": "S2823",
+      "populationLabels": ["Total"],
+      "note": "Batch 020 manual primary-PDF extraction. Methods, Tables 1-2, results, and discussion were checked (article pp. 175-182). This is a single-team prospective Spanish professional cohort across the 2020-2021 and 2021-2022 seasons. The paper provides direct match and training incidence but no season-wide exposure totals, so no exposure was calculated from its rates. The target condition is non-contact calf muscle strain; the direct muscle and lower-leg structured rows are retained, while target diagnosis/location are not echoed as a most-common outcome. Reviewer attention: the results state 68.7% reinjuries (11/16), while a later discussion sentence says 9/16; the direct results percentage and compatible count are retained.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2823",
+          "leadAuthor": "Soler A",
+          "title": "Influence of the External Workload on Calf Muscle Strain Injuries in Professional Football Players: A Pilot Study.",
+          "yearOfPublication": "2025",
+          "journal": "Sports Health: A Multidisciplinary Approach",
+          "doi": "10.1177/19417381241247754",
+          "studyDesign": "prospective observational study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Spain",
+          "levelOfPlay": "professional, LaLiga top division",
+          "ageCategory": "senior",
+          "meanAge": "28.2 ± 4.0",
+          "sampleSizePlayers": "41",
+          "numberOfTeams": "1",
+          "observationDuration": "2020-2021 and 2021-2022 competitive seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [non-contact calf muscle strain preventing the next training session or competition]",
+          "incidenceDefinition": "calf muscle strain injuries per 1000 player-hours, separately for match and training exposure",
+          "severityDefinition": "minimal 1-3 days; mild 4-7; moderate 8-28; severe >28 days",
+          "recurrenceDefinition": "subsequent injury to the same location and tissue after full recovery",
+          "mechanismReporting": "team medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "2",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "16",
+          "injuryMatchCount": "12",
+          "injuryTrainingCount": "4",
+          "injuryIncidenceMatch": "3.1",
+          "injuryIncidenceTraining": "0.5",
+          "injuryTimeLossMean": "14.8 ± 12.5",
+          "injuryMostCommonSeverity": "moderate (56.2%)",
+          "injuryNonContact": "16",
+          "injuryRecurrentTotal": "11",
+          "injuryRecurrenceRate": "68.7%"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "non-contact calf muscle strain",
+          "injuryTissueType_injury_diagnosis_prevalence": "16",
+          "injuryTissueType_injury_diagnosis_severityMeanDays": "mean 14.8 ± 12.5",
+          "injuryTissueType_muscle_injury_prevalence": "16",
+          "injuryTissueType_muscle_injury_severityMeanDays": "mean 14.8 ± 12.5"
+        },
+        "injuryLocation": {
+          "injuryLocation_lower_leg_prevalence": "16",
+          "injuryLocation_lower_leg_severityMeanDays": "mean 14.8 ± 12.5"
+        }
+      }
+    },
+    {
+      "studyId": "S2824",
+      "populationLabels": ["All seasons", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+      "note": "Batch 020 manual primary-PDF extraction. Methods, Table 1, Table 2, Figures 1-3, results, and discussion were checked (article pp. 201-209). The direct layout is all seasons followed by the eight reported seasons. Table 1 supports season-level team, age, and exposure rows; headline injury/illness outcomes and Table 2 metrics are pooled-only and remain on All seasons. Table 2 reports medians (IQR) rather than means in its structured severity columns; values are labelled accordingly. The source reports illness incidence/system percentages but no total illness count, so no illness count or structured system count was inferred. Table 2 is intentionally not aggregated across incomplete location/type subsets.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2824",
+          "leadAuthor": "Chamari K",
+          "title": "Evolution of injury burden in Qatari professional football — 8 season data from the Aspetar Injury and Illness Surveillance Programme.",
+          "yearOfPublication": "2025",
+          "journal": "Biology of Sport",
+          "doi": "10.5114/biolsport.2025.139089",
+          "studyDesign": "prospective observational cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Qatar",
+          "levelOfPlay": "professional, Qatar Stars League first and second divisions",
+          "sex": "male",
+          "ageCategory": "adult (>=18 years)",
+          "meanAge": "25.6 ± 5\n26.4 ± 4.7\n26.6 ± 4.4\n26.5 ± 4.6\n26.5 ± 4.5\n26.3 ± 4.6\n26.5 ± 5.1\n26.3 ± 5\n26.3 ± 5.3",
+          "sampleSizePlayers": "1466",
+          "numberOfTeams": "17\n16\n14\n15\n17\n17\n17\n17\n17",
+          "observationDuration": "July 2014-May 2022, 8 domestic seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [unable to fully participate in training or match play]",
+          "incidenceDefinition": "time-loss injuries and illnesses per 1000 player-hours",
+          "burdenDefinition": "days lost per 1000 player-hours",
+          "severityDefinition": "mild 0-3 days; minor 4-7; moderate 7-28; severe >28 days",
+          "recurrenceDefinition": "same body part and structure type within one year of the index injury",
+          "mechanismReporting": "team physician or physiotherapist"
+        },
+        "exposure": {
+          "seasonLength": "domestic season (July-May)",
+          "numberOfSeasons": "8",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "746384\n100260\n67115\n86304\n104336\n97881\n86086\n107676\n96726",
+          "matchExposure": "89186\n10381\n8376\n9977\n11501\n10741\n9351\n15142\n13716",
+          "trainingExposure": "657198\n89880\n58739\n76326\n92835\n87140\n76735\n92533\n83010"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "4789",
+          "injuryIncidenceOverall": "6.4",
+          "injuryIncidenceMatch": "19.3",
+          "injuryIncidenceTraining": "3.1",
+          "injuryIncidenceCi95": "6.3-6.6",
+          "injuryBurden": "129",
+          "injuryBurdenCi95": "128-130",
+          "injuryMostCommonDiagnosis": "hamstring strain (761)",
+          "injuryMostCommonLocation": "thigh (1356)",
+          "injuryMostCommonSeverity": "moderate (2093; 43.2%)",
+          "injuryModeRepetitiveGradual": "808",
+          "injuryModeAcuteSudden": "3924",
+          "injuryRecurrenceRate": "10.8%"
+        },
+        "illnessOutcome": {
+          "illnessIncidenceOverall": "1.1",
+          "illnessIncidenceCi95": "0.9-1.3",
+          "illnessMostCommonSystem": "upper respiratory tract (51%)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_concussion_prevalence": "23",
+          "injuryTissueType_concussion_incidence": "0.03 (0.02-0.04)",
+          "injuryTissueType_concussion_burden": "0.3 (0.3-0.3)",
+          "injuryTissueType_concussion_severityMeanDays": "median 8 (IQR 5-12)"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "105",
+          "injuryLocation_head_neck_overall_incidence": "0.14 (0.11-0.16)",
+          "injuryLocation_head_neck_overall_burden": "1.6 (1.6-1.7)",
+          "injuryLocation_head_neck_overall_severityMeanDays": "median 6 (IQR 2-12)",
+          "injuryLocation_shoulder_prevalence": "86",
+          "injuryLocation_shoulder_incidence": "0.12 (0.09-0.14)",
+          "injuryLocation_shoulder_burden": "3.2 (3.1-3.3)",
+          "injuryLocation_shoulder_severityMeanDays": "median 15 (IQR 7-31)",
+          "injuryLocation_hand_prevalence": "68",
+          "injuryLocation_hand_incidence": "0.09 (0.07-0.11)",
+          "injuryLocation_hand_burden": "1.3 (1.2-1.3)",
+          "injuryLocation_hand_severityMeanDays": "median 8 (IQR 3-18)",
+          "injuryLocation_lumbosacral_prevalence": "199",
+          "injuryLocation_lumbosacral_incidence": "0.27 (0.23-0.3)",
+          "injuryLocation_lumbosacral_burden": "2.4 (2.3-2.5)",
+          "injuryLocation_lumbosacral_severityMeanDays": "median 4 (IQR 2-9)",
+          "injuryLocation_thigh_prevalence": "1356",
+          "injuryLocation_thigh_incidence": "1.82 (1.72-1.91)",
+          "injuryLocation_thigh_burden": "27.5 (27.1-27.8)",
+          "injuryLocation_thigh_severityMeanDays": "median 11 (IQR 5-20)",
+          "injuryLocation_knee_prevalence": "610",
+          "injuryLocation_knee_incidence": "0.81 (0.75-0.88)",
+          "injuryLocation_knee_burden": "34.7 (34.2-35.1)",
+          "injuryLocation_knee_severityMeanDays": "median 12 (IQR 5-38)",
+          "injuryLocation_lower_leg_prevalence": "416",
+          "injuryLocation_lower_leg_incidence": "0.56 (0.5-0.61)",
+          "injuryLocation_lower_leg_burden": "8.3 (8.1-8.6)",
+          "injuryLocation_lower_leg_severityMeanDays": "median 9 (IQR 3-19)",
+          "injuryLocation_ankle_prevalence": "527",
+          "injuryLocation_ankle_incidence": "0.71 (0.65-0.77)",
+          "injuryLocation_ankle_burden": "14.2 (14-14.5)",
+          "injuryLocation_ankle_severityMeanDays": "median 8 (IQR 4-20)",
+          "injuryLocation_foot_prevalence": "137",
+          "injuryLocation_foot_incidence": "0.18 (0.15-0.21)",
+          "injuryLocation_foot_burden": "3.6 (3.5-3.8)",
+          "injuryLocation_foot_severityMeanDays": "median 5 (IQR 2-17)"
+        }
+      }
+    },
+    {
+      "studyId": "S2826",
+      "populationLabels": ["Total", "Bundesliga", "La Liga", "Ligue 1", "Premier League", "Serie A"],
+      "note": "Batch 020 manual primary-PDF extraction. Methods, Tables 1-7, and Graphs 1-5 were checked (article pp. 16-25). The direct layout is total followed by the five leagues. Table 1 supplies each league's match exposure and average player age; the article supplies direct injuries and lay-off days by league. The pooled injury count and lay-off days are transparent sums of the five reported league values, while pooled incidence and burden were not calculated. Graph 4 is used for the direct league burden values; it reports Ligue 1 as 193.53 despite an inconsistent 186.67 value in nearby prose, so the labelled graph value is retained. This is a target knee-ligament cohort; structured ligament/knee counts are retained, but the target is not duplicated as a most-common diagnosis/type/location.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2826",
+          "leadAuthor": "Klačar S",
+          "title": "AN ANALYSIS OF KNEE LIGAMENT MATCH INJURY INCIDENCE, BURDEN AND SEVERITY PATTERNS ACROSS THE TOP FIVE EUROPEAN FOOTBALL LEAGUES THROUGHOUT THE 2022/2023 SEASON.",
+          "yearOfPublication": "2024",
+          "journal": "Homo Sporticus",
+          "doi": "10.61886/1840-4324.2024.26.2.16",
+          "studyDesign": "descriptive observational study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "England, France, Germany, Italy, Spain",
+          "levelOfPlay": "professional, top five European leagues",
+          "ageCategory": "adult",
+          "meanAge": "25.1 ± 0.94\n25.1\n25.8\n24.5\n24.9\n25.2",
+          "sampleSizePlayers": "3015",
+          "numberOfTeams": "98\n18\n20\n20\n20\n20",
+          "observationDuration": "2022-2023 season"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [match knee ligament injuries]",
+          "incidenceDefinition": "match knee ligament injuries per 1000 player-hours",
+          "burdenDefinition": "lay-off days per 1000 player-hours",
+          "severityDefinition": "minimal 1-3 days; mild 4-7; moderate 8-28; severe >28 days",
+          "mechanismReporting": "Noisefeed injury repository"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "match exposure hours",
+          "totalExposure": "71382.7\n11919.2\n14801.0\n14287.1\n15449.8\n14925.6",
+          "matchExposure": "71382.7\n11919.2\n14801.0\n14287.1\n15449.8\n14925.6"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "287\n45\n50\n58\n75\n59",
+          "injuryMatchCount": "287\n45\n50\n58\n75\n59",
+          "injuryTimeLossTotal": "12664\n1829\n2765\n2410\n3471\n2189",
+          "injuryBurden": "\n153.44\n162.82\n193.53\n226.47\n146.66",
+          "injuryMostCommonSeverity": "\nsevere (40.00%)\nsevere (34.00%)\nsevere (43.10%)\nsevere (43.86%)\nsevere (40.68%)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_ligament_joint_capsule_prevalence": "287\n45\n50\n58\n75\n59",
+          "injuryTissueType_ligament_joint_capsule_burden": "\n153.44\n162.82\n193.53\n226.47\n146.66"
+        },
+        "injuryLocation": {
+          "injuryLocation_knee_prevalence": "287\n45\n50\n58\n75\n59",
+          "injuryLocation_knee_burden": "\n153.44\n162.82\n193.53\n226.47\n146.66"
+        }
+      }
+    }
+  ]
+}

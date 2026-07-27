@@ -1,0 +1,133 @@
+{
+  "artifactType": "S4775 Table 5 age-by-setting live correction input with embedded rollback",
+  "scope": "S4775 only; preserve the existing overall Match and Training rows, then add each Table 5 age group as Match and Training rows",
+  "model": "GPT-5 Codex (high reasoning); local substitute because the skill-default GPT-5.5 was not selectable in this delegated workspace",
+  "source": {
+    "primaryPdfSha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9",
+    "table": "Table 5, PDF page 7 (journal page 1613)",
+    "directAgeGroups": ["U11", "U12", "U13", "U14", "U15", "U16", "U18"],
+    "mapping": "Table 5 directly reports exposure, injury count, incidence with 95% CI, burden with 95% CI, mean severity with 95% CI, and median severity with 95% CI for Match and Training within every listed age group. No age-specific Table 3 location or Table 4 injury-type value is staged."
+  },
+  "stageA": {
+    "result": "passed",
+    "populationOrder": [
+      "Match",
+      "Training",
+      "U11 Match",
+      "U11 Training",
+      "U12 Match",
+      "U12 Training",
+      "U13 Match",
+      "U13 Training",
+      "U14 Match",
+      "U14 Training",
+      "U15 Match",
+      "U15 Training",
+      "U16 Match",
+      "U16 Training",
+      "U18 Match",
+      "U18 Training"
+    ],
+    "directVsDerived": "All new age-by-setting values are direct Table 5 cells; no arithmetic or back-calculation was used.",
+    "structuredFamilies": "Existing Table 3 injuryLocation and Table 4 injuryTissueType fields remain unchanged and therefore populate only the first two overall Match/Training rows.",
+    "sourceDiscrepancy": "Retain both printed overall and age-specific rows. Table 5 age rows sum to 130 match and 128 training injuries and 14,351 match and 53,770 training hours, versus the printed overall Table 2 totals of 128, 124, 14,999 and 56,075. Several printed Table 5 rates also do not reproduce from the adjacent count/exposure cells. Per direct-value rules, no age cell was recalculated or reconciled."
+  },
+  "rollbackEvidence": {
+    "capturedAt": "2026-07-14T15:11:58.881Z",
+    "paperId": "c8852567-f3c5-4f5c-b77e-aa5db9b3df22",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "studyId": "S4775",
+    "primaryFileId": "dc75c704-3e82-4992-933f-9323395e87b7",
+    "primaryFileSha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9",
+    "populationLabels": ["Match", "Training"],
+    "liveFieldCount": 164,
+    "populationValueCount": 265,
+    "screeningVoteIds": ["b0ddeb2d-6b8f-4bea-877f-7f304fc53987", "ecd87d6e-cf92-498e-b634-992d222a717b"],
+    "fullTextResolution": "ready_for_extraction",
+    "promotedPaperId": "c8852567-f3c5-4f5c-b77e-aa5db9b3df22"
+  },
+  "rollbackPayload": {
+    "papers": [
+      {
+        "studyId": "S4775",
+        "populationLabels": ["Match", "Training"],
+        "fields": {
+          "exposure": {
+            "totalExposure": "14999\n56075",
+            "matchExposure": "14999\n",
+            "trainingExposure": "\n56075"
+          },
+          "injuryOutcome": {
+            "injuryTotalCount": "128\n124",
+            "injuryTimeLossCount": "128\n124",
+            "injuryMatchCount": "128\n",
+            "injuryMatchTimeLossCount": "128\n",
+            "injuryTrainingCount": "\n124",
+            "injuryTrainingTimeLossCount": "\n124",
+            "injuryIncidenceOverall": "8.53\n2.21",
+            "injuryIncidenceMatch": "8.53\n",
+            "injuryIncidenceTraining": "\n2.21",
+            "injuryIncidenceTimeLossOverall": "8.53\n2.21",
+            "injuryIncidenceTimeLossMatch": "8.53\n",
+            "injuryIncidenceTimeLossTraining": "\n2.21",
+            "injuryIncidenceCi95": "5.66-11.84\n1.58-3.15",
+            "injuryTimeLossMedian": "13 (10-20)\n13 (9-14)",
+            "injuryTimeLossMean": "28 (22-36)\n20 (15-25)",
+            "injuryBurden": "236\n44",
+            "injuryBurdenCi95": "181-289\n30-64"
+          }
+        }
+      }
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S4775",
+      "populationLabels": [
+        "Match",
+        "Training",
+        "U11 Match",
+        "U11 Training",
+        "U12 Match",
+        "U12 Training",
+        "U13 Match",
+        "U13 Training",
+        "U14 Match",
+        "U14 Training",
+        "U15 Match",
+        "U15 Training",
+        "U16 Match",
+        "U16 Training",
+        "U18 Match",
+        "U18 Training"
+      ],
+      "fields": {
+        "exposure": {
+          "totalExposure": "14999\n56075\n2154\n7544\n2293\n7299\n2572\n8596\n2132\n8455\n1716\n7830\n2114\n7866\n1370\n6180",
+          "matchExposure": "14999\n\n2154\n\n2293\n\n2572\n\n2132\n\n1716\n\n2114\n\n1370\n",
+          "trainingExposure": "\n56075\n\n7544\n\n7299\n\n8596\n\n8455\n\n7830\n\n7866\n\n6180"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "128\n124\n8\n8\n14\n11\n21\n19\n34\n31\n14\n19\n21\n25\n18\n15",
+          "injuryTimeLossCount": "128\n124\n8\n8\n14\n11\n21\n19\n34\n31\n14\n19\n21\n25\n18\n15",
+          "injuryMatchCount": "128\n\n8\n\n14\n\n21\n\n34\n\n14\n\n21\n\n18\n",
+          "injuryMatchTimeLossCount": "128\n\n8\n\n14\n\n21\n\n34\n\n14\n\n21\n\n18\n",
+          "injuryTrainingCount": "\n124\n\n8\n\n11\n\n19\n\n31\n\n19\n\n25\n\n15",
+          "injuryTrainingTimeLossCount": "\n124\n\n8\n\n11\n\n19\n\n31\n\n19\n\n25\n\n15",
+          "injuryIncidenceOverall": "8.53\n2.21\n3.71\n1.06\n6.11\n1.51\n8.16\n2.21\n15.95\n3.55\n8.16\n2.30\n9.93\n3.05\n12.41\n2.27",
+          "injuryIncidenceMatch": "8.53\n\n3.71\n\n6.11\n\n8.16\n\n15.95\n\n8.16\n\n9.93\n\n12.41\n",
+          "injuryIncidenceTraining": "\n2.21\n\n1.06\n\n1.51\n\n2.21\n\n3.55\n\n2.30\n\n3.05\n\n2.27",
+          "injuryIncidenceTimeLossOverall": "8.53\n2.21\n3.71\n1.06\n6.11\n1.51\n8.16\n2.21\n15.95\n3.55\n8.16\n2.30\n9.93\n3.05\n12.41\n2.27",
+          "injuryIncidenceTimeLossMatch": "8.53\n\n3.71\n\n6.11\n\n8.16\n\n15.95\n\n8.16\n\n9.93\n\n12.41\n",
+          "injuryIncidenceTimeLossTraining": "\n2.21\n\n1.06\n\n1.51\n\n2.21\n\n3.55\n\n2.30\n\n3.05\n\n2.27",
+          "injuryIncidenceCi95": "5.66-11.84\n1.58-3.15\n0.40-8.36\n0.00-2.87\n1.67-11.39\n0.13-3.89\n2.60-20.35\n1.06-3.42\n13.49-19.07\n2.50-4.61\n3.07-11.32\n1.62-3.11\n5.18-16.59\n1.86-4.88\n3.67-19.55\n0.49-5.33",
+          "injuryTimeLossMedian": "13 (10-20)\n13 (9-14)\n11 (8-13)\n14 (0-14)\n16 (9-48)\n12 (4-22)\n8 (6-12)\n13 (10-15)\n20 (10-24)\n12 (8-13)\n29 (13-30)\n14 (6-20)\n14 (9-20)\n16 (9-33)\n22 (12-42)\n12 (0-17)",
+          "injuryTimeLossMean": "28 (22-36)\n20 (15-25)\n22 (13-28)\n15 (0-15)\n31 (8-38)\n13 (4-22)\n14 (6-17)\n17 (13-23)\n33 (17-53)\n18 (9-27)\n35 (21-41)\n28 (12-58)\n23 (14-37)\n27 (15-43)\n34 (29-39)\n15 (12-34)",
+          "injuryBurden": "236\n44\n83\n16\n189\n20\n110\n38\n510\n64\n289\n64\n225\n82\n421\n34",
+          "injuryBurdenCi95": "181-289\n30-64\n5-192\n0-44\n21-370\n1-48\n17-323\n19-54\n257-783\n24-112\n83-429\n20-131\n141-314\n50-112\n107-637\n6-61"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "artifactType": "Backlog 2 Batch 032 staged manual extraction input",
+  "scope": "Fixed membership S2348, S2382, S2506, S2631, S3025 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "fixedBatchMembership": [
+    "S2348",
+    "S2382",
+    "S2506",
+    "S2631",
+    "S3025"
+  ],
+  "preApply": {
+    "assignmentProfile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "statuses": {
+      "S2348": "mental_health",
+      "S2382": "mental_health",
+      "S2506": "mental_health",
+      "S2631": "mental_health",
+      "S3025": "mental_health"
+    },
+    "existingExtractionFields": {
+      "S2348": 0,
+      "S2382": 0,
+      "S2506": 0,
+      "S2631": 0,
+      "S3025": 0
+    },
+    "existingPopulationGroups": {
+      "S2348": 0,
+      "S2382": 0,
+      "S2506": 0,
+      "S2631": 0,
+      "S3025": 0
+    },
+    "primaryFileSha256": {
+      "S2348": "502b28290fbe53b91fb13193c525836c8981594603f9af17c652bb6c194129b7",
+      "S2382": "845cd6b540a42f8805a624d265557a25374ffb86baeb6957d9647e31a34b49b8",
+      "S2506": "08137d8918ceb4231dda83f89f90aa7f56f056ecd1c063a71456429ff011bc8e",
+      "S2631": "e5827e14b703a5c50ffb276e25065aa4f7ccab15dc47569d9f357fe8ea0a8e72",
+      "S3025": "c729d97bb296fdd47e81ac6d608ac54f384d6fa1a4afd0a5b15040407c96e0e1"
+    },
+    "protectedScreeningSignatureSha256": "40a565b5a9b69776418b4b440edb43aa3497fd82afe45ce29795ad0186f95eed",
+    "protectedScreening": "Each record has two immutable full-text include votes, a ready_for_extraction resolution, and a promotion link. No screening-record, vote, resolution, promotion, or file write is staged."
+  },
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "Each attached primary PDF was inspected in full once; every local SHA-256 matches papers.primary_file_sha256.",
+      "The strongest directly reported population split was checked for each source. S2382 has one defensible `Total` row because its 13/22 low-energy-availability-risk outcome is pooled; its national/U20 membership split is descriptive only and does not carry separately reported outcome values. The other four records have no extraction population.",
+      "Tabs 1-4 and all results tables, figures, discussion, and conclusions were swept for compatible injury/illness numerator, denominator, incidence, burden, severity, recurrence, mechanism, diagnosis, location, tissue/type, and illness metrics. S2382 supports the direct metabolic/nutritional illness-risk fields below; the other four do not support a Tabs 1-10 payload.",
+      "S2348 is a 10-page 766-person COVID-19 vaccination and State-Trait Anxiety Inventory survey; injury appears only as a questionnaire exclusion criterion.",
+      "S2382 is an 8-page 22-player questionnaire study of low energy availability, eating-disorder risk, sleep, nutrition knowledge, mood, and menstrual disturbance. Its directly reported LEAF-Q screen identifies 13/22 players (59.1%) at risk of problematic low energy availability; this is a compatible metabolic/nutritional illness-risk outcome, not an injury-surveillance outcome.",
+      "S2506 is a 16-page 18-player U16 four-match well-being questionnaire study. Its figures and analyses report muscle soreness, stress, mood, fatigue, sleep, and a wellness index; injury appears only as background/risk context, never as an outcome.",
+      "S2631 is a 13-page PRISMA-ScR scoping review that screened literature and synthesized 72 articles, rather than reporting a single player cohort. Its live exclusion is corrected from mental_health to systematic_review.",
+      "S3025 is an 8-page 52-player competitive-anxiety questionnaire study by playing position; all results are SCAT/CSAI-2 anxiety and self-confidence scores, not injury or illness outcomes.",
+      "S2382 uses supported study, participant, definition, and metabolic/nutritional illness field IDs. Its single `Total` population value rows are dual-written from the same one-line extraction fields. No fields, structured rows, or populations are staged for the other four exclusions."
+    ]
+  },
+  "sourceCoverage": {
+    "S2348": "Attached 10-page primary PDF: abstract, participant criteria, State-Trait Anxiety Inventory procedures, Tables 1-4, results, discussion, conclusion, and references swept.",
+    "S2382": "Attached 8-page primary PDF: abstract, participants, validated-questionnaire methods, Tables 1-4, results, discussion, conclusion, and references swept.",
+    "S2506": "Attached 16-page primary PDF: abstract, U16 participant criteria, well-being questionnaire, Figures 1-8, results/regressions, discussion, conclusion, and references swept.",
+    "S2631": "Attached 13-page primary PDF: abstract, PRISMA-ScR methods/search/selection/data-charting, Table 1, Figures 1-4, results, discussion, conclusion, and references swept.",
+    "S3025": "Attached 8-page primary PDF: abstract, 52-player participant/methods section, Tables 1-2, results, discussion, conclusion, and references swept."
+  },
+  "classifications": [
+    {
+      "studyId": "S2348",
+      "status": "mental_health",
+      "populationLabels": [],
+      "caveat": "COVID-19 vaccination/anxiety survey; no injury or illness surveillance outcome."
+    },
+    {
+      "studyId": "S2382",
+      "status": "processing",
+      "populationLabels": [
+        "Total"
+      ],
+      "caveat": "LEAF-Q is an indirect risk screen, not a diagnosis. The direct pooled 13/22 (59.1%) low-energy-availability-risk result is stored as a metabolic/nutritional illness-risk field; overlapping mood, sleep, and eating-disorder questionnaire measures are not forced into an artificial all-illness total."
+    },
+    {
+      "studyId": "S2506",
+      "status": "mental_health",
+      "populationLabels": [],
+      "caveat": "Four-match well-being questionnaire study; muscle soreness is a self-reported wellness indicator, not an injury outcome."
+    },
+    {
+      "studyId": "S2631",
+      "status": "systematic_review",
+      "populationLabels": [],
+      "caveat": "PRISMA-ScR scoping review of 72 publications; not a primary player cohort."
+    },
+    {
+      "studyId": "S3025",
+      "status": "mental_health",
+      "populationLabels": [],
+      "caveat": "Competitive-anxiety/self-confidence study by playing position; no injury or illness outcome."
+    }
+  ],
+  "paperActions": [
+    {
+      "studyId": "S2382",
+      "action": "extract_and_status",
+      "from": "mental_health",
+      "to": "processing",
+      "reason": "Direct pooled LEAF-Q risk of problematic low energy availability is compatible with the metabolic/nutritional illness schema."
+    },
+    {
+      "studyId": "S2631",
+      "action": "status_only",
+      "from": "mental_health",
+      "to": "systematic_review",
+      "reason": "Primary source identifies itself as a PRISMA-ScR scoping review and reports literature-review results, not a player cohort."
+    }
+  ],
+  "papers": [
+    {
+      "studyId": "S2382",
+      "populationLabels": [
+        "Total"
+      ],
+      "primaryFileSha256": "845cd6b540a42f8805a624d265557a25374ffb86baeb6957d9647e31a34b49b8",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2382",
+          "leadAuthor": "Coombes I",
+          "title": "Risk of Low Energy Availability in New Zealand National Team and U20 Female Football Representatives",
+          "yearOfPublication": "2024",
+          "journal": "Women in Sport and Physical Activity Journal",
+          "doi": "10.1123/wspaj.2023-0041",
+          "studyDesign": "cross-sectional observational study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "New Zealand",
+          "levelOfPlay": "international women's National Team and U20 representatives",
+          "sex": "female",
+          "ageCategory": "U20 / adult",
+          "sampleSizePlayers": "22",
+          "numberOfTeams": "2",
+          "meanAge": "20.8 +/- 3.5",
+          "observationDuration": "single cross-sectional online survey (March-April 2022)"
+        },
+        "definitions": {
+          "illnessDefinition": "risk of problematic low energy availability [LEAF-Q score >=8]",
+          "incidenceDefinition": "prevalence at a single cross-sectional assessment (percent of players)",
+          "mechanismReporting": "player self-reported online questionnaire"
+        },
+        "illnessOutcome": {
+          "illnessPlayersCompletedStudy": "22",
+          "illnessMostCommonEtiology": "low energy availability risk (13; 59.1%)"
+        },
+        "illnessEtiology": {
+          "illnessEtiology_metabolic_prevalence": "13",
+          "illnessEtiology_metabolic_incidence": "59.1%"
+        }
+      },
+      "caveats": [
+        "LEAF-Q identifies risk of problematic low energy availability; it is an indirect screen and does not establish a clinical diagnosis or measured energy availability.",
+        "National Team and U20 membership is 11/11, but no separate LEAF-Q prevalence is reported by squad, so all outcome values remain on the one `Total` row.",
+        "Eating-disorder, sleep, mood, menstrual-status, and injury-history questionnaire items overlap or are not directly reported as compatible primary outcomes; no artificial all-illness total, psychiatric row, injury row, or rate-derived value is created."
+      ]
+    }
+  ]
+}

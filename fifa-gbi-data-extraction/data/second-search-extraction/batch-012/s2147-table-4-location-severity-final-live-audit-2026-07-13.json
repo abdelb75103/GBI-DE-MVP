@@ -1,0 +1,37 @@
+{
+  "scope": "Second search — Backlog 2 Batch 012; S2147 Table 4 additive injury-location correction",
+  "completedAt": "2026-07-13",
+  "mode": "live apply and focused integrity gate",
+  "paper": {
+    "studyId": "S2147",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "populationLabels": ["Total", "2020", "2021", "2022", "2023"],
+    "sourceAttached": true,
+    "studyIdMatchesAssignedStudyId": true
+  },
+  "sourceCoverage": {
+    "source": "Primary PDF, Table 4 (PDF p. 7; journal p. 455)",
+    "locationTable": "Direct four-season pooled injury-location incidence, median time loss, and burden"
+  },
+  "apply": {
+    "requestedFields": 26,
+    "writtenFields": 26,
+    "unknownFields": [],
+    "unexpectedlySkippedFields": [],
+    "populationValuesAfterSync": 155
+  },
+  "integrityGate": {
+    "sourceToLiveMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "protectedScreeningMetadataPreserved": true,
+    "result": "passed"
+  },
+  "caveats": [
+    "Table 4 reports medians, not means. Per reviewer instruction, values are stored in severityMeanDays as `value (median)`.",
+    "The source's combined Hip and groin row is retained in the established groin field, so its values represent the source's combined scope rather than groin-only injuries.",
+    "Upper arm/elbow/forearm, wrist and hand, chest and thoracic spine, and ACL injury have no single compatible injury-location target and were intentionally not forced into a narrower or overall location field.",
+    "Concussion remains in the existing tissue/type family; this correction is limited to the injury-location family."
+  ],
+  "input": "data/second-search-extraction/batch-012/s2147-table-4-location-severity-correction-input-2026-07-13.json"
+}

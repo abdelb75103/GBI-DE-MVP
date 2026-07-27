@@ -1,0 +1,277 @@
+{
+  "artifactType": "Aspetar ASPREV focused live integrity audit",
+  "date": "2026-07-27",
+  "result": "passed",
+  "architecture": {
+    "professionalQslAnchor": "S2824",
+    "academyAnchor": "S261",
+    "afcMulticountryAnchor": "S602",
+    "syntheticMasterCreated": false
+  },
+  "fixedFamilyMembership": [
+    "S071",
+    "S195",
+    "S261",
+    "S344",
+    "S544",
+    "S555",
+    "S602",
+    "S712",
+    "S1431",
+    "S2824",
+    "S3577"
+  ],
+  "fixedApplyMembership": [
+    "S261",
+    "S2824",
+    "S602"
+  ],
+  "checks": {
+    "exactFamilyMembership": true,
+    "protectedScreeningSignatureBefore": "7179d619e77b17c99f088f118253ebb5707638ad94ba603ae68052cb1a70dbd7",
+    "protectedScreeningSignatureAfter": "7179d619e77b17c99f088f118253ebb5707638ad94ba603ae68052cb1a70dbd7",
+    "protectedScreeningMetadataUnchanged": true,
+    "statusesAssignmentsFlagsAndSourcesUnchanged": true,
+    "stagedFieldsMatchLive": true,
+    "extractionPopulationDualWritesMatch": true,
+    "studyIdsMatchAssignments": true,
+    "datedAuditNotesPresentOnce": true,
+    "relevantBacklogsUpdated": true
+  },
+  "paperAudits": [
+    {
+      "studyId": "S071",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "b7ecbdef-ce5f-4927-913c-e92b151c299e",
+      "sourceSha256": null,
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S195",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "779ff9a1-9eba-46b3-96bc-75d4cb9a8296",
+      "sourceSha256": "370f17045216f219e630491234b8d30879b9835478058b06d7b0bb89df09b9b8",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S261",
+      "role": "applied anchor",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "1d859449-2123-44b2-95f9-90d922969ffd",
+      "sourceSha256": "27046aaa103ad550f9f96a03eefb0745e73dfe89bd0ec383af8a908697f9fc31",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      },
+      "liveData": {
+        "extractionFields": 131,
+        "stagedFieldsChecked": 129,
+        "newFields": 117,
+        "changedFields": 6,
+        "unchangedFields": 8,
+        "populationGroupsBefore": 0,
+        "populationGroupsAfter": 13,
+        "populationValuesBefore": 0,
+        "populationValuesAfter": 652
+      },
+      "fieldMismatches": [],
+      "conflictingExtractionFieldAliases": [],
+      "unknownStagedFieldIds": [],
+      "populationMismatches": [],
+      "retainedPriorPrefixMismatches": [],
+      "matchingReconciliationNotes": [
+        {
+          "id": "ace0ec5c-74dc-418a-90ab-a90a6696723a",
+          "createdAt": "2026-07-27T13:58:53.138+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S344",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "768722d6-42b9-4e3b-b063-27678d245958",
+      "sourceSha256": "5a0998f5c7b6566dcdf96ba5fd67f5aab4b7fe9528bb0802dc329c7167b99e00",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S544",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "14c0ecfc-1bfd-4452-a59f-99f08e915bd1",
+      "sourceSha256": "f7708fb9d783a04272867e321620615937423b2448fb81358ed7abccbb041686",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S555",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "0f63bebf-e332-492a-b8b9-72f33e0614e0",
+      "sourceSha256": "a3930d6b19a2dc9fd317cc82e8d53f5479b7a801d7404b215a3db5d550a8b219",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S602",
+      "role": "applied anchor",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "9cb58d6b-1330-4ca5-af0b-4afe55061e21",
+      "sourceSha256": "84aed171b29840e49a34b3b2d464a39d32bad6123cea6d5cf5b80af4f0cb1777",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      },
+      "liveData": {
+        "extractionFields": 105,
+        "stagedFieldsChecked": 102,
+        "newFields": 91,
+        "changedFields": 7,
+        "unchangedFields": 7,
+        "populationGroupsBefore": 0,
+        "populationGroupsAfter": 4,
+        "populationValuesBefore": 0,
+        "populationValuesAfter": 98
+      },
+      "fieldMismatches": [],
+      "conflictingExtractionFieldAliases": [],
+      "unknownStagedFieldIds": [],
+      "populationMismatches": [],
+      "retainedPriorPrefixMismatches": [],
+      "matchingReconciliationNotes": [
+        {
+          "id": "98df34bd-6e1d-421b-b050-5e67fe184ab5",
+          "createdAt": "2026-07-27T13:59:08.204+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S712",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "c472a4cd-970d-41c3-b964-d141ce0d40e4",
+      "sourceSha256": "453dfd0b5356aff3fb5d730cbfa162e7c0c5272745efc132e810f2036bc222d5",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S1431",
+      "role": "audit-only source",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "3134ce95-7dcb-4141-a17b-dd383f8239a5",
+      "sourceSha256": "7419695bf291f19d07c1f819e4824900896eb1aa8eb24651f02ed0ad88611361",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    },
+    {
+      "studyId": "S2824",
+      "role": "applied anchor",
+      "status": "aspetar_asprev",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "3d99d44b-26f3-4233-bb3e-ab4ebce7e525",
+      "sourceSha256": "b3098677903093ec48b4b9f85a86a04b97571b7a691f996315848fd857858426",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      },
+      "liveData": {
+        "extractionFields": 108,
+        "stagedFieldsChecked": 57,
+        "newFields": 23,
+        "changedFields": 34,
+        "unchangedFields": 51,
+        "populationGroupsBefore": 9,
+        "populationGroupsAfter": 13,
+        "populationValuesBefore": 108,
+        "populationValuesAfter": 216
+      },
+      "fieldMismatches": [],
+      "conflictingExtractionFieldAliases": [],
+      "unknownStagedFieldIds": [],
+      "populationMismatches": [],
+      "retainedPriorPrefixMismatches": [],
+      "matchingReconciliationNotes": [
+        {
+          "id": "2a78e5dc-1a63-4d77-a92d-bdb0466daed3",
+          "createdAt": "2026-07-27T13:58:58.706+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S3577",
+      "role": "audit-only source",
+      "status": "retrospective_substudy_analysis",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "sourceFileId": "de6be817-d479-44a5-8610-7b023d30806b",
+      "sourceSha256": "26edb492879ac967504daf55cbcbe5650df6e11b83c0a38836604d6762c34301",
+      "preservation": {
+        "status": true,
+        "flagReason": true,
+        "assignment": true,
+        "primaryFileId": true,
+        "sourceFile": true
+      }
+    }
+  ],
+  "warnings": [],
+  "failures": [],
+  "rollbackSnapshot": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/aspetar-reconciliation/aspetar-pre-apply-live-rollback-snapshot-2026-07-27.json"
+}

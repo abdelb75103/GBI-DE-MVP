@@ -1,0 +1,95 @@
+{
+  "artifactType": "Backlog 2 Batch 027 final live integrity audit",
+  "scope": "Fixed membership S4734, S4839, S3342, S5434, S4719 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-027/second-search-extraction-batch-027-input-2026-07-14.json",
+  "fixedMembership": ["S4734", "S4839", "S3342", "S5434", "S4719"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached live primary PDF was downloaded once and inspected after its SHA-256 matched both papers.primary_file_sha256 and paper_files.file_sha256.",
+    "fieldValidation": {
+      "stagedFieldCount": 73,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S4734": [],
+        "S4839": [],
+        "S3342": ["All seasons", "2013/14", "2014", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
+        "S5434": [],
+        "S4719": []
+      }
+    },
+    "classifications": {
+      "S4734": "Systematic review/meta-analysis of 15 soccer injury-prevention RCTs.",
+      "S4839": "Four-season, 14-team substudy of the UEFA Elite Club Injury Study.",
+      "S3342": "Eligible prospective observational A-League Women cohort with a direct study-specific per-match/round denominator and 732 reported matches.",
+      "S5434": "Systematic review/meta-analysis of three FIFA 11+ ankle-injury RCTs.",
+      "S4719": "Systematic review/meta-analysis of neuromuscular-training studies."
+    },
+    "dryRunNote": "The standard dry run reached the documented population-sync limitation because new multiline fields are not simulated before population derivation. All 73 staged field IDs and newline counts were validated separately before apply; the live apply then derived the expected eight groups."
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only field writes with core-tab completion, structured population sync, and four true exclusion-route status updates",
+    "writtenFieldsIncludingCoreNotReportedRows": { "S3342": 79 },
+    "populationValuesWritten": { "S3342": 339 },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S4734": { "status": "systematic_review", "flagReason": "Systematic review/meta-analysis of 15 soccer injury-prevention RCTs; not a primary extraction record" },
+      "S4839": { "status": "uefa", "flagReason": "UEFA Elite Club Injury Study substudy; preserve UEFA study-family exclusion route" },
+      "S5434": { "status": "systematic_review", "flagReason": "Systematic review/meta-analysis of three FIFA 11+ ankle-injury RCTs; not a primary extraction record" },
+      "S4719": { "status": "systematic_review", "flagReason": "Systematic review/meta-analysis of neuromuscular-training studies; not a primary extraction record" }
+    },
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S3342", "S4719", "S4734", "S4839", "S5434"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "sourceHashMismatches": 0,
+    "studyIdMismatches": 0,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "screeningRecordsVerified": 10,
+      "protectedHashChanges": 0,
+      "manualDecisionChanges": 0,
+      "resolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "027",
+      "updatedRows": ["S4734", "S4839", "S3342", "S5434", "S4719"]
+    },
+    "papers": [
+      { "studyId": "S4734", "status": "systematic_review", "populationLabels": [], "populationCount": 0, "liveFieldCount": 0, "populationValueCount": 0, "primaryFileSha256": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277" },
+      { "studyId": "S4839", "status": "uefa", "populationLabels": [], "populationCount": 0, "liveFieldCount": 0, "populationValueCount": 0, "primaryFileSha256": "5201ad56e31f1a16f34cd41132d815cb9dbf303eea2eb424232102be0958d4df" },
+      { "studyId": "S3342", "status": "processing", "populationLabels": ["All seasons", "2013/14", "2014", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"], "populationCount": 8, "liveFieldCount": 79, "populationValueCount": 339, "primaryFileSha256": "b0edf0a84722831079f97cbdc090ca580065228f37205ccc1cd1eaff64b865fc" },
+      { "studyId": "S5434", "status": "systematic_review", "populationLabels": [], "populationCount": 0, "liveFieldCount": 0, "populationValueCount": 0, "primaryFileSha256": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015" },
+      { "studyId": "S4719", "status": "systematic_review", "populationLabels": [], "populationCount": 0, "liveFieldCount": 0, "populationValueCount": 0, "primaryFileSha256": "01f183be688086b16227de9ea351b339b99280b47a65f6a326f4abae27c15ce6" }
+    ]
+  },
+  "sourceCoverage": {
+    "S4734": "PDF pp. 1-15; abstract, PRISMA methods, eligibility, included-study table, outcome analyses/figures, limitations and conclusion.",
+    "S4839": "PDF pp. 1-9; ECIS cohort methods, definitions, questionnaire, Figure 1, Tables 1-2, discussion, limitations and conclusion.",
+    "S3342": "PDF pp. 1-7; abstract, methods/definitions, Figure 1, Tables 1-2 including continuation, results, discussion, limitations and conclusion. Online supplement was not attached.",
+    "S5434": "PDF pp. 1-18; abstract, PRISMA/PICO methods, Tables 1-6, flow/forest plots, bias assessment, discussion and conclusion.",
+    "S4719": "PDF pp. 1-16; abstract, PRISMA methods, PICO criteria, included-study tables, results, discussion and conclusion."
+  },
+  "caveats": {
+    "S4734": "True systematic-review exclusion retained in fixed Batch 027; no extraction fields or populations were created.",
+    "S4839": "True UEFA Elite Club study-family exclusion retained in fixed Batch 027; no duplicate ECIS extraction fields or populations were created.",
+    "S3342": "Player-hours were unavailable, but the paper directly reports 732 matches and a study-specific per-match/round rate. Pooled structured counts sum direct season cells; contact/non-contact counts are percentage-derived from 334. Table 2 cells and prose conflict on head/neck totals, so the direct table cells were retained and flagged. Combined hip/groin and sternum/ribs/upper-back rows were not forced into narrower schema fields.",
+    "S5434": "True systematic-review exclusion retained in fixed Batch 027; no extraction fields or populations were created.",
+    "S4719": "True systematic-review exclusion retained in fixed Batch 027; no extraction fields or populations were created."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "human extraction review"
+}

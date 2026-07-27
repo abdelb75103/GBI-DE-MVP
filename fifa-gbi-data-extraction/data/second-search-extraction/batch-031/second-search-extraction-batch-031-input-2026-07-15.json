@@ -1,0 +1,98 @@
+{
+  "artifactType": "Backlog 2 Batch 031 staged manual extraction input",
+  "scope": "Fixed membership S2236, S2238, S2285, S2305, S2308 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "fixedBatchMembership": ["S2236", "S2238", "S2285", "S2305", "S2308"],
+  "preApply": {
+    "assignmentProfile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "statuses": {
+      "S2236": "mental_health",
+      "S2238": "mental_health",
+      "S2285": "mental_health",
+      "S2305": "mental_health",
+      "S2308": "mental_health"
+    },
+    "existingExtractionFields": {
+      "S2236": 0,
+      "S2238": 0,
+      "S2285": 0,
+      "S2305": 0,
+      "S2308": 0
+    },
+    "existingPopulationGroups": {
+      "S2236": 0,
+      "S2238": 0,
+      "S2285": 0,
+      "S2305": 0,
+      "S2308": 0
+    },
+    "protectedScreening": "Each record has two immutable full-text include votes, a ready_for_extraction resolution, and a promotion link. No screening-record, vote, resolution, or promotion write is staged.",
+    "primaryFileSha256": {
+      "S2236": "6a34eb4d8face759d985d6a2a34e2f5cf0afe8c8cd9fa0fe080f6837983d07a3",
+      "S2238": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3",
+      "S2285": "befb25fe1b907d868fdcd90267e95f8dcfa5cbb74a1603baf092f453104ef552",
+      "S2305": "41c8ca2a963228790ddc24b1811bff2aeedf4da4155bebc93ce6ed04c6ef6cf5",
+      "S2308": "96387c1a30b80428244d88e11cc78a161733dc22806eba3da433df6c32acc7f8"
+    }
+  },
+  "stageA": {
+    "result": "passed with one reviewer-attention caveat",
+    "checks": [
+      "Each attached primary PDF was inspected in full once and its local SHA-256 matched papers.primary_file_sha256.",
+      "All five records already carry the appropriate true-exclusion status mental_health; none has extraction fields or population rows. Their exact batch membership is retained rather than replaced.",
+      "S2236 is a cross-sectional DASS-21, Pittsburgh Sleep Quality Index, and Epworth Sleepiness Scale comparison of 12 youth and 10 adult Chilean cerebral-palsy footballers; it reports psychological and sleep outcomes, not injury or illness surveillance.",
+      "S2238 is a 3-week observational low-energy-availability, diet, and body-composition study of 11 female National Premier League soccer players; injuries only appear as a participant-exclusion reason and it reports no injury outcome denominator, count, rate, burden, or severity.",
+      "S2285 is a phenomenological, semi-structured-interview study of eight Turkish Amputee Football Super League athletes about anxiety and coping; injury is an anxiety theme rather than a measured injury outcome.",
+      "S2305 is a cross-sectional EAT-26, DOS, BES, and bioimpedance assessment of eating-disorder/orthorexia risk and body perception in 51 elite/first-division soccer players; injury only appears in an eligibility criterion and there is no injury/illness outcome extraction.",
+      "S2308's stored primary PDF is internally a 26-page study of physical-activity barriers among 531 Filipino college students, not the cited pre-competitive-anxiety paper on young female soccer players. Its SHA matches the stored live attachment, so the attachment/citation mismatch is documented rather than silently repaired. The citation title and abstract still support the existing mental_health classification.",
+      "No Tabs 1-10 fields, derived values, structured rows, populations, or status corrections are staged. Consequently there are no field IDs to validate and no structured dual-write payload."
+    ]
+  },
+  "sourceCoverage": {
+    "S2236": "Attached 12-page primary PDF: abstract, methods/participants, Table 1, questionnaire procedures, results tables, discussion, conclusion, and references swept.",
+    "S2238": "Attached 10-page primary PDF: abstract, participants, Figure 1, Tables 1-4, dietary/energy-availability results, discussion, conclusion, and references swept.",
+    "S2285": "Attached 19-page primary PDF: abstract, study design/sample, interview procedures, Table 1, Figures 1-4, thematic results, discussion, conclusion, and references swept.",
+    "S2305": "Attached 14-page primary PDF: abstract, methods/participants, questionnaires and body-composition measures, Tables 1-5, results, discussion, conclusion, and references swept.",
+    "S2308": "Attached 26-page primary PDF: abstract, methods, 531-college-student sample, Tables 1-2, results, discussion, conclusion, and references swept; it does not match the S2308 citation/abstract."
+  },
+  "classifications": [
+    {
+      "studyId": "S2236",
+      "status": "mental_health",
+      "populationLabels": [],
+      "primaryFileSha256": "6a34eb4d8face759d985d6a2a34e2f5cf0afe8c8cd9fa0fe080f6837983d07a3",
+      "caveat": "Psychological and sleep questionnaire study; no injury or illness outcomes."
+    },
+    {
+      "studyId": "S2238",
+      "status": "mental_health",
+      "populationLabels": [],
+      "primaryFileSha256": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3",
+      "caveat": "Low-energy-availability and eating-disorder-risk study; no injury surveillance outcome."
+    },
+    {
+      "studyId": "S2285",
+      "status": "mental_health",
+      "populationLabels": [],
+      "primaryFileSha256": "befb25fe1b907d868fdcd90267e95f8dcfa5cbb74a1603baf092f453104ef552",
+      "caveat": "Qualitative anxiety/coping study; fears of injury are not injury events or surveillance data."
+    },
+    {
+      "studyId": "S2305",
+      "status": "mental_health",
+      "populationLabels": [],
+      "primaryFileSha256": "41c8ca2a963228790ddc24b1811bff2aeedf4da4155bebc93ce6ed04c6ef6cf5",
+      "caveat": "Eating-disorder, orthorexia, and body-image assessment; no compatible injury/illness outcome."
+    },
+    {
+      "studyId": "S2308",
+      "status": "mental_health",
+      "populationLabels": [],
+      "primaryFileSha256": "96387c1a30b80428244d88e11cc78a161733dc22806eba3da433df6c32acc7f8",
+      "caveat": "The stored file is a citation mismatch. Keep mental_health because the citation/abstract describe anxiety, but recover the correct PDF before relying on source-level evidence."
+    }
+  ],
+  "papers": []
+}

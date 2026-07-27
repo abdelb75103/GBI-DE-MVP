@@ -1,0 +1,140 @@
+{
+  "artifactType": "Retrospective sub-study source-family reconciliation input",
+  "generatedAt": "2026-07-27T00:00:00.000Z",
+  "writeBoundary": "papers.metadata.analysisSourceTreatment and additive paper_notes only; paper status, extraction data, files, screening state, assignments, and flags are protected",
+  "scope": {
+    "currentRetrospectiveSubstudyCount": 11,
+    "alreadyGovernedCount": 8,
+    "newlyGovernedRetrospectiveStudyIds": [
+      "S3218",
+      "S5061",
+      "S606"
+    ],
+    "newAnchorStudyIds": [
+      "S319",
+      "S1665",
+      "S625"
+    ],
+    "statusChangesRequested": 0,
+    "reason": "The three retrospective papers already have the correct retrospective_substudy_analysis status. This reconciliation adds their missing parent-child source-family treatment so default analysis exports use the parent study and source exports retain both papers."
+  },
+  "papers": [
+    {
+      "studyId": "S319",
+      "familyKey": "finnish-premier-division-2019",
+      "note": "Retrospective sub-study reconciliation, 27 July 2026: S319 is the analysis anchor for the 2019 Finnish Premier Division cohort. S3218 uses the same 236 players and 12 teams for a surface-specific secondary analysis. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "evidence": "S319 and S3218 report the same 2019 Finnish Premier Division cohort of 236 players from 12 teams; S3218 is explicitly flagged as an S319 sub-study.",
+      "allowRowPolicyUpgrade": false,
+      "intendedTreatment": {
+        "version": "2026-07-27-retrospective-substudy-v1",
+        "role": "anchor",
+        "includeInAnalysisExport": true,
+        "sourceLinks": [],
+        "populationExclusions": [],
+        "requireCompletePopulationMap": false,
+        "populationTreatments": []
+      }
+    },
+    {
+      "studyId": "S3218",
+      "familyKey": "finnish-premier-division-2019",
+      "note": "Retrospective sub-study reconciliation, 27 July 2026: S3218 is a surface-specific secondary analysis of the S319 cohort and remains under Retrospective Sub-study Analysis. It is retained in source scope and excluded from default denominator aggregation. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "evidence": "Same 2019 Finnish Premier Division cohort as S319: 236 players and 12 teams. The live flag already states “Exclude - S319 Substudy”.",
+      "allowRowPolicyUpgrade": false,
+      "intendedTreatment": {
+        "version": "2026-07-27-retrospective-substudy-v1",
+        "role": "nested_subset",
+        "includeInAnalysisExport": false,
+        "sourceLinks": [
+          {
+            "anchorStudyId": "S319",
+            "relationship": "nested",
+            "tournamentKey": "finnish-premier-division-2019",
+            "notes": "Surface-specific secondary analysis of the S319 cohort."
+          }
+        ],
+        "populationExclusions": [],
+        "requireCompletePopulationMap": false,
+        "populationTreatments": []
+      }
+    },
+    {
+      "studyId": "S1665",
+      "familyKey": "malaysian-single-club-hsi-2023",
+      "note": "Retrospective sub-study reconciliation, 27 July 2026: S1665 is the analysis anchor for the 2023 Malaysian single-club hamstring cohort. S5061 is a smaller 72-player strength subset from the same cohort. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "evidence": "S1665 reports the full 81-player cohort with 24,147.5 total exposure hours; S5061 reports a 72-player hip-strength subset from the same club and season.",
+      "allowRowPolicyUpgrade": false,
+      "intendedTreatment": {
+        "version": "2026-07-27-retrospective-substudy-v1",
+        "role": "anchor",
+        "includeInAnalysisExport": true,
+        "sourceLinks": [],
+        "populationExclusions": [],
+        "requireCompletePopulationMap": false,
+        "populationTreatments": []
+      }
+    },
+    {
+      "studyId": "S5061",
+      "familyKey": "malaysian-single-club-hsi-2023",
+      "note": "Retrospective sub-study reconciliation, 27 July 2026: S5061 is the 72-player hip-strength subset of the S1665 Malaysian single-club cohort and remains under Retrospective Sub-study Analysis. It is retained in source scope and excluded from default denominator aggregation. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "evidence": "The methods and prior correction audit identify the same Malaysian club and 2023 season as S1665, with S5061 restricted to 72 of the 81 players.",
+      "allowRowPolicyUpgrade": false,
+      "intendedTreatment": {
+        "version": "2026-07-27-retrospective-substudy-v1",
+        "role": "nested_subset",
+        "includeInAnalysisExport": false,
+        "sourceLinks": [
+          {
+            "anchorStudyId": "S1665",
+            "relationship": "nested",
+            "tournamentKey": "malaysian-single-club-hsi-2023",
+            "notes": "Hip-strength subset of the S1665 cohort."
+          }
+        ],
+        "populationExclusions": [],
+        "requireCompletePopulationMap": false,
+        "populationTreatments": []
+      }
+    },
+    {
+      "studyId": "S625",
+      "familyKey": "norway-female-u17-2005-trial",
+      "note": "Retrospective sub-study reconciliation, 27 July 2026: S625 is the analysis anchor for the 2005 Norwegian female U17 cluster-randomised trial. S606 is the turf-specific secondary analysis of the same 2,020 players and 109 teams. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "evidence": "S606 states that it is based on the S625 randomised trial; both use the same 2,020 players and 109 teams in the 2005 Norwegian female U17 season.",
+      "allowRowPolicyUpgrade": false,
+      "intendedTreatment": {
+        "version": "2026-07-27-retrospective-substudy-v1",
+        "role": "anchor",
+        "includeInAnalysisExport": true,
+        "sourceLinks": [],
+        "populationExclusions": [],
+        "requireCompletePopulationMap": false,
+        "populationTreatments": []
+      }
+    },
+    {
+      "studyId": "S606",
+      "familyKey": "norway-female-u17-2005-trial",
+      "note": "Retrospective sub-study reconciliation, 27 July 2026: S606 is the turf-specific secondary analysis of the S625 trial and remains under Retrospective Sub-study Analysis. It is retained in source scope and excluded from default denominator aggregation. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "evidence": "The S606 methods explicitly state that the analysis is based on the cluster-randomised trial reported in S625, using the same 2,020 players and 109 teams.",
+      "allowRowPolicyUpgrade": false,
+      "intendedTreatment": {
+        "version": "2026-07-27-retrospective-substudy-v1",
+        "role": "nested_subset",
+        "includeInAnalysisExport": false,
+        "sourceLinks": [
+          {
+            "anchorStudyId": "S625",
+            "relationship": "nested",
+            "tournamentKey": "norway-female-u17-2005-trial",
+            "notes": "Turf-specific secondary analysis of the S625 trial."
+          }
+        ],
+        "populationExclusions": [],
+        "requireCompletePopulationMap": false,
+        "populationTreatments": []
+      }
+    }
+  ]
+}

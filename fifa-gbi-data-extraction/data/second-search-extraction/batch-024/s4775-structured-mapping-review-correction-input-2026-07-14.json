@@ -1,0 +1,48 @@
+{
+  "artifactType": "S4775 independent-review structured mapping correction input",
+  "scope": "S4775 only; add Table 3 Lower back to Lumbosacral and Table 4 Unknown to Non-specific tissue type",
+  "source": {
+    "primaryPdfSha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9",
+    "table3LowerBack": {
+      "match": {"count": "3", "incidence": "0.20", "burden": "3", "meanSeverity": "14", "medianSeverity": "10"},
+      "training": {"count": "6", "incidence": "0.11 (0.01-0.24)", "burden": "1 (0-2)", "meanSeverity": "10 (9-16)", "medianSeverity": "9 (9-16)"}
+    },
+    "table4Unknown": {
+      "match": {"count": "6", "incidence": "0.40 (0.08-1.05)", "burden": "4 (1-10)", "meanSeverity": "12 (4-20)", "medianSeverity": "10 (4-20)"},
+      "training": {"count": "18", "incidence": "0.32 (0.04-0.76)", "burden": "4 (0-10)", "meanSeverity": "13 (4-30)", "medianSeverity": "9 (1-40)"}
+    },
+    "medianMapping": "Median values were checked and retained in this audit evidence, but the structured schema has no median-severity metric. They are not forced into severityMeanDays."
+  },
+  "rollbackEvidence": {
+    "capturedBeforeCorrection": true,
+    "populationLabels": ["Match", "Training", "U11 Match", "U11 Training", "U12 Match", "U12 Training", "U13 Match", "U13 Training", "U14 Match", "U14 Training", "U15 Match", "U15 Training", "U16 Match", "U16 Training", "U18 Match", "U18 Training"],
+    "liveFieldCount": 164,
+    "populationValueCount": 475,
+    "allEightTargetFieldRowsAbsent": true,
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "studyId": "S4775",
+    "primaryFileId": "dc75c704-3e82-4992-933f-9323395e87b7",
+    "screeningVoteIds": ["b0ddeb2d-6b8f-4bea-877f-7f304fc53987", "ecd87d6e-cf92-498e-b634-992d222a717b"]
+  },
+  "papers": [
+    {
+      "studyId": "S4775",
+      "populationLabels": ["Match", "Training", "U11 Match", "U11 Training", "U12 Match", "U12 Training", "U13 Match", "U13 Training", "U14 Match", "U14 Training", "U15 Match", "U15 Training", "U16 Match", "U16 Training", "U18 Match", "U18 Training"],
+      "fields": {
+        "injuryLocation": {
+          "injuryLocation_lumbosacral_prevalence": "3\n6",
+          "injuryLocation_lumbosacral_incidence": "0.20\n0.11 (0.01-0.24)",
+          "injuryLocation_lumbosacral_burden": "3\n1 (0-2)",
+          "injuryLocation_lumbosacral_severityMeanDays": "14\n10 (9-16)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_non_specific_tissue_prevalence": "6\n18",
+          "injuryTissueType_non_specific_tissue_incidence": "0.40 (0.08-1.05)\n0.32 (0.04-0.76)",
+          "injuryTissueType_non_specific_tissue_burden": "4 (1-10)\n4 (0-10)",
+          "injuryTissueType_non_specific_tissue_severityMeanDays": "12 (4-20)\n13 (4-30)"
+        }
+      }
+    }
+  ]
+}

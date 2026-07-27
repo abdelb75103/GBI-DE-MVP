@@ -636,6 +636,11 @@ const injuryTissueTypeGroups: MetricGroup[] = [
       overallTissueGuidance,
   },
   { id: 'muscle_injury', label: 'Muscle injury' },
+  {
+    id: 'tendon_injury',
+    label: 'Tendon injury',
+    description: 'Broad tendon injury category when the source does not distinguish tendinopathy from tendon rupture.',
+  },
   { id: 'muscle_contusion', label: 'Muscle contusion' },
   { id: 'muscle_compartment', label: 'Muscle compartment syndrome' },
   { id: 'tendinopathy', label: 'Tendinopathy' },

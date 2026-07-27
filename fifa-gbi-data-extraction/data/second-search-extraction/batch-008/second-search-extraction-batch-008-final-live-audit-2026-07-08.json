@@ -1,0 +1,197 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; extraction Batch 008; final live post-review-gate audit; 2026-07-08",
+  "reviewModel": "GPT-5.4 Codex strongest available in current runtime; separate model/reasoning selector unavailable",
+  "papers": [
+    {
+      "studyId": "S1299",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1299",
+      "fileAttached": true,
+      "file": {
+        "storage_bucket": "papers",
+        "storage_object_path": "ea48949f-e19c-440d-8b27-b57222cb5593/1781617103092-S1299-effects-of-in-season-strength-training-on-physical-fitness-and-injury-prevention-in-north-african-elite-young-female-soc.pdf",
+        "file_sha256": "f25644563760c6cc6ef9fc3fc12d682fdc2b6fe238a6388965a020c71da75a8f",
+        "size": 1404456
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "fieldRows": 44,
+      "populationLabels": [
+        "Control group",
+        "Strength training group"
+      ],
+      "populationValueRows": 46,
+      "dualWriteMismatches": [],
+      "batchNotePresent": true,
+      "reviewGate": {
+        "classification": "no action",
+        "caveats": []
+      },
+      "globalFieldsExcludedFromPopulationValues": true
+    },
+    {
+      "studyId": "S1326",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1326",
+      "fileAttached": true,
+      "file": {
+        "storage_bucket": "papers",
+        "storage_object_path": "d1a4b480-204f-41c0-a3f8-0c7cd4f2db3f/1781615448227-S1326-orthopedic-injuries-in-men-s-professional-soccer-during-the-coronavirus-disease-pandemic.pdf",
+        "file_sha256": "d786d5448920dafcd18f2e8e503ce0afe7c971abaa69181962063c62cabae8f3",
+        "size": 391000
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "fieldRows": 44,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueRows": 21,
+      "dualWriteMismatches": [],
+      "batchNotePresent": true,
+      "reviewGate": {
+        "classification": "no action",
+        "caveats": [
+          "The results prose states 118 total injuries, while Table 1 totals 119 records with injury; live injuryTotalCount and injuryMatchCount retain the headline prose value 118, and the discrepancy requires reviewer attention."
+        ]
+      },
+      "globalFieldsExcludedFromPopulationValues": true
+    },
+    {
+      "studyId": "S1356",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1356",
+      "fileAttached": true,
+      "file": {
+        "storage_bucket": "papers",
+        "storage_object_path": "e7687c7a-6526-4a63-8b0c-0581432f79a7/1781617213879-S1356-effects-of-a-preseason-neuromuscular-training-program-vs-an-endurance-dominated-program-on-physical-fitness-and-injury-p.pdf",
+        "file_sha256": "f812aaba50bd616594050bc875fd9a58a7cb1455bb3146d64ab2eff064961665",
+        "size": 3047288
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "fieldRows": 48,
+      "populationLabels": [
+        "Endurance training group",
+        "Neuromuscular training group"
+      ],
+      "populationValueRows": 54,
+      "dualWriteMismatches": [],
+      "batchNotePresent": true,
+      "reviewGate": {
+        "classification": "no action",
+        "caveats": [
+          "Table 8 directly reports recurrent injuries as 5 in the endurance-training group and 2 in the neuromuscular-training group; recurrence definition was not reported and remains blank."
+        ]
+      },
+      "globalFieldsExcludedFromPopulationValues": true,
+      "injuryRecurrentTotal": "5\n2",
+      "injuryRecurrentPopulationValues": [
+        "5",
+        "2"
+      ]
+    },
+    {
+      "studyId": "S1389",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1389",
+      "fileAttached": true,
+      "file": {
+        "storage_bucket": "papers",
+        "storage_object_path": "335f2221-1f19-403d-aa90-5e54cd7e55bb/1782231666561-S1389-the-impact-of-injury-on-career-progression-in-elite-youth-football-findings-at-10-years.pdf",
+        "file_sha256": "b971cd50129765b008a92583756a345671e9da01e582e7e04050660ef47d5b49",
+        "size": 1226989
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "fieldRows": 58,
+      "populationLabels": [
+        "Total",
+        "U12",
+        "U13",
+        "U14",
+        "U15",
+        "U16",
+        "U17",
+        "U19"
+      ],
+      "populationValueRows": 109,
+      "dualWriteMismatches": [],
+      "batchNotePresent": true,
+      "reviewGate": {
+        "classification": "no action",
+        "caveats": [
+          "Structured tissue/type time-loss values are reported medians stored with explicit median labels."
+        ]
+      },
+      "globalFieldsExcludedFromPopulationValues": true
+    },
+    {
+      "studyId": "S1402",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1402",
+      "fileAttached": true,
+      "file": {
+        "storage_bucket": "papers",
+        "storage_object_path": "4ca224b5-4b7a-4814-9122-1bf88ff8e048/1772029494202-Marques_-_2024_-_Descriptive_analysis_of_injury_types_and_incidence_during_futsal_preseason_across_different_competit.pdf",
+        "file_sha256": "c757709d90749797bb254fde116b2d8e5da55b25104dccbe4fdfcb928e28f2bd",
+        "size": 242061
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryOutcome",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "fieldRows": 34,
+      "populationLabels": [
+        "Elite",
+        "Sub-elite",
+        "Amateur"
+      ],
+      "populationValueRows": 40,
+      "dualWriteMismatches": [],
+      "batchNotePresent": true,
+      "reviewGate": {
+        "classification": "no action",
+        "caveats": [
+          "Printed exposure values retained; rates imply group player-hours, but no back-calculation was applied."
+        ]
+      },
+      "globalFieldsExcludedFromPopulationValues": true
+    }
+  ],
+  "review": "post-independent-review correction live gate rerun"
+}

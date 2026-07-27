@@ -1,0 +1,131 @@
+{
+  "artifactType": "Backlog 2 Batch 035 final live integrity audit",
+  "scope": "Fixed membership S4716, S5428, S5482 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "inputArtifact": "data/second-search-extraction/batch-035/second-search-extraction-batch-035-input-2026-07-15.json",
+  "fixedMembership": ["S4716", "S5428", "S5482"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached primary PDF was inspected in full once. All three local SHA-256 values match the live papers.primary_file_sha256 values.",
+    "fieldValidation": {
+      "stagedFieldCount": 0,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S4716": [],
+        "S5428": [],
+        "S5482": []
+      },
+      "dryRun": "Not applicable: all three fixed members correctly have no compatible Tabs 1-10 payload, so no extraction-field or population write was staged."
+    },
+    "classifications": {
+      "S4716": "Competitive-anxiety study with only a total season injury-count distribution and no compatible injury/illness surveillance payload; existing mental_health status retained.",
+      "S5428": "Cross-sectional DASS-21 study of central and assistant referees; tagged referee because participants are not current football players.",
+      "S5482": "Nationwide register cohort with depression/anxiety-related-disorder and suicide outcomes only; existing mental_health status retained."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "fieldApply": {},
+    "statusUpdates": {
+      "S5428": {
+        "status": "referee",
+        "flagReason": "Soccer referee population; not current football-player participants",
+        "conditionalPrecondition": "status=mental_health and flag_reason is null",
+        "affectedRows": 1
+      }
+    },
+    "noOpExclusions": ["S4716", "S5482"],
+    "extractionAndPopulationWrites": 0,
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S4716", "S5428", "S5482"],
+    "assignment": "All three remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "statuses": {
+      "S4716": "mental_health",
+      "S5428": "referee",
+      "S5482": "mental_health"
+    },
+    "primaryFilesAttached": 3,
+    "primaryFileHashMismatches": 0,
+    "studyIdChecks": {
+      "S4716": "S4716 equals papers.assigned_study_id",
+      "S5428": "S5428 equals papers.assigned_study_id",
+      "S5482": "S5482 equals papers.assigned_study_id"
+    },
+    "populationLayouts": {
+      "S4716": [],
+      "S5428": [],
+      "S5482": []
+    },
+    "liveFieldCounts": {
+      "S4716": 0,
+      "S5428": 0,
+      "S5482": 0
+    },
+    "populationValueCounts": {
+      "S4716": 0,
+      "S5428": 0,
+      "S5482": 0
+    },
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "preApplySignatureSha256": "eabd9eaa02f9c042fafea404401ea9b64f1e41175ff8b4a0c3d64710ac8cd918",
+      "postApplySignatureSha256": "eabd9eaa02f9c042fafea404401ea9b64f1e41175ff8b4a0c3d64710ac8cd918",
+      "fullTextRecordsVerified": 3,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "035",
+      "updatedRows": ["S4716", "S5428", "S5482"]
+    },
+    "papers": [
+      {
+        "studyId": "S4716",
+        "status": "mental_health",
+        "populationLabels": [],
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874"
+      },
+      {
+        "studyId": "S5428",
+        "status": "referee",
+        "flagReason": "Soccer referee population; not current football-player participants",
+        "populationLabels": [],
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "10f30441dd996c26bfe49ffc81b194365cd60dcb4b5b4b1eab78a25549513266"
+      },
+      {
+        "studyId": "S5482",
+        "status": "mental_health",
+        "populationLabels": [],
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "8f94ccc32076def2e2460b560adb95a34429b6807c1f68b0b550a192e76d7b3f"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "S4716": "Attached 18-page primary PDF: abstract, introduction, participants, questionnaire/injury-register method, Table 1, Figures 1-2, Tables 2-6, results, discussion, limitations, practical applications, conclusions, and references swept.",
+    "S5428": "Attached 7-page primary PDF: abstract, introduction, referee eligibility/sampling, DASS-21 and statistical methods, Tables 1-5, results, discussion, limitations, conclusions, and references swept.",
+    "S5482": "Attached 8-page primary PDF: abstract, introduction, nationwide-register data sources, cohort/outcome/statistical methods, Tables 1-5, Figures 1-2, results, discussion, limitations, conclusions, and references swept."
+  },
+  "caveats": {
+    "S4716": "Injuries are only the season-total count used in anxiety correlations. Because the paper gives neither an at-risk denominator nor compatible injury-outcome detail, no sparse injury extraction was created.",
+    "S5428": "Its prior mental_health placeholder was replaced by the more specific referee exclusion. No injury or illness outcome is reported.",
+    "S5482": "The cohort’s player data are historic/current-status registry data; all direct outcomes are depression/anxiety-related diagnoses and suicide, not injury or illness surveillance."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "Human review: S4716 and S5482 mental-health classifications; S5428 referee exclusion."
+}

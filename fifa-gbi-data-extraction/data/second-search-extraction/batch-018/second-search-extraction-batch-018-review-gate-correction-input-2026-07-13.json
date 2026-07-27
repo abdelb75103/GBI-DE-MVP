@@ -1,0 +1,15 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 018; post-apply review-gate correction; 2026-07-13",
+  "papers": [
+    {
+      "studyId": "S2330",
+      "populationLabels": ["Total"],
+      "note": "Batch 018 review-gate correction: lead author normalized from an imported full-name form to the required source-faithful Surname Initials format, Fernandes GCAM. No outcome, population, status, source-file, screening, resolver, or human-vote value is changed.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Fernandes GCAM"
+        }
+      }
+    }
+  ]
+}

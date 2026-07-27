@@ -1,0 +1,275 @@
+{
+  "scope": "Backlog 2 Batch 022 — fixed membership S3577, S4961, S4806, S3219, S5338",
+  "model": "GPT-5.6 Sol (medium); documented local substitute because the skill-default GPT-5.5 was unavailable in this workspace.",
+  "fixedBatchMembership": ["S3577", "S4961", "S4806", "S3219", "S5338"],
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "Each attached primary PDF was inspected once; the live primary-file SHA-256 matched the downloaded source for every fixed member.",
+      "S3577 was classified as an overlapping secondary analysis of the already-live S344 Qatar Stars League cohort; S4806 was classified as a systematic review. Neither is staged as a new primary-cohort extraction.",
+      "S4961, S3219, and S5338 have a direct at-risk denominator or a directly reported accepted incidence denominator. No exposure, count, rate, burden, or time-loss value was back-calculated from another metric.",
+      "Tabs 1–4 were staged for each primary-cohort payload; Tables, results text, and usable figures were swept for Tabs 5–10. Structured fields use source-row-aligned population values.",
+      "Field identifiers, two-line population alignment, and source-to-payload values will be validated locally before apply. The generic apply-script dry run cannot simulate new multiline groups before population sync, so it is intentionally not used as a false assurance."
+    ]
+  },
+  "sourceCoverage": {
+    "S3577": "Primary PDF pp. 53-60: abstract; methods; Figure 1; Tables 1-5; results; discussion; references checked.",
+    "S4961": "Primary PDF pp. 1-8: abstract; methods; Figures 1-2; Tables 1-4; results; discussion; references checked.",
+    "S4806": "Primary PDF pp. 1-8: abstract; PRISMA methods/flowchart; Table 1; narrative results; discussion; conclusion; references checked.",
+    "S3219": "Primary PDF pp. 1-9: abstract; methods; Tables 1-3; Figure 1; results; discussion; references checked.",
+    "S5338": "Primary PDF pp. 1-9: abstract; methods; Tables 1-4; Figures 1-4; results; discussion; references checked. Figure 2 is combined-by-phase only and was not forced into the tournament rows."
+  },
+  "exclusions": [
+    {
+      "studyId": "S3577",
+      "classification": "retrospective_substudy_analysis",
+      "flagReason": "Secondary analysis of existing S344 Qatar Stars League 2013/14-2014/15 cohort; not independently extracted",
+      "primaryFileSha256": "26edb492879ac967504daf55cbcbe5650df6e11b83c0a38836604d6762c34301",
+      "populationLabels": [],
+      "caveats": [
+        "The paper explicitly describes itself as a secondary analysis of the 2013-2015 Qatar Stars League prospective cohort.",
+        "The parent cohort is already live as S344 (Epidemiology of time loss groin injuries in a men's professional football league: a 2-year prospective study of 17 clubs and 606 players).",
+        "No independent extraction is staged, avoiding duplicate cohort counting while retaining this fixed Batch 022 member and its attached source."
+      ]
+    },
+    {
+      "studyId": "S4806",
+      "classification": "systematic_review",
+      "flagReason": "Systematic review/meta-analysis; not a primary extraction record",
+      "primaryFileSha256": "f9759f8fe088b4a1b075be39addefc70546d1627292d16fdf3faf90111abc44c",
+      "populationLabels": [],
+      "caveats": [
+        "PRISMA systematic review of five controlled trials; the narrative synthesis is not a primary surveillance cohort.",
+        "No primary-study extraction is staged."
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "studyId": "S4961",
+      "populationLabels": ["Total"],
+      "primaryFileSha256": "b5387b9b4bcff2008f5a363ae0e0ac4da8ba2c893e39af3e23981eacf30cc090",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4961",
+          "leadAuthor": "Morland N",
+          "title": "Incidence and risk factors of spondylolysis in youth football: a longitudinal study among male Norwegian players.",
+          "yearOfPublication": "2026",
+          "journal": "BMJ Open Sport & Exercise Medicine",
+          "doi": "10.1136/bmjsem-2026-003222",
+          "studyDesign": "prospective longitudinal cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Norway",
+          "levelOfPlay": "youth regional/national level",
+          "sex": "male",
+          "ageCategory": "U15-U17",
+          "meanAge": "14.6 / 15.4 / 16.5 years (2019/2020/2021)",
+          "sampleSizePlayers": "98",
+          "numberOfTeams": "6",
+          "observationDuration": "2019-2021 (three seasons; U15-U17)"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [MRI-confirmed spondylolysis after low-back-pain clinical criteria]",
+          "incidenceDefinition": "MRI-confirmed spondylolysis cases per 1000 training and match hours",
+          "recurrenceDefinition": "same site on follow-up MRI; different side or level classified as new",
+          "mechanismReporting": "player self-report with physiotherapist clinical follow-up"
+        },
+        "exposure": {
+          "numberOfSeasons": "3",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "12",
+          "injuryIncidenceOverall": "0.22"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "spondylolysis",
+          "injuryTissueType_injury_diagnosis_prevalence": "12",
+          "injuryTissueType_injury_diagnosis_incidence": "0.22"
+        }
+      },
+      "caveats": [
+        "The paper reports a direct incidence denominator but not total season-wide player-hours; no exposure was inferred from the rate.",
+        "It is a specific spondylolysis cohort, so the target diagnosis is retained only in the structured diagnosis row and is not echoed as a most-common all-injury outcome.",
+        "No direct anatomical-region count is reported for defensible location-tab mapping."
+      ]
+    },
+    {
+      "studyId": "S3219",
+      "populationLabels": ["Artificial turf", "Natural grass"],
+      "primaryFileSha256": "164b3744f7eb294a29b4150469683ebe4c956261e1a3ad2c3d110a1a53f112d9",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3219",
+          "leadAuthor": "Immonen V",
+          "title": "No difference in sudden-onset injury risk between artificial turf and natural grass for Finnish female elite-level footballers: A five-season study.",
+          "yearOfPublication": "2025",
+          "journal": "Knee Surgery, Sports Traumatology, Arthroscopy",
+          "doi": "10.1002/ksa.70018",
+          "studyDesign": "five-season prospective cohort sub-study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Finland",
+          "levelOfPlay": "female premier division (elite level)",
+          "sex": "female",
+          "ageCategory": "15-34 years (2023 eligibility >=18 years)",
+          "meanAge": "21.2 years (median 20, range 15-34)",
+          "sampleSizePlayers": "154-205 players per season",
+          "numberOfTeams": "8-10 per season",
+          "observationDuration": "2020-2024 (five seasons; league-match follow-up)"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint [sudden-onset league-match injury; irrespective of medical attention or time loss]",
+          "incidenceDefinition": "sudden-onset league-match injuries per 1000 match-hours",
+          "severityDefinition": "0 days; 1-3 days; 4-7 days; 8-28 days; 29-90 days; 91-180 days; >180 days",
+          "recurrenceDefinition": "same type at same location after return to full participation",
+          "mechanismReporting": "player self-report with team physiotherapist verification"
+        },
+        "exposure": {
+          "numberOfSeasons": "5",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "9368\n2770",
+          "matchExposure": "9368\n2770"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "184\n53",
+          "injuryMatchCount": "184\n53",
+          "injuryIncidenceOverall": "19.6\n19.3",
+          "injuryIncidenceMatch": "19.6\n19.3",
+          "injuryIncidenceCi95": "16.9-22.6\n14.6-25.0",
+          "injuryMostCommonLocation": "knee (39; 4.2 per 1000 match-hours)\nankle (13; 4.7 per 1000 match-hours)",
+          "injuryMostCommonSeverity": "8-28 days (43; 4.6 per 1000 match-hours)\n8-28 days (18; 6.5 per 1000 match-hours)",
+          "injuryContact": "106\n21",
+          "injuryNonContact": "57\n15",
+          "injuryRecurrentTotal": "24\n10"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "anterior cruciate ligament injury\nanterior cruciate ligament injury",
+          "injuryTissueType_injury_diagnosis_prevalence": "15\n4",
+          "injuryTissueType_injury_diagnosis_incidence": "1.6 (0.9-2.6)\n1.5 (0.5-3.5)",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "15\n4",
+          "injuryTissueType_ligament_joint_capsule_incidence": "1.6 (0.9-2.6)\n1.5 (0.5-3.5)"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "23\n6",
+          "injuryLocation_head_neck_overall_incidence": "2.4 (1.6-3.6)\n2.2 (0.9-4.5)",
+          "injuryLocation_upper_limb_overall_prevalence": "15\n2",
+          "injuryLocation_upper_limb_overall_incidence": "1.6 (0.9-2.6)\n0.7 (0.1-2.3)",
+          "injuryLocation_trunk_overall_prevalence": "7\n1",
+          "injuryLocation_trunk_overall_incidence": "0.7 (0.3-1.5)\n0.4 (0.0-1.7)",
+          "injuryLocation_lower_limb_overall_prevalence": "139\n44",
+          "injuryLocation_lower_limb_overall_incidence": "14.8 (12.5-17.4)\n16.0 (11.8-21.3)",
+          "injuryLocation_groin_prevalence": "10\n0",
+          "injuryLocation_groin_incidence": "1.1 (0.5-1.9)\n",
+          "injuryLocation_thigh_prevalence": "36\n12",
+          "injuryLocation_thigh_incidence": "3.8 (2.7-5.2)\n4.4 (2.4-7.4)",
+          "injuryLocation_knee_prevalence": "39\n11",
+          "injuryLocation_knee_incidence": "4.2 (3.0-5.6)\n4.0 (2.1-6.9)",
+          "injuryLocation_lower_leg_prevalence": "9\n4",
+          "injuryLocation_lower_leg_incidence": "1.0 (0.5-1.7)\n1.5 (0.5-3.5)",
+          "injuryLocation_ankle_prevalence": "34\n13",
+          "injuryLocation_ankle_incidence": "3.6 (2.6-5.0)\n4.7 (2.6-7.9)",
+          "injuryLocation_foot_prevalence": "11\n4",
+          "injuryLocation_foot_incidence": "1.2 (0.6-2.0)\n1.5 (0.5-3.5)",
+          "injuryLocation_position_goalkeeper_prevalence": "20\n3",
+          "injuryLocation_position_goalkeeper_incidence": "23.4 (14.7-35.4)\n13.2 (3.7-35.2)",
+          "injuryLocation_position_defender_prevalence": "48\n14",
+          "injuryLocation_position_defender_incidence": "16.1 (12.0-21.2)\n14.1 (8.1-23.1)",
+          "injuryLocation_position_midfielder_prevalence": "67\n16",
+          "injuryLocation_position_midfielder_incidence": "18.0 (16.3-26.3)\n17.3 (10.3-27.5)",
+          "injuryLocation_position_attacker_prevalence": "49\n20",
+          "injuryLocation_position_attacker_incidence": "21.0 (15.7-27.5)\n32.9 (20.7-49.8)"
+        }
+      },
+      "caveats": [
+        "Rows are surface-exposure strata, not disjoint player cohorts; participant characteristics therefore stay on the first row and source exposures/outcomes are surface-aligned.",
+        "All injuries are the paper's sudden-onset league-match cohort, so overall and match incidence are necessarily identical; training values remain blank.",
+        "Contact is the transparent direct-plus-indirect-contact sum (106/21); no count was inferred for missing-contact records.",
+        "The Table 3 Hip and groin category is mapped only to the established Groin schema row. Injury types were explicitly not medically confirmed and are intentionally not forced into tissue rows beyond directly diagnosed ACL."
+      ]
+    },
+    {
+      "studyId": "S5338",
+      "populationLabels": ["UEFA EURO 2024", "CONMEBOL Copa America 2024"],
+      "primaryFileSha256": "cc44258b9999490c787c0742059cff79bfdb039fff458001b2c891b07b08bcf2",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S5338",
+          "leadAuthor": "Verhagen E",
+          "title": "Injury incidence and patterns in men's UEFA EURO 2024 and CONMEBOL Copa America 2024: descriptive findings from two simultaneously staged tournaments.",
+          "yearOfPublication": "2025",
+          "journal": "BMJ Open Sport & Exercise Medicine",
+          "doi": "10.1136/bmjsem-2025-002671",
+          "studyDesign": "prospective injury surveillance cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "International (UEFA/CONMEBOL)",
+          "levelOfPlay": "elite senior men's international tournament",
+          "sex": "male",
+          "ageCategory": "senior",
+          "sampleSizePlayers": "622\n390",
+          "numberOfTeams": "24\n15",
+          "observationDuration": "27 May-14 July 2024\n14 June-14 July 2024"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [injury during football activity preventing full participation in training or matches]",
+          "incidenceDefinition": "new time-loss injuries per 1000 player-hours of tournament exposure",
+          "burdenDefinition": "days lost per 1000 player-hours of tournament exposure",
+          "severityDefinition": "slight 0 days; minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days",
+          "mechanismReporting": "team doctors"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "14359\n6968",
+          "matchExposure": "2284\n965",
+          "trainingExposure": "12075\n6003"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "56\n29",
+          "injuryMatchCount": "35\n18",
+          "injuryTrainingCount": "21\n11",
+          "injuryIncidenceOverall": "3.9\n4.2",
+          "injuryIncidenceMatch": "15.3\n18.7",
+          "injuryIncidenceCi95": "2.9-4.9\n2.6-5.7",
+          "injuryTimeLossTotal": "1633\n558",
+          "injuryTimeLossMedian": "9 (Q1-Q3 5.0-42.0)\n3 (Q1-Q3 2.0-36.0)",
+          "injuryBurden": "167.0\n98.0",
+          "injuryBurdenCi95": "158.9-175.1\n89.9-106.1",
+          "injuryMostCommonDiagnosis": "hamstring muscle injury (9; figure-derived from 26% of 35 muscle injuries)\nhamstring muscle injury (7; figure-derived from 46% of 15 muscle injuries)",
+          "injuryMostCommonType": "muscle injury (35; 63%)\nmuscle injury (15; 50%)",
+          "injuryMostCommonLocation": "thigh (13; 22%)\nthigh (16; 64%)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "hamstring muscle injury\nhamstring muscle injury",
+          "injuryTissueType_injury_diagnosis_prevalence": "9\n7",
+          "injuryTissueType_muscle_injury_prevalence": "35\n15",
+          "injuryTissueType_bone_fracture_prevalence": "2\n",
+          "injuryTissueType_concussion_prevalence": "1\n1",
+          "injuryTissueType_laceration_prevalence": "2\n"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "4\n1",
+          "injuryLocation_upper_limb_overall_prevalence": "2\n2",
+          "injuryLocation_lower_limb_overall_prevalence": "49\n22",
+          "injuryLocation_groin_prevalence": "9\n1",
+          "injuryLocation_thigh_prevalence": "13\n16",
+          "injuryLocation_knee_prevalence": "7\n3",
+          "injuryLocation_lower_leg_prevalence": "12\n0",
+          "injuryLocation_ankle_prevalence": "6\n2",
+          "injuryLocation_foot_prevalence": "2\n0"
+        }
+      },
+      "caveats": [
+        "Table 2 phase counts and the Results text support 56 UEFA plus 29 Copa new injuries (85 total); Table 4's location spectrum instead totals 56 plus 30. The headline outcome preserves the former while direct Table 4 location rows are retained as printed for reviewer attention.",
+        "The paper gives incompatible UEFA match-rate text values (15.3 in Results versus 17.1 in Discussion); the Results value 15.3 is retained. Copa's direct 18.7 is retained.",
+        "The stored time-loss total/burden use Table 3's overall-impact values that include post-tournament days (1633/558 days; burden 167.0/98.0). The separately reported tournament-only burden (30.4/17.6) has no second compatible headline field and is retained in this caveat for review.",
+        "Figure 4 is readable: hamstring counts (9/7) are percentage-derived from the directly stated muscle-injury denominators (35/15). Figure 2 is combined-by-phase only and is not falsely assigned to the two tournament rows. Back and lower-leg/Achilles labels without an exact narrower location mapping remain limited to defensible parent rows."
+      ]
+    }
+  ]
+}

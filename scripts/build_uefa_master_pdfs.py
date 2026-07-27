@@ -49,6 +49,74 @@ MANDATORY_IDS = {
     "S111",  # UEFA-method-only/non-ECIS source retained in triage even if assigned elsewhere
     "S200",  # all-injury ECIS anchor, currently extracted
     "S112",  # WECIS anchor
+    "S1091",  # second-search duplicate alias of S112
+    "S2391",  # second-search nested ACLR cohort, audit-only
+    "S4839",  # second-search hamstring burden risk-factor substudy
+    "S5151",  # second-search 2022/23 ECIS season supplement
+    "S5338",  # UEFA EURO tournament paper, outside ECIS/WECIS
+}
+
+SECOND_SEARCH_SOURCE_FAMILY_LEDGER = {
+    "S1091": {
+        "classification": "duplicate alias",
+        "family": "WECIS women",
+        "canonical_source": "S112",
+        "doi": "10.1136/bjsports-2023-107133",
+        "period": "2018/2019-2021/2022",
+        "handling": "Do not create another WECIS extraction or master row; retain S112 as source-of-truth.",
+        "overlap_decision": "The title, DOI, article pagination, 1,527 injuries, 463 injured players, and Table 2 values match S112. The PDF hash differs only because it is a separate downloaded rendition.",
+        "local_pdf_sha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+        "canonical_pdf_sha256": "4fe9a740511e157af1d270dcd15e0a8096248a7b8e63f091e98414d05b1bf824",
+    },
+    "S5151": {
+        "classification": "included supplement",
+        "family": "ECIS men",
+        "canonical_source": "S200",
+        "doi": "10.1136/bmjsem-2025-002772",
+        "period": "2022/23",
+        "handling": "Add one directly supported 2022/23 season row to UEFA-ECIS-MASTER without changing or extending the S200 anchor denominator.",
+        "overlap_decision": "The season is later than S200 (ending 2018/19) and S043 (ending 2021/22). Only direct full-season values are retained; historical comparator, World Cup subgroup, and unpooled muscle-rate contrasts remain audit-only.",
+        "direct_supported_values": {
+            "sampleSizePlayers": "913",
+            "numberOfTeams": "29",
+            "observationDuration": "2022/23",
+            "numberOfSeasons": "1",
+            "totalExposure": "176790",
+            "injuryTotalCount": "1123",
+            "injuryIncidenceTraining": "3.5 (95% CI 3.2-3.9)",
+            "injuryIncidenceMatch": "21.1 (95% CI 19.5-22.9)",
+            "injuryTimeLossTotal": "26418",
+        },
+        "local_pdf_sha256": "569a6530a1d2e0185b7149582314e6dd8b200f4b2f7401239e80eb951d939a2a",
+    },
+    "S4839": {
+        "classification": "audit-only",
+        "family": "ECIS men",
+        "canonical_source": "S043",
+        "doi": "10.1136/bmjsem-2024-002182",
+        "period": "2019/20-2022/23",
+        "handling": "Keep outside the live master; use a separate risk-factor workspace if team-season communication and prevention associations are needed.",
+        "overlap_decision": "This 14-team substudy reports 54 observed team-season burden/predictor pairs and team-specific burden values, not a directly pooled programme-wide hamstring incidence or burden. Importing its rows would overlap the S043 ECIS hamstring cohort and mix a risk-factor denominator into the master.",
+        "local_pdf_sha256": "5201ad56e31f1a16f34cd41132d815cb9dbf303eea2eb424232102be0958d4df",
+    },
+    "S2391": {
+        "classification": "audit-only",
+        "family": "ECIS men",
+        "canonical_source": "S401",
+        "doi": "10.1177/03635465251353213",
+        "period": "2001-2022",
+        "handling": "Keep outside the live master; use a separate prognosis workspace if ACL reconstruction return-to-play comparisons are needed.",
+        "overlap_decision": "The analysis nests 110 ACL reconstruction cases within 5,447 ECIS players and compares thigh, hamstring, and quadriceps incidence before/after return to play. Adding these subgroup rates to the master would double-count the ECIS cohort and mix prognosis contrasts with the programme rows.",
+        "local_pdf_sha256": "a2d780d73fe1319a015d1839b4927acd1e52c02df14804077c042f967ecc3d0b",
+    },
+    "S5338": {
+        "classification": "separate workspace",
+        "family": "UEFA tournament",
+        "canonical_source": None,
+        "period": "UEFA EURO tournament",
+        "handling": "Keep outside UEFA-ECIS-MASTER and WECIS; extract only in its own tournament workspace if eligible.",
+        "overlap_decision": "UEFA branding does not make a tournament cohort part of the longitudinal elite-club ECIS/WECIS programme.",
+    },
 }
 
 ECIS_REFINED_DECISIONS = {
@@ -99,7 +167,7 @@ ECIS_REFINED_DECISIONS = {
     ),
     "S200": (
         "master anchor",
-        "Use as the only all-injury ECIS men denominator and the base for shared definitions/context.",
+        "Use as the historical all-injury ECIS men anchor for overlapping periods and the base for shared definitions/context.",
         "Live anchor row includes all-injury count/incidence/exposure plus directly reported S200 parent tissue counts.",
     ),
     "S202": (
@@ -136,6 +204,11 @@ ECIS_REFINED_DECISIONS = {
         "audit-only overlap",
         "Do not use live because the index-injury RTP rows duplicate diagnosis concepts already represented by cleaner incidence/burden source papers.",
         "Retain in audit for prognosis context only.",
+    ),
+    "S5151": (
+        "retained season supplement",
+        "Use one 2022/23 row because it adds a later directly reported full-season ECIS denominator, count, training/match incidence, and time-loss total.",
+        "The row does not replace or extend S200; World Cup player subgroups and historical comparison rates remain audit-only.",
     ),
 }
 
@@ -285,7 +358,7 @@ ECIS_SOURCE_LEDGER = {
         "period": "2001/02-2018/19",
         "tag": "master sheet",
         "handling": "Top live ECIS row and master denominator.",
-        "reason": "Only all-injury ECIS men denominator used for the master; shared definitions and cohort context are stored here.",
+        "reason": "Historical all-injury ECIS men anchor for overlapping periods; shared definitions and cohort context are stored here.",
     },
     "S201": {
         "topic": "General epidemiology of football injuries",
@@ -385,11 +458,32 @@ ECIS_SOURCE_LEDGER = {
         "handling": "No live ECIS row.",
         "reason": "Index-injury RTP rows duplicate diagnosis concepts already represented by cleaner incidence/burden source papers.",
     },
+    "S2391": {
+        "topic": "Thigh muscle injury after ACL reconstruction",
+        "period": "nested ECIS cohort, 2001-2022",
+        "tag": "audit-only",
+        "handling": "No live master row; use a separate prognosis workspace if required.",
+        "reason": "The 110 ACL reconstruction cases are nested within the ECIS cohort, so pre/post return-to-play incidence rows would double-count the programme and mix prognosis with surveillance.",
+    },
+    "S4839": {
+        "topic": "Medical/performance staff communication and hamstring burden",
+        "period": "14-team substudy, 2019/20-2022/23",
+        "tag": "audit-only",
+        "handling": "No live master row; use a separate risk-factor workspace if required.",
+        "reason": "The source reports team-season burden and predictor associations rather than a pooled programme-wide hamstring incidence or burden compatible with the S043 master row.",
+    },
+    "S5151": {
+        "topic": "2022/23 World Cup-season injury incidence",
+        "period": "2022/23",
+        "tag": "included supplement",
+        "handling": "Live ECIS row: 2022/23 World Cup-season all injuries.",
+        "reason": "Adds a later non-overlapping full-season ECIS denominator, injury count, training/match incidence, and directly reported total absence days while preserving S200 as the anchor.",
+    },
 }
 
 S200_MASTER_FIELDS = [
     ("Master source", "S200 - Injury rates decreased in men's professional football"),
-    ("Role", "Only all-injury ECIS men denominator used in the master extraction"),
+    ("Role", "Historical all-injury ECIS men anchor for overlapping periods"),
     ("Reporting period", "2001/02-2018/19"),
     ("Population", "49 professional elite men's teams; 3302 players"),
     ("Exposure", "1,784,281 player-hours"),
@@ -420,6 +514,7 @@ ECIS_LIVE_ROWS = [
     ("S091", "Achilles tendon rupture", "2001-2011", "Incidence, burden, time-loss, exposure"),
     ("S007", "Indirect thigh muscle injuries", "2001-2013", "Incidence, burden, time-loss, mechanism, exposure"),
     ("S007", "Direct thigh muscle contusions", "2001-2013", "Incidence, burden, time-loss, mechanism, exposure"),
+    ("S5151", "2022/23 World Cup-season all injuries", "2022/23", "Full-season exposure, count, training/match incidence, total time-loss"),
 ]
 
 ECIS_VISUAL_STATUS = {
@@ -437,6 +532,7 @@ ECIS_VISUAL_STATUS = {
     "S368": ("included", "S368 - included as syndesmosis row"),
     "S401": ("included", "S401 - included as ACL row"),
     "S451": ("included", "S451 - included as fifth-metatarsal fracture row"),
+    "S5151": ("included", "S5151 - included as a later 2022/23 full-season supplement; S200 remains the anchor"),
     "S002": ("covered", "S002 - not included; ACL superseded by S401"),
     "S011": ("covered", "S011 - not included; common-injury overlap covered by S200 + retained concept rows"),
     "S042": ("covered", "S042 - not included; hamstring superseded by S043"),
@@ -458,6 +554,8 @@ ECIS_VISUAL_STATUS = {
     "S513": ("audit", "S513 - audit-only; short-turnaround risk factor"),
     "S527": ("audit", "S527 - audit-only; return-to-play risk paper"),
     "S554": ("audit", "S554 - audit-only; regional subgroup paper"),
+    "S2391": ("audit", "S2391 - audit-only; nested ACL reconstruction prognosis cohort"),
+    "S4839": ("audit", "S4839 - audit-only; 14-team hamstring burden risk-factor substudy"),
 }
 
 OTHER_VISUAL_STATUS = {
@@ -465,6 +563,8 @@ OTHER_VISUAL_STATUS = {
     "S068": "S068 - own workspace; South America vs ECIS comparator",
     "S109": "S109 - own workspace; UEFA tournament audit",
     "S111": "S111 - own workspace; UEFA-method paper, non-ECIS/WECIS",
+    "S1091": "S1091 - duplicate alias of S112; no second WECIS record",
+    "S5338": "S5338 - separate UEFA EURO tournament workspace, outside ECIS/WECIS",
 }
 
 
@@ -568,6 +668,20 @@ def classify(row: dict[str, Any]) -> SourcePaper:
             ledger["tag"],
             ledger["handling"],
             ledger["reason"],
+        )
+    if sid in SECOND_SEARCH_SOURCE_FAMILY_LEDGER:
+        ledger = SECOND_SEARCH_SOURCE_FAMILY_LEDGER[sid]
+        return SourcePaper(
+            sid,
+            title,
+            status,
+            year,
+            lead,
+            doi,
+            ledger["family"],
+            ledger["classification"],
+            ledger["handling"],
+            ledger["overlap_decision"],
         )
     if "women" in lower or "wecis" in lower:
         return SourcePaper(
@@ -1035,7 +1149,7 @@ def build_ecis_master_pdf(path: Path, ecis_rows: list[SourcePaper], other_rows: 
     story.extend(
         bullets(
             [
-                "This is the only all-injury ECIS men denominator used in the master extraction.",
+                "This is the historical all-injury ECIS men anchor for overlapping periods.",
                 "Overlapping all-injury, trend, risk-factor, availability, or prognosis papers do not create extra master rows.",
                 "Supplement papers are retained only when they add useful diagnosis/location-specific incidence, burden, time-loss, recurrence, mechanism, or exposure values.",
             ],
@@ -1073,7 +1187,7 @@ def build_ecis_master_pdf(path: Path, ecis_rows: list[SourcePaper], other_rows: 
     included = [
         row
         for row in ecis_rows
-        if ECIS_SOURCE_LEDGER.get(row.study_id, {}).get("tag") in {"master sheet", "included here", "included here / partial audit-only"}
+        if ECIS_SOURCE_LEDGER.get(row.study_id, {}).get("tag") in {"master sheet", "included here", "included here / partial audit-only", "included supplement"}
     ]
     not_live = [row for row in ecis_rows if row not in included]
 
@@ -1130,7 +1244,7 @@ def build_ecis_master_pdf(path: Path, ecis_rows: list[SourcePaper], other_rows: 
     story.extend(
         bullets(
             [
-                "Confirm S200 remains the only all-injury ECIS men denominator.",
+                "Confirm S200 remains the historical all-injury ECIS men anchor for overlapping periods.",
                 "Confirm every retained supplement row has a useful metric beyond count-only overlap.",
                 "Confirm every non-retained paper has a visible tag: already included, superseded, audit-only, or separate workspace/WECIS.",
                 "Confirm no ordinary UEFA source paper is exported analytically alongside the master in a way that double counts ECIS data.",
@@ -1325,9 +1439,6 @@ def append_methodology_sections(story: list[Any], s: dict[str, ParagraphStyle]) 
 def main() -> int:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     AUDIT_DIR.mkdir(parents=True, exist_ok=True)
-    standalone_methodology_pdf = OUT_DIR / "UEFA_Master_Methodological_Justification.pdf"
-    standalone_methodology_pdf.unlink(missing_ok=True)
-
     papers = [classify(row) for row in load_papers()]
     ecis = [row for row in papers if row.category == "ECIS men"]
     wecis = [row for row in papers if row.category == "WECIS women"]
@@ -1356,6 +1467,7 @@ def main() -> int:
             for source, row, period, retained in ECIS_LIVE_ROWS
         ],
         "ecis_source_ledger": ECIS_SOURCE_LEDGER,
+        "second_search_source_family_ledger": SECOND_SEARCH_SOURCE_FAMILY_LEDGER,
         "sources": [row.__dict__ for row in papers],
     }
     audit_path = AUDIT_DIR / "uefa-master-source-audit.json"

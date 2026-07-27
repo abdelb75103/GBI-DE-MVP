@@ -1,0 +1,252 @@
+{
+  "scope": "Second search temporary extraction bridge for AI include plus one human include",
+  "mode": "apply",
+  "generatedAt": "2026-07-04T14:03:50.633Z",
+  "selectionRule": {
+    "searchBatch": "Second search - Ishanka - 2026-05-26",
+    "aiStatus": "completed",
+    "aiSuggestedDecision": "include",
+    "humanIncludeVotes": 1,
+    "humanExcludeVotes": 0,
+    "manualDecision": null,
+    "promotedPaperId": null,
+    "hasAttachedFile": true,
+    "limit": 10
+  },
+  "selected": [
+    {
+      "studyId": "S1091",
+      "screeningRecordId": "140aa0ee-44ec-4997-9e13-7ed0ae0a9811",
+      "title": "UEFA Women's Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most common and ACL injuries most burdensome.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+      "storageBucket": "papers",
+      "storageObjectPath": "a844cbed-9e3b-4384-9d9e-bce3a4c028fd/1781618394268-S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "Injury incidence was calculated as the number of injuries per 1000 playing hours",
+        "aiSourceLocation": "S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf p. 1, Abstract",
+        "aiConfidence": 0.99,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "UEFA Women's Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most common and ACL injuries most burdensome.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Hallen Anna",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1091-bc2bd537f868.pdf",
+          "studyId": "S1091",
+          "decision": "include",
+          "recordId": "140aa0ee-44ec-4997-9e13-7ed0ae0a9811",
+          "pdfSha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.99,
+          "dataSource": "128 Hallén A, et al. Br J Sports Med 2024;58:128–136. doi:10.1136/bjsports-2023-107133 UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most comm",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "Injury incidence was calculated as the number of injuries per 1000 playing hours",
+          "evidenceQuotes": [
+            "Injury incidence was calculated as the number of injuries per 1000 playing hours",
+            "…r J Sports Med 2024;58:128–136. doi:10.1136/bjsports-2023-107133 UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most common and ACL injuries most burdensome Anna Hallén…",
+            "…, Blake C, et al. Injury incidence rates in women’s football: a systematic review and meta- analysis of prospective injury surveillance studies . Br J Sports Med 2023;57:471–80. 4 Kirk endall DT, Krustrup P . Studying professional and recreational female footballers: a bibliometric e…"
+          ],
+          "sourceLocation": "S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf p. 1, Abstract",
+            "S1091-bc2bd537f868.pdf p. 1, extracted evidence packet",
+            "S1091-bc2bd537f868.pdf p. 8, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…dual player exposure and time- loss injuries . Injury incidence was calculated as the number of injuries per 1000 playing hours and injury burden as the number of days lost per 1000 hours. Results 1527 injuries were recorded in 463 players with an injury incidence of 6.7 (95% CI 6.4 t…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "128 Hallén A, et al. Br J Sports Med 2024;58:128–136. doi:10.1136/bjsports-2023-107133 UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most comm"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.513+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:44:23.346192+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T18:46:13.246Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:44:23.346192+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:44:23.346192+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-22T13:44:23.346192+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "91a8df28-89d2-4e85-8f93-372960a0adbd",
+      "createdFileId": "ea13005a-eb77-4907-b74a-e51ea869ef81",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "Injury incidence was calculated as the number of injuries per 1000 playing hours",
+        "aiSourceLocation": "S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf p. 1, Abstract",
+        "aiConfidence": 0.99,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "UEFA Women's Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most common and ACL injuries most burdensome.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Hallen Anna",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1091-bc2bd537f868.pdf",
+          "studyId": "S1091",
+          "decision": "include",
+          "recordId": "140aa0ee-44ec-4997-9e13-7ed0ae0a9811",
+          "pdfSha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.99,
+          "dataSource": "128 Hallén A, et al. Br J Sports Med 2024;58:128–136. doi:10.1136/bjsports-2023-107133 UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most comm",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "Injury incidence was calculated as the number of injuries per 1000 playing hours",
+          "evidenceQuotes": [
+            "Injury incidence was calculated as the number of injuries per 1000 playing hours",
+            "…r J Sports Med 2024;58:128–136. doi:10.1136/bjsports-2023-107133 UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most common and ACL injuries most burdensome Anna Hallén…",
+            "…, Blake C, et al. Injury incidence rates in women’s football: a systematic review and meta- analysis of prospective injury surveillance studies . Br J Sports Med 2023;57:471–80. 4 Kirk endall DT, Krustrup P . Studying professional and recreational female footballers: a bibliometric e…"
+          ],
+          "sourceLocation": "S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf p. 1, Abstract",
+            "S1091-bc2bd537f868.pdf p. 1, extracted evidence packet",
+            "S1091-bc2bd537f868.pdf p. 8, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…dual player exposure and time- loss injuries . Injury incidence was calculated as the number of injuries per 1000 playing hours and injury burden as the number of days lost per 1000 hours. Results 1527 injuries were recorded in 463 players with an injury incidence of 6.7 (95% CI 6.4 t…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "128 Hallén A, et al. Br J Sports Med 2024;58:128–136. doi:10.1136/bjsports-2023-107133 UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most comm"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.513+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:44:23.346192+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T18:46:13.246Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:44:23.346192+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:44:23.346192+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    }
+  ],
+  "skippedBeforeLimit": [],
+  "protectedScreeningFieldsChanged": false
+}

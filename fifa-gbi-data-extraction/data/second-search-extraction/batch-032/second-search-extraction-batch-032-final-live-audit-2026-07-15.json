@@ -1,0 +1,185 @@
+{
+  "artifactType": "Backlog 2 Batch 032 final live integrity audit",
+  "scope": "Fixed membership S2348, S2382, S2506, S2631, S3025 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-032/second-search-extraction-batch-032-input-2026-07-15.json",
+  "correctionAuditCreated": true,
+  "fixedMembership": [
+    "S2348",
+    "S2382",
+    "S2506",
+    "S2631",
+    "S3025"
+  ],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached primary PDF was inspected in full once and its local SHA-256 matched papers.primary_file_sha256. All source tables, figures, results, discussions, conclusions, and references were swept before classifying the five fixed records.",
+    "fieldValidation": {
+      "stagedFieldCount": 33,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S2348": [],
+        "S2382": [
+          "Total"
+        ],
+        "S2506": [],
+        "S2631": [],
+        "S3025": []
+      },
+      "reason": "S2382 directly reports a pooled LEAF-Q low-energy-availability-risk prevalence and is staged as one metabolic/nutritional illness `Total` row. The other three mental-health/well-being papers have no compatible outcome, and S2631 is a systematic scoping review rather than a primary player cohort."
+    },
+    "classifications": {
+      "S2348": "COVID-19 vaccination and State-Trait Anxiety Inventory survey; injury only appears as a questionnaire exclusion criterion.",
+      "S2382": "Direct pooled LEAF-Q screen identifies 13/22 players (59.1%) at risk of problematic low energy availability; stored as a metabolic/nutritional illness-risk result, not an injury outcome or clinical diagnosis.",
+      "S2506": "Four-match U16 well-being questionnaire study; muscle soreness is a wellness item, not an injury event or surveillance outcome.",
+      "S2631": "PRISMA-ScR scoping review of 72 publications, not a primary player cohort.",
+      "S3025": "Competitive-anxiety/self-confidence questionnaire study by playing position; no injury or illness outcome."
+    }
+  },
+  "sourceCoverage": {
+    "S2348": "Primary PDF pp. 1-10: abstract, participant criteria, State-Trait Anxiety Inventory procedures, Tables 1-4, results, discussion, conclusion, and references swept.",
+    "S2382": "Primary PDF pp. 1-8: abstract, participants, validated-questionnaire methods, Tables 1-4, results, discussion, conclusion, and references swept.",
+    "S2506": "Primary PDF pp. 1-16: abstract, U16 participant criteria, well-being questionnaire, Figures 1-8, results/regressions, discussion, conclusion, and references swept.",
+    "S2631": "Primary PDF pp. 1-13: abstract, PRISMA-ScR methods/search/selection/data-charting, Table 1, Figures 1-4, results, discussion, conclusion, and references swept.",
+    "S3025": "Primary PDF pp. 1-8: abstract, 52-player participant/methods section, Tables 1-2, results, discussion, conclusion, and references swept."
+  },
+  "apply": {
+    "result": "passed — one additive extraction plus two status corrections",
+    "statusUpdates": [
+      {
+        "studyId": "S2382",
+        "from": "mental_health",
+        "to": "processing",
+        "reason": "Direct pooled low-energy-availability-risk prevalence is compatible with the metabolic/nutritional illness schema."
+      },
+      {
+        "studyId": "S2631",
+        "from": "mental_health",
+        "to": "systematic_review",
+        "reason": "Primary source is a PRISMA-ScR scoping review, not a primary player cohort."
+      }
+    ],
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S2348": 0,
+      "S2382": 33,
+      "S2506": 0,
+      "S2631": 0,
+      "S3025": 0
+    },
+    "populationWrites": {
+      "groups": 1,
+      "values": 11
+    },
+    "paperNoteWrites": 0,
+    "fileWrites": 0,
+    "screeningWrites": 0,
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "postApplyCorrectionRequired": true,
+    "correctionAudit": "data/second-search-extraction/batch-032/second-search-extraction-batch-032-s2382-correction-audit-2026-07-15.json"
+  },
+  "stageB": {
+    "result": "passed — ready for human review",
+    "exactMembership": [
+      "S2348",
+      "S2382",
+      "S2506",
+      "S2631",
+      "S3025"
+    ],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "statuses": {
+      "S2348": "mental_health",
+      "S2382": "processing",
+      "S2506": "mental_health",
+      "S2631": "systematic_review",
+      "S3025": "mental_health"
+    },
+    "papers": [
+      {
+        "studyId": "S2348",
+        "status": "processing",
+        "populationLabels": [
+          "Total"
+        ],
+        "populationCount": 1,
+        "populationValueCount": 11,
+        "liveFieldCount": 33,
+        "primaryFileSha256": "502b28290fbe53b91fb13193c525836c8981594603f9af17c652bb6c194129b7"
+      },
+      {
+        "studyId": "S2382",
+        "status": "processing",
+        "populationLabels": [
+          "Total"
+        ],
+        "populationCount": 1,
+        "populationValueCount": 11,
+        "liveFieldCount": 33,
+        "primaryFileSha256": "845cd6b540a42f8805a624d265557a25374ffb86baeb6957d9647e31a34b49b8"
+      },
+      {
+        "studyId": "S2506",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "populationValueCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "08137d8918ceb4231dda83f89f90aa7f56f056ecd1c063a71456429ff011bc8e"
+      },
+      {
+        "studyId": "S2631",
+        "status": "systematic_review",
+        "populationLabels": [],
+        "populationCount": 0,
+        "populationValueCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "e5827e14b703a5c50ffb276e25065aa4f7ccab15dc47569d9f357fe8ea0a8e72"
+      },
+      {
+        "studyId": "S3025",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "populationValueCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "c729d97bb296fdd47e81ac6d608ac54f384d6fa1a4afd0a5b15040407c96e0e1"
+      }
+    ],
+    "primaryFilesAttached": 5,
+    "primaryFileHashMismatches": 0,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "studyIdIntegrity": "S2382's live studyId field equals papers.assigned_study_id (`S2382`). The four valid exclusions have no extraction fields or population values, so no display studyId field applies; all five retain their exact assigned_study_id values.",
+    "protectedScreening": {
+      "fullTextVotesVerified": 10,
+      "protectedScreeningSignatureSha256Before": "40a565b5a9b69776418b4b440edb43aa3497fd82afe45ce29795ad0186f95eed",
+      "protectedScreeningSignatureSha256After": "40a565b5a9b69776418b4b440edb43aa3497fd82afe45ce29795ad0186f95eed",
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0,
+      "evidence": "Each fixed record still has two include votes, an include resolution, and a promotion link. Live mutations were limited to S2382's staged extraction/status and S2631's status correction."
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "032",
+      "updatedRows": [
+        "S2348",
+        "S2382",
+        "S2506",
+        "S2631",
+        "S3025"
+      ]
+    }
+  },
+  "caveats": [
+    "S2382's LEAF-Q result is an indirect risk screen, not a clinical diagnosis or a measured energy-availability value. Its National/U20 11/11 membership split does not have separately reported prevalence, so its data remain on `Total`.",
+    "No population layout or extraction payload applies to S2348, S2506, S2631, or S3025; the empty layouts are intentional and source-supported.",
+    "The fixed Batch 032 rows remain pending human review. No record was marked reviewed_complete."
+  ],
+  "readyFor": "human review"
+}

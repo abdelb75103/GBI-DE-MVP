@@ -1,0 +1,92 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; final post-apply live review gate; 2026-07-13",
+  "reviewMethod": "Primary-PDF source-to-live review at the strongest available in-session reasoning level. A separately selectable independent runtime/model was not exposed; this limitation is recorded here.",
+  "blockerFixed": {
+    "studyId": "S2264",
+    "issue": "A recurrence result had been placed in recurrenceDefinition although the paper does not define recurrence.",
+    "fix": "Cleared the unsupported field with second-search-extraction-batch-017-review-gate-correction-input-2026-07-13.json, rebuilt the two football population rows, and reran the gate."
+  },
+  "papers": [
+    {
+      "studyId": "S2234",
+      "classification": "eligible manual extraction",
+      "status": "processing",
+      "sourceCoverage": "Methods, results, Tables 1-5, Figures 1-3; all directly mappable Table 2/3/4/5 outcome, severity, location and type rows checked.",
+      "studyIdMatchesAssignedStudyId": true,
+      "sourceAttachedAndHashMatched": true,
+      "populationLabels": ["All players", "U14", "U15", "U16", "U17", "U18"],
+      "expectedNonblankFields": 65,
+      "fieldValueMismatches": [],
+      "unexpectedNonblankFields": [],
+      "structuredDualWriteFailures": [],
+      "humanFullTextIncludeVotes": 2,
+      "resolverDecisionPresent": false,
+      "gateResult": "ready for human review",
+      "reviewerAttention": "Table 4 location rows sum to 828 while the article headline total is 832; direct rows were retained without inference."
+    },
+    {
+      "studyId": "S2254",
+      "classification": "eligible manual extraction",
+      "status": "processing",
+      "sourceCoverage": "Methods, results, Tables 1-5, Figures 1-3 and discussion; only full-cohort outcome values entered.",
+      "studyIdMatchesAssignedStudyId": true,
+      "sourceAttachedAndHashMatched": true,
+      "populationLabels": ["Total"],
+      "expectedNonblankFields": 26,
+      "fieldValueMismatches": [],
+      "unexpectedNonblankFields": [],
+      "structuredDualWriteFailures": [],
+      "humanFullTextIncludeVotes": 2,
+      "resolverDecisionPresent": false,
+      "gateResult": "ready for human review",
+      "reviewerAttention": "Mechanism and match/training splits cover only 55 of 71 injuries, so they remain deliberately blank as cohort totals."
+    },
+    {
+      "studyId": "S2259",
+      "classification": "eligible manual extraction",
+      "status": "processing",
+      "sourceCoverage": "Methods, results, Tables 1-3 and discussion; direct trial-arm exposure, outcome, structured incidence and count rows checked.",
+      "studyIdMatchesAssignedStudyId": true,
+      "sourceAttachedAndHashMatched": true,
+      "populationLabels": ["Total", "Intervention", "Control"],
+      "expectedNonblankFields": 81,
+      "fieldValueMismatches": [],
+      "unexpectedNonblankFields": [],
+      "structuredDualWriteFailures": [],
+      "humanFullTextIncludeVotes": 2,
+      "resolverDecisionPresent": false,
+      "gateResult": "ready for human review",
+      "reviewerAttention": "Pooled Table 2 diagnosis-specific days-lost values were not forced into a non-existent matching arm/type aggregate."
+    },
+    {
+      "studyId": "S2264",
+      "classification": "eligible football-only subgroup extraction",
+      "status": "processing",
+      "sourceCoverage": "Methods, results, Tables 1-4 and Figures 1-3; Table 2 football male/female rows only, with basketball excluded.",
+      "studyIdMatchesAssignedStudyId": true,
+      "sourceAttachedAndHashMatched": true,
+      "populationLabels": ["Male football", "Female football"],
+      "expectedNonblankFields": 29,
+      "fieldValueMismatches": [],
+      "unexpectedNonblankFields": [],
+      "structuredDualWriteFailures": [],
+      "humanFullTextIncludeVotes": 2,
+      "resolverDecisionPresent": false,
+      "gateResult": "ready for human review",
+      "reviewerAttention": "Headline ACL-plus-LAS counts/incidence are transparent sums of the direct disjoint Table 2 rows; confidence intervals remain only on their direct knee/ankle rows."
+    },
+    {
+      "studyId": "S2284",
+      "classification": "American-data exclusion",
+      "status": "american_data",
+      "flagReason": "U.S. Pac-12/NCAA collegiate surveillance data; American data exclusion.",
+      "sourceCoverage": "Methods and Tables 1-2 confirm female Pac-12/NCAA collegiate surveillance; no extraction fields written.",
+      "sourceAttachedAndHashMatched": true,
+      "humanFullTextIncludeVotes": 2,
+      "resolverDecisionPresent": false,
+      "gateResult": "correctly classified; pending human review state retained"
+    }
+  ],
+  "batchMembership": {"expected": ["S2234", "S2254", "S2259", "S2264", "S2284"], "missing": [], "extra": []},
+  "overallGateResult": "pass; all eligible records are ready for human review and remain processing; S2284 is correctly american_data; no record was marked reviewed_complete."
+}

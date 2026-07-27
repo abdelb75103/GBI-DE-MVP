@@ -1,0 +1,462 @@
+{
+  "artifactType": "Aspetar pre-provenance-note live snapshot",
+  "date": "2026-07-27",
+  "fixedMembership": [
+    "S071",
+    "S195",
+    "S261",
+    "S344",
+    "S544",
+    "S555",
+    "S602",
+    "S712",
+    "S1431",
+    "S2824",
+    "S3577"
+  ],
+  "rollback": {
+    "method": "Remove only the inserted paper-note IDs recorded in the apply audit. This rollback would delete live note records and therefore requires explicit destructive-action approval.",
+    "destructiveActionRequired": true
+  },
+  "papers": [
+    {
+      "studyId": "S071",
+      "paperId": "2b8db153-7ee4-450c-9dbb-b0df8f73ec58",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "b7ecbdef-ce5f-4927-913c-e92b151c299e",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "2052e20236d318280455d06295727a4cd6a2b1a9f6453bab49664a8bdb89dcfa",
+      "notes": []
+    },
+    {
+      "studyId": "S1431",
+      "paperId": "ee902899-f029-4c50-ad03-fd78b2d2f559",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "3134ce95-7dcb-4141-a17b-dd383f8239a5",
+      "protectedMetadata": {
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-19T14:49:00.651786+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          },
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-07-06T21:48:39.719421+00:00",
+            "reviewerName": "Dr. Nicol van Dyk",
+            "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-19T14:49:00.651786+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          },
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-07-06T21:48:39.719421+00:00",
+            "reviewerName": "Dr. Nicol van Dyk",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+          }
+        ],
+        "fullTextResolution": "ready_for_extraction",
+        "screeningDecision": "include",
+        "screeningResolution": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T16:49:11.422Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "titleAbstractResolution": "ready_for_full_text",
+        "screeningPromotedAt": "2026-07-06T21:48:41.080Z",
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "e0acbfdb973db60367993ed5cb65464c08592121e32fc8f87138b995390161ad",
+      "notes": [
+        {
+          "id": "d4f18664-1d10-437f-9487-70ac7c7852cb",
+          "body": "Manual PDF extraction (no Gemini), GPT-5 high-reasoning pass. Sources: Abstract, Methods, Figure 1 and Table 1 (continued). Population is the directly reported total of 95 unique players / 223 included growth intervals; total index injuries are 161, while regression model outcomes use separate event counts (119 overall, 90 sudden, 42 gradual), so those outcomes are retained only as onset counts and not reconciled to the index-injury total.",
+          "createdAt": "2026-07-10T13:39:45.283+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S195",
+      "paperId": "22682687-4380-44b5-987d-6f8a6791b848",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "779ff9a1-9eba-46b3-96bc-75d4cb9a8296",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "ab350832c39648fc986d3b7584fe35b114270b9a8c52270ceed851a729a982fd",
+      "notes": []
+    },
+    {
+      "studyId": "S261",
+      "paperId": "aeb820e9-a60c-4573-aebd-095dcec74b27",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "1d859449-2123-44b2-95f9-90d922969ffd",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "f2e762dba425affadf27b440ab1e0dcafebf5dab63f08bb5bf123fe51c559b16",
+      "notes": [
+        {
+          "id": "ace0ec5c-74dc-418a-90ab-a90a6696723a",
+          "body": "Aspetar academy anchor reconciliation, 2026-07-27. S261 is the final published source for the 2012/13-2015/16 Aspire Academy cohort; S071 is a duplicate manuscript alias. Rows Total/U9-U19 retain the directly printed final-paper values. The final row is the later, non-overlapping 2016/17-2018/19 U13-U15 S1431 cohort. Table 2, Table 3, Supplementary Tables 1-3, and Supplementary Figure 1 were checked. Source discrepancy retained: pooled Supplementary Table 3 reports Knee 218 and Lower leg/calf 105, while the age rows sum to Knee 168 and Lower leg/calf 155; both views total 323 and no values were reassigned by inference.",
+          "createdAt": "2026-07-27T13:58:53.138+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S2824",
+      "paperId": "9bfe224a-94c7-43c7-a57b-de4c59d09fb4",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "3d99d44b-26f3-4233-bb3e-ab4ebce7e525",
+      "protectedMetadata": {
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:21:11.585721+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          },
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-07-08T08:35:27.867356+00:00",
+            "reviewerName": "Dr. Nicol van Dyk",
+            "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:21:11.585721+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          },
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-07-08T08:35:27.867356+00:00",
+            "reviewerName": "Dr. Nicol van Dyk",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+          }
+        ],
+        "fullTextResolution": "ready_for_extraction",
+        "screeningDecision": "include",
+        "screeningResolution": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T18:48:21.350Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "titleAbstractResolution": "ready_for_full_text",
+        "screeningPromotedAt": "2026-07-08T08:35:29.064Z",
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "575ca376ae04cb7e1d69a7faaba59bfc45ab9c90883c007afee58e9ec0f0b9b7",
+      "notes": [
+        {
+          "id": "20c12e88-68da-4e93-8282-23ac779a27e0",
+          "body": "Batch 020 manual primary-PDF extraction. Methods, Table 1, Table 2, Figures 1-3, results, and discussion were checked (article pp. 201-209). The direct layout is all seasons followed by the eight reported seasons. Table 1 supports season-level team, age, and exposure rows; headline injury/illness outcomes and Table 2 metrics are pooled-only and remain on All seasons. Table 2 reports medians (IQR) rather than means in its structured severity columns; values are labelled accordingly. The source reports illness incidence/system percentages but no total illness count, so no illness count or structured system count was inferred. Table 2 is intentionally not aggregated across incomplete location/type subsets.",
+          "createdAt": "2026-07-13T00:11:20.981+00:00"
+        },
+        {
+          "id": "2a78e5dc-1a63-4d77-a92d-bdb0466daed3",
+          "body": "Aspetar professional QSL anchor reconciliation, 2026-07-27. Existing S2824 All seasons and 2014/15-2021/22 rows remain the modern all-injury denominator. Added source-scoped rows: disjoint 2008/09 S195 all-injury cohort; overlapping S344 groin, S555 ACL, and S712 head/neck-concussion topic supplements. Topic rows must not be summed as independent all-injury denominators. S544 and S3577 are covered by the S344 row and remain audit-only secondary analyses.",
+          "createdAt": "2026-07-27T13:58:58.706+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S344",
+      "paperId": "47875a34-0e97-4ba1-ab6f-dec5977282da",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "768722d6-42b9-4e3b-b063-27678d245958",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "4152604a25ed748ca94a68f38cbcd525f21cbafe14c943e4726f5e574581d6a8",
+      "notes": []
+    },
+    {
+      "studyId": "S3577",
+      "paperId": "382687c6-dde2-4dbf-bc8f-05acfba39c5a",
+      "status": "retrospective_substudy_analysis",
+      "flagReason": "Secondary analysis of existing S344 Qatar Stars League 2013/14-2014/15 cohort; not independently extracted",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "de6be817-d479-44a5-8610-7b023d30806b",
+      "protectedMetadata": {
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T19:48:35.152634+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          },
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-07-07T20:50:42.445929+00:00",
+            "reviewerName": "Dr. Nicol van Dyk",
+            "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T19:48:35.152634+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          },
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-07-07T20:50:42.445929+00:00",
+            "reviewerName": "Dr. Nicol van Dyk",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003"
+          }
+        ],
+        "fullTextResolution": "ready_for_extraction",
+        "screeningDecision": "include",
+        "screeningResolution": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T11:13:57.905Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "titleAbstractResolution": "ready_for_full_text",
+        "screeningPromotedAt": "2026-07-07T20:50:43.760Z",
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "434d2122e1ce04f6c84ecfa7f4cbeaa708da9e612dd9005a7cfbc127e83421cb",
+      "notes": []
+    },
+    {
+      "studyId": "S544",
+      "paperId": "69adb76e-d822-48df-be16-7a5c9d151bbf",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "14c0ecfc-1bfd-4452-a59f-99f08e915bd1",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "7720ab117a6040c7970cffddd39ad85ba9c5b4e0d1724cdee1b9e9dba7f6f4be",
+      "notes": [
+        {
+          "id": "212ac199-03a1-481a-a817-1a0476bd02c6",
+          "body": "already included data",
+          "createdAt": "2026-03-26T17:04:33.227+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S555",
+      "paperId": "1ccd6561-d3f3-4450-af2a-c25952b99352",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "0f63bebf-e332-492a-b8b9-72f33e0614e0",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "4a2858e16fd01a78572432bea151e392b627a869b59a81a664bddd434ffbdc6a",
+      "notes": [
+        {
+          "id": "b0bf2a32-6317-4bfd-8e01-f9ed3193cb34",
+          "body": "ACL Specific\nExtarcted - but is it sub study?",
+          "createdAt": "2026-03-27T16:17:26.179+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S602",
+      "paperId": "a924869a-5932-4c83-a735-7f68127c90ec",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "9cb58d6b-1330-4ca5-af0b-4afe55061e21",
+      "protectedMetadata": {
+        "fullTextDecisions": null,
+        "fullTextDecisionAudit": null,
+        "fullTextResolution": null,
+        "screeningDecision": null,
+        "screeningResolution": null,
+        "titleAbstractDecisions": null,
+        "titleAbstractResolution": null,
+        "screeningPromotedAt": null,
+        "temporaryExtractionPromotion": null,
+        "temporaryExtractionPromotedAt": null
+      },
+      "extractionPopulationSignatureSha256": "ad205fa7cfdbdee4daf19b7f72d9e06b1c38ae4d071911ff0cb8e96d6452a3e1",
+      "notes": [
+        {
+          "id": "98df34bd-6e1d-421b-b050-5e67fe184ab5",
+          "body": "Aspetar ASPREV reconciliation, 2026-07-27. S602 remains a separate AFC multicountry anchor, not part of the Qatar Stars League master: 22 teams from nine countries over 2017-2019. Abstract, methods, Tables 1-2, Figure 1, results, discussion, and limitations were checked. The source prints total exposure 232,665 h and season values 72,431 / 80,470 / 80,470 h, whose sum is 233,371 h; all printed values are retained without correction or back-calculation.",
+          "createdAt": "2026-07-27T13:59:08.204+00:00"
+        }
+      ]
+    },
+    {
+      "studyId": "S712",
+      "paperId": "611ef79b-a7bc-4cc0-84ee-786a5bad5f04",
+      "status": "aspetar_asprev",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "c472a4cd-970d-41c3-b964-d141ce0d40e4",
+      "protectedMetadata": {
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T14:35:50.386489+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T14:35:50.386489+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending",
+        "screeningDecision": "include",
+        "screeningResolution": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-09T11:07:58.941Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "titleAbstractResolution": "ready_for_full_text",
+        "screeningPromotedAt": "2026-07-08T09:16:14.322Z",
+        "temporaryExtractionPromotion": true,
+        "temporaryExtractionPromotedAt": "2026-07-03T21:18:08.801Z"
+      },
+      "extractionPopulationSignatureSha256": "cea6a09e4a0063fd76522cc74aebcfa37e804bb3c254bd9edb17a53a9227d289",
+      "notes": []
+    }
+  ]
+}

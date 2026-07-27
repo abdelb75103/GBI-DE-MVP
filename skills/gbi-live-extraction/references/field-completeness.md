@@ -43,7 +43,7 @@ Use this reference when checking core metadata, participant fields, definitions,
 - `incidenceDefinition` must state the denominator frame whenever incidence, rate, prevalence, or burden is extracted.
 - Prefer concise denominator text such as `per 1000 player-hours`, `per 1000 athlete-exposures`, `per 100 players`, `per player-season`, or `per training day`.
 - `mechanismReporting` should name the reporter category, such as `medical staff`, `former staff`, `coach`, or `player self-report`; do not use a named person or replace it with the exposure logger.
-- If the paper reports non-hour denominators such as athlete-exposures, player-months, player-days, or match-minutes, still fill exposure using the direct denominator and set `exposureMeasurementUnit` to the closest supported value or `other`.
+- Athlete-exposures remain an accepted direct denominator. By user adjudication on 2026-07-27, athlete-years, player-/athlete-days, and projected exposure hours are not accepted as stand-alone denominators for this review. If one of those is the only denominator, classify the paper as `no_exposure`; if an accepted denominator is also reported, retain the accepted denominator and document the excluded measure.
 
 ## Sparse And Companion Papers
 

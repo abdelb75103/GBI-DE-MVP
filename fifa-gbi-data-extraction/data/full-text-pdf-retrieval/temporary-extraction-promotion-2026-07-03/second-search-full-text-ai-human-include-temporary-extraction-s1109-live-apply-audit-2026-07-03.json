@@ -1,0 +1,230 @@
+{
+  "scope": "Second search temporary extraction bridge for AI include plus one human include",
+  "mode": "apply",
+  "generatedAt": "2026-07-04T14:04:11.074Z",
+  "selectionRule": {
+    "searchBatch": "Second search - Ishanka - 2026-05-26",
+    "aiStatus": "completed",
+    "aiSuggestedDecision": "include",
+    "humanIncludeVotes": 1,
+    "humanExcludeVotes": 0,
+    "manualDecision": null,
+    "promotedPaperId": null,
+    "hasAttachedFile": true,
+    "limit": 10
+  },
+  "selected": [
+    {
+      "studyId": "S1109",
+      "screeningRecordId": "55550352-a452-4cb3-9b7e-ba307c8a8f1b",
+      "title": "The effects of jump training on measures of physical performance, lower extremities injury incidence and burden in highly trained male soccer players.",
+      "aiModel": "Claude Opus 4.8",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "fileSha256": "034374c11d871ced0dc9ae2763bdcc3f6f1962370d364a3d368fffab75eb4fe0",
+      "storageBucket": "papers",
+      "storageObjectPath": "04d1ce80-60e8-43ff-af46-7f58fcc2f145/1782332634969-S1109-the-effects-of-jump-training-on-measures-of-physical-performance-lower-extremities-injury-incidence-and-burden.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Single-blind randomized controlled trial in semi-professional male association football players comparing a 16-week jump-training program with regular soccer training, with lower-extremity injury incidence and burden as outcomes. It applies the UEFA epidemiological injury definition (time-loss) and records individual training and match exposure in hours, reporting injuries per 1000 h and days absence per 1000 h, giving a usable direct-time denominator. RCT epidemiology with a usable denominator is eligible under the criteria.",
+        "aiEvidenceQuote": "A single blind (i.e., researchers) randomized controlled trial was conducted to compare the effects of 16-week jump training program (EG) compared to 16 weeks of regular soccer training (CG) in physical performance and lower extremities injury profile of semi-professional male soccer players. | The Union of European Football Associations (UEFA) guidelines for epidemiological research were followed. Injury was defined as 'an injury that occurred during a scheduled training session or match that caused absence from the next training session or match'. | The lower extremities injury incidence (injuries/1,000 h exposure ...) was 8.94 in the CG compared to 2.81 in the EG ... Lower extremities injury burden (days of absence/1;000 h exposure ...) was 194.86 in the CG compared to 71.37 in the EG.",
+        "aiSourceLocation": "Page 4, Experimental design and procedures | Page 6, Injuries: definitions and data collection | Page 10, Results",
+        "aiConfidence": 0.88,
+        "aiModel": "Claude Opus 4.8",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "aiRawResponse": {
+          "tags": [
+            "RCT",
+            "jump/plyometric training",
+            "injury incidence",
+            "injury burden",
+            "semi-professional men's football",
+            "UEFA definition",
+            "direct exposure denominator"
+          ],
+          "model": "Claude Opus 4.8",
+          "title": "The effects of jump training on measures of physical performance, lower extremities injury incidence and burden in highly trained male soccer players.",
+          "reason": "Single-blind randomized controlled trial in semi-professional male association football players comparing a 16-week jump-training program with regular soccer training, with lower-extremity injury incidence and burden as outcomes. It applies the UEFA epidemiological injury definition (time-loss) and records individual training and match exposure in hours, reporting injuries per 1000 h and days absence per 1000 h, giving a usable direct-time denominator. RCT epidemiology with a usable denominator is eligible under the criteria.",
+          "studyId": "S1109",
+          "decision": "include",
+          "recordId": "55550352-a452-4cb3-9b7e-ba307c8a8f1b",
+          "auditNotes": "Included as eligible RCT epidemiology with UEFA time-loss definition and direct exposure-hour denominator for injury incidence and burden, despite small single-club sample. Reviewing model substituted to Claude Opus 4.8 (project-default GPT-5.5 quota-blocked until 2026-06-29); criteria fifa-gbi-full-text-v8-2026-06-23. No protected human/resolver fields touched.",
+          "confidence": 0.88,
+          "dataSource": "Club strength/conditioning and medical staff records using a UEFA-based standardized injury report and daily individual exposure logs.",
+          "studyDesign": "Randomized controlled trial (single-blind).",
+          "evidenceQuotes": [
+            "A single blind (i.e., researchers) randomized controlled trial was conducted to compare the effects of 16-week jump training program (EG) compared to 16 weeks of regular soccer training (CG) in physical performance and lower extremities injury profile of semi-professional male soccer players.",
+            "The Union of European Football Associations (UEFA) guidelines for epidemiological research were followed. Injury was defined as 'an injury that occurred during a scheduled training session or match that caused absence from the next training session or match'.",
+            "The lower extremities injury incidence (injuries/1,000 h exposure ...) was 8.94 in the CG compared to 2.81 in the EG ... Lower extremities injury burden (days of absence/1;000 h exposure ...) was 194.86 in the CG compared to 71.37 in the EG."
+          ],
+          "derivationBasis": "Exposure hours recorded and incidence/burden expressed per 1000 h; no reviewer calculation required.",
+          "exclusionReason": null,
+          "sourceLocations": [
+            "Page 4, Experimental design and procedures",
+            "Page 6, Injuries: definitions and data collection",
+            "Page 10, Results"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Semi-professional competitive men's club football.",
+          "derivationPossible": true,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Lower-extremity injury incidence (injuries/1000 h) and burden (days absence/1000 h) with rate ratios; eligible injury epidemiology outcome.",
+          "reportedDenominator": "Individual training and match exposure recorded daily in hours; incidence expressed per 1000 h (CG 8.94 vs EG 2.81 injuries/1000 h) and burden per 1000 h (CG 194.86 vs EG 71.37 days/1000 h).",
+          "dataCollectionTiming": "Prospective during a 16-week in-season intervention period; injuries and exposure recorded daily.",
+          "populationEligibility": "Semi-professional senior male soccer players from one club, in-season (4 training sessions plus one official match per week).",
+          "injuryIllnessDefinition": "Injury defined per UEFA guidelines as an injury occurring during a scheduled training session or match causing absence from the next training session or match; burden as days lost per 1000 h exposure.",
+          "denominatorEvidenceQuote": "Data related to lower extremity injuries (i.e., incidence and burden) are presented as the number of injuries/1,000 h ... and the number of absence days/1,000 h ... Exposure time was registered daily individually, in hours, in training, and matches (friendly and official).",
+          "denominatorSourceLocation": "Page 6, Injuries: definitions and data collection; Page 7, Statistical analysis; Page 11-12, Results."
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-25T12:45:45.975+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-25T15:54:48.138873+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T12:57:26.107Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T15:54:48.138873+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T15:54:48.138873+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-25T15:54:48.138873+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "b2b650c8-da4c-4385-a7bb-9471e4627e36",
+      "createdFileId": "3121e936-2d61-4256-8b37-4214c3eb146a",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Single-blind randomized controlled trial in semi-professional male association football players comparing a 16-week jump-training program with regular soccer training, with lower-extremity injury incidence and burden as outcomes. It applies the UEFA epidemiological injury definition (time-loss) and records individual training and match exposure in hours, reporting injuries per 1000 h and days absence per 1000 h, giving a usable direct-time denominator. RCT epidemiology with a usable denominator is eligible under the criteria.",
+        "aiEvidenceQuote": "A single blind (i.e., researchers) randomized controlled trial was conducted to compare the effects of 16-week jump training program (EG) compared to 16 weeks of regular soccer training (CG) in physical performance and lower extremities injury profile of semi-professional male soccer players. | The Union of European Football Associations (UEFA) guidelines for epidemiological research were followed. Injury was defined as 'an injury that occurred during a scheduled training session or match that caused absence from the next training session or match'. | The lower extremities injury incidence (injuries/1,000 h exposure ...) was 8.94 in the CG compared to 2.81 in the EG ... Lower extremities injury burden (days of absence/1;000 h exposure ...) was 194.86 in the CG compared to 71.37 in the EG.",
+        "aiSourceLocation": "Page 4, Experimental design and procedures | Page 6, Injuries: definitions and data collection | Page 10, Results",
+        "aiConfidence": 0.88,
+        "aiModel": "Claude Opus 4.8",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "aiRawResponse": {
+          "tags": [
+            "RCT",
+            "jump/plyometric training",
+            "injury incidence",
+            "injury burden",
+            "semi-professional men's football",
+            "UEFA definition",
+            "direct exposure denominator"
+          ],
+          "model": "Claude Opus 4.8",
+          "title": "The effects of jump training on measures of physical performance, lower extremities injury incidence and burden in highly trained male soccer players.",
+          "reason": "Single-blind randomized controlled trial in semi-professional male association football players comparing a 16-week jump-training program with regular soccer training, with lower-extremity injury incidence and burden as outcomes. It applies the UEFA epidemiological injury definition (time-loss) and records individual training and match exposure in hours, reporting injuries per 1000 h and days absence per 1000 h, giving a usable direct-time denominator. RCT epidemiology with a usable denominator is eligible under the criteria.",
+          "studyId": "S1109",
+          "decision": "include",
+          "recordId": "55550352-a452-4cb3-9b7e-ba307c8a8f1b",
+          "auditNotes": "Included as eligible RCT epidemiology with UEFA time-loss definition and direct exposure-hour denominator for injury incidence and burden, despite small single-club sample. Reviewing model substituted to Claude Opus 4.8 (project-default GPT-5.5 quota-blocked until 2026-06-29); criteria fifa-gbi-full-text-v8-2026-06-23. No protected human/resolver fields touched.",
+          "confidence": 0.88,
+          "dataSource": "Club strength/conditioning and medical staff records using a UEFA-based standardized injury report and daily individual exposure logs.",
+          "studyDesign": "Randomized controlled trial (single-blind).",
+          "evidenceQuotes": [
+            "A single blind (i.e., researchers) randomized controlled trial was conducted to compare the effects of 16-week jump training program (EG) compared to 16 weeks of regular soccer training (CG) in physical performance and lower extremities injury profile of semi-professional male soccer players.",
+            "The Union of European Football Associations (UEFA) guidelines for epidemiological research were followed. Injury was defined as 'an injury that occurred during a scheduled training session or match that caused absence from the next training session or match'.",
+            "The lower extremities injury incidence (injuries/1,000 h exposure ...) was 8.94 in the CG compared to 2.81 in the EG ... Lower extremities injury burden (days of absence/1;000 h exposure ...) was 194.86 in the CG compared to 71.37 in the EG."
+          ],
+          "derivationBasis": "Exposure hours recorded and incidence/burden expressed per 1000 h; no reviewer calculation required.",
+          "exclusionReason": null,
+          "sourceLocations": [
+            "Page 4, Experimental design and procedures",
+            "Page 6, Injuries: definitions and data collection",
+            "Page 10, Results"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Semi-professional competitive men's club football.",
+          "derivationPossible": true,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Lower-extremity injury incidence (injuries/1000 h) and burden (days absence/1000 h) with rate ratios; eligible injury epidemiology outcome.",
+          "reportedDenominator": "Individual training and match exposure recorded daily in hours; incidence expressed per 1000 h (CG 8.94 vs EG 2.81 injuries/1000 h) and burden per 1000 h (CG 194.86 vs EG 71.37 days/1000 h).",
+          "dataCollectionTiming": "Prospective during a 16-week in-season intervention period; injuries and exposure recorded daily.",
+          "populationEligibility": "Semi-professional senior male soccer players from one club, in-season (4 training sessions plus one official match per week).",
+          "injuryIllnessDefinition": "Injury defined per UEFA guidelines as an injury occurring during a scheduled training session or match causing absence from the next training session or match; burden as days lost per 1000 h exposure.",
+          "denominatorEvidenceQuote": "Data related to lower extremity injuries (i.e., incidence and burden) are presented as the number of injuries/1,000 h ... and the number of absence days/1,000 h ... Exposure time was registered daily individually, in hours, in training, and matches (friendly and official).",
+          "denominatorSourceLocation": "Page 6, Injuries: definitions and data collection; Page 7, Statistical analysis; Page 11-12, Results."
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-25T12:45:45.975+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-25T15:54:48.138873+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T12:57:26.107Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T15:54:48.138873+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-25T15:54:48.138873+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    }
+  ],
+  "skippedBeforeLimit": [],
+  "protectedScreeningFieldsChanged": false
+}

@@ -1,91 +1,44 @@
-## User Preference: Local Dev Servers
+# FIFA GBI Repository Instructions
 
-Do not kill, stop, or restart local dev servers unless Abdel explicitly asks for that in the current request. If a local verification step needs a fresh server and one is already running, use the existing server when possible or report the stale-server limitation instead of terminating it.
+## Instruction Routing
 
-## User Preference: External Plugin Actions
+This root file applies to every task. Load only the task branch that matches the work; do not preload all branches.
 
-For any external plugin or connector action where other people could see the result or be affected, do not perform the action unless Abdel has explicitly reviewed and approved the exact action in the current request.
+| Task | Additional instructions |
+| --- | --- |
+| Next.js UI, API, database code, app configuration, or deployment | `fifa-gbi-data-extraction/src/AGENTS.md` |
+| Title/abstract screening, full-text screening, AI recommendations, criteria, conflicts, or promotion state | `agent-instructions/screening/AGENTS.md` plus the matching screening skill |
+| Manual extraction, extraction QA/apply, population layouts, Backlog 2, or extraction status | `agent-instructions/extraction/AGENTS.md` plus `skills/gbi-live-extraction/SKILL.md` |
+| Covidence PDF retrieval | `skills/covidence-pdf-retrieval/SKILL.md` |
+| Translation upload | `skills/covidence-translation-upload/SKILL.md` |
+| Translated-PDF appendix work | `skills/gbi-translated-pdf-appendix/SKILL.md` |
 
-This includes, but is not limited to, sending emails or messages, posting comments, editing shared documents, creating or modifying calendar invites, granting or changing permissions, submitting forms, publishing content, merging pull requests, or making changes in systems used by other people.
+`fifa-gbi-data-extraction/src/AGENTS.md` is discovered automatically for files under `src/`. The screening and extraction branches are semantic, so read them explicitly even when the files being changed live under `scripts/`, `data/`, or `docs/`. If a task spans domains, load only the branches it truly touches. Task-specific branches override generic repository guidance where they are more specific; global safety and approval rules still apply.
 
-Before taking one of these actions, present what will be changed or sent, who can see it or who is affected, and the exact target account, file, thread, recipient, or permission. Proceed only after Abdel clearly confirms approval.
+## Repository Map
 
-## User Preference: Commits
+- `fifa-gbi-data-extraction/`: Next.js application, app-specific scripts, tests, live-workflow data, and review backlogs.
+- `skills/`: reusable screening, extraction, retrieval, and translation workflows.
+- `scripts/`: root Covidence/Chrome automation.
+- `docs/`: setup, implementation, product, planning, reports, and research notes.
+- `sql/`: setup and administrative SQL.
+- `supabase/`: database configuration and migrations.
+- `agent-instructions/`: semantic task branches that should not be loaded for unrelated work.
 
-Do not create, amend, rewrite, or push commits unless Abdel explicitly asks for commit or push work in the current request. Code edits, file changes, and verification do not imply permission to commit.
+There are two Node workspaces: the repository root for Covidence/Chrome automation and `fifa-gbi-data-extraction/` for the application.
 
-## GitHub/Vercel Auto-Deploy Identity
+## Shared Live-Data Safety
 
-This GitHub repository is private. Vercel therefore deploys a Git commit only when its GitHub author is linked through Vercel Login Connections to a Vercel user who has access to the connected production project. For a Pro team the author must be a team member; for a Hobby team the author must be the team owner.
+The application and local operational scripts can access live Supabase data. A task-specific screening or extraction request authorizes only the writes defined by its routed branch and skill. It does not authorize unrelated paper, vote, resolver, permission, storage, or deployment changes.
 
-The production Git integration targets `abdelrahmans-projects/fifa-gbi-data-extraction` on Vercel team `AbdelRahman's projects` (`team_kOe7GN58FtvUNS0tsG7aGYww`). The checkout's `fifa-gbi-data-extraction/.vercel/project.json` and the local Vercel CLI login `abdelbabiker-3247` point to the separate `abdel-babikers-projects` team, so do not use that local link to judge or trigger the GitHub production deployment.
+Human screening votes are immutable unless Abdel requests the exact vote repair. Never infer permission to change reviewer IDs, decisions, timestamps, resolver entries, or manual-review state from a request to update AI recommendations or extraction data.
 
-The Hobby team owner is Vercel account `abdelbabiker-7113` (`abdel.babiker@ucd.ie`), whose GitHub Login Connection is `abdelb75103`. Commits intended for GitHub-triggered Vercel deployment must use `abdelb75103 <210773581+abdelb75103@users.noreply.github.com>`. Before committing, verify the repository-local `git config user.name` and `git config user.email`; set those exact repository-local values if they differ. Private-repository test commit `2fdd3cb` verified this identity triggers the production deployment successfully.
+Preserve existing worktree changes and generated audit history. Do not commit or push unless Abdel asks in the current request.
 
-Before a deployment commit, verify repository visibility, the repository-local `user.name`/`user.email`, GitHub's mapped author login, and that login's production-team membership. Pushes to `main` should then create production deployments; other branches should create previews. After every push, verify the GitHub Vercel status. If it says `Git author ... must have access to the project`, report the access failure and request/approve team access rather than deploying through the unrelated local Vercel project.
+## Root Automation
 
-## User Preference: Small Cosmetic Changes
+Run root Covidence/Chrome commands from the repository root. Common scripts include `npm run covidence:prepare`, `covidence:collect`, `covidence:download`, `covidence:query`, and `chrome:*`. These may interact with signed-in or shared systems; follow the applicable skill and external-action approval rules.
 
-For very small cosmetic changes, such as font color, copy, spacing, labels, or similarly low-risk visual tweaks, do not run extended verification or deployment checks unless Abdel explicitly asks for verification. Make the focused edit and report the changed files so Abdel can review manually.
+## Instruction Maintenance
 
-## User Preference: Frontend Claude Handoff Scope
-
-Do not hand every frontend fix or UI change to terminal Claude. Handle routine frontend work directly in Codex, including bug fixes, modals, forms, copy, spacing, filters, scrolling, workflow adjustments, and constrained component polish.
-
-Use terminal Claude for larger frontend design work where a second design pass is materially useful, such as landing pages, new screens, major redesigns, brand or visual direction, complex interaction design, or broad UX polish.
-
-## User Preference: Spreadsheet Editing
-
-Do not automatically open Excel or spreadsheet files after every workbook change unless Abdel explicitly asks to open the file in the current request. Make the edit, run only the necessary checks, and report the changed files.
-
-## User Preference: Spreadsheet Subtitles
-
-Do not add explanatory sublines, subtitles, helper text, or instructional text inside spreadsheet sheets unless Abdel explicitly asks for them in the current request.
-
-## User Preference: AI Screening and Extraction Models
-
-Do not use Gemini for AI screening, AI extraction, AI review, or other project AI functions unless Abdel explicitly asks for Gemini in the current request.
-
-Run project AI functions locally from the current workspace and apply results to the database from that local workflow. Default to GPT-5.5 with medium reasoning when available. If that exact model is unavailable, use the closest suitable local Codex/OpenAI terminal model with explicit reasoning, record the model used, and explain the substitution before applying results.
-
-## User Preference: Full-Text Derivable Denominators
-
-For full-text screening, treat a denominator as `paper_derivable` when the paper reports cohort-level inputs that can be multiplied into a study total without extra assumptions, such as mean match minutes times explicit participant count, as long as the numerator is cohort-wide and the at-risk frame is clear.
-
-When using this rule, record the exact reported inputs and note if the implied total is approximate because the published mean is rounded. Do not exclude solely because the paper reports a cohort mean instead of the multiplied total.
-
-## User Preference: AI Screening Decision Integrity
-
-Human screening votes are immutable audit records. Never change, replace, remove, or "restore" a human vote by editing `metadata.titleAbstractDecisions`, reviewer decision arrays, reviewer IDs/names, vote timestamps, or manual-review fields unless Abdel explicitly asks for that exact human-vote repair in the current request.
-
-When Abdel asks to update title/abstract AI screening decisions, re-review conflicts, apply updated criteria, or update AI recommendations, treat that as an AI recommendation update only. Use the project AI screening workflow to update `ai_*` fields and criteria/model audit fields. Do not add `resolver_decision` entries, do not resolve conflicts, do not promote to full text manually, and do not delete or create full-text placeholders unless Abdel explicitly approves the exact record-level resolver or promotion action.
-
-Legitimate AI-vs-human disagreements should remain conflicts. Report them as conflicts with the human vote, AI recommendation, and criteria-based reason. Only resolve conflicts when Abdel explicitly says to resolve/adjudicate the specific records and approves the exact intended decision for each affected record.
-
-When Abdel asks to update AI recommendations and the local workflow produces corrected recommendation artifacts, do not stop at local JSON/Markdown or local review outputs unless he explicitly asks for a local-only or dry-run result. Carry the same AI recommendation update through the live project apply path as well, updating the web app/database AI fields and then verifying the written values. This applies only to AI recommendation fields and does not permit manual-vote, resolver, or human-decision edits.
-
-## User Preference: Local Corrections Must Reach Live Records
-
-When Abdel asks to correct, replace, refresh, or re-review a paper or screening record that already backs the live app/website, do not stop at a local file swap, local JSON, local Markdown, or local review note unless he explicitly says `local-only`, `dry-run`, or otherwise asks to stop short.
-
-By default, carry the correction through to the live record in the same task. This includes the matching live PDF/storage object when the paper file itself was corrected, and the matching live `ai_*` fields when the AI recommendation was corrected. After writing live changes, verify the stored file hash/path and the written AI fields.
-
-This default does not permit changing human votes, resolver decisions, or other protected manual-review fields without explicit approval for that exact action.
-
-## User Preference: Follow Skills End-to-End
-
-When a repo or local skill clearly applies, follow that skill through its full default workflow instead of stopping at an intermediate artifact. If the skill includes later steps such as upload, database apply, audit logging, verification, or handoff, complete those steps unless Abdel explicitly asks to stop short.
-
-This does not override the approval rules above for visible external actions. If a skill includes an external upload or change that still needs explicit approval, pause only for that approval; otherwise, carry the skill to completion.
-
-## User Preference: Second Search Title/Abstract Freeze
-
-Title/abstract screening for the second search batch `Second search - Ishanka - 2026-05-26` is complete and should not be altered unless Abdel explicitly asks to reopen that stage.
-
-Do not rerun or update second-search title/abstract AI recommendations, criteria/model audit fields, offline packs, conflict handling, resolver state, or promotion state by default. If a new rule or edge case comes up for that batch, apply it in full-text screening instead unless Abdel explicitly says to change title/abstract screening.
-
-## User Preference: Descriptive Audit and Backlog Tracking
-
-When creating or updating audits, backlogs, manifests, reports, or tracking files, make the scope and source context explicit in the file name and opening summary. Include the search/import wave when relevant, such as `original search`, `second search`, or `second updated search`, plus the workflow stage, date, and whether the file is a queue, dry run, upload log, unresolved backlog, or final audit.
-
-Do not use vague names like `new papers`, `missing PDFs`, or `current audit` unless the surrounding path and first lines make the exact dataset unambiguous. Tracking should clearly distinguish already uploaded/found records, records previously searched without success, newly promoted records still needing a first search, and records skipped because they already have a local or database PDF.
+Keep the root as a router and shared safety layer. Put app implementation details in `fifa-gbi-data-extraction/src/AGENTS.md`, screening rules in the screening branch, and extraction rules in the extraction branch. Keep each sibling `CLAUDE.md` as exactly `@AGENTS.md`.

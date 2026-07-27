@@ -1,0 +1,155 @@
+{
+  "artifactType": "S4775 Table 5 age-by-setting correction final live audit",
+  "scope": "S4775 only",
+  "completedAt": "2026-07-14",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "Local substitute because the skill-default GPT-5.5 was not selectable in this delegated workspace.",
+  "inputArtifact": "data/second-search-extraction/batch-024/s4775-table-5-age-setting-correction-input-2026-07-14.json",
+  "source": {
+    "primaryPdfSha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9",
+    "table": "Table 5, PDF page 7 (journal page 1613)",
+    "ageGroups": ["U11", "U12", "U13", "U14", "U15", "U16", "U18"],
+    "directValues": [
+      {
+        "ageGroup": "U11",
+        "match": {"count": "8", "exposureHours": "2154", "incidence": "3.71", "incidenceCi95": "0.40-8.36", "burden": "83", "burdenCi95": "5-192", "meanSeverity": "22", "meanSeverityCi95": "13-28", "medianSeverity": "11", "medianSeverityCi95": "8-13"},
+        "training": {"count": "8", "exposureHours": "7544", "incidence": "1.06", "incidenceCi95": "0.00-2.87", "burden": "16", "burdenCi95": "0-44", "meanSeverity": "15", "meanSeverityCi95": "0-15", "medianSeverity": "14", "medianSeverityCi95": "0-14"}
+      },
+      {
+        "ageGroup": "U12",
+        "match": {"count": "14", "exposureHours": "2293", "incidence": "6.11", "incidenceCi95": "1.67-11.39", "burden": "189", "burdenCi95": "21-370", "meanSeverity": "31", "meanSeverityCi95": "8-38", "medianSeverity": "16", "medianSeverityCi95": "9-48"},
+        "training": {"count": "11", "exposureHours": "7299", "incidence": "1.51", "incidenceCi95": "0.13-3.89", "burden": "20", "burdenCi95": "1-48", "meanSeverity": "13", "meanSeverityCi95": "4-22", "medianSeverity": "12", "medianSeverityCi95": "4-22"}
+      },
+      {
+        "ageGroup": "U13",
+        "match": {"count": "21", "exposureHours": "2572", "incidence": "8.16", "incidenceCi95": "2.60-20.35", "burden": "110", "burdenCi95": "17-323", "meanSeverity": "14", "meanSeverityCi95": "6-17", "medianSeverity": "8", "medianSeverityCi95": "6-12"},
+        "training": {"count": "19", "exposureHours": "8596", "incidence": "2.21", "incidenceCi95": "1.06-3.42", "burden": "38", "burdenCi95": "19-54", "meanSeverity": "17", "meanSeverityCi95": "13-23", "medianSeverity": "13", "medianSeverityCi95": "10-15"}
+      },
+      {
+        "ageGroup": "U14",
+        "match": {"count": "34", "exposureHours": "2132", "incidence": "15.95", "incidenceCi95": "13.49-19.07", "burden": "510", "burdenCi95": "257-783", "meanSeverity": "33", "meanSeverityCi95": "17-53", "medianSeverity": "20", "medianSeverityCi95": "10-24"},
+        "training": {"count": "31", "exposureHours": "8455", "incidence": "3.55", "incidenceCi95": "2.50-4.61", "burden": "64", "burdenCi95": "24-112", "meanSeverity": "18", "meanSeverityCi95": "9-27", "medianSeverity": "12", "medianSeverityCi95": "8-13"}
+      },
+      {
+        "ageGroup": "U15",
+        "match": {"count": "14", "exposureHours": "1716", "incidence": "8.16", "incidenceCi95": "3.07-11.32", "burden": "289", "burdenCi95": "83-429", "meanSeverity": "35", "meanSeverityCi95": "21-41", "medianSeverity": "29", "medianSeverityCi95": "13-30"},
+        "training": {"count": "19", "exposureHours": "7830", "incidence": "2.30", "incidenceCi95": "1.62-3.11", "burden": "64", "burdenCi95": "20-131", "meanSeverity": "28", "meanSeverityCi95": "12-58", "medianSeverity": "14", "medianSeverityCi95": "6-20"}
+      },
+      {
+        "ageGroup": "U16",
+        "match": {"count": "21", "exposureHours": "2114", "incidence": "9.93", "incidenceCi95": "5.18-16.59", "burden": "225", "burdenCi95": "141-314", "meanSeverity": "23", "meanSeverityCi95": "14-37", "medianSeverity": "14", "medianSeverityCi95": "9-20"},
+        "training": {"count": "25", "exposureHours": "7866", "incidence": "3.05", "incidenceCi95": "1.86-4.88", "burden": "82", "burdenCi95": "50-112", "meanSeverity": "27", "meanSeverityCi95": "15-43", "medianSeverity": "16", "medianSeverityCi95": "9-33"}
+      },
+      {
+        "ageGroup": "U18",
+        "match": {"count": "18", "exposureHours": "1370", "incidence": "12.41", "incidenceCi95": "3.67-19.55", "burden": "421", "burdenCi95": "107-637", "meanSeverity": "34", "meanSeverityCi95": "29-39", "medianSeverity": "22", "medianSeverityCi95": "12-42"},
+        "training": {"count": "15", "exposureHours": "6180", "incidence": "2.27", "incidenceCi95": "0.49-5.33", "burden": "34", "burdenCi95": "6-61", "meanSeverity": "15", "meanSeverityCi95": "12-34", "medianSeverity": "12", "medianSeverityCi95": "0-17"}
+      }
+    ]
+  },
+  "populationLayout": {
+    "count": 16,
+    "labels": [
+      "Match",
+      "Training",
+      "U11 Match",
+      "U11 Training",
+      "U12 Match",
+      "U12 Training",
+      "U13 Match",
+      "U13 Training",
+      "U14 Match",
+      "U14 Training",
+      "U15 Match",
+      "U15 Training",
+      "U16 Match",
+      "U16 Training",
+      "U18 Match",
+      "U18 Training"
+    ],
+    "structuredMapping": "Table 3 injuryLocation and Table 4 injuryTissueType remain overall-only on Match and Training (positions 0 and 1). Their extraction field values were unchanged and all age-row cells remain blank."
+  },
+  "validation": {
+    "fieldIdValidation": {"stagedFieldCount": 20, "unknownFieldIds": 0, "allChangedFieldsHave16Lines": true},
+    "dryRun": {"mode": "dry-run", "writtenFieldCount": 20, "skippedFieldCount": 0, "unknownFieldCount": 0, "populationSimulationNote": "The existing script re-queries live fields before population sync during dry-run, so it reported the pre-apply two groups. Separate schema and line-count validation confirmed all 16 staged rows before apply."}
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "corrective live apply with overwrite limited to S4775's 20 staged fields and population rebuild",
+    "writtenFields": [
+      "totalExposure",
+      "matchExposure",
+      "trainingExposure",
+      "injuryTotalCount",
+      "injuryTimeLossCount",
+      "injuryMatchCount",
+      "injuryMatchTimeLossCount",
+      "injuryTrainingCount",
+      "injuryTrainingTimeLossCount",
+      "injuryIncidenceOverall",
+      "injuryIncidenceMatch",
+      "injuryIncidenceTraining",
+      "injuryIncidenceTimeLossOverall",
+      "injuryIncidenceTimeLossMatch",
+      "injuryIncidenceTimeLossTraining",
+      "injuryIncidenceCi95",
+      "injuryTimeLossMedian",
+      "injuryTimeLossMean",
+      "injuryBurden",
+      "injuryBurdenCi95"
+    ],
+    "skippedFields": 0,
+    "unknownFields": 0,
+    "populationGroupsWritten": 16,
+    "populationValuesWritten": 475
+  },
+  "postApplyIndependentReviewCorrection": {
+    "result": "passed",
+    "inputArtifact": "data/second-search-extraction/batch-024/s4775-structured-mapping-review-correction-input-2026-07-14.json",
+    "correctionAudit": "data/second-search-extraction/batch-024/s4775-structured-mapping-review-correction-audit-2026-07-14.json",
+    "mapping": "Table 3 Lower back was added to Lumbosacral and Table 4 Unknown was added to Non-specific tissue type on overall Match/Training only. Dislocation remains intentionally unmapped because no clean dedicated schema group exists.",
+    "writtenFieldCount": 8,
+    "ageRowValuesWritten": 0,
+    "medianHandling": "Direct structured medians were checked and documented in the correction audit but not forced into mean fields because the schema has no median metric."
+  },
+  "postReviewAgeCategoryCorrection": {
+    "result": "passed",
+    "inputArtifact": "data/second-search-extraction/batch-024/s4775-age-category-line-labels-correction-input-2026-07-14.json",
+    "correctionAudit": "data/second-search-extraction/batch-024/s4775-age-category-line-labels-correction-audit-2026-07-14.json",
+    "mapping": "Participant Characteristics ageCategory now labels all 16 lines explicitly: pooled U11-U18 match/training followed by each Table 5 age group as match/training.",
+    "writtenFieldCount": 1,
+    "populationLabelsChanged": false
+  },
+  "stageB": {
+    "result": "passed",
+    "studyId": "S4775",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "liveFieldCount": 172,
+    "stagedFieldMismatches": 0,
+    "unexpectedFieldChanges": 0,
+    "locationOrTypeFieldChanges": 8,
+    "locationOrTypeChangesExpected": true,
+    "populationCount": 16,
+    "populationValueCount": 506,
+    "structuredDualWriteMismatches": 0,
+    "studyIdEqualsAssignedStudyId": true,
+    "sourceAttachment": {"fileCount": 1, "primaryFileId": "dc75c704-3e82-4992-933f-9323395e87b7", "sha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9", "unchanged": true},
+    "protectedChecks": {"paperProtectedFieldChanges": 0, "screeningMetadataChanges": 0, "screeningRecordChanges": 0, "screeningVoteChanges": 0, "humanVotesVerified": 2, "promotionStateChanges": 0},
+    "backlog": {"document": "docs/second-search-extraction-review-backlog-2026-07-03.md", "row": "S4775", "populationLayoutUpdated": true, "table5SourceMappingUpdated": true, "overallOnlyLocationTypeCaveatUpdated": true}
+  },
+  "directVsDerived": "Every newly added age-by-setting value is a direct Table 5 cell. No counts, exposure, incidence, burden, or severity values were derived or back-calculated.",
+  "caveats": [
+    "Table 5 reports U11, U12, U13, U14, U15, U16, and U18; it does not report U17, so no U17 rows were invented.",
+    "Tables 3 and 4 report location and injury type by overall Match/Training setting only, not by age; those values remain on the first two rows only.",
+    "The direct Table 5 age rows sum to 130 match and 128 training injuries and 14,351 match and 53,770 training hours, versus overall Table 2 totals of 128, 124, 14,999 and 56,075. Several printed Table 5 rates also do not reproduce from adjacent count/exposure cells. Both printed overall and subgroup values were retained without recalculation or reconciliation.",
+    "The pre-existing source inconsistency remains: the abstract reports five academies while Methods states eight."
+  ],
+  "rollback": {
+    "evidence": "The input artifact embeds the exact pre-change two-row values, paper/source identifiers, counts, screening vote IDs, and promotion state under rollbackEvidence and rollbackPayload.",
+    "command": "jq '.rollbackPayload' data/second-search-extraction/batch-024/s4775-table-5-age-setting-correction-input-2026-07-14.json > /tmp/s4775-rollback.json && node --experimental-strip-types scripts/apply-second-search-extraction-json.mjs --input=/tmp/s4775-rollback.json --overwrite --apply",
+    "notExecuted": true
+  },
+  "finding": "no action; ready for human extraction review"
+}

@@ -1,0 +1,70 @@
+{
+  "artifactType": "Backlog 2 Batch 035 staged manual extraction input",
+  "scope": "Fixed membership S4716, S5428, S5482 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "fixedBatchMembership": ["S4716", "S5428", "S5482"],
+  "preApply": {
+    "assignmentProfile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "statuses": {
+      "S4716": "mental_health",
+      "S5428": "mental_health",
+      "S5482": "mental_health"
+    },
+    "existingExtractionFields": {
+      "S4716": 0,
+      "S5428": 0,
+      "S5482": 0
+    },
+    "existingPopulationGroups": {
+      "S4716": 0,
+      "S5428": 0,
+      "S5482": 0
+    },
+    "protectedScreening": "Each record has two immutable full-text include votes, a ready_for_extraction resolution, and a promotion link. No screening-record, vote, resolution, promotion, source-file, or extraction-field write is staged.",
+    "protectedScreeningSignatureSha256": "eabd9eaa02f9c042fafea404401ea9b64f1e41175ff8b4a0c3d64710ac8cd918",
+    "primaryFileSha256": {
+      "S4716": "06d591d16496caf05234cc6e4001c5a5d9ba26d5191511d0a56342d5a125e874",
+      "S5428": "10f30441dd996c26bfe49ffc81b194365cd60dcb4b5b4b1eab78a25549513266",
+      "S5482": "8f94ccc32076def2e2460b560adb95a34429b6807c1f68b0b550a192e76d7b3f"
+    }
+  },
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "Each attached primary PDF was inspected once in full, including every results table and usable figure. The locally inspected SHA-256 value matches papers.primary_file_sha256 for all three records.",
+      "No paper has a compatible Tabs 1-10 injury or illness-surveillance payload, so no population layout or extraction field is staged. Structured-population dual writing is therefore not applicable.",
+      "S4716 is a Spanish youth-soccer competitive-anxiety study. Its sole injury measure is a season-long total injury count used in descriptive/correlational anxiety analyses; the paper reports no at-risk denominator, injury type, injury severity, location, mechanism, illness outcome, or compatible surveillance measure. Its existing mental_health status is retained rather than forcing a sparse extraction.",
+      "S5428 is a cross-sectional DASS-21 study of licensed central and assistant referees, not current football-player participants. All results tables report depression, anxiety, stress, role, league, sex, demographics, and regression associations; no injury or illness outcome is reported. It is staged for the true referee exclusion status.",
+      "S5482 is a nationwide Swedish register cohort of current/former top-division male players. Its outcomes are diagnosed depression/anxiety-related disorders and suicide; Tables 1-5 and Figure 1-2 contain registry, demographic, mental-health, suicide, and hazard-ratio results only. Its existing mental_health status is retained."
+    ]
+  },
+  "sourceCoverage": {
+    "S4716": "Attached 18-page primary PDF: abstract, introduction, participants, questionnaire/injury-register method, Table 1, Figures 1-2, Tables 2-6, results, discussion, limitations, practical applications, conclusions, and references swept.",
+    "S5428": "Attached 7-page primary PDF: abstract, introduction, referee eligibility/sampling, DASS-21 and statistical methods, Tables 1-5, results, discussion, limitations, conclusions, and references swept.",
+    "S5482": "Attached 8-page primary PDF: abstract, introduction, nationwide-register data sources, cohort/outcome/statistical methods, Tables 1-5, Figures 1-2, results, discussion, limitations, conclusions, and references swept."
+  },
+  "classifications": [
+    {
+      "studyId": "S4716",
+      "classification": "mental_health",
+      "populationLabels": [],
+      "caveat": "Although the study prospectively tracks a season total of injuries, it is an anxiety-risk-factor study and supplies only an injury-count distribution without a usable injury-surveillance denominator or compatible Tabs 1-10 outcome detail."
+    },
+    {
+      "studyId": "S5428",
+      "classification": "referee",
+      "flagReason": "Soccer referee population; not current football-player participants",
+      "populationLabels": [],
+      "caveat": "The population is licensed central and assistant referees; mental-health symptoms are the only study outcomes."
+    },
+    {
+      "studyId": "S5482",
+      "classification": "mental_health",
+      "populationLabels": [],
+      "caveat": "The nationwide cohort supplies psychiatric-diagnosis and suicide outcomes, not injury/illness surveillance data."
+    }
+  ],
+  "papers": []
+}

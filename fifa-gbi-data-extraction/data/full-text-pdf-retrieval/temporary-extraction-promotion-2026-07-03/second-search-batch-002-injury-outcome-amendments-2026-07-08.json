@@ -1,0 +1,36 @@
+{
+  "papers": [
+    {
+      "studyId": "S859",
+      "populationLabels": ["Male", "Female"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryMedicalAttentionCount": "380\n454",
+          "injuryTimeLossCount": "380\n454"
+        }
+      },
+      "note": "S859 updated on 2026-07-08 during Batch 002 cleanup. High School RIO injury definition requires medical attention and restriction for at least one day beyond the injury day, so the soccer overuse injury totals already stored as 380/454 were mirrored into medical-attention and time-loss count fields. Did not add match/training counts because the clean soccer-specific event-type split is not printed as direct counts in the main tables."
+    },
+    {
+      "studyId": "S877",
+      "populationLabels": ["Total", "Male", "Female"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryTimeLossCount": "59\n31\n28",
+          "injuryRecurrentTotal": "3"
+        }
+      },
+      "note": "S877 updated on 2026-07-08 during Batch 002 cleanup. LAS definition requires inability to practice for more than one day, so the Total/Male/Female LAS counts 59/31/28 were mirrored into injuryTimeLossCount. Results text reports 56 first injuries and 3 second injuries during follow-up, so recurrent injuries were added as a pooled total of 3. Did not force reaction or contact-direction rows into generic injuryOutcome fields beyond the already stored contact/non-contact values."
+    },
+    {
+      "studyId": "S892",
+      "populationLabels": ["Total"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryTimeLossCount": "15"
+        }
+      },
+      "note": "S892 updated on 2026-07-08 during Batch 002 cleanup. The paper defines included injuries as time-loss injuries, so the total injury count of 15 from Table 2 was mirrored into injuryTimeLossCount. Non-contact injury incidence 5.91 per 1000 h remains noted in source but was not forced into a generic field because the schema has no non-contact incidence field."
+    }
+  ]
+}

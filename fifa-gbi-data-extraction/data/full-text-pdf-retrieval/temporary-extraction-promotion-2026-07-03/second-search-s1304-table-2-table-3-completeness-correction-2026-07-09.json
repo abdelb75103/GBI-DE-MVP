@@ -1,0 +1,62 @@
+{
+  "papers": [
+    {
+      "studyId": "S1304",
+      "populationLabels": ["Total"],
+      "note": "Second-search S1304 Table 2-3 completeness correction (2026-07-09). Added direct concussion, fracture, abrasion, and location metrics; corrected time-loss values; and removed the unsupported combined sprains/strains-to-joint-sprain mapping. Sprains/strains is retained only as the reported most common diagnosis.",
+      "fields": {
+        "injuryOutcome": {
+          "injuryTimeLossTotal": "1796",
+          "injuryTimeLossMean": "27.2 +/- 38.0",
+          "injuryMostCommonDiagnosis": "strains/sprains",
+          "injuryMostCommonType": null
+        },
+        "injuryTissueType": {
+          "injuryTissueType_joint_sprain_prevalence": null,
+          "injuryTissueType_joint_sprain_incidence": null,
+          "injuryTissueType_joint_sprain_burden": null,
+          "injuryTissueType_joint_sprain_severityTotalDays": null,
+          "injuryTissueType_joint_sprain_severityMeanDays": null,
+          "injuryTissueType_concussion_prevalence": "12",
+          "injuryTissueType_concussion_incidence": "20.8 (11.8-36.6)",
+          "injuryTissueType_concussion_severityTotalDays": "372",
+          "injuryTissueType_concussion_severityMeanDays": "31.0 +/- 4.9",
+          "injuryTissueType_bone_fracture_prevalence": "3",
+          "injuryTissueType_bone_fracture_incidence": "5.2 (1.7-16.1)",
+          "injuryTissueType_bone_fracture_severityTotalDays": "206",
+          "injuryTissueType_bone_fracture_severityMeanDays": "68.7 +/- 70.4",
+          "injuryTissueType_abrasion_prevalence": "5",
+          "injuryTissueType_abrasion_incidence": "8.7 (3.6-20.8)",
+          "injuryTissueType_abrasion_severityTotalDays": "54",
+          "injuryTissueType_abrasion_severityMeanDays": "10.8 +/- 10.8"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_burden": null,
+          "injuryLocation_head_prevalence": "13",
+          "injuryLocation_head_severityTotalDays": "381",
+          "injuryLocation_upper_limb_overall_severityTotalDays": "38",
+          "injuryLocation_upper_limb_overall_severityMeanDays": "12.7 +/- 2.3",
+          "injuryLocation_wrist_prevalence": "1",
+          "injuryLocation_wrist_incidence": "1.7 (0.2-12.3)",
+          "injuryLocation_wrist_severityTotalDays": "14",
+          "injuryLocation_wrist_severityMeanDays": "14",
+          "injuryLocation_trunk_overall_prevalence": "7",
+          "injuryLocation_trunk_overall_incidence": "12.1 (5.8-25.4)",
+          "injuryLocation_trunk_overall_severityTotalDays": "199",
+          "injuryLocation_trunk_overall_severityMeanDays": "28.4 +/- 53.7",
+          "injuryLocation_lumbosacral_prevalence": "5",
+          "injuryLocation_lumbosacral_severityTotalDays": "193",
+          "injuryLocation_lower_limb_overall_severityMeanDays": "20.1 +/- 37.1",
+          "injuryLocation_thigh_severityTotalDays": "174",
+          "injuryLocation_knee_incidence": "12.1 (5.8-25.4)",
+          "injuryLocation_knee_severityTotalDays": "270",
+          "injuryLocation_knee_severityMeanDays": "38.6 +/- 80.1",
+          "injuryLocation_lower_leg_prevalence": "9",
+          "injuryLocation_lower_leg_severityTotalDays": "96",
+          "injuryLocation_ankle_severityMeanDays": "23.8 +/- 39.9",
+          "injuryLocation_foot_severityTotalDays": "91"
+        }
+      }
+    }
+  ]
+}

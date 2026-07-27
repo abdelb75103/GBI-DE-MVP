@@ -1,0 +1,610 @@
+{
+  "scope": "Second search temporary extraction batches 005-006 input, prepared 2026-07-07",
+  "sourceBatch": "Second search - Ishanka - 2026-05-26",
+  "papers": [
+    {
+      "studyId": "S1196",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 005. Source checked: methods/results, Tables 1-3, Figure 1. Match-only Sao Paulo Championship extraction from directly reported 2023 injury counts, incidence, type/location/contact rows. Exposure hours were not back-calculated from incidence. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Sales AM",
+          "title": "Increased incidence of injuries in the Sao Paulo Soccer Championship post-pandemic",
+          "yearOfPublication": "2024",
+          "journal": "Acta Ortopedica Brasileira",
+          "doi": "10.1590/1413-785220243206e282994",
+          "studyDesign": "prospective comparative study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Brazil",
+          "levelOfPlay": "professional",
+          "sex": "male",
+          "ageCategory": "senior",
+          "observationDuration": "2023 Sao Paulo Soccer Championship"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint",
+          "incidenceDefinition": "per 1000 match-hours",
+          "mechanismReporting": "Team medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "76",
+          "injuryMatchCount": "76",
+          "injuryIncidenceOverall": "22.1",
+          "injuryIncidenceMatch": "22.1",
+          "injuryMostCommonDiagnosis": "muscle strain",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "thigh",
+          "injuryContact": "37",
+          "injuryNonContact": "39"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "35",
+          "injuryTissueType_joint_sprain_prevalence": "14",
+          "injuryTissueType_concussion_prevalence": "8",
+          "injuryTissueType_superficial_contusion_prevalence": "7",
+          "injuryTissueType_bone_fracture_prevalence": "3"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "32",
+          "injuryLocation_head_prevalence": "13",
+          "injuryLocation_ankle_prevalence": "11",
+          "injuryLocation_knee_prevalence": "8",
+          "injuryLocation_lower_leg_prevalence": "4",
+          "injuryLocation_foot_prevalence": "3",
+          "injuryLocation_shoulder_prevalence": "3",
+          "injuryLocation_hip_prevalence": "1",
+          "injuryLocation_abdomen_prevalence": "1",
+          "injuryLocation_side_right_prevalence": "33",
+          "injuryLocation_side_left_prevalence": "27",
+          "injuryLocation_side_bilateral_prevalence": "2"
+        }
+      }
+    },
+    {
+      "studyId": "S1265",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 005. Source checked: abstract, methods, results, Tables 1-4. Sparse hamstring-only prospective cohort extraction. Exposure/incidence were not entered because the paper reports HSI counts and risk-factor models rather than clean cohort incidence denominators. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Oliveira-Junior O",
+          "title": "Potential financial loss and risk factors for hamstring muscle injuries in elite male Brazilian soccer players: a season-long prospective cohort pilot study",
+          "yearOfPublication": "2024",
+          "journal": "Frontiers in Sports & Active Living",
+          "doi": "10.3389/fspor.2024.1360452",
+          "studyDesign": "prospective cohort pilot study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Brazil",
+          "levelOfPlay": "professional",
+          "sex": "male",
+          "ageCategory": "senior",
+          "meanAge": "25 +/- 6 years",
+          "sampleSizePlayers": "34",
+          "numberOfTeams": "1",
+          "observationDuration": "2019 season"
+        },
+        "definitions": {
+          "injuryDefinition": "time-loss hamstring muscle injury",
+          "severityDefinition": "FIFA days-absence categories: minimal 1-3, mild 4-7, moderate 8-28, severe >28 days",
+          "recurrenceDefinition": "more than one hamstring injury occurrence during the season",
+          "mechanismReporting": "Club medical records and MRI confirmation"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "9",
+          "injuryPlayersCompletedStudy": "34",
+          "injuryTimeLossCount": "9",
+          "injuryTimeLossTotal": "202",
+          "injuryTimeLossMean": "22",
+          "injuryTimeLossMedian": "18",
+          "injuryMostCommonDiagnosis": "hamstring muscle injury",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "posterior thigh",
+          "injuryMostCommonSeverity": "moderate",
+          "injuryRecurrentTotal": "1"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "9",
+          "injuryTissueType_muscle_injury_severityMeanDays": "22",
+          "injuryTissueType_muscle_injury_severityTotalDays": "202"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "9",
+          "injuryLocation_thigh_severityMeanDays": "22",
+          "injuryLocation_thigh_severityTotalDays": "202"
+        }
+      }
+    },
+    {
+      "studyId": "S1304",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 005. Source checked: methods/results and Tables 1-3. Female New Zealand amateur team match-only extraction with direct match exposure, injury counts, incidence, burden, severity, location, and type rows. Training exposure/outcomes are absent because the paper is match-injury focused. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "King DA",
+          "title": "Match Injury Incidence for a New Zealand Amateur Domestic Female Soccer Team over Two Consecutive Seasons",
+          "yearOfPublication": "2024",
+          "journal": "Sports",
+          "doi": "10.3390/sports12080216",
+          "studyDesign": "descriptive epidemiological observational study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "New Zealand",
+          "levelOfPlay": "amateur",
+          "sex": "female",
+          "ageCategory": "senior",
+          "meanAge": "23.0 +/- 9.8 years",
+          "sampleSizePlayers": "49",
+          "numberOfTeams": "1",
+          "observationDuration": "2022-2023 domestic seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint",
+          "incidenceDefinition": "per 1000 match-hours",
+          "burdenDefinition": "days lost per 1000 match-hours",
+          "severityDefinition": "time away from match or team training participation",
+          "mechanismReporting": "Team injury surveillance"
+        },
+        "exposure": {
+          "numberOfSeasons": "2",
+          "exposureMeasurementUnit": "hours",
+          "matchExposure": "577.5"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "84",
+          "injuryTimeLossCount": "66",
+          "injuryMatchCount": "84",
+          "injuryMatchTimeLossCount": "66",
+          "injuryIncidenceMatch": "145.5 (117.4-180.1)",
+          "injuryIncidenceTimeLossMatch": "114.3 (89.8-145.5)",
+          "injuryTimeLossTotal": "1845",
+          "injuryTimeLossMean": "22.6 +/- 36.8",
+          "injuryBurden": "3194.8 (2579.7-3956.6)",
+          "injuryMostCommonDiagnosis": "sprain/strain",
+          "injuryMostCommonType": "sprain/strain",
+          "injuryMostCommonLocation": "ankle",
+          "injuryMostCommonSeverity": "mild"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_joint_sprain_prevalence": "50",
+          "injuryTissueType_joint_sprain_incidence": "86.6 (65.6-114.2)",
+          "injuryTissueType_joint_sprain_burden": "2017.3",
+          "injuryTissueType_joint_sprain_severityTotalDays": "1165",
+          "injuryTissueType_joint_sprain_severityMeanDays": "23.3 +/- 40.2"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "26",
+          "injuryLocation_head_neck_overall_incidence": "45.0 (30.7-66.1)",
+          "injuryLocation_head_neck_overall_burden": "1319.5",
+          "injuryLocation_head_neck_overall_severityTotalDays": "762",
+          "injuryLocation_head_neck_overall_severityMeanDays": "29.3 +/- 7.6",
+          "injuryLocation_upper_limb_overall_prevalence": "3",
+          "injuryLocation_upper_limb_overall_incidence": "5.2 (1.7-16.1)",
+          "injuryLocation_lower_limb_overall_prevalence": "61",
+          "injuryLocation_lower_limb_overall_incidence": "105.6 (82.2-135.8)",
+          "injuryLocation_lower_limb_overall_severityTotalDays": "1227",
+          "injuryLocation_thigh_prevalence": "10",
+          "injuryLocation_knee_prevalence": "7",
+          "injuryLocation_ankle_prevalence": "25",
+          "injuryLocation_ankle_incidence": "43.3 (29.3-64.1)",
+          "injuryLocation_ankle_severityTotalDays": "596",
+          "injuryLocation_lower_leg_prevalence": "8",
+          "injuryLocation_foot_prevalence": "10"
+        }
+      }
+    },
+    {
+      "studyId": "S1328",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 005. Source checked: abstract, methods, results. Copa America 2019 concussion-protocol paper extracted sparsely as tournament concussion surveillance. The paper reports 40 total injuries, including two infectious diseases and three concussions; concussion incidence is per 1000 athlete-exposures. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Pangrazio O",
+          "title": "Enhancing Protocols for Concussion Management in Professional Soccer Events",
+          "yearOfPublication": "2024",
+          "journal": "Cureus",
+          "doi": "10.7759/cureus.64064",
+          "studyDesign": "descriptive tournament surveillance study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Brazil",
+          "levelOfPlay": "professional international",
+          "sex": "male",
+          "ageCategory": "senior",
+          "meanAge": "29 years among injured players",
+          "sampleSizePlayers": "567",
+          "numberOfTeams": "12",
+          "observationDuration": "Copa America 2019, 26 matches over three weeks"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention concussion/TBI protocol report",
+          "incidenceDefinition": "per 1000 athlete-exposures",
+          "mechanismReporting": "Referee and team medical staff CFRP reports with video review"
+        },
+        "exposure": {
+          "seasonLength": "3 weeks",
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "athlete-exposures",
+          "totalExposure": "567"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "40",
+          "injuryMedicalAttentionCount": "40",
+          "injuryMatchCount": "40",
+          "injuryMostCommonDiagnosis": "traumatic injury",
+          "injuryMostCommonType": "traumatic injury"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "2",
+          "illnessMostCommonEtiology": "infection"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_concussion_prevalence": "3",
+          "injuryTissueType_concussion_incidence": "5.3"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "3",
+          "injuryLocation_head_incidence": "5.3"
+        }
+      }
+    },
+    {
+      "studyId": "S1358",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 005 replacement after systematic-review skips. Source checked: abstract, methods/results, Tables 1-3. Italian male elite U19 season extraction uses pooled cohort denominator and direct injury/type/location muscle rows. Location rows are muscle-site rows, not all-injury anatomical rows. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Magistrali M",
+          "title": "Epidemiology of Non-Contact Muscle Injuries in the Italian Male Elite Under-19 Football (Soccer) Championship",
+          "yearOfPublication": "2024",
+          "journal": "Sports Medicine - Open",
+          "doi": "10.1186/s40798-024-00738-0",
+          "studyDesign": "prospective multicentre cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Italy",
+          "levelOfPlay": "elite youth",
+          "sex": "male",
+          "ageCategory": "Under-19",
+          "meanAge": "18.0 +/- 0.4 years",
+          "sampleSizePlayers": "391",
+          "numberOfTeams": "14",
+          "observationDuration": "2022-2023 season"
+        },
+        "definitions": {
+          "injuryDefinition": "modified time-loss",
+          "incidenceDefinition": "per 1000 player-hours",
+          "burdenDefinition": "days lost per 1000 player-hours",
+          "severityDefinition": "minimal 1-3, mild 4-7, moderate 8-28, severe >28 days",
+          "recurrenceDefinition": "same region and same diagnosis after full recovery and return to football",
+          "mechanismReporting": "Club referring physicians"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": "114734",
+          "trainingExposure": "103210",
+          "matchExposure": "11524"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "479",
+          "injuryTimeLossCount": "479",
+          "injuryIncidenceOverall": "4.17",
+          "injuryIncidenceMatch": "17.09",
+          "injuryIncidenceTraining": "2.73",
+          "injuryTimeLossTotal": "14231",
+          "injuryMostCommonDiagnosis": "hamstring muscle injury",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "hamstrings/posterior thigh",
+          "injuryMostCommonSeverity": "moderate"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "209",
+          "injuryTissueType_muscle_injury_incidence": "1.82 (1.59-2.09)",
+          "injuryTissueType_muscle_injury_burden": "39.4 (28.9-56.9)",
+          "injuryTissueType_muscle_injury_severityMeanDays": "21.6 +/- 19.5",
+          "injuryTissueType_muscle_injury_severityTotalDays": "4516",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "148",
+          "injuryTissueType_joint_sprain_prevalence": "48",
+          "injuryTissueType_tendinopathy_prevalence": "31"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "132",
+          "injuryLocation_thigh_incidence": "1.15",
+          "injuryLocation_thigh_burden": "27.0",
+          "injuryLocation_thigh_severityTotalDays": "3103",
+          "injuryLocation_groin_prevalence": "47",
+          "injuryLocation_groin_incidence": "0.41",
+          "injuryLocation_groin_burden": "7.4",
+          "injuryLocation_lower_leg_prevalence": "27",
+          "injuryLocation_lower_leg_incidence": "0.24 (0.16-0.34)",
+          "injuryLocation_lower_leg_burden": "4.7 (2-7.5)"
+        }
+      }
+    },
+    {
+      "studyId": "S1563",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 006. Source checked: translated English merged PDF methods/results and original-page translation text. Mental-health schema fit: CESD depressive symptoms stored as psychiatric/psychological illness prevalence; poor quality of life is noted but not forced into a separate illness-region row. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Maguina-Figueroa S",
+          "title": "Relationship between depressive symptoms and deterioration of quality of life in Peruvian First Division soccer players",
+          "yearOfPublication": "2024",
+          "journal": "Revista de Neuro-Psiquiatria",
+          "doi": "10.20453/rnp.v87i2.4965",
+          "studyDesign": "observational analytical retrospective secondary analysis"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Peru",
+          "levelOfPlay": "professional",
+          "sex": "male / female",
+          "ageCategory": "senior and youth",
+          "meanAge": "18.42 +/- 4.65 years",
+          "sampleSizePlayers": "168",
+          "observationDuration": "2019-2020"
+        },
+        "definitions": {
+          "illnessDefinition": "CESD-7 depressive symptoms score >=9",
+          "incidenceDefinition": "prevalence among surveyed players",
+          "mechanismReporting": "Player self-reported questionnaire"
+        },
+        "exposure": {
+          "numberOfSeasons": "not_reported",
+          "exposureMeasurementUnit": "other"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "29",
+          "illnessIncidenceOverall": "17.26%",
+          "illnessMostCommonSystem": "psychiatric/psychological",
+          "illnessMostCommonEtiology": "depressive symptoms"
+        },
+        "illnessRegion": {
+          "illnessRegion_psychiatric_prevalence": "29",
+          "illnessRegion_psychiatric_incidence": "17.26%"
+        }
+      }
+    },
+    {
+      "studyId": "S1665",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 006. Source checked: scanned article image, especially abstract page; no machine-readable OCR was available. Sparse hamstring-strain extraction from abstract only: 81 Malaysian professional footballers, 2023 league season, HSI incidence 0.91/1000h, match 5.43/1000h, training 0.42/1000h. Tables need reviewer spot-check before completion. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Yunus MY",
+          "title": "Incidence and intrinsic risk factors of hamstring strain injuries among Malaysian footballers: a cohort study of 81 professional footballers",
+          "yearOfPublication": "2025",
+          "journal": "Gazzetta Medica Italiana Archivio per le Scienze Mediche",
+          "doi": "10.23736/S0393-3660.24.05540-2",
+          "studyDesign": "cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Malaysia",
+          "levelOfPlay": "professional",
+          "sex": "male",
+          "ageCategory": "senior",
+          "sampleSizePlayers": "81",
+          "numberOfTeams": "1",
+          "observationDuration": "2023 Malaysian Football League season"
+        },
+        "definitions": {
+          "injuryDefinition": "hamstring strain injury",
+          "incidenceDefinition": "per 1000 hours",
+          "mechanismReporting": "Season injury surveillance"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryIncidenceOverall": "0.91",
+          "injuryIncidenceMatch": "5.43",
+          "injuryIncidenceTraining": "0.42",
+          "injuryMostCommonDiagnosis": "hamstring strain injury",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "posterior thigh"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_incidence": "0.91"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_incidence": "0.91"
+        }
+      }
+    },
+    {
+      "studyId": "S1680",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 006. Source checked: translated English merged PDF methods/results and tables. Youth training-center workload cohort extracted with total injuries, hours, incidence, and directly reported tissue/type counts. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Joubin J",
+          "title": "Relationships between internal workload and injury incidence in elite youth soccer players",
+          "yearOfPublication": "2024",
+          "journal": "Journal de Traumatologie du Sport",
+          "doi": "10.1016/j.jts.2023.09.007",
+          "studyDesign": "retrospective observational cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "France",
+          "levelOfPlay": "elite youth",
+          "sex": "male",
+          "ageCategory": "U16 to U23",
+          "meanAge": "17.7 years",
+          "sampleSizePlayers": "45",
+          "numberOfTeams": "4",
+          "observationDuration": "2021-07-01 to 2022-05-31"
+        },
+        "definitions": {
+          "injuryDefinition": "time-loss >3 days",
+          "incidenceDefinition": "per 1000 practice hours",
+          "mechanismReporting": "Club physician"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": "12360"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "68",
+          "injuryPlayersCompletedStudy": "45",
+          "injuryTimeLossCount": "68",
+          "injuryIncidenceOverall": "5.50",
+          "injuryTimeLossMean": "36.6 +/- 58.4 days off",
+          "injuryMostCommonDiagnosis": "ankle sprain",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "ankle"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "28",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "16",
+          "injuryTissueType_tendinopathy_prevalence": "12",
+          "injuryTissueType_bone_prevalence": "10"
+        },
+        "injuryLocation": {
+          "injuryLocation_ankle_prevalence": "10"
+        }
+      }
+    },
+    {
+      "studyId": "S1941",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 006 replacement after systematic-review/non-extraction skips. Source checked: abstract, methods/results, Table 2. Sparse HSI workload cohort extraction. Exposure denominators beyond preseason training hours were not back-calculated. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Saito H",
+          "title": "The Protective Effect of Preseason Running Workload Against In-Season Hamstring Strain Injuries in Elite Soccer Players",
+          "yearOfPublication": "2026",
+          "journal": "Sports Health: A Multidisciplinary Approach",
+          "doi": "10.1177/19417381251388482",
+          "studyDesign": "retrospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Japan",
+          "levelOfPlay": "elite professional",
+          "sex": "male",
+          "ageCategory": "senior",
+          "meanAge": "26.6 +/- 4.5 years",
+          "sampleSizePlayers": "42 unique players; 67 athlete-seasons",
+          "observationDuration": "2021-2023 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "noncontact hamstring strain injury confirmed by club medical doctors",
+          "incidenceDefinition": "per 1000 exposure hours",
+          "mechanismReporting": "Club medical doctors and GPS workload records"
+        },
+        "exposure": {
+          "numberOfSeasons": "3",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "17",
+          "injuryTimeLossCount": "17",
+          "injuryIncidenceOverall": "7.8",
+          "injuryTimeLossMean": "19.2 +/- 13.7",
+          "injuryMostCommonDiagnosis": "hamstring strain injury",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "posterior thigh"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "17",
+          "injuryTissueType_muscle_injury_incidence": "7.8",
+          "injuryTissueType_muscle_injury_severityMeanDays": "19.2 +/- 13.7"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "15",
+          "injuryLocation_thigh_severityMeanDays": "19.2 +/- 13.7"
+        }
+      }
+    },
+    {
+      "studyId": "S1993",
+      "populationLabels": ["Total"],
+      "note": "Second-search temporary extraction batch 006 replacement after systematic-review/non-extraction skips. Source checked: methods/results and Table 1. Elite female four-season menstrual-cycle injury study extracted as one total row; bleeding/non-bleeding phase values are left in notes rather than separate population rows because they are phase exposure states, not stable cohorts. Formal full-text inclusion still requires a second human include; screening remains pending.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Ferrer E",
+          "title": "Menstruation and injury occurrence; a four season observational study in elite female football players",
+          "yearOfPublication": "2025",
+          "journal": "Frontiers in Sports & Active Living",
+          "doi": "10.3389/fspor.2025.1665482",
+          "studyDesign": "descriptive epidemiological study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Spain",
+          "levelOfPlay": "elite professional",
+          "sex": "female",
+          "ageCategory": "senior",
+          "meanAge": "25.72 +/- 4.27 years",
+          "sampleSizePlayers": "33",
+          "numberOfTeams": "1",
+          "observationDuration": "2019/2020-2022/2023 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time-loss lower-limb musculoskeletal injury",
+          "incidenceDefinition": "per 1000 exposure hours",
+          "burdenDefinition": "days lost per 1000 exposure hours",
+          "severityDefinition": "mild 1-7, moderate 8-28, severe >28 days",
+          "mechanismReporting": "Team doctor and GPS exposure records"
+        },
+        "exposure": {
+          "numberOfSeasons": "4",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "80",
+          "injuryTimeLossCount": "80",
+          "injuryMatchCount": "18",
+          "injuryTrainingCount": "62",
+          "injuryIncidenceOverall": "6.42 (5.09-7.99)",
+          "injuryIncidenceMatch": "5.94",
+          "injuryIncidenceTraining": "6.41",
+          "injuryTimeLossTotal": "3530",
+          "injuryTimeLossMedian": "18.5",
+          "injuryBurden": "283 (274-293)",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "lower limb",
+          "injuryMostCommonSeverity": "moderate"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "46",
+          "injuryTissueType_muscle_injury_incidence": "3.69",
+          "injuryTissueType_muscle_injury_burden": "83.7",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "24",
+          "injuryTissueType_ligament_joint_capsule_incidence": "1.92",
+          "injuryTissueType_ligament_joint_capsule_burden": "187",
+          "injuryTissueType_tendinopathy_prevalence": "10",
+          "injuryTissueType_tendinopathy_incidence": "0.80",
+          "injuryTissueType_tendinopathy_burden": "12.4"
+        },
+        "injuryLocation": {
+          "injuryLocation_lower_limb_overall_prevalence": "80",
+          "injuryLocation_side_left_prevalence": "38",
+          "injuryLocation_side_left_incidence": "3.05",
+          "injuryLocation_side_left_burden": "151",
+          "injuryLocation_side_right_prevalence": "42",
+          "injuryLocation_side_right_incidence": "3.37",
+          "injuryLocation_side_right_burden": "132"
+        }
+      }
+    }
+  ]
+}

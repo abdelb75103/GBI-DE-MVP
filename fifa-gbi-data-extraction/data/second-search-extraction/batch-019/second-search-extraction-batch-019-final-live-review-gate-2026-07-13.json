@@ -1,0 +1,76 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 019; final live review gate; 2026-07-13",
+  "fixedMembership": ["S2496", "S2514", "S2538", "S2584", "S2615"],
+  "inputArtifact": "second-search-extraction-batch-019-input-2026-07-13.json",
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "All five attached primary PDFs classified and results tables/usable figures swept once.",
+      "Population layouts selected from the strongest directly reported axis and newline alignment validated before apply.",
+      "Tabs 1-4 were checked for all included studies; compatible Tabs 5-10 values were staged only when directly reported or transparently summed.",
+      "All 283 staged field IDs were valid; no unsupported field IDs were proposed.",
+      "The apply-script dry run cannot emulate new multiline population rows; separately validated label counts against maximum staged line count (S2514 5/5, S2538 2/2, S2584 4/4, S2615 1/1)."
+    ]
+  },
+  "stageB": {
+    "result": "passed",
+    "checks": [
+      "Exact fixed membership present; no replacement paper introduced.",
+      "Assignment is AbdelRahman Babiker for all five papers.",
+      "Statuses are systematic_review for S2496 and processing for S2514, S2538, S2584, and S2615.",
+      "Attached primary files, storage paths, and expected SHA-256 hashes remain present for all five papers.",
+      "studyId fields equal papers.assigned_study_id; all 283 staged extraction fields exactly equal the final live values with no skips or unknown fields.",
+      "Population labels and structured population_values are newline-aligned with extraction_fields; no unexpected or mismatched population value was found.",
+      "Protected screening decision, both full-text decisions, full-text resolution, and promotion metadata remain preserved for all five records.",
+      "Only Batch 019 backlog rows were updated."
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S2496",
+      "status": "systematic_review",
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionFieldCount": 0,
+      "sourceSha256": "8e18ab453f4fc2248e38caa32abff74ba438872014bc70722b32ff561414a1af",
+      "result": "Systematic-review exclusion applied; source remains attached."
+    },
+    {
+      "studyId": "S2514",
+      "status": "processing",
+      "populationLabels": ["Total", "U12", "U14", "U16", "U18"],
+      "populationValueCount": 92,
+      "extractionFieldCount": 87,
+      "sourceSha256": "1a5087d95266502120511b7c158a34fab3c50123cae9a5943d7b0e7634c7d851",
+      "result": "Ready for human review; source table total/subrow discrepancy documented."
+    },
+    {
+      "studyId": "S2538",
+      "status": "processing",
+      "populationLabels": ["Control group", "Experimental group"],
+      "populationValueCount": 14,
+      "extractionFieldCount": 23,
+      "sourceSha256": "ebbc7e037846349ba0dd116d9991e57a18f1570b99e17995ec79ecd8d2dd8b0f",
+      "result": "Ready for human review; sparse direct outcome extraction, without rate-derived exposures."
+    },
+    {
+      "studyId": "S2584",
+      "status": "processing",
+      "populationLabels": ["Ramadan - Traditional training", "Ramadan - Neuromuscular training", "Post-Ramadan - Traditional training", "Post-Ramadan - Neuromuscular training"],
+      "populationValueCount": 96,
+      "extractionFieldCount": 44,
+      "sourceSha256": "620abf49b64a520608716f1e7228536727721c2c7df7e7da05b2cbc04b36c5b3",
+      "result": "Ready for human review; two broad source type-to-schema mappings documented."
+    },
+    {
+      "studyId": "S2615",
+      "status": "processing",
+      "populationLabels": ["Total"],
+      "populationValueCount": 113,
+      "extractionFieldCount": 129,
+      "sourceSha256": "10c3a7aa246609c7bb3c4e1d1bcc051a8bf340dda81d1a5e53fe209e40f31576",
+      "result": "Ready for human review; printed exposure and match-rate inconsistencies documented without inference."
+    }
+  ],
+  "postApplyCorrection": false
+}

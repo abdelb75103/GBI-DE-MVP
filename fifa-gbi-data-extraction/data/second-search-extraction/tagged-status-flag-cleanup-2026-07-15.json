@@ -1,0 +1,42 @@
+{
+  "task": "Backlog 2 tagged-status flag cleanup",
+  "date": "2026-07-15",
+  "scope": "Batches 023 onward",
+  "taggedStatuses": [
+    "mental_health",
+    "uefa",
+    "no_exposure",
+    "fifa_data",
+    "aspetar_asprev",
+    "american_data",
+    "systematic_review",
+    "referee",
+    "retrospective_substudy_analysis"
+  ],
+  "candidateIds": [
+    "S3337", "S5061", "S5151", "S3842", "S4732", "S4734", "S4839", "S5434", "S4719",
+    "S1899", "S1903", "S1920", "S1971", "S2079", "S2087", "S2236", "S2238", "S2285",
+    "S2305", "S2308", "S2348", "S2506", "S2631", "S3025", "S3518", "S3896", "S4005",
+    "S4296", "S4372", "S4685", "S4716", "S5428", "S5482", "S1914", "S3873", "S4669"
+  ],
+  "liveChanges": [
+    { "studyId": "S3337", "oldStatus": "american_data", "newStatus": "american_data", "oldFlagReason": "U.S.-only academy injury-surveillance cohort; preserve as American data exclusion", "newFlagReason": null },
+    { "studyId": "S5061", "oldStatus": "retrospective_substudy_analysis", "newStatus": "retrospective_substudy_analysis", "oldFlagReason": "Overlapping secondary analysis of the existing S1665 Malaysian 2023 club cohort; identical exposure totals and related HSI dataset, not independently extracted", "newFlagReason": null },
+    { "studyId": "S4732", "oldStatus": "systematic_review", "newStatus": "systematic_review", "oldFlagReason": "Systematic review/meta-analysis of FIFA 11+ adherence trials; not a primary extraction record", "newFlagReason": null },
+    { "studyId": "S4734", "oldStatus": "systematic_review", "newStatus": "systematic_review", "oldFlagReason": "Systematic review/meta-analysis of 15 soccer injury-prevention RCTs; not a primary extraction record", "newFlagReason": null },
+    { "studyId": "S4839", "oldStatus": "uefa", "newStatus": "uefa", "oldFlagReason": "UEFA Elite Club Injury Study substudy; preserve UEFA study-family exclusion route", "newFlagReason": null },
+    { "studyId": "S5434", "oldStatus": "systematic_review", "newStatus": "systematic_review", "oldFlagReason": "Systematic review/meta-analysis of three FIFA 11+ ankle-injury RCTs; not a primary extraction record", "newFlagReason": null },
+    { "studyId": "S4719", "oldStatus": "systematic_review", "newStatus": "systematic_review", "oldFlagReason": "Systematic review/meta-analysis of neuromuscular-training studies; not a primary extraction record", "newFlagReason": null },
+    { "studyId": "S1899", "oldStatus": "referee", "newStatus": "referee", "oldFlagReason": "Referee cohort; not an eligible current-player extraction record", "newFlagReason": null },
+    { "studyId": "S1903", "oldStatus": "mental_health", "newStatus": "mental_health", "oldFlagReason": "Mental well-being screening-tool development and psychometric validation; no reportable disorder-prevalence or injury/illness surveillance payload", "newFlagReason": null },
+    { "studyId": "S3896", "oldStatus": "referee", "newStatus": "referee", "oldFlagReason": "Soccer referee population; not current football-player participants", "newFlagReason": null },
+    { "studyId": "S5428", "oldStatus": "referee", "newStatus": "referee", "oldFlagReason": "Soccer referee population; not current football-player participants", "newFlagReason": null }
+  ],
+  "backlogRowsChanged": [],
+  "ambiguousRowsLeftUntouched": [
+    { "studyId": "S1914", "liveStatus": "flagged", "tag": "mental_health", "flagReason": "No exposure - exclude" },
+    { "studyId": "S3873", "liveStatus": "flagged", "tag": "mental_health", "flagReason": "No exposure - exclude" },
+    { "studyId": "S4669", "liveStatus": "flagged", "tag": "mental_health", "flagReason": "No exposure - exclude" }
+  ],
+  "backlogRowsInspectedWithTrueFlaggedStatusLeftUntouched": ["S3951", "S4715", "S1914", "S3873", "S4669"]
+}

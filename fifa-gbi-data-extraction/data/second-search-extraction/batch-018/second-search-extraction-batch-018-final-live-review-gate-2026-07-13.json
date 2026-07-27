@@ -1,0 +1,89 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 018; final post-apply live review gate; 2026-07-13",
+  "reviewMethod": "High-reasoning manual source-to-live review in the current Codex runtime; no separately selectable higher-reasoning or fresh-context reviewer was exposed in this delegated subtask. The coordinator performs the required cross-batch reconciliation after both delegated gates.",
+  "result": "ready for human review",
+  "batchMembership": {
+    "expected": ["S2287", "S2330", "S2392", "S2470", "S2482"],
+    "reviewed": ["S2287", "S2330", "S2392", "S2470", "S2482"],
+    "missing": [],
+    "extra": []
+  },
+  "reviewGateCorrection": {
+    "studyId": "S2330",
+    "classification": "blocker fixed and rechecked",
+    "issue": "Lead author was initially staged in a full-name form instead of the required Surname Initials format.",
+    "fix": "Applied only leadAuthor = Fernandes GCAM using the reviewed correction JSON; correction dry-run and live apply both completed with zero unknown fields and a one-row population sync."
+  },
+  "papers": [
+    {
+      "studyId": "S2287",
+      "classification": "no action - ready for human review",
+      "liveStatus": "processing",
+      "assignedTo": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+      "studyIdMatchesPaper": true,
+      "sourceAttachedAndHashVerified": "eb1a36b7eed851fb946f1bfeeef63586cf76ad74a18d081e5838c7e18952d0ba",
+      "populationLayout": ["COVID-19 positive", "COVID-19 negative"],
+      "populationValues": 20,
+      "structuredDualWriteFailures": [],
+      "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+      "sourceCoverage": "Methods, Table 1, Table 2, Figure 1, results, and limitations checked.",
+      "reviewerAttention": "The paper reports direct individual mean incidence and days-absent values by COVID status, not subgroup event counts or total exposure; none were back-calculated."
+    },
+    {
+      "studyId": "S2330",
+      "classification": "needs reviewer attention - ready for human review",
+      "liveStatus": "processing",
+      "assignedTo": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+      "studyIdMatchesPaper": true,
+      "sourceAttachedAndHashVerified": "63a756954ef2bdc18365b6a7d3a20a1591f5611e442cff7ee2948315fece1223",
+      "populationLayout": ["Total"],
+      "populationValues": 32,
+      "structuredDualWriteFailures": [],
+      "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+      "sourceCoverage": "Methods, Tables 1-3, Figures 1-3, results, and limitations checked.",
+      "reviewerAttention": "The schema has no face location. Head and face CMFT were transparently combined into the closest head field (299); type and position aggregates are documented in the paper note. The lead-author blocker was corrected and this paper was rechecked."
+    },
+    {
+      "studyId": "S2392",
+      "classification": "no action - ready for human review",
+      "liveStatus": "processing",
+      "assignedTo": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+      "studyIdMatchesPaper": true,
+      "sourceAttachedAndHashVerified": "ff3941270109d13b4440a5b8d51c893418960e800052c9062a91a6d480f895ed",
+      "populationLayout": ["All seasons U9", "All seasons U11", "All seasons U13", "All seasons U15", "2016/17 U9", "2016/17 U11", "2016/17 U13", "2016/17 U15", "2017/18 U9", "2017/18 U11", "2017/18 U13", "2017/18 U15", "2018/19 U9", "2018/19 U11", "2018/19 U13", "2018/19 U15", "2019/20 U9", "2019/20 U11", "2019/20 U13", "2019/20 U15", "2020/21 U9", "2020/21 U11", "2020/21 U13", "2020/21 U15", "2021/22 U9", "2021/22 U11", "2021/22 U13", "2021/22 U15"],
+      "populationValues": 68,
+      "structuredDualWriteFailures": [],
+      "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+      "sourceCoverage": "Methods, Tables 1-3, Figures 1-2, results, and discussion checked, including visual confirmation of Figure 2 labels.",
+      "reviewerAttention": "The 811-player figure is global and appears only on the first row by the established row-alignment convention. All-season age-category totals are direct figure values; every season x age incidence is directly reported."
+    },
+    {
+      "studyId": "S2470",
+      "classification": "needs reviewer attention - ready for human review",
+      "liveStatus": "processing",
+      "assignedTo": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+      "studyIdMatchesPaper": true,
+      "sourceAttachedAndHashVerified": "0959c74b6b92f9c45a25ce0d6f07c844962d8d36008927c335bedd49364a50e5",
+      "populationLayout": ["All", "Match", "Training"],
+      "populationValues": 315,
+      "structuredDualWriteFailures": [],
+      "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+      "sourceCoverage": "Methods, Tables 1-6, every results subsection, perspectives, and limitations checked; Table 5 was visually inspected after rendering.",
+      "reviewerAttention": "The source combines cartilage/disc/meniscus; its closest cartilage-injury field is explicitly flagged for reviewer confirmation. Bursitis/impingement/synovitis, Achilles tendon, pelvis/sacrum, sternum/ribs/upper-back, and non-specific source categories were intentionally not forced into narrower unmatched schema rows. The source does not print a single all-activity incidence or median severity, so those All cells remain blank."
+    },
+    {
+      "studyId": "S2482",
+      "classification": "no action - ready for human review",
+      "liveStatus": "processing",
+      "assignedTo": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+      "studyIdMatchesPaper": true,
+      "sourceAttachedAndHashVerified": "6f3f4cf4ca82fd4e98dd6f3c6cb69a876e6edf2767e44e1c513fce0a109da181",
+      "populationLayout": ["Total", "Starter", "Non-starter"],
+      "populationValues": 26,
+      "structuredDualWriteFailures": [],
+      "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+      "sourceCoverage": "Methods, Table 1, Figures 1-3, results, discussion, and limitations checked.",
+      "reviewerAttention": "The source reports a total of 58 non-contact and 33 muscular injuries, but group-level counts and exposure totals are absent; only directly reported starter/non-starter mean incidences were entered."
+    }
+  ]
+}

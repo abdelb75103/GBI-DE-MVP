@@ -1,0 +1,40 @@
+{
+  "scope": "Second search — Backlog 2 Batch 013; S2257 Table 1 additive injury-type severity correction",
+  "completedAt": "2026-07-13",
+  "mode": "live apply and focused integrity gate",
+  "paper": {
+    "studyId": "S2257",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "populationLabels": ["Total", "U13", "U11", "U9"],
+    "sourceAttached": true,
+    "studyIdMatchesAssignedStudyId": true
+  },
+  "sourceCoverage": {
+    "source": "Primary PDF p. 4, Table 1 (SHA-256 b44545933889d199fd045e061343793662fff320f2467b79f2c034860057c09e)",
+    "measure": "Days Out, mean days absent",
+    "allMuscleInjuries": {"U13": "12.8", "U11": "13.5", "U9": "7.3"},
+    "muscleContusions": {"U13": "5.4", "U11": "6", "U9": null}
+  },
+  "apply": {
+    "writtenFields": [
+      "injuryTissueType_muscle_injury_severityMeanDays",
+      "injuryTissueType_muscle_contusion_severityMeanDays"
+    ],
+    "populationValuesWritten": 5,
+    "existingInjuryOutcomeMeanDaysPreserved": "\\n12.8\\n13.5\\n7.3"
+  },
+  "integrityGate": {
+    "sourceToLiveMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "populationHashMatchesFields": true,
+    "protectedScreeningMetadataPreserved": true,
+    "result": "passed"
+  },
+  "caveats": [
+    "The source reports mean days out, not total days lost; injuryTimeLossTotal remains blank.",
+    "The source reports structural muscle ruptures, not tendon ruptures; no muscle-rupture schema row exists, so those values were not mapped to tendon_rupture.",
+    "DOMS has no exact structured tissue/type row and was not forced into a non-equivalent category.",
+    "No pooled Total mean was reported or derived."
+  ]
+}

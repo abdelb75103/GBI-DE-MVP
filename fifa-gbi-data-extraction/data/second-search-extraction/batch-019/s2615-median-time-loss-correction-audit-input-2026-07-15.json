@@ -1,0 +1,81 @@
+{
+  "artifactType": "live-correction-audit-input",
+  "createdAt": "2026-07-15",
+  "studyId": "S2615",
+  "paperId": "7f0cda4b-6e38-454c-8258-6b55be510ac1",
+  "scope": "Add directly printed median time-loss values only to compatible existing severityMeanDays fields and matching Total-population values. Display literals as <direct value> (median) under the existing mean-days UI label; no UI/schema change.",
+  "source": {
+    "primaryPdf": "S2615-time-loss-injuries-and-illnesses-at-the-fifa-world-cup-qatar-2022.pdf",
+    "sha256": "10c3a7aa246609c7bb3c4e1d1bcc051a8bf340dda81d1a5e53fe209e40f31576",
+    "table1": "Journal p. 277 / PDF page 4: Pattern of time-loss injuries by body area",
+    "table2": "Journal p. 278 / PDF page 5: Pattern of time-loss injuries by tissue and pathology type"
+  },
+  "population": {
+    "labels": ["Total"],
+    "groupId": "ac8f9a6b-29bc-4b99-9ad9-5b5956ffead2",
+    "beforeFieldCount": 129,
+    "beforePopulationValueCount": 113
+  },
+  "changes": [
+    {"fieldId":"injuryLocation_head_severityMeanDays","tab":"injuryLocation","before":null,"after":"14 (median)","source":"Table 1, Head"},
+    {"fieldId":"injuryLocation_shoulder_severityMeanDays","tab":"injuryLocation","before":null,"after":"8 (median)","source":"Table 1, Shoulder"},
+    {"fieldId":"injuryLocation_abdomen_severityMeanDays","tab":"injuryLocation","before":null,"after":"3 (median)","source":"Table 1, Abdomen"},
+    {"fieldId":"injuryLocation_hip_severityMeanDays","tab":"injuryLocation","before":null,"after":"2 (median)","source":"Table 1, Hip"},
+    {"fieldId":"injuryLocation_groin_severityMeanDays","tab":"injuryLocation","before":null,"after":"1 (median)","source":"Table 1, Groin"},
+    {"fieldId":"injuryLocation_thigh_severityMeanDays","tab":"injuryLocation","before":null,"after":"8 (median)","source":"Table 1, Thigh"},
+    {"fieldId":"injuryLocation_knee_severityMeanDays","tab":"injuryLocation","before":null,"after":"31 (median)","source":"Table 1, Knee"},
+    {"fieldId":"injuryLocation_lower_leg_severityMeanDays","tab":"injuryLocation","before":null,"after":"4 (median)","source":"Table 1, Lower leg"},
+    {"fieldId":"injuryLocation_ankle_severityMeanDays","tab":"injuryLocation","before":null,"after":"3 (median)","source":"Table 1, Ankle"},
+    {"fieldId":"injuryLocation_foot_severityMeanDays","tab":"injuryLocation","before":null,"after":"2 (median)","source":"Table 1, Foot"},
+    {"fieldId":"injuryTissueType_injury_diagnosis_severityMeanDays","tab":"injuryTissueType","before":null,"after":"17 (median)","source":"Table 1, Hamstring muscle injury"},
+    {"fieldId":"injuryTissueType_muscle_tendon_severityMeanDays","tab":"injuryTissueType","before":null,"after":"4 (median)","source":"Table 2, Muscle/tendon"},
+    {"fieldId":"injuryTissueType_muscle_injury_severityMeanDays","tab":"injuryTissueType","before":null,"after":"7 (median)","source":"Table 2, Muscle injury"},
+    {"fieldId":"injuryTissueType_ligament_joint_capsule_severityMeanDays","tab":"injuryTissueType","before":null,"after":"10 (median)","source":"Table 2, Ligament/joint capsule"},
+    {"fieldId":"injuryTissueType_bone_severityMeanDays","tab":"injuryTissueType","before":null,"after":"32 (median)","source":"Table 2, Bone"},
+    {"fieldId":"injuryTissueType_cartilage_synovium_bursa_severityMeanDays","tab":"injuryTissueType","before":null,"after":"2 (median)","source":"Table 2, Cartilage/synovium/bursa"},
+    {"fieldId":"injuryTissueType_superficial_tissues_skin_severityMeanDays","tab":"injuryTissueType","before":null,"after":"3 (median)","source":"Table 2, Superficial tissues/skin"},
+    {"fieldId":"injuryTissueType_nervous_severityMeanDays","tab":"injuryTissueType","before":null,"after":"9 (median)","source":"Table 2, Nervous"}
+  ],
+  "intentionallyBlank": [
+    "Table 1 Neck and all Table 1 rows with one or zero cases: no directly printed median time loss.",
+    "Table 2 muscle contusion, tendinopathy, joint sprain, fracture, bone contusion, synovitis/capsulitis, cartilage injury, bursitis, superficial contusion, laceration, brain/spinal cord injury, and peripheral nerve injury: no directly printed median time loss in Table 2.",
+    "Table 1 location-specific subrows are not copied into pooled tissue-type fields; only exact one-to-one mappings above are used."
+  ],
+  "preApplyIntegrity": {
+    "targetFieldsPresent": 0,
+    "targetPopulationValuesPresent": 0,
+    "nonTargetExtractionFieldsSha256": "6d577174a404c55b1a10057388ee3481cb2747cf1e2d22d10427f8864a1751cd",
+    "nonTargetPopulationValuesSha256": "0821ae426742685152b8594d0264f0dc89a29ad7a54bede3d3fdf576e2e63fb6",
+    "protectedStateSha256": "f6fccd7046e027ae1194ba62dd3209533cead4c83382d984c586554a2da7e577"
+  },
+  "rollbackPlan": "If any direct write fails, delete only the newly inserted 18 extraction_fields and 18 matching population_values, then restore the prior paper metadata including the prior populationHash. No pre-existing target field/value exists to restore.",
+  "applyAndGate": {
+    "applied": true,
+    "appliedAt": "2026-07-15",
+    "directWrite": {
+      "extractionFieldsAdded": 18,
+      "populationValuesAdded": 18,
+      "populationGroup": "Total",
+      "paperMetadataChange": "populationHash only"
+    },
+    "stageA": {
+      "exactSourceMapping": "pass",
+      "unsupportedValues": 0,
+      "derivedValues": 0
+    },
+    "stageB": {
+      "targetFieldsExact": true,
+      "targetPopulationValuesExact": true,
+      "fieldPopulationMismatchCount": 0,
+      "nonTargetExtractionFieldsSha256": "6d577174a404c55b1a10057388ee3481cb2747cf1e2d22d10427f8864a1751cd",
+      "nonTargetPopulationValuesSha256": "0821ae426742685152b8594d0264f0dc89a29ad7a54bede3d3fdf576e2e63fb6",
+      "protectedStateSha256WithPriorPopulationHash": "f6fccd7046e027ae1194ba62dd3209533cead4c83382d984c586554a2da7e577",
+      "populationHashMatchesLiveValues": true,
+      "sourceAttached": true,
+      "studyId": "S2615",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "pass": true
+    }
+  }
+}

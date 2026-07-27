@@ -1,0 +1,29 @@
+{
+  "artifactType": "complete-source-family-live-export-verification",
+  "generatedAt": "2026-07-27T17:44:42.398Z",
+  "result": "PASS",
+  "requestedPaperCount": 6,
+  "exportBatchSize": 20,
+  "analysisIncludedPaperCount": 3,
+  "analysisExcludedPaperCount": 3,
+  "sourcePaperCount": 6,
+  "analysisCsvDataRowCount": 7,
+  "sourceCsvDataRowCount": 11,
+  "includedStudyIds": [
+    "S1665",
+    "S319",
+    "S625"
+  ],
+  "excludedStudyIds": [
+    "S3218",
+    "S5061",
+    "S606"
+  ],
+  "exportHashes": {
+    "analysisJsonSha256": "42de903c8a3e5279a08cc7f1b2bff504bab267035fca62cd6640a5ae856e45e1",
+    "analysisCsvSha256": "d03ba484447b9d18953ddc32bb599c0f09076b2adb0688eefacd97cf07e961b8",
+    "sourceJsonSha256": "2d16c6686f9d33a37df313c4554f313f5bef7ec262a5888a922ec22849ef89bd",
+    "sourceCsvSha256": "d3b32fa67b68a53414ab031fee3fae975d1e130a6078124242c10cf3a84f59d7"
+  },
+  "rowChecks": []
+}

@@ -1,0 +1,6 @@
+{
+  "papers": [
+    {"studyId":"S1149","populationLabels":["Men - senior","Men - youth","Women - senior","Women - youth"],"fields":{"illnessOutcome":{"illnessTotalCount":"\n\n21\n38"}}},
+    {"studyId":"S1213","populationLabels":["Total"],"fields":{"injuryOutcome":{"injuryTimeLossMean":null}}}
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "scope": "Second search Backlog 2 Batch 030 manual source-to-payload input, prepared 2026-07-15",
+  "sourceBatch": "Second search - Ishanka - 2026-05-26",
+  "batch": "030",
+  "model": "GPT-5 Codex manual extraction; the local GPT-5.5 execution surface was not exposed to this batch agent.",
+  "stageA": {
+    "result": "pass",
+    "populationRule": "No population rows: each fixed record is excluded from routine GBI Tabs 1-10 extraction, so no supported population-aligned extraction value exists.",
+    "structuredDualWrite": "not applicable; no population_values or extraction_fields are staged",
+    "protectedMetadata": "Snapshot confirmed two human full-text include decisions and attached PDFs for every fixed record; neither screening_records nor paper metadata will be written."
+  },
+  "papers": [
+    {
+      "studyId": "S1914",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "flagged",
+      "liveUpdate": {
+        "status": "flagged",
+        "flagReason": "No exposure - exclude"
+      },
+      "sourceCoverage": "Primary PDF pp. 1-13: abstract, methods/injury surveillance, Table 1, Tables 2-4, Figure 1, results, discussion and limitations.",
+      "rationale": "Cross-sectional pre-season personality study. Injury history covers career and previous-season self-report only; Table 1's age-group incidence has no direct at-risk exposure total. No count-to-exposure or rate-to-exposure derivation is permitted.",
+      "blankStructuredFamilies": "No eligible surveillance denominator; all Tabs 1-10 fields intentionally unstaged."
+    },
+    {
+      "studyId": "S1920",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 957-974: abstract, methods, VOSviewer Figures 1-6, results/model tables, discussion and conclusion.",
+      "rationale": "VOSviewer/SmartPLS analysis of Scopus documents and latent constructs, not a primary football-player cohort or GBI surveillance study.",
+      "blankStructuredFamilies": "No player injury/illness outcome, numerator, denominator, exposure, mechanism, severity, tissue or location data."
+    },
+    {
+      "studyId": "S1971",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 415-434: abstract, methods, Table 1, Figures 1-2, quantitative and qualitative results, discussion and conclusion.",
+      "rationale": "Mixed-methods mental-ill-health symptom study in 103 tier-three women footballers (with six interviews), not injury/illness surveillance.",
+      "blankStructuredFamilies": "Mental-health symptom prevalence is outside the GBI injury/illness schema; no injury/illness surveillance denominator or compatible outcome family is reported."
+    },
+    {
+      "studyId": "S2079",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Translated-first/original-second full text: English translation pp. 1-31; abstract, methods, Tables 1-7, results and discussion.",
+      "rationale": "Cross-sectional study of self-esteem, sport anxiety and athletic coping in 286 footballers; no injury/illness surveillance outcome, exposure or denominator.",
+      "blankStructuredFamilies": "All results are psychological scale scores and regressions, so no Tabs 5-10 row maps cleanly."
+    },
+    {
+      "studyId": "S2087",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 1035-1048: abstract, methods, Figure 1, Tables 1-2, quantitative and qualitative results, discussion and conclusion.",
+      "rationale": "Mixed-methods mental-health/social-support study of 67 Ahmedabad footballers plus four injury-experience interviews. Injury material is narrative only and supplies no compatible surveillance outcome or denominator.",
+      "blankStructuredFamilies": "No direct injury/illness counts, incidence, exposure, structured diagnosis/location, severity or mechanism values."
+    }
+  ]
+}

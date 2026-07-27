@@ -1,0 +1,155 @@
+[
+  {
+    "studyId": "S1445",
+    "status": "processing",
+    "studyIdField": "S1445",
+    "files": 1,
+    "populations": [
+      "Pre-PHV overall",
+      "Pre-PHV fast growth",
+      "Pre-PHV moderate growth",
+      "Pre-PHV slow growth",
+      "Circa-PHV overall",
+      "Circa-PHV fast growth",
+      "Circa-PHV moderate growth",
+      "Circa-PHV slow growth",
+      "Post-PHV overall",
+      "Post-PHV fast growth",
+      "Post-PHV moderate growth",
+      "Post-PHV slow growth"
+    ],
+    "fields": 47,
+    "structured": 12,
+    "missingDual": [
+      "injuryLocation_foot_burden",
+      "injuryLocation_foot_incidence",
+      "injuryLocation_hip_burden",
+      "injuryLocation_hip_incidence",
+      "injuryLocation_knee_burden",
+      "injuryLocation_knee_incidence",
+      "injuryLocation_lumbosacral_burden",
+      "injuryLocation_lumbosacral_incidence",
+      "injuryTissueType_ligament_joint_capsule_burden",
+      "injuryTissueType_ligament_joint_capsule_incidence",
+      "injuryTissueType_muscle_injury_burden",
+      "injuryTissueType_muscle_injury_incidence"
+    ],
+    "notes": 1
+  },
+  {
+    "studyId": "S2040",
+    "status": "processing",
+    "studyIdField": "S2040",
+    "files": 1,
+    "populations": [
+      "All players",
+      "Professional all",
+      "Professional RR",
+      "Professional RX",
+      "Professional XX",
+      "U19 all",
+      "U19 RR",
+      "U19 RX",
+      "U19 XX",
+      "U17 all",
+      "U17 RR",
+      "U17 RX",
+      "U17 XX"
+    ],
+    "fields": 35,
+    "structured": 1,
+    "missingDual": [
+      "injuryTissueType_muscle_injury_incidence"
+    ],
+    "notes": 1
+  },
+  {
+    "studyId": "S2391",
+    "status": "processing",
+    "studyIdField": "S2391",
+    "files": 1,
+    "populations": [
+      "ACLR, ≤1 year after RTP",
+      "ACLR, ≤2 years after RTP"
+    ],
+    "fields": 37,
+    "structured": 2,
+    "missingDual": [
+      "injuryLocation_thigh_incidence",
+      "injuryTissueType_muscle_injury_incidence"
+    ],
+    "notes": 1
+  },
+  {
+    "studyId": "S4634",
+    "status": "processing",
+    "studyIdField": "S4634",
+    "files": 1,
+    "populations": [
+      "Female all seasons",
+      "Female 2014/15",
+      "Female 2015/16",
+      "Female 2016/17",
+      "Female 2017/18",
+      "Female 2018/19",
+      "Female 2019/20",
+      "Female 2020/21",
+      "Male all seasons",
+      "Male 2014/15",
+      "Male 2015/16",
+      "Male 2016/17",
+      "Male 2017/18",
+      "Male 2018/19",
+      "Male 2019/20",
+      "Male 2020/21"
+    ],
+    "fields": 38,
+    "structured": 2,
+    "missingDual": [
+      "injuryLocation_knee_prevalence",
+      "injuryTissueType_ligament_joint_capsule_prevalence"
+    ],
+    "notes": 1
+  },
+  {
+    "studyId": "S4691",
+    "status": "processing",
+    "studyIdField": "S4691",
+    "files": 1,
+    "populations": [
+      "Total",
+      "Goalkeeper",
+      "Defender",
+      "Midfielder",
+      "Forward"
+    ],
+    "fields": 65,
+    "structured": 23,
+    "missingDual": [
+      "injuryLocation_ankle_prevalence",
+      "injuryLocation_foot_prevalence",
+      "injuryLocation_hand_prevalence",
+      "injuryLocation_head_prevalence",
+      "injuryLocation_hip_prevalence",
+      "injuryLocation_knee_prevalence",
+      "injuryLocation_lower_leg_prevalence",
+      "injuryLocation_lower_limb_overall_prevalence",
+      "injuryLocation_lumbosacral_prevalence",
+      "injuryLocation_position_attacker_prevalence",
+      "injuryLocation_position_defender_prevalence",
+      "injuryLocation_position_goalkeeper_prevalence",
+      "injuryLocation_position_midfielder_prevalence",
+      "injuryLocation_shoulder_prevalence",
+      "injuryLocation_thigh_prevalence",
+      "injuryLocation_trunk_overall_prevalence",
+      "injuryLocation_upper_limb_overall_prevalence",
+      "injuryTissueType_bone_fracture_prevalence",
+      "injuryTissueType_concussion_prevalence",
+      "injuryTissueType_joint_sprain_prevalence",
+      "injuryTissueType_laceration_prevalence",
+      "injuryTissueType_muscle_injury_prevalence",
+      "injuryTissueType_superficial_contusion_prevalence"
+    ],
+    "notes": 1
+  }
+]

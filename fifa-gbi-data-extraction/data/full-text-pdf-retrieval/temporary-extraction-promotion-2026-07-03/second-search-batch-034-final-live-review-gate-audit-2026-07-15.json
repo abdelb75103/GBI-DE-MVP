@@ -1,0 +1,115 @@
+{
+  "scope": "Second search Backlog 2 Batch 034 final live review-gate audit",
+  "batch": "034",
+  "localDate": "2026-07-15",
+  "applyTimestampUtc": "2026-07-14T23:42:32.512Z",
+  "model": "GPT-5 Codex manual extraction; the local GPT-5.5 execution surface was not exposed to this batch agent.",
+  "membership": ["S4005", "S4296", "S4372", "S4669", "S4685"],
+  "stageA": {
+    "result": "pass",
+    "populationLayouts": {
+      "S4005": [],
+      "S4296": [],
+      "S4372": [],
+      "S4669": [],
+      "S4685": []
+    },
+    "structuredDualWrite": "not applicable: zero staged extraction_fields and zero staged population_values",
+    "scope": "No Tabs 1-10 fields were supported by an eligible GBI surveillance outcome in this fixed batch."
+  },
+  "apply": {
+    "result": "pass",
+    "paperStatusUpdates": [
+      {
+        "studyId": "S4669",
+        "from": { "status": "mental_health", "flagReason": null },
+        "to": { "status": "flagged", "flagReason": "No exposure - exclude" },
+        "reason": "Direct six-month self-reported time-loss injury characteristics lack a usable at-risk exposure denominator; no derivation is permitted."
+      }
+    ],
+    "additivePaperNotes": 5,
+    "untouched": [
+      "screening_records",
+      "human screening votes",
+      "resolver/promotion metadata",
+      "assigned_study_id (studyId)",
+      "source PDF attachments",
+      "extractions",
+      "extraction_fields",
+      "population_groups",
+      "population_values"
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S4005",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1-16: abstract, methods, Tables 1-10, Figures 1-3, results, discussion and limitations.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Eating-disorder-risk/body-esteem questionnaire; chronic conditions are background only and no injury/illness surveillance value applies."
+    },
+    {
+      "studyId": "S4296",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1-17: abstract, methods, Table 1, Table 2, Figures 1-3, results, discussion and conclusion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "BDI-II/BAI/suicidal-ideation symptom study with matched controls; no injury/illness surveillance outcome or schema mapping."
+    },
+    {
+      "studyId": "S4372",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1-12: abstract, methods, Tables 1-7, Figure 1, results, discussion, limitations and conclusion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Football-engagement latent-profile paper; the methods exclude sports-related injuries and its outcomes are self-esteem/depression measures."
+    },
+    {
+      "studyId": "S4669",
+      "status": "flagged",
+      "flagReason": "No exposure - exclude",
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1-8: abstract, methods, Tables 1-2, Figures 1-3, results, discussion and limitations.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Fixed batch member retained without extraction rows: the 295 self-reported time-loss injuries have no accepted athlete-/match-/training-exposure denominator."
+    },
+    {
+      "studyId": "S4685",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1-10: abstract, methods, Tables 1-2, results, discussion, recommendations and conclusion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Severe musculoskeletal injury is a dichotomous mental-health regression covariate only; no compatible GBI injury surveillance payload is reported."
+    }
+  ],
+  "stageB": {
+    "result": "pass",
+    "checks": {
+      "fixedMembership": true,
+      "assignment": true,
+      "statusAndFlagReason": true,
+      "studyIdAndSourceAttachment": true,
+      "populationLabelsAndOrder": true,
+      "writtenFieldEquality": true,
+      "structuredDualWrite": true,
+      "protectedScreeningAndPromotionState": true,
+      "backlogRows": true
+    },
+    "liveCounts": {
+      "extractions": 0,
+      "extractionFields": 0,
+      "populationGroups": 0,
+      "populationValues": 0,
+      "batch034PaperNotes": 5,
+      "sourceFiles": 5
+    },
+    "protectedMetadataSha256": "349e55ff39fc01adfe11308105c8ff4b8934b1a46ed3f468ec6d9d91f3b9cc78",
+    "protectedMetadataUnchanged": true,
+    "correctionRequired": false
+  }
+}

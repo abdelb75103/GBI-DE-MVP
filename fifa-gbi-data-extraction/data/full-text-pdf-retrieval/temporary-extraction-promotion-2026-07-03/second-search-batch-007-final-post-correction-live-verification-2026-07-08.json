@@ -1,0 +1,97 @@
+{
+  "batch": "Second search extraction Batch 007",
+  "review": "post-correction live review gate rerun",
+  "model": "strongest available Codex runtime; separate GPT-5.5-high selector unavailable",
+  "membership": {
+    "expected": [
+      "S1149",
+      "S1197",
+      "S1213",
+      "S1219",
+      "S1229"
+    ],
+    "actual": [
+      "S1149",
+      "S1197",
+      "S1213",
+      "S1219",
+      "S1229"
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S1149",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1149",
+      "populations": [
+        "Men - senior",
+        "Men - youth",
+        "Women - senior",
+        "Women - youth"
+      ],
+      "populationValues": 91,
+      "structuredDualWriteMismatches": [],
+      "illnessTotalCount": "\n\n21\n38",
+      "blockers": []
+    },
+    {
+      "studyId": "S1197",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1197",
+      "populations": [
+        "Total"
+      ],
+      "populationValues": 24,
+      "structuredDualWriteMismatches": [],
+      "blockers": []
+    },
+    {
+      "studyId": "S1213",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1213",
+      "populations": [
+        "Total"
+      ],
+      "populationValues": 12,
+      "structuredDualWriteMismatches": [],
+      "injuryTimeLossMean": {
+        "value": null,
+        "status": "not_reported",
+        "field_id": "injuryTimeLossMean",
+        "tab": "injuryOutcome"
+      },
+      "blockers": []
+    },
+    {
+      "studyId": "S1219",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1219",
+      "populations": [
+        "Total"
+      ],
+      "populationValues": 25,
+      "structuredDualWriteMismatches": [],
+      "blockers": []
+    },
+    {
+      "studyId": "S1229",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1229",
+      "populations": [
+        "Total",
+        "U14",
+        "U16",
+        "U18",
+        "Senior"
+      ],
+      "populationValues": 185,
+      "structuredDualWriteMismatches": [],
+      "blockers": []
+    }
+  ]
+}

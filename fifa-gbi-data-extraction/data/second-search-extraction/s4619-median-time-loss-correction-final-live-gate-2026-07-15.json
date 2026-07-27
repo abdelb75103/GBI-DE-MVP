@@ -1,0 +1,25 @@
+{
+  "studyId": "S4619",
+  "gate": "focused post-apply integrity gate",
+  "result": "pass",
+  "source": {
+    "tables": "1-4",
+    "pages": "3-5 of 10-page primary PDF",
+    "evidence": "Table 1 overall/match/training median time loss; Table 2 match body-area medians; Table 3 training body-area medians; Table 4 match/training tissue/pathology medians",
+    "primaryFileSha256Matches": true
+  },
+  "live": {
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "studyIdMatchesAssignedStudyId": true,
+    "sourceFileAttached": true,
+    "populationLabelsInOrder": ["Match", "Training"],
+    "populationValueCounts": [106, 102],
+    "targetedExtractionFieldMismatches": 0,
+    "targetedPopulationValueMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "protectedScreeningMetadataPresent": true,
+    "backlogMedianCorrectionNotePresent": true
+  },
+  "caveat": "Combined Groin/hip was not forced into separate hip/groin schema rows; no values were calculated or aggregated."
+}

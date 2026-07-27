@@ -1,0 +1,24 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 018; manual extraction dry-run validation; 2026-07-13",
+  "mode": "dry-run validation",
+  "input": "data/second-search-extraction/batch-018/second-search-extraction-batch-018-input-2026-07-13.json",
+  "inputSha256": "1d505124b8e0c678aa5ef8a04bb6c2ccac161a4b71d419da1670157a5ecaafb8",
+  "result": "pass with known script limitation",
+  "scriptDryRunLimitation": "apply-second-search-extraction-json.mjs intentionally reads live extraction_fields before simulating new fields for population sync. With five first-time extraction records it reports Expected 0 population labels before it can produce a normal simulated audit. This is the known limitation documented in the live-extraction workflow; it does not indicate invalid field IDs or an unsafe live-write plan.",
+  "validations": [
+    {"studyId": "S2287", "fieldIdsKnown": true, "payloadFieldCount": 25, "populationLabels": 2, "populationDefiningLines": 2, "preApplyStatus": "processing", "preApplyPopulationGroups": 0, "attachedPrimaryPdf": true},
+    {"studyId": "S2330", "fieldIdsKnown": true, "payloadFieldCount": 45, "populationLabels": 1, "populationDefiningLines": 1, "preApplyStatus": "processing", "preApplyPopulationGroups": 0, "attachedPrimaryPdf": true},
+    {"studyId": "S2392", "fieldIdsKnown": true, "payloadFieldCount": 21, "populationLabels": 28, "populationDefiningLines": 28, "preApplyStatus": "processing", "preApplyPopulationGroups": 0, "attachedPrimaryPdf": true},
+    {"studyId": "S2470", "fieldIdsKnown": true, "payloadFieldCount": 126, "populationLabels": 3, "populationDefiningLines": 3, "preApplyStatus": "processing", "preApplyPopulationGroups": 0, "attachedPrimaryPdf": true},
+    {"studyId": "S2482", "fieldIdsKnown": true, "payloadFieldCount": 29, "populationLabels": 3, "populationDefiningLines": 3, "preApplyStatus": "processing", "preApplyPopulationGroups": 0, "attachedPrimaryPdf": true}
+  ],
+  "safetyChecks": {
+    "allFiveReservedTo": "00000000-0000-0000-0000-000000000001",
+    "allFiveHaveOneAttachedPdf": true,
+    "allFiveHaveZeroPreexistingPopulationGroups": true,
+    "protectedHumanVotesAndResolverMetadataInInput": false,
+    "overwriteRequested": false,
+    "allowEmptyOverwriteRequested": false
+  },
+  "nextStep": "Apply with --complete-core-tabs, then independently verify live papers, files, extraction fields, population groups, population values, and protected metadata."
+}

@@ -1,0 +1,344 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; extraction Batch 007; full live post-independent-review gate; 2026-07-08",
+  "reviewModel": "strongest available Codex runtime; separate GPT-5.5-high selector unavailable",
+  "membership": {
+    "expected": [
+      "S1149",
+      "S1197",
+      "S1213",
+      "S1219",
+      "S1229"
+    ],
+    "actual": [
+      "S1149",
+      "S1197",
+      "S1213",
+      "S1219",
+      "S1229"
+    ],
+    "missing": []
+  },
+  "papers": [
+    {
+      "studyId": "S1149",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1149",
+      "primaryFile": {
+        "id": "46c7f74b-165c-4193-80e1-09d6800315ed",
+        "name": "S1149-the-football-association-injury-and-illness-surveillance-study-the-incidence-burden-and-severity-of-injuries-and-illness.pdf",
+        "size": 1204361,
+        "file_sha256": "960e98ce214a55d0d249f39fdb73261c380a29333d8347832d67a4cea23c4c2c",
+        "storage_bucket": "papers",
+        "storage_object_path": "8dc7ae9d-a88c-4916-81c1-2e093832ccd1/1781616944392-S1149-the-football-association-injury-and-illness-surveillance-study-the-incidence-burden-and-severity-of-injuries-and-illness.pdf"
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "illnessOutcome",
+        "injuryOutcome",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "populationLabels": [
+        "Men - senior",
+        "Men - youth",
+        "Women - senior",
+        "Women - youth"
+      ],
+      "populationValueRows": 87,
+      "structuredDualWriteMismatches": [],
+      "correctedValues": {
+        "sampleSizePlayers": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "illnessDefinition": {
+          "value": "time-loss",
+          "status": "reported"
+        },
+        "injuryDefinition": {
+          "value": "time loss [>=1 day]",
+          "status": "reported"
+        },
+        "totalExposure": {
+          "value": "29562\n43764\n29616\n51150",
+          "status": "reported"
+        },
+        "numberOfSeasons": {
+          "value": "8",
+          "status": "reported"
+        }
+      },
+      "latestNote": "Batch 007 independent-review correction. Cleared sampleSizePlayers because Table 1 reports repeated player camp attendances across eight seasons, not unique players. Illness definition canonicalized to time-loss; the paper requires at least one day unable to participate.",
+      "classification": "no action",
+      "blockers": []
+    },
+    {
+      "studyId": "S1197",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1197",
+      "primaryFile": {
+        "id": "70195d28-89d5-4107-af24-07abdc6b5f27",
+        "name": "S1197-injuries-during-the-covid-19-pandemic-in-the-2021-paulista-soccer-championship-in-brazil.pdf",
+        "size": 1300509,
+        "file_sha256": "64ab74c38192901c136eb06d0d0256d0ac0d026884bbdc42d9c29920f6cb60da",
+        "storage_bucket": "papers",
+        "storage_object_path": "ec195aa0-7002-4130-8d6f-c362f4c34bd3/1781615445410-S1197-injuries-during-the-covid-19-pandemic-in-the-2021-paulista-soccer-championship-in-brazil.pdf"
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueRows": 24,
+      "structuredDualWriteMismatches": [],
+      "correctedValues": {
+        "sampleSizePlayers": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "illnessDefinition": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "injuryDefinition": {
+          "value": "physical complaint",
+          "status": "reported"
+        },
+        "totalExposure": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "numberOfSeasons": {
+          "value": "1",
+          "status": "reported"
+        },
+        "injuryLocation_head_prevalence": {
+          "value": "3",
+          "status": "reported"
+        },
+        "injuryLocation_thigh_prevalence": {
+          "value": "11",
+          "status": "reported"
+        }
+      },
+      "latestNote": "Second-search extraction Batch 007. Source checked: methods/results and Figures 2-4. Match-only championship data. Structured counts are percentage-derived from n=26 and rounded to the nearest compatible integer; match exposure was not back-calculated from count/rate.",
+      "classification": "no action",
+      "blockers": []
+    },
+    {
+      "studyId": "S1213",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1213",
+      "primaryFile": {
+        "id": "448609fc-184e-4a31-8e13-841561676101",
+        "name": "S1213-critical-fluctuations-as-an-early-warning-signal-of-sports-injuries-a-proof-of-concept-using-football-monitoring-data.pdf",
+        "size": 3588089,
+        "file_sha256": "eeff291876202fc0074a8f687058a5d5f056a3baa312cbb823175adaacfd11e0",
+        "storage_bucket": "papers",
+        "storage_object_path": "4377270a-d24c-49cb-998f-77b5816b6811/1781615451346-S1213-critical-fluctuations-as-an-early-warning-signal-of-sports-injuries-a-proof-of-concept-using-football-monitoring-data.pdf"
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryOutcome",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueRows": 11,
+      "structuredDualWriteMismatches": [],
+      "correctedValues": {
+        "sampleSizePlayers": {
+          "value": "23",
+          "status": "reported"
+        },
+        "illnessDefinition": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "injuryDefinition": {
+          "value": "time loss",
+          "status": "reported"
+        },
+        "totalExposure": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "numberOfSeasons": {
+          "value": "2",
+          "status": "reported"
+        }
+      },
+      "latestNote": "Batch 007 independent-review correction. Injury definition canonicalized to time loss from physician-recorded injury-related time loss; the paper does not print a formal consensus injury definition. Cleared average daily monitoring observations from totalExposure because observations are not football exposure; retained source context: average 339 observations/player (range 155-430) over up to two seasons.",
+      "classification": "no action",
+      "blockers": []
+    },
+    {
+      "studyId": "S1219",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1219",
+      "primaryFile": {
+        "id": "94d45ee1-4cc4-442c-940d-631a0eb07fd1",
+        "name": "S1219-english-translation-plus-original.pdf",
+        "size": 337194,
+        "file_sha256": "c097b76e157bc3a76e3400030e77b85eb0c297c40d65c723811a4bee307a530b",
+        "storage_bucket": "papers",
+        "storage_object_path": "3f32175c-dae3-41ef-af13-3b7bdc055550/1782312294146-S1219-english-translation-plus-original.pdf"
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueRows": 25,
+      "structuredDualWriteMismatches": [],
+      "correctedValues": {
+        "sampleSizePlayers": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "illnessDefinition": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "injuryDefinition": {
+          "value": "time loss [ankle sprains only; >=1 match or training session]",
+          "status": "reported"
+        },
+        "totalExposure": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "numberOfSeasons": {
+          "value": "15",
+          "status": "reported"
+        },
+        "injuryRecurrentTotal": {
+          "value": "79",
+          "status": "reported"
+        }
+      },
+      "latestNote": "Batch 007 independent-review correction. numberOfSeasons normalized to 15 competition-seasons. injuryRecurrentTotal 79 is percentage-derived by rounding 31.22% x 253 ankle sprains; the published recurrence percentage is direct.",
+      "classification": "no action",
+      "blockers": []
+    },
+    {
+      "studyId": "S1229",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "studyIdField": "S1229",
+      "primaryFile": {
+        "id": "942eb314-51f0-44fd-98b1-962b1c9e34b7",
+        "name": "S1229-epidemiology-and-clinical-characteristics-of-football-injuries-among-academy-players-in-ghana.pdf",
+        "size": 267250,
+        "file_sha256": "ec5576c3bbd0a444d93a89ce1947f6f61f0d851caed26b6e6a969493f7947cc5",
+        "storage_bucket": "papers",
+        "storage_object_path": "2da389f9-d345-44e2-bfe4-2fa1931f41d4/1781615439020-S1229-epidemiology-and-clinical-characteristics-of-football-injuries-among-academy-players-in-ghana.pdf"
+      },
+      "tabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "populationLabels": [
+        "Total",
+        "U14",
+        "U16",
+        "U18",
+        "Senior"
+      ],
+      "populationValueRows": 220,
+      "structuredDualWriteMismatches": [],
+      "correctedValues": {
+        "sampleSizePlayers": {
+          "value": "80\n7\n17\n29\n27",
+          "status": "reported"
+        },
+        "illnessDefinition": {
+          "value": null,
+          "status": "not_reported"
+        },
+        "injuryDefinition": {
+          "value": "medical attention",
+          "status": "reported"
+        },
+        "totalExposure": {
+          "value": "28082.4\n2069.0\n5522.9\n10138.0\n10078.9",
+          "status": "reported"
+        },
+        "numberOfSeasons": {
+          "value": "1",
+          "status": "reported"
+        },
+        "injuryRecurrentTotal": {
+          "value": "14",
+          "status": "reported"
+        },
+        "injuryTissueType_physis_prevalence": {
+          "value": "1\n1\n0\n0\n0",
+          "status": "reported"
+        },
+        "injuryLocation_head_prevalence": {
+          "value": "1\n0\n1\n0\n0",
+          "status": "reported"
+        },
+        "injuryLocation_shoulder_prevalence": {
+          "value": "2\n0\n1\n1\n0",
+          "status": "reported"
+        },
+        "injuryLocation_elbow_prevalence": {
+          "value": "1\n0\n1\n0\n0",
+          "status": "reported"
+        },
+        "injuryLocation_forearm_prevalence": {
+          "value": "1\n0\n1\n0\n0",
+          "status": "reported"
+        },
+        "injuryLocation_chest_prevalence": {
+          "value": "1\n0\n0\n1\n0",
+          "status": "reported"
+        },
+        "injuryLocation_lumbosacral_prevalence": {
+          "value": "10\n2\n3\n3\n2",
+          "status": "reported"
+        },
+        "injuryLocation_thigh_prevalence": {
+          "value": "22\n2\n6\n8\n6",
+          "status": "reported"
+        },
+        "injuryLocation_lower_leg_prevalence": {
+          "value": "11\n0\n2\n7\n1",
+          "status": "reported"
+        }
+      },
+      "latestNote": "Batch 007 independent-review correction. Injury definition canonicalized to medical attention because the cohort includes any complaint receiving physiotherapist attention or causing missed participation; this broader canonical label retains time-loss cases. Completed Table 4 location sweep with subgroup columns. Hamstring was transparently aggregated into thigh and Achilles tendon into lower leg. Osgood-Schlatter disease mapped to physis injury. Face mapped to the head parent row. Meniscus tear and chest pain were checked but not forced because no clean dedicated schema row exists for either source category.",
+      "classification": "no action",
+      "blockers": []
+    }
+  ]
+}

@@ -41,6 +41,7 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 - When categories are broader or combined in a way that does not map cleanly, fill only the rows that are clearly justified and note which combined categories were intentionally not forced into narrower rows.
 - If the source reports a combined category and the schema has a matching combined `overall` field, use that combined field instead of leaving the row blank.
 - Example: map `head/face/neck` to `injuryLocation_head_neck_overall`, not to separate `head` or `neck` rows.
+- Do not map a combined `strains/sprains` source category to the narrower `joint_sprain` row. Retain it as a headline/combined diagnosis unless the source separates a compatible joint-sprain count.
 - If the source reports a narrower combined label that still maps cleanly into a single schema parent field, use the parent field.
 - Examples: map `head/face` to `injuryLocation_head`; map `shoulder/clavicle` or `shoulder/clavicular` to `injuryLocation_shoulder`.
 - If the source splits a schema parent field into adjacent subrows that clearly belong together, aggregate them only when that mapping is transparent.
@@ -91,6 +92,7 @@ Read this file when filling `injuryTissueType`, `injuryLocation`, or other metri
 ## Figure Rule
 
 - Use figure-derived values only when the figure is readable enough to support defensible extraction.
+- Treat positional/body-location figures as a mandatory location-tab sweep: capture every compatible location row shown in a readable figure, including positional counts or defensibly percentage-derived counts. Do not stop at the headline/most-common location.
 - Restrict figure-derived rows to missing compatible rows.
 - Mark figure-derived rows with lower confidence/page hint when the workflow supports it.
 - Do not let a figure estimate overwrite a direct table/text value.

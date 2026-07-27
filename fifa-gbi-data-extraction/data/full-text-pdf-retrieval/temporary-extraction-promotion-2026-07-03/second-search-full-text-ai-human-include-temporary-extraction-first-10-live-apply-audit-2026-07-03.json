@@ -1,0 +1,2411 @@
+{
+  "scope": "Second search temporary extraction bridge for AI include plus one human include",
+  "mode": "apply",
+  "generatedAt": "2026-07-04T14:02:01.935Z",
+  "selectionRule": {
+    "searchBatch": "Second search - Ishanka - 2026-05-26",
+    "aiStatus": "completed",
+    "aiSuggestedDecision": "include",
+    "humanIncludeVotes": 1,
+    "humanExcludeVotes": 0,
+    "manualDecision": null,
+    "promotedPaperId": null,
+    "hasAttachedFile": true,
+    "limit": 10
+  },
+  "selected": [
+    {
+      "studyId": "S899",
+      "screeningRecordId": "03610b6b-71b4-4110-9437-9450916f1267",
+      "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+      "storageBucket": "papers",
+      "storageObjectPath": "34863f3f-eea0-45ca-82f4-3e122caa97f8/1781805784240-S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with retrospective cohort, mappable health-outcome ascertainment, and a athlete exposures denominator.",
+        "aiEvidenceQuote": "…Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, game…",
+        "aiSourceLocation": "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "decision_reassessed"
+          ],
+          "year": "2024",
+          "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+          "reason": "Eligible competitive football/futsal primary study with retrospective cohort, mappable health-outcome ascertainment, and a athlete exposures denominator.",
+          "authors": "Kontos Anthony P",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S899-4f5ed3cea21f.pdf",
+          "studyId": "S899",
+          "decision": "include",
+          "recordId": "03610b6b-71b4-4110-9437-9450916f1267",
+          "pdfSha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "…yer participated in every practice. The number of game exposures was determined using each institution’s publicly available data. Incidence rate ratios (IR), with 95% CIs and p-values, were calcu - lated for the concussed sample and repeated when stratifying the concussed group by sex…",
+          "covidenceId": null,
+          "studyDesign": "Retrospective cohort",
+          "evidenceQuote": "…Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, game…",
+          "evidenceQuotes": [
+            "…Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, game…",
+            "…Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, games/practices, h…",
+            "…pidemiological studies of concussion in soccer utilizing sports injury-surveillance programs rather than prospective study design (Zuckerman et al. 2015 ; Wasserman et al. 2016 ; DiStefano et al. 2018 ) have found higher injury rates in collegi - ate athletes compared to high school,…"
+          ],
+          "sourceLocation": "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+            "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+            "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "athlete_exposures",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…AA- DoD Concussion Assessment, Research, and Education (CARE) Consortium. Incidence rates for concussion per 1000 athlete exposures (AEs) were calculated across the 2015–16/2016–17 seasons. Incidence rates (IR) comparing risk factor groups were also calculated. A total of 162 concussi…",
+          "dataCollectionTiming": "Timing classified from the paper methods and decisive design evidence.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "Science and Medicine in Football ISSN: 2473-3938 (Print) 2473-4446 (Online) Journal homepage: www.tandfonline.com/journals/rsmf20 Incidence of concussion and associated risk factors in collegiate soccer: ﬁndings from the NCAA-DoD CARE consortium Anthony P. Kon"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.508+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-21T12:51:01.133316+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T14:26:36.523Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "createdFileId": "991d4da5-f312-49a6-8b92-cc7d7ff85a38",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with retrospective cohort, mappable health-outcome ascertainment, and a athlete exposures denominator.",
+        "aiEvidenceQuote": "…Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, game…",
+        "aiSourceLocation": "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "decision_reassessed"
+          ],
+          "year": "2024",
+          "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+          "reason": "Eligible competitive football/futsal primary study with retrospective cohort, mappable health-outcome ascertainment, and a athlete exposures denominator.",
+          "authors": "Kontos Anthony P",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S899-4f5ed3cea21f.pdf",
+          "studyId": "S899",
+          "decision": "include",
+          "recordId": "03610b6b-71b4-4110-9437-9450916f1267",
+          "pdfSha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "…yer participated in every practice. The number of game exposures was determined using each institution’s publicly available data. Incidence rate ratios (IR), with 95% CIs and p-values, were calcu - lated for the concussed sample and repeated when stratifying the concussed group by sex…",
+          "covidenceId": null,
+          "studyDesign": "Retrospective cohort",
+          "evidenceQuote": "…Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, game…",
+          "evidenceQuotes": [
+            "…Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, game…",
+            "…Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA ABSTRACT This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, games/practices, h…",
+            "…pidemiological studies of concussion in soccer utilizing sports injury-surveillance programs rather than prospective study design (Zuckerman et al. 2015 ; Wasserman et al. 2016 ; DiStefano et al. 2018 ) have found higher injury rates in collegi - ate athletes compared to high school,…"
+          ],
+          "sourceLocation": "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+            "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet",
+            "S899-4f5ed3cea21f.pdf p. 2, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "athlete_exposures",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…AA- DoD Concussion Assessment, Research, and Education (CARE) Consortium. Incidence rates for concussion per 1000 athlete exposures (AEs) were calculated across the 2015–16/2016–17 seasons. Incidence rates (IR) comparing risk factor groups were also calculated. A total of 162 concussi…",
+          "dataCollectionTiming": "Timing classified from the paper methods and decisive design evidence.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "Science and Medicine in Football ISSN: 2473-3938 (Print) 2473-4446 (Online) Journal homepage: www.tandfonline.com/journals/rsmf20 Incidence of concussion and associated risk factors in collegiate soccer: ﬁndings from the NCAA-DoD CARE consortium Anthony P. Kon"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.508+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-21T12:51:01.133316+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T14:26:36.523Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S982",
+      "screeningRecordId": "69fca09b-fb48-4f7f-a144-d2a6359ea3d1",
+      "title": "The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "966cfc817e25b1422f2070026f9955dfc2d1c8b9bcae5e02c1e6196d55ac5d49",
+      "storageBucket": "papers",
+      "storageObjectPath": "18182f45-a619-47c3-993b-ecececdb1701/1781615430779-S982-the-11-injury-prevention-programme-decreases-rate-of-hamstring-strain-injuries-in-male-collegiate-soccer-players.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season",
+        "aiSourceLocation": "S982.pdf p. 1, Abstract",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players.",
+          "reason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Silvers-Granelli Holly",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S982-966cfc817e25.pdf",
+          "studyId": "S982",
+          "decision": "include",
+          "recordId": "69fca09b-fb48-4f7f-a144-d2a6359ea3d1",
+          "pdfSha256": "966cfc817e25b1422f2070026f9955dfc2d1c8b9bcae5e02c1e6196d55ac5d49",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "701 Silvers- Granelli H, et al. Br J Sports Med 2024;58:701–708. doi:10.1136/bjsports-2023-107323 The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players Holly Silvers- Granelli ,1,2 Richard Silverman ,",
+          "covidenceId": null,
+          "studyDesign": "Randomized controlled study",
+          "evidenceQuote": "included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season",
+          "evidenceQuotes": [
+            "included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season",
+            "…ompliance with the 11+ affects hamstring injury risk. Methods T his study is a secondary analysis from a prospective cluster randomised controlled trial that included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season. Thi…",
+            "…1+ affects hamstring injury risk. Methods T his study is a secondary analysis from a prospective cluster randomised controlled trial that included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season. Thirty- one teams were…"
+          ],
+          "sourceLocation": "S982.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S982.pdf p. 1, Abstract",
+            "S982-966cfc817e25.pdf p. 1, extracted evidence packet",
+            "S982-966cfc817e25.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "701 Silvers- Granelli H, et al. Br J Sports Med 2024;58:701–708. doi:10.1136/bjsports-2023-107323 The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players Holly Silvers- Granelli ,1,2 Richard Silverman ,",
+          "dataCollectionTiming": "Timing classified from the paper methods and decisive design evidence.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…reoccur at very high rates and present with persistent symp- tomology that often results in significant time loss, ranging anywhere from 17 to 90 days. 23 24 T o address the onus that injury has on the sport of soccer, the Federation Internationale de Foot- ball Association (FIFA) an…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.668+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-19T14:20:08.671997+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T16:55:15.228Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-19T14:20:08.671997+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-19T14:20:08.671997+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-19T14:20:08.671997+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "dbcb7b15-192d-4ab8-98db-71672aaf7e71",
+      "createdFileId": "6ae104a1-31c1-4c19-89a5-9319c4cdf5ac",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season",
+        "aiSourceLocation": "S982.pdf p. 1, Abstract",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players.",
+          "reason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Silvers-Granelli Holly",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S982-966cfc817e25.pdf",
+          "studyId": "S982",
+          "decision": "include",
+          "recordId": "69fca09b-fb48-4f7f-a144-d2a6359ea3d1",
+          "pdfSha256": "966cfc817e25b1422f2070026f9955dfc2d1c8b9bcae5e02c1e6196d55ac5d49",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "701 Silvers- Granelli H, et al. Br J Sports Med 2024;58:701–708. doi:10.1136/bjsports-2023-107323 The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players Holly Silvers- Granelli ,1,2 Richard Silverman ,",
+          "covidenceId": null,
+          "studyDesign": "Randomized controlled study",
+          "evidenceQuote": "included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season",
+          "evidenceQuotes": [
+            "included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season",
+            "…ompliance with the 11+ affects hamstring injury risk. Methods T his study is a secondary analysis from a prospective cluster randomised controlled trial that included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season. Thi…",
+            "…1+ affects hamstring injury risk. Methods T his study is a secondary analysis from a prospective cluster randomised controlled trial that included 65 National Collegiate Athletic Association (NCAA) division I and II men’s soccer teams over the fall 2012 season. Thirty- one teams were…"
+          ],
+          "sourceLocation": "S982.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S982.pdf p. 1, Abstract",
+            "S982-966cfc817e25.pdf p. 1, extracted evidence packet",
+            "S982-966cfc817e25.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "701 Silvers- Granelli H, et al. Br J Sports Med 2024;58:701–708. doi:10.1136/bjsports-2023-107323 The 11+ injury prevention programme decreases rate of hamstring strain injuries in male collegiate soccer players Holly Silvers- Granelli ,1,2 Richard Silverman ,",
+          "dataCollectionTiming": "Timing classified from the paper methods and decisive design evidence.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…reoccur at very high rates and present with persistent symp- tomology that often results in significant time loss, ranging anywhere from 17 to 90 days. 23 24 T o address the onus that injury has on the sport of soccer, the Federation Internationale de Foot- ball Association (FIFA) an…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.668+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-19T14:20:08.671997+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T16:55:15.228Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-19T14:20:08.671997+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-19T14:20:08.671997+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S989",
+      "screeningRecordId": "f182db61-ed0c-47f2-8cab-3a50baa1fa89",
+      "title": "Shoulder injuries in Brazilian professional football players: epidemiological analysis of 3828 games.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "e3def84369db071ecd0567f5086db528a4026ad601c841c91875e78968c036c0",
+      "storageBucket": "papers",
+      "storageObjectPath": "28e566c9-d1da-44db-9d3a-2ad5b0755d25/1781804955350-S989-shoulder-injuries-in-brazilian-professional-football-players-epidemiological-analysis-of-3828-games.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a direct time denominator.",
+        "aiEvidenceQuote": "…m the Brazilian Football Championship (BFC) and the Paulista Foot- ball Championship (PFC). METHODS This prospective epidemiological study evaluated shoulder injuries in two divisions of two major professional football championships in Brazil—the BFC and PFC —during 2016 to 2019. This…",
+        "aiSourceLocation": "S989-e3def84369db.pdf p. 2, extracted evidence packet",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "decision_reassessed"
+          ],
+          "year": "2024",
+          "title": "Shoulder injuries in Brazilian professional football players: epidemiological analysis of 3828 games.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a direct time denominator.",
+          "authors": "Lima Ewerton Borges de Souza",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S989-e3def84369db.pdf",
+          "studyId": "S989",
+          "decision": "include",
+          "recordId": "f182db61-ed0c-47f2-8cab-3a50baa1fa89",
+          "pdfSha256": "e3def84369db071ecd0567f5086db528a4026ad601c841c91875e78968c036c0",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "…s on collecting data and completing digital forms correctly using two online platforms: Trans- fermarkt (Transfermarkt GmbH & Co. KG, Germany) and SurveyMonkey (Momentive.ai, USA). Data were collected throughout the championships, with club phy- sicians recording each player's medical…",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "…m the Brazilian Football Championship (BFC) and the Paulista Foot- ball Championship (PFC). METHODS This prospective epidemiological study evaluated shoulder injuries in two divisions of two major professional football championships in Brazil—the BFC and PFC —during 2016 to 2019. This…",
+          "evidenceQuotes": [
+            "…m the Brazilian Football Championship (BFC) and the Paulista Foot- ball Championship (PFC). METHODS This prospective epidemiological study evaluated shoulder injuries in two divisions of two major professional football championships in Brazil—the BFC and PFC —during 2016 to 2019. This…",
+            "…e underestimated the total number of shoulder injuries. Despite these limitations, this was an extensive prospective study lasting four years and included a large sample of athletes and injuries, in which we were able to collect unpublished data from two major professional football ch…",
+            "….1186/s40634- 022-00560-1. [11] Margato GF, Andrade Júnior EF, Lara PHS, Pagura JR, Cohen M, Arliani GG. Prospective study of muscle injuries in three consecutive seasons of the Brazilian football championship. Rev Bras Ortop (Sao Paulo) 2020;55:687 –94. https:// doi.org/10.1055/s-004…"
+          ],
+          "sourceLocation": "S989-e3def84369db.pdf p. 2, extracted evidence packet",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S989-e3def84369db.pdf p. 2, extracted evidence packet",
+            "S989-e3def84369db.pdf p. 5, extracted evidence packet",
+            "S989-e3def84369db.pdf p. 6, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…y played sport that poses potential risks for musculoskeletal injuries. Upper-limb injuries have a lower incidence rate than lower-limb injuries but can still cause absenteeism and performance impairment in football players. This descriptive epidemiological study aimed to evaluate and…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "Original Research Shoulder injuries in Brazilian professional football players: epidemiological analysis of 3828 games Ewerton Borges de Souza Lima a, Paulo Santoro Belangero a, Paulo Henrique Schmidt Lara a, Leandro Masini Ribeiro a, Eduardo Ant ^onio de Figu"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.791+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:20:29.572487+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T18:50:27.726Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:20:29.572487+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:20:29.572487+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-22T13:20:29.572487+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "35733dcd-9e5b-4bf5-ba6a-cf7435fed46b",
+      "createdFileId": "89438b9f-9cc1-42c4-86d0-fbfeb0a69eb7",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a direct time denominator.",
+        "aiEvidenceQuote": "…m the Brazilian Football Championship (BFC) and the Paulista Foot- ball Championship (PFC). METHODS This prospective epidemiological study evaluated shoulder injuries in two divisions of two major professional football championships in Brazil—the BFC and PFC —during 2016 to 2019. This…",
+        "aiSourceLocation": "S989-e3def84369db.pdf p. 2, extracted evidence packet",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "decision_reassessed"
+          ],
+          "year": "2024",
+          "title": "Shoulder injuries in Brazilian professional football players: epidemiological analysis of 3828 games.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a direct time denominator.",
+          "authors": "Lima Ewerton Borges de Souza",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S989-e3def84369db.pdf",
+          "studyId": "S989",
+          "decision": "include",
+          "recordId": "f182db61-ed0c-47f2-8cab-3a50baa1fa89",
+          "pdfSha256": "e3def84369db071ecd0567f5086db528a4026ad601c841c91875e78968c036c0",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "…s on collecting data and completing digital forms correctly using two online platforms: Trans- fermarkt (Transfermarkt GmbH & Co. KG, Germany) and SurveyMonkey (Momentive.ai, USA). Data were collected throughout the championships, with club phy- sicians recording each player's medical…",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "…m the Brazilian Football Championship (BFC) and the Paulista Foot- ball Championship (PFC). METHODS This prospective epidemiological study evaluated shoulder injuries in two divisions of two major professional football championships in Brazil—the BFC and PFC —during 2016 to 2019. This…",
+          "evidenceQuotes": [
+            "…m the Brazilian Football Championship (BFC) and the Paulista Foot- ball Championship (PFC). METHODS This prospective epidemiological study evaluated shoulder injuries in two divisions of two major professional football championships in Brazil—the BFC and PFC —during 2016 to 2019. This…",
+            "…e underestimated the total number of shoulder injuries. Despite these limitations, this was an extensive prospective study lasting four years and included a large sample of athletes and injuries, in which we were able to collect unpublished data from two major professional football ch…",
+            "….1186/s40634- 022-00560-1. [11] Margato GF, Andrade Júnior EF, Lara PHS, Pagura JR, Cohen M, Arliani GG. Prospective study of muscle injuries in three consecutive seasons of the Brazilian football championship. Rev Bras Ortop (Sao Paulo) 2020;55:687 –94. https:// doi.org/10.1055/s-004…"
+          ],
+          "sourceLocation": "S989-e3def84369db.pdf p. 2, extracted evidence packet",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S989-e3def84369db.pdf p. 2, extracted evidence packet",
+            "S989-e3def84369db.pdf p. 5, extracted evidence packet",
+            "S989-e3def84369db.pdf p. 6, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…y played sport that poses potential risks for musculoskeletal injuries. Upper-limb injuries have a lower incidence rate than lower-limb injuries but can still cause absenteeism and performance impairment in football players. This descriptive epidemiological study aimed to evaluate and…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "Original Research Shoulder injuries in Brazilian professional football players: epidemiological analysis of 3828 games Ewerton Borges de Souza Lima a, Paulo Santoro Belangero a, Paulo Henrique Schmidt Lara a, Leandro Masini Ribeiro a, Eduardo Ant ^onio de Figu"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.791+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:20:29.572487+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T18:50:27.726Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:20:29.572487+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:20:29.572487+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S991",
+      "screeningRecordId": "333b5ffc-1e94-4bde-b089-454383daf40d",
+      "title": "Injury Incidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "339adbd8d3ad2809e4e5586cf4c20a2ab5579c217455aa05c8a381d3dad2288b",
+      "storageBucket": "papers",
+      "storageObjectPath": "ceb14ffc-0b7f-4ca1-98d7-dbb48b524e84/1781618240762-S991-injury-incidence-severity-and-type-across-the-menstrual-cycle-in-female-footballers-a-prospective-three-season-cohort-st.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "used to estimate in- jury incidence rate (IIR) per 1000 person-days",
+        "aiSourceLocation": "S991.pdf p. 3, Methods",
+        "aiConfidence": 0.98,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "Injury Incidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Barlow Ally",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S991-339adbd8d3ad.pdf",
+          "studyId": "S991",
+          "decision": "include",
+          "recordId": "333b5ffc-1e94-4bde-b089-454383daf40d",
+          "pdfSha256": "339adbd8d3ad2809e4e5586cf4c20a2ab5579c217455aa05c8a381d3dad2288b",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.98,
+          "dataSource": "…n about why and how to track and monitor cycles. Players were then tracked longitudinally by a nominated physiotherapist alongside the female health lead for the club, and any concerns or abnormal- ities were discussed with the relevant practitioner(s) from the multidisciplinary team.…",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "used to estimate in- jury incidence rate (IIR) per 1000 person-days",
+          "evidenceQuotes": [
+            "used to estimate in- jury incidence rate (IIR) per 1000 person-days",
+            "Injury Incidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study ALLY BARLOW1, JOANNA M. BLODGETT2, SEAN WILLIAMS1, CHARLES R. PEDLAR2,3,4,a n d GEORGIE BRUINVELS2,3,4 1Centre for Health, and Injury & Illnes…",
+            "…cidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study ALLY BARLOW1, JOANNA M. BLODGETT2, SEAN WILLIAMS1, CHARLES R. PEDLAR2,3,4,a n d GEORGIE BRUINVELS2,3,4 1Centre for Health, and Injury & Illness Prevention in Sport, De…"
+          ],
+          "sourceLocation": "S991.pdf p. 3, Methods",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S991.pdf p. 3, Methods",
+            "S991-339adbd8d3ad.pdf p. 1, extracted evidence packet",
+            "S991-339adbd8d3ad.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…l individual players. This was calcu- lated for each menstrual cycle phase and used to estimate in- jury incidence rate (IIR) per 1000 person-days for each phases (29). Injury incidence rate ratios (IIRR) were calculated by comparing IIR between phases, using phase 1 as the reference…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…jury incidence, severity, and type in elite female professional footballers over three seasons. Methods: Time-loss injuries and menstrual cycle data were prospectively recorded for 26 elite female football players across three seasons. The menstrual cycle was categorized into four pha…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.834+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T12:15:12.91011+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-05T16:53:57.297Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T12:15:12.91011+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T12:15:12.91011+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-22T12:15:12.91011+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "5e45d1f1-7615-41cf-a198-5f47297ba707",
+      "createdFileId": "bb18135e-56de-46f7-a65c-dcbc60c8c447",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "used to estimate in- jury incidence rate (IIR) per 1000 person-days",
+        "aiSourceLocation": "S991.pdf p. 3, Methods",
+        "aiConfidence": 0.98,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "Injury Incidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Barlow Ally",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S991-339adbd8d3ad.pdf",
+          "studyId": "S991",
+          "decision": "include",
+          "recordId": "333b5ffc-1e94-4bde-b089-454383daf40d",
+          "pdfSha256": "339adbd8d3ad2809e4e5586cf4c20a2ab5579c217455aa05c8a381d3dad2288b",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.98,
+          "dataSource": "…n about why and how to track and monitor cycles. Players were then tracked longitudinally by a nominated physiotherapist alongside the female health lead for the club, and any concerns or abnormal- ities were discussed with the relevant practitioner(s) from the multidisciplinary team.…",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "used to estimate in- jury incidence rate (IIR) per 1000 person-days",
+          "evidenceQuotes": [
+            "used to estimate in- jury incidence rate (IIR) per 1000 person-days",
+            "Injury Incidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study ALLY BARLOW1, JOANNA M. BLODGETT2, SEAN WILLIAMS1, CHARLES R. PEDLAR2,3,4,a n d GEORGIE BRUINVELS2,3,4 1Centre for Health, and Injury & Illnes…",
+            "…cidence, Severity, and Type Across the Menstrual Cycle in Female Footballers: A Prospective Three Season Cohort Study ALLY BARLOW1, JOANNA M. BLODGETT2, SEAN WILLIAMS1, CHARLES R. PEDLAR2,3,4,a n d GEORGIE BRUINVELS2,3,4 1Centre for Health, and Injury & Illness Prevention in Sport, De…"
+          ],
+          "sourceLocation": "S991.pdf p. 3, Methods",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S991.pdf p. 3, Methods",
+            "S991-339adbd8d3ad.pdf p. 1, extracted evidence packet",
+            "S991-339adbd8d3ad.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…l individual players. This was calcu- lated for each menstrual cycle phase and used to estimate in- jury incidence rate (IIR) per 1000 person-days for each phases (29). Injury incidence rate ratios (IIRR) were calculated by comparing IIR between phases, using phase 1 as the reference…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…jury incidence, severity, and type in elite female professional footballers over three seasons. Methods: Time-loss injuries and menstrual cycle data were prospectively recorded for 26 elite female football players across three seasons. The menstrual cycle was categorized into four pha…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:17.834+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T12:15:12.91011+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-05T16:53:57.297Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T12:15:12.91011+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T12:15:12.91011+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S1009",
+      "screeningRecordId": "b6bcc872-ce91-4911-ba48-ba38c0543f3c",
+      "title": "Use of the concussion check protocol for concussion assessment in a female soccer team over two consecutive seasons in New Zealand.",
+      "aiModel": "codex-local-full-text-rereview-review-route-fix-2026-06-22",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v5-2026-06-22",
+      "fileSha256": "76e9da6a388562cbb023f4aec0fa8ab4e56a6ade363d8cff719fb43731a4788b",
+      "storageBucket": "papers",
+      "storageObjectPath": "d6d10a25-b85f-4b78-889b-3b67e72ff8e3/1781617190984-S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+        "aiSourceLocation": "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+        "aiConfidence": 0.98,
+        "aiModel": "codex-local-full-text-rereview-review-route-fix-2026-06-22",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v5-2026-06-22",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "model": "codex-local-full-text-rereview-review-route-fix-2026-06-22",
+          "title": "Use of the concussion check protocol for concussion assessment in a female soccer team over two consecutive seasons in New Zealand.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "King Doug",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1009-76e9da6a3885.pdf",
+          "studyId": "S1009",
+          "decision": "include",
+          "recordId": "b6bcc872-ce91-4911-ba48-ba38c0543f3c",
+          "pdfSha256": "76e9da6a388562cbb023f4aec0fa8ab4e56a6ade363d8cff719fb43731a4788b",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked. Applied as targeted live AI-field correction after the 2026-06-22 review-route false-positive sweep. Previous live ai_model was codex-in-chat-full-text-screening-skill and previous live ai_criteria_version was fifa-gbi-full-text-v1-2026-04-24.",
+          "confidence": 0.98,
+          "dataSource": "…ncussion: anonymous survey of a collegiate cohort, Neurol. Clin. Pract. 3 (4) (2013) 279 – 287 . [16] J. Register-Mihalik, K. Guskeiwicz, T. Valoch McLeod, L. Linnan, F. Mueller, S. Marshall, Knowledge, attitude, and concussion-reporting behaviors among high school athletes: a prelimi…",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+          "evidenceQuotes": [
+            "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+            "…line medical care by using a Concussion Check Protocol (CCP) for non-medically-trained people. Method: A prospective observational cohort study was undertaken on a single amateur female club-based soccer team over two consecutive years in New Zealand utilising a non-medically trained…",
+            "…a Concussion Check Protocol (CCP) for non-medically-trained people. Method: A prospective observational cohort study was undertaken on a single amateur female club-based soccer team over two consecutive years in New Zealand utilising a non-medically trained support person termed a Sa…"
+          ],
+          "sourceLocation": "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v5-2026-06-22",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+            "S1009-76e9da6a3885.pdf p. 1, extracted evidence packet",
+            "S1009-76e9da6a3885.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "previousLiveAiModel": "codex-in-chat-full-text-screening-skill",
+          "reportedDenominator": "…eline. Results: The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs, with mean missed-match duration of 31 (95% CI: 27.9 to 34.1) days. Twelve players over the study had a significantly slower post-injury K – D (49.9 [44.3 to 64.…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "previousLiveDecision": "include",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "Journal of the Neurological Sciences 460 (2024) 123011 Available online 13 April 2024 0022-510X/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/). Use of the c",
+          "denominatorEvidenceQuote": "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+          "denominatorSourceLocation": "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+          "previousLiveCriteriaVersion": "fifa-gbi-full-text-v1-2026-04-24"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-22T11:00:47.162+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-21T16:28:22.408608+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T00:39:07.668Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T16:28:22.408608+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T16:28:22.408608+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-21T16:28:22.408608+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "3940773f-5ab6-4805-8c79-18722dd9f28c",
+      "createdFileId": "7664e983-aed6-4114-b6ab-15ce7bf9a851",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+        "aiSourceLocation": "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+        "aiConfidence": 0.98,
+        "aiModel": "codex-local-full-text-rereview-review-route-fix-2026-06-22",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v5-2026-06-22",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "model": "codex-local-full-text-rereview-review-route-fix-2026-06-22",
+          "title": "Use of the concussion check protocol for concussion assessment in a female soccer team over two consecutive seasons in New Zealand.",
+          "reason": "Eligible competitive football/futsal primary study with prospective observational study, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "King Doug",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1009-76e9da6a3885.pdf",
+          "studyId": "S1009",
+          "decision": "include",
+          "recordId": "b6bcc872-ce91-4911-ba48-ba38c0543f3c",
+          "pdfSha256": "76e9da6a388562cbb023f4aec0fa8ab4e56a6ade363d8cff719fb43731a4788b",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked. Applied as targeted live AI-field correction after the 2026-06-22 review-route false-positive sweep. Previous live ai_model was codex-in-chat-full-text-screening-skill and previous live ai_criteria_version was fifa-gbi-full-text-v1-2026-04-24.",
+          "confidence": 0.98,
+          "dataSource": "…ncussion: anonymous survey of a collegiate cohort, Neurol. Clin. Pract. 3 (4) (2013) 279 – 287 . [16] J. Register-Mihalik, K. Guskeiwicz, T. Valoch McLeod, L. Linnan, F. Mueller, S. Marshall, Knowledge, attitude, and concussion-reporting behaviors among high school athletes: a prelimi…",
+          "covidenceId": null,
+          "studyDesign": "Prospective observational study",
+          "evidenceQuote": "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+          "evidenceQuotes": [
+            "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+            "…line medical care by using a Concussion Check Protocol (CCP) for non-medically-trained people. Method: A prospective observational cohort study was undertaken on a single amateur female club-based soccer team over two consecutive years in New Zealand utilising a non-medically trained…",
+            "…a Concussion Check Protocol (CCP) for non-medically-trained people. Method: A prospective observational cohort study was undertaken on a single amateur female club-based soccer team over two consecutive years in New Zealand utilising a non-medically trained support person termed a Sa…"
+          ],
+          "sourceLocation": "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v5-2026-06-22",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+            "S1009-76e9da6a3885.pdf p. 1, extracted evidence packet",
+            "S1009-76e9da6a3885.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "previousLiveAiModel": "codex-in-chat-full-text-screening-skill",
+          "reportedDenominator": "…eline. Results: The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs, with mean missed-match duration of 31 (95% CI: 27.9 to 34.1) days. Twelve players over the study had a significantly slower post-injury K – D (49.9 [44.3 to 64.…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "previousLiveDecision": "include",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "Journal of the Neurological Sciences 460 (2024) 123011 Available online 13 April 2024 0022-510X/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/). Use of the c",
+          "denominatorEvidenceQuote": "The study overall incidence of match-related concussions was 20.8 (95% CI: 11.8 to 36.6) per 1000 match-hrs",
+          "denominatorSourceLocation": "S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf p. 1, Abstract",
+          "previousLiveCriteriaVersion": "fifa-gbi-full-text-v1-2026-04-24"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-22T11:00:47.162+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-21T16:28:22.408608+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T00:39:07.668Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T16:28:22.408608+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T16:28:22.408608+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S1014",
+      "screeningRecordId": "8184970e-a13c-443a-9634-19d438193fb0",
+      "title": "Efficacy of a new injury prevention programme (FUNBALL) in young male football (soccer) players: a cluster-randomised controlled trial.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "85f0018f9315be9143777a4981e70b7e7642092c41f64ed59cecc592edfd2503",
+      "storageBucket": "papers",
+      "storageObjectPath": "78581925-ab2b-4fd4-b6a7-b444fa42d5b1/1781618443013-S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a direct time denominator.",
+        "aiEvidenceQuote": "the primary outcome measure was the overall number of football- related injuries",
+        "aiSourceLocation": "S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf p. 1, Abstract",
+        "aiConfidence": 0.97,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "Efficacy of a new injury prevention programme (FUNBALL) in young male football (soccer) players: a cluster-randomised controlled trial.",
+          "reason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a direct time denominator.",
+          "authors": "Obertinca Rilind",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1014-85f0018f9315.pdf",
+          "studyId": "S1014",
+          "decision": "include",
+          "recordId": "8184970e-a13c-443a-9634-19d438193fb0",
+          "pdfSha256": "85f0018f9315be9143777a4981e70b7e7642092c41f64ed59cecc592edfd2503",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.97,
+          "dataSource": "…tory of injuries and current health conditions. Throughout the competitive season, the coaches or team’s physiotherapists reported to the research assistants team exposure hours, programme execution (compli- ance) and the new injuries that occurred on a weekly basis. If reporting was…",
+          "covidenceId": null,
+          "studyDesign": "Randomized controlled study",
+          "evidenceQuote": "the primary outcome measure was the overall number of football- related injuries",
+          "evidenceQuotes": [
+            "the primary outcome measure was the overall number of football- related injuries",
+            "…107388 Efficacy of a new injury prevention programme in male young football (soccer) players: a cluster- randomised controlled trial Rilind Obërtinca ,1,2 Rina Meha,1 Ilir Hoxha,3,4 Bujar Shabani,5,6 Tim Meyer ,1 Karen aus der Fünten1 Original research To cite: Obërtinca R, Meha R, Ho…",
+            "…sistants team exposure hours, programme execution (compli- ance) and the new injuries that occurred on a weekly basis. If reporting was delayed for more than 1 week, an automatic message was sent to them. The original plan was to record the injuries and individual exposure hours and r…"
+          ],
+          "sourceLocation": "S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf p. 1, Abstract",
+            "S1014-85f0018f9315.pdf p. 1, extracted evidence packet",
+            "S1014-85f0018f9315.pdf p. 3, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…ek. There was a significantly lower incidence in the INT group regarding the overall number of injuries (incidence rate ratio (IRR) 0.69, 95% CI 0.55 to 0.87), the number of thigh injuries (IRR 0.62, 95% CI 0.39 to 0.98), of moderate (time loss between 7 and 28 days) (IRR 0.65, 95% CI…",
+          "dataCollectionTiming": "Timing classified from the paper methods and decisive design evidence.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…) 0.69, 95% CI 0.55 to 0.87), the number of thigh injuries (IRR 0.62, 95% CI 0.39 to 0.98), of moderate (time loss between 7 and 28 days) (IRR 0.65, 95% CI 0.44 to 0.97) and of severe injuries (time loss >28 days) (IRR 0.51, 95% CI 0.28 to 0.91). Conclusion T he ’FUNBALL’ programme re…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.156+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:59:41.440774+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T05:57:17.058Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:59:41.440774+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:59:41.440774+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-22T13:59:41.440774+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "85ddb9df-2911-4fa4-99e6-f0637b1598b9",
+      "createdFileId": "02e85209-d10f-494c-82da-54e817b4cacc",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a direct time denominator.",
+        "aiEvidenceQuote": "the primary outcome measure was the overall number of football- related injuries",
+        "aiSourceLocation": "S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf p. 1, Abstract",
+        "aiConfidence": 0.97,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "Efficacy of a new injury prevention programme (FUNBALL) in young male football (soccer) players: a cluster-randomised controlled trial.",
+          "reason": "Eligible competitive football/futsal primary study with randomized controlled study, mappable health-outcome ascertainment, and a direct time denominator.",
+          "authors": "Obertinca Rilind",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1014-85f0018f9315.pdf",
+          "studyId": "S1014",
+          "decision": "include",
+          "recordId": "8184970e-a13c-443a-9634-19d438193fb0",
+          "pdfSha256": "85f0018f9315be9143777a4981e70b7e7642092c41f64ed59cecc592edfd2503",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.97,
+          "dataSource": "…tory of injuries and current health conditions. Throughout the competitive season, the coaches or team’s physiotherapists reported to the research assistants team exposure hours, programme execution (compli- ance) and the new injuries that occurred on a weekly basis. If reporting was…",
+          "covidenceId": null,
+          "studyDesign": "Randomized controlled study",
+          "evidenceQuote": "the primary outcome measure was the overall number of football- related injuries",
+          "evidenceQuotes": [
+            "the primary outcome measure was the overall number of football- related injuries",
+            "…107388 Efficacy of a new injury prevention programme in male young football (soccer) players: a cluster- randomised controlled trial Rilind Obërtinca ,1,2 Rina Meha,1 Ilir Hoxha,3,4 Bujar Shabani,5,6 Tim Meyer ,1 Karen aus der Fünten1 Original research To cite: Obërtinca R, Meha R, Ho…",
+            "…sistants team exposure hours, programme execution (compli- ance) and the new injuries that occurred on a weekly basis. If reporting was delayed for more than 1 week, an automatic message was sent to them. The original plan was to record the injuries and individual exposure hours and r…"
+          ],
+          "sourceLocation": "S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf p. 1, Abstract",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf p. 1, Abstract",
+            "S1014-85f0018f9315.pdf p. 1, extracted evidence packet",
+            "S1014-85f0018f9315.pdf p. 3, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…ek. There was a significantly lower incidence in the INT group regarding the overall number of injuries (incidence rate ratio (IRR) 0.69, 95% CI 0.55 to 0.87), the number of thigh injuries (IRR 0.62, 95% CI 0.39 to 0.98), of moderate (time loss between 7 and 28 days) (IRR 0.65, 95% CI…",
+          "dataCollectionTiming": "Timing classified from the paper methods and decisive design evidence.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…) 0.69, 95% CI 0.55 to 0.87), the number of thigh injuries (IRR 0.62, 95% CI 0.39 to 0.98), of moderate (time loss between 7 and 28 days) (IRR 0.65, 95% CI 0.44 to 0.97) and of severe injuries (time loss >28 days) (IRR 0.51, 95% CI 0.28 to 0.91). Conclusion T he ’FUNBALL’ programme re…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.156+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:59:41.440774+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T05:57:17.058Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:59:41.440774+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:59:41.440774+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S1019",
+      "screeningRecordId": "2d2d6067-7977-4012-aee7-8e33ab8eb774",
+      "title": "Injury Profile in Youth Female Athletes: A Systematic Review and Meta-Analysis.",
+      "aiModel": "GPT-5 Codex inline review, medium reasoning",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "fileSha256": "4a24ee92f08b0367c43bb610c5efafaee62f6614aa4f5f309cb137d8e2a84cb7",
+      "storageBucket": "papers",
+      "storageObjectPath": "9d301505-c78f-4a13-91d4-49952d316604/1781617107215-S1019-injury-profile-in-youth-female-athletes-a-systematic-review-and-meta-analysis.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Relevant systematic review/meta-analysis for reference checking: it synthesizes youth female athlete injury incidence, prevalence, exposure, days lost, and burden data, with soccer-specific pooled findings noted.",
+        "aiEvidenceQuote": "Studies were considered if they reported time-loss injury incidence or prevalence in youth female (≤ 19 years old) athletes.",
+        "aiSourceLocation": "PDF p. 1, Abstract",
+        "aiConfidence": 0.9,
+        "aiModel": "GPT-5 Codex inline review, medium reasoning",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "aiRawResponse": {
+          "tags": [
+            "systematic_review",
+            "reference_checking"
+          ],
+          "year": "2024",
+          "model": "GPT-5 Codex inline review, medium reasoning",
+          "title": "Injury Profile in Youth Female Athletes: A Systematic Review and Meta-Analysis.",
+          "reason": "Relevant systematic review/meta-analysis for reference checking: it synthesizes youth female athlete injury incidence, prevalence, exposure, days lost, and burden data, with soccer-specific pooled findings noted.",
+          "authors": "Beech Jake",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/tmp/full-text-ai-conflicts-2026-06-23/S1019_Beech_Jake_2024.pdf",
+          "studyId": "S1019",
+          "decision": "include",
+          "recordId": "2d2d6067-7977-4012-aee7-8e33ab8eb774",
+          "pdfSha256": "4a24ee92f08b0367c43bb610c5efafaee62f6614aa4f5f309cb137d8e2a84cb7",
+          "auditNotes": "Retained as review-route evidence, not as a primary extraction study.",
+          "confidence": 0.9,
+          "dataSource": "Systematic review of primary injury surveillance studies.",
+          "studyDesign": "Systematic review and meta-analysis",
+          "evidenceQuotes": [
+            "Studies were considered if they reported time-loss injury incidence or prevalence in youth female (≤ 19 years old) athletes.",
+            "pooled days lost data could only be estimated for soccer."
+          ],
+          "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "PDF p. 1, Abstract"
+          ],
+          "criteriaTriggered": [
+            "I-REV-01"
+          ],
+          "denominatorStatus": "not_applicable_review",
+          "competitionContext": "Youth competitive sport studies, including soccer.",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football subgroup/reference value",
+          "outcomeEligibility": "Time-loss injury incidence, prevalence, burden, exposure, days lost.",
+          "reportedDenominator": null,
+          "dataCollectionTiming": "Not applicable; retained review route.",
+          "populationEligibility": "Youth female athletes, with soccer-specific estimates discussed.",
+          "injuryIllnessDefinition": "Time-loss injury outcomes extracted from included studies.",
+          "denominatorEvidenceQuote": "Studies were considered if they reported time-loss injury incidence or prevalence in youth female (≤ 19 years old) athletes.",
+          "denominatorSourceLocation": "PDF p. 1, Abstract"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-23T15:41:15.536+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-21T15:28:37.177865+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T11:26:32.222Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T15:28:37.177865+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T15:28:37.177865+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-21T15:28:37.177865+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "8de93888-b261-43e2-95e6-b19139337672",
+      "createdFileId": "eaca6498-8c90-46ab-9ee5-d383364aafd4",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Relevant systematic review/meta-analysis for reference checking: it synthesizes youth female athlete injury incidence, prevalence, exposure, days lost, and burden data, with soccer-specific pooled findings noted.",
+        "aiEvidenceQuote": "Studies were considered if they reported time-loss injury incidence or prevalence in youth female (≤ 19 years old) athletes.",
+        "aiSourceLocation": "PDF p. 1, Abstract",
+        "aiConfidence": 0.9,
+        "aiModel": "GPT-5 Codex inline review, medium reasoning",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "aiRawResponse": {
+          "tags": [
+            "systematic_review",
+            "reference_checking"
+          ],
+          "year": "2024",
+          "model": "GPT-5 Codex inline review, medium reasoning",
+          "title": "Injury Profile in Youth Female Athletes: A Systematic Review and Meta-Analysis.",
+          "reason": "Relevant systematic review/meta-analysis for reference checking: it synthesizes youth female athlete injury incidence, prevalence, exposure, days lost, and burden data, with soccer-specific pooled findings noted.",
+          "authors": "Beech Jake",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/tmp/full-text-ai-conflicts-2026-06-23/S1019_Beech_Jake_2024.pdf",
+          "studyId": "S1019",
+          "decision": "include",
+          "recordId": "2d2d6067-7977-4012-aee7-8e33ab8eb774",
+          "pdfSha256": "4a24ee92f08b0367c43bb610c5efafaee62f6614aa4f5f309cb137d8e2a84cb7",
+          "auditNotes": "Retained as review-route evidence, not as a primary extraction study.",
+          "confidence": 0.9,
+          "dataSource": "Systematic review of primary injury surveillance studies.",
+          "studyDesign": "Systematic review and meta-analysis",
+          "evidenceQuotes": [
+            "Studies were considered if they reported time-loss injury incidence or prevalence in youth female (≤ 19 years old) athletes.",
+            "pooled days lost data could only be estimated for soccer."
+          ],
+          "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "PDF p. 1, Abstract"
+          ],
+          "criteriaTriggered": [
+            "I-REV-01"
+          ],
+          "denominatorStatus": "not_applicable_review",
+          "competitionContext": "Youth competitive sport studies, including soccer.",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football subgroup/reference value",
+          "outcomeEligibility": "Time-loss injury incidence, prevalence, burden, exposure, days lost.",
+          "reportedDenominator": null,
+          "dataCollectionTiming": "Not applicable; retained review route.",
+          "populationEligibility": "Youth female athletes, with soccer-specific estimates discussed.",
+          "injuryIllnessDefinition": "Time-loss injury outcomes extracted from included studies.",
+          "denominatorEvidenceQuote": "Studies were considered if they reported time-loss injury incidence or prevalence in youth female (≤ 19 years old) athletes.",
+          "denominatorSourceLocation": "PDF p. 1, Abstract"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-23T15:41:15.536+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-21T15:28:37.177865+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-13T11:26:32.222Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T15:28:37.177865+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T15:28:37.177865+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S1041",
+      "screeningRecordId": "72356827-e8a4-4c97-94db-24f5dd5a37e8",
+      "title": "Groin injuries in women's premier league football in Norway: A two-season prospective cohort study describing clinical and imaging characteristics.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "19c26258c1f2c261cc958dab3b841066ad626b01f6d3094bed0c7c1a73d294e8",
+      "storageBucket": "papers",
+      "storageObjectPath": "607ac267-0dfe-41a0-80c9-1ed13e1354db/1780952105945-S1041-groin-injuries-in-women-s-premier-league-football-in-norway-a-two-season-prospective-cohort-study-describing-clinical-an.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective cohort, mappable health-outcome ascertainment, and a direct time denominator.",
+        "aiEvidenceQuote": "Overall incidence was reported as the number of groin injuries that occurred per 1000 h of football exposure.",
+        "aiSourceLocation": "S1041.pdf p. 7, Methods/Statistics",
+        "aiConfidence": 0.95,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "Groin injuries in women's premier league football in Norway: A two-season prospective cohort study describing clinical and imaging characteristics.",
+          "reason": "Eligible competitive football/futsal primary study with prospective cohort, mappable health-outcome ascertainment, and a direct time denominator.",
+          "authors": "Thorarinsdottir Solveig",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1041-19c26258c1f2.pdf",
+          "studyId": "S1041",
+          "decision": "include",
+          "recordId": "72356827-e8a4-4c97-94db-24f5dd5a37e8",
+          "pdfSha256": "19c26258c1f2c261cc958dab3b841066ad626b01f6d3094bed0c7c1a73d294e8",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.95,
+          "dataSource": "University of Southern Denmark Groin injuries in women's premier league football in Norway A two-season prospective cohort study describing clinical and imaging characteristics Thorarinsdottir, Solveig; Amundsen, Roar; Larmo, Arne; Pedersen, Roar; Andersen, Th",
+          "covidenceId": null,
+          "studyDesign": "Prospective cohort",
+          "evidenceQuote": "Overall incidence was reported as the number of groin injuries that occurred per 1000 h of football exposure.",
+          "evidenceQuotes": [
+            "Overall incidence was reported as the number of groin injuries that occurred per 1000 h of football exposure.",
+            "University of Southern Denmark Groin injuries in women's premier league football in Norway A two-season prospective cohort study describing clinical and imaging characteristics Thorarinsdottir, Solveig; Amundsen, Roar; Larmo, Arne; Pedersen, Roar; Andersen, Thor Einar; Bahr, Roald; M…",
+            "…of Southern Denmark Groin injuries in women's premier league football in Norway A two-season prospective cohort study describing clinical and imaging characteristics Thorarinsdottir, Solveig; Amundsen, Roar; Larmo, Arne; Pedersen, Roar; Andersen, Thor Einar; Bahr, Roald; Møller, Meret…"
+          ],
+          "sourceLocation": "S1041.pdf p. 7, Methods/Statistics",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1041.pdf p. 7, Methods/Statistics",
+            "S1041-19c26258c1f2.pdf p. 1, extracted evidence packet",
+            "S1041-19c26258c1f2.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…95% CI: 3.4% to 4.4%) of players reported a groin injury at any time; of which 78% caused time loss. The incidence rate was 1.6 injuries/1000 h (95% CI: 1.3 to 2.0) and their burden 11 days lost/1000 h. The physical therapists examined 67 of 124 player-reported groin injuries (53%). A…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…ed the player-reported injuries based on the Doha classification system. Injuries with more than 3 days’ time-loss or reported in two consecutive weeks were eligible for magnetic resonance imaging (MRI). Results: On average, 3.9% (95% CI: 3.4% to 4.4%) of players reported a groin inju…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.343+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T19:17:47.134797+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-03T14:31:49.779Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T19:17:47.134797+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T19:17:47.134797+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-22T19:17:47.134797+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "dbfa8741-d29a-413a-924e-f5ae73dfdf71",
+      "createdFileId": "41073b51-b844-4307-8e68-2b92361e9985",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with prospective cohort, mappable health-outcome ascertainment, and a direct time denominator.",
+        "aiEvidenceQuote": "Overall incidence was reported as the number of groin injuries that occurred per 1000 h of football exposure.",
+        "aiSourceLocation": "S1041.pdf p. 7, Methods/Statistics",
+        "aiConfidence": 0.95,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_full_text",
+            "v4_rereview",
+            "prior_evidence_revalidated"
+          ],
+          "year": "2024",
+          "title": "Groin injuries in women's premier league football in Norway: A two-season prospective cohort study describing clinical and imaging characteristics.",
+          "reason": "Eligible competitive football/futsal primary study with prospective cohort, mappable health-outcome ascertainment, and a direct time denominator.",
+          "authors": "Thorarinsdottir Solveig",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1041-19c26258c1f2.pdf",
+          "studyId": "S1041",
+          "decision": "include",
+          "recordId": "72356827-e8a4-4c97-94db-24f5dd5a37e8",
+          "pdfSha256": "19c26258c1f2c261cc958dab3b841066ad626b01f6d3094bed0c7c1a73d294e8",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.95,
+          "dataSource": "University of Southern Denmark Groin injuries in women's premier league football in Norway A two-season prospective cohort study describing clinical and imaging characteristics Thorarinsdottir, Solveig; Amundsen, Roar; Larmo, Arne; Pedersen, Roar; Andersen, Th",
+          "covidenceId": null,
+          "studyDesign": "Prospective cohort",
+          "evidenceQuote": "Overall incidence was reported as the number of groin injuries that occurred per 1000 h of football exposure.",
+          "evidenceQuotes": [
+            "Overall incidence was reported as the number of groin injuries that occurred per 1000 h of football exposure.",
+            "University of Southern Denmark Groin injuries in women's premier league football in Norway A two-season prospective cohort study describing clinical and imaging characteristics Thorarinsdottir, Solveig; Amundsen, Roar; Larmo, Arne; Pedersen, Roar; Andersen, Thor Einar; Bahr, Roald; M…",
+            "…of Southern Denmark Groin injuries in women's premier league football in Norway A two-season prospective cohort study describing clinical and imaging characteristics Thorarinsdottir, Solveig; Amundsen, Roar; Larmo, Arne; Pedersen, Roar; Andersen, Thor Einar; Bahr, Roald; Møller, Meret…"
+          ],
+          "sourceLocation": "S1041.pdf p. 7, Methods/Statistics",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1041.pdf p. 7, Methods/Statistics",
+            "S1041-19c26258c1f2.pdf p. 1, extracted evidence packet",
+            "S1041-19c26258c1f2.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "direct_time",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "…95% CI: 3.4% to 4.4%) of players reported a groin injury at any time; of which 78% caused time loss. The incidence rate was 1.6 injuries/1000 h (95% CI: 1.3 to 2.0) and their burden 11 days lost/1000 h. The physical therapists examined 67 of 124 player-reported groin injuries (53%). A…",
+          "dataCollectionTiming": "Health outcomes were recorded during forward follow-up.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…ed the player-reported injuries based on the Doha classification system. Injuries with more than 3 days’ time-loss or reported in two consecutive weeks were eligible for magnetic resonance imaging (MRI). Results: On average, 3.9% (95% CI: 3.4% to 4.4%) of players reported a groin inju…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.343+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T19:17:47.134797+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-03T14:31:49.779Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T19:17:47.134797+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T19:17:47.134797+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S1049",
+      "screeningRecordId": "285afcc4-18ee-4604-8ec0-7cdb3035857a",
+      "title": "Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study.",
+      "aiModel": "codex-in-chat-full-text-screening-skill",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+      "fileSha256": "d9fc4d1a751d59bd359ef6b7d3d4ee5d12d1f3f8ddfd5d822deea78e1afb8f1b",
+      "storageBucket": "papers",
+      "storageObjectPath": "f7a9f673-30c7-41e6-9762-51f66b222fca/1781866753133-S1049-prevalence-and-intensity-of-pain-in-male-and-female-amateur-football-players-a-prospective-cohort-study.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with systematic review/meta-analysis, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiothe…",
+        "aiSourceLocation": "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "review",
+            "football_full_text",
+            "v4_rereview",
+            "decision_reassessed"
+          ],
+          "year": "2024",
+          "title": "Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study.",
+          "reason": "Eligible competitive football/futsal primary study with systematic review/meta-analysis, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Wezenberg Daphne",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1049-d9fc4d1a751d.pdf",
+          "studyId": "S1049",
+          "decision": "include",
+          "recordId": "285afcc4-18ee-4604-8ec0-7cdb3035857a",
+          "pdfSha256": "d9fc4d1a751d59bd359ef6b7d3d4ee5d12d1f3f8ddfd5d822deea78e1afb8f1b",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "…sented in this study are available on reasonable request from the corresponding author. The data are not publicly available due to privacy regulations related to data that can be traced back to an indi- vidual participant. Declaration of interest statement None. D. Wezenberg, H. Lindb…",
+          "covidenceId": null,
+          "studyDesign": "Systematic review/meta-analysis",
+          "evidenceQuote": "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiothe…",
+          "evidenceQuotes": [
+            "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiothe…",
+            "…nal research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiotherapy, Linköp…",
+            "…during training and/or match play in both male and female and youth and adult amateur players. Design: A prospective cohort study involving amateur football players. Methods: Players (n = 502, median age 18 years, range 14– 46) responded to weekly questionnaires during one season, inc…"
+          ],
+          "sourceLocation": "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+            "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+            "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-PUB-01",
+            "I-REV-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences,",
+          "dataCollectionTiming": "Evidence synthesis; primary-study timing not applicable.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…g tissue damage. Further, presence of physical com- plaints was associated with a risk for a more severe time-loss injury later on 6 with serious consequences for the individual and team. Journal of Science and Medicine in Sport 27 (2024) 222– 227 ⁎ Corresponding author. E-mail addres…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.424+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:14:14.658213+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T20:42:34.838Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:14:14.658213+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:14:14.658213+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-22T13:14:14.658213+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "ad6d7ab3-4a09-4867-bf55-a018bb19e1ec",
+      "createdFileId": "383a9b00-393c-44ab-ae7a-16902db397af",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Eligible competitive football/futsal primary study with systematic review/meta-analysis, mappable health-outcome ascertainment, and a published time rate denominator.",
+        "aiEvidenceQuote": "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiothe…",
+        "aiSourceLocation": "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+        "aiConfidence": 0.94,
+        "aiModel": "codex-in-chat-full-text-screening-skill",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+        "aiRawResponse": {
+          "tags": [
+            "review",
+            "football_full_text",
+            "v4_rereview",
+            "decision_reassessed"
+          ],
+          "year": "2024",
+          "title": "Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study.",
+          "reason": "Eligible competitive football/futsal primary study with systematic review/meta-analysis, mappable health-outcome ascertainment, and a published time rate denominator.",
+          "authors": "Wezenberg Daphne",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S1049-d9fc4d1a751d.pdf",
+          "studyId": "S1049",
+          "decision": "include",
+          "recordId": "285afcc4-18ee-4604-8ec0-7cdb3035857a",
+          "pdfSha256": "d9fc4d1a751d59bd359ef6b7d3d4ee5d12d1f3f8ddfd5d822deea78e1afb8f1b",
+          "auditNotes": "Sequential in-chat Codex re-review against fifa-gbi-full-text-v4-2026-06-19. Human votes, resolver decisions, files, and screening state were not changed. All applicable eligibility families were checked.",
+          "confidence": 0.94,
+          "dataSource": "…sented in this study are available on reasonable request from the corresponding author. The data are not publicly available due to privacy regulations related to data that can be traced back to an indi- vidual participant. Declaration of interest statement None. D. Wezenberg, H. Lindb…",
+          "covidenceId": null,
+          "studyDesign": "Systematic review/meta-analysis",
+          "evidenceQuote": "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiothe…",
+          "evidenceQuotes": [
+            "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiothe…",
+            "…nal research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences, Unit of Physiotherapy, Linköp…",
+            "…during training and/or match play in both male and female and youth and adult amateur players. Design: A prospective cohort study involving amateur football players. Methods: Players (n = 502, median age 18 years, range 14– 46) responded to weekly questionnaires during one season, inc…"
+          ],
+          "sourceLocation": "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+          "criteriaVersion": "fifa-gbi-full-text-v4-2026-06-19",
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+            "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet",
+            "S1049-d9fc4d1a751d.pdf p. 1, extracted evidence packet"
+          ],
+          "criteriaTriggered": [
+            "I-PUB-01",
+            "I-REV-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "Competitive league/season or club setting described in the paper",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Injury/illness epidemiology or related health outcome",
+          "reportedDenominator": "Original research Prevalence and intensity of pain in male and female amateur football players: A prospective cohort study Daphne Wezenberg a,b,c,⁎, Hanna Lindblom a,c,S oﬁ Sonesson a,c, Martin Hägglund a,c a Department of Health, Medicine and Caring Sciences,",
+          "dataCollectionTiming": "Evidence synthesis; primary-study timing not applicable.",
+          "populationEligibility": "Football/futsal participants described in the paper",
+          "injuryIllnessDefinition": "…g tissue damage. Further, presence of physical com- plaints was associated with a risk for a more severe time-loss injury later on 6 with serious consequences for the individual and team. Journal of Science and Medicine in Sport 27 (2024) 222– 227 ⁎ Corresponding author. E-mail addres…"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-19T11:52:06.424+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-22T13:14:14.658213+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-14T20:42:34.838Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:14:14.658213+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-22T13:14:14.658213+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    },
+    {
+      "studyId": "S1060",
+      "screeningRecordId": "5c50a5f8-996c-4a5a-be1e-8818ee0ab2b5",
+      "title": "ACTN3 XX Genotype Negatively Affects Running Performance and Increases Muscle Injury Incidence in LaLiga Football Players.",
+      "aiModel": "gpt-5.5 (medium) via codex-cli",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "fileSha256": "a427d21d575f702ae94700acd14a4050ee51829fef0b5568a89281e435ff5d04",
+      "storageBucket": "papers",
+      "storageObjectPath": "961d75d0-d93f-42bb-8c50-ad24000c60bd/1782231831642-S1060-actn3-xx-genotype-negatively-affects-running-performance-and-increases-muscle-injury-incidence-in-laliga-footb.pdf",
+      "before": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Prospective descriptive study of LaLiga players with team medical-staff injury reporting and published injury incidence rates per 1000 hours by genotype.",
+        "aiEvidenceQuote": "A total of 315 professional football players from 12 teams competing in the first division of football in Spain | All non-contact injuries that occurred during the 2021–2022 season were recorded by the medical staff | Injury incidence... as number of injuries per 1000 h of football exposure, was individually calculated | football exposure times (match and training exposures) reported by the strength and conditioning staff",
+        "aiSourceLocation": "S1060.txt, Methods—Participants, article p. 2 of 14 | S1060.txt, Methods—Injury Data Collection, article p. 4 of 14 | S1060.txt, Methods—Injury Data Collection, article p. 4 of 14 | S1060.txt, Methods—Injury Data Collection, article p. 4 of 14",
+        "aiConfidence": 0.94,
+        "aiModel": "gpt-5.5 (medium) via codex-cli",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_specific",
+            "professional_male",
+            "published_time_rate",
+            "prospective"
+          ],
+          "year": "2024",
+          "model": "gpt-5.5 (medium) via codex-cli",
+          "title": "ACTN3 XX Genotype Negatively Affects Running Performance and Increases Muscle Injury Incidence in LaLiga Football Players.",
+          "reason": "Prospective descriptive study of LaLiga players with team medical-staff injury reporting and published injury incidence rates per 1000 hours by genotype.",
+          "authors": "Juan Del Coso; Gil Rodas; Aitor Soler-Aguinaga; Roberto López-Del Campo; Ricardo Resta; Joaquín González-Rodenas; Jordi Ferrandis; Víctor Moreno-Pérez",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-second-pass-2026-06-23/files/S1060-actn3-xx-genotype-negatively-affects-running-performance-and-increases-muscle-injury-incidence-in-laliga-footb.pdf",
+          "studyId": "S1060",
+          "decision": "include",
+          "recordId": "5c50a5f8-996c-4a5a-be1e-8818ee0ab2b5",
+          "pdfSha256": "a427d21d575f702ae94700acd14a4050ee51829fef0b5568a89281e435ff5d04",
+          "auditNotes": "Text was truncated after references, but decisive methods/results denominator evidence was present before truncation.",
+          "confidence": 0.94,
+          "dataSource": "Team medical staff reported non-contact injuries; strength and conditioning staff reported football exposure times; Mediacoach recorded match performance.",
+          "covidenceId": "S1060",
+          "studyDesign": "Prospective descriptive cohort study.",
+          "evidenceQuotes": [
+            "A total of 315 professional football players from 12 teams competing in the first division of football in Spain",
+            "All non-contact injuries that occurred during the 2021–2022 season were recorded by the medical staff",
+            "Injury incidence... as number of injuries per 1000 h of football exposure, was individually calculated",
+            "football exposure times (match and training exposures) reported by the strength and conditioning staff"
+          ],
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1060.txt, Methods—Participants, article p. 2 of 14",
+            "S1060.txt, Methods—Injury Data Collection, article p. 4 of 14",
+            "S1060.txt, Methods—Injury Data Collection, article p. 4 of 14",
+            "S1060.txt, Methods—Injury Data Collection, article p. 4 of 14"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "LaLiga Santander 2021-2022 official league season.",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Non-contact injury incidence, match/training injury incidence, injury type incidence, and return-to-play days.",
+          "reportedDenominator": "Published injury rates per 1000 h: total 3.4, 4.9, 5.4 injuries/1000 h by genotype; match 18.9, 33.3, 43.8 injuries/1000 h; training 1.5, 1.6, 1.1 injuries/1000 h.",
+          "dataCollectionTiming": "Genetic and baseline data were collected before/during the 2021-2022 season; match performance and non-contact injuries were recorded during that season.",
+          "populationEligibility": "Top-level professional male football players from Spanish LaLiga.",
+          "injuryIllnessDefinition": "Non-contact injuries were diagnosed and classified using the 2020 IOC consensus statement for recording and reporting epidemiological data on injury and illness in sport.",
+          "denominatorEvidenceQuote": "Total injury incidence (injury per 1000 h) 3.4 ± 3.9 4.9 ± 5.9 5.4 ± 4.2",
+          "denominatorSourceLocation": "S1060.txt, Results—Table 2, article p. 8 of 14"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-23T19:00:35.995+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-24T14:52:36.61084+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-03T11:57:41.181Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-24T14:52:36.61084+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-24T14:52:36.61084+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      },
+      "humanDecisions": [
+        {
+          "reason": null,
+          "decision": "include",
+          "decidedAt": "2026-06-24T14:52:36.61084+00:00",
+          "reviewerName": "AbdelRahman Babiker",
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+        }
+      ],
+      "createdPaperId": "91030508-f3c3-44b5-801a-4cef8fef6e5e",
+      "createdFileId": "de173dce-ef77-488b-8159-c82e80295426",
+      "applied": true,
+      "after": {
+        "aiStatus": "completed",
+        "aiSuggestedDecision": "include",
+        "aiReason": "Prospective descriptive study of LaLiga players with team medical-staff injury reporting and published injury incidence rates per 1000 hours by genotype.",
+        "aiEvidenceQuote": "A total of 315 professional football players from 12 teams competing in the first division of football in Spain | All non-contact injuries that occurred during the 2021–2022 season were recorded by the medical staff | Injury incidence... as number of injuries per 1000 h of football exposure, was individually calculated | football exposure times (match and training exposures) reported by the strength and conditioning staff",
+        "aiSourceLocation": "S1060.txt, Methods—Participants, article p. 2 of 14 | S1060.txt, Methods—Injury Data Collection, article p. 4 of 14 | S1060.txt, Methods—Injury Data Collection, article p. 4 of 14 | S1060.txt, Methods—Injury Data Collection, article p. 4 of 14",
+        "aiConfidence": 0.94,
+        "aiModel": "gpt-5.5 (medium) via codex-cli",
+        "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+        "aiRawResponse": {
+          "tags": [
+            "primary_study",
+            "football_specific",
+            "professional_male",
+            "published_time_rate",
+            "prospective"
+          ],
+          "year": "2024",
+          "model": "gpt-5.5 (medium) via codex-cli",
+          "title": "ACTN3 XX Genotype Negatively Affects Running Performance and Increases Muscle Injury Incidence in LaLiga Football Players.",
+          "reason": "Prospective descriptive study of LaLiga players with team medical-staff injury reporting and published injury incidence rates per 1000 hours by genotype.",
+          "authors": "Juan Del Coso; Gil Rodas; Aitor Soler-Aguinaga; Roberto López-Del Campo; Ricardo Resta; Joaquín González-Rodenas; Jordi Ferrandis; Víctor Moreno-Pérez",
+          "pdfPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/awaiting-pdf-second-pass-2026-06-23/files/S1060-actn3-xx-genotype-negatively-affects-running-performance-and-increases-muscle-injury-incidence-in-laliga-footb.pdf",
+          "studyId": "S1060",
+          "decision": "include",
+          "recordId": "5c50a5f8-996c-4a5a-be1e-8818ee0ab2b5",
+          "pdfSha256": "a427d21d575f702ae94700acd14a4050ee51829fef0b5568a89281e435ff5d04",
+          "auditNotes": "Text was truncated after references, but decisive methods/results denominator evidence was present before truncation.",
+          "confidence": 0.94,
+          "dataSource": "Team medical staff reported non-contact injuries; strength and conditioning staff reported football exposure times; Mediacoach recorded match performance.",
+          "covidenceId": "S1060",
+          "studyDesign": "Prospective descriptive cohort study.",
+          "evidenceQuotes": [
+            "A total of 315 professional football players from 12 teams competing in the first division of football in Spain",
+            "All non-contact injuries that occurred during the 2021–2022 season were recorded by the medical staff",
+            "Injury incidence... as number of injuries per 1000 h of football exposure, was individually calculated",
+            "football exposure times (match and training exposures) reported by the strength and conditioning staff"
+          ],
+          "derivationBasis": null,
+          "exclusionReason": null,
+          "sourceLocations": [
+            "S1060.txt, Methods—Participants, article p. 2 of 14",
+            "S1060.txt, Methods—Injury Data Collection, article p. 4 of 14",
+            "S1060.txt, Methods—Injury Data Collection, article p. 4 of 14",
+            "S1060.txt, Methods—Injury Data Collection, article p. 4 of 14"
+          ],
+          "criteriaTriggered": [
+            "I-DES-01",
+            "I-POP-01",
+            "I-SET-01",
+            "I-OUT-01",
+            "I-DEF-01",
+            "I-DEN-01",
+            "I-PUB-01"
+          ],
+          "denominatorStatus": "published_time_rate",
+          "competitionContext": "LaLiga Santander 2021-2022 official league season.",
+          "derivationPossible": false,
+          "footballDiscipline": "Association football",
+          "outcomeEligibility": "Non-contact injury incidence, match/training injury incidence, injury type incidence, and return-to-play days.",
+          "reportedDenominator": "Published injury rates per 1000 h: total 3.4, 4.9, 5.4 injuries/1000 h by genotype; match 18.9, 33.3, 43.8 injuries/1000 h; training 1.5, 1.6, 1.1 injuries/1000 h.",
+          "dataCollectionTiming": "Genetic and baseline data were collected before/during the 2021-2022 season; match performance and non-contact injuries were recorded during that season.",
+          "populationEligibility": "Top-level professional male football players from Spanish LaLiga.",
+          "injuryIllnessDefinition": "Non-contact injuries were diagnosed and classified using the 2020 IOC consensus statement for recording and reporting epidemiological data on injury and illness in sport.",
+          "denominatorEvidenceQuote": "Total injury incidence (injury per 1000 h) 3.4 ± 3.9 4.9 ± 5.9 5.4 ± 4.2",
+          "denominatorSourceLocation": "S1060.txt, Results—Table 2, article p. 8 of 14"
+        },
+        "aiError": null,
+        "aiReviewedAt": "2026-06-23T19:00:35.995+00:00",
+        "manualDecision": null,
+        "manualReason": null,
+        "manualDecidedBy": "00000000-0000-0000-0000-000000000001",
+        "manualDecidedAt": "2026-06-24T14:52:36.61084+00:00",
+        "promotedPaperId": null,
+        "promotedBy": null,
+        "promotedAt": null,
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-03T11:57:41.181Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-24T14:52:36.61084+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-24T14:52:36.61084+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextResolution": "pending"
+      }
+    }
+  ],
+  "skippedBeforeLimit": [
+    {
+      "studyId": "S707",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S712",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S755",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S759",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S789",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S803",
+      "reasons": [
+        "include_vote_count_0",
+        "exclude_vote_count_1"
+      ]
+    },
+    {
+      "studyId": "S817",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S826",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S859",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S877",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S892",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    },
+    {
+      "studyId": "S933",
+      "reasons": [
+        "paper_study_id_exists",
+        "paper_file_hash_exists"
+      ]
+    }
+  ],
+  "protectedScreeningFieldsChanged": false
+}

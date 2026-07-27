@@ -1,0 +1,9 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 018; live reservation before delegated manual extraction",
+  "reservedAt": "2026-07-12T23:00:29.327888+00:00",
+  "profile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+  "preReservationState": { "status": "uploaded", "assignedTo": null },
+  "postReservationState": { "status": "processing", "assignedTo": "00000000-0000-0000-0000-000000000001" },
+  "papers": ["S2287", "S2330", "S2392", "S2470", "S2482"],
+  "selectionRule": "Unassigned second-search records with an attached PDF, two human full-text include votes, and fullTextResolution ready_for_extraction."
+}

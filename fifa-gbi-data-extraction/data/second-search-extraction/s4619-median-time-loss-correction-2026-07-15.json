@@ -1,0 +1,32 @@
+{
+  "scope": "S4619 primary PDF Tables 1-4 median time-loss correction",
+  "papers": [
+    {
+      "studyId": "S4619",
+      "populationLabels": ["Match", "Training"],
+      "fields": {
+        "injuryLocation": {
+          "injuryLocation_head_severityMeanDays": "7 (median)\n0 (median)",
+          "injuryLocation_shoulder_severityMeanDays": "\n70 (median)",
+          "injuryLocation_lumbosacral_severityMeanDays": "\n1 (median)",
+          "injuryLocation_thigh_severityMeanDays": "1 (median)\n2 (median)",
+          "injuryLocation_knee_severityMeanDays": "11 (median)\n1 (median)",
+          "injuryLocation_ankle_severityMeanDays": "\n1 (median)",
+          "injuryLocation_foot_severityMeanDays": "\n0 (median)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_tendon_severityMeanDays": "1 (median)\n1 (median)",
+          "injuryTissueType_muscle_injury_severityMeanDays": "5 (median)\n2 (median)",
+          "injuryTissueType_nervous_severityMeanDays": "7 (median)\n",
+          "injuryTissueType_bone_severityMeanDays": "15 (median)\n0 (median)",
+          "injuryTissueType_cartilage_synovium_bursa_severityMeanDays": "35 (median)\n1.5 (median)",
+          "injuryTissueType_ligament_joint_capsule_severityMeanDays": "11 (median)\n1 (median)",
+          "injuryTissueType_joint_sprain_severityMeanDays": "\n0.5 (median)",
+          "injuryTissueType_tendinopathy_severityMeanDays": "\n0 (median)",
+          "injuryTissueType_superficial_tissues_skin_severityMeanDays": "\n10 (median)",
+          "injuryTissueType_vessels_severityMeanDays": "0.5 (median)\n0 (median)"
+        }
+      }
+    }
+  ]
+}

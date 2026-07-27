@@ -1,0 +1,202 @@
+{
+  "artifactType": "Backlog 2 Batch 029 staged manual extraction input",
+  "scope": "Fixed membership S1247, S1260, S1384, S1899, S1903 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "fixedBatchMembership": ["S1247", "S1260", "S1384", "S1899", "S1903"],
+  "preApply": {
+    "assignmentProfile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "statuses": {
+      "S1247": "mental_health",
+      "S1260": "mental_health",
+      "S1384": "mental_health",
+      "S1899": "mental_health",
+      "S1903": "mental_health"
+    },
+    "existingExtractionFields": 0,
+    "existingPopulationGroups": 0,
+    "protectedScreening": {
+      "S1247": "two full-text include votes; ready_for_extraction",
+      "S1260": "two full-text include votes; ready_for_extraction",
+      "S1384": "two full-text include votes; ready_for_extraction; resolver state retained",
+      "S1899": "two full-text include votes; ready_for_extraction",
+      "S1903": "two full-text include votes; ready_for_extraction; resolver state retained"
+    }
+  },
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "Each live primary PDF was inspected once. The local SHA-256 matched both papers.primary_file_sha256 and paper_files.file_sha256 for S1247, S1260, S1384 and S1903.",
+      "S1899's previously cached PDF did not match the live attachment and was not used. The actual live PDF was downloaded once from papers storage, SHA-256 matched papers.primary_file_sha256 and paper_files.file_sha256, and that file was inspected.",
+      "Population layouts were selected before staging: Total / LEA / MEA / OEA (S1247); Baseline / 12-month follow-up (S1260); Second division total / Second division female / Second division male (S1384); no extraction populations for S1899 or S1903.",
+      "Tabs 1-4 were staged for every schema-compatible player cohort. All tables and usable figures were swept once for the compatible psychiatric/psychological outcome fields; injury fields were not populated from historical or association-only injury information.",
+      "S1247 and S1260 report overlapping mental-health symptoms, so no artificial all-illness total was created. Their direct psychiatric/metabolic structured rows preserve the compatible condition-specific counts and percentages.",
+      "S1899 is a referee cohort, so it is correctly routed to referee rather than player extraction. S1903 is an academy screening-tool development and psychometric-validation study with no reportable disorder prevalence or injury/illness surveillance payload, so it remains mental_health.",
+      "All staged field IDs were validated against the live extraction schema. No exposure, injury count, or population value was derived from an incompatible denominator. S1247's two n≈11 psychiatric counts are transparent nearest-whole conversions from 44% of the directly reported 25-player denominator."
+    ]
+  },
+  "sourceCoverage": {
+    "S1247": "Primary PDF pp. 1-9: abstract, methods/definitions, Tables 1-5, Figures 1-3, results, discussion, limitations and conclusion. No reportable injury surveillance outcome; Figure 3 supplied direct mental-health percentages.",
+    "S1260": "Primary PDF pp. 1-8: abstract, methods/validated questionnaire definitions, Tables 1-4, results, discussion, limitations and conclusion. The online supplement was referenced but not attached; it was not required for the reported Table 2 values.",
+    "S1384": "Primary PDF pp. 1-14: abstract, participant/design methods, Tables 1-4, results, discussion, limitations and conclusion. MINI diagnostic outcomes are reported only for the second-division comparison cohort.",
+    "S1899": "Live primary PDF pp. 199-214: abstract, methods, Tables 1-4, results, discussion, limitations and conclusion. It exclusively studies Turkish amateur football referees.",
+    "S1903": "Primary PDF pp. 33-45: abstract, three development/validation phases, participant section, psychometric results, discussion, limitations and Appendix A. It reports tool validity/reliability, not extractable disorder prevalence."
+  },
+  "classifications": [
+    {
+      "studyId": "S1899",
+      "status": "referee",
+      "flagReason": "Referee cohort; not an eligible current-player extraction record",
+      "primaryFileSha256": "256045133bdf72590fdb85aaf1ac738e1fd548a44e39535d1b9bca59189eea81",
+      "populationLabels": []
+    },
+    {
+      "studyId": "S1903",
+      "status": "mental_health",
+      "flagReason": "Mental well-being screening-tool development and psychometric validation; no reportable disorder-prevalence or injury/illness surveillance payload",
+      "primaryFileSha256": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c",
+      "populationLabels": []
+    }
+  ],
+  "papers": [
+    {
+      "studyId": "S1247",
+      "populationLabels": ["Total", "LEA", "MEA", "OEA"],
+      "primaryFileSha256": "3f810e8cd61d383aa2c2244eed04b8cfdc211369381969bc1f052cd2a2198df3",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S1247",
+          "leadAuthor": "Saifi A",
+          "title": "Risk for low energy availability, disordered eating and sleep disturbance among female football players",
+          "yearOfPublication": "2024",
+          "journal": "Physical Activity and Nutrition",
+          "doi": "10.20463/pan.2024.0022",
+          "studyDesign": "cross-sectional descriptive observational study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "India",
+          "levelOfPlay": "state-level professional female football",
+          "sex": "female",
+          "ageCategory": "adult (19-30 years)",
+          "meanAge": "20.5 +/- 2.38\n21.0 +/- 3.28\n20.9 +/- 2.08\n19.9 +/- 2.13",
+          "sampleSizePlayers": "25\n6\n9\n10",
+          "observationDuration": "single precompetition assessment"
+        },
+        "definitions": {
+          "illnessDefinition": "SMHAT-1 step-1 poor mental-health screen and step-2 symptom-specific cutoffs",
+          "incidenceDefinition": "prevalence at a single precompetition assessment (percent of players)",
+          "mechanismReporting": "player self-reported questionnaire"
+        },
+        "illnessOutcome": {
+          "illnessMostCommonSystem": "psychiatric/psychological",
+          "illnessMostCommonEtiology": "disordered eating (44%; n approximately 11)"
+        },
+        "illnessRegion": {
+          "illnessRegion_psychiatric_prevalence": "11",
+          "illnessRegion_psychiatric_incidence": "44%"
+        },
+        "illnessEtiology": {
+          "illnessEtiology_metabolic_prevalence": "6",
+          "illnessEtiology_metabolic_incidence": "24%"
+        }
+      },
+      "caveats": [
+        "Total / LEA / MEA / OEA follows the directly reported energy-availability strata. Mental-health and low-energy-availability values are pooled only, so their values stay on the Total line.",
+        "The psychiatric count n=11 is a transparent nearest-whole conversion of the direct 44% value over 25 players. The study's poor-mental-health and disordered-eating percentages overlap, so no all-illness total is asserted.",
+        "The 8% injury-history item is a LEAF-Q history item in a study that excluded current musculoskeletal injury; it is not an injury-surveillance outcome and was not mapped."
+      ]
+    },
+    {
+      "studyId": "S1260",
+      "populationLabels": ["Baseline", "12-month follow-up"],
+      "primaryFileSha256": "5f728408b1af4b23d55a14f5f57d569f9d1b309049fe82c75f5158ce275d03f8",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S1260",
+          "leadAuthor": "Pillay L",
+          "title": "Don't forget to mind the mind: a prospective cohort study over 12 months on mental health symptoms in active professional male footballers",
+          "yearOfPublication": "2024",
+          "journal": "BMC Sports Science, Medicine and Rehabilitation",
+          "doi": "10.1186/s13102-024-01005-1",
+          "studyDesign": "prospective observational cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Europe (FIFPRO-affiliated national unions)",
+          "levelOfPlay": "professional first- or second-tier national league",
+          "sex": "male",
+          "ageCategory": "adult (24-30 years)",
+          "meanAge": "26.5 +/- 1.7",
+          "sampleSizePlayers": "101\n80",
+          "observationDuration": "12 months"
+        },
+        "definitions": {
+          "illnessDefinition": "mental-health symptoms meeting validated APSQ, GAD-7, PHQ-9, BEDA-Q, ASSQ, AUDIT-C or CAGE-AID cutoffs",
+          "incidenceDefinition": "baseline prevalence and 12-month new-symptom incidence using symptom-specific denominators",
+          "mechanismReporting": "player self-reported questionnaire"
+        },
+        "illnessOutcome": {
+          "illnessMostCommonSystem": "psychiatric/psychological\npsychiatric/psychological",
+          "illnessMostCommonEtiology": "distress\nnew-onset distress"
+        },
+        "illnessRegion": {
+          "illnessRegion_psychiatric_prevalence": "53\n14",
+          "illnessRegion_psychiatric_incidence": "52.5%\n29.2%"
+        }
+      },
+      "caveats": [
+        "Baseline / 12-month follow-up is the strongest direct reporting axis. The 12-month incidence denominators differ by symptom because only players free from that symptom at baseline are eligible; the 80-person response count is retained only as the follow-up cohort size.",
+        "Distress is the most frequent reported symptom at both time points. Mental-health symptom categories overlap, so no all-illness total, injury total, or aggregate rate was created.",
+        "Tables 3-4 report historical/association injury and surgery data without a prospective injury-surveillance denominator; no injury fields were populated."
+      ]
+    },
+    {
+      "studyId": "S1384",
+      "populationLabels": ["Second division total", "Second division female", "Second division male"],
+      "primaryFileSha256": "d03b5189b1036954815a7c66f8bb91c84fd72d127935a7fdbf599ee130a31114",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S1384",
+          "leadAuthor": "Bonet L",
+          "title": "Mental Health in First- and Second-Division Soccer Players: A Cross-Sectional Study",
+          "yearOfPublication": "2024",
+          "journal": "Sports",
+          "doi": "10.3390/sports12040106",
+          "studyDesign": "cross-sectional descriptive study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Spain",
+          "levelOfPlay": "professional second division (Villarreal CF)",
+          "sex": "mixed\nfemale\nmale",
+          "ageCategory": "adult (>=18 years)",
+          "meanAge": "23.24 +/- 4.54\n\n",
+          "sampleSizePlayers": "42\n21\n21",
+          "observationDuration": "September 2020-July 2022 (single cross-sectional assessment)"
+        },
+        "definitions": {
+          "illnessDefinition": "MINI structured diagnostic interview for DSM-IV and ICD-10 psychiatric disorders",
+          "incidenceDefinition": "prevalence among second-division players at a single cross-sectional assessment",
+          "mechanismReporting": "research-trained interviewer and player-completed questionnaires"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "11\n4\n7",
+          "illnessIncidenceOverall": "26.2%\n19.0%\n33.3%",
+          "illnessMostCommonSystem": "psychiatric/psychological",
+          "illnessMostCommonEtiology": "agoraphobia / generalized anxiety disorder (3 each)"
+        },
+        "illnessRegion": {
+          "illnessRegion_psychiatric_prevalence": "11\n4\n7",
+          "illnessRegion_psychiatric_incidence": "26.2%\n19.0%\n33.3%"
+        }
+      },
+      "caveats": [
+        "The direct diagnostic table only covers the 42 second-division players. First-division men were assessed with other scales but did not receive the MINI diagnostic interview, so no all-54 diagnosis total was inferred.",
+        "Second division total / female / male preserves the table's overlapping total-and-subgroup layout. Total MINI diagnosis represents players with one or more diagnoses; category counts are comorbid and were not summed.",
+        "No injury or exposure surveillance data are reported."
+      ]
+    }
+  ]
+}

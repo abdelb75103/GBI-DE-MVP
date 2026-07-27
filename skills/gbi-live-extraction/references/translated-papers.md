@@ -19,9 +19,18 @@ Use this reference when a paper is a translated non-English full text or belongs
 - Before relying on a recreated translated table, check the matching paper audit for source-table detections and `needs_table_spot_check`.
 - If flagged, inspect the named original PDF pages before extracting table values.
 
+## Live Attachment Handling
+
+- Before upload, load `web-app-extraction-attachment-contract.md`.
+- Live `paper_files` has a one-row-per-paper contract. Do not attempt to add the translation as a second row.
+- Upload the merged English-first/original-second PDF to a new versioned storage path, then guarded-update the existing file row and paper primary-file pointer.
+- Preserve the original storage object's exact path and SHA-256 in `metadata.translationAttachment.originalAttachment`; never overwrite or delete that object.
+- Make retries resumable: reuse an existing deterministic target object only after its downloaded SHA-256 matches the staged merged file.
+
 ## Provenance Notes
 
 - Every translated-paper extraction must add a live paper note stating source language, translation date, translation model/workflow, and that extraction used the merged translated-first/original-second PDF.
+- The provenance must also record the merged file SHA-256 and the preserved original object's bucket, path, filename, size, and SHA-256.
 - For the 2026-05-07 batch, use:
 
 ```text

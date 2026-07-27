@@ -1,0 +1,160 @@
+{
+  "artifactType": "pre-apply-snapshot-rollback",
+  "scope": "S4703 only; before Table 2/3 IOC type mapping and Figure 2 derived location correction",
+  "createdAt": "2026-07-15",
+  "studyId": "S4703",
+  "paper": {
+    "id": "b2ff2b6c-42d8-492a-a970-c0502640ffbf",
+    "status": "processing",
+    "assigned_to": "00000000-0000-0000-0000-000000000001",
+    "primary_file_sha256": "067d06b834a583912e395aa630def6767cd4373f238eefa7da1cdd9985dd3bdc",
+    "storage_bucket": "papers",
+    "storage_object_path": "d794b7c4-fe54-4018-a150-c950d08b55bc/1781866765202-S4703-national-health-registries-in-professional-german-football-development-and-first-results-from-the-men-s-and-wo.pdf",
+    "flag_reason": null,
+    "populationLabels": ["Total", "Male", "Female"],
+    "protectedScreeningState": {
+      "screeningDecision": "include",
+      "fullTextResolution": "ready_for_extraction",
+      "screeningPromotedAt": "2026-07-08T10:11:19.880Z",
+      "titleAbstractResolution": "ready_for_full_text",
+      "titleAbstractPromotedAt": "2026-06-03T15:36:25.601Z",
+      "fullTextDecisions": [
+        {
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001",
+          "reviewerName": "AbdelRahman Babiker",
+          "decision": "include",
+          "reason": null,
+          "decidedAt": "2026-06-22T19:26:07.554566+00:00"
+        },
+        {
+          "reviewerProfileId": "550e8400-e29b-41d4-a716-446655440003",
+          "reviewerName": "Dr. Nicol van Dyk",
+          "decision": "include",
+          "reason": null,
+          "decidedAt": "2026-07-08T10:11:17.964266+00:00"
+        }
+      ],
+      "titleAbstractDecisions": [
+        {
+          "reviewerProfileId": "00000000-0000-0000-0000-000000000001",
+          "reviewerName": "AbdelRahman Babiker",
+          "decision": "include",
+          "action": "reviewer_vote",
+          "note": null,
+          "decidedAt": "2026-06-03T14:48:13.659Z"
+        }
+      ]
+    }
+  },
+  "rollbackInstructions": [
+    "This snapshot was created before live overwrite. To rollback the extraction values, apply the rollbackPayload below through scripts/apply-second-search-extraction-json.mjs with --apply --overwrite, then delete the added S4703-only injuryLocation/injuryTissueType fields listed in addedFieldIds if a strict deletion rollback is required.",
+    "The apply script rebuilds population_groups and population_values from newline-aligned extraction_fields; pre-apply population labels were Total / Male / Female and pre-apply populationValueCount was 55.",
+    "Protected screening/promotion/resolver state must remain exactly as recorded above."
+  ],
+  "addedFieldIds": [
+    "injuryLocation_head_neck_overall_prevalence",
+    "injuryLocation_head_prevalence",
+    "injuryLocation_neck_prevalence",
+    "injuryLocation_upper_limb_overall_prevalence",
+    "injuryLocation_shoulder_prevalence",
+    "injuryLocation_elbow_prevalence",
+    "injuryLocation_trunk_overall_prevalence",
+    "injuryLocation_lumbosacral_prevalence",
+    "injuryLocation_lower_limb_overall_prevalence",
+    "injuryLocation_hip_prevalence",
+    "injuryLocation_thigh_prevalence",
+    "injuryLocation_knee_prevalence",
+    "injuryLocation_lower_leg_prevalence",
+    "injuryLocation_ankle_prevalence",
+    "injuryLocation_foot_prevalence",
+    "injuryTissueType_muscle_tendon_prevalence",
+    "injuryTissueType_muscle_tendon_incidence",
+    "injuryTissueType_muscle_injury_prevalence",
+    "injuryTissueType_muscle_injury_incidence",
+    "injuryTissueType_muscle_injury_severityMeanDays",
+    "injuryTissueType_nervous_prevalence",
+    "injuryTissueType_nervous_incidence",
+    "injuryTissueType_brain_spinal_prevalence",
+    "injuryTissueType_brain_spinal_incidence",
+    "injuryTissueType_concussion_prevalence",
+    "injuryTissueType_concussion_incidence",
+    "injuryTissueType_concussion_severityMeanDays",
+    "injuryTissueType_ligament_joint_capsule_prevalence",
+    "injuryTissueType_ligament_joint_capsule_incidence",
+    "injuryTissueType_joint_sprain_prevalence",
+    "injuryTissueType_joint_sprain_incidence",
+    "injuryTissueType_superficial_tissues_skin_prevalence",
+    "injuryTissueType_superficial_tissues_skin_incidence",
+    "injuryTissueType_superficial_contusion_prevalence",
+    "injuryTissueType_superficial_contusion_incidence",
+    "injuryTissueType_superficial_contusion_severityMeanDays"
+  ],
+  "rollbackPayload": {
+    "papers": [
+      {
+        "studyId": "S4703",
+        "populationLabels": ["Total", "Male", "Female"],
+        "fields": {
+          "studyDetails": {
+            "studyId": "S4703",
+            "leadAuthor": "Huber L",
+            "title": "National health registries in professional German football: development and first results from the men's and women's 1st and 2nd Bundesliga",
+            "yearOfPublication": "2026",
+            "journal": "BMJ Open Sport & Exercise Medicine",
+            "doi": "10.1136/bmjsem-2025-003003",
+            "studyDesign": "prospective national health registry cohort study"
+          },
+          "participantCharacteristics": {
+            "fifaDiscipline": "Association football (11-a-side)",
+            "country": "Germany",
+            "levelOfPlay": "professional 1st and 2nd Bundesliga",
+            "sex": "mixed\nmale\nfemale",
+            "ageCategory": "adult (>=18 years)",
+            "meanAge": "\n25.6 +/- 4.3\n22.5 +/- 4.2",
+            "sampleSizePlayers": "1514\n963\n551",
+            "numberOfTeams": "54\n33\n21",
+            "observationDuration": "first registry season: men 2022/2023; women 2023/2024"
+          },
+          "definitions": {
+            "injuryDefinition": "time loss",
+            "illnessDefinition": "time loss [illness or other medical reason causing absence]",
+            "incidenceDefinition": "cases per 1000 hours of match exposure",
+            "severityDefinition": "return-to-play days from event to medical clearance for full team training and match play",
+            "mechanismReporting": "team medical staff"
+          },
+          "exposure": {
+            "seasonLength": "one complete league season",
+            "numberOfSeasons": "1",
+            "exposureMeasurementUnit": "player-hours"
+          },
+          "injuryOutcome": {
+            "injuryTotalCount": "865\n503\n362",
+            "injuryTimeLossCount": "865\n503\n362",
+            "injuryMostCommonDiagnosis": "\nankle sprain (47)\nankle sprain (26)",
+            "injuryMostCommonType": "\nankle sprain (47)\nankle sprain (26)",
+            "injuryMostCommonLocation": "\nthigh (31.9%)\nknee (22.4%)"
+          },
+          "illnessOutcome": {
+            "illnessTotalCount": "320\n176\n144",
+            "illnessTimeLossTotal": "3188",
+            "illnessMostCommonSystem": "\nrespiratory infection without COVID-19 (119)\nrespiratory infection without COVID-19 (85)"
+          },
+          "injuryTissueType": {
+            "injuryTissueType_injury_diagnosis_diagnosis": "\nankle sprain\nankle sprain",
+            "injuryTissueType_injury_diagnosis_prevalence": "\n47\n26",
+            "injuryTissueType_injury_diagnosis_incidence": "\n3.16 (2.26-4.06)\n2.56 (1.58-3.54)",
+            "injuryTissueType_injury_diagnosis_severityMeanDays": "\n7.3\n36.4"
+          },
+          "illnessRegion": {
+            "illnessRegion_respiratory_prevalence": "\n119\n85",
+            "illnessRegion_respiratory_incidence": "\n8.00 (6.56-9.44)\n8.37 (6.79-10.32)",
+            "illnessRegion_respiratory_severityMeanDays": "\n11.8\n10.5",
+            "illnessRegion_gastrointestinal_prevalence": "\n19\n19",
+            "illnessRegion_gastrointestinal_incidence": "\n1.28 (0.71-1.85)\n1.87 (1.13-2.92)",
+            "illnessRegion_gastrointestinal_severityMeanDays": "\n23.8\n3.5"
+          }
+        }
+      }
+    ]
+  }
+}

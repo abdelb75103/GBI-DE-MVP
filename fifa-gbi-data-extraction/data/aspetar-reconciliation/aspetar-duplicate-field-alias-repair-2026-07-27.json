@@ -1,0 +1,56 @@
+{
+  "artifactType": "Aspetar duplicate extraction-field alias repair",
+  "date": "2026-07-27",
+  "mode": "apply",
+  "reason": "Legacy extraction rows in non-canonical tabs reused two schema field IDs. Aligning the aliases prevents population rebuild order from selecting stale values.",
+  "fixedMembership": [
+    "S261",
+    "S602"
+  ],
+  "fixedFieldIds": [
+    "injuryDefinition",
+    "mechanismReporting"
+  ],
+  "repairs": [
+    {
+      "studyId": "S261",
+      "extractionId": "feeb408c-108f-4b1d-837a-3af40129de89",
+      "tab": "participantCharacteristics",
+      "fieldId": "injuryDefinition",
+      "fieldRowId": "be3c0186-9930-4467-ae1f-3c78c6b77dc2",
+      "beforeValue": "time-loss",
+      "afterValue": "medical attention [with separate time-loss injuries]\n\n\n\n\n\n\n\n\n\n\n\ntime loss [recurrent injuries excluded]",
+      "beforeUpdatedAt": "2026-04-12T11:27:59.937+00:00"
+    },
+    {
+      "studyId": "S261",
+      "extractionId": "feeb408c-108f-4b1d-837a-3af40129de89",
+      "tab": "participantCharacteristics",
+      "fieldId": "mechanismReporting",
+      "fieldRowId": "c951cd36-3ccb-4fc8-9310-37b0b2fda7f6",
+      "beforeValue": "Medical Staff",
+      "afterValue": "academy medical staff\n\n\n\n\n\n\n\n\n\n\n\nmedical staff",
+      "beforeUpdatedAt": "2026-04-12T11:27:59.937+00:00"
+    },
+    {
+      "studyId": "S602",
+      "extractionId": "0d0b94b2-ba65-4035-91f9-f51d9c7fc086",
+      "tab": "participantCharacteristics",
+      "fieldId": "injuryDefinition",
+      "fieldRowId": "0d475130-c5ea-421d-baa7-578207da9b55",
+      "beforeValue": "time-loss",
+      "afterValue": "time loss [unable to participate fully in training or match play]",
+      "beforeUpdatedAt": "2026-04-12T11:27:59.937+00:00"
+    },
+    {
+      "studyId": "S602",
+      "extractionId": "0d0b94b2-ba65-4035-91f9-f51d9c7fc086",
+      "tab": "participantCharacteristics",
+      "fieldId": "mechanismReporting",
+      "fieldRowId": "e349e330-9a74-4c2a-a260-098421a6c2cd",
+      "beforeValue": "Medical Staff",
+      "afterValue": "club doctor or physiotherapist",
+      "beforeUpdatedAt": "2026-04-12T11:27:59.937+00:00"
+    }
+  ]
+}

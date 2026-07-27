@@ -1,0 +1,172 @@
+{
+  "artifactType": "Backlog 2 Batch 023 final live integrity audit",
+  "scope": "Fixed membership S3337, S3075, S5005, S3944, S5158 only",
+  "model": "Codex (GPT-5), medium reasoning; the skill-default GPT-5.5 was not exposed in this workspace.",
+  "tokenUsage": "Unavailable: the sub-agent runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-023/second-search-extraction-batch-023-input-2026-07-14.json",
+  "fixedMembership": [
+    "S3337",
+    "S3075",
+    "S5005",
+    "S3944",
+    "S5158"
+  ],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached primary PDF was inspected once; all five live primary-file SHA-256 values matched the inspected attachments.",
+    "fieldValidation": {
+      "unknownFieldIds": 0,
+      "stagedFieldCount": 160,
+      "populationLineCountViolations": 0,
+      "populationLayouts": {
+        "S3075": [
+          "Total",
+          "LAS group",
+          "Control group"
+        ],
+        "S5005": [
+          "Match-related head injury",
+          "Suspected SRC",
+          "Diagnosed SRC"
+        ],
+        "S3944": [
+          "FDP (U9-U11)",
+          "Early YDP (U12-U14)",
+          "Late YDP (U15-U16)",
+          "PDP (U18-U21)"
+        ],
+        "S5158": [
+          "Men's international",
+          "Women's international",
+          "Men's domestic",
+          "Women's domestic"
+        ]
+      }
+    },
+    "classification": {
+      "S3337": "American-data exclusion: U.S.-only male academy injury-surveillance cohort; no extraction fields staged."
+    },
+    "sourceCoverage": {
+      "S3337": "Primary PDF pp. 1-7: methods, Tables 1-4, results and discussion.",
+      "S3075": "Primary PDF pp. 1-14: methods, Tables 1-5, results and discussion.",
+      "S5005": "Primary PDF pp. 1-7: methods, Tables 1-2, Figures 1-4, results and discussion.",
+      "S3944": "Primary PDF pp. 1-7: methods, Tables 1-2, Figures 1-2, results and discussion.",
+      "S5158": "Primary PDF pp. 1-10: methods, Tables 1-5, results and discussion."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only live apply with core-tab completion and population sync; one planned exclusion classification update",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S3075": 38,
+      "S5005": 54,
+      "S3944": 43,
+      "S5158": 49
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S3337": {
+        "status": "american_data",
+        "flagReason": "U.S.-only academy injury-surveillance cohort; preserve as American data exclusion"
+      }
+    },
+    "postApplyCorrectionRequired": false
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": [
+      "S3337",
+      "S3075",
+      "S5005",
+      "S3944",
+      "S5158"
+    ],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "backlogRowsVerified": 5,
+    "protectedScreening": {
+      "screeningRecordsVerified": 10,
+      "votesVerified": 10,
+      "protectedSignatureChanges": 0,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0
+    },
+    "papers": [
+      {
+        "studyId": "S3337",
+        "status": "american_data",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "6796f5fd23e0cb23fb9263139538d7ccb46aa538611412d1e241b25bfd3a0913"
+      },
+      {
+        "studyId": "S3075",
+        "status": "processing",
+        "populationLabels": [
+          "Total",
+          "LAS group",
+          "Control group"
+        ],
+        "populationCount": 3,
+        "liveFieldCount": 38,
+        "populationValueCount": 30,
+        "primaryFileSha256": "6a361b8f0d7a76f484fdec9ca9e7f3c953f12cc1176df9be6718a7d02d6ab40f"
+      },
+      {
+        "studyId": "S5005",
+        "status": "processing",
+        "populationLabels": [
+          "Match-related head injury",
+          "Suspected SRC",
+          "Diagnosed SRC"
+        ],
+        "populationCount": 3,
+        "liveFieldCount": 54,
+        "populationValueCount": 76,
+        "primaryFileSha256": "86e5721157cfdd3903ccc44c0afc51ba7c2ea84029d2c9aa16e1041a31f23dcf"
+      },
+      {
+        "studyId": "S3944",
+        "status": "processing",
+        "populationLabels": [
+          "FDP (U9-U11)",
+          "Early YDP (U12-U14)",
+          "Late YDP (U15-U16)",
+          "PDP (U18-U21)"
+        ],
+        "populationCount": 4,
+        "liveFieldCount": 43,
+        "populationValueCount": 65,
+        "primaryFileSha256": "4af73edc7a5c0a7ac7b7fbcb142bff9c83195d957be79ae4654b581c2901045e"
+      },
+      {
+        "studyId": "S5158",
+        "status": "processing",
+        "populationLabels": [
+          "Men's international",
+          "Women's international",
+          "Men's domestic",
+          "Women's domestic"
+        ],
+        "populationCount": 4,
+        "liveFieldCount": 49,
+        "populationValueCount": 91,
+        "primaryFileSha256": "9166219308fa304d2a0d4c9743cbddc99d79ba2bee7528c2f91b21dfe7e03bfd"
+      }
+    ]
+  },
+  "caveats": {
+    "S3337": "U.S.-only academy cohort retained in the fixed batch as an American-data exclusion.",
+    "S3075": "Exposure is direct mean (SD) hours per player; aggregate exposure and incidence were not inferred. Bilateral LAS events were not treated as recurrences.",
+    "S5005": "The three rows are nested definitions sharing 4455 match-hours. Figure 4 mechanisms lack category-aligned splits; median severity is not misfiled as a structured mean.",
+    "S3944": "The phase-aligned frame contains 453 match/training injuries versus 603 apophyseal injuries overall. Raw hours were omitted, and combined locations without exact schema rows were not forced.",
+    "S5158": "Raw exposure totals were omitted. Women's domestic overall rates use only seasons with exposure, and Table 5 unknown positions remain unimputed."
+  },
+  "readyFor": "human extraction review"
+}

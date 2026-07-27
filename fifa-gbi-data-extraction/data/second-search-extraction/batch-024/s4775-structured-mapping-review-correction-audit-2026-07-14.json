@@ -1,0 +1,79 @@
+{
+  "artifactType": "S4775 independent-review structured mapping post-apply correction audit",
+  "scope": "S4775 only",
+  "trigger": "Independent review found that Table 3 Lower back and Table 4 Unknown have direct schema mappings.",
+  "inputArtifact": "data/second-search-extraction/batch-024/s4775-structured-mapping-review-correction-input-2026-07-14.json",
+  "source": {
+    "primaryPdfSha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9",
+    "table3LowerBack": {
+      "mapping": "injuryLocation_lumbosacral",
+      "match": {"count": "3", "incidence": "0.20", "burden": "3", "meanSeverity": "14", "medianSeverity": "10"},
+      "training": {"count": "6", "incidence": "0.11 (0.01-0.24)", "burden": "1 (0-2)", "meanSeverity": "10 (9-16)", "medianSeverity": "9 (9-16)"}
+    },
+    "table4Unknown": {
+      "mapping": "injuryTissueType_non_specific_tissue",
+      "match": {"count": "6", "incidence": "0.40 (0.08-1.05)", "burden": "4 (1-10)", "meanSeverity": "12 (4-20)", "medianSeverity": "10 (4-20)"},
+      "training": {"count": "18", "incidence": "0.32 (0.04-0.76)", "burden": "4 (0-10)", "meanSeverity": "13 (4-30)", "medianSeverity": "9 (1-40)"}
+    },
+    "medianHandling": "The schema has count, incidence, burden, mean-severity and total-days structured metrics, but no median-severity metric. Direct medians are recorded here as audit evidence and were not forced into mean-severity fields."
+  },
+  "dryRun": {
+    "result": "passed",
+    "writtenFieldCount": 8,
+    "skippedFieldCount": 0,
+    "unknownFieldCount": 0,
+    "populationCountBeforeApply": 16
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only",
+    "writtenFields": [
+      "injuryLocation_lumbosacral_prevalence",
+      "injuryLocation_lumbosacral_incidence",
+      "injuryLocation_lumbosacral_burden",
+      "injuryLocation_lumbosacral_severityMeanDays",
+      "injuryTissueType_non_specific_tissue_prevalence",
+      "injuryTissueType_non_specific_tissue_incidence",
+      "injuryTissueType_non_specific_tissue_burden",
+      "injuryTissueType_non_specific_tissue_severityMeanDays"
+    ],
+    "skippedFields": 0,
+    "unknownFields": 0,
+    "populationGroupsWritten": 16,
+    "populationValuesWritten": 491
+  },
+  "stageB": {
+    "result": "passed",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "studyIdEqualsAssignedStudyId": true,
+    "liveFieldCountBefore": 164,
+    "liveFieldCountAfter": 172,
+    "stagedFieldMismatches": 0,
+    "unexpectedFieldChanges": 0,
+    "unexpectedFieldRemovals": 0,
+    "populationCount": 16,
+    "populationValueCount": 491,
+    "structuredDualWriteMismatches": 0,
+    "targetValuesOnAgeRows": 0,
+    "sourceAttachment": {"fileCount": 1, "fileChanged": false, "sha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9"},
+    "protectedChecks": {"paperProtectedFieldChanges": 0, "screeningMetadataChanges": 0, "screeningRecordChanges": 0, "screeningVoteChanges": 0, "humanVotesVerified": 2, "promotionStateChanges": 0},
+    "backlog": {"row": "S4775", "lowerBackMappingUpdated": true, "unknownMappingUpdated": true, "dislocationCaveatRetained": true}
+  },
+  "rollback": {
+    "preCorrectionState": "All eight target extraction_field rows were absent; live field count was 164 and population value count was 475.",
+    "exactInsertedRows": [
+      {"id": "c3e0383c-7ccc-46b9-ba5b-60df32eaa653", "fieldId": "injuryLocation_lumbosacral_burden"},
+      {"id": "b3914133-c93b-4bf2-af60-338696eb6a32", "fieldId": "injuryLocation_lumbosacral_incidence"},
+      {"id": "63c01316-8492-4d73-b573-4916904e6e02", "fieldId": "injuryLocation_lumbosacral_prevalence"},
+      {"id": "a725a2db-73f2-4e81-a893-bfa0aef386bd", "fieldId": "injuryLocation_lumbosacral_severityMeanDays"},
+      {"id": "30d3436e-7a1d-40af-896a-6b880475f7fd", "fieldId": "injuryTissueType_non_specific_tissue_burden"},
+      {"id": "3dfb842c-7ba7-414f-838c-c2e1b468cf81", "fieldId": "injuryTissueType_non_specific_tissue_incidence"},
+      {"id": "57b87781-b957-4478-8e10-96ce5ef909b1", "fieldId": "injuryTissueType_non_specific_tissue_prevalence"},
+      {"id": "383469c6-459d-4e63-a24a-72465aa6eca5", "fieldId": "injuryTissueType_non_specific_tissue_severityMeanDays"}
+    ],
+    "path": "Delete only the eight listed extraction_fields rows, then rebuild S4775 populations from the remaining extraction fields using the same population-sync routine; this returns the pre-correction 16 groups and 475 population values.",
+    "notExecuted": true
+  },
+  "finding": "no action; blocker corrected and S4775 is ready for human extraction review"
+}

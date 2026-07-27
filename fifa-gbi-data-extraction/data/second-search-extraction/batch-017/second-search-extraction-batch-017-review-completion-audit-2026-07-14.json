@@ -1,0 +1,80 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; human review completion and final status reconciliation; 2026-07-14",
+  "completedAt": "2026-07-14",
+  "batchMembership": [
+    "S2234",
+    "S2254",
+    "S2259",
+    "S2264",
+    "S2284"
+  ],
+  "papers": [
+    {
+      "studyId": "S2234",
+      "status": "extracted",
+      "flagReason": null,
+      "reviewState": "reviewed_complete",
+      "populationCount": 6,
+      "populationLabels": ["All players", "U14", "U15", "U16", "U17", "U18"]
+    },
+    {
+      "studyId": "S2254",
+      "status": "extracted",
+      "flagReason": null,
+      "reviewState": "reviewed_complete",
+      "populationCount": 1,
+      "populationLabels": ["Total"]
+    },
+    {
+      "studyId": "S2259",
+      "status": "retrospective_substudy_analysis",
+      "flagReason": "Overlapping FUNBALL secondary analysis of S1014; retain only for severe-injury detail; do not count independently.",
+      "reviewState": "reviewed_complete",
+      "populationCount": 3,
+      "populationLabels": ["Total", "Intervention", "Control"]
+    },
+    {
+      "studyId": "S2264",
+      "status": "extracted",
+      "flagReason": null,
+      "reviewState": "reviewed_complete",
+      "populationCount": 2,
+      "populationLabels": ["Male football", "Female football"]
+    },
+    {
+      "studyId": "S2284",
+      "status": "flagged",
+      "flagReason": "No exposure - exclude",
+      "reviewState": "reviewed_complete",
+      "populationCount": 7,
+      "populationLabels": [
+        "All seasons",
+        "2016-2017 athletic season",
+        "2017-2018 athletic season",
+        "2018-2019 athletic season",
+        "2019-2020 athletic season",
+        "2020-2021 athletic season",
+        "2021-2022 athletic season"
+      ]
+    }
+  ],
+  "liveWrite": {
+    "changedPaper": "S2284",
+    "changedFields": {
+      "status": "flagged",
+      "flag_reason": "No exposure - exclude"
+    },
+    "unchangedFinalStatuses": ["S2234", "S2254", "S2259", "S2264"]
+  },
+  "integrityGate": {
+    "result": "pass",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "allFiveAssignedToAbdelRahmanBabiker": true,
+    "allFiveSourceHashesPresent": true,
+    "beforeProtectedHash": "8d5ed770dd217006c974c70eb4f4f2a39d215b9a139b55d7777b1ac0edbc228b",
+    "afterProtectedHash": "8d5ed770dd217006c974c70eb4f4f2a39d215b9a139b55d7777b1ac0edbc228b",
+    "protectedScreeningStateUnchanged": true,
+    "batchMembershipPreserved": true,
+    "backlogRowsMarkedReviewedComplete": true
+  }
+}

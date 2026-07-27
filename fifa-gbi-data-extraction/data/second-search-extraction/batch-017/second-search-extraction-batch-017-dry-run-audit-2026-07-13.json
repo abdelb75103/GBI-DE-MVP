@@ -1,0 +1,14 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; manual extraction field-validation dry run; 2026-07-13",
+  "mode": "dry-run",
+  "input": "second-search-extraction-batch-017-input-2026-07-13.json",
+  "result": "pass",
+  "papers": [
+    {"studyId": "S2234", "stagedNonblankFields": 64, "unknownFields": [], "preexistingNonblankFields": 0},
+    {"studyId": "S2254", "stagedNonblankFields": 25, "unknownFields": [], "preexistingNonblankFields": 0},
+    {"studyId": "S2259", "stagedNonblankFields": 80, "unknownFields": [], "preexistingNonblankFields": 0},
+    {"studyId": "S2264", "stagedNonblankFields": 29, "unknownFields": [], "preexistingNonblankFields": 0}
+  ],
+  "populationSyncLimitation": "The application script does not simulate newly staged multiline extraction fields before population synchronization during dry run. The field-validation run therefore omitted populationLabels, as required by the established workflow; live apply then rebuilt populations from the labelled source input and the post-apply gate verified every structured dual write.",
+  "excludedPaper": {"studyId": "S2284", "plannedAction": "Set live status to american_data with an explicit U.S. Pac-12/NCAA surveillance flag reason; do not create extraction fields."}
+}

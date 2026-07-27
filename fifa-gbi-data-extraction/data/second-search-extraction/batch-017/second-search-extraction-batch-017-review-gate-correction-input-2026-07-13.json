@@ -1,0 +1,14 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; post-apply review-gate correction; 2026-07-13",
+  "papers": [
+    {
+      "studyId": "S2264",
+      "populationLabels": ["Male football", "Female football"],
+      "fields": {
+        "definitions": {
+          "recurrenceDefinition": null
+        }
+      }
+    }
+  ]
+}

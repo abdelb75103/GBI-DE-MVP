@@ -12,6 +12,8 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 - Transparent aggregation of directly reported compatible values is allowed.
 - Example: summing directly reported exposure subrows within the same subgroup into one broader total.
 - Example: summing directly reported subtype counts into a broader structured row when they share the same denominator and the schema row clearly represents that combined category.
+- Before leaving `injuryOutcome` headline fields blank, check summary/event tables for compatible diagnosis, region, or subtype rows that can be summed within the same population columns. Fill direct/summed counts, time-loss totals, recurrence totals, and compatible burden/incidence fields; do not sum CIs or mean/median severity.
+- When disjoint subtype rows share the exact same population/exposure denominator, compatible counts, incidence, and burden may be summed into the headline injuryOutcome row; never sum CIs or mean/median severity summaries.
 - For participant-count fields only, a direct total may be split by directly reported subgroup proportions when the paper explicitly gives both pieces of information and the arithmetic is transparent.
 - Example: total players plus `71% boys / 29% girls` may be used to fill `sampleSizePlayers` for `male / female`.
 - When you do this, note that the participant counts were proportion-derived in the review summary or backlog note.
@@ -30,6 +32,7 @@ Read this file whenever a field looks recoverable by calculation but is not expl
 
 - Leave the live field blank.
 - Mention the calculation opportunity in the review summary or backlog note if it is likely useful for later review.
+- Preserve a directly printed but internally inconsistent rate/CI pair as a flagged source error. Do not silently infer a likely corrected value from the CI or neighboring rows without a corrigendum or source clarification.
 
 ## Related Field Rules
 

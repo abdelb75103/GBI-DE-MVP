@@ -1,0 +1,383 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 019; manual primary-PDF extraction; additive-only; 2026-07-13",
+  "sourceCoverage": "S2496: primary-PDF title/abstract/methods classification. S2514: primary-PDF methods, Table 1, Table 2, Table 3, results, figures, discussion and limitations. S2538: primary-PDF methods, Figure 1, Tables 1-2, Figure 2, results and limitations. S2584: primary-PDF methods, Tables 1-9, Figures 1-2, results and discussion. S2615: primary-PDF methods, Tables 1-2, Figures 1-2, results and discussion.",
+  "exclusions": [
+    {
+      "studyId": "S2496",
+      "status": "systematic_review",
+      "flagReason": "Systematic review and meta-analysis of 26 studies; no original cohort extraction.",
+      "sourceCoverage": "Primary PDF title, abstract, PRISMA methods, and results."
+    }
+  ],
+  "papers": [
+    {
+      "studyId": "S2514",
+      "populationLabels": ["Total", "U12", "U14", "U16", "U18"],
+      "note": "Batch 019 manual primary-PDF extraction. Methods, Table 1, Table 2, Table 3, Figures 1-3, results, discussion, and limitations checked (pp. 995-1002). Layout is Total/U12/U14/U16/U18: Table 1 directly supplies total and age-group injury counts, estimated player-day incidence, activity, onset and mechanism; Table 2 supplies pooled location and tissue/pathology rows. The field-side-clinic medical-attention cohort (52 injuries in 109 players) is the extraction frame. The separate U16/U18 OSTRC-H2 self-report subset has a broader all-complaints definition and overlapping cases, so its headline health-problem outcomes were not blended into the clinic cohort. Structured rows retain direct counts and incidences with CIs; Table 2 severity is median estimated time loss and was not put in mean-days fields. Muscle-contusion (2 thigh + 1 lower leg) and tendinopathy (2 groin + 2 knee) fields are transparent compatible sums. The prose tissue/pathology totals (bone 18, muscle/tendon 17, ligament/joint capsule 6; bone contusion 10, physis 8, muscle injury 7) do not fully reconcile with the visible nested Table 2 rows, so direct published totals are retained and the discrepancy is flagged for review.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2514",
+          "leadAuthor": "Wik EH",
+          "title": "Injuries sustained by male football players in a South African academy league: epidemiology and methodological appraisal of two surveillance approaches in a lower-resourced club environment.",
+          "yearOfPublication": "2025",
+          "journal": "Journal of Science and Medicine in Sport",
+          "doi": "10.1016/j.jsams.2025.07.012",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "South Africa",
+          "levelOfPlay": "high-performance academy league",
+          "sex": "male",
+          "ageCategory": "U12\nU12\nU14\nU16\nU18",
+          "meanAge": "14.1 +/- 2.2",
+          "sampleSizePlayers": "109\n29\n31\n28\n21",
+          "numberOfTeams": "2",
+          "observationDuration": "2023 competitive season, mid-April through October"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [all presenting problems; excluding follow-up visits]",
+          "incidenceDefinition": "medical attention injuries per 365 player-days",
+          "severityDefinition": "clinician-estimated days of time loss",
+          "recurrenceDefinition": "re-injury after a previous injury",
+          "mechanismReporting": "volunteer physicians"
+        },
+        "exposure": {
+          "seasonLength": "mid-April through October",
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-days",
+          "totalExposure": "21691"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "52\n6\n13\n19\n14",
+          "injuryMedicalAttentionCount": "52",
+          "injuryMatchCount": "23",
+          "injuryTrainingCount": "28",
+          "injuryIncidenceOverall": "0.88\n0.38\n0.77\n1.24\n1.22",
+          "injuryIncidenceMatch": "0.39",
+          "injuryIncidenceTraining": "0.47",
+          "injuryIncidenceCi95": "0.65 to 1.15\n0.14 to 0.83\n0.41 to 1.32\n0.75 to 1.94\n0.67 to 2.05",
+          "injuryMostCommonDiagnosis": "bone contusion",
+          "injuryMostCommonType": "bone",
+          "injuryMostCommonLocation": "knee",
+          "injuryModeRepetitiveGradual": "7",
+          "injuryModeAcuteSudden": "45",
+          "injuryContact": "25",
+          "injuryNonContact": "25",
+          "injuryRecurrentTotal": "2"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_tendon_prevalence": "17",
+          "injuryTissueType_muscle_tendon_incidence": "0.29 (0.17 to 0.46)",
+          "injuryTissueType_muscle_injury_prevalence": "7",
+          "injuryTissueType_muscle_injury_incidence": "0.12 (0.05 to 0.24)",
+          "injuryTissueType_muscle_contusion_prevalence": "3",
+          "injuryTissueType_muscle_contusion_incidence": "0.05 (0.01 to 0.15)",
+          "injuryTissueType_tendinopathy_prevalence": "4",
+          "injuryTissueType_tendinopathy_incidence": "0.07 (0.02 to 0.17)",
+          "injuryTissueType_bone_prevalence": "18",
+          "injuryTissueType_bone_incidence": "0.30 (0.18 to 0.48)",
+          "injuryTissueType_bone_contusion_prevalence": "10",
+          "injuryTissueType_bone_contusion_incidence": "0.17 (0.08 to 0.31)",
+          "injuryTissueType_physis_prevalence": "8",
+          "injuryTissueType_physis_incidence": "0.13 (0.06 to 0.27)",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "6",
+          "injuryTissueType_ligament_joint_capsule_incidence": "0.10 (0.04 to 0.22)",
+          "injuryTissueType_joint_sprain_prevalence": "4",
+          "injuryTissueType_joint_sprain_incidence": "0.07 (0.02 to 0.17)",
+          "injuryTissueType_concussion_prevalence": "4",
+          "injuryTissueType_concussion_incidence": "0.07 (0.02 to 0.17)"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "7",
+          "injuryLocation_head_incidence": "0.12 (0.05 to 0.24)",
+          "injuryLocation_neck_prevalence": "1",
+          "injuryLocation_neck_incidence": "0.02 (0.00 to 0.09)",
+          "injuryLocation_shoulder_prevalence": "2",
+          "injuryLocation_shoulder_incidence": "0.03 (0.00 to 0.12)",
+          "injuryLocation_forearm_prevalence": "1",
+          "injuryLocation_forearm_incidence": "0.02 (0.00 to 0.09)",
+          "injuryLocation_wrist_prevalence": "1",
+          "injuryLocation_wrist_incidence": "0.02 (0.00 to 0.09)",
+          "injuryLocation_chest_prevalence": "2",
+          "injuryLocation_chest_incidence": "0.03 (0.00 to 0.12)",
+          "injuryLocation_hip_prevalence": "6",
+          "injuryLocation_hip_incidence": "0.10 (0.04 to 0.22)",
+          "injuryLocation_groin_prevalence": "7",
+          "injuryLocation_groin_incidence": "0.12 (0.05 to 0.24)",
+          "injuryLocation_thigh_prevalence": "4",
+          "injuryLocation_thigh_incidence": "0.07 (0.02 to 0.17)",
+          "injuryLocation_knee_prevalence": "11",
+          "injuryLocation_knee_incidence": "0.19 (0.09 to 0.33)",
+          "injuryLocation_lower_leg_prevalence": "4",
+          "injuryLocation_lower_leg_incidence": "0.07 (0.02 to 0.17)",
+          "injuryLocation_ankle_prevalence": "5",
+          "injuryLocation_ankle_incidence": "0.08 (0.03 to 0.20)",
+          "injuryLocation_foot_prevalence": "1",
+          "injuryLocation_foot_incidence": "0.02 (0.00 to 0.09)"
+        }
+      }
+    },
+    {
+      "studyId": "S2538",
+      "populationLabels": ["Control group", "Experimental group"],
+      "note": "Batch 019 manual primary-PDF extraction. Abstract, methods, Figure 1, Tables 1-2, Figure 2, results, discussion, and limitations checked (pp. 1-30). The direct randomized-group layout is Control (n=10) / Experimental low-load resistance training (n=10). The 12-week intervention recorded five musculoskeletal injuries, all in control (166 absence days); Figure 2 directly reports control/experimental incidence 9.57/0.00 injuries per 1000 player-hours and burden 317.83/0.00 absence days per 1000 player-hours. Exposure totals, match/training splits, injury mechanisms, locations and types are not reported as clean values and were not derived. The paper does not identify the club country; it remains blank rather than inferred from author affiliations.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2538",
+          "leadAuthor": "Durán Custodio R",
+          "title": "Low-load resistance training reduces injury incidence and burden, and improves the physical performance in youth soccer players.",
+          "yearOfPublication": "2025",
+          "journal": "Sportis Sci J",
+          "doi": "10.17979/sportis.2025.11.1.11151",
+          "studyDesign": "randomized controlled trial"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "levelOfPlay": "semi-professional, national level",
+          "sex": "male",
+          "ageCategory": "youth",
+          "meanAge": "16.7 +/- 0.1",
+          "sampleSizePlayers": "10\n10",
+          "numberOfTeams": "1",
+          "observationDuration": "12-week intervention"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [lower-limb injuries; UEFA model criteria]",
+          "incidenceDefinition": "injuries per 1000 player-hours",
+          "burdenDefinition": "days of absence per 1000 player-hours",
+          "severityDefinition": "days of absence"
+        },
+        "exposure": {
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "5\n0",
+          "injuryIncidenceOverall": "9.57\n0.00",
+          "injuryBurden": "317.83\n0.00"
+        }
+      }
+    },
+    {
+      "studyId": "S2584",
+      "populationLabels": ["Ramadan - Traditional training", "Ramadan - Neuromuscular training", "Post-Ramadan - Traditional training", "Post-Ramadan - Neuromuscular training"],
+      "note": "Batch 019 manual primary-PDF extraction. Methods, Tables 1-9, Figures 1-2, results, discussion, and limitations checked (pp. 1-21). Table 9 directly supports a four-line period-by-arm layout: Ramadan traditional training / Ramadan neuromuscular training / post-Ramadan traditional training / post-Ramadan neuromuscular training. All injury, exposure, incidence, burden, location, mechanism, type and severity values are direct Table 9 values. Table 9 broad \"contusions\" is mapped to the closest superficial-contusion schema field; \"laceration and skin lesion\" is mapped to the broader superficial-tissues/skin field, not the narrower laceration field. No CIs were reported for each group rate (the table reports only arm rate ratios), so structured and arm-specific CI fields remain blank.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2584",
+          "leadAuthor": "Belamjahad A",
+          "title": "Effects of Neuromuscular Training Applied During Ramadan on Physical Fitness and Injury Prevention in Highly-Trained Male Youth Soccer Players.",
+          "yearOfPublication": "2025",
+          "journal": "Sports Medicine - Open",
+          "doi": "10.1186/s40798-025-00831-y",
+          "studyDesign": "randomized controlled trial"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Morocco",
+          "levelOfPlay": "professional academy, highly trained national level",
+          "sex": "male",
+          "ageCategory": "U17/U19",
+          "meanAge": "16.0-17.7 years (U17/U19)",
+          "sampleSizePlayers": "20\n20\n20\n20",
+          "numberOfTeams": "1",
+          "observationDuration": "8 weeks: Ramadan 4 weeks plus post-Ramadan 4 weeks"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [FIFA consensus classification]",
+          "incidenceDefinition": "injuries per 1000 player-hours",
+          "burdenDefinition": "days of absence per 1000 player-hours",
+          "severityDefinition": "minimal 1-3 days; minor 4-7 days; moderate 8-28 days; severe >28 days"
+        },
+        "exposure": {
+          "seasonLength": "10 months, September to June",
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "500\n500\n1750\n1750",
+          "matchExposure": "60\n60\n150\n150",
+          "trainingExposure": "440\n440\n1600\n1600"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "4\n3\n26\n15",
+          "injuryMatchCount": "2\n2\n14\n10",
+          "injuryTrainingCount": "2\n1\n12\n5",
+          "injuryIncidenceOverall": "8.00\n6.00\n14.86\n8.57",
+          "injuryIncidenceMatch": "33.33\n33.33\n93.33\n66.67",
+          "injuryIncidenceTraining": "4.55\n2.27\n7.50\n3.13",
+          "injuryTimeLossTotal": "12\n8\n157\n62",
+          "injuryBurden": "24.00\n16.00\n89.71\n35.42",
+          "injuryMostCommonSeverity": "minimal (1-3 days)\nminimal (1-3 days)\nminimal (1-3 days)\nminimal (1-3 days)",
+          "injuryContact": "2\n2\n11\n13",
+          "injuryNonContact": "2\n1\n15\n2"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_tendon_prevalence": "1\n0\n11\n1",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "1\n1\n3\n1",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "0\n0\n1\n0",
+          "injuryTissueType_superficial_contusion_prevalence": "2\n2\n11\n13"
+        },
+        "injuryLocation": {
+          "injuryLocation_upper_limb_overall_prevalence": "0\n0\n1\n2",
+          "injuryLocation_trunk_overall_prevalence": "0\n0\n1\n2",
+          "injuryLocation_lower_limb_overall_prevalence": "4\n3\n24\n11"
+        }
+      }
+    },
+    {
+      "studyId": "S2615",
+      "populationLabels": ["Total"],
+      "note": "Batch 019 manual primary-PDF extraction. Methods, Tables 1-2, Figures 1-2, results, discussion, and limitations checked (pp. 275-282). Total-row extraction covers the 705 consenting male players from 28 national teams during FIFA World Cup Qatar 2022. Injury analysis uses 81 events: the source recorded 82 injuries but one player sustained two injuries in different body areas during one incident, so only the most severe was included in analyses. The printed total exposure is 14,362 h while separately printed training and match exposure is 12,227 + 2,136 = 14,363 h; both direct values are retained without reconciliation. The abstract/text reports match incidence 20.6/1000 h and Figure 2 separately prints 46 events and 21.6/1000 h; event counts and the match rate are therefore intentionally left out pending reviewer resolution. Location/tissue rows retain direct Table 1-2 values and inline 95% CIs where reported. The paper reports location/tissue median time loss, not schema-compatible mean-days fields. Illness data are direct total values; respiratory and gastrointestinal counts are system-level values, while infection and drug-related poisoning are etiological values.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2615",
+          "leadAuthor": "Serner A",
+          "title": "Time-loss injuries and illnesses at the FIFA world cup Qatar 2022.",
+          "yearOfPublication": "2025",
+          "journal": "Science and Medicine in Football",
+          "doi": "10.1080/24733938.2024.2357568",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Qatar",
+          "levelOfPlay": "international senior men's national teams",
+          "sex": "male",
+          "ageCategory": "senior",
+          "meanAge": "median 26 years (IQR 24-30)",
+          "sampleSizePlayers": "705",
+          "numberOfTeams": "28",
+          "observationDuration": "FIFA World Cup Qatar 2022, 20 November-18 December; team participation varied"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [inability to complete the current or future training session or match]",
+          "illnessDefinition": "time loss [health-related complaint or disorder, not considered an injury]",
+          "incidenceDefinition": "injuries per 1000 player-hours; illnesses per 1000 competition days",
+          "burdenDefinition": "days lost per 1000 player-hours for injuries; per 1000 competition days for illnesses",
+          "severityDefinition": "number of days of time loss",
+          "recurrenceDefinition": "reinjury and subsequent injury classifications recorded",
+          "mechanismReporting": "team medical staff"
+        },
+        "exposure": {
+          "seasonLength": "29 days",
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "14362",
+          "matchExposure": "2136",
+          "trainingExposure": "12227"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "81",
+          "injuryTimeLossCount": "81",
+          "injuryIncidenceOverall": "5.6",
+          "injuryIncidenceTraining": "2.1",
+          "injuryIncidenceCi95": "4.5 to 7.0",
+          "injuryTimeLossTotal": "1478",
+          "injuryBurden": "103",
+          "injuryBurdenCi95": "61 to 152",
+          "injuryMostCommonDiagnosis": "hamstring muscle injury",
+          "injuryMostCommonType": "muscle/tendon",
+          "injuryMostCommonLocation": "thigh",
+          "injuryMostCommonSeverity": "minimal (1-3 days)",
+          "injuryModeRepetitiveGradual": "16",
+          "injuryModeAcuteSudden": "66",
+          "injuryContact": "26",
+          "injuryNonContact": "34",
+          "injuryRecurrentTotal": "2"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "hamstring muscle injury",
+          "injuryTissueType_injury_diagnosis_prevalence": "16",
+          "injuryTissueType_injury_diagnosis_incidence": "1.11 (0.64 to 1.81)",
+          "injuryTissueType_injury_diagnosis_burden": "26.7 (14.4 to 42.5)",
+          "injuryTissueType_muscle_tendon_prevalence": "48",
+          "injuryTissueType_muscle_tendon_incidence": "3.34 (2.46 to 4.43)",
+          "injuryTissueType_muscle_tendon_burden": "38.9 (23.6 to 58.8)",
+          "injuryTissueType_muscle_injury_prevalence": "40",
+          "injuryTissueType_muscle_injury_incidence": "2.79 (1.99 to 3.79)",
+          "injuryTissueType_muscle_injury_burden": "38.7 (22.7 to 56.7)",
+          "injuryTissueType_muscle_contusion_prevalence": "4",
+          "injuryTissueType_tendinopathy_prevalence": "3",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "18",
+          "injuryTissueType_ligament_joint_capsule_incidence": "1.32 (0.80 to 2.07)",
+          "injuryTissueType_ligament_joint_capsule_burden": "42.1 (17.4 to 72.5)",
+          "injuryTissueType_joint_sprain_prevalence": "19",
+          "injuryTissueType_bone_prevalence": "5",
+          "injuryTissueType_bone_incidence": "0.35 (0.11 to 0.81)",
+          "injuryTissueType_bone_burden": "17.8 (2.8 to 35.4)",
+          "injuryTissueType_bone_fracture_prevalence": "4",
+          "injuryTissueType_bone_contusion_prevalence": "1",
+          "injuryTissueType_cartilage_synovium_bursa_prevalence": "5",
+          "injuryTissueType_cartilage_synovium_bursa_incidence": "0.35 (0.11 to 0.81)",
+          "injuryTissueType_cartilage_synovium_bursa_burden": "1.1 (0.6 to 1.8)",
+          "injuryTissueType_synovitis_capsulitis_prevalence": "3",
+          "injuryTissueType_cartilage_injury_prevalence": "1",
+          "injuryTissueType_bursitis_prevalence": "1",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "3",
+          "injuryTissueType_superficial_tissues_skin_incidence": "0.21 (0.04 to 0.61)",
+          "injuryTissueType_superficial_tissues_skin_burden": "1.7 (0.2 to 4.4)",
+          "injuryTissueType_superficial_contusion_prevalence": "2",
+          "injuryTissueType_laceration_prevalence": "1",
+          "injuryTissueType_nervous_prevalence": "2",
+          "injuryTissueType_nervous_incidence": "0.14 (0.02 to 0.50)",
+          "injuryTissueType_nervous_burden": "1.3 (0.6 to 1.9)",
+          "injuryTissueType_brain_spinal_prevalence": "1",
+          "injuryTissueType_peripheral_nerve_prevalence": "1",
+          "injuryTissueType_concussion_prevalence": "1"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "2",
+          "injuryLocation_head_incidence": "0.14 (0.02 to 0.50)",
+          "injuryLocation_head_burden": "10.9 (1.9 to 20.0)",
+          "injuryLocation_neck_prevalence": "1",
+          "injuryLocation_neck_incidence": "0.07 (0.00 to 0.39)",
+          "injuryLocation_shoulder_prevalence": "2",
+          "injuryLocation_shoulder_incidence": "0.14 (0.02 to 0.50)",
+          "injuryLocation_shoulder_burden": "1.1 (0.1 to 2.1)",
+          "injuryLocation_abdomen_prevalence": "2",
+          "injuryLocation_abdomen_incidence": "0.14 (0.02 to 0.50)",
+          "injuryLocation_abdomen_burden": "0.3 (0.3 to 0.4)",
+          "injuryLocation_hip_prevalence": "3",
+          "injuryLocation_hip_incidence": "0.21 (0.04 to 0.61)",
+          "injuryLocation_hip_burden": "0.3 (0.2 to 0.4)",
+          "injuryLocation_groin_prevalence": "7",
+          "injuryLocation_groin_incidence": "0.49 (0.20 to 1.00)",
+          "injuryLocation_groin_burden": "1.3 (0.5 to 2.1)",
+          "injuryLocation_thigh_prevalence": "24",
+          "injuryLocation_thigh_incidence": "1.67 (1.07 to 2.49)",
+          "injuryLocation_thigh_burden": "30.5 (17.2 to 47.9)",
+          "injuryLocation_knee_prevalence": "10",
+          "injuryLocation_knee_incidence": "0.70 (0.33 to 1.28)",
+          "injuryLocation_knee_burden": "36.5 (13.2 to 63.0)",
+          "injuryLocation_lower_leg_prevalence": "11",
+          "injuryLocation_lower_leg_incidence": "0.77 (0.38 to 1.37)",
+          "injuryLocation_lower_leg_burden": "10.7 (3.7 to 21.5)",
+          "injuryLocation_ankle_prevalence": "12",
+          "injuryLocation_ankle_incidence": "0.91 (0.48 to 1.55)",
+          "injuryLocation_ankle_burden": "6.4 (2.8 to 10.8)",
+          "injuryLocation_foot_prevalence": "5",
+          "injuryLocation_foot_incidence": "0.35 (0.11 to 0.81)",
+          "injuryLocation_foot_burden": "2.2 (0.4 to 4.5)"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "15",
+          "illnessIncidenceOverall": "1.1",
+          "illnessIncidenceCi95": "0.6 to 1.8",
+          "illnessTimeLossTotal": "29",
+          "illnessTimeLossMedian": "2 (IQR 1-3)",
+          "illnessBurden": "2.1",
+          "illnessBurdenCi95": "1.0 to 3.4",
+          "illnessMostCommonSystem": "respiratory",
+          "illnessMostCommonEtiology": "infection"
+        },
+        "illnessRegion": {
+          "illnessRegion_respiratory_prevalence": "12",
+          "illnessRegion_gastrointestinal_prevalence": "2"
+        },
+        "illnessEtiology": {
+          "illnessEtiology_infection_prevalence": "14",
+          "illnessEtiology_drug_related_prevalence": "1"
+        }
+      }
+    }
+  ]
+}

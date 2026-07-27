@@ -1,0 +1,91 @@
+{
+  "scope": "Second search — Backlog 2 Batch 018; S2470 user-approved direct-median display correction",
+  "completedAt": "2026-07-15T12:48:20.156+00:00",
+  "paper": {
+    "studyId": "S2470",
+    "paperId": "0147517b-9846-4581-ad42-f698cb03a20e",
+    "populationLabels": ["All", "Match", "Training"],
+    "primaryFileSha256": "0959c74b6b92f9c45a25ce0d6f07c844962d8d36008927c335bedd49364a50e5"
+  },
+  "approvedConvention": "Store each direct source median in the existing severityMeanDays cell as <value> (median); do not alter the UI label or the total-severity metric.",
+  "source": {
+    "primaryPdf": "S2470-the-football-association-injury-and-illness-surveillance-study-the-incidence-burden-and-severity-of-injuries-i.pdf",
+    "tablesSwept": [
+      "Table 4, PDF p. 7 — injury type",
+      "Table 6, PDF pp. 10-11 — injury location/diagnosis"
+    ],
+    "statistic": "direct median severity in days; no value was derived and IQRs were not copied into the requested display cell"
+  },
+  "stageA": {
+    "fieldIdsValidatedAgainstLiveSchema": true,
+    "targetSeverityMeanFieldsBlankBeforeApply": true,
+    "targetPopulationValuesBlankBeforeApply": true,
+    "sourceToPayloadPassed": true,
+    "protectedTotalSeverityFieldCount": 20,
+    "protectedTotalSeverityPopulationValueCount": 60
+  },
+  "stagedAndWritten": [
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Muscle strain/tear/rupture/cramps", "fieldId": "injuryTissueType_muscle_injury_severityMeanDays", "value": "12 (median)\\n13 (median)\\n11 (median)"},
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Ligament sprain/tear/rupture", "fieldId": "injuryTissueType_ligament_joint_capsule_severityMeanDays", "value": "20 (median)\\n29 (median)\\n15 (median)"},
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Tendon injury/rupture/tendinosis", "fieldId": "injuryTissueType_tendon_injury_severityMeanDays", "value": "18 (median)\\n12 (median)\\n21 (median)"},
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Haematoma/contusion/bruise", "fieldId": "injuryTissueType_superficial_contusion_severityMeanDays", "value": "5 (median)\\n5 (median)\\n6 (median)"},
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Concussion", "fieldId": "injuryTissueType_concussion_severityMeanDays", "value": "11 (median)\\n12 (median)\\n10 (median)"},
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Cartilage/disc/meniscus", "fieldId": "injuryTissueType_cartilage_injury_severityMeanDays", "value": "31 (median)\\n25.5 (median)\\n35 (median)"},
+    {"tab": "injuryTissueType", "source": "Table 4 p. 7 — Bone fracture", "fieldId": "injuryTissueType_bone_fracture_severityMeanDays", "value": "57 (median)\\n60 (median)\\n52 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Abdomen", "fieldId": "injuryLocation_abdomen_severityMeanDays", "value": "7 (median)\\n10 (median)\\n7 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Ankle", "fieldId": "injuryLocation_ankle_severityMeanDays", "value": "17 (median)\\n18.5 (median)\\n16 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Arm", "fieldId": "injuryLocation_upper_arm_severityMeanDays", "value": "13 (median)\\n13 (median)\\n13 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Foot/toe", "fieldId": "injuryLocation_foot_severityMeanDays", "value": "20 (median)\\n8.5 (median)\\n32.5 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Head/face", "fieldId": "injuryLocation_head_severityMeanDays", "value": "10 (median)\\n11 (median)\\n9 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Hip/groin", "fieldId": "injuryLocation_hip_severityMeanDays", "value": "11 (median)\\n11 (median)\\n10 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Knee", "fieldId": "injuryLocation_knee_severityMeanDays", "value": "28 (median)\\n37 (median)\\n24 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Low back", "fieldId": "injuryLocation_lumbosacral_severityMeanDays", "value": "9 (median)\\n10 (median)\\n7.5 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 10 — Lower leg", "fieldId": "injuryLocation_lower_leg_severityMeanDays", "value": "15 (median)\\n12 (median)\\n19 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 11 — Neck/cervical spine", "fieldId": "injuryLocation_neck_severityMeanDays", "value": "4 (median)\\n3.5 (median)\\n4 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 11 — Shoulder/clavicle", "fieldId": "injuryLocation_shoulder_severityMeanDays", "value": "25 (median)\\n24.5 (median)\\n25 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 11 — Thigh", "fieldId": "injuryLocation_thigh_severityMeanDays", "value": "11 (median)\\n11.5 (median)\\n11 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 11 — Wrist/hand/finger/thumb", "fieldId": "injuryLocation_hand_severityMeanDays", "value": "17 (median)\\n8 (median)\\n18 (median)"},
+    {"tab": "injuryLocation", "source": "Table 6 p. 11 — Unspecified", "fieldId": "injuryLocation_unspecified_severityMeanDays", "value": "28 (median)\\n8 (median)\\n156 (median)"}
+  ],
+  "intentionallyBlankSourceCategories": {
+    "injuryTissueType": [
+      "Bursitis/impingement/synovitis: combined source category has no one-to-one schema row; it must not be forced into bursitis, synovitis/capsulitis, or the broader cartilage/synovium/bursa parent.",
+      "Pain (undiagnosed), Other, and Unspecified: non-comparable residual categories compete for the single non-specific tissue row; median severity summaries cannot be aggregated or selected arbitrarily."
+    ],
+    "injuryLocation": [
+      "Achilles tendon, lateral ankle ligament, hip/groin muscle/tendon, ACL, MCL, meniscal/cartilage, triceps surae, hamstring, quadriceps, adductor, and concussion are diagnoses/subtypes, not replacements for the separately reported broad location rows.",
+      "Head/face/neck injury is a combined diagnosis rather than a clean overall-region row; pelvis/sacrum and sternum/ribs/upper back do not have a one-to-one location field."
+    ]
+  },
+  "apply": {
+    "extractionFieldsInserted": 21,
+    "populationValuesInserted": 63,
+    "populationGroupsChanged": 0,
+    "paperFieldsChanged": 0,
+    "notesCreated": 0,
+    "backlogUpdate": "Existing S2470 Backlog 2 note now states the value (median) convention; review state remains pending_review."
+  },
+  "stageB": {
+    "writtenSeverityMeanFieldCount": 21,
+    "writtenSeverityMeanPopulationValueCount": 63,
+    "matchingMeanFieldMismatches": 0,
+    "populationValueMismatches": 0,
+    "unexpectedMeanFields": 0,
+    "populationLayout": ["All", "Match", "Training"],
+    "protectedTotalSeverityFieldSnapshotSha256Before": "80fec777976554d58ea5c176452b60c395cce5f015448c882d37a1ce142606e3",
+    "protectedTotalSeverityFieldSnapshotSha256After": "80fec777976554d58ea5c176452b60c395cce5f015448c882d37a1ce142606e3",
+    "protectedTotalSeverityPopulationValueSnapshotSha256Before": "101094d69ba0aa1d3d5c8d301b4477dfae70133f5bced561c878bbf0e2cdeca2",
+    "protectedTotalSeverityPopulationValueSnapshotSha256After": "101094d69ba0aa1d3d5c8d301b4477dfae70133f5bced561c878bbf0e2cdeca2",
+    "protectedStateUnchanged": {
+      "studyId": "S2470",
+      "status": "processing",
+      "assignment": "00000000-0000-0000-0000-000000000001",
+      "primarySourceAttachment": "6a91355b-a4b4-42ed-a5a8-26bb9dc82f65",
+      "screeningRecord": "eb83e76e-21f2-4b2f-8231-9bbf698bd329",
+      "screeningVotes": 2,
+      "manualDecision": "include",
+      "promotionTarget": "0147517b-9846-4581-ad42-f698cb03a20e"
+    },
+    "result": "passed — direct median strings are in the matching severityMeanDays fields and aligned population_values; total-severity and protected state are unchanged"
+  }
+}

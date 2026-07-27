@@ -1,0 +1,48 @@
+{
+  "artifactType": "Backlog 2 Batches 024-025 review completion reconciliation audit",
+  "completedAt": "2026-07-14",
+  "scope": "Fixed Batch 024 and Batch 025 membership only",
+  "requestedAction": "Mark both batches reviewed complete and transition processing papers to extracted",
+  "liveApply": {
+    "databaseWriteRequired": false,
+    "reason": "All seven in-scope extraction papers were already live as extracted at preflight; no processing rows remained to transition.",
+    "statusWrites": 0
+  },
+  "batch024": {
+    "membership": ["S4775", "S2876", "S5061", "S5151", "S3842"],
+    "verifiedLiveStatuses": {
+      "S4775": "extracted",
+      "S2876": "extracted",
+      "S5061": "retrospective_substudy_analysis",
+      "S5151": "uefa",
+      "S3842": "systematic_review"
+    },
+    "preservedSpecialStatuses": ["S5061", "S5151", "S3842"],
+    "backlogRowsMarkedReviewedComplete": 5,
+    "completedDateAdded": "2026-07-14"
+  },
+  "batch025": {
+    "membership": ["S5323", "S4778", "S4629", "S3407", "S3996"],
+    "verifiedLiveStatuses": {
+      "S5323": "extracted",
+      "S4778": "extracted",
+      "S4629": "extracted",
+      "S3407": "extracted",
+      "S3996": "extracted"
+    },
+    "backlogRowsMarkedReviewedComplete": 5,
+    "completedDateAdded": "2026-07-14"
+  },
+  "verification": {
+    "exactMembershipCount": 10,
+    "missingLivePapers": 0,
+    "unexpectedProcessingStatuses": 0,
+    "backlogReviewedCompleteRows": 10,
+    "specialStatusChanges": 0,
+    "extractionFieldChanges": 0,
+    "populationChanges": 0,
+    "screeningOrVoteChanges": 0,
+    "document": "docs/second-search-extraction-review-backlog-2026-07-03.md"
+  },
+  "finding": "no action; both batches are complete and the backlog now matches the verified live state"
+}

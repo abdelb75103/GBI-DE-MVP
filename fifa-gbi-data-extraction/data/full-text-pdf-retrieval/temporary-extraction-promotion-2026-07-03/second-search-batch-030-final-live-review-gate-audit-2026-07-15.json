@@ -1,0 +1,112 @@
+{
+  "scope": "Second search Backlog 2 Batch 030 final live review-gate audit",
+  "batch": "030",
+  "localDate": "2026-07-15",
+  "applyTimestampUtc": "2026-07-14T23:30:19.201Z",
+  "model": "GPT-5 Codex manual extraction; the local GPT-5.5 execution surface was not exposed to this batch agent.",
+  "membership": ["S1914", "S1920", "S1971", "S2079", "S2087"],
+  "stageA": {
+    "result": "pass",
+    "populationLayouts": {
+      "S1914": [],
+      "S1920": [],
+      "S1971": [],
+      "S2079": [],
+      "S2087": []
+    },
+    "structuredDualWrite": "not applicable: zero staged extraction_fields and zero staged population_values",
+    "scope": "No Tabs 1-10 fields were supported by an eligible GBI surveillance outcome in this fixed batch."
+  },
+  "apply": {
+    "result": "pass",
+    "paperStatusUpdates": [
+      {
+        "studyId": "S1914",
+        "from": { "status": "mental_health", "flagReason": null },
+        "to": { "status": "flagged", "flagReason": "No exposure - exclude" },
+        "reason": "Cross-sectional career/previous-season injury history has no direct at-risk exposure; no derivation is allowed."
+      }
+    ],
+    "additivePaperNotes": 5,
+    "untouched": [
+      "screening_records",
+      "human screening votes",
+      "resolver/promotion metadata",
+      "assigned_study_id (studyId)",
+      "source PDF attachments",
+      "extractions",
+      "extraction_fields",
+      "population_groups",
+      "population_values"
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S1914",
+      "status": "flagged",
+      "flagReason": "No exposure - exclude",
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1-13: abstract, methods/injury surveillance, Table 1, Tables 2-4, Figure 1, results, discussion and limitations.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Fixed batch member retained without extraction rows; Table 1 age-group rates cannot be converted to exposure."
+    },
+    {
+      "studyId": "S1920",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 957-974: abstract, methods, VOSviewer Figures 1-6, results/model tables, discussion and conclusion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Scopus-document VOSviewer/SmartPLS analysis, not a primary football-player cohort or GBI surveillance study."
+    },
+    {
+      "studyId": "S1971",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 415-434: abstract, methods, Table 1, Figures 1-2, quantitative and qualitative results, discussion and conclusion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Mental-ill-health symptom study of 103 tier-three women footballers plus six interviews; no injury/illness surveillance outcome."
+    },
+    {
+      "studyId": "S2079",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Translated-first/original-second full text: English translation pp. 1-31; abstract, methods, Tables 1-7, results and discussion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Self-esteem, sport-anxiety and athletic-coping scores/regressions in 286 footballers do not map to GBI outcome tabs."
+    },
+    {
+      "studyId": "S2087",
+      "status": "mental_health",
+      "flagReason": null,
+      "populationLabels": [],
+      "sourceCoverage": "Primary PDF pp. 1035-1048: abstract, methods, Figure 1, Tables 1-2, quantitative and qualitative results, discussion and conclusion.",
+      "sourceAttached": true,
+      "reviewerCaveat": "Injury evidence is narrative from four interviews only, without a compatible surveillance outcome or denominator."
+    }
+  ],
+  "stageB": {
+    "result": "pass",
+    "checks": {
+      "fixedMembership": true,
+      "assignment": true,
+      "statusAndFlagReason": true,
+      "studyIdAndSourceAttachment": true,
+      "populationLabelsAndOrder": true,
+      "writtenFieldEquality": true,
+      "structuredDualWrite": true,
+      "protectedScreeningAndPromotionState": true,
+      "backlogRows": true
+    },
+    "liveCounts": {
+      "extractionFields": 0,
+      "populationGroups": 0,
+      "populationValues": 0,
+      "batch030PaperNotes": 5,
+      "screeningRecordsVerified": 10
+    },
+    "correctionRequired": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "artifactType": "Backlog 2 Batch 024 post-apply correction audit",
+  "studyId": "S5061",
+  "reason": "The final scoped backlog diff exposed that S5061 reuses the exact 24,147.5 total, 1,072.5 match, and 23,075 training player-hour totals from the already-reviewed S1665 Malaysian 2023 single-club HSI cohort. S5061 analyses a smaller 72-player strength subset of that related cohort and should not be independently extracted.",
+  "initialApply": {
+    "status": "processing",
+    "populationLabels": ["Total", "Senior", "U23", "U20"],
+    "writtenFieldsIncludingCoreNotReportedRows": 48,
+    "populationGroups": 4,
+    "populationValues": 81
+  },
+  "correction": {
+    "classification": "retrospective_substudy_analysis",
+    "flagReason": "Overlapping secondary analysis of the existing S1665 Malaysian 2023 club cohort; identical exposure totals and related HSI dataset, not independently extracted",
+    "removedExtractionFields": 48,
+    "removedPopulationGroups": 4,
+    "removedPopulationValues": 81,
+    "retainedEmptyExtractionRows": 7,
+    "sourceFileRetained": true,
+    "assignmentRetained": "00000000-0000-0000-0000-000000000001"
+  },
+  "focusedStageB": {
+    "result": "passed",
+    "status": "retrospective_substudy_analysis",
+    "liveFieldCount": 0,
+    "populationGroupCount": 0,
+    "populationValueCount": 0,
+    "primaryFileAttached": true,
+    "fullTextVotesVerified": 2,
+    "protectedScreeningSignatureBefore": "a4b42fb0aecb9d56df564e6865217cd4ffda2beff1d375eeedc6347a198080e1",
+    "protectedScreeningSignatureAfter": "a4b42fb0aecb9d56df564e6865217cd4ffda2beff1d375eeedc6347a198080e1",
+    "protectedScreeningChanged": false
+  }
+}

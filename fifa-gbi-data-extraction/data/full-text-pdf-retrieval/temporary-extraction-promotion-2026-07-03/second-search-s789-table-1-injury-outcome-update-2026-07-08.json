@@ -1,0 +1,21 @@
+{
+  "papers": [
+    {
+      "studyId": "S789",
+      "populationLabels": ["Congested periods", "Noncongested periods"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryTotalCount": "21\n44",
+          "injuryMedicalAttentionCount": "21\n44",
+          "injuryTimeLossCount": "17\n22",
+          "injuryTimeLossTotal": "282\n430",
+          "injuryRecurrentTotal": "2\n4",
+          "injuryMostCommonDiagnosis": "hamstrings muscle injury",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "lower leg (medical-attention injuries); thigh (time-loss injuries)"
+        }
+      },
+      "note": "S789 updated on 2026-07-08 from Table 1. Added headline injuryOutcome values that were recoverable by direct summation of compatible Table 1 subrows using the existing Congested periods / Noncongested periods population split. Medical-attention/total soft-tissue injuries are 21/44; time-loss injuries are 17/22; recurrent time-loss injuries are 2/4; layoff-day cells sum to 282/430 by period. Most common diagnosis is hamstrings muscle injury; most common type is muscle injury; most common location is lower leg for medical-attention rows and thigh for time-loss rows. Did not fill onset or mechanism fields because Table 1 reports those totals by diagnosis, not split cleanly by congested/noncongested period. Note: Table 1 layoff-day cells sum to 712 while the prose reports 704 total layoff days, so period-specific table cells were retained rather than reconciling the mismatch."
+    }
+  ]
+}

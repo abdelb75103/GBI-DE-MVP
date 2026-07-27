@@ -1,0 +1,56 @@
+{
+  "scope": "Second search temporary extraction bridge for AI include plus one human include",
+  "mode": "dry-run",
+  "generatedAt": "2026-07-08T15:04:27.239Z",
+  "selectionRule": {
+    "searchBatch": "Second search - Ishanka - 2026-05-26",
+    "aiStatus": "completed",
+    "aiSuggestedDecision": "include",
+    "humanIncludeVotes": 1,
+    "humanExcludeVotes": 0,
+    "manualDecision": null,
+    "promotedPaperId": null,
+    "hasAttachedFile": true,
+    "limit": 5
+  },
+  "selected": [],
+  "skippedBeforeLimit": [
+    {
+      "studyId": "S1101",
+      "reasons": [
+        "exclude_vote_count_1"
+      ]
+    },
+    {
+      "studyId": "S2205",
+      "reasons": [
+        "exclude_vote_count_1"
+      ]
+    },
+    {
+      "studyId": "S3888",
+      "reasons": [
+        "exclude_vote_count_1"
+      ]
+    },
+    {
+      "studyId": "S4615",
+      "reasons": [
+        "exclude_vote_count_1"
+      ]
+    },
+    {
+      "studyId": "S4741",
+      "reasons": [
+        "exclude_vote_count_1"
+      ]
+    },
+    {
+      "studyId": "S4800",
+      "reasons": [
+        "exclude_vote_count_1"
+      ]
+    }
+  ],
+  "protectedScreeningFieldsChanged": false
+}

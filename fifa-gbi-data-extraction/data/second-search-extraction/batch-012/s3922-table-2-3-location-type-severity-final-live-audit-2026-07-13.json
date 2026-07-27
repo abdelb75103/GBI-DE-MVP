@@ -1,0 +1,38 @@
+{
+  "scope": "Second search — Backlog 2 Batch 012; S3922 Table 2/3 additive structured-metric correction",
+  "completedAt": "2026-07-13",
+  "mode": "live apply and focused integrity gate",
+  "paper": {
+    "studyId": "S3922",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "populationLabels": ["Total"],
+    "sourceAttached": true,
+    "studyIdMatchesAssignedStudyId": true
+  },
+  "sourceCoverage": {
+    "source": "Primary PDF, Tables 2-3 (journal pp. 459-460)",
+    "locationTable": "Table 2: direct body-area incidence, burden, and median time loss",
+    "typeTable": "Table 3: direct tissue/pathology incidence, burden, and median time loss"
+  },
+  "apply": {
+    "requestedFields": 54,
+    "writtenFields": 54,
+    "unknownFields": [],
+    "unexpectedlySkippedFields": [],
+    "populationValuesAfterSync": 117
+  },
+  "integrityGate": {
+    "sourceToLiveMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "protectedScreeningMetadataPreserved": true,
+    "result": "passed"
+  },
+  "caveats": [
+    "The source reports medians, not means. Per reviewer instruction, values are stored in severityMeanDays as `value (median)`.",
+    "Table 2's `Chest and thoracic spine` has no exact one-row schema target and is intentionally not forced into chest, thoracic spine, or trunk overall.",
+    "Table 3's `Meniscus` has no exact meniscus field and is intentionally not forced into cartilage injury.",
+    "The published Shoulder incidence CI `0.012 to 0.0163` does not contain its point estimate `0.056`; the direct printed value is preserved."
+  ],
+  "input": "data/second-search-extraction/batch-012/s3922-table-2-3-location-type-severity-correction-input-2026-07-13.json"
+}

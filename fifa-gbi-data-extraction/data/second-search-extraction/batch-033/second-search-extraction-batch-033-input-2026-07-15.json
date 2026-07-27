@@ -1,0 +1,329 @@
+{
+  "artifactType": "Backlog 2 Batch 033 staged manual extraction input",
+  "scope": "Fixed membership S3518, S3873, S3881, S3896, S3953 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "fixedBatchMembership": ["S3518", "S3873", "S3881", "S3896", "S3953"],
+  "preApply": {
+    "assignmentProfile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "statuses": {
+      "S3518": "mental_health",
+      "S3873": "mental_health",
+      "S3881": "mental_health",
+      "S3896": "mental_health",
+      "S3953": "mental_health"
+    },
+    "existingExtractionFields": {"S3518": 0, "S3873": 0, "S3881": 0, "S3896": 0, "S3953": 0},
+    "existingPopulationGroups": {"S3518": 0, "S3873": 0, "S3881": 0, "S3896": 0, "S3953": 0},
+    "protectedScreening": "Each record has two immutable full-text include votes, a ready_for_extraction resolution, and a promotion link. No screening-record, vote, resolution, or promotion write is staged.",
+    "primaryFileSha256": {
+      "S3518": "917fa91a815ff9d61b11335c440dcbbe2630b63099c14f02292727c20908cc87",
+      "S3873": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572",
+      "S3881": "1aaed0d40e1738184710d0e706bf99e187908044ddcefca592a5a7155bbf209d",
+      "S3896": "329b1c29a00a820f7031cd8d334289b5858770c97c75a14de895bd633b9fd0cb",
+      "S3953": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980"
+    }
+  },
+  "stageA": {
+    "result": "passed with one reviewer-attention caveat",
+    "checks": [
+      "Each attached primary PDF was inspected once in full, including all results tables and usable figures; each local SHA-256 matches papers.primary_file_sha256.",
+      "Population layouts were selected before field staging: S3881 Total and S3953 Total. The other three fixed records have no compatible extraction population.",
+      "S3881 is a prospective FIFA Women's World Cup surveillance cohort with direct player-hour/player-day denominators. Tabs 1-10 were swept: Tables 1-2 provide direct time-loss injury location/tissue metrics; the results text provides all-injury, illness, onset, recurrence, and exposure values.",
+      "S3953 is a prospective male-football cohort with directly published non-contact lower-limb rates per 1000 athlete-hours. Tabs 1-8 were swept: Table 4 and Figure 5 provide source-supported injury values; no illness data is reported. Exposure totals were not back-calculated from the rates.",
+      "S3518 is a longitudinal depression/anxiety questionnaire study with no injury or illness surveillance outcome, so its true mental_health exclusion remains appropriate.",
+      "S3873 is a cross-sectional self-reported previous-season injury-history study. It reports headcounts and recalled injury categories only; regular current participation and weekly sessions are not a study-specific at-risk exposure denominator. It is staged for flagged status with flag_reason No exposure - exclude and no extraction payload.",
+      "S3896 is a cross-sectional questionnaire study of 156 active soccer main referees, not football players. It is staged for referee status and no extraction payload.",
+      "All staged field IDs are schema-defined. Structured values are dual-written through population sync, and aggregation is limited to transparent same-denominator sums: S3953 muscle injury (groin/hamstring/quadriceps/unspecified thigh strains), thigh (hamstring/quadriceps/unspecified thigh), and knee (meniscus/other knee) count/rate rows. No CIs, means, total exposure, or recurrence total are derived."
+    ]
+  },
+  "sourceCoverage": {
+    "S3518": "Attached 11-page primary PDF: abstract, methods/participants, Table 1, Tables 2-3, results, discussion, limitations, conclusion, and references swept.",
+    "S3873": "Attached 12-page primary PDF: abstract, design/participants, Tables 1-5, injury-history questionnaire method, results, discussion, limitations, conclusion, and references swept.",
+    "S3881": "Attached 12-page primary PDF: abstract, methods/definitions/exposure, Table 1, Table 2, Figures 1-2, injury/illness/mental-health results, discussion, limitations, and conclusion swept.",
+    "S3896": "Attached 21-page primary PDF: abstract, referee eligibility/sample, questionnaire methods, results tables, discussion, limitations, conclusion, and references swept.",
+    "S3953": "Attached 28-page primary PDF: abstract, prospective design/participants, Tables 1-8, Figures 1-9, injury-surveillance method, Table 4/Figure 5 injury results, discussion, limitations, conclusion, and references swept."
+  },
+  "classifications": [
+    {
+      "studyId": "S3518",
+      "classification": "mental_health",
+      "populationLabels": [],
+      "caveat": "Longitudinal CES-D/GAD-7 symptom study; injuries are contextual discussion examples, not measured injury or illness outcomes."
+    },
+    {
+      "studyId": "S3873",
+      "classification": "flagged",
+      "flagReason": "No exposure - exclude",
+      "populationLabels": [],
+      "caveat": "Cross-sectional self-reported injury history lacks a usable at-risk exposure denominator; reported weekly sessions and prior-season injury groupings cannot support a defensible rate or exposure derivation."
+    },
+    {
+      "studyId": "S3881",
+      "classification": "processing",
+      "populationLabels": ["Total"],
+      "caveat": "Time-loss injury location/tissue rows are source-supported. Contact and player-action data are restricted to the sudden-onset subset and are deliberately not placed in all-injury count fields."
+    },
+    {
+      "studyId": "S3896",
+      "classification": "referee",
+      "populationLabels": [],
+      "caveat": "Active main referees are not current football-player participants; psychological questionnaire outcomes do not support GBI extraction."
+    },
+    {
+      "studyId": "S3953",
+      "classification": "processing",
+      "populationLabels": ["Total"],
+      "caveat": "The paper publishes rates but not raw total/match/training exposure, so exposure is blank. Its Table 4 Total reinjury cell is 0 despite direct row-level reinjury entries totalling 7; no recurrence total is staged pending source clarification."
+    }
+  ],
+  "papers": [
+    {
+      "studyId": "S3881",
+      "populationLabels": ["Total"],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3881",
+          "leadAuthor": "Lu D",
+          "title": "Injury, illness, and mental health problems during the 2023 FIFA Women's World Cup",
+          "yearOfPublication": "2025",
+          "journal": "Science and Medicine in Football",
+          "doi": "10.1080/24733938.2025.2524168",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Australia and New Zealand",
+          "levelOfPlay": "elite international women's national teams",
+          "sex": "female",
+          "ageCategory": "Senior",
+          "meanAge": "median 26 (IQR 23-30; range 17-40)",
+          "sampleSizePlayers": "536",
+          "numberOfTeams": "26",
+          "observationDuration": "15 July-20 August 2023 (32 days)"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [new injuries; time-loss subset reported separately]",
+          "illnessDefinition": "medical attention [new illnesses; time-loss subset reported separately]",
+          "incidenceDefinition": "injuries per 1000 player-hours; illnesses and mental-health problems per 1000 player-days",
+          "burdenDefinition": "injury days lost per 1000 player-hours; illness and mental-health-problem days lost per 1000 player-days",
+          "severityDefinition": "time-loss days from health-problem onset to earliest full unrestricted team training or match participation",
+          "recurrenceDefinition": "subsequent case classified as reinjury/repeated illness/repeated mental-health problem or exacerbation",
+          "mechanismReporting": "Medical Staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "other [player-hours for injuries; player-days for illnesses and mental-health problems]",
+          "totalExposure": "11349",
+          "matchExposure": "1644",
+          "trainingExposure": "9705"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "161",
+          "injuryPlayersCompletedStudy": "536",
+          "injuryTeamsCompletedStudy": "26",
+          "injuryMedicalAttentionCount": "161",
+          "injuryTimeLossCount": "59",
+          "injuryIncidenceOverall": "14.2",
+          "injuryIncidenceMatch": "31.0",
+          "injuryIncidenceTraining": "4.8",
+          "injuryIncidenceTimeLossOverall": "5.2",
+          "injuryIncidenceTimeLossMatch": "14.0",
+          "injuryIncidenceTimeLossTraining": "2.2",
+          "injuryIncidenceCi95": "12.1-16.6",
+          "injuryTimeLossTotal": "735",
+          "injuryBurden": "64.6",
+          "injuryBurdenCi95": "30.8-110.4",
+          "injuryMostCommonType": "muscle/tendon",
+          "injuryMostCommonLocation": "knee",
+          "injuryMostCommonSeverity": "0 days time loss",
+          "injuryModeRepetitiveGradual": "64",
+          "injuryModeAcuteSudden": "97",
+          "injuryRecurrentTotal": "14"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "41",
+          "illnessPlayersCompletedStudy": "536",
+          "illnessTeamsCompletedStudy": "26",
+          "illnessIncidenceOverall": "4.2",
+          "illnessIncidenceCi95": "3.0-5.6",
+          "illnessTimeLossTotal": "12",
+          "illnessBurden": "1.2",
+          "illnessBurdenCi95": "0.4-2.2",
+          "illnessMostCommonSystem": "respiratory",
+          "illnessMostCommonSeverity": "1-3 days"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_tendon_prevalence": "27",
+          "injuryTissueType_muscle_tendon_incidence": "2.37 (1.56-3.45)",
+          "injuryTissueType_muscle_tendon_burden": "18.02 (11.34-26.63)",
+          "injuryTissueType_muscle_tendon_severityMeanDays": "median 6 (IQR 3-9.5)",
+          "injuryTissueType_muscle_injury_prevalence": "19",
+          "injuryTissueType_muscle_injury_incidence": "1.67 (1.01-2.61)",
+          "injuryTissueType_muscle_injury_burden": "15.64 (9.32-23.64)",
+          "injuryTissueType_muscle_injury_severityMeanDays": "median 7 (IQR 4.5-10.5)",
+          "injuryTissueType_muscle_contusion_prevalence": "5",
+          "injuryTissueType_muscle_contusion_incidence": "0.44 (0.14-1.03)",
+          "injuryTissueType_muscle_contusion_burden": "1.76 (0.88-2.64)",
+          "injuryTissueType_muscle_contusion_severityMeanDays": "median 3 (IQR 3-3)",
+          "injuryTissueType_tendinopathy_prevalence": "3",
+          "injuryTissueType_nervous_prevalence": "7",
+          "injuryTissueType_nervous_incidence": "0.62 (0.25-1.27)",
+          "injuryTissueType_nervous_burden": "4.22 (2.90-5.45)",
+          "injuryTissueType_nervous_severityMeanDays": "median 7 (IQR 5.5-9)",
+          "injuryTissueType_brain_spinal_prevalence": "7",
+          "injuryTissueType_brain_spinal_incidence": "0.62 (0.25-1.27)",
+          "injuryTissueType_brain_spinal_burden": "4.22 (2.90-5.45)",
+          "injuryTissueType_brain_spinal_severityMeanDays": "median 7 (IQR 5.5-9)",
+          "injuryTissueType_concussion_prevalence": "7",
+          "injuryTissueType_concussion_incidence": "0.62 (0.25-1.27)",
+          "injuryTissueType_concussion_burden": "4.22 (2.90-5.36)",
+          "injuryTissueType_concussion_severityMeanDays": "median 7 (IQR 5.5-9)",
+          "injuryTissueType_bone_prevalence": "2",
+          "injuryTissueType_bone_incidence": "0.18 (0.02-0.63)",
+          "injuryTissueType_bone_burden": "16.00 (0.35-31.64)",
+          "injuryTissueType_bone_severityMeanDays": "median 91",
+          "injuryTissueType_bone_fracture_prevalence": "1",
+          "injuryTissueType_bone_contusion_prevalence": "1",
+          "injuryTissueType_cartilage_synovium_bursa_prevalence": "5",
+          "injuryTissueType_cartilage_synovium_bursa_incidence": "0.44 (0.14-1.03)",
+          "injuryTissueType_cartilage_synovium_bursa_burden": "1.93 (0.53-3.34)",
+          "injuryTissueType_cartilage_synovium_bursa_severityMeanDays": "median 2 (IQR 1-9)",
+          "injuryTissueType_cartilage_injury_prevalence": "4",
+          "injuryTissueType_cartilage_injury_incidence": "0.35 (0.1-0.9)",
+          "injuryTissueType_cartilage_injury_burden": "1.14 (0.35-2.46)",
+          "injuryTissueType_cartilage_injury_severityMeanDays": "median 1.5 (IQR 1-3.75)",
+          "injuryTissueType_synovitis_capsulitis_prevalence": "1",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "11",
+          "injuryTissueType_ligament_joint_capsule_incidence": "0.97 (0.48-1.73)",
+          "injuryTissueType_ligament_joint_capsule_burden": "23.29 (7.38-45.35)",
+          "injuryTissueType_ligament_joint_capsule_severityMeanDays": "median 9 (IQR 2-32.5)",
+          "injuryTissueType_joint_sprain_prevalence": "11",
+          "injuryTissueType_joint_sprain_incidence": "0.97 (0.48-1.73)",
+          "injuryTissueType_joint_sprain_burden": "23.29 (7.38-45.35)",
+          "injuryTissueType_joint_sprain_severityMeanDays": "median 9 (IQR 2-32.5)",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "1",
+          "injuryTissueType_superficial_tissues_skin_incidence": "0.09 (0-0.49)",
+          "injuryTissueType_superficial_tissues_skin_burden": "0.35",
+          "injuryTissueType_superficial_tissues_skin_severityMeanDays": "median 4",
+          "injuryTissueType_vessels_prevalence": "3",
+          "injuryTissueType_vessels_incidence": "0.26 (0.05-0.77)",
+          "injuryTissueType_vessels_burden": "0.44 (0.26-0.53)",
+          "injuryTissueType_vessels_severityMeanDays": "median 2"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "9",
+          "injuryLocation_head_incidence": "0.79 (0.36-1.5)",
+          "injuryLocation_head_burden": "4.64 (3.06-6.22)",
+          "injuryLocation_head_severityMeanDays": "median 7 (IQR 4-8)",
+          "injuryLocation_neck_prevalence": "2",
+          "injuryLocation_neck_incidence": "0.18 (0.02-0.63)",
+          "injuryLocation_neck_burden": "0.26 (0.18-0.35)",
+          "injuryLocation_neck_severityMeanDays": "median 1.5 (IQR 1.25-1.75)",
+          "injuryLocation_shoulder_prevalence": "1",
+          "injuryLocation_shoulder_incidence": "0.09 (0-0.49)",
+          "injuryLocation_lumbosacral_prevalence": "1",
+          "injuryLocation_lumbosacral_incidence": "0.09 (0-0.49)",
+          "injuryLocation_groin_prevalence": "4",
+          "injuryLocation_groin_incidence": "0.35 (0.1-0.9)",
+          "injuryLocation_groin_burden": "4.47 (2.45-7.44)",
+          "injuryLocation_groin_severityMeanDays": "median 9 (IQR 7-14.75)",
+          "injuryLocation_thigh_prevalence": "10",
+          "injuryLocation_thigh_incidence": "0.88 (0.42-1.62)",
+          "injuryLocation_thigh_burden": "6.13 (3.50-9.46)",
+          "injuryLocation_thigh_severityMeanDays": "median 6.5 (IQR 2.75-8.5)",
+          "injuryLocation_knee_prevalence": "11",
+          "injuryLocation_knee_incidence": "0.97 (0.48-1.73)",
+          "injuryLocation_knee_burden": "10.94 (3.06-21.28)",
+          "injuryLocation_knee_severityMeanDays": "median 4 (IQR 1.5-9)",
+          "injuryLocation_lower_leg_prevalence": "9",
+          "injuryLocation_lower_leg_incidence": "0.79 (0.36-1.5)",
+          "injuryLocation_lower_leg_burden": "21.98 (3.15-52.62)",
+          "injuryLocation_lower_leg_severityMeanDays": "median 7 (IQR 3-21)",
+          "injuryLocation_ankle_prevalence": "7",
+          "injuryLocation_ankle_incidence": "0.62 (0.25-1.27)",
+          "injuryLocation_ankle_burden": "13.05 (1.49-33.62)",
+          "injuryLocation_ankle_severityMeanDays": "median 3 (IQR 1.5-11)",
+          "injuryLocation_foot_prevalence": "5",
+          "injuryLocation_foot_incidence": "0.44 (0.14-1.03)",
+          "injuryLocation_foot_burden": "0.88 (0.53-1.31)",
+          "injuryLocation_foot_severityMeanDays": "median 2 (IQR 1-2)"
+        },
+        "illnessRegion": {
+          "illnessRegion_respiratory_prevalence": "16",
+          "illnessRegion_genitourinary_prevalence": "9",
+          "illnessRegion_gastrointestinal_prevalence": "6"
+        }
+      }
+    },
+    {
+      "studyId": "S3953",
+      "populationLabels": ["Total"],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3953",
+          "leadAuthor": "Liveris NI",
+          "title": "Interdependent Effect of Intrinsic Risk Factors on Non-Contact Lower Limb Injuries in Male Football Players: A Structural Equation Modeling Approach",
+          "yearOfPublication": "2026",
+          "journal": "Medicina",
+          "doi": "10.3390/medicina62010052",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Greece",
+          "levelOfPlay": "Greek professional second/third division and U19 teams",
+          "sex": "male",
+          "ageCategory": "Senior and U19",
+          "meanAge": "22.16 ± 5.03",
+          "sampleSizePlayers": "97",
+          "numberOfTeams": "5",
+          "observationDuration": "2022-2023 competitive season (10 months)"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [non-contact lower-limb physical issue causing inability to fully engage in football for at least 1 day]",
+          "incidenceDefinition": "non-contact lower-limb injuries per 1000 athlete-hours of training and match exposure",
+          "severityDefinition": "time loss from injury occurrence to full return to competition",
+          "mechanismReporting": "Medical Staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "athlete-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "75",
+          "injuryPlayersCompletedStudy": "97",
+          "injuryTeamsCompletedStudy": "5",
+          "injuryTimeLossCount": "75",
+          "injuryIncidenceOverall": "1.97",
+          "injuryMostCommonDiagnosis": "hamstring strain",
+          "injuryMostCommonType": "muscle injury",
+          "injuryNonContact": "75"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "42",
+          "injuryTissueType_muscle_injury_incidence": "1.10"
+        },
+        "injuryLocation": {
+          "injuryLocation_groin_prevalence": "13",
+          "injuryLocation_groin_incidence": "0.34",
+          "injuryLocation_groin_severityMeanDays": "6.62 ± 6.25",
+          "injuryLocation_thigh_prevalence": "29",
+          "injuryLocation_thigh_incidence": "0.76",
+          "injuryLocation_knee_prevalence": "6",
+          "injuryLocation_knee_incidence": "0.16",
+          "injuryLocation_lower_leg_prevalence": "6",
+          "injuryLocation_lower_leg_incidence": "0.16",
+          "injuryLocation_lower_leg_severityMeanDays": "6.33 ± 4.85",
+          "injuryLocation_ankle_prevalence": "11",
+          "injuryLocation_ankle_incidence": "0.29",
+          "injuryLocation_ankle_severityMeanDays": "16.00 ± 20.99",
+          "injuryLocation_foot_prevalence": "1",
+          "injuryLocation_foot_incidence": "0.03",
+          "injuryLocation_foot_severityMeanDays": "22.00 ± 0.00"
+        }
+      }
+    }
+  ]
+}

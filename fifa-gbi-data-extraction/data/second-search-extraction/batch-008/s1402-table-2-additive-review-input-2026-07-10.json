@@ -1,0 +1,31 @@
+{
+  "scope": "S1402 Table 2 additive extraction review; second-search extraction Backlog 2; 2026-07-10",
+  "papers": [
+    {
+      "studyId": "S1402",
+      "populationLabels": ["Elite", "Sub-elite", "Amateur"],
+      "note": "Table 2 corrective review. Replaced the previously stored percentages in compatible structured prevalence rows with nearest-whole absolute counts calculated as Table 2 percentage × reported group denominator: Elite n=13, Sub-elite n=39, Amateur n=16. Existing headline fields were preserved. Table 2 traumatic/non-traumatic mechanism percentages were checked but not mapped to contact/non-contact or onset because those categories are not equivalent. Severity-class percentages were checked but no compatible class-count field exists. The source Joint category was not forced into a narrower schema tissue row. Source: Marques et al. 2024, Table 2, DOI 10.3389/fspor.2024.1363006.",
+      "fields": {
+        "injuryTissueType": {
+          "injuryTissueType_ligament_joint_capsule_prevalence": "3\n2\n2",
+          "injuryTissueType_muscle_injury_prevalence": "1\n6\n2",
+          "injuryTissueType_bone_prevalence": "\n1\n"
+        },
+        "injuryLocation": {
+          "injuryLocation_lower_limb_overall_prevalence": "4\n10\n4",
+          "injuryLocation_upper_limb_overall_prevalence": "\n2\n",
+          "injuryLocation_trunk_overall_prevalence": "1\n\n",
+          "injuryLocation_ankle_prevalence": "3\n1\n1",
+          "injuryLocation_knee_prevalence": "1\n1\n2",
+          "injuryLocation_lumbosacral_prevalence": "1\n\n",
+          "injuryLocation_thigh_prevalence": "\n4\n1",
+          "injuryLocation_groin_prevalence": "\n2\n",
+          "injuryLocation_foot_prevalence": "\n1\n",
+          "injuryLocation_elbow_prevalence": "\n1\n",
+          "injuryLocation_wrist_prevalence": "\n1\n",
+          "injuryLocation_hip_prevalence": "\n1\n"
+        }
+      }
+    }
+  ]
+}

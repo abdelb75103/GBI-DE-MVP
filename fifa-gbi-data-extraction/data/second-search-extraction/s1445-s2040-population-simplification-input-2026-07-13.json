@@ -1,0 +1,91 @@
+{
+  "scope": "User-requested live simplification of S1445 and S2040 population layouts; additive source values retained only where directly reported; 2026-07-13",
+  "papers": [
+    {
+      "studyId": "S1445",
+      "populationLabels": ["Total"],
+      "note": "2026-07-13 user-requested correction: replaced the maturity-by-growth grid with one source-wide Total row. Direct total values from the primary paper are retained: 84 players, 782 injuries, 162,314 player-hours, incidence 4.82 (95% CI 4.49-5.17), mean time loss 23 days, and burden 113 (95% CI 105-121). Maturity and growth-rate analytic cells were intentionally removed from the active extraction layout; their former live state is retained in the correction audit.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S1445",
+          "leadAuthor": "Monasterio X",
+          "title": "The combined effects of growth and maturity status on injury risk in an elite football academy.",
+          "yearOfPublication": "2024",
+          "journal": "Biology of Sport",
+          "doi": "10.5114/biolsport.2024.129472",
+          "studyDesign": "retrospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Spain",
+          "levelOfPlay": "elite academy",
+          "sex": "male",
+          "ageCategory": "youth",
+          "sampleSizePlayers": "84",
+          "numberOfTeams": "1",
+          "observationDuration": "2000-2020 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss",
+          "incidenceDefinition": "injuries per 1000 player-hours",
+          "burdenDefinition": "days lost per 1000 player-hours",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "20",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "162314"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "782",
+          "injuryIncidenceOverall": "4.82",
+          "injuryIncidenceCi95": "4.49-5.17",
+          "injuryTimeLossMean": "23",
+          "injuryBurden": "113",
+          "injuryBurdenCi95": "105-121"
+        }
+      }
+    },
+    {
+      "studyId": "S2040",
+      "populationLabels": ["All players", "PRO", "U17", "U19"],
+      "note": "2026-07-13 user-requested correction: simplified the extraction to All players / PRO / U17 / U19. Direct cohort counts and age rows are retained from Table 1. The direct total of 144 non-contact lower-limb muscle injuries remains on All players only. The source reports incidence and return-to-play only by ACTN3 genotype, so all genotype-specific rate and recovery cells were intentionally removed rather than derived or reassigned to PRO, U17, or U19.",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2040",
+          "leadAuthor": "Barthelemy B",
+          "title": "Higher Incidence and Longer Recovery Time from Non-Contact Muscle Injuries in ACTN3 XX Genotype Players from a Soccer Academy: A Three-Season Longitudinal Study.",
+          "yearOfPublication": "2026",
+          "journal": "Sports Medicine - Open",
+          "doi": "10.1186/s40798-026-00978-2",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "France",
+          "levelOfPlay": "top-level professional and academy\nprofessional (Ligue 1)\nyouth national level\nyouth national level",
+          "sex": "male",
+          "ageCategory": "senior and youth\nsenior\nU17\nU19",
+          "meanAge": "\n24.3 ± 3.2\n16.6 ± 0.5\n18.8 ± 0.8",
+          "sampleSizePlayers": "76\n22\n27\n27",
+          "numberOfTeams": "1",
+          "observationDuration": "2020/21-2022/23, 3 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [non-contact lower-limb muscle injuries only]",
+          "incidenceDefinition": "non-contact muscle injuries per 1000 player-hours",
+          "severityDefinition": "return-to-play days",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "3",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "144",
+          "injuryNonContact": "144"
+        }
+      }
+    }
+  ]
+}

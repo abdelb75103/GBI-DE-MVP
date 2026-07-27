@@ -1,0 +1,63 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; S2284 american_data reclassification and manual Tabs 1-10 extraction; 2026-07-14",
+  "model": "Codex GPT-5 (local inline workflow; high reasoning; no Gemini)",
+  "classification": {
+    "previous": "american_data",
+    "corrected": "eligible primary football study",
+    "rationale": "The source uses the Pac-12 Health Analytics Program/CARE-Affiliated Program, a conference-specific registry across 12 Pac-12 institutions. It is not U.S. High School RIO, the NCAA Injury Surveillance Program, or national U.S. surveillance. The paper explicitly distinguishes its Pac-12 athlete-year analysis from prior NCAA athlete-exposure studies, and it reports a clean women's soccer subgroup.",
+    "sourceFile": "tmp/full-text-ai-review-newly-imported-pdfs-2026-06-26/pdfs/S2284.pdf",
+    "sourceSha256": "c284984b4099c6fd06de039ddcca1c3be5d429b7d229f3250905d6ee480377f9",
+    "protectedPreApplyHash": "6f907c93392c31caf3a2639a732d915401bc3f7fd9a6c4e7f1fbc2696be358f3"
+  },
+  "papers": [
+    {
+      "studyId": "S2284",
+      "populationLabels": [
+        "All seasons",
+        "2016-2017 athletic season",
+        "2017-2018 athletic season",
+        "2018-2019 athletic season",
+        "2019-2020 athletic season",
+        "2020-2021 athletic season",
+        "2021-2022 athletic season"
+      ],
+      "note": "Batch 017 S2284 user-approved american_data reclassification and manual primary-PDF extraction. The Pac-12 Health Analytics Program/CARE-Affiliated Program is a conference-specific registry, not U.S. High School RIO, the NCAA Injury Surveillance Program, or national U.S. surveillance. The paper explicitly contrasts its Pac-12 athlete-year analysis with prior NCAA athlete-exposure studies. Only the clean women's soccer subgroup is extracted. Methods and all Results, Tables 1-2, the contact-level Figure, Discussion, limitations, and references were scanned. Table 1 directly reports 182 soccer concussions overall and 34/36/39/17/40/16 by academic season; Table 2 directly reports the matching overall and annual incidences per 100 athlete-years with 95% CIs. No soccer athlete-year total was printed, so exposure was not back-calculated from count/rate; the printed 14,486 athlete-years and 815 unique athletes are all-sport totals and were not copied. Soccer had more than 5 represented teams, but the exact number and soccer-specific player count/age were not reported. The contact-class figure is pooled across sports and was not mapped. Soccer-specific illness, severity, recurrence, mechanism, location, burden, match/training, and time-loss metrics were absent; the authors state that mechanism was not directly assessed.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Whelan BM",
+          "title": "Beyond Contact: Epidemiology of Concussion Incidence in Women's Collegiate Sports, 2016–2022",
+          "yearOfPublication": "2026",
+          "journal": "Journal of Athletic Training",
+          "doi": "10.4085/1062-6050-0290.25",
+          "studyDesign": "retrospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "United States",
+          "levelOfPlay": "women's collegiate, Division I conference",
+          "sex": "female",
+          "numberOfTeams": ">5",
+          "observationDuration": "July 2016-June 2022, 6 athletic seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [concussion diagnosed by team medical personnel using the Concussion in Sport Group definition]",
+          "incidenceDefinition": "concussions per 100 athlete-years (roster-based; each athlete contributes 1 athlete-year per season)",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "6",
+          "exposureMeasurementUnit": "other"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "182\n34\n36\n39\n17\n40\n16",
+          "injuryIncidenceOverall": "11.03\n20.61\n17.06\n13.18\n5.52\n12.20\n4.68",
+          "injuryIncidenceCi95": "9.61-12.63\n15.14-27.41\n12.59-22.72\n9.79-17.50\n3.47-8.66\n9.08-16.18\n2.90-7.46"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_concussion_prevalence": "182\n34\n36\n39\n17\n40\n16",
+          "injuryTissueType_concussion_incidence": "11.03 (95% CI 9.61-12.63)\n20.61 (95% CI 15.14-27.41)\n17.06 (95% CI 12.59-22.72)\n13.18 (95% CI 9.79-17.50)\n5.52 (95% CI 3.47-8.66)\n12.20 (95% CI 9.08-16.18)\n4.68 (95% CI 2.90-7.46)"
+        }
+      }
+    }
+  ]
+}

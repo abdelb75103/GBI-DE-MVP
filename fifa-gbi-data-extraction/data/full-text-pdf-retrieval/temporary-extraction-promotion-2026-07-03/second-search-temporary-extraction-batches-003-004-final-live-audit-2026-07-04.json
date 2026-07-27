@@ -1,0 +1,406 @@
+{
+  "scope": "Second search temporary extraction bridge and live extraction batches 003-004, final state",
+  "sourceBatch": "Second search - Ishanka - 2026-05-26",
+  "generatedAt": "2026-07-04T14:09:43.311Z",
+  "extractedPendingReview": [
+    "S899",
+    "S982",
+    "S989",
+    "S991",
+    "S1009",
+    "S1014",
+    "S1041",
+    "S1049",
+    "S1060",
+    "S1109"
+  ],
+  "eligibilityFailedOrExcluded": [
+    "S1019",
+    "S1091"
+  ],
+  "replacementsApplied": {
+    "S1019": "S1109",
+    "S1091": "S1109 is extraction replacement after S1091 UEFA exclusion; S1019 systematic review was also excluded"
+  },
+  "protectedScreeningFieldsChanged": false,
+  "records": [
+    {
+      "studyId": "S899",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "991d4da5-f312-49a6-8b92-cc7d7ff85a38",
+        "fileSha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+        "storageBucket": "papers",
+        "storageObjectPath": "34863f3f-eea0-45ca-82f4-3e122caa97f8/1781805784240-S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 41,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 3,
+        "populationValueCount": 35,
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S982",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "dbcb7b15-192d-4ab8-98db-71672aaf7e71",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "6ae104a1-31c1-4c19-89a5-9319c4cdf5ac",
+        "fileSha256": "966cfc817e25b1422f2070026f9955dfc2d1c8b9bcae5e02c1e6196d55ac5d49",
+        "storageBucket": "papers",
+        "storageObjectPath": "18182f45-a619-47c3-993b-ecececdb1701/1781615430779-S982-the-11-injury-prevention-programme-decreases-rate-of-hamstring-strain-injuries-in-male-collegiate-soccer-players.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Control group",
+          "Intervention group"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 40,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 2,
+        "populationValueCount": 28,
+        "populationLabels": [
+          "Control group",
+          "Intervention group"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S989",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "35733dcd-9e5b-4bf5-ba6a-cf7435fed46b",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "89438b9f-9cc1-42c4-86d0-fbfeb0a69eb7",
+        "fileSha256": "e3def84369db071ecd0567f5086db528a4026ad601c841c91875e78968c036c0",
+        "storageBucket": "papers",
+        "storageObjectPath": "28e566c9-d1da-44db-9d3a-2ad5b0755d25/1781804955350-S989-shoulder-injuries-in-brazilian-professional-football-players-epidemiological-analysis-of-3828-games.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 48,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 26,
+        "populationLabels": [
+          "Total"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S991",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "5e45d1f1-7615-41cf-a198-5f47297ba707",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "bb18135e-56de-46f7-a65c-dcbc60c8c447",
+        "fileSha256": "339adbd8d3ad2809e4e5586cf4c20a2ab5579c217455aa05c8a381d3dad2288b",
+        "storageBucket": "papers",
+        "storageObjectPath": "ceb14ffc-0b7f-4ca1-98d7-dbb48b524e84/1781618240762-S991-injury-incidence-severity-and-type-across-the-menstrual-cycle-in-female-footballers-a-prospective-three-season-cohort-st.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 45,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 24,
+        "populationLabels": [
+          "Total"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1009",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "3940773f-5ab6-4805-8c79-18722dd9f28c",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "7664e983-aed6-4114-b6ab-15ce7bf9a851",
+        "fileSha256": "76e9da6a388562cbb023f4aec0fa8ab4e56a6ade363d8cff719fb43731a4788b",
+        "storageBucket": "papers",
+        "storageObjectPath": "d6d10a25-b85f-4b78-889b-3b67e72ff8e3/1781617190984-S1009-use-of-the-concussion-check-protocol-for-concussion-assessment-in-a-female-soccer-team-over-two-consecutive-seasons-in-n.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 7,
+        "fieldCount": 49,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 29,
+        "populationLabels": [
+          "Total"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1014",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "85ddb9df-2911-4fa4-99e6-f0637b1598b9",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "02e85209-d10f-494c-82da-54e817b4cacc",
+        "fileSha256": "85f0018f9315be9143777a4981e70b7e7642092c41f64ed59cecc592edfd2503",
+        "storageBucket": "papers",
+        "storageObjectPath": "78581925-ab2b-4fd4-b6a7-b444fa42d5b1/1781618443013-S1014-efficacy-of-a-new-injury-prevention-programme-funball-in-young-male-football-soccer-players-a-cluster-randomised-control.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Intervention group",
+          "Control group"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 65,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 2,
+        "populationValueCount": 87,
+        "populationLabels": [
+          "Intervention group",
+          "Control group"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1041",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "dbfa8741-d29a-413a-924e-f5ae73dfdf71",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "41073b51-b844-4307-8e68-2b92361e9985",
+        "fileSha256": "19c26258c1f2c261cc958dab3b841066ad626b01f6d3094bed0c7c1a73d294e8",
+        "storageBucket": "papers",
+        "storageObjectPath": "607ac267-0dfe-41a0-80c9-1ed13e1354db/1780952105945-S1041-groin-injuries-in-women-s-premier-league-football-in-norway-a-two-season-prospective-cohort-study-describing-clinical-an.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 51,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 31,
+        "populationLabels": [
+          "Total"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1049",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "ad6d7ab3-4a09-4867-bf55-a018bb19e1ec",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "383a9b00-393c-44ab-ae7a-16902db397af",
+        "fileSha256": "d9fc4d1a751d59bd359ef6b7d3d4ee5d12d1f3f8ddfd5d822deea78e1afb8f1b",
+        "storageBucket": "papers",
+        "storageObjectPath": "f7a9f673-30c7-41e6-9762-51f66b222fca/1781866753133-S1049-prevalence-and-intensity-of-pain-in-male-and-female-amateur-football-players-a-prospective-cohort-study.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Total"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 5,
+        "fieldCount": 33,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 1,
+        "populationValueCount": 13,
+        "populationLabels": [
+          "Total"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1060",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "91030508-f3c3-44b5-801a-4cef8fef6e5e",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "de173dce-ef77-488b-8159-c82e80295426",
+        "fileSha256": "a427d21d575f702ae94700acd14a4050ee51829fef0b5568a89281e435ff5d04",
+        "storageBucket": "papers",
+        "storageObjectPath": "961d75d0-d93f-42bb-8c50-ad24000c60bd/1782231831642-S1060-actn3-xx-genotype-negatively-affects-running-performance-and-increases-muscle-injury-incidence-in-laliga-footb.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "RR genotype",
+          "RX genotype",
+          "XX genotype"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 47,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 3,
+        "populationValueCount": 56,
+        "populationLabels": [
+          "RR genotype",
+          "RX genotype",
+          "XX genotype"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1109",
+      "expectedOutcome": "extracted_pending_review",
+      "paper": {
+        "id": "b2b650c8-da4c-4385-a7bb-9471e4627e36",
+        "status": "processing",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": null,
+        "primaryFileId": "3121e936-2d61-4256-8b37-4214c3eb146a",
+        "fileSha256": "034374c11d871ced0dc9ae2763bdcc3f6f1962370d364a3d368fffab75eb4fe0",
+        "storageBucket": "papers",
+        "storageObjectPath": "04d1ce80-60e8-43ff-af46-7f58fcc2f145/1782332634969-S1109-the-effects-of-jump-training-on-measures-of-physical-performance-lower-extremities-injury-incidence-and-burden.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": [
+          "Control group",
+          "Experimental group"
+        ],
+        "populationHashPresent": true
+      },
+      "extraction": {
+        "tabCount": 6,
+        "fieldCount": 35,
+        "coreFieldsComplete": true,
+        "populationGroupCount": 2,
+        "populationValueCount": 21,
+        "populationLabels": [
+          "Control group",
+          "Experimental group"
+        ]
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1019",
+      "expectedOutcome": "eligibility_excluded",
+      "paper": {
+        "id": "8de93888-b261-43e2-95e6-b19139337672",
+        "status": "systematic_review",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": "Systematic review/meta-analysis; not a primary extraction record",
+        "primaryFileId": "eaca6498-8c90-46ab-9ee5-d383364aafd4",
+        "fileSha256": "4a24ee92f08b0367c43bb610c5efafaee62f6614aa4f5f309cb137d8e2a84cb7",
+        "storageBucket": "papers",
+        "storageObjectPath": "9d301505-c78f-4a13-91d4-49952d316604/1781617107215-S1019-injury-profile-in-youth-female-athletes-a-systematic-review-and-meta-analysis.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": null,
+        "populationHashPresent": false
+      },
+      "extraction": {
+        "tabCount": 0,
+        "fieldCount": 0,
+        "coreFieldsComplete": false,
+        "populationGroupCount": 0,
+        "populationValueCount": 0,
+        "populationLabels": []
+      },
+      "protectedScreeningFieldsChanged": false
+    },
+    {
+      "studyId": "S1091",
+      "expectedOutcome": "eligibility_excluded",
+      "paper": {
+        "id": "91a8df28-89d2-4e85-8f93-372960a0adbd",
+        "status": "uefa",
+        "assignedTo": "00000000-0000-0000-0000-000000000001",
+        "flagReason": "UEFA Women’s Elite Club Injury Study family; excluded from routine extraction queue",
+        "primaryFileId": "ea13005a-eb77-4907-b74a-e51ea869ef81",
+        "fileSha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+        "storageBucket": "papers",
+        "storageObjectPath": "a844cbed-9e3b-4384-9d9e-bce3a4c028fd/1781618394268-S1091-uefa-women-s-elite-club-injury-study-a-prospective-study-on-1527-injuries-over-four-consecutive-seasons-2018-2019-to-202.pdf",
+        "searchBatch": "second",
+        "temporaryExtractionPromotion": true,
+        "populationLabels": null,
+        "populationHashPresent": false
+      },
+      "extraction": {
+        "tabCount": 0,
+        "fieldCount": 0,
+        "coreFieldsComplete": false,
+        "populationGroupCount": 0,
+        "populationValueCount": 0,
+        "populationLabels": []
+      },
+      "protectedScreeningFieldsChanged": false
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "artifactType": "Backlog 2 Batch 033 final live integrity audit",
+  "scope": "Fixed membership S3518, S3873, S3881, S3896, S3953 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "inputArtifact": "data/second-search-extraction/batch-033/second-search-extraction-batch-033-input-2026-07-15.json",
+  "fixedMembership": ["S3518", "S3873", "S3881", "S3896", "S3953"],
+  "stageA": {
+    "result": "passed with one needs-reviewer-attention caveat",
+    "sourceInspection": "Each attached primary PDF was inspected in full once. All five local SHA-256 values match the live papers.primary_file_sha256 values.",
+    "fieldValidation": {
+      "stagedFieldCount": 202,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S3518": [],
+        "S3873": [],
+        "S3881": ["Total"],
+        "S3896": [],
+        "S3953": ["Total"]
+      },
+      "dryRun": "The normal apply-script dry run stopped at the documented first-write population-sync limitation (Expected 0 population labels, received 1). It issued no live write. A separate schema check validated every staged field ID before the successful apply."
+    },
+    "classifications": {
+      "S3518": "Longitudinal mental-health questionnaire study; no injury or illness surveillance outcome.",
+      "S3873": "Cross-sectional recalled injury-history study with no usable at-risk exposure denominator; flagged No exposure - exclude.",
+      "S3881": "Prospective FIFA Women's World Cup injury, illness, and mental-health surveillance cohort; extracted as one Total row.",
+      "S3896": "Cross-sectional active-main-referee questionnaire study; tagged referee because participants are not current football players.",
+      "S3953": "Prospective non-contact lower-limb injury cohort; extracted as one Total row from direct Table 4/Figure 5 values."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "fieldApply": {
+      "S3881": {
+        "stagedFields": 154,
+        "writtenFields": 155,
+        "additionalCoreNotReportedFields": ["seasonLength"],
+        "skippedNonblankFields": 0,
+        "unknownFields": 0,
+        "populationGroups": 1,
+        "populationValues": 138
+      },
+      "S3953": {
+        "stagedFields": 48,
+        "writtenFields": 55,
+        "additionalCoreNotReportedFields": ["illnessDefinition", "burdenDefinition", "recurrenceDefinition", "seasonLength", "totalExposure", "matchExposure", "trainingExposure"],
+        "skippedNonblankFields": 0,
+        "unknownFields": 0,
+        "populationGroups": 1,
+        "populationValues": 34
+      }
+    },
+    "statusUpdates": {
+      "S3873": {"status": "flagged", "flagReason": "No exposure - exclude"},
+      "S3881": {"status": "processing", "flagReason": null},
+      "S3896": {"status": "referee", "flagReason": "Soccer referee population; not current football-player participants"},
+      "S3953": {"status": "processing", "flagReason": null}
+    },
+    "noOpExclusions": ["S3518"],
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed with one needs-reviewer-attention caveat",
+    "exactMembership": ["S3518", "S3873", "S3881", "S3896", "S3953"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "statuses": {
+      "S3518": "mental_health",
+      "S3873": "flagged",
+      "S3881": "processing",
+      "S3896": "referee",
+      "S3953": "processing"
+    },
+    "primaryFilesAttached": 5,
+    "primaryFileHashMismatches": 0,
+    "studyIdChecks": {
+      "S3881": "S3881 equals papers.assigned_study_id",
+      "S3953": "S3953 equals papers.assigned_study_id",
+      "exclusions": "No extraction rows were staged for S3518, S3873, or S3896."
+    },
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "preApplySignatureSha256": "025799f38deac64642550cbb780e2424dfaed5e0c95173ea3864555bd0c65aa3",
+      "postApplySignatureSha256": "025799f38deac64642550cbb780e2424dfaed5e0c95173ea3864555bd0c65aa3",
+      "fullTextVotesVerified": 10,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "033",
+      "updatedRows": ["S3518", "S3873", "S3881", "S3896", "S3953"]
+    },
+    "papers": [
+      {
+        "studyId": "S3518",
+        "status": "mental_health",
+        "populationLabels": [],
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "917fa91a815ff9d61b11335c440dcbbe2630b63099c14f02292727c20908cc87"
+      },
+      {
+        "studyId": "S3873",
+        "status": "flagged",
+        "flagReason": "No exposure - exclude",
+        "populationLabels": [],
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "6b45c245adf0dc15acd774ea91f354e2aa4178129a81eb38d89d7b0a66d69572"
+      },
+      {
+        "studyId": "S3881",
+        "status": "processing",
+        "populationLabels": ["Total"],
+        "populationCount": 1,
+        "liveFieldCount": 155,
+        "populationValueCount": 138,
+        "notReportedCoreFieldCount": 1,
+        "primaryFileSha256": "1aaed0d40e1738184710d0e706bf99e187908044ddcefca592a5a7155bbf209d"
+      },
+      {
+        "studyId": "S3896",
+        "status": "referee",
+        "flagReason": "Soccer referee population; not current football-player participants",
+        "populationLabels": [],
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "329b1c29a00a820f7031cd8d334289b5858770c97c75a14de895bd633b9fd0cb"
+      },
+      {
+        "studyId": "S3953",
+        "status": "processing",
+        "populationLabels": ["Total"],
+        "populationCount": 1,
+        "liveFieldCount": 55,
+        "populationValueCount": 34,
+        "notReportedCoreFieldCount": 7,
+        "primaryFileSha256": "b08f51e2d86d43cea4c32896143b4f16dc7038cc46375912a5af018e50c94980"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "S3518": "Attached 11-page primary PDF: abstract, methods/participants, Table 1, Tables 2-3, results, discussion, limitations, conclusion, and references swept.",
+    "S3873": "Attached 12-page primary PDF: abstract, design/participants, Tables 1-5, injury-history questionnaire method, results, discussion, limitations, conclusion, and references swept.",
+    "S3881": "Attached 12-page primary PDF: abstract, methods/definitions/exposure, Table 1, Table 2, Figures 1-2, injury/illness/mental-health results, discussion, limitations, and conclusion swept.",
+    "S3896": "Attached 21-page primary PDF: abstract, referee eligibility/sample, questionnaire methods, results tables, discussion, limitations, conclusion, and references swept.",
+    "S3953": "Attached 28-page primary PDF: abstract, prospective design/participants, Tables 1-8, Figures 1-9, injury-surveillance method, Table 4/Figure 5 injury results, discussion, limitations, conclusion, and references swept."
+  },
+  "caveats": {
+    "S3518": "No compatible injury/illness outcome; mental_health status is retained.",
+    "S3873": "Flagged because its recalled injury-history counts and current weekly training description cannot establish an at-risk denominator.",
+    "S3881": "Time-loss structure is complete from Tables 1-2. Contact, player-action, and foul-play values are restricted to sudden-onset subsets, so they were not represented as all-injury count fields. The results text says 6 respiratory time-loss illnesses while the abstract says 7; only direct medical-attention region counts are stored.",
+    "S3896": "Referee population is ineligible for routine player extraction; referee status replaces the prior mental_health placeholder.",
+    "S3953": "Needs reviewer attention: Table 4 prints 0 in its Total reinjury cell despite direct row-level reinjury entries. No recurrence total is stored. Total/match/training exposure is blank because it was not printed and was not back-calculated."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "Human review: S3881 and S3953 extraction records; S3518 and S3896 exclusions; S3873 flagged denominator exclusion."
+}

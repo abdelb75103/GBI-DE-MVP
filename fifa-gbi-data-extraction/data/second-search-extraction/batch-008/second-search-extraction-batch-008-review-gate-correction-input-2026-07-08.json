@@ -1,0 +1,23 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; extraction Batch 008; post-apply review-gate correction; 2026-07-08",
+  "papers": [
+    {
+      "studyId": "S1326",
+      "populationLabels": ["Total"],
+      "fields": {
+        "participantCharacteristics": {
+          "numberOfTeams": null
+        }
+      }
+    },
+    {
+      "studyId": "S1356",
+      "populationLabels": ["Endurance training group", "Neuromuscular training group"],
+      "fields": {
+        "injuryOutcome": {
+          "injuryRecurrentTotal": "5\n2"
+        }
+      }
+    }
+  ]
+}

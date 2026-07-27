@@ -1,0 +1,78 @@
+{
+  "artifactType": "Aspetar source-family paper-note provenance apply audit",
+  "date": "2026-07-27",
+  "mode": "apply",
+  "fixedMembership": [
+    "S071",
+    "S195",
+    "S261",
+    "S344",
+    "S544",
+    "S555",
+    "S602",
+    "S712",
+    "S1431",
+    "S2824",
+    "S3577"
+  ],
+  "inserted": [
+    {
+      "studyId": "S071",
+      "noteId": "041bd056-cdce-4658-9083-550712e9575f",
+      "createdAt": "2026-07-27T15:23:46.336+00:00"
+    },
+    {
+      "studyId": "S195",
+      "noteId": "7103675b-69cc-4402-819e-dc8be97c3de0",
+      "createdAt": "2026-07-27T15:23:46.424+00:00"
+    },
+    {
+      "studyId": "S261",
+      "noteId": "0dc1e742-18fd-442d-8182-19e218d18a59",
+      "createdAt": "2026-07-27T15:23:46.526+00:00"
+    },
+    {
+      "studyId": "S344",
+      "noteId": "3744d164-1ffa-4397-ba81-d3b931e60c5c",
+      "createdAt": "2026-07-27T15:23:46.572+00:00"
+    },
+    {
+      "studyId": "S544",
+      "noteId": "a113f375-dd62-496c-8c5b-d29c06c59b2f",
+      "createdAt": "2026-07-27T15:23:46.671+00:00"
+    },
+    {
+      "studyId": "S555",
+      "noteId": "e9bfd2d7-a86a-4317-bc61-2402a627dc8a",
+      "createdAt": "2026-07-27T15:23:46.724+00:00"
+    },
+    {
+      "studyId": "S602",
+      "noteId": "f0befd39-db72-4ea3-b4c9-07ce6c2bed28",
+      "createdAt": "2026-07-27T15:23:46.775+00:00"
+    },
+    {
+      "studyId": "S712",
+      "noteId": "de624708-ac47-431a-a75e-82c79daf6115",
+      "createdAt": "2026-07-27T15:23:46.818+00:00"
+    },
+    {
+      "studyId": "S1431",
+      "noteId": "489f7e55-5c7e-4098-9d5e-5270828d6855",
+      "createdAt": "2026-07-27T15:23:46.885+00:00"
+    },
+    {
+      "studyId": "S2824",
+      "noteId": "70445a7a-ebd8-42c4-8fa3-f5dc3632b18c",
+      "createdAt": "2026-07-27T15:23:46.983+00:00"
+    },
+    {
+      "studyId": "S3577",
+      "noteId": "8dc1f7ff-9ec2-456d-9dac-ebec2dd3ab8d",
+      "createdAt": "2026-07-27T15:23:47.047+00:00"
+    }
+  ],
+  "skippedExisting": [],
+  "inputPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/aspetar-reconciliation/aspetar-paper-provenance-note-input-2026-07-27.json",
+  "preApplySnapshotPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/aspetar-reconciliation/aspetar-pre-note-live-snapshot-2026-07-27.json"
+}

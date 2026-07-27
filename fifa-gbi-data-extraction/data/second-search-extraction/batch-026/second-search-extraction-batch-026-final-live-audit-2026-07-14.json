@@ -1,0 +1,133 @@
+{
+  "artifactType": "Backlog 2 Batch 026 final live integrity audit",
+  "scope": "Fixed membership S3942, S4732, S4562, S3935, S5004 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-026/second-search-extraction-batch-026-input-2026-07-14.json",
+  "fixedMembership": ["S3942", "S4732", "S4562", "S3935", "S5004"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached primary PDF was inspected once after a successful SHA-256 comparison against its live papers.primary_file_sha256 value.",
+    "fieldValidation": {
+      "stagedFieldCount": 294,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S3942": ["Total", "1st Bundesliga", "2nd Bundesliga"],
+        "S4732": [],
+        "S4562": ["Total", "Match", "Training"],
+        "S3935": ["Total", "Match", "Training"],
+        "S5004": ["Football 5-a-side"]
+      }
+    },
+    "classification": {
+      "S4732": "Systematic review/meta-analysis of five FIFA 11+ adherence RCTs; tagged systematic_review with no primary-cohort extraction.",
+      "S5004": "Multisport Paralympic surveillance retained only because Tables 2 and 5 give a clean directly reportable Football 5-a-side subgroup."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only field writes with core-tab completion, structured population sync, and one approved S4732 systematic-review classification update",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S3942": 47,
+      "S4562": 162,
+      "S3935": 65,
+      "S5004": 37
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S4732": {
+        "status": "systematic_review",
+        "flagReason": "Systematic review/meta-analysis of FIFA 11+ adherence trials; not a primary extraction record"
+      }
+    },
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S3935", "S3942", "S4562", "S4732", "S5004"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "fullTextVotesVerified": 10,
+      "protectedSignatureChanges": 0,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "026",
+      "updatedRows": ["S3942", "S4732", "S4562", "S3935", "S5004"]
+    },
+    "papers": [
+      {
+        "studyId": "S3942",
+        "status": "processing",
+        "populationLabels": ["Total", "1st Bundesliga", "2nd Bundesliga"],
+        "populationCount": 3,
+        "liveFieldCount": 47,
+        "populationValueCount": 59,
+        "primaryFileSha256": "7bbf740e33a1b2d1e77d38a93f7324e502a208f3d259701afa9405361b9a796c"
+      },
+      {
+        "studyId": "S4732",
+        "status": "systematic_review",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "a6072b47bb7c02768615a9f72d5a958051687d9b266e1a69427622f4b3d0b16e"
+      },
+      {
+        "studyId": "S4562",
+        "status": "processing",
+        "populationLabels": ["Total", "Match", "Training"],
+        "populationCount": 3,
+        "liveFieldCount": 162,
+        "populationValueCount": 251,
+        "primaryFileSha256": "a4de6ec341ad67178677494cff380508c14e36062044be180798d0f7ede28d07"
+      },
+      {
+        "studyId": "S3935",
+        "status": "processing",
+        "populationLabels": ["Total", "Match", "Training"],
+        "populationCount": 3,
+        "liveFieldCount": 65,
+        "populationValueCount": 48,
+        "primaryFileSha256": "a9dd580423ccf2171a5954d60f268d5a6b3dacd0212b4cc9c1bf7327c1964675"
+      },
+      {
+        "studyId": "S5004",
+        "status": "processing",
+        "populationLabels": ["Football 5-a-side"],
+        "populationCount": 1,
+        "liveFieldCount": 37,
+        "populationValueCount": 15,
+        "primaryFileSha256": "35c51f9b47f959b0198a09eddd832fc15b061237ee6a5443c6af28233e6e6f38"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "S3942": "Primary PDF pp. 1-8; Tables I-VII and Figures 1-3 swept. Absent supplements are the only source of unreported detailed location rows.",
+    "S4732": "Primary PDF pp. 1-7; PRISMA methods/flow, Tables 1-2, Figures 1-3 and conclusion confirm systematic-review classification.",
+    "S4562": "Primary PDF pp. 1-24; Table 1 and Tables 2-4 sweep all directly mappable time-loss headline, tissue, location and illness-system rows. Referenced medical-attention supplement was not attached.",
+    "S3935": "Primary PDF pp. 1-7; Tables 1-3 and Figures 1-2 swept. Direct Table 2 diagnosis rows support the staged type and location values.",
+    "S5004": "Primary PDF pp. 1-9; football-only Tables 2 and 5 staged. Tables 1, 3, 4 and 6 are all-sport, therefore intentionally not transferred."
+  },
+  "caveats": {
+    "S3942": "Training exposures are transparent Table IV season sums; Table V/VI Poisson estimates are retained directly. The narrative's conflicting 17,217-hour wording is not used. Detailed locations reside only in non-attached supplements.",
+    "S4732": "True systematic-review exclusion retained in fixed batch; no extraction fields or populations were created.",
+    "S4562": "Total structured counts transparently sum direct Match/Training counts, while rates, burden and medians retain their original denominator-specific lines. Supplementary medical-attention structures are unavailable in the attached PDF.",
+    "S3935": "No exposure total was derived from rate; the paper's direct player-hour rates are adequate. The source places two insidious-onset injuries in its Training incidence group.",
+    "S5004": "Only the direct Football 5-a-side sport subgroup is eligible for extraction; all-sport structural/illness-system tables were deliberately left blank."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "human extraction review"
+}

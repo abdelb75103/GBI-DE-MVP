@@ -1,0 +1,80 @@
+{
+  "scope": "Second search Backlog 2 Batch 034 manual source-to-payload input, prepared 2026-07-15",
+  "sourceBatch": "Second search - Ishanka - 2026-05-26",
+  "batch": "034",
+  "model": "GPT-5 Codex manual extraction; the local GPT-5.5 execution surface was not exposed to this batch agent.",
+  "stageA": {
+    "result": "pass",
+    "populationRule": "No population rows: each fixed record is excluded from routine GBI Tabs 1-10 extraction, so no supported population-aligned extraction value exists.",
+    "structuredDualWrite": "not applicable; no population_values or extraction_fields are staged",
+    "protectedMetadata": "Pre-apply snapshot confirmed two human full-text include decisions and attached PDFs for every fixed record; neither screening_records nor paper metadata will be written.",
+    "protectedMetadataSha256": "349e55ff39fc01adfe11308105c8ff4b8934b1a46ed3f468ec6d9d91f3b9cc78"
+  },
+  "papers": [
+    {
+      "studyId": "S4005",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 1-16: abstract, methods, Tables 1-10, Figures 1-3, results, discussion and limitations.",
+      "rationale": "Cross-sectional survey of 90 Polish amateur/professional male footballers, assessing eating-disorder risk and body esteem. The participant questionnaire mentions chronic conditions only as background; it reports no injury or illness surveillance outcome, usable denominator, incidence, burden, severity, mechanism, diagnosis or location family compatible with Tabs 1-10.",
+      "blankStructuredFamilies": "All results are EAT-26/BES, BMI, diet and social-media measures; no injury/illness structured family is supported."
+    },
+    {
+      "studyId": "S4296",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 1-17: abstract, methods, Table 1, Table 2, Figures 1-3, results, discussion and conclusion.",
+      "rationale": "Age- and education-matched cross-sectional comparison of 214 elite male soccer players and 110 non-athlete controls using BDI-II/BAI and suicidal-ideation measures. It is a mental-health symptom study, not injury/illness surveillance; no GBI injury/illness numerator, denominator, exposure, incidence, burden, severity, mechanism, diagnosis or location value is reported.",
+      "blankStructuredFamilies": "Psychometric symptom/severity data and neural-network classification do not map to the GBI injury/illness schema."
+    },
+    {
+      "studyId": "S4372",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 1-12: abstract, methods, Tables 1-7, Figure 1, results, discussion, limitations and conclusion.",
+      "rationale": "Chinese adolescent football-engagement latent-profile study (n=1,659) with self-esteem and depression-score outcomes. The methods explicitly exclude adolescents with sports-related injuries; all reported outcomes are engagement/psychometric measures, with no injury or illness surveillance value for Tabs 1-10.",
+      "blankStructuredFamilies": "No player injury/illness outcome, numerator, exposure, incidence, burden, severity, mechanism, tissue/type or location family is reported."
+    },
+    {
+      "studyId": "S4669",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "flagged",
+      "liveUpdate": {
+        "status": "flagged",
+        "flagReason": "No exposure - exclude"
+      },
+      "sourceCoverage": "Primary PDF pp. 1-8: abstract, methods, Tables 1-2, Figures 1-3, results, discussion and limitations.",
+      "rationale": "The survey reports 295 prior-six-month, self-reported time-loss injuries among 668 ECNL respondents plus type, location, mechanism and duration distributions. It reports no athlete-/match-/training-exposure total, time-based rate, or defensible inputs for a GBI denominator. Headcount and six-month percentage are not an accepted at-risk denominator, and exposure must not be back-calculated; the record is therefore flagged for no exposure rather than extracted.",
+      "blankStructuredFamilies": "Direct injury characteristics were swept but intentionally unstaged because the necessary at-risk denominator is absent; no count, rate, burden, severity or structured row is applied."
+    },
+    {
+      "studyId": "S4685",
+      "populationLabels": [],
+      "fields": {},
+      "classification": "mental_health",
+      "liveUpdate": {
+        "status": "mental_health",
+        "flagReason": null
+      },
+      "sourceCoverage": "Primary PDF pp. 1-10: abstract, methods, Tables 1-2, results, discussion, recommendations and conclusion.",
+      "rationale": "Australian A-Leagues cross-sectional mental-health survey of 313 men and 240 women. A dichotomous self-report of a severe musculoskeletal injury in the prior six months is only a regression covariate (32%/33%); the primary results are mental-health symptom prevalence, with no compatible injury surveillance count/rate/exposure, structured diagnosis/location, burden or severity payload.",
+      "blankStructuredFamilies": "Mental-health questionnaire prevalence and injury-association odds ratios do not support Tabs 1-10 injury/illness fields."
+    }
+  ]
+}

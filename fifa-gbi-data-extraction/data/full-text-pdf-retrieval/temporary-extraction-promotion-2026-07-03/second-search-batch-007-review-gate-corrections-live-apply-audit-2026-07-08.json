@@ -1,0 +1,30 @@
+{
+  "mode": "apply",
+  "input": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/temporary-extraction-promotion-2026-07-03/second-search-batch-007-review-gate-corrections-2026-07-08.json",
+  "papers": [
+    {
+      "studyId": "S1149",
+      "written": [
+        "illnessTotalCount"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 4,
+        "values": 91
+      }
+    },
+    {
+      "studyId": "S1213",
+      "written": [
+        "injuryTimeLossMean"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 1,
+        "values": 12
+      }
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "artifactType": "Backlog 2 Batch 025 final live integrity audit",
+  "scope": "Fixed membership S5323, S4778, S4629, S3407, S3996 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "medium",
+  "modelNote": "The workflow-default GPT-5.5 was not exposed in this workspace; GPT-5 Codex with medium reasoning was used inline.",
+  "tokenUsage": "Unavailable: this runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-025/second-search-extraction-batch-025-input-2026-07-14.json",
+  "fixedMembership": ["S5323", "S4778", "S4629", "S3407", "S3996"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "All five attached primary PDFs were inspected once and their locally calculated SHA-256 values matched the live primary-file SHA-256 values.",
+    "fieldValidation": {
+      "unknownFieldIds": 0,
+      "stagedFieldCount": 305,
+      "populationLayouts": {
+        "S5323": ["Total"],
+        "S4778": ["Total", "2010-2015", "2016-2021"],
+        "S4629": ["Total", "Training", "Match"],
+        "S3407": ["Total", "Intervention", "Control"],
+        "S3996": ["Intervention", "Control"]
+      }
+    },
+    "classification": {
+      "S5323": "eligible prospective professional-football cohort",
+      "S4778": "eligible MLS injury-surveillance cohort under the MLS reporting-channel rule",
+      "S4629": "eligible prospective youth-football cohort",
+      "S3407": "eligible youth-football randomized controlled trial",
+      "S3996": "eligible collegiate-football non-randomized controlled trial"
+    },
+    "sourceCoverage": {
+      "S5323": "70-page primary source: methods, Tables 1-8, Figures 1-5, results, discussion, limitations, and supplementary material scanned; direct outcome extraction uses primary-surveillance Tables 1-2.",
+      "S4778": "Primary PDF pp. 1-8: methods, Tables 1-3, results, discussion, and limitations scanned.",
+      "S4629": "Primary PDF pp. 1-7: methods, Tables 1-6, results, discussion, and limitations scanned.",
+      "S3407": "41-page primary source: methods, Tables 1-6, Figure 2, results, discussion, and limitations scanned; Figure 2 visually checked.",
+      "S3996": "Primary PDF pp. 1-10: methods, Tables I-III, Figures 1-2, results, discussion, and limitations scanned; the cited Supplementary Table I was not embedded in the attachment."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only live apply with core-tab completion and structured population sync",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S5323": 56,
+      "S4778": 43,
+      "S4629": 129,
+      "S3407": 62,
+      "S3996": 43
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {},
+    "postApplyCorrectionRequired": false,
+    "correctionAuditCreated": false
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S5323", "S4778", "S4629", "S3407", "S3996"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001) with live status processing.",
+    "primaryFilesAttached": 5,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "fullTextVotesVerified": 10,
+      "protectedSignatureChanges": 0,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "025",
+      "updatedRows": ["S5323", "S4778", "S4629", "S3407", "S3996"]
+    },
+    "papers": [
+      {
+        "studyId": "S5323",
+        "status": "processing",
+        "populationLabels": ["Total"],
+        "populationCount": 1,
+        "liveStagedFieldCount": 50,
+        "populationValueCount": 35,
+        "primaryFileSha256": "f3297de213c0ab09f874519dff4bc11e4dda4f0d82b032d09a1f3fb2edbcb5cf"
+      },
+      {
+        "studyId": "S4778",
+        "status": "processing",
+        "populationLabels": ["Total", "2010-2015", "2016-2021"],
+        "populationCount": 3,
+        "liveStagedFieldCount": 35,
+        "populationValueCount": 33,
+        "primaryFileSha256": "cc91286b02afcfb843823ef46fd19ea14130557ad11a503e07f03ef6d2edfc35"
+      },
+      {
+        "studyId": "S4629",
+        "status": "processing",
+        "populationLabels": ["Total", "Training", "Match"],
+        "populationCount": 3,
+        "liveStagedFieldCount": 127,
+        "populationValueCount": 121,
+        "primaryFileSha256": "1f500dd3654f65704a959d913647cc2082fb4807e1bc6d1d20e556acd4e0a0d6"
+      },
+      {
+        "studyId": "S3407",
+        "status": "processing",
+        "populationLabels": ["Total", "Intervention", "Control"],
+        "populationCount": 3,
+        "liveStagedFieldCount": 58,
+        "populationValueCount": 101,
+        "primaryFileSha256": "bbbe1a40e4001e0e5a009bd501ae339a90ae6bbc1fe1dd23b552ad22dca437a4"
+      },
+      {
+        "studyId": "S3996",
+        "status": "processing",
+        "populationLabels": ["Intervention", "Control"],
+        "populationCount": 2,
+        "liveStagedFieldCount": 35,
+        "populationValueCount": 36,
+        "primaryFileSha256": "6c1de0828dd3bf056a8a26a105915533ab2dbea2403c8b75aa950cc0d1cf96d3"
+      }
+    ]
+  },
+  "caveats": {
+    "S5323": "Accepted-manuscript source names six European clubs but not countries or aggregate exposure. Its tissue-family prose percentages conflict with component injury-type rows, so no disputed parent-tissue aggregation was written.",
+    "S4778": "MLS surveillance is eligible despite missing raw player exposure. Contact/non-contact onset subsets cover only 116 of 144 tears and no gap was inferred.",
+    "S4629": "The source's training-burden CI is retained exactly as printed (25.54-4.97), although its reversed range needs reviewer attention.",
+    "S3407": "Totals for compatible Table 5 structured rows are direct group sums; Figure 2 contact/non-contact counts are percentage-derived from its explicit 95-injury denominator. Non-match rows were not mislabelled as training.",
+    "S3996": "The all-player intervention/control population uses 389/343 player-seasons. Raw player-hours and all-ACL match/training counts are absent and were not derived."
+  },
+  "readyFor": "human extraction review"
+}

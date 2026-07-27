@@ -1,0 +1,467 @@
+{
+  "scope": "Backlog 2 Batch 025 — fixed membership S5323, S4778, S4629, S3407, S3996 only",
+  "model": "GPT-5 Codex (medium); the workflow-default GPT-5.5 was not exposed in this workspace.",
+  "fixedBatchMembership": ["S5323", "S4778", "S4629", "S3407", "S3996"],
+  "exclusions": [],
+  "sourceCoverage": {
+    "S5323": "Attached 70-page primary PDF: article header/abstract, methods, Figures 1-5, Tables 1-8, results, discussion, limitations, references, and appended supplementary material scanned once. Direct extraction uses the primary 12-month injury-surveillance results in Tables 1-2; model-performance and cost tables are not outcome extraction data.",
+    "S4778": "Attached primary PDF pp. 1-8: abstract, methods, Tables 1-3, results, discussion, limitations, and references scanned once.",
+    "S4629": "Attached primary PDF pp. 1-7: abstract, methods/definitions, Tables 1-6, results, discussion, limitations, and references scanned once.",
+    "S3407": "Attached 41-page primary PDF: abstract, methods, participant flow, Tables 1-6, Figure 2, results, discussion, limitations, and references scanned once. Figure 2 was visually checked; its 95-injury percentage denominator supports only the stated contact/non-contact count conversion.",
+    "S3996": "Attached primary PDF pp. 1-10: abstract, methods/definitions, Tables I-III, Figures 1-2, results, discussion, limitations, and references scanned once. Supplementary Table I is cited for one-season results but was not embedded in the attached PDF."
+  },
+  "protectedScreeningSignatures": {
+    "S5323": "d05aa15b8b05d52c24440bb9bd9dae3ccec771c71e7fa34c1d39a504d79a182a",
+    "S4778": "7df4de05540a555ceeb42d0bfb17ad82955b48814b1f95caad2bb3bc141ae1de",
+    "S4629": "7674f0e3bd90378ca9073dfdaa46359b9d2db0cb9b1f2c9569004f3794ec1441",
+    "S3407": "7c8a971923e1877a8d8fa84699986a57607f9ed469e753bd8f7da9bf5b884db8",
+    "S3996": "cb8bd54e9c10065631d599d80c38b330632fbfd2ccc5b800028019198e07f1b6"
+  },
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "Each live primary PDF was downloaded and inspected once; its local SHA-256 was checked against the live primary-file SHA-256 before staging.",
+      "Population layouts were selected before field staging: Total for S5323; Total / 2010-2015 / 2016-2021 for S4778; Total / Training / Match for S4629; Total / Intervention / Control for S3407; and Intervention / Control for S3996.",
+      "Tabs 1-4 were checked for all five sources. Every reported results table and usable figure was swept for injury counts, rates, burden, severity, recurrence, mechanism/contact, diagnosis/type, location, and illness outcomes. No paper reports extractable illness outcomes.",
+      "No exposure, count, burden, or days-lost value was back-calculated from a rate. The only arithmetic is transparent source-row aggregation for compatible S3407 total structured counts and the Figure 2 contact/non-contact percentage-to-count exception using the printed total of 95 injuries.",
+      "S4778 is retained as eligible MLS injury-surveillance reporting under the workflow rule despite missing raw player-exposure totals."
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S5323",
+      "populationLabels": ["Total"],
+      "primaryFileSha256": "f3297de213c0ab09f874519dff4bc11e4dda4f0d82b032d09a1f3fb2edbcb5cf",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S5323",
+          "leadAuthor": "Wang Y",
+          "title": "Development and validation of a machine learning model for non-contact injury prediction based on lower limb strength asymmetry in professional football",
+          "yearOfPublication": "2026",
+          "journal": "Scientific Reports",
+          "doi": "10.1038/s41598-025-34468-4",
+          "studyDesign": "prospective cohort study [machine-learning model development and temporal validation]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Europe (six top-tier clubs; countries not specified)",
+          "levelOfPlay": "professional male football; six elite clubs in top-tier European leagues",
+          "sex": "male",
+          "ageCategory": "18-35 years",
+          "meanAge": "24.7 +/- 4.2 years",
+          "sampleSizePlayers": "312",
+          "numberOfTeams": "6",
+          "observationDuration": "12-month prospective surveillance (2022-2023); temporal validation 2023-2024"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [non-contact tissue damage causing unavailability for football training or match participation]",
+          "incidenceDefinition": "non-contact lower-extremity injuries per 1000 player-hours",
+          "severityDefinition": "minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days",
+          "recurrenceDefinition": "recurrent injury after an index injury; source does not provide a same-site rule",
+          "mechanismReporting": "club medical staff using a web-based UEFA-methodology surveillance system; weekly data-completeness audits"
+        },
+        "exposure": {
+          "numberOfSeasons": "1 primary surveillance season",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "127",
+          "injuryIncidenceOverall": "4.8",
+          "injuryIncidenceCi95": "4.2-5.4",
+          "injuryTimeLossTotal": "2847",
+          "injuryMostCommonDiagnosis": "hamstring strain (48)",
+          "injuryMostCommonType": "hamstring strain (48)",
+          "injuryMostCommonLocation": "posterior thigh (52)",
+          "injuryMostCommonSeverity": "moderate, 8-28 days (57)",
+          "injuryNonContact": "127",
+          "injuryRecurrentTotal": "31",
+          "injuryRecurrenceRate": "24.4%"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "hamstring strain",
+          "injuryTissueType_injury_diagnosis_prevalence": "48",
+          "injuryTissueType_injury_diagnosis_incidence": "1.82",
+          "injuryTissueType_injury_diagnosis_severityTotalDays": "1124"
+        },
+        "injuryLocation": {
+          "injuryLocation_lower_limb_overall_prevalence": "127",
+          "injuryLocation_lower_limb_overall_incidence": "4.8",
+          "injuryLocation_lower_limb_overall_severityTotalDays": "2847",
+          "injuryLocation_thigh_prevalence": "52",
+          "injuryLocation_thigh_incidence": "1.97",
+          "injuryLocation_thigh_severityTotalDays": "1287",
+          "injuryLocation_groin_prevalence": "19",
+          "injuryLocation_groin_incidence": "0.72",
+          "injuryLocation_groin_severityTotalDays": "398",
+          "injuryLocation_lower_leg_prevalence": "18",
+          "injuryLocation_lower_leg_incidence": "0.68",
+          "injuryLocation_lower_leg_severityTotalDays": "342"
+        }
+      },
+      "caveats": [
+        "The attached primary source is an accepted-manuscript version with 70 pages, including supplemental material. It identifies six European clubs but does not name the countries or print aggregate player-hour exposure totals.",
+        "The Table 2 component injury-type rows and the prose tissue-family percentages are internally inconsistent. Only the directly printed hamstring diagnosis row and compatible direct location rows are staged; no disputed parent-tissue aggregation is forced.",
+        "All recorded outcome events are non-contact lower-extremity injuries by the study definition; no illness data are reported."
+      ]
+    },
+    {
+      "studyId": "S4778",
+      "populationLabels": ["Total", "2010-2015", "2016-2021"],
+      "primaryFileSha256": "cc91286b02afcfb843823ef46fd19ea14130557ad11a503e07f03ef6d2edfc35",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4778",
+          "leadAuthor": "Forsythe B",
+          "title": "ACL Injuries in Major League Soccer: A 10-Year Analysis of Injury Rate and Return to Play, and Performance Metrics by Player Position",
+          "yearOfPublication": "2025",
+          "journal": "Orthopaedic Journal of Sports Medicine",
+          "doi": "10.1177/23259671251399842",
+          "studyDesign": "retrospective cohort study of Major League Soccer Injury Surveillance database data"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Major League Soccer (United States/Canada)",
+          "levelOfPlay": "professional Major League Soccer",
+          "sex": "male",
+          "ageCategory": "senior professional",
+          "meanAge": "24.8 +/- 4.3 years",
+          "sampleSizePlayers": "132",
+          "observationDuration": "2010-2021 ACL injury surveillance"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [complete ACL rupture, with possible additional co-ligament involvement]",
+          "incidenceDefinition": "annual ACL-injury rate reported by MLS Injury Surveillance database; raw player-exposure denominator not reported",
+          "recurrenceDefinition": "subsequent ACL injury/reinjury as reported by the surveillance database",
+          "mechanismReporting": "Major League Soccer Injury Surveillance database"
+        },
+        "exposure": {
+          "numberOfSeasons": "12",
+          "exposureMeasurementUnit": "other"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "144\n74\n70",
+          "injuryIncidenceOverall": "\n1.21\n1.79",
+          "injuryMostCommonDiagnosis": "ACL rupture",
+          "injuryMostCommonType": "ACL injury",
+          "injuryMostCommonLocation": "knee",
+          "injuryContact": "47",
+          "injuryNonContact": "69"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "ACL rupture",
+          "injuryTissueType_injury_diagnosis_prevalence": "144\n74\n70",
+          "injuryTissueType_injury_diagnosis_incidence": "\n1.21\n1.79",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "144\n74\n70",
+          "injuryTissueType_ligament_joint_capsule_incidence": "\n1.21\n1.79"
+        },
+        "injuryLocation": {
+          "injuryLocation_knee_prevalence": "144\n74\n70",
+          "injuryLocation_knee_incidence": "\n1.21\n1.79"
+        }
+      },
+      "caveats": [
+        "MLS injury-surveillance reporting is eligible under the workflow rule. The authors explicitly note that their annual injury-rate calculation lacks individual player exposure, so raw exposure was not reconstructed.",
+        "The 47 contact and 69 non-contact values are direct Table 1 subsets whose sum is below the 144 tears because injury-onset data are incomplete; no missing mechanism is inferred.",
+        "Return-to-play and games-missed summaries are not recast as standardized time-loss severity fields."
+      ]
+    },
+    {
+      "studyId": "S4629",
+      "populationLabels": ["Total", "Training", "Match"],
+      "primaryFileSha256": "1f500dd3654f65704a959d913647cc2082fb4807e1bc6d1d20e556acd4e0a0d6",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4629",
+          "leadAuthor": "Lee I",
+          "title": "Epidemiology of Sport Injury Among Korean Male Youth Soccer Players: A Prospective Cohort Study",
+          "yearOfPublication": "2026",
+          "journal": "Pediatric Exercise Science",
+          "doi": "10.1123/pes.2024-0118",
+          "studyDesign": "prospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Korea",
+          "levelOfPlay": "elite local U15 youth teams",
+          "sex": "male",
+          "ageCategory": "U15 (12-15 years)",
+          "meanAge": "13.21 (0.95) years",
+          "sampleSizePlayers": "100",
+          "numberOfTeams": "2",
+          "observationDuration": "January-December 2021"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint [any complaint arising during football; time-loss and medical-attention injuries included]",
+          "incidenceDefinition": "injuries per 1000 player-hours",
+          "burdenDefinition": "days lost per 1000 player-hours",
+          "severityDefinition": "slight 0 days; minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days",
+          "recurrenceDefinition": "same body location and injury type after return to full football participation",
+          "mechanismReporting": "certified athletic trainers; exposure collected by coaching staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "243.05 (19.02) mean h/player",
+          "matchExposure": "41.77 (12.73) mean h/player",
+          "trainingExposure": "201.28 (15.88) mean h/player"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "140\n78\n62",
+          "injuryMatchCount": "\n\n62",
+          "injuryTrainingCount": "\n78\n",
+          "injuryIncidenceOverall": "5.76\n3.88\n14.76",
+          "injuryIncidenceMatch": "\n\n14.76",
+          "injuryIncidenceTraining": "\n3.88\n",
+          "injuryIncidenceCi95": "4.81-6.72\n3.02-4.74\n11.09-18.44",
+          "injuryTimeLossMean": "14.01 (35.37) days",
+          "injuryBurden": "80.64\n33.52\n306.57",
+          "injuryBurdenCi95": "67.30-94.02\n25.54-4.97\n230.34-383.00",
+          "injuryMostCommonType": "ligament sprain/rupture (54)",
+          "injuryMostCommonLocation": "ankle (46)",
+          "injuryMostCommonSeverity": "slight, 0 days (40)",
+          "injuryModeRepetitiveGradual": "12",
+          "injuryModeRepetitiveSudden": "8",
+          "injuryContact": "57",
+          "injuryNonContact": "63",
+          "injuryRecurrentTotal": "53",
+          "injuryRecurrenceRate": "37.86%"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_ligament_joint_capsule_prevalence": "54",
+          "injuryTissueType_ligament_joint_capsule_incidence": "2.14",
+          "injuryTissueType_ligament_joint_capsule_burden": "59.56",
+          "injuryTissueType_superficial_contusion_prevalence": "34",
+          "injuryTissueType_superficial_contusion_incidence": "1.40",
+          "injuryTissueType_superficial_contusion_burden": "0.87",
+          "injuryTissueType_muscle_injury_prevalence": "23",
+          "injuryTissueType_muscle_injury_incidence": "0.95",
+          "injuryTissueType_muscle_injury_burden": "5.16",
+          "injuryTissueType_tendon_injury_prevalence": "11",
+          "injuryTissueType_tendon_injury_incidence": "0.45",
+          "injuryTissueType_tendon_injury_burden": "0.61",
+          "injuryTissueType_tendinopathy_prevalence": "11",
+          "injuryTissueType_tendinopathy_incidence": "0.45",
+          "injuryTissueType_tendinopathy_burden": "0.61",
+          "injuryTissueType_bone_prevalence": "7",
+          "injuryTissueType_bone_incidence": "0.29",
+          "injuryTissueType_bone_burden": "6.95",
+          "injuryTissueType_bone_fracture_prevalence": "3",
+          "injuryTissueType_bone_fracture_incidence": "0.12",
+          "injuryTissueType_bone_fracture_burden": "5.76",
+          "injuryTissueType_bone_stress_prevalence": "4",
+          "injuryTissueType_bone_stress_incidence": "0.17",
+          "injuryTissueType_bone_stress_burden": "1.19",
+          "injuryTissueType_laceration_prevalence": "3",
+          "injuryTissueType_laceration_incidence": "0.12",
+          "injuryTissueType_laceration_burden": "0.08"
+        },
+        "injuryLocation": {
+          "injuryLocation_lower_limb_overall_prevalence": "108",
+          "injuryLocation_lower_limb_overall_incidence": "4.44",
+          "injuryLocation_lower_limb_overall_burden": "65.62",
+          "injuryLocation_ankle_prevalence": "46",
+          "injuryLocation_ankle_incidence": "1.89",
+          "injuryLocation_ankle_burden": "38.29",
+          "injuryLocation_thigh_prevalence": "21",
+          "injuryLocation_thigh_incidence": "0.86",
+          "injuryLocation_thigh_burden": "2.09",
+          "injuryLocation_knee_prevalence": "15",
+          "injuryLocation_knee_incidence": "0.62",
+          "injuryLocation_knee_burden": "21.45",
+          "injuryLocation_foot_prevalence": "10",
+          "injuryLocation_foot_incidence": "0.41",
+          "injuryLocation_foot_burden": "1.60",
+          "injuryLocation_lower_leg_prevalence": "6",
+          "injuryLocation_lower_leg_incidence": "0.25",
+          "injuryLocation_lower_leg_burden": "1.00",
+          "injuryLocation_groin_prevalence": "5",
+          "injuryLocation_groin_incidence": "0.21",
+          "injuryLocation_groin_burden": "0.76",
+          "injuryLocation_hip_prevalence": "1",
+          "injuryLocation_hip_incidence": "0.04",
+          "injuryLocation_hip_burden": "0.12",
+          "injuryLocation_upper_limb_overall_prevalence": "18",
+          "injuryLocation_upper_limb_overall_incidence": "0.74",
+          "injuryLocation_upper_limb_overall_burden": "12.62",
+          "injuryLocation_shoulder_prevalence": "3",
+          "injuryLocation_shoulder_incidence": "0.12",
+          "injuryLocation_shoulder_burden": "11.08",
+          "injuryLocation_elbow_prevalence": "2",
+          "injuryLocation_elbow_incidence": "0.08",
+          "injuryLocation_elbow_burden": "0.32",
+          "injuryLocation_wrist_prevalence": "6",
+          "injuryLocation_wrist_incidence": "0.25",
+          "injuryLocation_wrist_burden": "0.29",
+          "injuryLocation_hand_prevalence": "7",
+          "injuryLocation_hand_incidence": "0.29",
+          "injuryLocation_hand_burden": "0.61",
+          "injuryLocation_trunk_overall_prevalence": "14",
+          "injuryLocation_trunk_overall_incidence": "0.58",
+          "injuryLocation_trunk_overall_burden": "2.44",
+          "injuryLocation_lumbosacral_prevalence": "5",
+          "injuryLocation_lumbosacral_incidence": "0.21",
+          "injuryLocation_lumbosacral_burden": "1.47",
+          "injuryLocation_head_prevalence": "4",
+          "injuryLocation_head_incidence": "0.17",
+          "injuryLocation_head_burden": "0.77",
+          "injuryLocation_thoracic_spine_prevalence": "1",
+          "injuryLocation_thoracic_spine_incidence": "0.04",
+          "injuryLocation_thoracic_spine_burden": "0.16",
+          "injuryLocation_chest_prevalence": "1",
+          "injuryLocation_chest_incidence": "0.04",
+          "injuryLocation_chest_burden": "0"
+        }
+      },
+      "caveats": [
+        "The Total / Training / Match layout preserves Table 3's directly reported outcome axis; all detailed type and location rows are pooled Total-only because the source does not give their training/match split.",
+        "The source prints only mean exposure per player, so aggregate player-hour exposure is not back-calculated. Its training-burden CI is preserved exactly as printed (`25.54-4.97`), although its reversed range needs reviewer attention.",
+        "Bone parent values and Hand parent values are transparent sums of directly reported compatible subrows. Contact (57) is the sum of other-player, moving-object, and stagnant-object contact rows; CIs and mean severity values are not aggregated."
+      ]
+    },
+    {
+      "studyId": "S3407",
+      "populationLabels": ["Total", "Intervention", "Control"],
+      "primaryFileSha256": "bbbe1a40e4001e0e5a009bd501ae339a90ae6bbc1fe1dd23b552ad22dca437a4",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3407",
+          "leadAuthor": "Brunelli M",
+          "title": "One exercise session a day keeps the physio away: effect of a newly designed daily exercise programme on injury prevention in youth football - A randomised controlled trial",
+          "yearOfPublication": "2025",
+          "journal": "Physical Therapy in Sport",
+          "doi": "10.1016/j.ptsp.2025.04.005",
+          "studyDesign": "randomised controlled trial"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "England",
+          "levelOfPlay": "academy youth football",
+          "sex": "male",
+          "ageCategory": "U9-U18 (8-18 years)",
+          "meanAge": "\n14 years (95% CI 11-15)\n13 years (95% CI 12-14)",
+          "sampleSizePlayers": "93\n46\n47",
+          "numberOfTeams": "1 academy",
+          "observationDuration": "2021/2022 season; 6 months"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [physical complaint preventing full participation in subsequent football training or match play]",
+          "incidenceDefinition": "time-loss injuries per 1000 player-hours",
+          "severityDefinition": "slight 0 days; minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days",
+          "mechanismReporting": "academy physiotherapist using a standardized online injury-recording platform"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "\n4964.30\n4952.25",
+          "matchExposure": "\n23.43 mean h/player (95% CI 1.66-45.20)\n23.98 mean h/player (95% CI 0.75-47.21)",
+          "trainingExposure": "\n84.23 mean h/player (95% CI 9.44-159.02)\n81.65 mean h/player (95% CI 12.59-150.70)"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "95\n50\n45",
+          "injuryIncidenceOverall": "\n10.10\n9.07",
+          "injuryIncidenceCi95": "\n7.49-13.31\n6.61-12.13",
+          "injuryMatchCount": "\n24\n23",
+          "injuryIncidenceMatch": "\n22.27\n20.41",
+          "injuryTimeLossMedian": "\n15 days (95% CI 7-23)\n16 days (95% CI 11-27)",
+          "injuryMostCommonType": "muscle (29)\nmuscle (15)\nmuscle (14)",
+          "injuryMostCommonLocation": "ankle (18)\nankle (10)\nknee (11)",
+          "injuryMostCommonSeverity": "moderate (41)\nmoderate (23)\nmoderate (18)",
+          "injuryContact": "39",
+          "injuryNonContact": "56"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_bone_prevalence": "17\n11\n6",
+          "injuryTissueType_nervous_prevalence": "3\n3\n",
+          "injuryTissueType_brain_spinal_prevalence": "3\n3\n",
+          "injuryTissueType_cartilage_injury_prevalence": "4\n1\n3",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "19\n10\n9",
+          "injuryTissueType_muscle_injury_prevalence": "29\n15\n14",
+          "injuryTissueType_tendon_injury_prevalence": "21\n8\n13"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "3\n3\n",
+          "injuryLocation_neck_prevalence": "2\n1\n1",
+          "injuryLocation_upper_limb_overall_prevalence": "7\n5\n2",
+          "injuryLocation_shoulder_prevalence": "1\n1\n",
+          "injuryLocation_forearm_prevalence": "2\n\n2",
+          "injuryLocation_hand_prevalence": "2\n2\n",
+          "injuryLocation_trunk_overall_prevalence": "6\n5\n1",
+          "injuryLocation_lumbosacral_prevalence": "5\n4\n1",
+          "injuryLocation_lower_limb_overall_prevalence": "79\n42\n37",
+          "injuryLocation_groin_prevalence": "13\n5\n8",
+          "injuryLocation_thigh_prevalence": "11\n5\n6",
+          "injuryLocation_knee_prevalence": "17\n6\n11",
+          "injuryLocation_lower_leg_prevalence": "12\n8\n4",
+          "injuryLocation_ankle_prevalence": "18\n10\n8",
+          "injuryLocation_foot_prevalence": "8\n4\n4"
+        }
+      },
+      "caveats": [
+        "The Total / Intervention / Control layout preserves the RCT comparison. Total structured rows and most-common summaries are transparent sums of the two Table 5 groups; no rates, burden, or severity values were summed.",
+        "Table 4's non-match category is not treated as training because the methods allow another occasion. Figure 2's contact and non-contact percentages were converted to 39 and 56 using its printed 95-injury denominator; the count conversion is the only percentage-derived value.",
+        "Table 5's Joint and Disc labels have no clean one-to-one schema field, and Sternum/ribs/upper-back is retained only in the compatible Trunk parent; no illness outcomes are reported."
+      ]
+    },
+    {
+      "studyId": "S3996",
+      "populationLabels": ["Intervention", "Control"],
+      "primaryFileSha256": "6c1de0828dd3bf056a8a26a105915533ab2dbea2403c8b75aa950cc0d1cf96d3",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3996",
+          "leadAuthor": "Magoshi H",
+          "title": "Effect of the FIFA 11+ on anterior cruciate ligament injury incidence rates in collegiate female football players over three consecutive seasons",
+          "yearOfPublication": "2026",
+          "journal": "The Journal of Sports Medicine and Physical Fitness",
+          "doi": "10.23736/S0022-4707.25.17071-0",
+          "studyDesign": "non-randomized controlled trial [secondary analysis]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Japan",
+          "levelOfPlay": "collegiate Kanto University Women's Football Association Division 1",
+          "sex": "female",
+          "ageCategory": "collegiate",
+          "meanAge": "19.6 +/- 1.2 years\n19.6 +/- 1.1 years",
+          "sampleSizePlayers": "389 player-seasons\n343 player-seasons",
+          "numberOfTeams": "4\n3",
+          "observationDuration": "2013-2015 (three consecutive seasons)"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [MRI-diagnosed ACL injury occurring during football practice or match]",
+          "incidenceDefinition": "ACL injuries per 1000 player-hours",
+          "mechanismReporting": "team athletic trainers or physiotherapists; ACL diagnosis by orthopedic surgeons using MRI"
+        },
+        "exposure": {
+          "numberOfSeasons": "3",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "9\n23",
+          "injuryIncidenceOverall": "0.075\n0.259",
+          "injuryMostCommonDiagnosis": "ACL injury",
+          "injuryMostCommonType": "ligament injury",
+          "injuryMostCommonLocation": "knee",
+          "injuryContact": "3\n5",
+          "injuryNonContact": "6\n18"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "ACL injury\nACL injury",
+          "injuryTissueType_injury_diagnosis_prevalence": "9\n23",
+          "injuryTissueType_injury_diagnosis_incidence": "0.075\n0.259",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "9\n23",
+          "injuryTissueType_ligament_joint_capsule_incidence": "0.075\n0.259"
+        },
+        "injuryLocation": {
+          "injuryLocation_knee_prevalence": "9\n23",
+          "injuryLocation_knee_incidence": "0.075\n0.259"
+        }
+      },
+      "caveats": [
+        "The Intervention / Control rows use Table II's all-player three-season player-season groups (389 / 343), not the smaller continuing-three-season subgroup (66 / 62).",
+        "Raw player-hour totals are not printed and were not back-calculated. Table III reports only non-contact playing-situation rows, so its training/match values are not inserted as total ACL match/training fields.",
+        "The source does not report illness outcomes, anatomical rows beyond the ACL knee diagnosis, recurrence, or standardized time-loss severity."
+      ]
+    }
+  ]
+}

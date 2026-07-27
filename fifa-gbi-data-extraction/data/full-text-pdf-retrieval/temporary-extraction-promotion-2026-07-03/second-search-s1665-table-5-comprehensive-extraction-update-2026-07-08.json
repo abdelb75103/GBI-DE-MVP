@@ -1,0 +1,78 @@
+{
+  "papers": [
+    {
+      "studyId": "S1665",
+      "populationLabels": ["Total", "Senior", "Under 23", "Under 20"],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S1665",
+          "leadAuthor": "Yunus MY",
+          "title": "Incidence and intrinsic risk factors of hamstring strain injuries among Malaysian footballers: a cohort study of 81 professional footballers",
+          "yearOfPublication": "2025",
+          "journal": "Gazzetta Medica Italiana Archivio per le Scienze Mediche",
+          "doi": "10.23736/S0393-3660.24.05540-2",
+          "studyDesign": "prospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Malaysia",
+          "levelOfPlay": "professional",
+          "sex": "male\nmale\nmale\nmale",
+          "ageCategory": "Total\nSenior\nUnder 23\nUnder 20",
+          "meanAge": "21.41 +/- 3.02\n23 +/- 4\n22 +/- 2\n19 +/- 1",
+          "sampleSizePlayers": "81\n31\n24\n26",
+          "numberOfTeams": "1",
+          "observationDuration": "2023 Malaysian Football League season"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [hamstring strain injury; posterior thigh strained muscle]",
+          "illnessDefinition": null,
+          "incidenceDefinition": "per 1000 player-hours",
+          "burdenDefinition": null,
+          "severityDefinition": "minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days",
+          "recurrenceDefinition": "recurrent HSI reported as recurrent rate; exact recurrence definition not reported",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "seasonLength": null,
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "24147.5\n8170.5\n7227.5\n8749.5",
+          "matchExposure": "1072.5\n511.5\n313.5\n247.5",
+          "trainingExposure": "23075\n7659\n6914\n8502"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "15\n15\n0\n0",
+          "injuryPlayersCompletedStudy": "81\n31\n24\n26",
+          "injuryTeamsCompletedStudy": "1",
+          "injuryTimeLossCount": "15\n15\n0\n0",
+          "injuryMatchCount": "9\n9\n0\n0",
+          "injuryMatchTimeLossCount": "9\n9\n0\n0",
+          "injuryTrainingCount": "6\n6\n0\n0",
+          "injuryTrainingTimeLossCount": "6\n6\n0\n0",
+          "injuryIncidenceOverall": "0.62\n1.83\n0\n0",
+          "injuryIncidenceMatch": "8.39\n17.59\n0\n0",
+          "injuryIncidenceTraining": "0.26\n0.78\n0\n0",
+          "injuryMostCommonDiagnosis": null,
+          "injuryMostCommonType": null,
+          "injuryMostCommonLocation": null,
+          "injuryMostCommonSeverity": "moderate (8-28 days)\nmoderate (8-28 days)\n\n",
+          "injuryContact": "0\n0\n0\n0",
+          "injuryNonContact": "15\n15\n0\n0"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "hamstring strain injury\nhamstring strain injury\nhamstring strain injury\nhamstring strain injury",
+          "injuryTissueType_injury_diagnosis_prevalence": "15\n15\n0\n0",
+          "injuryTissueType_injury_diagnosis_incidence": "0.62\n1.83\n0\n0",
+          "injuryTissueType_muscle_injury_prevalence": "15\n15\n0\n0",
+          "injuryTissueType_muscle_injury_incidence": "0.62\n1.83\n0\n0"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "15\n15\n0\n0",
+          "injuryLocation_thigh_incidence": "0.62\n1.83\n0\n0"
+        }
+      },
+      "note": "S1665 comprehensive extraction update from scanned full text on 2026-07-08. Population layout updated to Total / Senior / Under 23 / Under 20. Table V extracted for HSI counts, match/training split, exposure hours, and HSI incidence per 1000 player-hours: Total 15 HSI, 9 match, 6 training, 24147.5 total h, 1072.5 match h, 23075 training h, incidence 0.62 / 8.39 / 0.26; Senior 15 HSI, 9 match, 6 training, 8170.5 total h, 511.5 match h, 7659 training h, incidence 1.83 / 17.59 / 0.78; U23 and U20 reported zero HSI with exposure rows. Table II used for sample and age rows. Results text used for all HSI non-contact, severity distribution, and note that no HSI occurred in U23/U20. The Table V all-injury counts were checked (Total 86, Senior 69, U23 11, U20 6) but the headline injury fields are kept HSI-specific because the reported incidence columns are HSI incidence."
+    }
+  ]
+}

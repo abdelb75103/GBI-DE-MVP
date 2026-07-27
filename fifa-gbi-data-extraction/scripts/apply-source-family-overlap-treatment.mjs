@@ -5,15 +5,35 @@ import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
 const APP_ROOT = path.resolve(import.meta.dirname, '..');
-const DATA_DIR = path.join(
+const DEFAULT_DATA_DIR = path.join(
   APP_ROOT,
   'data',
   'source-family-overlap-audit',
   '2026-07-27',
 );
-const INPUT_PATH = path.join(DATA_DIR, 'analysis-source-treatment-input-2026-07-27.json');
-const PRE_APPLY_PATH = path.join(DATA_DIR, 'source-family-pre-apply-live-snapshot-2026-07-27.json');
-const FINAL_AUDIT_PATH = path.join(DATA_DIR, 'source-family-final-live-integrity-audit-2026-07-27.json');
+
+function argumentValue(name) {
+  const index = process.argv.indexOf(name);
+  return index === -1 ? null : process.argv[index + 1] ?? null;
+}
+
+function resolveArgumentPath(value, fallback) {
+  return value ? path.resolve(process.cwd(), value) : fallback;
+}
+
+const DATA_DIR = resolveArgumentPath(argumentValue('--data-dir'), DEFAULT_DATA_DIR);
+const INPUT_PATH = resolveArgumentPath(
+  argumentValue('--input'),
+  path.join(DEFAULT_DATA_DIR, 'analysis-source-treatment-input-2026-07-27.json'),
+);
+const PRE_APPLY_PATH = resolveArgumentPath(
+  argumentValue('--snapshot'),
+  path.join(DATA_DIR, 'source-family-pre-apply-live-snapshot-2026-07-27.json'),
+);
+const FINAL_AUDIT_PATH = resolveArgumentPath(
+  argumentValue('--audit'),
+  path.join(DATA_DIR, 'source-family-final-live-integrity-audit-2026-07-27.json'),
+);
 const APPLY = process.argv.includes('--apply');
 const VERIFY = process.argv.includes('--verify');
 

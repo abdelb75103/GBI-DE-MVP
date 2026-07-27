@@ -1,0 +1,43 @@
+{
+  "scope": "S2040 user-requested restoration of the pre-simplification Batch 014 population layout",
+  "created_at": "2026-07-13",
+  "target": "Supabase project apjhyrxiailuhxbrxowx.supabase.co",
+  "restore_source": "data/second-search-extraction/batch-014/second-search-extraction-batch-014-input-2026-07-10.json",
+  "pre_apply": {
+    "population_labels": ["All players", "PRO", "U17", "U19"],
+    "population_values": 18,
+    "restore_fields_differing": 17
+  },
+  "apply": {
+    "mode": "additive payload restoration with explicit overwrite of the original 27 fields",
+    "status_unchanged": "processing",
+    "assignment_unchanged": "AbdelRahman Babiker",
+    "source_file_unchanged": true,
+    "screening_votes_unchanged": true
+  },
+  "post_apply": {
+    "population_labels": [
+      "All players",
+      "Professional all",
+      "Professional RR",
+      "Professional RX",
+      "Professional XX",
+      "U19 all",
+      "U19 RR",
+      "U19 RX",
+      "U19 XX",
+      "U17 all",
+      "U17 RR",
+      "U17 RX",
+      "U17 XX"
+    ],
+    "population_values": 72,
+    "expected_population_values": 72,
+    "field_mismatches": [],
+    "population_mismatches": [],
+    "study_id_preserved": true,
+    "source_attached": true,
+    "human_include_votes": 2,
+    "review_limitation": "No fresh independent reviewer was available in this side conversation."
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "capturedAt": "2026-07-27T18:04:06.046Z",
+  "paper": {
+    "id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+    "assignedStudyId": "S642",
+    "title": "Medical Support for an All-Star Youth Soccer Team in Niigata",
+    "status": "flagged",
+    "flagReason": null,
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "primaryFileId": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+    "primaryFileSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+    "storageBucket": "papers",
+    "storageObjectPath": "01ae3404-e9d5-4a83-9506-94abeaebffcc/1777299185818-26575243_8385448110007966.pdf",
+    "originalFileName": "26575243_8385448110007966.pdf",
+    "metadata": {
+      "source": "covidence_import_2026-03-11",
+      "searchBatch": "first",
+      "activeSession": {
+        "fullName": "AbdelRahman Babiker",
+        "profileId": "00000000-0000-0000-0000-000000000001",
+        "startedAt": "2026-05-01T09:39:28.885Z",
+        "lastHeartbeatAt": "2026-07-27T17:25:09.089Z"
+      },
+      "covidenceStudy": "Edama 2012",
+      "covidenceNumber": "#869",
+      "searchBatchLabel": "First search",
+      "importSourceLabel": "First search - original extraction corpus"
+    },
+    "updatedAt": "2026-07-27T17:25:09.395341+00:00"
+  },
+  "attachments": [
+    {
+      "id": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+      "name": "26575243_8385448110007966.pdf",
+      "originalFileName": "26575243_8385448110007966.pdf",
+      "size": 6501617,
+      "mimeType": "application/pdf",
+      "storageBucket": "papers",
+      "storageObjectPath": "01ae3404-e9d5-4a83-9506-94abeaebffcc/1777299185818-26575243_8385448110007966.pdf",
+      "registeredSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+      "downloadedSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+      "downloadError": null,
+      "isPrimary": true,
+      "uploadedAt": "2026-04-27T14:13:07.108+00:00"
+    }
+  ],
+  "notes": [],
+  "extractionTabs": [
+    {
+      "id": "c3c54e04-24ed-49cd-83d1-bf781bb8a896",
+      "tab": "definitions",
+      "model": "human-input",
+      "updatedAt": "2026-04-27T14:34:29.72378+00:00"
+    },
+    {
+      "id": "1cd2085b-45f1-49ef-8e85-636709d3042e",
+      "tab": "exposure",
+      "model": "human-input",
+      "updatedAt": "2026-04-27T14:34:29.854612+00:00"
+    },
+    {
+      "id": "3160f8fc-99da-493f-8660-796ec6558e6c",
+      "tab": "injuryOutcome",
+      "model": "human-input",
+      "updatedAt": "2026-04-27T14:34:29.972118+00:00"
+    },
+    {
+      "id": "dcf20d67-8aab-42f8-844d-f7953b96582f",
+      "tab": "participantCharacteristics",
+      "model": "human-input",
+      "updatedAt": "2026-04-27T14:34:29.524791+00:00"
+    },
+    {
+      "id": "256ddf9d-a62d-4a8f-90e6-3701d7f7bdf4",
+      "tab": "studyDetails",
+      "model": "human-input",
+      "updatedAt": "2026-05-01T15:59:33.809042+00:00"
+    }
+  ],
+  "fields": {
+    "participantCharacteristics.ageCategory": {
+      "id": "4c4e94cf-1c82-48d5-9b8c-0ec745375dc6",
+      "value": "15-18 years",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.country": {
+      "id": "4bc174a8-cf89-4c5b-9be1-49437f8ffbbc",
+      "value": "Japan",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "exposure.exposureMeasurementUnit": {
+      "id": "ce8dac30-029c-46e0-bdc9-74e8295d5941",
+      "value": "match-hours",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.771+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.fifaDiscipline": {
+      "id": "4ddde39b-604a-48c3-a1bc-184baa2a7edb",
+      "value": "Association football (11-a-side)",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "definitions.incidenceDefinition": {
+      "id": "c46814fd-eaeb-4e46-840b-145c532566b4",
+      "value": "acute injuries per 1000 match-hours per player",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.656+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "definitions.injuryDefinition": {
+      "id": "9fbfff02-108d-4e23-bc8d-687290b1e3a3",
+      "value": "medical attention or time-loss",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.656+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "injuryOutcome.injuryIncidenceOverall": {
+      "id": "e6ebce85-6b88-4b16-b4be-f09b17676385",
+      "value": "162.9",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.911+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "injuryOutcome.injuryMostCommonDiagnosis": {
+      "id": "8d9cc2a4-64be-419a-b466-848e5e330690",
+      "value": "direct contusion of lower extremity and ankle sprain",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.911+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "injuryOutcome.injuryMostCommonLocation": {
+      "id": "8b37c26c-d11a-4117-a251-05e511738077",
+      "value": "lower extremity",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.911+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "injuryOutcome.injuryMostCommonType": {
+      "id": "fbb65acc-12dc-421f-9b7a-3284725b998d",
+      "value": "contusion and sprain",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.911+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "studyDetails.journal": {
+      "id": "605a8fb4-0402-4cca-8807-d70da8d131b8",
+      "value": "Japanese Journal of Clinical Sports Medicine",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.348+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "studyDetails.leadAuthor": {
+      "id": "d9035c7f-d7ee-4677-b902-621577ab247c",
+      "value": "Edama M",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.348+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.levelOfPlay": {
+      "id": "503a9701-0a92-43b7-b447-ce8193faeb94",
+      "value": "all-star youth prefectural selection team",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "exposure.matchExposure": {
+      "id": "70f51e72-267d-477d-a5aa-b89e0087d04d",
+      "value": "59 matches",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.771+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.meanAge": {
+      "id": "964aa485-1829-438e-9874-f8286b6fc309",
+      "value": "16.5",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "definitions.mechanismReporting": {
+      "id": "a44e7521-73e9-45a6-bd5a-663ef2c92b36",
+      "value": "Medical Staff",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.656+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "exposure.numberOfSeasons": {
+      "id": "07bde4da-cb39-45c7-8b7e-328a2604685f",
+      "value": "8",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.771+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.numberOfTeams": {
+      "id": "e117967f-dabd-4e87-83fb-e251f25e3486",
+      "value": "1",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.observationDuration": {
+      "id": "af0f1cb8-0c04-4089-9dfc-3eeb4c6acaf0",
+      "value": "2002-2009; 8 years",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.sampleSizePlayers": {
+      "id": "3c10bbeb-a20e-451a-a94d-d71b216b7e0a",
+      "value": "164",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "participantCharacteristics.sex": {
+      "id": "3205d467-c541-4a30-bc25-934e7298c8c8",
+      "value": "male",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.461+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "studyDetails.studyDesign": {
+      "id": "46e0ea44-dcdb-4414-b864-6c08b43bdd79",
+      "value": "prospective cohort",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.348+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "studyDetails.studyId": {
+      "id": "80b5a45b-f9b6-44d9-8382-93f3cf6df882",
+      "value": "S642",
+      "status": "reported",
+      "confidence": null,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-05-01T15:59:33.47+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "studyDetails.title": {
+      "id": "75c89816-7401-4f67-9426-d88efb17313d",
+      "value": "Medical support for an all-star youth soccer team in Niigata prefecture by physical therapists",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.348+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    "studyDetails.yearOfPublication": {
+      "id": "48425a60-2b86-440b-81ba-0a5dd5193e14",
+      "value": "2012",
+      "status": "reported",
+      "confidence": 0.75,
+      "metric": null,
+      "pageHint": null,
+      "sourceQuote": null,
+      "updatedAt": "2026-04-27T14:34:29.348+00:00",
+      "updatedBy": "00000000-0000-0000-0000-000000000001"
+    }
+  },
+  "populationGroups": [],
+  "populationValues": [],
+  "screening": {
+    "records": [],
+    "votes": [],
+    "recordsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "votesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "scope": "Second search — Backlog 2 Batch 012; S3922 additive Table 2/3 location/type incidence, burden, and median-severity correction",
+  "papers": [
+    {
+      "studyId": "S3922",
+      "populationLabels": ["Total"],
+      "note": "S3922 Table 2/3 additive correction, 2026-07-13. The primary PDF (pp. 459-460; Tables 2-3) was rechecked. Added every directly mappable missing location incidence/burden value from Table 2 and every directly mappable missing tissue/type incidence/burden value from Table 3. The source reports medians, not means; per correction request, each is placed in the UI's severity-mean field as `value (median)`. `Chest and thoracic spine` remains unmapped because the schema has no exact combined row, and Table 3 `Meniscus` remains unmapped because no exact meniscus field exists. The printed Shoulder incidence CI `0.012 to 0.0163` does not contain its point estimate `0.056`; it is retained exactly as published.",
+      "fields": {
+        "injuryLocation": {
+          "injuryLocation_head_incidence": "0.037 (0.005-0.135)",
+          "injuryLocation_head_burden": "1.570 (1.118-2.013)",
+          "injuryLocation_head_severityMeanDays": "42 (median)",
+          "injuryLocation_shoulder_incidence": "0.056 (0.012-0.0163)",
+          "injuryLocation_shoulder_burden": "0.969 (0.615-1.621)",
+          "injuryLocation_shoulder_severityMeanDays": "12 (median)",
+          "injuryLocation_hand_incidence": "0.019 (0.00-0.104)",
+          "injuryLocation_hand_burden": "0.06",
+          "injuryLocation_hand_severityMeanDays": "3 (median)",
+          "injuryLocation_lumbosacral_incidence": "0.149 (0.064-0.294)",
+          "injuryLocation_lumbosacral_burden": "0.875 (0.540-1.193)",
+          "injuryLocation_lumbosacral_severityMeanDays": "6 (median)",
+          "injuryLocation_abdomen_incidence": "0.019 (0.00-0.104)",
+          "injuryLocation_abdomen_burden": "0.17",
+          "injuryLocation_abdomen_severityMeanDays": "9 (median)",
+          "injuryLocation_hip_incidence": "0.037 (0.005-0.135)",
+          "injuryLocation_hip_burden": "0.205 (0.149-0.261)",
+          "injuryLocation_hip_severityMeanDays": "5.5 (median)",
+          "injuryLocation_groin_incidence": "0.410 (0.257-0.621)",
+          "injuryLocation_groin_burden": "5.638 (4.286-6.988)",
+          "injuryLocation_groin_severityMeanDays": "15.5 (median)",
+          "injuryLocation_thigh_severityMeanDays": "13 (median)",
+          "injuryLocation_knee_severityMeanDays": "22 (median)",
+          "injuryLocation_lower_leg_incidence": "0.447 (0.287-0.665)",
+          "injuryLocation_lower_leg_burden": "8.274 (6.355-10.473)",
+          "injuryLocation_lower_leg_severityMeanDays": "15.5 (median)",
+          "injuryLocation_ankle_incidence": "0.335 (0.199-0.530)",
+          "injuryLocation_ankle_burden": "5.516 (3.727-7.715)",
+          "injuryLocation_ankle_severityMeanDays": "13.5 (median)",
+          "injuryLocation_foot_incidence": "0.093 (0.030-0.217)",
+          "injuryLocation_foot_burden": "1.603 (0.578-2.758)",
+          "injuryLocation_foot_severityMeanDays": "7 (median)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_tendon_severityMeanDays": "13.5 (median)",
+          "injuryTissueType_muscle_injury_severityMeanDays": "13.5 (median)",
+          "injuryTissueType_tendinopathy_incidence": "0.112 (0.041-0.2434)",
+          "injuryTissueType_tendinopathy_burden": "4.752 (1.118-9.243)",
+          "injuryTissueType_tendinopathy_severityMeanDays": "19 (median)",
+          "injuryTissueType_ligament_joint_capsule_severityMeanDays": "16 (median)",
+          "injuryTissueType_bone_burden": "4.342 (2.441-6.466)",
+          "injuryTissueType_bone_severityMeanDays": "15 (median)",
+          "injuryTissueType_bone_fracture_incidence": "0.130 (0.052-0.269)",
+          "injuryTissueType_bone_fracture_burden": "3.448 (1.659-5.311)",
+          "injuryTissueType_bone_fracture_severityMeanDays": "30 (median)",
+          "injuryTissueType_superficial_contusion_incidence": "0.130 (0.052-0.269)",
+          "injuryTissueType_superficial_contusion_burden": "1.715 (0.950-2.590)",
+          "injuryTissueType_superficial_contusion_severityMeanDays": "11 (median)",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "1",
+          "injuryTissueType_superficial_tissues_skin_incidence": "0.02 (0.00-0.10)",
+          "injuryTissueType_superficial_tissues_skin_burden": "0.130",
+          "injuryTissueType_superficial_tissues_skin_severityMeanDays": "7 (median)",
+          "injuryTissueType_non_specific_tissue_prevalence": "10",
+          "injuryTissueType_non_specific_tissue_incidence": "0.186 (0.0894-0.343)",
+          "injuryTissueType_non_specific_tissue_burden": "2.497 (0.988-4.603)",
+          "injuryTissueType_non_specific_tissue_severityMeanDays": "7 (median)"
+        }
+      }
+    }
+  ]
+}

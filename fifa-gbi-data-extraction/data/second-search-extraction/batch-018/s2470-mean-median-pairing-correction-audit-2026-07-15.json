@@ -1,0 +1,197 @@
+{
+  "scope": "Second search — Backlog 2 Batch 018; S2470 requested injury tissue/type and location mean [median] severity display correction",
+  "completedAt": "2026-07-15",
+  "mode": "source and live-schema validation; no database write",
+  "paper": {
+    "studyId": "S2470",
+    "paperId": "0147517b-9846-4581-ad42-f698cb03a20e",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "populationLabels": ["All", "Match", "Training"],
+    "primaryFileSha256": "0959c74b6b92f9c45a25ce0d6f07c844962d8d36008927c335bedd49364a50e5",
+    "localPrimaryFileSha256": "0959c74b6b92f9c45a25ce0d6f07c844962d8d36008927c335bedd49364a50e5",
+    "primaryFileAttached": true
+  },
+  "requestedDisplay": "Preserve an existing directly reported mean severity and append the matching directly reported median in brackets: mean [median].",
+  "sourceFinding": {
+    "result": "blocked_no_direct_mean_median_pair",
+    "reason": "The primary PDF reports median severity (with IQR where available) and total severity for these rows, but no mean severity. A total-days value is not a mean and cannot be converted to or displayed as mean [median].",
+    "schemaFinding": "The live schema has distinct severityMeanDays and severityTotalDays fields. S2470 has 0 existing severityMeanDays values and 20 existing severityTotalDays fields; adding median text to severityTotalDays or creating a severityMeanDays value would mislabel the statistic and change the requested scope.",
+    "sourceTables": [
+      "Table 4, PDF p. 7: injury type, incidence, median severity, total severity, and burden.",
+      "Table 6, PDF pp. 10-11: injury location/diagnosis, total severity, median severity, and burden."
+    ]
+  },
+  "stageA": {
+    "sourceTablesSwept": ["Table 4", "Table 6"],
+    "populationAlignment": "All / Match / Training",
+    "existingMeanSeverityFields": 0,
+    "existingTotalSeverityFields": 20,
+    "sourceMeanSeverityFields": 0,
+    "result": "blocked before apply; no permissible mean [median] pairing exists"
+  },
+  "unchangedExistingStructuredSeverityRows": [
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_muscle_injury_severityTotalDays",
+      "before": "13076\\n5422\\n7654",
+      "directMedianAllMatchTraining": "12 (6-25) | 13 (6-27) | 11 (5-23)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_ligament_joint_capsule_severityTotalDays",
+      "before": "23029\\n13692\\n9337",
+      "directMedianAllMatchTraining": "20 (6-51) | 29 (9-65) | 15 (6-41)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_tendon_injury_severityTotalDays",
+      "before": "4488\\n1369\\n3119",
+      "directMedianAllMatchTraining": "18 (6-44) | 12 (6-31) | 21 (7-55)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_superficial_contusion_severityTotalDays",
+      "before": "1415\\n778\\n637",
+      "directMedianAllMatchTraining": "5 (3-8) | 5 (3-8) | 6 (3-13)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_concussion_severityTotalDays",
+      "before": "1744\\n993\\n751",
+      "directMedianAllMatchTraining": "11 (6-19) | 12 (7-20) | 10 (6-18)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_cartilage_injury_severityTotalDays",
+      "before": "4195\\n1707\\n2488",
+      "directMedianAllMatchTraining": "31 (11-73) | 25.5 (9-63) | 35 (12-76)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryTissueType",
+      "fieldId": "injuryTissueType_bone_fracture_severityTotalDays",
+      "before": "4491\\n2213\\n2278",
+      "directMedianAllMatchTraining": "57 (30-90) | 60 (27-97) | 52 (33-89)",
+      "source": "Table 4, PDF p. 7"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_abdomen_severityTotalDays",
+      "before": "219\\n147\\n72",
+      "directMedianAllMatchTraining": "7 (4-15) | 10 | 7 (5-12)",
+      "source": "Table 6, PDF p. 10"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_ankle_severityTotalDays",
+      "before": "12067\\n5735\\n6332",
+      "directMedianAllMatchTraining": "17 (6-41) | 18.5 (6-41) | 16 (6-41)",
+      "source": "Table 6, PDF p. 10"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_upper_arm_severityTotalDays",
+      "before": "754\\n112\\n642",
+      "directMedianAllMatchTraining": "13 (4-52) | 13 (5-18) | 13 (5-71)",
+      "source": "Table 6, PDF p. 10 (source row: Arm)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_foot_severityTotalDays",
+      "before": "5407\\n2411\\n2996",
+      "directMedianAllMatchTraining": "20 (5-60) | 8.5 (4-51) | 32.5 (9-71)",
+      "source": "Table 6, PDF p. 10 (source row: Foot/toe)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_head_severityTotalDays",
+      "before": "2494\\n1492\\n1002",
+      "directMedianAllMatchTraining": "10 (6-17) | 11 (6-18) | 9 (6-15)",
+      "source": "Table 6, PDF p. 10 (source row: Head/face)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_hip_severityTotalDays",
+      "before": "2323\\n1015\\n1308",
+      "directMedianAllMatchTraining": "11 (6-21) | 11 (6-19) | 10 (5-25)",
+      "source": "Table 6, PDF p. 10 (source row: Hip/groin)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_knee_severityTotalDays",
+      "before": "31612\\n18483\\n13129",
+      "directMedianAllMatchTraining": "28 (9-83) | 37 (9-123) | 24 (9-62)",
+      "source": "Table 6, PDF p. 10"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_lumbosacral_severityTotalDays",
+      "before": "1223\\n393\\n830",
+      "directMedianAllMatchTraining": "9 (5-31) | 10 (5-25) | 7.5 (5-31)",
+      "source": "Table 6, PDF p. 10 (source row: Low back)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_lower_leg_severityTotalDays",
+      "before": "4157\\n1574\\n2853",
+      "directMedianAllMatchTraining": "15 (7-32) | 12 (6-23) | 19 (8-39)",
+      "source": "Table 6, PDF p. 10"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_neck_severityTotalDays",
+      "before": "214\\n52\\n162",
+      "directMedianAllMatchTraining": "4 (2-8) | 3.5 (2-7) | 4 (3-13)",
+      "source": "Table 6, PDF p. 11 (source row: Neck/cervical spine)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_shoulder_severityTotalDays",
+      "before": "1494\\n752\\n742",
+      "directMedianAllMatchTraining": "25 (12-55) | 24.5 (12-42) | 25 (10-92)",
+      "source": "Table 6, PDF p. 11 (source row: Shoulder/clavicle)"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_thigh_severityTotalDays",
+      "before": "11194\\n4371\\n6823",
+      "directMedianAllMatchTraining": "11 (5-23) | 11.5 (6-27) | 11 (5-21)",
+      "source": "Table 6, PDF p. 11"
+    },
+    {
+      "tab": "injuryLocation",
+      "fieldId": "injuryLocation_hand_severityTotalDays",
+      "before": "800\\n78\\n722",
+      "directMedianAllMatchTraining": "17 (6-33) | 8 (7-20) | 18 (6-40)",
+      "source": "Table 6, PDF p. 11 (source row: Wrist/hand/finger/thumb)"
+    }
+  ],
+  "unchangedRowsWithoutDirectMedian": [],
+  "apply": {
+    "attempted": false,
+    "reason": "No existing directly reported mean severity value and no source-reported mean exist for a valid mean [median] pairing.",
+    "extractionFieldsChanged": 0,
+    "populationValuesChanged": 0,
+    "populationGroupsChanged": 0,
+    "paperFieldsChanged": 0,
+    "backlogChanged": false
+  },
+  "stageB": {
+    "structuredSeverityCellsChecked": 60,
+    "structuredDualWriteMismatches": 0,
+    "sourceToLiveMismatchesForExistingTotalDays": 0,
+    "fieldSnapshotSha256Before": "90b5a387bbd623e255b3aec9844774f07d6b8eb692380ba1785597d0e42406ef",
+    "fieldSnapshotSha256After": "90b5a387bbd623e255b3aec9844774f07d6b8eb692380ba1785597d0e42406ef",
+    "protectedSnapshotSha256Before": "b5d6efa6b48de93171432fdfd108ecb6a5b8dae49cf182f4ec5b2527abb47276",
+    "protectedSnapshotSha256After": "b5d6efa6b48de93171432fdfd108ecb6a5b8dae49cf182f4ec5b2527abb47276",
+    "protectedFieldsPreserved": ["studyId", "status", "assignment", "screening records", "screening votes", "promotion links", "primary source attachment"],
+    "result": "passed — no live mutation was permitted or made"
+  },
+  "nextSafeOption": "If Abdel wants the directly reported medians displayed, authorize a schema-safe representation that labels them as median rather than mean (for example, a dedicated median metric/field or a clearly labelled median-only value)."
+}

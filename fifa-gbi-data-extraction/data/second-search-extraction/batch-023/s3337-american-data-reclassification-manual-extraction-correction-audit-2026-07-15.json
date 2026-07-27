@@ -1,0 +1,81 @@
+{
+  "artifactType": "Backlog 2 Batch 023 focused live correction audit",
+  "date": "2026-07-15",
+  "scope": "S3337 only; correction of the prior erroneous American-data exclusion",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "livePaper": {
+    "paperId": "6e1981c2-009d-43d7-a577-c140cf854568",
+    "studyId": "S3337",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "assignedToName": "AbdelRahman Babiker",
+    "primaryFileId": "394930ca-a993-4514-9629-c06af8bf6788",
+    "primaryFileSha256": "6796f5fd23e0cb23fb9263139538d7ccb46aa538611412d1e241b25bfd3a0913",
+    "originalFileName": "injury_patterns_in_academy_level_male_youth_soccer.12.pdf"
+  },
+  "statusCorrection": {
+    "priorStatus": "american_data",
+    "currentStatus": "processing",
+    "reason": "The full source is a single Midwestern U.S. academy cohort (regional developmental academy transitioning to one MLS Next academy), not NCAA, High School RIO, NATION/Datalys, national U.S. surveillance, or an overlapping companion study. It is therefore eligible for manual extraction and remains awaiting human review."
+  },
+  "sourceCoverage": "Primary PDF pp. 1-7 visually and textually inspected: abstract, introduction, methods, Table 1, Table 2, Figure 1, Table 3, Table 4, Table 5, results, discussion, limitations, acknowledgments, and references. Figure 1 was readable and checked but only restates Table 2 season/team exposure and incidence values.",
+  "populationLayout": {
+    "labels": ["Total", "U12", "U13", "U14", "U15", "U17", "U19"],
+    "count": 7,
+    "rationale": "This is the strongest direct source axis. U16 and U18 are not reported by the source and were not invented."
+  },
+  "fieldCounts": {
+    "stagedDirectFields": 57,
+    "liveExtractionFields": 64,
+    "filledExtractionFields": 57,
+    "coreNotReportedFields": 7,
+    "populationValues": 265
+  },
+  "extractionScope": {
+    "tabs": ["studyDetails", "participantCharacteristics", "definitions", "exposure", "injuryOutcome", "injuryTissueType", "injuryLocation"],
+    "intentionallyBlankFamilies": ["illnessOutcome", "illnessRegion", "illnessEtiology"],
+    "directValueCaveats": [
+      "Table 2 player counts are source-reported starting-roster estimates and may count athletes across seasons; they are not inferred unique-player totals.",
+      "Table 3 is scoped to 331 injury events; Table 4 is scoped to 338 diagnoses/type events because seven events had more than one type. Values are retained in their respective scopes.",
+      "Broad tissue parent rows use only transparent sums of compatible Table 4 subrows. No rate-to-count, count-to-exposure, burden, recurrence, or match/training-exposure calculation was made.",
+      "Combined source locations/types without a clean schema target (including hip/groin and mixed multi-location rows) were not forced into narrower fields."
+    ]
+  },
+  "protectedScreening": {
+    "preApplyState": "Two full-text reviewer include votes; full-text resolution ready_for_extraction; promoted-paper link present.",
+    "postApplyUnchanged": true,
+    "fullTextVoteCount": 2,
+    "protectedScreeningSignatureSha256": "eb81b29427e9609f73c20bad9b4b016054ecb29a5a709b8ff486f49139ea7423",
+    "screeningWrites": 0,
+    "resolverWrites": 0,
+    "promotionWrites": 0
+  },
+  "applyResult": {
+    "result": "passed",
+    "workflow": "apply-second-search-extraction-json.mjs with additive-only behavior and core-tab completion; then a conditional direct paper-status update.",
+    "skippedNonblankFields": 0,
+    "unknownFieldIds": [],
+    "populationSync": {
+      "groups": 7,
+      "values": 265
+    },
+    "conditionalStatusUpdate": "S3337 changed from american_data to processing only after matching the expected study ID, existing assignment, and prior status."
+  },
+  "integrityGate": {
+    "result": "passed",
+    "fixedMembership": ["S3337"],
+    "sourceToLiveFieldTransferMismatches": 0,
+    "coreNotReportedMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "populationLayoutMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "localPrimaryFileHashMatchesLivePaper": true,
+    "attachedPrimaryFileHashMatchesLivePaper": true,
+    "studyIdMatchesAssignedStudyId": true,
+    "assignmentPreserved": true,
+    "statusIsProcessing": true,
+    "protectedScreeningUnchanged": true,
+    "backlogRowUpdated": "docs/second-search-extraction-review-backlog-2026-07-03.md, Batch 023 S3337 only"
+  },
+  "readyFor": "Human extraction review; do not mark extracted or reviewed complete in this correction."
+}

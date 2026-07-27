@@ -1,0 +1,19 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 017; manual extraction live apply; 2026-07-13",
+  "mode": "live apply",
+  "input": "second-search-extraction-batch-017-input-2026-07-13.json",
+  "additiveOnly": true,
+  "papers": [
+    {"studyId": "S2234", "status": "processing", "populationLabels": ["All players", "U14", "U15", "U16", "U17", "U18"], "populationGroups": 6, "populationValues": 256, "unknownFields": [], "skippedNonblankFields": []},
+    {"studyId": "S2254", "status": "processing", "populationLabels": ["Total"], "populationGroups": 1, "populationValues": 12, "unknownFields": [], "skippedNonblankFields": []},
+    {"studyId": "S2259", "status": "processing", "populationLabels": ["Total", "Intervention", "Control"], "populationGroups": 3, "populationValues": 148, "unknownFields": [], "skippedNonblankFields": []},
+    {"studyId": "S2264", "status": "processing", "populationLabels": ["Male football", "Female football"], "populationGroups": 2, "populationValues": 28, "unknownFields": [], "skippedNonblankFields": []}
+  ],
+  "classificationOnly": {
+    "studyId": "S2284",
+    "status": "american_data",
+    "flagReason": "U.S. Pac-12/NCAA collegiate surveillance data; American data exclusion.",
+    "extractionFieldsWritten": 0
+  },
+  "protectedManualReviewFields": "No title/abstract votes, full-text votes, resolver decisions, or promotion metadata were written."
+}

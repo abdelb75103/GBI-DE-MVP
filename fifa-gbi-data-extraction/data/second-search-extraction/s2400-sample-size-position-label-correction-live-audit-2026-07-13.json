@@ -1,0 +1,28 @@
+{
+  "studyId": "S2400",
+  "paperId": "c19c2447-89ef-4b4f-a47e-36ba70e450ae",
+  "correction": "Added each population's playing-position label directly to the aligned sampleSizePlayers value at reviewer direction; no new schema field was retained.",
+  "source": {
+    "quote": "Playing positions were categorized into central defenders (n = 7), fullbacks (n = 8), central midfielders (n = 6), wide midfielders (n = 10), and forwards (n = 15).",
+    "pageHint": "p. 3, Exposure times and playing position"
+  },
+  "rowMapping": [
+    { "position": 0, "populationLabel": "Total", "sampleSizePlayers": "46 - all positions" },
+    { "position": 1, "populationLabel": "Central defender", "sampleSizePlayers": "7 - central defender" },
+    { "position": 2, "populationLabel": "Fullback", "sampleSizePlayers": "8 - fullback" },
+    { "position": 3, "populationLabel": "Central midfielder", "sampleSizePlayers": "6 - central midfielder" },
+    { "position": 4, "populationLabel": "Wide midfielder", "sampleSizePlayers": "10 - wide midfielder" },
+    { "position": 5, "populationLabel": "Forward", "sampleSizePlayers": "15 - forward" }
+  ],
+  "integrityCheck": {
+    "paperStatus": "processing",
+    "flagReason": null,
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "primaryFileId": "04d0ee88-383f-4d4f-96ef-a51835b89632",
+    "primaryFileSha256": "520444fb96713f4dee0e930ef7d5a516fe9fcb4c181bd4c03f9dac637c89f310",
+    "humanFullTextVotes": ["AbdelRahman Babiker: include", "Dr. Nicol van Dyk: include"],
+    "fullTextResolution": "ready_for_extraction",
+    "playingPositionFieldPresent": false,
+    "protectedFieldsChanged": false
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "artifactType": "S4775 participant age-category line-label post-apply correction audit",
+  "scope": "S4775 only",
+  "completedAt": "2026-07-14",
+  "inputArtifact": "data/second-search-extraction/batch-024/s4775-age-category-line-labels-correction-input-2026-07-14.json",
+  "change": {
+    "tab": "participantCharacteristics",
+    "fieldId": "ageCategory",
+    "priorValue": "U11-U18 (9-17 years)",
+    "newLineCount": 16,
+    "labels": [
+      "U11-U18 (9-17 years) - match",
+      "U11-U18 (9-17 years) - training",
+      "U11 - match",
+      "U11 - training",
+      "U12 - match",
+      "U12 - training",
+      "U13 - match",
+      "U13 - training",
+      "U14 - match",
+      "U14 - training",
+      "U15 - match",
+      "U15 - training",
+      "U16 - match",
+      "U16 - training",
+      "U18 - match",
+      "U18 - training"
+    ]
+  },
+  "validation": {
+    "dryRun": {
+      "written": ["ageCategory"],
+      "skipped": 0,
+      "unknownFields": 0,
+      "populationGroups": 16,
+      "preApplyPopulationValues": 491
+    },
+    "apply": {
+      "written": ["ageCategory"],
+      "skipped": 0,
+      "unknownFields": 0,
+      "populationGroups": 16,
+      "populationValues": 506
+    }
+  },
+  "stageB": {
+    "result": "passed",
+    "studyId": "S4775",
+    "status": "processing",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "liveFieldCount": 172,
+    "populationCount": 16,
+    "populationValueCount": 506,
+    "ageCategoryLineCount": 16,
+    "ageCategoryStoredValueMismatches": 0,
+    "globalDualWriteMismatches": 0,
+    "populationLabelsUnchanged": true,
+    "sourceAttachment": {
+      "fileCount": 1,
+      "primaryFileId": "dc75c704-3e82-4992-933f-9323395e87b7",
+      "sha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9",
+      "size": 1288032,
+      "unchanged": true
+    },
+    "protectedChecks": {
+      "studyIdUnchanged": true,
+      "statusUnchanged": true,
+      "assignmentUnchanged": true,
+      "screeningRecordChanges": 0,
+      "screeningVoteChanges": 0,
+      "humanIncludeVotesVerified": 2,
+      "promotionStateChanges": 0
+    },
+    "backlog": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "row": "S4775",
+      "ageCategoryLineMappingUpdated": true
+    }
+  },
+  "rollback": {
+    "payload": "rollbackPayload in the input artifact restores the prior one-line ageCategory value while preserving the same 16 population labels",
+    "command": "jq '.rollbackPayload' data/second-search-extraction/batch-024/s4775-age-category-line-labels-correction-input-2026-07-14.json > /tmp/s4775-age-category-rollback.json && node --experimental-strip-types scripts/apply-second-search-extraction-json.mjs --input=/tmp/s4775-age-category-rollback.json --overwrite --apply",
+    "notExecuted": true
+  },
+  "finding": "no action; requested age-group labels are present on all 16 Participant Characteristics rows"
+}

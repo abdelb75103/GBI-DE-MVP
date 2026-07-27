@@ -1,0 +1,346 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 018; manual primary-PDF extraction; additive-only; 2026-07-13",
+  "papers": [
+    {
+      "studyId": "S2287",
+      "populationLabels": ["COVID-19 positive", "COVID-19 negative"],
+      "note": "Batch 018 manual primary-PDF extraction. Methods, Table 1, Table 2, Figure 1, results, and limitations checked (pp. 492-496). The direct population split is COVID-19 positive (n=83) versus negative (n=64). Table 2 directly reports individual mean non-contact injury incidence and mean days absent by group; total injury-event counts, exposure totals, tissue, and location counts are not reported and were not derived. Injury data were entered only as non-contact injury metrics; no target-condition diagnosis/type/location was echoed as a most-common outcome.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Moreno-Perez V",
+          "title": "Effect of COVID-19 on Injury Incidence and Severity in Professional Female Football Players: A Cohort Prospective Study.",
+          "yearOfPublication": "2025",
+          "journal": "Sports Health",
+          "doi": "10.1177/19417381241262031",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Spain",
+          "levelOfPlay": "professional, Liga F",
+          "sex": "female\nfemale",
+          "ageCategory": "senior\nsenior",
+          "meanAge": "25 +/- 5\n25 +/- 5",
+          "sampleSizePlayers": "83\n64",
+          "numberOfTeams": "7",
+          "observationDuration": "2021-2022 season"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [non-contact injuries only]",
+          "incidenceDefinition": "non-contact injuries per 1000 player-hours",
+          "severityDefinition": "minimal 1-3 days; mild 4-7; moderate 8-28; severe >28 days",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryIncidenceOverall": "5.1\n4.9",
+          "injuryIncidenceMatch": "37.2\n29.5",
+          "injuryIncidenceTraining": "2.7\n2.9",
+          "injuryTimeLossMean": "38.3\n40.5"
+        }
+      }
+    },
+    {
+      "studyId": "S2330",
+      "populationLabels": ["Total"],
+      "note": "Batch 018 manual primary-PDF extraction. Methods, Tables 1-3, Figures 1-3, results, and limitations checked (pp. 224-229). This is a prospective male professional Brazilian match-only craniomaxillofacial trauma cohort. Table 1 directly reports the 299 CMFT events and all diagnosis/severity/recurrence values. Superficial contusion (77), laceration (97), superficial tissue/skin (174), and bone fracture (38) are transparent sums of mutually exclusive Table 1 rows. Position totals are transparent sums of head plus face rows: goalkeeper 21, defender including sidebacks 110, midfielder including defensive midfielders 89, forward 79. The schema has no face row; the directly reported head (178) plus face (121) CMFT distribution is retained as 299 in its closest supported head category, with this mapping caveat preserved here. No mechanism data were reported.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Fernandes GCAM",
+          "title": "Sport-related concussion in Brazilian professional soccer: A four-year prospective epidemiological analysis.",
+          "yearOfPublication": "2025",
+          "journal": "Sports Medicine and Health Science",
+          "doi": "10.1016/j.smhs.2024.07.001",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Brazil",
+          "levelOfPlay": "professional",
+          "sex": "male",
+          "ageCategory": "senior",
+          "meanAge": "27.2",
+          "observationDuration": "2016-2019, 4 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [match-related craniomaxillofacial trauma]",
+          "incidenceDefinition": "craniomaxillofacial trauma per 1000 match-hours",
+          "severityDefinition": "mild <4 days; minor 4-7; moderate 8-28; major 4-8 weeks; severe >8 weeks",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "4",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "126324",
+          "matchExposure": "126324"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "299",
+          "injuryTimeLossCount": "299",
+          "injuryMatchCount": "299",
+          "injuryMatchTimeLossCount": "299",
+          "injuryIncidenceOverall": "2.37",
+          "injuryIncidenceMatch": "2.37",
+          "injuryTimeLossMean": "5.12",
+          "injuryMostCommonDiagnosis": "concussion",
+          "injuryMostCommonLocation": "head",
+          "injuryMostCommonSeverity": "mild (<4 days)",
+          "injuryRecurrentTotal": "38",
+          "injuryRecurrenceRate": "12.71%"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_superficial_tissues_skin_prevalence": "174",
+          "injuryTissueType_superficial_contusion_prevalence": "77",
+          "injuryTissueType_laceration_prevalence": "97",
+          "injuryTissueType_concussion_prevalence": "87",
+          "injuryTissueType_concussion_incidence": "0.69",
+          "injuryTissueType_bone_prevalence": "38",
+          "injuryTissueType_bone_fracture_prevalence": "38"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "299",
+          "injuryLocation_position_goalkeeper_prevalence": "21",
+          "injuryLocation_position_defender_prevalence": "110",
+          "injuryLocation_position_midfielder_prevalence": "89",
+          "injuryLocation_position_attacker_prevalence": "79"
+        }
+      }
+    },
+    {
+      "studyId": "S2392",
+      "populationLabels": ["All seasons U9", "All seasons U11", "All seasons U13", "All seasons U15", "2016/17 U9", "2016/17 U11", "2016/17 U13", "2016/17 U15", "2017/18 U9", "2017/18 U11", "2017/18 U13", "2017/18 U15", "2018/19 U9", "2018/19 U11", "2018/19 U13", "2018/19 U15", "2019/20 U9", "2019/20 U11", "2019/20 U13", "2019/20 U15", "2020/21 U9", "2020/21 U11", "2020/21 U13", "2020/21 U15", "2021/22 U9", "2021/22 U11", "2021/22 U13", "2021/22 U15"],
+      "note": "Batch 018 manual primary-PDF extraction. Methods, Table 1, Table 2, Table 3, Figures 1-2, results, and discussion checked (pp. 3-9). The source directly supports an all-seasons age-category summary followed by every season x age category incidence row, which is retained. Figure 2 directly prints all-seasons trauma/overuse counts: U9 12/11, U11 38/43, U13 86/94, U15 126/106; total counts are transparent same-row sums. Table 1 directly reports every traumatic, overuse, and overall incidence cell. No total exposure, anatomical location, tissue/diagnosis, severity, or match-versus-training numeric rows are reported; none were inferred. The direct cohort total of 811 players is global and therefore remains only on the first live row by workflow row-alignment convention.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Skomrlj J",
+          "title": "Understanding Injury Dynamics in Youth Soccer: A Six-Season Study of Traumatic and Overuse Injuries.",
+          "yearOfPublication": "2025",
+          "journal": "Sport Mont",
+          "doi": "10.26773/smj.250601",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "levelOfPlay": "professional academy",
+          "ageCategory": "U9\nU11\nU13\nU15\nU9\nU11\nU13\nU15\nU9\nU11\nU13\nU15\nU9\nU11\nU13\nU15\nU9\nU11\nU13\nU15\nU9\nU11\nU13\nU15\nU9\nU11\nU13\nU15",
+          "sampleSizePlayers": "811",
+          "observationDuration": "2016/17-2021/22, 6 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention",
+          "incidenceDefinition": "injuries per 1000 player-hours",
+          "severityDefinition": "time lost from training and competition",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "6",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "23\n81\n180\n232",
+          "injuryModeRepetitiveGradual": "11\n43\n94\n106",
+          "injuryModeAcuteSudden": "12\n38\n86\n126",
+          "injuryIncidenceOverall": "\n\n\n\n1.74\n5.88\n7.39\n11.92\n1.45\n5.06\n8.39\n6.33\n2.07\n6.62\n6.84\n6.83\n1.66\n2.85\n6.98\n5.06\n1.44\n1.74\n3.12\n5.31\n0.69\n2.80\n5.23\n6.65"
+        }
+      }
+    },
+    {
+      "studyId": "S2470",
+      "populationLabels": ["All", "Match", "Training"],
+      "note": "Batch 018 manual primary-PDF extraction. Methods, Tables 1-6, all results text, and perspectives/limitations checked (pp. 1-13). Population layout is all injuries / match / training. Only directly reported values were used, except where explicitly stated mappings are transparent: hip/groin maps to hip, head/face maps to head, shoulder/clavicle maps to shoulder, arm maps to upper arm, and wrist/hand/finger/thumb maps to hand. Cartilage/disc/meniscus is stored in the closest cartilage-injury schema row and should be reviewer-checked because the source combines those diagnoses. The table reports no single all-activity incidence or median severity, so those All cells stay blank; no rates, counts, burdens, or CIs were back-calculated. Both injury location and tissue/type tables were fully swept; no illness outcome table is present despite the surveillance-programme title.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Sprouse B",
+          "title": "The Football Association Injury and Illness Surveillance Study: The Incidence, Burden, and Severity of Injuries in English Women's Domestic Football-A 5-Year Prospective Cohort Study.",
+          "yearOfPublication": "2025",
+          "journal": "Scandinavian Journal of Medicine and Science in Sports",
+          "doi": "10.1111/sms.70094",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "England",
+          "levelOfPlay": "professional, top two domestic tiers",
+          "sex": "female\nfemale\nfemale",
+          "ageCategory": "senior\nsenior\nsenior",
+          "numberOfTeams": "93 team-seasons",
+          "observationDuration": "2018-2023, 5 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [1 or more days absence]",
+          "incidenceDefinition": "time-loss injuries per 1000 player-hours",
+          "burdenDefinition": "days absent per 1000 player-hours",
+          "severityDefinition": "minor 1-7 days; moderate 8-28; severe 29-89; major 90 or more",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "5",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "255272\n43020\n212252",
+          "matchExposure": "43020\n43020",
+          "trainingExposure": "212252\n\n212252"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "2167\n981\n1186",
+          "injuryTimeLossCount": "2167\n981\n1186",
+          "injuryMatchCount": "981\n981",
+          "injuryMatchTimeLossCount": "981\n981",
+          "injuryTrainingCount": "1186\n\n1186",
+          "injuryTrainingTimeLossCount": "1186\n\n1186",
+          "injuryIncidenceOverall": "\n20.5\n2.9",
+          "injuryIncidenceMatch": "20.5\n20.5",
+          "injuryIncidenceTraining": "2.9\n\n2.9",
+          "injuryIncidenceCi95": "\n16.9-24.1\n2.0-4.0",
+          "injuryTimeLossTotal": "76687\n37269\n39418",
+          "injuryTimeLossMedian": "\n14 (IQR 6-36)\n13 (IQR 6-37)",
+          "injuryBurden": "\n775.1\n96.9",
+          "injuryBurdenCi95": "\n630.0-934.9\n66.1-138.5",
+          "injuryMostCommonDiagnosis": "hamstring muscle/tendon\nhamstring muscle/tendon\nhamstring muscle/tendon",
+          "injuryMostCommonType": "muscle injury\nmuscle injury\nmuscle injury",
+          "injuryMostCommonLocation": "thigh\nthigh\nthigh",
+          "injuryMostCommonSeverity": "moderate (8-28 days)\nmoderate (8-28 days)\nmoderate (8-28 days)",
+          "injuryModeRepetitiveGradual": "375\n134\n241",
+          "injuryModeAcuteSudden": "1421\n700\n721",
+          "injuryContact": "975\n549\n426",
+          "injuryNonContact": "759\n259\n500",
+          "injuryCumulativeRepetitive": "0\n0\n0"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "620\n235\n385",
+          "injuryTissueType_muscle_injury_incidence": "1.60 (0.52-3.24)\n4.88 (1.60-10.02)\n0.93 (0.30-1.95)",
+          "injuryTissueType_muscle_injury_burden": "36.27 (11.78-73.38)\n118.48 (38.54-238.01)\n19.60 (6.38-40.57)",
+          "injuryTissueType_muscle_injury_severityTotalDays": "13076\n5422\n7654",
+          "injuryTissueType_tendon_injury_prevalence": "118\n43\n75",
+          "injuryTissueType_tendon_injury_incidence": "0.33 (0.10-0.69)\n0.91 (0.26-1.93)\n0.22 (0.06-0.46)",
+          "injuryTissueType_tendon_injury_burden": "12.42 (3.99-25.79)\n30.17 (9.72-63.16)\n8.82 (2.85-18.22)",
+          "injuryTissueType_tendon_injury_severityTotalDays": "4488\n1369\n3119",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "395\n190\n205",
+          "injuryTissueType_ligament_joint_capsule_incidence": "1.09 (0.35-2.27)\n3.79 (1.19-7.83)\n0.54 (0.17-1.12)",
+          "injuryTissueType_ligament_joint_capsule_burden": "65.68 (21.43-134.72)\n266.83 (88.61-552.26)\n24.91 (8.05-51.47)",
+          "injuryTissueType_ligament_joint_capsule_severityTotalDays": "23029\n13692\n9337",
+          "injuryTissueType_superficial_contusion_prevalence": "151\n100\n51",
+          "injuryTissueType_superficial_contusion_incidence": "0.48 (0.15-1.00)\n2.21 (0.67-4.58)\n0.13 (0.03-0.29)",
+          "injuryTissueType_superficial_contusion_burden": "4.20 (1.37-8.68)\n17.55 (5.51-36.31)\n1.49 (0.49-3.06)",
+          "injuryTissueType_superficial_contusion_severityTotalDays": "1415\n778\n637",
+          "injuryTissueType_concussion_prevalence": "116\n66\n50",
+          "injuryTissueType_concussion_incidence": "0.33 (0.10-0.70)\n1.44 (0.42-3.00)\n0.10 (0.02-0.23)",
+          "injuryTissueType_concussion_burden": "4.98 (1.62-10.24)\n22.52 (7.18-45.37)\n1.42 (0.46-2.87)",
+          "injuryTissueType_concussion_severityTotalDays": "1744\n993\n751",
+          "injuryTissueType_cartilage_injury_prevalence": "76\n29\n47",
+          "injuryTissueType_cartilage_injury_incidence": "0.22 (0.06-0.45)\n0.63 (0.16-1.32)\n0.13 (0.03-0.28)",
+          "injuryTissueType_cartilage_injury_burden": "11.13 (3.56-22.66)\n34.59 (11.13-70.92)\n6.38 (2.03-13.12)",
+          "injuryTissueType_cartilage_injury_severityTotalDays": "4195\n1707\n2488",
+          "injuryTissueType_bone_fracture_prevalence": "69\n33\n36",
+          "injuryTissueType_bone_fracture_incidence": "0.22 (0.07-0.45)\n0.74 (0.21-1.60)\n0.11 (0.03-0.23)",
+          "injuryTissueType_bone_fracture_burden": "14.04 (4.55-28.70)\n47.56 (15.55-98.44)\n7.25 (2.28-14.53)",
+          "injuryTissueType_bone_fracture_severityTotalDays": "4491\n2213\n2278"
+        },
+        "injuryLocation": {
+          "injuryLocation_abdomen_prevalence": "10\n4\n6",
+          "injuryLocation_abdomen_incidence": "0.02 (0.00-0.05)\n0.07 (0.00-0.19)\n0.01 (0.00-0.03)",
+          "injuryLocation_abdomen_burden": "0.56 (0.18-1.15)\n3.05 (0.95-6.32)\n0.06 (0.01-0.14)",
+          "injuryLocation_abdomen_severityTotalDays": "219\n147\n72",
+          "injuryLocation_upper_arm_prevalence": "21\n7\n14",
+          "injuryLocation_upper_arm_incidence": "0.06 (0.02-0.14)\n0.14 (0.02-0.35)\n0.05 (0.01-0.11)",
+          "injuryLocation_upper_arm_burden": "2.44 (0.76-4.89)\n2.30 (0.72-4.74)\n2.46 (0.80-5.09)",
+          "injuryLocation_upper_arm_severityTotalDays": "754\n112\n642",
+          "injuryLocation_head_prevalence": "184\n108\n76",
+          "injuryLocation_head_incidence": "0.52 (0.16-1.06)\n2.30 (0.70-4.77)\n0.16 (0.04-0.35)",
+          "injuryLocation_head_burden": "7.02 (2.27-14.31)\n32.66 (10.67-66.46)\n1.82 (0.58-3.76)",
+          "injuryLocation_head_severityTotalDays": "2494\n1492\n1002",
+          "injuryLocation_hip_prevalence": "90\n40\n50",
+          "injuryLocation_hip_incidence": "0.23 (0.07-0.49)\n0.86 (0.23-1.84)\n0.10 (0.02-0.23)",
+          "injuryLocation_hip_burden": "5.96 (1.91-12.07)\n18.78 (6.16-38.01)\n3.36 (1.06-6.79)",
+          "injuryLocation_hip_severityTotalDays": "2323\n1015\n1308",
+          "injuryLocation_knee_prevalence": "403\n191\n212",
+          "injuryLocation_knee_incidence": "1.11 (0.35-2.28)\n4.09 (1.28-8.41)\n0.51 (0.16-1.06)",
+          "injuryLocation_knee_burden": "88.69 (29.49-181.40)\n384.57 (123.90-776.06)\n28.73 (9.36-59.87)",
+          "injuryLocation_knee_severityTotalDays": "31612\n18483\n13129",
+          "injuryLocation_lumbosacral_prevalence": "60\n20\n40",
+          "injuryLocation_lumbosacral_incidence": "0.14 (0.04-0.31)\n0.40 (0.09-0.88)\n0.09 (0.02-0.20)",
+          "injuryLocation_lumbosacral_burden": "2.51 (0.81-5.04)\n8.51 (2.77-17.43)\n1.30 (0.42-2.67)",
+          "injuryLocation_lumbosacral_severityTotalDays": "1223\n393\n830",
+          "injuryLocation_lower_leg_prevalence": "169\n81\n88",
+          "injuryLocation_lower_leg_incidence": "0.47 (0.14-0.95)\n1.84 (0.56-3.84)\n0.19 (0.05-0.40)",
+          "injuryLocation_lower_leg_burden": "11.57 (3.67-23.69)\n35.87 (11.92-73.90)\n6.65 (2.14-13.51)",
+          "injuryLocation_lower_leg_severityTotalDays": "4157\n1574\n2853",
+          "injuryLocation_neck_prevalence": "15\n8\n7",
+          "injuryLocation_neck_incidence": "0.04 (0.01-0.09)\n0.16 (0.02-0.37)\n0.01 (0.00-0.04)",
+          "injuryLocation_neck_burden": "0.68 (0.22-1.39)\n1.02 (0.30-2.12)\n0.61 (0.19-1.25)",
+          "injuryLocation_neck_severityTotalDays": "214\n52\n162",
+          "injuryLocation_shoulder_prevalence": "37\n24\n13",
+          "injuryLocation_shoulder_incidence": "0.12 (0.03-0.26)\n0.53 (0.14-1.14)\n0.04 (0.00-0.09)",
+          "injuryLocation_shoulder_burden": "4.54 (1.49-9.17)\n16.57 (5.39-34.84)\n2.10 (0.66-4.37)",
+          "injuryLocation_shoulder_severityTotalDays": "1494\n752\n742",
+          "injuryLocation_thigh_prevalence": "550\n212\n338",
+          "injuryLocation_thigh_incidence": "1.44 (0.47-2.99)\n4.30 (1.35-8.83)\n0.86 (0.27-1.79)",
+          "injuryLocation_thigh_burden": "31.30 (10.17-64.52)\n94.09 (30.24-188.62)\n18.57 (6.04-37.21)",
+          "injuryLocation_thigh_severityTotalDays": "11194\n4371\n6823",
+          "injuryLocation_ankle_prevalence": "390\n187\n203",
+          "injuryLocation_ankle_incidence": "1.02 (0.33-2.12)\n3.72 (1.16-7.72)\n0.48 (0.15-0.99)",
+          "injuryLocation_ankle_burden": "31.14 (10.01-64.46)\n113.06 (36.89-232.40)\n14.53 (4.67-29.34)",
+          "injuryLocation_ankle_severityTotalDays": "12067\n5735\n6332",
+          "injuryLocation_foot_prevalence": "129\n69\n60",
+          "injuryLocation_foot_incidence": "0.38 (0.12-0.80)\n1.49 (0.46-3.11)\n0.16 (0.05-0.33)",
+          "injuryLocation_foot_burden": "15.36 (4.88-31.66)\n48.21 (15.83-99.51)\n8.70 (2.84-17.94)",
+          "injuryLocation_foot_severityTotalDays": "5407\n2411\n2996",
+          "injuryLocation_hand_prevalence": "34\n6\n28",
+          "injuryLocation_hand_incidence": "0.09 (0.02-0.19)\n0.14 (0.02-0.35)\n0.08 (0.02-0.17)",
+          "injuryLocation_hand_burden": "1.77 (0.54-3.60)\n1.81 (0.53-3.77)\n1.76 (0.56-3.70)",
+          "injuryLocation_hand_severityTotalDays": "800\n78\n722"
+        }
+      }
+    },
+    {
+      "studyId": "S2482",
+      "populationLabels": ["Total", "Starter", "Non-starter"],
+      "note": "Batch 018 manual primary-PDF extraction. Methods, Table 1, Figures 1-3, results, and limitations checked (pp. 99-107). The strongest direct split is Total / starter / non-starter. The total cohort has 58 non-contact injuries and 33 muscular injuries, while Table 1 reports group-level mean incidence only; no subgroup injury-event counts or group exposure totals were derived. Non-contact injuries are the target cohort, so no most-common diagnosis/type/location was echoed. The readable figures provide regression/ROC relationships and thresholds, not additional schema-compatible injury counts, location, tissue, or severity metrics.",
+      "fields": {
+        "studyDetails": {
+          "leadAuthor": "Moreno-Perez V",
+          "title": "Non-contact injury incidence in professional women's football depends on the starting status of the player.",
+          "yearOfPublication": "2025",
+          "journal": "Biology of Sport",
+          "doi": "10.5114/biolsport.2025.145916",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Spain",
+          "levelOfPlay": "professional, Liga F",
+          "sex": "female\nfemale\nfemale",
+          "ageCategory": "senior\nsenior\nsenior",
+          "meanAge": "28.5 +/- 3.9",
+          "sampleSizePlayers": "37\n20\n17",
+          "numberOfTeams": "1",
+          "observationDuration": "2019-2021, 2 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [non-contact injuries only]",
+          "incidenceDefinition": "non-contact injuries per 1000 player-hours",
+          "severityDefinition": "minimal, mild, moderate, severe [IOC classification]",
+          "mechanismReporting": "medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "2",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "58",
+          "injuryNonContact": "58",
+          "injuryIncidenceOverall": "\n0.12\n0.20",
+          "injuryIncidenceMatch": "\n0.63\n1.22",
+          "injuryIncidenceTraining": "\n0.18\n0.27",
+          "injuryMostCommonSeverity": "severe"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "33",
+          "injuryTissueType_muscle_injury_incidence": "\n0.06\n0.13"
+        }
+      }
+    }
+  ]
+}

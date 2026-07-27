@@ -1,0 +1,85 @@
+{
+  "artifactType": "Aspetar source-family paper-note provenance input",
+  "date": "2026-07-27",
+  "fixedMembership": [
+    "S071",
+    "S195",
+    "S261",
+    "S344",
+    "S544",
+    "S555",
+    "S602",
+    "S712",
+    "S1431",
+    "S2824",
+    "S3577"
+  ],
+  "notes": [
+    {
+      "studyId": "S071",
+      "classification": "duplicate alias",
+      "groupedUnder": "S261",
+      "body": "Aspetar source-family treatment, 2026-07-27: S071 is a manuscript-stage duplicate alias of S261 for the same 551-player Aspire Academy cohort over 2012/13-2015/16. No S071 values were added as an independent extraction or denominator. Use S261 as the academy source of truth; S071 is retained for provenance and audit only."
+    },
+    {
+      "studyId": "S195",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "body": "Aspetar source-family treatment, 2026-07-27: S195 is a disjoint historical Qatar Stars League all-injury supplement from August 2008 to April 2009. Its directly reported 10-club, 230-player, 217-injury values were added to S2824 as the explicitly labelled 2008/09 historical row. The S195 record remains as source provenance; do not count both the source record and the grouped S2824 row as separate representations of the same 2008/09 cohort."
+    },
+    {
+      "studyId": "S261",
+      "classification": "anchor",
+      "groupedUnder": "S261",
+      "body": "Aspetar source-family treatment, 2026-07-27: S261 is the academy anchor and source of truth for the 551-player U9-U19 Aspire Academy cohort over 2012/13-2015/16. Its final published data were extracted into Total and U9-U19 rows. S071 is a duplicate manuscript alias. Direct values from the later, non-overlapping S1431 2016/17-2018/19 U13-U15 cohort were added as the explicitly labelled final S261 row, with S1431 provenance retained."
+    },
+    {
+      "studyId": "S344",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "body": "Aspetar source-family treatment, 2026-07-27: S344 is the 2013/14-2014/15 Qatar Stars League groin-injury supplement. Its directly supported 606-player, 205,466-hour, 206-groin-injury values were added to S2824 as an explicitly labelled topic row. This period overlaps S2824 in 2014/15, so the S344 row is not an independent all-injury denominator. The S344 source record remains for provenance and must not be counted again alongside the grouped S2824 row."
+    },
+    {
+      "studyId": "S544",
+      "classification": "covered by another row",
+      "groupedUnder": "S344",
+      "body": "Aspetar source-family treatment, 2026-07-27: S544 is covered by the S344 groin row. It uses the same 2013/14-2014/15 Qatar Stars League programme and the same 205,466-hour denominator; the 579-player analytic sample reflects selection for risk-factor modelling. No S544 values were added as an independent extraction row or denominator. Retain S544 for provenance and audit only."
+    },
+    {
+      "studyId": "S555",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "body": "Aspetar source-family treatment, 2026-07-27: S555 is the ACL-specific Qatar Stars League supplement for 2013/14-2017/18. Its directly reported 486,951-hour and 37-ACL-rupture values were added to S2824 as an explicitly labelled ACL topic row. The period overlaps the S2824 programme, so this row is not an independent all-injury denominator. The S555 source record remains for provenance and must not be counted again alongside the grouped S2824 row."
+    },
+    {
+      "studyId": "S602",
+      "classification": "separate cohort",
+      "groupedUnder": "S602",
+      "body": "Aspetar source-family treatment, 2026-07-27: S602 is a separate AFC multicountry professional anchor, not part of the Qatar Stars League or Aspire Academy denominators. Its directly reported 2017-2019 data were extracted into Total, 2017, 2018, and 2019 rows on S602 itself. The source states nine countries but enumerates ten jurisdictions, including China and Hong Kong separately; it also prints pooled exposure of 232,665 hours while season rows sum to 233,371 hours. Both source views are preserved without correction."
+    },
+    {
+      "studyId": "S712",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "body": "Aspetar source-family treatment, 2026-07-27: S712 is the head/neck and concussion-specific Qatar Stars League supplement for 2013/14-2020/21. Its directly supported topic values, including 87 head/neck injuries among 4,736 time-loss injuries, were added to S2824 as an explicitly labelled topic row. The period overlaps the S2824 programme, so this row is not an independent all-injury denominator. The S712 source record remains for provenance and must not be counted again alongside the grouped S2824 row."
+    },
+    {
+      "studyId": "S1431",
+      "classification": "included supplement",
+      "groupedUnder": "S261",
+      "body": "Aspetar source-family treatment, 2026-07-27: S1431 is a later, non-overlapping Aspire Academy supplement covering U13-U15 players in 2016/17-2018/19. Its directly reported 95-player, 21,712-hour, 161-index-injury core and compatible Table 1 values were added to S261 as the labelled final population row. The S1431 record remains as source provenance; do not count both the source record and the grouped S261 row as separate representations of the same S1431 cohort."
+    },
+    {
+      "studyId": "S2824",
+      "classification": "anchor",
+      "groupedUnder": "S2824",
+      "body": "Aspetar source-family treatment, 2026-07-27: S2824 is the Qatar Stars League professional anchor. Its existing All seasons and 2014/15-2021/22 rows remain the modern all-injury denominator. Four labelled source rows were added: disjoint S195 2008/09 all-injury, overlapping S344 groin, S555 ACL, and S712 head/neck-concussion. The topic rows preserve direct supplementary detail but must not be summed as independent all-injury denominators. S544 and S3577 are covered by the S344 source row."
+    },
+    {
+      "studyId": "S3577",
+      "classification": "covered by another row",
+      "groupedUnder": "S344",
+      "body": "Aspetar source-family treatment, 2026-07-27: S3577 is a retrospective limb-asymmetry secondary analysis of the S344 2013/14-2014/15 Qatar Stars League groin cohort and pre-season screening data. It has no independent surveillance denominator. No S3577 values were added to an anchor; the source is retained for provenance and audit only and is covered by the S344 topic row under S2824."
+    }
+  ]
+}

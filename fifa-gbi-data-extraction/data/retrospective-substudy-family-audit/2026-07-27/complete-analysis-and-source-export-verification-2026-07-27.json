@@ -1,0 +1,4183 @@
+{
+  "artifactType": "complete-source-family-live-export-verification",
+  "generatedAt": "2026-07-27T17:46:03.447Z",
+  "result": "PASS",
+  "requestedPaperCount": 188,
+  "exportBatchSize": 20,
+  "analysisIncludedPaperCount": 66,
+  "analysisExcludedPaperCount": 122,
+  "sourcePaperCount": 188,
+  "analysisCsvDataRowCount": 135,
+  "sourceCsvDataRowCount": 399,
+  "includedStudyIds": [
+    "S008",
+    "S010",
+    "S025",
+    "S028",
+    "S037",
+    "S048",
+    "S058",
+    "S059",
+    "S064",
+    "S065",
+    "S075",
+    "S076",
+    "S078",
+    "S081",
+    "S086",
+    "S087",
+    "S088",
+    "S089",
+    "S090",
+    "S092",
+    "S094",
+    "S095",
+    "S099",
+    "S100",
+    "S1014",
+    "S102",
+    "S103",
+    "S104",
+    "S109",
+    "S112",
+    "S115",
+    "S1229",
+    "S1304",
+    "S139",
+    "S1402",
+    "S162",
+    "S1665",
+    "S261",
+    "S2615",
+    "S272",
+    "S277",
+    "S2813",
+    "S2824",
+    "S292",
+    "S319",
+    "S378",
+    "S3881",
+    "S391",
+    "S417",
+    "S421",
+    "S428",
+    "S4629",
+    "S4652",
+    "S481",
+    "S496",
+    "S532",
+    "S5338",
+    "S586",
+    "S602",
+    "S605",
+    "S625",
+    "S628",
+    "S644",
+    "S989",
+    "S991",
+    "UEFA-ECIS-MASTER"
+  ],
+  "excludedStudyIds": [
+    "S002",
+    "S006",
+    "S007",
+    "S011",
+    "S019",
+    "S026",
+    "S031",
+    "S036",
+    "S038",
+    "S039",
+    "S042",
+    "S043",
+    "S044",
+    "S046",
+    "S047",
+    "S056",
+    "S057",
+    "S071",
+    "S073",
+    "S074",
+    "S079",
+    "S080",
+    "S082",
+    "S084",
+    "S091",
+    "S096",
+    "S1009",
+    "S1041",
+    "S106",
+    "S107",
+    "S108",
+    "S1091",
+    "S110",
+    "S113",
+    "S114",
+    "S116",
+    "S117",
+    "S118",
+    "S119",
+    "S120",
+    "S121",
+    "S122",
+    "S123",
+    "S124",
+    "S125",
+    "S126",
+    "S127",
+    "S128",
+    "S129",
+    "S131",
+    "S132",
+    "S1328",
+    "S133",
+    "S134",
+    "S135",
+    "S136",
+    "S137",
+    "S138",
+    "S1389",
+    "S1431",
+    "S175",
+    "S195",
+    "S199",
+    "S200",
+    "S201",
+    "S202",
+    "S209",
+    "S211",
+    "S2259",
+    "S231",
+    "S2391",
+    "S2474",
+    "S256",
+    "S259",
+    "S273",
+    "S289",
+    "S303",
+    "S3075",
+    "S3218",
+    "S324",
+    "S338",
+    "S340",
+    "S344",
+    "S3577",
+    "S358",
+    "S368",
+    "S389",
+    "S390",
+    "S401",
+    "S415",
+    "S430",
+    "S451",
+    "S452",
+    "S454",
+    "S468",
+    "S4691",
+    "S4778",
+    "S4793",
+    "S4839",
+    "S5061",
+    "S509",
+    "S513",
+    "S5151",
+    "S527",
+    "S534",
+    "S544",
+    "S554",
+    "S555",
+    "S558",
+    "S573",
+    "S574",
+    "S576",
+    "S581",
+    "S600",
+    "S606",
+    "S618",
+    "S627",
+    "S630",
+    "S640",
+    "S645",
+    "S658",
+    "S712"
+  ],
+  "exportHashes": {
+    "analysisJsonSha256": "0faafd27e46ff8b088a34bd70ede57e2fe0981d01c9ae8fdebe0d997c8ecae8f",
+    "analysisCsvSha256": "96ad5996c5ae5c6ef5497c7d8cf666a8f857c61a99afb7d4e460d53d2962becf",
+    "sourceJsonSha256": "a6fc4011a39ebf920d5d725484e3d6626c8c36ef43e4f750d2cef1080d1c050e",
+    "sourceCsvSha256": "405c0f9e28929e2acdf58341427221b600754489e38a13999d8355f18930e073"
+  },
+  "rowChecks": [
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "ECIS men all injuries 2001/02-2018/19",
+        "ECIS men all injuries 2022/23"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "ECIS men all injuries 2001/02-2018/19"
+        },
+        {
+          "position": 19,
+          "label": "S5151 ECIS men 2022/23 World Cup-season all injuries",
+          "key": "ECIS men all injuries 2022/23"
+        }
+      ],
+      "excludedRowKeys": [
+        "ECIS men hamstring injuries 2001/02-2021/22",
+        "ECIS men hip/groin injuries 2001/02-2015/16",
+        "ECIS men adductor injuries 2001/02-2015/16",
+        "ECIS men LCL injuries 2001-2018",
+        "ECIS men PCL injuries 2001-2018",
+        "ECIS men MCL injuries 2001/02-2011/12",
+        "ECIS men ACL injuries 2001-2015",
+        "ECIS men ankle injuries 2001/02-2011/12",
+        "ECIS men syndesmosis injuries 2001-2016",
+        "ECIS men upper-extremity injuries 2001-2011",
+        "ECIS men head/neck injuries 2001/02-2009/10",
+        "ECIS men concussion injuries 2001/02-2009/10",
+        "ECIS-related stress fractures through 2012",
+        "ECIS men fifth-metatarsal fractures through 2012",
+        "ECIS men Achilles tendinopathy 2001-2011",
+        "ECIS men Achilles rupture 2001-2011",
+        "ECIS men indirect thigh injuries 2001-May 2013",
+        "ECIS men direct thigh contusions 2001-May 2013"
+      ],
+      "sourceRowKeys": [
+        "ECIS men all injuries 2001/02-2018/19",
+        "ECIS men hamstring injuries 2001/02-2021/22",
+        "ECIS men hip/groin injuries 2001/02-2015/16",
+        "ECIS men adductor injuries 2001/02-2015/16",
+        "ECIS men LCL injuries 2001-2018",
+        "ECIS men PCL injuries 2001-2018",
+        "ECIS men MCL injuries 2001/02-2011/12",
+        "ECIS men ACL injuries 2001-2015",
+        "ECIS men ankle injuries 2001/02-2011/12",
+        "ECIS men syndesmosis injuries 2001-2016",
+        "ECIS men upper-extremity injuries 2001-2011",
+        "ECIS men head/neck injuries 2001/02-2009/10",
+        "ECIS men concussion injuries 2001/02-2009/10",
+        "ECIS-related stress fractures through 2012",
+        "ECIS men fifth-metatarsal fractures through 2012",
+        "ECIS men Achilles tendinopathy 2001-2011",
+        "ECIS men Achilles rupture 2001-2011",
+        "ECIS men indirect thigh injuries 2001-May 2013",
+        "ECIS men direct thigh contusions 2001-May 2013",
+        "ECIS men all injuries 2022/23"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "ECIS men all injuries 2001/02-2018/19"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "ECIS men hamstring injuries 2001/02-2021/22"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "ECIS men hip/groin injuries 2001/02-2015/16"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "ECIS men adductor injuries 2001/02-2015/16"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "ECIS men LCL injuries 2001-2018"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "ECIS men PCL injuries 2001-2018"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "ECIS men MCL injuries 2001/02-2011/12"
+        },
+        {
+          "position": 7,
+          "label": "Row 8",
+          "key": "ECIS men ACL injuries 2001-2015"
+        },
+        {
+          "position": 8,
+          "label": "Row 9",
+          "key": "ECIS men ankle injuries 2001/02-2011/12"
+        },
+        {
+          "position": 9,
+          "label": "Row 10",
+          "key": "ECIS men syndesmosis injuries 2001-2016"
+        },
+        {
+          "position": 10,
+          "label": "Row 11",
+          "key": "ECIS men upper-extremity injuries 2001-2011"
+        },
+        {
+          "position": 11,
+          "label": "Row 12",
+          "key": "ECIS men head/neck injuries 2001/02-2009/10"
+        },
+        {
+          "position": 12,
+          "label": "Row 13",
+          "key": "ECIS men concussion injuries 2001/02-2009/10"
+        },
+        {
+          "position": 13,
+          "label": "Row 14",
+          "key": "ECIS-related stress fractures through 2012"
+        },
+        {
+          "position": 14,
+          "label": "Row 15",
+          "key": "ECIS men fifth-metatarsal fractures through 2012"
+        },
+        {
+          "position": 15,
+          "label": "Row 16",
+          "key": "ECIS men Achilles tendinopathy 2001-2011"
+        },
+        {
+          "position": 16,
+          "label": "Row 17",
+          "key": "ECIS men Achilles rupture 2001-2011"
+        },
+        {
+          "position": 17,
+          "label": "Row 18",
+          "key": "ECIS men indirect thigh injuries 2001-May 2013"
+        },
+        {
+          "position": 18,
+          "label": "Row 19",
+          "key": "ECIS men direct thigh contusions 2001-May 2013"
+        },
+        {
+          "position": 19,
+          "label": "S5151 ECIS men 2022/23 World Cup-season all injuries",
+          "key": "ECIS men all injuries 2022/23"
+        }
+      ]
+    },
+    {
+      "studyId": "S002",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1",
+        "uefa-ecis-men: Row 2",
+        "uefa-ecis-men: Row 3"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1",
+        "uefa-ecis-men: Row 2",
+        "uefa-ecis-men: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "uefa-ecis-men: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "uefa-ecis-men: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S006",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S007",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S011",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S019",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S042",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S043",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S046",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S056",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1",
+        "uefa-ecis-men: Row 2"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1",
+        "uefa-ecis-men: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "uefa-ecis-men: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S057",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S175",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S200",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S2391",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: ACLR, ≤1 year after RTP",
+        "uefa-ecis-men: ACLR, ≤2 years after RTP"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: ACLR, ≤1 year after RTP",
+        "uefa-ecis-men: ACLR, ≤2 years after RTP"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "ACLR, ≤1 year after RTP",
+          "key": "uefa-ecis-men: ACLR, ≤1 year after RTP"
+        },
+        {
+          "position": 1,
+          "label": "ACLR, ≤2 years after RTP",
+          "key": "uefa-ecis-men: ACLR, ≤2 years after RTP"
+        }
+      ]
+    },
+    {
+      "studyId": "S044",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "uefa-ecis-men: Row 1",
+        "uefa-ecis-men: Row 2",
+        "uefa-ecis-men: Row 3"
+      ],
+      "sourceRowKeys": [
+        "uefa-ecis-men: Row 1",
+        "uefa-ecis-men: Row 2",
+        "uefa-ecis-men: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "uefa-ecis-men: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "uefa-ecis-men: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "uefa-ecis-men: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S112",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "uefa-wecis-women: S112 WECIS women total - 2018/2019-2021/2022"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "S112 WECIS women total - 2018/2019-2021/2022",
+          "key": "uefa-wecis-women: S112 WECIS women total - 2018/2019-2021/2022"
+        }
+      ],
+      "excludedRowKeys": [
+        "uefa-wecis-women: S112 WECIS women season - 2018/2019",
+        "uefa-wecis-women: S112 WECIS women season - 2019/2020",
+        "uefa-wecis-women: S112 WECIS women season - 2020/2021",
+        "uefa-wecis-women: S112 WECIS women season - 2021/2022"
+      ],
+      "sourceRowKeys": [
+        "uefa-wecis-women: S112 WECIS women total - 2018/2019-2021/2022",
+        "uefa-wecis-women: S112 WECIS women season - 2018/2019",
+        "uefa-wecis-women: S112 WECIS women season - 2019/2020",
+        "uefa-wecis-women: S112 WECIS women season - 2020/2021",
+        "uefa-wecis-women: S112 WECIS women season - 2021/2022"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "S112 WECIS women total - 2018/2019-2021/2022",
+          "key": "uefa-wecis-women: S112 WECIS women total - 2018/2019-2021/2022"
+        },
+        {
+          "position": 1,
+          "label": "S112 WECIS women season - 2018/2019",
+          "key": "uefa-wecis-women: S112 WECIS women season - 2018/2019"
+        },
+        {
+          "position": 2,
+          "label": "S112 WECIS women season - 2019/2020",
+          "key": "uefa-wecis-women: S112 WECIS women season - 2019/2020"
+        },
+        {
+          "position": 3,
+          "label": "S112 WECIS women season - 2020/2021",
+          "key": "uefa-wecis-women: S112 WECIS women season - 2020/2021"
+        },
+        {
+          "position": 4,
+          "label": "S112 WECIS women season - 2021/2022",
+          "key": "uefa-wecis-women: S112 WECIS women season - 2021/2022"
+        }
+      ]
+    },
+    {
+      "studyId": "S261",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "aspetar-aspire-academy: Total 2012/13-2015/16"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total 2012/13-2015/16",
+          "key": "aspetar-aspire-academy: Total 2012/13-2015/16"
+        }
+      ],
+      "excludedRowKeys": [
+        "aspetar-aspire-academy: U9",
+        "aspetar-aspire-academy: U10",
+        "aspetar-aspire-academy: U11",
+        "aspetar-aspire-academy: U12",
+        "aspetar-aspire-academy: U13",
+        "aspetar-aspire-academy: U14",
+        "aspetar-aspire-academy: U15",
+        "aspetar-aspire-academy: U16",
+        "aspetar-aspire-academy: U17",
+        "aspetar-aspire-academy: U18",
+        "aspetar-aspire-academy: U19",
+        "aspetar-aspire-academy: 2016/17-2018/19 U13-U15 growth cohort (S1431)"
+      ],
+      "sourceRowKeys": [
+        "aspetar-aspire-academy: Total 2012/13-2015/16",
+        "aspetar-aspire-academy: U9",
+        "aspetar-aspire-academy: U10",
+        "aspetar-aspire-academy: U11",
+        "aspetar-aspire-academy: U12",
+        "aspetar-aspire-academy: U13",
+        "aspetar-aspire-academy: U14",
+        "aspetar-aspire-academy: U15",
+        "aspetar-aspire-academy: U16",
+        "aspetar-aspire-academy: U17",
+        "aspetar-aspire-academy: U18",
+        "aspetar-aspire-academy: U19",
+        "aspetar-aspire-academy: 2016/17-2018/19 U13-U15 growth cohort (S1431)"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total 2012/13-2015/16",
+          "key": "aspetar-aspire-academy: Total 2012/13-2015/16"
+        },
+        {
+          "position": 1,
+          "label": "U9",
+          "key": "aspetar-aspire-academy: U9"
+        },
+        {
+          "position": 2,
+          "label": "U10",
+          "key": "aspetar-aspire-academy: U10"
+        },
+        {
+          "position": 3,
+          "label": "U11",
+          "key": "aspetar-aspire-academy: U11"
+        },
+        {
+          "position": 4,
+          "label": "U12",
+          "key": "aspetar-aspire-academy: U12"
+        },
+        {
+          "position": 5,
+          "label": "U13",
+          "key": "aspetar-aspire-academy: U13"
+        },
+        {
+          "position": 6,
+          "label": "U14",
+          "key": "aspetar-aspire-academy: U14"
+        },
+        {
+          "position": 7,
+          "label": "U15",
+          "key": "aspetar-aspire-academy: U15"
+        },
+        {
+          "position": 8,
+          "label": "U16",
+          "key": "aspetar-aspire-academy: U16"
+        },
+        {
+          "position": 9,
+          "label": "U17",
+          "key": "aspetar-aspire-academy: U17"
+        },
+        {
+          "position": 10,
+          "label": "U18",
+          "key": "aspetar-aspire-academy: U18"
+        },
+        {
+          "position": 11,
+          "label": "U19",
+          "key": "aspetar-aspire-academy: U19"
+        },
+        {
+          "position": 12,
+          "label": "2016/17-2018/19 U13-U15 growth cohort (S1431)",
+          "key": "aspetar-aspire-academy: 2016/17-2018/19 U13-U15 growth cohort (S1431)"
+        }
+      ]
+    },
+    {
+      "studyId": "S071",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "aspetar-aspire-academy: Row 1",
+        "aspetar-aspire-academy: Row 2",
+        "aspetar-aspire-academy: Row 3",
+        "aspetar-aspire-academy: Row 4",
+        "aspetar-aspire-academy: Row 5",
+        "aspetar-aspire-academy: Row 6",
+        "aspetar-aspire-academy: Row 7",
+        "aspetar-aspire-academy: Row 8",
+        "aspetar-aspire-academy: Row 9",
+        "aspetar-aspire-academy: Row 10",
+        "aspetar-aspire-academy: Row 11"
+      ],
+      "sourceRowKeys": [
+        "aspetar-aspire-academy: Row 1",
+        "aspetar-aspire-academy: Row 2",
+        "aspetar-aspire-academy: Row 3",
+        "aspetar-aspire-academy: Row 4",
+        "aspetar-aspire-academy: Row 5",
+        "aspetar-aspire-academy: Row 6",
+        "aspetar-aspire-academy: Row 7",
+        "aspetar-aspire-academy: Row 8",
+        "aspetar-aspire-academy: Row 9",
+        "aspetar-aspire-academy: Row 10",
+        "aspetar-aspire-academy: Row 11"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "aspetar-aspire-academy: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "aspetar-aspire-academy: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "aspetar-aspire-academy: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "aspetar-aspire-academy: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "aspetar-aspire-academy: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "aspetar-aspire-academy: Row 6"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "aspetar-aspire-academy: Row 7"
+        },
+        {
+          "position": 7,
+          "label": "Row 8",
+          "key": "aspetar-aspire-academy: Row 8"
+        },
+        {
+          "position": 8,
+          "label": "Row 9",
+          "key": "aspetar-aspire-academy: Row 9"
+        },
+        {
+          "position": 9,
+          "label": "Row 10",
+          "key": "aspetar-aspire-academy: Row 10"
+        },
+        {
+          "position": 10,
+          "label": "Row 11",
+          "key": "aspetar-aspire-academy: Row 11"
+        }
+      ]
+    },
+    {
+      "studyId": "S076",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "aspetar-aspire-academy: Row 1",
+        "aspetar-aspire-academy: Row 2",
+        "aspetar-aspire-academy: Row 3",
+        "aspetar-aspire-academy: Row 4",
+        "aspetar-aspire-academy: Row 5",
+        "aspetar-aspire-academy: Row 6"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "aspetar-aspire-academy: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "aspetar-aspire-academy: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "aspetar-aspire-academy: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "aspetar-aspire-academy: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "aspetar-aspire-academy: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "aspetar-aspire-academy: Row 6"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "aspetar-aspire-academy: Row 1",
+        "aspetar-aspire-academy: Row 2",
+        "aspetar-aspire-academy: Row 3",
+        "aspetar-aspire-academy: Row 4",
+        "aspetar-aspire-academy: Row 5",
+        "aspetar-aspire-academy: Row 6"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "aspetar-aspire-academy: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "aspetar-aspire-academy: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "aspetar-aspire-academy: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "aspetar-aspire-academy: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "aspetar-aspire-academy: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "aspetar-aspire-academy: Row 6"
+        }
+      ]
+    },
+    {
+      "studyId": "S1431",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "aspetar-aspire-academy: Total"
+      ],
+      "sourceRowKeys": [
+        "aspetar-aspire-academy: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "aspetar-aspire-academy: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S2824",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "aspetar-qsl-professional: All seasons",
+        "aspetar-qsl-professional: 2008/09 historical all-injury cohort (S195)"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "All seasons",
+          "key": "aspetar-qsl-professional: All seasons"
+        },
+        {
+          "position": 9,
+          "label": "2008/09 historical all-injury cohort (S195)",
+          "key": "aspetar-qsl-professional: 2008/09 historical all-injury cohort (S195)"
+        }
+      ],
+      "excludedRowKeys": [
+        "aspetar-qsl-professional: 2014/15",
+        "aspetar-qsl-professional: 2015/16",
+        "aspetar-qsl-professional: 2016/17",
+        "aspetar-qsl-professional: 2017/18",
+        "aspetar-qsl-professional: 2018/19",
+        "aspetar-qsl-professional: 2019/20",
+        "aspetar-qsl-professional: 2020/21",
+        "aspetar-qsl-professional: 2021/22",
+        "aspetar-qsl-professional: 2013/14-2014/15 groin supplement (S344)",
+        "aspetar-qsl-professional: 2013/14-2017/18 ACL supplement (S555)",
+        "aspetar-qsl-professional: 2013/14-2020/21 head-neck-concussion supplement (S712)"
+      ],
+      "sourceRowKeys": [
+        "aspetar-qsl-professional: All seasons",
+        "aspetar-qsl-professional: 2014/15",
+        "aspetar-qsl-professional: 2015/16",
+        "aspetar-qsl-professional: 2016/17",
+        "aspetar-qsl-professional: 2017/18",
+        "aspetar-qsl-professional: 2018/19",
+        "aspetar-qsl-professional: 2019/20",
+        "aspetar-qsl-professional: 2020/21",
+        "aspetar-qsl-professional: 2021/22",
+        "aspetar-qsl-professional: 2008/09 historical all-injury cohort (S195)",
+        "aspetar-qsl-professional: 2013/14-2014/15 groin supplement (S344)",
+        "aspetar-qsl-professional: 2013/14-2017/18 ACL supplement (S555)",
+        "aspetar-qsl-professional: 2013/14-2020/21 head-neck-concussion supplement (S712)"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "All seasons",
+          "key": "aspetar-qsl-professional: All seasons"
+        },
+        {
+          "position": 1,
+          "label": "2014/15",
+          "key": "aspetar-qsl-professional: 2014/15"
+        },
+        {
+          "position": 2,
+          "label": "2015/16",
+          "key": "aspetar-qsl-professional: 2015/16"
+        },
+        {
+          "position": 3,
+          "label": "2016/17",
+          "key": "aspetar-qsl-professional: 2016/17"
+        },
+        {
+          "position": 4,
+          "label": "2017/18",
+          "key": "aspetar-qsl-professional: 2017/18"
+        },
+        {
+          "position": 5,
+          "label": "2018/19",
+          "key": "aspetar-qsl-professional: 2018/19"
+        },
+        {
+          "position": 6,
+          "label": "2019/20",
+          "key": "aspetar-qsl-professional: 2019/20"
+        },
+        {
+          "position": 7,
+          "label": "2020/21",
+          "key": "aspetar-qsl-professional: 2020/21"
+        },
+        {
+          "position": 8,
+          "label": "2021/22",
+          "key": "aspetar-qsl-professional: 2021/22"
+        },
+        {
+          "position": 9,
+          "label": "2008/09 historical all-injury cohort (S195)",
+          "key": "aspetar-qsl-professional: 2008/09 historical all-injury cohort (S195)"
+        },
+        {
+          "position": 10,
+          "label": "2013/14-2014/15 groin supplement (S344)",
+          "key": "aspetar-qsl-professional: 2013/14-2014/15 groin supplement (S344)"
+        },
+        {
+          "position": 11,
+          "label": "2013/14-2017/18 ACL supplement (S555)",
+          "key": "aspetar-qsl-professional: 2013/14-2017/18 ACL supplement (S555)"
+        },
+        {
+          "position": 12,
+          "label": "2013/14-2020/21 head-neck-concussion supplement (S712)",
+          "key": "aspetar-qsl-professional: 2013/14-2020/21 head-neck-concussion supplement (S712)"
+        }
+      ]
+    },
+    {
+      "studyId": "S344",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "aspetar-qsl-professional: Row 1"
+      ],
+      "sourceRowKeys": [
+        "aspetar-qsl-professional: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "aspetar-qsl-professional: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S544",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "aspetar-qsl-professional: Row 1"
+      ],
+      "sourceRowKeys": [
+        "aspetar-qsl-professional: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "aspetar-qsl-professional: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S555",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "aspetar-qsl-professional: Row 1"
+      ],
+      "sourceRowKeys": [
+        "aspetar-qsl-professional: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "aspetar-qsl-professional: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S712",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "aspetar-qsl-professional: Total"
+      ],
+      "sourceRowKeys": [
+        "aspetar-qsl-professional: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "aspetar-qsl-professional: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S602",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "aspetar-afc-multicountry: Total 2017-2019"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total 2017-2019",
+          "key": "aspetar-afc-multicountry: Total 2017-2019"
+        }
+      ],
+      "excludedRowKeys": [
+        "aspetar-afc-multicountry: 2017",
+        "aspetar-afc-multicountry: 2018",
+        "aspetar-afc-multicountry: 2019"
+      ],
+      "sourceRowKeys": [
+        "aspetar-afc-multicountry: Total 2017-2019",
+        "aspetar-afc-multicountry: 2017",
+        "aspetar-afc-multicountry: 2018",
+        "aspetar-afc-multicountry: 2019"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total 2017-2019",
+          "key": "aspetar-afc-multicountry: Total 2017-2019"
+        },
+        {
+          "position": 1,
+          "label": "2017",
+          "key": "aspetar-afc-multicountry: 2017"
+        },
+        {
+          "position": 2,
+          "label": "2018",
+          "key": "aspetar-afc-multicountry: 2018"
+        },
+        {
+          "position": 3,
+          "label": "2019",
+          "key": "aspetar-afc-multicountry: 2019"
+        }
+      ]
+    },
+    {
+      "studyId": "S075",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "german-youth-academy-2012-13: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "german-youth-academy-2012-13: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "german-youth-academy-2012-13: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "german-youth-academy-2012-13: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S047",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "german-youth-academy-2012-13: Row 1",
+        "german-youth-academy-2012-13: Row 2",
+        "german-youth-academy-2012-13: Row 3",
+        "german-youth-academy-2012-13: Row 4",
+        "german-youth-academy-2012-13: Row 5",
+        "german-youth-academy-2012-13: Row 6",
+        "german-youth-academy-2012-13: Row 7"
+      ],
+      "sourceRowKeys": [
+        "german-youth-academy-2012-13: Row 1",
+        "german-youth-academy-2012-13: Row 2",
+        "german-youth-academy-2012-13: Row 3",
+        "german-youth-academy-2012-13: Row 4",
+        "german-youth-academy-2012-13: Row 5",
+        "german-youth-academy-2012-13: Row 6",
+        "german-youth-academy-2012-13: Row 7"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "german-youth-academy-2012-13: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "german-youth-academy-2012-13: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "german-youth-academy-2012-13: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "german-youth-academy-2012-13: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "german-youth-academy-2012-13: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "german-youth-academy-2012-13: Row 6"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "german-youth-academy-2012-13: Row 7"
+        }
+      ]
+    },
+    {
+      "studyId": "S630",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "german-youth-academy-2012-13: Row 1",
+        "german-youth-academy-2012-13: Row 2",
+        "german-youth-academy-2012-13: Row 3",
+        "german-youth-academy-2012-13: Row 4",
+        "german-youth-academy-2012-13: Row 5",
+        "german-youth-academy-2012-13: Row 6",
+        "german-youth-academy-2012-13: Row 7",
+        "german-youth-academy-2012-13: Row 8"
+      ],
+      "sourceRowKeys": [
+        "german-youth-academy-2012-13: Row 1",
+        "german-youth-academy-2012-13: Row 2",
+        "german-youth-academy-2012-13: Row 3",
+        "german-youth-academy-2012-13: Row 4",
+        "german-youth-academy-2012-13: Row 5",
+        "german-youth-academy-2012-13: Row 6",
+        "german-youth-academy-2012-13: Row 7",
+        "german-youth-academy-2012-13: Row 8"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "german-youth-academy-2012-13: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "german-youth-academy-2012-13: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "german-youth-academy-2012-13: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "german-youth-academy-2012-13: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "german-youth-academy-2012-13: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "german-youth-academy-2012-13: Row 6"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "german-youth-academy-2012-13: Row 7"
+        },
+        {
+          "position": 7,
+          "label": "Row 8",
+          "key": "german-youth-academy-2012-13: Row 8"
+        }
+      ]
+    },
+    {
+      "studyId": "S1389",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "german-youth-academy-2012-13: Total",
+        "german-youth-academy-2012-13: U12",
+        "german-youth-academy-2012-13: U13",
+        "german-youth-academy-2012-13: U14",
+        "german-youth-academy-2012-13: U15",
+        "german-youth-academy-2012-13: U16",
+        "german-youth-academy-2012-13: U17",
+        "german-youth-academy-2012-13: U19"
+      ],
+      "sourceRowKeys": [
+        "german-youth-academy-2012-13: Total",
+        "german-youth-academy-2012-13: U12",
+        "german-youth-academy-2012-13: U13",
+        "german-youth-academy-2012-13: U14",
+        "german-youth-academy-2012-13: U15",
+        "german-youth-academy-2012-13: U16",
+        "german-youth-academy-2012-13: U17",
+        "german-youth-academy-2012-13: U19"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "german-youth-academy-2012-13: Total"
+        },
+        {
+          "position": 1,
+          "label": "U12",
+          "key": "german-youth-academy-2012-13: U12"
+        },
+        {
+          "position": 2,
+          "label": "U13",
+          "key": "german-youth-academy-2012-13: U13"
+        },
+        {
+          "position": 3,
+          "label": "U14",
+          "key": "german-youth-academy-2012-13: U14"
+        },
+        {
+          "position": 4,
+          "label": "U15",
+          "key": "german-youth-academy-2012-13: U15"
+        },
+        {
+          "position": 5,
+          "label": "U16",
+          "key": "german-youth-academy-2012-13: U16"
+        },
+        {
+          "position": 6,
+          "label": "U17",
+          "key": "german-youth-academy-2012-13: U17"
+        },
+        {
+          "position": 7,
+          "label": "U19",
+          "key": "german-youth-academy-2012-13: U19"
+        }
+      ]
+    },
+    {
+      "studyId": "S1014",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "funball-cluster-rct: Intervention group",
+        "funball-cluster-rct: Control group"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Intervention group",
+          "key": "funball-cluster-rct: Intervention group"
+        },
+        {
+          "position": 1,
+          "label": "Control group",
+          "key": "funball-cluster-rct: Control group"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "funball-cluster-rct: Intervention group",
+        "funball-cluster-rct: Control group"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Intervention group",
+          "key": "funball-cluster-rct: Intervention group"
+        },
+        {
+          "position": 1,
+          "label": "Control group",
+          "key": "funball-cluster-rct: Control group"
+        }
+      ]
+    },
+    {
+      "studyId": "S2259",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "funball-cluster-rct: Total",
+        "funball-cluster-rct: Intervention",
+        "funball-cluster-rct: Control"
+      ],
+      "sourceRowKeys": [
+        "funball-cluster-rct: Total",
+        "funball-cluster-rct: Intervention",
+        "funball-cluster-rct: Control"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "funball-cluster-rct: Total"
+        },
+        {
+          "position": 1,
+          "label": "Intervention",
+          "key": "funball-cluster-rct: Intervention"
+        },
+        {
+          "position": 2,
+          "label": "Control",
+          "key": "funball-cluster-rct: Control"
+        }
+      ]
+    },
+    {
+      "studyId": "S2474",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "funball-cluster-rct: Total",
+        "funball-cluster-rct: U15",
+        "funball-cluster-rct: U17",
+        "funball-cluster-rct: U19"
+      ],
+      "sourceRowKeys": [
+        "funball-cluster-rct: Total",
+        "funball-cluster-rct: U15",
+        "funball-cluster-rct: U17",
+        "funball-cluster-rct: U19"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "funball-cluster-rct: Total"
+        },
+        {
+          "position": 1,
+          "label": "U15",
+          "key": "funball-cluster-rct: U15"
+        },
+        {
+          "position": 2,
+          "label": "U17",
+          "key": "funball-cluster-rct: U17"
+        },
+        {
+          "position": 3,
+          "label": "U19",
+          "key": "funball-cluster-rct: U19"
+        }
+      ]
+    },
+    {
+      "studyId": "S289",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "funball-cluster-rct: Row 1"
+      ],
+      "sourceRowKeys": [
+        "funball-cluster-rct: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "funball-cluster-rct: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S025",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "dutch-amateur-professional-2009-10: Row 1",
+        "dutch-amateur-professional-2009-10: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-professional-2009-10: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "dutch-amateur-professional-2009-10: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "dutch-amateur-professional-2009-10: Row 1",
+        "dutch-amateur-professional-2009-10: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-professional-2009-10: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "dutch-amateur-professional-2009-10: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S468",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "dutch-amateur-professional-2009-10: Row 1"
+      ],
+      "sourceRowKeys": [
+        "dutch-amateur-professional-2009-10: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-professional-2009-10: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S658",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "dutch-amateur-professional-2009-10: Row 1",
+        "dutch-amateur-professional-2009-10: Row 2",
+        "dutch-amateur-professional-2009-10: Row 3"
+      ],
+      "sourceRowKeys": [
+        "dutch-amateur-professional-2009-10: Row 1",
+        "dutch-amateur-professional-2009-10: Row 2",
+        "dutch-amateur-professional-2009-10: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-professional-2009-10: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "dutch-amateur-professional-2009-10: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "dutch-amateur-professional-2009-10: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S991",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "female-menstrual-cycle-cohort: Total"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "female-menstrual-cycle-cohort: Total"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "female-menstrual-cycle-cohort: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "female-menstrual-cycle-cohort: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S073",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "female-menstrual-cycle-cohort: Row 1"
+      ],
+      "sourceRowKeys": [
+        "female-menstrual-cycle-cohort: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "female-menstrual-cycle-cohort: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S074",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "female-menstrual-cycle-cohort: Row 1"
+      ],
+      "sourceRowKeys": [
+        "female-menstrual-cycle-cohort: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "female-menstrual-cycle-cohort: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S586",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "australian-a-league-2012-18: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-a-league-2012-18: Row 1"
+        }
+      ],
+      "excludedRowKeys": [
+        "australian-a-league-2012-18: Row 2",
+        "australian-a-league-2012-18: Row 3",
+        "australian-a-league-2012-18: Row 4",
+        "australian-a-league-2012-18: Row 5",
+        "australian-a-league-2012-18: Row 6",
+        "australian-a-league-2012-18: Row 7"
+      ],
+      "sourceRowKeys": [
+        "australian-a-league-2012-18: Row 1",
+        "australian-a-league-2012-18: Row 2",
+        "australian-a-league-2012-18: Row 3",
+        "australian-a-league-2012-18: Row 4",
+        "australian-a-league-2012-18: Row 5",
+        "australian-a-league-2012-18: Row 6",
+        "australian-a-league-2012-18: Row 7"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-a-league-2012-18: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "australian-a-league-2012-18: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "australian-a-league-2012-18: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "australian-a-league-2012-18: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "australian-a-league-2012-18: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "australian-a-league-2012-18: Row 6"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "australian-a-league-2012-18: Row 7"
+        }
+      ]
+    },
+    {
+      "studyId": "S573",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "australian-a-league-2012-18: Row 1"
+      ],
+      "sourceRowKeys": [
+        "australian-a-league-2012-18: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-a-league-2012-18: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S618",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "australian-a-league-2012-18: Row 1"
+      ],
+      "sourceRowKeys": [
+        "australian-a-league-2012-18: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-a-league-2012-18: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S008",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "ready-to-play-norway-women: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "ready-to-play-norway-women: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "ready-to-play-norway-women: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "ready-to-play-norway-women: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S1041",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "ready-to-play-norway-women: Total"
+      ],
+      "sourceRowKeys": [
+        "ready-to-play-norway-women: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "ready-to-play-norway-women: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S065",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "iran-national-futsal-18-month: Row 1",
+        "iran-national-futsal-18-month: Row 2",
+        "iran-national-futsal-18-month: Row 3"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "iran-national-futsal-18-month: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "iran-national-futsal-18-month: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "iran-national-futsal-18-month: Row 3"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "iran-national-futsal-18-month: Row 1",
+        "iran-national-futsal-18-month: Row 2",
+        "iran-national-futsal-18-month: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "iran-national-futsal-18-month: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "iran-national-futsal-18-month: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "iran-national-futsal-18-month: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S080",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "iran-national-futsal-18-month: Row 1",
+        "iran-national-futsal-18-month: Row 2",
+        "iran-national-futsal-18-month: Row 3",
+        "iran-national-futsal-18-month: Row 4"
+      ],
+      "sourceRowKeys": [
+        "iran-national-futsal-18-month: Row 1",
+        "iran-national-futsal-18-month: Row 2",
+        "iran-national-futsal-18-month: Row 3",
+        "iran-national-futsal-18-month: Row 4"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "iran-national-futsal-18-month: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "iran-national-futsal-18-month: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "iran-national-futsal-18-month: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "iran-national-futsal-18-month: Row 4"
+        }
+      ]
+    },
+    {
+      "studyId": "S1304",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "new-zealand-female-team-2022-23: Total"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "new-zealand-female-team-2022-23: Total"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "new-zealand-female-team-2022-23: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "new-zealand-female-team-2022-23: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S1009",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "new-zealand-female-team-2022-23: Total"
+      ],
+      "sourceRowKeys": [
+        "new-zealand-female-team-2022-23: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "new-zealand-female-team-2022-23: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S1229",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "ghana-academy-2021-22: Total"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "ghana-academy-2021-22: Total"
+        }
+      ],
+      "excludedRowKeys": [
+        "ghana-academy-2021-22: U14",
+        "ghana-academy-2021-22: U16",
+        "ghana-academy-2021-22: U18",
+        "ghana-academy-2021-22: Senior"
+      ],
+      "sourceRowKeys": [
+        "ghana-academy-2021-22: Total",
+        "ghana-academy-2021-22: U14",
+        "ghana-academy-2021-22: U16",
+        "ghana-academy-2021-22: U18",
+        "ghana-academy-2021-22: Senior"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "ghana-academy-2021-22: Total"
+        },
+        {
+          "position": 1,
+          "label": "U14",
+          "key": "ghana-academy-2021-22: U14"
+        },
+        {
+          "position": 2,
+          "label": "U16",
+          "key": "ghana-academy-2021-22: U16"
+        },
+        {
+          "position": 3,
+          "label": "U18",
+          "key": "ghana-academy-2021-22: U18"
+        },
+        {
+          "position": 4,
+          "label": "Senior",
+          "key": "ghana-academy-2021-22: Senior"
+        }
+      ]
+    },
+    {
+      "studyId": "S324",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "ghana-academy-2021-22: Row 1",
+        "ghana-academy-2021-22: Row 2",
+        "ghana-academy-2021-22: Row 3",
+        "ghana-academy-2021-22: Row 4",
+        "ghana-academy-2021-22: Row 5"
+      ],
+      "sourceRowKeys": [
+        "ghana-academy-2021-22: Row 1",
+        "ghana-academy-2021-22: Row 2",
+        "ghana-academy-2021-22: Row 3",
+        "ghana-academy-2021-22: Row 4",
+        "ghana-academy-2021-22: Row 5"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "ghana-academy-2021-22: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "ghana-academy-2021-22: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "ghana-academy-2021-22: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "ghana-academy-2021-22: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "ghana-academy-2021-22: Row 5"
+        }
+      ]
+    },
+    {
+      "studyId": "S428",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "spanish-groin-2015-16: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "spanish-groin-2015-16: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "spanish-groin-2015-16: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "spanish-groin-2015-16: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S211",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "spanish-groin-2015-16: Row 1",
+        "spanish-groin-2015-16: Row 2"
+      ],
+      "sourceRowKeys": [
+        "spanish-groin-2015-16: Row 1",
+        "spanish-groin-2015-16: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "spanish-groin-2015-16: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "spanish-groin-2015-16: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S496",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "high-school-1995-97-surveillance: male",
+        "high-school-1995-97-surveillance: female"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "male",
+          "key": "high-school-1995-97-surveillance: male"
+        },
+        {
+          "position": 1,
+          "label": "female",
+          "key": "high-school-1995-97-surveillance: female"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "high-school-1995-97-surveillance: male",
+        "high-school-1995-97-surveillance: female"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "male",
+          "key": "high-school-1995-97-surveillance: male"
+        },
+        {
+          "position": 1,
+          "label": "female",
+          "key": "high-school-1995-97-surveillance: female"
+        }
+      ]
+    },
+    {
+      "studyId": "S231",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "high-school-1995-97-surveillance: Row 1",
+        "high-school-1995-97-surveillance: Row 2"
+      ],
+      "sourceRowKeys": [
+        "high-school-1995-97-surveillance: Row 1",
+        "high-school-1995-97-surveillance: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "high-school-1995-97-surveillance: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "high-school-1995-97-surveillance: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S4629",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "korean-youth-2021: Total"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "korean-youth-2021: Total"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "korean-youth-2021: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "korean-youth-2021: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S3075",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "korean-youth-2021: Total"
+      ],
+      "sourceRowKeys": [
+        "korean-youth-2021: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "korean-youth-2021: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S417",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "english-professional-clubs-1994-97: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-professional-clubs-1994-97: Row 1"
+        }
+      ],
+      "excludedRowKeys": [
+        "english-professional-clubs-1994-97: Row 2",
+        "english-professional-clubs-1994-97: Row 3"
+      ],
+      "sourceRowKeys": [
+        "english-professional-clubs-1994-97: Row 1",
+        "english-professional-clubs-1994-97: Row 2",
+        "english-professional-clubs-1994-97: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-professional-clubs-1994-97: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "english-professional-clubs-1994-97: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "english-professional-clubs-1994-97: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S574",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "english-professional-clubs-1994-97: Row 1"
+      ],
+      "sourceRowKeys": [
+        "english-professional-clubs-1994-97: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-professional-clubs-1994-97: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S421",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "australian-academy-2017-20: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-academy-2017-20: Row 1"
+        }
+      ],
+      "excludedRowKeys": [
+        "australian-academy-2017-20: Row 2",
+        "australian-academy-2017-20: Row 3",
+        "australian-academy-2017-20: Row 4"
+      ],
+      "sourceRowKeys": [
+        "australian-academy-2017-20: Row 1",
+        "australian-academy-2017-20: Row 2",
+        "australian-academy-2017-20: Row 3",
+        "australian-academy-2017-20: Row 4"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-academy-2017-20: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "australian-academy-2017-20: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "australian-academy-2017-20: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "australian-academy-2017-20: Row 4"
+        }
+      ]
+    },
+    {
+      "studyId": "S600",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "australian-academy-2017-20: Row 1"
+      ],
+      "sourceRowKeys": [
+        "australian-academy-2017-20: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-academy-2017-20: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S452",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "english-fa-academy-audit-2000-05: Row 1"
+      ],
+      "sourceRowKeys": [
+        "english-fa-academy-audit-2000-05: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-fa-academy-audit-2000-05: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S454",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "english-fa-academy-audit-2000-05: Row 1"
+      ],
+      "sourceRowKeys": [
+        "english-fa-academy-audit-2000-05: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-fa-academy-audit-2000-05: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S4778",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "mls-public-diagnosis-2010-21: Total",
+        "mls-public-diagnosis-2010-21: 2010-2015",
+        "mls-public-diagnosis-2010-21: 2016-2021"
+      ],
+      "sourceRowKeys": [
+        "mls-public-diagnosis-2010-21: Total",
+        "mls-public-diagnosis-2010-21: 2010-2015",
+        "mls-public-diagnosis-2010-21: 2016-2021"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "mls-public-diagnosis-2010-21: Total"
+        },
+        {
+          "position": 1,
+          "label": "2010-2015",
+          "key": "mls-public-diagnosis-2010-21: 2010-2015"
+        },
+        {
+          "position": 2,
+          "label": "2016-2021",
+          "key": "mls-public-diagnosis-2010-21: 2016-2021"
+        }
+      ]
+    },
+    {
+      "studyId": "S4793",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "mls-public-diagnosis-2010-21: Total",
+        "mls-public-diagnosis-2010-21: 2010-2015",
+        "mls-public-diagnosis-2010-21: 2016-2021"
+      ],
+      "sourceRowKeys": [
+        "mls-public-diagnosis-2010-21: Total",
+        "mls-public-diagnosis-2010-21: 2010-2015",
+        "mls-public-diagnosis-2010-21: 2016-2021"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "mls-public-diagnosis-2010-21: Total"
+        },
+        {
+          "position": 1,
+          "label": "2010-2015",
+          "key": "mls-public-diagnosis-2010-21: 2010-2015"
+        },
+        {
+          "position": 2,
+          "label": "2016-2021",
+          "key": "mls-public-diagnosis-2010-21: 2016-2021"
+        }
+      ]
+    },
+    {
+      "studyId": "S605",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "norway-cup-2005-08: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "norway-cup-2005-08: Row 1"
+        }
+      ],
+      "excludedRowKeys": [
+        "norway-cup-2005-08: Row 2",
+        "norway-cup-2005-08: Row 3"
+      ],
+      "sourceRowKeys": [
+        "norway-cup-2005-08: Row 1",
+        "norway-cup-2005-08: Row 2",
+        "norway-cup-2005-08: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "norway-cup-2005-08: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "norway-cup-2005-08: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "norway-cup-2005-08: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S627",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "norway-cup-2005-08: Row 1"
+      ],
+      "sourceRowKeys": [
+        "norway-cup-2005-08: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "norway-cup-2005-08: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S628",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "fifa11-collegiate-men: Row 1",
+        "fifa11-collegiate-men: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "fifa11-collegiate-men: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "fifa11-collegiate-men: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "fifa11-collegiate-men: Row 1",
+        "fifa11-collegiate-men: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "fifa11-collegiate-men: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "fifa11-collegiate-men: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S481",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "fifa11-kids-multicountry: Row 1",
+        "fifa11-kids-multicountry: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "fifa11-kids-multicountry: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "fifa11-kids-multicountry: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "fifa11-kids-multicountry: Row 1",
+        "fifa11-kids-multicountry: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "fifa11-kids-multicountry: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "fifa11-kids-multicountry: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S430",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "fifa11-kids-multicountry: Total",
+        "fifa11-kids-multicountry: Control",
+        "fifa11-kids-multicountry: Intervention"
+      ],
+      "sourceRowKeys": [
+        "fifa11-kids-multicountry: Total",
+        "fifa11-kids-multicountry: Control",
+        "fifa11-kids-multicountry: Intervention"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "fifa11-kids-multicountry: Total"
+        },
+        {
+          "position": 1,
+          "label": "Control",
+          "key": "fifa11-kids-multicountry: Control"
+        },
+        {
+          "position": 2,
+          "label": "Intervention",
+          "key": "fifa11-kids-multicountry: Intervention"
+        }
+      ]
+    },
+    {
+      "studyId": "S209",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "norwegian-ankle-risk-substudy: Row 1"
+      ],
+      "sourceRowKeys": [
+        "norwegian-ankle-risk-substudy: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "norwegian-ankle-risk-substudy: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S058",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "swedish-elite-sex-2005: Row 1",
+        "swedish-elite-sex-2005: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "swedish-elite-sex-2005: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "swedish-elite-sex-2005: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "swedish-elite-sex-2005: Row 1",
+        "swedish-elite-sex-2005: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "swedish-elite-sex-2005: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "swedish-elite-sex-2005: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S028",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "nordic-hamstring-high-school: Row 1",
+        "nordic-hamstring-high-school: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "nordic-hamstring-high-school: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "nordic-hamstring-high-school: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "nordic-hamstring-high-school: Row 1",
+        "nordic-hamstring-high-school: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "nordic-hamstring-high-school: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "nordic-hamstring-high-school: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S086",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "female-hypermobility-2014-15: Row 1",
+        "female-hypermobility-2014-15: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "female-hypermobility-2014-15: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "female-hypermobility-2014-15: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "female-hypermobility-2014-15: Row 1",
+        "female-hypermobility-2014-15: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "female-hypermobility-2014-15: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "female-hypermobility-2014-15: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S087",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "hamstring-prevention-elite: Row 1",
+        "hamstring-prevention-elite: Row 2",
+        "hamstring-prevention-elite: Row 3",
+        "hamstring-prevention-elite: Row 4",
+        "hamstring-prevention-elite: Row 5",
+        "hamstring-prevention-elite: Row 6",
+        "hamstring-prevention-elite: Row 7"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "hamstring-prevention-elite: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "hamstring-prevention-elite: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "hamstring-prevention-elite: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "hamstring-prevention-elite: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "hamstring-prevention-elite: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "hamstring-prevention-elite: Row 6"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "hamstring-prevention-elite: Row 7"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "hamstring-prevention-elite: Row 1",
+        "hamstring-prevention-elite: Row 2",
+        "hamstring-prevention-elite: Row 3",
+        "hamstring-prevention-elite: Row 4",
+        "hamstring-prevention-elite: Row 5",
+        "hamstring-prevention-elite: Row 6",
+        "hamstring-prevention-elite: Row 7"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "hamstring-prevention-elite: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "hamstring-prevention-elite: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "hamstring-prevention-elite: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "hamstring-prevention-elite: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "hamstring-prevention-elite: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "hamstring-prevention-elite: Row 6"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "hamstring-prevention-elite: Row 7"
+        }
+      ]
+    },
+    {
+      "studyId": "S088",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "german-knee-prevention: Row 1",
+        "german-knee-prevention: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "german-knee-prevention: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "german-knee-prevention: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "german-knee-prevention: Row 1",
+        "german-knee-prevention: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "german-knee-prevention: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "german-knee-prevention: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S089",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "sao-paulo-2016: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "sao-paulo-2016: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "sao-paulo-2016: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "sao-paulo-2016: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S090",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "brazil-2019: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "brazil-2019: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "brazil-2019: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "brazil-2019: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S092",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "australian-ankle-risk: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-ankle-risk: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "australian-ankle-risk: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "australian-ankle-risk: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S095",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "norway-text-message-method: Row 1",
+        "norway-text-message-method: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "norway-text-message-method: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "norway-text-message-method: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "norway-text-message-method: Row 1",
+        "norway-text-message-method: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "norway-text-message-method: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "norway-text-message-method: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S099",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "fifa11-shoulder-goalkeepers: Row 1",
+        "fifa11-shoulder-goalkeepers: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "fifa11-shoulder-goalkeepers: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "fifa11-shoulder-goalkeepers: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "fifa11-shoulder-goalkeepers: Row 1",
+        "fifa11-shoulder-goalkeepers: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "fifa11-shoulder-goalkeepers: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "fifa11-shoulder-goalkeepers: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S100",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "match-congestion-single-club: Row 1",
+        "match-congestion-single-club: Row 2",
+        "match-congestion-single-club: Row 3"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "match-congestion-single-club: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "match-congestion-single-club: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "match-congestion-single-club: Row 3"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "match-congestion-single-club: Row 1",
+        "match-congestion-single-club: Row 2",
+        "match-congestion-single-club: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "match-congestion-single-club: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "match-congestion-single-club: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "match-congestion-single-club: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S102",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "english-youth-female-2019-20: Row 1",
+        "english-youth-female-2019-20: Row 2",
+        "english-youth-female-2019-20: Row 3",
+        "english-youth-female-2019-20: Row 4",
+        "english-youth-female-2019-20: Row 5"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-youth-female-2019-20: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "english-youth-female-2019-20: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "english-youth-female-2019-20: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "english-youth-female-2019-20: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "english-youth-female-2019-20: Row 5"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "english-youth-female-2019-20: Row 1",
+        "english-youth-female-2019-20: Row 2",
+        "english-youth-female-2019-20: Row 3",
+        "english-youth-female-2019-20: Row 4",
+        "english-youth-female-2019-20: Row 5"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "english-youth-female-2019-20: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "english-youth-female-2019-20: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "english-youth-female-2019-20: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "english-youth-female-2019-20: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "english-youth-female-2019-20: Row 5"
+        }
+      ]
+    },
+    {
+      "studyId": "S103",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "saudi-surface-pilot: Row 1",
+        "saudi-surface-pilot: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "saudi-surface-pilot: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "saudi-surface-pilot: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "saudi-surface-pilot: Row 1",
+        "saudi-surface-pilot: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "saudi-surface-pilot: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "saudi-surface-pilot: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S104",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "caribbean-women-league: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "caribbean-women-league: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "caribbean-women-league: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "caribbean-women-league: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S115",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "french-academy-workload: U19",
+        "french-academy-workload: U21"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "U19",
+          "key": "french-academy-workload: U19"
+        },
+        {
+          "position": 1,
+          "label": "U21",
+          "key": "french-academy-workload: U21"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "french-academy-workload: U19",
+        "french-academy-workload: U21"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "U19",
+          "key": "french-academy-workload: U19"
+        },
+        {
+          "position": 1,
+          "label": "U21",
+          "key": "french-academy-workload: U21"
+        }
+      ]
+    },
+    {
+      "studyId": "S139",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "epl-workload-model: Row 1"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "epl-workload-model: Row 1"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "epl-workload-model: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "epl-workload-model: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S1402",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "futsal-preseason-levels: Elite",
+        "futsal-preseason-levels: Sub-elite",
+        "futsal-preseason-levels: Amateur"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Elite",
+          "key": "futsal-preseason-levels: Elite"
+        },
+        {
+          "position": 1,
+          "label": "Sub-elite",
+          "key": "futsal-preseason-levels: Sub-elite"
+        },
+        {
+          "position": 2,
+          "label": "Amateur",
+          "key": "futsal-preseason-levels: Amateur"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "futsal-preseason-levels: Elite",
+        "futsal-preseason-levels: Sub-elite",
+        "futsal-preseason-levels: Amateur"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Elite",
+          "key": "futsal-preseason-levels: Elite"
+        },
+        {
+          "position": 1,
+          "label": "Sub-elite",
+          "key": "futsal-preseason-levels: Sub-elite"
+        },
+        {
+          "position": 2,
+          "label": "Amateur",
+          "key": "futsal-preseason-levels: Amateur"
+        }
+      ]
+    },
+    {
+      "studyId": "S303",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "futsal-preseason-levels: Row 1",
+        "futsal-preseason-levels: Row 2",
+        "futsal-preseason-levels: Row 3"
+      ],
+      "sourceRowKeys": [
+        "futsal-preseason-levels: Row 1",
+        "futsal-preseason-levels: Row 2",
+        "futsal-preseason-levels: Row 3"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "futsal-preseason-levels: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "futsal-preseason-levels: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "futsal-preseason-levels: Row 3"
+        }
+      ]
+    },
+    {
+      "studyId": "S989",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "brazil-shoulder-2016-19: Total"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "brazil-shoulder-2016-19: Total"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "brazil-shoulder-2016-19: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "brazil-shoulder-2016-19: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S273",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "brazil-shoulder-2016-19: Row 1"
+      ],
+      "sourceRowKeys": [
+        "brazil-shoulder-2016-19: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "brazil-shoulder-2016-19: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S2813",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "dutch-growth-injuries-2021-22: Total"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "dutch-growth-injuries-2021-22: Total"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "dutch-growth-injuries-2021-22: Total"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "dutch-growth-injuries-2021-22: Total"
+        }
+      ]
+    },
+    {
+      "studyId": "S338",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "dutch-growth-injuries-2021-22: Row 1"
+      ],
+      "sourceRowKeys": [
+        "dutch-growth-injuries-2021-22: Row 1"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-growth-injuries-2021-22: Row 1"
+        }
+      ]
+    },
+    {
+      "studyId": "S644",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "swiss-youth-muscle-2016-17: Row 1",
+        "swiss-youth-muscle-2016-17: Row 2",
+        "swiss-youth-muscle-2016-17: Row 3",
+        "swiss-youth-muscle-2016-17: Row 4",
+        "swiss-youth-muscle-2016-17: Row 5",
+        "swiss-youth-muscle-2016-17: Row 6"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "swiss-youth-muscle-2016-17: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "swiss-youth-muscle-2016-17: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "swiss-youth-muscle-2016-17: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "swiss-youth-muscle-2016-17: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "swiss-youth-muscle-2016-17: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "swiss-youth-muscle-2016-17: Row 6"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "swiss-youth-muscle-2016-17: Row 1",
+        "swiss-youth-muscle-2016-17: Row 2",
+        "swiss-youth-muscle-2016-17: Row 3",
+        "swiss-youth-muscle-2016-17: Row 4",
+        "swiss-youth-muscle-2016-17: Row 5",
+        "swiss-youth-muscle-2016-17: Row 6"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "swiss-youth-muscle-2016-17: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "swiss-youth-muscle-2016-17: Row 2"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "swiss-youth-muscle-2016-17: Row 3"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "swiss-youth-muscle-2016-17: Row 4"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "swiss-youth-muscle-2016-17: Row 5"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "swiss-youth-muscle-2016-17: Row 6"
+        }
+      ]
+    },
+    {
+      "studyId": "S645",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "swiss-youth-muscle-2016-17: Total",
+        "swiss-youth-muscle-2016-17: U21",
+        "swiss-youth-muscle-2016-17: U18",
+        "swiss-youth-muscle-2016-17: U17",
+        "swiss-youth-muscle-2016-17: U16",
+        "swiss-youth-muscle-2016-17: U15"
+      ],
+      "sourceRowKeys": [
+        "swiss-youth-muscle-2016-17: Total",
+        "swiss-youth-muscle-2016-17: U21",
+        "swiss-youth-muscle-2016-17: U18",
+        "swiss-youth-muscle-2016-17: U17",
+        "swiss-youth-muscle-2016-17: U16",
+        "swiss-youth-muscle-2016-17: U15"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Total",
+          "key": "swiss-youth-muscle-2016-17: Total"
+        },
+        {
+          "position": 1,
+          "label": "U21",
+          "key": "swiss-youth-muscle-2016-17: U21"
+        },
+        {
+          "position": 2,
+          "label": "U18",
+          "key": "swiss-youth-muscle-2016-17: U18"
+        },
+        {
+          "position": 3,
+          "label": "U17",
+          "key": "swiss-youth-muscle-2016-17: U17"
+        },
+        {
+          "position": 4,
+          "label": "U16",
+          "key": "swiss-youth-muscle-2016-17: U16"
+        },
+        {
+          "position": 5,
+          "label": "U15",
+          "key": "swiss-youth-muscle-2016-17: U15"
+        }
+      ]
+    },
+    {
+      "studyId": "S532",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "dutch-amateur-rct-2009-10: Row 1",
+        "dutch-amateur-rct-2009-10: Row 2"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-rct-2009-10: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "dutch-amateur-rct-2009-10: Row 2"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "dutch-amateur-rct-2009-10: Row 1",
+        "dutch-amateur-rct-2009-10: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-rct-2009-10: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "dutch-amateur-rct-2009-10: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S534",
+      "analysisPaperIncluded": false,
+      "analysisRowKeys": [],
+      "analysisCsvRows": [],
+      "excludedRowKeys": [
+        "dutch-amateur-rct-2009-10: Row 1",
+        "dutch-amateur-rct-2009-10: Row 2"
+      ],
+      "sourceRowKeys": [
+        "dutch-amateur-rct-2009-10: Row 1",
+        "dutch-amateur-rct-2009-10: Row 2"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "dutch-amateur-rct-2009-10: Row 1"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "dutch-amateur-rct-2009-10: Row 2"
+        }
+      ]
+    },
+    {
+      "studyId": "S037",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "FIFA World Cup 1998",
+        "FIFA U-20 World Championship 1999",
+        "FIFA U-20 World Championship 2001",
+        "FIFA U-17 World Championship 1999",
+        "FIFA U-17 World Championship 2001",
+        "Men's Olympic football 2000",
+        "FIFA Confederations Cup 1999",
+        "FIFA Confederations Cup 2001",
+        "FIFA Club World Championship 2000"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "FIFA World Cup 1998"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "FIFA U-20 World Championship 1999"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "FIFA U-20 World Championship 2001"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "FIFA U-17 World Championship 1999"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "FIFA U-17 World Championship 2001"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "Men's Olympic football 2000"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "FIFA Confederations Cup 1999"
+        },
+        {
+          "position": 7,
+          "label": "Row 8",
+          "key": "FIFA Confederations Cup 2001"
+        },
+        {
+          "position": 8,
+          "label": "Row 9",
+          "key": "FIFA Club World Championship 2000"
+        }
+      ],
+      "excludedRowKeys": [
+        "FIFA Women's World Cup 1999",
+        "Women's Olympic football 2000",
+        "FIFA Futsal World Cup 2000"
+      ],
+      "sourceRowKeys": [
+        "FIFA World Cup 1998",
+        "FIFA U-20 World Championship 1999",
+        "FIFA U-20 World Championship 2001",
+        "FIFA U-17 World Championship 1999",
+        "FIFA U-17 World Championship 2001",
+        "Men's Olympic football 2000",
+        "FIFA Confederations Cup 1999",
+        "FIFA Confederations Cup 2001",
+        "FIFA Club World Championship 2000",
+        "FIFA Women's World Cup 1999",
+        "Women's Olympic football 2000",
+        "FIFA Futsal World Cup 2000"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "FIFA World Cup 1998"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "FIFA U-20 World Championship 1999"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "FIFA U-20 World Championship 2001"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "FIFA U-17 World Championship 1999"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "FIFA U-17 World Championship 2001"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "Men's Olympic football 2000"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "FIFA Confederations Cup 1999"
+        },
+        {
+          "position": 7,
+          "label": "Row 8",
+          "key": "FIFA Confederations Cup 2001"
+        },
+        {
+          "position": 8,
+          "label": "Row 9",
+          "key": "FIFA Club World Championship 2000"
+        },
+        {
+          "position": 9,
+          "label": "Row 10",
+          "key": "FIFA Women's World Cup 1999"
+        },
+        {
+          "position": 10,
+          "label": "Row 11",
+          "key": "Women's Olympic football 2000"
+        },
+        {
+          "position": 11,
+          "label": "Row 12",
+          "key": "FIFA Futsal World Cup 2000"
+        }
+      ]
+    },
+    {
+      "studyId": "S064",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "FIFA Women's World Cup 1999",
+        "FIFA Women's World Cup 2003",
+        "Women's Olympic football 2000",
+        "Women's Olympic football 2004",
+        "FIFA U-19 Women's World Championship 2002",
+        "FIFA U-19 Women's World Championship 2004",
+        "FIFA U-20 Women's World Championship 2006"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "FIFA Women's World Cup 1999"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "FIFA Women's World Cup 2003"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "Women's Olympic football 2000"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "Women's Olympic football 2004"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "FIFA U-19 Women's World Championship 2002"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "FIFA U-19 Women's World Championship 2004"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "FIFA U-20 Women's World Championship 2006"
+        }
+      ],
+      "excludedRowKeys": [
+        "Pooled overall row"
+      ],
+      "sourceRowKeys": [
+        "FIFA Women's World Cup 1999",
+        "FIFA Women's World Cup 2003",
+        "Women's Olympic football 2000",
+        "Women's Olympic football 2004",
+        "FIFA U-19 Women's World Championship 2002",
+        "FIFA U-19 Women's World Championship 2004",
+        "FIFA U-20 Women's World Championship 2006",
+        "Pooled overall row"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "FIFA Women's World Cup 1999"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "FIFA Women's World Cup 2003"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "Women's Olympic football 2000"
+        },
+        {
+          "position": 3,
+          "label": "Row 4",
+          "key": "Women's Olympic football 2004"
+        },
+        {
+          "position": 4,
+          "label": "Row 5",
+          "key": "FIFA U-19 Women's World Championship 2002"
+        },
+        {
+          "position": 5,
+          "label": "Row 6",
+          "key": "FIFA U-19 Women's World Championship 2004"
+        },
+        {
+          "position": 6,
+          "label": "Row 7",
+          "key": "FIFA U-20 Women's World Championship 2006"
+        },
+        {
+          "position": 7,
+          "label": "Row 8",
+          "key": "Pooled overall row"
+        }
+      ]
+    },
+    {
+      "studyId": "S078",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "FIFA Futsal World Cup 2000",
+        "FIFA Futsal World Cup 2004",
+        "FIFA Futsal World Cup 2008"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "FIFA Futsal World Cup 2000"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "FIFA Futsal World Cup 2004"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "FIFA Futsal World Cup 2008"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "FIFA Futsal World Cup 2000",
+        "FIFA Futsal World Cup 2004",
+        "FIFA Futsal World Cup 2008"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "FIFA Futsal World Cup 2000"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "FIFA Futsal World Cup 2004"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "FIFA Futsal World Cup 2008"
+        }
+      ]
+    },
+    {
+      "studyId": "S109",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "UEFA national-team tournament surveillance series 2006-2008"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "UEFA national-team tournament surveillance series 2006-2008"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "UEFA national-team tournament surveillance series 2006-2008"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "UEFA national-team tournament surveillance series 2006-2008"
+        }
+      ]
+    },
+    {
+      "studyId": "S292",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "Elite international football competition in Africa (reported series)"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "Elite international football competition in Africa (reported series)"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "Elite international football competition in Africa (reported series)"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "Elite international football competition in Africa (reported series)"
+        }
+      ]
+    },
+    {
+      "studyId": "S391",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "UEFA EURO 2004",
+        "UEFA Women's EURO 2005",
+        "UEFA Men's U-19 Championship 2005"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "UEFA EURO 2004"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "UEFA Women's EURO 2005"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "UEFA Men's U-19 Championship 2005"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "UEFA EURO 2004",
+        "UEFA Women's EURO 2005",
+        "UEFA Men's U-19 Championship 2005"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "Row 1",
+          "key": "UEFA EURO 2004"
+        },
+        {
+          "position": 1,
+          "label": "Row 2",
+          "key": "UEFA Women's EURO 2005"
+        },
+        {
+          "position": 2,
+          "label": "Row 3",
+          "key": "UEFA Men's U-19 Championship 2005"
+        }
+      ]
+    },
+    {
+      "studyId": "S5338",
+      "analysisPaperIncluded": true,
+      "analysisRowKeys": [
+        "UEFA EURO 2024",
+        "CONMEBOL Copa America 2024"
+      ],
+      "analysisCsvRows": [
+        {
+          "position": 0,
+          "label": "UEFA EURO 2024",
+          "key": "UEFA EURO 2024"
+        },
+        {
+          "position": 1,
+          "label": "CONMEBOL Copa America 2024",
+          "key": "CONMEBOL Copa America 2024"
+        }
+      ],
+      "excludedRowKeys": [],
+      "sourceRowKeys": [
+        "UEFA EURO 2024",
+        "CONMEBOL Copa America 2024"
+      ],
+      "sourceCsvRows": [
+        {
+          "position": 0,
+          "label": "UEFA EURO 2024",
+          "key": "UEFA EURO 2024"
+        },
+        {
+          "position": 1,
+          "label": "CONMEBOL Copa America 2024",
+          "key": "CONMEBOL Copa America 2024"
+        }
+      ]
+    }
+  ]
+}

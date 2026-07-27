@@ -1,0 +1,115 @@
+{
+  "artifactType": "Aspetar ASPREV source-family ledger and architecture decision",
+  "date": "2026-07-27",
+  "scope": [
+    "S071",
+    "S195",
+    "S261",
+    "S344",
+    "S544",
+    "S555",
+    "S602",
+    "S712",
+    "S1431",
+    "S2824",
+    "S3577"
+  ],
+  "pdfVerification": {
+    "method": "Downloaded each matching live PDF, calculated SHA-256, and compared it with the registered live hash where present. S071 had no registered live hash, so its calculated hash is recorded as the baseline.",
+    "sha256ByStudyId": {
+      "S071": "55041f92ee95c797151658cb3819006f505fb00322bd15d2c1c10855259eae32",
+      "S195": "370f17045216f219e630491234b8d30879b9835478058b06d7b0bb89df09b9b8",
+      "S261": "27046aaa103ad550f9f96a03eefb0745e73dfe89bd0ec383af8a908697f9fc31",
+      "S344": "5a0998f5c7b6566dcdf96ba5fd67f5aab4b7fe9528bb0802dc329c7167b99e00",
+      "S544": "f7708fb9d783a04272867e321620615937423b2448fb81358ed7abccbb041686",
+      "S555": "a3930d6b19a2dc9fd317cc82e8d53f5479b7a801d7404b215a3db5d550a8b219",
+      "S602": "84aed171b29840e49a34b3b2d464a39d32bad6123cea6d5cf5b80af4f0cb1777",
+      "S712": "453dfd0b5356aff3fb5d730cbfa162e7c0c5272745efc132e810f2036bc222d5",
+      "S1431": "7419695bf291f19d07c1f819e4824900896eb1aa8eb24651f02ed0ad88611361",
+      "S2824": "b3098677903093ec48b4b9f85a86a04b97571b7a691f996315848fd857858426",
+      "S3577": "26edb492879ac967504daf55cbcbe5650df6e11b83c0a38836604d6762c34301"
+    }
+  },
+  "architecture": {
+    "selected": "Existing-paper anchors with cohort-specific grouping",
+    "anchors": {
+      "professionalQsl": "S2824",
+      "academy": "S261",
+      "afcMulticountry": "S602"
+    },
+    "rationale": [
+      "A single synthetic Aspetar master was rejected because the QSL professional cohort, Aspire Academy cohort, and AFC multicountry cohort are different populations.",
+      "A two-master professional-versus-academy design was rejected as incomplete because S602 is a separate 22-team, nine-country AFC surveillance cohort.",
+      "S2824 is the strongest modern QSL all-injury anchor. S195 is a disjoint 2008/09 historical QSL row. S344, S555, and S712 contribute topic-specific rows and are not independent all-injury denominators.",
+      "S261 is the final published four-season academy anchor. S071 is its manuscript-stage duplicate alias. S1431 covers the same academy at U13-U15 in later, non-overlapping seasons and is retained as a later-period supplement."
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S071",
+      "classification": "duplicate alias",
+      "groupedUnder": "S261",
+      "evidence": "Same title, authors, 551-player U9-U19 academy cohort, four 2012/13-2015/16 seasons, and DOI manuscript; S071 is a 71-page manuscript/review file while S261 is the final 20-page publication."
+    },
+    {
+      "studyId": "S261",
+      "classification": "anchor",
+      "groupedUnder": "S261",
+      "evidence": "Final published academy source, DOI 10.1136/bjsports-2020-102859; 551 unique players, 1,322 time-loss injuries, 25,034 days lost, 2012/13-2015/16."
+    },
+    {
+      "studyId": "S1431",
+      "classification": "included supplement",
+      "groupedUnder": "S261",
+      "evidence": "Same Aspire Academy affiliation but later, non-overlapping 2016/17-2018/19 U13-U15 period; 95 players, 21,712 player-hours, 161 index injuries."
+    },
+    {
+      "studyId": "S195",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "evidence": "QSL historical all-injury cohort from August 2008-April 2009; 10 clubs, 230 players, 217 injuries. Period is disjoint from the modern QSL rows."
+    },
+    {
+      "studyId": "S2824",
+      "classification": "anchor",
+      "groupedUnder": "S2824",
+      "evidence": "Strongest QSL all-injury source; 17 first/second-division clubs, 1,466 unique players, 746,384 player-hours, 4,789 injuries, 2014/15-2021/22."
+    },
+    {
+      "studyId": "S344",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "evidence": "Groin-specific QSL surveillance in 2013/14-2014/15; 606 players, 205,466 hours, 206 groin injuries. It overlaps the anchor in 2014/15 and is retained only as a topic row."
+    },
+    {
+      "studyId": "S544",
+      "classification": "covered by another row",
+      "groupedUnder": "S344",
+      "evidence": "Same 2013/14-2014/15 QSL programme and 205,466-hour denominator as S344; 579 versus 606 players reflects analytic selection. It adds risk-factor modelling, not an independent epidemiological denominator."
+    },
+    {
+      "studyId": "S3577",
+      "classification": "covered by another row",
+      "groupedUnder": "S344",
+      "evidence": "Retrospective limb-asymmetry secondary analysis of the same 2013/14-2014/15 QSL groin cohort and pre-season screening data; no independent denominator."
+    },
+    {
+      "studyId": "S555",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "evidence": "ACL-specific QSL surveillance over 2013/14-2017/18; 486,951 hours and 37 ACL ruptures. Overlaps the anchor and is retained only for ACL-specific detail."
+    },
+    {
+      "studyId": "S712",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "evidence": "Head/neck and concussion-specific QSL surveillance over 2013/14-2020/21; 87 head/neck injuries among 4,736 time-loss injuries. Overlaps the anchor and is retained only for topic-specific detail."
+    },
+    {
+      "studyId": "S602",
+      "classification": "separate cohort",
+      "groupedUnder": "S602",
+      "evidence": "AFC surveillance, not a QSL denominator: 22 professional teams from nine countries, 2017-2019, 900 unique players, 232,665 hours, 1,159 injuries."
+    }
+  ]
+}

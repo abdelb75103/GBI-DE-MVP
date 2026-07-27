@@ -291,6 +291,7 @@ function buildRefinedEcisRows(s200Fields) {
     ['S091 Achilles tendon rupture - 2001-2011', 'male - Achilles-rupture-specific study'],
     ['S007 indirect thigh muscle injuries - 2001-2013', 'male - indirect-thigh-specific study'],
     ['S007 direct thigh muscle contusions - 2001-2013', 'male - direct-thigh-contusion-specific study'],
+    ['S5151 ECIS men 2022/23 World Cup-season all injuries', 'male - 2022/23 World Cup-season supplement'],
   ];
 
   return [
@@ -1331,6 +1332,17 @@ function buildEcisSupplementRows() {
       injuryTissueType_muscle_injury_prevalence: '362',
       injuryLocation_lower_leg_prevalence: '362',
     }),
+    sourceRow('S5151 ECIS men 2022/23 World Cup-season all injuries', 'S5151', {
+      observationDuration: '2022/23',
+      numberOfSeasons: '1',
+      sampleSizePlayers: '913',
+      numberOfTeams: '29',
+      totalExposure: '176790',
+      injuryTotalCount: '1123',
+      injuryIncidenceTraining: '3.5 (95% CI 3.2-3.9)',
+      injuryIncidenceMatch: '21.1 (95% CI 19.5-22.9)',
+      injuryTimeLossTotal: '26418',
+    }),
     sourceRow('S527 first match after return to play - 2001/02-2016/17', 'S527', {
       observationDuration: '2001/02-2016/17',
       numberOfSeasons: '16',
@@ -1533,6 +1545,17 @@ function buildS109Rows() {
 }
 
 async function main() {
+  const destructiveRebuildApproved = process.argv.includes('--destructive-rebuild');
+  const rollbackSnapshotArg = process.argv.find((arg) => arg.startsWith('--rollback-snapshot='));
+  const rollbackSnapshotPath = rollbackSnapshotArg?.slice('--rollback-snapshot='.length);
+  if (!destructiveRebuildApproved || !rollbackSnapshotPath || !fs.existsSync(rollbackSnapshotPath)) {
+    throw new Error(
+      'Refusing destructive UEFA master rebuild. This script deletes and recreates live extraction rows. '
+      + 'Run it only after exact destructive approval, with --destructive-rebuild and '
+      + '--rollback-snapshot=/absolute/path/to/verified-pre-apply-snapshot.json.',
+    );
+  }
+
   const onlyWecis = process.argv.includes('--only-wecis');
   const onlyEcis = process.argv.includes('--only-ecis');
   const env = loadEnvFile(envPath);

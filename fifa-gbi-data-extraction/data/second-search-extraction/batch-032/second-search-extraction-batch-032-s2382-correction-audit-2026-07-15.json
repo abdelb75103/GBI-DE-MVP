@@ -1,0 +1,56 @@
+{
+  "artifactType": "Backlog 2 Batch 032 post-apply correction audit",
+  "scope": "S2382 only; fixed Batch 032 membership otherwise unchanged",
+  "reason": "A final schema/sibling-batch check showed that S2382's directly reported LEAF-Q low-energy-availability-risk prevalence (13/22; 59.1%) maps to the supported metabolic/nutritional illness fields. The initial no-payload classification was therefore corrected before handoff.",
+  "sourceEvidence": {
+    "primaryFileSha256": "845cd6b540a42f8805a624d265557a25374ffb86baeb6957d9647e31a34b49b8",
+    "sourceCoverage": "Primary PDF pp. 1-8; abstract, participant/method sections, Tables 1-4, results, discussion, conclusion, and references were already swept in the original source pass.",
+    "directOutcome": "LEAF-Q score >=8 identified 13 of 22 players (59.1%) as at risk of problematic low energy availability.",
+    "mappingRationale": "The direct result is a pooled metabolic/nutritional illness-risk prevalence. LEAF-Q is an indirect screen, so it is not recorded as a clinical diagnosis, and overlapping questionnaire outcomes are not summed into an artificial all-illness count."
+  },
+  "stagedCorrection": {
+    "status": "mental_health -> processing",
+    "populationLayout": [
+      "Total"
+    ],
+    "directFields": {
+      "illnessPlayersCompletedStudy": "22",
+      "illnessMostCommonEtiology": "low energy availability risk (13; 59.1%)",
+      "illnessEtiology_metabolic_prevalence": "13",
+      "illnessEtiology_metabolic_incidence": "59.1%"
+    },
+    "coreTabs": "Study details, participant characteristics, definitions, and exposure were completed using the standard core-tab not-reported rows where the source has no value."
+  },
+  "apply": {
+    "result": "passed",
+    "writtenFieldsIncludingCoreNotReportedRows": 33,
+    "unknownFields": 0,
+    "skippedNonblankFields": 0,
+    "populationGroupsWritten": 1,
+    "populationValuesWritten": 11,
+    "paperNoteWrites": 0,
+    "fileWrites": 0,
+    "screeningWrites": 0
+  },
+  "stageB": {
+    "result": "passed",
+    "status": "processing",
+    "assignment": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "primaryFileAttachedAndHashMatched": true,
+    "studyId": "S2382",
+    "populationLabels": [
+      "Total"
+    ],
+    "populationCount": 1,
+    "populationValueCount": 11,
+    "liveFieldCount": 33,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreeningSignatureSha256Before": "40a565b5a9b69776418b4b440edb43aa3497fd82afe45ce29795ad0186f95eed",
+    "protectedScreeningSignatureSha256After": "40a565b5a9b69776418b4b440edb43aa3497fd82afe45ce29795ad0186f95eed",
+    "protectedScreeningChanges": 0,
+    "backlogRowUpdated": true
+  },
+  "readyFor": "human review"
+}

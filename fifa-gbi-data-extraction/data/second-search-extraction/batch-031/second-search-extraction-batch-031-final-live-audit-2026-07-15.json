@@ -1,0 +1,143 @@
+{
+  "artifactType": "Backlog 2 Batch 031 final live integrity audit",
+  "scope": "Fixed membership S2236, S2238, S2285, S2305, S2308 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-031/second-search-extraction-batch-031-input-2026-07-15.json",
+  "fixedMembership": ["S2236", "S2238", "S2285", "S2305", "S2308"],
+  "stageA": {
+    "result": "passed with one needs-reviewer-attention caveat",
+    "sourceInspection": "Each attached primary PDF was inspected in full once after a local SHA-256 comparison against papers.primary_file_sha256. The stored S2308 file passed the hash comparison but failed citation/content comparison.",
+    "fieldValidation": {
+      "stagedFieldCount": 0,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S2236": [],
+        "S2238": [],
+        "S2285": [],
+        "S2305": [],
+        "S2308": []
+      },
+      "reason": "All five sources are true mental-health/non-injury exclusions with no compatible Tabs 1-10 values."
+    },
+    "classifications": {
+      "S2236": "Mental-health and sleep questionnaire comparison; no injury or illness surveillance outcome.",
+      "S2238": "Low-energy-availability/diet study; no injury or illness surveillance outcome.",
+      "S2285": "Qualitative football-anxiety/coping study; injury is a fear theme, not an outcome.",
+      "S2305": "Eating-disorder/orthorexia/body-image study; injury appears only in eligibility criteria.",
+      "S2308": "Citation and abstract describe pre-competitive anxiety, but the stored attachment is an unrelated college-student physical-activity-barriers paper. Existing mental_health status is retained; correct-source recovery requires reviewer attention."
+    }
+  },
+  "apply": {
+    "result": "passed — no-op live apply",
+    "mode": "No live paper, extraction, population, note, file, or screening write was needed or performed. All five records already had the correct mental_health exclusion status, AbdelRahman Babiker assignment, no extraction fields, and no population rows.",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S2236": 0,
+      "S2238": 0,
+      "S2285": 0,
+      "S2305": 0,
+      "S2308": 0
+    },
+    "statusUpdates": 0,
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed with one needs-reviewer-attention caveat",
+    "exactMembership": ["S2236", "S2238", "S2285", "S2305", "S2308"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "statuses": {
+      "S2236": "mental_health",
+      "S2238": "mental_health",
+      "S2285": "mental_health",
+      "S2305": "mental_health",
+      "S2308": "mental_health"
+    },
+    "primaryFilesAttached": 5,
+    "primaryFileHashMismatches": 0,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "fullTextVotesVerified": 10,
+      "protectedScreeningSignatureSha256": "0f147a90c70c71579766df89c15b7506762975787ace91fc7f365180183bda6f",
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0,
+      "evidence": "No live database write was issued after the pre-apply snapshot; the final query confirms two include votes, ready_for_extraction resolution, and a promotion link for every fixed record."
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "031",
+      "updatedRows": ["S2236", "S2238", "S2285", "S2305", "S2308"]
+    },
+    "papers": [
+      {
+        "studyId": "S2236",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "6a34eb4d8face759d985d6a2a34e2f5cf0afe8c8cd9fa0fe080f6837983d07a3"
+      },
+      {
+        "studyId": "S2238",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "bf9d642954ce1fe70a68cd03da491f7db9ab76e52e9efdd4d14a5b72bd8024e3"
+      },
+      {
+        "studyId": "S2285",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "befb25fe1b907d868fdcd90267e95f8dcfa5cbb74a1603baf092f453104ef552"
+      },
+      {
+        "studyId": "S2305",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "41c8ca2a963228790ddc24b1811bff2aeedf4da4155bebc93ce6ed04c6ef6cf5"
+      },
+      {
+        "studyId": "S2308",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "96387c1a30b80428244d88e11cc78a161733dc22806eba3da433df6c32acc7f8",
+        "reviewerAttention": "Stored source file is attached and hash-consistent but does not match this citation. No replacement was made because file recovery is outside this extraction-only scope."
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "S2236": "Attached 12-page primary PDF: abstract, methods/participants, Table 1, questionnaires, results tables, discussion, conclusion, and references swept.",
+    "S2238": "Attached 10-page primary PDF: abstract, participants, Figure 1, Tables 1-4, energy/diet results, discussion, conclusion, and references swept.",
+    "S2285": "Attached 19-page primary PDF: abstract, design/sample, interview methods, Table 1, Figures 1-4, thematic results, discussion, conclusion, and references swept.",
+    "S2305": "Attached 14-page primary PDF: abstract, methods/participants, questionnaires/body-composition measures, Tables 1-5, results, discussion, conclusion, and references swept.",
+    "S2308": "Attached 26-page primary PDF: physical-activity-barriers abstract, methods, 531-college-student sample, Tables 1-2, results, discussion, conclusion, and references swept; it does not match the S2308 citation."
+  },
+  "caveats": {
+    "S2236": "Retained true mental_health exclusion; direct participant context does not create compatible injury/illness data.",
+    "S2238": "Retained true mental_health exclusion; low energy availability and eating-disorder risk are not injury surveillance outcomes.",
+    "S2285": "Retained true mental_health exclusion; qualitative injury fears cannot be treated as injuries, counts, or denominators.",
+    "S2305": "Retained true mental_health exclusion; its no-injury eligibility criterion is not an injury outcome.",
+    "S2308": "Needs reviewer attention: recover the correct cited PDF before relying on a full-text source check. Do not infer that the mismatched attachment proves the citation's methods or results."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "Human exclusion review for S2236, S2238, S2285, and S2305; source-file recovery and then human review for S2308."
+}

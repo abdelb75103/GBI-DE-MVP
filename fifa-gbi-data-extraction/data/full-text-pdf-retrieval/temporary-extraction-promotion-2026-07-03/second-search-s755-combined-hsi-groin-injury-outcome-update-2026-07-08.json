@@ -1,0 +1,28 @@
+{
+  "papers": [
+    {
+      "studyId": "S755",
+      "populationLabels": ["Control period", "Intervention period"],
+      "fields": {
+        "definitions": {
+          "injuryDefinition": "time-loss HSI and time-loss groin injury",
+          "incidenceDefinition": "per 1000 player-hours",
+          "burdenDefinition": "days absence per 1000 player-hours",
+          "severityDefinition": "minimal 1-3 days, mild 4-7 days, moderate 8-28 days, severe >28 days"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "19\n26",
+          "injuryTimeLossCount": "19\n26",
+          "injuryIncidenceOverall": "2.45\n1.93",
+          "injuryIncidenceMatch": "7.02\n3.63",
+          "injuryIncidenceTraining": "0.87\n1.43",
+          "injuryBurden": "40.55\n31.64"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": null
+        }
+      },
+      "note": "S755 updated on 2026-07-08 from Table 1 of Adams et al. 2024. Added combined injuryOutcome values for HSI plus time-loss groin injury by arm because the component outcomes are disjoint and use the same control/intervention player-hour denominators. Control combined count 19 = 10 HSI + 9 groin; intervention combined count 26 = 18 HSI + 8 groin. Incidence and burden were summed within arm: overall incidence 2.45/1.93, match incidence 7.02/3.63, training incidence 0.87/1.43, overall burden 40.55/31.64. Component location rows remain unchanged. Did not aggregate confidence intervals or mean days lost. Cleared illnessTotalCount because the previous 19/26 values were injury counts, not illness outcomes."
+    }
+  ]
+}

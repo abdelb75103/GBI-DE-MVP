@@ -1,0 +1,65 @@
+{
+  "mode": "apply",
+  "input": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/second-search-extraction/batch-007/second-search-extraction-batch-007-independent-review-corrections-input-2026-07-08.json",
+  "papers": [
+    {
+      "studyId": "S1149",
+      "written": [
+        "sampleSizePlayers",
+        "illnessDefinition"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 4,
+        "values": 87
+      }
+    },
+    {
+      "studyId": "S1213",
+      "written": [
+        "injuryDefinition",
+        "totalExposure"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 1,
+        "values": 11
+      }
+    },
+    {
+      "studyId": "S1219",
+      "written": [
+        "numberOfSeasons"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 1,
+        "values": 25
+      }
+    },
+    {
+      "studyId": "S1229",
+      "written": [
+        "injuryDefinition",
+        "injuryTissueType_physis_prevalence",
+        "injuryLocation_head_prevalence",
+        "injuryLocation_shoulder_prevalence",
+        "injuryLocation_elbow_prevalence",
+        "injuryLocation_forearm_prevalence",
+        "injuryLocation_chest_prevalence",
+        "injuryLocation_lumbosacral_prevalence",
+        "injuryLocation_thigh_prevalence",
+        "injuryLocation_lower_leg_prevalence"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 5,
+        "values": 220
+      }
+    }
+  ]
+}

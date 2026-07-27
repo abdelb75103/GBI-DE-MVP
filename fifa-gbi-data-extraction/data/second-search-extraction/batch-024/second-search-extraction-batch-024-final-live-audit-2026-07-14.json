@@ -1,0 +1,128 @@
+{
+  "artifactType": "Backlog 2 Batch 024 final live integrity audit",
+  "scope": "Fixed membership S4775, S2876, S5061, S5151, S3842 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "medium",
+  "modelNote": "Documented local substitute because the skill-default GPT-5.5 was not selectable in this delegated workspace.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-024/second-search-extraction-batch-024-input-2026-07-14.json",
+  "fixedMembership": ["S4775", "S2876", "S5061", "S5151", "S3842"],
+  "stageA": {
+    "result": "passed after focused S5061 correction",
+    "sourceInspection": "Each live attached primary source was inspected once; all five inspected-file SHA-256 values matched the live primary-file SHA-256 values.",
+    "fieldValidation": {
+      "unknownFieldIds": 0,
+      "stagedFieldCount": 237,
+      "populationLayouts": {
+        "S4775": ["Match", "Training"],
+        "S2876": ["CAE", "Non-CAE"]
+      }
+    },
+    "classification": {
+      "S5061": "Overlapping secondary analysis of the existing S1665 Malaysian 2023 single-club HSI cohort; initially staged fields were removed and the record was classified retrospective_substudy_analysis.",
+      "S5151": "UEFA Elite Club Injury Study subanalysis; classified uefa with no independent extraction.",
+      "S3842": "Systematic review/meta-analysis; classified systematic_review with no primary-cohort extraction."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only live apply with core-tab completion and structured population sync; two planned classification updates; followed by one focused S5061 companion-cohort correction",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S4775": 164,
+      "S2876": 39,
+      "S5061": 48
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S5151": {
+        "status": "uefa",
+        "flagReason": "UEFA Elite Club Injury Study subanalysis; retained under the project UEFA study-family exclusion"
+      },
+      "S3842": {
+        "status": "systematic_review",
+        "flagReason": "Systematic review/meta-analysis of FIFA injury-prevention programmes; not a primary extraction record"
+      }
+    },
+    "translationProvenance": {
+      "S2876": "Translated from Japanese on 2026-07-03 using Codex GPT-5.5 workflow; extracted from merged PDF with English translation first and original source second."
+    },
+    "postApplyCorrectionRequired": true,
+    "correctionAudit": "data/second-search-extraction/batch-024/second-search-extraction-batch-024-s5061-correction-audit-2026-07-14.json"
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S4775", "S2876", "S5061", "S5151", "S3842"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "fullTextVotesVerified": 10,
+      "protectedSignatureChanges": 0,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "024",
+      "updatedRows": ["S4775", "S2876", "S5061", "S5151", "S3842"]
+    },
+    "papers": [
+      {
+        "studyId": "S4775",
+        "status": "processing",
+        "populationLabels": ["Match", "Training"],
+        "populationCount": 2,
+        "liveFieldCount": 164,
+        "populationValueCount": 265,
+        "primaryFileSha256": "d3ee841b1acfded2e6e452628ff6fa66adf2d7be9fba0e62ddfbe9d99257bbf9"
+      },
+      {
+        "studyId": "S2876",
+        "status": "processing",
+        "populationLabels": ["CAE", "Non-CAE"],
+        "populationCount": 2,
+        "liveFieldCount": 39,
+        "populationValueCount": 32,
+        "primaryFileSha256": "89bafe99431bdcf0120ea7d7f64487fb263e9cbd994c8793718ad0b5d587cad1"
+      },
+      {
+        "studyId": "S5061",
+        "status": "retrospective_substudy_analysis",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "43d24ca5cbdbf4080067841c6cf1bcf95c1e1fc3aa378257f49190a1b19c16ad"
+      },
+      {
+        "studyId": "S5151",
+        "status": "uefa",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "569a6530a1d2e0185b7149582314e6dd8b200f4b2f7401239e80eb951d939a2a"
+      },
+      {
+        "studyId": "S3842",
+        "status": "systematic_review",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "c150181902e0d947c039119271d3ab5ef4da173dce6572f7713aacc69e99f284"
+      }
+    ]
+  },
+  "caveats": {
+    "S4775": "Abstract reports five academies while Methods states eight. Hamstring plus other-thigh count/incidence/burden are transparently aggregated into the Thigh schema row; lower-back, dislocation and unknown categories are intentionally unmapped.",
+    "S2876": "All-complaints groin-pain definition applies regardless of time loss/treatment. The printed 0.22-0.51 CI is for the risk ratio, not either incidence estimate.",
+    "S5061": "The paper reuses the exact 24,147.5 total, 1,072.5 match and 23,075 training player-hour totals from already-reviewed S1665 while analysing a smaller strength subset. It is retained as an overlapping secondary analysis with no independent extraction.",
+    "S5151": "True UEFA Elite Club study-family exclusion retained in fixed batch.",
+    "S3842": "True systematic-review exclusion retained in fixed batch."
+  },
+  "correctionAuditCreated": true,
+  "readyFor": "human extraction review"
+}

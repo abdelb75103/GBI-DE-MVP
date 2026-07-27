@@ -1,0 +1,301 @@
+{
+  "artifactType": "correction-audit",
+  "scope": "S4703 only; Tables 2-3 IOC-compatible type mapping and Figure 2 derived location prevalence correction",
+  "createdAt": "2026-07-15",
+  "model": "Codex GPT-5, high-risk local execution",
+  "source": {
+    "pdfPath": "fifa-gbi-data-extraction/tmp/second-updated-search-zotero-full-text-pdf-import-2026-06-19/files/S4703-national-health-registries-in-professional-german-football-development-and-first-results-from-the-men-s-and-wo.pdf",
+    "sha256Expected": "067d06b834a583912e395aa630def6767cd4373f238eefa7da1cdd9985dd3bdc",
+    "sha256Observed": "067d06b834a583912e395aa630def6767cd4373f238eefa7da1cdd9985dd3bdc",
+    "provenance": [
+      "PDF p. 4 text/results: sex-specific injury totals are male 503 and female 362; Figure 2 reports sex-specific injured body-region percentages.",
+      "PDF p. 5 Table 2: ten most frequent injuries in male football with cases per season, incidence per 1000 hours match exposure with 95% CI, and RTP days mean +/- SD.",
+      "PDF p. 5 Table 3: ten most frequent injuries in female football with cases per season, incidence per 1000 hours match exposure with 95% CI, and RTP days mean +/- SD."
+    ]
+  },
+  "preApplySnapshotRollback": "fifa-gbi-data-extraction/data/second-search-extraction/batch-028/s4703-table2-3-figure2-pre-apply-snapshot-rollback-2026-07-15.json",
+  "correctionInput": "fifa-gbi-data-extraction/data/second-search-extraction/batch-028/s4703-table2-3-figure2-correction-input-2026-07-15.json",
+  "populationLayout": ["Total", "Male", "Female"],
+  "directVsDerivedRules": {
+    "tables2And3": "Direct source counts, incidence point estimates, CIs, and mean RTP values. Counts and point incidences were summed only within sex where component rows share the exact same match-exposure denominator. CIs and mean RTP values were not summed.",
+    "figure2": "Derived counts from printed rounded percentages using percentage * sex-specific injury count denominator. Stored as injuryLocation prevalence only. Figure 2 was not used for type or incidence.",
+    "doubleCounting": "Figure 2 remains the source for location totals. Tables 2-3 diagnosis rows are subsets and were not added to Figure 2 location counts."
+  },
+  "table2MaleMappings": [
+    {
+      "sourceRow": "Ankle sprain",
+      "source": "Table 2, PDF p. 5",
+      "count": 47,
+      "incidence": "3.16 (2.26 to 4.06)",
+      "meanRtpDays": 7.3,
+      "iocLocation": "ankle",
+      "iocType": ["ligament_joint_capsule", "joint_sprain"],
+      "liveUse": "Type count/incidence included in ligament_joint_capsule and joint_sprain sums; exact diagnosis retained in generic injury_diagnosis row from prior extraction. Location count comes from Figure 2, not this row."
+    },
+    {
+      "sourceRow": "Muscle strain dorsal thigh",
+      "source": "Table 2, PDF p. 5",
+      "count": 27,
+      "incidence": "1.82 (1.13 to 2.51)",
+      "meanRtpDays": 10.3,
+      "iocLocation": "thigh",
+      "iocType": ["muscle_tendon", "muscle_injury"]
+    },
+    {
+      "sourceRow": "Muscle fibre rupture dorsal thigh",
+      "source": "Table 2, PDF p. 5",
+      "count": 21,
+      "incidence": "1.41 (0.81 to 2.01)",
+      "meanRtpDays": 26.6,
+      "iocLocation": "thigh",
+      "iocType": ["muscle_tendon", "muscle_injury"]
+    },
+    {
+      "sourceRow": "Collateral ligament rupture ankle",
+      "source": "Table 2, PDF p. 5",
+      "count": 18,
+      "incidence": "1.21 (0.65 to 1.77)",
+      "meanRtpDays": 20.7,
+      "iocLocation": "ankle",
+      "iocType": ["ligament_joint_capsule"]
+    },
+    {
+      "sourceRow": "Meniscus lesion knee",
+      "source": "Table 2, PDF p. 5",
+      "count": 18,
+      "incidence": "1.21 (0.65 to 1.77)",
+      "meanRtpDays": 35.8,
+      "iocLocation": "knee",
+      "iocType": [],
+      "liveUse": "Not forced into type because schema has no exact meniscus row; location count comes from Figure 2."
+    },
+    {
+      "sourceRow": "Collateral ligament rupture knee",
+      "source": "Table 2, PDF p. 5",
+      "count": 17,
+      "incidence": "1.14 (0.60 to 1.68)",
+      "meanRtpDays": 38.2,
+      "iocLocation": "knee",
+      "iocType": ["ligament_joint_capsule"]
+    },
+    {
+      "sourceRow": "Contusion ankle",
+      "source": "Table 2, PDF p. 5",
+      "count": 17,
+      "incidence": "1.14 (0.60 to 1.68)",
+      "meanRtpDays": 5.4,
+      "iocLocation": "ankle",
+      "iocType": ["superficial_tissues_skin", "superficial_contusion"]
+    },
+    {
+      "sourceRow": "Muscle fibre rupture ventral thigh",
+      "source": "Table 2, PDF p. 5",
+      "count": 17,
+      "incidence": "1.14 (0.60 to 1.68)",
+      "meanRtpDays": 20.9,
+      "iocLocation": "thigh",
+      "iocType": ["muscle_tendon", "muscle_injury"]
+    },
+    {
+      "sourceRow": "Knee sprain",
+      "source": "Table 2, PDF p. 5",
+      "count": 16,
+      "incidence": "1.08 (0.55 to 1.61)",
+      "meanRtpDays": 28.0,
+      "iocLocation": "knee",
+      "iocType": ["ligament_joint_capsule", "joint_sprain"]
+    },
+    {
+      "sourceRow": "Muscle strain ventral thigh",
+      "source": "Table 2, PDF p. 5",
+      "count": 13,
+      "incidence": "0.88 (0.40 to 1.36)",
+      "meanRtpDays": 10.2,
+      "iocLocation": "thigh",
+      "iocType": ["muscle_tendon", "muscle_injury"]
+    }
+  ],
+  "table3FemaleMappings": [
+    {
+      "sourceRow": "Ankle sprain",
+      "source": "Table 3, PDF p. 5",
+      "count": 26,
+      "incidence": "2.56 (1.58 to 3.54)",
+      "meanRtpDays": 36.4,
+      "iocLocation": "ankle",
+      "iocType": ["ligament_joint_capsule", "joint_sprain"],
+      "liveUse": "Type count/incidence included in ligament_joint_capsule and joint_sprain sums; exact diagnosis retained in generic injury_diagnosis row from prior extraction. Location count comes from Figure 2, not this row."
+    },
+    {
+      "sourceRow": "ACL rupture",
+      "source": "Table 3, PDF p. 5",
+      "count": 26,
+      "incidence": "2.56 (1.58 to 3.54)",
+      "meanRtpDays": 392.8,
+      "iocLocation": "knee",
+      "iocType": ["ligament_joint_capsule"]
+    },
+    {
+      "sourceRow": "Knee sprain",
+      "source": "Table 3, PDF p. 5",
+      "count": 18,
+      "incidence": "1.78 (0.96 to 2.60)",
+      "meanRtpDays": 38.6,
+      "iocLocation": "knee",
+      "iocType": ["ligament_joint_capsule", "joint_sprain"]
+    },
+    {
+      "sourceRow": "Contusion ankle",
+      "source": "Table 3, PDF p. 5",
+      "count": 16,
+      "incidence": "1.58 (0.81 to 2.35)",
+      "meanRtpDays": 19.7,
+      "iocLocation": "ankle",
+      "iocType": ["superficial_tissues_skin", "superficial_contusion"]
+    },
+    {
+      "sourceRow": "Collateral ligament rupture ankle",
+      "source": "Table 3, PDF p. 5",
+      "count": 16,
+      "incidence": "1.58 (0.81 to 2.35)",
+      "meanRtpDays": 31.6,
+      "iocLocation": "ankle",
+      "iocType": ["ligament_joint_capsule"]
+    },
+    {
+      "sourceRow": "Concussion",
+      "source": "Table 3, PDF p. 5",
+      "count": 13,
+      "incidence": "1.28 (0.57 to 1.99)",
+      "meanRtpDays": 12.7,
+      "iocLocation": "head",
+      "iocType": ["nervous", "brain_spinal", "concussion"]
+    },
+    {
+      "sourceRow": "Meniscus lesion knee",
+      "source": "Table 3, PDF p. 5",
+      "count": 12,
+      "incidence": "1.19 (0.52 to 1.86)",
+      "meanRtpDays": 305.3,
+      "iocLocation": "knee",
+      "iocType": [],
+      "liveUse": "Not forced into type because schema has no exact meniscus row; location count comes from Figure 2."
+    },
+    {
+      "sourceRow": "Contusion head",
+      "source": "Table 3, PDF p. 5",
+      "count": 11,
+      "incidence": "1.09 (0.45 to 1.73)",
+      "meanRtpDays": 11.6,
+      "iocLocation": "head",
+      "iocType": ["superficial_tissues_skin", "superficial_contusion"]
+    },
+    {
+      "sourceRow": "Contusion foot",
+      "source": "Table 3, PDF p. 5",
+      "count": 10,
+      "incidence": "0.99 (0.38 to 1.60)",
+      "meanRtpDays": 28.0,
+      "iocLocation": "foot",
+      "iocType": ["superficial_tissues_skin", "superficial_contusion"]
+    },
+    {
+      "sourceRow": "Muscle strain ventral thigh",
+      "source": "Table 3, PDF p. 5",
+      "count": 10,
+      "incidence": "0.99 (0.38 to 1.60)",
+      "meanRtpDays": 11.3,
+      "iocLocation": "thigh",
+      "iocType": ["muscle_tendon", "muscle_injury"]
+    }
+  ],
+  "typeSumsWritten": {
+    "Male": {
+      "muscle_tendon": "27 + 21 + 17 + 13 = 78; incidence 1.82 + 1.41 + 1.14 + 0.88 = 5.25",
+      "muscle_injury": "27 + 21 + 17 + 13 = 78; incidence 5.25",
+      "ligament_joint_capsule": "47 + 18 + 17 + 16 = 98; incidence 3.16 + 1.21 + 1.14 + 1.08 = 6.59",
+      "joint_sprain": "47 + 16 = 63; incidence 3.16 + 1.08 = 4.24",
+      "superficial_tissues_skin": "17 = 17; incidence 1.14 (95% CI retained because single component)",
+      "superficial_contusion": "17 = 17; incidence 1.14 (95% CI retained because single component); severityMeanDays 5.4 retained because single component"
+    },
+    "Female": {
+      "muscle_tendon": "10 = 10; incidence 0.99 (0.38-1.60)",
+      "muscle_injury": "10 = 10; incidence 0.99 (0.38-1.60); severityMeanDays 11.3 retained because single component",
+      "nervous": "13 = 13; incidence 1.28 (0.57-1.99)",
+      "brain_spinal": "13 = 13; incidence 1.28 (0.57-1.99)",
+      "concussion": "13 = 13; incidence 1.28 (0.57-1.99); severityMeanDays 12.7 retained because single component",
+      "ligament_joint_capsule": "26 + 26 + 18 + 16 = 86; incidence 2.56 + 2.56 + 1.78 + 1.58 = 8.48",
+      "joint_sprain": "26 + 18 = 44; incidence 2.56 + 1.78 = 4.34",
+      "superficial_tissues_skin": "16 + 11 + 10 = 37; incidence 1.58 + 1.09 + 0.99 = 3.66",
+      "superficial_contusion": "16 + 11 + 10 = 37; incidence 3.66"
+    }
+  },
+  "figure2Formulae": {
+    "denominators": {
+      "Male": 503,
+      "Female": 362
+    },
+    "componentCounts": [
+      {"sourceCategory": "Thigh", "mappedField": "injuryLocation_thigh_prevalence", "male": "31.9% * 503 = 160.457 -> 160", "female": "18.1% * 362 = 65.522 -> 66"},
+      {"sourceCategory": "Ankle", "mappedField": "injuryLocation_ankle_prevalence", "male": "17.3% * 503 = 87.019 -> 87", "female": "19.5% * 362 = 70.590 -> 71"},
+      {"sourceCategory": "Knee", "mappedField": "injuryLocation_knee_prevalence", "male": "16.5% * 503 = 82.995 -> 83", "female": "22.4% * 362 = 81.088 -> 81"},
+      {"sourceCategory": "Lower leg", "mappedField": "injuryLocation_lower_leg_prevalence", "male": "8.0% * 503 = 40.240 -> 40", "female": "7.9% * 362 = 28.598 -> 29"},
+      {"sourceCategory": "Foot", "mappedField": "injuryLocation_foot_prevalence", "male": "5.6% * 503 = 28.168 -> 28", "female": "5.1% * 362 = 18.462 -> 18"},
+      {"sourceCategory": "Head", "mappedField": "injuryLocation_head_prevalence", "male": "5.1% * 503 = 25.653 -> 26", "female": "7.9% * 362 = 28.598 -> 29"},
+      {"sourceCategory": "Hip", "mappedField": "injuryLocation_hip_prevalence", "male": "3.9% * 503 = 19.617 -> 20", "female": "3.4% * 362 = 12.308 -> 12"},
+      {"sourceCategory": "Trunk/Abdomen", "mappedField": "injuryLocation_trunk_overall_prevalence parent only", "male": "3.5% * 503 = 17.605 -> 18", "female": "0.9% * 362 = 3.258 -> 3"},
+      {"sourceCategory": "Lower back", "mappedField": "injuryLocation_lumbosacral_prevalence", "male": "2.9% * 503 = 14.587 -> 15", "female": "4.5% * 362 = 16.290 -> 16"},
+      {"sourceCategory": "Shoulder", "mappedField": "injuryLocation_shoulder_prevalence", "male": "2.7% * 503 = 13.581 -> 14", "female": "4.2% * 362 = 15.204 -> 15"},
+      {"sourceCategory": "Hand/wrist", "mappedField": "injuryLocation_upper_limb_overall_prevalence parent only", "male": "1.4% * 503 = 7.042 -> 7", "female": "2.0% * 362 = 7.240 -> 7"},
+      {"sourceCategory": "Neck", "mappedField": "injuryLocation_neck_prevalence", "male": "0.8% * 503 = 4.024 -> 4", "female": "0.6% * 362 = 2.172 -> 2"},
+      {"sourceCategory": "Elbow", "mappedField": "injuryLocation_elbow_prevalence", "male": "0.2% * 503 = 1.006 -> 1", "female": "1.1% * 362 = 3.982 -> 4"},
+      {"sourceCategory": "Arm", "mappedField": "injuryLocation_upper_limb_overall_prevalence parent only", "male": "0.0% * 503 = 0.000 -> 0", "female": "0.3% * 362 = 1.086 -> 1"},
+      {"sourceCategory": "Others", "mappedField": "unsupported; not stored", "male": "0.0% * 503 = 0.000 -> 0", "female": "0.1% * 362 = 0.362 -> 0"}
+    ],
+    "derivedParentCountsWritten": {
+      "injuryLocation_head_neck_overall_prevalence": "Male head 26 + neck 4 = 30; Female head 29 + neck 2 = 31",
+      "injuryLocation_upper_limb_overall_prevalence": "Male shoulder 14 + hand/wrist 7 + elbow 1 + arm 0 = 22; Female shoulder 15 + hand/wrist 7 + elbow 4 + arm 1 = 27",
+      "injuryLocation_trunk_overall_prevalence": "Male trunk/abdomen 18 + lower back 15 = 33; Female trunk/abdomen 3 + lower back 16 = 19",
+      "injuryLocation_lower_limb_overall_prevalence": "Male thigh 160 + ankle 87 + knee 83 + lower leg 40 + foot 28 + hip 20 = 418; Female thigh 66 + ankle 71 + knee 81 + lower leg 29 + foot 18 + hip 12 = 277"
+    },
+    "roundingReconciliation": {
+      "Male": "Printed percentages sum to 99.8%; nearest-integer components sum to 503, residual 0 vs denominator 503.",
+      "Female": "Printed percentages sum to 98.0%; nearest-integer components sum to 354, residual 8 vs denominator 362. No adjustment was forced."
+    }
+  },
+  "applyResult": {
+    "command": "node --experimental-strip-types scripts/apply-second-search-extraction-json.mjs --input=data/second-search-extraction/batch-028/s4703-table2-3-figure2-correction-input-2026-07-15.json --apply --overwrite",
+    "mode": "apply",
+    "writtenFieldCount": 36,
+    "skipped": [],
+    "unknownFields": [],
+    "populationSync": {
+      "groups": 3,
+      "values": 118
+    }
+  },
+  "integrityGate": {
+    "exactRecord": true,
+    "studyId": "S4703",
+    "status": "processing",
+    "assignment": "00000000-0000-0000-0000-000000000001",
+    "sourceHashOk": true,
+    "sourceAttached": true,
+    "populationLabels": ["Total", "Male", "Female"],
+    "extractionFieldCountAfter": 83,
+    "populationValueCountAfter": 118,
+    "stagedFieldMismatches": 0,
+    "unrelatedBaselineFieldMismatches": 0,
+    "dualWritePopulationMismatches": 0,
+    "protectedScreeningState": "unchanged by key-insensitive comparison",
+    "backlogRow": "updated only for S4703; status remains processing and review state remains pending_review"
+  },
+  "limitations": [
+    "Tables 2-3 are top-10 diagnosis tables, not exhaustive tissue/type distributions; written type rows are sums of compatible listed diagnosis rows, not full-category totals.",
+    "No CI is fabricated for aggregated incidence sums.",
+    "Mean RTP/severity is not summed; only direct single-component structured severity values were written.",
+    "Meniscus lesion rows are not forced into type because the schema has no exact meniscus field.",
+    "Figure 2 supports location prevalence only. No location incidence was derived, and Table 2-3 location subsets were not added to Figure 2 totals.",
+    "Figure 2 exact component rows not stored: hand/wrist, arm, trunk/abdomen narrower rows, and Others. Their counts are included only where compatible parent overall rows were defensible."
+  ]
+}

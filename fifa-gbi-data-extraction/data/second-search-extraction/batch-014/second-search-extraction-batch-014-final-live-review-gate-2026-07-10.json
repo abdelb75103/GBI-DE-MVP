@@ -1,0 +1,52 @@
+[
+  {
+    "studyId": "S1445",
+    "status": "processing",
+    "studyIdMatches": true,
+    "sourceAttached": true,
+    "populationCount": 12,
+    "noteCount": 1,
+    "structuredDualWriteFailures": [],
+    "unexpectedExpectedTimeLoss": false
+  },
+  {
+    "studyId": "S2040",
+    "status": "processing",
+    "studyIdMatches": true,
+    "sourceAttached": true,
+    "populationCount": 13,
+    "noteCount": 1,
+    "structuredDualWriteFailures": [],
+    "unexpectedExpectedTimeLoss": false
+  },
+  {
+    "studyId": "S2391",
+    "status": "processing",
+    "studyIdMatches": true,
+    "sourceAttached": true,
+    "populationCount": 2,
+    "noteCount": 1,
+    "structuredDualWriteFailures": [],
+    "unexpectedExpectedTimeLoss": false
+  },
+  {
+    "studyId": "S4634",
+    "status": "processing",
+    "studyIdMatches": true,
+    "sourceAttached": true,
+    "populationCount": 16,
+    "noteCount": 1,
+    "structuredDualWriteFailures": [],
+    "unexpectedExpectedTimeLoss": false
+  },
+  {
+    "studyId": "S4691",
+    "status": "processing",
+    "studyIdMatches": true,
+    "sourceAttached": true,
+    "populationCount": 5,
+    "noteCount": 1,
+    "structuredDualWriteFailures": [],
+    "unexpectedExpectedTimeLoss": false
+  }
+]

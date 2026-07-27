@@ -1,0 +1,5 @@
+# Parallel Backlog 2 Batch Agent Prompt
+
+Substitute `{BATCH}` and `{IDS}` only:
+
+> Own only Backlog 2 Batch `{BATCH}`: `{IDS}`. The coordinator already reserved the fixed five records and pre-created their backlog rows. Follow `skills/gbi-live-extraction/SKILL.md`, loading only paper-relevant references. For each fixed record, inspect the attached full text once, classify it, choose population rows, stage Tabs 1–10 where supported, and complete Stage A of `references/review-gate.md` before applying. Keep exclusions in the batch. Apply additive-only live changes, preserve `studyId` and protected screening metadata, dual-write structured rows, then run Stage B immediately. Fix and re-gate only changed papers. Update only this batch's five backlog rows. Persist one batch input and one final live audit; create a correction audit only if a post-apply correction was necessary. Return one completion message with statuses, population layouts, source coverage, apply/gate results, caveats, and artifact paths. Do not request or perform cross-agent review.

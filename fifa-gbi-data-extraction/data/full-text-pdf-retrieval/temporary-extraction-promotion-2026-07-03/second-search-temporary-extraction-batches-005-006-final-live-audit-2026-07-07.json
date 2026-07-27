@@ -1,0 +1,449 @@
+{
+  "scope": "Second search temporary extraction batches 005-006 final live audit",
+  "sourceBatch": "Second search - Ishanka - 2026-05-26",
+  "generatedAt": "2026-07-07T23:08:32.635Z",
+  "extractedPendingReview": [
+    "S1196",
+    "S1265",
+    "S1304",
+    "S1328",
+    "S1358",
+    "S1563",
+    "S1665",
+    "S1680",
+    "S1941",
+    "S1993"
+  ],
+  "eligibilityFailedOrExcluded": [
+    "S1233",
+    "S1350",
+    "S1894",
+    "S1909",
+    "S1934",
+    "S1981"
+  ],
+  "protectedScreeningFieldsChanged": false,
+  "reviewGateModel": "current Codex inline review; no separate selectable GPT-5.5 high-reasoning runner available",
+  "records": [
+    {
+      "studyId": "S1196",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "49107bb8136da9da965513d275971dca85e618703a1681647fde95c8f5933323",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 31,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1196",
+      "fieldCount": 55,
+      "structuredFieldCount": 17,
+      "updatedByProfileCount": 55,
+      "recentNotes": [
+        "Second-search temporary extraction batch 005. Source checked: methods/results, Tables 1-3, Figure 1. Match-only Sao Paulo Championship extraction from directly reported 2023 injury"
+      ]
+    },
+    {
+      "studyId": "S1265",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "7b83811e665848e462829ac8aee5993cf4fbd994ff1922dd74c7a2b9b2f3fdd6",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 25,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1265",
+      "fieldCount": 46,
+      "structuredFieldCount": 6,
+      "updatedByProfileCount": 46,
+      "recentNotes": [
+        "Second-search temporary extraction batch 005. Source checked: abstract, methods, results, Tables 1-4. Sparse hamstring-only prospective cohort extraction. Exposure/incidence were n"
+      ]
+    },
+    {
+      "studyId": "S1304",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "0ad930108a59f4a26bbd993bbc15141e537da75f6c4bf9d1b50f596ded665cb4",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 44,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1304",
+      "fieldCount": 64,
+      "structuredFieldCount": 22,
+      "updatedByProfileCount": 64,
+      "recentNotes": [
+        "Second-search temporary extraction batch 005. Source checked: methods/results and Tables 1-3. Female New Zealand amateur team match-only extraction with direct match exposure, inju"
+      ]
+    },
+    {
+      "studyId": "S1328",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "dc0601bdf2ccd79262dd484305568dbf4aeb5a943764ba15b0785bb8815f9168",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 21,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "illnessOutcome",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1328",
+      "fieldCount": 40,
+      "structuredFieldCount": 4,
+      "updatedByProfileCount": 40,
+      "recentNotes": [
+        "Second-search temporary extraction batch 005. Source checked: abstract, methods, results. Copa America 2019 concussion-protocol paper extracted sparsely as tournament concussion su"
+      ]
+    },
+    {
+      "studyId": "S1358",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "307da9628dd5e900d7d3e3605faaa1d6b8c423a33e12ad7fd0705c100c874f8e",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 39,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1358",
+      "fieldCount": 57,
+      "structuredFieldCount": 18,
+      "updatedByProfileCount": 57,
+      "recentNotes": [
+        "Second-search temporary extraction batch 005 replacement after systematic-review skips. Source checked: abstract, methods/results, Tables 1-3. Italian male elite U19 season extract"
+      ]
+    },
+    {
+      "studyId": "S1563",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "4c9fa17e393c51c090a08346e05908e2c4386d671f5926a19d2e64287674c8aa",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 13,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "illnessOutcome",
+        "illnessRegion",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1563",
+      "fieldCount": 35,
+      "structuredFieldCount": 2,
+      "updatedByProfileCount": 35,
+      "recentNotes": [
+        "Second-search temporary extraction batch 006. Source checked: translated English merged PDF methods/results and original-page translation text. Mental-health schema fit: CESD depre"
+      ]
+    },
+    {
+      "studyId": "S1665",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "60ab6626735471770a427226307bbd244052f4d8e92a06c5268a326925fbc5b4",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 15,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1665",
+      "fieldCount": 37,
+      "structuredFieldCount": 2,
+      "updatedByProfileCount": 37,
+      "recentNotes": [
+        "Second-search temporary extraction batch 006. Source checked: scanned article image, especially abstract page; no machine-readable OCR was available. Sparse hamstring-strain extrac"
+      ]
+    },
+    {
+      "studyId": "S1680",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "30bff81859d164bee66d73fc3daa46e51efe4c5be79e745429a30bf8a8688d1d",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 22,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1680",
+      "fieldCount": 42,
+      "structuredFieldCount": 5,
+      "updatedByProfileCount": 42,
+      "recentNotes": [
+        "Second-search temporary extraction batch 006. Source checked: translated English merged PDF methods/results and tables. Youth training-center workload cohort extracted with total i"
+      ]
+    },
+    {
+      "studyId": "S1941",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "9050f6d3eed0d4273997faedc67c44a05d04a5bd874a5cc472a22ef9668fc7be",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 19,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1941",
+      "fieldCount": 41,
+      "structuredFieldCount": 5,
+      "updatedByProfileCount": 41,
+      "recentNotes": [
+        "Second-search temporary extraction batch 006 replacement after systematic-review/non-extraction skips. Source checked: abstract, methods/results, Table 2. Sparse HSI workload cohor"
+      ]
+    },
+    {
+      "studyId": "S1993",
+      "status": "processing",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": null,
+      "hasPrimaryFile": true,
+      "fileSha256": "f0e4ed61ecc261e77310e47931d3d696a825d355ceea08a33c71d522070200bd",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [
+        "Total"
+      ],
+      "populationValueCount": 37,
+      "extractionTabs": [
+        "definitions",
+        "exposure",
+        "injuryLocation",
+        "injuryOutcome",
+        "injuryTissueType",
+        "participantCharacteristics",
+        "studyDetails"
+      ],
+      "coreTabsPresent": true,
+      "studyIdField": "S1993",
+      "fieldCount": 58,
+      "structuredFieldCount": 16,
+      "updatedByProfileCount": 58,
+      "recentNotes": [
+        "Second-search temporary extraction batch 006 replacement after systematic-review/non-extraction skips. Source checked: methods/results and Table 1. Elite female four-season menstru"
+      ]
+    },
+    {
+      "studyId": "S1233",
+      "status": "systematic_review",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": "Systematic review; not a primary extraction record",
+      "hasPrimaryFile": true,
+      "fileSha256": "97951f4623acd5b5d28e9652e5c2c0508f0c3d312c950be6460ea05a0d07a08b",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionTabs": [],
+      "coreTabsPresent": false,
+      "studyIdField": null,
+      "fieldCount": 0,
+      "structuredFieldCount": 0,
+      "updatedByProfileCount": 0,
+      "recentNotes": [
+        "Second-search temporary extraction batches 005-006: eligibility/extraction skip. Systematic review; not a primary extraction record. Formal full-text inclusion still requires a sec"
+      ]
+    },
+    {
+      "studyId": "S1350",
+      "status": "systematic_review",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": "Systematic review/meta-analysis; not a primary extraction record",
+      "hasPrimaryFile": true,
+      "fileSha256": "2a68941da05cd77027305611150bdf5b2e44eb8710e065ef20bbeb664d238ead",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionTabs": [],
+      "coreTabsPresent": false,
+      "studyIdField": null,
+      "fieldCount": 0,
+      "structuredFieldCount": 0,
+      "updatedByProfileCount": 0,
+      "recentNotes": [
+        "Second-search temporary extraction batches 005-006: eligibility/extraction skip. Systematic review/meta-analysis; not a primary extraction record. Formal full-text inclusion still "
+      ]
+    },
+    {
+      "studyId": "S1894",
+      "status": "systematic_review",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": "Systematic review; not a primary extraction record",
+      "hasPrimaryFile": true,
+      "fileSha256": "76ed2ecbe27d082acd31393891fa78064319dba7b6167ff64106949a4f9118cf",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionTabs": [],
+      "coreTabsPresent": false,
+      "studyIdField": null,
+      "fieldCount": 0,
+      "structuredFieldCount": 0,
+      "updatedByProfileCount": 0,
+      "recentNotes": [
+        "Second-search temporary extraction batches 005-006: eligibility/extraction skip. Systematic review; not a primary extraction record. Formal full-text inclusion still requires a sec"
+      ]
+    },
+    {
+      "studyId": "S1909",
+      "status": "systematic_review",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": "Systematic scoping review; not a primary extraction record",
+      "hasPrimaryFile": true,
+      "fileSha256": "301cd452f82a21f7fc25bab048e684c5981fdd38a23271dff6d7e4800d696d64",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionTabs": [],
+      "coreTabsPresent": false,
+      "studyIdField": null,
+      "fieldCount": 0,
+      "structuredFieldCount": 0,
+      "updatedByProfileCount": 0,
+      "recentNotes": [
+        "Second-search temporary extraction batches 005-006: eligibility/extraction skip. Systematic scoping review; not a primary extraction record. Formal full-text inclusion still requir"
+      ]
+    },
+    {
+      "studyId": "S1934",
+      "status": "flagged",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": "No extractable GBI injury/illness count, incidence, or denominator; psychology comparison study",
+      "hasPrimaryFile": true,
+      "fileSha256": "23bbd42de1f41baba8e09396f1127247538aa477e47bb253691ef3d313b6996d",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionTabs": [],
+      "coreTabsPresent": false,
+      "studyIdField": null,
+      "fieldCount": 0,
+      "structuredFieldCount": 0,
+      "updatedByProfileCount": 0,
+      "recentNotes": [
+        "Second-search temporary extraction batches 005-006: eligibility/extraction skip. No extractable GBI injury/illness count, incidence, or denominator; psychology comparison study. Fo"
+      ]
+    },
+    {
+      "studyId": "S1981",
+      "status": "systematic_review",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "flagReason": "Systematic review; not a primary extraction record",
+      "hasPrimaryFile": true,
+      "fileSha256": "2a59ea7c5e81fcde3e362558beadbba5aa54482f4945cf830aebf9fe9c5f0a3d",
+      "temporaryExtractionPromotion": true,
+      "populationLabels": [],
+      "populationValueCount": 0,
+      "extractionTabs": [],
+      "coreTabsPresent": false,
+      "studyIdField": null,
+      "fieldCount": 0,
+      "structuredFieldCount": 0,
+      "updatedByProfileCount": 0,
+      "recentNotes": [
+        "Second-search temporary extraction batches 005-006: eligibility/extraction skip. Systematic review; not a primary extraction record. Formal full-text inclusion still requires a sec"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "studyId": "S2400",
+  "paperId": "c19c2447-89ef-4b4f-a47e-36ba70e450ae",
+  "scope": "Reviewer-directed derived overall injury severity and burden on the Total population row.",
+  "source": {
+    "location": "p. 5 (journal p. 963), Table 2",
+    "training": {
+      "injuries": 33,
+      "meanDaysAbsent": 10.82,
+      "burdenDaysPer1000PlayerHours": 17.11,
+      "exposurePlayerHours": 20868.07
+    },
+    "match": {
+      "injuries": 17,
+      "meanDaysAbsent": 15.0,
+      "burdenDaysPer1000PlayerHours": 206.02,
+      "exposurePlayerHours": 1237.72
+    },
+    "total": {
+      "injuries": 50,
+      "exposurePlayerHours": 22105.79
+    }
+  },
+  "calculation": {
+    "estimatedTrainingDaysLost": "33 × 10.82 = 357.06",
+    "estimatedMatchDaysLost": "17 × 15.00 = 255.00",
+    "estimatedTotalDaysLost": "357.06 + 255.00 = 612.06",
+    "injuryTimeLossMean": "612.06 ÷ 50 = 12.2412 → 12.24 days",
+    "injuryBurden": "(612.06 ÷ 22,105.79) × 1,000 = 27.6878 → 27.69 days per 1,000 player-hours"
+  },
+  "liveWrite": {
+    "population": "Total",
+    "injuryTimeLossMean": "12.24",
+    "injuryBurden": "27.69",
+    "confidence": 0.9,
+    "derivationApprovedBy": "AbdelRahman Babiker in this conversation"
+  },
+  "integrityCheck": {
+    "status": "processing",
+    "flagReason": null,
+    "primaryFileSha256": "520444fb96713f4dee0e930ef7d5a516fe9fcb4c181bd4c03f9dac637c89f310",
+    "fullTextResolution": "ready_for_extraction",
+    "humanFullTextVotesUnchanged": true,
+    "subgroupOutcomeCellsLeftBlank": true
+  },
+  "caveat": "The derived estimates use Table 2 values rounded by the authors; they are not directly reported overall values."
+}

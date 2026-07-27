@@ -10,6 +10,7 @@ const inputPath = process.argv.find((arg) => arg.startsWith('--input='))?.split(
 const APPLY = args.has('--apply');
 const OVERWRITE = args.has('--overwrite');
 const COMPLETE_CORE_TABS = args.has('--complete-core-tabs');
+const SKIP_NOTES = args.has('--skip-notes');
 const CORE_TABS = new Set(['studyDetails', 'participantCharacteristics', 'definitions', 'exposure']);
 
 if (!inputPath) {
@@ -254,7 +255,7 @@ for (const item of papers) {
     }
   }
 
-  if (APPLY && item.note) {
+  if (APPLY && item.note && !SKIP_NOTES) {
     const { error: noteError } = await supabase.from('paper_notes').insert({
       id: crypto.randomUUID(),
       paper_id: paper.id,

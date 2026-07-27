@@ -1,0 +1,147 @@
+{
+  "artifactType": "Backlog 2 Batch 029 final live integrity audit",
+  "scope": "Fixed membership S1247, S1260, S1384, S1899, S1903 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "tokenUsage": "Unavailable: this delegated runtime did not expose a per-run token-usage metric.",
+  "inputArtifact": "data/second-search-extraction/batch-029/second-search-extraction-batch-029-input-2026-07-15.json",
+  "fixedMembership": ["S1247", "S1260", "S1384", "S1899", "S1903"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "All five live primary PDFs were inspected once. Local source hashes matched live paper and file hashes for S1247, S1260, S1384 and S1903. The cached S1899 PDF was a different source and was not used; the actual live attachment was downloaded once, matched live hashes, and was inspected.",
+    "fieldValidation": {
+      "stagedFieldCount": 70,
+      "unknownFieldIds": 0,
+      "populationLayouts": {
+        "S1247": ["Total", "LEA", "MEA", "OEA"],
+        "S1260": ["Baseline", "12-month follow-up"],
+        "S1384": ["Second division total", "Second division female", "Second division male"],
+        "S1899": [],
+        "S1903": []
+      }
+    },
+    "dryRun": "The standard no-write apply script stopped at its documented limitation: it cannot derive brand-new multiline population groups before a live write. Separate schema and newline-alignment validation passed for all 70 staged fields and all three population layouts.",
+    "classification": {
+      "S1247": "Schema-compatible player prevalence data: pooled psychiatric/psychological disordered-eating prevalence and calculated-EA low-energy-availability prevalence were staged without inventing an all-illness total.",
+      "S1260": "Schema-compatible prospective player psychiatric prevalence/new-onset data: direct distress values were staged by baseline and follow-up; overlapping symptom categories were not summed.",
+      "S1384": "Schema-compatible psychiatric diagnoses: MINI values were staged only for the directly reported second-division cohort and sex subgroups.",
+      "S1899": "Referee cohort, not an eligible current-player extraction record.",
+      "S1903": "Mental well-being screening-tool development and psychometric validation, with no reportable disorder-prevalence or injury/illness surveillance payload."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only field writes with complete core Tabs 1-4, structured population sync, and source-supported status routing",
+    "writtenFieldsIncludingCoreNotReportedRows": {
+      "S1247": 35,
+      "S1260": 33,
+      "S1384": 35
+    },
+    "populationValuesWritten": {
+      "S1247": 18,
+      "S1260": 15,
+      "S1384": 24
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S1247": { "status": "processing" },
+      "S1260": { "status": "processing" },
+      "S1384": { "status": "processing" },
+      "S1899": { "status": "referee", "flagReason": "Referee cohort; not an eligible current-player extraction record" },
+      "S1903": { "status": "mental_health", "flagReason": "Mental well-being screening-tool development and psychometric validation; no reportable disorder-prevalence or injury/illness surveillance payload" }
+    },
+    "postApplyCorrectionRequired": false,
+    "correctionAudit": null
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S1247", "S1260", "S1384", "S1899", "S1903"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "sourceHashMismatches": 0,
+    "studyIdMismatches": 0,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "unexpectedLiveFields": 0,
+    "missingCoreFields": 0,
+    "protectedScreening": {
+      "screeningRecordsVerified": 10,
+      "fullTextVotesVerified": 10,
+      "protectedSignatureChanges": 0,
+      "manualDecisionChanges": 0,
+      "resolutionChanges": 0,
+      "promotionStateChanges": 0
+    },
+    "backlogRows": {
+      "document": "docs/second-search-extraction-review-backlog-2026-07-03.md",
+      "batch": "029",
+      "updatedRows": ["S1247", "S1260", "S1384", "S1899", "S1903"]
+    },
+    "papers": [
+      {
+        "studyId": "S1247",
+        "status": "processing",
+        "populationLabels": ["Total", "LEA", "MEA", "OEA"],
+        "populationCount": 4,
+        "liveFieldCount": 35,
+        "populationValueCount": 18,
+        "primaryFileSha256": "3f810e8cd61d383aa2c2244eed04b8cfdc211369381969bc1f052cd2a2198df3"
+      },
+      {
+        "studyId": "S1260",
+        "status": "processing",
+        "populationLabels": ["Baseline", "12-month follow-up"],
+        "populationCount": 2,
+        "liveFieldCount": 33,
+        "populationValueCount": 15,
+        "primaryFileSha256": "5f728408b1af4b23d55a14f5f57d569f9d1b309049fe82c75f5158ce275d03f8"
+      },
+      {
+        "studyId": "S1384",
+        "status": "processing",
+        "populationLabels": ["Second division total", "Second division female", "Second division male"],
+        "populationCount": 3,
+        "liveFieldCount": 35,
+        "populationValueCount": 24,
+        "primaryFileSha256": "d03b5189b1036954815a7c66f8bb91c84fd72d127935a7fdbf599ee130a31114"
+      },
+      {
+        "studyId": "S1899",
+        "status": "referee",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "256045133bdf72590fdb85aaf1ac738e1fd548a44e39535d1b9bca59189eea81"
+      },
+      {
+        "studyId": "S1903",
+        "status": "mental_health",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "populationValueCount": 0,
+        "primaryFileSha256": "46c6035fe2a8637f958e429273d2a3099bd7ac0d1af15aa0c550adc94ca8e11c"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "S1247": "Primary PDF pp. 1-9; methods, Tables 1-5, Figures 1-3, results, discussion and conclusion. Figure 3's direct 44% values support the stored psychiatric count and prevalence; historical injury was not mapped as surveillance.",
+    "S1260": "Primary PDF pp. 1-8; methods, all validated questionnaire definitions, Tables 1-4, results, discussion, limitations and conclusion. The directly reported Table 2 values support the baseline/follow-up psychiatric rows; the referenced online supplement was not attached.",
+    "S1384": "Primary PDF pp. 1-14; participant methods, Tables 1-4, results, discussion, limitations and conclusion. Direct MINI diagnosis values apply only to the second-division cohort.",
+    "S1899": "Matching live primary PDF pp. 199-214; methods, Tables 1-4, results, discussion and conclusion. Referee-only population confirmed.",
+    "S1903": "Primary PDF pp. 33-45; all three development/validation phases, participant section, psychometric results, discussion, limitations and Appendix A. Tool validity/reliability, rather than reportable surveillance prevalence, confirmed."
+  },
+  "caveats": {
+    "S1247": "Psychiatric n=11 is transparently percentage-derived from 44% of 25. Poor mental health, disordered eating and low energy availability overlap, so the audit preserves condition-specific structured values and omits an artificial total.",
+    "S1260": "The follow-up symptom incidence denominator varies by symptom; the 80-player response count does not replace those symptom-specific denominators. The seven symptom categories overlap. Historical injury/surgery associations were not treated as injury surveillance.",
+    "S1384": "MINI diagnostic categories are comorbid and were not summed. First-division players did not undergo that diagnostic interview, so no all-54 diagnostic total was inferred.",
+    "S1899": "A mismatched cached PDF was detected before extraction and replaced by the matching live attachment for this source sweep. The correct referee exclusion has no extraction payload.",
+    "S1903": "The paper is a screening-process and psychometric validation study, not a disorder-prevalence or injury/illness surveillance record; no extraction payload was forced."
+  },
+  "correctionAuditCreated": false,
+  "readyFor": "human extraction review for S1247, S1260 and S1384; classification review for S1899 and S1903"
+}

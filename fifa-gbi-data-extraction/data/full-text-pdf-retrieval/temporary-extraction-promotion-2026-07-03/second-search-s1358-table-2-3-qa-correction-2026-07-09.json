@@ -1,0 +1,14 @@
+{
+  "papers": [
+    {
+      "studyId": "S1358",
+      "populationLabels": ["Total"],
+      "note": "Second-search S1358 Table 2-3 QA correction (2026-07-09). Cleared the incorrect mapping of the broad Table 2 `Traumatic` category to superficial tissues/skin. All remaining type and muscle-site rows were checked against Tables 2-3; pooled thigh and groin rows are transparent compatible sums of the directly reported muscle-site rows.",
+      "fields": {
+        "injuryTissueType": {
+          "injuryTissueType_superficial_tissues_skin_prevalence": null
+        }
+      }
+    }
+  ]
+}

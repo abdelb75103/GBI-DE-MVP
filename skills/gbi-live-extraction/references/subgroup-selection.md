@@ -9,6 +9,7 @@ Read this file when the paper could be extracted either as a pooled line or as m
 - Build the population row layout before filling fields.
 - If the source reports pooled values and subgroups, use `Total / subgroup 1 / subgroup 2 ...` unless the source table clearly uses a more defensible order.
 - If the source reports subgroup-only values and no pooled total, do not invent a `Total` row.
+- If the source prints a distinct overall count plus subgroup rows and the totals disagree, retain both: store the printed overall on `Total`, store compatible subgroup rows separately, and document the discrepancy instead of reconciling it by inference.
 - Keep subgroup rows only for fields where the paper actually reports or implies subgroup differences.
 
 ## Trial Arm Rule
@@ -18,11 +19,19 @@ Read this file when the paper could be extracted either as a pooled line or as m
 - Do not keep a pooled row for a two-arm trial when the paper directly reports arm-level exposure, counts, incidences, burden, or other primary outcomes.
 - Only keep a pooled row if the arm-level data are incomplete or incompatible with the schema, and state that reason explicitly in the review summary or backlog note.
 
+## Season Split Rule
+
+- If a paper reports a clean `All seasons` or pooled row plus per-season rows for counts, incidence, burden, exposure, location, tissue/type, or severity, default to `All seasons / season 1 / season 2...`.
+- Use the paper's exact season labels when printed, such as `2017-18 season`.
+- Keep pooled-only values on `All seasons`; do not copy them into season rows.
+- If a season-split table conflicts internally with a pooled prose value, store the direct pooled value on `All seasons`, split only the direct season cells, and note the inconsistency.
+
 ## Common Preferred Splits
 
 - Age groups such as `U13` / `U14` / `U15` / `U16`
 - Intervention vs control
 - Male vs female
+- Seasons when the paper reports direct season-specific rows
 - Playing surface comparisons when the paper truly compares exposure or injuries on those surfaces
 - Club home-venue surface comparisons such as `artificial turf home venue` vs `natural grass home venue`
 

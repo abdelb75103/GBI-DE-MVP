@@ -1,0 +1,336 @@
+{
+  "scope": "Backlog 2 Batch 023 fixed records S3337, S3075, S5005, S3944, S5158 only",
+  "model": "Codex GPT-5 (medium); local substitute because the skill-default GPT-5.5 was not exposed in this workspace.",
+  "fixedBatchMembership": [
+    "S3337",
+    "S3075",
+    "S5005",
+    "S3944",
+    "S5158"
+  ],
+  "exclusions": [
+    {
+      "studyId": "S3337",
+      "classification": "american_data",
+      "flagReason": "U.S.-only academy injury-surveillance cohort; preserve as American data exclusion"
+    }
+  ],
+  "sourceCoverage": {
+    "S3337": "Attached primary PDF pp. 1-7: abstract, methods, Tables 1-4, results, discussion and limitations.",
+    "S3075": "Attached primary PDF pp. 1-14: methods, Tables 1-5, injury-surveillance definition, results, discussion and limitations.",
+    "S5005": "Attached primary PDF pp. 1-7: methods, Tables 1-2, Figures 1-4 (including readable mechanism figure), results, discussion and limitations.",
+    "S3944": "Attached primary PDF pp. 1-7: methods, Tables 1-2, Figures 1-2, results, discussion and limitations.",
+    "S5158": "Attached primary PDF pp. 1-10: methods, Tables 1-5, results, discussion and limitations."
+  },
+  "stageA": {
+    "result": "passed",
+    "populationAlignment": "Strongest direct axes selected before field staging; shared values stay on the first line and subgroup values retain source order.",
+    "coreTabs": "Tabs 1-4 checked for all four included papers; no extraction fields staged for the American-data exclusion.",
+    "structuredSweep": "All results tables and usable figures checked for counts, incidence, burden, severity, confidence intervals, recurrence, mechanism/contact, diagnosis/type and location. Illness families were absent in all five papers.",
+    "derivedValues": [
+      "No exposure, rate, burden or days-lost value was back-calculated.",
+      "S5005 match exposure of 4455 h is the paper's explicit 1.5 h x 22 players x 135 matches calculation and is retained as printed.",
+      "S3944 pooled recurrence 4.4% was not forced onto a phase row because the source has no Total population line."
+    ],
+    "blankStructuredFamilies": {
+      "S3075": "No published incidence, burden, severity-duration, mechanism/contact split or clean subgroup outcome table; illness families absent.",
+      "S5005": "No compatible tissue family beyond head-injury/concussion diagnosis; position data describe injured players rather than category-aligned event counts; illness families absent.",
+      "S3944": "Ankle/foot, hip/groin and pelvis/sacrum are combined source locations without exact combined schema rows; only Knee is mapped. Median severity is retained in the headline field and not misfiled as structured mean severity; illness families absent.",
+      "S5158": "No anatomical-location data beyond the diagnosis and no clean broad contact/non-contact mapping; median severity is not misfiled as structured mean severity; illness families absent."
+    }
+  },
+  "protectedScreeningSignatures": {
+    "S3337": "c51be59b3db6e6d865ebfe15d87cd800cfa8e7a69f502e90b1704260bb709d33",
+    "S3075": "e506a776bf0863afc613695d21038668629df5ec33eddf0f0d45465e41968e8d",
+    "S5005": "6b79fb28f5ae28aa8522698181e43f90975c8b5ad5857fb9195f16048fe54c5a",
+    "S3944": "776edb18ac3c323af89ee99fe017e3fa9998ecc67f59d3d539b67f9c331ffead",
+    "S5158": "f5068633d46c88d1c2b07f031382c79c47ccc691700490e48048a98e4e5b6b4e"
+  },
+  "papers": [
+    {
+      "studyId": "S3075",
+      "populationLabels": [
+        "Total",
+        "LAS group",
+        "Control group"
+      ],
+      "primaryFileSha256": "6a361b8f0d7a76f484fdec9ca9e7f3c953f12cc1176df9be6718a7d02d6ab40f",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3075",
+          "leadAuthor": "Lee I",
+          "title": "Intrinsic Risk Factors for Lateral Ankle Sprains in Adolescent Soccer Players: A Prospective Cohort Study.",
+          "yearOfPublication": "2024",
+          "journal": "International Journal of Applied Sports Sciences",
+          "doi": "10.24985/ijass.2024.36.1.1",
+          "studyDesign": "prospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Korea",
+          "levelOfPlay": "elite youth",
+          "sex": "male",
+          "ageCategory": "U15 (12-15 years)",
+          "meanAge": "13.21 (0.95) years\n12.95 (0.91) years\n13.37 (0.94) years",
+          "sampleSizePlayers": "100\n37\n63",
+          "numberOfTeams": "2",
+          "observationDuration": "1-year follow-up"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [lateral ankle sprain causing difficulty in physical activity for at least 1 day]",
+          "incidenceDefinition": "LAS events during 1-year follow-up; the paper reports mean player-hours but no injury rate",
+          "mechanismReporting": "team medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "243.05 (19.02) mean h/player\n241.26 (20.43) mean h/player\n244.10 (18.23) mean h/player",
+          "matchExposure": "41.77 (12.73) mean h/player\n41.98 (12.65) mean h/player\n41.64 (12.88) mean h/player",
+          "trainingExposure": "201.28 (15.88) mean h/player\n199.28 (17.56) mean h/player\n202.46 (14.82) mean h/player"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "44",
+          "injuryPlayersCompletedStudy": "100",
+          "injuryTeamsCompletedStudy": "2",
+          "injuryTimeLossCount": "44"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "lateral ankle sprain",
+          "injuryTissueType_injury_diagnosis_prevalence": "44",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "44",
+          "injuryTissueType_joint_sprain_prevalence": "44"
+        },
+        "injuryLocation": {
+          "injuryLocation_ankle_prevalence": "44"
+        }
+      },
+      "caveats": [
+        "The paper reports exposure as mean (SD) hours per player for Total/LAS/control rows. Aggregate player-hours and incidence were not back-calculated.",
+        "The LAS and control rows are outcome-defined comparison groups; the 44 LAS events occurred in 37 players, while seven players sprained both ankles.",
+        "No recurrence count is inferred from bilateral LAS events."
+      ]
+    },
+    {
+      "studyId": "S5005",
+      "populationLabels": [
+        "Match-related head injury",
+        "Suspected SRC",
+        "Diagnosed SRC"
+      ],
+      "primaryFileSha256": "86e5721157cfdd3903ccc44c0afc51ba7c2ea84029d2c9aa16e1041a31f23dcf",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S5005",
+          "leadAuthor": "Nuri SG",
+          "title": "Characteristics of match-related head injuries in professional women's football: A prospective cohort study.",
+          "yearOfPublication": "2026",
+          "journal": "Journal of Science and Medicine in Sport",
+          "doi": "10.1016/j.jsams.2026.04.010",
+          "studyDesign": "prospective observational cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Norway",
+          "levelOfPlay": "professional premier league",
+          "sex": "female",
+          "ageCategory": "senior",
+          "meanAge": "23.7 (4.7) years among 13 injured players",
+          "sampleSizePlayers": "246",
+          "numberOfTeams": "10",
+          "observationDuration": "2024 competitive season (March to mid-November; 135 league matches)"
+        },
+        "definitions": {
+          "injuryDefinition": "all complaints [three nested match-related head-injury/SRC categories using progressively stricter MHCQ symptom and clinical-sign criteria]",
+          "incidenceDefinition": "injuries per 1000 match-hours",
+          "burdenDefinition": "days lost per 1000 match-hours",
+          "severityDefinition": "days from injury occurrence to first full-contact training session or match",
+          "mechanismReporting": "video analysts, team physiotherapists, and player MHCQ interview"
+        },
+        "exposure": {
+          "seasonLength": "March to mid-November",
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "4455",
+          "matchExposure": "4455"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "14\n10\n3",
+          "injuryPlayersCompletedStudy": "246",
+          "injuryTeamsCompletedStudy": "10",
+          "injuryMatchCount": "14\n10\n3",
+          "injuryIncidenceOverall": "3.1\n2.2\n0.7",
+          "injuryIncidenceMatch": "3.1\n2.2\n0.7",
+          "injuryIncidenceCi95": "1.5 to 4.8\n0.8 to 3.6\n-0.1 to 1.4",
+          "injuryTimeLossTotal": "144 days\n132 days\n94 days",
+          "injuryTimeLossMedian": "6 days (IQR 2.5-7.5)\n6.5 days (IQR 3.3-10.3)\n9 days (IQR 7-78)",
+          "injuryBurden": "32.3\n29.6\n21.1",
+          "injuryBurdenCi95": "30.7 to 34.0\n28.2 to 31.0\n20.3 to 21.9",
+          "injuryContact": "14"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "match-related head injury\nsuspected sports-related concussion\ndiagnosed sports-related concussion",
+          "injuryTissueType_injury_diagnosis_prevalence": "14\n10\n3",
+          "injuryTissueType_injury_diagnosis_incidence": "3.1 (95% CI 1.5 to 4.8)\n2.2 (95% CI 0.8 to 3.6)\n0.7 (95% CI -0.1 to 1.4)",
+          "injuryTissueType_injury_diagnosis_burden": "32.3 (95% CI 30.7 to 34.0)\n29.6 (95% CI 28.2 to 31.0)\n21.1 (95% CI 20.3 to 21.9)",
+          "injuryTissueType_injury_diagnosis_severityTotalDays": "144\n132\n94",
+          "injuryTissueType_concussion_prevalence": "\n10\n3",
+          "injuryTissueType_concussion_incidence": "\n2.2 (95% CI 0.8 to 3.6)\n0.7 (95% CI -0.1 to 1.4)",
+          "injuryTissueType_concussion_burden": "\n29.6 (95% CI 28.2 to 31.0)\n21.1 (95% CI 20.3 to 21.9)",
+          "injuryTissueType_concussion_severityTotalDays": "\n132\n94"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "14\n10\n3",
+          "injuryLocation_head_incidence": "3.1 (95% CI 1.5 to 4.8)\n2.2 (95% CI 0.8 to 3.6)\n0.7 (95% CI -0.1 to 1.4)",
+          "injuryLocation_head_burden": "32.3 (95% CI 30.7 to 34.0)\n29.6 (95% CI 28.2 to 31.0)\n21.1 (95% CI 20.3 to 21.9)",
+          "injuryLocation_head_severityTotalDays": "144\n132\n94"
+        }
+      },
+      "caveats": [
+        "The three rows are nested definitions rather than disjoint cohorts; all use the same direct 4455 match-hours denominator.",
+        "The broad match-related head-injury row requires at least one MHCQ symptom and is not equated with diagnosed concussion; the dedicated concussion row begins at Suspected SRC.",
+        "Figure 4 was readable and checked: 6 collisions, 4 aerial-duel contacts, 2 non-intentional ball impacts, 1 intentional header and 1 fall-related head impact. The paper does not split these mechanisms across all three category rows.",
+        "Median severity remains in the headline median field and is not placed in structured mean-severity fields."
+      ]
+    },
+    {
+      "studyId": "S3944",
+      "populationLabels": [
+        "FDP (U9-U11)",
+        "Early YDP (U12-U14)",
+        "Late YDP (U15-U16)",
+        "PDP (U18-U21)"
+      ],
+      "primaryFileSha256": "4af73edc7a5c0a7ac7b7fbcb142bff9c83195d957be79ae4654b581c2901045e",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3944",
+          "leadAuthor": "Oxendale C",
+          "title": "Distal-to-proximal progression of apophyseal injuries with age in male youth academy footballers: a two-season prospective cohort study of 16,024 player-seasons.",
+          "yearOfPublication": "2025",
+          "journal": "British Journal of Sports Medicine",
+          "doi": "10.1136/bjsports-2024-109612",
+          "studyDesign": "prospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "England and Wales",
+          "levelOfPlay": "Premier League and Category One academy",
+          "sex": "male",
+          "ageCategory": "U9-U11\nU12-U14\nU15-U16\nU18-U21",
+          "numberOfTeams": "29 academies in 2021/22; 31 academies in 2022/23",
+          "observationDuration": "2021/22 and 2022/23 seasons (16,024 player-seasons)"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [physical complaint preventing full participation for at least 1 day after injury]",
+          "incidenceDefinition": "match- and training-related apophyseal injuries per 1000 player-hours",
+          "burdenDefinition": "days lost per 1000 player-hours",
+          "severityDefinition": "days lost per injury event; reported as median (IQR)",
+          "recurrenceDefinition": "same injury type and site after return to full participation",
+          "mechanismReporting": "academy medical staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "2",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "74\n230\n112\n37",
+          "injuryTimeLossCount": "74\n230\n112\n37",
+          "injuryIncidenceOverall": "0.15\n0.42\n0.38\n0.10",
+          "injuryIncidenceCi95": "0.12 to 0.18\n0.37 to 0.48\n0.31 to 0.45\n0.07 to 0.13",
+          "injuryTimeLossMedian": "20 days (IQR 12-48)\n29 days (IQR 17-61)\n38 days (IQR 20-78)\n35 days (IQR 19-82)",
+          "injuryBurden": "4.6\n19.3\n20.3\n4.6",
+          "injuryBurdenCi95": "3.6 to 5.7\n16.9 to 21.9\n16.8 to 24.4\n3.3 to 6.4"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": "apophyseal injury\napophyseal injury\napophyseal injury\napophyseal injury",
+          "injuryTissueType_physis_prevalence": "74\n230\n112\n37",
+          "injuryTissueType_physis_incidence": "0.15 (95% CI 0.12 to 0.18)\n0.42 (95% CI 0.37 to 0.48)\n0.38 (95% CI 0.31 to 0.45)\n0.10 (95% CI 0.07 to 0.13)",
+          "injuryTissueType_physis_burden": "4.6 (95% CI 3.6 to 5.7)\n19.3 (95% CI 16.9 to 21.9)\n20.3 (95% CI 16.8 to 24.4)\n4.6 (95% CI 3.3 to 6.4)"
+        },
+        "injuryLocation": {
+          "injuryLocation_knee_prevalence": "19\n85\n18\n9",
+          "injuryLocation_knee_incidence": "0.04 (95% CI 0.02 to 0.06)\n0.16 (95% CI 0.13 to 0.19)\n0.06 (95% CI 0.04 to 0.10)\n0.02 (95% CI 0.01 to 0.04)",
+          "injuryLocation_knee_burden": "1.3 (95% CI 0.8 to 2.0)\n6.4 (95% CI 5.2 to 7.9)\n3.9 (95% CI 2.5 to 6.2)\n1.3 (95% CI 0.7 to 2.6)"
+        }
+      },
+      "caveats": [
+        "The source reports 603 apophyseal injuries overall, but Table 2's phase-aligned incidence/burden frame contains 453 match- and training-related injuries. The phase rows retain only that compatible frame.",
+        "Raw phase exposure hours are not printed and were not back-calculated from counts and rates; this Premier League injury-surveillance study remains eligible under the league-database rule.",
+        "Table 2 ankle/foot, hip/groin and pelvis/sacrum categories have no exact combined schema rows and were intentionally not forced into narrower locations; Knee is mapped directly.",
+        "The pooled 4.4% recurrence rate is not assigned to the first phase row because no Total population row exists."
+      ]
+    },
+    {
+      "studyId": "S5158",
+      "populationLabels": [
+        "Men's international",
+        "Women's international",
+        "Men's domestic",
+        "Women's domestic"
+      ],
+      "primaryFileSha256": "9166219308fa304d2a0d4c9743cbddc99d79ba2bee7528c2f91b21dfe7e03bfd",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S5158",
+          "leadAuthor": "Sprouse B",
+          "title": "The incidence and burden of concussion in men's and women's English professional football.",
+          "yearOfPublication": "2025",
+          "journal": "BMJ Open Sport & Exercise Medicine",
+          "doi": "10.1136/bmjsem-2024-002297",
+          "studyDesign": "retrospective analysis of routinely collected injury-surveillance data"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "England",
+          "levelOfPlay": "elite international and professional domestic",
+          "sex": "male\nfemale\nmale\nfemale",
+          "ageCategory": "U15-senior\nU15-senior\nadult professional\nadult professional",
+          "observationDuration": "international 2012-2022; men's domestic 2013-2022; women's domestic 2018-2022"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [medically diagnosed concussion preventing participation for at least 1 day]",
+          "incidenceDefinition": "concussions per 1000 player-hours",
+          "burdenDefinition": "days lost per 1000 player-hours",
+          "severityDefinition": "days before return to training or match play; reported as median (IQR)",
+          "mechanismReporting": "club/team physiotherapists and medical doctors"
+        },
+        "exposure": {
+          "numberOfSeasons": "up to 10 seasons",
+          "exposureMeasurementUnit": "player-hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "16\n40\n188\n83",
+          "injuryTimeLossCount": "16\n40\n188\n83",
+          "injuryMatchCount": "12\n15\n146\n48",
+          "injuryMatchTimeLossCount": "12\n15\n146\n48",
+          "injuryTrainingCount": "4\n25\n42\n35",
+          "injuryTrainingTimeLossCount": "4\n25\n42\n35",
+          "injuryIncidenceOverall": "0.18\n0.44\n0.17\n0.46",
+          "injuryIncidenceMatch": "0.91 (95% CI 0.40 to 1.43)\n1.63 (95% CI 0.81 to 2.46)\n0.85 (95% CI 0.71 to 0.99)\n1.55 (95% CI 1.12 to 1.99)",
+          "injuryIncidenceTraining": "0.05 (95% CI 0.00 to 0.11)\n0.31 (95% CI 0.19 to 0.43)\n0.04 (95% CI 0.03 to 0.05)\n0.10 (95% CI 0.04 to 0.17)",
+          "injuryIncidenceCi95": "0.09 to 0.27\n0.30 to 0.58\n0.14 to 0.19\n0.34 to 0.57",
+          "injuryTimeLossMedian": "11 days (IQR 6-16)\n12 days (IQR 7-22)\n7 days (IQR 5-11)\n12 days (IQR 7-22)",
+          "injuryBurden": "2.21\n7.52\n2.02\n7.75",
+          "injuryBurdenCi95": "1.90 to 2.52\n6.94 to 8.07\n1.93 to 2.10\n7.27 to 8.23"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_concussion_prevalence": "16\n40\n188\n83",
+          "injuryTissueType_concussion_incidence": "0.18 (95% CI 0.09 to 0.27)\n0.44 (95% CI 0.30 to 0.58)\n0.17 (95% CI 0.14 to 0.19)\n0.46 (95% CI 0.34 to 0.57)",
+          "injuryTissueType_concussion_burden": "2.21 (95% CI 1.90 to 2.52)\n7.52 (95% CI 6.94 to 8.07)\n2.02 (95% CI 1.93 to 2.10)\n7.75 (95% CI 7.27 to 8.23)"
+        },
+        "injuryLocation": {
+          "injuryLocation_position_goalkeeper_prevalence": "2\n2\n9\n6",
+          "injuryLocation_position_defender_prevalence": "7\n8\n46\n16",
+          "injuryLocation_position_midfielder_prevalence": "5\n11\n23\n12",
+          "injuryLocation_position_attacker_prevalence": "1\n4\n19\n1"
+        }
+      },
+      "caveats": [
+        "Raw exposure totals are not printed and were not back-calculated. The FA league/international injury-surveillance database is an eligible reporting channel under the workflow rule.",
+        "Women's domestic overall incidence and burden use only 2020/21-2021/22 because corresponding exposure was missing for 2018/19-2019/20; counts and median severity cover all four seasons as the paper reports.",
+        "Table 5 position counts exclude unknown positions (1/15/91/48 unknown by cohort); the direct known-position counts are retained without imputation.",
+        "The inciting-event categories do not support a clean broad contact/non-contact split, and no anatomical-location table is reported."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2180 @@
+{
+  "artifactType": "S642 / Covidence #869 translation attachment and extraction correction audit",
+  "date": "2026-07-27",
+  "scope": "S642 / Covidence #869 only",
+  "model": "GPT-5 Codex",
+  "targetSystem": "FIFA GBI web app extraction",
+  "source": {
+    "language": "Japanese",
+    "translatedOn": "2026-05-25",
+    "mergedPdf": "outputs/extraction-ready-translations/2026-05-25-716-869/merged-translated-original/pdfs/merged-translated-first-original-second-#869.pdf",
+    "mergedPdfSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+    "originalPdfSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+    "paperAudit": "outputs/extraction-ready-translations/2026-05-25-716-869/paper-audits/table-audit-#869.md",
+    "pages": {
+      "translated": 5,
+      "original": 8,
+      "total": 13
+    },
+    "visualChecks": [
+      "Merged pages 1-5 rendered cleanly and contained the full English translation.",
+      "Original p.300 Table 1 verified player, age, support-day, match, and PT rows.",
+      "Original p.302 Figures 1-2 verified injury-type and injury-location percentages."
+    ]
+  },
+  "upload": {
+    "target_system": "web app extraction",
+    "covidence_number": "#869",
+    "assigned_study_id": "S642",
+    "screening_record_id": null,
+    "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+    "source_language": "Japanese",
+    "review_reference_id": null,
+    "filename": "Covidence_869_English_translation_first_original_second.pdf",
+    "source_filter": "exact papers.assigned_study_id plus metadata.covidenceNumber",
+    "study_id": "S642",
+    "storage_bucket": "papers",
+    "storage_object_path": "translated-merged/869/2026-07-27-4fe55d8ee95d-Covidence_869_English_translation_first_original_second.pdf",
+    "file_sha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+    "status": "uploaded_and_verified",
+    "document_id": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+    "upload_key": "translated-merged/869/2026-07-27-4fe55d8ee95d-Covidence_869_English_translation_first_original_second.pdf",
+    "file_size": 6514613,
+    "started_at_utc": "2026-07-27T18:04:06.046Z",
+    "finished_at_utc": "2026-07-27T18:18:21.147Z",
+    "message": "Updated the supported single extraction-file pointer to the merged English-first/original-second PDF and preserved the verified original storage object and hash in provenance metadata."
+  },
+  "before": {
+    "capturedAt": "2026-07-27T18:04:06.046Z",
+    "paper": {
+      "id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+      "assignedStudyId": "S642",
+      "title": "Medical Support for an All-Star Youth Soccer Team in Niigata",
+      "status": "flagged",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+      "primaryFileSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+      "storageBucket": "papers",
+      "storageObjectPath": "01ae3404-e9d5-4a83-9506-94abeaebffcc/1777299185818-26575243_8385448110007966.pdf",
+      "originalFileName": "26575243_8385448110007966.pdf",
+      "metadata": {
+        "source": "covidence_import_2026-03-11",
+        "searchBatch": "first",
+        "activeSession": {
+          "fullName": "AbdelRahman Babiker",
+          "profileId": "00000000-0000-0000-0000-000000000001",
+          "startedAt": "2026-05-01T09:39:28.885Z",
+          "lastHeartbeatAt": "2026-07-27T17:25:09.089Z"
+        },
+        "covidenceStudy": "Edama 2012",
+        "covidenceNumber": "#869",
+        "searchBatchLabel": "First search",
+        "importSourceLabel": "First search - original extraction corpus"
+      },
+      "updatedAt": "2026-07-27T17:25:09.395341+00:00"
+    },
+    "attachments": [
+      {
+        "id": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+        "name": "26575243_8385448110007966.pdf",
+        "originalFileName": "26575243_8385448110007966.pdf",
+        "size": 6501617,
+        "mimeType": "application/pdf",
+        "storageBucket": "papers",
+        "storageObjectPath": "01ae3404-e9d5-4a83-9506-94abeaebffcc/1777299185818-26575243_8385448110007966.pdf",
+        "registeredSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+        "downloadedSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+        "downloadError": null,
+        "isPrimary": true,
+        "uploadedAt": "2026-04-27T14:13:07.108+00:00"
+      }
+    ],
+    "notes": [],
+    "extractionTabs": [
+      {
+        "id": "c3c54e04-24ed-49cd-83d1-bf781bb8a896",
+        "tab": "definitions",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.72378+00:00"
+      },
+      {
+        "id": "1cd2085b-45f1-49ef-8e85-636709d3042e",
+        "tab": "exposure",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.854612+00:00"
+      },
+      {
+        "id": "3160f8fc-99da-493f-8660-796ec6558e6c",
+        "tab": "injuryOutcome",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.972118+00:00"
+      },
+      {
+        "id": "dcf20d67-8aab-42f8-844d-f7953b96582f",
+        "tab": "participantCharacteristics",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.524791+00:00"
+      },
+      {
+        "id": "256ddf9d-a62d-4a8f-90e6-3701d7f7bdf4",
+        "tab": "studyDetails",
+        "model": "human-input",
+        "updatedAt": "2026-05-01T15:59:33.809042+00:00"
+      }
+    ],
+    "fields": {
+      "participantCharacteristics.ageCategory": {
+        "id": "4c4e94cf-1c82-48d5-9b8c-0ec745375dc6",
+        "value": "15-18 years",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.country": {
+        "id": "4bc174a8-cf89-4c5b-9be1-49437f8ffbbc",
+        "value": "Japan",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.exposureMeasurementUnit": {
+        "id": "ce8dac30-029c-46e0-bdc9-74e8295d5941",
+        "value": "match-hours",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.771+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.fifaDiscipline": {
+        "id": "4ddde39b-604a-48c3-a1bc-184baa2a7edb",
+        "value": "Association football (11-a-side)",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.incidenceDefinition": {
+        "id": "c46814fd-eaeb-4e46-840b-145c532566b4",
+        "value": "acute injuries per 1000 match-hours per player",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.656+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.injuryDefinition": {
+        "id": "9fbfff02-108d-4e23-bc8d-687290b1e3a3",
+        "value": "medical attention or time-loss",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.656+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceOverall": {
+        "id": "e6ebce85-6b88-4b16-b4be-f09b17676385",
+        "value": "162.9",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.911+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonDiagnosis": {
+        "id": "8d9cc2a4-64be-419a-b466-848e5e330690",
+        "value": "direct contusion of lower extremity and ankle sprain",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.911+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonLocation": {
+        "id": "8b37c26c-d11a-4117-a251-05e511738077",
+        "value": "lower extremity",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.911+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonType": {
+        "id": "fbb65acc-12dc-421f-9b7a-3284725b998d",
+        "value": "contusion and sprain",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.911+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.journal": {
+        "id": "605a8fb4-0402-4cca-8807-d70da8d131b8",
+        "value": "Japanese Journal of Clinical Sports Medicine",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.348+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.leadAuthor": {
+        "id": "d9035c7f-d7ee-4677-b902-621577ab247c",
+        "value": "Edama M",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.348+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.levelOfPlay": {
+        "id": "503a9701-0a92-43b7-b447-ce8193faeb94",
+        "value": "all-star youth prefectural selection team",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.matchExposure": {
+        "id": "70f51e72-267d-477d-a5aa-b89e0087d04d",
+        "value": "59 matches",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.771+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.meanAge": {
+        "id": "964aa485-1829-438e-9874-f8286b6fc309",
+        "value": "16.5",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.mechanismReporting": {
+        "id": "a44e7521-73e9-45a6-bd5a-663ef2c92b36",
+        "value": "Medical Staff",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.656+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.numberOfSeasons": {
+        "id": "07bde4da-cb39-45c7-8b7e-328a2604685f",
+        "value": "8",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.771+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.numberOfTeams": {
+        "id": "e117967f-dabd-4e87-83fb-e251f25e3486",
+        "value": "1",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.observationDuration": {
+        "id": "af0f1cb8-0c04-4089-9dfc-3eeb4c6acaf0",
+        "value": "2002-2009; 8 years",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.sampleSizePlayers": {
+        "id": "3c10bbeb-a20e-451a-a94d-d71b216b7e0a",
+        "value": "164",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.sex": {
+        "id": "3205d467-c541-4a30-bc25-934e7298c8c8",
+        "value": "male",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.studyDesign": {
+        "id": "46e0ea44-dcdb-4414-b864-6c08b43bdd79",
+        "value": "prospective cohort",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.348+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.studyId": {
+        "id": "80b5a45b-f9b6-44d9-8382-93f3cf6df882",
+        "value": "S642",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-05-01T15:59:33.47+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.title": {
+        "id": "75c89816-7401-4f67-9426-d88efb17313d",
+        "value": "Medical support for an all-star youth soccer team in Niigata prefecture by physical therapists",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.348+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.yearOfPublication": {
+        "id": "48425a60-2b86-440b-81ba-0a5dd5193e14",
+        "value": "2012",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": null,
+        "sourceQuote": null,
+        "updatedAt": "2026-04-27T14:34:29.348+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      }
+    },
+    "populationGroups": [],
+    "populationValues": [],
+    "screening": {
+      "records": [],
+      "votes": [],
+      "recordsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "votesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "after": {
+    "capturedAt": "2026-07-27T18:18:17.464Z",
+    "paper": {
+      "id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+      "assignedStudyId": "S642",
+      "title": "Medical Support for an All-Star Youth Soccer Team in Niigata",
+      "status": "processing",
+      "flagReason": null,
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "primaryFileId": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+      "primaryFileSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+      "storageBucket": "papers",
+      "storageObjectPath": "translated-merged/869/2026-07-27-4fe55d8ee95d-Covidence_869_English_translation_first_original_second.pdf",
+      "originalFileName": "Covidence_869_English_translation_first_original_second.pdf",
+      "metadata": {
+        "source": "covidence_import_2026-03-11",
+        "searchBatch": "first",
+        "activeSession": {
+          "fullName": "AbdelRahman Babiker",
+          "profileId": "00000000-0000-0000-0000-000000000001",
+          "startedAt": "2026-05-01T09:39:28.885Z",
+          "lastHeartbeatAt": "2026-07-27T17:25:09.089Z"
+        },
+        "covidenceStudy": "Edama 2012",
+        "covidenceNumber": "#869",
+        "searchBatchLabel": "First search",
+        "importSourceLabel": "First search - original extraction corpus",
+        "translationAttachment": {
+          "fileId": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+          "fileName": "Covidence_869_English_translation_first_original_second.pdf",
+          "workflow": "Codex GPT-5 manual translation with rendered-page checks",
+          "attachedOn": "2026-07-27",
+          "fileSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+          "mergeOrder": "English translation first; complete original source second",
+          "targetSystem": "FIFA GBI web app extraction",
+          "translatedOn": "2026-05-25",
+          "storageBucket": "papers",
+          "paperAuditPath": "outputs/extraction-ready-translations/2026-05-25-716-869/paper-audits/table-audit-#869.md",
+          "sourceLanguage": "Japanese",
+          "covidenceNumber": "#869",
+          "localSourcePath": "outputs/extraction-ready-translations/2026-05-25-716-869/merged-translated-original/pdfs/merged-translated-first-original-second-#869.pdf",
+          "storageObjectPath": "translated-merged/869/2026-07-27-4fe55d8ee95d-Covidence_869_English_translation_first_original_second.pdf",
+          "originalAttachment": {
+            "fileId": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+            "fileName": "26575243_8385448110007966.pdf",
+            "fileSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+            "storageBucket": "papers",
+            "storageObjectPath": "01ae3404-e9d5-4a83-9506-94abeaebffcc/1777299185818-26575243_8385448110007966.pdf"
+          }
+        },
+        "translationExtractionFollowUp": {
+          "model": "GPT-5 Codex",
+          "completedAt": "2026-07-27T18:11:29.510Z",
+          "disposition": "ready_for_human_extraction_review",
+          "reviewedTabs": [
+            "studyDetails",
+            "participantCharacteristics",
+            "definitions",
+            "exposure",
+            "injuryOutcome",
+            "illnessOutcome",
+            "injuryTissueType",
+            "injuryLocation",
+            "illnessRegion",
+            "illnessEtiology"
+          ],
+          "populationLabels": [
+            "All years (2002-2009)",
+            "Before active water supply (2002-2004)",
+            "After active water supply (2005-2009)"
+          ]
+        }
+      },
+      "updatedAt": "2026-07-27T18:11:34.418634+00:00"
+    },
+    "attachments": [
+      {
+        "id": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+        "name": "Covidence_869_English_translation_first_original_second.pdf",
+        "originalFileName": "Covidence_869_English_translation_first_original_second.pdf",
+        "size": 6514613,
+        "mimeType": "application/pdf",
+        "storageBucket": "papers",
+        "storageObjectPath": "translated-merged/869/2026-07-27-4fe55d8ee95d-Covidence_869_English_translation_first_original_second.pdf",
+        "registeredSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+        "downloadedSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+        "downloadError": null,
+        "isPrimary": true,
+        "uploadedAt": "2026-07-27T18:11:29.51+00:00"
+      }
+    ],
+    "paperStorageObject": {
+      "storageBucket": "papers",
+      "storageObjectPath": "translated-merged/869/2026-07-27-4fe55d8ee95d-Covidence_869_English_translation_first_original_second.pdf",
+      "registeredSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+      "downloadedSha256": "4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257",
+      "downloadError": null
+    },
+    "preservedOriginalSource": {
+      "fileId": "01ae3404-e9d5-4a83-9506-94abeaebffcc",
+      "fileName": "26575243_8385448110007966.pdf",
+      "fileSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+      "storageBucket": "papers",
+      "storageObjectPath": "01ae3404-e9d5-4a83-9506-94abeaebffcc/1777299185818-26575243_8385448110007966.pdf",
+      "downloadedSha256": "570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc",
+      "downloadError": null
+    },
+    "notes": [
+      {
+        "id": "721c2796-3c7d-4573-835a-fb0ee42c459f",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "body": "Translated from Japanese on 2026-05-25 using the Codex GPT-5 manual translation workflow; extracted on 2026-07-27 from a merged PDF with English translation first and original source second. Merged PDF SHA-256: 4fe55d8ee95d30d6dceb55e232ae7d18e0ff3456397ed260251ae6d960744257. Original source SHA-256: 570810025830c4572860888bf9ff61218fddd5c8e55a4bdbfd172ee93f1af2fc. Population layout: All years (2002-2009) / Before active water supply (2002-2004) / After active water supply (2005-2009).",
+        "created_at": "2026-07-27T18:11:29.51+00:00"
+      }
+    ],
+    "extractionTabs": [
+      {
+        "id": "c3c54e04-24ed-49cd-83d1-bf781bb8a896",
+        "tab": "definitions",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.72378+00:00"
+      },
+      {
+        "id": "1cd2085b-45f1-49ef-8e85-636709d3042e",
+        "tab": "exposure",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.854612+00:00"
+      },
+      {
+        "id": "aa193a58-eb91-4693-8f46-465928cc981e",
+        "tab": "illnessEtiology",
+        "model": "human-input",
+        "updatedAt": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "190e5cf9-0df1-472b-b6da-e4600ee95ba2",
+        "tab": "illnessOutcome",
+        "model": "human-input",
+        "updatedAt": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "80e6dc62-4f1a-490f-9d21-140d7c5adffc",
+        "tab": "illnessRegion",
+        "model": "human-input",
+        "updatedAt": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "31f3589a-f417-4c07-b65e-6efd37b00eaf",
+        "tab": "injuryLocation",
+        "model": "human-input",
+        "updatedAt": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "3160f8fc-99da-493f-8660-796ec6558e6c",
+        "tab": "injuryOutcome",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.972118+00:00"
+      },
+      {
+        "id": "b6315e2e-bc3d-47a0-a719-44165614d0c3",
+        "tab": "injuryTissueType",
+        "model": "human-input",
+        "updatedAt": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "dcf20d67-8aab-42f8-844d-f7953b96582f",
+        "tab": "participantCharacteristics",
+        "model": "human-input",
+        "updatedAt": "2026-04-27T14:34:29.524791+00:00"
+      },
+      {
+        "id": "256ddf9d-a62d-4a8f-90e6-3701d7f7bdf4",
+        "tab": "studyDetails",
+        "model": "human-input",
+        "updatedAt": "2026-05-01T15:59:33.809042+00:00"
+      }
+    ],
+    "fields": {
+      "participantCharacteristics.ageCategory": {
+        "id": "4c4e94cf-1c82-48d5-9b8c-0ec745375dc6",
+        "value": "14-18 years\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original pp.299-300, Table 1",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.174277+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.burdenDefinition": {
+        "id": "1dc455e6-2924-4d40-8ca7-0d79b8409acf",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; burden was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.country": {
+        "id": "4bc174a8-cf89-4c5b-9be1-49437f8ffbbc",
+        "value": "Japan\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.299",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.044274+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.doi": {
+        "id": "6b913ae7-84b4-4847-b75c-417e98f0d60b",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "DOI checked in full text and cover; not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.exposureMeasurementUnit": {
+        "id": "ce8dac30-029c-46e0-bdc9-74e8295d5941",
+        "value": "player-hours\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.299-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.639498+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.fifaDiscipline": {
+        "id": "4ddde39b-604a-48c3-a1bc-184baa2a7edb",
+        "value": "Association football (11-a-side)\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.299",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.002589+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessBurden": {
+        "id": "ae0c4265-815a-46a3-9371-df61ee09db99",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessBurdenCi95": {
+        "id": "f139498f-5177-4065-ba7a-43aff02234db",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.illnessDefinition": {
+        "id": "b0733d5d-6d86-4b1e-9191-fae1dc0986c7",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessDurationMean": {
+        "id": "0a9aebe7-9de2-4fb8-8421-e04dd4e39021",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessDurationMedian": {
+        "id": "7b37c080-8568-4113-b9dc-f96c63ea5317",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessIncidenceCi95": {
+        "id": "b0d722e1-16de-4f9a-ab0a-96d49ebf1eb2",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessIncidenceMatch": {
+        "id": "5deb4b75-f411-4fa1-89ce-53fa005d27ab",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessIncidenceOverall": {
+        "id": "56a9ce74-aa54-4071-b03e-25a86b2f86f5",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessIncidenceTraining": {
+        "id": "59e9f9f0-e2bf-4504-b6d2-476f47f3b7cb",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessMatchCount": {
+        "id": "183daf71-c0c4-4cfa-96c8-a4e8ec2f818a",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessModeGradual": {
+        "id": "9c390a4e-974b-4c88-bb0b-ee8e2833e2e6",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessModeSudden": {
+        "id": "34cba2d7-5d8d-4549-948b-052ead31c2dd",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessMostCommonEtiology": {
+        "id": "3e15f844-531f-4806-97d1-19367e0e8aec",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessMostCommonSeverity": {
+        "id": "30f46701-88ef-4c4d-b156-51850c637c90",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessMostCommonSystem": {
+        "id": "bac9a62e-5751-416f-8c7b-523ec3c0ce82",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessPlayersCompletedStudy": {
+        "id": "87691a4b-04e1-4a40-aae3-f9fd01b1e698",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessTeamsCompletedStudy": {
+        "id": "b2bca16c-e808-462d-ba37-c1e45e9652d4",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessTimeLossMean": {
+        "id": "2ae9b318-226f-4600-a825-8db38f427411",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessTimeLossMedian": {
+        "id": "38dceb6c-7771-4fe6-ad25-1d5c977c290e",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessTimeLossTotal": {
+        "id": "a15784a3-1fba-41b0-a113-ee382ae2c9fe",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessTotalCount": {
+        "id": "9cad3eaa-0590-4f2b-9265-e0dd71c4af35",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "illnessOutcome.illnessTrainingCount": {
+        "id": "cbd4ff7e-947b-445c-9612-5c27d1cb14ea",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; illnesses were not an outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.incidenceDefinition": {
+        "id": "c46814fd-eaeb-4e46-840b-145c532566b4",
+        "value": "per 1000 player-hours of match exposure\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.299-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.469406+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryBurden": {
+        "id": "f4ab0661-833b-47ba-a76a-f2587ddecf3a",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Injury burden was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryBurdenCi95": {
+        "id": "ce85fb50-a179-4808-9332-48f064710951",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Injury burden confidence interval was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryContact": {
+        "id": "894a7189-d0a9-4a6e-aca9-0095b3cf8514",
+        "value": "88\n\n",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Percentage-derived from 70% of 126 acute injuries; original p.302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryCumulativeRepetitive": {
+        "id": "6bfb4979-3a36-4f1f-940f-9ba05e7bc23f",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Cumulative repetitive injuries were not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.injuryDefinition": {
+        "id": "9fbfff02-108d-4e23-bc8d-687290b1e3a3",
+        "value": "medical attention [acute match injuries recorded by physical therapists on the medical support check sheet]\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged pp.2-3; original pp.300-301",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.363754+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryDurationMean": {
+        "id": "ac069401-3170-4843-b0c6-c0cfbd5c522f",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Injury duration was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryDurationMedian": {
+        "id": "d7f63859-5878-4348-b7ff-3de3fbf6230c",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Injury duration was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceCi95": {
+        "id": "0d35194b-5d7b-4366-b66f-75eb9dc06488",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "No incidence confidence interval was reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceMatch": {
+        "id": "379cb346-a152-416c-af15-0dfaa2a99913",
+        "value": "162.9\n205.7\n154.3",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged p.3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceOverall": {
+        "id": "e6ebce85-6b88-4b16-b4be-f09b17676385",
+        "value": "162.9\n205.7\n154.3",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.756131+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceTimeLossMatch": {
+        "id": "13e7cb86-2ad3-4fbd-897d-ab465f6848ea",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Consequential-case definition is not cleanly time-loss",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceTimeLossOverall": {
+        "id": "cf641e85-df06-4930-972e-77c2e522bebc",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Consequential-case definition is not cleanly time-loss",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceTimeLossTraining": {
+        "id": "edac2c70-0285-4eae-9bc9-5522a06b2006",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Training incidence was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryIncidenceTraining": {
+        "id": "c7dab11f-1acc-4eb9-8e48-f5261252f1a6",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Training incidence was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMatchCount": {
+        "id": "d867301a-de58-4997-bb9c-23edbf17f323",
+        "value": "126\n44\n82",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged p.3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMatchMedicalAttentionCount": {
+        "id": "d124efc7-1878-4961-b7ab-60870e7ccc8f",
+        "value": "126\n44\n82",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged pp.2-3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMatchTimeLossCount": {
+        "id": "9bb96b9e-8feb-4191-9b25-1648dbff70fb",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Consequential-case definition is not cleanly time-loss",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMedicalAttentionCount": {
+        "id": "9e27da4d-59d5-422d-9475-ec4a1aeb52b2",
+        "value": "126\n44\n82",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged pp.2-3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryModeAcuteSudden": {
+        "id": "327fd05b-b159-4a2b-b450-04d55ec4611c",
+        "value": "126\n44\n82",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged p.3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryModeRepetitiveGradual": {
+        "id": "a866e271-7269-452a-be63-5fbe5a4b8d1a",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Repetitive gradual-onset injuries were outside the acute-injury cohort",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryModeRepetitiveSudden": {
+        "id": "15be5c60-abee-4db4-8e96-0fa1a7351fd2",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Repetitive sudden-onset injuries were not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonDiagnosis": {
+        "id": "8d9cc2a4-64be-419a-b466-848e5e330690",
+        "value": "contusion\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.3; original p.302, Figure 1",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.791632+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonLocation": {
+        "id": "8b37c26c-d11a-4117-a251-05e511738077",
+        "value": "ankle/foot (34%)\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.3; original p.302, Figure 2",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.862963+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonSeverity": {
+        "id": "e33f4075-0692-44c6-89ff-22b4cd8388e5",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "No formal severity class distribution was reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryMostCommonType": {
+        "id": "fbb65acc-12dc-421f-9b7a-3284725b998d",
+        "value": "contusion (48%)\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.3; original p.302, Figure 1",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.833985+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryNonContact": {
+        "id": "be1590ca-c77b-4d6c-bcf3-ba1820b5771a",
+        "value": "38\n\n",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Complement of the reported 70% contact share over 126 acute injuries; original p.302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryPlayersCompletedStudy": {
+        "id": "207e1c10-72d9-4c37-a9a9-00c3ec322617",
+        "value": "164\n58\n106",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.300-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryRecurrenceRate": {
+        "id": "665c34c5-f884-4dec-9544-1b9ba04216fa",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Recurrence rate was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryRecurrentTotal": {
+        "id": "4338196d-dba5-4e63-948b-3e24e9880191",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Recurrent injuries were not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTeamsCompletedStudy": {
+        "id": "bb723cd4-a2d7-4196-8b9d-57f5407040da",
+        "value": "1\n\n",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.299-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTimeLossCount": {
+        "id": "361773ba-c37a-49c9-91ff-8024d74bcc69",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "The 45 consequential cases mix next-day treatment and inability to play; not forced into time-loss",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTimeLossMean": {
+        "id": "8fa8d1b2-6971-4411-bca9-11a6b2c0d492",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Mean time loss was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTimeLossMedian": {
+        "id": "657a0b2f-2eec-4a19-9476-c6eee81ea312",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Median time loss was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTimeLossTotal": {
+        "id": "6a402c3e-adfe-408d-a467-c5ebadbd27a2",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Time-loss days were not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTotalCount": {
+        "id": "70f26d38-ab4b-4c4d-94ab-ef0d443b0b52",
+        "value": "126\n44\n82",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged p.3; original pp.301-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTrainingCount": {
+        "id": "5902e750-1e39-4eb8-a837-d2dd57c55040",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Training injuries were not studied",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTrainingMedicalAttentionCount": {
+        "id": "20d1715a-e998-48aa-8510-3cb95d57cb4e",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Training injuries were not studied",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "injuryOutcome.injuryTrainingTimeLossCount": {
+        "id": "3efb6ebb-f77d-43e3-abcd-2f9a8495a04d",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Training injuries were not studied",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.journal": {
+        "id": "605a8fb4-0402-4cca-8807-d70da8d131b8",
+        "value": "Japanese Journal of Clinical Sports Medicine",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; RapidILL cover",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:32.666893+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.leadAuthor": {
+        "id": "d9035c7f-d7ee-4677-b902-621577ab247c",
+        "value": "Edama M",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.299",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:32.502578+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.levelOfPlay": {
+        "id": "503a9701-0a92-43b7-b447-ce8193faeb94",
+        "value": "all-star youth prefectural selection team\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.299",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.093355+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.matchExposure": {
+        "id": "70f51e72-267d-477d-a5aa-b89e0087d04d",
+        "value": null,
+        "status": "not_reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Full text checked; 59 matches were reported, but exposure hours were not printed",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.670357+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.meanAge": {
+        "id": "964aa485-1829-438e-9874-f8286b6fc309",
+        "value": "16.5\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.300, Table 1",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.217461+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.mechanismReporting": {
+        "id": "a44e7521-73e9-45a6-bd5a-663ef2c92b36",
+        "value": "Medical Staff\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.2; original pp.300-301",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.502767+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.numberOfSeasons": {
+        "id": "07bde4da-cb39-45c7-8b7e-328a2604685f",
+        "value": "8\n3\n5",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.299-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.60996+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.numberOfTeams": {
+        "id": "e117967f-dabd-4e87-83fb-e251f25e3486",
+        "value": "1\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original pp.299-300",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.288654+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.observationDuration": {
+        "id": "af0f1cb8-0c04-4089-9dfc-3eeb4c6acaf0",
+        "value": "2002-2009; 8 years\n2002-2004\n2005-2009",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.299-302",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.332862+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.recurrenceDefinition": {
+        "id": "07522eb0-854e-404c-8910-fa55d8fad7c5",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; recurrence was not reported",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.sampleSizePlayers": {
+        "id": "3c10bbeb-a20e-451a-a94d-d71b216b7e0a",
+        "value": "164\n58\n106",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.300, Table 1",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.25776+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.seasonLength": {
+        "id": "0f55964e-6681-45b8-b406-153daa5c6403",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; no season length in weeks",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "definitions.severityDefinition": {
+        "id": "a833a453-d282-4916-b0c2-fdc95fcd1359",
+        "value": "injuries requiring treatment through the following day or preventing participation in the following day's match\n\n",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Merged p.3; original p.301",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "participantCharacteristics.sex": {
+        "id": "3205d467-c541-4a30-bc25-934e7298c8c8",
+        "value": "male\n\n",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.299",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:33.140229+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.studyDesign": {
+        "id": "46e0ea44-dcdb-4414-b864-6c08b43bdd79",
+        "value": "retrospective cohort [prospective data]",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged pp.1-3; original pp.299-301",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:32.775681+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.studyId": {
+        "id": "80b5a45b-f9b6-44d9-8382-93f3cf6df882",
+        "value": "S642",
+        "status": "reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "System-assigned study ID",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:32.431711+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.title": {
+        "id": "75c89816-7401-4f67-9426-d88efb17313d",
+        "value": "Medical support for an all-star youth soccer team in Niigata prefecture by physical therapists: Eight-year evaluation of the incidence of acute injury, and change of acute injury incidence by active water supply",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; original p.299",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:32.541056+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.totalExposure": {
+        "id": "568698e7-5abe-4940-80d0-a0a3de44130a",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Full text checked; exposure hours were not printed and were not back-calculated",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "exposure.trainingExposure": {
+        "id": "596f784d-4f24-49ff-84d4-1689cfcbbb23",
+        "value": null,
+        "status": "not_reported",
+        "confidence": null,
+        "metric": null,
+        "pageHint": "Training injuries and exposure were outside the study outcome",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:29.51+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      },
+      "studyDetails.yearOfPublication": {
+        "id": "48425a60-2b86-440b-81ba-0a5dd5193e14",
+        "value": "2012",
+        "status": "reported",
+        "confidence": 0.75,
+        "metric": null,
+        "pageHint": "Merged p.1; RapidILL cover",
+        "sourceQuote": null,
+        "updatedAt": "2026-07-27T18:11:32.580219+00:00",
+        "updatedBy": "00000000-0000-0000-0000-000000000001"
+      }
+    },
+    "populationGroups": [
+      {
+        "id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "tab": "participantCharacteristics",
+        "label": "All years (2002-2009)",
+        "position": 0,
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "tab": "participantCharacteristics",
+        "label": "Before active water supply (2002-2004)",
+        "position": 1,
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "tab": "participantCharacteristics",
+        "label": "After active water supply (2005-2009)",
+        "position": 2,
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      }
+    ],
+    "populationValues": [
+      {
+        "id": "508cf61f-bbc8-46f1-ab41-7f6fe3cef0de",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "ageCategory",
+        "value": "14-18 years",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "ageCategory",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "d42e8b22-3c25-43f6-9a39-c271019ef04f",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryContact",
+        "value": "88",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryContact",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "6e7ac8b6-cc3d-44d2-a26d-028d99a84c39",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryIncidenceMatch",
+        "value": "162.9",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceMatch",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "952c497e-a630-4977-bcbf-d07bdc3e4980",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryIncidenceMatch",
+        "value": "205.7",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceMatch",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "6c594448-2e58-4490-8405-ae4e4b1a1381",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryIncidenceMatch",
+        "value": "154.3",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceMatch",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "cfeb7a70-42f1-4ce7-8dc9-005515492d3d",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryIncidenceOverall",
+        "value": "162.9",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceOverall",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "e35956ea-8b5c-4a12-98d1-03cd45dd7ac9",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryIncidenceOverall",
+        "value": "205.7",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceOverall",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "e7c5e22d-1a95-4647-8da7-94e6ca67a78e",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryIncidenceOverall",
+        "value": "154.3",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceOverall",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "2930c7c9-1a2b-4915-b89b-5b3c26e25123",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMatchCount",
+        "value": "126",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMatchCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "230be023-8145-4055-93a2-24179eeae82a",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMatchCount",
+        "value": "44",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMatchCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "c245a864-ad87-4780-8409-c1c244267f91",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMatchCount",
+        "value": "82",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMatchCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "3a997152-a18f-4ea9-a4dc-28e7b5a27ec9",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMatchMedicalAttentionCount",
+        "value": "126",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMatchMedicalAttentionCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "5db596b7-c12c-474c-92e7-02982068c6d9",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMatchMedicalAttentionCount",
+        "value": "44",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMatchMedicalAttentionCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "7f8f8c0d-7087-4437-9baf-1174773a16bb",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMatchMedicalAttentionCount",
+        "value": "82",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMatchMedicalAttentionCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "9f54cfc6-4625-488f-8eb2-f7cb753397cd",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMedicalAttentionCount",
+        "value": "126",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMedicalAttentionCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "c569c7c4-4cc4-4619-8c9d-a6b16b6823ac",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMedicalAttentionCount",
+        "value": "44",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMedicalAttentionCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "626a66a1-b26c-4cdb-9bb8-c54b0200c4af",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMedicalAttentionCount",
+        "value": "82",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMedicalAttentionCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "f7d8f888-9e88-48e4-ba71-a0229628f511",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryModeAcuteSudden",
+        "value": "126",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryModeAcuteSudden",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "b88a2d3d-c2c0-4e54-89e7-1f614f0565e1",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryModeAcuteSudden",
+        "value": "44",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryModeAcuteSudden",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "1c53d942-f59f-4d1b-a505-f1383c961303",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryModeAcuteSudden",
+        "value": "82",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryModeAcuteSudden",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "9ab45785-2189-4f55-be36-a486047b74b1",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMostCommonDiagnosis",
+        "value": "contusion",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMostCommonDiagnosis",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "a8e3316d-ba87-49ad-bd18-db4c0a7ee202",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMostCommonLocation",
+        "value": "ankle/foot (34%)",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMostCommonLocation",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "8db6fd96-8fb8-42f6-8f4d-c841c3f578e6",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryMostCommonType",
+        "value": "contusion (48%)",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryMostCommonType",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "6f643876-fe63-4f6b-b243-a03317926956",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryNonContact",
+        "value": "38",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryNonContact",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "8b961f39-94d8-4929-ae34-2b35462cafa4",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryPlayersCompletedStudy",
+        "value": "164",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryPlayersCompletedStudy",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "3662b1fa-40f0-40df-a52b-fdb61425b4d1",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryPlayersCompletedStudy",
+        "value": "58",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryPlayersCompletedStudy",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "89a1fe07-ca98-4664-aa44-aa24f061fce0",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryPlayersCompletedStudy",
+        "value": "106",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryPlayersCompletedStudy",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "8399d2f1-7975-4d16-b308-fd7c21638d39",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryTeamsCompletedStudy",
+        "value": "1",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryTeamsCompletedStudy",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "ceb52dcc-2050-4585-8e3c-c7e0bd455c19",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryTotalCount",
+        "value": "126",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryTotalCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "11d567ff-2d94-4909-8185-c92c077be24f",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryTotalCount",
+        "value": "44",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryTotalCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "7212ef92-a81c-4f38-a819-458088f6980c",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "injuryTotalCount",
+        "value": "82",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryTotalCount",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "63b3ef6c-9e27-455e-a8fd-a00fa2204c3c",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "meanAge",
+        "value": "16.5",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "meanAge",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "62f53f1e-8406-4e03-9f92-dfebf4baedd0",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "numberOfSeasons",
+        "value": "8",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "numberOfSeasons",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "572b59a5-f80f-4016-ab89-30bd7baade95",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "numberOfSeasons",
+        "value": "3",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "numberOfSeasons",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "1abf48b4-5c7d-438d-ad6d-13831468a0ef",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "numberOfSeasons",
+        "value": "5",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "numberOfSeasons",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "f620e6c7-2f39-44b0-a490-a06d7ebba46e",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "numberOfTeams",
+        "value": "1",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "numberOfTeams",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "820051f9-6ed0-450c-9e25-916ded4b9417",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "observationDuration",
+        "value": "2002-2009; 8 years",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "observationDuration",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "6accefee-3164-4c4e-aaec-e3094fe45b70",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "observationDuration",
+        "value": "2002-2004",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "observationDuration",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "4c81c053-7e30-47e4-aa22-8bb8b6e8400a",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "observationDuration",
+        "value": "2005-2009",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "observationDuration",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "99257b51-749a-41ec-814c-c3e41db55803",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "sampleSizePlayers",
+        "value": "164",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "sampleSizePlayers",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "e7f39715-f045-4ea8-9bb7-24cb40a34c38",
+        "population_group_id": "7a4a8791-53ec-4fa1-95ae-f654b14d678d",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "sampleSizePlayers",
+        "value": "58",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "sampleSizePlayers",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "f2b6b84d-5b51-4193-ac8f-21cd297c6693",
+        "population_group_id": "d4890c86-3f2f-48ab-97b7-c51b21a02f7c",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "sampleSizePlayers",
+        "value": "106",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "sampleSizePlayers",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      },
+      {
+        "id": "bf3726a2-c659-44e5-a1a2-5092709c6259",
+        "population_group_id": "b5ffad68-51e1-42d0-98b2-0c199568e2f8",
+        "paper_id": "1398614f-1f37-4f67-ad1d-8484f9261664",
+        "field_id": "sex",
+        "value": "male",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "sex",
+        "created_at": "2026-07-27T18:11:29.51+00:00",
+        "updated_at": "2026-07-27T18:11:29.51+00:00"
+      }
+    ],
+    "screening": {
+      "records": [],
+      "votes": [],
+      "recordsSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "votesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "sourceCoverage": "English translation, full methods and results, original Table 1, original Figures 1-2, discussion, limitations, and printed English abstract checked.",
+  "populationLayout": {
+    "labels": [
+      "All years (2002-2009)",
+      "Before active water supply (2002-2004)",
+      "After active water supply (2005-2009)"
+    ],
+    "count": 3,
+    "rationale": "The source directly reports pooled values and the primary pre/post active-water-supply comparison.",
+    "applied": {
+      "groups": 3,
+      "values": 43
+    }
+  },
+  "extractionScope": {
+    "reviewedTabs": [
+      "studyDetails",
+      "participantCharacteristics",
+      "definitions",
+      "exposure",
+      "injuryOutcome",
+      "illnessOutcome",
+      "injuryTissueType",
+      "injuryLocation",
+      "illnessRegion",
+      "illnessEtiology"
+    ],
+    "reportedFieldCount": 35,
+    "notReportedFieldCount": 52,
+    "intentionallyBlankFamilies": {
+      "illnessOutcome": "Illnesses were not an outcome.",
+      "injuryTissueType": "Figure 1 percentages total 101% after rounding, so count fields were not populated or forced from incompatible percentages.",
+      "injuryLocation": "Figure 2 percentages total 101%, and the largest category combines ankle/foot; count fields were not forced from rounded or combined percentages.",
+      "illnessRegion": "Illnesses were not an outcome.",
+      "illnessEtiology": "Illnesses were not an outcome."
+    },
+    "directAndDerivedCaveats": [
+      "Pre/post player totals 58 and 106 are transparent sums of direct annual Table 1 counts.",
+      "Contact count 88 is percentage-derived from 70% of 126; non-contact count 38 is the binary complement.",
+      "No exposure total was back-calculated from counts and rates.",
+      "The 45 consequential injuries and their incidence were not forced into time-loss fields because the definition mixes next-day treatment with inability to play."
+    ]
+  },
+  "protectedScreening": {
+    "preApplyLinkedRecords": 0,
+    "preApplyLinkedVotes": 0,
+    "postApplyUnchanged": true,
+    "screeningWrites": 0,
+    "resolverWrites": 0,
+    "promotionWrites": 0
+  },
+  "integrityGate": {
+    "result": "passed",
+    "findings": [],
+    "fieldMismatches": [],
+    "populationMismatches": [],
+    "exactTargetMembership": true,
+    "assignmentPreserved": true,
+    "statusIsProcessing": true,
+    "studyIdMatchesAssignedStudyId": true,
+    "originalAttachmentPreserved": true,
+    "translatedAttachmentPrimaryAndVerified": true,
+    "translationProvenancePresent": true,
+    "allTenTabsPresent": true,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "unexpectedLiveFields": [],
+    "populationLayoutMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "protectedScreeningUnchanged": true,
+    "backlogUpdated": true
+  },
+  "rollback": {
+    "paperPointer": "Restore the papers primary_file_id, primary_file_sha256, storage fields, original_file_name, status, flag_reason, and metadata from before.paper.",
+    "extractionFields": "Restore each pre-existing extraction field from before.fields. Newly added rows can remain as not_reported until deletion is separately approved.",
+    "attachments": "Restore the single paper_files row and papers storage pointers from before. The original storage object remains intact and verified at its prior path.",
+    "population": "The full pre-apply state had no population rows. Removal of the additive population rows is destructive and would require separate approval."
+  },
+  "readyFor": "Human extraction review"
+}

@@ -1,0 +1,19 @@
+{
+  "mode": "dry-run",
+  "input": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/second-search-extraction/batch-018/second-search-extraction-batch-018-independent-review-s2287-correction-input-2026-07-13.json",
+  "papers": [
+    {
+      "studyId": "S2287",
+      "written": [
+        "injuryDefinition",
+        "injuryTissueType_muscle_injury_incidence"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 2,
+        "values": 20
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "scope": "S4703 Tables 2-3 IOC-compatible type mapping plus Figure 2 percentage-derived location counts",
+  "papers": [
+    {
+      "studyId": "S4703",
+      "populationLabels": ["Total", "Male", "Female"],
+      "fields": {
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "\n30\n31",
+          "injuryLocation_head_prevalence": "\n26\n29",
+          "injuryLocation_neck_prevalence": "\n4\n2",
+          "injuryLocation_upper_limb_overall_prevalence": "\n22\n27",
+          "injuryLocation_shoulder_prevalence": "\n14\n15",
+          "injuryLocation_elbow_prevalence": "\n1\n4",
+          "injuryLocation_trunk_overall_prevalence": "\n33\n19",
+          "injuryLocation_lumbosacral_prevalence": "\n15\n16",
+          "injuryLocation_lower_limb_overall_prevalence": "\n418\n277",
+          "injuryLocation_hip_prevalence": "\n20\n12",
+          "injuryLocation_thigh_prevalence": "\n160\n66",
+          "injuryLocation_knee_prevalence": "\n83\n81",
+          "injuryLocation_lower_leg_prevalence": "\n40\n29",
+          "injuryLocation_ankle_prevalence": "\n87\n71",
+          "injuryLocation_foot_prevalence": "\n28\n18"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_muscle_tendon_prevalence": "\n78\n10",
+          "injuryTissueType_muscle_tendon_incidence": "\n5.25\n0.99 (0.38-1.60)",
+          "injuryTissueType_muscle_injury_prevalence": "\n78\n10",
+          "injuryTissueType_muscle_injury_incidence": "\n5.25\n0.99 (0.38-1.60)",
+          "injuryTissueType_muscle_injury_severityMeanDays": "\n\n11.3",
+          "injuryTissueType_nervous_prevalence": "\n\n13",
+          "injuryTissueType_nervous_incidence": "\n\n1.28 (0.57-1.99)",
+          "injuryTissueType_brain_spinal_prevalence": "\n\n13",
+          "injuryTissueType_brain_spinal_incidence": "\n\n1.28 (0.57-1.99)",
+          "injuryTissueType_concussion_prevalence": "\n\n13",
+          "injuryTissueType_concussion_incidence": "\n\n1.28 (0.57-1.99)",
+          "injuryTissueType_concussion_severityMeanDays": "\n\n12.7",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "\n98\n86",
+          "injuryTissueType_ligament_joint_capsule_incidence": "\n6.59\n8.48",
+          "injuryTissueType_joint_sprain_prevalence": "\n63\n44",
+          "injuryTissueType_joint_sprain_incidence": "\n4.24\n4.34",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "\n17\n37",
+          "injuryTissueType_superficial_tissues_skin_incidence": "\n1.14 (0.60-1.68)\n3.66",
+          "injuryTissueType_superficial_contusion_prevalence": "\n17\n37",
+          "injuryTissueType_superficial_contusion_incidence": "\n1.14 (0.60-1.68)\n3.66",
+          "injuryTissueType_superficial_contusion_severityMeanDays": "\n5.4\n"
+        }
+      }
+    }
+  ]
+}

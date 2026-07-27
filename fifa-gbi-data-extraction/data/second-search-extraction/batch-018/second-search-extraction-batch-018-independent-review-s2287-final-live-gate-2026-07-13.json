@@ -1,0 +1,37 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; Backlog 2 Batch 018; focused post-correction live review gate; 2026-07-13",
+  "result": "pass - S2287 ready for human review; S2482 numerical state unchanged",
+  "changesInScope": {
+    "S2287": [
+      "injuryDefinition clarified to medical attention [non-contact muscle injuries only]",
+      "injuryTissueType_muscle_injury_incidence added as direct Table 2 values 5.1 / 4.9 per 1000 player-hours"
+    ],
+    "S2482": [
+      "backlog-only reviewer-facing age/sample caveat; no database field changed"
+    ]
+  },
+  "S2287": {
+    "status": "processing",
+    "assignedTo": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "studyIdMatchesPaper": true,
+    "sourceAttachedAndHashVerified": "eb1a36b7eed851fb946f1bfeeef63586cf76ad74a18d081e5838c7e18952d0ba",
+    "populationLayout": ["COVID-19 positive", "COVID-19 negative"],
+    "injuryDefinition": "medical attention [non-contact muscle injuries only]",
+    "muscleInjuryIncidenceExtractionField": "5.1\n4.9",
+    "muscleInjuryIncidencePopulationValues": ["5.1", "4.9"],
+    "populationValueCount": 22,
+    "structuredDualWriteFailures": [],
+    "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+    "gateResult": "ready for human review"
+  },
+  "S2482": {
+    "status": "processing",
+    "sourceAttachedAndHashVerified": "6f3f4cf4ca82fd4e98dd6f3c6cb69a876e6edf2767e44e1c513fce0a109da181",
+    "populationLayout": ["Total", "Starter", "Non-starter"],
+    "meanAgeUnchanged": "28.5 +/- 3.9",
+    "sampleSizeUnchanged": "37\n20\n17",
+    "populationValueCountUnchanged": 26,
+    "protectedMetadata": {"titleAbstractVotes": 1, "fullTextVotes": 2, "resolverDecisionPresent": false, "fullTextResolution": "ready_for_extraction"},
+    "reviewerAttention": "The reported mean age is from 40 recruited players, while the live analytic populations are 37 total / 20 starter / 17 non-starter. The numerical fields are not misleading: sample size is already the 37 analytic participants, and mean age remains the explicitly reported recruited-cohort summary."
+  }
+}

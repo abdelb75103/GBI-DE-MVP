@@ -1,0 +1,186 @@
+{
+  "artifactType": "Backlog 2 Batch 027 staged manual extraction input",
+  "scope": "Fixed membership S4734, S4839, S3342, S5434, S4719 only",
+  "model": "GPT-5 Codex",
+  "reasoningLevel": "high",
+  "modelNote": "The skill-default GPT-5.5 runner was not selectable in this delegated workspace; the available local GPT-5 Codex model was used.",
+  "fixedBatchMembership": ["S4734", "S4839", "S3342", "S5434", "S4719"],
+  "preApply": {
+    "assignmentProfile": "AbdelRahman Babiker (00000000-0000-0000-0000-000000000001)",
+    "statuses": {
+      "S4734": "processing",
+      "S4839": "processing",
+      "S3342": "processing",
+      "S5434": "processing",
+      "S4719": "processing"
+    },
+    "existingExtractionFields": 0,
+    "existingPopulationGroups": 0,
+    "existingPopulationValues": 0,
+    "protectedScreeningSha256": {
+      "S4734/full_text": "cf6d1a56f47f116bbda488670cd7a4499b74721833a26e13e60e7e1eb31656ec",
+      "S4734/title_abstract": "dbd38dfa8ad016865b8434289b27ce0c4039e78d5db68175bcde0129001d9182",
+      "S4839/full_text": "c9b9208e9696c14d0149f970b101f1895db12db1b634bbefe793acf271cceead",
+      "S4839/title_abstract": "b6b3aa35057af61a8f77077303da37810ef7d27c071140bb3019770b08129606",
+      "S3342/full_text": "c611c044adcb68f2106caa13590b8cb8d6dbd1dce646ca59c8d3af95317b34dd",
+      "S3342/title_abstract": "23f156b43d0a9433b75d49c7e0f3f9f36500ef21c57c561648a70ff242455a9d",
+      "S5434/full_text": "a6293c0a8f870951cf97dd263bb39242b019863e25b5f6835925a7aa8657810c",
+      "S5434/title_abstract": "ad02a97baf68ac13644549dfc6587326cb1cdc526317faf3ab0b4750305f816c",
+      "S4719/full_text": "5551dd7c8a755d86729ebc3264e24a9a30d59bbfc91ebdadcdb94014a5d72751",
+      "S4719/title_abstract": "4634bd11951c4778c94eda3ac7b79f614d887b10312b1139e152909fe531cd86"
+    }
+  },
+  "stageA": {
+    "result": "passed",
+    "checks": [
+      "All five attached live primary PDFs were downloaded once and SHA-256 matched both papers.primary_file_sha256 and paper_files.file_sha256 before inspection.",
+      "The strongest directly reported S3342 layout is All seasons / 2013/14 / 2014 / 2015/16 / 2016/17 / 2017/18 / 2018/19 / 2019/20 because the paper reports an overall 334-injury cohort plus directly printed season rows.",
+      "S4734, S5434 and S4719 self-identify as systematic reviews/meta-analyses and synthesise multiple primary studies, so no primary-cohort extraction payload is staged.",
+      "S4839 explicitly identifies itself as a four-season substudy of 14 UEFA Elite Club Injury Study teams and is classified uefa; no duplicate ECIS extraction payload is staged.",
+      "S3342 Tabs 1-4 were staged and every results table and usable figure was checked once for Tabs 5-10. Table 1 supports tissue/type counts and rates; Table 2 supports location counts and rates; Figure 1/prose supports headline severity and mechanism only where defensible.",
+      "No exposure was back-calculated from injury rates. S3342 directly reports 732 matches and rates per match/round; the rate denominator is retained as the study-specific usable denominator despite unavailable player-hours.",
+      "Pooled structured counts are transparent sums of directly printed season cells. Contact/non-contact headline counts are percentage-derived from the direct overall denominator of 334 and are explicitly documented."
+    ]
+  },
+  "sourceCoverage": {
+    "S4734": "Attached primary PDF pp. 1-15: abstract, PRISMA methods, eligibility, included-study Table 1, outcome meta-analyses/figures, limitations and conclusion checked; systematic review/meta-analysis of 15 RCTs.",
+    "S4839": "Attached primary PDF pp. 1-9: abstract, ECIS cohort methods, definitions, questionnaire, Figure 1, Tables 1-2, discussion, limitations and conclusion checked; explicit UEFA ECIS substudy.",
+    "S3342": "Attached primary PDF pp. 1-7: abstract, methods/definitions, Figure 1, Tables 1-2 including the continued location table, results, discussion, limitations and conclusion checked. Online supplementary data were referenced but not attached.",
+    "S5434": "Attached primary PDF pp. 1-18: abstract, PRISMA/PICO methods, Tables 1-6, flow/forest plots, bias assessment, discussion and conclusion checked; systematic review/meta-analysis of three RCTs.",
+    "S4719": "Attached primary PDF pp. 1-16: abstract, PRISMA methods, PICO criteria, included-study Tables 2-3, results, discussion and conclusion checked; systematic review/meta-analysis."
+  },
+  "classifications": [
+    {
+      "studyId": "S4734",
+      "status": "systematic_review",
+      "flagReason": "Systematic review/meta-analysis of 15 soccer injury-prevention RCTs; not a primary extraction record",
+      "primaryFileSha256": "b4361c625f23c8841024d625bbb2a1fb4c748b1900db407c8fffa2279836a277",
+      "populationLabels": []
+    },
+    {
+      "studyId": "S4839",
+      "status": "uefa",
+      "flagReason": "UEFA Elite Club Injury Study substudy; preserve UEFA study-family exclusion route",
+      "primaryFileSha256": "5201ad56e31f1a16f34cd41132d815cb9dbf303eea2eb424232102be0958d4df",
+      "populationLabels": []
+    },
+    {
+      "studyId": "S5434",
+      "status": "systematic_review",
+      "flagReason": "Systematic review/meta-analysis of three FIFA 11+ ankle-injury RCTs; not a primary extraction record",
+      "primaryFileSha256": "865c6e458922a2fff647f8078b7e2b83f47f552de9a943acab096670049b6015",
+      "populationLabels": []
+    },
+    {
+      "studyId": "S4719",
+      "status": "systematic_review",
+      "flagReason": "Systematic review/meta-analysis of neuromuscular-training studies; not a primary extraction record",
+      "primaryFileSha256": "01f183be688086b16227de9ea351b339b99280b47a65f6a326f4abae27c15ce6",
+      "populationLabels": []
+    }
+  ],
+  "papers": [
+    {
+      "studyId": "S3342",
+      "populationLabels": ["All seasons", "2013/14", "2014", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
+      "primaryFileSha256": "b0edf0a84722831079f97cbdc090ca580065228f37205ccc1cd1eaff64b865fc",
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3342",
+          "leadAuthor": "Leonard G",
+          "title": "Injury epidemiology in Australian women's professional football",
+          "yearOfPublication": "2025",
+          "journal": "Journal of Science and Medicine in Sport",
+          "doi": "10.1016/j.jsams.2024.11.012",
+          "studyDesign": "prospective observational cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Australia",
+          "levelOfPlay": "elite women's professional domestic league (A-League Women)",
+          "sex": "female",
+          "ageCategory": "adult (>=18 years)",
+          "sampleSizePlayers": "170-200 registered players per season",
+          "numberOfTeams": "8 teams initially; 9 from 2015/16",
+          "observationDuration": "2013/14-2019/20 (7 consecutive seasons)"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [physical complaint requiring medical attention and resulting in a missed A-League Women match]",
+          "incidenceDefinition": "injuries per match per competition round/season",
+          "severityDefinition": "mild 1 missed match; moderate 2-4 missed matches; severe >=5 missed matches",
+          "mechanismReporting": "head club physiotherapist"
+        },
+        "exposure": {
+          "seasonLength": "12 regular-season competition rounds per team; finals excluded",
+          "numberOfSeasons": "7",
+          "exposureMeasurementUnit": "other",
+          "totalExposure": "732 matches across 7 seasons"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "334\n58\n31\n41\n50\n58\n57\n39",
+          "injuryTimeLossCount": "334",
+          "injuryMostCommonType": "joint and ligament (130; 39%)",
+          "injuryMostCommonLocation": "ankle (79; 24%)",
+          "injuryMostCommonSeverity": "mild (48%)",
+          "injuryContact": "107",
+          "injuryNonContact": "227"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_bone_prevalence": "25\n1\n0\n3\n5\n6\n9\n1",
+          "injuryTissueType_bone_incidence": "\n0.02 (0.00-4.17)\n0.00 (0.00-Inf)\n0.06 (0.00-1.13)\n0.10 (0.01-0.98)\n0.11 (0.01-0.96)\n0.16 (0.03-0.91)\n0.02 (0.00-2.20)",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "130\n29\n11\n17\n17\n21\n17\n18",
+          "injuryTissueType_ligament_joint_capsule_incidence": "\n0.85 (0.38-1.91)\n0.24 (0.05-1.17)\n0.33 (0.10-1.16)\n0.31 (0.09-1.13)\n0.39 (0.12-1.24)\n0.34 (0.11-1.12)\n0.34 (0.11-1.07)",
+          "injuryTissueType_muscle_tendon_prevalence": "115\n25\n10\n13\n23\n14\n18\n12",
+          "injuryTissueType_muscle_tendon_incidence": "\n0.59 (0.22-1.56)\n0.22 (0.04-1.15)\n0.24 (0.05-1.04)\n0.42 (0.14-1.28)\n0.27 (0.07-1.07)\n0.36 (0.11-1.15)\n0.23 (0.06-0.93)",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "5\n0\n0\n0\n0\n0\n4\n1",
+          "injuryTissueType_superficial_tissues_skin_incidence": "\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.07 (0.00-0.98)\n0.06 (0.00-0.92)",
+          "injuryTissueType_nervous_prevalence": "29\n2\n8\n5\n2\n5\n4\n3",
+          "injuryTissueType_nervous_incidence": "\n1.07 (0.52-2.20)\n0.51 (0.17-1.52)\n0.51 (0.19-1.40)\n0.62 (0.25-1.54)\n0.66 (0.27-1.60)\n0.77 (0.35-1.70)\n0.48 (0.18-1.27)",
+          "injuryTissueType_concussion_prevalence": "14",
+          "injuryTissueType_non_specific_tissue_prevalence": "30\n1\n2\n3\n3\n12\n5\n4",
+          "injuryTissueType_non_specific_tissue_incidence": "\n0.02 (0.00-4.17)\n0.04 (0.00-1.87)\n0.06 (0.00-1.13)\n0.05 (0.00-1.20)\n0.23 (0.05-1.03)\n0.08 (0.01-0.92)\n0.06 (0.00-0.92)"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "18\n1\n4\n2\n1\n3\n4\n3",
+          "injuryLocation_head_incidence": "\n0.02 (0.00-4.17)\n0.08 (0.01-1.23)\n0.04 (0.00-1.60)\n0.02 (0.00-3.88)\n0.06 (0.00-1.13)\n0.07 (0.00-0.98)\n0.14 (0.02-0.85)",
+          "injuryLocation_neck_prevalence": "1\n0\n0\n1\n0\n0\n0\n0",
+          "injuryLocation_neck_incidence": "\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.02 (0.00-3.88)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_shoulder_prevalence": "4\n0\n1\n1\n0\n2\n0\n0",
+          "injuryLocation_shoulder_incidence": "\n0.00 (0.00-Inf)\n0.02 (0.00-4.52)\n0.02 (0.00-3.88)\n0.00 (0.00-Inf)\n0.04 (0.00-1.41)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_upper_arm_prevalence": "1\n1\n0\n0\n0\n0\n0\n0",
+          "injuryLocation_upper_arm_incidence": "\n0.02 (0.00-4.17)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_elbow_prevalence": "1\n0\n0\n0\n0\n1\n0\n0",
+          "injuryLocation_elbow_incidence": "\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.02 (0.00-3.88)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_forearm_prevalence": "5\n0\n0\n1\n1\n3\n0\n0",
+          "injuryLocation_forearm_incidence": "\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.02 (0.00-3.88)\n0.02 (0.00-3.88)\n0.05 (0.00-1.20)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_wrist_prevalence": "0\n0\n0\n0\n0\n0\n0\n0",
+          "injuryLocation_wrist_incidence": "\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_hand_prevalence": "6\n1\n0\n0\n3\n2\n0\n0",
+          "injuryLocation_hand_incidence": "\n0.02 (0.00-4.17)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.05 (0.00-1.20)\n0.04 (0.00-1.60)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_abdomen_prevalence": "2\n0\n2\n0\n0\n0\n0\n0",
+          "injuryLocation_abdomen_incidence": "\n0.00 (0.00-Inf)\n0.05 (0.00-1.65)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)\n0.00 (0.00-Inf)",
+          "injuryLocation_lumbosacral_prevalence": "20\n5\n4\n1\n1\n3\n5\n1",
+          "injuryLocation_lumbosacral_incidence": "\n0.10 (0.01-1.05)\n0.08 (0.01-1.23)\n0.02 (0.00-3.88)\n0.02 (0.00-2.51)\n0.05 (0.00-1.20)\n0.09 (0.01-0.91)\n0.02 (0.00-2.20)",
+          "injuryLocation_thigh_prevalence": "65\n11\n6\n7\n19\n6\n9\n7",
+          "injuryLocation_thigh_incidence": "\n0.22 (0.04-1.08)\n0.13 (0.01-1.12)\n0.13 (0.02-0.96)\n0.35 (0.10-1.17)\n0.11 (0.01-0.96)\n0.21 (0.04-0.95)\n0.11 (0.01-0.84)",
+          "injuryLocation_knee_prevalence": "51\n10\n2\n11\n7\n3\n11\n7",
+          "injuryLocation_knee_incidence": "\n0.19 (0.04-1.05)\n0.04 (0.00-1.87)\n0.22 (0.05-1.02)\n0.13 (0.02-0.95)\n0.06 (0.00-1.13)\n0.19 (0.04-0.93)\n0.15 (0.03-0.85)",
+          "injuryLocation_lower_leg_prevalence": "26\n4\n4\n4\n3\n3\n4\n4",
+          "injuryLocation_lower_leg_incidence": "\n0.15 (0.02-1.03)\n0.08 (0.01-1.23)\n0.05 (0.00-1.20)\n0.05 (0.00-1.20)\n0.05 (0.00-1.20)\n0.07 (0.01-0.96)\n0.12 (0.02-0.84)",
+          "injuryLocation_ankle_prevalence": "79\n15\n7\n7\n7\n18\n14\n11",
+          "injuryLocation_ankle_incidence": "\n0.41 (0.13-1.32)\n0.16 (0.02-1.11)\n0.13 (0.02-0.95)\n0.13 (0.02-0.96)\n0.33 (0.09-1.15)\n0.24 (0.06-0.99)\n0.23 (0.05-0.93)",
+          "injuryLocation_foot_prevalence": "24\n2\n0\n2\n5\n5\n8\n2",
+          "injuryLocation_foot_incidence": "\n0.04 (0.00-1.73)\n0.00 (0.00-Inf)\n0.04 (0.00-1.60)\n0.10 (0.01-0.98)\n0.10 (0.01-0.98)\n0.14 (0.02-0.90)\n0.04 (0.00-1.23)"
+        }
+      },
+      "caveats": [
+        "The paper directly reports 732 matches and a study-specific rate per match/round, but player-hour exposure was unavailable. No exposure or count was back-calculated from rates.",
+        "All-seasons tissue and location counts are transparent sums of directly printed season cells; their season-specific modelled rates and CIs remain direct source values.",
+        "Contact/non-contact headline counts (107/227) are nearest-integer percentage-derived values using the directly reported 334-injury denominator and printed 32%/68% split.",
+        "Table 2 season cells sum to 18 head/face plus 1 neck injury, while the prose states 17 head-and-neck injuries; the directly printed table cells are retained and the inconsistency is flagged for reviewer attention.",
+        "The paper reports hip/groin and sternum/ribs/upper-back as combined source categories without a clean one-to-one schema row; those families are intentionally not forced into narrower live fields.",
+        "Illness, recurrence, days lost, and raw match/training counts are absent. Figure 1 gives trend graphics but not sufficiently precise numeric labels for defensible transfer."
+      ]
+    }
+  ]
+}

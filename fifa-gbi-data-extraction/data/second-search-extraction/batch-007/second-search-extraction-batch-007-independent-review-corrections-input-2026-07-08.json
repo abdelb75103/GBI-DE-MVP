@@ -1,0 +1,48 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; extraction Batch 007; independent-review targeted corrections; 2026-07-08",
+  "papers": [
+    {
+      "studyId": "S1149",
+      "populationLabels": ["Men - senior", "Men - youth", "Women - senior", "Women - youth"],
+      "fields": {
+        "participantCharacteristics": {"sampleSizePlayers": null},
+        "definitions": {"illnessDefinition": "time-loss"}
+      },
+      "note": "Batch 007 independent-review correction. Cleared sampleSizePlayers because Table 1 reports repeated player camp attendances across eight seasons, not unique players. Illness definition canonicalized to time-loss; the paper requires at least one day unable to participate."
+    },
+    {
+      "studyId": "S1213",
+      "populationLabels": ["Total"],
+      "fields": {
+        "definitions": {"injuryDefinition": "time loss"},
+        "exposure": {"totalExposure": null}
+      },
+      "note": "Batch 007 independent-review correction. Injury definition canonicalized to time loss from physician-recorded injury-related time loss; the paper does not print a formal consensus injury definition. Cleared average daily monitoring observations from totalExposure because observations are not football exposure; retained source context: average 339 observations/player (range 155-430) over up to two seasons."
+    },
+    {
+      "studyId": "S1219",
+      "populationLabels": ["Total"],
+      "fields": {"exposure": {"numberOfSeasons": "15"}},
+      "note": "Batch 007 independent-review correction. numberOfSeasons normalized to 15 competition-seasons. injuryRecurrentTotal 79 is percentage-derived by rounding 31.22% x 253 ankle sprains; the published recurrence percentage is direct."
+    },
+    {
+      "studyId": "S1229",
+      "populationLabels": ["Total", "U14", "U16", "U18", "Senior"],
+      "fields": {
+        "definitions": {"injuryDefinition": "medical attention"},
+        "injuryTissueType": {"injuryTissueType_physis_prevalence": "1\n1\n0\n0\n0"},
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "1\n0\n1\n0\n0",
+          "injuryLocation_shoulder_prevalence": "2\n0\n1\n1\n0",
+          "injuryLocation_elbow_prevalence": "1\n0\n1\n0\n0",
+          "injuryLocation_forearm_prevalence": "1\n0\n1\n0\n0",
+          "injuryLocation_chest_prevalence": "1\n0\n0\n1\n0",
+          "injuryLocation_lumbosacral_prevalence": "10\n2\n3\n3\n2",
+          "injuryLocation_thigh_prevalence": "22\n2\n6\n8\n6",
+          "injuryLocation_lower_leg_prevalence": "11\n0\n2\n7\n1"
+        }
+      },
+      "note": "Batch 007 independent-review correction. Injury definition canonicalized to medical attention because the cohort includes any complaint receiving physiotherapist attention or causing missed participation; this broader canonical label retains time-loss cases. Completed Table 4 location sweep with subgroup columns. Hamstring was transparently aggregated into thigh and Achilles tendon into lower leg. Osgood-Schlatter disease mapped to physis injury. Face mapped to the head parent row. Meniscus tear and chest pain were checked but not forced because no clean dedicated schema row exists for either source category."
+    }
+  ]
+}

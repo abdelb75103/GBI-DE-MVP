@@ -1,0 +1,30 @@
+{
+  "mode": "dry-run",
+  "input": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/second-search-extraction/batch-008/second-search-extraction-batch-008-review-gate-correction-input-2026-07-08.json",
+  "papers": [
+    {
+      "studyId": "S1326",
+      "written": [
+        "numberOfTeams"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 1,
+        "values": 21
+      }
+    },
+    {
+      "studyId": "S1356",
+      "written": [
+        "injuryRecurrentTotal"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 2,
+        "values": 52
+      }
+    }
+  ]
+}

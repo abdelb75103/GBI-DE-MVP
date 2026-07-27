@@ -1,0 +1,267 @@
+{
+  "artifactType": "Aspetar source-family paper-note provenance final live audit",
+  "date": "2026-07-27",
+  "result": "passed",
+  "fixedMembership": [
+    "S071",
+    "S195",
+    "S261",
+    "S344",
+    "S544",
+    "S555",
+    "S602",
+    "S712",
+    "S1431",
+    "S2824",
+    "S3577"
+  ],
+  "paperAudits": [
+    {
+      "studyId": "S071",
+      "classification": "duplicate alias",
+      "groupedUnder": "S261",
+      "matchingNoteIds": [
+        "041bd056-cdce-4658-9083-550712e9575f"
+      ],
+      "noteCountBefore": 0,
+      "noteCountAfter": 2,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S195",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "matchingNoteIds": [
+        "7103675b-69cc-4402-819e-dc8be97c3de0"
+      ],
+      "noteCountBefore": 0,
+      "noteCountAfter": 2,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S261",
+      "classification": "anchor",
+      "groupedUnder": "S261",
+      "matchingNoteIds": [
+        "0dc1e742-18fd-442d-8182-19e218d18a59"
+      ],
+      "noteCountBefore": 1,
+      "noteCountAfter": 3,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S344",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "matchingNoteIds": [
+        "3744d164-1ffa-4397-ba81-d3b931e60c5c"
+      ],
+      "noteCountBefore": 0,
+      "noteCountAfter": 2,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S544",
+      "classification": "covered by another row",
+      "groupedUnder": "S344",
+      "matchingNoteIds": [
+        "a113f375-dd62-496c-8c5b-d29c06c59b2f"
+      ],
+      "noteCountBefore": 1,
+      "noteCountAfter": 3,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S555",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "matchingNoteIds": [
+        "e9bfd2d7-a86a-4317-bc61-2402a627dc8a"
+      ],
+      "noteCountBefore": 1,
+      "noteCountAfter": 3,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S602",
+      "classification": "separate cohort",
+      "groupedUnder": "S602",
+      "matchingNoteIds": [
+        "f0befd39-db72-4ea3-b4c9-07ce6c2bed28"
+      ],
+      "noteCountBefore": 1,
+      "noteCountAfter": 3,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S712",
+      "classification": "included supplement",
+      "groupedUnder": "S2824",
+      "matchingNoteIds": [
+        "de624708-ac47-431a-a75e-82c79daf6115"
+      ],
+      "noteCountBefore": 0,
+      "noteCountAfter": 2,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S1431",
+      "classification": "included supplement",
+      "groupedUnder": "S261",
+      "matchingNoteIds": [
+        "489f7e55-5c7e-4098-9d5e-5270828d6855"
+      ],
+      "noteCountBefore": 1,
+      "noteCountAfter": 3,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S2824",
+      "classification": "anchor",
+      "groupedUnder": "S2824",
+      "matchingNoteIds": [
+        "70445a7a-ebd8-42c4-8fa3-f5dc3632b18c"
+      ],
+      "noteCountBefore": 2,
+      "noteCountAfter": 4,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    },
+    {
+      "studyId": "S3577",
+      "classification": "covered by another row",
+      "groupedUnder": "S344",
+      "matchingNoteIds": [
+        "8dc1f7ff-9ec2-456d-9dac-ebec2dd3ab8d"
+      ],
+      "noteCountBefore": 0,
+      "noteCountAfter": 2,
+      "checks": {
+        "exactNotePresentOnce": true,
+        "appliedNoteIdMatches": true,
+        "snapshotNotesPreserved": true,
+        "noteCountAtLeastOneHigher": true,
+        "extractionPopulationUnchanged": true,
+        "statusUnchanged": true,
+        "flagReasonUnchanged": true,
+        "assignmentUnchanged": true,
+        "primaryFileUnchanged": true,
+        "protectedMetadataUnchanged": true
+      }
+    }
+  ],
+  "failures": [],
+  "rollback": {
+    "destructiveActionRequired": true,
+    "method": "Remove only the 11 matching note IDs listed in paperAudits after explicit destructive-action approval."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "scope": "Second search - Ishanka - 2026-05-26; extraction Batch 008; manual additive-only Tabs 1-10 extraction input; 2026-07-08",
+  "sourceBatch": "Second search extraction Batch 008",
+  "papers": [
+    {
+      "studyId": "S1299",
+      "populationLabels": ["Control group", "Strength training group"],
+      "note": "Second-search extraction Batch 008. Manually extracted from the live primary PDF; Tables 1, 9, and 10 and methods/results were checked. Population rows follow the directly reported control and strength-training arms. Only non-contact injuries were analyzed. No illness outcomes were reported.",
+      "fields": {
+        "studyDetails": {"leadAuthor":"Darragi M","title":"Effects of In-Season Strength Training on Physical Fitness and Injury Prevention in North African Elite Young Female Soccer Players","yearOfPublication":"2024","journal":"Sports Medicine - Open","doi":"10.1186/s40798-024-00762-0","studyDesign":"randomized controlled trial"},
+        "participantCharacteristics": {"fifaDiscipline":"Association football (11-a-side)","country":"Tunisia","levelOfPlay":"elite national team","sex":"female\n","ageCategory":"U15\n","meanAge":"15.5 ± 0.9\n15.2 ± 0.9","sampleSizePlayers":"16\n14","numberOfTeams":"1\n","observationDuration":"September-May soccer season\n"},
+        "definitions": {"injuryDefinition":"time loss","incidenceDefinition":"per 1000 player-hours","burdenDefinition":"days absent per 1000 player-hours","severityDefinition":"minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days","recurrenceDefinition":"same type and location after recovery and return to full playing activity","mechanismReporting":"Medical Staff\n"},
+        "exposure": {"seasonLength":"\n","numberOfSeasons":"1\n","exposureMeasurementUnit":"player-hours\n","totalExposure":"4191\n4191","matchExposure":"411\n411","trainingExposure":"3780\n3780"},
+        "injuryOutcome": {"injuryTotalCount":"11\n2","injuryPlayersCompletedStudy":"13\n13","injuryTimeLossCount":"11\n2","injuryIncidenceOverall":"2.62\n0.48","injuryTimeLossTotal":"70\n14","injuryBurden":"16.70\n3.34","injuryMostCommonType":"sprains/ligament ruptures\nsprains/ligament ruptures","injuryMostCommonLocation":"lower body\nlower body","injuryMostCommonSeverity":"minimal\nmild","injuryNonContact":"11\n2"},
+        "injuryTissueType": {"injuryTissueType_muscle_injury_prevalence":"2\n0","injuryTissueType_joint_sprain_prevalence":"8\n2"},
+        "injuryLocation": {"injuryLocation_upper_limb_overall_prevalence":"1\n0","injuryLocation_lower_limb_overall_prevalence":"10\n2","injuryLocation_lumbosacral_prevalence":"1\n0"}
+      }
+    },
+    {
+      "studyId": "S1326",
+      "populationLabels": ["Total"],
+      "note": "Second-search extraction Batch 008. Manually extracted from the live primary PDF; methods, results, Table 1, and Figures 1-3 were checked. The cohort comprised match injuries only. Exact exposure was not stored because the paper gives a calculation formula rather than a direct exposure total. No illness outcomes were reported.",
+      "fields": {
+        "studyDetails": {"leadAuthor":"Arliani GG","title":"Orthopedic Injuries in Men's Professional Soccer During the Coronavirus Disease Pandemic","yearOfPublication":"2024","journal":"Acta Ortopedica Brasileira","doi":"10.1590/1413-785220243203e273510","studyDesign":"prospective case series"},
+        "participantCharacteristics": {"fifaDiscipline":"Association football (11-a-side)","country":"Brazil","levelOfPlay":"professional","sex":"male","ageCategory":"senior","meanAge":"26.6","numberOfTeams":"32","observationDuration":"2020 São Paulo State Football Championship"},
+        "definitions": {"injuryDefinition":"physical complaint","incidenceDefinition":"per 1000 match-hours","severityDefinition":"moderate 8-28 days; other categories displayed in Figure 2","mechanismReporting":"Medical Staff"},
+        "exposure": {"numberOfSeasons":"1","exposureMeasurementUnit":"player-hours"},
+        "injuryOutcome": {"injuryTotalCount":"118","injuryMatchCount":"118","injuryIncidenceOverall":"13.96","injuryIncidenceMatch":"13.96","injuryTimeLossMean":"20.6","injuryMostCommonDiagnosis":"hamstring strain","injuryMostCommonType":"muscle strain","injuryMostCommonLocation":"thigh","injuryMostCommonSeverity":"moderate"},
+        "injuryTissueType": {"injuryTissueType_muscle_injury_prevalence":"54","injuryTissueType_joint_sprain_prevalence":"23","injuryTissueType_superficial_contusion_prevalence":"21","injuryTissueType_bone_fracture_prevalence":"6","injuryTissueType_concussion_prevalence":"4","injuryTissueType_laceration_prevalence":"4"}
+      }
+    },
+    {
+      "studyId": "S1356",
+      "populationLabels": ["Endurance training group", "Neuromuscular training group"],
+      "note": "Second-search extraction Batch 008. Manually extracted from the live primary PDF; Tables 1, 7, and 8 and methods/results were checked. Population rows follow the directly reported intervention arms. No illness outcomes were reported.",
+      "fields": {
+        "studyDetails": {"leadAuthor":"Belamjahad A","title":"Effects of a Preseason Neuromuscular Training Program vs. an Endurance-Dominated Program on Physical Fitness and Injury Prevention in Female Soccer Players","yearOfPublication":"2024","journal":"Sports Medicine - Open","doi":"10.1186/s40798-024-00731-7","studyDesign":"randomized controlled trial"},
+        "participantCharacteristics": {"fifaDiscipline":"Association football (11-a-side)","country":"Morocco","levelOfPlay":"professional, 1st Division","sex":"female\n","ageCategory":"16-18 years\n","meanAge":"17.0 ± 1.6\n17.0 ± 1.3","sampleSizePlayers":"12\n12","numberOfTeams":"1\n","observationDuration":"full soccer season\n"},
+        "definitions": {"injuryDefinition":"physical complaint","incidenceDefinition":"per 1000 player-hours","burdenDefinition":"days absent per 1000 player-hours","severityDefinition":"minimal 1-3 days; minor 4-7 days; moderate 8-28 days; severe >28 days","mechanismReporting":"Medical Staff\n"},
+        "exposure": {"numberOfSeasons":"1\n","exposureMeasurementUnit":"player-hours\n","totalExposure":"4485\n4485","matchExposure":"540\n540","trainingExposure":"3945\n3945"},
+        "injuryOutcome": {"injuryTotalCount":"53\n23","injuryPlayersCompletedStudy":"12\n12","injuryIncidenceOverall":"11.82\n5.13","injuryTimeLossTotal":"440\n150","injuryBurden":"98.10\n33.44","injuryMostCommonType":"contusion\ncontusion","injuryMostCommonLocation":"lower body\nlower body","injuryMostCommonSeverity":"minimal\nminimal","injuryContact":"24\n18","injuryNonContact":"29\n5"},
+        "injuryTissueType": {"injuryTissueType_muscle_injury_prevalence":"12\n3","injuryTissueType_joint_sprain_prevalence":"14\n3","injuryTissueType_superficial_contusion_prevalence":"24\n15","injuryTissueType_bone_fracture_prevalence":"0\n1","injuryTissueType_laceration_prevalence":"3\n0","injuryTissueType_tendinopathy_prevalence":"0\n1"},
+        "injuryLocation": {"injuryLocation_upper_limb_overall_prevalence":"3\n2","injuryLocation_lower_limb_overall_prevalence":"50\n21"}
+      }
+    },
+    {
+      "studyId": "S1389",
+      "populationLabels": ["Total", "U12", "U13", "U14", "U15", "U16", "U17", "U19"],
+      "note": "Second-search extraction Batch 008. Manually extracted from the live primary PDF; Tables 1-5 and Figure 2 were checked. Population rows retain the pooled cohort and directly reported age groups. Table 3 tissue/type metrics are pooled-only on the Total row. Median time loss by tissue type is stored in structured severity fields and should be read as median, not mean. No illness outcomes were reported.",
+      "fields": {
+        "studyDetails": {"leadAuthor":"Bangert Y","title":"The Impact of Injury on Career Progression in Elite Youth Football—Findings at 10 Years","yearOfPublication":"2024","journal":"Journal of Clinical Medicine","doi":"10.3390/jcm13071915","studyDesign":"prospective cohort study with 10-year follow-up"},
+        "participantCharacteristics": {"fifaDiscipline":"Association football (11-a-side)","country":"Germany","levelOfPlay":"elite youth academy","sex":"male\n\n\n\n\n\n\n","ageCategory":"Youth\nU12\nU13\nU14\nU15\nU16\nU17\nU19","meanAge":"15.0 ± 2.1\n11.7 ± 0.4\n12.8 ± 0.5\n13.4 ± 0.4\n14.5 ± 0.5\n15.6 ± 0.5\n16.6 ± 0.5\n18.0 ± 0.8","sampleSizePlayers":"130\n14\n17\n18\n18\n21\n21\n21","numberOfTeams":"1\n\n\n\n\n\n\n","observationDuration":"2012-2013 season\n\n\n\n\n\n\n"},
+        "definitions": {"injuryDefinition":"time loss [>3 days]","incidenceDefinition":"per 1000 player-hours","burdenDefinition":"days lost per 1000 player-hours","severityDefinition":"mild 4-7 days; moderate 7-28 days; severe >28 days","mechanismReporting":"Medical Staff\n\n\n\n\n\n\n"},
+        "exposure": {"seasonLength":"40\n\n\n\n\n\n\n","numberOfSeasons":"1\n\n\n\n\n\n\n","exposureMeasurementUnit":"player-hours\n\n\n\n\n\n\n","totalExposure":"40120\n\n\n\n\n\n\n"},
+        "injuryOutcome": {"injuryTotalCount":"107\n4\n4\n13\n12\n22\n20\n32","injuryTimeLossCount":"107\n4\n4\n13\n12\n22\n20\n32","injuryIncidenceOverall":"2.7\n1.4\n1.2\n2.6\n2.3\n2.8\n2.6\n4.0","injuryTimeLossTotal":"2474\n38\n86\n294\n257\n629\n148\n1022","injuryTimeLossMean":"23.1\n9.5\n21.5\n22.6\n21.4\n28.6\n7.4\n31.9","injuryBurden":"62.4\n13.3\n25.8\n58.8\n49.2\n80.1\n19.2\n127.6","injuryBurdenCi95":"41.6-83.2\n5.0-21.6\n0-52.0\n18.7-94.9\n14.7-84\n28-131\n13.5-25\n41.2-214.4","injuryMostCommonType":"joint sprain\n\n\n\n\n\n\n","injuryMostCommonSeverity":"mean 23.1 days\n\n\n\n\n\n\n"},
+        "injuryTissueType": {"injuryTissueType_joint_sprain_prevalence":"31\n\n\n\n\n\n\n","injuryTissueType_joint_sprain_incidence":"0.8\n\n\n\n\n\n\n","injuryTissueType_joint_sprain_burden":"13.2 (7.6-18.7)\n\n\n\n\n\n\n","injuryTissueType_joint_sprain_severityMeanDays":"median 16.5 (IQR 9.5-23.4)\n\n\n\n\n\n\n","injuryTissueType_muscle_injury_prevalence":"30\n\n\n\n\n\n\n","injuryTissueType_muscle_injury_incidence":"0.7\n\n\n\n\n\n\n","injuryTissueType_muscle_injury_burden":"8.5 (5.6-11.3)\n\n\n\n\n\n\n","injuryTissueType_muscle_injury_severityMeanDays":"median 12.1 (IQR 8-16.1)\n\n\n\n\n\n\n","injuryTissueType_bone_prevalence":"12\n\n\n\n\n\n\n","injuryTissueType_bone_incidence":"0.3\n\n\n\n\n\n\n","injuryTissueType_bone_burden":"13.4 (7-19.8)\n\n\n\n\n\n\n","injuryTissueType_bone_severityMeanDays":"median 44.8 (IQR 23.4-66.1)\n\n\n\n\n\n\n","injuryTissueType_physis_prevalence":"12\n\n\n\n\n\n\n","injuryTissueType_physis_incidence":"0.3\n\n\n\n\n\n\n","injuryTissueType_physis_burden":"8.3 (4.8-11.7)\n\n\n\n\n\n\n","injuryTissueType_physis_severityMeanDays":"median 27.5 (IQR 16-39)\n\n\n\n\n\n\n","injuryTissueType_superficial_contusion_prevalence":"12\n\n\n\n\n\n\n","injuryTissueType_superficial_contusion_incidence":"0.3\n\n\n\n\n\n\n","injuryTissueType_superficial_contusion_burden":"1.6 (1.3-1.8)\n\n\n\n\n\n\n","injuryTissueType_superficial_contusion_severityMeanDays":"median 5.2 (IQR 4.2-6.1)\n\n\n\n\n\n\n"}
+      }
+    },
+    {
+      "studyId": "S1402",
+      "populationLabels": ["Elite", "Sub-elite", "Amateur"],
+      "note": "Second-search extraction Batch 008. Manually extracted from the live primary PDF; Tables 1-2 and all results were checked. Population rows follow competitive level. The printed exposure values (80/26/18 h) are retained as reported; rates appear to use group player-hours, but exposure was not back-calculated. Injury characteristics are percentage-only and were not forced into count fields. No illness outcomes were reported.",
+      "fields": {
+        "studyDetails": {"leadAuthor":"Marques C","title":"Descriptive analysis of injury types and incidence during futsal preseason across different competitive levels","yearOfPublication":"2024","journal":"Frontiers in Sports and Active Living","doi":"10.3389/fspor.2024.1363006","studyDesign":"descriptive observational study"},
+        "participantCharacteristics": {"fifaDiscipline":"Futsal\n\n","country":"Portugal\n\n","levelOfPlay":"elite\nsub-elite\namateur","sex":"male\nmale\nmale","ageCategory":"senior\nsenior\nsenior","meanAge":"23.77 ± 4.38\n25.36 ± 4.83\n22.01 ± 3.55","sampleSizePlayers":"13\n39\n16","numberOfTeams":"1\n3\n1","observationDuration":"2023-2024 preseason, 4 weeks\n2023-2024 preseason, 4 weeks\n2023-2024 preseason, 4 weeks"},
+        "definitions": {"injuryDefinition":"physical complaint\n\n","incidenceDefinition":"per 1000 player-hours\n\n","severityDefinition":"minimal 1-3 days; mild 4-7 days; moderate 8-28 days; severe >28 days\n\n","mechanismReporting":"Medical Staff\n\n"},
+        "exposure": {"seasonLength":"4\n4\n4","numberOfSeasons":"1\n1\n1","exposureMeasurementUnit":"hours\nhours\nhours","totalExposure":"80\n26\n18","trainingExposure":"80\n26\n18"},
+        "injuryOutcome": {"injuryIncidenceOverall":"4.8\n11.8\n13.9","injuryIncidenceTraining":"4.8\n11.8\n13.9","injuryMostCommonType":"ligament injury\nmuscle injury\nmuscle and ligament injuries","injuryMostCommonLocation":"ankle\nthigh\nknee","injuryMostCommonSeverity":"moderate\nmoderate\nsevere"}
+      }
+    }
+  ]
+}

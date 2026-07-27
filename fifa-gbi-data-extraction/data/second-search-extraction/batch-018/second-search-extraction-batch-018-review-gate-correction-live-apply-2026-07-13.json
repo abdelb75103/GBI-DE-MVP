@@ -1,0 +1,18 @@
+{
+  "mode": "apply",
+  "input": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/second-search-extraction/batch-018/second-search-extraction-batch-018-review-gate-correction-input-2026-07-13.json",
+  "papers": [
+    {
+      "studyId": "S2330",
+      "written": [
+        "leadAuthor"
+      ],
+      "skipped": [],
+      "unknownFields": [],
+      "populationSync": {
+        "groups": 1,
+        "values": 32
+      }
+    }
+  ]
+}

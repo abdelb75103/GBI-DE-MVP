@@ -1,0 +1,94 @@
+{
+  "artifactType": "Source-family overlap final live integrity audit",
+  "generatedAt": "2026-07-27T17:44:13.015Z",
+  "result": "PASS",
+  "integrityFailures": [],
+  "writeBoundary": "papers.metadata.analysisSourceTreatment and additive paper_notes only; paper status, extraction data, files, screening state, assignments, and flags are protected",
+  "requestedPaperCount": 6,
+  "metadataWriteCount": 6,
+  "noteInsertCount": 6,
+  "metadataWrites": [
+    "S319",
+    "S3218",
+    "S1665",
+    "S5061",
+    "S625",
+    "S606"
+  ],
+  "insertedNotes": [
+    {
+      "studyId": "S319",
+      "id": "1a6e4dcf-7cd9-44fd-9b89-3fcf4db780d3",
+      "paper_id": "dcc8d370-366b-4bf8-b1a3-1a4bf42c3374",
+      "body": "Retrospective sub-study reconciliation, 27 July 2026: S319 is the analysis anchor for the 2019 Finnish Premier Division cohort. S3218 uses the same 236 players and 12 teams for a surface-specific secondary analysis. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "created_at": "2026-07-27T17:44:11.716774+00:00"
+    },
+    {
+      "studyId": "S3218",
+      "id": "0a811707-404a-43d4-8a8b-16342bf8f56d",
+      "paper_id": "d73fa2f0-1627-4597-ba81-59098f45cde7",
+      "body": "Retrospective sub-study reconciliation, 27 July 2026: S3218 is a surface-specific secondary analysis of the S319 cohort and remains under Retrospective Sub-study Analysis. It is retained in source scope and excluded from default denominator aggregation. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "created_at": "2026-07-27T17:44:12.087744+00:00"
+    },
+    {
+      "studyId": "S1665",
+      "id": "d79478dc-8de0-4b87-b9e0-43ec9a265d9b",
+      "paper_id": "e018a889-ddb6-4fcc-a6a9-18c680b7b441",
+      "body": "Retrospective sub-study reconciliation, 27 July 2026: S1665 is the analysis anchor for the 2023 Malaysian single-club hamstring cohort. S5061 is a smaller 72-player strength subset from the same cohort. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "created_at": "2026-07-27T17:44:12.229583+00:00"
+    },
+    {
+      "studyId": "S5061",
+      "id": "34f7f684-6ec7-4ecb-9055-53fa70175df1",
+      "paper_id": "97d409e5-e85d-4d66-99ff-c0eff06459f5",
+      "body": "Retrospective sub-study reconciliation, 27 July 2026: S5061 is the 72-player hip-strength subset of the S1665 Malaysian single-club cohort and remains under Retrospective Sub-study Analysis. It is retained in source scope and excluded from default denominator aggregation. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "created_at": "2026-07-27T17:44:12.468515+00:00"
+    },
+    {
+      "studyId": "S625",
+      "id": "680a3b91-7832-4c35-b107-ce3dc30ce4cf",
+      "paper_id": "d174f47e-531b-4014-88c6-6560ee6d36bb",
+      "body": "Retrospective sub-study reconciliation, 27 July 2026: S625 is the analysis anchor for the 2005 Norwegian female U17 cluster-randomised trial. S606 is the turf-specific secondary analysis of the same 2,020 players and 109 teams. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "created_at": "2026-07-27T17:44:12.552088+00:00"
+    },
+    {
+      "studyId": "S606",
+      "id": "104170a9-dea6-4649-bd19-1110c94fae99",
+      "paper_id": "18d59d53-b734-40de-a6a9-08d7853f847b",
+      "body": "Retrospective sub-study reconciliation, 27 July 2026: S606 is the turf-specific secondary analysis of the S625 trial and remains under Retrospective Sub-study Analysis. It is retained in source scope and excluded from default denominator aggregation. No status, extraction, population, screening, file, assignment, or flag value was changed.",
+      "created_at": "2026-07-27T17:44:12.676053+00:00"
+    }
+  ],
+  "includedStudyIds": [
+    "S1665",
+    "S319",
+    "S625"
+  ],
+  "excludedStudyIds": [
+    "S3218",
+    "S5061",
+    "S606"
+  ],
+  "excludedRows": [],
+  "protectedHashesBefore": {
+    "aggregate": "732ee6783163f909db26ef2587776eead0d96466a9cdb4c9036cc44f788a4a80",
+    "papers": "c08926c92a5b9da27f96e29b61c34995012a03c3af4914491c7e47814c2d4f87",
+    "existingNotes": "7d396af8562190128b89332557593d9d50ff08b55f494e6febed8ad54a410cc6",
+    "files": "cb2d1e896ba790678ed492314bcefc788d83ca53f67aab46842e4620091d8829",
+    "extractions": "3c496de8aec90a5019c39ab08f150dc83f078eab60a2ff052bbffd2237ae98ed",
+    "groups": "b24bd2e0c79feab4d3bd86f91087162ecb175184003354ea85e2fb4e61b6f463",
+    "screeningRecords": "5afc891255a908142a71964b1955cd6dcc486cb779947624f61b5fd6c3373a1e",
+    "screeningVotes": "c4ec1f3d2eb46efd53135cf78baf838054bfab52d89f7c7fcf215ffe26975ad0"
+  },
+  "protectedHashesAfter": {
+    "aggregate": "732ee6783163f909db26ef2587776eead0d96466a9cdb4c9036cc44f788a4a80",
+    "papers": "c08926c92a5b9da27f96e29b61c34995012a03c3af4914491c7e47814c2d4f87",
+    "existingNotes": "7d396af8562190128b89332557593d9d50ff08b55f494e6febed8ad54a410cc6",
+    "files": "cb2d1e896ba790678ed492314bcefc788d83ca53f67aab46842e4620091d8829",
+    "extractions": "3c496de8aec90a5019c39ab08f150dc83f078eab60a2ff052bbffd2237ae98ed",
+    "groups": "b24bd2e0c79feab4d3bd86f91087162ecb175184003354ea85e2fb4e61b6f463",
+    "screeningRecords": "5afc891255a908142a71964b1955cd6dcc486cb779947624f61b5fd6c3373a1e",
+    "screeningVotes": "c4ec1f3d2eb46efd53135cf78baf838054bfab52d89f7c7fcf215ffe26975ad0"
+  },
+  "preApplyPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/retrospective-substudy-family-audit/2026-07-27/retrospective-substudy-pre-apply-live-snapshot-2026-07-27.json"
+}

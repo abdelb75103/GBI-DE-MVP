@@ -1,0 +1,113 @@
+{
+  "artifactType": "Backlog 2 Batch 022 final live integrity audit",
+  "scope": "Fixed membership S3577, S4961, S4806, S3219, S5338 only",
+  "model": "GPT-5.6 Sol (medium); documented local substitute because the skill-default GPT-5.5 was unavailable in this workspace.",
+  "inputArtifact": "data/second-search-extraction/batch-022/second-search-extraction-batch-022-input-2026-07-13.json",
+  "fixedMembership": ["S3577", "S4961", "S4806", "S3219", "S5338"],
+  "stageA": {
+    "result": "passed",
+    "sourceInspection": "Each attached primary PDF inspected once; all five live primary-file SHA-256 values matched the inspected source.",
+    "fieldValidation": {
+      "unknownFieldIds": 0,
+      "stagedFieldCount": 148,
+      "populationLayouts": {
+        "S4961": ["Total"],
+        "S3219": ["Artificial turf", "Natural grass"],
+        "S5338": ["UEFA EURO 2024", "CONMEBOL Copa America 2024"]
+      }
+    },
+    "classification": {
+      "S3577": "Overlapping secondary analysis of existing S344; no independent extraction staged.",
+      "S4806": "Systematic review; no primary-cohort extraction staged."
+    }
+  },
+  "apply": {
+    "result": "passed",
+    "mode": "additive-only live apply with core-tab completion and population sync; two planned classification updates",
+    "writtenFields": {
+      "S4961": 34,
+      "S3219": 72,
+      "S5338": 57
+    },
+    "skippedNonblankFields": 0,
+    "unknownFields": 0,
+    "classificationUpdates": {
+      "S3577": {
+        "status": "retrospective_substudy_analysis",
+        "flagReason": "Secondary analysis of existing S344 Qatar Stars League 2013/14-2014/15 cohort; not independently extracted"
+      },
+      "S4806": {
+        "status": "systematic_review",
+        "flagReason": "Systematic review/meta-analysis; not a primary extraction record"
+      }
+    },
+    "postApplyCorrectionRequired": false
+  },
+  "stageB": {
+    "result": "passed",
+    "exactMembership": ["S3577", "S4961", "S4806", "S3219", "S5338"],
+    "assignment": "All five remain assigned to AbdelRahman Babiker (00000000-0000-0000-0000-000000000001).",
+    "primaryFilesAttached": 5,
+    "sourceToLiveFieldTransferMismatches": 0,
+    "structuredDualWriteMismatches": 0,
+    "unknownLiveFieldIds": 0,
+    "protectedScreening": {
+      "votesVerified": 10,
+      "voteSignatureChanges": 0,
+      "screeningDecisionChanges": 0,
+      "fullTextResolutionChanges": 0
+    },
+    "papers": [
+      {
+        "studyId": "S3577",
+        "status": "retrospective_substudy_analysis",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "26edb492879ac967504daf55cbcbe5650df6e11b83c0a38836604d6762c34301"
+      },
+      {
+        "studyId": "S4961",
+        "status": "processing",
+        "populationLabels": ["Total"],
+        "populationCount": 1,
+        "liveFieldCount": 34,
+        "populationValueCount": 13,
+        "primaryFileSha256": "b5387b9b4bcff2008f5a363ae0e0ac4da8ba2c893e39af3e23981eacf30cc090"
+      },
+      {
+        "studyId": "S4806",
+        "status": "systematic_review",
+        "populationLabels": [],
+        "populationCount": 0,
+        "liveFieldCount": 0,
+        "primaryFileSha256": "f9759f8fe088b4a1b075be39addefc70546d1627292d16fdf3faf90111abc44c"
+      },
+      {
+        "studyId": "S3219",
+        "status": "processing",
+        "populationLabels": ["Artificial turf", "Natural grass"],
+        "populationCount": 2,
+        "liveFieldCount": 72,
+        "populationValueCount": 97,
+        "primaryFileSha256": "164b3744f7eb294a29b4150469683ebe4c956261e1a3ad2c3d110a1a53f112d9"
+      },
+      {
+        "studyId": "S5338",
+        "status": "processing",
+        "populationLabels": ["UEFA EURO 2024", "CONMEBOL Copa America 2024"],
+        "populationCount": 2,
+        "liveFieldCount": 57,
+        "populationValueCount": 70,
+        "primaryFileSha256": "cc44258b9999490c787c0742059cff79bfdb039fff458001b2c891b07b08bcf2"
+      }
+    ]
+  },
+  "caveats": {
+    "S3577": "Secondary analysis of S344's existing QSL cohort; not independently counted.",
+    "S4961": "Direct 0.22 per 1000 training+match-hours incidence is retained; no season-wide total exposure was inferred.",
+    "S3219": "Surface strata are exposure contexts rather than disjoint player cohorts; direct-plus-indirect contact is transparently summed, and unconfirmed injury types are not mapped.",
+    "S5338": "Table 2/results (56/29 new injuries) conflict with Table 4's 56/30 location total. The Results UEFA match rate 15.3 conflicts with Discussion 17.1. Figure 4 hamstring values are percentage-derived from printed muscle denominators; Figure 2 is combined-by-phase and left unassigned."
+  },
+  "readyFor": "human extraction review"
+}
