@@ -1,0 +1,3368 @@
+{
+  "artifactType": "Complete source-verified row-treatment input",
+  "generatedAt": "2026-07-27T17:14:16.670Z",
+  "version": "2026-07-27-source-family-v1",
+  "papers": [
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "ECIS men all injuries 2001/02-2018/19",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2018/19",
+            "totalExposure": "1784281"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "ECIS men hamstring injuries 2001/02-2021/22",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2021/22",
+            "totalExposure": "2131561"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "ECIS men hip/groin injuries 2001/02-2015/16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2015/16",
+            "totalExposure": "1816071"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "ECIS men adductor injuries 2001/02-2015/16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2015/16",
+            "injuryTotalCount": "1139"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "ECIS men LCL injuries 2001-2018",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2018",
+            "totalExposure": "2554687"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "ECIS men PCL injuries 2001-2018",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2018",
+            "totalExposure": "2554687"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "Row 7",
+          "tournamentKey": "ECIS men MCL injuries 2001/02-2011/12",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2011/12",
+            "totalExposure": "1057201"
+          }
+        },
+        {
+          "populationPosition": 7,
+          "expectedLabel": "Row 8",
+          "tournamentKey": "ECIS men ACL injuries 2001-2015",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2015",
+            "totalExposure": "2387913"
+          }
+        },
+        {
+          "populationPosition": 8,
+          "expectedLabel": "Row 9",
+          "tournamentKey": "ECIS men ankle injuries 2001/02-2011/12",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2011/12",
+            "totalExposure": "1057201"
+          }
+        },
+        {
+          "populationPosition": 9,
+          "expectedLabel": "Row 10",
+          "tournamentKey": "ECIS men syndesmosis injuries 2001-2016",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2016",
+            "sampleSizePlayers": "3677"
+          }
+        },
+        {
+          "populationPosition": 10,
+          "expectedLabel": "Row 11",
+          "tournamentKey": "ECIS men upper-extremity injuries 2001-2011",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2011",
+            "totalExposure": "1537936"
+          }
+        },
+        {
+          "populationPosition": 11,
+          "expectedLabel": "Row 12",
+          "tournamentKey": "ECIS men head/neck injuries 2001/02-2009/10",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2009/10",
+            "totalExposure": "797389"
+          }
+        },
+        {
+          "populationPosition": 12,
+          "expectedLabel": "Row 13",
+          "tournamentKey": "ECIS men concussion injuries 2001/02-2009/10",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2009/10",
+            "injuryTotalCount": "48"
+          }
+        },
+        {
+          "populationPosition": 13,
+          "expectedLabel": "Row 14",
+          "tournamentKey": "ECIS-related stress fractures through 2012",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "related cohorts through 2012",
+            "totalExposure": "1180000"
+          }
+        },
+        {
+          "populationPosition": 14,
+          "expectedLabel": "Row 15",
+          "tournamentKey": "ECIS men fifth-metatarsal fractures through 2012",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2012",
+            "sampleSizePlayers": "3487"
+          }
+        },
+        {
+          "populationPosition": 15,
+          "expectedLabel": "Row 16",
+          "tournamentKey": "ECIS men Achilles tendinopathy 2001-2011",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2011",
+            "totalExposure": "1057201"
+          }
+        },
+        {
+          "populationPosition": 16,
+          "expectedLabel": "Row 17",
+          "tournamentKey": "ECIS men Achilles rupture 2001-2011",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2011",
+            "injuryTotalCount": "9"
+          }
+        },
+        {
+          "populationPosition": 17,
+          "expectedLabel": "Row 18",
+          "tournamentKey": "ECIS men indirect thigh injuries 2001-May 2013",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "May 2013",
+            "totalExposure": "1194510"
+          }
+        },
+        {
+          "populationPosition": 18,
+          "expectedLabel": "Row 19",
+          "tournamentKey": "ECIS men direct thigh contusions 2001-May 2013",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "May 2013",
+            "injuryTotalCount": "231"
+          }
+        },
+        {
+          "populationPosition": 19,
+          "expectedLabel": "S5151 ECIS men 2022/23 World Cup-season all injuries",
+          "tournamentKey": "ECIS men all injuries 2022/23",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2022/23",
+            "totalExposure": "176790"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S002",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2001 to 2009 (varying number of seasons)",
+            "totalExposure": "738608"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "uefa-ecis-men: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "329846",
+            "matchExposure": "42736"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "uefa-ecis-men: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "104777",
+            "matchExposure": "15242"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S006",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "17 seasons",
+            "totalExposure": "2554687"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S007",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "12 years",
+            "totalExposure": "1194510"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S011",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "11)",
+            "totalExposure": "1057201"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S019",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "15 seasons",
+            "totalExposure": "1701992"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S042",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "13 seasons",
+            "totalExposure": "1344553"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S043",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "21 seasons",
+            "totalExposure": "2131561"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S046",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "15 years",
+            "totalExposure": "1816071"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S056",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "1 year (2020)",
+            "totalExposure": "114533"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "uefa-ecis-men: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2019)",
+            "numberOfTeams": "43"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S057",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "11 seasons",
+            "totalExposure": "1026104"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S175",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "18 seasons",
+            "sampleSizePlayers": "6754"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S200",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "18 seasons",
+            "totalExposure": "1784281"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S2391",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "ACLR, ≤1 year after RTP",
+          "tournamentKey": "uefa-ecis-men: ACLR, ≤1 year after RTP",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "July 2001-May 2022, 21 seasons",
+            "sampleSizePlayers": "107"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "ACLR, ≤2 years after RTP",
+          "tournamentKey": "uefa-ecis-men: ACLR, ≤2 years after RTP",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "injuryTotalCount": "79"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S044",
+      "familyKey": "uefa-ecis-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "uefa-ecis-men: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "18 seasons",
+            "totalExposure": "3686838"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "uefa-ecis-men: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "matchExposure": "52576",
+            "trainingExposure": "382099"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "uefa-ecis-men: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "matchExposure": "498151",
+            "trainingExposure": "2754012"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S112",
+      "familyKey": "uefa-wecis-women",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "S112 WECIS women total - 2018/2019-2021/2022",
+          "tournamentKey": "uefa-wecis-women: S112 WECIS women total - 2018/2019-2021/2022",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2018/2019 to 2021/2022",
+            "totalExposure": "227922"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "S112 WECIS women season - 2018/2019",
+          "tournamentKey": "uefa-wecis-women: S112 WECIS women season - 2018/2019",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2018/2019",
+            "sampleSizePlayers": "596"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "S112 WECIS women season - 2019/2020",
+          "tournamentKey": "uefa-wecis-women: S112 WECIS women season - 2019/2020",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2019/2020",
+            "sampleSizePlayers": "596"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "S112 WECIS women season - 2020/2021",
+          "tournamentKey": "uefa-wecis-women: S112 WECIS women season - 2020/2021",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2020/2021",
+            "sampleSizePlayers": "596"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "S112 WECIS women season - 2021/2022",
+          "tournamentKey": "uefa-wecis-women: S112 WECIS women season - 2021/2022",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2021/2022",
+            "sampleSizePlayers": "596"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S261",
+      "familyKey": "aspetar-aspire-academy",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total 2012/13-2015/16",
+          "tournamentKey": "aspetar-aspire-academy: Total 2012/13-2015/16",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2012/13-2015/16 (4 seasons)",
+            "sampleSizePlayers": "551"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "U9",
+          "tournamentKey": "aspetar-aspire-academy: U9",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U9"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "U10",
+          "tournamentKey": "aspetar-aspire-academy: U10",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U10"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "U11",
+          "tournamentKey": "aspetar-aspire-academy: U11",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U11"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "U12",
+          "tournamentKey": "aspetar-aspire-academy: U12",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U12"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "U13",
+          "tournamentKey": "aspetar-aspire-academy: U13",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U13"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "U14",
+          "tournamentKey": "aspetar-aspire-academy: U14",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U14"
+          }
+        },
+        {
+          "populationPosition": 7,
+          "expectedLabel": "U15",
+          "tournamentKey": "aspetar-aspire-academy: U15",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U15"
+          }
+        },
+        {
+          "populationPosition": 8,
+          "expectedLabel": "U16",
+          "tournamentKey": "aspetar-aspire-academy: U16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U16"
+          }
+        },
+        {
+          "populationPosition": 9,
+          "expectedLabel": "U17",
+          "tournamentKey": "aspetar-aspire-academy: U17",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U17"
+          }
+        },
+        {
+          "populationPosition": 10,
+          "expectedLabel": "U18",
+          "tournamentKey": "aspetar-aspire-academy: U18",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U18"
+          }
+        },
+        {
+          "populationPosition": 11,
+          "expectedLabel": "U19",
+          "tournamentKey": "aspetar-aspire-academy: U19",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "ageCategory": "U19"
+          }
+        },
+        {
+          "populationPosition": 12,
+          "expectedLabel": "2016/17-2018/19 U13-U15 growth cohort (S1431)",
+          "tournamentKey": "aspetar-aspire-academy: 2016/17-2018/19 U13-U15 growth cohort (S1431)",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2016/17-2018/19 (3 seasons); included growth intervals mean 113 days",
+            "totalExposure": "21712"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S071",
+      "familyKey": "aspetar-aspire-academy",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "aspetar-aspire-academy: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "4 seasons",
+            "sampleSizePlayers": "96"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "aspetar-aspire-academy: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "103",
+            "ageCategory": "10"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "aspetar-aspire-academy: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "113",
+            "ageCategory": "11"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "aspetar-aspire-academy: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "111",
+            "ageCategory": "12"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "aspetar-aspire-academy: Row 5",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "98",
+            "ageCategory": "13"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "aspetar-aspire-academy: Row 6",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "112",
+            "ageCategory": "14"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "Row 7",
+          "tournamentKey": "aspetar-aspire-academy: Row 7",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "115",
+            "ageCategory": "15"
+          }
+        },
+        {
+          "populationPosition": 7,
+          "expectedLabel": "Row 8",
+          "tournamentKey": "aspetar-aspire-academy: Row 8",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "112",
+            "ageCategory": "16"
+          }
+        },
+        {
+          "populationPosition": 8,
+          "expectedLabel": "Row 9",
+          "tournamentKey": "aspetar-aspire-academy: Row 9",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "106",
+            "ageCategory": "17"
+          }
+        },
+        {
+          "populationPosition": 9,
+          "expectedLabel": "Row 10",
+          "tournamentKey": "aspetar-aspire-academy: Row 10",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "108",
+            "ageCategory": "18"
+          }
+        },
+        {
+          "populationPosition": 10,
+          "expectedLabel": "Row 11",
+          "tournamentKey": "aspetar-aspire-academy: Row 11",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "17",
+            "ageCategory": "19"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S076",
+      "familyKey": "aspetar-aspire-academy",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "aspetar-aspire-academy: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "4 seasons",
+            "matchExposure": "1978"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "aspetar-aspire-academy: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "2519",
+            "trainingExposure": "16726"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "aspetar-aspire-academy: Row 3",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "3062",
+            "trainingExposure": "14803"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "aspetar-aspire-academy: Row 4",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "2816",
+            "trainingExposure": "12903"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "aspetar-aspire-academy: Row 5",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "2535",
+            "trainingExposure": "11203"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "aspetar-aspire-academy: Row 6",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "1848",
+            "trainingExposure": "7340"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1431",
+      "familyKey": "aspetar-aspire-academy",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "aspetar-aspire-academy: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2016/17-2018/19 (3 seasons); included growth intervals mean 113 days",
+            "totalExposure": "21712"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S2824",
+      "familyKey": "aspetar-qsl-professional",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "All seasons",
+          "tournamentKey": "aspetar-qsl-professional: All seasons",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "July 2014-May 2022, 8 domestic seasons",
+            "totalExposure": "746384"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "2014/15",
+          "tournamentKey": "aspetar-qsl-professional: 2014/15",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "100260",
+            "matchExposure": "10381"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "2015/16",
+          "tournamentKey": "aspetar-qsl-professional: 2015/16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "67115",
+            "matchExposure": "8376"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "2016/17",
+          "tournamentKey": "aspetar-qsl-professional: 2016/17",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "86304",
+            "matchExposure": "9977"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "2017/18",
+          "tournamentKey": "aspetar-qsl-professional: 2017/18",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "104336",
+            "matchExposure": "11501"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "2018/19",
+          "tournamentKey": "aspetar-qsl-professional: 2018/19",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "97881",
+            "matchExposure": "10741"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "2019/20",
+          "tournamentKey": "aspetar-qsl-professional: 2019/20",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "86086",
+            "matchExposure": "9351"
+          }
+        },
+        {
+          "populationPosition": 7,
+          "expectedLabel": "2020/21",
+          "tournamentKey": "aspetar-qsl-professional: 2020/21",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "107676",
+            "matchExposure": "15142"
+          }
+        },
+        {
+          "populationPosition": 8,
+          "expectedLabel": "2021/22",
+          "tournamentKey": "aspetar-qsl-professional: 2021/22",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "96726",
+            "matchExposure": "13716"
+          }
+        },
+        {
+          "populationPosition": 9,
+          "expectedLabel": "2008/09 historical all-injury cohort (S195)",
+          "tournamentKey": "aspetar-qsl-professional: 2008/09 historical all-injury cohort (S195)",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "August 2008-April 2009",
+            "totalExposure": "170.0 ± 56.0"
+          }
+        },
+        {
+          "populationPosition": 10,
+          "expectedLabel": "2013/14-2014/15 groin supplement (S344)",
+          "tournamentKey": "aspetar-qsl-professional: 2013/14-2014/15 groin supplement (S344)",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "July 2013-June 2015",
+            "totalExposure": "205466"
+          }
+        },
+        {
+          "populationPosition": 11,
+          "expectedLabel": "2013/14-2017/18 ACL supplement (S555)",
+          "tournamentKey": "aspetar-qsl-professional: 2013/14-2017/18 ACL supplement (S555)",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2013/14-2017/18",
+            "totalExposure": "486951"
+          }
+        },
+        {
+          "populationPosition": 12,
+          "expectedLabel": "2013/14-2020/21 head-neck-concussion supplement (S712)",
+          "tournamentKey": "aspetar-qsl-professional: 2013/14-2020/21 head-neck-concussion supplement (S712)",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2013/14-2020/21",
+            "sampleSizePlayers": "3762 player records"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S344",
+      "familyKey": "aspetar-qsl-professional",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "aspetar-qsl-professional: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2 years",
+            "sampleSizePlayers": "606"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S544",
+      "familyKey": "aspetar-qsl-professional",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "aspetar-qsl-professional: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "July 2013 to June 2015",
+            "totalExposure": "205466"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S555",
+      "familyKey": "aspetar-qsl-professional",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "aspetar-qsl-professional: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2013/2014 to 2017/2018 (5 seasons)",
+            "totalExposure": "486951"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S712",
+      "familyKey": "aspetar-qsl-professional",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "aspetar-qsl-professional: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2013/14-2020/21 seasons",
+            "sampleSizePlayers": "3762"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S602",
+      "familyKey": "aspetar-afc-multicountry",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total 2017-2019",
+          "tournamentKey": "aspetar-afc-multicountry: Total 2017-2019",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "January 2017-December 2019",
+            "totalExposure": "232665"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "2017",
+          "tournamentKey": "aspetar-afc-multicountry: 2017",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "72431",
+            "sampleSizePlayers": "408"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "2018",
+          "tournamentKey": "aspetar-afc-multicountry: 2018",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "80470",
+            "sampleSizePlayers": "396"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "2019",
+          "tournamentKey": "aspetar-afc-multicountry: 2019",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "80470",
+            "sampleSizePlayers": "429"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S075",
+      "familyKey": "german-youth-academy-2012-13",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "german-youth-academy-2012-13: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1 season",
+            "totalExposure": "41973"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S047",
+      "familyKey": "german-youth-academy-2012-13",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "german-youth-academy-2012-13: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "1 season",
+            "totalExposure": "41973"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "german-youth-academy-2012-13: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "18",
+            "injuryTotalCount": "4"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "german-youth-academy-2012-13: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "20",
+            "injuryTotalCount": "15"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "german-youth-academy-2012-13: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "21",
+            "injuryTotalCount": "12"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "german-youth-academy-2012-13: Row 5",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "22",
+            "injuryTotalCount": "22"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "german-youth-academy-2012-13: Row 6",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "21",
+            "injuryTotalCount": "20"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "Row 7",
+          "tournamentKey": "german-youth-academy-2012-13: Row 7",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "21",
+            "injuryTotalCount": "32"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S630",
+      "familyKey": "german-youth-academy-2012-13",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "german-youth-academy-2012-13: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "one season",
+            "totalExposure": "115833"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "german-youth-academy-2012-13: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "19116",
+            "matchExposure": "891"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "german-youth-academy-2012-13: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "18309",
+            "matchExposure": "759"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "german-youth-academy-2012-13: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "15499",
+            "matchExposure": "649"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "german-youth-academy-2012-13: Row 5",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "17824",
+            "matchExposure": "814"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "german-youth-academy-2012-13: Row 6",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "16689",
+            "matchExposure": "759"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "Row 7",
+          "tournamentKey": "german-youth-academy-2012-13: Row 7",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "15799",
+            "matchExposure": "814"
+          }
+        },
+        {
+          "populationPosition": 7,
+          "expectedLabel": "Row 8",
+          "tournamentKey": "german-youth-academy-2012-13: Row 8",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "12597",
+            "matchExposure": "649"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1389",
+      "familyKey": "german-youth-academy-2012-13",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "german-youth-academy-2012-13: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2012-2013 season",
+            "totalExposure": "40120"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "U12",
+          "tournamentKey": "german-youth-academy-2012-13: U12",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "14",
+            "injuryTotalCount": "4"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "U13",
+          "tournamentKey": "german-youth-academy-2012-13: U13",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "17",
+            "injuryTotalCount": "4"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "U14",
+          "tournamentKey": "german-youth-academy-2012-13: U14",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "18",
+            "injuryTotalCount": "13"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "U15",
+          "tournamentKey": "german-youth-academy-2012-13: U15",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "18",
+            "injuryTotalCount": "12"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "U16",
+          "tournamentKey": "german-youth-academy-2012-13: U16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "21",
+            "injuryTotalCount": "22"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "U17",
+          "tournamentKey": "german-youth-academy-2012-13: U17",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "21",
+            "injuryTotalCount": "20"
+          }
+        },
+        {
+          "populationPosition": 7,
+          "expectedLabel": "U19",
+          "tournamentKey": "german-youth-academy-2012-13: U19",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "21",
+            "injuryTotalCount": "32"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1014",
+      "familyKey": "funball-cluster-rct",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Intervention group",
+          "tournamentKey": "funball-cluster-rct: Intervention group",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2021-08-23 to 2022-05-22",
+            "totalExposure": "53454"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Control group",
+          "tournamentKey": "funball-cluster-rct: Control group",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "52938",
+            "matchExposure": "8666"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S2259",
+      "familyKey": "funball-cluster-rct",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "funball-cluster-rct: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "August 2021-May 2022, 9 months",
+            "numberOfTeams": "45"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Intervention",
+          "tournamentKey": "funball-cluster-rct: Intervention",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "53454",
+            "matchExposure": "9017"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Control",
+          "tournamentKey": "funball-cluster-rct: Control",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "52938",
+            "matchExposure": "8666"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S2474",
+      "familyKey": "funball-cluster-rct",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "funball-cluster-rct: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2021-2022 season, 9 months",
+            "totalExposure": "52938"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "U15",
+          "tournamentKey": "funball-cluster-rct: U15",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "204",
+            "injuryTotalCount": "49"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "U17",
+          "tournamentKey": "funball-cluster-rct: U17",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "190",
+            "injuryTotalCount": "70"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "U19",
+          "tournamentKey": "funball-cluster-rct: U19",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "109",
+            "injuryTotalCount": "68"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S289",
+      "familyKey": "funball-cluster-rct",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "funball-cluster-rct: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "May 2022",
+            "totalExposure": "106392"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S025",
+      "familyKey": "dutch-amateur-professional-2009-10",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "dutch-amateur-professional-2009-10: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "33 weeks",
+            "totalExposure": "44252"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "dutch-amateur-professional-2009-10: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "39 weeks",
+            "totalExposure": "46194"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S468",
+      "familyKey": "dutch-amateur-professional-2009-10",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "dutch-amateur-professional-2009-10: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2010 competitive season (33 weeks)",
+            "totalExposure": "44252"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S658",
+      "familyKey": "dutch-amateur-professional-2009-10",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "dutch-amateur-professional-2009-10: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2010 season",
+            "totalExposure": "90446"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "dutch-amateur-professional-2009-10: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "44252",
+            "matchExposure": "12734"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "dutch-amateur-professional-2009-10: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "46194",
+            "matchExposure": "5182"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S991",
+      "familyKey": "female-menstrual-cycle-cohort",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "female-menstrual-cycle-cohort: Total",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "3 seasons",
+            "totalExposure": "7273"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S073",
+      "familyKey": "female-menstrual-cycle-cohort",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "female-menstrual-cycle-cohort: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "3 seasons",
+            "totalExposure": "7273"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S074",
+      "familyKey": "female-menstrual-cycle-cohort",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "female-menstrual-cycle-cohort: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "3 seasons",
+            "totalExposure": "7273"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S586",
+      "familyKey": "australian-a-league-2012-18",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "australian-a-league-2012-18: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2017/18 (6 seasons)",
+            "totalExposure": "162"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "australian-a-league-2012-18: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2012/13 season",
+            "totalExposure": "27"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "australian-a-league-2012-18: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2013/14 season",
+            "totalExposure": "27"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "australian-a-league-2012-18: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2014/15 season",
+            "totalExposure": "27"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "australian-a-league-2012-18: Row 5",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2015/16 season",
+            "totalExposure": "27"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "australian-a-league-2012-18: Row 6",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2016/17 season",
+            "totalExposure": "27"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "Row 7",
+          "tournamentKey": "australian-a-league-2012-18: Row 7",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2017/18 season",
+            "totalExposure": "27"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S573",
+      "familyKey": "australian-a-league-2012-18",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "australian-a-league-2012-18: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2012/2013 to 2017/2018 (6 seasons)",
+            "matchExposure": "810 matches(27 per season)"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S618",
+      "familyKey": "australian-a-league-2012-18",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "australian-a-league-2012-18: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2017/18 (6 seasons)",
+            "sampleSizePlayers": "421"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S008",
+      "familyKey": "ready-to-play-norway-women",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "ready-to-play-norway-women: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2020 and 2021 seasons",
+            "totalExposure": "66234"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1041",
+      "familyKey": "ready-to-play-norway-women",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "ready-to-play-norway-women: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2020 and 2021 seasons",
+            "totalExposure": "66234"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S065",
+      "familyKey": "iran-national-futsal-18-month",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "iran-national-futsal-18-month: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "18 months",
+            "totalExposure": "24326"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "iran-national-futsal-18-month: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "sampleSizePlayers": "15",
+            "numberOfTeams": "1"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "iran-national-futsal-18-month: Row 3",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "sampleSizePlayers": "23",
+            "numberOfTeams": "1"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S080",
+      "familyKey": "iran-national-futsal-18-month",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "iran-national-futsal-18-month: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "18 months",
+            "sampleSizePlayers": "17"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "iran-national-futsal-18-month: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "23",
+            "injuryTotalCount": "18"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "iran-national-futsal-18-month: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "15",
+            "injuryTotalCount": "8"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "iran-national-futsal-18-month: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "injuryTotalCount": "54",
+            "ageCategory": "total"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1304",
+      "familyKey": "new-zealand-female-team-2022-23",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "new-zealand-female-team-2022-23: Total",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2022-2023 domestic seasons",
+            "matchExposure": "577.5"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1009",
+      "familyKey": "new-zealand-female-team-2022-23",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "new-zealand-female-team-2022-23: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2022 and 2023 seasons",
+            "matchExposure": "577.5"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1229",
+      "familyKey": "ghana-academy-2021-22",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "ghana-academy-2021-22: Total",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "September 2021-June 2022 (39 weeks)",
+            "totalExposure": "28082.4"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "U14",
+          "tournamentKey": "ghana-academy-2021-22: U14",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "2069.0",
+            "matchExposure": "186.9"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "U16",
+          "tournamentKey": "ghana-academy-2021-22: U16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "5522.9",
+            "matchExposure": "510.2"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "U18",
+          "tournamentKey": "ghana-academy-2021-22: U18",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "10138.0",
+            "matchExposure": "964.5"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Senior",
+          "tournamentKey": "ghana-academy-2021-22: Senior",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "10078.9",
+            "matchExposure": "745.1"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S324",
+      "familyKey": "ghana-academy-2021-22",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "ghana-academy-2021-22: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "39 weeks",
+            "sampleSizePlayers": "7"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "ghana-academy-2021-22: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "17",
+            "injuryTotalCount": "28"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "ghana-academy-2021-22: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "29",
+            "injuryTotalCount": "58"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "ghana-academy-2021-22: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "27",
+            "injuryTotalCount": "28"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "ghana-academy-2021-22: Row 5",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "injuryMatchCount": "66",
+            "injuryIncidenceTraining": "2.3"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S428",
+      "familyKey": "spanish-groin-2015-16",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "spanish-groin-2015-16: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "39 weeks (2015/2016 season)",
+            "totalExposure": "71908"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S211",
+      "familyKey": "spanish-groin-2015-16",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "spanish-groin-2015-16: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "preseason",
+            "totalExposure": "8576"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "spanish-groin-2015-16: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "in season",
+            "totalExposure": "71908"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S496",
+      "familyKey": "high-school-1995-97-surveillance",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "male",
+          "tournamentKey": "high-school-1995-97-surveillance: male",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1997 academic years",
+            "totalExposure": "385443"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "female",
+          "tournamentKey": "high-school-1995-97-surveillance: female",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1997 academic years",
+            "totalExposure": "335512"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S231",
+      "familyKey": "high-school-1995-97-surveillance",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "high-school-1995-97-surveillance: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "1997 academic years",
+            "totalExposure": "385443"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "high-school-1995-97-surveillance: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "1997 academic years",
+            "totalExposure": "335512"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S4629",
+      "familyKey": "korean-youth-2021",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "korean-youth-2021: Total",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "January-December 2021",
+            "totalExposure": "243.05 (19.02) mean h/player"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S3075",
+      "familyKey": "korean-youth-2021",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "korean-youth-2021: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "1-year follow-up",
+            "totalExposure": "243.05 (19.02) mean h/player"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S417",
+      "familyKey": "english-professional-clubs-1994-97",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "english-professional-clubs-1994-97: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "November 1994 to May 1997",
+            "sampleSizePlayers": "138"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "english-professional-clubs-1994-97: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "November 1994 to May 1997",
+            "sampleSizePlayers": "108"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "english-professional-clubs-1994-97: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "November 1994 to May 1997",
+            "sampleSizePlayers": "30"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S574",
+      "familyKey": "english-professional-clubs-1994-97",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "english-professional-clubs-1994-97: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "May 1997",
+            "sampleSizePlayers": "138"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S421",
+      "familyKey": "australian-academy-2017-20",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "australian-academy-2017-20: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2019/2020 (3 seasons) Total",
+            "totalExposure": "36818"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "australian-academy-2017-20: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2017/2018",
+            "totalExposure": "13284"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "australian-academy-2017-20: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2018/2019",
+            "totalExposure": "13167"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "australian-academy-2017-20: Row 4",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2019/2020",
+            "totalExposure": "10417"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S600",
+      "familyKey": "australian-academy-2017-20",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "australian-academy-2017-20: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2020 (3 seasons)",
+            "totalExposure": "30438.5"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S452",
+      "familyKey": "english-fa-academy-audit-2000-05",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "english-fa-academy-audit-2000-05: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2004/05",
+            "sampleSizePlayers": "12306"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S454",
+      "familyKey": "english-fa-academy-audit-2000-05",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "english-fa-academy-audit-2000-05: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "5 seasons (July 2000 to June 2005)",
+            "sampleSizePlayers": "12306"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S4778",
+      "familyKey": "mls-public-diagnosis-2010-21",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "mls-public-diagnosis-2010-21: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2010-2021 ACL injury surveillance",
+            "sampleSizePlayers": "132"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "2010-2015",
+          "tournamentKey": "mls-public-diagnosis-2010-21: 2010-2015",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2010-2015",
+            "injuryTotalCount": "74"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "2016-2021",
+          "tournamentKey": "mls-public-diagnosis-2010-21: 2016-2021",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2016-2021",
+            "injuryTotalCount": "70"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S4793",
+      "familyKey": "mls-public-diagnosis-2010-21",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "mls-public-diagnosis-2010-21: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2010-2021",
+            "sampleSizePlayers": "2715"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "2010-2015",
+          "tournamentKey": "mls-public-diagnosis-2010-21: 2010-2015",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2010-2015"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "2016-2021",
+          "tournamentKey": "mls-public-diagnosis-2010-21: 2016-2021",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2016-2021"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S605",
+      "familyKey": "norway-cup-2005-08",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "norway-cup-2005-08: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2008(4seasons)",
+            "totalExposure": "62597"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "norway-cup-2005-08: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "6022",
+            "matchExposure": "6022"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "norway-cup-2005-08: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "56575",
+            "matchExposure": "56575"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S627",
+      "familyKey": "norway-cup-2005-08",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "norway-cup-2005-08: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2005 to 2008 Norway Cup tournaments",
+            "totalExposure": "62597"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S628",
+      "familyKey": "fifa11-collegiate-men",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "fifa11-collegiate-men: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "December)",
+            "totalExposure": "44212"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "fifa11-collegiate-men: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "35226",
+            "matchExposure": "10935"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S481",
+      "familyKey": "fifa11-kids-multicountry",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "fifa11-kids-multicountry: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "Jun/Jul 2015)",
+            "totalExposure": "152033"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "fifa11-kids-multicountry: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "140716",
+            "matchExposure": "19769"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S430",
+      "familyKey": "fifa11-kids-multicountry",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "fifa11-kids-multicountry: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2014/2015 season",
+            "totalExposure": "292748"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Control",
+          "tournamentKey": "fifa11-kids-multicountry: Control",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2014/2015 season",
+            "totalExposure": "152089"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Intervention",
+          "tournamentKey": "fifa11-kids-multicountry: Intervention",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2014/2015 season",
+            "totalExposure": "140659"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S209",
+      "familyKey": "norwegian-ankle-risk-substudy",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "norwegian-ankle-risk-substudy: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "injuryTotalCount": "prvious paper reported all data"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S058",
+      "familyKey": "swedish-elite-sex-2005",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "swedish-elite-sex-2005: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2005 season",
+            "totalExposure": "71361"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "swedish-elite-sex-2005: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "54156",
+            "matchExposure": "7687"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S028",
+      "familyKey": "nordic-hamstring-high-school",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "nordic-hamstring-high-school: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "27 weeks",
+            "totalExposure": "28910"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "nordic-hamstring-high-school: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "45374",
+            "sampleSizePlayers": "156"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S086",
+      "familyKey": "female-hypermobility-2014-15",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "female-hypermobility-2014-15: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "June 2015",
+            "totalExposure": "211.81"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "female-hypermobility-2014-15: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "injuryMostCommonLocation": "Knee"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S087",
+      "familyKey": "hamstring-prevention-elite",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "hamstring-prevention-elite: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1999 Iceland",
+            "totalExposure": "33258"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "hamstring-prevention-elite: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2000 Iceland",
+            "totalExposure": "28887"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "hamstring-prevention-elite: Row 3",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2000 Norway",
+            "totalExposure": "65313"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "hamstring-prevention-elite: Row 4",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2001 Iceland",
+            "totalExposure": "36193"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "hamstring-prevention-elite: Row 5",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2001 Norway",
+            "totalExposure": "74306"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "hamstring-prevention-elite: Row 6",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2002 Iceland",
+            "totalExposure": "19538"
+          }
+        },
+        {
+          "populationPosition": 6,
+          "expectedLabel": "Row 7",
+          "tournamentKey": "hamstring-prevention-elite: Row 7",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2002 Norway",
+            "totalExposure": "74758"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S088",
+      "familyKey": "german-knee-prevention",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "german-knee-prevention: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1 season",
+            "totalExposure": "138249"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "german-knee-prevention: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "157065",
+            "matchExposure": "30855"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S089",
+      "familyKey": "sao-paulo-2016",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "sao-paulo-2016: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2016",
+            "injuryTotalCount": "259"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S090",
+      "familyKey": "brazil-2019",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "brazil-2019: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1 season",
+            "sampleSizePlayers": "645"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S092",
+      "familyKey": "australian-ankle-risk",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "australian-ankle-risk: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2 seasons",
+            "sampleSizePlayers": "210"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S095",
+      "familyKey": "norway-text-message-method",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "norway-text-message-method: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1 season",
+            "sampleSizePlayers": "228"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "norway-text-message-method: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "injuryTotalCount": "88"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S099",
+      "familyKey": "fifa11-shoulder-goalkeepers",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "fifa11-shoulder-goalkeepers: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1 season (6 months)",
+            "totalExposure": "80555"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "fifa11-shoulder-goalkeepers: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "62887",
+            "matchExposure": "13653"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S100",
+      "familyKey": "match-congestion-single-club",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "match-congestion-single-club: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "6 seasons",
+            "matchExposure": "269.2"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "match-congestion-single-club: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "138.9"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "match-congestion-single-club: Row 3",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "matchExposure": "724.0"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S102",
+      "familyKey": "english-youth-female-2019-20",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "english-youth-female-2019-20: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2019/2020 season",
+            "totalExposure": "7347"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "english-youth-female-2019-20: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "12813",
+            "matchExposure": "1563"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "english-youth-female-2019-20: Row 3",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "16076",
+            "matchExposure": "1919"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "english-youth-female-2019-20: Row 4",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "16598",
+            "matchExposure": "2185"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "english-youth-female-2019-20: Row 5",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "52834",
+            "matchExposure": "6373"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S103",
+      "familyKey": "saudi-surface-pilot",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "saudi-surface-pilot: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "Gulf Cup 2010 (3G)",
+            "totalExposure": "114066"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "saudi-surface-pilot: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "Asian Cup 2011 (Grass)",
+            "totalExposure": "88884"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S104",
+      "familyKey": "caribbean-women-league",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "caribbean-women-league: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "1 season",
+            "matchExposure": "940.5"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S115",
+      "familyKey": "french-academy-workload",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "U19",
+          "tournamentKey": "french-academy-workload: U19",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "four",
+            "sampleSizePlayers": "52"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "U21",
+          "tournamentKey": "french-academy-workload: U21",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "five",
+            "sampleSizePlayers": "70"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S139",
+      "familyKey": "epl-workload-model",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "epl-workload-model: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2016/2017 season",
+            "matchExposure": "2824"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S1402",
+      "familyKey": "futsal-preseason-levels",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Elite",
+          "tournamentKey": "futsal-preseason-levels: Elite",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2023-2024 preseason, 4 weeks",
+            "totalExposure": "80"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Sub-elite",
+          "tournamentKey": "futsal-preseason-levels: Sub-elite",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "26",
+            "trainingExposure": "26"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Amateur",
+          "tournamentKey": "futsal-preseason-levels: Amateur",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "18",
+            "trainingExposure": "18"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S303",
+      "familyKey": "futsal-preseason-levels",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "futsal-preseason-levels: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "4 weeks",
+            "totalExposure": "80"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "futsal-preseason-levels: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "26",
+            "trainingExposure": "26"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "futsal-preseason-levels: Row 3",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "totalExposure": "18",
+            "trainingExposure": "18"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S989",
+      "familyKey": "brazil-shoulder-2016-19",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "brazil-shoulder-2016-19: Total",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2016 to 2019; 15 championship seasons",
+            "totalExposure": "126357"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S273",
+      "familyKey": "brazil-shoulder-2016-19",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "brazil-shoulder-2016-19: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2019 championships",
+            "totalExposure": "126357"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S2813",
+      "familyKey": "dutch-growth-injuries-2021-22",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "dutch-growth-injuries-2021-22: Total",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2021-2022 season",
+            "totalExposure": "99224"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S338",
+      "familyKey": "dutch-growth-injuries-2021-22",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "dutch-growth-injuries-2021-22: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2022",
+            "totalExposure": "99224"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S644",
+      "familyKey": "swiss-youth-muscle-2016-17",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "July 2017 (12 months)",
+            "totalExposure": "43062"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "10764",
+            "sampleSizePlayers": "26"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "Row 3",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Row 3",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "10101",
+            "sampleSizePlayers": "26"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "Row 4",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Row 4",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "7740",
+            "sampleSizePlayers": "20"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "Row 5",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Row 5",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "7680",
+            "sampleSizePlayers": "20"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "Row 6",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Row 6",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "totalExposure": "6777",
+            "sampleSizePlayers": "18"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S645",
+      "familyKey": "swiss-youth-muscle-2016-17",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Total",
+          "tournamentKey": "swiss-youth-muscle-2016-17: Total",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "August 2016-July 2017 (12 months)",
+            "sampleSizePlayers": "110"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "U21",
+          "tournamentKey": "swiss-youth-muscle-2016-17: U21",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "numberOfTeams": "1",
+            "ageCategory": "U21"
+          }
+        },
+        {
+          "populationPosition": 2,
+          "expectedLabel": "U18",
+          "tournamentKey": "swiss-youth-muscle-2016-17: U18",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "numberOfTeams": "1",
+            "ageCategory": "U18"
+          }
+        },
+        {
+          "populationPosition": 3,
+          "expectedLabel": "U17",
+          "tournamentKey": "swiss-youth-muscle-2016-17: U17",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "numberOfTeams": "1",
+            "ageCategory": "U17"
+          }
+        },
+        {
+          "populationPosition": 4,
+          "expectedLabel": "U16",
+          "tournamentKey": "swiss-youth-muscle-2016-17: U16",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "numberOfTeams": "1",
+            "ageCategory": "U16"
+          }
+        },
+        {
+          "populationPosition": 5,
+          "expectedLabel": "U15",
+          "tournamentKey": "swiss-youth-muscle-2016-17: U15",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "numberOfTeams": "1",
+            "ageCategory": "U15"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S532",
+      "familyKey": "dutch-amateur-rct-2009-10",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "dutch-amateur-rct-2009-10: Row 1",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "observationDuration": "2009/2010 season (September 2009 to May 2010)",
+            "sampleSizePlayers": "223"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "dutch-amateur-rct-2009-10: Row 2",
+          "includeInAnalysisExport": true,
+          "expectedValues": {
+            "sampleSizePlayers": "233",
+            "numberOfTeams": "12"
+          }
+        }
+      ]
+    },
+    {
+      "studyId": "S534",
+      "familyKey": "dutch-amateur-rct-2009-10",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {
+          "populationPosition": 0,
+          "expectedLabel": "Row 1",
+          "tournamentKey": "dutch-amateur-rct-2009-10: Row 1",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "observationDuration": "2009/2010 season (September 2009 to May 2010)",
+            "sampleSizePlayers": "223"
+          }
+        },
+        {
+          "populationPosition": 1,
+          "expectedLabel": "Row 2",
+          "tournamentKey": "dutch-amateur-rct-2009-10: Row 2",
+          "includeInAnalysisExport": false,
+          "expectedValues": {
+            "sampleSizePlayers": "233",
+            "numberOfTeams": "12"
+          }
+        }
+      ]
+    }
+  ],
+  "rowIdentityGaps": []
+}

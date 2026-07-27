@@ -1,0 +1,2540 @@
+{
+  "artifactType": "Source-family overlap final live integrity audit",
+  "generatedAt": "2026-07-27T17:04:27.489Z",
+  "result": "PASS",
+  "integrityFailures": [],
+  "writeBoundary": "papers.metadata.analysisSourceTreatment and additive paper_notes only",
+  "requestedPaperCount": 155,
+  "metadataWriteCount": 155,
+  "noteInsertCount": 155,
+  "metadataWrites": [
+    "UEFA-ECIS-MASTER",
+    "S002",
+    "S006",
+    "S007",
+    "S011",
+    "S019",
+    "S042",
+    "S043",
+    "S046",
+    "S056",
+    "S057",
+    "S079",
+    "S084",
+    "S091",
+    "S106",
+    "S107",
+    "S108",
+    "S110",
+    "S113",
+    "S175",
+    "S199",
+    "S200",
+    "S201",
+    "S202",
+    "S340",
+    "S358",
+    "S368",
+    "S401",
+    "S415",
+    "S451",
+    "S509",
+    "S513",
+    "S527",
+    "S554",
+    "S576",
+    "S581",
+    "S2391",
+    "S4839",
+    "S044",
+    "S031",
+    "S036",
+    "S136",
+    "S137",
+    "S138",
+    "S389",
+    "S390",
+    "S112",
+    "S1091",
+    "S261",
+    "S071",
+    "S076",
+    "S1431",
+    "S2824",
+    "S195",
+    "S344",
+    "S544",
+    "S3577",
+    "S555",
+    "S712",
+    "S602",
+    "S075",
+    "S047",
+    "S630",
+    "S1389",
+    "S1014",
+    "S2259",
+    "S2474",
+    "S289",
+    "S025",
+    "S468",
+    "S658",
+    "S991",
+    "S073",
+    "S074",
+    "S586",
+    "S573",
+    "S618",
+    "S008",
+    "S1041",
+    "S065",
+    "S080",
+    "S120",
+    "S1304",
+    "S1009",
+    "S1229",
+    "S324",
+    "S428",
+    "S211",
+    "S496",
+    "S231",
+    "S4629",
+    "S3075",
+    "S417",
+    "S574",
+    "S421",
+    "S600",
+    "S452",
+    "S454",
+    "S4778",
+    "S4793",
+    "S605",
+    "S627",
+    "S628",
+    "S026",
+    "S116",
+    "S481",
+    "S430",
+    "S209",
+    "S058",
+    "S118",
+    "S028",
+    "S117",
+    "S086",
+    "S121",
+    "S087",
+    "S122",
+    "S088",
+    "S123",
+    "S089",
+    "S124",
+    "S090",
+    "S125",
+    "S092",
+    "S126",
+    "S094",
+    "S127",
+    "S095",
+    "S128",
+    "S099",
+    "S131",
+    "S100",
+    "S132",
+    "S102",
+    "S133",
+    "S103",
+    "S134",
+    "S104",
+    "S135",
+    "S115",
+    "S114",
+    "S139",
+    "S082",
+    "S1402",
+    "S303",
+    "S989",
+    "S273",
+    "S2813",
+    "S338",
+    "S644",
+    "S645",
+    "S532",
+    "S534",
+    "S038",
+    "S119",
+    "S129"
+  ],
+  "insertedNotes": [
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "id": "a9739742-cd8b-46f1-827b-63c5735aba8b",
+      "paper_id": "aa1999a9-8e71-4435-b5ae-a53d7546e14d",
+      "body": "Source-family overlap treatment, 27 July 2026: UEFA-ECIS-MASTER remains the existing men’s ECIS grouped source of truth. Only the S200 all-injury row and the disjoint 2022/23 S5151 all-injury row own default analysis denominators. Diagnosis, prognosis and subgroup rows remain available in source scope but are source-only for denominator aggregation. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:14.602042+00:00"
+    },
+    {
+      "studyId": "S002",
+      "id": "90927a72-357c-4cc9-93b9-30ef477a15b7",
+      "paper_id": "6ac93086-be80-4b4f-a9c1-f862d84a886b",
+      "body": "Source-family overlap treatment, 27 July 2026: S002 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Older ACL-focused source overlaps the ECIS programme and is superseded for master extraction by the later 15-year ACL paper. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:14.672917+00:00"
+    },
+    {
+      "studyId": "S006",
+      "id": "2dc56abd-0056-4e48-8e06-efb00d3e51c4",
+      "paper_id": "3ace2f14-0f38-4f33-aac3-538e6a918052",
+      "body": "Source-family overlap treatment, 27 July 2026: S006 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds diagnosis-specific incidence, burden, time-loss, recurrence/mechanism, and exposure not isolated in S200. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:14.750875+00:00"
+    },
+    {
+      "studyId": "S007",
+      "id": "97174f73-8e5e-4f07-ad09-14211b55df6e",
+      "paper_id": "0d884c84-f150-4d52-aed9-71147c3ed31b",
+      "body": "Source-family overlap treatment, 27 July 2026: S007 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds directly reported incidence, burden, time-loss, mechanism, and exposure for thigh injury subtypes. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:14.805918+00:00"
+    },
+    {
+      "studyId": "S011",
+      "id": "94dae9ea-4cd1-498a-bd95-e2e67c731c2e",
+      "paper_id": "8c0831e3-9b6a-4b7b-a82d-019f553d403c",
+      "body": "Source-family overlap treatment, 27 July 2026: S011 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. All-injury denominator overlaps S200; common diagnosis rows would duplicate concepts already represented by cleaner retained concept papers. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:14.935746+00:00"
+    },
+    {
+      "studyId": "S019",
+      "id": "d98f1d10-9211-4ad0-b357-76d9b79a41a8",
+      "paper_id": "b5917086-dfcb-478a-82d2-c18e99fad76d",
+      "body": "Source-family overlap treatment, 27 July 2026: S019 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Association/risk-factor paper, not a clean additional injury-count denominator for the ECIS master. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.005784+00:00"
+    },
+    {
+      "studyId": "S042",
+      "id": "b94d0b3a-4f1a-45de-8b8e-4021490ec156",
+      "paper_id": "b3380f1d-8eee-4755-8826-fff3a0ecb937",
+      "body": "Source-family overlap treatment, 27 July 2026: S042 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Earlier hamstring time-trend paper is superseded by the longer 21-season hamstring paper retained in the master. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.082102+00:00"
+    },
+    {
+      "studyId": "S043",
+      "id": "c6800345-7e7f-458b-98e8-332e23f93484",
+      "paper_id": "9b586f55-7902-4eb4-8c45-5e87ad277c8e",
+      "body": "Source-family overlap treatment, 27 July 2026: S043 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds longer hamstring-specific match/training incidence, time-loss, recurrence, and exposure. Subtypes are not separate master rows because they mainly add counts/time-loss without compatible incidence/burden. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.149701+00:00"
+    },
+    {
+      "studyId": "S046",
+      "id": "26a7cf78-b9f4-48eb-bc51-eade4982c7c3",
+      "paper_id": "f5caf630-555c-4ebb-ae9a-fd085514cf28",
+      "body": "Source-family overlap treatment, 27 July 2026: S046 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds incidence, burden, time-loss, mechanism, recurrence, and exposure for a location/diagnosis not isolated in S200. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.256075+00:00"
+    },
+    {
+      "studyId": "S056",
+      "id": "4f27ef53-9ca2-43ec-9c50-4c599a56a8b9",
+      "paper_id": "42e56227-2bee-47b4-9c11-21bf3fa1edb2",
+      "body": "Source-family overlap treatment, 27 July 2026: S056 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Special-period subgroup analysis would not be combinable with S200 programme-period counts. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.316503+00:00"
+    },
+    {
+      "studyId": "S057",
+      "id": "26dcfc1b-1786-46d4-a07d-c7a3cdb87ed0",
+      "paper_id": "66bb1ee3-52fc-4c91-8144-1bd55d8fef8d",
+      "body": "Source-family overlap treatment, 27 July 2026: S057 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Performance association paper; injury denominator overlaps the ECIS all-injury programme already represented by S200. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.461187+00:00"
+    },
+    {
+      "studyId": "S079",
+      "id": "4ff69bdf-d4b4-4604-90cc-70853444407f",
+      "paper_id": "a34958ba-87b7-4216-a74b-2db08e8978b8",
+      "body": "Source-family overlap treatment, 27 July 2026: S079 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Risk-factor analysis with a restricted cohort; not a clean programme-wide count to merge into the master. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.521384+00:00"
+    },
+    {
+      "studyId": "S084",
+      "id": "3e38d17f-7f33-46e4-b9d1-a3ba99b322d9",
+      "paper_id": "b2f8884a-8d8d-440a-bdce-b1fac7c1c24e",
+      "body": "Source-family overlap treatment, 27 July 2026: S084 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Exposure/risk-factor paper; muscle injury parent counts are already represented by S200 and specific thigh/hamstring papers. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.580938+00:00"
+    },
+    {
+      "studyId": "S091",
+      "id": "b4151b12-eb27-4a50-9109-cfb3f597dba3",
+      "paper_id": "93a26b37-f099-4ba7-8237-ab27f44100e8",
+      "body": "Source-family overlap treatment, 27 July 2026: S091 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds diagnosis-specific incidence, burden, time-loss, recurrence, and exposure. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.639018+00:00"
+    },
+    {
+      "studyId": "S106",
+      "id": "89719da2-6c43-416b-a8d3-07d1e3c6d373",
+      "paper_id": "334b6bd7-a7cf-4b20-b870-44437bee728f",
+      "body": "Source-family overlap treatment, 27 July 2026: S106 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds diagnosis-specific incidence, burden, time-loss, recurrence/mechanism, and exposure. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.694415+00:00"
+    },
+    {
+      "studyId": "S107",
+      "id": "ba41557f-5e95-4368-8605-e66281f9b98f",
+      "paper_id": "49c4d7d6-1f36-47f5-be75-c88f917220c6",
+      "body": "Source-family overlap treatment, 27 July 2026: S107 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds ankle-specific incidence, time-loss, recurrence, exposure, and structured location/tissue values. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.78541+00:00"
+    },
+    {
+      "studyId": "S108",
+      "id": "fae50658-bdc6-40db-bfe6-be163af59e81",
+      "paper_id": "9542630f-8996-406b-9342-54b2164c6bea",
+      "body": "Source-family overlap treatment, 27 July 2026: S108 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Early all-injury surveillance is incorporated into the broader S200 ECIS master period. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.853631+00:00"
+    },
+    {
+      "studyId": "S110",
+      "id": "25cdf3e0-e6e1-4562-bc73-2d6c2d96119f",
+      "paper_id": "0ad6eae7-c90a-4f0c-aac1-b3d5a9b4951e",
+      "body": "Source-family overlap treatment, 27 July 2026: S110 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Earlier hip/groin source is superseded by the longer retained hip/groin paper. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:15.981945+00:00"
+    },
+    {
+      "studyId": "S113",
+      "id": "97ba8c9d-69c6-4c6b-b8e0-3807e36ee19c",
+      "paper_id": "b20695b9-96ee-45a6-9377-e9da844acaef",
+      "body": "Source-family overlap treatment, 27 July 2026: S113 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds incidence, time-loss, recurrence, and exposure for a location group not isolated in S200. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.034908+00:00"
+    },
+    {
+      "studyId": "S175",
+      "id": "c61a8b98-a25b-4b20-9185-3a3b872cfff0",
+      "paper_id": "397c2543-ff62-405b-a1d9-46757200289a",
+      "body": "Source-family overlap treatment, 27 July 2026: S175 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Specific ankle diagnosis overlaps the retained S107 ankle row and appears more useful for diagnosis detail than for master-level incidence/burden consolidation. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.099608+00:00"
+    },
+    {
+      "studyId": "S199",
+      "id": "27b1eaa4-05a4-4e4d-ada0-ed012330976b",
+      "paper_id": "6fbf56ad-4909-40bf-b95f-cf1eddf95702",
+      "body": "Source-family overlap treatment, 27 July 2026: S199 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Availability/performance association paper; does not add a clean master injury-count denominator. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.163177+00:00"
+    },
+    {
+      "studyId": "S200",
+      "id": "7dc98f0e-9760-43b8-9627-50d10f620ff9",
+      "paper_id": "977ff565-2ad6-497c-966a-8ad8df58cc60",
+      "body": "Source-family overlap treatment, 27 July 2026: S200 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Historical all-injury ECIS men anchor for overlapping periods; shared definitions and cohort context are stored here. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.21828+00:00"
+    },
+    {
+      "studyId": "S201",
+      "id": "f84caa5c-180d-4e56-944e-e0226131cb5a",
+      "paper_id": "ff6a52a4-59a8-41b8-a8a0-f04f73956a12",
+      "body": "Source-family overlap treatment, 27 July 2026: S201 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. General epidemiology source is superseded for master extraction by S200 and retained diagnosis-specific papers. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.294664+00:00"
+    },
+    {
+      "studyId": "S202",
+      "id": "3ed177fc-6cca-4c7f-a705-d36c7556f06f",
+      "paper_id": "84025ad0-b5b5-47d7-b7c6-ed2b70e4bf30",
+      "body": "Source-family overlap treatment, 27 July 2026: S202 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Overall stress-fracture incidence and recurrence-rate detail are retained; count-only subtype detail is not a separate master row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.360908+00:00"
+    },
+    {
+      "studyId": "S340",
+      "id": "017eca3f-107d-4141-8a7b-de3c0c4b0248",
+      "paper_id": "10186adf-a4a4-4e44-8a40-a48519670029",
+      "body": "Source-family overlap treatment, 27 July 2026: S340 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds location/diagnosis-specific incidence, time-loss, and exposure. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.502089+00:00"
+    },
+    {
+      "studyId": "S358",
+      "id": "a66d161c-dd94-4678-8c64-d4de2d8e5ea9",
+      "paper_id": "f764f371-384d-4184-9c69-6b482e00c9c1",
+      "body": "Source-family overlap treatment, 27 July 2026: S358 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Trend/risk paper overlaps the S200 denominator and is not a separate master population. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.579549+00:00"
+    },
+    {
+      "studyId": "S368",
+      "id": "14ab67fb-08d0-42df-b605-f0bdf7df3ee1",
+      "paper_id": "e4e433f2-0dff-4ca1-abeb-67a6ae60f593",
+      "body": "Source-family overlap treatment, 27 July 2026: S368 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds directly reported incidence, burden, total time-loss, recurrence, and exposure. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.63525+00:00"
+    },
+    {
+      "studyId": "S401",
+      "id": "8bffa4a2-4ef6-4f6e-8b01-92d41776e64b",
+      "paper_id": "586f63c5-1ed6-4823-a03c-50931c5dd7c0",
+      "body": "Source-family overlap treatment, 27 July 2026: S401 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Retained as the strongest ACL-specific ECIS row with direct incidence, recurrence/severity, and exposure. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.701383+00:00"
+    },
+    {
+      "studyId": "S415",
+      "id": "344b67a2-12a5-4bec-8fe2-2e05c9fbb392",
+      "paper_id": "5cdf8313-9a50-4f17-83fd-cd2a4d924242",
+      "body": "Source-family overlap treatment, 27 July 2026: S415 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Team availability/performance association paper; not a clean additional injury outcome row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.75857+00:00"
+    },
+    {
+      "studyId": "S451",
+      "id": "ac72ed9f-ebf6-449c-8b7d-6789217ea61b",
+      "paper_id": "3b72a055-82b8-4801-9a85-7a3988b438ae",
+      "body": "Source-family overlap treatment, 27 July 2026: S451 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Adds fracture-specific incidence, recurrence/non-contact detail, and exposure; separate from stress-fracture case definition. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.814276+00:00"
+    },
+    {
+      "studyId": "S509",
+      "id": "68730aff-8771-48e9-b56d-23a8dcf5a21e",
+      "paper_id": "700d14bb-50f4-4eda-ac50-4528cf65ada2",
+      "body": "Source-family overlap treatment, 27 July 2026: S509 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Appears to duplicate or overlap the MCL concept already represented by S106. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:16.878045+00:00"
+    },
+    {
+      "studyId": "S513",
+      "id": "6760bb0b-5162-42ec-8575-da4ca14931a1",
+      "paper_id": "7e78ada0-c3de-4a8e-a965-7aab2ad24bc8",
+      "body": "Source-family overlap treatment, 27 July 2026: S513 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Fixture-congestion/risk-factor analysis; not a separate master denominator. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.030161+00:00"
+    },
+    {
+      "studyId": "S527",
+      "id": "dac83b4c-4b24-4165-9020-c35f8455e669",
+      "paper_id": "190ab728-6771-4f9e-973f-02254963d3a5",
+      "body": "Source-family overlap treatment, 27 July 2026: S527 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Return-to-play risk/prognosis source rather than a clean incidence/burden extraction row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.106329+00:00"
+    },
+    {
+      "studyId": "S554",
+      "id": "83d13b13-13bb-463a-9875-af01b11e9c69",
+      "paper_id": "310b263b-968d-42b3-83ad-bdb794f79d1f",
+      "body": "Source-family overlap treatment, 27 July 2026: S554 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Regional subgroup incidence would split the same ECIS denominator already held by S200. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.16376+00:00"
+    },
+    {
+      "studyId": "S576",
+      "id": "546c7770-f9fd-47e8-a1fd-7c8c8e138f6e",
+      "paper_id": "6f9b6ff0-6547-4a7e-833f-c1746853b2db",
+      "body": "Source-family overlap treatment, 27 July 2026: S576 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Prognosis/risk paper; concussion extraction concept is already represented by S340. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.216869+00:00"
+    },
+    {
+      "studyId": "S581",
+      "id": "6f5d5986-3658-4615-b1ca-2c2d87ba2668",
+      "paper_id": "d73efb40-0037-41f2-8fce-df0b68354929",
+      "body": "Source-family overlap treatment, 27 July 2026: S581 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Index-injury RTP rows duplicate diagnosis concepts already represented by cleaner incidence/burden source papers. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.268274+00:00"
+    },
+    {
+      "studyId": "S2391",
+      "id": "eabc5414-5e58-4919-8645-82b0a760599d",
+      "paper_id": "32d8bb0c-57bb-450d-afb5-7b756073d7af",
+      "body": "Source-family overlap treatment, 27 July 2026: S2391 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. The 110 ACL reconstruction cases are nested within the ECIS cohort, so pre/post return-to-play incidence rows would double-count the programme and mix prognosis with surveillance. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.359161+00:00"
+    },
+    {
+      "studyId": "S4839",
+      "id": "8eaaa55b-fd56-417d-9467-a2f02aa1b8de",
+      "paper_id": "ca328f41-eddf-4328-be05-f88bbdfe182f",
+      "body": "Source-family overlap treatment, 27 July 2026: S4839 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. The source reports team-season burden and predictor associations rather than a pooled programme-wide hamstring incidence or burden compatible with the S043 master row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.453926+00:00"
+    },
+    {
+      "studyId": "S044",
+      "id": "cf637ad9-cfc6-4afa-b8cd-785d1cb006b2",
+      "paper_id": "5dd98153-90ee-4c76-9a89-9466e2beb2f1",
+      "body": "Source-family overlap treatment, 27 July 2026: S044 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.607068+00:00"
+    },
+    {
+      "studyId": "S031",
+      "id": "9e9ba87d-8e0d-4fe1-8db3-6a3870afc359",
+      "paper_id": "b28cc435-c176-42e0-9cc2-4305228c2c11",
+      "body": "Source-family overlap treatment, 27 July 2026: S031 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.669248+00:00"
+    },
+    {
+      "studyId": "S036",
+      "id": "32ef9b7a-7c23-44a2-9880-db7d1adcf7e3",
+      "paper_id": "cbcfe088-10b5-4bdc-97e2-cab62388af6a",
+      "body": "Source-family overlap treatment, 27 July 2026: S036 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.72262+00:00"
+    },
+    {
+      "studyId": "S136",
+      "id": "28f91fce-24f4-4b3f-a9fc-a3715796ca3c",
+      "paper_id": "376cd0d7-96ea-48bb-8c6b-ac90757a1e07",
+      "body": "Source-family overlap treatment, 27 July 2026: S136 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.775481+00:00"
+    },
+    {
+      "studyId": "S137",
+      "id": "b8f271b6-95c2-45fb-893c-22cdc4bee159",
+      "paper_id": "31b22d74-2a94-4478-acfd-bc7e64791dfb",
+      "body": "Source-family overlap treatment, 27 July 2026: S137 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.828697+00:00"
+    },
+    {
+      "studyId": "S138",
+      "id": "4c10c1ac-f632-4b3a-ba48-6e9c4d29164e",
+      "paper_id": "a1527351-5186-4553-8ca3-98f1b20206e2",
+      "body": "Source-family overlap treatment, 27 July 2026: S138 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.893515+00:00"
+    },
+    {
+      "studyId": "S389",
+      "id": "27260fd9-599a-4e74-b8c3-090bb652bcf8",
+      "paper_id": "1f5b8612-7db6-4929-a32d-be75dbce1bde",
+      "body": "Source-family overlap treatment, 27 July 2026: S389 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:17.956691+00:00"
+    },
+    {
+      "studyId": "S390",
+      "id": "90c159b3-bbc6-4868-81fb-1ae9372b0d02",
+      "paper_id": "405198b8-aab8-4e5e-a469-378e70387e30",
+      "body": "Source-family overlap treatment, 27 July 2026: S390 belongs to the UEFA ECIS men source family and is source-only in the default analysis export. Its surveillance population overlaps the ECIS programme or a retained topic row. The existing UEFA-ECIS-MASTER remains the grouped source of truth. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:18.082843+00:00"
+    },
+    {
+      "studyId": "S112",
+      "id": "fea1dda8-1aa6-4956-b613-40fa7ceaeeee",
+      "paper_id": "a6949d2a-1de1-4ff7-a1fb-491354a79320",
+      "body": "Source-family overlap treatment, 27 July 2026: S112 is the canonical WECIS record. Its pooled four-season row owns the default analysis denominator; season rows remain in source scope to avoid pooling the pooled denominator and its component seasons together. S1091 is a duplicate alias.",
+      "created_at": "2026-07-27T17:04:18.15848+00:00"
+    },
+    {
+      "studyId": "S1091",
+      "id": "36c67791-8751-44fa-85ad-a244c9178e17",
+      "paper_id": "91a8df28-89d2-4e85-8f93-372960a0adbd",
+      "body": "Source-family overlap treatment, 27 July 2026: S1091 is a bibliographic or import duplicate of S112 in the UEFA WECIS family. S112 is the canonical analysis record. S1091 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:18.242795+00:00"
+    },
+    {
+      "studyId": "S261",
+      "id": "d08db338-f43f-4083-97b1-fb4f45cda74d",
+      "paper_id": "aeb820e9-a60c-4573-aebd-095dcec74b27",
+      "body": "Source-family overlap treatment, 27 July 2026: S261 owns the pooled 2012/13-2015/16 Aspire Academy denominator. Age rows and the appended S1431 row remain available in source scope but are excluded from default denominator aggregation. S076 owns the later all-injury period; S1431 is nested within S076.",
+      "created_at": "2026-07-27T17:04:18.336922+00:00"
+    },
+    {
+      "studyId": "S071",
+      "id": "549c0d89-32c1-41c9-9e36-ef0a2f0cfb32",
+      "paper_id": "2b8db153-7ee4-450c-9dbb-b0df8f73ec58",
+      "body": "Source-family overlap treatment, 27 July 2026: S071 is a bibliographic or import duplicate of S261 in the Aspire Academy 2012/13-2015/16 family. S261 is the canonical analysis record. S071 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:18.408959+00:00"
+    },
+    {
+      "studyId": "S076",
+      "id": "76c5f655-012d-4eda-9c10-f5cd36e9d52d",
+      "paper_id": "d9e02d5d-56a7-40c8-88e2-5c1ba0dc51b5",
+      "body": "Source-family overlap treatment, 27 July 2026: S076 owns the later Aspire Academy all-injury period, 2016/17-2019/20. Its U13-U18 rows are disjoint exposure strata. S1431 is a nested U13-U15 risk-factor subset of three of these four seasons and is source-only.",
+      "created_at": "2026-07-27T17:04:18.480478+00:00"
+    },
+    {
+      "studyId": "S1431",
+      "id": "f9646a0c-c10c-4008-9168-8fbfc89d1b0f",
+      "paper_id": "ee902899-f029-4c50-ad03-fd78b2d2f559",
+      "body": "Source-family overlap treatment, 27 July 2026: S1431 is a nested U13-U15 growth and maturity analysis from 2016/17-2018/19 within the later S076 Aspire Academy period. It adds risk-factor detail but no independent all-injury denominator. Its appended representation in S261 is also source-only.",
+      "created_at": "2026-07-27T17:04:18.603928+00:00"
+    },
+    {
+      "studyId": "S2824",
+      "id": "743156c2-c23c-4671-8aff-29eb9ae0ff2a",
+      "paper_id": "9bfe224a-94c7-43c7-a57b-de4c59d09fb4",
+      "body": "Source-family overlap treatment, 27 July 2026: S2824 owns the pooled 2014/15-2021/22 QSL denominator and the disjoint S195 2008/09 historical row. Component seasons, groin, ACL, and head/neck-concussion rows remain source-only to prevent pooled-plus-component or topic-denominator duplication.",
+      "created_at": "2026-07-27T17:04:18.67524+00:00"
+    },
+    {
+      "studyId": "S195",
+      "id": "8952a9a8-6ff0-4896-bf27-f3c9cfc19429",
+      "paper_id": "22682687-4380-44b5-987d-6f8a6791b848",
+      "body": "Source-family overlap treatment, 27 July 2026: S195 is source-only in the QSL family. Disjoint historical row is already represented in S2824. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:18.740937+00:00"
+    },
+    {
+      "studyId": "S344",
+      "id": "698c453a-f637-4a03-bb6c-dd7e86c15e1d",
+      "paper_id": "47875a34-0e97-4ba1-ab6f-dec5977282da",
+      "body": "Source-family overlap treatment, 27 July 2026: S344 is source-only in the QSL family. Groin-specific row is already represented in S2824 and overlaps 2014/15. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:18.805776+00:00"
+    },
+    {
+      "studyId": "S544",
+      "id": "0a59c0fb-4d10-4244-b0dc-f0fa71175f77",
+      "paper_id": "69adb76e-d822-48df-be16-7a5c9d151bbf",
+      "body": "Source-family overlap treatment, 27 July 2026: S544 is source-only in the QSL family. Same 205,466-hour groin programme as S344, used for risk-factor modelling. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:18.883372+00:00"
+    },
+    {
+      "studyId": "S3577",
+      "id": "1a7b466b-c34d-448c-8fc5-5fc85bdf70f2",
+      "paper_id": "382687c6-dde2-4dbf-bc8f-05acfba39c5a",
+      "body": "Source-family overlap treatment, 27 July 2026: S3577 is source-only in the QSL family. Retrospective limb-asymmetry analysis of the S344 cohort. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:18.939496+00:00"
+    },
+    {
+      "studyId": "S555",
+      "id": "7100f584-9cda-4422-8797-421973d8cb55",
+      "paper_id": "1ccd6561-d3f3-4450-af2a-c25952b99352",
+      "body": "Source-family overlap treatment, 27 July 2026: S555 is source-only in the QSL family. ACL-specific row is already represented in S2824. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:18.993888+00:00"
+    },
+    {
+      "studyId": "S712",
+      "id": "a603a407-2c90-45b3-9f78-bd92714d259a",
+      "paper_id": "611ef79b-a7bc-4cc0-84ee-786a5bad5f04",
+      "body": "Source-family overlap treatment, 27 July 2026: S712 is source-only in the QSL family. Head/neck-concussion row is already represented in S2824. No extraction or population value was changed.",
+      "created_at": "2026-07-27T17:04:19.128272+00:00"
+    },
+    {
+      "studyId": "S602",
+      "id": "6b7f746b-f706-4a01-9031-0028828aed47",
+      "paper_id": "a924869a-5932-4c83-a735-7f68127c90ec",
+      "body": "Source-family overlap treatment, 27 July 2026: S602 remains a separate AFC multicountry anchor. The pooled row owns the default denominator; component years remain in source scope to avoid pooled-plus-year duplication.",
+      "created_at": "2026-07-27T17:04:19.183629+00:00"
+    },
+    {
+      "studyId": "S075",
+      "id": "5f245f2d-2511-4893-aba8-370642136b58",
+      "paper_id": "8d3a8f3c-3483-480b-82bd-31755484ce10",
+      "body": "Source-family overlap treatment, 27 July 2026: S075 owns the pooled 138-player, 41,973-hour, 109-injury German academy denominator for 2012/13.",
+      "created_at": "2026-07-27T17:04:19.262125+00:00"
+    },
+    {
+      "studyId": "S047",
+      "id": "36ce7803-dcd9-454f-b758-8b027d8aeef6",
+      "paper_id": "255ed3ec-8d95-4cc6-84cb-b1c2b2028577",
+      "body": "Source-family overlap treatment, 27 July 2026: S047 is source-only under S075. Age-specific analysis of the same 138-player academy season.",
+      "created_at": "2026-07-27T17:04:19.317478+00:00"
+    },
+    {
+      "studyId": "S630",
+      "id": "1efba5ad-8d1c-42e6-9ae7-6a4d59586504",
+      "paper_id": "ef0f1f0f-6eca-4e07-90ea-7d19826536de",
+      "body": "Source-family overlap treatment, 27 July 2026: S630 is source-only under S075. Earlier injury-profile publication from the same 138-player and 109-injury cohort.",
+      "created_at": "2026-07-27T17:04:19.37749+00:00"
+    },
+    {
+      "studyId": "S1389",
+      "id": "f4b4513f-968b-4ac3-9ea8-7b5602e8214f",
+      "paper_id": "18b90694-e3dc-45aa-9a2f-c65e99da67e1",
+      "body": "Source-family overlap treatment, 27 July 2026: S1389 is source-only under S075. Ten-year career follow-up of 130 eligible players from the same cohort.",
+      "created_at": "2026-07-27T17:04:19.438756+00:00"
+    },
+    {
+      "studyId": "S1014",
+      "id": "ea79d3e1-e59b-4d1b-8df2-dd4733d6dab0",
+      "paper_id": "85ddb9df-2911-4fa4-99e6-f0637b1598b9",
+      "body": "Source-family overlap treatment, 27 July 2026: S1014 owns the FUNBALL intervention and control denominators.",
+      "created_at": "2026-07-27T17:04:19.492059+00:00"
+    },
+    {
+      "studyId": "S2259",
+      "id": "a5f14d7a-0dec-45c9-af1a-c933ffde1a3c",
+      "paper_id": "8401092a-b7cb-43f8-b376-59af71f854fb",
+      "body": "Source-family overlap treatment, 27 July 2026: S2259 is source-only under S1014. Secondary severe-injury analysis across the same trial arms.",
+      "created_at": "2026-07-27T17:04:19.544994+00:00"
+    },
+    {
+      "studyId": "S2474",
+      "id": "33ce2dd2-db39-4bd4-9968-2cf1cd6ad96a",
+      "paper_id": "4c1195ae-df55-48cd-8762-8cdebc8af414",
+      "body": "Source-family overlap treatment, 27 July 2026: S2474 is source-only under S1014. Age analysis of the exact S1014 control arm.",
+      "created_at": "2026-07-27T17:04:19.685581+00:00"
+    },
+    {
+      "studyId": "S289",
+      "id": "8a257472-622b-4018-aba1-1fde129abd33",
+      "paper_id": "487a90de-8343-4c9e-8864-d0c4d938348c",
+      "body": "Source-family overlap treatment, 27 July 2026: S289 is source-only under S1014. Exact duplicate import of S1014.",
+      "created_at": "2026-07-27T17:04:19.743093+00:00"
+    },
+    {
+      "studyId": "S025",
+      "id": "0b5b115d-effd-4193-b8c9-280a1b1b3f9a",
+      "paper_id": "e426a51c-397c-429c-b8fb-207f456fce03",
+      "body": "Source-family overlap treatment, 27 July 2026: S025 owns the disjoint Dutch amateur and professional 2009/10 cohort denominators.",
+      "created_at": "2026-07-27T17:04:19.794966+00:00"
+    },
+    {
+      "studyId": "S468",
+      "id": "70ae8037-5f05-495f-bdb5-7ea4e3a76474",
+      "paper_id": "39ef91cf-2415-4429-bee3-d9a3bbb5be9d",
+      "body": "Source-family overlap treatment, 27 July 2026: S468 is source-only under S025. Amateur cohort re-analysis.",
+      "created_at": "2026-07-27T17:04:19.84585+00:00"
+    },
+    {
+      "studyId": "S658",
+      "id": "54f55ea8-fc64-445a-91e4-b82670afe234",
+      "paper_id": "5a27527c-4af7-40cd-b1a1-2de66525fd61",
+      "body": "Source-family overlap treatment, 27 July 2026: S658 is source-only under S025. Pooled and subgroup representation of the same amateur/professional cohorts.",
+      "created_at": "2026-07-27T17:04:19.917812+00:00"
+    },
+    {
+      "studyId": "S991",
+      "id": "88900b55-88f0-421b-bcbf-cdd832471df6",
+      "paper_id": "5e45d1f1-7615-41cf-a198-5f47297ba707",
+      "body": "Source-family overlap treatment, 27 July 2026: S991 is the canonical analysis record for the Female football menstrual-cycle cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:19.996535+00:00"
+    },
+    {
+      "studyId": "S073",
+      "id": "db8add9a-d3f4-435e-817d-327718866e35",
+      "paper_id": "9d2c5ea1-d999-4bfc-a478-1d362e6e56b3",
+      "body": "Source-family overlap treatment, 27 July 2026: S073 is a bibliographic or import duplicate of S991 in the Female football menstrual-cycle cohort family. S991 is the canonical analysis record. S073 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:20.057629+00:00"
+    },
+    {
+      "studyId": "S074",
+      "id": "f96e37aa-6ea9-42b6-a93b-d01e61b0b9c1",
+      "paper_id": "81efdabd-c65e-44bc-ada5-fe8e5ecb390d",
+      "body": "Source-family overlap treatment, 27 July 2026: S074 is a bibliographic or import duplicate of S991 in the Female football menstrual-cycle cohort family. S991 is the canonical analysis record. S074 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:20.210203+00:00"
+    },
+    {
+      "studyId": "S586",
+      "id": "bafbad16-5b7f-4009-9ea7-191906935694",
+      "paper_id": "1876bf41-b309-4740-a1ee-c235f9b41a62",
+      "body": "Source-family overlap treatment, 27 July 2026: S586 owns the pooled six-season A-League denominator. Season rows remain in source scope to prevent pooled-plus-season duplication.",
+      "created_at": "2026-07-27T17:04:20.274772+00:00"
+    },
+    {
+      "studyId": "S573",
+      "id": "83fe276f-f457-41a1-a011-848516f2c6d1",
+      "paper_id": "f6d8e92f-46bf-4a0b-b659-257a053caf77",
+      "body": "Source-family overlap treatment, 27 July 2026: S573 is source-only under S586. Team-versus-league analysis of the same programme.",
+      "created_at": "2026-07-27T17:04:20.3341+00:00"
+    },
+    {
+      "studyId": "S618",
+      "id": "e11b0cf1-9ab0-4798-82e4-0f3a1592b548",
+      "paper_id": "fce3ee47-5542-49db-ad01-f41298a7ccd2",
+      "body": "Source-family overlap treatment, 27 July 2026: S618 is source-only under S586. Financial/performance analysis using the same 421-player cohort without an independent exposure denominator.",
+      "created_at": "2026-07-27T17:04:20.408938+00:00"
+    },
+    {
+      "studyId": "S008",
+      "id": "6e87e5f3-b3d6-410f-9560-6e3f482322dc",
+      "paper_id": "30784c7e-d0f1-42c6-8982-65b142f14236",
+      "body": "Source-family overlap treatment, 27 July 2026: S008 owns the 2020-2021 Norwegian women’s cohort denominator.",
+      "created_at": "2026-07-27T17:04:20.463168+00:00"
+    },
+    {
+      "studyId": "S1041",
+      "id": "50cda1de-1e2e-436f-9a52-83d75682c440",
+      "paper_id": "dbfa8741-d29a-413a-924e-f5ae73dfdf71",
+      "body": "Source-family overlap treatment, 27 July 2026: S1041 is the groin-injury subset of the S008 cohort and adds clinical/imaging detail only.",
+      "created_at": "2026-07-27T17:04:20.523128+00:00"
+    },
+    {
+      "studyId": "S065",
+      "id": "db135c97-60c4-488e-bd40-8e1730d8de67",
+      "paper_id": "512116af-88d5-4b68-a8d9-f9502cb00d72",
+      "body": "Source-family overlap treatment, 27 July 2026: S065 owns the three national-team strata for the 18-month Iranian futsal cohort.",
+      "created_at": "2026-07-27T17:04:20.692633+00:00"
+    },
+    {
+      "studyId": "S080",
+      "id": "b155abc4-5cd3-466d-94f9-d939e258f3ce",
+      "paper_id": "85399364-f0af-4046-b8cf-cd49cd96b0d0",
+      "body": "Source-family overlap treatment, 27 July 2026: S080 reuses the S065 cohort for physical-fitness risk analysis and is source-only.",
+      "created_at": "2026-07-27T17:04:20.750099+00:00"
+    },
+    {
+      "studyId": "S120",
+      "id": "566a55eb-68c4-42e3-b52f-abc335e87f12",
+      "paper_id": "e83228d3-578a-4e3f-9e96-e74db10d497b",
+      "body": "Source-family overlap treatment, 27 July 2026: S120 is a bibliographic or import duplicate of S080 in the Iran national futsal family. S080 is the canonical analysis record. S120 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:20.806516+00:00"
+    },
+    {
+      "studyId": "S1304",
+      "id": "6e62b4fd-8489-4f25-8f6e-1f9b699e6bdd",
+      "paper_id": "e35747fa-33cd-41b1-8892-ade2758392bd",
+      "body": "Source-family overlap treatment, 27 July 2026: S1304 owns the two-season all-match-injury denominator.",
+      "created_at": "2026-07-27T17:04:20.860736+00:00"
+    },
+    {
+      "studyId": "S1009",
+      "id": "ffd39c80-c767-4018-aac5-a53afbff243a",
+      "paper_id": "3940773f-5ab6-4805-8c79-18722dd9f28c",
+      "body": "Source-family overlap treatment, 27 July 2026: S1009 is the concussion-specific analysis of the same New Zealand team and seasons.",
+      "created_at": "2026-07-27T17:04:20.946803+00:00"
+    },
+    {
+      "studyId": "S1229",
+      "id": "02d0f058-0ac6-422d-99ac-b79222b936c1",
+      "paper_id": "ec4026ef-6f06-4c2e-a048-11c910bb6f2b",
+      "body": "Source-family overlap treatment, 27 July 2026: S1229 owns the pooled Ghana academy denominator. Age rows remain source-only for denominator aggregation.",
+      "created_at": "2026-07-27T17:04:21.00576+00:00"
+    },
+    {
+      "studyId": "S324",
+      "id": "986f44b1-b3f3-4c09-8347-7ac864063f9d",
+      "paper_id": "ed57efee-dd41-4fa3-a9ee-6d357e199d32",
+      "body": "Source-family overlap treatment, 27 July 2026: S324 is the risk-factor analysis of the same Ghana academy age strata.",
+      "created_at": "2026-07-27T17:04:21.055772+00:00"
+    },
+    {
+      "studyId": "S428",
+      "id": "82073188-0f7e-442c-b66c-12e54ef61c77",
+      "paper_id": "6a4c5c85-8a48-4b70-87d9-ea9220f94ac2",
+      "body": "Source-family overlap treatment, 27 July 2026: S428 owns the 39-week in-season groin-problem denominator.",
+      "created_at": "2026-07-27T17:04:21.107926+00:00"
+    },
+    {
+      "studyId": "S211",
+      "id": "18e8b13e-8ada-4fd6-ac9f-c09e43ce21b8",
+      "paper_id": "13a6833a-3dac-4ff4-aa6b-0a9b64e36fbc",
+      "body": "Source-family overlap treatment, 27 July 2026: S211 adds a preseason extension but repeats the S428 in-season cohort and is source-only.",
+      "created_at": "2026-07-27T17:04:21.255595+00:00"
+    },
+    {
+      "studyId": "S496",
+      "id": "a9cf1aa9-6c1e-4d4b-894d-0f6d9295bec5",
+      "paper_id": "bc7d9021-508c-40f3-ba9a-315554c87943",
+      "body": "Source-family overlap treatment, 27 July 2026: S496 owns the broad 1995-1997 high-school surveillance denominator.",
+      "created_at": "2026-07-27T17:04:21.311093+00:00"
+    },
+    {
+      "studyId": "S231",
+      "id": "45fbdef2-d6ed-4c01-8bfc-bb647271bf75",
+      "paper_id": "d429b074-9ada-4899-bfba-cba8f681ea72",
+      "body": "Source-family overlap treatment, 27 July 2026: S231 reuses the S496 surveillance denominators for a kidney-injury analysis and is source-only.",
+      "created_at": "2026-07-27T17:04:21.374993+00:00"
+    },
+    {
+      "studyId": "S4629",
+      "id": "8a59ed3c-5d92-4df0-ba78-8c9ae10da76e",
+      "paper_id": "ea0b6015-203a-4c59-b9b5-ec84f4d77322",
+      "body": "Source-family overlap treatment, 27 July 2026: S4629 owns the 2021 Korean youth all-injury denominator.",
+      "created_at": "2026-07-27T17:04:21.456384+00:00"
+    },
+    {
+      "studyId": "S3075",
+      "id": "c5eb58e6-dbba-4175-9379-13528ecc18b8",
+      "paper_id": "408a68c0-8cde-49b2-afe5-1ecacc8a9658",
+      "body": "Source-family overlap treatment, 27 July 2026: S3075 is the lateral-ankle-sprain subset of S4629.",
+      "created_at": "2026-07-27T17:04:21.539899+00:00"
+    },
+    {
+      "studyId": "S417",
+      "id": "ee383407-6d21-493f-9b2a-fe953ce56c45",
+      "paper_id": "6714daa4-f245-497a-9e24-ee9f193cc690",
+      "body": "Source-family overlap treatment, 27 July 2026: S417 owns the pooled four-club epidemiological denominator.",
+      "created_at": "2026-07-27T17:04:21.59833+00:00"
+    },
+    {
+      "studyId": "S574",
+      "id": "1e787a4b-1dc4-4ebb-a297-cd3044ea68a3",
+      "paper_id": "77925895-0b26-4dd0-82cc-8831652321f3",
+      "body": "Source-family overlap treatment, 27 July 2026: S574 is a risk-assessment analysis of the S417 cohort.",
+      "created_at": "2026-07-27T17:04:21.741832+00:00"
+    },
+    {
+      "studyId": "S421",
+      "id": "e6df481c-4c40-47d1-8939-cd00de87d53a",
+      "paper_id": "c4e702d8-0802-4ea7-b4d8-cf03f8c59eb5",
+      "body": "Source-family overlap treatment, 27 July 2026: S421 owns the pooled three-season academy denominator. Season rows remain in source scope.",
+      "created_at": "2026-07-27T17:04:21.800348+00:00"
+    },
+    {
+      "studyId": "S600",
+      "id": "d22750a4-e96b-457b-9348-ba9afee1f74e",
+      "paper_id": "b4ad9328-f7c4-4363-a436-ceee40f52590",
+      "body": "Source-family overlap treatment, 27 July 2026: S600 reuses the same academy and seasons for phase-specific analyses and is source-only.",
+      "created_at": "2026-07-27T17:04:21.856649+00:00"
+    },
+    {
+      "studyId": "S452",
+      "id": "a38faacb-f06d-4659-aedf-389b83961778",
+      "paper_id": "c408d44e-1d20-45c0-9e0e-42cf913336de",
+      "body": "Source-family overlap treatment, 27 July 2026: S452 is source-only in the English FA academy audit family. Thigh-muscle prognosis analysis. No eligible general all-injury anchor is present in the live corpus.",
+      "created_at": "2026-07-27T17:04:21.913208+00:00"
+    },
+    {
+      "studyId": "S454",
+      "id": "89a93d92-1834-4e19-acce-dd750c616d21",
+      "paper_id": "eeff0f54-959d-4fda-8fa8-6dc9f2359820",
+      "body": "Source-family overlap treatment, 27 July 2026: S454 is source-only in the English FA academy audit family. Knee-injury analysis. No eligible general all-injury anchor is present in the live corpus.",
+      "created_at": "2026-07-27T17:04:21.971494+00:00"
+    },
+    {
+      "studyId": "S4778",
+      "id": "3b2e9c6a-d106-4fdd-8094-95b4b148a60b",
+      "paper_id": "551d5ed6-c7e2-4c64-8585-e13a5d07af90",
+      "body": "Source-family overlap treatment, 27 July 2026: S4778 is audit-only. The source reports a diagnosis-specific public-data cohort without an eligible at-risk exposure denominator.",
+      "created_at": "2026-07-27T17:04:22.032364+00:00"
+    },
+    {
+      "studyId": "S4793",
+      "id": "0fbd6f47-60c1-43bc-b2b5-70957f0959f7",
+      "paper_id": "1dd18f12-58d1-45d6-9021-1e430acbc5b2",
+      "body": "Source-family overlap treatment, 27 July 2026: S4793 is audit-only. The source reports a diagnosis-specific public-data cohort without an eligible at-risk exposure denominator.",
+      "created_at": "2026-07-27T17:04:22.097102+00:00"
+    },
+    {
+      "studyId": "S605",
+      "id": "722603c8-3702-471f-8102-4258d7ab5570",
+      "paper_id": "9f613e2b-353f-40f4-9688-4239012c3d6f",
+      "body": "Source-family overlap treatment, 27 July 2026: S605 owns the pooled Norway Cup denominator. Surface rows remain in source scope.",
+      "created_at": "2026-07-27T17:04:22.15415+00:00"
+    },
+    {
+      "studyId": "S627",
+      "id": "03358b30-f937-4c43-86f3-eedeb4c2e88b",
+      "paper_id": "2d59c793-e32c-42b0-841f-bfd9a6a9b4bd",
+      "body": "Source-family overlap treatment, 27 July 2026: S627 is an earlier bibliographic representation of the same Norway Cup totals and is source-only.",
+      "created_at": "2026-07-27T17:04:22.307034+00:00"
+    },
+    {
+      "studyId": "S628",
+      "id": "a0ddb2d0-92a1-4ec4-9bd0-dce1ab122925",
+      "paper_id": "c2e22bb6-6928-4e90-9b0e-8e25dac9024c",
+      "body": "Source-family overlap treatment, 27 July 2026: S628 owns the collegiate male FIFA 11+ trial denominators.",
+      "created_at": "2026-07-27T17:04:22.374874+00:00"
+    },
+    {
+      "studyId": "S026",
+      "id": "0f23472d-331c-4af7-8736-da221595b38b",
+      "paper_id": "e6a62ca4-61ef-463c-8064-e322cf3cbdce",
+      "body": "Source-family overlap treatment, 27 July 2026: S026 is the ACL-specific retrospective analysis of S628 and is source-only.",
+      "created_at": "2026-07-27T17:04:22.4344+00:00"
+    },
+    {
+      "studyId": "S116",
+      "id": "95f8b56a-7ebe-4492-850d-97c81a1a8b60",
+      "paper_id": "5d3b5dc1-4af2-48ba-9bc8-40e55b22c089",
+      "body": "Source-family overlap treatment, 27 July 2026: S116 is a bibliographic or import duplicate of S026 in the FIFA 11+ ACL analysis family. S026 is the canonical analysis record. S116 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:22.515511+00:00"
+    },
+    {
+      "studyId": "S481",
+      "id": "9501ddf8-9b7a-4463-a8fe-1ec1ee2515f8",
+      "paper_id": "c216b599-b58b-4b2c-96ca-9d64077ef7ae",
+      "body": "Source-family overlap treatment, 27 July 2026: S481 owns the multicountry 11+ Kids trial arm denominators.",
+      "created_at": "2026-07-27T17:04:22.578803+00:00"
+    },
+    {
+      "studyId": "S430",
+      "id": "f963d437-1395-4755-b9f9-351d6df1ca79",
+      "paper_id": "1f9169fb-64f5-4b01-903d-ddd4cd0adc23",
+      "body": "Source-family overlap treatment, 27 July 2026: S430 is the severe-injury secondary analysis of S481 and is source-only.",
+      "created_at": "2026-07-27T17:04:22.63404+00:00"
+    },
+    {
+      "studyId": "S209",
+      "id": "3bf85e3a-662d-4d5c-8157-64e38a103e47",
+      "paper_id": "4acb637b-542d-4bdd-82d9-c1bbd6c12f7a",
+      "body": "Source-family overlap treatment, 27 July 2026: S209 is a risk-factor re-analysis of a parent randomised trial that is not present as a live paper. It is source-only and remains unresolved to an in-corpus anchor.",
+      "created_at": "2026-07-27T17:04:22.689907+00:00"
+    },
+    {
+      "studyId": "S058",
+      "id": "8d27259f-abfc-413a-8096-c4ed9dea7195",
+      "paper_id": "34d8071a-ba29-42c7-88b3-0ead910c223e",
+      "body": "Source-family overlap treatment, 27 July 2026: S058 is the canonical analysis record for the Swedish elite male/female 2005 family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:22.828829+00:00"
+    },
+    {
+      "studyId": "S118",
+      "id": "3bd3767b-0055-4763-890a-513ef7169ecc",
+      "paper_id": "01c594c9-e04b-493c-b5d3-9d099b175bd4",
+      "body": "Source-family overlap treatment, 27 July 2026: S118 is a bibliographic or import duplicate of S058 in the Swedish elite male/female 2005 family. S058 is the canonical analysis record. S118 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:22.890464+00:00"
+    },
+    {
+      "studyId": "S028",
+      "id": "cca5601f-075a-4887-8755-dbc8bfd73775",
+      "paper_id": "e28f320a-6ca2-4347-be16-f9c9528bd326",
+      "body": "Source-family overlap treatment, 27 July 2026: S028 is the canonical analysis record for the Nordic hamstring high-school trial family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:22.948089+00:00"
+    },
+    {
+      "studyId": "S117",
+      "id": "145e6f59-6e47-4708-be28-13834b591809",
+      "paper_id": "c13efa23-aae4-4553-a33c-22b68759f03c",
+      "body": "Source-family overlap treatment, 27 July 2026: S117 is a bibliographic or import duplicate of S028 in the Nordic hamstring high-school trial family. S028 is the canonical analysis record. S117 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.001727+00:00"
+    },
+    {
+      "studyId": "S086",
+      "id": "e864b7fb-64cf-4fe0-b47b-d99ea335cd8e",
+      "paper_id": "20cf6912-5ff6-480d-96d2-1753d94bf056",
+      "body": "Source-family overlap treatment, 27 July 2026: S086 is the canonical analysis record for the Female elite joint-hypermobility cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.059686+00:00"
+    },
+    {
+      "studyId": "S121",
+      "id": "4e60083f-70a1-4a75-96cb-62f0731a5fcd",
+      "paper_id": "677aeb74-39a2-4966-ac1b-d610d204e46b",
+      "body": "Source-family overlap treatment, 27 July 2026: S121 is a bibliographic or import duplicate of S086 in the Female elite joint-hypermobility cohort family. S086 is the canonical analysis record. S121 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.113982+00:00"
+    },
+    {
+      "studyId": "S087",
+      "id": "699954be-1041-4d7a-9847-b3988dfcd9b0",
+      "paper_id": "1301e63e-286f-46d0-957b-2d55664efad2",
+      "body": "Source-family overlap treatment, 27 July 2026: S087 is the canonical analysis record for the Elite hamstring-prevention intervention family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.31543+00:00"
+    },
+    {
+      "studyId": "S122",
+      "id": "1012dc1f-69a7-4147-bde6-599db907e3de",
+      "paper_id": "3fa7dbf7-407d-4a18-8f50-234555b3487c",
+      "body": "Source-family overlap treatment, 27 July 2026: S122 is a bibliographic or import duplicate of S087 in the Elite hamstring-prevention intervention family. S087 is the canonical analysis record. S122 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.373698+00:00"
+    },
+    {
+      "studyId": "S088",
+      "id": "3b559748-2ac9-4bf7-9c26-935aa25a79f4",
+      "paper_id": "13f7fcca-30dd-413e-9e9e-4e09ccb5d4ce",
+      "body": "Source-family overlap treatment, 27 July 2026: S088 is the canonical analysis record for the German severe-knee-injury prevention cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.4309+00:00"
+    },
+    {
+      "studyId": "S123",
+      "id": "ee1c3657-e750-48e6-9920-ca720b2e9e5d",
+      "paper_id": "1e02cdef-9ebf-4fcb-a6c5-5b9ea8b231b6",
+      "body": "Source-family overlap treatment, 27 July 2026: S123 is a bibliographic or import duplicate of S088 in the German severe-knee-injury prevention cohort family. S088 is the canonical analysis record. S123 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.486321+00:00"
+    },
+    {
+      "studyId": "S089",
+      "id": "f3c6aad5-31ee-482b-bffd-3179063ac3fb",
+      "paper_id": "5ba88232-baeb-4c47-9d6d-d3ba17154e26",
+      "body": "Source-family overlap treatment, 27 July 2026: S089 is the canonical analysis record for the São Paulo professional championship 2016 family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.544664+00:00"
+    },
+    {
+      "studyId": "S124",
+      "id": "1450f6c3-0ae7-41da-9c74-f34b55716eca",
+      "paper_id": "eae2ca07-436b-4da2-b940-75f29ef4084a",
+      "body": "Source-family overlap treatment, 27 July 2026: S124 is a bibliographic or import duplicate of S089 in the São Paulo professional championship 2016 family. S089 is the canonical analysis record. S124 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.677236+00:00"
+    },
+    {
+      "studyId": "S090",
+      "id": "b3a2a32f-d513-4431-87ca-a33617c1e7d7",
+      "paper_id": "86043663-f0c0-4e2a-848c-f528776f51ae",
+      "body": "Source-family overlap treatment, 27 July 2026: S090 is the canonical analysis record for the Brazilian championship 2019 family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.731327+00:00"
+    },
+    {
+      "studyId": "S125",
+      "id": "eca05597-fdf7-4fb5-9ebf-4541f446e4fa",
+      "paper_id": "432d77f6-a1dd-402a-b634-69adf5cb0ae6",
+      "body": "Source-family overlap treatment, 27 July 2026: S125 is a bibliographic or import duplicate of S090 in the Brazilian championship 2019 family. S090 is the canonical analysis record. S125 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.879366+00:00"
+    },
+    {
+      "studyId": "S092",
+      "id": "6501fadf-a96c-4d00-93ed-4cd5ee459845",
+      "paper_id": "29201686-0921-4a6d-a96f-a185ab43af1c",
+      "body": "Source-family overlap treatment, 27 July 2026: S092 is the canonical analysis record for the Australian amateur ankle-risk cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.941768+00:00"
+    },
+    {
+      "studyId": "S126",
+      "id": "6442676e-ba36-44a9-b7ca-f94a6c61ac6c",
+      "paper_id": "4cd734f9-1250-476f-a5d4-1ee5fbbfbd20",
+      "body": "Source-family overlap treatment, 27 July 2026: S126 is a bibliographic or import duplicate of S092 in the Australian amateur ankle-risk cohort family. S092 is the canonical analysis record. S126 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:23.99675+00:00"
+    },
+    {
+      "studyId": "S094",
+      "id": "d98bf173-3f8f-46dd-a518-3a97f28b0c75",
+      "paper_id": "69b24ebe-f92a-442f-87cd-e392c680c274",
+      "body": "Source-family overlap treatment, 27 July 2026: S094 is the canonical analysis record for the US high-school concussion trends family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.052106+00:00"
+    },
+    {
+      "studyId": "S127",
+      "id": "3e462e56-c24b-4f1f-8a76-dcd2e0fa7276",
+      "paper_id": "c7a5752e-32b1-4a6a-a87f-40591ee3fade",
+      "body": "Source-family overlap treatment, 27 July 2026: S127 is a bibliographic or import duplicate of S094 in the US high-school concussion trends family. S094 is the canonical analysis record. S127 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.122338+00:00"
+    },
+    {
+      "studyId": "S095",
+      "id": "02d7dab8-10bc-4130-8501-2bb8880fa716",
+      "paper_id": "ccf8ea07-cc04-4f8d-8216-9597414fa224",
+      "body": "Source-family overlap treatment, 27 July 2026: S095 is the canonical analysis record for the Norwegian women’s text-message method study family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.182485+00:00"
+    },
+    {
+      "studyId": "S128",
+      "id": "719c6e19-349a-46de-b19b-39117989d24a",
+      "paper_id": "2b243649-7ded-4939-b24f-a7a03508c07e",
+      "body": "Source-family overlap treatment, 27 July 2026: S128 is a bibliographic or import duplicate of S095 in the Norwegian women’s text-message method study family. S095 is the canonical analysis record. S128 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.242534+00:00"
+    },
+    {
+      "studyId": "S099",
+      "id": "b087d2f5-a89c-46c3-8b09-ddfd0af70fa6",
+      "paper_id": "d0eb6344-79d2-4aec-85c8-0a47a9193761",
+      "body": "Source-family overlap treatment, 27 July 2026: S099 is the canonical analysis record for the FIFA 11+ shoulder goalkeeper trial family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.391242+00:00"
+    },
+    {
+      "studyId": "S131",
+      "id": "aef63a2d-2a90-4593-879f-bfa03259db88",
+      "paper_id": "1aff06e7-effc-41af-9e11-26b65c00fce8",
+      "body": "Source-family overlap treatment, 27 July 2026: S131 is a bibliographic or import duplicate of S099 in the FIFA 11+ shoulder goalkeeper trial family. S099 is the canonical analysis record. S131 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.447069+00:00"
+    },
+    {
+      "studyId": "S100",
+      "id": "347d5fe5-56c8-46d0-9b9d-7135a0f8dabd",
+      "paper_id": "c2a87ee4-51e3-45ee-9c29-d1eb6e96df47",
+      "body": "Source-family overlap treatment, 27 July 2026: S100 is the canonical analysis record for the Single-club match-congestion study family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.500905+00:00"
+    },
+    {
+      "studyId": "S132",
+      "id": "aed6027e-2090-4cdb-b270-284779f4735d",
+      "paper_id": "91da098e-d4d7-4005-a62d-f0e60b998965",
+      "body": "Source-family overlap treatment, 27 July 2026: S132 is a bibliographic or import duplicate of S100 in the Single-club match-congestion study family. S100 is the canonical analysis record. S132 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.553423+00:00"
+    },
+    {
+      "studyId": "S102",
+      "id": "7af8f7ff-5987-48de-a780-01ce2ea88bba",
+      "paper_id": "72d13b9c-8071-453e-a567-213d2e385759",
+      "body": "Source-family overlap treatment, 27 July 2026: S102 is the canonical analysis record for the English elite youth female 2019/20 family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.61147+00:00"
+    },
+    {
+      "studyId": "S133",
+      "id": "eff589c4-fd48-445f-8a02-af9777ff6e15",
+      "paper_id": "457f4164-e77c-4164-8410-a8a380208780",
+      "body": "Source-family overlap treatment, 27 July 2026: S133 is a bibliographic or import duplicate of S102 in the English elite youth female 2019/20 family. S102 is the canonical analysis record. S133 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.72883+00:00"
+    },
+    {
+      "studyId": "S103",
+      "id": "c1cb09fc-9ecb-4812-aa62-5f64fe9de882",
+      "paper_id": "3a875a63-d142-4628-b874-9b1507f4a96e",
+      "body": "Source-family overlap treatment, 27 July 2026: S103 is the canonical analysis record for the Saudi national-team surface pilot family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.788746+00:00"
+    },
+    {
+      "studyId": "S134",
+      "id": "8540c6bc-9604-4c36-a587-efea1fe216be",
+      "paper_id": "56edfa09-d17a-4a27-acb4-2af1acad8716",
+      "body": "Source-family overlap treatment, 27 July 2026: S134 is a bibliographic or import duplicate of S103 in the Saudi national-team surface pilot family. S103 is the canonical analysis record. S134 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:24.95202+00:00"
+    },
+    {
+      "studyId": "S104",
+      "id": "f6819cb6-c5f4-4904-9fdb-8afa587444d9",
+      "paper_id": "10bea811-8f34-463a-b5e0-0a0b87e61cd5",
+      "body": "Source-family overlap treatment, 27 July 2026: S104 is the canonical analysis record for the Caribbean amateur women’s league family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.000256+00:00"
+    },
+    {
+      "studyId": "S135",
+      "id": "17b2aeef-12f4-460e-b6cb-f533235055d5",
+      "paper_id": "f6f7a1b1-e874-4c77-9716-dc4427a912ea",
+      "body": "Source-family overlap treatment, 27 July 2026: S135 is a bibliographic or import duplicate of S104 in the Caribbean amateur women’s league family. S104 is the canonical analysis record. S135 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.047814+00:00"
+    },
+    {
+      "studyId": "S115",
+      "id": "275791a8-c74c-4426-b817-0635850a8db4",
+      "paper_id": "70d32abe-4303-4e0c-b368-54a0d31e059e",
+      "body": "Source-family overlap treatment, 27 July 2026: S115 is the canonical analysis record for the French academy workload study family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.095045+00:00"
+    },
+    {
+      "studyId": "S114",
+      "id": "e159f740-5cbd-49c7-a762-d4c51bc589fb",
+      "paper_id": "73c589de-db3b-4139-aad2-f98a14d06ec4",
+      "body": "Source-family overlap treatment, 27 July 2026: S114 is a bibliographic or import duplicate of S115 in the French academy workload study family. S115 is the canonical analysis record. S114 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.146049+00:00"
+    },
+    {
+      "studyId": "S139",
+      "id": "dfe0c376-d45f-40b0-b4da-3fb9f3f4ab5e",
+      "paper_id": "61b8774d-69b4-4c14-8810-e165216c2e2c",
+      "body": "Source-family overlap treatment, 27 July 2026: S139 is the canonical analysis record for the English Premier League workload model family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.194947+00:00"
+    },
+    {
+      "studyId": "S082",
+      "id": "85d345dd-b9e6-4bfe-b0cd-0db6daa30d9c",
+      "paper_id": "15fc419b-561d-45f9-8f49-65f335d591ca",
+      "body": "Source-family overlap treatment, 27 July 2026: S082 is a bibliographic or import duplicate of S139 in the English Premier League workload model family. S139 is the canonical analysis record. S082 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.245559+00:00"
+    },
+    {
+      "studyId": "S1402",
+      "id": "cf18a499-8562-4b07-a88b-bb55de2bd0eb",
+      "paper_id": "c7ce85d7-381d-40d6-8898-754641053240",
+      "body": "Source-family overlap treatment, 27 July 2026: S1402 is the canonical analysis record for the Futsal preseason competitive-level study family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.301038+00:00"
+    },
+    {
+      "studyId": "S303",
+      "id": "0eb8b13a-a263-4e3f-afa7-9f6bc2c17889",
+      "paper_id": "bc0deedb-027c-4628-896b-00121291f461",
+      "body": "Source-family overlap treatment, 27 July 2026: S303 is a bibliographic or import duplicate of S1402 in the Futsal preseason competitive-level study family. S1402 is the canonical analysis record. S303 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.444195+00:00"
+    },
+    {
+      "studyId": "S989",
+      "id": "288eaa0d-fc69-4e81-a2f7-f8b3ca3d4fa6",
+      "paper_id": "35733dcd-9e5b-4bf5-ba6a-cf7435fed46b",
+      "body": "Source-family overlap treatment, 27 July 2026: S989 is the canonical analysis record for the Brazilian professional shoulder cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.512029+00:00"
+    },
+    {
+      "studyId": "S273",
+      "id": "b2de5fe6-a46c-4e1b-afc1-175805da7db1",
+      "paper_id": "9bbf1e50-e302-40d9-b873-7f52c64879eb",
+      "body": "Source-family overlap treatment, 27 July 2026: S273 is a bibliographic or import duplicate of S989 in the Brazilian professional shoulder cohort family. S989 is the canonical analysis record. S273 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.570563+00:00"
+    },
+    {
+      "studyId": "S2813",
+      "id": "f751d208-0023-4776-9cac-c9ef8183d7af",
+      "paper_id": "0aaa3809-327c-4dbe-867a-321145cd6cc4",
+      "body": "Source-family overlap treatment, 27 July 2026: S2813 is the canonical analysis record for the Dutch youth growth-related injury cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.66227+00:00"
+    },
+    {
+      "studyId": "S338",
+      "id": "698e99ea-12a0-4a45-a8a8-20da32b127d3",
+      "paper_id": "d2169b45-cb2e-443a-9379-bdbe9979a741",
+      "body": "Source-family overlap treatment, 27 July 2026: S338 is a bibliographic or import duplicate of S2813 in the Dutch youth growth-related injury cohort family. S2813 is the canonical analysis record. S338 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.712365+00:00"
+    },
+    {
+      "studyId": "S644",
+      "id": "216e2360-3905-4e09-b584-8cf7a6e1d1ea",
+      "paper_id": "8c7416bd-d89b-434a-adfa-cc8551c75852",
+      "body": "Source-family overlap treatment, 27 July 2026: S644 is the canonical analysis record for the Swiss youth muscle-injury cohort family. Duplicate imports are retained only in source scope. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.762526+00:00"
+    },
+    {
+      "studyId": "S645",
+      "id": "38fd254b-73b0-43b2-9987-af5794adbdb6",
+      "paper_id": "d0abda7a-7758-477d-9182-b0f13528bb73",
+      "body": "Source-family overlap treatment, 27 July 2026: S645 is a bibliographic or import duplicate of S644 in the Swiss youth muscle-injury cohort family. S644 is the canonical analysis record. S645 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:25.812395+00:00"
+    },
+    {
+      "studyId": "S532",
+      "id": "f799fccc-e745-4fde-b146-6f713c0d93c1",
+      "paper_id": "823263ec-b432-46af-ad1c-cdb12f75f2d8",
+      "body": "Source-family overlap treatment, 27 July 2026: S532 is the full-paper anchor for the Dutch amateur RCT.",
+      "created_at": "2026-07-27T17:04:25.940216+00:00"
+    },
+    {
+      "studyId": "S534",
+      "id": "2ddb36f1-30ed-4d7b-bf1b-3bb8031d73d7",
+      "paper_id": "8a864ef3-7176-4f74-8408-411a94b94aa9",
+      "body": "Source-family overlap treatment, 27 July 2026: S534 is the conference-abstract representation of S532 and is source-only.",
+      "created_at": "2026-07-27T17:04:25.993157+00:00"
+    },
+    {
+      "studyId": "S038",
+      "id": "d9f61a61-1ed9-4dc4-b7e5-7f43d866bb1c",
+      "paper_id": "2cc50c89-b7b1-46be-bd93-b3a848c14030",
+      "body": "Source-family overlap treatment, 27 July 2026: S038 is a bibliographic or import duplicate of S010 in the validated tournament source ledger family. S010 is the canonical analysis record. S038 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:26.047229+00:00"
+    },
+    {
+      "studyId": "S119",
+      "id": "7905db3d-38b4-4335-8e2f-f51058700ef9",
+      "paper_id": "6045cd03-8b28-4b5b-8381-722d16c2e33a",
+      "body": "Source-family overlap treatment, 27 July 2026: S119 is a bibliographic or import duplicate of S064 in the validated tournament source ledger family. S064 is the canonical analysis record. S119 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:26.102489+00:00"
+    },
+    {
+      "studyId": "S129",
+      "id": "8dc3c1c5-f90a-4225-88f0-b0eb0b4de0dd",
+      "paper_id": "dd260309-7713-476e-8453-d3218c3c1ab5",
+      "body": "Source-family overlap treatment, 27 July 2026: S129 is a bibliographic or import duplicate of S096 in the validated tournament source ledger family. S096 is the canonical analysis record. S129 remains available in source scope but is excluded from the default analysis export. No screening, status, assignment, extraction, population, file or protected value was changed.",
+      "created_at": "2026-07-27T17:04:26.172489+00:00"
+    }
+  ],
+  "includedStudyIds": [
+    "S008",
+    "S025",
+    "S028",
+    "S058",
+    "S065",
+    "S075",
+    "S076",
+    "S086",
+    "S087",
+    "S088",
+    "S089",
+    "S090",
+    "S092",
+    "S094",
+    "S095",
+    "S099",
+    "S100",
+    "S1014",
+    "S102",
+    "S103",
+    "S104",
+    "S112",
+    "S115",
+    "S1229",
+    "S1304",
+    "S139",
+    "S1402",
+    "S261",
+    "S2813",
+    "S2824",
+    "S417",
+    "S421",
+    "S428",
+    "S4629",
+    "S481",
+    "S496",
+    "S532",
+    "S586",
+    "S602",
+    "S605",
+    "S628",
+    "S644",
+    "S989",
+    "S991",
+    "UEFA-ECIS-MASTER"
+  ],
+  "excludedStudyIds": [
+    "S002",
+    "S006",
+    "S007",
+    "S011",
+    "S019",
+    "S026",
+    "S031",
+    "S036",
+    "S038",
+    "S042",
+    "S043",
+    "S044",
+    "S046",
+    "S047",
+    "S056",
+    "S057",
+    "S071",
+    "S073",
+    "S074",
+    "S079",
+    "S080",
+    "S082",
+    "S084",
+    "S091",
+    "S1009",
+    "S1041",
+    "S106",
+    "S107",
+    "S108",
+    "S1091",
+    "S110",
+    "S113",
+    "S114",
+    "S116",
+    "S117",
+    "S118",
+    "S119",
+    "S120",
+    "S121",
+    "S122",
+    "S123",
+    "S124",
+    "S125",
+    "S126",
+    "S127",
+    "S128",
+    "S129",
+    "S131",
+    "S132",
+    "S133",
+    "S134",
+    "S135",
+    "S136",
+    "S137",
+    "S138",
+    "S1389",
+    "S1431",
+    "S175",
+    "S195",
+    "S199",
+    "S200",
+    "S201",
+    "S202",
+    "S209",
+    "S211",
+    "S2259",
+    "S231",
+    "S2391",
+    "S2474",
+    "S273",
+    "S289",
+    "S303",
+    "S3075",
+    "S324",
+    "S338",
+    "S340",
+    "S344",
+    "S3577",
+    "S358",
+    "S368",
+    "S389",
+    "S390",
+    "S401",
+    "S415",
+    "S430",
+    "S451",
+    "S452",
+    "S454",
+    "S468",
+    "S4778",
+    "S4793",
+    "S4839",
+    "S509",
+    "S513",
+    "S527",
+    "S534",
+    "S544",
+    "S554",
+    "S555",
+    "S573",
+    "S574",
+    "S576",
+    "S581",
+    "S600",
+    "S618",
+    "S627",
+    "S630",
+    "S645",
+    "S658",
+    "S712"
+  ],
+  "excludedRows": [
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "ECIS men hamstring injuries 2001/02-2021/22"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "ECIS men hip/groin injuries 2001/02-2015/16"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "ECIS men adductor injuries 2001/02-2015/16"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 4,
+      "expectedLabel": "Row 5",
+      "sourceKey": "ECIS men LCL injuries 2001-2018"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 5,
+      "expectedLabel": "Row 6",
+      "sourceKey": "ECIS men PCL injuries 2001-2018"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 6,
+      "expectedLabel": "Row 7",
+      "sourceKey": "ECIS men MCL injuries 2001/02-2011/12"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 7,
+      "expectedLabel": "Row 8",
+      "sourceKey": "ECIS men ACL injuries 2001-2015"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 8,
+      "expectedLabel": "Row 9",
+      "sourceKey": "ECIS men ankle injuries 2001/02-2011/12"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 9,
+      "expectedLabel": "Row 10",
+      "sourceKey": "ECIS men syndesmosis injuries 2001-2016"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 10,
+      "expectedLabel": "Row 11",
+      "sourceKey": "ECIS men upper-extremity injuries 2001-2011"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 11,
+      "expectedLabel": "Row 12",
+      "sourceKey": "ECIS men head/neck injuries 2001/02-2009/10"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 12,
+      "expectedLabel": "Row 13",
+      "sourceKey": "ECIS men concussion injuries 2001/02-2009/10"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 13,
+      "expectedLabel": "Row 14",
+      "sourceKey": "ECIS-related stress fractures through 2012"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 14,
+      "expectedLabel": "Row 15",
+      "sourceKey": "ECIS men fifth-metatarsal fractures through 2012"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 15,
+      "expectedLabel": "Row 16",
+      "sourceKey": "ECIS men Achilles tendinopathy 2001-2011"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 16,
+      "expectedLabel": "Row 17",
+      "sourceKey": "ECIS men Achilles rupture 2001-2011"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 17,
+      "expectedLabel": "Row 18",
+      "sourceKey": "ECIS men indirect thigh injuries 2001-May 2013"
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "populationPosition": 18,
+      "expectedLabel": "Row 19",
+      "sourceKey": "ECIS men direct thigh contusions 2001-May 2013"
+    },
+    {
+      "studyId": "S002",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S002",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "uefa-ecis-men: Row 2"
+    },
+    {
+      "studyId": "S002",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "uefa-ecis-men: Row 3"
+    },
+    {
+      "studyId": "S006",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S007",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S011",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S019",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S042",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S043",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S046",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S056",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S056",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "uefa-ecis-men: Row 2"
+    },
+    {
+      "studyId": "S057",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S175",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S200",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S2391",
+      "populationPosition": 0,
+      "expectedLabel": "ACLR, ≤1 year after RTP",
+      "sourceKey": "uefa-ecis-men: ACLR, ≤1 year after RTP"
+    },
+    {
+      "studyId": "S2391",
+      "populationPosition": 1,
+      "expectedLabel": "ACLR, ≤2 years after RTP",
+      "sourceKey": "uefa-ecis-men: ACLR, ≤2 years after RTP"
+    },
+    {
+      "studyId": "S044",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "uefa-ecis-men: Row 1"
+    },
+    {
+      "studyId": "S044",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "uefa-ecis-men: Row 2"
+    },
+    {
+      "studyId": "S044",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "uefa-ecis-men: Row 3"
+    },
+    {
+      "studyId": "S112",
+      "populationPosition": 1,
+      "expectedLabel": "S112 WECIS women season - 2018/2019",
+      "sourceKey": "uefa-wecis-women: S112 WECIS women season - 2018/2019"
+    },
+    {
+      "studyId": "S112",
+      "populationPosition": 2,
+      "expectedLabel": "S112 WECIS women season - 2019/2020",
+      "sourceKey": "uefa-wecis-women: S112 WECIS women season - 2019/2020"
+    },
+    {
+      "studyId": "S112",
+      "populationPosition": 3,
+      "expectedLabel": "S112 WECIS women season - 2020/2021",
+      "sourceKey": "uefa-wecis-women: S112 WECIS women season - 2020/2021"
+    },
+    {
+      "studyId": "S112",
+      "populationPosition": 4,
+      "expectedLabel": "S112 WECIS women season - 2021/2022",
+      "sourceKey": "uefa-wecis-women: S112 WECIS women season - 2021/2022"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 1,
+      "expectedLabel": "U9",
+      "sourceKey": "aspetar-aspire-academy: U9"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 2,
+      "expectedLabel": "U10",
+      "sourceKey": "aspetar-aspire-academy: U10"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 3,
+      "expectedLabel": "U11",
+      "sourceKey": "aspetar-aspire-academy: U11"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 4,
+      "expectedLabel": "U12",
+      "sourceKey": "aspetar-aspire-academy: U12"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 5,
+      "expectedLabel": "U13",
+      "sourceKey": "aspetar-aspire-academy: U13"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 6,
+      "expectedLabel": "U14",
+      "sourceKey": "aspetar-aspire-academy: U14"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 7,
+      "expectedLabel": "U15",
+      "sourceKey": "aspetar-aspire-academy: U15"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 8,
+      "expectedLabel": "U16",
+      "sourceKey": "aspetar-aspire-academy: U16"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 9,
+      "expectedLabel": "U17",
+      "sourceKey": "aspetar-aspire-academy: U17"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 10,
+      "expectedLabel": "U18",
+      "sourceKey": "aspetar-aspire-academy: U18"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 11,
+      "expectedLabel": "U19",
+      "sourceKey": "aspetar-aspire-academy: U19"
+    },
+    {
+      "studyId": "S261",
+      "populationPosition": 12,
+      "expectedLabel": "2016/17-2018/19 U13-U15 growth cohort (S1431)",
+      "sourceKey": "aspetar-aspire-academy: 2016/17-2018/19 U13-U15 growth cohort (S1431)"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "aspetar-aspire-academy: Row 1"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "aspetar-aspire-academy: Row 2"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "aspetar-aspire-academy: Row 3"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "aspetar-aspire-academy: Row 4"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 4,
+      "expectedLabel": "Row 5",
+      "sourceKey": "aspetar-aspire-academy: Row 5"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 5,
+      "expectedLabel": "Row 6",
+      "sourceKey": "aspetar-aspire-academy: Row 6"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 6,
+      "expectedLabel": "Row 7",
+      "sourceKey": "aspetar-aspire-academy: Row 7"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 7,
+      "expectedLabel": "Row 8",
+      "sourceKey": "aspetar-aspire-academy: Row 8"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 8,
+      "expectedLabel": "Row 9",
+      "sourceKey": "aspetar-aspire-academy: Row 9"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 9,
+      "expectedLabel": "Row 10",
+      "sourceKey": "aspetar-aspire-academy: Row 10"
+    },
+    {
+      "studyId": "S071",
+      "populationPosition": 10,
+      "expectedLabel": "Row 11",
+      "sourceKey": "aspetar-aspire-academy: Row 11"
+    },
+    {
+      "studyId": "S1431",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "aspetar-aspire-academy: Total"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 1,
+      "expectedLabel": "2014/15",
+      "sourceKey": "aspetar-qsl-professional: 2014/15"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 2,
+      "expectedLabel": "2015/16",
+      "sourceKey": "aspetar-qsl-professional: 2015/16"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 3,
+      "expectedLabel": "2016/17",
+      "sourceKey": "aspetar-qsl-professional: 2016/17"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 4,
+      "expectedLabel": "2017/18",
+      "sourceKey": "aspetar-qsl-professional: 2017/18"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 5,
+      "expectedLabel": "2018/19",
+      "sourceKey": "aspetar-qsl-professional: 2018/19"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 6,
+      "expectedLabel": "2019/20",
+      "sourceKey": "aspetar-qsl-professional: 2019/20"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 7,
+      "expectedLabel": "2020/21",
+      "sourceKey": "aspetar-qsl-professional: 2020/21"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 8,
+      "expectedLabel": "2021/22",
+      "sourceKey": "aspetar-qsl-professional: 2021/22"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 10,
+      "expectedLabel": "2013/14-2014/15 groin supplement (S344)",
+      "sourceKey": "aspetar-qsl-professional: 2013/14-2014/15 groin supplement (S344)"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 11,
+      "expectedLabel": "2013/14-2017/18 ACL supplement (S555)",
+      "sourceKey": "aspetar-qsl-professional: 2013/14-2017/18 ACL supplement (S555)"
+    },
+    {
+      "studyId": "S2824",
+      "populationPosition": 12,
+      "expectedLabel": "2013/14-2020/21 head-neck-concussion supplement (S712)",
+      "sourceKey": "aspetar-qsl-professional: 2013/14-2020/21 head-neck-concussion supplement (S712)"
+    },
+    {
+      "studyId": "S344",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "aspetar-qsl-professional: Row 1"
+    },
+    {
+      "studyId": "S544",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "aspetar-qsl-professional: Row 1"
+    },
+    {
+      "studyId": "S555",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "aspetar-qsl-professional: Row 1"
+    },
+    {
+      "studyId": "S712",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "aspetar-qsl-professional: Total"
+    },
+    {
+      "studyId": "S602",
+      "populationPosition": 1,
+      "expectedLabel": "2017",
+      "sourceKey": "aspetar-afc-multicountry: 2017"
+    },
+    {
+      "studyId": "S602",
+      "populationPosition": 2,
+      "expectedLabel": "2018",
+      "sourceKey": "aspetar-afc-multicountry: 2018"
+    },
+    {
+      "studyId": "S602",
+      "populationPosition": 3,
+      "expectedLabel": "2019",
+      "sourceKey": "aspetar-afc-multicountry: 2019"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "german-youth-academy-2012-13: Row 1"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "german-youth-academy-2012-13: Row 2"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "german-youth-academy-2012-13: Row 3"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "german-youth-academy-2012-13: Row 4"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 4,
+      "expectedLabel": "Row 5",
+      "sourceKey": "german-youth-academy-2012-13: Row 5"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 5,
+      "expectedLabel": "Row 6",
+      "sourceKey": "german-youth-academy-2012-13: Row 6"
+    },
+    {
+      "studyId": "S047",
+      "populationPosition": 6,
+      "expectedLabel": "Row 7",
+      "sourceKey": "german-youth-academy-2012-13: Row 7"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "german-youth-academy-2012-13: Row 1"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "german-youth-academy-2012-13: Row 2"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "german-youth-academy-2012-13: Row 3"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "german-youth-academy-2012-13: Row 4"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 4,
+      "expectedLabel": "Row 5",
+      "sourceKey": "german-youth-academy-2012-13: Row 5"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 5,
+      "expectedLabel": "Row 6",
+      "sourceKey": "german-youth-academy-2012-13: Row 6"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 6,
+      "expectedLabel": "Row 7",
+      "sourceKey": "german-youth-academy-2012-13: Row 7"
+    },
+    {
+      "studyId": "S630",
+      "populationPosition": 7,
+      "expectedLabel": "Row 8",
+      "sourceKey": "german-youth-academy-2012-13: Row 8"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "german-youth-academy-2012-13: Total"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 1,
+      "expectedLabel": "U12",
+      "sourceKey": "german-youth-academy-2012-13: U12"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 2,
+      "expectedLabel": "U13",
+      "sourceKey": "german-youth-academy-2012-13: U13"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 3,
+      "expectedLabel": "U14",
+      "sourceKey": "german-youth-academy-2012-13: U14"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 4,
+      "expectedLabel": "U15",
+      "sourceKey": "german-youth-academy-2012-13: U15"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 5,
+      "expectedLabel": "U16",
+      "sourceKey": "german-youth-academy-2012-13: U16"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 6,
+      "expectedLabel": "U17",
+      "sourceKey": "german-youth-academy-2012-13: U17"
+    },
+    {
+      "studyId": "S1389",
+      "populationPosition": 7,
+      "expectedLabel": "U19",
+      "sourceKey": "german-youth-academy-2012-13: U19"
+    },
+    {
+      "studyId": "S2259",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "funball-cluster-rct: Total"
+    },
+    {
+      "studyId": "S2259",
+      "populationPosition": 1,
+      "expectedLabel": "Intervention",
+      "sourceKey": "funball-cluster-rct: Intervention"
+    },
+    {
+      "studyId": "S2259",
+      "populationPosition": 2,
+      "expectedLabel": "Control",
+      "sourceKey": "funball-cluster-rct: Control"
+    },
+    {
+      "studyId": "S2474",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "funball-cluster-rct: Total"
+    },
+    {
+      "studyId": "S2474",
+      "populationPosition": 1,
+      "expectedLabel": "U15",
+      "sourceKey": "funball-cluster-rct: U15"
+    },
+    {
+      "studyId": "S2474",
+      "populationPosition": 2,
+      "expectedLabel": "U17",
+      "sourceKey": "funball-cluster-rct: U17"
+    },
+    {
+      "studyId": "S2474",
+      "populationPosition": 3,
+      "expectedLabel": "U19",
+      "sourceKey": "funball-cluster-rct: U19"
+    },
+    {
+      "studyId": "S289",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "funball-cluster-rct: Row 1"
+    },
+    {
+      "studyId": "S468",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "dutch-amateur-professional-2009-10: Row 1"
+    },
+    {
+      "studyId": "S658",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "dutch-amateur-professional-2009-10: Row 1"
+    },
+    {
+      "studyId": "S658",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "dutch-amateur-professional-2009-10: Row 2"
+    },
+    {
+      "studyId": "S658",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "dutch-amateur-professional-2009-10: Row 3"
+    },
+    {
+      "studyId": "S073",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "female-menstrual-cycle-cohort: Row 1"
+    },
+    {
+      "studyId": "S074",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "female-menstrual-cycle-cohort: Row 1"
+    },
+    {
+      "studyId": "S586",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "australian-a-league-2012-18: Row 2"
+    },
+    {
+      "studyId": "S586",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "australian-a-league-2012-18: Row 3"
+    },
+    {
+      "studyId": "S586",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "australian-a-league-2012-18: Row 4"
+    },
+    {
+      "studyId": "S586",
+      "populationPosition": 4,
+      "expectedLabel": "Row 5",
+      "sourceKey": "australian-a-league-2012-18: Row 5"
+    },
+    {
+      "studyId": "S586",
+      "populationPosition": 5,
+      "expectedLabel": "Row 6",
+      "sourceKey": "australian-a-league-2012-18: Row 6"
+    },
+    {
+      "studyId": "S586",
+      "populationPosition": 6,
+      "expectedLabel": "Row 7",
+      "sourceKey": "australian-a-league-2012-18: Row 7"
+    },
+    {
+      "studyId": "S573",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "australian-a-league-2012-18: Row 1"
+    },
+    {
+      "studyId": "S618",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "australian-a-league-2012-18: Row 1"
+    },
+    {
+      "studyId": "S1041",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "ready-to-play-norway-women: Total"
+    },
+    {
+      "studyId": "S080",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "iran-national-futsal-18-month: Row 1"
+    },
+    {
+      "studyId": "S080",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "iran-national-futsal-18-month: Row 2"
+    },
+    {
+      "studyId": "S080",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "iran-national-futsal-18-month: Row 3"
+    },
+    {
+      "studyId": "S080",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "iran-national-futsal-18-month: Row 4"
+    },
+    {
+      "studyId": "S1009",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "new-zealand-female-team-2022-23: Total"
+    },
+    {
+      "studyId": "S1229",
+      "populationPosition": 1,
+      "expectedLabel": "U14",
+      "sourceKey": "ghana-academy-2021-22: U14"
+    },
+    {
+      "studyId": "S1229",
+      "populationPosition": 2,
+      "expectedLabel": "U16",
+      "sourceKey": "ghana-academy-2021-22: U16"
+    },
+    {
+      "studyId": "S1229",
+      "populationPosition": 3,
+      "expectedLabel": "U18",
+      "sourceKey": "ghana-academy-2021-22: U18"
+    },
+    {
+      "studyId": "S1229",
+      "populationPosition": 4,
+      "expectedLabel": "Senior",
+      "sourceKey": "ghana-academy-2021-22: Senior"
+    },
+    {
+      "studyId": "S324",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "ghana-academy-2021-22: Row 1"
+    },
+    {
+      "studyId": "S324",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "ghana-academy-2021-22: Row 2"
+    },
+    {
+      "studyId": "S324",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "ghana-academy-2021-22: Row 3"
+    },
+    {
+      "studyId": "S324",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "ghana-academy-2021-22: Row 4"
+    },
+    {
+      "studyId": "S324",
+      "populationPosition": 4,
+      "expectedLabel": "Row 5",
+      "sourceKey": "ghana-academy-2021-22: Row 5"
+    },
+    {
+      "studyId": "S211",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "spanish-groin-2015-16: Row 1"
+    },
+    {
+      "studyId": "S211",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "spanish-groin-2015-16: Row 2"
+    },
+    {
+      "studyId": "S231",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "high-school-1995-97-surveillance: Row 1"
+    },
+    {
+      "studyId": "S231",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "high-school-1995-97-surveillance: Row 2"
+    },
+    {
+      "studyId": "S3075",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "korean-youth-2021: Total"
+    },
+    {
+      "studyId": "S417",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "english-professional-clubs-1994-97: Row 2"
+    },
+    {
+      "studyId": "S417",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "english-professional-clubs-1994-97: Row 3"
+    },
+    {
+      "studyId": "S574",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "english-professional-clubs-1994-97: Row 1"
+    },
+    {
+      "studyId": "S421",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "australian-academy-2017-20: Row 2"
+    },
+    {
+      "studyId": "S421",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "australian-academy-2017-20: Row 3"
+    },
+    {
+      "studyId": "S421",
+      "populationPosition": 3,
+      "expectedLabel": "Row 4",
+      "sourceKey": "australian-academy-2017-20: Row 4"
+    },
+    {
+      "studyId": "S600",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "australian-academy-2017-20: Row 1"
+    },
+    {
+      "studyId": "S452",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "english-fa-academy-audit-2000-05: Row 1"
+    },
+    {
+      "studyId": "S454",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "english-fa-academy-audit-2000-05: Row 1"
+    },
+    {
+      "studyId": "S4778",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "mls-public-diagnosis-2010-21: Total"
+    },
+    {
+      "studyId": "S4778",
+      "populationPosition": 1,
+      "expectedLabel": "2010-2015",
+      "sourceKey": "mls-public-diagnosis-2010-21: 2010-2015"
+    },
+    {
+      "studyId": "S4778",
+      "populationPosition": 2,
+      "expectedLabel": "2016-2021",
+      "sourceKey": "mls-public-diagnosis-2010-21: 2016-2021"
+    },
+    {
+      "studyId": "S4793",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "mls-public-diagnosis-2010-21: Total"
+    },
+    {
+      "studyId": "S4793",
+      "populationPosition": 1,
+      "expectedLabel": "2010-2015",
+      "sourceKey": "mls-public-diagnosis-2010-21: 2010-2015"
+    },
+    {
+      "studyId": "S4793",
+      "populationPosition": 2,
+      "expectedLabel": "2016-2021",
+      "sourceKey": "mls-public-diagnosis-2010-21: 2016-2021"
+    },
+    {
+      "studyId": "S605",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "norway-cup-2005-08: Row 2"
+    },
+    {
+      "studyId": "S605",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "norway-cup-2005-08: Row 3"
+    },
+    {
+      "studyId": "S627",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "norway-cup-2005-08: Row 1"
+    },
+    {
+      "studyId": "S430",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "fifa11-kids-multicountry: Total"
+    },
+    {
+      "studyId": "S430",
+      "populationPosition": 1,
+      "expectedLabel": "Control",
+      "sourceKey": "fifa11-kids-multicountry: Control"
+    },
+    {
+      "studyId": "S430",
+      "populationPosition": 2,
+      "expectedLabel": "Intervention",
+      "sourceKey": "fifa11-kids-multicountry: Intervention"
+    },
+    {
+      "studyId": "S209",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "norwegian-ankle-risk-substudy: Row 1"
+    },
+    {
+      "studyId": "S303",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "futsal-preseason-levels: Row 1"
+    },
+    {
+      "studyId": "S303",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "futsal-preseason-levels: Row 2"
+    },
+    {
+      "studyId": "S303",
+      "populationPosition": 2,
+      "expectedLabel": "Row 3",
+      "sourceKey": "futsal-preseason-levels: Row 3"
+    },
+    {
+      "studyId": "S273",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "brazil-shoulder-2016-19: Row 1"
+    },
+    {
+      "studyId": "S338",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "dutch-growth-injuries-2021-22: Row 1"
+    },
+    {
+      "studyId": "S645",
+      "populationPosition": 0,
+      "expectedLabel": "Total",
+      "sourceKey": "swiss-youth-muscle-2016-17: Total"
+    },
+    {
+      "studyId": "S645",
+      "populationPosition": 1,
+      "expectedLabel": "U21",
+      "sourceKey": "swiss-youth-muscle-2016-17: U21"
+    },
+    {
+      "studyId": "S645",
+      "populationPosition": 2,
+      "expectedLabel": "U18",
+      "sourceKey": "swiss-youth-muscle-2016-17: U18"
+    },
+    {
+      "studyId": "S645",
+      "populationPosition": 3,
+      "expectedLabel": "U17",
+      "sourceKey": "swiss-youth-muscle-2016-17: U17"
+    },
+    {
+      "studyId": "S645",
+      "populationPosition": 4,
+      "expectedLabel": "U16",
+      "sourceKey": "swiss-youth-muscle-2016-17: U16"
+    },
+    {
+      "studyId": "S645",
+      "populationPosition": 5,
+      "expectedLabel": "U15",
+      "sourceKey": "swiss-youth-muscle-2016-17: U15"
+    },
+    {
+      "studyId": "S534",
+      "populationPosition": 0,
+      "expectedLabel": "Row 1",
+      "sourceKey": "dutch-amateur-rct-2009-10: Row 1"
+    },
+    {
+      "studyId": "S534",
+      "populationPosition": 1,
+      "expectedLabel": "Row 2",
+      "sourceKey": "dutch-amateur-rct-2009-10: Row 2"
+    }
+  ],
+  "protectedHashesBefore": {
+    "aggregate": "b76ef7e3fb7cfb30b1a46fba688413dacb51b7f91c9c1d5f9d593c4525d924ec",
+    "papers": "2bdcaafad8c5535ac4d47457f13c2afd16072860421a0679c739d16ceecb1b9f",
+    "existingNotes": "5d86066fa7c1b5206abc3d83a4247f8dbba5a8a319917651babb1e84013aadef",
+    "files": "b5571cfe21bba3bcf7e0c3b2a8292c87d4cfe00ca822d3c38328fcf071c98af0",
+    "extractions": "020c77236df897ff9673667259a1afba609906a9036a4d3205b983106248b76a",
+    "groups": "0de739ea7e91ca6ef47124604d3c071254ad078c821f9abe5855bcca15b7dd59",
+    "screeningRecords": "e5b0057dd763929a101705a157475065c5c5f57476fe23c7bc56434ba009e8ce",
+    "screeningVotes": "931de653423430c9621ae695934b6feea2caf83e26f6bda1944de3e52ec15fde"
+  },
+  "protectedHashesAfter": {
+    "aggregate": "b76ef7e3fb7cfb30b1a46fba688413dacb51b7f91c9c1d5f9d593c4525d924ec",
+    "papers": "2bdcaafad8c5535ac4d47457f13c2afd16072860421a0679c739d16ceecb1b9f",
+    "existingNotes": "5d86066fa7c1b5206abc3d83a4247f8dbba5a8a319917651babb1e84013aadef",
+    "files": "b5571cfe21bba3bcf7e0c3b2a8292c87d4cfe00ca822d3c38328fcf071c98af0",
+    "extractions": "020c77236df897ff9673667259a1afba609906a9036a4d3205b983106248b76a",
+    "groups": "0de739ea7e91ca6ef47124604d3c071254ad078c821f9abe5855bcca15b7dd59",
+    "screeningRecords": "e5b0057dd763929a101705a157475065c5c5f57476fe23c7bc56434ba009e8ce",
+    "screeningVotes": "931de653423430c9621ae695934b6feea2caf83e26f6bda1944de3e52ec15fde"
+  },
+  "preApplyPath": "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/source-family-overlap-audit/2026-07-27/source-family-pre-apply-live-snapshot-2026-07-27.json"
+}

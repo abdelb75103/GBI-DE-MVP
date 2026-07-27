@@ -1,0 +1,337 @@
+{
+  "artifactType": "Frozen UEFA source-family evidence input",
+  "frozenAt": "2026-07-27T17:14:09.343Z",
+  "sourcePath": "Data Analysis/Data Cleaning/audit/uefa-master/uefa-master-source-audit.json",
+  "sourceSha256": "fda2991682a9718b0d0eb7968c08cd5b996df49ef71e240dfc6ef21edb539466",
+  "purpose": "Self-contained reproducibility input for the 27 July 2026 complete source-family treatment generator. This freezes only the UEFA ledgers needed by the scoped audit.",
+  "ecis_source_ledger": {
+    "S002": {
+      "topic": "ACL injury",
+      "period": "earlier ECIS/cohort period",
+      "tag": "superseded",
+      "handling": "Do not add a live row; use S401 ACL as the retained ACL concept row.",
+      "reason": "Older ACL-focused source overlaps the ECIS programme and is superseded for master extraction by the later 15-year ACL paper."
+    },
+    "S006": {
+      "topic": "LCL/PCL injuries",
+      "period": "2001-2018",
+      "tag": "included here",
+      "handling": "Live ECIS rows: LCL injuries; PCL injuries.",
+      "reason": "Adds diagnosis-specific incidence, burden, time-loss, recurrence/mechanism, and exposure not isolated in S200."
+    },
+    "S007": {
+      "topic": "Indirect thigh strains and direct thigh contusions",
+      "period": "2001-2013",
+      "tag": "included here",
+      "handling": "Live ECIS rows: indirect thigh muscle injuries; direct thigh muscle contusions.",
+      "reason": "Adds directly reported incidence, burden, time-loss, mechanism, and exposure for thigh injury subtypes."
+    },
+    "S011": {
+      "topic": "Common injury patterns / prevention-era benchmark",
+      "period": "overlapping 11-year ECIS period",
+      "tag": "already included / audit-only",
+      "handling": "No live ECIS row unless a reviewer requests a historical common-injury benchmark worksheet.",
+      "reason": "All-injury denominator overlaps S200; common diagnosis rows would duplicate concepts already represented by cleaner retained concept papers."
+    },
+    "S019": {
+      "topic": "Team injury burden / prevention practice association",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only",
+      "handling": "Do not add to master rows; extract in own workspace only if team-level risk-factor analysis is needed.",
+      "reason": "Association/risk-factor paper, not a clean additional injury-count denominator for the ECIS master."
+    },
+    "S042": {
+      "topic": "Hamstring time trend",
+      "period": "2001/02-2014/15",
+      "tag": "superseded",
+      "handling": "No live ECIS row; use S043 hamstring row.",
+      "reason": "Earlier hamstring time-trend paper is superseded by the longer 21-season hamstring paper retained in the master."
+    },
+    "S043": {
+      "topic": "Hamstring injuries",
+      "period": "2001/02-2021/22",
+      "tag": "included here",
+      "handling": "Live ECIS row: hamstring injuries. Structural/functional subtype count rows remain audit-only.",
+      "reason": "Adds longer hamstring-specific match/training incidence, time-loss, recurrence, and exposure. Subtypes are not separate master rows because they mainly add counts/time-loss without compatible incidence/burden."
+    },
+    "S046": {
+      "topic": "Hip/groin and adductor-related injuries",
+      "period": "2001/02-2015/16",
+      "tag": "included here",
+      "handling": "Live ECIS rows: hip/groin injuries; adductor-related hip/groin injuries.",
+      "reason": "Adds incidence, burden, time-loss, mechanism, recurrence, and exposure for a location/diagnosis not isolated in S200."
+    },
+    "S056": {
+      "topic": "COVID-19 lockdown/restart injury burden",
+      "period": "COVID restart period",
+      "tag": "audit-only special period",
+      "handling": "Do not add to the master denominator; extract separately only for COVID-specific analysis.",
+      "reason": "Special-period subgroup analysis would not be combinable with S200 programme-period counts."
+    },
+    "S057": {
+      "topic": "Team performance impact",
+      "period": "overlapping 11-year ECIS period",
+      "tag": "audit-only",
+      "handling": "No live ECIS row.",
+      "reason": "Performance association paper; injury denominator overlaps the ECIS all-injury programme already represented by S200."
+    },
+    "S079": {
+      "topic": "Internal workload and non-contact injury",
+      "period": "one ECIS season / five teams",
+      "tag": "audit-only risk factor",
+      "handling": "No live ECIS row unless a separate workload-risk worksheet is created.",
+      "reason": "Risk-factor analysis with a restricted cohort; not a clean programme-wide count to merge into the master."
+    },
+    "S084": {
+      "topic": "Fixture congestion and muscle injuries",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only risk factor",
+      "handling": "No live ECIS row.",
+      "reason": "Exposure/risk-factor paper; muscle injury parent counts are already represented by S200 and specific thigh/hamstring papers."
+    },
+    "S091": {
+      "topic": "Achilles tendon injuries",
+      "period": "2001-2011",
+      "tag": "included here",
+      "handling": "Live ECIS rows: Achilles tendinopathy; Achilles tendon rupture.",
+      "reason": "Adds diagnosis-specific incidence, burden, time-loss, recurrence, and exposure."
+    },
+    "S106": {
+      "topic": "MCL injuries",
+      "period": "2001/02-2011/12",
+      "tag": "included here",
+      "handling": "Live ECIS row: MCL injuries.",
+      "reason": "Adds diagnosis-specific incidence, burden, time-loss, recurrence/mechanism, and exposure."
+    },
+    "S107": {
+      "topic": "Ankle injuries",
+      "period": "2001/02-2011/12",
+      "tag": "included here",
+      "handling": "Live ECIS row: ankle injuries.",
+      "reason": "Adds ankle-specific incidence, time-loss, recurrence, exposure, and structured location/tissue values."
+    },
+    "S108": {
+      "topic": "Early Champions League prospective injury study",
+      "period": "early ECIS/Champions League period",
+      "tag": "already included",
+      "handling": "No live ECIS row.",
+      "reason": "Early all-injury surveillance is incorporated into the broader S200 ECIS master period."
+    },
+    "S110": {
+      "topic": "Hip/groin injuries",
+      "period": "earlier ECIS hip/groin period",
+      "tag": "superseded",
+      "handling": "No live ECIS row; use S046 hip/groin rows.",
+      "reason": "Earlier hip/groin source is superseded by the longer retained hip/groin paper."
+    },
+    "S113": {
+      "topic": "Upper extremity injuries",
+      "period": "2001-2011",
+      "tag": "included here",
+      "handling": "Live ECIS row: upper extremity injuries.",
+      "reason": "Adds incidence, time-loss, recurrence, and exposure for a location group not isolated in S200."
+    },
+    "S175": {
+      "topic": "Anterior ankle impingement",
+      "period": "overlapping ECIS ankle period",
+      "tag": "covered by ankle row / audit-only",
+      "handling": "No live ECIS row unless a reviewer requests a diagnosis-level ankle worksheet.",
+      "reason": "Specific ankle diagnosis overlaps the retained S107 ankle row and appears more useful for diagnosis detail than for master-level incidence/burden consolidation."
+    },
+    "S199": {
+      "topic": "Winter break and player availability",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only availability paper",
+      "handling": "No live ECIS row.",
+      "reason": "Availability/performance association paper; does not add a clean master injury-count denominator."
+    },
+    "S200": {
+      "topic": "All injuries, men's ECIS",
+      "period": "2001/02-2018/19",
+      "tag": "master sheet",
+      "handling": "Top live ECIS row and master denominator.",
+      "reason": "Historical all-injury ECIS men anchor for overlapping periods; shared definitions and cohort context are stored here."
+    },
+    "S201": {
+      "topic": "General epidemiology of football injuries",
+      "period": "earlier/summary source",
+      "tag": "already included / superseded",
+      "handling": "No live ECIS row.",
+      "reason": "General epidemiology source is superseded for master extraction by S200 and retained diagnosis-specific papers."
+    },
+    "S202": {
+      "topic": "Stress fractures",
+      "period": "ECIS-related cohorts",
+      "tag": "included here / partial audit-only",
+      "handling": "Live ECIS row: stress fractures. Fifth-metatarsal stress-fracture count-only detail is audit-only.",
+      "reason": "Overall stress-fracture incidence and recurrence-rate detail are retained; count-only subtype detail is not a separate master row."
+    },
+    "S340": {
+      "topic": "Head/neck injuries and concussion",
+      "period": "2001/02-2009/10",
+      "tag": "included here",
+      "handling": "Live ECIS rows: head/neck injuries; concussion.",
+      "reason": "Adds location/diagnosis-specific incidence, time-loss, and exposure."
+    },
+    "S358": {
+      "topic": "Lower injury rates / prevention or time-trend analysis",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only trend paper",
+      "handling": "No live ECIS row unless a trend-specific worksheet is created.",
+      "reason": "Trend/risk paper overlaps the S200 denominator and is not a separate master population."
+    },
+    "S368": {
+      "topic": "Isolated syndesmotic ankle injuries",
+      "period": "2001-2016",
+      "tag": "included here",
+      "handling": "Live ECIS row: isolated syndesmotic ankle injuries.",
+      "reason": "Adds directly reported incidence, burden, total time-loss, recurrence, and exposure."
+    },
+    "S401": {
+      "topic": "ACL injuries",
+      "period": "2001-2015",
+      "tag": "included here",
+      "handling": "Live ECIS row: ACL injuries.",
+      "reason": "Retained as the strongest ACL-specific ECIS row with direct incidence, recurrence/severity, and exposure."
+    },
+    "S415": {
+      "topic": "Match congestion and performance/player availability",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only availability paper",
+      "handling": "No live ECIS row.",
+      "reason": "Team availability/performance association paper; not a clean additional injury outcome row."
+    },
+    "S451": {
+      "topic": "Fifth metatarsal fractures",
+      "period": "2001-2012",
+      "tag": "included here",
+      "handling": "Live ECIS row: fifth metatarsal fractures.",
+      "reason": "Adds fracture-specific incidence, recurrence/non-contact detail, and exposure; separate from stress-fracture case definition."
+    },
+    "S509": {
+      "topic": "MCL injuries",
+      "period": "overlapping MCL period",
+      "tag": "duplicate/superseded",
+      "handling": "No additional live row; use retained S106 MCL row.",
+      "reason": "Appears to duplicate or overlap the MCL concept already represented by S106."
+    },
+    "S513": {
+      "topic": "Short turnaround and muscle injury rate",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only risk factor",
+      "handling": "No live ECIS row.",
+      "reason": "Fixture-congestion/risk-factor analysis; not a separate master denominator."
+    },
+    "S527": {
+      "topic": "First match after return to play",
+      "period": "overlapping ECIS RTP period",
+      "tag": "audit-only prognosis",
+      "handling": "No live ECIS row.",
+      "reason": "Return-to-play risk/prognosis source rather than a clean incidence/burden extraction row."
+    },
+    "S554": {
+      "topic": "Regional differences in injury incidence",
+      "period": "overlapping ECIS period",
+      "tag": "audit-only subgroup paper",
+      "handling": "No live ECIS row unless a region-specific subgroup worksheet is created.",
+      "reason": "Regional subgroup incidence would split the same ECIS denominator already held by S200."
+    },
+    "S576": {
+      "topic": "Concussion and subsequent injury risk",
+      "period": "overlapping ECIS concussion period",
+      "tag": "covered by concussion row / audit-only",
+      "handling": "No additional live ECIS row; use S340 for concussion incidence/time-loss.",
+      "reason": "Prognosis/risk paper; concussion extraction concept is already represented by S340."
+    },
+    "S581": {
+      "topic": "Time before return to play for common injuries",
+      "period": "2001-2017",
+      "tag": "audit-only prognosis",
+      "handling": "No live ECIS row.",
+      "reason": "Index-injury RTP rows duplicate diagnosis concepts already represented by cleaner incidence/burden source papers."
+    },
+    "S2391": {
+      "topic": "Thigh muscle injury after ACL reconstruction",
+      "period": "nested ECIS cohort, 2001-2022",
+      "tag": "audit-only",
+      "handling": "No live master row; use a separate prognosis workspace if required.",
+      "reason": "The 110 ACL reconstruction cases are nested within the ECIS cohort, so pre/post return-to-play incidence rows would double-count the programme and mix prognosis with surveillance."
+    },
+    "S4839": {
+      "topic": "Medical/performance staff communication and hamstring burden",
+      "period": "14-team substudy, 2019/20-2022/23",
+      "tag": "audit-only",
+      "handling": "No live master row; use a separate risk-factor workspace if required.",
+      "reason": "The source reports team-season burden and predictor associations rather than a pooled programme-wide hamstring incidence or burden compatible with the S043 master row."
+    },
+    "S5151": {
+      "topic": "2022/23 World Cup-season injury incidence",
+      "period": "2022/23",
+      "tag": "included supplement",
+      "handling": "Live ECIS row: 2022/23 World Cup-season all injuries.",
+      "reason": "Adds a later non-overlapping full-season ECIS denominator, injury count, training/match incidence, and directly reported total absence days while preserving S200 as the anchor."
+    }
+  },
+  "second_search_source_family_ledger": {
+    "S1091": {
+      "classification": "duplicate alias",
+      "family": "WECIS women",
+      "canonical_source": "S112",
+      "doi": "10.1136/bjsports-2023-107133",
+      "period": "2018/2019-2021/2022",
+      "handling": "Do not create another WECIS extraction or master row; retain S112 as source-of-truth.",
+      "overlap_decision": "The title, DOI, article pagination, 1,527 injuries, 463 injured players, and Table 2 values match S112. The PDF hash differs only because it is a separate downloaded rendition.",
+      "local_pdf_sha256": "bc2bd537f868e7226ddc7c3c9362738e10f7e35e60a518d6618bab619fe5cb26",
+      "canonical_pdf_sha256": "4fe9a740511e157af1d270dcd15e0a8096248a7b8e63f091e98414d05b1bf824"
+    },
+    "S5151": {
+      "classification": "included supplement",
+      "family": "ECIS men",
+      "canonical_source": "S200",
+      "doi": "10.1136/bmjsem-2025-002772",
+      "period": "2022/23",
+      "handling": "Add one directly supported 2022/23 season row to UEFA-ECIS-MASTER without changing or extending the S200 anchor denominator.",
+      "overlap_decision": "The season is later than S200 (ending 2018/19) and S043 (ending 2021/22). Only direct full-season values are retained; historical comparator, World Cup subgroup, and unpooled muscle-rate contrasts remain audit-only.",
+      "direct_supported_values": {
+        "sampleSizePlayers": "913",
+        "numberOfTeams": "29",
+        "observationDuration": "2022/23",
+        "numberOfSeasons": "1",
+        "totalExposure": "176790",
+        "injuryTotalCount": "1123",
+        "injuryIncidenceTraining": "3.5 (95% CI 3.2-3.9)",
+        "injuryIncidenceMatch": "21.1 (95% CI 19.5-22.9)",
+        "injuryTimeLossTotal": "26418"
+      },
+      "local_pdf_sha256": "569a6530a1d2e0185b7149582314e6dd8b200f4b2f7401239e80eb951d939a2a"
+    },
+    "S4839": {
+      "classification": "audit-only",
+      "family": "ECIS men",
+      "canonical_source": "S043",
+      "doi": "10.1136/bmjsem-2024-002182",
+      "period": "2019/20-2022/23",
+      "handling": "Keep outside the live master; use a separate risk-factor workspace if team-season communication and prevention associations are needed.",
+      "overlap_decision": "This 14-team substudy reports 54 observed team-season burden/predictor pairs and team-specific burden values, not a directly pooled programme-wide hamstring incidence or burden. Importing its rows would overlap the S043 ECIS hamstring cohort and mix a risk-factor denominator into the master.",
+      "local_pdf_sha256": "5201ad56e31f1a16f34cd41132d815cb9dbf303eea2eb424232102be0958d4df"
+    },
+    "S2391": {
+      "classification": "audit-only",
+      "family": "ECIS men",
+      "canonical_source": "S401",
+      "doi": "10.1177/03635465251353213",
+      "period": "2001-2022",
+      "handling": "Keep outside the live master; use a separate prognosis workspace if ACL reconstruction return-to-play comparisons are needed.",
+      "overlap_decision": "The analysis nests 110 ACL reconstruction cases within 5,447 ECIS players and compares thigh, hamstring, and quadriceps incidence before/after return to play. Adding these subgroup rates to the master would double-count the ECIS cohort and mix prognosis contrasts with the programme rows.",
+      "local_pdf_sha256": "a2d780d73fe1319a015d1839b4927acd1e52c02df14804077c042f967ecc3d0b"
+    },
+    "S5338": {
+      "classification": "separate workspace",
+      "family": "UEFA tournament",
+      "canonical_source": null,
+      "period": "UEFA EURO tournament",
+      "handling": "Keep outside UEFA-ECIS-MASTER and WECIS; extract only in its own tournament workspace if eligible.",
+      "overlap_decision": "UEFA branding does not make a tournament cohort part of the longitudinal elite-club ECIS/WECIS programme."
+    }
+  }
+}
