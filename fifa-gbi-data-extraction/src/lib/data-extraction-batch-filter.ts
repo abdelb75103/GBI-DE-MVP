@@ -1,4 +1,8 @@
 import type { PaperStatus } from '@/lib/types';
+import {
+  parseAnalysisSourceTreatment,
+  type AnalysisPaperRole,
+} from './analysis-source-policy.ts';
 
 export type DataExtractionBatchFilter = 'total' | 'first' | 'second';
 
@@ -12,6 +16,8 @@ export type DataExtractionPaperSummary = {
   year: string | null;
   doi: string | null;
   flagReason: string | null;
+  analysisRole: AnalysisPaperRole;
+  includeInAnalysisExport: boolean;
   noteCount: number;
   assignedTo: string | null;
   assigneeName?: string;
@@ -29,6 +35,7 @@ export type DataExtractionPaperRow = {
   year: string | null;
   doi: string | null;
   flag_reason: string | null;
+  analysis_source_treatment: unknown;
   assigned_to: string | null;
   search_batch: string | null;
   search_batch_label: string | null;
@@ -79,6 +86,9 @@ export const mapDataExtractionPaperRow = (
     ...(row.search_batch_label !== null ? { searchBatchLabel: row.search_batch_label } : {}),
   };
   const assigneeName = row.assigned_to === null ? undefined : assigneeNames.get(row.assigned_to);
+  const analysisTreatment = parseAnalysisSourceTreatment({
+    analysisSourceTreatment: row.analysis_source_treatment,
+  });
 
   return {
     id: row.id,
@@ -90,6 +100,8 @@ export const mapDataExtractionPaperRow = (
     year: row.year,
     doi: row.doi,
     flagReason: row.flag_reason,
+    analysisRole: analysisTreatment.role,
+    includeInAnalysisExport: analysisTreatment.includeInAnalysisExport,
     noteCount: Array.isArray(row.paper_notes) ? (row.paper_notes[0]?.count ?? 0) : 0,
     assignedTo: row.assigned_to,
     ...(assigneeName !== undefined ? { assigneeName } : {}),

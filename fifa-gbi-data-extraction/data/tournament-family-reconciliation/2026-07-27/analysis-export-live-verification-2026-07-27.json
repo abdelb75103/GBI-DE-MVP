@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-07-27T16:26:13.962Z",
+  "result": "PASS",
+  "requestedPaperCount": 28,
+  "analysisIncludedPaperCount": 19,
+  "analysisExcludedPaperCount": 9,
+  "sourceAuditPaperCount": 28,
+  "csvDataRowCount": 61,
+  "includedStudyIds": [
+    "S010",
+    "S037",
+    "S048",
+    "S059",
+    "S064",
+    "S078",
+    "S081",
+    "S109",
+    "S162",
+    "S2615",
+    "S272",
+    "S277",
+    "S292",
+    "S378",
+    "S3881",
+    "S391",
+    "S4652",
+    "S5338",
+    "UEFA-ECIS-MASTER"
+  ],
+  "excludedStudyIds": [
+    "S039",
+    "S096",
+    "S1328",
+    "S256",
+    "S259",
+    "S4691",
+    "S5151",
+    "S558",
+    "S640"
+  ],
+  "exclusionRules": [
+    {
+      "studyId": "S039",
+      "analysisRole": "cross_tournament_supplement"
+    },
+    {
+      "studyId": "S096",
+      "analysisRole": "cross_tournament_supplement"
+    },
+    {
+      "studyId": "S256",
+      "analysisRole": "cross_tournament_supplement"
+    },
+    {
+      "studyId": "S259",
+      "analysisRole": "supplement"
+    },
+    {
+      "studyId": "S640",
+      "analysisRole": "nested_subset"
+    },
+    {
+      "studyId": "S1328",
+      "analysisRole": "audit_only"
+    },
+    {
+      "studyId": "S4691",
+      "analysisRole": "audit_only"
+    },
+    {
+      "studyId": "S5151",
+      "analysisRole": "supplement"
+    },
+    {
+      "studyId": "S558",
+      "analysisRole": "audit_only"
+    }
+  ],
+  "rowChecks": [
+    {
+      "studyId": "S037",
+      "analysisTournamentKeys": [
+        "FIFA World Cup 1998",
+        "FIFA U-20 World Championship 1999",
+        "FIFA U-20 World Championship 2001",
+        "FIFA U-17 World Championship 1999",
+        "FIFA U-17 World Championship 2001",
+        "Men's Olympic football 2000",
+        "FIFA Confederations Cup 1999",
+        "FIFA Confederations Cup 2001",
+        "FIFA Club World Championship 2000"
+      ],
+      "sourceOnlyTournamentKeys": [
+        "FIFA Women's World Cup 1999",
+        "Women's Olympic football 2000",
+        "FIFA Futsal World Cup 2000"
+      ]
+    },
+    {
+      "studyId": "S064",
+      "analysisTournamentKeys": [
+        "FIFA Women's World Cup 1999",
+        "FIFA Women's World Cup 2003",
+        "Women's Olympic football 2000",
+        "Women's Olympic football 2004",
+        "FIFA U-19 Women's World Championship 2002",
+        "FIFA U-19 Women's World Championship 2004",
+        "FIFA U-20 Women's World Championship 2006"
+      ],
+      "sourceOnlyTournamentKeys": [
+        "Pooled overall row"
+      ]
+    },
+    {
+      "studyId": "S078",
+      "analysisTournamentKeys": [
+        "FIFA Futsal World Cup 2000",
+        "FIFA Futsal World Cup 2004",
+        "FIFA Futsal World Cup 2008"
+      ],
+      "sourceOnlyTournamentKeys": []
+    },
+    {
+      "studyId": "S109",
+      "analysisTournamentKeys": [
+        "UEFA national-team tournament surveillance series 2006-2008"
+      ],
+      "sourceOnlyTournamentKeys": []
+    },
+    {
+      "studyId": "S292",
+      "analysisTournamentKeys": [
+        "Elite international football competition in Africa (reported series)"
+      ],
+      "sourceOnlyTournamentKeys": []
+    },
+    {
+      "studyId": "S391",
+      "analysisTournamentKeys": [
+        "UEFA EURO 2004",
+        "UEFA Women's EURO 2005",
+        "UEFA Men's U-19 Championship 2005"
+      ],
+      "sourceOnlyTournamentKeys": []
+    },
+    {
+      "studyId": "S5338",
+      "analysisTournamentKeys": [
+        "UEFA EURO 2024",
+        "CONMEBOL Copa America 2024"
+      ],
+      "sourceOnlyTournamentKeys": []
+    }
+  ]
+}

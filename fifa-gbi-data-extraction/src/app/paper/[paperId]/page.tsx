@@ -16,6 +16,10 @@ import { WorkspaceSaveManager } from '@/components/workspace-save-manager';
 import { WorkspaceSaveButton } from '@/components/workspace-save-button';
 import { PaperActionButtons } from '@/components/paper-action-buttons';
 import { MobileWorkspaceBlocker } from '@/components/mobile-workspace-blocker';
+import {
+  getAnalysisPaperRoleLabel,
+  parseAnalysisSourceTreatment,
+} from '@/lib/analysis-source-policy';
 
 export const dynamic = 'force-dynamic';
 
@@ -154,6 +158,14 @@ export default async function PaperWorkspace({
 
   const file = paper.primaryFileId ? await mockDb.getFile(paper.primaryFileId) : undefined;
   const notes = await mockDb.listNotes(paper.id);
+  const analysisSourceLinks = await mockDb.listAnalysisSourceLinks(
+    paper.id,
+    paper.assignedStudyId,
+    paper.metadata,
+  );
+  const analysisSourceTreatment = parseAnalysisSourceTreatment(paper.metadata);
+  const analysisPopulationExclusions = analysisSourceTreatment.populationExclusions;
+  const analysisPopulationTreatments = analysisSourceTreatment.populationTreatments;
   const isTemporaryExtraction = paper.metadata?.temporaryExtractionPromotion === true;
   const eligibilityStatus = paper.flagReason
     ? 'Flagged'
@@ -274,6 +286,87 @@ export default async function PaperWorkspace({
                     ) : (
                       <p className="mt-3 text-sm text-slate-500">File metadata will be available after upload.</p>
                     )}
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                      Analysis treatment
+                    </p>
+                    <div className={`mt-3 rounded-2xl p-4 shadow-sm ring-1 ${
+                      paper.includeInAnalysisExport
+                        ? 'bg-emerald-50/70 ring-emerald-200/70'
+                        : 'bg-amber-50/80 ring-amber-200/70'
+                    }`}>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${
+                          paper.includeInAnalysisExport
+                            ? 'bg-emerald-100 text-emerald-800'
+                            : 'bg-amber-100 text-amber-900'
+                        }`}>
+                          {getAnalysisPaperRoleLabel(paper.analysisRole)}
+                        </span>
+                        <span className="text-xs font-semibold text-slate-700">
+                          {paper.includeInAnalysisExport
+                            ? 'Included in analysis export'
+                            : 'Source only, excluded from analysis export'}
+                        </span>
+                      </div>
+                      {analysisSourceLinks.length > 0 ? (
+                        <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-700">
+                          {analysisSourceLinks.map((link) => {
+                            const currentIsSource = link.sourcePaperId === paper.id;
+                            const linkedPaperId = currentIsSource ? link.anchorPaperId : link.sourcePaperId;
+                            const linkedStudyId = currentIsSource ? link.anchorStudyId : link.sourceStudyId;
+                            const direction = currentIsSource ? 'Handled in' : 'Uses source';
+                            return (
+                              <li key={link.id}>
+                                {direction}{' '}
+                                <Link
+                                  href={`/paper/${linkedPaperId}?returnTo=${encodeURIComponent(backHref)}`}
+                                  className="font-semibold text-indigo-700 underline underline-offset-2"
+                                >
+                                  {linkedStudyId}
+                                </Link>
+                                {link.tournamentKey ? ` for ${link.tournamentKey}` : ''}
+                                {` (${link.relationship.replaceAll('_', ' ')})`}
+                                {link.notes ? `: ${link.notes}` : ''}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      ) : (
+                        <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                          No companion-source links are recorded for this paper.
+                        </p>
+                      )}
+                      {analysisPopulationTreatments.length > 0 ? (
+                        <div className="mt-3 border-t border-slate-200/70 pt-3">
+                          <p className="font-semibold text-slate-800">Tournament row map</p>
+                          <ul className="mt-2 space-y-1 text-xs leading-relaxed text-slate-700">
+                            {analysisPopulationTreatments.map((row) => (
+                              <li key={`${row.populationPosition}-${row.tournamentKey}`}>
+                                {row.expectedLabel}: {row.tournamentKey}
+                                {row.includeInAnalysisExport ? '' : ' (source only)'}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : null}
+                      {analysisPopulationExclusions.length > 0 ? (
+                        <div className="mt-3 border-t border-slate-200/70 pt-3">
+                          <p className="font-semibold text-slate-800">Rows excluded from analysis export</p>
+                          <ul className="mt-2 space-y-1 text-xs leading-relaxed text-slate-700">
+                            {analysisPopulationExclusions.map((exclusion) => (
+                              <li key={`${exclusion.populationPosition}-${exclusion.tournamentKey}`}>
+                                {exclusion.expectedLabel}
+                                {exclusion.tournamentKey ? `, ${exclusion.tournamentKey}` : ''}
+                                {exclusion.anchorStudyId ? `, counted in ${exclusion.anchorStudyId}` : ''}
+                                {`: ${exclusion.notes}`}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Eligibility check</p>

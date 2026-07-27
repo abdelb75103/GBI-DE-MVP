@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-07-27T16:26:29.233Z",
+  "result": "PASS",
+  "verification": {
+    "protectedHash": "ad9bd0dc85ce67a65c9011dfb9d20b4d9349b6b441a1133bbd070fbcc2858f5a",
+    "paperCount": 28,
+    "sourceLinkCount": 17,
+    "populationExclusionCount": 4,
+    "populationTreatmentCount": 30,
+    "screeningRecordCount": 14,
+    "screeningVoteCount": 14,
+    "extractionCount": 192,
+    "populationGroupCount": 79
+  },
+  "reverseLinkChecks": [
+    {
+      "anchorStudyId": "S037",
+      "sourceStudyIds": [
+        "S256"
+      ]
+    },
+    {
+      "anchorStudyId": "S048",
+      "sourceStudyIds": [
+        "S256"
+      ]
+    },
+    {
+      "anchorStudyId": "S059",
+      "sourceStudyIds": [
+        "S039",
+        "S096",
+        "S256",
+        "S640"
+      ]
+    },
+    {
+      "anchorStudyId": "S064",
+      "sourceStudyIds": [
+        "S256",
+        "S259"
+      ]
+    },
+    {
+      "anchorStudyId": "S078",
+      "sourceStudyIds": [
+        "S256"
+      ]
+    },
+    {
+      "anchorStudyId": "S081",
+      "sourceStudyIds": [
+        "S039",
+        "S096",
+        "S256"
+      ]
+    },
+    {
+      "anchorStudyId": "S277",
+      "sourceStudyIds": [
+        "S039",
+        "S096",
+        "S256"
+      ]
+    },
+    {
+      "anchorStudyId": "S5338",
+      "sourceStudyIds": [
+        "S4652"
+      ]
+    },
+    {
+      "anchorStudyId": "UEFA-ECIS-MASTER",
+      "sourceStudyIds": [
+        "S5151"
+      ]
+    }
+  ],
+  "compactProjectionCheck": {
+    "studyId": "S277",
+    "role": "anchor",
+    "includeInAnalysisExport": true
+  }
+}

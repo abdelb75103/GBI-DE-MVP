@@ -1,6 +1,12 @@
 import { extractionFieldDefinitions, extractionTabMeta } from '@/lib/extraction/schema';
 import { derivePopulationGroups } from '@/lib/extraction/populations';
 import { mockDb } from '@/lib/mock-db';
+import {
+  parseAnalysisSourceTreatment,
+  partitionAnalysisExportPapers,
+  selectAnalysisPopulationGroups,
+  type AnalysisExportScope,
+} from '@/lib/analysis-source-policy';
 import type {
   ExtractionFieldResult,
   ExtractionResult,
@@ -31,7 +37,14 @@ const fieldMetricLookup = new Map(
   extractionFieldDefinitions.map((definition) => [definition.id, definition.metric ?? null]),
 );
 
-const baseHeaders = ['Paper ID', 'Paper Title', 'Status'] as const;
+const baseHeaders = [
+  'Paper ID',
+  'Paper Title',
+  'Status',
+  'Population Position',
+  'Population Label',
+  'Tournament / Series',
+] as const;
 
 type ExportExtractionField = {
   fieldId: string;
@@ -59,6 +72,7 @@ type ExportPopulationGroup = {
   id: string;
   label: string;
   position: number;
+  tournamentKey?: string;
   values: ExportPopulationValue[];
 };
 
@@ -376,26 +390,57 @@ const normalizePopulations = (
   });
 };
 
-export async function buildJsonExport(paperIds: string[]) {
+type ExportOptions = {
+  scope?: AnalysisExportScope;
+};
+
+export async function buildJsonExport(paperIds: string[], options: ExportOptions = {}) {
   const papers = await Promise.all(paperIds.map((id) => mockDb.getPaper(id)));
   const existingPapers = papers.filter(Boolean) as Paper[];
+  const { included, excluded } = partitionAnalysisExportPapers(
+    existingPapers,
+    options.scope ?? 'analysis',
+  );
 
   const records = await Promise.all(
-    existingPapers.map(async (paper) => {
+    included.map(async (paper) => {
       const file = paper.primaryFileId ? await mockDb.getFile(paper.primaryFileId) : undefined;
       const notes = await mockDb.listNotes(paper.id);
       const extractions = await mockDb.listExtractions(paper.id);
       const populationGroups = await mockDb.listPopulationGroups(paper.id);
       const populationValues = await mockDb.listPopulationValues(paper.id);
+      const analysisTreatment = parseAnalysisSourceTreatment(paper.metadata);
+      const scopedPopulationGroups = selectAnalysisPopulationGroups(
+        populationGroups,
+        populationValues,
+        analysisTreatment,
+        options.scope ?? 'analysis',
+      );
 
-      const populations = resolvePopulationGroups(populationGroups, populationValues, extractions, paper.id);
-      const normalizedPopulations = normalizePopulations(populations, extractions);
+      const populations = resolvePopulationGroups(scopedPopulationGroups, populationValues, extractions, paper.id);
+      const tournamentKeyByPosition = new Map(
+        analysisTreatment.populationTreatments.map((row) => [
+          row.populationPosition,
+          row.tournamentKey,
+        ]),
+      );
+      const normalizedPopulations = normalizePopulations(populations, extractions).map((group) => ({
+        ...group,
+        tournamentKey: tournamentKeyByPosition.get(group.position) ?? group.label,
+      }));
+      const rawExtractionsOmittedForOverlap =
+        (options.scope ?? 'analysis') === 'analysis'
+        && analysisTreatment.populationTreatments.some(
+          (row) => !row.includeInAnalysisExport,
+        );
 
       return {
         paper,
         file: mapFile(file),
         notes,
-        extractions: extractions.map(mapExtraction),
+        extractions: rawExtractionsOmittedForOverlap ? [] : extractions.map(mapExtraction),
+        rawExtractionsOmittedForOverlap,
+        analysisPopulationExclusions: analysisTreatment.populationExclusions,
         populations: normalizedPopulations,
       };
     }),
@@ -406,31 +451,43 @@ export async function buildJsonExport(paperIds: string[]) {
 
   return {
     generatedAt: new Date().toISOString(),
+    exportScope: options.scope ?? 'analysis',
     paperCount: records.length,
     missingPaperIds,
+    excludedPapers: excluded.map((paper) => ({
+      id: paper.id,
+      assignedStudyId: paper.assignedStudyId,
+      analysisRole: paper.analysisRole,
+    })),
     papers: records,
   };
 }
 
-export async function buildCsvExport(paperIds: string[]): Promise<string> {
+export async function buildCsvExport(paperIds: string[], options: ExportOptions = {}): Promise<string> {
   const headers = [...baseHeaders, ...valueColumns.map((column) => column.label)];
   const rows: string[][] = [];
+  const papers = await Promise.all(paperIds.map((paperId) => mockDb.getPaper(paperId)));
+  const { included } = partitionAnalysisExportPapers(
+    papers.filter(Boolean) as Paper[],
+    options.scope ?? 'analysis',
+  );
 
-  for (const paperId of paperIds) {
-    const paper = await mockDb.getPaper(paperId);
-
-    if (!paper) {
-      rows.push(headers.map(() => escapeCsv('')));
-      continue;
-    }
+  for (const paper of included) {
 
     const [extractions, populationGroups, populationValues] = await Promise.all([
       mockDb.listExtractions(paper.id),
       mockDb.listPopulationGroups(paper.id),
       mockDb.listPopulationValues(paper.id),
     ]);
+    const analysisTreatment = parseAnalysisSourceTreatment(paper.metadata);
 
-    let exportGroups = resolvePopulationGroups(populationGroups, populationValues, extractions, paper.id);
+    const scopedPopulationGroups = selectAnalysisPopulationGroups(
+      populationGroups,
+      populationValues,
+      analysisTreatment,
+      options.scope ?? 'analysis',
+    );
+    let exportGroups = resolvePopulationGroups(scopedPopulationGroups, populationValues, extractions, paper.id);
     if (!exportGroups.length) {
       exportGroups = [
         {
@@ -445,6 +502,12 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
     // Normalize populations to split multiline values and handle global fields
     const normalizedGroups = normalizePopulations(exportGroups, extractions);
     const sortedGroups = [...normalizedGroups].sort((a, b) => a.position - b.position);
+    const tournamentKeyByPosition = new Map(
+      analysisTreatment.populationTreatments.map((row) => [
+        row.populationPosition,
+        row.tournamentKey,
+      ]),
+    );
 
     // Build value map for quick lookup
     const valuesByGroup = new Map<string, Map<string, string | null>>();
@@ -461,6 +524,9 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
         escapeCsv(paper.assignedStudyId || paper.id),
         escapeCsv(paper.title ?? ''),
         escapeCsv(paper.status),
+        escapeCsv(String(group.position)),
+        escapeCsv(group.label),
+        escapeCsv(tournamentKeyByPosition.get(group.position) ?? group.label),
       ];
 
       const groupValues = valuesByGroup.get(group.id);
@@ -490,6 +556,6 @@ export async function buildCsvExport(paperIds: string[]): Promise<string> {
   return `\uFEFF${[headerLine, ...dataLines].join('\r\n')}`;
 }
 
-export async function buildPaperCsv(paperId: string): Promise<string> {
-  return buildCsvExport([paperId]);
+export async function buildPaperCsv(paperId: string, options: ExportOptions = {}): Promise<string> {
+  return buildCsvExport([paperId], options);
 }

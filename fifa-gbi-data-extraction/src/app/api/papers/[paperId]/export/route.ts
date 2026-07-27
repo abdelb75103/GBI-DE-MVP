@@ -20,11 +20,22 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
   }
 
+  const scope = request.nextUrl.searchParams.get('scope') === 'source' ? 'source' : 'analysis';
+  if (scope === 'analysis' && !paper.includeInAnalysisExport) {
+    return NextResponse.json(
+      {
+        error: `${paper.assignedStudyId} is a source-only record and is excluded from the analysis export`,
+        analysisRole: paper.analysisRole,
+      },
+      { status: 409 },
+    );
+  }
+
   const format = request.nextUrl.searchParams.get('format') === 'csv' ? 'csv' : 'json';
   const base = sanitizeForFilename(`${paper.title ?? 'paper'}-${paper.id}`.toLowerCase());
 
   if (format === 'csv') {
-    const csv = await buildPaperCsv(paperId);
+    const csv = await buildPaperCsv(paperId, { scope });
     const headers = new Headers({
       'Content-Type': 'text/csv; charset=utf-8',
       'Content-Disposition': `attachment; filename="${base}.csv"`,
@@ -33,7 +44,7 @@ export async function GET(request: NextRequest) {
     return new Response(csv, { status: 200, headers });
   }
 
-  const payload = await buildJsonExport([paperId]);
+  const payload = await buildJsonExport([paperId], { scope });
   const record = payload.papers[0];
   const body = JSON.stringify({ generatedAt: payload.generatedAt, paper: record }, null, 2);
   const headers = new Headers({

@@ -9,6 +9,7 @@ import { FlagToggleButton } from '@/components/flag-toggle-button';
 import { StatusPill } from '@/components/status-pill';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
 import type { DataExtractionPaperSummary } from '@/lib/data-extraction-batch-filter';
+import { getAnalysisPaperRoleLabel } from '@/lib/analysis-source-policy';
 
 type PapersTableProps = {
   papers: DataExtractionPaperSummary[];
@@ -104,6 +105,7 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
       const payload = (await response.json().catch(() => ({}))) as {
         error?: string;
         export?: { downloadUrl?: string };
+        excludedPapers?: Array<{ id: string }>;
       };
 
       if (!response.ok) {
@@ -111,7 +113,12 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
         return;
       }
 
-      setMessage(kind.toUpperCase() + ' export ready');
+      const excludedCount = payload.excludedPapers?.length ?? 0;
+      setMessage(
+        excludedCount > 0
+          ? `${kind.toUpperCase()} export ready. ${excludedCount} source-only ${excludedCount === 1 ? 'paper was' : 'papers were'} excluded.`
+          : `${kind.toUpperCase()} export ready`,
+      );
       if (payload.export?.downloadUrl) {
         setDownloadUrl(payload.export.downloadUrl);
         setDownloadKind(kind);
@@ -214,6 +221,16 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                       {paper.title}
                     </Link>
                     <p className="text-xs text-slate-600">{paper.leadAuthor || 'Unknown author'}</p>
+                    {paper.analysisRole !== 'standalone' ? (
+                      <span className={`inline-flex w-fit items-center rounded-full px-2 py-1 text-[11px] font-semibold ${
+                        paper.includeInAnalysisExport
+                          ? 'bg-emerald-50 text-emerald-700'
+                          : 'bg-amber-50 text-amber-800'
+                      }`}>
+                        {getAnalysisPaperRoleLabel(paper.analysisRole)}
+                        {paper.includeInAnalysisExport ? '' : ' · source only'}
+                      </span>
+                    ) : null}
                   </div>
                   <StatusPill status={paper.status} />
                 </div>
@@ -387,6 +404,16 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                             {paper.title}
                           </Link>
                           <p className="text-xs text-slate-600">{paper.leadAuthor || 'Unknown author'}</p>
+                          {paper.analysisRole !== 'standalone' ? (
+                            <span className={`inline-flex w-fit items-center rounded-full px-2 py-1 text-[11px] font-semibold ${
+                              paper.includeInAnalysisExport
+                                ? 'bg-emerald-50 text-emerald-700'
+                                : 'bg-amber-50 text-amber-800'
+                            }`}>
+                              {getAnalysisPaperRoleLabel(paper.analysisRole)}
+                              {paper.includeInAnalysisExport ? '' : ' · source only'}
+                            </span>
+                          ) : null}
                         </div>
                       </div>
                     </td>
@@ -476,12 +503,14 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
                               </a>
                             ) : null}
                             <a
-                              href={`/api/papers/${paper.id}/export?format=csv`}
+                              href={`/api/papers/${paper.id}/export?format=csv${
+                                paper.includeInAnalysisExport ? '' : '&scope=source'
+                              }`}
                               download
                               onClick={() => setMenuOpenFor(null)}
                               className="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
                             >
-                              Download CSV
+                              {paper.includeInAnalysisExport ? 'Download CSV' : 'Download source CSV'}
                             </a>
                           </div>
                         ) : null}

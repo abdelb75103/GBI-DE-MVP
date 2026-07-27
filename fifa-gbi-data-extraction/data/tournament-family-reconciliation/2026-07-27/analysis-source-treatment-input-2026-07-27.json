@@ -1,0 +1,329 @@
+{
+  "model": "OpenAI Codex, GPT-5 family",
+  "methodology": "Hybrid tournament source ledger. One anchor owns each tournament denominator. Multi-tournament papers retain non-overlapping tournament rows. Supplement, nested-subset and audit-only papers remain visible but are excluded from the default analysis export.",
+  "papers": [
+    {
+      "studyId": "S010",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for the 2014 FIFA World Cup. This paper owns that tournament denominator and remains included in the default analysis export. No screening state, extraction status, assignment or extracted value was changed."
+    },
+    {
+      "studyId": "S037",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): multi-tournament row ledger for early FIFA and Olympic competitions from 1998 to 2001. Non-overlapping tournament rows remain included. Rows already represented by the stronger S064 women's ledger or S078 futsal ledger are excluded through the separate row-exclusion ledger. No extracted row or value was changed."
+    },
+    {
+      "studyId": "S039",
+      "analysisRole": "cross_tournament_supplement",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): cross-tournament supplement using the 2002, 2006 and 2010 FIFA World Cup datasets. It adds foul-play mechanism, location, diagnosis and severity context, but it does not own a tournament denominator. The source is linked to anchors S277, S081 and S059 and is excluded from the default analysis export to prevent double-counting."
+    },
+    {
+      "studyId": "S048",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for the 2009 FIFA Confederations Cup. This paper owns the injury and illness denominator for that tournament and remains included in the default analysis export."
+    },
+    {
+      "studyId": "S059",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for the 2010 FIFA World Cup. S039 and S096 provide cross-tournament subgroup analyses, while S640 is a nested single-team subset. Those papers remain visible as sources but do not contribute another 2010 tournament denominator."
+    },
+    {
+      "studyId": "S064",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): primary row ledger for FIFA women's World Cups, women's Olympic football and women's youth tournaments. Direct tournament rows remain included. The pooled Overall row is excluded from the default analysis export because it repeats the component tournaments."
+    },
+    {
+      "studyId": "S078",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): discipline-specific row ledger and preferred source for the 2000, 2004 and 2008 FIFA Futsal World Cups. The overlapping 2000 futsal row in S037 is excluded from the default analysis export."
+    },
+    {
+      "studyId": "S081",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for the 2006 FIFA World Cup. S039 and S096 are linked subgroup supplements and S256 is pooled trend context. Those sources do not contribute another 2006 denominator."
+    },
+    {
+      "studyId": "S096",
+      "analysisRole": "cross_tournament_supplement",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): cross-tournament score-state and playing-position supplement using the 2002, 2006 and 2010 FIFA World Cup datasets. It is linked to S277, S081 and S059 and is excluded from the default analysis export because it does not represent a new tournament denominator."
+    },
+    {
+      "studyId": "S109",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): UEFA senior and youth national-team tournament ledger. It remains included as the source for its reported tournament series. Its current pooled row structure requires a later audit before any finer tournament re-framing, and no extraction data was changed here."
+    },
+    {
+      "studyId": "S162",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for the 2017 CONCACAF Gold Cup. It owns that tournament denominator and remains included in the default analysis export."
+    },
+    {
+      "studyId": "S256",
+      "analysisRole": "cross_tournament_supplement",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): pooled FIFA trend review covering 51 FIFA tournaments and four Olympic football tournaments from 1998 to 2012. It remains valid for cross-tournament trends but is excluded from the default analysis export because many component tournaments are already represented by direct anchors or row ledgers."
+    },
+    {
+      "studyId": "S259",
+      "analysisRole": "supplement",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): multisport Olympic companion source. It may provide disjoint contextual information for women's Olympic football in 2004, but it is not the preferred football tournament denominator. S064 remains the football-specific source, so S259 is source-only in the default analysis export."
+    },
+    {
+      "studyId": "S272",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for Copa América 2011. It owns that tournament denominator and remains included in the default analysis export."
+    },
+    {
+      "studyId": "S277",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor and single source of truth for the 2002 FIFA World Cup denominator. S039 and S096 remain linked supplements, while S256 remains pooled trend context. Compatible future additions from those sources must be documented here without adding another tournament denominator."
+    },
+    {
+      "studyId": "S292",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): international-competition series ledger for African elite competitions from 2007 to 2009. No stronger exact tournament-specific replacement was located, so the reported series remains included as its own analysis unit."
+    },
+    {
+      "studyId": "S378",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): tournament anchor for the 2019 UEFA Regions' Cup. It remains a distinct amateur regional-team tournament and is included in the default analysis export."
+    },
+    {
+      "studyId": "S391",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): row ledger for UEFA EURO 2004, UEFA Women's EURO 2005 and the UEFA Men's U-19 Championship 2005. Each direct tournament row remains included because no stronger overlapping source was located."
+    },
+    {
+      "studyId": "S640",
+      "analysisRole": "nested_subset",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): nested single-team rehabilitation and workload subset within the 2010 FIFA World Cup. S059 owns the tournament denominator. S640 remains available for source-level review but is excluded from the default analysis export."
+    },
+    {
+      "studyId": "S1328",
+      "analysisRole": "audit_only",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): Copa América 2019 protocol or analytical source retained for audit only. Its denominator is inconsistent with the tournament-surveillance counting unit, so it is excluded from the default analysis export and is not treated as a tournament anchor."
+    },
+    {
+      "studyId": "S2615",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): standalone tournament anchor for the FIFA World Cup Qatar 2022. It owns that tournament denominator and remains included in the default analysis export."
+    },
+    {
+      "studyId": "S3881",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): standalone tournament anchor for the FIFA Women's World Cup 2023. It owns that tournament denominator and remains included in the default analysis export."
+    },
+    {
+      "studyId": "S4652",
+      "analysisRole": "separate_family",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): separate CONMEBOL club-tournament surveillance family covering Libertadores and Sudamericana competitions. It does not overlap the Copa América 2024 national-team denominator in S5338 and remains independently exportable."
+    },
+    {
+      "studyId": "S4691",
+      "analysisRole": "audit_only",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): CONCACAF Gold Cup 2019 audit-only source. It lacks an eligible exposure denominator, so its counts may remain visible for review but it is excluded from the default analysis export."
+    },
+    {
+      "studyId": "S5151",
+      "analysisRole": "supplement",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): included supplement in the UEFA ECIS men's club-season workflow, not a FIFA national-team tournament source. Its 2022/23 World Cup-season row is handled in UEFA-ECIS-MASTER. S5151 is excluded from the default source-paper analysis export to prevent duplication with that master record."
+    },
+    {
+      "studyId": "S5338",
+      "analysisRole": "multi_tournament_ledger",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): two-row tournament anchor for UEFA EURO 2024 and CONMEBOL Copa América 2024. The existing reviewed extraction remains valid and unchanged. Both direct tournament rows remain included in the default analysis export."
+    },
+    {
+      "studyId": "S558",
+      "analysisRole": "audit_only",
+      "includeInAnalysisExport": false,
+      "note": "Analysis source treatment (27 July 2026): archived public or video-derived craniofacial audit source without an eligible medical-surveillance tournament denominator. It remains visible for audit and is excluded from the default analysis export."
+    },
+    {
+      "studyId": "UEFA-ECIS-MASTER",
+      "analysisRole": "anchor",
+      "includeInAnalysisExport": true,
+      "note": "Analysis source treatment (27 July 2026): master analysis record for the UEFA ECIS men's club-season family. It is the exportable source of truth for incorporated ECIS supplement rows, including S5151. This label does not change any extraction value or workflow state."
+    }
+  ],
+  "sourceLinks": [
+    {
+      "sourceStudyId": "S039",
+      "anchorStudyId": "S277",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2002",
+      "notes": "Foul-play subgroup analysis using the anchor tournament dataset; no independent denominator."
+    },
+    {
+      "sourceStudyId": "S039",
+      "anchorStudyId": "S081",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2006",
+      "notes": "Foul-play subgroup analysis using the anchor tournament dataset; no independent denominator."
+    },
+    {
+      "sourceStudyId": "S039",
+      "anchorStudyId": "S059",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2010",
+      "notes": "Foul-play subgroup analysis using the anchor tournament dataset; no independent denominator."
+    },
+    {
+      "sourceStudyId": "S096",
+      "anchorStudyId": "S277",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2002",
+      "notes": "Score-state and playing-position subgroup analysis; no independent denominator."
+    },
+    {
+      "sourceStudyId": "S096",
+      "anchorStudyId": "S081",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2006",
+      "notes": "Score-state and playing-position subgroup analysis; no independent denominator."
+    },
+    {
+      "sourceStudyId": "S096",
+      "anchorStudyId": "S059",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2010",
+      "notes": "Score-state and playing-position subgroup analysis; no independent denominator."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S037",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA and Olympic competitions 1998-2001",
+      "notes": "Pooled trend source overlaps direct early-tournament rows."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S064",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA women's and Olympic competitions 1999-2006",
+      "notes": "Pooled trend source overlaps direct women's tournament rows."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S078",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA Futsal World Cups 2000-2008",
+      "notes": "Pooled trend source overlaps discipline-specific futsal rows."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S277",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2002",
+      "notes": "Pooled trend source overlaps the direct tournament anchor."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S081",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2006",
+      "notes": "Pooled trend source overlaps the direct tournament anchor."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S048",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA Confederations Cup 2009",
+      "notes": "Pooled trend source overlaps the direct tournament anchor."
+    },
+    {
+      "sourceStudyId": "S256",
+      "anchorStudyId": "S059",
+      "relationship": "pooled_across",
+      "tournamentKey": "FIFA World Cup 2010",
+      "notes": "Pooled trend source overlaps the direct tournament anchor."
+    },
+    {
+      "sourceStudyId": "S259",
+      "anchorStudyId": "S064",
+      "relationship": "supports",
+      "tournamentKey": "Women's Olympic football 2004",
+      "notes": "Multisport context only; S064 remains the football-specific denominator."
+    },
+    {
+      "sourceStudyId": "S640",
+      "anchorStudyId": "S059",
+      "relationship": "nested",
+      "tournamentKey": "FIFA World Cup 2010",
+      "notes": "One-team rehabilitation and workload subset nested within the anchor tournament."
+    },
+    {
+      "sourceStudyId": "S4652",
+      "anchorStudyId": "S5338",
+      "relationship": "separate_family",
+      "tournamentKey": "CONMEBOL competitions 2022-2024",
+      "notes": "Club competitions are analytically separate from the Copa América national-team row."
+    },
+    {
+      "sourceStudyId": "S5151",
+      "anchorStudyId": "UEFA-ECIS-MASTER",
+      "relationship": "incorporated",
+      "tournamentKey": "UEFA ECIS men's 2022/23 World Cup season",
+      "notes": "The directly supported season row is already represented in the ECIS master."
+    }
+  ],
+  "populationExclusions": [
+    {
+      "studyId": "S037",
+      "populationPosition": 9,
+      "expectedLabel": "Row 10",
+      "anchorStudyId": "S064",
+      "tournamentKey": "FIFA Women's World Cup 1999",
+      "notes": "The discipline-specific S064 tournament row is the stronger source."
+    },
+    {
+      "studyId": "S037",
+      "populationPosition": 10,
+      "expectedLabel": "Row 11",
+      "anchorStudyId": "S064",
+      "tournamentKey": "Women's Olympic football 2000",
+      "notes": "The discipline-specific S064 tournament row is the stronger source."
+    },
+    {
+      "studyId": "S037",
+      "populationPosition": 11,
+      "expectedLabel": "Row 12",
+      "anchorStudyId": "S078",
+      "tournamentKey": "FIFA Futsal World Cup 2000",
+      "notes": "The discipline-specific S078 tournament row is the stronger source."
+    },
+    {
+      "studyId": "S064",
+      "populationPosition": 7,
+      "expectedLabel": "Row 8",
+      "anchorStudyId": null,
+      "tournamentKey": "Pooled overall row",
+      "notes": "The pooled Overall row repeats the seven direct component tournament rows."
+    }
+  ]
+}

@@ -32,6 +32,7 @@ import {
 } from '@/lib/db/ai-review-decisions';
 import { clearProfileGeminiKey, getProfileGeminiKey, hasProfileGeminiKey, setProfileGeminiKey } from '@/lib/db/profiles';
 import { PaperSessionConflictError } from '@/lib/db/shared';
+import { listAnalysisSourceLinks } from '@/lib/db/analysis-source-links';
 import { listPaperDuplicates, resolvePaperDuplicate, scanForDuplicates } from '@/lib/db/duplicates';
 import {
   queueUpload,
@@ -89,6 +90,7 @@ export const mockDb = {
   listNotes,
   addNote,
   deleteNote,
+  listAnalysisSourceLinks,
 
   listExports,
   createExport,

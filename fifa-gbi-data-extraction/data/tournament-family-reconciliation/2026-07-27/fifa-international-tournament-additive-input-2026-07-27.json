@@ -1,0 +1,297 @@
+{
+  "artifactType": "FIFA and international tournament additive extraction input",
+  "date": "2026-07-27",
+  "representation": "hybrid source-ledger",
+  "papers": [
+    {
+      "studyId": "S039",
+      "expectedStatus": "fifa_data",
+      "populationLabels": ["Foul play", "Non-foul play"],
+      "expandSingletonsToPopulationCount": true,
+      "layoutCorrectionJustification": "The publication reports two mutually exclusive injury-causation subgroups. Duplicating invariant study fields across two rows is required so subgroup outcomes remain line-aligned and cannot be misread as tournament denominators.",
+      "sourcePageHint": "pp. 3-5, Tables 1-4",
+      "sourceQuote": "Foul play was attributed to 134 injuries, while 278 injuries were not caused by foul play.",
+      "provenance": "Direct subgroup counts and reported subgroup rates. Parent tissue totals are transparent sums of directly reported subtypes.",
+      "fields": {
+        "injuryOutcome": {
+          "injuryTotalCount": "134\n278",
+          "injuryIncidenceOverall": "20.6 (95% CI 17.3-24.4)\n42.6 (95% CI 37.7-47.9)",
+          "injuryTimeLossMedian": "1 (IQR 0-3)\n2 (IQR 0-5)",
+          "injuryContact": "134\n152",
+          "injuryNonContact": "\n125",
+          "injuryMostCommonType": "contusion\ncontusion",
+          "injuryMostCommonLocation": "lower leg\nthigh",
+          "injuryMostCommonSeverity": "0 days\n1-3 days"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "14\n30",
+          "injuryLocation_upper_limb_overall_prevalence": "3\n12",
+          "injuryLocation_shoulder_prevalence": "5\n7",
+          "injuryLocation_trunk_overall_prevalence": "8\n20",
+          "injuryLocation_hip_prevalence": "0\n6",
+          "injuryLocation_groin_prevalence": "0\n17",
+          "injuryLocation_thigh_prevalence": "16\n68",
+          "injuryLocation_knee_prevalence": "12\n33",
+          "injuryLocation_lower_leg_prevalence": "38\n36",
+          "injuryLocation_ankle_prevalence": "30\n30",
+          "injuryLocation_foot_prevalence": "7\n18"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_superficial_contusion_prevalence": "91\n105",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "98\n123",
+          "injuryTissueType_joint_sprain_prevalence": "21\n33",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "22\n39",
+          "injuryTissueType_muscle_injury_prevalence": "5\n69",
+          "injuryTissueType_concussion_prevalence": "3\n3",
+          "injuryTissueType_bone_fracture_prevalence": "3\n5"
+        }
+      }
+    },
+    {
+      "studyId": "S048",
+      "expectedStatus": "fifa_data",
+      "populationLabels": ["2009 FIFA Confederations Cup"],
+      "sourcePageHint": "pp. 2-5, Results and injury/illness tables",
+      "sourceQuote": "A total of 56 injuries and 35 illnesses were recorded during 2070 player-days.",
+      "provenance": "Counts and rates are direct unless identified as percentage-derived. The location, tissue and contact counts are rounded products of the reported stable denominator n=56.",
+      "corrections": {
+        "seasonLength": {
+          "expected": "15 days",
+          "value": "2.14",
+          "justification": "The source explicitly defines the observation as the 15-day period from 14 to 28 June 2009. The schema requires a numeric duration in weeks, so the source interval is represented as 15 divided by 7, or 2.14 weeks."
+        }
+      },
+      "fields": {
+        "injuryOutcome": {
+          "injuryTotalCount": "56",
+          "injuryTeamsCompletedStudy": "8",
+          "injuryMedicalAttentionCount": "56",
+          "injuryTimeLossCount": "19",
+          "injuryMatchCount": "34",
+          "injuryTrainingCount": "22",
+          "injuryIncidenceOverall": "27.0",
+          "injuryIncidenceCi95": "20.9-35.0",
+          "injuryIncidenceMatch": "64.4 (95% CI 46.4-88.6)",
+          "injuryIncidenceTraining": "10.6 (95% CI 7.0-16.0)",
+          "injuryTimeLossTotal": "49 days",
+          "injuryTimeLossMean": "0.88 days",
+          "injuryMostCommonDiagnosis": "contusion",
+          "injuryMostCommonType": "contusion",
+          "injuryMostCommonLocation": "thigh",
+          "injuryMostCommonSeverity": "0 days",
+          "injuryContact": "31"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "35",
+          "illnessTeamsCompletedStudy": "8",
+          "illnessIncidenceOverall": "16.9",
+          "illnessIncidenceCi95": "12.2-23.4",
+          "illnessTimeLossTotal": "16 days",
+          "illnessTimeLossMean": "0.46 days",
+          "illnessMostCommonSystem": "respiratory",
+          "illnessMostCommonEtiology": "environmental factors",
+          "illnessMostCommonSeverity": "0 days"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "11",
+          "injuryLocation_knee_prevalence": "10",
+          "injuryLocation_ankle_prevalence": "8",
+          "injuryLocation_foot_prevalence": "7",
+          "injuryLocation_lower_leg_prevalence": "6"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_superficial_contusion_prevalence": "22",
+          "injuryTissueType_joint_sprain_prevalence": "10",
+          "injuryTissueType_muscle_injury_prevalence": "6"
+        },
+        "illnessRegion": {
+          "illnessRegion_respiratory_prevalence": "20",
+          "illnessRegion_dermatological_prevalence": "6",
+          "illnessRegion_gastrointestinal_prevalence": "5",
+          "illnessRegion_neurological_prevalence": "2",
+          "illnessRegion_genitourinary_prevalence": "1",
+          "illnessRegion_ophthalmological_prevalence": "1"
+        },
+        "illnessEtiology": {
+          "illnessEtiology_infection_prevalence": "12"
+        }
+      }
+    },
+    {
+      "studyId": "S059",
+      "expectedStatus": "fifa_data",
+      "populationLabels": ["2010 FIFA World Cup"],
+      "sourcePageHint": "pp. 2-6, Results and Table 1",
+      "sourceQuote": "The study reported 229 injuries and 99 illnesses across match, training and player-day surveillance.",
+      "provenance": "All outcome and structured counts are directly reported. Total exposure is the transparent sum of 2046 match player-hours and 13160 training player-hours.",
+      "fields": {
+        "exposure": {
+          "totalExposure": "15206"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "229",
+          "injuryTeamsCompletedStudy": "32",
+          "injuryMedicalAttentionCount": "229",
+          "injuryTimeLossCount": "140",
+          "injuryMatchCount": "125",
+          "injuryMatchTimeLossCount": "82",
+          "injuryTrainingCount": "104",
+          "injuryTrainingTimeLossCount": "58",
+          "injuryIncidenceMatch": "61.1 (95% CI 50.4-71.8)",
+          "injuryIncidenceTraining": "7.9 (95% CI 6.4-9.4)",
+          "injuryIncidenceTimeLossMatch": "40.1 (95% CI 31.4-48.8)",
+          "injuryIncidenceTimeLossTraining": "4.4 (95% CI 3.3-5.5)",
+          "injuryMostCommonDiagnosis": "thigh strain",
+          "injuryMostCommonType": "contusion",
+          "injuryMostCommonLocation": "thigh",
+          "injuryContact": "122"
+        },
+        "illnessOutcome": {
+          "illnessTotalCount": "99",
+          "illnessTeamsCompletedStudy": "32",
+          "illnessIncidenceOverall": "7.7",
+          "illnessIncidenceCi95": "6.2-9.2",
+          "illnessTimeLossMean": "1.76 days",
+          "illnessMostCommonSystem": "respiratory",
+          "illnessMostCommonEtiology": "infection",
+          "illnessMostCommonSeverity": "0 days"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_neck_overall_prevalence": "19",
+          "injuryLocation_upper_limb_overall_prevalence": "16",
+          "injuryLocation_trunk_overall_prevalence": "18",
+          "injuryLocation_hip_prevalence": "3",
+          "injuryLocation_groin_prevalence": "7",
+          "injuryLocation_thigh_prevalence": "55",
+          "injuryLocation_knee_prevalence": "25",
+          "injuryLocation_lower_leg_prevalence": "37",
+          "injuryLocation_ankle_prevalence": "32",
+          "injuryLocation_foot_prevalence": "17"
+        },
+        "illnessRegion": {
+          "illnessRegion_respiratory_prevalence": "40",
+          "illnessRegion_gastrointestinal_prevalence": "26"
+        },
+        "illnessEtiology": {
+          "illnessEtiology_infection_prevalence": "60"
+        }
+      }
+    },
+    {
+      "studyId": "S081",
+      "expectedStatus": "flagged",
+      "statusCorrection": {
+        "expected": "flagged",
+        "value": "fifa_data",
+        "expectedFlagReason": null,
+        "justification": "The attached full text reports a complete eligible 2006 FIFA World Cup denominator and direct injury outcomes. The prior flag has no reason and is contradicted by the source."
+      },
+      "populationLabels": ["2006 FIFA World Cup"],
+      "sourcePageHint": "pp. 2-4, Results and Table 2",
+      "sourceQuote": "All 64 matches were returned, with 145 injuries and 68.7 injuries per 1000 match-hours.",
+      "provenance": "Direct tournament denominator, outcomes, location and diagnosis counts.",
+      "fields": {
+        "studyDetails": {
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "numberOfTeams": "32"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention",
+          "incidenceDefinition": "injuries per 1000 match-hours and injuries per match",
+          "severityDefinition": "estimated days of absence from football",
+          "mechanismReporting": "Medical Staff"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": "2112",
+          "matchExposure": "2112"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "145",
+          "injuryTeamsCompletedStudy": "32",
+          "injuryMedicalAttentionCount": "145",
+          "injuryTimeLossCount": "97",
+          "injuryMatchCount": "145",
+          "injuryMatchTimeLossCount": "97",
+          "injuryIncidenceMatch": "68.7",
+          "injuryIncidenceCi95": "57.5-79.9",
+          "injuryIncidenceTimeLossMatch": "45.9",
+          "injuryMostCommonDiagnosis": "contusion",
+          "injuryMostCommonType": "contusion",
+          "injuryMostCommonLocation": "lower leg",
+          "injuryMostCommonSeverity": "0 days",
+          "injuryContact": "104",
+          "injuryNonContact": "38"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "13",
+          "injuryLocation_upper_limb_overall_prevalence": "12",
+          "injuryLocation_trunk_overall_prevalence": "15",
+          "injuryLocation_hip_prevalence": "1",
+          "injuryLocation_groin_prevalence": "6",
+          "injuryLocation_thigh_prevalence": "21",
+          "injuryLocation_knee_prevalence": "18",
+          "injuryLocation_lower_leg_prevalence": "30",
+          "injuryLocation_ankle_prevalence": "24",
+          "injuryLocation_foot_prevalence": "6"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_superficial_contusion_prevalence": "74",
+          "injuryTissueType_joint_sprain_prevalence": "25",
+          "injuryTissueType_muscle_injury_prevalence": "19",
+          "injuryTissueType_concussion_prevalence": "1",
+          "injuryTissueType_bone_fracture_prevalence": "1"
+        }
+      }
+    },
+    {
+      "studyId": "S277",
+      "expectedStatus": "fifa_data",
+      "populationLabels": ["2002 FIFA World Cup"],
+      "expectedExistingPopulationLabels": ["Row 1"],
+      "populationLabelCorrectionJustification": "The generic label concealed the direct 2002 World Cup denominator. Renaming the existing row preserves its identity and clarifies tournament-level provenance.",
+      "repairPopulationDualWrite": true,
+      "populationDualWriteJustification": "The existing population value for most-common severity was truncated to '7 days absence' while the canonical extraction and source report the 1-7 day category. The canonical source-verified value is retained.",
+      "sourcePageHint": "pp. 23S-25S, Tables 1-2",
+      "sourceQuote": "All 128 reports from 64 matches were returned, with 171 injuries and 81.0 injuries per 1000 match-hours.",
+      "provenance": "Direct tournament denominator, injury counts and structured tables. Time-loss count is the transparent difference between 160 injuries with known consequence and 53 with no absence.",
+      "fields": {
+        "exposure": {
+          "totalExposure": "2112",
+          "matchExposure": "2112"
+        },
+        "injuryOutcome": {
+          "injuryTimeLossCount": "107",
+          "injuryMatchTimeLossCount": "107",
+          "injuryIncidenceTimeLossMatch": "50.7",
+          "injuryIncidenceOverall": "81.0",
+          "injuryMostCommonSeverity": "1-7 days absence"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "25",
+          "injuryLocation_upper_limb_overall_prevalence": "8",
+          "injuryLocation_trunk_overall_prevalence": "6",
+          "injuryLocation_hip_prevalence": "2",
+          "injuryLocation_groin_prevalence": "9",
+          "injuryLocation_thigh_prevalence": "30",
+          "injuryLocation_knee_prevalence": "22",
+          "injuryLocation_lower_leg_prevalence": "29",
+          "injuryLocation_ankle_prevalence": "25",
+          "injuryLocation_foot_prevalence": "14"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_superficial_contusion_prevalence": "84",
+          "injuryTissueType_muscle_injury_prevalence": "35",
+          "injuryTissueType_joint_sprain_prevalence": "24",
+          "injuryTissueType_superficial_tissues_skin_prevalence": "12",
+          "injuryTissueType_concussion_prevalence": "4",
+          "injuryTissueType_bone_fracture_prevalence": "3",
+          "injuryTissueType_ligament_joint_capsule_prevalence": "25"
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 import type { ExtractionMetric, UploadQueueStatus } from '@/lib/supabase/types';
+import type {
+  AnalysisPaperRole,
+  AnalysisSourceRelationship,
+} from '@/lib/analysis-source-policy';
 
 export type PaperStatus =
   | 'uploaded'
@@ -74,6 +78,8 @@ export interface Paper {
   storageObjectPath: string | null;
   primaryFileId: string | null;
   flagReason: string | null;
+  analysisRole: AnalysisPaperRole;
+  includeInAnalysisExport: boolean;
   metadata?: Record<string, unknown>;
   noteCount: number;
   assignedTo: string | null;
@@ -153,6 +159,17 @@ export interface PopulationValue {
   sourceFieldId: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface AnalysisSourceLink {
+  id: string;
+  sourcePaperId: string;
+  sourceStudyId: string;
+  anchorPaperId: string;
+  anchorStudyId: string;
+  relationship: AnalysisSourceRelationship;
+  tournamentKey: string;
+  notes: string | null;
 }
 
 export interface ExportJob {

@@ -33,6 +33,7 @@ export const DATA_EXTRACTION_PAPER_SELECT = [
   'year',
   'doi',
   'flag_reason',
+  'analysis_source_treatment:metadata->analysisSourceTreatment',
   'assigned_to',
   'search_batch:metadata->>searchBatch',
   'search_batch_label:metadata->>searchBatchLabel',

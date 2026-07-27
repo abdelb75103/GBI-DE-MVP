@@ -1,0 +1,77 @@
+{
+  "version": "2026-07-27.2",
+  "papers": [
+    {
+      "studyId": "S037",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "Row 1", "tournamentKey": "FIFA World Cup 1998", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "2046.0"}},
+        {"populationPosition": 1, "expectedLabel": "Row 2", "tournamentKey": "FIFA U-20 World Championship 1999", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "957.0"}},
+        {"populationPosition": 2, "expectedLabel": "Row 3", "tournamentKey": "FIFA U-20 World Championship 2001", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "1435.5"}},
+        {"populationPosition": 3, "expectedLabel": "Row 4", "tournamentKey": "FIFA U-17 World Championship 1999", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "1039.5"}},
+        {"populationPosition": 4, "expectedLabel": "Row 5", "tournamentKey": "FIFA U-17 World Championship 2001", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "1056.0"}},
+        {"populationPosition": 5, "expectedLabel": "Row 6", "tournamentKey": "Men's Olympic football 2000", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "1023.0"}},
+        {"populationPosition": 6, "expectedLabel": "Row 7", "tournamentKey": "FIFA Confederations Cup 1999", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "248"}},
+        {"populationPosition": 7, "expectedLabel": "Row 8", "tournamentKey": "FIFA Confederations Cup 2001", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "528"}},
+        {"populationPosition": 8, "expectedLabel": "Row 9", "tournamentKey": "FIFA Club World Championship 2000", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "313.5"}},
+        {"populationPosition": 9, "expectedLabel": "Row 10", "tournamentKey": "FIFA Women's World Cup 1999", "includeInAnalysisExport": false, "expectedValues": {"matchExposure": "776"}},
+        {"populationPosition": 10, "expectedLabel": "Row 11", "tournamentKey": "Women's Olympic football 2000", "includeInAnalysisExport": false, "expectedValues": {"matchExposure": "495"}},
+        {"populationPosition": 11, "expectedLabel": "Row 12", "tournamentKey": "FIFA Futsal World Cup 2000", "includeInAnalysisExport": false, "expectedValues": {"matchExposure": "220"}}
+      ]
+    },
+    {
+      "studyId": "S064",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "Row 1", "tournamentKey": "FIFA Women's World Cup 1999", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "USA 1999"}},
+        {"populationPosition": 1, "expectedLabel": "Row 2", "tournamentKey": "FIFA Women's World Cup 2003", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "USA 2003"}},
+        {"populationPosition": 2, "expectedLabel": "Row 3", "tournamentKey": "Women's Olympic football 2000", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "Olympics 2000"}},
+        {"populationPosition": 3, "expectedLabel": "Row 4", "tournamentKey": "Women's Olympic football 2004", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "Olympics 2004"}},
+        {"populationPosition": 4, "expectedLabel": "Row 5", "tournamentKey": "FIFA U-19 Women's World Championship 2002", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "U19 Canada 2002"}},
+        {"populationPosition": 5, "expectedLabel": "Row 6", "tournamentKey": "FIFA U-19 Women's World Championship 2004", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "U19 Thailand 2004"}},
+        {"populationPosition": 6, "expectedLabel": "Row 7", "tournamentKey": "FIFA U-20 Women's World Championship 2006", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "U20 Russia 2006"}},
+        {"populationPosition": 7, "expectedLabel": "Row 8", "tournamentKey": "Pooled overall row", "includeInAnalysisExport": false, "expectedValues": {"observationDuration": "Overall"}}
+      ]
+    },
+    {
+      "studyId": "S078",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "Row 1", "tournamentKey": "FIFA Futsal World Cup 2000", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "220"}},
+        {"populationPosition": 1, "expectedLabel": "Row 2", "tournamentKey": "FIFA Futsal World Cup 2004", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "266.7"}},
+        {"populationPosition": 2, "expectedLabel": "Row 3", "tournamentKey": "FIFA Futsal World Cup 2008", "includeInAnalysisExport": true, "expectedValues": {"matchExposure": "356.7"}}
+      ]
+    },
+    {
+      "studyId": "S109",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "Row 1", "tournamentKey": "UEFA national-team tournament surveillance series 2006-2008", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "2008", "numberOfTeams": "104"}}
+      ]
+    },
+    {
+      "studyId": "S292",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "Row 1", "tournamentKey": "Elite international football competition in Africa (reported series)", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "week tournament (2010 CECAFA Senior Challenge Cup)"}}
+      ]
+    },
+    {
+      "studyId": "S391",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "Row 1", "tournamentKey": "UEFA EURO 2004", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "July 04 2004"}},
+        {"populationPosition": 1, "expectedLabel": "Row 2", "tournamentKey": "UEFA Women's EURO 2005", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "June 19 2005"}},
+        {"populationPosition": 2, "expectedLabel": "Row 3", "tournamentKey": "UEFA Men's U-19 Championship 2005", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "July 29 2005"}}
+      ]
+    },
+    {
+      "studyId": "S5338",
+      "requireCompletePopulationMap": true,
+      "rows": [
+        {"populationPosition": 0, "expectedLabel": "UEFA EURO 2024", "tournamentKey": "UEFA EURO 2024", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "27 May-14 July 2024"}},
+        {"populationPosition": 1, "expectedLabel": "CONMEBOL Copa America 2024", "tournamentKey": "CONMEBOL Copa America 2024", "includeInAnalysisExport": true, "expectedValues": {"observationDuration": "14 June-14 July 2024"}}
+      ]
+    }
+  ]
+}

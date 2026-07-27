@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-27T16:10:09.871Z",
+  "result": "PASS",
+  "verification": {
+    "protectedHash": "ad9bd0dc85ce67a65c9011dfb9d20b4d9349b6b441a1133bbd070fbcc2858f5a",
+    "paperCount": 28,
+    "sourceLinkCount": 17,
+    "populationExclusionCount": 4,
+    "screeningRecordCount": 14,
+    "screeningVoteCount": 14,
+    "extractionCount": 192,
+    "populationGroupCount": 79
+  },
+  "representativeReverseLinkCheck": {
+    "anchorStudyId": "S277",
+    "sourceStudyIds": [
+      "S039",
+      "S096",
+      "S256"
+    ]
+  },
+  "compactProjectionCheck": {
+    "studyId": "S277",
+    "role": "anchor",
+    "includeInAnalysisExport": true
+  }
+}

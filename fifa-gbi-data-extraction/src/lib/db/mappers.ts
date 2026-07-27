@@ -22,10 +22,12 @@ import type {
   ScreeningRecordRow,
 } from '@/lib/db/types';
 import { normalizeRowMetadata, parseActiveSession } from '@/lib/db/shared';
+import { parseAnalysisSourceTreatment } from '@/lib/analysis-source-policy';
 
 export const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => {
   const metadata = normalizeRowMetadata(row.metadata);
   const activeSession = parseActiveSession(metadata, row.id);
+  const analysisTreatment = parseAnalysisSourceTreatment(metadata);
 
   return {
     id: row.id,
@@ -49,6 +51,8 @@ export const mapPaperRow = (row: PaperRow, noteCount = 0): Paper => {
     storageObjectPath: row.storage_object_path ?? null,
     primaryFileId: row.primary_file_id ?? null,
     flagReason: row.flag_reason ?? null,
+    analysisRole: analysisTreatment.role,
+    includeInAnalysisExport: analysisTreatment.includeInAnalysisExport,
     metadata: Object.keys(metadata).length > 0 ? metadata : undefined,
     noteCount,
     assignedTo: row.assigned_to ?? null,
