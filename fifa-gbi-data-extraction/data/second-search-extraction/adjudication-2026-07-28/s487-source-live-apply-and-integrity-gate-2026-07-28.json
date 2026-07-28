@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "task": "S487 eligibility adjudication, Tabs 1-10 extraction correction, and focused live integrity gate",
+  "date": "2026-07-28",
+  "mode": "live_apply",
+  "model": "Codex, GPT-5 family runtime (GPT-5.5 was not exposed in this environment); Gemini not used",
+  "eligibility": {
+    "decision": "eligible local/current-participant prospective surveillance cohort",
+    "sourceSystem": "Big Ten Sports Injury Monitoring System (SIMS)",
+    "sourceOwnershipEvidence": "Methods: SIMS was established by the Big Ten Athletic Conference in the early 1980s.",
+    "geographicScopeEvidence": "Methods: athletes from one NCAA Division I institution; Limitations: study limited to a single NCAA Big Ten institution and a national sample is needed.",
+    "notNcaaIsp": "The primary outcomes came from the institution-level SIMS roster, daily practice/game logs and injury records, not the NCAA Injury Surveillance Program."
+  },
+  "primaryPdf": {
+    "localVerifiedPath": "/tmp/S487-yang2012.pdf",
+    "sha256": "383f7b3138b1b4036f0059f1a5adaac5a2243a5616e1b43e637918794e2b58d2",
+    "hashVerifiedAgainstLivePointer": true,
+    "pages": 7
+  },
+  "populationLayout": {
+    "before": [
+      {
+        "label": "Row 1",
+        "position": 0
+      }
+    ],
+    "staged": [
+      {
+        "label": "Women's soccer",
+        "position": 0
+      }
+    ],
+    "rationale": "Only the directly reported women’s soccer sport row is eligible for football extraction."
+  },
+  "stageACompleteness": {
+    "passed": true,
+    "tabs1To4": "Citation, DOI, descriptive epidemiology design with prospective daily surveillance data, one U.S. Division I women’s soccer team, female collegiate age group, three-season observation, time-loss definition, medical-staff reporting, athlete-exposure denominator and 3,105 soccer AEs checked.",
+    "tab5": "Soccer total 74 injuries, 15 overuse/repetitive-gradual and 59 acute-sudden. Direct rates are 48.3 and 190.0 per 10,000 AEs; 238.3 is the permitted sum across disjoint onset categories sharing the same denominator.",
+    "tabs6To10": "No illnesses reported. Tables 3-4 provide type, location and severity only for all sports or sex-wide groups, not soccer, so no soccer-specific structured rows are compatible.",
+    "matchTrainingOrientation": "No soccer-specific match/practice exposure or injury split is reported; the existing training-count value 238.3 is a misplaced rate.",
+    "intentionallyBlank": "Soccer roster/sample size, mean age, match/training exposure and counts, recurrence, burden, time-loss duration, common diagnosis/type/location/severity, tissue, location and illness families.",
+    "derivedValues": [
+      {
+        "fieldId": "injuryIncidenceOverall",
+        "value": "238.3",
+        "calculation": "48.3 overuse + 190.0 acute, same 3,105 athlete-exposure denominator",
+        "confidenceInterval": "not derived or stored because the paper reports only category-specific CIs"
+      }
+    ],
+    "blockersCorrectedInStage": [
+      "Remove 35 from sampleSizePlayers because it is injured athletes, not roster/sample size.",
+      "Remove 238.3 from injuryTrainingCount and place it in injuryIncidenceOverall.",
+      "Canonicalise the injury definition and reporter category.",
+      "Add DOI and prospective-data provenance to the descriptive study design."
+    ]
+  },
+  "intendedChanges": [
+    {
+      "tab": "studyDetails",
+      "fieldId": "doi",
+      "value": "10.4085/1062-6050-47.2.198",
+      "sourceQuote": "PubMed PMID 22488286 reports DOI 10.4085/1062-6050-47.2.198.",
+      "pageHint": "PubMed metadata",
+      "before": null
+    },
+    {
+      "tab": "studyDetails",
+      "fieldId": "studyDesign",
+      "value": "descriptive epidemiology study [prospective data]",
+      "sourceQuote": "Daily team rosters, practices, games, and reportable injuries were entered into the ongoing SIMS surveillance system.",
+      "pageHint": "2 of 7",
+      "before": "descriptive epidemiology study"
+    },
+    {
+      "tab": "definitions",
+      "fieldId": "injuryDefinition",
+      "value": "time loss [clinical signs of tissue damage and unable to return the same day]",
+      "sourceQuote": "All included injuries required clinical signs of tissue damage and inability to return to practice or game the same day.",
+      "pageHint": "2 of 7",
+      "before": "time-loss"
+    },
+    {
+      "tab": "definitions",
+      "fieldId": "mechanismReporting",
+      "value": "medical staff [certified athletic trainers]",
+      "sourceQuote": "Certified athletic trainers are responsible for entering data from their teams into SIMS.",
+      "pageHint": "2 of 7",
+      "before": "Certified athletic trainers"
+    },
+    {
+      "tab": "participantCharacteristics",
+      "fieldId": "sampleSizePlayers",
+      "value": null,
+      "sourceQuote": "Table 1 reports 35 injured soccer athletes, not the full soccer roster or enrolled player sample.",
+      "pageHint": "3 of 7",
+      "before": "35"
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryTrainingCount",
+      "value": null,
+      "sourceQuote": "No soccer-specific training-injury count is reported; 238.3 is the summed overall rate, not a count.",
+      "pageHint": "4 of 7",
+      "before": "238.3"
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryIncidenceOverall",
+      "value": "238.3",
+      "sourceQuote": "Soccer overuse rate 48.3 plus acute rate 190.0 per 10,000 AEs; disjoint categories share the same 3,105-AE denominator.",
+      "pageHint": "4 of 7",
+      "before": null
+    }
+  ],
+  "recoverySnapshot": {
+    "paper": {
+      "id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+      "assigned_study_id": "S487",
+      "assigned_to": "00000000-0000-0000-0000-000000000001",
+      "status": "flagged",
+      "flag_reason": "Consult Avanash - NCAA related but not clearly NCAA-ISP/Rio",
+      "doi": null,
+      "normalized_doi": null,
+      "metadata": {
+        "source": "covidence_import_2026-03-11",
+        "searchBatch": "first",
+        "activeSession": {
+          "fullName": "AbdelRahman Babiker",
+          "profileId": "00000000-0000-0000-0000-000000000001",
+          "startedAt": "2026-03-22T22:25:06.197Z",
+          "lastHeartbeatAt": "2026-07-28T17:05:21.538Z"
+        },
+        "covidenceStudy": "Yang 2012",
+        "populationHash": "[{\"position\":0,\"label\":\"Row 1\",\"values\":{\"ageCategory\":\"college\",\"injuryDefinition\":\"loss\",\"injuryModeAcuteSudden\":\"59\",\"injuryModeRepetitiveGradual\":\"15\",\"injuryTotalCount\":\"74\",\"injuryTrainingCount\":\"238.3\",\"numberOfSeasons\":\"3\",\"numberOfTeams\":\"1\",\"observationDuration\":\"2005/2006 to 2007/2008 seasons (3 seasons)\",\"sampleSizePlayers\":\"35\",\"sex\":\"female\",\"totalExposure\":\"3105\"}}]",
+        "covidenceNumber": "#653",
+        "searchBatchLabel": "First search",
+        "importSourceLabel": "First search - original extraction corpus"
+      },
+      "updated_at": "2026-07-28T17:05:21.799374+00:00",
+      "primary_file_id": "e3a428f5-29b8-41dd-a6fa-e628327e4823",
+      "primary_file_sha256": "383f7b3138b1b4036f0059f1a5adaac5a2243a5616e1b43e637918794e2b58d2",
+      "storage_bucket": "papers",
+      "storage_object_path": "e3a428f5-29b8-41dd-a6fa-e628327e4823/1773267829593-yang2012.pdf"
+    },
+    "extractionFields": [
+      {
+        "tab": "studyDetails",
+        "fieldId": "doi",
+        "row": null
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "studyDesign",
+        "row": {
+          "id": "8101bbfe-04d8-4dbe-9405-642e727b3877",
+          "extraction_id": "29355ec8-45ed-4951-81d9-ffabdd043b7f",
+          "field_id": "studyDesign",
+          "value": "descriptive epidemiology study",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "Design: Descriptive epidemiology study.",
+          "page_hint": "1 of 7",
+          "updated_at": "2026-03-22T22:30:49.583+00:00",
+          "updated_by": null,
+          "updated_by_agent": "human"
+        }
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "injuryDefinition",
+        "row": {
+          "id": "db5ed001-f982-4c2e-8ff6-5bf8377f00e6",
+          "extraction_id": "22324841-e30b-448a-a8a3-ec39e94e03a0",
+          "field_id": "injuryDefinition",
+          "value": "time-loss",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "inability of the player to return to practice or game the same day",
+          "page_hint": "2 of 7",
+          "updated_at": "2026-03-22T22:30:49.583+00:00",
+          "updated_by": null,
+          "updated_by_agent": "human"
+        }
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "mechanismReporting",
+        "row": {
+          "id": "bb6a93f2-7b90-4d01-9fb9-6dead67bf2a9",
+          "extraction_id": "22324841-e30b-448a-a8a3-ec39e94e03a0",
+          "field_id": "mechanismReporting",
+          "value": "Certified athletic trainers",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "Certified athletic trainers are responsible for entering data from their teams into SIMS.",
+          "page_hint": "2 of 7",
+          "updated_at": "2026-03-22T22:30:49.583+00:00",
+          "updated_by": null,
+          "updated_by_agent": "human"
+        }
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "sampleSizePlayers",
+        "row": {
+          "id": "4a0c4e00-f06c-4c76-b76e-730ee7174c35",
+          "extraction_id": "ee7ea001-6dff-4938-8550-4bb1694316c3",
+          "field_id": "sampleSizePlayers",
+          "value": "35",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": null,
+          "page_hint": null,
+          "updated_at": "2026-03-22T22:36:45.337+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "human"
+        }
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTrainingCount",
+        "row": {
+          "id": "576428ef-e2da-47b1-b593-6fe0257d82f3",
+          "extraction_id": "7fc308c7-4863-46c4-b793-6d9a59dfaa88",
+          "field_id": "injuryTrainingCount",
+          "value": "238.3",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": null,
+          "page_hint": null,
+          "updated_at": "2026-03-22T22:36:46.698372+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "human"
+        }
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceOverall",
+        "row": {
+          "id": "3edc31d4-14a2-41dc-b4bc-83983132415a",
+          "extraction_id": "7fc308c7-4863-46c4-b793-6d9a59dfaa88",
+          "field_id": "injuryIncidenceOverall",
+          "value": null,
+          "confidence": null,
+          "status": "not_reported",
+          "metric": null,
+          "source_quote": null,
+          "page_hint": null,
+          "updated_at": "2026-03-22T22:30:49.583+00:00",
+          "updated_by": null,
+          "updated_by_agent": "human"
+        }
+      }
+    ],
+    "populationGroup": {
+      "id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+      "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+      "tab": "participantCharacteristics",
+      "label": "Row 1",
+      "position": 0,
+      "created_at": "2026-03-22T22:36:47.365+00:00",
+      "updated_at": "2026-03-22T22:36:47.365+00:00"
+    },
+    "populationValues": [
+      {
+        "fieldId": "injuryDefinition",
+        "row": {
+          "id": "7b351ee5-19b7-49b1-908f-2439f597768c",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "injuryDefinition",
+          "value": "loss",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryDefinition",
+          "created_at": "2026-03-22T22:36:47.484+00:00",
+          "updated_at": "2026-03-22T22:36:47.484+00:00"
+        }
+      },
+      {
+        "fieldId": "sampleSizePlayers",
+        "row": {
+          "id": "dfe3c59d-a18b-437a-bd90-00b6a38569d5",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "sampleSizePlayers",
+          "value": "35",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "sampleSizePlayers",
+          "created_at": "2026-03-22T22:36:47.484+00:00",
+          "updated_at": "2026-03-22T22:36:47.484+00:00"
+        }
+      },
+      {
+        "fieldId": "injuryTrainingCount",
+        "row": {
+          "id": "0cf6809f-775c-4459-9141-d98a22f508d7",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "injuryTrainingCount",
+          "value": "238.3",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryTrainingCount",
+          "created_at": "2026-03-22T22:36:47.484+00:00",
+          "updated_at": "2026-03-22T22:36:47.484+00:00"
+        }
+      },
+      {
+        "fieldId": "injuryIncidenceOverall",
+        "row": null
+      }
+    ]
+  },
+  "protectedBeforeHashes": {
+    "paperFiles": "dd93d18236ca0fa88edb6a9788d1bc8beb7ae873fcab1d40e82fdad772626146",
+    "screeningRecords": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "screeningVotes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "aiReviewDecisions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "stageBIntegrityGate": {
+    "passed": true,
+    "checks": {
+      "correctPaperStatus": true,
+      "flagCleared": true,
+      "doiWritten": true,
+      "studyIdFieldPreserved": true,
+      "sourceAttached": true,
+      "populationLayout": true,
+      "populationValueMismatches": [],
+      "allWrittenFieldsMatch": true,
+      "assignmentPreserved": true,
+      "assignedStudyIdPreserved": true,
+      "primaryFilePointerPreserved": true,
+      "paperFilesUnchanged": true,
+      "screeningRecordsUnchanged": true,
+      "screeningVotesUnchanged": true,
+      "aiReviewDecisionsUnchanged": true
+    },
+    "writtenChecks": [
+      {
+        "fieldId": "doi",
+        "expected": "10.4085/1062-6050-47.2.198",
+        "actual": "10.4085/1062-6050-47.2.198",
+        "matches": true
+      },
+      {
+        "fieldId": "studyDesign",
+        "expected": "descriptive epidemiology study [prospective data]",
+        "actual": "descriptive epidemiology study [prospective data]",
+        "matches": true
+      },
+      {
+        "fieldId": "injuryDefinition",
+        "expected": "time loss [clinical signs of tissue damage and unable to return the same day]",
+        "actual": "time loss [clinical signs of tissue damage and unable to return the same day]",
+        "matches": true
+      },
+      {
+        "fieldId": "mechanismReporting",
+        "expected": "medical staff [certified athletic trainers]",
+        "actual": "medical staff [certified athletic trainers]",
+        "matches": true
+      },
+      {
+        "fieldId": "sampleSizePlayers",
+        "expected": null,
+        "actual": null,
+        "matches": true
+      },
+      {
+        "fieldId": "injuryTrainingCount",
+        "expected": null,
+        "actual": null,
+        "matches": true
+      },
+      {
+        "fieldId": "injuryIncidenceOverall",
+        "expected": "238.3",
+        "actual": "238.3",
+        "matches": true
+      }
+    ]
+  },
+  "after": {
+    "paper": {
+      "id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+      "assigned_study_id": "S487",
+      "assigned_to": "00000000-0000-0000-0000-000000000001",
+      "status": "extracted",
+      "flag_reason": null,
+      "doi": "10.4085/1062-6050-47.2.198",
+      "normalized_doi": "10.4085/1062-6050-47.2.198",
+      "primary_file_id": "e3a428f5-29b8-41dd-a6fa-e628327e4823",
+      "primary_file_sha256": "383f7b3138b1b4036f0059f1a5adaac5a2243a5616e1b43e637918794e2b58d2"
+    },
+    "populationGroups": [
+      {
+        "id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+        "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+        "tab": "participantCharacteristics",
+        "label": "Women's soccer",
+        "position": 0,
+        "created_at": "2026-03-22T22:36:47.365+00:00",
+        "updated_at": "2026-07-28T17:15:26.147+00:00"
+      }
+    ],
+    "targetExtractionFields": [
+      {
+        "tab": "studyDetails",
+        "fieldId": "doi",
+        "row": {
+          "id": "0f9e1d87-1a78-45e8-ba10-1aaac6a56628",
+          "extraction_id": "29355ec8-45ed-4951-81d9-ffabdd043b7f",
+          "field_id": "doi",
+          "value": "10.4085/1062-6050-47.2.198",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "PubMed PMID 22488286 reports DOI 10.4085/1062-6050-47.2.198.",
+          "page_hint": "PubMed metadata",
+          "updated_at": "2026-07-28T17:15:25.596+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "studyDesign",
+        "row": {
+          "id": "8101bbfe-04d8-4dbe-9405-642e727b3877",
+          "extraction_id": "29355ec8-45ed-4951-81d9-ffabdd043b7f",
+          "field_id": "studyDesign",
+          "value": "descriptive epidemiology study [prospective data]",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "Daily team rosters, practices, games, and reportable injuries were entered into the ongoing SIMS surveillance system.",
+          "page_hint": "2 of 7",
+          "updated_at": "2026-07-28T17:15:25.905193+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "injuryDefinition",
+        "row": {
+          "id": "db5ed001-f982-4c2e-8ff6-5bf8377f00e6",
+          "extraction_id": "22324841-e30b-448a-a8a3-ec39e94e03a0",
+          "field_id": "injuryDefinition",
+          "value": "time loss [clinical signs of tissue damage and unable to return the same day]",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "All included injuries required clinical signs of tissue damage and inability to return to practice or game the same day.",
+          "page_hint": "2 of 7",
+          "updated_at": "2026-07-28T17:15:25.962138+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "mechanismReporting",
+        "row": {
+          "id": "bb6a93f2-7b90-4d01-9fb9-6dead67bf2a9",
+          "extraction_id": "22324841-e30b-448a-a8a3-ec39e94e03a0",
+          "field_id": "mechanismReporting",
+          "value": "medical staff [certified athletic trainers]",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "Certified athletic trainers are responsible for entering data from their teams into SIMS.",
+          "page_hint": "2 of 7",
+          "updated_at": "2026-07-28T17:15:26.013654+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "sampleSizePlayers",
+        "row": {
+          "id": "4a0c4e00-f06c-4c76-b76e-730ee7174c35",
+          "extraction_id": "ee7ea001-6dff-4938-8550-4bb1694316c3",
+          "field_id": "sampleSizePlayers",
+          "value": null,
+          "confidence": null,
+          "status": "not_reported",
+          "metric": null,
+          "source_quote": "Table 1 reports 35 injured soccer athletes, not the full soccer roster or enrolled player sample.",
+          "page_hint": "3 of 7",
+          "updated_at": "2026-07-28T17:15:26.067914+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTrainingCount",
+        "row": {
+          "id": "576428ef-e2da-47b1-b593-6fe0257d82f3",
+          "extraction_id": "7fc308c7-4863-46c4-b793-6d9a59dfaa88",
+          "field_id": "injuryTrainingCount",
+          "value": null,
+          "confidence": null,
+          "status": "not_reported",
+          "metric": null,
+          "source_quote": "No soccer-specific training-injury count is reported; 238.3 is the summed overall rate, not a count.",
+          "page_hint": "4 of 7",
+          "updated_at": "2026-07-28T17:15:26.104042+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceOverall",
+        "row": {
+          "id": "3edc31d4-14a2-41dc-b4bc-83983132415a",
+          "extraction_id": "7fc308c7-4863-46c4-b793-6d9a59dfaa88",
+          "field_id": "injuryIncidenceOverall",
+          "value": "238.3",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "Soccer overuse rate 48.3 plus acute rate 190.0 per 10,000 AEs; disjoint categories share the same 3,105-AE denominator.",
+          "page_hint": "4 of 7",
+          "updated_at": "2026-07-28T17:15:26.139322+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      }
+    ],
+    "targetPopulationValues": [
+      {
+        "fieldId": "injuryDefinition",
+        "row": {
+          "id": "7b351ee5-19b7-49b1-908f-2439f597768c",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "injuryDefinition",
+          "value": "time loss [clinical signs of tissue damage and unable to return the same day]",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryDefinition",
+          "created_at": "2026-03-22T22:36:47.484+00:00",
+          "updated_at": "2026-07-28T17:15:26.01+00:00"
+        }
+      },
+      {
+        "fieldId": "sampleSizePlayers",
+        "row": {
+          "id": "dfe3c59d-a18b-437a-bd90-00b6a38569d5",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "sampleSizePlayers",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "sampleSizePlayers",
+          "created_at": "2026-03-22T22:36:47.484+00:00",
+          "updated_at": "2026-07-28T17:15:26.048+00:00"
+        }
+      },
+      {
+        "fieldId": "injuryTrainingCount",
+        "row": {
+          "id": "0cf6809f-775c-4459-9141-d98a22f508d7",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "injuryTrainingCount",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryTrainingCount",
+          "created_at": "2026-03-22T22:36:47.484+00:00",
+          "updated_at": "2026-07-28T17:15:26.081+00:00"
+        }
+      },
+      {
+        "fieldId": "injuryIncidenceOverall",
+        "row": {
+          "id": "74284bd6-f3d4-47f0-90e1-6ae903d52ca3",
+          "population_group_id": "e751f4b5-f286-4cb5-8e5f-e62dfb316483",
+          "paper_id": "65d8464b-db96-4b96-a6b2-9fea69885ba1",
+          "field_id": "injuryIncidenceOverall",
+          "value": "238.3",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryIncidenceOverall",
+          "created_at": "2026-07-28T17:15:26.113+00:00",
+          "updated_at": "2026-07-28T17:15:26.113+00:00"
+        }
+      }
+    ]
+  }
+}

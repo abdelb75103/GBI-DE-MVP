@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-07-28",
+  "studyId": "S016",
+  "paperId": "329c3a24-7b01-43ea-9be1-9f28bc99d47d",
+  "scope": "S016 only; source-verified correction of a flagged first-search extraction",
+  "model": "Codex GPT-5, xhigh reasoning, manual extraction; no Gemini",
+  "expectedLiveState": {
+    "status": "flagged",
+    "flagReason": "not ncaa or rio",
+    "assignedTo": "00000000-0000-0000-0000-000000000001",
+    "primaryFileId": "e88144aa-c3bf-43ec-b2d8-bf641c3b5f30",
+    "primaryFileSha256": "ccbd50c41846e8c9adb6ff3eac2e3a9e7fa81e139e7cc9831707b83ef672e81e"
+  },
+  "eligibility": {
+    "decision": "eligible_local_cohort",
+    "reason": "The primary paper reports the North Carolina High School Athletic Injury Study, a prospective cohort sampled from 100 North Carolina public high schools. Trained school contacts collected study-specific injury reports and weekly participation forms from 1996 to 1999. It is not High School RIO, NCAA surveillance, NATION/Datalys, or another national US surveillance feed.",
+    "footballSubset": "Boys' soccer and girls' soccer rows only. American football and the other ten sports are excluded from this extraction."
+  },
+  "sourceCoverage": {
+    "primaryPdfPages": 13,
+    "journalPages": "1209-1221",
+    "sections": [
+      "title and abstract",
+      "design overview",
+      "injury definition",
+      "sampling methods",
+      "data collection",
+      "athlete-exposure definition",
+      "data analysis",
+      "results",
+      "Tables 1-5",
+      "Figure 1",
+      "discussion",
+      "strengths and limitations",
+      "references"
+    ]
+  },
+  "populationLabels": [
+    "Boys' soccer",
+    "Girls' soccer"
+  ],
+  "fields": {
+    "studyDetails": {
+      "studyId": "S016",
+      "leadAuthor": "Knowles SB",
+      "title": "A Prospective Study of Injury Incidence among North Carolina High School Athletes",
+      "yearOfPublication": "2006",
+      "journal": "American Journal of Epidemiology",
+      "doi": "10.1093/aje/kwj337",
+      "studyDesign": "prospective cohort"
+    },
+    "participantCharacteristics": {
+      "fifaDiscipline": "Association football (11-a-side)",
+      "country": "United States (North Carolina)",
+      "levelOfPlay": "varsity high school",
+      "sex": "male\nfemale",
+      "ageCategory": "Youth",
+      "meanAge": null,
+      "sampleSizePlayers": "1304\n748",
+      "numberOfTeams": null,
+      "observationDuration": "1996-1999 school years"
+    },
+    "definitions": {
+      "injuryDefinition": "medical attention [or limited full participation the following day; concussions, fractures, and eye injuries included regardless]",
+      "illnessDefinition": null,
+      "incidenceDefinition": "per 1,000 athlete-exposures [one athlete participating in one practice or competition; preseason and regular season only]",
+      "burdenDefinition": null,
+      "severityDefinition": null,
+      "recurrenceDefinition": null,
+      "mechanismReporting": "School personnel [athletic trainers or athletic directors]"
+    },
+    "exposure": {
+      "seasonLength": null,
+      "numberOfSeasons": "3",
+      "exposureMeasurementUnit": "athlete-exposures",
+      "totalExposure": null,
+      "matchExposure": null,
+      "trainingExposure": null
+    },
+    "injuryOutcome": {
+      "injuryTotalCount": "252\n121",
+      "injuryPlayersCompletedStudy": null,
+      "injuryTeamsCompletedStudy": null,
+      "injuryMedicalAttentionCount": null,
+      "injuryTimeLossCount": null,
+      "injuryMatchCount": null,
+      "injuryMatchMedicalAttentionCount": null,
+      "injuryMatchTimeLossCount": null,
+      "injuryTrainingCount": null,
+      "injuryTrainingMedicalAttentionCount": null,
+      "injuryTrainingTimeLossCount": null,
+      "injuryIncidenceOverall": "2.81\n2.35",
+      "injuryIncidenceMatch": null,
+      "injuryIncidenceTraining": null,
+      "injuryIncidenceTimeLossOverall": null,
+      "injuryIncidenceTimeLossMatch": null,
+      "injuryIncidenceTimeLossTraining": null,
+      "injuryIncidenceCi95": "2.03-3.90\n1.55-3.55",
+      "injuryTimeLossTotal": null,
+      "injuryTimeLossMedian": null,
+      "injuryTimeLossMean": null,
+      "injuryBurden": null,
+      "injuryBurdenCi95": null,
+      "injuryMostCommonDiagnosis": null,
+      "injuryMostCommonType": null,
+      "injuryMostCommonLocation": null,
+      "injuryMostCommonSeverity": null,
+      "injuryModeRepetitiveGradual": null,
+      "injuryModeRepetitiveSudden": null,
+      "injuryModeAcuteSudden": null,
+      "injuryContact": null,
+      "injuryNonContact": null,
+      "injuryCumulativeRepetitive": null,
+      "injuryDurationMedian": null,
+      "injuryDurationMean": null,
+      "injuryRecurrentTotal": null,
+      "injuryRecurrenceRate": null
+    }
+  },
+  "evidence": {
+    "studyDetails.leadAuthor": {
+      "sourceQuote": "Sarah B. Knowles, Stephen W. Marshall, J. Michael Bowling, Dana Loomis, Robert Millikan, Jinzhen Yang, Nancy L. Weaver, William Kalsbeek, and Frederick O. Mueller",
+      "pageHint": "PDF p. 1 (journal p. 1209)"
+    },
+    "studyDetails.title": {
+      "sourceQuote": "A Prospective Study of Injury Incidence among North Carolina High School Athletes",
+      "pageHint": "PDF p. 1 (journal p. 1209)"
+    },
+    "studyDetails.yearOfPublication": {
+      "sourceQuote": "Am J Epidemiol 2006;164:1209-1221",
+      "pageHint": "PDF p. 1 (journal p. 1209)"
+    },
+    "studyDetails.journal": {
+      "sourceQuote": "American Journal of Epidemiology",
+      "pageHint": "PDF p. 1 (journal p. 1209)"
+    },
+    "studyDetails.doi": {
+      "sourceQuote": "DOI: 10.1093/aje/kwj337",
+      "pageHint": "PDF p. 1 (journal p. 1209)"
+    },
+    "studyDetails.studyDesign": {
+      "sourceQuote": "The North Carolina High School Athletic Injury Study was a prospective cohort study conducted from 1996 to 1999.",
+      "pageHint": "PDF p. 2 (journal p. 1210)"
+    },
+    "participantCharacteristics.fifaDiscipline": {
+      "sourceQuote": "Twelve sports were included: boys' and girls' soccer, boys' and girls' track, boys' and girls' basketball, baseball, softball, wrestling, volleyball, cheerleading, and football.",
+      "pageHint": "PDF p. 3 (journal p. 1211)"
+    },
+    "participantCharacteristics.country": {
+      "sourceQuote": "injury and risk factor data were collected from a sample of high school varsity athletes from 100 public high schools in North Carolina",
+      "pageHint": "PDF p. 3 (journal p. 1211)"
+    },
+    "participantCharacteristics.levelOfPlay": {
+      "sourceQuote": "all varsity athletes playing any of these selected sports were included as participants",
+      "pageHint": "PDF p. 3 (journal p. 1211)"
+    },
+    "participantCharacteristics.sex": {
+      "sourceQuote": "Boys' soccer; Girls' soccer",
+      "pageHint": "PDF pp. 2 and 4 (Tables 1 and 2)"
+    },
+    "participantCharacteristics.ageCategory": {
+      "sourceQuote": "high school varsity athletes",
+      "pageHint": "PDF pp. 1-3"
+    },
+    "participantCharacteristics.sampleSizePlayers": {
+      "sourceQuote": "Boys' soccer 1,304; Girls' soccer 748",
+      "pageHint": "PDF p. 2 (Table 1, journal p. 1210)"
+    },
+    "participantCharacteristics.observationDuration": {
+      "sourceQuote": "conducted from 1996 to 1999",
+      "pageHint": "PDF p. 2 (journal p. 1210)"
+    },
+    "definitions.injuryDefinition": {
+      "sourceQuote": "A reportable injury was one that resulted from participation in a high school sport and either limited the student's full participation in the sport the day following the injury or required medical attention by a medical professional. Additionally, concussions, fractures, or eye injuries were reportable regardless of whether they resulted in lost participation or required medical attention.",
+      "pageHint": "PDF pp. 3-4 (journal pp. 1211-1212)"
+    },
+    "definitions.incidenceDefinition": {
+      "sourceQuote": "Incidence rates were estimated as the number of injuries divided by the sum of athlete-exposures. The analysis of incidence rates included only injuries and exposure time during the preseason and regular season.",
+      "pageHint": "PDF p. 6 (journal p. 1214)"
+    },
+    "definitions.mechanismReporting": {
+      "sourceQuote": "Most school contacts were the athletic trainer (69.0 percent), with the remainder being athletic directors (31.0 percent). Data collectors were trained to administer the data collection instruments.",
+      "pageHint": "PDF pp. 5-6 (journal pp. 1213-1214)"
+    },
+    "exposure.numberOfSeasons": {
+      "sourceQuote": "A prospective cohort study of injury risk factors was conducted from 1996 to 1999",
+      "pageHint": "PDF p. 1 (journal p. 1209)"
+    },
+    "exposure.exposureMeasurementUnit": {
+      "sourceQuote": "An 'athlete-exposure' is one athlete participating in one practice or competition.",
+      "pageHint": "PDF p. 5 (Table 2 footnote, journal p. 1213)"
+    },
+    "injuryOutcome.injuryTotalCount": {
+      "sourceQuote": "Boys' soccer 252; Girls' soccer 121",
+      "pageHint": "PDF p. 4 (Table 2, journal p. 1212)"
+    },
+    "injuryOutcome.injuryIncidenceOverall": {
+      "sourceQuote": "Boys' soccer 2.81; Girls' soccer 2.35 per 1,000 athlete-exposures",
+      "pageHint": "PDF p. 4 (Table 2, journal p. 1212)"
+    },
+    "injuryOutcome.injuryIncidenceCi95": {
+      "sourceQuote": "Boys' soccer 95% CI 2.03, 3.90; Girls' soccer 95% CI 1.55, 3.55",
+      "pageHint": "PDF p. 4 (Table 2, journal p. 1212)"
+    }
+  },
+  "intentionallyBlank": {
+    "participantFields": [
+      "meanAge: no soccer-specific mean or range reported",
+      "numberOfTeams: 100 schools is the multisport sampling frame, not a soccer-specific team count"
+    ],
+    "exposureFields": [
+      "seasonLength: not reported",
+      "totalExposure: soccer-specific total athlete-exposures not printed; not back-calculated from count and rate",
+      "matchExposure and trainingExposure: existing values were back-calculated all-sport values and are not soccer-specific"
+    ],
+    "outcomeFields": [
+      "match and training counts or incidence: only adjusted rate ratios by sport are printed, not soccer-specific counts or rates",
+      "medical-attention and time-loss counts: not reported as separate soccer-specific totals",
+      "severity, burden, recurrence, onset, contact, diagnosis, type, and location: no compatible soccer-specific values"
+    ],
+    "tabs": [
+      "illnessOutcome: illness was not studied",
+      "injuryTissueType: no compatible soccer-specific current-injury distribution",
+      "injuryLocation: no compatible soccer-specific current-injury distribution",
+      "illnessRegion: illness was not studied",
+      "illnessEtiology: illness was not studied"
+    ]
+  }
+}

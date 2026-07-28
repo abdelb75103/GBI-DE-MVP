@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "task": "S899 NCAA-DoD CARE source-system, overlap, and extraction adjudication",
+  "date": "2026-07-28",
+  "mode": "dry_run",
+  "model": "GPT-5.6 Sol",
+  "noGemini": true,
+  "source": {
+    "localPdf": "tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S899-4f5ed3cea21f.pdf",
+    "registeredSha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+    "sectionsScanned": [
+      "Abstract",
+      "Introduction",
+      "Materials and methods",
+      "Results",
+      "Tables 1-3",
+      "Discussion",
+      "Limitations",
+      "Acknowledgements/funding",
+      "References"
+    ]
+  },
+  "decision": {
+    "eligible": true,
+    "finalStatus": "extracted",
+    "reason": "NCAA-DoD CARE is a distinct research cohort, not NCAA-ISP/NCAA ISS/High School RIO/national U.S. injury surveillance.",
+    "liveOverlap": "No duplicate DOI or exact CARE companion DOI is present among live papers.",
+    "nonLiveOverlap": "Kaminski et al. 2022 (2014-2017 CARE soccer cohort) and Jo et al. 2024 (broader CARE soccer concussion cohort) materially overlap but are not promoted live papers."
+  },
+  "preconditions": {
+    "studyId": true,
+    "status": true,
+    "flag": true,
+    "assignment": true,
+    "fileId": true,
+    "paperHash": true,
+    "storagePath": true,
+    "populationLayout": true,
+    "extractionTabs": true,
+    "twoHumanIncludes": true,
+    "sameDoiUnique": true,
+    "careCompanionsNotLive": true,
+    "noteNotYetPresent": true,
+    "field:studyDesign": true,
+    "field:injuryContact": true,
+    "field:injuryIncidenceMatch": true,
+    "field:injuryIncidenceTraining": true,
+    "field:injuryRecurrentTotal": true
+  },
+  "stagedFields": [
+    {
+      "tab": "studyDetails",
+      "fieldId": "studyDesign",
+      "before": "retrospective cohort",
+      "value": "retrospective cohort [prospective data]",
+      "pageHint": "Article pp. 189-190",
+      "sourceQuote": "The abstract labels this a retrospective cohort; participants were recruited into the multisite CARE study and followed under a standardised research protocol."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryContact",
+      "before": "60\n32\n28",
+      "value": "162\n66\n96",
+      "pageHint": "Article pp. 191-192, Table 3",
+      "sourceQuote": "All 162 concussions were assigned to collision, accidental ball contact, purposeful header, or ground/object contact mechanisms; sex-specific Table 3 rows sum to 66 male and 96 female events."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryIncidenceMatch",
+      "before": null,
+      "value": "\n0.04\n0.04",
+      "pageHint": "Article p. 191, Concussion incidence rates",
+      "sourceQuote": "For males and females, the competition incidence was 0.04 per 1000 athlete-exposures."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryIncidenceTraining",
+      "before": null,
+      "value": "\n0.01\n0.02",
+      "pageHint": "Article p. 191, Concussion incidence rates",
+      "sourceQuote": "Practice incidence was 0.01 per 1000 athlete-exposures for males and 0.02 for females."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryRecurrentTotal",
+      "before": null,
+      "value": "2\n\n",
+      "pageHint": "Article p. 191, Demographic data",
+      "sourceQuote": "The results report 158 participants with one concussion and two players with two concussions during the study."
+    }
+  ],
+  "stagedPopulationValues": {
+    "injuryContact": [
+      "162",
+      "66",
+      "96"
+    ],
+    "injuryIncidenceMatch": [
+      "",
+      "0.04",
+      "0.04"
+    ],
+    "injuryIncidenceTraining": [
+      "",
+      "0.01",
+      "0.02"
+    ],
+    "injuryRecurrentTotal": [
+      "2",
+      "",
+      ""
+    ]
+  },
+  "caveats": [
+    "Exposure athlete-exposures were estimated by the paper, not prospectively logged; no match/training athlete-exposure totals were inferred.",
+    "The paper contains internally inconsistent sex counts; existing directly printed 1240 male and 1162 female rows were preserved.",
+    "The recurrent-event count 2 is a transparent derivation from the directly reported two players sustaining two concussions; no recurrence percentage was calculated.",
+    "Absolute male/female overall incidence, absolute incidence CIs, severity, burden, illness, and match/training counts by sex were not reported and remain blank."
+  ],
+  "apply": null,
+  "integrityGate": null,
+  "rollback": {
+    "snapshotAvailable": true,
+    "path": "The exact before-state rows are captured by this run and the pre-apply /tmp snapshot. Updated values and paper status can be restored from that verified copy. Additive rows or the new note would require explicit approval before deletion under repository destructive-action rules."
+  }
+}

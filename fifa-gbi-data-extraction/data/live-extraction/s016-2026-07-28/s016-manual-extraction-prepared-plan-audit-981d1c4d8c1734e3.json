@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-07-28",
+  "mode": "prepared-plan",
+  "planId": "981d1c4d8c1734e3",
+  "scope": "S016 only; source-verified correction of a flagged first-search extraction",
+  "model": "Codex GPT-5, xhigh reasoning, manual extraction; no Gemini",
+  "eligibility": {
+    "decision": "eligible_local_cohort",
+    "reason": "The primary paper reports the North Carolina High School Athletic Injury Study, a prospective cohort sampled from 100 North Carolina public high schools. Trained school contacts collected study-specific injury reports and weekly participation forms from 1996 to 1999. It is not High School RIO, NCAA surveillance, NATION/Datalys, or another national US surveillance feed.",
+    "footballSubset": "Boys' soccer and girls' soccer rows only. American football and the other ten sports are excluded from this extraction."
+  },
+  "sourceCoverage": {
+    "primaryPdfPages": 13,
+    "journalPages": "1209-1221",
+    "sections": [
+      "title and abstract",
+      "design overview",
+      "injury definition",
+      "sampling methods",
+      "data collection",
+      "athlete-exposure definition",
+      "data analysis",
+      "results",
+      "Tables 1-5",
+      "Figure 1",
+      "discussion",
+      "strengths and limitations",
+      "references"
+    ]
+  },
+  "sourceFile": {
+    "bucket": "papers",
+    "objectPath": "9bcb1f87-8d22-406b-83d8-a16affb086f8/1763037792870-Knowles_S.B._and_Marshall_S.W._and_Bowling_J.M._and_Loomis_D._and_Millikan_R._and_Yang_J._and_Weaver_N.L._and_Kalsbeek_W._and_Mueller_F.O._-_2006_-_A_prospective_study_of_injury_incidence_among_North_Carolina_high_school_athletes.pdf",
+    "bytes": 122416,
+    "sha256": "ccbd50c41846e8c9adb6ff3eac2e3a9e7fa81e139e7cc9831707b83ef672e81e"
+  },
+  "before": {
+    "stateHash": "091354f39e7e99dcbac58794169a223dec42a3b94af788a96a59809e161ba498",
+    "status": "flagged",
+    "flagReason": "not ncaa or rio",
+    "assignment": "00000000-0000-0000-0000-000000000001",
+    "extractionTabs": [
+      "definitions",
+      "exposure",
+      "participantCharacteristics",
+      "studyDetails"
+    ],
+    "populationLabels": [
+      "Row 1",
+      "Row 2",
+      "Row 3",
+      "Row 4",
+      "Row 5",
+      "Row 6"
+    ],
+    "populationCount": 6,
+    "populationValues": 21,
+    "protectedHash": "ba90ecc84dfe7770e0a99e9bc2f0c4cbd3317daf77f2b456f9ee323208dd64ee",
+    "screeningRecordsResolvedByStudyIdOrPaperId": 0,
+    "screeningVotes": 0
+  },
+  "preApplyCompleteness": {
+    "result": "passed",
+    "unknownFieldIds": [],
+    "missingRequiredPayloadFields": [],
+    "populationLabels": [
+      "Boys' soccer",
+      "Girls' soccer"
+    ],
+    "populationCount": 2,
+    "stagedPopulationValues": 14,
+    "tabsPopulated": [
+      "studyDetails",
+      "participantCharacteristics",
+      "definitions",
+      "exposure",
+      "injuryOutcome"
+    ],
+    "intentionallyBlank": {
+      "participantFields": [
+        "meanAge: no soccer-specific mean or range reported",
+        "numberOfTeams: 100 schools is the multisport sampling frame, not a soccer-specific team count"
+      ],
+      "exposureFields": [
+        "seasonLength: not reported",
+        "totalExposure: soccer-specific total athlete-exposures not printed; not back-calculated from count and rate",
+        "matchExposure and trainingExposure: existing values were back-calculated all-sport values and are not soccer-specific"
+      ],
+      "outcomeFields": [
+        "match and training counts or incidence: only adjusted rate ratios by sport are printed, not soccer-specific counts or rates",
+        "medical-attention and time-loss counts: not reported as separate soccer-specific totals",
+        "severity, burden, recurrence, onset, contact, diagnosis, type, and location: no compatible soccer-specific values"
+      ],
+      "tabs": [
+        "illnessOutcome: illness was not studied",
+        "injuryTissueType: no compatible soccer-specific current-injury distribution",
+        "injuryLocation: no compatible soccer-specific current-injury distribution",
+        "illnessRegion: illness was not studied",
+        "illnessEtiology: illness was not studied"
+      ]
+    },
+    "derivedOrBackCalculatedValues": []
+  },
+  "applyResult": {
+    "result": "not_run_dry_run",
+    "fieldWrites": [
+      {
+        "tab": "studyDetails",
+        "fieldId": "studyId",
+        "action": "update",
+        "priorValue": "S016",
+        "stagedValue": "S016"
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "leadAuthor",
+        "action": "update",
+        "priorValue": "Knowles S.B.",
+        "stagedValue": "Knowles SB"
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "title",
+        "action": "update",
+        "priorValue": "A Prospective Study of Injury Incidence among North Carolina High School Athletes",
+        "stagedValue": "A Prospective Study of Injury Incidence among North Carolina High School Athletes"
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "yearOfPublication",
+        "action": "update",
+        "priorValue": "2006",
+        "stagedValue": "2006"
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "journal",
+        "action": "update",
+        "priorValue": "American Journal of Epidemiology",
+        "stagedValue": "American Journal of Epidemiology"
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "doi",
+        "action": "update",
+        "priorValue": "10.1093/aje/kwj337",
+        "stagedValue": "10.1093/aje/kwj337"
+      },
+      {
+        "tab": "studyDetails",
+        "fieldId": "studyDesign",
+        "action": "update",
+        "priorValue": "prospective cohort",
+        "stagedValue": "prospective cohort"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "fifaDiscipline",
+        "action": "update",
+        "priorValue": "Association football (11-a-side)",
+        "stagedValue": "Association football (11-a-side)"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "country",
+        "action": "update",
+        "priorValue": "USA",
+        "stagedValue": "United States (North Carolina)"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "levelOfPlay",
+        "action": "update",
+        "priorValue": "collegiate",
+        "stagedValue": "varsity high school"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "sex",
+        "action": "update",
+        "priorValue": "male\nfemale",
+        "stagedValue": "male\nfemale"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "ageCategory",
+        "action": "update",
+        "priorValue": "<14\n15\n16\n17\n18\n≥19",
+        "stagedValue": "Youth"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "meanAge",
+        "action": "update",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "sampleSizePlayers",
+        "action": "update",
+        "priorValue": "636\n2,236\n3,610\n4,097\n2,388\n205",
+        "stagedValue": "1304\n748"
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "numberOfTeams",
+        "action": "update",
+        "priorValue": "100",
+        "stagedValue": null
+      },
+      {
+        "tab": "participantCharacteristics",
+        "fieldId": "observationDuration",
+        "action": "update",
+        "priorValue": "3-year",
+        "stagedValue": "1996-1999 school years"
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "injuryDefinition",
+        "action": "update",
+        "priorValue": "medical attention",
+        "stagedValue": "medical attention [or limited full participation the following day; concussions, fractures, and eye injuries included regardless]"
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "illnessDefinition",
+        "action": "update",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "incidenceDefinition",
+        "action": "update",
+        "priorValue": "Incidence rates were estimated as the number of injuries divided by the sum of athlete-exposures.",
+        "stagedValue": "per 1,000 athlete-exposures [one athlete participating in one practice or competition; preseason and regular season only]"
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "burdenDefinition",
+        "action": "update",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "severityDefinition",
+        "action": "update",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "recurrenceDefinition",
+        "action": "update",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "definitions",
+        "fieldId": "mechanismReporting",
+        "action": "update",
+        "priorValue": "Medical Staff",
+        "stagedValue": "School personnel [athletic trainers or athletic directors]"
+      },
+      {
+        "tab": "exposure",
+        "fieldId": "seasonLength",
+        "action": "update",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "exposure",
+        "fieldId": "numberOfSeasons",
+        "action": "update",
+        "priorValue": "3",
+        "stagedValue": "3"
+      },
+      {
+        "tab": "exposure",
+        "fieldId": "exposureMeasurementUnit",
+        "action": "update",
+        "priorValue": "athlete-exposures",
+        "stagedValue": "athlete-exposures"
+      },
+      {
+        "tab": "exposure",
+        "fieldId": "totalExposure",
+        "action": "update",
+        "priorValue": "1032117",
+        "stagedValue": null
+      },
+      {
+        "tab": "exposure",
+        "fieldId": "matchExposure",
+        "action": "update",
+        "priorValue": "451747",
+        "stagedValue": null
+      },
+      {
+        "tab": "exposure",
+        "fieldId": "trainingExposure",
+        "action": "update",
+        "priorValue": "580370",
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTotalCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": "252\n121"
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryPlayersCompletedStudy",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTeamsCompletedStudy",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMedicalAttentionCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTimeLossCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMatchCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMatchMedicalAttentionCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMatchTimeLossCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTrainingCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTrainingMedicalAttentionCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTrainingTimeLossCount",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceOverall",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": "2.81\n2.35"
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceMatch",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceTraining",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceTimeLossOverall",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceTimeLossMatch",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceTimeLossTraining",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryIncidenceCi95",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": "2.03-3.90\n1.55-3.55"
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTimeLossTotal",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTimeLossMedian",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryTimeLossMean",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryBurden",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryBurdenCi95",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMostCommonDiagnosis",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMostCommonType",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMostCommonLocation",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryMostCommonSeverity",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryModeRepetitiveGradual",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryModeRepetitiveSudden",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryModeAcuteSudden",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryContact",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryNonContact",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryCumulativeRepetitive",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryDurationMedian",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryDurationMean",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryRecurrentTotal",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      },
+      {
+        "tab": "injuryOutcome",
+        "fieldId": "injuryRecurrenceRate",
+        "action": "insert",
+        "priorValue": null,
+        "stagedValue": null
+      }
+    ],
+    "oldPopulationGroupsToReplace": [
+      {
+        "id": "940e8190-14cc-4f72-b5e1-45b997f7f5d6",
+        "label": "Row 1",
+        "position": 0
+      },
+      {
+        "id": "7a8b0083-4498-4796-b939-81f389c46143",
+        "label": "Row 2",
+        "position": 1
+      },
+      {
+        "id": "a96f0575-4a4d-4be7-b106-6bed291a37b9",
+        "label": "Row 3",
+        "position": 2
+      },
+      {
+        "id": "c3277bb9-8a24-4bd8-95bb-5a52e3e3e77d",
+        "label": "Row 4",
+        "position": 3
+      },
+      {
+        "id": "ada81d32-af93-41c3-b2f6-139fbf7285ac",
+        "label": "Row 5",
+        "position": 4
+      },
+      {
+        "id": "04d8c76f-a8fe-4349-8fa5-f04d300a1f96",
+        "label": "Row 6",
+        "position": 5
+      }
+    ],
+    "oldPopulationValueCountToReplace": 21,
+    "newPopulationGroups": [
+      {
+        "id": "2621f636-e247-53fd-9693-e42acfba7307",
+        "label": "Boys' soccer",
+        "position": 0
+      },
+      {
+        "id": "bc4b4186-c0a6-5354-8de8-0b1f5c673bc8",
+        "label": "Girls' soccer",
+        "position": 1
+      }
+    ],
+    "newPopulationValueCount": 14
+  },
+  "integrityGate": {
+    "result": "not_run_dry_run",
+    "stagedPopulationLabels": [
+      "Boys' soccer",
+      "Girls' soccer"
+    ],
+    "stagedPopulationCount": 2,
+    "stagedPopulationValues": 14
+  },
+  "final": null,
+  "backlogUpdateRequired": "Deferred until live apply and focused integrity gate pass",
+  "readyFor": "Explicit approval of the immutable S016 population replacement plan"
+}

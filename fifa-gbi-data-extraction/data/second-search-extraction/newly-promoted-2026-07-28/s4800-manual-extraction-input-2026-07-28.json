@@ -1,0 +1,174 @@
+{
+  "artifactType": "Newly promoted paper staged manual extraction input",
+  "date": "2026-07-28",
+  "scope": "S4800 only",
+  "model": "gpt-5.6-sol",
+  "reasoningLevel": "medium",
+  "modelNote": "The skill-default GPT-5.5 model is unavailable in this agent lane. The closest suitable local Codex/OpenAI model, gpt-5.6-sol with medium reasoning, was used.",
+  "fixedMembership": [
+    "S4800"
+  ],
+  "preApply": {
+    "paperId": "e84cb607-2bc9-4df6-9119-a5833c37f087",
+    "screeningRecordId": "408f6cba-55a1-419e-a14e-33d10c24b8dd",
+    "primaryFileId": "35ec28fc-9755-423a-a1be-6cea08fdc2bf",
+    "primaryFileSha256": "b88656471ce9f676ff1a61ccd90805e1bf3afe2f50b8092f2bf4a5be22ca5361",
+    "status": "uploaded",
+    "assignedTo": null,
+    "existingExtractions": 0,
+    "existingExtractionFields": 0,
+    "existingPopulationGroups": 0,
+    "existingPopulationValues": 0,
+    "protectedScreening": "The linked full-text record has reviewer votes exclude/include followed by an include consensus resolution, fullTextResolution ready_for_extraction, and promoted_paper_id e84cb607-2bc9-4df6-9119-a5833c37f087. No screening, vote, resolver, or promotion write is staged."
+  },
+  "stageA": {
+    "result": "passed",
+    "correctionHistory": {
+      "review": "Cold post-apply semantic review identified population granularity, numeric-field, time-loss subset, and target-diagnosis duplication blockers.",
+      "disposition": "Corrected before human review. The staged payload now uses the exact Table 3 All seasons plus 2013-2018 columns and clears unsupported or duplicated fields.",
+      "findingsCorrected": [
+        "Expanded the population layout from one Total row to All seasons / 2013 / 2014 / 2015 / 2016 / 2017 / 2018.",
+        "Removed 209 player-seasons from sampleSizePlayers and left the All seasons line blank; retained the six direct annual player counts.",
+        "Removed units and prose from meanAge and populated the direct annual values.",
+        "Populated every compatible direct Table 3 annual exposure, injury-count, incidence, recurrence, muscle-injury, muscle/tendon, and thigh row.",
+        "Cleared seasonLength because no numeric week duration is reported.",
+        "Cleared duplicate time-loss incidence and time-loss count fields because the paper reports one primary time-loss-defined incidence/count set, not a separate subset.",
+        "Cleared target-diagnosis headline and free-diagnosis structured fields while retaining the compatible muscle-injury structured mapping."
+      ]
+    },
+    "populationLayout": {
+      "labels": [
+        "All seasons",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018"
+      ],
+      "count": 7,
+      "rationale": "Table 3 directly reports an All seasons total and six exact season columns. Those columns are the strongest directly reported axis and preserve the paper's changing annual player-seasons, exposure, injury counts, incidence, and recurrence."
+    },
+    "sourceCoverage": "Exact attached eight-page PDF inspected textually and visually: abstract; Methods; player characteristics; injury, recurrence, and MRI definitions; Tables 1-7; Figure 1; Results; Discussion; limitations; and Conclusion.",
+    "tablesAndFigures": {
+      "Table 1": "MRI acquisition parameters; no compatible epidemiological extraction values.",
+      "Figure 1": "Illustrative MRI for one type 1-T injury; no population-level quantitative extraction value.",
+      "Table 2": "Modified JISS MRI classification definitions; retained in source coverage and mapping caveats.",
+      "Table 3": "Direct annual and total player-seasons, exposure hours, training/game/total HMI counts, incidence rates, and reinjury counts.",
+      "Table 4": "Direct affected-muscle, proximal/middle/distal location, and modified JISS type counts.",
+      "Table 5": "Direct reinjury numerator/denominator, location, timing, affected-muscle, and initial-type distributions.",
+      "Table 6": "Reinjury versus no-reinjury comparison; no additional compatible headline or structured live fields.",
+      "Table 7": "Affected-muscle subgroup risk-factor comparison; no separate population line because the denominators are injured-leg analysis subgroups, not the at-risk cohort."
+    },
+    "intentionallyBlankFamilies": {
+      "illnessOutcome": "No illness outcome was studied.",
+      "illnessRegion": "No illness outcome was studied.",
+      "illnessEtiology": "No illness outcome was studied."
+    },
+    "checkedButNotFilled": [
+      "No injury or structured 95% confidence intervals were reported.",
+      "No injury burden or directly reported days-lost severity statistic was reported.",
+      "No clean contact/non-contact or onset-mechanism count was reported; exclusion of direct contusions was not converted into a non-contact count.",
+      "No side or playing-position distribution was reported.",
+      "Proximal/middle/distal thirds and biceps femoris/semitendinosus/semimembranosus lack one-to-one structured schema rows, so they remain represented only in reviewer-facing source coverage and the most-common fields.",
+      "Modified JISS type 2 combines muscle-tendon junction injury with intramuscular tendon involvement, so types 2 and 3 were not aggregated into the narrower tendon-injury structured row."
+    ],
+    "derivations": {
+      "used": [],
+      "rejected": [
+        "No exposure or count was back-calculated from an incidence rate.",
+        "No recurrence denominator was inferred: the paper directly reports 12/40 (30%) after excluding three surgically treated type 3 injuries from the nonoperative reinjury analysis.",
+        "No days lost were inferred from planned rehabilitation or return-to-play periods.",
+        "No tendon subtype total was created from the modified JISS categories because type 2 is a combined category."
+      ]
+    },
+    "recurrenceFrameCaveat": "Annual injuryRecurrentTotal values use Table 3's all-injury frame. The directly reported overall recurrence rate remains 30% (12/40) for the nonoperatively treated-leg analysis."
+  },
+  "papers": [
+    {
+      "studyId": "S4800",
+      "populationLabels": [
+        "All seasons",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4800",
+          "leadAuthor": "Ogawa T",
+          "title": "Incidence of Hamstring Injury and Analysis of Risk Factors for Reinjury in Japanese Professional Football Players.",
+          "yearOfPublication": "2025",
+          "journal": "Orthopaedic Journal of Sports Medicine",
+          "doi": "10.1177/23259671251391776",
+          "studyDesign": "retrospective cohort study"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Japan",
+          "levelOfPlay": "professional (J.League divisions 1 and 2)",
+          "sex": "male",
+          "ageCategory": "Senior",
+          "meanAge": "24.7 ± 1.3\n23.1 ± 3.8\n23.3 ± 3.2\n24.8 ± 3.5\n25.6 ± 4.0\n26.3 ± 5.1\n25.1 ± 4.7",
+          "sampleSizePlayers": "\n38\n33\n34\n32\n36\n36",
+          "numberOfTeams": "1",
+          "observationDuration": "2013-2018 (6 consecutive seasons)"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [MRI-confirmed hamstring injury causing ≥4 days' absence from team training]",
+          "illnessDefinition": null,
+          "incidenceDefinition": "per 1000 player-hours",
+          "burdenDefinition": null,
+          "severityDefinition": null,
+          "recurrenceDefinition": "subsequent injury at the same location before return to complete play or within 2 months after return to complete play",
+          "mechanismReporting": "Medical Staff (club doctor)"
+        },
+        "exposure": {
+          "seasonLength": null,
+          "numberOfSeasons": "6",
+          "exposureMeasurementUnit": "player-hours",
+          "totalExposure": "71742\n12363\n12015\n10838\n12549\n11437\n12540",
+          "matchExposure": "9148\n1425\n1573\n1650\n1557\n1485\n1458",
+          "trainingExposure": "62594\n10938\n10442\n9188\n10992\n9952\n11082"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "43\n6\n7\n4\n10\n10\n6",
+          "injuryTeamsCompletedStudy": "1",
+          "injuryTimeLossCount": null,
+          "injuryMatchCount": "21\n1\n3\n2\n6\n7\n2",
+          "injuryMatchTimeLossCount": null,
+          "injuryTrainingCount": "22\n5\n4\n2\n4\n3\n4",
+          "injuryTrainingTimeLossCount": null,
+          "injuryIncidenceOverall": "0.60\n0.49\n0.58\n0.37\n0.80\n0.87\n0.48",
+          "injuryIncidenceMatch": "2.30\n0.70\n1.91\n1.21\n3.85\n4.71\n1.37",
+          "injuryIncidenceTraining": "0.35\n0.46\n0.38\n0.22\n0.36\n0.30\n0.36",
+          "injuryIncidenceTimeLossOverall": null,
+          "injuryIncidenceTimeLossMatch": null,
+          "injuryIncidenceTimeLossTraining": null,
+          "injuryMostCommonDiagnosis": null,
+          "injuryMostCommonType": "modified JISS type 1-M (15)",
+          "injuryMostCommonLocation": "middle third of the hamstring (17)",
+          "injuryRecurrentTotal": "12\n2\n3\n1\n2\n2\n2",
+          "injuryRecurrenceRate": "30% (12/40 nonoperatively treated legs)"
+        },
+        "injuryTissueType": {
+          "injuryTissueType_injury_diagnosis_diagnosis": null,
+          "injuryTissueType_injury_diagnosis_prevalence": null,
+          "injuryTissueType_injury_diagnosis_incidence": null,
+          "injuryTissueType_muscle_tendon_prevalence": "43\n6\n7\n4\n10\n10\n6",
+          "injuryTissueType_muscle_tendon_incidence": "0.60\n0.49\n0.58\n0.37\n0.80\n0.87\n0.48",
+          "injuryTissueType_muscle_injury_prevalence": "43\n6\n7\n4\n10\n10\n6",
+          "injuryTissueType_muscle_injury_incidence": "0.60\n0.49\n0.58\n0.37\n0.80\n0.87\n0.48"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "43\n6\n7\n4\n10\n10\n6",
+          "injuryLocation_thigh_incidence": "0.60\n0.49\n0.58\n0.37\n0.80\n0.87\n0.48"
+        }
+      }
+    }
+  ],
+  "readyFor": "Guarded live correction and focused S4800 Stage B rerun"
+}

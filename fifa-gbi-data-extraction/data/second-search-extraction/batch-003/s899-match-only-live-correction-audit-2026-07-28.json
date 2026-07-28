@@ -1,0 +1,903 @@
+{
+  "schemaVersion": 1,
+  "task": "S899 remove training-derived exposure and incidence data; retain match data",
+  "date": "2026-07-28",
+  "mode": "live_apply",
+  "model": "GPT-5.6 Sol",
+  "noGemini": true,
+  "interpretation": {
+    "cleared": [
+      "totalExposure",
+      "injuryIncidenceOverall",
+      "injuryIncidenceTraining",
+      "injuryTrainingCount",
+      "injuryTissueType_concussion_incidence",
+      "injuryLocation_head_incidence"
+    ],
+    "retainedMatchFields": {
+      "injuryMatchCount": "89\n\n",
+      "injuryIncidenceMatch": "\n0.04\n0.04"
+    },
+    "retainedDescriptiveData": [
+      "injuryTotalCount",
+      "injuryTissueType_concussion_prevalence",
+      "injuryLocation_head_prevalence",
+      "injuryContact",
+      "injuryRecurrentTotal"
+    ],
+    "rationale": "Training athlete-exposures were assumed rather than observed. Overall exposure and incidence values incorporate that assumed training component."
+  },
+  "preconditions": {
+    "exactPaper": true,
+    "status": true,
+    "assignment": true,
+    "file": true,
+    "populationLayout": true,
+    "twoHumanIncludes": true,
+    "noteAbsent": true,
+    "field:totalExposure": true,
+    "population:totalExposure": true,
+    "field:injuryIncidenceOverall": true,
+    "population:injuryIncidenceOverall": true,
+    "field:injuryIncidenceTraining": true,
+    "population:injuryIncidenceTraining": true,
+    "field:injuryTrainingCount": true,
+    "population:injuryTrainingCount": true,
+    "field:injuryTissueType_concussion_incidence": true,
+    "population:injuryTissueType_concussion_incidence": true,
+    "field:injuryLocation_head_incidence": true,
+    "population:injuryLocation_head_incidence": true,
+    "retained:injuryMatchCount": true,
+    "retained:injuryIncidenceMatch": true
+  },
+  "before": {
+    "fields": {
+      "totalExposure": {
+        "id": "1b758bcd-51fa-40d4-a38d-e5a0034e5dc6",
+        "extraction_id": "a43ccc96-dba6-412f-9526-b7eaac7d256a",
+        "field_id": "totalExposure",
+        "value": "1990880\n1002200\n988680",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:57.061+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      },
+      "injuryIncidenceOverall": {
+        "id": "98095201-7b03-4784-bd1b-83c861c46ff0",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceOverall",
+        "value": "0.08\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:57.429+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      },
+      "injuryIncidenceTraining": {
+        "id": "e6dacbc9-e080-44ce-bd02-4455878b774c",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceTraining",
+        "value": "\n0.01\n0.02",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "Practice incidence was 0.01 per 1000 athlete-exposures for males and 0.02 for females.",
+        "page_hint": "Article p. 191, Concussion incidence rates",
+        "updated_at": "2026-07-28T17:23:48.067+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      "injuryTrainingCount": {
+        "id": "cfc3aebf-fd55-4440-ab5e-4776adac05e7",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryTrainingCount",
+        "value": "73\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:57.372+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      },
+      "injuryTissueType_concussion_incidence": {
+        "id": "368ebf87-1f95-49c7-becd-1afb78617347",
+        "extraction_id": "80de6f73-2038-46cd-98b5-eab2c98ae684",
+        "field_id": "injuryTissueType_concussion_incidence",
+        "value": "0.08\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": "incidence",
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:57.897+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      },
+      "injuryLocation_head_incidence": {
+        "id": "bd290b84-341f-4246-af5a-f1da69c535ad",
+        "extraction_id": "5bb9ff2d-61d0-4df4-be65-088dcce8082f",
+        "field_id": "injuryLocation_head_incidence",
+        "value": "0.08\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": "incidence",
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:58.074+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      }
+    },
+    "populationValues": {
+      "totalExposure": [
+        {
+          "id": "2ef11723-e3be-4c8f-b07b-76403cec77b6",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "totalExposure",
+          "value": "1990880",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "totalExposure",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        },
+        {
+          "id": "35023c12-39f5-4c4f-9a79-32c58df0a17f",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "totalExposure",
+          "value": "1002200",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "totalExposure",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        },
+        {
+          "id": "801d18f9-4583-489e-9bed-0b61c32c0535",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "totalExposure",
+          "value": "988680",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "totalExposure",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        }
+      ],
+      "injuryIncidenceOverall": [
+        {
+          "id": "6c21fb2a-c5bb-49e2-a318-fef85a942252",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceOverall",
+          "value": "0.08",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryIncidenceOverall",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        }
+      ],
+      "injuryIncidenceTraining": [
+        {
+          "id": "85c0ff89-db1f-414d-b5b4-8308a56af900",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceTraining",
+          "value": "0.01",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceTraining",
+          "created_at": "2026-07-28T17:23:48.364+00:00",
+          "updated_at": "2026-07-28T17:23:48.364+00:00"
+        },
+        {
+          "id": "34626118-073a-494f-a2a3-3316403c13dc",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceTraining",
+          "value": "0.02",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceTraining",
+          "created_at": "2026-07-28T17:23:48.405+00:00",
+          "updated_at": "2026-07-28T17:23:48.405+00:00"
+        }
+      ],
+      "injuryTrainingCount": [
+        {
+          "id": "a0dd664c-a697-44f8-bd31-350e98d351f1",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryTrainingCount",
+          "value": "73",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryTrainingCount",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        }
+      ],
+      "injuryTissueType_concussion_incidence": [
+        {
+          "id": "c085cf75-4432-4d88-a473-a40f6a162ecf",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryTissueType_concussion_incidence",
+          "value": "0.08",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryTissueType_concussion_incidence",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        }
+      ],
+      "injuryLocation_head_incidence": [
+        {
+          "id": "c89d4d70-85ba-42f9-ad63-80226eae45e1",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryLocation_head_incidence",
+          "value": "0.08",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryLocation_head_incidence",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-04T14:07:58.851+00:00"
+        }
+      ]
+    },
+    "retainedMatchFields": {
+      "injuryMatchCount": {
+        "id": "1db811ea-15ea-4cef-80b6-cad85d6c7a0a",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryMatchCount",
+        "value": "89\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:57.247+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      },
+      "injuryIncidenceMatch": {
+        "id": "b6c8a76e-c947-4b9b-8784-5a2165504978",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceMatch",
+        "value": "\n0.04\n0.04",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "For males and females, the competition incidence was 0.04 per 1000 athlete-exposures.",
+        "page_hint": "Article p. 191, Concussion incidence rates",
+        "updated_at": "2026-07-28T17:23:48.003+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      }
+    },
+    "protectedStateSha256": "a84bbc4448efa97707260574565a9fc379359fe9689c80cdb7bc22f7634962e8",
+    "unchangedFieldsSha256": "1f5ea1702518e02e62aa4d6dd7322e4487cc6acf44fa10c10934139799e4e87c",
+    "unchangedPopulationSha256": "67e62973de535c7ca75000c657a045db488ea00090b4405f2edbf2069a06e7c5"
+  },
+  "apply": {
+    "extractionFields": [
+      {
+        "id": "1b758bcd-51fa-40d4-a38d-e5a0034e5dc6",
+        "extraction_id": "a43ccc96-dba6-412f-9526-b7eaac7d256a",
+        "field_id": "totalExposure",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.099717+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "98095201-7b03-4784-bd1b-83c861c46ff0",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceOverall",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.416984+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "e6dacbc9-e080-44ce-bd02-4455878b774c",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceTraining",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.521082+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "cfc3aebf-fd55-4440-ab5e-4776adac05e7",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryTrainingCount",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.640963+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "368ebf87-1f95-49c7-becd-1afb78617347",
+        "extraction_id": "80de6f73-2038-46cd-98b5-eab2c98ae684",
+        "field_id": "injuryTissueType_concussion_incidence",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": "incidence",
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.715235+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "bd290b84-341f-4246-af5a-f1da69c535ad",
+        "extraction_id": "5bb9ff2d-61d0-4df4-be65-088dcce8082f",
+        "field_id": "injuryLocation_head_incidence",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": "incidence",
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.785296+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      }
+    ],
+    "populationValues": [
+      {
+        "id": "2ef11723-e3be-4c8f-b07b-76403cec77b6",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "totalExposure",
+        "value": null,
+        "metric": null,
+        "unit": null,
+        "source_field_id": "totalExposure",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:18.991+00:00"
+      },
+      {
+        "id": "35023c12-39f5-4c4f-9a79-32c58df0a17f",
+        "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "totalExposure",
+        "value": null,
+        "metric": null,
+        "unit": null,
+        "source_field_id": "totalExposure",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:19.072+00:00"
+      },
+      {
+        "id": "801d18f9-4583-489e-9bed-0b61c32c0535",
+        "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "totalExposure",
+        "value": null,
+        "metric": null,
+        "unit": null,
+        "source_field_id": "totalExposure",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:19.172+00:00"
+      },
+      {
+        "id": "6c21fb2a-c5bb-49e2-a318-fef85a942252",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceOverall",
+        "value": null,
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryIncidenceOverall",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:19.28+00:00"
+      },
+      {
+        "id": "85c0ff89-db1f-414d-b5b4-8308a56af900",
+        "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceTraining",
+        "value": null,
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryIncidenceTraining",
+        "created_at": "2026-07-28T17:23:48.364+00:00",
+        "updated_at": "2026-07-28T17:32:19.387+00:00"
+      },
+      {
+        "id": "34626118-073a-494f-a2a3-3316403c13dc",
+        "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceTraining",
+        "value": null,
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryIncidenceTraining",
+        "created_at": "2026-07-28T17:23:48.405+00:00",
+        "updated_at": "2026-07-28T17:32:19.422+00:00"
+      },
+      {
+        "id": "a0dd664c-a697-44f8-bd31-350e98d351f1",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryTrainingCount",
+        "value": null,
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryTrainingCount",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:19.503+00:00"
+      },
+      {
+        "id": "c085cf75-4432-4d88-a473-a40f6a162ecf",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryTissueType_concussion_incidence",
+        "value": null,
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryTissueType_concussion_incidence",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:19.569+00:00"
+      },
+      {
+        "id": "c89d4d70-85ba-42f9-ad63-80226eae45e1",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryLocation_head_incidence",
+        "value": null,
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryLocation_head_incidence",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:32:19.697+00:00"
+      }
+    ],
+    "note": {
+      "id": "1a9a51d9-4531-4ced-b7ef-41865fee28c6",
+      "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "body": "S899 denominator correction requested by Abdel on 2026-07-28. Training exposure is not used because the paper did not observe practice athlete-exposures: it assumed 40 practices per athlete per year based on investigator and university-staff estimates. The active extraction therefore excludes training count/rate, total exposure, overall incidence, and the duplicated overall concussion/head incidence rows that depend on the training-inclusive denominator. Match count and match incidence are retained. Competition exposure was reconstructed by the authors from preseason rosters and public NCAA schedules rather than an assumed number of events, although it still does not verify individual participation and should be interpreted cautiously. Descriptive concussion totals, sex-specific counts, contact mechanisms, recurrent events, and structured prevalence counts remain because they do not depend on the estimated training denominator. The source sex-count discrepancy remains unresolved: total n=2471; stated sex-available n=2366; results male/female n=1240/1162; Table 1 female n=1204.",
+      "created_at": "2026-07-28T17:32:19.732+00:00"
+    },
+    "paperMetadata": {
+      "id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "assigned_study_id": "S899",
+      "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "lead_author": "Kontos Anthony P",
+      "journal": "Science & Medicine in Football",
+      "year": "2024",
+      "doi": "10.1080/24733938.2023.2227134",
+      "status": "extracted",
+      "storage_bucket": "papers",
+      "storage_object_path": "34863f3f-eea0-45ca-82f4-3e122caa97f8/1781805784240-S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+      "uploaded_by": "00000000-0000-0000-0000-000000000001",
+      "uploaded_at": "2026-07-04T14:02:01.937+00:00",
+      "updated_at": "2026-07-28T17:32:20.233749+00:00",
+      "metadata": {
+        "importRaw": {
+          "A1": "Kontos, Anthony P | Eagle, Shawn R | Chrisman, Sara P D | Putukian, Margot | Manderino, Lisa | Holland, Cyndi | Collins, Michael W | Broglio, Steven P | McAllister, Thomas W | McCrea, Michael A | Pasquina, Paul | Kaminski, Thomas W",
+          "A2": "CARE Consortium Investigators",
+          "CY": "England",
+          "DB": "Ovid MEDLINE(R) <July 2024 to December 2024>",
+          "DO": "https://dx.doi.org/10.1080/24733938.2023.2227134",
+          "EP": "195",
+          "ER": "",
+          "ID": "37338928",
+          "IS": "3",
+          "JA": "Sci. med. footb.",
+          "JF": "Science & Medicine in Football",
+          "KW": "Humans | *Soccer/in [Injuries] | *Brain Concussion/ep [Epidemiology] | Male | Female | Incidence | Retrospective Studies | Risk Factors | Young Adult | Universities/sn [Statistics & Numerical Data] | United States/ep [Epidemiology] | Athletic Injuries/ep [Epidemiology] | Adolescent | Sex Factors",
+          "L2": "https://ovidsp.ovid.com/ovidweb.cgi?T=JS&PAGE=reference&D=med26&NEWS=N&AN=37338928",
+          "M1": "101724288",
+          "M2": "Kontos, Anthony P. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Eagle, Shawn R. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Chrisman, Sara P D. Seattle Children's Hospital, Seattle, WA, USA. | Putukian, Margot. Major League Soccer, New York, NY, USA. | Manderino, Lisa. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Holland, Cyndi. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Collins, Michael W. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Broglio, Steven P. Department of Kinesiology, University of Michigan, Ann Arbor, MI, USA. | McAllister, Thomas W. Department of Kinesiology, Indiana University School of Medicine, Ann Arbor, MI, USA. | McCrea, Michael A. Department of Kinesiology, Medical College of Wisconsin, Ann Arbor, MI, USA. | Pasquina, Paul. Department of Kinesiology, Uniformed Services University of the Health Sciences, Ann Arbor, MI, USA. | Kaminski, Thomas W. Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA.",
+          "N2": "This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, games/practices, history of concussion, and playing position. Collegiate soccer players were recruited (n = 2,471) from 23 institutions from the NCAA-DoD Concussion Assessment, Research, and Education (CARE) Consortium. Incidence rates for concussion per 1000 athlete exposures (AEs) were calculated across the 2015-16/2016-17 seasons. Incidence rates (IR) comparing risk factor groups were also calculated. A total of 162 concussions occurred during the study, for an IR of 0.08/1000 AEs. Females were more likely to have a concussion than males overall (IR = 1.47) and were more likely to have a concussion in games (IR = 1.42) and practices (IR = 2.91). Concussions were more likely during competition compared to practice (IR = 2.53), and less likely in Division III, compared to Divisions I and II, chi2 = 6.5, p > .05. In the concussed group, male sex was associated with 2.47 times higher odds of playing defender and 2.29 times higher odds of a collision mechanism. Results confirm previous findings that females and game exposures have higher concussion IR than males and practice exposures. Findings also supported sex differences in IRs based on exposure type, position, and mechanism.",
+          "PT": "Journal Article, Research Support, Non-U.S. Gov't, Research Support, U.S. Gov't, Non-P.H.S.",
+          "SN": "2473-4446 | 2473-3938",
+          "SP": "189",
+          "T1": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+          "TY": "JOUR",
+          "UR": "https://newcastle.primo.exlibrisgroup.com/openurl/61UON_INST/61UON_INST:61UON?sid=OVID:medline&id=pmid:37338928&id=doi:10.1080%2F24733938.2023.2227134&issn=2473-3938&isbn=&volume=8&issue=3&spage=189&pages=189-195&date=2024&title=Science+%26+Medicine+in+Football&atitle=Incidence+of+concussion+and+associated+risk+factors+in+collegiate+soccer%3A+findings+from+the+NCAA-DoD+CARE+consortium.&aulast=Kontos",
+          "VL": "8",
+          "Y1": "2024//",
+          "Y2": "20230623//"
+        },
+        "searchBatch": "second",
+        "importSource": "Medline",
+        "activeSession": {
+          "fullName": "AbdelRahman Babiker",
+          "profileId": "00000000-0000-0000-0000-000000000001",
+          "startedAt": "2026-07-08T19:57:06.917Z",
+          "lastHeartbeatAt": "2026-07-28T17:26:56.469Z"
+        },
+        "normalizedDoi": "10.1080/24733938.2023.2227134",
+        "searchRunDate": "2026-05-26",
+        "duplicateKeyV2": "89b7fc12814a9ccd9734c52e7d9ac5847533c3b36d6b021f394054e6557dca4e",
+        "importFileName": "20260526 Medline ris (44).ris",
+        "populationHash": "[{\"position\":0,\"label\":\"Total\",\"values\":{\"ageCategory\":\"adult\",\"injuryContact\":\"162\",\"injuryDefinition\":\"medical attention [concussion only]\",\"injuryLocation_head_prevalence\":\"162\",\"injuryMatchCount\":\"89\",\"injuryRecurrentTotal\":\"2\",\"injuryTissueType_concussion_prevalence\":\"162\",\"injuryTotalCount\":\"162\",\"meanAge\":\"19.4 ± 1.4\",\"numberOfSeasons\":\"2\",\"numberOfTeams\":\"23 institutions\",\"observationDuration\":\"2015-2016 and 2016-2017 seasons\",\"sampleSizePlayers\":\"2471\",\"sex\":\"mixed\"}},{\"position\":1,\"label\":\"Male\",\"values\":{\"injuryContact\":\"66\",\"injuryIncidenceMatch\":\"0.04\",\"injuryLocation_head_prevalence\":\"66\",\"injuryTissueType_concussion_prevalence\":\"66\",\"injuryTotalCount\":\"66\",\"sampleSizePlayers\":\"1240\",\"sex\":\"male\"}},{\"position\":2,\"label\":\"Female\",\"values\":{\"injuryContact\":\"96\",\"injuryIncidenceMatch\":\"0.04\",\"injuryLocation_head_prevalence\":\"96\",\"injuryTissueType_concussion_prevalence\":\"96\",\"injuryTotalCount\":\"96\",\"sampleSizePlayers\":\"1162\",\"sex\":\"female\"}}]",
+        "screeningStage": "full_text",
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ],
+        "searchBatchLabel": "Second search - Ishanka - 2026-05-26",
+        "searchProvidedBy": "Ishanka Weerasekara",
+        "titleFingerprint": "incidence of concussion and associated risk factors in collegiate soccer findings from the ncaadod care consortium",
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "importSourceLabel": "Second search - Ishanka - 2026-05-26 - Medline",
+        "screeningDecision": "include",
+        "screeningRecordId": "03610b6b-71b4-4110-9437-9450916f1267",
+        "fullTextResolution": "pending",
+        "awaitingFullTextPdf": false,
+        "screeningPromotedAt": "2026-07-06T23:06:56.246Z",
+        "fullTextPdfSourceUrl": "https://www-tandfonline-com.ucd.idm.oclc.org/doi/pdf/10.1080/24733938.2023.2227134",
+        "titleAbstractStudyId": "S899",
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextPdfAttachedAt": "2026-06-18T18:03:04.615Z",
+        "fullTextPdfAttachedBy": "script:import-ucd-browser-cache-pdfs",
+        "titleAbstractRecordId": "32e2465b-c1ef-4c3b-ac41-94cb5112bf8c",
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T14:26:36.523Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "screeningDecisionReason": null,
+        "titleAbstractPromotedAt": "2026-06-15T14:26:38.078Z",
+        "titleAbstractPromotedBy": "00000000-0000-0000-0000-000000000001",
+        "titleAbstractResolution": "ready_for_full_text",
+        "temporaryExtractionReason": "AI include plus one human include; awaiting second human full-text review",
+        "temporaryExtractionPromotion": true,
+        "temporaryExtractionPromotedAt": "2026-07-04T14:02:01.937Z",
+        "temporaryExtractionPromotedBy": "00000000-0000-0000-0000-000000000001",
+        "temporaryExtractionPromotedByName": "AbdelRahman Babiker"
+      },
+      "primary_file_id": "991d4da5-f312-49a6-8b92-cc7d7ff85a38",
+      "flag_reason": null,
+      "claimed_at": null,
+      "is_archived": false,
+      "assigned_to": "00000000-0000-0000-0000-000000000001",
+      "extracted_title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "normalized_doi": "10.1080/24733938.2023.2227134",
+      "duplicate_key_v2": "89b7fc12814a9ccd9734c52e7d9ac5847533c3b36d6b021f394054e6557dca4e",
+      "title_fingerprint": "incidence of concussion and associated risk factors in collegiate soccer findings from the ncaadod care consortium",
+      "dedupe_review_status": "clean",
+      "primary_file_sha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+      "original_file_name": "S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf"
+    }
+  },
+  "integrityGate": {
+    "checks": {
+      "protectedStatePreserved": true,
+      "unchangedFieldsPreserved": true,
+      "unchangedPopulationValuesPreserved": true,
+      "notePresentExactlyOnce": true,
+      "retainedMatchFields": true,
+      "retainedMatchPopulationValues": true,
+      "populationHashRefreshed": true,
+      "cleared:totalExposure": true,
+      "populationCleared:totalExposure": true,
+      "cleared:injuryIncidenceOverall": true,
+      "populationCleared:injuryIncidenceOverall": true,
+      "cleared:injuryIncidenceTraining": true,
+      "populationCleared:injuryIncidenceTraining": true,
+      "cleared:injuryTrainingCount": true,
+      "populationCleared:injuryTrainingCount": true,
+      "cleared:injuryTissueType_concussion_incidence": true,
+      "populationCleared:injuryTissueType_concussion_incidence": true,
+      "cleared:injuryLocation_head_incidence": true,
+      "populationCleared:injuryLocation_head_incidence": true
+    },
+    "passed": true
+  },
+  "rollback": {
+    "recoverable": true,
+    "method": "Restore each cleared extraction_fields and population_values row from the exact IDs, values, statuses, source quotes, page hints, and timestamps captured in the before section. No row deletion is required."
+  },
+  "after": {
+    "fields": {
+      "totalExposure": {
+        "id": "1b758bcd-51fa-40d4-a38d-e5a0034e5dc6",
+        "extraction_id": "a43ccc96-dba6-412f-9526-b7eaac7d256a",
+        "field_id": "totalExposure",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.099717+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      "injuryIncidenceOverall": {
+        "id": "98095201-7b03-4784-bd1b-83c861c46ff0",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceOverall",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.416984+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      "injuryIncidenceTraining": {
+        "id": "e6dacbc9-e080-44ce-bd02-4455878b774c",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceTraining",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.521082+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      "injuryTrainingCount": {
+        "id": "cfc3aebf-fd55-4440-ab5e-4776adac05e7",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryTrainingCount",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": null,
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.640963+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      "injuryTissueType_concussion_incidence": {
+        "id": "368ebf87-1f95-49c7-becd-1afb78617347",
+        "extraction_id": "80de6f73-2038-46cd-98b5-eab2c98ae684",
+        "field_id": "injuryTissueType_concussion_incidence",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": "incidence",
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.715235+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      "injuryLocation_head_incidence": {
+        "id": "bd290b84-341f-4246-af5a-f1da69c535ad",
+        "extraction_id": "5bb9ff2d-61d0-4df4-be65-088dcce8082f",
+        "field_id": "injuryLocation_head_incidence",
+        "value": null,
+        "confidence": null,
+        "status": "not_reported",
+        "metric": "incidence",
+        "source_quote": "Excluded from active extraction by user adjudication on 2026-07-28 because the field depends on assumed training exposure; see the S899 denominator-correction note.",
+        "page_hint": "Article pp. 191 and 193, exposure methods and limitations",
+        "updated_at": "2026-07-28T17:32:19.785296+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      }
+    },
+    "populationValues": {
+      "totalExposure": [
+        {
+          "id": "2ef11723-e3be-4c8f-b07b-76403cec77b6",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "totalExposure",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "totalExposure",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:18.991+00:00"
+        },
+        {
+          "id": "35023c12-39f5-4c4f-9a79-32c58df0a17f",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "totalExposure",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "totalExposure",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:19.072+00:00"
+        },
+        {
+          "id": "801d18f9-4583-489e-9bed-0b61c32c0535",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "totalExposure",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "totalExposure",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:19.172+00:00"
+        }
+      ],
+      "injuryIncidenceOverall": [
+        {
+          "id": "6c21fb2a-c5bb-49e2-a318-fef85a942252",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceOverall",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryIncidenceOverall",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:19.28+00:00"
+        }
+      ],
+      "injuryIncidenceTraining": [
+        {
+          "id": "85c0ff89-db1f-414d-b5b4-8308a56af900",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceTraining",
+          "value": null,
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceTraining",
+          "created_at": "2026-07-28T17:23:48.364+00:00",
+          "updated_at": "2026-07-28T17:32:19.387+00:00"
+        },
+        {
+          "id": "34626118-073a-494f-a2a3-3316403c13dc",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceTraining",
+          "value": null,
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceTraining",
+          "created_at": "2026-07-28T17:23:48.405+00:00",
+          "updated_at": "2026-07-28T17:32:19.422+00:00"
+        }
+      ],
+      "injuryTrainingCount": [
+        {
+          "id": "a0dd664c-a697-44f8-bd31-350e98d351f1",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryTrainingCount",
+          "value": null,
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryTrainingCount",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:19.503+00:00"
+        }
+      ],
+      "injuryTissueType_concussion_incidence": [
+        {
+          "id": "c085cf75-4432-4d88-a473-a40f6a162ecf",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryTissueType_concussion_incidence",
+          "value": null,
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryTissueType_concussion_incidence",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:19.569+00:00"
+        }
+      ],
+      "injuryLocation_head_incidence": [
+        {
+          "id": "c89d4d70-85ba-42f9-ad63-80226eae45e1",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryLocation_head_incidence",
+          "value": null,
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryLocation_head_incidence",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:32:19.697+00:00"
+        }
+      ]
+    },
+    "retainedMatchFields": {
+      "injuryMatchCount": {
+        "id": "1db811ea-15ea-4cef-80b6-cad85d6c7a0a",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryMatchCount",
+        "value": "89\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": null,
+        "page_hint": null,
+        "updated_at": "2026-07-04T14:07:57.247+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "human"
+      },
+      "injuryIncidenceMatch": {
+        "id": "b6c8a76e-c947-4b9b-8784-5a2165504978",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceMatch",
+        "value": "\n0.04\n0.04",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "For males and females, the competition incidence was 0.04 per 1000 athlete-exposures.",
+        "page_hint": "Article p. 191, Concussion incidence rates",
+        "updated_at": "2026-07-28T17:23:48.003+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      }
+    },
+    "note": {
+      "id": "1a9a51d9-4531-4ced-b7ef-41865fee28c6",
+      "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "body": "S899 denominator correction requested by Abdel on 2026-07-28. Training exposure is not used because the paper did not observe practice athlete-exposures: it assumed 40 practices per athlete per year based on investigator and university-staff estimates. The active extraction therefore excludes training count/rate, total exposure, overall incidence, and the duplicated overall concussion/head incidence rows that depend on the training-inclusive denominator. Match count and match incidence are retained. Competition exposure was reconstructed by the authors from preseason rosters and public NCAA schedules rather than an assumed number of events, although it still does not verify individual participation and should be interpreted cautiously. Descriptive concussion totals, sex-specific counts, contact mechanisms, recurrent events, and structured prevalence counts remain because they do not depend on the estimated training denominator. The source sex-count discrepancy remains unresolved: total n=2471; stated sex-available n=2366; results male/female n=1240/1162; Table 1 female n=1204.",
+      "created_at": "2026-07-28T17:32:19.732+00:00"
+    },
+    "populationHash": "[{\"position\":0,\"label\":\"Total\",\"values\":{\"ageCategory\":\"adult\",\"injuryContact\":\"162\",\"injuryDefinition\":\"medical attention [concussion only]\",\"injuryLocation_head_prevalence\":\"162\",\"injuryMatchCount\":\"89\",\"injuryRecurrentTotal\":\"2\",\"injuryTissueType_concussion_prevalence\":\"162\",\"injuryTotalCount\":\"162\",\"meanAge\":\"19.4 ± 1.4\",\"numberOfSeasons\":\"2\",\"numberOfTeams\":\"23 institutions\",\"observationDuration\":\"2015-2016 and 2016-2017 seasons\",\"sampleSizePlayers\":\"2471\",\"sex\":\"mixed\"}},{\"position\":1,\"label\":\"Male\",\"values\":{\"injuryContact\":\"66\",\"injuryIncidenceMatch\":\"0.04\",\"injuryLocation_head_prevalence\":\"66\",\"injuryTissueType_concussion_prevalence\":\"66\",\"injuryTotalCount\":\"66\",\"sampleSizePlayers\":\"1240\",\"sex\":\"male\"}},{\"position\":2,\"label\":\"Female\",\"values\":{\"injuryContact\":\"96\",\"injuryIncidenceMatch\":\"0.04\",\"injuryLocation_head_prevalence\":\"96\",\"injuryTissueType_concussion_prevalence\":\"96\",\"injuryTotalCount\":\"96\",\"sampleSizePlayers\":\"1162\",\"sex\":\"female\"}}]"
+  }
+}

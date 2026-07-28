@@ -1,0 +1,873 @@
+{
+  "schemaVersion": 1,
+  "task": "S899 NCAA-DoD CARE source-system, overlap, and extraction adjudication",
+  "date": "2026-07-28",
+  "mode": "live_apply",
+  "model": "GPT-5.6 Sol",
+  "noGemini": true,
+  "source": {
+    "localPdf": "tmp/full-text-ai-rereview-all-current-2026-06-19/pdfs/S899-4f5ed3cea21f.pdf",
+    "registeredSha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+    "sectionsScanned": [
+      "Abstract",
+      "Introduction",
+      "Materials and methods",
+      "Results",
+      "Tables 1-3",
+      "Discussion",
+      "Limitations",
+      "Acknowledgements/funding",
+      "References"
+    ]
+  },
+  "decision": {
+    "eligible": true,
+    "finalStatus": "extracted",
+    "reason": "NCAA-DoD CARE is a distinct research cohort, not NCAA-ISP/NCAA ISS/High School RIO/national U.S. injury surveillance.",
+    "liveOverlap": "No duplicate DOI or exact CARE companion DOI is present among live papers.",
+    "nonLiveOverlap": "Kaminski et al. 2022 (2014-2017 CARE soccer cohort) and Jo et al. 2024 (broader CARE soccer concussion cohort) materially overlap but are not promoted live papers."
+  },
+  "preconditions": {
+    "studyId": true,
+    "status": true,
+    "flag": true,
+    "assignment": true,
+    "fileId": true,
+    "paperHash": true,
+    "storagePath": true,
+    "populationLayout": true,
+    "extractionTabs": true,
+    "twoHumanIncludes": true,
+    "sameDoiUnique": true,
+    "careCompanionsNotLive": true,
+    "noteNotYetPresent": true,
+    "field:studyDesign": true,
+    "field:injuryContact": true,
+    "field:injuryIncidenceMatch": true,
+    "field:injuryIncidenceTraining": true,
+    "field:injuryRecurrentTotal": true
+  },
+  "stagedFields": [
+    {
+      "tab": "studyDetails",
+      "fieldId": "studyDesign",
+      "before": "retrospective cohort",
+      "value": "retrospective cohort [prospective data]",
+      "pageHint": "Article pp. 189-190",
+      "sourceQuote": "The abstract labels this a retrospective cohort; participants were recruited into the multisite CARE study and followed under a standardised research protocol."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryContact",
+      "before": "60\n32\n28",
+      "value": "162\n66\n96",
+      "pageHint": "Article pp. 191-192, Table 3",
+      "sourceQuote": "All 162 concussions were assigned to collision, accidental ball contact, purposeful header, or ground/object contact mechanisms; sex-specific Table 3 rows sum to 66 male and 96 female events."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryIncidenceMatch",
+      "before": null,
+      "value": "\n0.04\n0.04",
+      "pageHint": "Article p. 191, Concussion incidence rates",
+      "sourceQuote": "For males and females, the competition incidence was 0.04 per 1000 athlete-exposures."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryIncidenceTraining",
+      "before": null,
+      "value": "\n0.01\n0.02",
+      "pageHint": "Article p. 191, Concussion incidence rates",
+      "sourceQuote": "Practice incidence was 0.01 per 1000 athlete-exposures for males and 0.02 for females."
+    },
+    {
+      "tab": "injuryOutcome",
+      "fieldId": "injuryRecurrentTotal",
+      "before": null,
+      "value": "2\n\n",
+      "pageHint": "Article p. 191, Demographic data",
+      "sourceQuote": "The results report 158 participants with one concussion and two players with two concussions during the study."
+    }
+  ],
+  "stagedPopulationValues": {
+    "injuryContact": [
+      "162",
+      "66",
+      "96"
+    ],
+    "injuryIncidenceMatch": [
+      "",
+      "0.04",
+      "0.04"
+    ],
+    "injuryIncidenceTraining": [
+      "",
+      "0.01",
+      "0.02"
+    ],
+    "injuryRecurrentTotal": [
+      "2",
+      "",
+      ""
+    ]
+  },
+  "caveats": [
+    "Exposure athlete-exposures were estimated by the paper, not prospectively logged; no match/training athlete-exposure totals were inferred.",
+    "The paper contains internally inconsistent sex counts; existing directly printed 1240 male and 1162 female rows were preserved.",
+    "The recurrent-event count 2 is a transparent derivation from the directly reported two players sustaining two concussions; no recurrence percentage was calculated.",
+    "Absolute male/female overall incidence, absolute incidence CIs, severity, burden, illness, and match/training counts by sex were not reported and remain blank."
+  ],
+  "apply": {
+    "fieldOperations": [
+      {
+        "operation": "update",
+        "row": {
+          "id": "2647c1c9-3e48-4dbf-846e-50938acea4e9",
+          "extraction_id": "0cd63ac8-73d8-4c0c-adc1-62ef40c00e0a",
+          "field_id": "studyDesign",
+          "value": "retrospective cohort [prospective data]",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "The abstract labels this a retrospective cohort; participants were recruited into the multisite CARE study and followed under a standardised research protocol.",
+          "page_hint": "Article pp. 189-190",
+          "updated_at": "2026-07-28T17:23:47.961742+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "operation": "update",
+        "row": {
+          "id": "ae486ff2-bc16-46da-ac50-77b4f19b6f4f",
+          "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+          "field_id": "injuryContact",
+          "value": "162\n66\n96",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "All 162 concussions were assigned to collision, accidental ball contact, purposeful header, or ground/object contact mechanisms; sex-specific Table 3 rows sum to 66 male and 96 female events.",
+          "page_hint": "Article pp. 191-192, Table 3",
+          "updated_at": "2026-07-28T17:23:48.056462+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "b6c8a76e-c947-4b9b-8784-5a2165504978",
+          "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+          "field_id": "injuryIncidenceMatch",
+          "value": "\n0.04\n0.04",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "For males and females, the competition incidence was 0.04 per 1000 athlete-exposures.",
+          "page_hint": "Article p. 191, Concussion incidence rates",
+          "updated_at": "2026-07-28T17:23:48.003+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "e6dacbc9-e080-44ce-bd02-4455878b774c",
+          "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+          "field_id": "injuryIncidenceTraining",
+          "value": "\n0.01\n0.02",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "Practice incidence was 0.01 per 1000 athlete-exposures for males and 0.02 for females.",
+          "page_hint": "Article p. 191, Concussion incidence rates",
+          "updated_at": "2026-07-28T17:23:48.067+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "03006e14-8298-4332-babc-e085d95e6d6b",
+          "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+          "field_id": "injuryRecurrentTotal",
+          "value": "2\n\n",
+          "confidence": null,
+          "status": "reported",
+          "metric": null,
+          "source_quote": "The results report 158 participants with one concussion and two players with two concussions during the study.",
+          "page_hint": "Article p. 191, Demographic data",
+          "updated_at": "2026-07-28T17:23:48.107+00:00",
+          "updated_by": "00000000-0000-0000-0000-000000000001",
+          "updated_by_agent": "codex"
+        }
+      }
+    ],
+    "populationOperations": [
+      {
+        "operation": "update",
+        "row": {
+          "id": "b12a3ecd-291d-4b01-a129-42316751a585",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryContact",
+          "value": "162",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryContact",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:23:48.157+00:00"
+        }
+      },
+      {
+        "operation": "update",
+        "row": {
+          "id": "a3fdc1d7-064c-4d85-940e-1472a4cb61d8",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryContact",
+          "value": "66",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryContact",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:23:48.201+00:00"
+        }
+      },
+      {
+        "operation": "update",
+        "row": {
+          "id": "43e47f8a-bada-4d08-9fa1-9b1d1639a7d2",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryContact",
+          "value": "96",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryContact",
+          "created_at": "2026-07-04T14:07:58.851+00:00",
+          "updated_at": "2026-07-28T17:23:48.243+00:00"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "9b8dbc1f-3f91-4224-a65e-b4648dbfff48",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceMatch",
+          "value": "0.04",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceMatch",
+          "created_at": "2026-07-28T17:23:48.28+00:00",
+          "updated_at": "2026-07-28T17:23:48.28+00:00"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "dc8cf624-0772-4078-950a-3e2f3cc4bf89",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceMatch",
+          "value": "0.04",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceMatch",
+          "created_at": "2026-07-28T17:23:48.323+00:00",
+          "updated_at": "2026-07-28T17:23:48.323+00:00"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "85c0ff89-db1f-414d-b5b4-8308a56af900",
+          "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceTraining",
+          "value": "0.01",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceTraining",
+          "created_at": "2026-07-28T17:23:48.364+00:00",
+          "updated_at": "2026-07-28T17:23:48.364+00:00"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "34626118-073a-494f-a2a3-3316403c13dc",
+          "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryIncidenceTraining",
+          "value": "0.02",
+          "metric": "incidence",
+          "unit": null,
+          "source_field_id": "injuryIncidenceTraining",
+          "created_at": "2026-07-28T17:23:48.405+00:00",
+          "updated_at": "2026-07-28T17:23:48.405+00:00"
+        }
+      },
+      {
+        "operation": "insert",
+        "row": {
+          "id": "e63de96a-b1f3-4997-8755-aa85928daa30",
+          "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+          "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+          "field_id": "injuryRecurrentTotal",
+          "value": "2",
+          "metric": null,
+          "unit": null,
+          "source_field_id": "injuryRecurrentTotal",
+          "created_at": "2026-07-28T17:23:48.527+00:00",
+          "updated_at": "2026-07-28T17:23:48.527+00:00"
+        }
+      }
+    ],
+    "note": {
+      "id": "52d24b32-3d66-4a2c-8f04-79210a63383f",
+      "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "body": "S899 source-system, overlap, and extraction adjudication completed 2026-07-28 using GPT-5.6 Sol at high scrutiny (GPT-5.5 unavailable; no Gemini). The primary PDF distinguishes the NCAA-DoD CARE Consortium research cohort from prior NCAA injury-surveillance programmes: CARE used multisite participant enrolment, standardised clinical concussion assessment, and team-physician diagnosis, while this publication retrospectively analysed the 2015-2016 and 2016-2017 CARE seasons. This is not NCAA-ISP/NCAA ISS, High School RIO, or national U.S. injury surveillance, so NCAA funding and collegiate affiliation alone do not place it in american_data. Exact live DOI and CARE-companion DOI checks found no other included live CARE paper. Original-search CARE companion publications by Kaminski et al. (2022; 2014-2017 cohort) and Jo et al. (2024; broader CARE concussion cohort) materially overlap this source family but are not promoted live papers, so S899 remains the independently extractable live epidemiology record. The existing Total / Male / Female extraction was preserved. Source-verified completion added sex-specific match incidence 0.04 / 0.04 and training incidence 0.01 / 0.02 per 1000 athlete-exposures, plus 2 repeat concussion events transparently derived from the directly reported two players who each sustained two concussions. The generic contact count was corrected from collision-only 60 / 32 / 28 to all four directly reported contact mechanisms summed as 162 / 66 / 96. The paper directly reports total estimated athlete-exposures, but match/training athlete-exposure totals were not printed: competition counts came from public schedules and practices were assumed at 40 per year, so matchExposure and trainingExposure remain blank and no exposure was back-calculated. The source has unresolved sex-denominator inconsistencies (Table 1 female n=1204; results text female n=1162 and male n=1240; stated sex-available n=2366). The existing directly printed results rows 1240 / 1162 were retained and must not be treated as summing cleanly to the total sample of 2471.",
+      "created_at": "2026-07-28T17:23:48.567+00:00"
+    },
+    "paper": {
+      "id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "assigned_study_id": "S899",
+      "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "lead_author": "Kontos Anthony P",
+      "journal": "Science & Medicine in Football",
+      "year": "2024",
+      "doi": "10.1080/24733938.2023.2227134",
+      "status": "extracted",
+      "storage_bucket": "papers",
+      "storage_object_path": "34863f3f-eea0-45ca-82f4-3e122caa97f8/1781805784240-S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+      "uploaded_by": "00000000-0000-0000-0000-000000000001",
+      "uploaded_at": "2026-07-04T14:02:01.937+00:00",
+      "updated_at": "2026-07-28T17:23:48.777932+00:00",
+      "metadata": {
+        "importRaw": {
+          "A1": "Kontos, Anthony P | Eagle, Shawn R | Chrisman, Sara P D | Putukian, Margot | Manderino, Lisa | Holland, Cyndi | Collins, Michael W | Broglio, Steven P | McAllister, Thomas W | McCrea, Michael A | Pasquina, Paul | Kaminski, Thomas W",
+          "A2": "CARE Consortium Investigators",
+          "CY": "England",
+          "DB": "Ovid MEDLINE(R) <July 2024 to December 2024>",
+          "DO": "https://dx.doi.org/10.1080/24733938.2023.2227134",
+          "EP": "195",
+          "ER": "",
+          "ID": "37338928",
+          "IS": "3",
+          "JA": "Sci. med. footb.",
+          "JF": "Science & Medicine in Football",
+          "KW": "Humans | *Soccer/in [Injuries] | *Brain Concussion/ep [Epidemiology] | Male | Female | Incidence | Retrospective Studies | Risk Factors | Young Adult | Universities/sn [Statistics & Numerical Data] | United States/ep [Epidemiology] | Athletic Injuries/ep [Epidemiology] | Adolescent | Sex Factors",
+          "L2": "https://ovidsp.ovid.com/ovidweb.cgi?T=JS&PAGE=reference&D=med26&NEWS=N&AN=37338928",
+          "M1": "101724288",
+          "M2": "Kontos, Anthony P. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Eagle, Shawn R. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Chrisman, Sara P D. Seattle Children's Hospital, Seattle, WA, USA. | Putukian, Margot. Major League Soccer, New York, NY, USA. | Manderino, Lisa. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Holland, Cyndi. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Collins, Michael W. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Broglio, Steven P. Department of Kinesiology, University of Michigan, Ann Arbor, MI, USA. | McAllister, Thomas W. Department of Kinesiology, Indiana University School of Medicine, Ann Arbor, MI, USA. | McCrea, Michael A. Department of Kinesiology, Medical College of Wisconsin, Ann Arbor, MI, USA. | Pasquina, Paul. Department of Kinesiology, Uniformed Services University of the Health Sciences, Ann Arbor, MI, USA. | Kaminski, Thomas W. Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA.",
+          "N2": "This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, games/practices, history of concussion, and playing position. Collegiate soccer players were recruited (n = 2,471) from 23 institutions from the NCAA-DoD Concussion Assessment, Research, and Education (CARE) Consortium. Incidence rates for concussion per 1000 athlete exposures (AEs) were calculated across the 2015-16/2016-17 seasons. Incidence rates (IR) comparing risk factor groups were also calculated. A total of 162 concussions occurred during the study, for an IR of 0.08/1000 AEs. Females were more likely to have a concussion than males overall (IR = 1.47) and were more likely to have a concussion in games (IR = 1.42) and practices (IR = 2.91). Concussions were more likely during competition compared to practice (IR = 2.53), and less likely in Division III, compared to Divisions I and II, chi2 = 6.5, p > .05. In the concussed group, male sex was associated with 2.47 times higher odds of playing defender and 2.29 times higher odds of a collision mechanism. Results confirm previous findings that females and game exposures have higher concussion IR than males and practice exposures. Findings also supported sex differences in IRs based on exposure type, position, and mechanism.",
+          "PT": "Journal Article, Research Support, Non-U.S. Gov't, Research Support, U.S. Gov't, Non-P.H.S.",
+          "SN": "2473-4446 | 2473-3938",
+          "SP": "189",
+          "T1": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+          "TY": "JOUR",
+          "UR": "https://newcastle.primo.exlibrisgroup.com/openurl/61UON_INST/61UON_INST:61UON?sid=OVID:medline&id=pmid:37338928&id=doi:10.1080%2F24733938.2023.2227134&issn=2473-3938&isbn=&volume=8&issue=3&spage=189&pages=189-195&date=2024&title=Science+%26+Medicine+in+Football&atitle=Incidence+of+concussion+and+associated+risk+factors+in+collegiate+soccer%3A+findings+from+the+NCAA-DoD+CARE+consortium.&aulast=Kontos",
+          "VL": "8",
+          "Y1": "2024//",
+          "Y2": "20230623//"
+        },
+        "searchBatch": "second",
+        "importSource": "Medline",
+        "activeSession": {
+          "fullName": "AbdelRahman Babiker",
+          "profileId": "00000000-0000-0000-0000-000000000001",
+          "startedAt": "2026-07-08T19:57:06.917Z",
+          "lastHeartbeatAt": "2026-07-28T17:07:38.827Z"
+        },
+        "normalizedDoi": "10.1080/24733938.2023.2227134",
+        "searchRunDate": "2026-05-26",
+        "duplicateKeyV2": "89b7fc12814a9ccd9734c52e7d9ac5847533c3b36d6b021f394054e6557dca4e",
+        "importFileName": "20260526 Medline ris (44).ris",
+        "populationHash": "[{\"position\":0,\"label\":\"Total\",\"values\":{\"ageCategory\":\"adult\",\"injuryContact\":\"60\",\"injuryDefinition\":\"concussion diagnosis\",\"injuryIncidenceOverall\":\"0.08\",\"injuryLocation_head_incidence\":\"0.08\",\"injuryLocation_head_prevalence\":\"162\",\"injuryMatchCount\":\"89\",\"injuryMostCommonDiagnosis\":\"concussion\",\"injuryMostCommonLocation\":\"head\",\"injuryMostCommonType\":\"concussion\",\"injuryTissueType_concussion_incidence\":\"0.08\",\"injuryTissueType_concussion_prevalence\":\"162\",\"injuryTotalCount\":\"162\",\"injuryTrainingCount\":\"73\",\"meanAge\":\"19.4 ± 1.4\",\"numberOfSeasons\":\"2\",\"numberOfTeams\":\"23 institutions\",\"observationDuration\":\"2015-2016 and 2016-2017 seasons\",\"sampleSizePlayers\":\"2471\",\"sex\":\"mixed\",\"totalExposure\":\"1990880\"}},{\"position\":1,\"label\":\"Male\",\"values\":{\"injuryContact\":\"32\",\"injuryLocation_head_prevalence\":\"66\",\"injuryTissueType_concussion_prevalence\":\"66\",\"injuryTotalCount\":\"66\",\"sampleSizePlayers\":\"1240\",\"sex\":\"male\",\"totalExposure\":\"1002200\"}},{\"position\":2,\"label\":\"Female\",\"values\":{\"injuryContact\":\"28\",\"injuryLocation_head_prevalence\":\"96\",\"injuryTissueType_concussion_prevalence\":\"96\",\"injuryTotalCount\":\"96\",\"sampleSizePlayers\":\"1162\",\"sex\":\"female\",\"totalExposure\":\"988680\"}}]",
+        "screeningStage": "full_text",
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ],
+        "searchBatchLabel": "Second search - Ishanka - 2026-05-26",
+        "searchProvidedBy": "Ishanka Weerasekara",
+        "titleFingerprint": "incidence of concussion and associated risk factors in collegiate soccer findings from the ncaadod care consortium",
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "importSourceLabel": "Second search - Ishanka - 2026-05-26 - Medline",
+        "screeningDecision": "include",
+        "screeningRecordId": "03610b6b-71b4-4110-9437-9450916f1267",
+        "fullTextResolution": "pending",
+        "awaitingFullTextPdf": false,
+        "screeningPromotedAt": "2026-07-06T23:06:56.246Z",
+        "fullTextPdfSourceUrl": "https://www-tandfonline-com.ucd.idm.oclc.org/doi/pdf/10.1080/24733938.2023.2227134",
+        "titleAbstractStudyId": "S899",
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextPdfAttachedAt": "2026-06-18T18:03:04.615Z",
+        "fullTextPdfAttachedBy": "script:import-ucd-browser-cache-pdfs",
+        "titleAbstractRecordId": "32e2465b-c1ef-4c3b-ac41-94cb5112bf8c",
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T14:26:36.523Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "screeningDecisionReason": null,
+        "titleAbstractPromotedAt": "2026-06-15T14:26:38.078Z",
+        "titleAbstractPromotedBy": "00000000-0000-0000-0000-000000000001",
+        "titleAbstractResolution": "ready_for_full_text",
+        "temporaryExtractionReason": "AI include plus one human include; awaiting second human full-text review",
+        "temporaryExtractionPromotion": true,
+        "temporaryExtractionPromotedAt": "2026-07-04T14:02:01.937Z",
+        "temporaryExtractionPromotedBy": "00000000-0000-0000-0000-000000000001",
+        "temporaryExtractionPromotedByName": "AbdelRahman Babiker"
+      },
+      "primary_file_id": "991d4da5-f312-49a6-8b92-cc7d7ff85a38",
+      "flag_reason": null,
+      "claimed_at": null,
+      "is_archived": false,
+      "assigned_to": "00000000-0000-0000-0000-000000000001",
+      "extracted_title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "normalized_doi": "10.1080/24733938.2023.2227134",
+      "duplicate_key_v2": "89b7fc12814a9ccd9734c52e7d9ac5847533c3b36d6b021f394054e6557dca4e",
+      "title_fingerprint": "incidence of concussion and associated risk factors in collegiate soccer findings from the ncaadod care consortium",
+      "dedupe_review_status": "clean",
+      "primary_file_sha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+      "original_file_name": "S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf"
+    }
+  },
+  "integrityGate": {
+    "checks": {
+      "exactPaper": true,
+      "finalStatus": true,
+      "assignmentPreserved": true,
+      "filePointerAndHashPreserved": true,
+      "protectedStatePreserved": true,
+      "populationLayoutPreserved": true,
+      "unchangedExtractionFieldsPreserved": true,
+      "unchangedPopulationValuesPreserved": true,
+      "notePresentExactlyOnce": true,
+      "sameDoiUnique": true,
+      "careCompanionsNotLive": true,
+      "field:studyDesign": true,
+      "field:injuryContact": true,
+      "field:injuryIncidenceMatch": true,
+      "field:injuryIncidenceTraining": true,
+      "field:injuryRecurrentTotal": true,
+      "population:injuryContact": true,
+      "dualWrite:injuryContact": true,
+      "population:injuryIncidenceMatch": true,
+      "dualWrite:injuryIncidenceMatch": true,
+      "population:injuryIncidenceTraining": true,
+      "dualWrite:injuryIncidenceTraining": true,
+      "population:injuryRecurrentTotal": true,
+      "dualWrite:injuryRecurrentTotal": true
+    },
+    "passed": true
+  },
+  "rollback": {
+    "snapshotAvailable": true,
+    "path": "The exact before-state rows are captured by this run and the pre-apply /tmp snapshot. Updated values and paper status can be restored from that verified copy. Additive rows or the new note would require explicit approval before deletion under repository destructive-action rules."
+  },
+  "after": {
+    "paper": {
+      "id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+      "assigned_study_id": "S899",
+      "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "lead_author": "Kontos Anthony P",
+      "journal": "Science & Medicine in Football",
+      "year": "2024",
+      "doi": "10.1080/24733938.2023.2227134",
+      "status": "extracted",
+      "storage_bucket": "papers",
+      "storage_object_path": "34863f3f-eea0-45ca-82f4-3e122caa97f8/1781805784240-S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+      "uploaded_by": "00000000-0000-0000-0000-000000000001",
+      "uploaded_at": "2026-07-04T14:02:01.937+00:00",
+      "updated_at": "2026-07-28T17:23:48.777932+00:00",
+      "metadata": {
+        "importRaw": {
+          "A1": "Kontos, Anthony P | Eagle, Shawn R | Chrisman, Sara P D | Putukian, Margot | Manderino, Lisa | Holland, Cyndi | Collins, Michael W | Broglio, Steven P | McAllister, Thomas W | McCrea, Michael A | Pasquina, Paul | Kaminski, Thomas W",
+          "A2": "CARE Consortium Investigators",
+          "CY": "England",
+          "DB": "Ovid MEDLINE(R) <July 2024 to December 2024>",
+          "DO": "https://dx.doi.org/10.1080/24733938.2023.2227134",
+          "EP": "195",
+          "ER": "",
+          "ID": "37338928",
+          "IS": "3",
+          "JA": "Sci. med. footb.",
+          "JF": "Science & Medicine in Football",
+          "KW": "Humans | *Soccer/in [Injuries] | *Brain Concussion/ep [Epidemiology] | Male | Female | Incidence | Retrospective Studies | Risk Factors | Young Adult | Universities/sn [Statistics & Numerical Data] | United States/ep [Epidemiology] | Athletic Injuries/ep [Epidemiology] | Adolescent | Sex Factors",
+          "L2": "https://ovidsp.ovid.com/ovidweb.cgi?T=JS&PAGE=reference&D=med26&NEWS=N&AN=37338928",
+          "M1": "101724288",
+          "M2": "Kontos, Anthony P. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Eagle, Shawn R. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Chrisman, Sara P D. Seattle Children's Hospital, Seattle, WA, USA. | Putukian, Margot. Major League Soccer, New York, NY, USA. | Manderino, Lisa. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Holland, Cyndi. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Collins, Michael W. Department of Orthopaedic Surgery, University of Pittsburgh, Pittsburgh, PA, USA. | Broglio, Steven P. Department of Kinesiology, University of Michigan, Ann Arbor, MI, USA. | McAllister, Thomas W. Department of Kinesiology, Indiana University School of Medicine, Ann Arbor, MI, USA. | McCrea, Michael A. Department of Kinesiology, Medical College of Wisconsin, Ann Arbor, MI, USA. | Pasquina, Paul. Department of Kinesiology, Uniformed Services University of the Health Sciences, Ann Arbor, MI, USA. | Kaminski, Thomas W. Department of Kinesiology and Applied Physiology, University of Delaware, Newark, DE, USA.",
+          "N2": "This retrospective cohort study aims to examine concussion incidence rates (IR) in collegiate soccer players and compare IRs based on risk factors including sex, competition level, games/practices, history of concussion, and playing position. Collegiate soccer players were recruited (n = 2,471) from 23 institutions from the NCAA-DoD Concussion Assessment, Research, and Education (CARE) Consortium. Incidence rates for concussion per 1000 athlete exposures (AEs) were calculated across the 2015-16/2016-17 seasons. Incidence rates (IR) comparing risk factor groups were also calculated. A total of 162 concussions occurred during the study, for an IR of 0.08/1000 AEs. Females were more likely to have a concussion than males overall (IR = 1.47) and were more likely to have a concussion in games (IR = 1.42) and practices (IR = 2.91). Concussions were more likely during competition compared to practice (IR = 2.53), and less likely in Division III, compared to Divisions I and II, chi2 = 6.5, p > .05. In the concussed group, male sex was associated with 2.47 times higher odds of playing defender and 2.29 times higher odds of a collision mechanism. Results confirm previous findings that females and game exposures have higher concussion IR than males and practice exposures. Findings also supported sex differences in IRs based on exposure type, position, and mechanism.",
+          "PT": "Journal Article, Research Support, Non-U.S. Gov't, Research Support, U.S. Gov't, Non-P.H.S.",
+          "SN": "2473-4446 | 2473-3938",
+          "SP": "189",
+          "T1": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+          "TY": "JOUR",
+          "UR": "https://newcastle.primo.exlibrisgroup.com/openurl/61UON_INST/61UON_INST:61UON?sid=OVID:medline&id=pmid:37338928&id=doi:10.1080%2F24733938.2023.2227134&issn=2473-3938&isbn=&volume=8&issue=3&spage=189&pages=189-195&date=2024&title=Science+%26+Medicine+in+Football&atitle=Incidence+of+concussion+and+associated+risk+factors+in+collegiate+soccer%3A+findings+from+the+NCAA-DoD+CARE+consortium.&aulast=Kontos",
+          "VL": "8",
+          "Y1": "2024//",
+          "Y2": "20230623//"
+        },
+        "searchBatch": "second",
+        "importSource": "Medline",
+        "activeSession": {
+          "fullName": "AbdelRahman Babiker",
+          "profileId": "00000000-0000-0000-0000-000000000001",
+          "startedAt": "2026-07-08T19:57:06.917Z",
+          "lastHeartbeatAt": "2026-07-28T17:07:38.827Z"
+        },
+        "normalizedDoi": "10.1080/24733938.2023.2227134",
+        "searchRunDate": "2026-05-26",
+        "duplicateKeyV2": "89b7fc12814a9ccd9734c52e7d9ac5847533c3b36d6b021f394054e6557dca4e",
+        "importFileName": "20260526 Medline ris (44).ris",
+        "populationHash": "[{\"position\":0,\"label\":\"Total\",\"values\":{\"ageCategory\":\"adult\",\"injuryContact\":\"60\",\"injuryDefinition\":\"concussion diagnosis\",\"injuryIncidenceOverall\":\"0.08\",\"injuryLocation_head_incidence\":\"0.08\",\"injuryLocation_head_prevalence\":\"162\",\"injuryMatchCount\":\"89\",\"injuryMostCommonDiagnosis\":\"concussion\",\"injuryMostCommonLocation\":\"head\",\"injuryMostCommonType\":\"concussion\",\"injuryTissueType_concussion_incidence\":\"0.08\",\"injuryTissueType_concussion_prevalence\":\"162\",\"injuryTotalCount\":\"162\",\"injuryTrainingCount\":\"73\",\"meanAge\":\"19.4 ± 1.4\",\"numberOfSeasons\":\"2\",\"numberOfTeams\":\"23 institutions\",\"observationDuration\":\"2015-2016 and 2016-2017 seasons\",\"sampleSizePlayers\":\"2471\",\"sex\":\"mixed\",\"totalExposure\":\"1990880\"}},{\"position\":1,\"label\":\"Male\",\"values\":{\"injuryContact\":\"32\",\"injuryLocation_head_prevalence\":\"66\",\"injuryTissueType_concussion_prevalence\":\"66\",\"injuryTotalCount\":\"66\",\"sampleSizePlayers\":\"1240\",\"sex\":\"male\",\"totalExposure\":\"1002200\"}},{\"position\":2,\"label\":\"Female\",\"values\":{\"injuryContact\":\"28\",\"injuryLocation_head_prevalence\":\"96\",\"injuryTissueType_concussion_prevalence\":\"96\",\"injuryTotalCount\":\"96\",\"sampleSizePlayers\":\"1162\",\"sex\":\"female\",\"totalExposure\":\"988680\"}}]",
+        "screeningStage": "full_text",
+        "populationLabels": [
+          "Total",
+          "Male",
+          "Female"
+        ],
+        "searchBatchLabel": "Second search - Ishanka - 2026-05-26",
+        "searchProvidedBy": "Ishanka Weerasekara",
+        "titleFingerprint": "incidence of concussion and associated risk factors in collegiate soccer findings from the ncaadod care consortium",
+        "fullTextDecisions": [
+          {
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "importSourceLabel": "Second search - Ishanka - 2026-05-26 - Medline",
+        "screeningDecision": "include",
+        "screeningRecordId": "03610b6b-71b4-4110-9437-9450916f1267",
+        "fullTextResolution": "pending",
+        "awaitingFullTextPdf": false,
+        "screeningPromotedAt": "2026-07-06T23:06:56.246Z",
+        "fullTextPdfSourceUrl": "https://www-tandfonline-com.ucd.idm.oclc.org/doi/pdf/10.1080/24733938.2023.2227134",
+        "titleAbstractStudyId": "S899",
+        "fullTextDecisionAudit": [
+          {
+            "action": "initial_vote",
+            "reason": null,
+            "decision": "include",
+            "decidedAt": "2026-06-21T12:51:01.133316+00:00",
+            "reviewerName": "AbdelRahman Babiker",
+            "resolutionBefore": "pending",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "fullTextPdfAttachedAt": "2026-06-18T18:03:04.615Z",
+        "fullTextPdfAttachedBy": "script:import-ucd-browser-cache-pdfs",
+        "titleAbstractRecordId": "32e2465b-c1ef-4c3b-ac41-94cb5112bf8c",
+        "titleAbstractDecisions": [
+          {
+            "note": null,
+            "action": "reviewer_vote",
+            "decision": "include",
+            "decidedAt": "2026-06-15T14:26:36.523Z",
+            "reviewerName": "AbdelRahman Babiker",
+            "reviewerProfileId": "00000000-0000-0000-0000-000000000001"
+          }
+        ],
+        "screeningDecisionReason": null,
+        "titleAbstractPromotedAt": "2026-06-15T14:26:38.078Z",
+        "titleAbstractPromotedBy": "00000000-0000-0000-0000-000000000001",
+        "titleAbstractResolution": "ready_for_full_text",
+        "temporaryExtractionReason": "AI include plus one human include; awaiting second human full-text review",
+        "temporaryExtractionPromotion": true,
+        "temporaryExtractionPromotedAt": "2026-07-04T14:02:01.937Z",
+        "temporaryExtractionPromotedBy": "00000000-0000-0000-0000-000000000001",
+        "temporaryExtractionPromotedByName": "AbdelRahman Babiker"
+      },
+      "primary_file_id": "991d4da5-f312-49a6-8b92-cc7d7ff85a38",
+      "flag_reason": null,
+      "claimed_at": null,
+      "is_archived": false,
+      "assigned_to": "00000000-0000-0000-0000-000000000001",
+      "extracted_title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+      "normalized_doi": "10.1080/24733938.2023.2227134",
+      "duplicate_key_v2": "89b7fc12814a9ccd9734c52e7d9ac5847533c3b36d6b021f394054e6557dca4e",
+      "title_fingerprint": "incidence of concussion and associated risk factors in collegiate soccer findings from the ncaadod care consortium",
+      "dedupe_review_status": "clean",
+      "primary_file_sha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e",
+      "original_file_name": "S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf"
+    },
+    "paperFiles": [
+      {
+        "id": "991d4da5-f312-49a6-8b92-cc7d7ff85a38",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "storage_bucket": "papers",
+        "storage_object_path": "34863f3f-eea0-45ca-82f4-3e122caa97f8/1781805784240-S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+        "original_filename": null,
+        "size_bytes": 0,
+        "mime_type": "application/pdf",
+        "checksum_sha256": null,
+        "uploaded_by": null,
+        "uploaded_at": "2026-07-04T14:02:01.937+00:00",
+        "data_base64": null,
+        "name": "S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+        "size": 679320,
+        "public_url": null,
+        "original_file_name": "S899-incidence-of-concussion-and-associated-risk-factors-in-collegiate-soccer-findings-from-the-ncaa-dod-care-conso.pdf",
+        "file_sha256": "4f5ed3cea21f57ee129ff39f150d47d21df6e6248809af32f8f177dca08e586e"
+      }
+    ],
+    "paperNotes": [
+      {
+        "id": "52d24b32-3d66-4a2c-8f04-79210a63383f",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "body": "S899 source-system, overlap, and extraction adjudication completed 2026-07-28 using GPT-5.6 Sol at high scrutiny (GPT-5.5 unavailable; no Gemini). The primary PDF distinguishes the NCAA-DoD CARE Consortium research cohort from prior NCAA injury-surveillance programmes: CARE used multisite participant enrolment, standardised clinical concussion assessment, and team-physician diagnosis, while this publication retrospectively analysed the 2015-2016 and 2016-2017 CARE seasons. This is not NCAA-ISP/NCAA ISS, High School RIO, or national U.S. injury surveillance, so NCAA funding and collegiate affiliation alone do not place it in american_data. Exact live DOI and CARE-companion DOI checks found no other included live CARE paper. Original-search CARE companion publications by Kaminski et al. (2022; 2014-2017 cohort) and Jo et al. (2024; broader CARE concussion cohort) materially overlap this source family but are not promoted live papers, so S899 remains the independently extractable live epidemiology record. The existing Total / Male / Female extraction was preserved. Source-verified completion added sex-specific match incidence 0.04 / 0.04 and training incidence 0.01 / 0.02 per 1000 athlete-exposures, plus 2 repeat concussion events transparently derived from the directly reported two players who each sustained two concussions. The generic contact count was corrected from collision-only 60 / 32 / 28 to all four directly reported contact mechanisms summed as 162 / 66 / 96. The paper directly reports total estimated athlete-exposures, but match/training athlete-exposure totals were not printed: competition counts came from public schedules and practices were assumed at 40 per year, so matchExposure and trainingExposure remain blank and no exposure was back-calculated. The source has unresolved sex-denominator inconsistencies (Table 1 female n=1204; results text female n=1162 and male n=1240; stated sex-available n=2366). The existing directly printed results rows 1240 / 1162 were retained and must not be treated as summing cleanly to the total sample of 2471.",
+        "created_at": "2026-07-28T17:23:48.567+00:00"
+      }
+    ],
+    "changedFields": [
+      {
+        "id": "2647c1c9-3e48-4dbf-846e-50938acea4e9",
+        "extraction_id": "0cd63ac8-73d8-4c0c-adc1-62ef40c00e0a",
+        "field_id": "studyDesign",
+        "value": "retrospective cohort [prospective data]",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "The abstract labels this a retrospective cohort; participants were recruited into the multisite CARE study and followed under a standardised research protocol.",
+        "page_hint": "Article pp. 189-190",
+        "updated_at": "2026-07-28T17:23:47.961742+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "ae486ff2-bc16-46da-ac50-77b4f19b6f4f",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryContact",
+        "value": "162\n66\n96",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "All 162 concussions were assigned to collision, accidental ball contact, purposeful header, or ground/object contact mechanisms; sex-specific Table 3 rows sum to 66 male and 96 female events.",
+        "page_hint": "Article pp. 191-192, Table 3",
+        "updated_at": "2026-07-28T17:23:48.056462+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "b6c8a76e-c947-4b9b-8784-5a2165504978",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceMatch",
+        "value": "\n0.04\n0.04",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "For males and females, the competition incidence was 0.04 per 1000 athlete-exposures.",
+        "page_hint": "Article p. 191, Concussion incidence rates",
+        "updated_at": "2026-07-28T17:23:48.003+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "e6dacbc9-e080-44ce-bd02-4455878b774c",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryIncidenceTraining",
+        "value": "\n0.01\n0.02",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "Practice incidence was 0.01 per 1000 athlete-exposures for males and 0.02 for females.",
+        "page_hint": "Article p. 191, Concussion incidence rates",
+        "updated_at": "2026-07-28T17:23:48.067+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      },
+      {
+        "id": "03006e14-8298-4332-babc-e085d95e6d6b",
+        "extraction_id": "5d9b7259-b62b-45f1-b0d4-0d11c4912f30",
+        "field_id": "injuryRecurrentTotal",
+        "value": "2\n\n",
+        "confidence": null,
+        "status": "reported",
+        "metric": null,
+        "source_quote": "The results report 158 participants with one concussion and two players with two concussions during the study.",
+        "page_hint": "Article p. 191, Demographic data",
+        "updated_at": "2026-07-28T17:23:48.107+00:00",
+        "updated_by": "00000000-0000-0000-0000-000000000001",
+        "updated_by_agent": "codex"
+      }
+    ],
+    "changedPopulationValues": [
+      {
+        "id": "b12a3ecd-291d-4b01-a129-42316751a585",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryContact",
+        "value": "162",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryContact",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:23:48.157+00:00",
+        "position": 0
+      },
+      {
+        "id": "a3fdc1d7-064c-4d85-940e-1472a4cb61d8",
+        "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryContact",
+        "value": "66",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryContact",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:23:48.201+00:00",
+        "position": 1
+      },
+      {
+        "id": "43e47f8a-bada-4d08-9fa1-9b1d1639a7d2",
+        "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryContact",
+        "value": "96",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryContact",
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-28T17:23:48.243+00:00",
+        "position": 2
+      },
+      {
+        "id": "9b8dbc1f-3f91-4224-a65e-b4648dbfff48",
+        "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceMatch",
+        "value": "0.04",
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryIncidenceMatch",
+        "created_at": "2026-07-28T17:23:48.28+00:00",
+        "updated_at": "2026-07-28T17:23:48.28+00:00",
+        "position": 1
+      },
+      {
+        "id": "dc8cf624-0772-4078-950a-3e2f3cc4bf89",
+        "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceMatch",
+        "value": "0.04",
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryIncidenceMatch",
+        "created_at": "2026-07-28T17:23:48.323+00:00",
+        "updated_at": "2026-07-28T17:23:48.323+00:00",
+        "position": 2
+      },
+      {
+        "id": "85c0ff89-db1f-414d-b5b4-8308a56af900",
+        "population_group_id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceTraining",
+        "value": "0.01",
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryIncidenceTraining",
+        "created_at": "2026-07-28T17:23:48.364+00:00",
+        "updated_at": "2026-07-28T17:23:48.364+00:00",
+        "position": 1
+      },
+      {
+        "id": "34626118-073a-494f-a2a3-3316403c13dc",
+        "population_group_id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryIncidenceTraining",
+        "value": "0.02",
+        "metric": "incidence",
+        "unit": null,
+        "source_field_id": "injuryIncidenceTraining",
+        "created_at": "2026-07-28T17:23:48.405+00:00",
+        "updated_at": "2026-07-28T17:23:48.405+00:00",
+        "position": 2
+      },
+      {
+        "id": "e63de96a-b1f3-4997-8755-aa85928daa30",
+        "population_group_id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "field_id": "injuryRecurrentTotal",
+        "value": "2",
+        "metric": null,
+        "unit": null,
+        "source_field_id": "injuryRecurrentTotal",
+        "created_at": "2026-07-28T17:23:48.527+00:00",
+        "updated_at": "2026-07-28T17:23:48.527+00:00",
+        "position": 0
+      }
+    ],
+    "populationGroups": [
+      {
+        "id": "9d7df72d-398d-4665-8a45-20ff23fa5d97",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "tab": "participantCharacteristics",
+        "label": "Total",
+        "position": 0,
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-04T14:07:58.851+00:00"
+      },
+      {
+        "id": "2130f5cd-cf3c-4b64-aa0b-a64346f8448c",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "tab": "participantCharacteristics",
+        "label": "Male",
+        "position": 1,
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-04T14:07:58.851+00:00"
+      },
+      {
+        "id": "120fb98b-fad5-45b3-9d7d-1e36775e7e15",
+        "paper_id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "tab": "participantCharacteristics",
+        "label": "Female",
+        "position": 2,
+        "created_at": "2026-07-04T14:07:58.851+00:00",
+        "updated_at": "2026-07-04T14:07:58.851+00:00"
+      }
+    ],
+    "sameDoiPapers": [
+      {
+        "id": "c09db6eb-c617-46a7-a198-9a4b03968429",
+        "assigned_study_id": "S899",
+        "title": "Incidence of concussion and associated risk factors in collegiate soccer: findings from the NCAA-DoD CARE consortium.",
+        "status": "extracted",
+        "doi": "10.1080/24733938.2023.2227134"
+      }
+    ],
+    "careCompanionPapers": []
+  }
+}
