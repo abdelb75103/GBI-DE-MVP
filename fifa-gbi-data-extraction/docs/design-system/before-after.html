@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>FIFA GBI: proposed design system, before and after</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<link rel="stylesheet" href="legacy-before.css">
+<style>
+  @page { size: 4.375in 9.5in; margin: 0; }
+  html, body { background: #fff; }
+
+  /* Chrome drops background fills in PDF unless this is forced. */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  .doc { width: 420px; margin: 0 auto; padding: 0 0 24px; }
+  .pad { padding: 0 18px; }
+
+  .cover { break-after: page; page-break-after: always; background: var(--navy-700); color: #fff; padding: 34px 18px 30px; position: relative; overflow: hidden; }
+  .cover::before { content:''; position:absolute; width:280px; height:280px; border-radius:50%; top:-130px; left:-70px; background:rgba(120,175,235,0.5); filter:blur(56px); }
+  .cover::after { content:''; position:absolute; width:300px; height:300px; border-radius:50%; bottom:-180px; right:-70px; background:rgba(30,115,200,0.65); filter:blur(56px); }
+  .cover > * { position: relative; }
+  .cover h1 { font-size: 27px; line-height: 1.18; font-weight: 600; letter-spacing: -0.02em; color: #fff; }
+  .cover p { color: rgba(255,255,255,0.78); font-size: 13.5px; line-height: 1.55; margin-top: 10px; }
+  .cover .t-label { color: rgba(255,255,255,0.6); }
+
+  .item { padding: 24px 0 0; }
+  .ba__before, .ba__after, .note, .pick { break-inside: avoid; page-break-inside: avoid; }
+  .item > h2 { break-after: avoid; page-break-after: avoid; }
+  .item > h2 { font-size: 17px; font-weight: 600; letter-spacing: -0.015em; color: var(--ink); }
+  .item > .why { font-size: 13px; line-height: 1.55; color: var(--ink-muted); margin-top: 6px; }
+  .item > .why b { color: var(--ink); font-weight: 600; }
+
+  .ba { margin-top: 14px; }
+  .ba__head { display: flex; align-items: center; gap: 7px; font-size: 10.5px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .ba__head i { width: 5px; height: 5px; border-radius: 50%; }
+  .ba__before .ba__head { color: #a1443c; } .ba__before .ba__head i { background: #b3261e; }
+  .ba__after  .ba__head { color: #0f5c56; } .ba__after  .ba__head i { background: #0f766e; }
+  .ba__box { border-radius: 12px; padding: 14px; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+  .ba__box--sunk { background: var(--n-50); }
+  .ba__after { margin-top: 14px; }
+
+  .note { margin-top: 12px; border-radius: 10px; padding: 10px 12px; font-size: 12px; line-height: 1.5;
+    background: var(--state-attention-tint); color: var(--state-attention-ink);
+    box-shadow: 0 0 0 1px var(--state-attention-line); }
+  .note b { font-weight: 600; }
+  .pick { margin-top: 12px; border-radius: 10px; padding: 10px 12px; font-size: 12px; line-height: 1.5;
+    background: var(--state-info-tint); color: var(--state-info-ink); box-shadow: 0 0 0 1px var(--state-info-line); }
+  .pick b { font-weight: 600; }
+
+  .count { display: inline-flex; align-items: baseline; gap: 5px; font-size: 11px; color: var(--ink-soft); margin-top: 8px; }
+  .count b { font-family: var(--font-mono); font-size: 12px; color: var(--ink); }
+
+  .divider { height: 1px; background: var(--line); margin-top: 26px; }
+  .rowwrap { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+  .colwrap { display: flex; flex-direction: column; gap: 9px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .scale { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sw { width: 46px; }
+  .sw i { display: block; height: 34px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(15,23,42,0.06); }
+  .sw span { display: block; font-family: var(--font-mono); font-size: 8.5px; color: var(--ink-soft); margin-top: 3px; text-align: center; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-check-circle" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-x-circle" viewBox="0 0 256 256"><path d="M165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-flag" viewBox="0 0 256 256"><path d="M42.76,50A8,8,0,0,0,40,56V224a8,8,0,0,0,16,0V179.77c26.79-21.16,49.87-9.75,76.45,3.41,16.4,8.11,34.06,16.85,53,16.85,13.93,0,28.54-4.75,43.82-18a8,8,0,0,0,2.76-6V56A8,8,0,0,0,218.76,50c-28,24.23-51.72,12.49-79.21-1.12C111.07,34.76,78.78,18.79,42.76,50ZM216,172.25c-26.79,21.16-49.87,9.74-76.45-3.41-25-12.35-52.81-26.13-83.55-8.4V59.79c26.79-21.16,49.87-9.75,76.45,3.4,25,12.35,52.82,26.13,83.55,8.4Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-clock-countdown" viewBox="0 0 256 256"><path d="M232,136.66A104.12,104.12,0,1,1,119.34,24,8,8,0,0,1,120.66,40,88.12,88.12,0,1,0,216,135.34,8,8,0,0,1,232,136.66ZM120,72v56a8,8,0,0,0,8,8h56a8,8,0,0,0,0-16H136V72a8,8,0,0,0-16,0Zm40-24a12,12,0,1,0-12-12A12,12,0,0,0,160,48Zm36,24a12,12,0,1,0-12-12A12,12,0,0,0,196,72Zm24,36a12,12,0,1,0-12-12A12,12,0,0,0,220,108Z"/></symbol><symbol id="i-circle-dashed" viewBox="0 0 256 256"><path d="M96.26,37.05A8,8,0,0,1,102,27.29a104.11,104.11,0,0,1,52,0,8,8,0,0,1-2,15.75,8.15,8.15,0,0,1-2-.26,88.09,88.09,0,0,0-44,0A8,8,0,0,1,96.26,37.05ZM53.79,55.14a104.05,104.05,0,0,0-26,45,8,8,0,0,0,15.42,4.27,88,88,0,0,1,22-38.09A8,8,0,0,0,53.79,55.14ZM43.21,151.55a8,8,0,1,0-15.42,4.28,104.12,104.12,0,0,0,26,45,8,8,0,0,0,11.41-11.22A88.14,88.14,0,0,1,43.21,151.55ZM150,213.22a88,88,0,0,1-44,0,8,8,0,1,0-4,15.49,104.11,104.11,0,0,0,52,0,8,8,0,0,0-4-15.49ZM222.65,146a8,8,0,0,0-9.85,5.58,87.91,87.91,0,0,1-22,38.08,8,8,0,1,0,11.42,11.21,104,104,0,0,0,26-45A8,8,0,0,0,222.65,146Zm-9.86-41.54a8,8,0,0,0,15.42-4.28,104,104,0,0,0-26-45,8,8,0,1,0-11.41,11.22A88,88,0,0,1,212.79,104.45Z"/></symbol><symbol id="i-file-text" viewBox="0 0 256 256"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></symbol><symbol id="i-upload-simple" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0ZM93.66,77.66,120,51.31V144a8,8,0,0,0,16,0V51.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,77.66Z"/></symbol><symbol id="i-magnifying-glass" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up" viewBox="0 0 256 256"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol><symbol id="i-arrow-down" viewBox="0 0 256 256"><path d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-sparkle" viewBox="0 0 256 256"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></symbol><symbol id="i-archive" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V88a16,16,0,0,0,16,16v88a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V104a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM208,192H48V104H208ZM224,88H32V64H224V88ZM96,136a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H104A8,8,0,0,1,96,136Z"/></symbol><symbol id="i-funnel" viewBox="0 0 256 256"><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-note-pencil" viewBox="0 0 256 256"><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-users-three" viewBox="0 0 256 256"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-dots-three" viewBox="0 0 256 256"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z"/></symbol><symbol id="i-list-checks" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z"/></symbol><symbol id="i-table" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM40,112H80v32H40Zm56,0H216v32H96ZM216,64V96H40V64ZM40,160H80v32H40Zm176,32H96V160H216v32Z"/></symbol><symbol id="i-trash" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-floppy-disk" viewBox="0 0 256 256"><path d="M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM168,208H88V152h80Zm40,0H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31ZM160,72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h56A8,8,0,0,1,160,72Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-moon" viewBox="0 0 256 256"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol></svg>
+<div class="doc">
+
+  <div class="cover">
+    <p class="t-label">FIFA GBI workspace</p>
+    <h1>Proposed design system</h1>
+    <p>Every component below, as it renders today and as it would render after the change. Nothing has been implemented yet. Mark the ones you want and I will build those.</p>
+    <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.65)">One accent: FIFA navy. Colour reserved for decisions. Five type sizes. Four radii. Two elevations.</p>
+  </div>
+
+  <div class="pad">
+
+    <!-- 1 -->
+    <section class="item">
+      <h2>1. Colour</h2>
+      <p class="why">The app uses <b>16 colour families</b>. Because no rule assigns meaning, the same state wears a different colour on each screen: flagged is amber in title and abstract, rose in full text, rose in extraction, and <span class="t-mono">#ef4444</span> in the progress donut.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box">
+            <div class="scale">
+              <div class="sw"><i style="background:#64748b"></i><span>slate</span></div>
+              <div class="sw"><i style="background:#10b981"></i><span>emerald</span></div>
+              <div class="sw"><i style="background:#6366f1"></i><span>indigo</span></div>
+              <div class="sw"><i style="background:#f59e0b"></i><span>amber</span></div>
+              <div class="sw"><i style="background:#f43f5e"></i><span>rose</span></div>
+              <div class="sw"><i style="background:#0ea5e9"></i><span>sky</span></div>
+              <div class="sw"><i style="background:#14b8a6"></i><span>teal</span></div>
+              <div class="sw"><i style="background:#8b5cf6"></i><span>violet</span></div>
+              <div class="sw"><i style="background:#a855f7"></i><span>purple</span></div>
+              <div class="sw"><i style="background:#fb923c"></i><span>orange</span></div>
+              <div class="sw"><i style="background:#3b82f6"></i><span>blue</span></div>
+              <div class="sw"><i style="background:#06b6d4"></i><span>cyan</span></div>
+              <div class="sw"><i style="background:#ef4444"></i><span>red</span></div>
+              <div class="sw"><i style="background:#22c55e"></i><span>green</span></div>
+              <div class="sw"><i style="background:#d946ef"></i><span>fuchsia</span></div>
+              <div class="sw"><i style="background:#eab308"></i><span>yellow</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <p class="t-label" style="margin-bottom:7px">Accent, the only one</p>
+            <div class="scale">
+              <div class="sw"><i style="background:var(--navy-100)"></i><span>100</span></div>
+              <div class="sw"><i style="background:var(--navy-300)"></i><span>300</span></div>
+              <div class="sw"><i style="background:var(--navy-500)"></i><span>500</span></div>
+              <div class="sw"><i style="background:var(--navy-600)"></i><span>600</span></div>
+              <div class="sw"><i style="background:var(--navy-700)"></i><span>700</span></div>
+              <div class="sw"><i style="background:var(--navy-900)"></i><span>900</span></div>
+            </div>
+            <p class="t-label" style="margin:14px 0 7px">Decision states, reserved</p>
+            <div class="colwrap">
+              <div class="rowwrap"><span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Positive</span><span class="t-caption">included, complete, extracted, resolved</span></div>
+              <div class="rowwrap"><span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Negative</span><span class="t-caption">excluded, flagged, error</span></div>
+              <div class="rowwrap"><span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>Attention</span><span class="t-caption">conflict, in progress</span></div>
+              <div class="rowwrap"><span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-circle-dashed"/></svg>Neutral</span><span class="t-caption">pending, uploaded, archived</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Worth knowing.</b> Your current include and exclude marks (emerald and rose) sit at a colour difference of 5.8 for red-green colour blindness, which is close to indistinguishable. The new pair scores 11.5, and every state also carries an icon and a word, so colour is never the only signal.</div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 2 -->
+    <section class="item">
+      <h2>2. Buttons</h2>
+      <p class="why">Three unrelated primary languages are in use: navy solid, a tri-colour gradient, and flat indigo. There are <b>7 navy variants with 3 different hover navies</b> for the same colour, and 13 near-duplicate secondary buttons.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="rowwrap">
+              <button class="lg-btn lg-btn-grad-a">Export CSV</button>
+              <button class="lg-btn lg-btn-grad-b">Save &amp; complete</button>
+              <button class="lg-btn lg-btn-indigo">Save key</button>
+            </div>
+            <div class="rowwrap" style="margin-top:8px">
+              <button class="lg-btn lg-btn-navy">Upload a PDF</button>
+              <button class="lg-btn lg-btn-navy-xl">Submit review</button>
+              <button class="lg-btn lg-btn-emerald">Promote</button>
+            </div>
+            <div class="rowwrap" style="margin-top:8px">
+              <button class="lg-btn lg-btn-amber">Flag paper</button>
+              <button class="lg-btn lg-btn-teal">Resolve</button>
+              <button class="lg-btn lg-btn-white">Back</button>
+            </div>
+            <div class="rowwrap" style="margin-top:8px">
+              <button class="lg-btn lg-btn-tint-indigo">Save draft</button>
+              <button class="lg-btn lg-btn-rose">Discard changes</button>
+            </div>
+            <p class="count"><b>11</b> of about 40 button treatments in the app</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="rowwrap">
+              <button class="btn btn--primary"><svg class="ico" fill="currentColor"><use href="#i-upload-simple"/></svg>Upload a PDF</button>
+              <button class="btn btn--secondary">Back</button>
+            </div>
+            <div class="rowwrap" style="margin-top:9px">
+              <button class="btn btn--ghost">Cancel</button>
+              <button class="btn btn--danger"><svg class="ico" fill="currentColor"><use href="#i-trash"/></svg>Discard</button>
+              <button class="btn btn--secondary btn--icon" aria-label="Filter"><svg class="ico" fill="currentColor"><use href="#i-funnel"/></svg></button>
+            </div>
+            <div class="rowwrap" style="margin-top:9px">
+              <button class="btn btn--primary btn--sm">Small</button>
+              <button class="btn btn--primary">Default</button>
+              <button class="btn btn--primary btn--lg">Large</button>
+            </div>
+            <div class="rowwrap" style="margin-top:9px">
+              <button class="btn btn--primary" style="box-shadow:var(--focus)">Focus</button>
+              <button class="btn btn--primary btn--loading">Saving</button>
+              <button class="btn btn--primary" disabled>Disabled</button>
+            </div>
+            <p class="count"><b>4</b> intents, 3 sizes, one focus ring</p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Also fixed.</b> Only 12 elements in the entire app currently define a focus ring, across 11 different colours. Most buttons have none, so keyboard users cannot see where they are.</div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 3 -->
+    <section class="item">
+      <h2>3. Status pills</h2>
+      <p class="why">16 statuses, 9 hues, no rule. Two statuses (UEFA and Aspetar ASPREV) currently share an identical colour string, and two more (Processing and Referee) do too.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="rowwrap">
+              <span class="lg-pill lg-p-uploaded">Uploaded</span>
+              <span class="lg-pill lg-p-processing">Processing</span>
+              <span class="lg-pill lg-p-extracted">Extracted</span>
+              <span class="lg-pill lg-p-flagged">Flagged</span>
+              <span class="lg-pill lg-p-qa">QA Review</span>
+              <span class="lg-pill lg-p-archived">Archived</span>
+              <span class="lg-pill lg-p-mental">Mental Health</span>
+              <span class="lg-pill lg-p-uefa">UEFA</span>
+              <span class="lg-pill lg-p-noexp">No Exposure</span>
+              <span class="lg-pill lg-p-fifa">FIFA Data</span>
+              <span class="lg-pill lg-p-uefa">Aspetar ASPREV</span>
+              <span class="lg-pill lg-p-american">American Data</span>
+              <span class="lg-pill lg-p-systematic">Systematic Review</span>
+              <span class="lg-pill lg-p-referee">Referee</span>
+              <span class="lg-pill lg-p-retro">Retrospective</span>
+              <span class="lg-pill lg-p-master">UEFA Master</span>
+            </div>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <p class="t-label" style="margin-bottom:8px">Workflow state, filled with an icon</p>
+            <div class="rowwrap">
+              <span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-circle-dashed"/></svg>Uploaded</span>
+              <span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-clock-countdown"/></svg>Processing</span>
+              <span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span>
+              <span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-flag"/></svg>Flagged</span>
+              <span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-list-checks"/></svg>QA review</span>
+              <span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-archive"/></svg>Archived</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick"><b>You asked to keep the source families coloured.</b> Here are the two ways to do that without the categories competing with the states above. Pick A or B.</div>
+      <div class="ba">
+        <div class="ba__after" style="margin-top:12px">
+          <div class="ba__head"><i></i>Option A: colour edge, neutral body</div>
+          <div class="ba__box">
+            <div class="rowwrap">
+              <span class="tag tag--edge cat-mental">Mental health</span>
+              <span class="tag tag--edge cat-uefa">UEFA</span>
+              <span class="tag tag--edge cat-fifa">FIFA data</span>
+              <span class="tag tag--edge cat-american">American data</span>
+              <span class="tag tag--edge cat-aspetar">Aspetar ASPREV</span>
+              <span class="tag tag--edge cat-system">Systematic review</span>
+              <span class="tag tag--edge cat-referee">Referee</span>
+              <span class="tag tag--edge cat-noexp">No exposure</span>
+              <span class="tag tag--edge cat-retro">Retrospective sub-study</span>
+              <span class="tag tag--edge cat-master">UEFA master extraction</span>
+            </div>
+            <p class="count">Colour identifies. The tag stays quiet next to a state pill.</p>
+          </div>
+        </div>
+        <div class="ba__after" style="margin-top:12px">
+          <div class="ba__head"><i></i>Option B: fully tinted, low saturation</div>
+          <div class="ba__box">
+            <div class="rowwrap">
+              <span class="tag tag--tint cat-mental">Mental health</span>
+              <span class="tag tag--tint cat-uefa">UEFA</span>
+              <span class="tag tag--tint cat-fifa">FIFA data</span>
+              <span class="tag tag--tint cat-american">American data</span>
+              <span class="tag tag--tint cat-aspetar">Aspetar ASPREV</span>
+              <span class="tag tag--tint cat-system">Systematic review</span>
+              <span class="tag tag--tint cat-referee">Referee</span>
+              <span class="tag tag--tint cat-noexp">No exposure</span>
+              <span class="tag tag--tint cat-retro">Retrospective sub-study</span>
+              <span class="tag tag--tint cat-master">UEFA master extraction</span>
+            </div>
+            <p class="count">Closer to today. Reads more strongly at a glance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ba__after" style="margin-top:12px">
+        <div class="ba__head"><i></i>Side by side in a row</div>
+        <div class="ba__box ba__box--sunk">
+          <article class="record record--negative" style="box-shadow:var(--e1)">
+            <div style="flex:1;min-width:0">
+              <div class="rowwrap" style="margin-bottom:5px">
+                <span class="tag tag--study">S4402</span>
+                <span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Excluded</span>
+                <span class="tag tag--edge cat-mental">Mental health</span>
+              </div>
+              <p class="t-body" style="color:var(--ink);font-weight:500">Mental Health Symptoms and Disorders in Elite Football</p>
+            </div>
+          </article>
+          <article class="record record--negative" style="box-shadow:var(--e1);margin-top:9px">
+            <div style="flex:1;min-width:0">
+              <div class="rowwrap" style="margin-bottom:5px">
+                <span class="tag tag--study">S4402</span>
+                <span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Excluded</span>
+                <span class="tag tag--tint cat-mental">Mental health</span>
+              </div>
+              <p class="t-body" style="color:var(--ink);font-weight:500">Mental Health Symptoms and Disorders in Elite Football</p>
+            </div>
+          </article>
+          <p class="count">Option A on top, Option B below.</p>
+        </div>
+      </div>
+      <div class="note"><b>Honest caveat on colouring categories.</b> There are 10 source families and only so many hues that do not sit near the four reserved decision colours. I have pushed Referee towards olive and Aspetar towards blue for that reason. Option A survives this better than Option B, because a 3px edge next to a filled state pill cannot be misread as a decision.</div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 4 -->
+    <section class="item">
+      <h2>4. Stat tiles and meters</h2>
+      <p class="why">There are <b>5 mutually incompatible</b> stat tile implementations. On the extraction dashboard each tile carries its own pastel gradient, so purple means "all papers" while two inches below purple means "retrospective sub-study".</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box ba__box--sunk lg-wrap">
+            <div class="two">
+              <div class="lg-stat lg-s-purple"><p class="lg-stat__label">All papers</p><p class="lg-stat__value">785</p><p class="lg-stat__cap">0 available</p><div class="lg-stat__track"><div class="lg-stat__bar" style="width:100%"></div></div></div>
+              <div class="lg-stat lg-s-sky"><p class="lg-stat__label">In progress</p><p class="lg-stat__value">13</p><p class="lg-stat__cap">13 total</p><div class="lg-stat__track"><div class="lg-stat__bar" style="width:100%"></div></div></div>
+              <div class="lg-stat lg-s-emerald"><p class="lg-stat__label">Completed</p><p class="lg-stat__value">424</p><p class="lg-stat__cap">92% of output</p><div class="lg-stat__track"><div class="lg-stat__bar" style="width:92%"></div></div></div>
+              <div class="lg-stat lg-s-rose"><p class="lg-stat__label">Needs attention</p><p class="lg-stat__value">21</p><p class="lg-stat__cap">Awaiting review</p><div class="lg-stat__track"><div class="lg-stat__bar" style="width:6%"></div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box ba__box--sunk">
+            <div class="two">
+              <div class="stat"><div class="stat__label"><span class="t-label">All papers</span></div><p class="stat__value">785</p><p class="stat__meta">13 assigned to you</p></div>
+              <div class="stat"><div class="stat__label"><span class="t-label">In progress</span></div><p class="stat__value">13</p><p class="stat__meta">Oldest opened 9 days ago</p></div>
+              <div class="stat"><div class="stat__label"><span class="t-label">Completed</span></div><p class="stat__value">424</p><p class="stat__meta"><span class="stat__delta stat__delta--up"><svg class="ico" style="width:11px;height:11px" fill="currentColor"><use href="#i-arrow-up"/></svg>+38</span> vs last week</p></div>
+              <div class="stat"><div class="stat__label"><span class="t-label">Needs attention</span></div><p class="stat__value">21</p><p class="stat__meta">17 flagged, 4 need a resolver</p></div>
+            </div>
+            <div class="stat" style="margin-top:9px">
+              <div class="stat__label"><span class="t-label">Extraction progress</span><span class="t-caption num">783 / 786</span></div>
+              <div class="meter-stack">
+                <span style="flex:424;background:var(--state-positive)"></span>
+                <span style="flex:311;background:var(--navy-600)"></span>
+                <span style="flex:21;background:var(--state-attention)"></span>
+                <span style="flex:30;background:var(--n-300)"></span>
+              </div>
+              <p class="stat__meta">Completed 424 · Tagged 311 · Flagged 21 · Not started 30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 5 -->
+    <section class="item">
+      <h2>5. Record rows</h2>
+      <p class="why">The left status rail already exists in full-text screening, at 400-level colours that do not match the 500-level dots used two columns away. It does not exist at all in the other two workflows. The proposal makes one rail, one meaning, in all three.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap" style="padding:0;overflow:hidden">
+            <table class="lg-tbl">
+              <thead><tr><th>Study</th><th>AI</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td class="lg-rail" style="--lgrail:#fbbf24"><b style="font-size:12px;color:#0f172a">S4615</b><br><span style="font-size:11px;color:#64748b">Pakarinen O</span></td>
+                    <td><span style="display:inline-flex;gap:5px;align-items:center;border-radius:999px;border:1px solid #a7f3d0;background:#ecfdf5;padding:2px 9px;font-size:11px;font-weight:600;color:#047857">AI include</span></td>
+                    <td><span style="display:inline-flex;border-radius:999px;border:1px solid #fde68a;background:#fffbeb;padding:2px 9px;font-size:11px;font-weight:600;color:#92400e">Conflict</span></td></tr>
+                <tr><td class="lg-rail" style="--lgrail:#34d399"><b style="font-size:12px;color:#0f172a">S0631</b><br><span style="font-size:11px;color:#64748b">Pellegrini A</span></td>
+                    <td><span style="display:inline-flex;gap:5px;align-items:center;border-radius:999px;border:1px solid #a7f3d0;background:#ecfdf5;padding:2px 9px;font-size:11px;font-weight:600;color:#047857">AI include</span></td>
+                    <td><span class="lg-pill lg-p-extracted">Extracted</span></td></tr>
+                <tr><td class="lg-rail" style="--lgrail:#a78bfa"><b style="font-size:12px;color:#0f172a">S4402</b><br><span style="font-size:11px;color:#64748b">Mesquita M</span></td>
+                    <td><span style="display:inline-flex;border-radius:999px;border:1px solid #e2e8f0;background:#f8fafc;padding:2px 9px;font-size:11px;font-weight:600;color:#64748b">None</span></td>
+                    <td><span class="lg-pill lg-p-mental">Mental Health</span></td></tr>
+              </tbody>
+            </table>
+            <p class="count" style="padding:0 14px 12px">Rail: amber, emerald, violet. Dots elsewhere: 500-level. Promoted is violet here, emerald in title and abstract, sky in the workspace.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box ba__box--sunk">
+            <div class="colwrap">
+              <article class="record record--attention" style="box-shadow:var(--e1)">
+                <div style="flex:1;min-width:0">
+                  <div class="rowwrap" style="margin-bottom:5px">
+                    <span class="tag tag--study">S4615</span>
+                    <span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>Conflict</span>
+                    <span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg>AI include</span>
+                  </div>
+                  <p class="t-body" style="color:var(--ink);font-weight:500">Association of Peak Height Velocity and Skeletal Maturity to Injury Incidence</p>
+                  <p class="t-caption" style="margin-top:3px">Pakarinen O · Scand J Med Sci Sports · 2023</p>
+                </div>
+              </article>
+              <article class="record record--positive" style="box-shadow:var(--e1)">
+                <div style="flex:1;min-width:0">
+                  <div class="rowwrap" style="margin-bottom:5px">
+                    <span class="tag tag--study">S0631</span>
+                    <span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span>
+                  </div>
+                  <p class="t-body" style="color:var(--ink);font-weight:500">Injury Analysis of a Professional Female Soccer Team</p>
+                  <p class="t-caption" style="margin-top:3px">Pellegrini A · J Sports Med Phys Fitness · 2021</p>
+                </div>
+              </article>
+              <article class="record record--negative" style="box-shadow:var(--e1)">
+                <div style="flex:1;min-width:0">
+                  <div class="rowwrap" style="margin-bottom:5px">
+                    <span class="tag tag--study">S4402</span>
+                    <span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Excluded</span>
+                    <span class="tag tag--edge cat-mental">Mental health</span>
+                  </div>
+                  <p class="t-body" style="color:var(--ink);font-weight:500">Mental Health Symptoms and Disorders in Elite Football</p>
+                  <p class="t-caption" style="margin-top:3px">Mesquita Vieira M · BJSM · 2022</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 6 -->
+      
+    <!-- table -->
+    <section class="item">
+      <h2>6. Table</h2>
+      <p class="why">Five tables exist with <b>six different header treatments</b> and three header backgrounds. Only one uses <span class="t-mono">scope="col"</span>, none has a sticky header, and the papers table lets you tick rows but gives the selected row no styling at all.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap" style="padding:0;overflow:hidden">
+            <table class="lg-tbl">
+              <thead style="background:rgba(15,23,42,0.05)"><tr><th style="letter-spacing:0.22em">Study</th><th style="letter-spacing:0.22em">Status</th><th style="letter-spacing:0.22em;text-align:center">Votes</th></tr></thead>
+              <tbody>
+                <tr><td><b style="font-size:12px;color:#0f172a">S4615</b></td><td><span class="lg-pill lg-p-processing">Processing</span></td><td style="text-align:center">2/2</td></tr>
+                <tr style="background:#f8fafc"><td><b style="font-size:12px;color:#0f172a">S0631</b></td><td><span class="lg-pill lg-p-extracted">Extracted</span></td><td style="text-align:center">2/2</td></tr>
+              </tbody>
+            </table>
+            <p class="count" style="padding:8px 14px 12px">Numbers centred, not right aligned or tabular. Ticked rows look identical to unticked ones.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box" style="padding:0;overflow:hidden">
+            <div class="table-wrap" style="box-shadow:none;border-radius:0">
+              <table class="tbl" style="min-width:0">
+                <thead><tr><th style="width:64px">Study</th><th>State</th><th class="right" style="width:64px">Votes</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="t-mono">S4615</span></td><td><span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>Conflict</span></td><td class="right">2 / 2</td></tr>
+                  <tr><td><span class="t-mono">S0631</span></td><td><span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span></td><td class="right">2 / 2</td></tr>
+                  <tr style="background:var(--navy-50);box-shadow:inset 3px 0 0 0 var(--navy-600)"><td><span class="t-mono">S4402</span></td><td><span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Excluded</span></td><td class="right">2 / 2</td></tr>
+                  <tr><td><span class="t-mono">S1129</span></td><td><span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-circle-dashed"/></svg>Needs vote</span></td><td class="right">0 / 2</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="count" style="padding:10px 14px 12px">44px rows, sticky header, right aligned tabular figures, a real selected row. On a phone this becomes the record rows in section 5 rather than scrolling sideways.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="item">
+<h2>7. Decision controls</h2>
+      <p class="why">Voting looks different in each stage. Title and abstract uses filled blocks, full text uses 16 and 20px circular marks (two copies of the same component that differ by one alpha value), extraction has a separate flag toggle.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="rowwrap">
+              <span style="display:inline-flex;align-items:center;gap:7px;border-radius:999px;border:1px solid #10b981;background:#d1fae5;padding:7px 15px;font-size:13px;font-weight:600;color:#064e3b">✓ Include</span>
+              <span style="display:inline-flex;align-items:center;gap:7px;border-radius:999px;border:1px solid #f43f5e;background:#ffe4e6;padding:7px 15px;font-size:13px;font-weight:600;color:#881337">✕ Exclude</span>
+            </div>
+            <div class="rowwrap" style="margin-top:10px">
+              <span class="lg-vote lg-vote-inc">✓</span>
+              <span class="lg-vote lg-vote-exc">✕</span>
+              <span class="lg-vote-empty"></span>
+              <span style="font-size:11px;color:#64748b">full text, 16px</span>
+            </div>
+            <div class="rowwrap" style="margin-top:8px">
+              <span class="lg-vote lg-vote-inc" style="width:20px;height:20px;box-shadow:0 1px 2px rgba(16,185,129,.4),0 0 0 2px #d1fae5">✓</span>
+              <span class="lg-vote lg-vote-exc" style="width:20px;height:20px;box-shadow:0 1px 2px rgba(244,63,94,.4),0 0 0 2px #ffe4e6">✕</span>
+              <span style="font-size:11px;color:#64748b">workspace, 20px</span>
+            </div>
+            <p class="count">Glyphs are text characters (✓ ✕ ⚑ →), not icons.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="decide">
+              <button data-kind="include" aria-pressed="true"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Include</button>
+              <button data-kind="exclude" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Exclude</button>
+            </div>
+            <div class="decide" style="margin-top:9px">
+              <button data-kind="include" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Include</button>
+              <button data-kind="exclude" aria-pressed="true"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Exclude</button>
+              <button data-kind="flag" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-flag"/></svg>Flag</button>
+            </div>
+            <p class="count">Same control in both stages. Keys: I, E, F, then J and K to move.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+
+    <!-- tabs -->
+    <section class="item">
+      <h2>8. Tabs, filters and toggles</h2>
+      <p class="why">There are <b>five different active-state languages</b> for the same idea: navy solid with a ring, navy solid with a shadow, a white raised chip, an indigo-100 tint, and indigo-600 on a dark track. The layout toggle in the extraction workspace uses a dark track on a light page, so its inactive labels are near invisible.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="rowwrap">
+              <span style="border-radius:999px;background:#0b3a70;color:#fff;padding:6px 14px;font-size:13px;font-weight:600;box-shadow:0 8px 22px -10px rgba(11,58,112,.6),0 0 0 1px rgba(11,58,112,.4)">Total</span>
+              <span style="border-radius:999px;background:#fff;color:#1e293b;padding:6px 14px;font-size:13px;font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.05),0 0 0 1px #e2e8f0">First search</span>
+            </div>
+            <div class="rowwrap" style="margin-top:9px">
+              <span style="border-radius:999px;background:rgba(224,231,255,0.7);color:#4f46e5;padding:6px 14px;font-size:12px;font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.05)">Study details</span>
+              <span style="border-radius:999px;padding:6px 14px;font-size:12px;font-weight:600;color:#64748b">Participants</span>
+            </div>
+            <div style="margin-top:9px;display:inline-flex;border-radius:999px;background:rgba(30,41,59,0.6);padding:4px;box-shadow:inset 0 2px 4px rgba(0,0,0,.06)">
+              <span style="border-radius:999px;background:#4f46e5;color:#fff;padding:5px 12px;font-size:12px;font-weight:600">Accordion</span>
+              <span style="padding:5px 12px;font-size:12px;font-weight:600;color:#94a3b8">Focus</span>
+            </div>
+            <p class="count">Three of the five, on three different screens.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <p class="t-label" style="margin-bottom:8px">Filter chips, with counts</p>
+            <div class="rowwrap">
+              <button class="chip" aria-pressed="true">All<span class="chip__count">4,893</span></button>
+              <button class="chip">Conflicts<span class="chip__count">14</span></button>
+              <button class="chip">Included<span class="chip__count">412</span></button>
+            </div>
+            <p class="t-label" style="margin:14px 0 8px">Segmented control, for view modes</p>
+            <div class="segmented" role="tablist">
+              <button role="tab" aria-selected="true">Accordion</button>
+              <button role="tab" aria-selected="false">Focus</button>
+              <button role="tab" aria-selected="false">Full screen</button>
+            </div>
+            <p class="t-label" style="margin:14px 0 8px">Tabs, for the ten extraction sections</p>
+            <div class="tabs" role="tablist">
+              <button role="tab" aria-selected="true">Study details</button>
+              <button role="tab" aria-selected="false">Participants</button>
+              <button role="tab" aria-selected="false">Definitions</button>
+              <button role="tab" aria-selected="false">Exposure</button>
+            </div>
+            <p class="count">One rule: chips filter, the segmented control switches view, tabs change section.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 9 -->
+    <section class="item">
+      <h2>9. Page header</h2>
+      <p class="why">You asked to keep the blob shine and move it to navy. The header also moves onto navy, so the primary action stops competing with the tiles underneath it. Same component on every page, one primary action, top right.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box ba__box--sunk lg-wrap" style="padding:10px">
+            <div class="lg-panel">
+              <div class="lg-blob-a"></div><div class="lg-blob-b"></div>
+              <div style="position:relative">
+                <span class="lg-eyebrow">Data extraction</span>
+                <h1 class="lg-h1" style="font-size:24px">AbdelRahman's Data Extraction</h1>
+                <p class="lg-sub">Track your papers and see your progress at a glance.</p>
+                <div class="rowwrap" style="margin-top:14px">
+                  <button class="lg-btn lg-btn-navy lg-btn-sm">Upload a PDF</button>
+                  <button class="lg-btn lg-btn-white lg-btn-sm">Run dedupe review</button>
+                  <button class="lg-btn lg-btn-white lg-btn-sm" style="color:#047857;border-color:#a7f3d0">Review uploads</button>
+                </div>
+              </div>
+            </div>
+            <p class="count" style="padding-top:8px">Indigo and emerald blobs. Three buttons of equal weight.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box ba__box--sunk" style="padding:10px">
+            <div class="pagehead" style="padding:20px">
+              <p class="t-label">Data extraction</p>
+              <h1 class="t-title" style="margin-top:6px;font-size:22px">Your extraction queue</h1>
+              <p class="t-body" style="margin-top:5px">13 papers in progress, 21 waiting on a reviewer.</p>
+              <div class="rowwrap" style="margin-top:14px">
+                <button class="btn btn--primary btn--sm"><svg class="ico" fill="currentColor"><use href="#i-upload-simple"/></svg>Upload a PDF</button>
+                <button class="btn btn--secondary btn--sm">Review uploads</button>
+              </div>
+            </div>
+            <p class="count" style="padding-top:8px">Navy blobs kept. One primary action.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Copy change.</b> "AbdelRahman's Data Extraction" and "Welcome back, AbdelRahman" become the name of the thing you are looking at. You know who you are; the header should tell you what is in front of you.</div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 8 -->
+    <section class="item">
+      <h2>10. Navigation</h2>
+      <p class="why">The header shows <b>three different link sets</b> depending on the page. Title &amp; Abstract and Full Text disappear entirely while you are in extraction, and Instructions, AI Metrics and Upload are unreachable from the screening screens.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap" style="padding:0;overflow:hidden">
+            <div class="lg-nav" style="gap:14px"><a class="on">Title &amp; Abstract</a><a>Full Text</a><a>Extraction</a><a>Overview</a></div>
+            <p class="count" style="padding:8px 14px 0">On /dashboard. No "Dashboard" link.</p>
+            <div class="lg-nav" style="gap:14px;margin-top:8px"><a>Dashboard</a><a class="on">Extraction</a><a>Instructions</a><a>Overview</a><a>AI Metrics</a></div>
+            <p class="count" style="padding:8px 14px 12px">In extraction. Both screening links are gone.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box" style="padding:0;overflow:hidden">
+            <div class="appbar" style="height:auto;flex-wrap:wrap;padding:12px;gap:8px">
+              <span class="brand"><span class="brand__mark">GBI</span>FIFA GBI</span>
+              <nav style="flex-wrap:wrap;margin-left:0">
+                <a href="#">Dashboard</a>
+                <a href="#">Title and abstract</a>
+                <a href="#" aria-current="page">Full text</a>
+                <a href="#">Extraction</a>
+                <a href="#">Overview</a>
+              </nav>
+            </div>
+            <p class="count" style="padding:0 12px 12px">One fixed set. Secondary destinations move into an overflow menu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 9 -->
+    <section class="item">
+      <h2>11. Forms</h2>
+      <p class="why">There are <b>9 input designs and 6 focus ring colours</b>. Five label styles. Several fields, including every extraction field editor, have no real label attached to the input at all.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="colwrap">
+              <div><span class="lg-label-a">Study status</span><input class="lg-input-a" value="Extracted" style="margin-top:6px"></div>
+              <div><span class="lg-label-b">Assignment</span><input class="lg-input-b" value="AbdelRahman Babiker"></div>
+              <div><span class="lg-label-c">Exclusion reason</span><input class="lg-input-c" value="No exposure data" style="margin-top:6px"></div>
+              <div><input class="lg-input-d" placeholder="Search title, study ID, author, DOI"></div>
+              <div><span class="lg-label-d">Total injuries</span><input class="lg-input-e" value="41" style="margin-top:6px"></div>
+            </div>
+            <p class="count">Radii here: 16px, 8px, 12px, pill, 12px.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="colwrap">
+              <div class="field"><label for="p1">Study status</label><select class="select" id="p1"><option>Extracted</option></select></div>
+              <div class="field"><label for="p2">Total injuries</label><input class="input input--error" id="p2" value="41.2"><p class="field__error"><svg class="ico" style="width:13px;height:13px" fill="currentColor"><use href="#i-warning"/></svg>Counts must be whole numbers. 41.2 looks like a rate.</p></div>
+              <div class="field"><label for="p3">Search queue</label><input class="input" id="p3" placeholder="Title, study ID, author, DOI"></div>
+              <div class="field"><label for="p4">Reviewer note</label><textarea class="textarea" id="p4" placeholder="What did you check, and where in the paper?"></textarea></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+
+    <!-- alerts -->
+    <section class="item">
+      <h2>12. Alerts and toasts</h2>
+      <p class="why">The inline notice component is <b>defined three separate times</b> in three files with identical code. There are three unrelated toast shells, and none of them has <span class="t-mono">aria-live</span>, so a screen reader never announces that a save succeeded or failed.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div style="border-radius:16px;border:1px solid rgba(254,205,211,0.7);background:rgba(255,241,242,0.8);padding:12px 16px;font-size:13px;font-weight:500;color:#be123c">Could not load screening records.</div>
+            <div style="margin-top:9px;border-radius:8px;border:1px solid #a7f3d0;background:#ecfdf5;padding:12px 16px;font-size:13px;font-weight:600;color:#064e3b">Saved</div>
+            <div style="margin-top:9px;border-radius:12px;border:1px solid #fde68a;background:#fffbeb;padding:10px 12px;font-size:12px;line-height:1.5;color:#78350f">Some updates are still pending.</div>
+            <div style="margin-top:9px;border-radius:24px;border:1px solid rgba(253,230,138,0.7);background:rgba(255,251,235,0.7);padding:16px;font-size:13px;color:#78350f;box-shadow:0 1px 2px rgba(0,0,0,.05),0 0 0 1px rgba(253,230,138,0.5)">Read-only mode. You cannot edit or save changes.</div>
+            <p class="count">Four shells: 16px, 8px, 12px and 24px radii, three border conventions.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="colwrap">
+              <div class="alert alert--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg><div><strong>Could not load records</strong>The screening queue did not respond. Retry, or check your connection.</div></div>
+              <div class="alert alert--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg><div><strong>Read-only mode</strong>You are viewing another reviewer's paper. Changes cannot be saved.</div></div>
+              <div class="alert alert--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg><div><strong>Promoted to extraction</strong>14 studies moved forward.</div></div>
+              <div class="alert alert--info"><svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg><div><strong>AI draft ready</strong>Four tabs drafted. Every field still needs your confirmation.</div></div>
+            </div>
+            <p class="t-label" style="margin:14px 0 8px">Toast, one shell, announced to screen readers</p>
+            <div class="alert alert--positive" style="box-shadow:var(--e2);border-color:transparent" role="status">
+              <svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>
+              <div><strong>Exposure data saved</strong>S0631, 12 fields written.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- modal -->
+    <section class="item">
+      <h2>13. Modals</h2>
+      <p class="why">Four backdrop scrims are in use at four opacities. The unsaved-changes dialog, the most consequential one in the app, has <b>no dialog role, no focus trap and no Escape key</b>, and its discard action falls back to a browser confirm box containing an emoji.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box ba__box--sunk lg-wrap" style="padding:12px">
+            <div style="position:relative;border-radius:24px;background:#fff;box-shadow:0 25px 50px -12px rgba(0,0,0,.25),0 0 0 1px rgba(226,232,240,.7);padding:18px;overflow:hidden">
+              <div class="lg-blob-a" style="width:100px;height:100px;background:rgba(253,230,138,0.5)"></div>
+              <div style="position:relative">
+                <p style="font-size:18px;font-weight:700;color:#0f172a">Unsaved changes</p>
+                <p style="font-size:13px;line-height:1.6;color:#334155;margin-top:6px">You have unsaved work in this tab.</p>
+                <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+                  <button class="lg-btn lg-btn-grad-b" style="width:100%;padding:11px">Save and complete</button>
+                  <button class="lg-btn lg-btn-tint-indigo" style="width:100%;padding:11px">Save draft</button>
+                  <button class="lg-btn lg-btn-rose" style="width:100%">Discard changes</button>
+                  <button style="width:100%;border:0;background:none;border-radius:999px;padding:9px;font-size:13px;color:#475569">Keep editing</button>
+                </div>
+              </div>
+            </div>
+            <p class="count" style="padding-top:8px">Four actions, three of them filled. Not keyboard dismissable.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box ba__box--sunk" style="padding:12px">
+            <div style="border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--e2);padding:18px" role="dialog" aria-modal="true">
+              <p class="t-section">Unsaved changes</p>
+              <p class="t-body" style="margin-top:5px;color:var(--ink-muted)">S0631 has 12 edited fields that have not been written.</p>
+              <div class="rowwrap" style="margin-top:14px">
+                <button class="btn btn--primary">Save and complete</button>
+                <button class="btn btn--secondary">Save draft</button>
+              </div>
+              <div class="rowwrap" style="margin-top:9px">
+                <button class="btn btn--ghost">Keep editing</button>
+                <button class="btn btn--danger btn--sm"><svg class="ico" fill="currentColor"><use href="#i-trash"/></svg>Discard 12 fields</button>
+              </div>
+            </div>
+            <p class="count" style="padding-top:8px">One primary action. The destructive label names what is lost. Escape closes, focus is trapped, focus returns where it came from.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 15 -->
+    <section class="item">
+      <h2>14. Empty, loading and error</h2>
+      <p class="why"><b>11 of 15 routes have no loading state</b>, there is no error page anywhere in the app, and most empty states are one line of grey text. This is the gap that makes the app feel unfinished when something is slow or missing.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div style="padding:26px 0;text-align:center;font-size:13px;color:#64748b">No references match this view.</div>
+            <div style="border-top:1px solid #e2e8f0;padding:26px 0;text-align:center;font-size:13px;color:#64748b">No notes yet.</div>
+            <div style="border-top:1px solid #e2e8f0;padding:26px 0;text-align:center;font-size:13px;color:#64748b">Loading API settings…</div>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box" style="padding:0">
+            <div class="empty" style="padding:26px 16px">
+              <div class="empty__icon"><svg class="ico" fill="currentColor"><use href="#i-file-text"/></svg></div>
+              <p class="t-section">No conflicts to resolve</p>
+              <p class="t-caption" style="margin-top:5px">Every study with two opposing votes has been settled.</p>
+              <button class="btn btn--secondary btn--sm" style="margin-top:12px">Go to my queue</button>
+            </div>
+            <div style="border-top:1px solid var(--line);padding:16px">
+              <div class="colwrap" style="gap:10px">
+                <div class="rowwrap"><div class="skel" style="width:52px;height:17px"></div><div class="skel" style="width:82px;height:17px;border-radius:999px"></div></div>
+                <div class="skel" style="width:100%;height:12px"></div>
+                <div class="skel" style="width:68%;height:12px"></div>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--line);padding:16px">
+              <div class="alert alert--negative">
+                <svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>
+                <div><strong>Save failed</strong>Exposure data could not be written. Your entries are still on screen.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+
+    <!-- icons -->
+    <section class="item">
+      <h2>15. Icons</h2>
+      <p class="why">There is <b>no icon library installed</b>. Every icon is hand drawn inline: 34 SVGs across 17 files, in 6 stroke weights and 4 viewboxes. The close icon exists in four different implementations, one of which is the text character <span class="t-mono">×</span>. Text glyphs (✓ ✕ ⚑ → ›) are used as icons in decision buttons and vote marks.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="rowwrap" style="gap:14px;font-size:19px;color:#334155">
+              <span>✓</span><span>✕</span><span>⚑</span><span>→</span><span>›</span><span>×</span><span>✎</span><span>–</span><span>↗</span><span>⚠️</span>
+            </div>
+            <p class="count">Stroke weights in the SVGs: 1.5, 1.6, 1.8, 2, 2.5, 4. Viewboxes: 16, 20, 24, 48.</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="rowwrap" style="gap:16px;color:var(--ink-muted)">
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-check-circle"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-x-circle"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-flag"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-warning"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-clock-countdown"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-file-text"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-upload-simple"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-magnifying-glass"/></svg>
+            </div>
+            <div class="rowwrap" style="gap:16px;color:var(--ink-muted);margin-top:12px">
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-funnel"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-sparkle"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-archive"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-list-checks"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-note-pencil"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-trash"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-caret-right"/></svg>
+              <svg style="width:20px;height:20px" fill="currentColor"><use href="#i-arrow-up"/></svg>
+            </div>
+            <p class="count">Phosphor, one weight, 16px in controls and 20px standalone. These are the actual icons used throughout this document.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 17 -->
+    <section class="item">
+      <h2>16. Type</h2>
+      <p class="why"><b>17 font sizes and 12 uppercase tracking values</b> are in use, with 9 different page-title treatments. Geist replaces Inter, and study IDs and figures get a monospace so columns line up.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <p style="font-size:30px;font-weight:600;letter-spacing:-0.025em;color:#0f172a">Full-text screening</p>
+            <p style="font-size:24px;font-weight:600;color:#0f172a;margin-top:6px">Full-text screening</p>
+            <p style="font-size:20px;font-weight:700;color:#0f172a;margin-top:6px">Full-text screening</p>
+            <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:#64748b;margin-top:10px">Tracking 0.22em</p>
+            <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.18em;color:#64748b">Tracking 0.18em</p>
+            <p style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:#64748b">Tracking 0.14em</p>
+            <p style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.24em;color:#64748b">Tracking 0.24em</p>
+            <p style="font-family:Inter;font-size:13px;color:#475569;margin-top:10px">Sizes: 9, 10, 11, 12, 13, 14, 15.2, 16, 18, 20, 24, 30, 36, 48, 23.2, 26.4, 41.6px</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <p class="t-display">786 extracted</p>
+            <p class="t-caption">Display 32</p>
+            <p class="t-title" style="margin-top:10px">Full-text screening</p>
+            <p class="t-caption">Title 22, one per page</p>
+            <p class="t-section" style="margin-top:10px">Participant characteristics</p>
+            <p class="t-caption">Section 16</p>
+            <p class="t-body" style="margin-top:10px">Vote on full-text PDFs and resolve conflicts.</p>
+            <p class="t-caption">Body 14, caption 12</p>
+            <p class="t-mono" style="margin-top:10px">S0376 · S4615 · 23,941 / 24,880</p>
+            <p class="t-caption">Geist Mono for IDs and figures</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 12 -->
+    <section class="item">
+      <h2>17. Shape and depth</h2>
+      <p class="why"><b>10 corner radii and 13 shadow values</b>, including six one-off shadow strings. Rounded-3xl on data panels reads consumer rather than institutional.</p>
+      <div class="ba">
+        <div class="ba__before">
+          <div class="ba__head"><i></i>Before</div>
+          <div class="ba__box lg-wrap">
+            <div class="rowwrap">
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:6px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">6</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:8px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">8</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:12px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">12</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:16px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">16</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:24px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">24</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:28px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">28</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:40px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">40</span>
+              <span style="display:grid;place-items:center;width:52px;height:40px;border-radius:999px;background:#f1f5f9;font-size:10px;color:#475569;box-shadow:inset 0 0 0 1px #e2e8f0">full</span>
+            </div>
+            <p class="count">Plus rounded-md and rounded-[1.75rem].</p>
+          </div>
+        </div>
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="rowwrap">
+              <span style="display:grid;place-items:center;width:60px;height:44px;border-radius:var(--r-xs);background:var(--n-100);font-size:10px;color:var(--ink-muted)">4 tag</span>
+              <span style="display:grid;place-items:center;width:60px;height:44px;border-radius:var(--r-md);background:var(--n-100);font-size:10px;color:var(--ink-muted)">8 control</span>
+              <span style="display:grid;place-items:center;width:60px;height:44px;border-radius:var(--r-lg);background:var(--n-100);font-size:10px;color:var(--ink-muted)">12 card</span>
+              <span style="display:grid;place-items:center;width:60px;height:44px;border-radius:var(--r-xl);background:var(--n-100);font-size:10px;color:var(--ink-muted)">16 page</span>
+              <span style="display:grid;place-items:center;width:60px;height:44px;border-radius:var(--r-full);background:var(--n-100);font-size:10px;color:var(--ink-muted)">pill only</span>
+            </div>
+            <p class="count">Documented rule: tags 4, controls 8, cards 12, page header and modal 16, status pills full.</p>
+            <div class="two" style="margin-top:12px">
+              <div style="border-radius:var(--r-lg);padding:12px;background:#fff;box-shadow:var(--e1)"><p class="t-caption">Elevation 1, everything</p></div>
+              <div style="border-radius:var(--r-lg);padding:12px;background:#fff;box-shadow:var(--e2)"><p class="t-caption">Elevation 2, overlays</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+
+    <!-- spacing -->
+    <section class="item">
+      <h2>18. Spacing and density</h2>
+      <p class="why">Panel padding currently varies between 12, 16, 20, 24, 32 and 40px on the same class of container, and heroes use four different responsive padding ladders. The proposal puts everything on a 4px grid with three container paddings.</p>
+      <div class="ba">
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box">
+            <div class="colwrap" style="gap:7px">
+              <div class="rowwrap"><i style="display:block;height:12px;width:4px;background:var(--navy-300)"></i><span class="t-caption">4  inside a pill, icon to label</span></div>
+              <div class="rowwrap"><i style="display:block;height:12px;width:8px;background:var(--navy-300)"></i><span class="t-caption">8  between related controls</span></div>
+              <div class="rowwrap"><i style="display:block;height:12px;width:12px;background:var(--navy-400)"></i><span class="t-caption">12 inside a compact card</span></div>
+              <div class="rowwrap"><i style="display:block;height:12px;width:16px;background:var(--navy-400)"></i><span class="t-caption">16 standard card padding, gap between cards</span></div>
+              <div class="rowwrap"><i style="display:block;height:12px;width:20px;background:var(--navy-500)"></i><span class="t-caption">20 panel padding</span></div>
+              <div class="rowwrap"><i style="display:block;height:12px;width:24px;background:var(--navy-500)"></i><span class="t-caption">24 page header padding</span></div>
+              <div class="rowwrap"><i style="display:block;height:12px;width:40px;background:var(--navy-600)"></i><span class="t-caption">40 between page sections</span></div>
+            </div>
+            <p class="count">Table and list rows: 44px minimum, which is also the touch target floor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Accessibility, while we are here.</b> The app currently has 16px checkboxes, 24 to 32px icon buttons, a 28px approve and decline pair in the extraction field editor, and several controls at roughly 26px. All of these move to a 44px touch target. The extraction field editors, the reviewer note fields and both search inputs also gain real labels, which they do not have today.</div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 20 -->
+    <section class="item">
+      <h2>19. Dark mode</h2>
+      <p class="why">Dark mode is currently produced by roughly 900 lines of forced overrides in the stylesheet, matching on substrings of class names. The proposal derives it from the same tokens, so it needs no overrides at all.</p>
+      <div class="ba">
+        <div class="ba__after">
+          <div class="ba__head"><i></i>After</div>
+          <div class="ba__box" data-theme="dark" style="background:#0b1220;box-shadow:0 0 0 1px #23324b">
+            <div class="colwrap">
+              <article class="record record--attention" style="box-shadow:var(--e1)">
+                <div style="flex:1;min-width:0">
+                  <div class="rowwrap" style="margin-bottom:5px">
+                    <span class="tag tag--study">S4615</span>
+                    <span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>Conflict</span>
+                  </div>
+                  <p class="t-body" style="color:var(--ink);font-weight:500">Association of Peak Height Velocity and Skeletal Maturity</p>
+                </div>
+              </article>
+              <div class="rowwrap">
+                <button class="btn btn--primary btn--sm">Primary</button>
+                <button class="btn btn--secondary btn--sm">Secondary</button>
+                <span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span>
+                <span class="tag tag--edge cat-mental">Mental health</span>
+              </div>
+              <div class="alert alert--attention">
+                <svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>
+                <div><strong>Read-only mode</strong>Changes cannot be saved.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <!-- 14 -->
+    <section class="item">
+      <h2>Decisions</h2>
+      <p class="why">Confirmed so far: Geist and Geist Mono, one pass across all screens, category tags stay coloured.</p>
+      <div class="ba__box" style="margin-top:12px">
+        <p class="t-section">Still open</p>
+        <ol class="t-body" style="margin-top:8px;padding-left:18px;line-height:1.7">
+          <li>Category tags: <b>Option A</b> (colour edge) or <b>Option B</b> (fully tinted)?</li>
+          <li>Anything in sections 1 to 19 you want left exactly as it is?</li>
+          <li>The header copy change in section 9 (page header), yes or no?</li>
+        </ol>
+        <p class="t-caption" style="margin-top:12px">The colour, contrast and colour-blindness checks in this document have been run and pass. Nothing has been written to the app.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+</body>
+</html>

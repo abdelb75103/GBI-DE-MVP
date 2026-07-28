@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { FormEvent, useState, useTransition } from 'react';
 
+import { Button, Field, Textarea } from '@/components/ui';
+
 type NoteComposerProps = {
   paperId: string;
 };
@@ -22,7 +24,7 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
     startTransition(async () => {
       setError(null);
       setSuccessMessage(null);
-      
+
       try {
         const response = await fetch(`/api/papers/${paperId}/notes`, {
           method: 'POST',
@@ -71,29 +73,31 @@ export function NoteComposer({ paperId }: NoteComposerProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <label className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500" htmlFor="note">
-        Add note
-      </label>
-      <textarea
-        id="note"
-        name="note"
-        className="h-28 w-full rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-        placeholder="Capture extraction decisions or follow-ups... (auto-saves when you click outside)"
-        value={body}
-        onChange={(event) => setBody(event.target.value)}
-        onBlur={handleBlur}
-        disabled={isPending}
-      />
-      {error ? <p className="text-xs font-medium text-rose-500">{error}</p> : null}
-      {successMessage ? <p className="text-xs font-medium text-emerald-600">{successMessage}</p> : null}
+      <Field label="Add note" error={error} help="Auto-saves when you click outside.">
+        {({ id, describedBy, invalid }) => (
+          <Textarea
+            id={id}
+            name="note"
+            aria-describedby={describedBy}
+            aria-invalid={invalid}
+            className="h-28"
+            placeholder="Capture extraction decisions or follow-ups..."
+            value={body}
+            onChange={(event) => setBody(event.target.value)}
+            onBlur={handleBlur}
+            disabled={isPending}
+          />
+        )}
+      </Field>
+      {successMessage ? (
+        <p role="status" className="text-xs font-medium text-positive-ink">
+          {successMessage}
+        </p>
+      ) : null}
       <div className="flex justify-end">
-        <button
-          type="submit"
-          className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
-          disabled={isPending}
-        >
+        <Button type="submit" size="sm" loading={isPending}>
           Save note
-        </button>
+        </Button>
       </div>
     </form>
   );

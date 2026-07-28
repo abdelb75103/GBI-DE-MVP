@@ -1,5 +1,13 @@
 'use client';
 
+import { Tag } from '@/components/ui';
+
+/**
+ * Who holds a paper is an attribute, not a reviewer decision, so it never takes
+ * a state colour. The Status column beside it carries the decision; these stay
+ * neutral and are told apart by their label.
+ */
+
 type AssignmentStatus = 'available' | 'mine' | 'assigned' | 'duplicate';
 
 type AssignmentBadgeProps = {
@@ -9,32 +17,17 @@ type AssignmentBadgeProps = {
 
 export function AssignmentBadge({ status, assigneeName }: AssignmentBadgeProps) {
   if (status === 'duplicate') {
-    return (
-      <span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-rose-700">
-        Duplicate
-      </span>
-    );
+    return <Tag>Duplicate</Tag>;
   }
 
   if (status === 'available') {
-    return (
-      <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
-        Available
-      </span>
-    );
+    return <Tag>Available</Tag>;
   }
 
   if (status === 'mine') {
-    return (
-      <span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700">
-        You&apos;re working on this
-      </span>
-    );
+    return <Tag title="Assigned to you">Yours</Tag>;
   }
 
-  return (
-    <span className="inline-flex items-center rounded-full border border-slate-300 bg-slate-100/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
-      Assigned to {assigneeName || 'another user'}
-    </span>
-  );
+  const name = assigneeName || 'another user';
+  return <Tag title={`Assigned to ${name}`}>Assigned to {name}</Tag>;
 }

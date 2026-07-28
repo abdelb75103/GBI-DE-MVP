@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { GlobalWorkerOptions, getDocument, type PDFDocumentProxy, type RenderTask } from 'pdfjs-dist';
 
+import { Alert } from '@/components/ui';
+
 type MobilePdfViewerProps = {
   src: string;
   title: string;
@@ -238,10 +240,10 @@ export function MobilePdfViewer({ src, title }: MobilePdfViewerProps) {
 
   if (errorMessage) {
     return (
-      <div className="grid min-h-[78dvh] place-items-center bg-white p-6 text-center">
-        <div className="max-w-sm rounded-2xl border border-rose-200 bg-rose-50 px-4 py-5 text-sm text-rose-900">
+      <div className="grid min-h-[78dvh] place-items-center bg-surface p-6 text-center">
+        <Alert tone="negative" className="max-w-sm text-left">
           Unable to render the PDF on mobile. {errorMessage}
-        </div>
+        </Alert>
       </div>
     );
   }
@@ -249,7 +251,7 @@ export function MobilePdfViewer({ src, title }: MobilePdfViewerProps) {
   return (
     <div
       ref={viewportRef}
-      className="h-[78dvh] w-full min-w-0 flex-1 overflow-auto bg-[#eef3f8] px-2 py-2"
+      className="h-[78dvh] w-full min-w-0 flex-1 overflow-auto bg-surface-sunk px-2 py-2"
       style={{ touchAction: 'pan-x pan-y' }}
       aria-label={title}
     >
@@ -261,14 +263,14 @@ export function MobilePdfViewer({ src, title }: MobilePdfViewerProps) {
         }}
       >
         {pageMetrics.length === 0 ? (
-          <div className="grid min-h-[74dvh] w-full place-items-center rounded-[1.75rem] border border-slate-200 bg-white text-sm text-slate-500 shadow-sm">
+          <div className="grid min-h-[74dvh] w-full place-items-center rounded-card border border-line bg-surface text-[13px] text-ink-soft shadow-e0">
             Loading PDF…
           </div>
         ) : (
           pageMetrics.map((metrics) => (
             <div
               key={metrics.pageNumber}
-              className="w-full overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm"
+              className="w-full overflow-hidden rounded-card border border-line bg-surface shadow-e0"
             >
               <canvas
                 ref={(node) => {

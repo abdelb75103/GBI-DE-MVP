@@ -1,0 +1,148 @@
+/* ==========================================================================
+   FIFA GBI Design Tokens (proposal)
+   One accent. One radius system. Colour means decision, never category.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- Accent: FIFA navy. The only accent in the product. ---------------- */
+  --navy-50:  #eff4fa;
+  --navy-100: #dbe7f4;
+  --navy-200: #b8cde8;
+  --navy-300: #8aabd6;
+  --navy-400: #5583bd;
+  --navy-500: #12508f;   /* hover / active */
+  --navy-600: #0b3a70;   /* PRIMARY ACCENT */
+  --navy-700: #092d58;
+  --navy-800: #072240;
+  --navy-900: #05182d;
+
+  /* --- Neutrals: one cool grey ramp, no warm/cool mixing ----------------- */
+  --n-0:   #ffffff;
+  --n-25:  #fbfcfe;
+  --n-50:  #f6f8fb;
+  --n-100: #eef2f7;
+  --n-200: #e2e8f0;
+  --n-300: #cbd5e1;
+  --n-400: #94a3b8;
+  --n-500: #64748b;
+  --n-600: #475569;
+  --n-700: #334155;
+  --n-800: #1e293b;
+  --n-900: #0f172a;
+
+  /* --- State colours: reserved. Never decorative. ------------------------ */
+  /* Validated: CVD-safe across all pairs, WCAG AA as ink. */
+  --state-positive:      #0f766e;  /* included, complete, extracted, resolved */
+  --state-positive-ink:  #0f5c56;
+  --state-positive-tint: #eaf5f2;
+  --state-positive-line: #b9dcd6;
+
+  --state-negative:      #b3261e;  /* excluded, flagged, error, destructive */
+  --state-negative-ink:  #b3261e;
+  --state-negative-tint: #fdeceb;
+  --state-negative-line: #f3c9c6;
+
+  --state-attention:      #c98a00; /* conflict, in progress, needs review */
+  --state-attention-ink:  #8a5a00;
+  --state-attention-tint: #fdf4e3;
+  --state-attention-line: #eeddb4;
+
+  --state-neutral:      var(--n-500);  /* pending, uploaded, archived */
+  --state-neutral-ink:  var(--n-600);
+  --state-neutral-tint: var(--n-100);
+  --state-neutral-line: var(--n-200);
+
+  --state-info:      var(--navy-600);  /* AI suggestion, promoted, system */
+  --state-info-ink:  var(--navy-600);
+  --state-info-tint: var(--navy-50);
+  --state-info-line: var(--navy-100);
+
+  /* --- Surfaces & ink ---------------------------------------------------- */
+  --page:          var(--n-50);
+  --surface:       var(--n-0);
+  --surface-sunk:  var(--n-50);
+  --surface-raise: var(--n-0);
+  --line:          var(--n-200);
+  --line-strong:   var(--n-300);
+
+  --ink:        var(--n-900);   /* headings */
+  --ink-body:   var(--n-700);   /* body */
+  --ink-muted:  var(--n-600);   /* secondary */
+  --ink-soft:   var(--n-500);   /* captions, labels */
+  --ink-invert: #ffffff;
+
+  /* --- Radius: documented rule, no mixing -------------------------------- */
+  --r-xs: 4px;    /* tags, tiny chips */
+  --r-sm: 6px;    /* checkbox, small controls */
+  --r-md: 8px;    /* buttons, inputs, select, tabs */
+  --r-lg: 12px;   /* cards, panels, table container */
+  --r-xl: 16px;   /* page header, modal */
+  --r-full: 999px;/* status pills and avatars only */
+
+  /* --- Elevation: exactly two levels ------------------------------------- */
+  --e0: 0 0 0 1px var(--line);
+  --e1: 0 1px 2px rgba(11, 58, 112, 0.06), 0 0 0 1px var(--line);
+  --e2: 0 12px 32px -12px rgba(11, 58, 112, 0.28), 0 0 0 1px var(--line);
+
+  /* --- Focus: one ring, everywhere --------------------------------------- */
+  --focus: 0 0 0 2px var(--surface), 0 0 0 4px var(--navy-400);
+
+  /* --- Motion ------------------------------------------------------------ */
+  --dur-fast: 120ms;
+  --dur: 160ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* --- Type -------------------------------------------------------------- */
+  --font-ui: 'Geist', ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --page:          #0b1220;
+  --surface:       #111c2e;
+  --surface-sunk:  #0e1728;
+  --surface-raise: #16233a;
+  --line:          #23324b;
+  --line-strong:   #33456180;
+
+  --ink:        #f1f5f9;
+  --ink-body:   #dbe3ee;
+  --ink-muted:  #a8b6c9;
+  --ink-soft:   #8496ad;
+  --ink-invert: #0b1220;
+
+  --navy-600: #2f6fb5;   /* accent lifts in dark so it stays visible */
+  --navy-500: #4a87c9;
+
+  --state-positive:      #2fbfa4;
+  --state-positive-ink:  #5eead4;
+  --state-positive-tint: #10312f;
+  --state-positive-line: #1c4f4a;
+
+  --state-negative:      #e05a52;
+  --state-negative-ink:  #fca5a5;
+  --state-negative-tint: #35191a;
+  --state-negative-line: #5c2a29;
+
+  --state-attention:      #e0a52c;
+  --state-attention-ink:  #fbbf24;
+  --state-attention-tint: #33270f;
+  --state-attention-line: #55411a;
+
+  --state-neutral-ink:  #a8b6c9;
+  --state-neutral-tint: #1a2740;
+  --state-neutral-line: #2a3a55;
+
+  --state-info-ink:  #8ab6e8;
+  --state-info-tint: #12233c;
+  --state-info-line: #1e3555;
+
+  --e0: 0 0 0 1px var(--line);
+  --e1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--line);
+  --e2: 0 12px 32px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--line);
+  --focus: 0 0 0 2px var(--surface), 0 0 0 4px var(--navy-400);
+}

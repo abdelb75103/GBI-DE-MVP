@@ -1,6 +1,7 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { ArrowLeft } from '@phosphor-icons/react';
+import { useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { FlagToggleButton } from '@/components/flag-toggle-button';
@@ -12,6 +13,7 @@ import { StatusSelect } from '@/components/status-select';
 import { formatDateTimeUTC } from '@/lib/format';
 import type { Paper, PaperNote, StoredFile } from '@/lib/types';
 import type { ExtractionTabsPanelProps } from '@/components/extraction-tabs-panel';
+import { Alert, Button, Card, Modal, PageHead, PanelHead, t } from '@/components/ui';
 
 type PaperWorkspaceClientProps = {
   paper: Paper;
@@ -24,6 +26,7 @@ type PaperWorkspaceClientProps = {
 export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: PaperWorkspaceClientProps) {
   const router = useRouter();
   const hasUnsavedChanges = false;
+  const [showLeaveConfirm, setShowLeaveConfirm] = useState(false);
   const sessionStatus = useMemo<WorkspaceSessionState>(() => {
     if (paper.activeSession) {
       return {
@@ -35,7 +38,8 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
   }, [paper.activeSession]);
 
   const handleBackToDashboard = useCallback(() => {
-    if (hasUnsavedChanges && !window.confirm('You have unsaved changes. Save them before leaving?')) {
+    if (hasUnsavedChanges) {
+      setShowLeaveConfirm(true);
       return;
     }
     router.push('/data-extraction');
@@ -45,7 +49,7 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
     if (sessionStatus.status === 'conflict') {
       const session = sessionStatus.session;
       return {
-        tone: 'warning' as const,
+        tone: 'attention' as const,
         title: 'Workspace locked',
         message: `${session.fullName || 'Another teammate'} started editing at ${formatDateTimeUTC(session.startedAt)}. You can view the paper but not overwrite their draft.`,
       };
@@ -53,7 +57,7 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
 
     if (sessionStatus.status === 'error') {
       return {
-        tone: 'error' as const,
+        tone: 'negative' as const,
         title: 'Workspace unavailable',
         message: sessionStatus.message,
       };
@@ -73,53 +77,30 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
 
   return (
     <div className="space-y-10">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-8 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-        <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-3">
-            <span className="inline-flex items-center rounded-full bg-indigo-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-600">
-              Paper workspace
+      <PageHead
+        eyebrow="Paper workspace"
+        title={
+          <span className="inline-flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center rounded-tag border border-white/25 bg-white/10 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-normal text-white">
+              {paper.assignedStudyId}
             </span>
-            <div className="space-y-3">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
-                  {paper.assignedStudyId}
-                </span>
-                <h1 className="text-3xl font-semibold text-slate-900">{paper.title}</h1>
-                <StatusPill status={paper.status} />
-              </div>
-              <p className="text-sm text-slate-600">
-                {paper.leadAuthor ? `${paper.leadAuthor} · ` : ''}
-                {paper.year ?? 'Year N/A'}
-              </p>
-              {sessionBanner ? (
-                <div
-                  className={`rounded-2xl border px-4 py-3 text-xs ${
-                    sessionBanner.tone === 'warning'
-                      ? 'border-amber-200 bg-amber-50 text-amber-700'
-                      : sessionBanner.tone === 'error'
-                        ? 'border-rose-200 bg-rose-50 text-rose-700'
-                        : 'border-indigo-200 bg-indigo-50 text-indigo-700'
-                  }`}
-                >
-                  <p className="font-semibold uppercase tracking-[0.22em]">{sessionBanner.title}</p>
-                  <p className="mt-1 text-[13px] leading-5">{sessionBanner.message}</p>
-                </div>
-              ) : null}
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={handleBackToDashboard}
-              className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-            >
-              Back to data extraction
-            </button>
-          </div>
-        </div>
-      </section>
+            {paper.title}
+            <StatusPill status={paper.status} />
+          </span>
+        }
+        description={`${paper.leadAuthor ? `${paper.leadAuthor} · ` : ''}${paper.year ?? 'Year N/A'}`}
+        actions={
+          <Button variant="secondary" onClick={handleBackToDashboard} icon={<ArrowLeft />}>
+            Back to data extraction
+          </Button>
+        }
+      >
+        {sessionBanner ? (
+          <Alert tone={sessionBanner.tone} title={sessionBanner.title}>
+            {sessionBanner.message}
+          </Alert>
+        ) : null}
+      </PageHead>
 
       <div className="flex flex-col gap-8">
         <PaperWorkspaceShell
@@ -130,31 +111,31 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
         />
 
         <div className="grid gap-6 xl:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+          <Card>
             <div className="space-y-5">
               <StatusSelect paperId={paper.id} status={paper.status} />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">File details</p>
+                <p className={t.label}>File details</p>
                 {file ? (
-                  <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                  <ul className={`mt-3 space-y-2 ${t.body}`}>
                     <li>
-                      <span className="font-medium text-slate-700">Name:</span> {file.name}
+                      <span className="font-medium text-ink">Name:</span> {file.name}
                     </li>
                     <li>
-                      <span className="font-medium text-slate-700">Size:</span> {formatBytes(file.size)}
+                      <span className="font-medium text-ink">Size:</span> {formatBytes(file.size)}
                     </li>
                     <li>
-                      <span className="font-medium text-slate-700">Uploaded:</span>{' '}
+                      <span className="font-medium text-ink">Uploaded:</span>{' '}
                       <time dateTime={file.uploadedAt}>{formatDateTimeUTC(file.uploadedAt)}</time>
                     </li>
                   </ul>
                 ) : (
-                  <p className="mt-3 text-sm text-slate-500">File metadata will be available after upload.</p>
+                  <p className={`mt-3 ${t.caption}`}>File metadata will be available after upload.</p>
                 )}
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Flags</p>
-                <p className="mt-1 text-xs text-slate-500">
+                <p className={t.label}>Flags</p>
+                <p className={`mt-1 ${t.caption}`}>
                   Use flags to mark issues that need reviewer attention.
                 </p>
                 <div className="mt-4">
@@ -162,22 +143,44 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
                 </div>
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">Notes</h2>
-            </div>
-            <p className="mt-2 text-xs text-slate-500">
-              Capture extraction decisions, definitions, or follow-up questions.
-            </p>
-            <div className="mt-5 space-y-5">
+          <Card>
+            <PanelHead
+              title="Notes"
+              description="Capture extraction decisions, definitions, or follow-up questions."
+            />
+            <div className="space-y-5">
               <NoteComposer paperId={paper.id} />
               <NoteList initialNotes={notes} paperId={paper.id} />
             </div>
-          </div>
+          </Card>
         </div>
       </div>
+
+      <Modal
+        open={showLeaveConfirm}
+        onClose={() => setShowLeaveConfirm(false)}
+        title="You have unsaved changes"
+        description="Save your work before leaving this paper?"
+        dismissible={false}
+        footer={
+          <>
+            <Button variant="secondary" onClick={() => setShowLeaveConfirm(false)}>
+              Keep editing
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                setShowLeaveConfirm(false);
+                router.push('/data-extraction');
+              }}
+            >
+              Leave without saving
+            </Button>
+          </>
+        }
+      />
     </div>
   );
 }

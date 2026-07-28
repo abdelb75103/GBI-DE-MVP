@@ -1,6 +1,8 @@
 'use client';
 
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, useId, useState } from 'react';
+
+import { Button, Field, Modal, Textarea } from '@/components/ui';
 
 type FlagReasonModalProps = {
   isOpen: boolean;
@@ -53,13 +55,9 @@ function FlagReasonDialog({
   onCancel,
   onSubmit,
 }: FlagReasonDialogProps) {
+  const formId = useId();
   const [reason, setReason] = useState(initialReason);
   const [error, setError] = useState<string | null>(null);
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-
-  useEffect(() => {
-    window.setTimeout(() => textareaRef.current?.focus(), 0);
-  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -72,68 +70,44 @@ function FlagReasonDialog({
   };
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/45 px-4 py-6 backdrop-blur-sm" role="presentation">
-      <form
-        onSubmit={handleSubmit}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="flag-reason-title"
-        className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl"
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h2 id="flag-reason-title" className="text-base font-semibold text-slate-950">
-              {title}
-            </h2>
-            <p className="mt-1 text-sm leading-6 text-slate-600">{description}</p>
-          </div>
-          <button
-            type="button"
-            onClick={onCancel}
-            disabled={isPending}
-            className="rounded-full border border-slate-200 px-2.5 py-1 text-xs font-semibold text-slate-500 transition hover:border-slate-300 hover:text-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-            aria-label="Close flag reason dialog"
-          >
-            Close
-          </button>
-        </div>
-
-        <label htmlFor="flag-reason" className="mt-4 block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-          Reason
-        </label>
-        <textarea
-          ref={textareaRef}
-          id="flag-reason"
-          value={reason}
-          onChange={(event) => {
-            setReason(event.target.value);
-            if (error) setError(null);
-          }}
-          rows={4}
-          disabled={isPending}
-          className="mt-2 min-h-28 w-full resize-y rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm leading-6 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-100 disabled:opacity-70"
-          placeholder="Briefly describe what needs reviewer attention."
-        />
-        {error ? <p className="mt-2 text-xs font-medium text-rose-600">{error}</p> : null}
-
-        <div className="mt-5 flex flex-wrap justify-end gap-2">
-          <button
-            type="button"
-            onClick={onCancel}
-            disabled={isPending}
-            className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
-          >
+    <Modal
+      open
+      onClose={onCancel}
+      title={title}
+      description={description}
+      dismissible={!isPending}
+      // The reason box holds typed text, so a stray backdrop click must not bin it.
+      dismissOnBackdrop={false}
+      footer={
+        <>
+          <Button type="button" variant="secondary" onClick={onCancel} disabled={isPending}>
             Cancel
-          </button>
-          <button
-            type="submit"
-            disabled={isPending}
-            className="rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-amber-500/20 transition hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {isPending ? 'Flagging...' : 'Flag paper'}
-          </button>
-        </div>
+          </Button>
+          <Button type="submit" form={formId} variant="primary" loading={isPending}>
+            Flag paper
+          </Button>
+        </>
+      }
+    >
+      <form id={formId} onSubmit={handleSubmit}>
+        <Field label="Reason" error={error}>
+          {({ id, describedBy, invalid }) => (
+            <Textarea
+              id={id}
+              aria-describedby={describedBy}
+              aria-invalid={invalid}
+              value={reason}
+              onChange={(event) => {
+                setReason(event.target.value);
+                if (error) setError(null);
+              }}
+              rows={4}
+              disabled={isPending}
+              placeholder="Briefly describe what needs reviewer attention."
+            />
+          )}
+        </Field>
       </form>
-    </div>
+    </Modal>
   );
 }

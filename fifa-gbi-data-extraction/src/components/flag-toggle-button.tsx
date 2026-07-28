@@ -1,9 +1,11 @@
 'use client';
 
+import { Flag } from '@phosphor-icons/react';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 
 import { FlagReasonModal } from '@/components/flag-reason-modal';
+import { Button } from '@/components/ui';
 
 type FlagToggleButtonProps = {
   paperId: string;
@@ -62,19 +64,24 @@ export function FlagToggleButton({ paperId, isFlagged }: FlagToggleButtonProps) 
 
   return (
     <div className="flex flex-col items-start gap-1">
-      <button
-        type="button"
-        className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
-          isFlagged
-            ? 'border-rose-700/80 bg-rose-900/80 text-rose-200 hover:bg-rose-800'
-            : 'border-slate-700/70 bg-slate-800/70 text-slate-300 hover:border-slate-600 hover:text-slate-100'
-        }`}
+      <Button
+        size="sm"
+        variant={isFlagged ? 'dangerSoft' : 'secondary'}
+        // Flagging opens a dialog to collect a reason; clearing a flag acts
+        // immediately. Announce whichever this click will actually do.
+        aria-pressed={isFlagged ? true : undefined}
+        aria-haspopup={isFlagged ? undefined : 'dialog'}
+        icon={<Flag weight={isFlagged ? 'fill' : 'regular'} />}
         onClick={handleClick}
-        disabled={isPending}
+        loading={isPending}
       >
-        {isFlagged ? 'Clear Flag' : 'Flag'}
-      </button>
-      {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
+        {isFlagged ? 'Clear flag' : 'Flag'}
+      </Button>
+      {error ? (
+        <span role="alert" className="text-xs font-medium text-negative-ink">
+          {error}
+        </span>
+      ) : null}
       <FlagReasonModal
         isOpen={isReasonModalOpen}
         isPending={isPending}

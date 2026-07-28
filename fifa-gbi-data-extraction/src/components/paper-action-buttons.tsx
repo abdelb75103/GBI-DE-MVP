@@ -1,7 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+import { ArrowLeft, CheckCircle, FloppyDisk } from '@phosphor-icons/react';
+
 import { useWorkspaceSave } from '@/components/workspace-save-manager';
+import { Button, ButtonLink } from '@/components/ui';
 
 type PaperActionButtonsProps = {
   readOnly?: boolean;
@@ -14,94 +16,31 @@ export function PaperActionButtons({ readOnly = false, backHref = '/data-extract
   if (readOnly) {
     return (
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <Link
-          href={backHref}
-          scroll
-          className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
-        >
-          ← Back to Data Extraction
-        </Link>
+        <ButtonLink href={backHref} size="lg" icon={<ArrowLeft />}>
+          Back to Data Extraction
+        </ButtonLink>
       </div>
     );
   }
 
   return (
     <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-      <button
-        type="button"
+      <Button
+        variant="secondary"
+        size="lg"
+        icon={<FloppyDisk />}
+        loading={isPending}
+        disabled={!hasUnsavedChanges}
         onClick={() => handleSave(false)}
-        disabled={isPending || !hasUnsavedChanges}
-        className="inline-flex items-center justify-center gap-2 rounded-full border border-indigo-200/70 bg-indigo-50/80 px-6 py-3 text-sm font-semibold text-indigo-700 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-100/80 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isPending ? (
-          <>
-            <svg
-              className="h-4 w-4 animate-spin"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              />
-            </svg>
-            Saving...
-          </>
-        ) : (
-          'Save and Continue'
-        )}
-      </button>
-      <button
-        type="button"
-        onClick={() => handleSave(true)}
-        disabled={isPending}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:from-emerald-500 hover:via-green-500 hover:to-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isPending ? (
-          <>
-            <svg
-              className="h-4 w-4 animate-spin"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              />
-            </svg>
-            Saving...
-          </>
-        ) : (
-          'Save and Complete'
-        )}
-      </button>
-      <Link
-        href={backHref}
-        scroll
-        className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
-      >
-        ← Back to Data Extraction
-      </Link>
+        Save and Continue
+      </Button>
+      <Button variant="primary" size="lg" icon={<CheckCircle />} loading={isPending} onClick={() => handleSave(true)}>
+        Save and Complete
+      </Button>
+      <ButtonLink href={backHref} size="lg" icon={<ArrowLeft />}>
+        Back to Data Extraction
+      </ButtonLink>
     </div>
   );
 }

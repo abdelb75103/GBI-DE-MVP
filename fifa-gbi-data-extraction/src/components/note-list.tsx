@@ -1,7 +1,10 @@
 'use client';
 
+import { Trash } from '@phosphor-icons/react';
 import { useEffect, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
+
+import { Button, Card, t } from '@/components/ui';
 import { formatDateTimeUTC } from '@/lib/format';
 import type { PaperNote } from '@/lib/types';
 
@@ -49,38 +52,31 @@ export function NoteList({ initialNotes, paperId }: NoteListProps) {
   };
 
   if (notes.length === 0) {
-    return <p className="text-sm text-slate-500">No notes yet.</p>;
+    return <p className={t.caption}>No notes yet.</p>;
   }
 
   return (
     <ul className="space-y-3">
       {notes.map((note) => (
-        <li
-          key={note.id}
-          className="group relative rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm ring-1 ring-slate-200/60 backdrop-blur hover:shadow-md transition-shadow"
-        >
-          <div className="flex items-center justify-between text-[11px] font-medium uppercase tracking-wide text-slate-400">
-            <time dateTime={note.createdAt}>{formatDateTimeUTC(note.createdAt)}</time>
-            <button
-              type="button"
-              onClick={() => handleDelete(note.id)}
-              disabled={isPending && deletingId === note.id}
-              className="opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-1 rounded-full bg-rose-50 px-2 py-1 text-[10px] font-semibold text-rose-600 hover:bg-rose-100 disabled:opacity-50"
-              aria-label="Delete note"
-            >
-              {deletingId === note.id ? (
-                'Deleting...'
-              ) : (
-                <>
-                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                  </svg>
-                  Delete
-                </>
-              )}
-            </button>
-          </div>
-          <p className="mt-3 text-sm leading-relaxed text-slate-700">{note.body}</p>
+        <li key={note.id}>
+          <Card className="group relative p-4">
+            <div className="flex items-center justify-between gap-2">
+              <time dateTime={note.createdAt} className={t.label}>
+                {formatDateTimeUTC(note.createdAt)}
+              </time>
+              <Button
+                type="button"
+                size="icon"
+                variant="ghost"
+                aria-label="Delete note"
+                icon={<Trash />}
+                onClick={() => handleDelete(note.id)}
+                loading={isPending && deletingId === note.id}
+                className="opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
+              />
+            </div>
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-body">{note.body}</p>
+          </Card>
         </li>
       ))}
     </ul>

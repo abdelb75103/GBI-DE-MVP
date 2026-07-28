@@ -1,55 +1,103 @@
 'use client';
 
+import { Archive, CheckCircle, CircleDashed, Clock, Flag, ListChecks } from '@phosphor-icons/react';
+import type { Icon } from '@phosphor-icons/react';
+
+import { Pill } from '@/components/ui/pill';
+import { Tag } from '@/components/ui/tag';
+import type { Category, Tone } from '@/components/ui/tone';
 import type { PaperStatus } from '@/lib/types';
 
-const statusStyles: Record<PaperStatus, string> = {
-  uploaded: 'border-slate-200/80 bg-slate-100/80 text-slate-700',
-  processing: 'border-amber-200/80 bg-amber-100/80 text-amber-700',
-  extracted: 'border-emerald-600 bg-emerald-700 text-white',
-  flagged: 'border-rose-200/80 bg-rose-100/80 text-rose-700 shadow-sm',
-  qa_review: 'border-sky-200/80 bg-sky-100/80 text-sky-700',
-  archived: 'border-slate-200/70 bg-slate-100/70 text-slate-500',
-  mental_health: 'border-purple-200/80 bg-purple-100/80 text-purple-700',
-  uefa: 'border-blue-200/80 bg-blue-100/80 text-blue-700',
-  no_exposure: 'border-orange-200/80 bg-orange-100/80 text-orange-700',
-  fifa_data: 'border-indigo-200/80 bg-indigo-100/80 text-indigo-700',
-  aspetar_asprev: 'border-blue-200/80 bg-blue-100/80 text-blue-700',
-  american_data: 'border-cyan-200/80 bg-cyan-100/80 text-cyan-700',
-  systematic_review: 'border-fuchsia-200/80 bg-fuchsia-100/80 text-fuchsia-700',
-  referee: 'border-amber-200/80 bg-amber-100/80 text-amber-700',
-  retrospective_substudy_analysis: 'border-violet-200/80 bg-violet-100/80 text-violet-700',
-  uefa_master_extraction: 'border-slate-300/80 bg-slate-900 text-white',
+/**
+ * `PaperStatus` mixes two unrelated things: six workflow states, which are
+ * decisions and therefore carry a state colour, and ten source families, which
+ * are categories and must never borrow one. They render as different components
+ * so a row can show both at once without the colours competing.
+ */
+
+type WorkflowState = {
+  label: string;
+  tone: Tone;
+  icon: Icon;
 };
 
-const statusLabels: Record<PaperStatus, string> = {
-  uploaded: 'Uploaded',
-  processing: 'Processing',
-  extracted: 'Extracted',
-  flagged: 'Flagged',
-  qa_review: 'QA Review',
-  archived: 'Archived',
-  mental_health: 'Mental Health',
-  uefa: 'UEFA',
-  no_exposure: 'No Exposure',
-  fifa_data: 'FIFA Data',
-  aspetar_asprev: 'Aspetar ASPREV',
-  american_data: 'American Data',
-  systematic_review: 'Systematic Review',
-  referee: 'Referee',
-  retrospective_substudy_analysis: 'Retrospective Sub-study Analysis',
-  uefa_master_extraction: 'UEFA Master Extraction',
-};
+// Labels are sentence case throughout, matching the approved proposal. Only
+// initialisms stay capitalised.
+const WORKFLOW_STATES = {
+  uploaded: { label: 'Uploaded', tone: 'neutral', icon: CircleDashed },
+  processing: { label: 'Processing', tone: 'attention', icon: Clock },
+  extracted: { label: 'Extracted', tone: 'positive', icon: CheckCircle },
+  flagged: { label: 'Flagged', tone: 'negative', icon: Flag },
+  qa_review: { label: 'QA review', tone: 'info', icon: ListChecks },
+  archived: { label: 'Archived', tone: 'neutral', icon: Archive },
+} as const satisfies Partial<Record<PaperStatus, WorkflowState>>;
 
-type StatusPillProps = {
-  status: PaperStatus;
-};
+const SOURCE_FAMILIES = {
+  mental_health: { label: 'Mental health', category: 'mental' },
+  uefa: { label: 'UEFA', category: 'uefa' },
+  no_exposure: { label: 'No exposure', category: 'noexp' },
+  fifa_data: { label: 'FIFA data', category: 'fifa' },
+  aspetar_asprev: { label: 'Aspetar ASPREV', category: 'aspetar' },
+  american_data: { label: 'American data', category: 'american' },
+  systematic_review: { label: 'Systematic review', category: 'system' },
+  referee: { label: 'Referee', category: 'referee' },
+  retrospective_substudy_analysis: { label: 'Retrospective sub-study', category: 'retro' },
+  uefa_master_extraction: { label: 'UEFA master extraction', category: 'master' },
+} as const satisfies Partial<Record<PaperStatus, { label: string; category: Category }>>;
 
-export function StatusPill({ status }: StatusPillProps) {
+export type WorkflowStatus = keyof typeof WORKFLOW_STATES;
+export type SourceFamily = keyof typeof SOURCE_FAMILIES;
+
+export function isWorkflowStatus(status: PaperStatus): status is WorkflowStatus {
+  return status in WORKFLOW_STATES;
+}
+
+export function isSourceFamily(status: PaperStatus): status is SourceFamily {
+  return status in SOURCE_FAMILIES;
+}
+
+/**
+ * The tone a record rail takes for a given status. Source families are
+ * categories, so they carry no decision colour and fall back to neutral. Derived
+ * from the same map as the pill so a row's rail can never contradict its pill.
+ */
+export function statusTone(status: PaperStatus): Tone {
+  return isWorkflowStatus(status) ? WORKFLOW_STATES[status].tone : 'neutral';
+}
+
+export function statusLabel(status: PaperStatus): string {
+  if (isWorkflowStatus(status)) return WORKFLOW_STATES[status].label;
+  if (isSourceFamily(status)) return SOURCE_FAMILIES[status].label;
+  return status;
+}
+
+/** A workflow state: uploaded, processing, extracted, flagged, QA review, archived. */
+export function StatePill({ status, className }: { status: WorkflowStatus; className?: string }) {
+  const state = WORKFLOW_STATES[status];
+  const Glyph = state.icon;
   return (
-    <span
-      className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${statusStyles[status]}`}
-    >
-      {statusLabels[status]}
-    </span>
+    <Pill tone={state.tone} icon={<Glyph weight="fill" />} className={className}>
+      {state.label}
+    </Pill>
   );
+}
+
+/** A source family. A category, so it uses the tint set and never a state colour. */
+export function SourceFamilyTag({ status, className }: { status: SourceFamily; className?: string }) {
+  const family = SOURCE_FAMILIES[status];
+  return (
+    <Tag category={family.category} className={className} title={family.label}>
+      {family.label}
+    </Tag>
+  );
+}
+
+/**
+ * Renders whichever of the two a `PaperStatus` turns out to be. Prefer
+ * `StatePill` or `SourceFamilyTag` directly where the kind is known.
+ */
+export function StatusPill({ status, className }: { status: PaperStatus; className?: string }) {
+  if (isWorkflowStatus(status)) return <StatePill status={status} className={className} />;
+  if (isSourceFamily(status)) return <SourceFamilyTag status={status} className={className} />;
+  return <Tag className={className}>{status}</Tag>;
 }

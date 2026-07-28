@@ -105,3 +105,6 @@ clear-test-data.mjs
 /isokinetic presentation/node_modules/
 /isokinetic%20presentation/
 /fifa-gbi-data-extraction/public/images/logo-Isokinetic_BLU-NEGATIVO.webp
+
+# Playwright CLI session artifacts
+.playwright-cli/

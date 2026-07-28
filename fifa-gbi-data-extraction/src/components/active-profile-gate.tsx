@@ -5,7 +5,9 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { useActiveProfile } from '@/components/providers/active-profile-provider';
 
-const PUBLIC_PATHS = new Set(['/profiles/select']);
+// The style guide renders primitives only, never live data, so it stays
+// reachable without a profile.
+const PUBLIC_PATHS = new Set(['/profiles/select', '/design-system']);
 
 export function ActiveProfileGate({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -26,7 +28,7 @@ export function ActiveProfileGate({ children }: { children: React.ReactNode }) {
 
   if (!isLoaded) {
     return (
-      <div className="flex flex-1 items-center justify-center text-sm text-slate-500">
+      <div className="flex flex-1 items-center justify-center text-[13px] text-ink-soft">
         Loading workspace profile…
       </div>
     );

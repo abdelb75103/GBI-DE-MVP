@@ -10,14 +10,14 @@ export function ActiveProfileIndicator() {
   const { profile, isLoaded, clearProfile } = useActiveProfile();
 
   if (!isLoaded) {
-    return <span className="text-xs text-slate-400">Loading…</span>;
+    return <span className="text-xs text-ink-soft">Loading…</span>;
   }
 
   if (!profile) {
     return (
       <Link
         href="/profiles/select"
-        className="rounded-full border border-indigo-100 bg-white/80 px-3 py-1 text-xs font-semibold text-indigo-600 transition hover:border-indigo-200 hover:text-indigo-700"
+        className="inline-flex min-h-9 items-center rounded-ctl border border-line-strong bg-surface px-3 text-[13px] font-semibold text-ink hover:border-navy-300 focus-visible:outline-none focus-visible:shadow-focus"
       >
         Choose profile
       </Link>
@@ -25,20 +25,17 @@ export function ActiveProfileIndicator() {
   }
 
   return (
-    <div className="flex items-center gap-2 rounded-full border border-slate-200/60 bg-white/70 px-3 py-1 text-xs shadow-sm">
-      <button
-        type="button"
-        aria-label="Switch Profile"
-        onClick={() => {
-          router.replace('/profiles/select');
-          void clearProfile().catch((error) => {
-            console.error('[ActiveProfileIndicator] Failed to clear profile session:', error);
-          });
-        }}
-        className="font-semibold text-indigo-600 transition hover:text-indigo-700"
-      >
-        Switch Profile
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={() => {
+        router.replace('/profiles/select');
+        void clearProfile().catch((error) => {
+          console.error('[ActiveProfileIndicator] Failed to clear profile session:', error);
+        });
+      }}
+      className="inline-flex min-h-9 items-center rounded-ctl border border-line-strong bg-surface px-3 text-[13px] font-semibold text-ink hover:border-navy-300 focus-visible:outline-none focus-visible:shadow-focus"
+    >
+      Switch Profile
+    </button>
   );
 }

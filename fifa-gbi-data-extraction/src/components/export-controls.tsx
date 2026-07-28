@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 
 import { useActiveProfile } from '@/components/providers/active-profile-provider';
+import { Button, Card, PanelHead, t } from '@/components/ui';
 
 type ExportControlsProps = {
   paperIds: string[];
@@ -19,14 +20,12 @@ export function ExportControls({ paperIds }: ExportControlsProps) {
 
   if (!isAdmin) {
     return (
-      <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-        <div className="space-y-3">
-          <p className="text-sm font-semibold text-slate-900">Exports</p>
-          <p className="text-xs text-slate-500">
-            Bulk exports are limited to administrators. Open an individual paper to download its extracted data.
-          </p>
-        </div>
-      </div>
+      <Card>
+        <PanelHead title="Exports" />
+        <p className={t.caption}>
+          Bulk exports are limited to administrators. Open an individual paper to download its extracted data.
+        </p>
+      </Card>
     );
   }
 
@@ -65,33 +64,26 @@ export function ExportControls({ paperIds }: ExportControlsProps) {
   };
 
   return (
-    <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-      <div className="flex flex-col gap-4">
-        <div className="space-y-1">
-          <p className="text-sm font-semibold text-slate-900">Exports</p>
-          <p className="text-xs text-slate-500">Launch a fresh dataset to share progress with downstream tools.</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
-            onClick={() => triggerExport('csv')}
-            disabled={isPending}
-          >
-            Export CSV
-          </button>
-          <button
-            type="button"
-            className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-            onClick={() => triggerExport('json')}
-            disabled={isPending}
-          >
-            Export JSON
-          </button>
-          {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
-          {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
-        </div>
+    <Card>
+      <PanelHead title="Exports" description="Launch a fresh dataset to share progress with downstream tools." />
+      <div className="flex flex-wrap items-center gap-3">
+        <Button variant="primary" onClick={() => triggerExport('csv')} disabled={isPending}>
+          Export CSV
+        </Button>
+        <Button variant="secondary" onClick={() => triggerExport('json')} disabled={isPending}>
+          Export JSON
+        </Button>
+        {message ? (
+          <span role="status" className="text-xs font-medium text-positive-ink">
+            {message}
+          </span>
+        ) : null}
+        {error ? (
+          <span role="alert" className="text-xs font-medium text-negative-ink">
+            {error}
+          </span>
+        ) : null}
       </div>
-    </div>
+    </Card>
   );
 }

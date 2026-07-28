@@ -1,9 +1,12 @@
 'use client';
 
+import { ArrowCounterClockwise, CaretDown } from '@phosphor-icons/react';
 import { useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { PapersTable } from '@/components/papers-table';
+import { statusLabel } from '@/components/status-pill';
+import { Button, Chip, cn, Field, Input, Select } from '@/components/ui';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
 import type { DataExtractionPaperSummary } from '@/lib/data-extraction-batch-filter';
 import type { PaperStatus } from '@/lib/types';
@@ -37,6 +40,9 @@ const PAPER_STATUSES: PaperStatus[] = [
   'retrospective_substudy_analysis',
   'uefa_master_extraction',
 ];
+
+/** Archived is admin-only, so it is appended separately. */
+const SELECTABLE_STATUSES = PAPER_STATUSES.filter((status) => status !== 'archived');
 
 const parsePaperStatus = (value: string | null) =>
   value && PAPER_STATUSES.includes(value as PaperStatus) ? (value as PaperStatus) : 'all';
@@ -180,9 +186,9 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
   }, [papers, profile]);
 
   const assignmentFilterOptions: Array<{ value: AssignmentFilter; label: string; count: number }> = [
-    { value: 'all', label: 'All Papers', count: counts.all },
+    { value: 'all', label: 'All papers', count: counts.all },
     { value: 'available', label: 'Available', count: counts.available },
-    { value: 'mine', label: 'My Papers', count: counts.mine },
+    { value: 'mine', label: 'My papers', count: counts.mine },
   ];
 
   const hasActiveFilters =
@@ -210,214 +216,168 @@ export function PapersDashboardClient({ papers, canBulkExport = true, isAdmin = 
     });
   };
 
-  const renderSearchControl = (className = 'xl:col-span-2') => (
-    <div className={className}>
-      <label htmlFor="search" className="mb-1.5 block text-xs font-semibold text-slate-600">
-        Search
-      </label>
-      <input
-        id="search"
-        type="text"
-        placeholder="Title, author, ID, DOI..."
-        value={searchQuery}
-        onChange={(e) => {
-          const value = e.target.value;
-          setSearchQuery(value);
-          replaceFilterParams({ q: value });
-        }}
-        className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
-      />
-    </div>
+  const renderSearchControl = (className?: string) => (
+    <Field label="Search" className={className}>
+      {({ id, describedBy }) => (
+        <Input
+          id={id}
+          aria-describedby={describedBy}
+          type="search"
+          placeholder="Title, author, ID, DOI…"
+          value={searchQuery}
+          onChange={(event) => {
+            const value = event.target.value;
+            setSearchQuery(value);
+            replaceFilterParams({ q: value });
+          }}
+        />
+      )}
+    </Field>
   );
 
   const filterFields = (
     <>
-      <div>
-        <label htmlFor="status-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
-          Status
-        </label>
-        <select
-          id="status-filter"
-          value={statusFilter}
-          onChange={(e) => {
-            const value = e.target.value as PaperStatus | 'all';
-            setStatusFilter(value);
-            replaceFilterParams({ status: value });
-          }}
-          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
-        >
-          <option value="all">All Statuses</option>
-          <option value="uploaded">Uploaded</option>
-          <option value="processing">Processing</option>
-          <option value="extracted">Extracted</option>
-          <option value="flagged">Flagged</option>
-          <option value="mental_health">Mental Health</option>
-          <option value="uefa">UEFA</option>
-          <option value="no_exposure">No Exposure</option>
-          <option value="fifa_data">FIFA Data</option>
-          <option value="aspetar_asprev">Aspetar ASPREV</option>
-          <option value="american_data">American Data</option>
-          <option value="systematic_review">Systematic Review</option>
-          <option value="referee">Referee</option>
-          <option value="retrospective_substudy_analysis">Retrospective Sub-study Analysis</option>
-          <option value="uefa_master_extraction">UEFA Master Extraction</option>
-          {isAdmin ? <option value="archived">Archived</option> : null}
-        </select>
-      </div>
+      <Field label="Status">
+        {({ id }) => (
+          <Select
+            id={id}
+            value={statusFilter}
+            onChange={(event) => {
+              const value = event.target.value as PaperStatus | 'all';
+              setStatusFilter(value);
+              replaceFilterParams({ status: value });
+            }}
+          >
+            <option value="all">All statuses</option>
+            {SELECTABLE_STATUSES.map((status) => (
+              <option key={status} value={status}>
+                {statusLabel(status)}
+              </option>
+            ))}
+            {isAdmin ? <option value="archived">{statusLabel('archived')}</option> : null}
+          </Select>
+        )}
+      </Field>
 
-      <div>
-        <label htmlFor="user-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
-          Assigned User
-        </label>
-        <select
-          id="user-filter"
-          value={userFilter}
-          onChange={(e) => {
-            const value = e.target.value;
-            setUserFilter(value);
-            replaceFilterParams({ assignee: value });
-          }}
-          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
-        >
-          <option value="all">All Users</option>
-          {uniqueAssignees.map(({ id, name }) => (
-            <option key={id} value={id}>
-              {name}
-            </option>
-          ))}
-        </select>
-      </div>
+      <Field label="Assigned user">
+        {({ id }) => (
+          <Select
+            id={id}
+            value={userFilter}
+            onChange={(event) => {
+              const value = event.target.value;
+              setUserFilter(value);
+              replaceFilterParams({ assignee: value });
+            }}
+          >
+            <option value="all">All users</option>
+            {uniqueAssignees.map(({ id: assigneeId, name }) => (
+              <option key={assigneeId} value={assigneeId}>
+                {name}
+              </option>
+            ))}
+          </Select>
+        )}
+      </Field>
 
-      <div>
-        <label htmlFor="flagged-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
-          Flagged
-        </label>
-        <select
-          id="flagged-filter"
-          value={flaggedFilter === 'all' ? 'all' : flaggedFilter ? 'yes' : 'no'}
-          onChange={(e) => {
-            const value = e.target.value;
-            const nextValue = value === 'all' ? 'all' : value === 'yes';
-            setFlaggedFilter(nextValue);
-            replaceFilterParams({ flagged: nextValue });
-          }}
-          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
-        >
-          <option value="all">All</option>
-          <option value="yes">Flagged Only</option>
-          <option value="no">Not Flagged</option>
-        </select>
-      </div>
+      <Field label="Flagged">
+        {({ id }) => (
+          <Select
+            id={id}
+            value={flaggedFilter === 'all' ? 'all' : flaggedFilter ? 'yes' : 'no'}
+            onChange={(event) => {
+              const value = event.target.value;
+              const nextValue = value === 'all' ? 'all' : value === 'yes';
+              setFlaggedFilter(nextValue);
+              replaceFilterParams({ flagged: nextValue });
+            }}
+          >
+            <option value="all">All</option>
+            <option value="yes">Flagged only</option>
+            <option value="no">Not flagged</option>
+          </Select>
+        )}
+      </Field>
 
-      <div>
-        <label htmlFor="notes-filter" className="mb-1.5 block text-xs font-semibold text-slate-600">
-          Notes
-        </label>
-        <select
-          id="notes-filter"
-          value={notesFilter === 'all' ? 'all' : notesFilter ? 'yes' : 'no'}
-          onChange={(e) => {
-            const value = e.target.value;
-            const nextValue = value === 'all' ? 'all' : value === 'yes';
-            setNotesFilter(nextValue);
-            replaceFilterParams({ notes: nextValue });
-          }}
-          className="w-full rounded-lg border border-slate-200/80 bg-white/90 px-3 py-2 text-sm shadow-sm transition-colors duration-200 ease-out focus:border-[#0b3a70] focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/20"
-        >
-          <option value="all">All</option>
-          <option value="yes">Has Notes</option>
-          <option value="no">No Notes</option>
-        </select>
-      </div>
+      <Field label="Notes">
+        {({ id }) => (
+          <Select
+            id={id}
+            value={notesFilter === 'all' ? 'all' : notesFilter ? 'yes' : 'no'}
+            onChange={(event) => {
+              const value = event.target.value;
+              const nextValue = value === 'all' ? 'all' : value === 'yes';
+              setNotesFilter(nextValue);
+              replaceFilterParams({ notes: nextValue });
+            }}
+          >
+            <option value="all">All</option>
+            <option value="yes">Has notes</option>
+            <option value="no">No notes</option>
+          </Select>
+        )}
+      </Field>
     </>
   );
 
   const filterSummary = hasActiveFilters ? (
-    <div className="flex items-center justify-between gap-3 rounded-xl border border-[#0b3a70]/15 bg-[#0b3a70]/5 px-4 py-2.5">
-      <p className="text-xs text-[#0b3a70]">
-        <span className="font-semibold tabular-nums">{filteredPapers.length}</span> of{' '}
-        <span className="font-semibold tabular-nums">{papers.length}</span> papers match your filters
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-card border border-info-line bg-info-tint px-3.5 py-2.5">
+      <p className="text-xs text-info-ink">
+        <span className="font-semibold [font-variant-numeric:tabular-nums]">{filteredPapers.length}</span> of{' '}
+        <span className="font-semibold [font-variant-numeric:tabular-nums]">{papers.length}</span> papers match your
+        filters
       </p>
-      <button
-        type="button"
-        onClick={resetFilters}
-        className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#0b3a70] ring-1 ring-[#0b3a70]/15 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0b3a70] hover:text-white"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className="h-3.5 w-3.5"
-        >
-          <path
-            fillRule="evenodd"
-            d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
-            clipRule="evenodd"
-          />
-        </svg>
-        Reset Filters
-      </button>
+      <Button size="sm" onClick={resetFilters} icon={<ArrowCounterClockwise />}>
+        Reset filters
+      </Button>
     </div>
   ) : null;
 
   return (
-    <div className="space-y-5">
-      {/* Assignment Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200/70 px-6 py-4">
-        {assignmentFilterOptions.map((option) => {
-          const active = assignmentFilter === option.value;
-          return (
-            <button
-              key={option.value}
-              type="button"
-              onClick={() => {
-                setAssignmentFilter(option.value);
-                replaceFilterParams({ assignment: option.value });
-              }}
-              className={`group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ease-out ${
-                active
-                  ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-10px_rgba(11,58,112,0.6)] ring-1 ring-[#0b3a70]/40'
-                  : 'border border-slate-300 bg-white text-slate-800 shadow-sm ring-1 ring-slate-200 hover:border-[#0b3a70]/40 hover:bg-slate-50 hover:text-[#0b3a70] hover:ring-[#0b3a70]/30'
-              }`}
-            >
-              <span className="leading-none">{option.label}</span>
-              <span
-                className={`inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full px-1.5 text-[10px] font-bold leading-none tabular-nums ${
-                  active ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-800 group-hover:bg-[#0b3a70]/10 group-hover:text-[#0b3a70]'
-                }`}
-              >
-                {option.count}
-              </span>
-            </button>
-          );
-        })}
+    <div>
+      {/* Assignment tabs. These are buttons; the batch filters on the page header
+          are links. Same visual, different semantics, deliberately. */}
+      <div className="flex flex-wrap items-center gap-2 border-b border-line px-5 py-3.5">
+        {assignmentFilterOptions.map((option) => (
+          <Chip
+            key={option.value}
+            active={assignmentFilter === option.value}
+            count={option.count}
+            onClick={() => {
+              setAssignmentFilter(option.value);
+              replaceFilterParams({ assignment: option.value });
+            }}
+          >
+            {option.label}
+          </Chip>
+        ))}
       </div>
 
-      {/* Mobile filters */}
-      <div className="space-y-3 px-4 md:hidden">
-        {renderSearchControl('')}
+      {/* The filter bar is a distinct toolbar zone: a sunk band so the controls,
+          which stay on `surface`, read as raised against it rather than floating
+          in undifferentiated white. */}
+      <div className="space-y-3 border-b border-line bg-surface-sunk px-4 py-4 md:hidden">
+        {renderSearchControl()}
         <button
           type="button"
+          aria-expanded={showMobileFilters}
           onClick={() => setShowMobileFilters((open) => !open)}
-          className="inline-flex w-full items-center justify-between rounded-xl border border-slate-200/70 bg-white/80 px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-700"
+          className="inline-flex min-h-11 w-full items-center justify-between rounded-ctl border border-line-strong bg-surface px-3.5 text-[13px] font-semibold text-ink transition-[border-color] duration-[160ms] ease-gbi hover:border-navy-300 focus-visible:outline-none focus-visible:shadow-focus"
         >
           <span>Advanced filters</span>
-          <svg
-            viewBox="0 0 16 16"
-            fill="none"
-            className={`h-4 w-4 transition ${showMobileFilters ? 'rotate-180' : ''}`}
+          <CaretDown
             aria-hidden
-          >
-            <path d="M3.5 6l4.5 4L12.5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+            weight="bold"
+            className={cn('h-4 w-4 transition-transform duration-[160ms] ease-gbi', showMobileFilters && 'rotate-180')}
+          />
         </button>
         {showMobileFilters ? <div className="grid gap-3 sm:grid-cols-2">{filterFields}</div> : null}
         {filterSummary}
       </div>
 
       {/* Desktop filters */}
-      <div className="hidden space-y-4 px-6 md:block">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      <div className="hidden space-y-3.5 border-b border-line bg-surface-sunk px-5 py-4 md:block">
+        <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {renderSearchControl('xl:col-span-2')}
           {filterFields}
         </div>

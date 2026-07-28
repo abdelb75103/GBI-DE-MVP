@@ -1,12 +1,27 @@
 'use client';
 
+import { ArrowSquareOut, CaretDown, FileText } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { AssignmentBadge } from '@/components/assignment-badge';
 import { FlagToggleButton } from '@/components/flag-toggle-button';
-import { StatusPill } from '@/components/status-pill';
+import { StatusPill, statusTone } from '@/components/status-pill';
+import {
+  Button,
+  Checkbox,
+  cn,
+  EmptyState,
+  numericCell,
+  RecordRow,
+  Table,
+  Tag,
+  Td,
+  Th,
+  Tr,
+  t,
+} from '@/components/ui';
 import { useActiveProfileState } from '@/hooks/use-active-profile';
 import type { DataExtractionPaperSummary } from '@/lib/data-extraction-batch-filter';
 import { getAnalysisPaperRoleLabel } from '@/lib/analysis-source-policy';
@@ -137,420 +152,316 @@ export function PapersTable({ papers, canBulkExport = true, isAdmin: _isAdmin = 
         setMenuOpenFor(null);
       }
     };
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpenFor(null);
+    };
     document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+      document.removeEventListener('keydown', handleKey);
+    };
   }, [menuOpenFor]);
 
-  return (
-    <div className="space-y-4">
-      {/* Mobile card list */}
-      <div className="space-y-3 md:hidden">
-        {canBulkExport ? (
-          <div className="flex flex-col gap-2 rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-3 shadow-sm ring-1 ring-slate-200/60">
-            <div className="text-xs text-slate-500">
-              {selected.size === 0 ? 'No papers selected' : `${selected.size} selected`}
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => exportSelected('csv')}
-                disabled={isPending || selected.size === 0}
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
-              >
-                Export selected CSV
-              </button>
-              <button
-                type="button"
-                onClick={() => exportSelected('json')}
-                disabled={isPending || selected.size === 0}
-                className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-              >
-                Export selected JSON
-              </button>
-              {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
-              {downloadUrl ? (
-                <a
-                  href={downloadUrl}
-                  download
-                  className="text-xs font-semibold text-indigo-600 underline underline-offset-2"
-                >
-                  Download {downloadKind?.toUpperCase()}
-                </a>
-              ) : null}
-              {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
-            </div>
-          </div>
+  // One definition each, rendered in both the mobile and desktop branches.
+  const exportBar = canBulkExport ? (
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-3">
+      <p className={t.caption}>{selected.size === 0 ? 'No papers selected' : `${selected.size} selected`}</p>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button
+          size="sm"
+          variant="primary"
+          onClick={() => exportSelected('csv')}
+          disabled={selected.size === 0}
+          loading={isPending}
+        >
+          Export selected CSV
+        </Button>
+        <Button size="sm" onClick={() => exportSelected('json')} disabled={isPending || selected.size === 0}>
+          Export selected JSON
+        </Button>
+        {message ? <span className="text-xs font-medium text-positive-ink">{message}</span> : null}
+        {downloadUrl ? (
+          <a
+            href={downloadUrl}
+            download
+            className="text-xs font-semibold text-navy-600 underline underline-offset-2 focus-visible:outline-none focus-visible:shadow-focus"
+          >
+            Download {downloadKind?.toUpperCase()}
+          </a>
         ) : null}
-
-        {papers.length === 0 ? (
-          <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 text-center text-sm text-slate-500 shadow-sm">
-            No uploads yet. Start by adding a PDF.
-          </div>
-        ) : (
-          visiblePapers.map((paper) => {
-            const assignmentStatus = getAssignmentStatus(paper);
-            const isSelected = selected.has(paper.id);
-            const notesLabel = paper.noteCount === 1 ? 'note' : 'notes';
-
-            return (
-              <div
-                key={paper.id}
-                className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm ring-1 ring-slate-200/60"
-              >
-                <div className="flex items-start gap-3">
-                  {canBulkExport ? (
-                    <input
-                      type="checkbox"
-                      aria-label={`Select ${paper.title}`}
-                      checked={isSelected}
-                      onChange={() => toggleOne(paper.id)}
-                      className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                  ) : null}
-                  <div className="flex-1 space-y-2">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                        {paper.assignedStudyId}
-                      </span>
-                      <span className="text-[11px] text-slate-500">{paper.year}</span>
-                    </div>
-                    <Link
-                      href={getPaperHref(paper.id)}
-                      className="text-base font-semibold text-slate-900 underline-offset-2 hover:text-indigo-700 hover:underline"
-                    >
-                      {paper.title}
-                    </Link>
-                    <p className="text-xs text-slate-600">{paper.leadAuthor || 'Unknown author'}</p>
-                    {paper.analysisRole !== 'standalone' ? (
-                      <span className={`inline-flex w-fit items-center rounded-full px-2 py-1 text-[11px] font-semibold ${
-                        paper.includeInAnalysisExport
-                          ? 'bg-emerald-50 text-emerald-700'
-                          : 'bg-amber-50 text-amber-800'
-                      }`}>
-                        {getAnalysisPaperRoleLabel(paper.analysisRole)}
-                        {paper.includeInAnalysisExport ? '' : ' · source only'}
-                      </span>
-                    ) : null}
-                  </div>
-                  <StatusPill status={paper.status} />
-                </div>
-
-                <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                  <AssignmentBadge status={assignmentStatus} assigneeName={paper.assigneeName} />
-                  <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-700">
-                    {paper.noteCount} {notesLabel}
-                  </span>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-700">
-                    {paper.flagReason ? 'Flagged' : 'Not flagged'}
-                  </span>
-                </div>
-
-                <div className="mt-4 flex flex-wrap items-center gap-2">
-                  <Link
-                    href={getPaperHref(paper.id)}
-                    className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-700"
-                  >
-                    Open paper
-                  </Link>
-                  <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
-                  {canBulkExport ? (
-                    <button
-                      type="button"
-                      onClick={() => toggleOne(paper.id)}
-                      className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-                    >
-                      {isSelected ? 'Deselect' : 'Select'}
-                    </button>
-                  ) : null}
-                </div>
-              </div>
-            );
-          })
-        )}
-
-        {papers.length > PAGE_SIZE ? (
-          <div className="flex items-center justify-between rounded-xl border border-slate-200/70 bg-white/80 px-4 py-3 text-xs text-slate-600 shadow-sm ring-1 ring-slate-200/60">
-            <div>
-              {startIndex + 1}–{Math.min(endIndex, papers.length)} of {papers.length}
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-                disabled={!hasPreviousPage}
-                className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-              >
-                Previous
-              </button>
-              <span>
-                Page {currentPageSafe} of {totalPages}
-              </span>
-              <button
-                type="button"
-                onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
-                disabled={!hasNextPage}
-                className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-              >
-                Next
-              </button>
-            </div>
-          </div>
+        {error ? (
+          <span role="alert" className="text-xs font-medium text-negative-ink">
+            {error}
+          </span>
         ) : null}
       </div>
+    </div>
+  ) : null;
 
-      {/* Desktop table */}
-      <div className="hidden overflow-x-auto md:block">
-        {canBulkExport ? (
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 px-6 py-3">
-            <div className="text-xs text-slate-500">
-              {selected.size === 0 ? 'No papers selected' : `${selected.size} selected`}
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => exportSelected('csv')}
-                disabled={isPending || selected.size === 0}
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
-              >
-                Export selected CSV
-              </button>
-              <button
-                type="button"
-                onClick={() => exportSelected('json')}
-                disabled={isPending || selected.size === 0}
-                className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-              >
-                Export selected JSON
-              </button>
-              {message ? <span className="text-xs font-medium text-emerald-600">{message}</span> : null}
-              {downloadUrl ? (
-                <a
-                  href={downloadUrl}
-                  download
-                  className="text-xs font-semibold text-indigo-600 underline underline-offset-2"
-                >
-                  Download {downloadKind?.toUpperCase()}
-                </a>
-              ) : null}
-              {error ? <span className="text-xs font-medium text-rose-500">{error}</span> : null}
-            </div>
-          </div>
-        ) : null}
+  const pagination =
+    papers.length > PAGE_SIZE ? (
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-5 py-3">
+        <p className={`${t.caption} ${t.num}`}>
+          Showing {startIndex + 1}–{Math.min(endIndex, papers.length)} of {papers.length}
+        </p>
+        <div className="inline-flex items-center gap-2">
+          <Button size="sm" onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))} disabled={!hasPreviousPage}>
+            Previous
+          </Button>
+          <span className={`${t.caption} ${t.num}`}>
+            Page {currentPageSafe} of {totalPages}
+          </span>
+          <Button
+            size="sm"
+            onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+            disabled={!hasNextPage}
+          >
+            Next
+          </Button>
+        </div>
+      </div>
+    ) : null;
 
-        <table className="min-w-full divide-y divide-slate-200/70 text-left text-sm text-slate-700">
-          <thead className="bg-slate-900/5 text-xs uppercase tracking-[0.22em] text-slate-500">
-            <tr>
-              <th className="px-6 py-3">
-                {canBulkExport ? (
-                  <input
-                    type="checkbox"
-                    aria-label="Select all papers"
-                    checked={allSelected}
-                    ref={(el) => {
-                      if (el) el.indeterminate = someSelected;
-                    }}
-                    onChange={toggleAll}
-                    className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-                  />
-                ) : null}
-              </th>
-              <th className="px-6 py-3 font-semibold">Title</th>
-              <th className="px-6 py-3 text-center font-semibold">Assignment</th>
-              <th className="px-6 py-3 text-center font-semibold">Status</th>
-              <th className="px-6 py-3 text-center font-semibold">Notes</th>
-              <th className="px-6 py-3 text-center font-semibold">Flag</th>
-              <th className="px-6 py-3 text-center font-semibold">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100/70 bg-white/80">
-            {papers.length === 0 ? (
-              <tr>
-                <td className="px-6 py-12 text-center text-sm text-slate-500" colSpan={7}>
-                  No uploads yet. Start by adding a PDF.
-                </td>
-              </tr>
-            ) : (
-              visiblePapers.map((paper) => {
-                const assignmentStatus = getAssignmentStatus(paper);
+  const emptyState = (
+    <EmptyState
+      icon={<FileText />}
+      title="No uploads yet"
+      description="Papers appear here once a PDF has been added to the library."
+    />
+  );
+
+  const analysisRoleTag = (paper: DataExtractionPaperSummary) =>
+    paper.analysisRole !== 'standalone' ? (
+      <Tag>
+        {getAnalysisPaperRoleLabel(paper.analysisRole)}
+        {paper.includeInAnalysisExport ? '' : ' · source only'}
+      </Tag>
+    ) : null;
+
+  return (
+    <div>
+      {/* Mobile card list */}
+      <div className="md:hidden">
+        {exportBar}
+        <div className="space-y-2.5 px-4 py-4">
+          {papers.length === 0
+            ? emptyState
+            : visiblePapers.map((paper) => {
                 const isSelected = selected.has(paper.id);
                 const notesLabel = paper.noteCount === 1 ? 'note' : 'notes';
 
                 return (
-                  <tr key={paper.id} className="align-middle transition hover:bg-slate-50/60">
-                    <td className="px-6 py-4">
-                      {canBulkExport ? (
-                        <input
-                          type="checkbox"
-                          aria-label={`Select ${paper.title}`}
-                          checked={isSelected}
-                          onChange={() => toggleOne(paper.id)}
-                          className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-                        />
-                      ) : null}
-                    </td>
-                    <td className="max-w-[22rem] px-6 py-4">
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-3">
-                          <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                            {paper.assignedStudyId}
-                          </span>
-                          <span className="text-xs text-slate-500">{paper.year}</span>
-                        </div>
-                        <div className="flex flex-col gap-1">
+                  <RecordRow key={paper.id} tone={statusTone(paper.status)} selected={isSelected}>
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Tag mono>{paper.assignedStudyId}</Tag>
+                        <span className={t.caption}>{paper.year}</span>
+                        <StatusPill status={paper.status} />
+                      </div>
+                      <Link
+                        href={getPaperHref(paper.id)}
+                        className="block text-[13px] font-semibold text-ink underline-offset-2 hover:text-navy-600 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
+                      >
+                        {paper.title}
+                      </Link>
+                      <p className={t.caption}>{paper.leadAuthor || 'Unknown author'}</p>
+                      <div className="flex flex-wrap items-center gap-2">
+                        {analysisRoleTag(paper)}
+                        <AssignmentBadge status={getAssignmentStatus(paper)} assigneeName={paper.assigneeName} />
+                        <Tag>
+                          {paper.noteCount} {notesLabel}
+                        </Tag>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2 pt-1">
+                        <Link
+                          href={getPaperHref(paper.id)}
+                          className="inline-flex min-h-9 items-center rounded-ctl bg-navy-600 px-3.5 text-[13px] font-semibold text-white transition-colors duration-[160ms] ease-gbi hover:bg-navy-500 focus-visible:outline-none focus-visible:shadow-focus"
+                        >
+                          Open paper
+                        </Link>
+                        <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
+                        {canBulkExport ? (
+                          <Checkbox
+                            label={`Select ${paper.title} for export`}
+                            hideLabel
+                            checked={isSelected}
+                            onChange={() => toggleOne(paper.id)}
+                          />
+                        ) : null}
+                      </div>
+                    </div>
+                  </RecordRow>
+                );
+              })}
+        </div>
+        {pagination}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block">
+        {exportBar}
+        <div className="overflow-x-auto">
+          <Table className="min-w-[900px]">
+            <thead>
+              <tr>
+                <Th className="w-12">
+                  {canBulkExport ? (
+                    <Checkbox
+                      label="Select all papers"
+                      hideLabel
+                      checked={allSelected}
+                      indeterminate={someSelected}
+                      onChange={toggleAll}
+                    />
+                  ) : null}
+                </Th>
+                <Th>Title</Th>
+                <Th>Assignment</Th>
+                <Th>Status</Th>
+                <Th className={numericCell}>Notes</Th>
+                <Th>Flag</Th>
+                <Th>Actions</Th>
+              </tr>
+            </thead>
+            <tbody>
+              {papers.length === 0 ? (
+                <tr>
+                  <Td colSpan={7} className="p-0">
+                    {emptyState}
+                  </Td>
+                </tr>
+              ) : (
+                visiblePapers.map((paper) => {
+                  const isSelected = selected.has(paper.id);
+
+                  return (
+                    <Tr key={paper.id}>
+                      <Td>
+                        {canBulkExport ? (
+                          <Checkbox
+                            label={`Select ${paper.title}`}
+                            hideLabel
+                            checked={isSelected}
+                            onChange={() => toggleOne(paper.id)}
+                          />
+                        ) : null}
+                      </Td>
+                      <Td className="max-w-[22rem]">
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <Tag mono>{paper.assignedStudyId}</Tag>
+                            <span className={t.caption}>{paper.year}</span>
+                          </div>
                           <Link
                             href={getPaperHref(paper.id)}
-                            className="line-clamp-2 text-sm font-semibold text-slate-900 underline-offset-2 hover:text-indigo-700 hover:underline"
+                            // No `block` here: line-clamp needs its own display value.
+                            className="line-clamp-2 text-[13px] font-semibold text-ink underline-offset-2 hover:text-navy-600 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
                           >
                             {paper.title}
                           </Link>
-                          <p className="text-xs text-slate-600">{paper.leadAuthor || 'Unknown author'}</p>
-                          {paper.analysisRole !== 'standalone' ? (
-                            <span className={`inline-flex w-fit items-center rounded-full px-2 py-1 text-[11px] font-semibold ${
-                              paper.includeInAnalysisExport
-                                ? 'bg-emerald-50 text-emerald-700'
-                                : 'bg-amber-50 text-amber-800'
-                            }`}>
-                              {getAnalysisPaperRoleLabel(paper.analysisRole)}
-                              {paper.includeInAnalysisExport ? '' : ' · source only'}
-                            </span>
-                          ) : null}
+                          <p className={t.caption}>{paper.leadAuthor || 'Unknown author'}</p>
+                          {analysisRoleTag(paper)}
                         </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                    <AssignmentBadge status={assignmentStatus} assigneeName={paper.assigneeName} />
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <StatusPill status={paper.status} />
-                    </td>
-                    <td className="px-6 py-4 text-center text-sm text-slate-700">
-                      {paper.noteCount} {notesLabel}
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="relative inline-block text-left">
-                        <button
-                          type="button"
-                          onClick={() => setMenuOpenFor((prev) => (prev === paper.id ? null : paper.id))}
-                          className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                        >
-                          Actions
-                          <svg
-                            className="ml-1.5 h-4 w-4 text-slate-500"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden
+                      </Td>
+                      <Td>
+                        <AssignmentBadge status={getAssignmentStatus(paper)} assigneeName={paper.assigneeName} />
+                      </Td>
+                      <Td>
+                        <StatusPill status={paper.status} />
+                      </Td>
+                      <Td className={numericCell}>{paper.noteCount}</Td>
+                      <Td>
+                        <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
+                      </Td>
+                      <Td>
+                        <div className="relative inline-block text-left">
+                          <Button
+                            size="sm"
+                            aria-expanded={menuOpenFor === paper.id}
+                            aria-haspopup="menu"
+                            onClick={() => setMenuOpenFor((prev) => (prev === paper.id ? null : paper.id))}
                           >
-                            <path
-                              d="M6 8l4 4 4-4"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </button>
+                            Actions
+                            <CaretDown aria-hidden weight="bold" className="h-3.5 w-3.5" />
+                          </Button>
 
-                        {menuOpenFor === paper.id ? (
-                          <div
-                            ref={(el) => {
-                              if (el) {
-                                menuRefs.current.set(paper.id, el);
-                              }
-                            }}
-                            className="absolute right-0 z-20 mt-2 w-44 origin-top-right overflow-hidden rounded-2xl border border-slate-200/70 bg-white/90 text-sm shadow-xl ring-1 ring-slate-200/60 backdrop-blur"
-                          >
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setMenuOpenFor(null);
-                                router.push(getPaperHref(paper.id));
+                          {menuOpenFor === paper.id ? (
+                            <div
+                              role="menu"
+                              ref={(el) => {
+                                if (el) {
+                                  menuRefs.current.set(paper.id, el);
+                                }
                               }}
-                              className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                              className="absolute right-0 z-20 mt-1.5 w-48 origin-top-right animate-[gbi-pop_120ms_var(--ease)] rounded-card bg-surface p-1 shadow-e2"
                             >
-                              Open
-                              <span aria-hidden>↗</span>
-                            </button>
-                            {canBulkExport ? (
                               <button
                                 type="button"
+                                role="menuitem"
                                 onClick={() => {
-                                  toggleOne(paper.id);
                                   setMenuOpenFor(null);
+                                  router.push(getPaperHref(paper.id));
                                 }}
-                                className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                                className={MENU_ITEM}
                               >
-                                {isSelected ? 'Deselect' : 'Select'} for export
-                                <input
-                                  type="checkbox"
-                                  className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
-                                  readOnly
-                                  checked={isSelected}
-                                />
+                                Open
+                                <ArrowSquareOut aria-hidden className="h-3.5 w-3.5" />
                               </button>
-                            ) : null}
-                            {paper.downloadUrl ? (
+                              {canBulkExport ? (
+                                <button
+                                  type="button"
+                                  role="menuitem"
+                                  onClick={() => {
+                                    toggleOne(paper.id);
+                                    setMenuOpenFor(null);
+                                  }}
+                                  className={MENU_ITEM}
+                                >
+                                  {isSelected ? 'Deselect' : 'Select'} for export
+                                </button>
+                              ) : null}
+                              {paper.downloadUrl ? (
+                                <a
+                                  href={paper.downloadUrl}
+                                  download
+                                  role="menuitem"
+                                  onClick={() => setMenuOpenFor(null)}
+                                  className={MENU_ITEM}
+                                >
+                                  Download PDF
+                                </a>
+                              ) : null}
                               <a
-                                href={paper.downloadUrl}
+                                href={`/api/papers/${paper.id}/export?format=csv${
+                                  paper.includeInAnalysisExport ? '' : '&scope=source'
+                                }`}
                                 download
+                                role="menuitem"
                                 onClick={() => setMenuOpenFor(null)}
-                                className="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                                className={MENU_ITEM}
                               >
-                                Download PDF
+                                {paper.includeInAnalysisExport ? 'Download CSV' : 'Download source CSV'}
                               </a>
-                            ) : null}
-                            <a
-                              href={`/api/papers/${paper.id}/export?format=csv${
-                                paper.includeInAnalysisExport ? '' : '&scope=source'
-                              }`}
-                              download
-                              onClick={() => setMenuOpenFor(null)}
-                              className="flex items-center justify-between rounded-lg px-3 py-2 text-slate-700 transition hover:bg-indigo-50 hover:text-indigo-700"
-                            >
-                              {paper.includeInAnalysisExport ? 'Download CSV' : 'Download source CSV'}
-                            </a>
-                          </div>
-                        ) : null}
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })
-            )}
-          </tbody>
-        </table>
-        {papers.length > PAGE_SIZE ? (
-          <div className="flex items-center justify-between border-t border-slate-200/70 px-6 py-3 text-xs text-slate-500">
-            <div>
-              Showing {startIndex + 1}–{Math.min(endIndex, papers.length)} of {papers.length}
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-                disabled={!hasPreviousPage}
-                className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-              >
-                Previous
-              </button>
-              <span>
-                Page {currentPageSafe} of {totalPages}
-              </span>
-              <button
-                type="button"
-                onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
-                disabled={!hasNextPage}
-                className="inline-flex items-center rounded-full border border-slate-200/70 bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 disabled:opacity-60"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        ) : null}
+                            </div>
+                          ) : null}
+                        </div>
+                      </Td>
+                    </Tr>
+                  );
+                })
+              )}
+            </tbody>
+          </Table>
+        </div>
+        {pagination}
       </div>
     </div>
   );
 }
+
+const MENU_ITEM = cn(
+  'flex w-full min-h-9 items-center justify-between gap-2 rounded-ctl px-2.5 text-[13px] font-medium text-ink-muted',
+  'transition-[background-color,color] duration-[160ms] ease-gbi hover:bg-surface-sunk hover:text-ink',
+  'focus-visible:outline-none focus-visible:shadow-focus',
+);

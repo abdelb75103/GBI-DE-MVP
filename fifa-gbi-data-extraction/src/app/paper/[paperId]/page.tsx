@@ -1,3 +1,4 @@
+import { ArrowLeft, LockSimple } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 
@@ -16,6 +17,7 @@ import { WorkspaceSaveManager } from '@/components/workspace-save-manager';
 import { WorkspaceSaveButton } from '@/components/workspace-save-button';
 import { PaperActionButtons } from '@/components/paper-action-buttons';
 import { MobileWorkspaceBlocker } from '@/components/mobile-workspace-blocker';
+import { Alert, ButtonLink, Card, EmptyState, PageHead, PanelHead, Pill, Tag, t } from '@/components/ui';
 import {
   getAnalysisPaperRoleLabel,
   parseAnalysisSourceTreatment,
@@ -41,7 +43,7 @@ export default async function PaperWorkspace({
   const rawSearchParams = await searchParams;
   const conflict = firstSearchParam(rawSearchParams.conflict);
   const backHref = getDataExtractionBackHref(firstSearchParam(rawSearchParams.returnTo));
-  
+
   const profile = await readActiveProfileSession();
   if (!profile) {
     redirect('/profiles/select?returnTo=' + encodeURIComponent(`/paper/${paperId}`));
@@ -63,35 +65,25 @@ export default async function PaperWorkspace({
   if (conflict === 'true' && !isAdmin) {
     const assigneeName = paper.assigneeName || 'another user';
     return (
-      <div className="space-y-10">
-        <section className="relative overflow-hidden rounded-3xl border border-rose-200/70 bg-rose-50/80 p-8 shadow-xl ring-1 ring-rose-200/60">
-          <div className="relative z-10 flex flex-col gap-6">
-            <div className="space-y-3">
-              <span className="inline-flex items-center rounded-full bg-rose-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-rose-600">
-                Paper Unavailable
-              </span>
-              <h1 className="text-3xl font-semibold text-slate-900">Access Restricted</h1>
-              <div className="space-y-4 text-slate-700">
-                <p className="text-lg">
-                  This paper is currently assigned to <strong>{assigneeName}</strong>.
-                </p>
-                <p className="text-sm">
-                  To prevent conflicts and data loss, only one person can work on a paper at a time. 
-                  Please choose a different paper from data extraction or wait until this paper becomes available.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center gap-3 pt-4">
-              <Link
-                href={backHref}
-                scroll
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
-              >
-                ← Back to Data Extraction
-              </Link>
-            </div>
-          </div>
-        </section>
+      <div className="mx-auto max-w-xl">
+        <Card>
+          <EmptyState
+            icon={<LockSimple weight="fill" />}
+            title="Access restricted"
+            description={
+              <>
+                This paper is currently assigned to <strong>{assigneeName}</strong>. To prevent conflicts and data
+                loss, only one person can work on a paper at a time. Choose a different paper from data extraction or
+                wait until this paper becomes available.
+              </>
+            }
+            action={
+              <ButtonLink variant="secondary" href={backHref} icon={<ArrowLeft />}>
+                Back to data extraction
+              </ButtonLink>
+            }
+          />
+        </Card>
       </div>
     );
   }
@@ -102,35 +94,25 @@ export default async function PaperWorkspace({
     // Paper is already assigned to someone else
     const assigneeName = paper.assigneeName || 'another user';
     return (
-      <div className="space-y-10">
-        <section className="relative overflow-hidden rounded-3xl border border-rose-200/70 bg-rose-50/80 p-8 shadow-xl ring-1 ring-rose-200/60">
-          <div className="relative z-10 flex flex-col gap-6">
-            <div className="space-y-3">
-              <span className="inline-flex items-center rounded-full bg-rose-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-rose-600">
-                Paper Unavailable
-              </span>
-              <h1 className="text-3xl font-semibold text-slate-900">Access Restricted</h1>
-              <div className="space-y-4 text-slate-700">
-                <p className="text-lg">
-                  This paper is currently assigned to <strong>{assigneeName}</strong>.
-                </p>
-                <p className="text-sm">
-                  To prevent conflicts and data loss, only one person can work on a paper at a time. 
-                  Please choose a different paper from data extraction or wait until this paper becomes available.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center gap-3 pt-4">
-              <Link
-                href={backHref}
-                scroll
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500"
-              >
-                ← Back to Data Extraction
-              </Link>
-            </div>
-          </div>
-        </section>
+      <div className="mx-auto max-w-xl">
+        <Card>
+          <EmptyState
+            icon={<LockSimple weight="fill" />}
+            title="Access restricted"
+            description={
+              <>
+                This paper is currently assigned to <strong>{assigneeName}</strong>. To prevent conflicts and data
+                loss, only one person can work on a paper at a time. Choose a different paper from data extraction or
+                wait until this paper becomes available.
+              </>
+            }
+            action={
+              <ButtonLink variant="secondary" href={backHref} icon={<ArrowLeft />}>
+                Back to data extraction
+              </ButtonLink>
+            }
+          />
+        </Card>
       </div>
     );
   }
@@ -172,6 +154,7 @@ export default async function PaperWorkspace({
     : isTemporaryExtraction
       ? 'Pending second reviewer'
       : 'Existing extraction record';
+  const eligibilityTone = paper.flagReason ? 'negative' : isTemporaryExtraction ? 'attention' : 'info';
   const extractions = await mockDb.listExtractions(paper.id);
   const extractionMap = new Map(extractions.map((extraction) => [extraction.tab, extraction] as const));
   const tabPayload = extractionTabs.map((tab) => {
@@ -200,56 +183,34 @@ export default async function PaperWorkspace({
   return (
     <MobileWorkspaceBlocker backHref={backHref}>
       <WorkspaceSaveManager paperId={paper.id} currentStatus={paper.status} readOnly={isReadOnly}>
-        <div className="extraction-workspace-page space-y-10">
+        <div className="space-y-10">
           {isReadOnly && (
-            <section className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-amber-50/80 p-6 shadow-xl ring-1 ring-amber-200/60">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center rounded-full bg-amber-100/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
-                  Read-Only Mode
-                </span>
-                <p className="text-sm font-medium text-amber-900">
-                  Viewing{' '}
-                  <strong>
-                    {(paper.assigneeName || 'another user')}&rsquo;s
-                  </strong>{' '}
-                  paper in read-only mode. You cannot edit or save changes.
-                </p>
-              </div>
-            </section>
+            <Alert tone="attention" title="Read-only mode">
+              Viewing <strong>{(paper.assigneeName || 'another user')}&rsquo;s</strong> paper in read-only mode. You
+              cannot edit or save changes.
+            </Alert>
           )}
-          <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8">
-            <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
-            <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-            <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="space-y-3">
-                <span className="inline-flex items-center rounded-full bg-indigo-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
-                  Paper workspace
+          <PageHead
+            eyebrow="Paper workspace"
+            title={
+              <span className="inline-flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center rounded-tag border border-white/25 bg-white/10 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-normal text-white">
+                  {paper.assignedStudyId}
                 </span>
-                <div className="space-y-3">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
-                      {paper.assignedStudyId}
-                    </span>
-                    <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl">{paper.title}</h1>
-                    <StatusPill status={paper.status} />
-                  </div>
-                  {paper.leadAuthor ? (
-                    <p className="text-sm text-slate-600">{paper.leadAuthor}</p>
-                  ) : null}
-                </div>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  href={backHref}
-                  scroll
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-                >
+                {paper.title}
+                <StatusPill status={paper.status} />
+              </span>
+            }
+            description={paper.leadAuthor}
+            actions={
+              <>
+                <ButtonLink variant="secondary" href={backHref} icon={<ArrowLeft />}>
                   Back to data extraction
-                </Link>
+                </ButtonLink>
                 {!isReadOnly && <WorkspaceSaveButton />}
-              </div>
-            </div>
-          </section>
+              </>
+            }
+          />
 
           <div className="flex flex-col gap-8">
             <PaperWorkspaceShell
@@ -261,57 +222,46 @@ export default async function PaperWorkspace({
             />
 
             <div className="grid gap-6 xl:grid-cols-2">
-              <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
+              <Card>
+                <PanelHead title="Workspace details" />
                 <div className="space-y-5">
                   {!isReadOnly && (
-                    <div className="rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
+                    <div className="rounded-ctl border border-line bg-surface-sunk p-4">
                       <StatusSelect paperId={paper.id} status={paper.status} />
                     </div>
                   )}
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">File details</p>
+                    <p className={t.label}>File details</p>
                     {file ? (
-                      <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                      <ul className={`mt-3 space-y-2 ${t.body}`}>
                         <li>
-                          <span className="font-medium text-slate-700">Name:</span> {file.name}
+                          <span className="font-medium text-ink">Name:</span> {file.name}
                         </li>
                         <li>
-                          <span className="font-medium text-slate-700">Size:</span> {formatBytes(file.size)}
+                          <span className="font-medium text-ink">Size:</span> {formatBytes(file.size)}
                         </li>
                         <li>
-                          <span className="font-medium text-slate-700">Uploaded:</span>{' '}
+                          <span className="font-medium text-ink">Uploaded:</span>{' '}
                           <time dateTime={file.uploadedAt}>{formatDateTimeUTC(file.uploadedAt)}</time>
                         </li>
                       </ul>
                     ) : (
-                      <p className="mt-3 text-sm text-slate-500">File metadata will be available after upload.</p>
+                      <p className={`mt-3 ${t.caption}`}>File metadata will be available after upload.</p>
                     )}
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                      Analysis treatment
-                    </p>
-                    <div className={`mt-3 rounded-2xl p-4 shadow-sm ring-1 ${
-                      paper.includeInAnalysisExport
-                        ? 'bg-emerald-50/70 ring-emerald-200/70'
-                        : 'bg-amber-50/80 ring-amber-200/70'
-                    }`}>
+                    <p className={t.label}>Analysis treatment</p>
+                    <div className="mt-3 rounded-ctl border border-line bg-surface-sunk p-4">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${
-                          paper.includeInAnalysisExport
-                            ? 'bg-emerald-100 text-emerald-800'
-                            : 'bg-amber-100 text-amber-900'
-                        }`}>
-                          {getAnalysisPaperRoleLabel(paper.analysisRole)}
-                        </span>
-                        <span className="text-xs font-semibold text-slate-700">
+                        <Tag>{getAnalysisPaperRoleLabel(paper.analysisRole)}</Tag>
+                        <Pill tone={paper.includeInAnalysisExport ? 'positive' : 'attention'} dot>
                           {paper.includeInAnalysisExport
                             ? 'Included in analysis export'
                             : 'Source only, excluded from analysis export'}
-                        </span>
+                        </Pill>
                       </div>
                       {analysisSourceLinks.length > 0 ? (
-                        <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-700">
+                        <ul className={`mt-3 space-y-2 ${t.caption}`}>
                           {analysisSourceLinks.map((link) => {
                             const currentIsSource = link.sourcePaperId === paper.id;
                             const linkedPaperId = currentIsSource ? link.anchorPaperId : link.sourcePaperId;
@@ -322,7 +272,7 @@ export default async function PaperWorkspace({
                                 {direction}{' '}
                                 <Link
                                   href={`/paper/${linkedPaperId}?returnTo=${encodeURIComponent(backHref)}`}
-                                  className="font-semibold text-indigo-700 underline underline-offset-2"
+                                  className="font-semibold text-navy-600 underline underline-offset-2"
                                 >
                                   {linkedStudyId}
                                 </Link>
@@ -334,14 +284,14 @@ export default async function PaperWorkspace({
                           })}
                         </ul>
                       ) : (
-                        <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                        <p className={`mt-2 ${t.caption}`}>
                           No companion-source links are recorded for this paper.
                         </p>
                       )}
                       {analysisPopulationTreatments.length > 0 ? (
-                        <div className="mt-3 border-t border-slate-200/70 pt-3">
-                          <p className="font-semibold text-slate-800">Tournament row map</p>
-                          <ul className="mt-2 space-y-1 text-xs leading-relaxed text-slate-700">
+                        <div className="mt-3 border-t border-line pt-3">
+                          <p className="font-semibold text-ink">Tournament row map</p>
+                          <ul className={`mt-2 space-y-1 ${t.caption}`}>
                             {analysisPopulationTreatments.map((row) => (
                               <li key={`${row.populationPosition}-${row.tournamentKey}`}>
                                 {row.expectedLabel}: {row.tournamentKey}
@@ -352,9 +302,9 @@ export default async function PaperWorkspace({
                         </div>
                       ) : null}
                       {analysisPopulationExclusions.length > 0 ? (
-                        <div className="mt-3 border-t border-slate-200/70 pt-3">
-                          <p className="font-semibold text-slate-800">Rows excluded from analysis export</p>
-                          <ul className="mt-2 space-y-1 text-xs leading-relaxed text-slate-700">
+                        <div className="mt-3 border-t border-line pt-3">
+                          <p className="font-semibold text-ink">Rows excluded from analysis export</p>
+                          <ul className={`mt-2 space-y-1 ${t.caption}`}>
                             {analysisPopulationExclusions.map((exclusion) => (
                               <li key={`${exclusion.populationPosition}-${exclusion.tournamentKey}`}>
                                 {exclusion.expectedLabel}
@@ -369,67 +319,46 @@ export default async function PaperWorkspace({
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Eligibility check</p>
-                    <div className={`mt-3 rounded-2xl p-4 shadow-sm ring-1 ${
-                      paper.flagReason
-                        ? 'bg-rose-50/80 ring-rose-200/70'
+                    <p className={t.label}>Eligibility check</p>
+                    <Alert tone={eligibilityTone} title={eligibilityStatus} className="mt-3">
+                      {paper.flagReason
+                        ? paper.flagReason
                         : isTemporaryExtraction
-                          ? 'bg-amber-50/80 ring-amber-200/70'
-                          : 'bg-slate-50/80 ring-slate-200/70'
-                    }`}>
-                      <p className={`text-sm font-semibold ${
-                        paper.flagReason
-                          ? 'text-rose-800'
-                          : isTemporaryExtraction
-                            ? 'text-amber-800'
-                            : 'text-slate-700'
-                      }`}>
-                        {eligibilityStatus}
-                      </p>
-                      <p className="mt-1 text-xs leading-relaxed text-slate-600">
-                        {paper.flagReason
-                          ? paper.flagReason
-                          : isTemporaryExtraction
-                            ? 'AI and one human reviewer include. Confirm eligibility before extracting; flag criteria failures first.'
-                            : 'No temporary screening bridge is attached to this record.'}
-                      </p>
-                    </div>
+                          ? 'AI and one human reviewer include. Confirm eligibility before extracting; flag criteria failures first.'
+                          : 'No temporary screening bridge is attached to this record.'}
+                    </Alert>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Flags</p>
-                    <p className="mt-1 text-xs text-slate-500">
+                    <p className={t.label}>Flags</p>
+                    <p className={`mt-1 ${t.caption}`}>
                       Use flags to mark issues that need reviewer attention.
                     </p>
                     {!isReadOnly && (
-                      <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40 transition hover:shadow-md">
+                      <div className="mt-4 rounded-ctl border border-line bg-surface-sunk p-4">
                         <FlagToggleButton paperId={paper.id} isFlagged={Boolean(paper.flagReason)} />
                       </div>
                     )}
                     {isReadOnly && (
-                      <div className="mt-4 rounded-2xl bg-gradient-to-br from-slate-50/80 to-slate-100/60 p-4 shadow-sm ring-1 ring-slate-200/40">
-                        <p className="text-xs text-slate-500">
+                      <div className="mt-4 rounded-ctl border border-line bg-surface-sunk p-4">
+                        <p className={t.caption}>
                           {paper.flagReason ? `Flagged: ${paper.flagReason}` : 'Not flagged'}
                         </p>
                       </div>
                     )}
                   </div>
                 </div>
-              </div>
+              </Card>
 
-              <div className="rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur">
-                <div>
-                  <h2 className="text-sm font-semibold text-slate-900">Notes</h2>
-                </div>
-                <p className="mt-2 text-xs text-slate-500">
-                  Capture extraction decisions, definitions, or follow-up questions.
-                </p>
-                <div className="mt-5 space-y-5">
-                  <div className="rounded-2xl bg-gradient-to-br from-indigo-50/60 to-slate-50/80 p-4 shadow-sm ring-1 ring-indigo-200/30 transition hover:shadow-md">
-                    <NoteComposer paperId={paper.id} />
-                  </div>
+              <Card>
+                <PanelHead
+                  title="Notes"
+                  description="Capture extraction decisions, definitions, or follow-up questions."
+                />
+                <div className="space-y-5">
+                  <NoteComposer paperId={paper.id} />
                   <NoteList initialNotes={notes} paperId={paper.id} />
                 </div>
-              </div>
+              </Card>
             </div>
 
             <PaperActionButtons readOnly={isReadOnly} backHref={backHref} />

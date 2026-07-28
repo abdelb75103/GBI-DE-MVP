@@ -16,6 +16,18 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 const STORAGE_KEY = 'gbi-theme-preference';
 const TRANSITION_CLASS = 'theme-transition';
 
+/**
+ * Dark mode is built but not exposed while the design-system migration is
+ * verified in light only. This is the single switch: flipping it back to `true`
+ * restores reading the stored preference here, and `ThemeToggleButton` can be
+ * rendered again in `app-header.tsx` and `mobile-nav.tsx`.
+ *
+ * While it is `false` the stored preference is neither read nor written, so a
+ * user who chose dark before it was hidden is not stranded in an unverified
+ * theme with no way back, and their preference survives for when it returns.
+ */
+export const THEME_SWITCHING_ENABLED = false;
+
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
   root.dataset.theme = theme;
@@ -32,9 +44,16 @@ function scheduleTransition() {
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('light');
-  const [isReady, setIsReady] = useState(false);
+  // With switching disabled there is no stored preference to wait for, so the
+  // provider is ready immediately and no state has to be set from an effect.
+  const [isReady, setIsReady] = useState(!THEME_SWITCHING_ENABLED);
 
   useEffect(() => {
+    if (!THEME_SWITCHING_ENABLED) {
+      applyTheme('light');
+      return;
+    }
+
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
       const next = stored === 'light' || stored === 'dark' ? stored : 'light';
@@ -48,7 +67,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!isReady) {
+    if (!isReady || !THEME_SWITCHING_ENABLED) {
       return;
     }
     applyTheme(theme);

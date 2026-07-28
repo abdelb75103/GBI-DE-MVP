@@ -3,6 +3,8 @@
 import { useEffect, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { Card, Field, Select, Tag, t } from '@/components/ui';
+
 type Profile = {
   id: string;
   full_name: string;
@@ -70,61 +72,54 @@ export function AssignmentManager({ paperId, currentAssigneeId, currentAssigneeN
   };
 
   return (
-    <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm ring-1 ring-slate-200/60">
+    <Card>
       <div className="space-y-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Assignment</p>
-          <p className="mt-1 text-xs text-slate-500">
-            Manage paper assignment. Only visible to administrators.
-          </p>
+          <p className={t.label}>Assignment</p>
+          <p className="mt-1 text-xs text-ink-soft">Manage paper assignment. Only visible to administrators.</p>
         </div>
 
-        {currentAssigneeName && (
-          <div className="rounded-lg bg-slate-50/80 px-3 py-2">
-            <p className="text-xs font-medium text-slate-600">Currently assigned to:</p>
-            <p className="text-sm font-semibold text-slate-900">{currentAssigneeName}</p>
+        {currentAssigneeName ? (
+          <div className="flex items-center gap-2 rounded-ctl bg-surface-sunk px-3 py-2">
+            <p className="text-xs font-medium text-ink-muted">Currently assigned to</p>
+            <Tag title={currentAssigneeName}>{currentAssigneeName}</Tag>
           </div>
-        )}
+        ) : null}
 
         {isLoading ? (
-          <div className="text-xs text-slate-500">Loading users...</div>
+          <p className="text-xs text-ink-soft">Loading users...</p>
         ) : error && !profiles.length ? (
-          <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+          <p role="alert" className="rounded-ctl border border-negative-line bg-negative-tint px-3 py-2 text-xs text-negative-ink">
             {error}
-          </div>
+          </p>
         ) : (
-          <div className="space-y-2">
-            <label htmlFor="assignment-select" className="block text-xs font-medium text-slate-700">
-              Assign to:
-            </label>
-            <select
-              id="assignment-select"
-              value={selectedUserId ?? ''}
-              onChange={(e) => handleAssignmentChange(e.target.value || null)}
-              disabled={isPending}
-              className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <option value="">Unassign</option>
-              {profiles.map((profile) => (
-                <option key={profile.id} value={profile.id}>
-                  {profile.full_name} ({profile.role})
-                </option>
-              ))}
-            </select>
-          </div>
+          <Field label="Assign to">
+            {({ id }) => (
+              <Select
+                id={id}
+                value={selectedUserId ?? ''}
+                onChange={(e) => handleAssignmentChange(e.target.value || null)}
+                disabled={isPending}
+              >
+                <option value="">Unassign</option>
+                {profiles.map((profile) => (
+                  <option key={profile.id} value={profile.id}>
+                    {profile.full_name} ({profile.role})
+                  </option>
+                ))}
+              </Select>
+            )}
+          </Field>
         )}
 
-        {error && profiles.length > 0 && (
-          <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+        {error && profiles.length > 0 ? (
+          <p role="alert" className="rounded-ctl border border-negative-line bg-negative-tint px-3 py-2 text-xs text-negative-ink">
             {error}
-          </div>
-        )}
+          </p>
+        ) : null}
 
-        {isPending && (
-          <div className="text-xs text-slate-500">Updating assignment...</div>
-        )}
+        {isPending ? <p className="text-xs text-ink-soft">Updating assignment...</p> : null}
       </div>
-    </div>
+    </Card>
   );
 }
-

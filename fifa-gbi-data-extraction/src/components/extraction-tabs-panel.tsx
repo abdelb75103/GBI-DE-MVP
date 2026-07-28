@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Sparkle } from '@phosphor-icons/react';
 import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import type { MutableRefObject } from 'react';
 import { useRouter } from 'next/navigation';
@@ -18,6 +18,8 @@ import {
 } from '@/lib/extraction/schema';
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
 import type { ExtractionFieldResult, ExtractionTab } from '@/lib/types';
+import { Button, ButtonLink, Segmented, Tabs, Tag, Toast, ToastViewport, cn, t } from '@/components/ui';
+import type { TabItem } from '@/components/ui';
 
 type TabPayload = {
   tab: ExtractionTab;
@@ -52,6 +54,12 @@ export type LayoutMode = 'accordion' | 'tabbed' | 'full';
 
 const metricOrder = extractionMetrics.map((item) => item.metric);
 const reviewBypassStudyIds = new Set(['S476', 'S477', 'S478', 'S479', 'S480', 'S482']);
+
+const TOAST_TONE: Record<FeedbackTone, 'info' | 'positive' | 'negative'> = {
+  info: 'info',
+  success: 'positive',
+  error: 'negative',
+};
 
 const isAiGeneratedModel = (model: string | null | undefined) => {
   if (!model) {
@@ -188,12 +196,12 @@ export function ExtractionTabsPanel({
     setReviewStates((prev) => {
       let changed = false;
       const next = new Map(prev);
-      
+
       reviewRequiredKeys.forEach((key) => {
         const [tab, fieldId] = key.split(':') as [ExtractionTab, string];
         const currentValueHash = getFieldValueHash(tab, fieldId);
         const existing = next.get(key);
-        
+
         if (!existing) {
           // New field requiring review
           next.set(key, { decision: 'pending', valueHash: currentValueHash });
@@ -205,7 +213,7 @@ export function ExtractionTabsPanel({
         }
         // If value hash matches, keep existing decision (approved/declined)
       });
-      
+
       // Remove keys that no longer require review
       next.forEach((_, key) => {
         if (!reviewRequiredKeys.has(key)) {
@@ -213,7 +221,7 @@ export function ExtractionTabsPanel({
           changed = true;
         }
       });
-      
+
       return changed ? next : prev;
     });
   }, [reviewRequiredKeys, readOnly, getFieldValueHash]);
@@ -250,11 +258,11 @@ export function ExtractionTabsPanel({
 
   const getLayoutHelper = () => layoutOptions.find((option) => option.id === layout)?.helper ?? '';
 
-useEffect(() => {
-  if (layoutMode && layoutMode !== internalLayout) {
-    setInternalLayout(layoutMode);
-  }
-}, [layoutMode, internalLayout]);
+  useEffect(() => {
+    if (layoutMode && layoutMode !== internalLayout) {
+      setInternalLayout(layoutMode);
+    }
+  }, [layoutMode, internalLayout]);
 
   useEffect(() => {
     setSelectedMap((prev) => {
@@ -332,14 +340,14 @@ useEffect(() => {
     [layout],
   );
 
-useEffect(() => {
-  if (!feedback || feedback.tone !== 'success') {
-    return;
-  }
+  useEffect(() => {
+    if (!feedback || feedback.tone !== 'success') {
+      return;
+    }
 
-  const timer = setTimeout(() => setFeedback(null), 2000);
-  return () => clearTimeout(timer);
-}, [feedback]);
+    const timer = setTimeout(() => setFeedback(null), 2000);
+    return () => clearTimeout(timer);
+  }, [feedback]);
 
   useEffect(() => {
     if (!orderedTabs.length) {
@@ -483,47 +491,15 @@ useEffect(() => {
       return null;
     }
 
-    const toneStyles: Record<FeedbackTone, { container: string; accent: string; text: string }> = {
-      info: {
-        container: 'border-indigo-200/80 bg-indigo-50/90 shadow-indigo-200/70',
-        accent: 'bg-indigo-500',
-        text: 'text-indigo-800',
-      },
-      success: {
-        container: 'border-emerald-200/80 bg-emerald-50/90 shadow-emerald-200/70',
-        accent: 'bg-emerald-500',
-        text: 'text-emerald-800',
-      },
-      error: {
-        container: 'border-rose-200/80 bg-rose-50/90 shadow-rose-200/70',
-        accent: 'bg-rose-500',
-        text: 'text-rose-800',
-      },
-    };
-
-    const styles = toneStyles[feedback.tone];
     const tabLabel = feedback.tab ? extractionTabMeta[feedback.tab].title : null;
 
     return (
-      <div className="pointer-events-none fixed bottom-6 right-6 z-50 flex max-w-sm justify-end">
-        <div
-          className={`pointer-events-auto flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-sm shadow-lg ${styles.container} ${styles.text}`}
-        >
-          <span className={`mt-1 inline-flex h-2 w-2 flex-none rounded-full ${styles.accent}`} aria-hidden />
-          <div className="flex-1 space-y-1">
-            {tabLabel ? <p className="text-xs font-semibold uppercase tracking-[0.22em]">{tabLabel}</p> : null}
-            <p className="text-sm leading-5">{feedback.message}</p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setFeedback(null)}
-            className="ml-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-white/80 text-xs font-semibold text-slate-500 shadow-sm transition hover:bg-white hover:text-slate-700"
-            aria-label="Dismiss notification"
-          >
-            ×
-          </button>
-        </div>
-      </div>
+      <ToastViewport>
+        <Toast tone={TOAST_TONE[feedback.tone]} onDismiss={() => setFeedback(null)}>
+          {tabLabel ? <p className={t.label}>{tabLabel}</p> : null}
+          <p className={t.body}>{feedback.message}</p>
+        </Toast>
+      </ToastViewport>
     );
   };
 
@@ -544,28 +520,29 @@ useEffect(() => {
       <div className="space-y-4">
         {showTitle ? (
           <div className="space-y-1">
-            <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
-            <p className="text-xs text-slate-500">
+            <h3 className={t.section}>{item.label}</h3>
+            <p className={t.caption}>
               {extractionTabMeta[item.tab].description}
               {isLiteModel ? ' (using Lite backup)' : null}
             </p>
           </div>
         ) : (
-          <p className="text-xs text-slate-500">
+          <p className={t.caption}>
             {extractionTabMeta[item.tab].description}
             {isLiteModel ? ' (using Lite backup)' : null}
           </p>
         )}
         <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
+          <Button
+            variant="primary"
+            size="sm"
+            icon={<Sparkle weight="fill" />}
+            loading={isPending}
             onClick={() => handleExtraction(item.tab)}
-            disabled={isPending}
-            className="inline-flex items-center justify-center rounded-full border border-indigo-200/70 bg-indigo-50/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-600 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 disabled:opacity-60"
           >
-            {isPending ? 'Extracting…' : 'Auto-extract selected data'}
-          </button>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-400">Gemini assist</span>
+            Auto-extract selected data
+          </Button>
+          <Tag>Gemini assist</Tag>
         </div>
         <div className={gridClassName}>
           {item.fields.map((field) => {
@@ -630,11 +607,11 @@ useEffect(() => {
       <div className="space-y-4">
         {showTitle ? (
           <div className="space-y-1">
-            <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
-            <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+            <h3 className={t.section}>{item.label}</h3>
+            <p className={t.caption}>{extractionTabMeta[item.tab].description}</p>
           </div>
         ) : (
-          <p className="text-xs text-slate-500">{extractionTabMeta[item.tab].description}</p>
+          <p className={t.caption}>{extractionTabMeta[item.tab].description}</p>
         )}
         {hasGroups ? (
           <div className="space-y-5">
@@ -647,10 +624,10 @@ useEffect(() => {
                 }
                 return orderA - orderB;
               });
-              
+
               // Use table editor for the 4 metric-based tabs
               const useTableEditor = ['injuryTissueType', 'injuryLocation', 'illnessRegion', 'illnessEtiology'].includes(item.tab);
-              
+
               return useTableEditor ? (
                 <ManualGroupTableEditor
                   key={group.label}
@@ -697,8 +674,8 @@ useEffect(() => {
     <div className="space-y-8">
       <div className="space-y-4">
         <div className="space-y-1">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">AI extraction</h2>
-          <p className="text-xs text-slate-500">Let Gemini draft the first four tabs for you.</p>
+          <h2 className={t.label}>AI extraction</h2>
+          <p className={t.caption}>Let Gemini draft the first four tabs for you.</p>
         </div>
         <div className="space-y-3">
           {aiTabs.map((item) => {
@@ -713,18 +690,19 @@ useEffect(() => {
                     aiAccordionRefs.current.delete(item.tab);
                   }
                 }}
-                className="scroll-mt-32 rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm"
+                className="scroll-mt-32 overflow-hidden rounded-card border border-line bg-surface shadow-e1"
               >
                 <button
                   type="button"
                   onClick={() => toggleAiTab(item.tab)}
-                  className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left"
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left focus-visible:outline-none focus-visible:shadow-focus"
                 >
-                  <span className="text-sm font-semibold text-slate-900">{item.label}</span>
-                  <span className="text-xs text-slate-500">{isOpen ? 'Hide details' : 'Show details'}</span>
+                  <span className={cn(t.body, 'font-semibold text-ink')}>{item.label}</span>
+                  <span className={t.caption}>{isOpen ? 'Hide details' : 'Show details'}</span>
                 </button>
                 {isOpen ? (
-                  <div className="space-y-4 border-t border-slate-200/60 px-6 py-5">
+                  <div className="space-y-4 border-t border-line px-5 py-5">
                     {renderAiCard(item, 'accordion', false)}
                   </div>
                 ) : null}
@@ -736,8 +714,8 @@ useEffect(() => {
 
       <div className="space-y-4">
         <div className="space-y-1">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Manual entry</h2>
-          <p className="text-xs text-slate-500">Complete the remaining tabs after reviewing the AI draft.</p>
+          <h2 className={t.label}>Manual entry</h2>
+          <p className={t.caption}>Complete the remaining tabs after reviewing the AI draft.</p>
         </div>
         <div className="space-y-3">
           {manualTabs.map((item) => {
@@ -753,18 +731,19 @@ useEffect(() => {
                     manualAccordionRefs.current.delete(item.tab);
                   }
                 }}
-                className="scroll-mt-32 rounded-3xl border border-slate-200/70 bg-white/90 shadow-sm"
+                className="scroll-mt-32 overflow-hidden rounded-card border border-line bg-surface shadow-e1"
               >
                 <button
                   type="button"
                   onClick={() => toggleManualTab(item.tab)}
-                  className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left"
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left focus-visible:outline-none focus-visible:shadow-focus"
                 >
-                  <span className="text-sm font-semibold text-slate-900">{item.label}</span>
-                  <span className="text-xs text-slate-500">{isOpen ? 'Hide details' : 'Show details'}</span>
+                  <span className={cn(t.body, 'font-semibold text-ink')}>{item.label}</span>
+                  <span className={t.caption}>{isOpen ? 'Hide details' : 'Show details'}</span>
                 </button>
                 {isOpen ? (
-                  <div className="space-y-4 border-t border-slate-200/60 px-6 py-5">
+                  <div className="space-y-4 border-t border-line px-5 py-5">
                     {renderManualCard(item, 'accordion', false)}
                   </div>
                 ) : null}
@@ -779,56 +758,48 @@ useEffect(() => {
   const renderTabbed = (mode: LayoutMode) => {
     const active = orderedTabs.find((item) => item.tab === activeTab) ?? orderedTabs[0];
     const isActiveAi = active ? aiExtractionTabs.has(active.tab) : false;
-    const isFull = mode === 'full';
+    const tabItems: TabItem<ExtractionTab>[] = orderedTabs.map((item) => ({
+      value: item.tab,
+      label: extractionTabMeta[item.tab].title,
+    }));
 
     return (
-      <div className="space-y-4">
-        <div
-          className={`rounded-3xl border ${
-            isFull
-              ? 'border-slate-200/80 bg-white/95 shadow-xl ring-1 ring-slate-200/70'
-              : 'border-slate-200/70 bg-white/90 shadow-sm'
-          }`}
-        >
-          <div
-            className={
-              isFull
-                ? 'flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]'
-                : 'flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,220px)_minmax(0,1fr)]'
-            }
-          >
-            <nav
-              className={`flex gap-2 overflow-x-auto border-b border-slate-200/60 px-4 py-3 text-sm text-slate-600 ${
-                isFull
-                  ? 'lg:flex-col lg:border-b-0 lg:border-r lg:px-6 lg:py-6'
-                  : 'lg:flex-col lg:border-b-0 lg:border-r lg:px-5 lg:py-6'
-              }`}
-            >
-              {orderedTabs.map((item) => {
-                const isActive = item.tab === active?.tab;
-                const tabLabel = extractionTabMeta[item.tab].title;
-                return (
-                  <button
-                    key={item.tab}
-                    type="button"
-                    onClick={() => setActiveTab(item.tab)}
-                    className={`flex-1 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition lg:flex-none lg:whitespace-normal lg:text-left lg:rounded-xl lg:px-4 lg:py-2 ${
-                      isActive ? 'bg-indigo-100/70 text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'
-                    }`}
-                  >
-                    {tabLabel}
-                  </button>
-                );
-              })}
-            </nav>
-            <div className={`space-y-4 px-4 py-5 ${isFull ? 'lg:px-8 lg:py-7' : 'lg:px-6 lg:py-6'}`}>
-              {active ? (
-                isActiveAi ? renderAiCard(active, mode) : renderManualCard(active, mode)
-              ) : (
-                <p className="text-sm text-slate-500">No extraction tabs available.</p>
-              )}
-            </div>
-          </div>
+      <div
+        className={cn(
+          'overflow-hidden rounded-card border border-line bg-surface shadow-e1',
+          // A left rail on desktop so all ten tab names stay visible at once; a
+          // scrolling bar below lg, where a rail would eat the content width.
+          'lg:grid',
+          mode === 'full'
+            ? 'lg:grid-cols-[minmax(0,240px)_minmax(0,1fr)]'
+            : 'lg:grid-cols-[minmax(0,220px)_minmax(0,1fr)]',
+        )}
+      >
+        {active ? (
+          <>
+            <Tabs
+              items={tabItems}
+              value={active.tab}
+              onChange={setActiveTab}
+              label="Extraction tabs"
+              className="px-4 lg:hidden"
+            />
+            <Tabs
+              items={tabItems}
+              value={active.tab}
+              onChange={setActiveTab}
+              label="Extraction tabs"
+              orientation="vertical"
+              className={cn('hidden border-line lg:flex lg:border-r lg:py-5', mode === 'full' ? 'lg:px-4' : 'lg:px-3')}
+            />
+          </>
+        ) : null}
+        <div className={cn('min-w-0 space-y-4 px-4 py-5', mode === 'full' ? 'lg:px-8 lg:py-7' : 'lg:px-6 lg:py-6')}>
+          {active ? (
+            isActiveAi ? renderAiCard(active, mode) : renderManualCard(active, mode)
+          ) : (
+            <p className={t.body}>No extraction tabs available.</p>
+          )}
         </div>
       </div>
     );
@@ -841,32 +812,19 @@ useEffect(() => {
         <section className="space-y-4">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-1">
-              <h2 className="text-lg font-semibold text-slate-900">Extraction workspace</h2>
-              <p className="text-xs text-slate-500">{getLayoutHelper()}</p>
+              <h2 className={t.section}>Extraction workspace</h2>
+              <p className={t.caption}>{getLayoutHelper()}</p>
             </div>
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-              <div className="inline-flex rounded-full bg-slate-800/60 p-1 text-xs font-semibold text-slate-300 shadow-inner">
-                {layoutOptions.map((option) => (
-                  <button
-                    key={option.id}
-                    type="button"
-                    onClick={() => handleLayoutChange(option.id)}
-                    className={`rounded-full px-3 py-1.5 transition ${
-                      layout === option.id
-                        ? 'bg-indigo-600 text-white shadow'
-                        : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
-              <Link
-                href="/settings/api"
-                className="text-xs font-semibold uppercase tracking-wide text-indigo-600 underline"
-              >
+              <Segmented
+                items={layoutOptions.map((option) => ({ value: option.id, label: option.label }))}
+                value={layout}
+                onChange={handleLayoutChange}
+                label="Extraction layout"
+              />
+              <ButtonLink href="/settings/api" variant="ghost" size="sm">
                 API settings
-              </Link>
+              </ButtonLink>
             </div>
           </div>
           {layout === 'accordion' ? renderAccordion() : null}

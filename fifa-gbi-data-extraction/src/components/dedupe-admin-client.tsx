@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
+import { Button, EmptyState, Pill, Tag, t } from '@/components/ui';
+import type { Tone } from '@/components/ui';
 import { formatDateTimeUTC } from '@/lib/format';
 import type { DedupePaperSummary, PaperDuplicate } from '@/lib/types';
 
@@ -26,6 +28,13 @@ const reasonCopy: Record<string, string> = {
   exact_key: 'Exact key (title/author/year)',
   fuzzy_title: 'Fuzzy title match',
   filename: 'Filename similarity',
+};
+
+const statusTone: Record<PaperDuplicate['status'], Tone> = {
+  unreviewed: 'attention',
+  confirmed_duplicate: 'negative',
+  not_duplicate: 'positive',
+  dismissed: 'neutral',
 };
 
 export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
@@ -145,24 +154,23 @@ export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
   const renderPaper = (paperId: string) => {
     const paper = paperMap.get(paperId);
     if (!paper) {
-      return <span className="text-sm text-rose-600">Unknown paper</span>;
+      return <span className="text-[13px] font-medium text-negative-ink">Unknown paper</span>;
     }
     return (
-      <div className="space-y-1">
-        <div className="text-sm font-semibold text-slate-900">{paper.title}</div>
-        <div className="text-xs text-slate-600">
-          ID: {paper.assignedStudyId} • Uploaded {formatDateTimeUTC(paper.createdAt)}
+      <div className="space-y-1.5">
+        <div className="text-[13px] font-semibold text-ink">{paper.title}</div>
+        <div className={t.caption}>
+          ID: {paper.assignedStudyId} · Uploaded {formatDateTimeUTC(paper.createdAt)}
         </div>
-        {paper.status === 'archived' ? (
-          <div className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
-            Archived
-          </div>
-        ) : null}
-        <div className="text-xs text-slate-500 truncate">
+        {paper.status === 'archived' ? <Pill tone="neutral" dot>Archived</Pill> : null}
+        <div className={`${t.caption} truncate`}>
           {paper.originalFileName ? `File: ${paper.originalFileName}` : null}
         </div>
-        <div className="flex gap-2 text-xs text-indigo-600">
-          <Link href={`/paper/${paper.id}`} className="hover:underline">
+        <div className="flex gap-2 text-xs">
+          <Link
+            href={`/paper/${paper.id}`}
+            className="text-navy-600 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
+          >
             Open paper
           </Link>
         </div>
@@ -199,28 +207,21 @@ export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={runScan}
-          disabled={isScanning}
-          className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow ${
-            isScanning ? 'bg-slate-500' : 'bg-indigo-600 hover:bg-indigo-500'
-          }`}
-        >
-          {isScanning ? 'Scanning…' : 'Run dedupe scan'}
-        </button>
-        <button
-          type="button"
-          onClick={refreshDuplicates}
-          disabled={isRefreshing}
-          className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 border border-slate-200 hover:bg-slate-50"
-        >
-          {isRefreshing ? 'Refreshing…' : 'Refresh list'}
-        </button>
+        <Button variant="primary" onClick={runScan} loading={isScanning}>
+          Run dedupe scan
+        </Button>
+        <Button variant="secondary" size="sm" onClick={refreshDuplicates} loading={isRefreshing}>
+          Refresh list
+        </Button>
         {actionState ? (
           <span
+            role={actionState.tone === 'error' ? 'alert' : 'status'}
             className={`text-xs font-semibold ${
-              actionState.tone === 'error' ? 'text-rose-600' : actionState.tone === 'success' ? 'text-emerald-700' : 'text-slate-600'
+              actionState.tone === 'error'
+                ? 'text-negative-ink'
+                : actionState.tone === 'success'
+                  ? 'text-positive-ink'
+                  : 'text-ink-muted'
             }`}
           >
             {actionState.message}
@@ -228,8 +229,8 @@ export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
         ) : null}
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
-        <div className="grid grid-cols-12 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-600">
+      <div className="overflow-hidden rounded-card bg-surface shadow-e1">
+        <div className={`grid grid-cols-12 gap-3 border-b border-line bg-surface-sunk px-4 py-3 ${t.label}`}>
           <div className="col-span-3">Paper A (earlier upload)</div>
           <div className="col-span-3">Paper B (later upload)</div>
           <div className="col-span-2">Reason</div>
@@ -237,80 +238,64 @@ export function DedupeAdminClient({ initialDuplicates, papers }: Props) {
           <div className="col-span-2 text-right">Actions</div>
         </div>
         {visibleRows.length === 0 ? (
-          <div className="p-4 text-sm text-slate-600">No suspected duplicates. Run a scan to update.</div>
+          <EmptyState title="No suspected duplicates" description="Run a scan to update this list." />
         ) : (
           visibleRows.map((row) => {
             const { leftId, rightId } = resolveOrder(row);
             return (
-            <div
-              key={row.id}
-              className="grid grid-cols-12 items-start gap-3 border-t border-slate-100 px-4 py-3 hover:bg-slate-50/60"
-            >
-              <div className="col-span-3">{renderPaper(leftId)}</div>
-              <div className="col-span-3">{renderPaper(rightId)}</div>
-              <div className="col-span-2 text-sm text-slate-700">
-                <div className="font-semibold">{reasonCopy[row.reason] ?? row.reason}</div>
-                {row.score !== null ? <div className="text-xs text-slate-500">Score: {row.score}%</div> : null}
-              </div>
-              <div className="col-span-2 text-sm">
-                <div className="font-semibold text-slate-800">{statusCopy[row.status] ?? row.status}</div>
-                <div className="text-xs text-slate-500">
-                  Detected {formatDateTimeUTC(row.detectedAt)}
-                  {row.resolvedAt ? ` • Resolved ${formatDateTimeUTC(row.resolvedAt)}` : ''}
+              <div
+                key={row.id}
+                className="grid grid-cols-12 items-start gap-3 border-t border-line px-4 py-3 transition-colors duration-[160ms] ease-gbi hover:bg-surface-sunk"
+              >
+                <div className="col-span-3">{renderPaper(leftId)}</div>
+                <div className="col-span-3">{renderPaper(rightId)}</div>
+                <div className="col-span-2 space-y-1.5">
+                  <Tag>{reasonCopy[row.reason] ?? row.reason}</Tag>
+                  {row.score !== null ? <div className={t.caption}>Score: {row.score}%</div> : null}
                 </div>
-              </div>
+                <div className="col-span-2 space-y-1.5">
+                  <Pill tone={statusTone[row.status]} dot>
+                    {statusCopy[row.status] ?? row.status}
+                  </Pill>
+                  <div className={t.caption}>
+                    Detected {formatDateTimeUTC(row.detectedAt)}
+                    {row.resolvedAt ? `, resolved ${formatDateTimeUTC(row.resolvedAt)}` : ''}
+                  </div>
+                </div>
                 <div className="col-span-2 flex flex-col items-end gap-2">
                   <div className="flex flex-wrap justify-end gap-2">
-                    <button
-                      type="button"
-                      onClick={() => resolveDuplicate(row.id, 'confirmed_duplicate')}
-                    className="rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-800 hover:bg-amber-200"
-                  >
-                    Mark duplicate
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => resolveDuplicate(row.id, 'not_duplicate')}
-                    className="rounded-md bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-800 hover:bg-emerald-200"
-                  >
-                    Keep both
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => resolveDuplicate(row.id, 'dismissed')}
-                    className="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-200"
-                  >
-                    Dismiss
-                  </button>
-                </div>
-                <div className="flex flex-wrap justify-end gap-2">
-                  <button
-                    type="button"
-                    onClick={() => archivePaper(leftId)}
-                    disabled={archivingId === leftId || archivingId === rightId}
-                    className={`rounded-md px-2 py-1 text-xs font-semibold ${
-                      archivingId === leftId || archivingId === rightId
-                        ? 'bg-amber-50 text-amber-400 cursor-not-allowed'
-                        : 'bg-amber-100 text-amber-800 hover:bg-amber-200'
-                    }`}
-                  >
-                    {archivingId === leftId ? 'Archiving...' : 'Archive A'}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => archivePaper(rightId)}
-                    disabled={archivingId === leftId || archivingId === rightId}
-                    className={`rounded-md px-2 py-1 text-xs font-semibold ${
-                      archivingId === leftId || archivingId === rightId
-                        ? 'bg-amber-50 text-amber-400 cursor-not-allowed'
-                        : 'bg-amber-100 text-amber-800 hover:bg-amber-200'
-                    }`}
-                  >
-                    {archivingId === rightId ? 'Archiving...' : 'Archive B'}
-                  </button>
+                    <Button size="sm" onClick={() => resolveDuplicate(row.id, 'confirmed_duplicate')}>
+                      Mark duplicate
+                    </Button>
+                    <Button size="sm" onClick={() => resolveDuplicate(row.id, 'not_duplicate')}>
+                      Keep both
+                    </Button>
+                    <Button size="sm" onClick={() => resolveDuplicate(row.id, 'dismissed')}>
+                      Dismiss
+                    </Button>
+                  </div>
+                  <div className="flex flex-wrap justify-end gap-2">
+                    <Button
+                      size="sm"
+                      variant="dangerSoft"
+                      onClick={() => archivePaper(leftId)}
+                      disabled={archivingId === leftId || archivingId === rightId}
+                      loading={archivingId === leftId}
+                    >
+                      Archive A
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="dangerSoft"
+                      onClick={() => archivePaper(rightId)}
+                      disabled={archivingId === leftId || archivingId === rightId}
+                      loading={archivingId === rightId}
+                    >
+                      Archive B
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
             );
           })
         )}

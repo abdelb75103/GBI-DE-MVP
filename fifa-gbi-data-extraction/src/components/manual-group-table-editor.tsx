@@ -1,9 +1,11 @@
 'use client';
 
+import { Plus, TrashSimple } from '@phosphor-icons/react';
 import { useContext, useEffect, useMemo, useState } from 'react';
 
 import { extractionMetrics } from '@/lib/extraction/schema';
 import type { ExtractionFieldDefinition } from '@/lib/extraction/schema';
+import { Button, Input, Table, Td, Th, Tr, t } from '@/components/ui';
 import { WorkspaceSaveContext } from '@/components/workspace-save-manager';
 import type {
   ExtractionFieldMetric,
@@ -108,20 +110,20 @@ export function ManualGroupTableEditor({
     if (!field) {
       return null;
     }
-    
+
     // Map ALL rows - preserve empty strings for blank cells
     // This ensures strict 1:1 row mapping (Row 1 = Row 1, Row 2 = Row 2, etc.)
     const lines = rowState.map((row) => {
       const value = row.values[metric] ?? '';
       return value; // Explicitly return empty string if blank - preserves row position
     });
-    
+
     // Check if ANY row has content
     const hasContent = lines.some((line) => line.trim().length > 0);
     if (!hasContent) {
       return null; // Return null only if ALL rows are blank
     }
-    
+
     // Join with newlines - empty strings will create empty lines
     // This ensures all metrics have the same number of lines (same row count)
     return lines.join('\n');
@@ -219,100 +221,71 @@ export function ManualGroupTableEditor({
   const diagnosisColumnLabel = 'Injury diagnosis';
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className="border-b border-slate-200 bg-slate-50 px-4 py-3">
+    <div className="overflow-hidden rounded-card border border-line bg-surface shadow-e1">
+      <div className="border-b border-line bg-surface-sunk px-4 py-3">
         <div className="space-y-0.5">
-          <h4 className="text-base font-semibold text-slate-900">{groupLabel}</h4>
-          {groupDescription ? <p className="text-sm font-medium text-slate-500">{groupDescription}</p> : null}
+          <h4 className={t.section}>{groupLabel}</h4>
+          {groupDescription ? <p className={t.caption}>{groupDescription}</p> : null}
         </div>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+        <Table>
           <thead>
-            <tr className="border-b border-slate-200 bg-slate-50">
-              {diagnosisField ? (
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-600">
-                  {diagnosisColumnLabel}
-                </th>
-              ) : null}
+            <Tr>
+              {diagnosisField ? <Th>{diagnosisColumnLabel}</Th> : null}
               {extractionMetrics.map(({ metric, label }) => (
-                <th
-                  key={metric}
-                  className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-600"
-                >
-                  {label}
-                </th>
+                <Th key={metric}>{label}</Th>
               ))}
-              <th className="px-4 py-3"></th>
-            </tr>
+              <Th>
+                <span className="sr-only">Row actions</span>
+              </Th>
+            </Tr>
           </thead>
           <tbody>
-            {rows.map((row) => (
-              <tr key={row.id} className="border-b border-slate-100 hover:bg-slate-50/50">
+            {rows.map((row, index) => (
+              <Tr key={row.id}>
                 {diagnosisField ? (
-                  <td className="px-4 py-3">
-                    <input
+                  <Td>
+                    <Input
                       type="text"
+                      aria-label={`${diagnosisColumnLabel}, row ${index + 1}`}
                       value={row.diagnosis}
-                      onChange={(e) => handleCellChange(row.id, 'diagnosis', e.target.value)}
-                      placeholder=""
-                      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-300 focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                      onChange={(event) => handleCellChange(row.id, 'diagnosis', event.target.value)}
                     />
-                  </td>
+                  </Td>
                 ) : null}
-                {extractionMetrics.map(({ metric }) => (
-                  <td key={metric} className="px-4 py-3">
-                    <input
+                {extractionMetrics.map(({ metric, label }) => (
+                  <Td key={metric}>
+                    <Input
                       type="text"
+                      aria-label={`${label}, row ${index + 1}`}
                       value={row.values[metric] ?? ''}
-                      onChange={(e) => handleCellChange(row.id, metric, e.target.value)}
-                      placeholder=""
-                      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-300 focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                      onChange={(event) => handleCellChange(row.id, metric, event.target.value)}
                     />
-                  </td>
+                  </Td>
                 ))}
-                <td className="px-4 py-3">
-                  {rows.length > 1 && (
-                    <button
-                      type="button"
+                <Td>
+                  {rows.length > 1 ? (
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      aria-label={`Remove row ${index + 1}`}
+                      icon={<TrashSimple />}
                       onClick={() => removeRow(row.id)}
-                      className="text-slate-400 hover:text-red-600 transition"
-                      title="Remove row"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="h-5 w-5"
-                      >
-                        <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                      </svg>
-                    </button>
-                  )}
-                </td>
-              </tr>
+                    />
+                  ) : null}
+                </Td>
+              </Tr>
             ))}
           </tbody>
-        </table>
+        </Table>
       </div>
 
-      <div className="border-t border-slate-200 bg-slate-50 px-4 py-3">
-        <button
-          type="button"
-          onClick={addRow}
-          className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-white hover:text-slate-900 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="h-4 w-4"
-          >
-            <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-          </svg>
-          Add Row
-        </button>
+      <div className="border-t border-line bg-surface-sunk px-4 py-3">
+        <Button variant="ghost" size="sm" icon={<Plus weight="bold" />} onClick={addRow}>
+          Add row
+        </Button>
       </div>
     </div>
   );

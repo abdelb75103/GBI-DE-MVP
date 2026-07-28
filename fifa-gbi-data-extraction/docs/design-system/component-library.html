@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIFA GBI Component Library (proposal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-check-circle" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-x-circle" viewBox="0 0 256 256"><path d="M165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></symbol><symbol id="i-flag" viewBox="0 0 256 256"><path d="M42.76,50A8,8,0,0,0,40,56V224a8,8,0,0,0,16,0V179.77c26.79-21.16,49.87-9.75,76.45,3.41,16.4,8.11,34.06,16.85,53,16.85,13.93,0,28.54-4.75,43.82-18a8,8,0,0,0,2.76-6V56A8,8,0,0,0,218.76,50c-28,24.23-51.72,12.49-79.21-1.12C111.07,34.76,78.78,18.79,42.76,50ZM216,172.25c-26.79,21.16-49.87,9.74-76.45-3.41-25-12.35-52.81-26.13-83.55-8.4V59.79c26.79-21.16,49.87-9.75,76.45,3.4,25,12.35,52.82,26.13,83.55,8.4Z"/></symbol><symbol id="i-warning" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></symbol><symbol id="i-clock-countdown" viewBox="0 0 256 256"><path d="M232,136.66A104.12,104.12,0,1,1,119.34,24,8,8,0,0,1,120.66,40,88.12,88.12,0,1,0,216,135.34,8,8,0,0,1,232,136.66ZM120,72v56a8,8,0,0,0,8,8h56a8,8,0,0,0,0-16H136V72a8,8,0,0,0-16,0Zm40-24a12,12,0,1,0-12-12A12,12,0,0,0,160,48Zm36,24a12,12,0,1,0-12-12A12,12,0,0,0,196,72Zm24,36a12,12,0,1,0-12-12A12,12,0,0,0,220,108Z"/></symbol><symbol id="i-circle-dashed" viewBox="0 0 256 256"><path d="M96.26,37.05A8,8,0,0,1,102,27.29a104.11,104.11,0,0,1,52,0,8,8,0,0,1-2,15.75,8.15,8.15,0,0,1-2-.26,88.09,88.09,0,0,0-44,0A8,8,0,0,1,96.26,37.05ZM53.79,55.14a104.05,104.05,0,0,0-26,45,8,8,0,0,0,15.42,4.27,88,88,0,0,1,22-38.09A8,8,0,0,0,53.79,55.14ZM43.21,151.55a8,8,0,1,0-15.42,4.28,104.12,104.12,0,0,0,26,45,8,8,0,0,0,11.41-11.22A88.14,88.14,0,0,1,43.21,151.55ZM150,213.22a88,88,0,0,1-44,0,8,8,0,1,0-4,15.49,104.11,104.11,0,0,0,52,0,8,8,0,0,0-4-15.49ZM222.65,146a8,8,0,0,0-9.85,5.58,87.91,87.91,0,0,1-22,38.08,8,8,0,1,0,11.42,11.21,104,104,0,0,0,26-45A8,8,0,0,0,222.65,146Zm-9.86-41.54a8,8,0,0,0,15.42-4.28,104,104,0,0,0-26-45,8,8,0,1,0-11.41,11.22A88,88,0,0,1,212.79,104.45Z"/></symbol><symbol id="i-file-text" viewBox="0 0 256 256"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></symbol><symbol id="i-upload-simple" viewBox="0 0 256 256"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0ZM93.66,77.66,120,51.31V144a8,8,0,0,0,16,0V51.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,77.66Z"/></symbol><symbol id="i-magnifying-glass" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-arrow-up" viewBox="0 0 256 256"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></symbol><symbol id="i-arrow-down" viewBox="0 0 256 256"><path d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-sparkle" viewBox="0 0 256 256"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></symbol><symbol id="i-archive" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V88a16,16,0,0,0,16,16v88a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V104a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM208,192H48V104H208ZM224,88H32V64H224V88ZM96,136a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H104A8,8,0,0,1,96,136Z"/></symbol><symbol id="i-funnel" viewBox="0 0 256 256"><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol><symbol id="i-note-pencil" viewBox="0 0 256 256"><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-info" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"/></symbol><symbol id="i-users-three" viewBox="0 0 256 256"><path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-dots-three" viewBox="0 0 256 256"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z"/></symbol><symbol id="i-list-checks" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z"/></symbol><symbol id="i-table" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM40,112H80v32H40Zm56,0H216v32H96ZM216,64V96H40V64ZM40,160H80v32H40Zm176,32H96V160H216v32Z"/></symbol><symbol id="i-trash" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></symbol><symbol id="i-floppy-disk" viewBox="0 0 256 256"><path d="M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM168,208H88V152h80Zm40,0H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31ZM160,72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h56A8,8,0,0,1,160,72Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol><symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-moon" viewBox="0 0 256 256"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol></svg>
+
+<div class="wrap">
+
+  <!-- ============ 0. Cover ============ -->
+  <header>
+    <p class="t-label">FIFA GBI design system</p>
+    <h1 class="t-display" style="margin-top:8px;max-width:22ch">One accent, one scale, one meaning per colour.</h1>
+    <p class="t-body" style="margin-top:12px;max-width:70ch;color:var(--ink-muted)">
+      Proposal for review. Every component below replaces two to six existing variants in the app.
+      The rule that drives it: <strong style="color:var(--ink)">colour means decision state, never category</strong>.
+      Navy is the only accent. Green, red and amber are reserved for what a reviewer decided.
+      Everything else is neutral.
+    </p>
+    <div class="row" style="margin-top:16px">
+      <span class="tag">Variance 2</span>
+      <span class="tag">Motion 2</span>
+      <span class="tag">Density 6</span>
+      <span class="tag">Light and dark</span>
+      <span class="tag">WCAG AA verified</span>
+      <span class="tag">CVD verified</span>
+    </div>
+  </header>
+
+  <!-- ============ 1. Colour ============ -->
+  <section class="sec">
+    <header>
+      <h2>1. Accent ramp</h2>
+      <p>FIFA navy. Used for the primary action, active navigation, focus rings, links and selection. Nothing else. Replaces indigo, violet, purple, sky, blue and teal accents currently in use.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="grid g4" style="gap:10px">
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-50)"></div><div class="swatch__meta"><b>navy 50</b><span>#eff4fa</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-100)"></div><div class="swatch__meta"><b>navy 100</b><span>#dbe7f4</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-300)"></div><div class="swatch__meta"><b>navy 300</b><span>#8aabd6</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-500)"></div><div class="swatch__meta"><b>navy 500 hover</b><span>#12508f</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-600)"></div><div class="swatch__meta"><b>navy 600 accent</b><span>#0b3a70</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-700)"></div><div class="swatch__meta"><b>navy 700 header</b><span>#092d58</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-800)"></div><div class="swatch__meta"><b>navy 800</b><span>#072240</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--navy-900)"></div><div class="swatch__meta"><b>navy 900</b><span>#05182d</span></div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header>
+      <h2>2. State colours (reserved)</h2>
+      <p>Four states, five meanings mapped onto them, identical in title and abstract screening, full-text screening and data extraction. Every state also carries an icon and a word, so the colour is never the only signal. Checked for red-green colour blindness, not eyeballed.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="grid g4" style="gap:10px">
+      <div class="swatch"><div class="swatch__chip" style="background:var(--state-positive)"></div><div class="swatch__meta"><b>Positive</b><span>included · complete · extracted · resolved</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--state-negative)"></div><div class="swatch__meta"><b>Negative</b><span>excluded · flagged · error · destructive</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--state-attention)"></div><div class="swatch__meta"><b>Attention</b><span>conflict · in progress · needs review</span></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:var(--n-400)"></div><div class="swatch__meta"><b>Neutral</b><span>pending · uploaded · archived</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Type ============ -->
+  <section class="sec">
+    <header>
+      <h2>3. Type scale</h2>
+      <p>Geist replaces Inter. Five sizes total, plus Geist Mono for study IDs and any figure that has to line up in a column. Numbers are tabular everywhere.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="card stack" style="gap:16px">
+      <div><p class="t-label">Label 11 / 600 / 0.06em</p><p class="t-caption" style="margin-top:2px">Section eyebrows, table headers, stat labels</p></div>
+      <div><p class="t-display">786 extracted</p><p class="t-caption">Display 32 / 600 - stat values and page hero only</p></div>
+      <div><p class="t-title">Full-text screening</p><p class="t-caption">Title 22 / 600 - one per page</p></div>
+      <div><p class="t-section">Participant characteristics</p><p class="t-caption">Section 16 / 600</p></div>
+      <div><p class="t-body">Vote on full-text PDFs, resolve conflicts, and promote included studies to extraction.</p><p class="t-caption">Body 14 / 400</p></div>
+      <div><p class="t-caption">Caption 12 / 400 - helper text, metadata, counts</p></div>
+      <div><p class="t-mono">S0376 · S4615 · S1129 · 23,941 / 24,880</p><p class="t-caption">Geist Mono 12 - study IDs and aligned figures</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Buttons ============ -->
+  <section class="sec">
+    <header>
+      <h2>4. Buttons</h2>
+      <p>Four intents, three sizes. Solid navy is the only filled button on a screen. The gradient buttons (indigo to sky to emerald, teal to emerald, purple) are all replaced by this one.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="card stack" style="gap:18px">
+      <div>
+        <p class="t-label" style="margin-bottom:9px">Intent</p>
+        <div class="row">
+          <button class="btn btn--primary"><svg class="ico" fill="currentColor"><use href="#i-upload-simple"/></svg>Upload a PDF</button>
+          <button class="btn btn--secondary">Review uploads</button>
+          <button class="btn btn--ghost">Cancel</button>
+          <button class="btn btn--danger"><svg class="ico" fill="currentColor"><use href="#i-trash"/></svg>Delete study</button>
+          <button class="btn btn--secondary btn--icon" aria-label="Filter"><svg class="ico" fill="currentColor"><use href="#i-funnel"/></svg></button>
+        </div>
+      </div>
+      <div>
+        <p class="t-label" style="margin-bottom:9px">Size</p>
+        <div class="row">
+          <button class="btn btn--primary btn--sm">Small 30</button>
+          <button class="btn btn--primary">Default 36</button>
+          <button class="btn btn--primary btn--lg">Large 44</button>
+        </div>
+      </div>
+      <div>
+        <p class="t-label" style="margin-bottom:9px">State</p>
+        <div class="row">
+          <button class="btn btn--primary">Rest</button>
+          <button class="btn btn--primary" style="background:var(--navy-500)">Hover</button>
+          <button class="btn btn--primary" style="box-shadow:var(--focus)">Focus</button>
+          <button class="btn btn--primary btn--loading">Saving</button>
+          <button class="btn btn--primary" disabled>Disabled</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Status ============ -->
+  <section class="sec">
+    <header>
+      <h2>5. Status pills and category tags</h2>
+      <p>This is the biggest consolidation. Today 16 paper statuses each own a colour, which puts nine hues on one table. Six of them are workflow states and keep colour. The other ten are source families and exclusion reasons: they are categories, not states, so they become neutral tags and are told apart by their label.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="compare">
+      <div class="compare__col compare__col--before">
+        <h3>Before: 9 hues, colour carries no rule</h3>
+        <div class="compare__box row">
+          <span class="pill" style="background:#e2e8f0;color:#334155;border-color:#cbd5e1">UPLOADED</span>
+          <span class="pill" style="background:#fef3c7;color:#b45309;border-color:#fde68a">PROCESSING</span>
+          <span class="pill" style="background:#047857;color:#fff">EXTRACTED</span>
+          <span class="pill" style="background:#ffe4e6;color:#be123c;border-color:#fecdd3">FLAGGED</span>
+          <span class="pill" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd">QA REVIEW</span>
+          <span class="pill" style="background:#f3e8ff;color:#7e22ce;border-color:#e9d5ff">MENTAL HEALTH</span>
+          <span class="pill" style="background:#dbeafe;color:#1d4ed8;border-color:#bfdbfe">UEFA</span>
+          <span class="pill" style="background:#ffedd5;color:#c2410c;border-color:#fed7aa">NO EXPOSURE</span>
+          <span class="pill" style="background:#e0e7ff;color:#4338ca;border-color:#c7d2fe">FIFA DATA</span>
+          <span class="pill" style="background:#cffafe;color:#0e7490;border-color:#a5f3fc">AMERICAN DATA</span>
+          <span class="pill" style="background:#fae8ff;color:#a21caf;border-color:#f5d0fe">SYSTEMATIC REVIEW</span>
+          <span class="pill" style="background:#ede9fe;color:#6d28d9;border-color:#ddd6fe">RETROSPECTIVE</span>
+        </div>
+      </div>
+      <div class="compare__col compare__col--after">
+        <h3>After: colour only where a decision was made</h3>
+        <div class="compare__box stack" style="gap:14px">
+          <div>
+            <p class="t-label" style="margin-bottom:8px">Workflow state</p>
+            <div class="row">
+              <span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-circle-dashed"/></svg>Uploaded</span>
+              <span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-clock-countdown"/></svg>Processing</span>
+              <span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span>
+              <span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-flag"/></svg>Flagged</span>
+              <span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-list-checks"/></svg>QA review</span>
+              <span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-archive"/></svg>Archived</span>
+            </div>
+          </div>
+          <div>
+            <p class="t-label" style="margin-bottom:8px">Source family and exclusion reason</p>
+            <div class="row">
+              <span class="tag">Mental health</span>
+              <span class="tag">UEFA</span>
+              <span class="tag">No exposure</span>
+              <span class="tag">FIFA data</span>
+              <span class="tag">Aspetar ASPREV</span>
+              <span class="tag">American data</span>
+              <span class="tag">Systematic review</span>
+              <span class="tag">Referee</span>
+              <span class="tag">Retrospective sub-study</span>
+              <span class="tag">UEFA master extraction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. Decision control ============ -->
+  <section class="sec">
+    <header>
+      <h2>6. Decision controls</h2>
+      <p>The same three buttons in both screening stages. Today title and abstract uses filled emerald and rose blocks, full text uses small circular icon buttons, and extraction uses a separate flag toggle. One control, one keyboard shortcut set.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="grid g2">
+      <div class="card stack">
+        <p class="t-label">Unset</p>
+        <div class="decide">
+          <button data-kind="include" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Include</button>
+          <button data-kind="exclude" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Exclude</button>
+          <button data-kind="flag" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-flag"/></svg>Flag</button>
+        </div>
+        <p class="t-caption">Keys: I include, E exclude, F flag, J and K to move.</p>
+      </div>
+      <div class="card stack">
+        <p class="t-label">Decided</p>
+        <div class="decide">
+          <button data-kind="include" aria-pressed="true"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Include</button>
+          <button data-kind="exclude" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Exclude</button>
+          <button data-kind="flag" aria-pressed="false"><svg class="ico" fill="currentColor"><use href="#i-flag"/></svg>Flag</button>
+        </div>
+        <p class="t-caption">Your vote is recorded. A second reviewer is still outstanding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Stat tiles ============ -->
+  <section class="sec">
+    <header>
+      <h2>7. Stat tiles and meters</h2>
+      <p>The tinted tile stays. What changes is that there is now one implementation instead of five, and the tone comes from what the metric means (total, positive, attention, negative) rather than from where the tile sits in the row. Single hue per tile, value in ink.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="grid g4">
+      <div class="stat stat--total">
+        <div class="stat__label"><span class="t-label">All papers</span></div>
+        <p class="stat__value">785</p>
+        <p class="stat__meta">13 assigned to you</p>
+        <div class="stat__meter"><span style="width:100%"></span></div>
+      </div>
+      <div class="stat stat--attention">
+        <div class="stat__label"><span class="t-label">In progress</span></div>
+        <p class="stat__value">13</p>
+        <p class="stat__meta">Oldest opened 9 days ago</p>
+        <div class="stat__meter"><span style="width:12%"></span></div>
+      </div>
+      <div class="stat stat--positive">
+        <div class="stat__label"><span class="t-label">Completed</span></div>
+        <p class="stat__value">424</p>
+        <p class="stat__meta"><span class="stat__delta stat__delta--up"><svg class="ico" style="width:12px;height:12px" fill="currentColor"><use href="#i-arrow-up"/></svg>+38</span> vs last week</p>
+        <div class="stat__meter"><span style="width:92%"></span></div>
+      </div>
+      <div class="stat stat--negative">
+        <div class="stat__label"><span class="t-label">Needs attention</span></div>
+        <p class="stat__value">21</p>
+        <p class="stat__meta">17 flagged, 4 awaiting a resolver</p>
+        <div class="stat__meter"><span style="width:6%"></span></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="panel-head"><h3 class="t-section">Extraction progress</h3><span class="t-caption num">783 of 786 resolved</span></div>
+      <div class="meter-stack" style="height:10px">
+        <span style="flex:424;background:var(--state-positive)"></span>
+        <span style="flex:311;background:var(--navy-600)"></span>
+        <span style="flex:21;background:var(--state-attention)"></span>
+        <span style="flex:30;background:var(--n-300)"></span>
+      </div>
+      <div class="row" style="margin-top:12px;gap:16px">
+        <span class="t-caption row" style="gap:6px"><i style="width:8px;height:8px;border-radius:2px;background:var(--state-positive)"></i>Completed 424</span>
+        <span class="t-caption row" style="gap:6px"><i style="width:8px;height:8px;border-radius:2px;background:var(--navy-600)"></i>Tagged 311</span>
+        <span class="t-caption row" style="gap:6px"><i style="width:8px;height:8px;border-radius:2px;background:var(--state-attention)"></i>Flagged 21</span>
+        <span class="t-caption row" style="gap:6px"><i style="width:8px;height:8px;border-radius:2px;background:var(--n-300)"></i>Not started 30</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. Record rows ============ -->
+  <section class="sec">
+    <header>
+      <h2>8. Record rows</h2>
+      <p>One card for a study, used in all three queues. The 3px left rail carries the state so a reviewer can scan a column of 50 rows peripherally. Long titles truncate, the study ID is monospaced so IDs line up.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="stack">
+      <article class="record record--attention">
+        <div style="flex:1;min-width:0">
+          <div class="row" style="gap:8px;margin-bottom:5px">
+            <span class="tag tag--study">S4615</span>
+            <span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>Conflict</span>
+            <span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg>AI include</span>
+          </div>
+          <p class="t-body" style="color:var(--ink);font-weight:500">Association of Peak Height Velocity and Skeletal Maturity to Injury Incidence in Male Elite Adolescent Football (Soccer) Players</p>
+          <p class="t-caption" style="margin-top:3px">Pakarinen O · Scandinavian Journal of Medicine &amp; Science in Sports · 2023</p>
+        </div>
+        <div class="stack" style="align-items:flex-end;gap:6px">
+          <span class="t-caption num">2 of 2 votes</span>
+          <button class="btn btn--secondary btn--sm">Resolve<svg class="ico" fill="currentColor"><use href="#i-caret-right"/></svg></button>
+        </div>
+      </article>
+      <article class="record record--positive">
+        <div style="flex:1;min-width:0">
+          <div class="row" style="gap:8px;margin-bottom:5px">
+            <span class="tag tag--study">S0631</span>
+            <span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span>
+          </div>
+          <p class="t-body" style="color:var(--ink);font-weight:500">Injury Analysis of a Professional Female Soccer Team in First Division Italian Season</p>
+          <p class="t-caption" style="margin-top:3px">Pellegrini A · The Journal of Sports Medicine and Physical Fitness · 2021</p>
+        </div>
+        <div class="stack" style="align-items:flex-end;gap:6px">
+          <span class="t-caption">10 of 10 tabs</span>
+          <button class="btn btn--secondary btn--sm">Open<svg class="ico" fill="currentColor"><use href="#i-caret-right"/></svg></button>
+        </div>
+      </article>
+      <article class="record record--negative">
+        <div style="flex:1;min-width:0">
+          <div class="row" style="gap:8px;margin-bottom:5px">
+            <span class="tag tag--study">S4402</span>
+            <span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Excluded</span>
+            <span class="tag">Mental health</span>
+          </div>
+          <p class="t-body" style="color:var(--ink);font-weight:500">Mental Health Symptoms and Disorders in Elite Football: a Longitudinal Cohort of Two Competitive Seasons</p>
+          <p class="t-caption" style="margin-top:3px">Mesquita Vieira M · British Journal of Sports Medicine · 2022</p>
+        </div>
+        <div class="stack" style="align-items:flex-end;gap:6px">
+          <span class="t-caption">Excluded at full text</span>
+        </div>
+      </article>
+      <article class="record record--neutral">
+        <div style="flex:1;min-width:0">
+          <div class="row" style="gap:8px;margin-bottom:5px">
+            <span class="tag tag--study">S1129</span>
+            <span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-circle-dashed"/></svg>Needs your vote</span>
+          </div>
+          <p class="t-body" style="color:var(--ink);font-weight:500">تأثير تدريبات التصور العقلي على أداء مهارة التمرير للاعبات كرة القدم النسائية</p>
+          <p class="t-caption" style="margin-top:3px">Suha Mohamed Fikry · International Journal of Sport Science · 2024</p>
+        </div>
+        <div class="stack" style="align-items:flex-end;gap:6px">
+          <span class="t-caption">Translated PDF attached</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 9. Table ============ -->
+  <section class="sec">
+    <header>
+      <h2>9. Table</h2>
+      <p>44px rows, sticky header, hairline dividers, no zebra, numbers right aligned and tabular. On mobile the table becomes the record rows above rather than scrolling sideways.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="table-wrap">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:84px">Study</th>
+            <th>Title</th>
+            <th style="width:150px">AI suggestion</th>
+            <th style="width:130px">State</th>
+            <th class="right" style="width:90px">Votes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="t-mono">S4615</span></td>
+            <td><span class="truncate">Association of Peak Height Velocity and Skeletal Maturity to Injury Incidence</span></td>
+            <td><span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg>Include</span></td>
+            <td><span class="pill pill--attention"><svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>Conflict</span></td>
+            <td class="right">2 / 2</td>
+          </tr>
+          <tr>
+            <td><span class="t-mono">S0631</span></td>
+            <td><span class="truncate">Injury Analysis of a Professional Female Soccer Team in First Division Italian Season</span></td>
+            <td><span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg>Include</span></td>
+            <td><span class="pill pill--positive"><svg class="ico" fill="currentColor"><use href="#i-check-circle"/></svg>Extracted</span></td>
+            <td class="right">2 / 2</td>
+          </tr>
+          <tr>
+            <td><span class="t-mono">S4402</span></td>
+            <td><span class="truncate">Mental Health Symptoms and Disorders in Elite Football: a Longitudinal Cohort of Two Competitive Seasons</span></td>
+            <td><span class="pill pill--neutral">No suggestion</span></td>
+            <td><span class="pill pill--negative"><svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>Excluded</span></td>
+            <td class="right">2 / 2</td>
+          </tr>
+          <tr>
+            <td><span class="t-mono">S1129</span></td>
+            <td><span class="truncate">Effect of mental imagery training on passing skill performance in female football players</span></td>
+            <td><span class="pill pill--info"><svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg>Exclude</span></td>
+            <td><span class="pill pill--neutral"><svg class="ico" fill="currentColor"><use href="#i-circle-dashed"/></svg>Needs vote</span></td>
+            <td class="right">0 / 2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 10. Page header ============ -->
+  <section class="sec">
+    <header>
+      <h2>10. Page header</h2>
+      <p>The blob shine stays, recoloured to the navy family. The header now sits on navy instead of white so the primary action reads without competing with the stat tiles beneath it. Same component on every page, with one primary action at top right.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="pagehead">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between">
+        <div style="min-width:0">
+          <p class="t-label">Data extraction</p>
+          <h1 class="t-title" style="margin-top:7px;font-size:26px">Your extraction queue</h1>
+          <p class="t-body" style="margin-top:6px;max-width:52ch">13 papers in progress, 21 waiting on a reviewer.</p>
+        </div>
+        <div class="row">
+          <button class="btn btn--secondary">Review uploads</button>
+          <button class="btn btn--primary"><svg class="ico" fill="currentColor"><use href="#i-upload-simple"/></svg>Upload a PDF</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. Navigation ============ -->
+  <section class="sec">
+    <header>
+      <h2>11. Navigation</h2>
+      <p>The header currently shows a different link set depending on which page you are on, so items move under the cursor. One fixed set, active state as a filled navy chip rather than a hairline underline.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="card--flush card" style="padding:0">
+      <div class="appbar">
+        <span class="brand"><span class="brand__mark">GBI</span>FIFA GBI</span>
+        <nav>
+          <a href="#">Dashboard</a>
+          <a href="#">Title and abstract</a>
+          <a href="#" aria-current="page">Full text</a>
+          <a href="#">Extraction</a>
+          <a href="#">Overview</a>
+        </nav>
+        <div class="row" style="margin-left:auto;gap:8px">
+          <button class="btn btn--ghost btn--icon" aria-label="Switch theme"><svg class="ico" fill="currentColor"><use href="#i-moon"/></svg></button>
+          <button class="btn btn--secondary btn--sm">AB · Switch profile</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12. Forms ============ -->
+  <section class="sec">
+    <header>
+      <h2>12. Form controls</h2>
+      <p>Labels above inputs, one focus ring, error text below the field. Extraction field editors, note composers, search fields and the API settings form all use these.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="grid g3">
+      <div class="card stack" style="gap:14px">
+        <div class="field">
+          <label for="f1">Study title</label>
+          <input class="input" id="f1" value="Injury Analysis of a Professional Female Soccer Team">
+        </div>
+        <div class="field">
+          <label for="f2">Exposure unit</label>
+          <select class="select" id="f2"><option>1000 player hours</option><option>1000 match hours</option></select>
+        </div>
+        <label class="check"><input type="checkbox" checked>Dual-write to population groups</label>
+      </div>
+      <div class="card stack" style="gap:14px">
+        <div class="field">
+          <label for="f3">Total injuries</label>
+          <input class="input input--error" id="f3" value="41.2" aria-invalid="true">
+          <p class="field__error"><svg class="ico" style="width:13px;height:13px" fill="currentColor"><use href="#i-warning"/></svg>Counts must be whole numbers. 41.2 looks like a rate.</p>
+        </div>
+        <div class="field">
+          <label for="f4">Reviewer note</label>
+          <textarea class="textarea" id="f4" placeholder="What did you check, and where in the paper?"></textarea>
+          <p class="field__help">Notes are visible to the other reviewer on this study.</p>
+        </div>
+      </div>
+      <div class="card stack" style="gap:14px">
+        <div class="field">
+          <label for="f5">Search queue</label>
+          <input class="input" id="f5" placeholder="Title, study ID, author, DOI">
+        </div>
+        <div>
+          <p class="t-label" style="margin-bottom:8px">Filters</p>
+          <div class="row" style="gap:7px">
+            <button class="chip" aria-pressed="true">All<span class="chip__count">4,893</span></button>
+            <button class="chip">Needs my vote<span class="chip__count">0</span></button>
+            <button class="chip">Conflicts<span class="chip__count">14</span></button>
+            <button class="chip">Included<span class="chip__count">412</span></button>
+          </div>
+        </div>
+        <div>
+          <p class="t-label" style="margin-bottom:8px">View</p>
+          <div class="segmented" role="tablist">
+            <button role="tab" aria-selected="true">Accordion</button>
+            <button role="tab" aria-selected="false">Focus</button>
+            <button role="tab" aria-selected="false">Full screen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true">Study details</button>
+        <button role="tab" aria-selected="false">Participants</button>
+        <button role="tab" aria-selected="false">Definitions</button>
+        <button role="tab" aria-selected="false">Exposure</button>
+        <button role="tab" aria-selected="false">Injury outcome</button>
+        <button role="tab" aria-selected="false">Illness outcome</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13. Feedback ============ -->
+  <section class="sec">
+    <header>
+      <h2>13. Alerts, empty, loading and error</h2>
+      <p>Several screens currently have no empty or loading state at all. These are the four shapes to fill those gaps with.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="stack">
+      <div class="alert alert--attention">
+        <svg class="ico" fill="currentColor"><use href="#i-warning"/></svg>
+        <div><strong>Read-only mode</strong>You are viewing Dr. Nicol van Dyk's paper. Changes cannot be saved.</div>
+      </div>
+      <div class="alert alert--negative">
+        <svg class="ico" fill="currentColor"><use href="#i-x-circle"/></svg>
+        <div><strong>Save failed</strong>Exposure data could not be written. Your entries are still on screen. Retry, or copy them out before leaving.</div>
+      </div>
+      <div class="alert alert--info">
+        <svg class="ico" fill="currentColor"><use href="#i-sparkle"/></svg>
+        <div><strong>AI draft ready for four tabs</strong>Study details, participants, definitions and exposure were drafted. Every field still needs your confirmation.</div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <div class="empty">
+          <div class="empty__icon"><svg class="ico" fill="currentColor"><use href="#i-file-text"/></svg></div>
+          <p class="t-section">No conflicts to resolve</p>
+          <p class="t-caption" style="margin-top:5px;max-width:38ch;margin-inline:auto">Every study with two opposing votes has been settled. New conflicts appear here as reviewers vote.</p>
+          <button class="btn btn--secondary btn--sm" style="margin-top:14px">Go to my queue</button>
+        </div>
+      </div>
+      <div class="card stack" style="gap:12px">
+        <p class="t-label">Loading</p>
+        <div class="stack" style="gap:12px">
+          <div class="row" style="gap:8px"><div class="skel" style="width:56px;height:18px"></div><div class="skel" style="width:88px;height:18px;border-radius:999px"></div></div>
+          <div class="skel" style="width:100%;height:13px"></div>
+          <div class="skel" style="width:72%;height:13px"></div>
+          <div class="skel" style="width:44%;height:11px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14. Before / after ============ -->
+  <section class="sec">
+    <header>
+      <h2>14. What changes on a real screen</h2>
+      <p>The extraction dashboard tiles, side by side.</p>
+      <div class="rule"></div>
+    </header>
+    <div class="compare">
+      <div class="compare__col compare__col--before">
+        <h3>Before</h3>
+        <div class="grid g2" style="gap:10px">
+          <div style="border-radius:24px;padding:16px;background:linear-gradient(135deg,#f3e8ff,#ede9fe);box-shadow:0 10px 30px -12px rgba(139,92,246,.5)">
+            <p style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7e22ce;font-weight:600">All papers</p>
+            <p style="font-size:30px;font-weight:600;color:#7e22ce;margin-top:6px">785</p>
+            <div style="height:5px;border-radius:3px;background:linear-gradient(90deg,#a855f7,#c084fc);margin-top:12px"></div>
+          </div>
+          <div style="border-radius:24px;padding:16px;background:linear-gradient(135deg,#dbeafe,#e0f2fe);box-shadow:0 10px 30px -12px rgba(59,130,246,.5)">
+            <p style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#1d4ed8;font-weight:600">In progress</p>
+            <p style="font-size:30px;font-weight:600;color:#1d4ed8;margin-top:6px">13</p>
+            <div style="height:5px;border-radius:3px;background:linear-gradient(90deg,#3b82f6,#38bdf8);margin-top:12px"></div>
+          </div>
+          <div style="border-radius:24px;padding:16px;background:linear-gradient(135deg,#d1fae5,#ccfbf1);box-shadow:0 10px 30px -12px rgba(16,185,129,.5)">
+            <p style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#047857;font-weight:600">Completed</p>
+            <p style="font-size:30px;font-weight:600;color:#047857;margin-top:6px">424</p>
+            <div style="height:5px;border-radius:3px;background:linear-gradient(90deg,#10b981,#34d399);margin-top:12px"></div>
+          </div>
+          <div style="border-radius:24px;padding:16px;background:linear-gradient(135deg,#ffe4e6,#ffedd5);box-shadow:0 10px 30px -12px rgba(244,63,94,.5)">
+            <p style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#be123c;font-weight:600">Needs attention</p>
+            <p style="font-size:30px;font-weight:600;color:#be123c;margin-top:6px">21</p>
+            <div style="height:5px;border-radius:3px;background:linear-gradient(90deg,#f43f5e,#fb923c);margin-top:12px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="compare__col compare__col--after">
+        <h3>After</h3>
+        <div class="grid g2" style="gap:10px">
+          <div class="stat"><div class="stat__label"><span class="t-label">All papers</span></div><p class="stat__value">785</p><p class="stat__meta">13 assigned to you</p></div>
+          <div class="stat"><div class="stat__label"><span class="t-label">In progress</span></div><p class="stat__value">13</p><p class="stat__meta">Oldest opened 9 days ago</p></div>
+          <div class="stat"><div class="stat__label"><span class="t-label">Completed</span></div><p class="stat__value">424</p><p class="stat__meta"><span class="stat__delta stat__delta--up"><svg class="ico" style="width:12px;height:12px" fill="currentColor"><use href="#i-arrow-up"/></svg>+38</span> vs last week</p></div>
+          <div class="stat"><div class="stat__label"><span class="t-label">Needs attention</span></div><p class="stat__value">21</p><p class="stat__meta">17 flagged, 4 awaiting a resolver</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

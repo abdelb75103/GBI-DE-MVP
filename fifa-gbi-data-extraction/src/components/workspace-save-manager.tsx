@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useState, useTransition } from 'react';
 import type { ExtractionTab, ExtractionFieldMetric, PaperStatus } from '@/lib/types';
 import { isTaggedAutoCompleteStatus } from '@/lib/status-groups';
+import { Button, Modal, Toast, ToastViewport } from '@/components/ui';
 
 type FieldUpdate = {
   paperId: string;
@@ -66,13 +67,21 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
   const [pendingNavigation, setPendingNavigation] = useState<string | null>(null);
   const [showWarning, setShowWarning] = useState(false);
   const [paperStatus, setPaperStatus] = useState<PaperStatus>(currentStatus);
-  
+
   // Store all pending field updates locally (not saved to DB yet)
   const [pendingUpdates, setPendingUpdates] = useState<Map<string, FieldUpdate>>(new Map());
   const [shouldAutoSave, setShouldAutoSave] = useState(false);
   const [pendingAiDecisions, setPendingAiDecisionsState] = useState(0);
   const hasPendingAiDecisions = pendingAiDecisions > 0;
   const shouldBlockNavigation = hasUnsavedChanges || hasPendingAiDecisions;
+
+  // Discard is a destructive action, so it always asks a second time before it
+  // runs. `discardIntent` records why the confirmation was opened: from the
+  // standalone `handleDiscard` context method, or from the "Discard all
+  // changes" action inside the navigation-blocked modal below.
+  const [discardConfirmOpen, setDiscardConfirmOpen] = useState(false);
+  const [discardIntent, setDiscardIntent] = useState<'standalone' | 'navigation' | null>(null);
+  const [aiDecisionsBlockOpen, setAiDecisionsBlockOpen] = useState(false);
 
   useEffect(() => {
     setPaperStatus(currentStatus);
@@ -99,7 +108,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
 
       const target = e.target as HTMLElement;
       const link = target.closest('a[href]') as HTMLAnchorElement | null;
-      
+
       if (link && link.href) {
         // Check if it's an internal navigation
         const url = new URL(link.href);
@@ -266,7 +275,7 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
 
         setMessage(markComplete ? 'Saved and marked as complete' : 'Changes saved successfully');
         setHasUnsavedChanges(false);
-        
+
         // Navigate if there was a pending navigation
         if (shouldNavigate && pendingNavigation) {
           const url = new URL(pendingNavigation);
@@ -282,17 +291,42 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
     });
   };
 
+  // Entry point for a standalone discard (no pending navigation attached).
+  // Currently unused by the shipped UI, but kept on the context for future
+  // callers, so it must obey the same no-native-dialog rule as the modal below.
   const handleDiscard = () => {
     if (hasPendingAiDecisions) {
-      alert('Approve or decline all AI extracted fields before leaving.');
+      setAiDecisionsBlockOpen(true);
       return;
     }
+    setDiscardIntent('standalone');
+    setDiscardConfirmOpen(true);
+  };
 
-    if (confirm('Are you sure you want to discard all unsaved changes? This will reload the page.')) {
-      setPendingUpdates(new Map());
-      setHasUnsavedChanges(false);
+  const openDiscardConfirm = () => {
+    setDiscardIntent('navigation');
+    setDiscardConfirmOpen(true);
+  };
+
+  const confirmDiscard = () => {
+    setPendingUpdates(new Map());
+    setHasUnsavedChanges(false);
+    setDiscardConfirmOpen(false);
+    setShowModal(false);
+
+    if (discardIntent === 'navigation') {
+      if (pendingNavigation) {
+        const url = new URL(pendingNavigation);
+        router.push(`${url.pathname}${url.search}`, { scroll: true });
+        setPendingNavigation(null);
+      } else {
+        // Go back if browser back was pressed
+        window.history.back();
+      }
+    } else {
       router.refresh();
     }
+    setDiscardIntent(null);
   };
 
   return (
@@ -312,167 +346,122 @@ export function WorkspaceSaveManager({ paperId, currentStatus, children, readOnl
         setPendingAiDecisions: setPendingAiDecisionsState,
       }}
     >
-      {/* Modal when trying to leave with unsaved changes */}
-      {showModal && shouldBlockNavigation && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-md">
-          <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-2xl ring-1 ring-slate-200/60">
-            {/* Decorative gradient background */}
-            <div className="absolute -left-10 -top-16 h-56 w-56 rounded-full bg-amber-200/40 blur-3xl" aria-hidden />
-            <div className="absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-indigo-200/30 blur-3xl" aria-hidden />
-            
-            <div className="relative z-10 p-8">
-              {/* Header with icon */}
-              <div className="mb-6 flex items-start gap-4">
-                <div className="rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 p-3 shadow-sm ring-1 ring-amber-200/40">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-7 w-7 text-amber-600"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">You Have Unsaved Changes</h3>
-                  <p className="mt-1 text-sm text-slate-600">
-                    Would you like to save your work before leaving?
-                  </p>
-                </div>
-              </div>
-              
-              {/* Message */}
-              <div className="mb-6 rounded-2xl bg-slate-50/80 p-4 ring-1 ring-slate-200/40">
-                <div className="space-y-2 text-sm leading-relaxed text-slate-700">
-                  {hasUnsavedChanges ? (
-                    <p>
-                      You have <strong>{pendingUpdates.size} unsaved changes</strong>. All progress will be{' '}
-                      <strong className="text-rose-700">permanently lost</strong> if you discard. We strongly recommend saving your work.
-                    </p>
-                  ) : null}
-                  {hasPendingAiDecisions ? (
-                    <p className="text-amber-700">
-                      Approve or decline <strong>{pendingAiDecisions}</strong> AI extracted fields before leaving this paper.
-                    </p>
-                  ) : null}
-                </div>
-              </div>
-              
-              {/* Action buttons */}
-              <div className="flex flex-col gap-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleSave(true, true);
-                    setShowModal(false);
-                  }}
-                  disabled={isPending}
-                  className="w-full rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg ring-1 ring-emerald-600/20 transition hover:from-emerald-500 hover:via-emerald-400 hover:to-green-500 hover:shadow-xl disabled:opacity-50"
-                >
-                  {isPending ? 'Saving...' : 'Save & Mark Complete'}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    handleSave(false, true);
-                    setShowModal(false);
-                  }}
-                  disabled={isPending}
-                  className="w-full rounded-full border border-indigo-200/70 bg-gradient-to-r from-indigo-50 to-sky-50 px-6 py-3.5 text-sm font-semibold text-indigo-700 shadow-sm ring-1 ring-indigo-200/40 transition hover:from-indigo-100 hover:to-sky-100 hover:shadow-md disabled:opacity-50"
-                >
-                  {isPending ? 'Saving...' : 'Save & Continue Working'}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    // Double confirmation for destructive action
-                    if (confirm(`⚠️ WARNING: You are about to permanently delete ${pendingUpdates.size} unsaved changes.\n\nThis action CANNOT be undone.\n\nAre you absolutely sure you want to discard all your work?`)) {
-                      setPendingUpdates(new Map());
-                      setHasUnsavedChanges(false);
-                      setShowModal(false);
-                      if (pendingNavigation) {
-                        const url = new URL(pendingNavigation);
-                        router.push(`${url.pathname}${url.search}`, { scroll: true });
-                        setPendingNavigation(null);
-                      } else {
-                        // Go back if browser back was pressed
-                        window.history.back();
-                      }
-                    }
-                  }}
-                  disabled={isPending}
-                  className="w-full rounded-full border-2 border-rose-300 bg-white px-6 py-3.5 text-sm font-semibold text-rose-700 shadow-sm transition hover:bg-rose-50 hover:border-rose-400 hover:shadow-md disabled:opacity-50"
-                >
-                  ⚠️ Discard All {pendingUpdates.size} Changes (Cannot Undo)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowModal(false);
-                    setPendingNavigation(null);
-                  }}
-                  disabled={isPending}
-                  className="w-full rounded-full px-6 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
-                >
-                  Stay on This Page
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Warning for too many pending updates */}
-      {showWarning && pendingUpdates.size > MAX_PENDING_UPDATES && (
-        <div className="fixed bottom-24 right-6 z-50 max-w-md rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 shadow-lg">
-          <div className="flex items-start gap-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="h-5 w-5 text-amber-600 mt-0.5"
+      {/* Modal when trying to leave with unsaved changes. This must be answered:
+          "Stay on this page" is always available, but Escape and the backdrop
+          do not silently discard the warning. */}
+      <Modal
+        open={showModal && shouldBlockNavigation}
+        onClose={() => {
+          setShowModal(false);
+          setPendingNavigation(null);
+        }}
+        title="You have unsaved changes"
+        description="Would you like to save your work before leaving?"
+        dismissible={false}
+        footer={
+          <>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setShowModal(false);
+                setPendingNavigation(null);
+              }}
+              disabled={isPending}
             >
-              <path
-                fillRule="evenodd"
-                d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-amber-900">
-                You have {pendingUpdates.size} unsaved changes
-              </p>
-              <p className="text-xs text-amber-700 mt-1">
-                Consider saving soon to avoid data loss. Auto-save will trigger at {AUTO_SAVE_THRESHOLD} changes.
-              </p>
-            </div>
-            <button
-              onClick={() => setShowWarning(false)}
-              className="text-amber-600 hover:text-amber-800"
+              Stay on this page
+            </Button>
+            <Button variant="danger" onClick={openDiscardConfirm} disabled={isPending}>
+              Discard all {pendingUpdates.size} changes
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                handleSave(false, true);
+                setShowModal(false);
+              }}
+              loading={isPending}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg>
-            </button>
-          </div>
+              Save &amp; continue working
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                handleSave(true, true);
+                setShowModal(false);
+              }}
+              loading={isPending}
+            >
+              Save &amp; mark complete
+            </Button>
+          </>
+        }
+      >
+        <div className="space-y-2">
+          {hasUnsavedChanges ? (
+            <p>
+              You have <strong>{pendingUpdates.size} unsaved changes</strong>. All progress will be{' '}
+              <strong className="text-negative-ink">permanently lost</strong> if you discard. We strongly recommend
+              saving your work.
+            </p>
+          ) : null}
+          {hasPendingAiDecisions ? (
+            <p className="text-attention-ink">
+              Approve or decline <strong>{pendingAiDecisions}</strong> AI extracted fields before leaving this paper.
+            </p>
+          ) : null}
         </div>
-      )}
+      </Modal>
 
-      {/* Success/Error toasts */}
-      {message && (
-        <div className="fixed bottom-6 right-6 z-50 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 shadow-lg">
-          <p className="text-sm font-semibold text-emerald-900">{message}</p>
-        </div>
-      )}
-      {error && (
-        <div className="fixed bottom-6 right-6 z-50 rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 shadow-lg">
-          <p className="text-sm font-semibold text-rose-900">{error}</p>
-        </div>
-      )}
+      {/* Second, explicit confirmation before an irreversible discard runs. */}
+      <Modal
+        open={discardConfirmOpen}
+        onClose={() => setDiscardConfirmOpen(false)}
+        title="Discard all unsaved changes?"
+        description="This will reload the page and cannot be undone."
+        dismissible={false}
+        footer={
+          <>
+            <Button variant="secondary" onClick={() => setDiscardConfirmOpen(false)}>
+              Keep my changes
+            </Button>
+            <Button variant="danger" onClick={confirmDiscard}>
+              Discard permanently
+            </Button>
+          </>
+        }
+      >
+        <p>
+          You are about to permanently delete <strong>{pendingUpdates.size} unsaved changes</strong>. This action
+          cannot be undone.
+        </p>
+      </Modal>
+
+      {/* Informational stop when AI decisions must be resolved before discarding. */}
+      <Modal
+        open={aiDecisionsBlockOpen}
+        onClose={() => setAiDecisionsBlockOpen(false)}
+        title="Resolve AI extracted fields first"
+        description="Approve or decline all AI extracted fields before leaving this paper."
+        footer={
+          <Button variant="secondary" onClick={() => setAiDecisionsBlockOpen(false)}>
+            Ok
+          </Button>
+        }
+      />
+
+      <ToastViewport>
+        {showWarning && pendingUpdates.size > MAX_PENDING_UPDATES ? (
+          <Toast tone="attention" onDismiss={() => setShowWarning(false)}>
+            <p className="font-semibold">You have {pendingUpdates.size} unsaved changes</p>
+            <p className="mt-1 text-ink-soft">
+              Consider saving soon to avoid data loss. Auto-save will trigger at {AUTO_SAVE_THRESHOLD} changes.
+            </p>
+          </Toast>
+        ) : null}
+        {message ? <Toast tone="positive">{message}</Toast> : null}
+        {error ? <Toast tone="negative">{error}</Toast> : null}
+      </ToastViewport>
+
       {children}
     </WorkspaceSaveContext.Provider>
   );

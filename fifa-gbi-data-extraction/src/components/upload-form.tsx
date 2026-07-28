@@ -2,6 +2,8 @@
 
 import { FormEvent, useRef, useState, useTransition } from 'react';
 
+import { Alert, Button, Card, Field, Input, Tag, t } from '@/components/ui';
+
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
 const MAX_FILE_COUNT = 700;
 
@@ -144,97 +146,95 @@ export function UploadForm() {
   const dismissError = () => setError(null);
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8" encType="multipart/form-data">
-      <div>
-        <label
-          htmlFor="file"
-          className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500"
-        >
-          PDF files
-        </label>
-        <input
-          ref={fileInputRef}
-          type="file"
-          id="file"
-          name="files"
-          accept="application/pdf"
-          multiple
-          className="mt-3 block w-full cursor-pointer rounded-2xl border border-dashed border-indigo-200/70 bg-indigo-50/40 p-5 text-sm text-indigo-700 shadow-inner focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-          disabled={isPending}
-        />
-        <p className="mt-2 text-xs text-slate-500">
-          Max 20 MB per file. Upload up to {MAX_FILE_COUNT} PDFs per batch. New uploads stay hidden until an admin approves
-          them.
-        </p>
-      </div>
+    <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
+      <Field
+        label="PDF files"
+        help={
+          <>
+            Max 20 MB per file. Upload up to {MAX_FILE_COUNT} PDFs per batch. New uploads stay hidden until an admin
+            approves them.
+          </>
+        }
+      >
+        {({ id, describedBy }) => (
+          // The ref reads the FileList and clears the value after submit.
+          <Input
+            ref={fileInputRef}
+            type="file"
+            id={id}
+            name="files"
+            accept="application/pdf"
+            multiple
+            aria-describedby={describedBy}
+            className="cursor-pointer"
+            disabled={isPending}
+          />
+        )}
+      </Field>
 
       {error ? (
-        <div className="flex items-start justify-between gap-3 rounded-2xl border border-rose-200/80 bg-rose-50/90 p-4 text-sm text-rose-700 shadow-inner">
-          <p className="font-medium">{error}</p>
-          <button
-            type="button"
-            onClick={dismissError}
-            className="rounded-full border border-rose-200 bg-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-600 transition hover:bg-white/90"
-          >
-            Dismiss
-          </button>
-        </div>
+        <Alert tone="negative">
+          <div className="flex items-start justify-between gap-3">
+            <p>{error}</p>
+            <Button size="sm" variant="ghost" onClick={dismissError}>
+              Dismiss
+            </Button>
+          </div>
+        </Alert>
       ) : null}
 
       {progress ? (
-        <p className="text-sm text-slate-600">
+        <p role="status" className={t.body}>
           Uploading {progress.current} of {progress.total} PDF{progress.total === 1 ? '' : 's'}...
         </p>
       ) : null}
 
       {summary ? (
-        <div className="rounded-2xl border border-slate-200/80 bg-white/70 p-4 shadow-inner">
-          <p className="text-sm font-semibold text-slate-700">
+        <Card>
+          <p className="text-[13px] font-semibold text-ink">
             Staged {summary.successCount} of {summary.total} file{summary.total === 1 ? '' : 's'} for approval.
           </p>
           {summary.uploads.length > 0 ? (
-            <div className="mt-2 text-xs text-slate-500">
-              <p className="font-semibold text-slate-600">Awaiting admin review:</p>
-              <ul className="mt-1 space-y-1">
+            <div className="mt-2.5 space-y-2">
+              <p className={t.label}>Awaiting admin review</p>
+              <ul className="space-y-1.5">
                 {summary.uploads.slice(0, 5).map((upload) => (
-                  <li key={upload.id}>
-                    {upload.fileName}
-                    {upload.title && upload.title !== upload.fileName ? ` → ${upload.title}` : ''}
+                  <li key={upload.id} className="flex flex-wrap items-center gap-1.5 text-[13px] text-ink-body">
+                    <Tag mono>{upload.fileName}</Tag>
+                    {upload.title && upload.title !== upload.fileName ? <span>{upload.title}</span> : null}
                   </li>
                 ))}
                 {summary.uploads.length > 5 ? (
-                  <li>And {summary.uploads.length - 5} more.</li>
+                  <li className={t.caption}>And {summary.uploads.length - 5} more.</li>
                 ) : null}
               </ul>
-              <p className="mt-2 text-[11px] text-slate-500">
+              <p className={t.caption}>
                 Papers remain hidden until an admin approves them. You&apos;ll see them on the dashboard afterward.
               </p>
             </div>
           ) : null}
           {summary.failures.length > 0 ? (
-            <div className="mt-2 text-sm text-rose-600">
-              <p className="font-medium">Failed uploads:</p>
-              <ul className="mt-1 space-y-1">
+            <div className="mt-2.5 space-y-1.5">
+              <p className="text-[13px] font-semibold text-negative-ink">Failed uploads</p>
+              <ul className="space-y-1">
                 {summary.failures.slice(0, 10).map((failure, index) => (
-                  <li key={`${failure.fileName}-${index}`}>
+                  <li key={`${failure.fileName}-${index}`} className="text-[13px] text-negative-ink">
                     {failure.fileName}: {failure.reason}
                   </li>
                 ))}
-                {summary.failures.length > 10 ? <li>And {summary.failures.length - 10} more.</li> : null}
+                {summary.failures.length > 10 ? (
+                  <li className={t.caption}>And {summary.failures.length - 10} more.</li>
+                ) : null}
               </ul>
             </div>
           ) : null}
-        </div>
+        </Card>
       ) : null}
 
       <div className="flex items-center justify-end gap-3">
-        <button
-          type="submit"
-          className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:from-indigo-500 hover:via-sky-500 hover:to-emerald-500 disabled:opacity-60"
-          disabled={isPending}
-        >
+        <Button type="submit" variant="primary" size="lg" loading={isPending}>
           Upload full text
-        </button>
+        </Button>
       </div>
     </form>
   );

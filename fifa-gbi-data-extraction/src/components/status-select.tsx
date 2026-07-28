@@ -3,23 +3,28 @@
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
 
+import { statusLabel } from '@/components/status-pill';
+import { Field, Select } from '@/components/ui';
 import { useWorkspaceSave } from '@/components/workspace-save-manager';
 import type { PaperStatus } from '@/lib/types';
 
-const options: { value: PaperStatus; label: string }[] = [
-  { value: 'processing', label: 'Processing' },
-  { value: 'extracted', label: 'Extracted' },
-  { value: 'flagged', label: 'Flagged' },
-  { value: 'mental_health', label: 'Mental Health' },
-  { value: 'uefa', label: 'UEFA' },
-  { value: 'no_exposure', label: 'No Exposure' },
-  { value: 'fifa_data', label: 'FIFA Data' },
-  { value: 'aspetar_asprev', label: 'Aspetar ASPREV' },
-  { value: 'american_data', label: 'American Data' },
-  { value: 'systematic_review', label: 'Systematic Review' },
-  { value: 'referee', label: 'Referee' },
-  { value: 'retrospective_substudy_analysis', label: 'Retrospective Sub-study Analysis' },
-  { value: 'uefa_master_extraction', label: 'UEFA Master Extraction' },
+// Option values must stay byte-identical: this select drives real status
+// writes. Only the displayed label is free to change, and it is sourced from
+// `statusLabel` so it can never drift from the pill shown elsewhere.
+const STATUS_VALUES: PaperStatus[] = [
+  'processing',
+  'extracted',
+  'flagged',
+  'mental_health',
+  'uefa',
+  'no_exposure',
+  'fifa_data',
+  'aspetar_asprev',
+  'american_data',
+  'systematic_review',
+  'referee',
+  'retrospective_substudy_analysis',
+  'uefa_master_extraction',
 ];
 
 type StatusSelectProps = {
@@ -61,23 +66,28 @@ export function StatusSelect({ paperId, status }: StatusSelectProps) {
   };
 
   return (
-    <div className="space-y-2">
-      <label className="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-        Status
-      </label>
-      <select
-        className="w-full rounded-2xl border border-slate-200/70 bg-white/70 px-4 py-2.5 text-sm text-slate-900 shadow-sm transition focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-        value={value}
-        disabled={isPending}
-        onChange={(event) => handleChange(event.target.value as PaperStatus)}
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      {error ? <p className="text-xs font-medium text-rose-500">{error}</p> : null}
-    </div>
+    <Field label="Status">
+      {({ id }) => (
+        <>
+          <Select
+            id={id}
+            value={value}
+            disabled={isPending}
+            onChange={(event) => handleChange(event.target.value as PaperStatus)}
+          >
+            {STATUS_VALUES.map((option) => (
+              <option key={option} value={option}>
+                {statusLabel(option)}
+              </option>
+            ))}
+          </Select>
+          {error ? (
+            <p role="alert" className="text-xs font-medium text-negative-ink">
+              {error}
+            </p>
+          ) : null}
+        </>
+      )}
+    </Field>
   );
 }

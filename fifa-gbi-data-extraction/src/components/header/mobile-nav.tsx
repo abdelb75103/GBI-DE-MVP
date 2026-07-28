@@ -1,10 +1,10 @@
 'use client';
 
+import { X } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 import { ActiveProfileIndicator } from '@/components/header/active-profile-indicator';
-import { PrimaryNavLinks } from '@/components/header/nav-links';
-import { ThemeToggleButton } from '@/components/header/theme-toggle-button';
+import { AllNavLinks } from '@/components/header/nav-links';
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ export function MobileNav() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200/70 bg-white/80 text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-200/70"
+        className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-ctl border border-line-strong bg-surface text-ink-muted hover:border-navy-300 hover:text-ink focus-visible:outline-none focus-visible:shadow-focus"
         aria-label="Open navigation"
       >
         <span className="sr-only">Open navigation</span>
@@ -26,39 +26,32 @@ export function MobileNav() {
       </button>
 
       {isOpen ? (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm" onClick={() => setIsOpen(false)}>
+        <div className="fixed inset-0 z-50 bg-[rgba(5,24,45,0.55)]" onClick={() => setIsOpen(false)}>
           <div
-            className="absolute right-0 top-0 flex h-full w-[320px] max-w-full flex-col gap-6 overflow-y-auto border-l border-slate-200/70 bg-white/95 px-6 py-6 shadow-2xl ring-1 ring-slate-200/60"
+            className="absolute right-0 top-0 flex h-full w-[320px] max-w-full flex-col gap-6 overflow-y-auto border-l border-line bg-surface px-5 py-5 shadow-e2"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Menu</p>
+              <p className="text-[11px] font-semibold uppercase leading-[1.3] tracking-[0.06em] text-ink-soft">Menu</p>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/70 bg-white/80 text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-200/70"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-ctl border border-line-strong bg-surface text-ink-muted hover:border-navy-300 hover:text-ink focus-visible:outline-none focus-visible:shadow-focus"
                 aria-label="Close navigation"
               >
-                <span className="sr-only">Close navigation</span>
-                <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4" aria-hidden>
-                  <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                </svg>
+                <X aria-hidden weight="bold" className="h-4 w-4" />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-1 text-base font-semibold text-slate-800">
-              <PrimaryNavLinks onNavigate={() => setIsOpen(false)} />
+            <nav className="flex flex-col gap-1">
+              <AllNavLinks onNavigate={() => setIsOpen(false)} />
             </nav>
 
-            <div className="space-y-4">
-              <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm ring-1 ring-slate-200/60">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Theme</p>
-                <div className="mt-3">
-                  <ThemeToggleButton />
-                </div>
-              </div>
-              <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-sm ring-1 ring-slate-200/60">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Profile</p>
+            {/* The Theme card is hidden alongside the desktop toggle while the
+                migration is verified in light mode only. */}
+            <div className="space-y-3">
+              <div className="rounded-card bg-surface-sunk p-4 shadow-e0">
+                <p className="text-[11px] font-semibold uppercase leading-[1.3] tracking-[0.06em] text-ink-soft">Profile</p>
                 <div className="mt-3">
                   <ActiveProfileIndicator />
                 </div>

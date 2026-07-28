@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { ExtractionTabsPanel, type ExtractionTabsPanelProps, type LayoutMode } from '@/components/extraction-tabs-panel';
+import { Card, t } from '@/components/ui';
 import type { PaperSession } from '@/lib/types';
 
 export type PaperWorkspaceShellProps = {
@@ -39,14 +40,14 @@ export function PaperWorkspaceShell({
       }
     >
       {showViewer ? (
-        <section className="flex flex-col rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur xl:sticky xl:top-24 xl:self-start">
-          <div className="border-b border-slate-200/70 px-6 py-5">
-            <h2 className="text-lg font-semibold text-slate-900">PDF preview</h2>
-            <p className="text-xs text-slate-500">
+        <Card flush className="flex flex-col xl:sticky xl:top-24 xl:self-start">
+          <div className="border-b border-line px-6 py-5">
+            <h2 className={t.section}>PDF preview</h2>
+            <p className={`${t.caption} mt-1`}>
               Review the paper on the left while validating the extracted fields on the right.
             </p>
           </div>
-          <div className="relative h-full min-h-[65vh] w-full overflow-hidden rounded-b-3xl border-t border-slate-200/60 bg-slate-100/80 lg:min-h-[75vh]">
+          <div className="relative h-full min-h-[65vh] w-full overflow-hidden bg-surface-sunk lg:min-h-[75vh]">
             {viewerUrl ? (
               <object
                 data={viewerUrl}
@@ -63,7 +64,7 @@ export function PaperWorkspaceShell({
                   style={{ minHeight: '100%' }}
                   allow="fullscreen"
                 />
-                <div className="flex h-full w-full items-center justify-center bg-white p-6 text-center text-sm text-slate-600">
+                <div className="flex h-full w-full items-center justify-center bg-surface p-6 text-center text-[13px] text-ink-body">
                   Your browser does not support inline PDF preview.{' '}
                   <a href={viewerUrl} target="_blank" rel="noopener noreferrer" className="ml-1 underline">
                     Open the document in a new tab
@@ -72,10 +73,10 @@ export function PaperWorkspaceShell({
                 </div>
               </object>
             ) : (
-              <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">PDF preview coming soon.</div>
+              <div className="flex h-full w-full items-center justify-center text-[13px] text-ink-soft">PDF preview coming soon.</div>
             )}
           </div>
-        </section>
+        </Card>
       ) : null}
 
       <ExtractionTabsPanel

@@ -1,7 +1,9 @@
 'use client';
 
+import { Tray } from '@phosphor-icons/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { Button, Checkbox, EmptyState, Table, Td, Th, Tr, t } from '@/components/ui';
 import type { UploadQueueItem } from '@/lib/types';
 import { formatDateTimeUTC } from '@/lib/format';
 
@@ -91,96 +93,83 @@ export function UploadApprovalClient({ initialUploads }: Props) {
     }
   };
 
+  const actionStateClass =
+    actionState?.tone === 'error'
+      ? 'text-negative-ink'
+      : actionState?.tone === 'success'
+        ? 'text-positive-ink'
+        : 'text-ink-muted';
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={finalizeUploads}
-          disabled={busy || uploads.length === 0}
-          className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white shadow ${
-            busy ? 'bg-slate-400' : 'bg-emerald-600 hover:bg-emerald-500'
-          }`}
-        >
-          {busy ? 'Processing…' : `Approve ${totalSelected} upload${totalSelected === 1 ? '' : 's'}`}
-        </button>
-        <button
-          type="button"
-          onClick={refreshUploads}
-          disabled={busy}
-          className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50"
-        >
+        <Button variant="primary" onClick={finalizeUploads} disabled={uploads.length === 0} loading={busy}>
+          {busy ? 'Processing' : `Approve ${totalSelected} upload${totalSelected === 1 ? '' : 's'}`}
+        </Button>
+        <Button variant="secondary" size="sm" onClick={refreshUploads} disabled={busy}>
           Refresh list
-        </button>
+        </Button>
         {actionState ? (
-          <span
-            className={`text-xs font-semibold ${
-              actionState.tone === 'error'
-                ? 'text-rose-600'
-                : actionState.tone === 'success'
-                  ? 'text-emerald-700'
-                  : 'text-slate-600'
-            }`}
-          >
+          <span role={actionState.tone === 'error' ? 'alert' : 'status'} className={`text-xs font-semibold ${actionStateClass}`}>
             {actionState.message}
           </span>
         ) : null}
       </div>
-      <p className="text-xs text-slate-500">
-        All uploads start checked. Uncheck any PDFs you want to block — unchecked files will be rejected when you approve.
+      <p className={t.caption}>
+        All uploads start checked. Uncheck any PDFs you want to block: unchecked files will be rejected when you approve.
       </p>
 
       {uploads.length === 0 ? (
-        <div className="rounded-xl border border-slate-200 bg-white/70 p-6 text-center text-sm text-slate-500">
-          No pending uploads. When new PDFs arrive, they will show up here for approval.
-        </div>
+        <EmptyState
+          icon={<Tray />}
+          title="No pending uploads"
+          description="When new PDFs arrive, they will show up here for approval."
+        />
       ) : (
-        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white/80">
-          <table className="min-w-full divide-y divide-slate-100 text-sm">
-            <thead className="bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <div className="overflow-x-auto rounded-card bg-surface shadow-e1">
+          <Table>
+            <thead>
               <tr>
-                <th scope="col" className="px-4 py-3 text-left">Approve</th>
-                <th scope="col" className="px-4 py-3 text-left">Paper</th>
-                <th scope="col" className="px-4 py-3 text-left">Uploader</th>
-                <th scope="col" className="px-4 py-3 text-left">Uploaded</th>
-                <th scope="col" className="px-4 py-3 text-left">File</th>
+                <Th>Approve</Th>
+                <Th>Paper</Th>
+                <Th>Uploader</Th>
+                <Th>Uploaded</Th>
+                <Th>File</Th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 bg-white/70">
+            <tbody>
               {uploads.map((upload) => (
-                <tr key={upload.id} className="hover:bg-slate-50/70">
-                  <td className="px-4 py-3">
-                    <input
-                      type="checkbox"
+                <Tr key={upload.id}>
+                  <Td>
+                    <Checkbox
+                      label={`Approve ${upload.title}`}
+                      hideLabel
                       checked={selected[upload.id] ?? true}
                       onChange={() => toggleSelection(upload.id)}
-                      className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
                     />
-                  </td>
-                  <td className="px-4 py-3">
-                    <div className="font-semibold text-slate-900">{upload.title}</div>
-                    <div className="text-xs text-slate-500">
+                  </Td>
+                  <Td>
+                    <div className="text-[13px] font-semibold text-ink">{upload.title}</div>
+                    <div className={t.caption}>
                       {upload.leadAuthor ? `${upload.leadAuthor}${upload.year ? ` (${upload.year})` : ''}` : upload.year ?? 'Year N/A'}
                     </div>
-                    {upload.doi ? (
-                      <div className="text-[11px] text-slate-400">DOI: {upload.doi}</div>
-                    ) : null}
-                  </td>
-                  <td className="px-4 py-3 text-xs text-slate-600">
-                    <div className="font-semibold text-slate-700">{upload.createdByName ?? 'Unknown'}</div>
-                    <div className="text-[11px] text-slate-500">{upload.createdBy ?? '—'}</div>
-                  </td>
-                  <td className="px-4 py-3 text-xs text-slate-600">
-                    <div>{formatDateTimeUTC(upload.createdAt)}</div>
-                  </td>
-                  <td className="px-4 py-3 text-xs text-slate-600">
-                    <div className="font-mono text-[11px] text-slate-500">{upload.originalFileName ?? upload.fileName}</div>
-                    <div>{(upload.size / (1024 * 1024)).toFixed(2)} MB</div>
-                  </td>
-                </tr>
+                    {upload.doi ? <div className={t.caption}>DOI: {upload.doi}</div> : null}
+                  </Td>
+                  <Td>
+                    <div className="text-[13px] font-medium text-ink-body">{upload.createdByName ?? 'Unknown'}</div>
+                    <div className={t.caption}>{upload.createdBy ?? 'Unknown'}</div>
+                  </Td>
+                  <Td>
+                    <div className={t.caption}>{formatDateTimeUTC(upload.createdAt)}</div>
+                  </Td>
+                  <Td>
+                    <div className={t.mono}>{upload.originalFileName ?? upload.fileName}</div>
+                    <div className={t.caption}>{(upload.size / (1024 * 1024)).toFixed(2)} MB</div>
+                  </Td>
+                </Tr>
               ))}
             </tbody>
-          </table>
+          </Table>
         </div>
       )}
     </div>

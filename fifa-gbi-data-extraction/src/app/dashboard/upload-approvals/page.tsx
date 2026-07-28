@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 
 import { UploadApprovalClient } from '@/components/upload-approval-client';
+import { PageHead } from '@/components/ui';
 import { mockDb } from '@/lib/mock-db';
 import { readActiveProfileSession } from '@/lib/session';
 
@@ -16,13 +17,11 @@ export default async function UploadApprovalsPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold text-slate-900">Upload approvals</h1>
-        <p className="text-sm text-slate-600">
-          Newly uploaded PDFs stay hidden until you review them. Everything starts checked — uncheck any files you don&apos;t
-          want to publish, then click approve to push the rest to the dashboard.
-        </p>
-      </div>
+      <PageHead
+        eyebrow="Uploads"
+        title="Upload approvals"
+        description="Newly uploaded PDFs stay hidden until you review them. Everything starts checked. Uncheck any files you don't want to publish, then click approve to push the rest to the dashboard."
+      />
 
       <UploadApprovalClient initialUploads={uploads} />
     </div>
