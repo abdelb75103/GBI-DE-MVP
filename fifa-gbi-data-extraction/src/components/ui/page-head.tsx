@@ -33,24 +33,18 @@ export function PageHead({
     <header
       className={cn(
         'relative isolate overflow-hidden rounded-page px-7 py-6',
-        // Light in the centre, navy at the corners.
-        'bg-[radial-gradient(115%_115%_at_50%_38%,var(--n-0)_0%,var(--navy-50)_52%,var(--navy-100)_100%)]',
+        // Three layers, painted back to front: a navy blob anchored in the top
+        // left corner, a lighter blue one in the bottom right, then the base
+        // wash that lifts to near-white through the middle. Both blobs are
+        // corner-anchored with a short falloff, so they stay tucked in rather
+        // than spreading a haze across the card.
+        'bg-[radial-gradient(circle_200px_at_0%_0%,rgba(11,58,112,0.20)_0%,rgba(11,58,112,0.07)_38%,transparent_66%),radial-gradient(circle_240px_at_100%_100%,rgba(96,148,210,0.26)_0%,rgba(96,148,210,0.08)_38%,transparent_68%),radial-gradient(115%_115%_at_50%_40%,var(--n-0)_0%,var(--navy-50)_58%,var(--navy-100)_100%)]',
         'shadow-[0_1px_2px_rgba(11,58,112,0.06),0_0_0_1px_var(--navy-100)]',
-        'dark:bg-[radial-gradient(115%_115%_at_50%_38%,var(--surface-raise)_0%,#12233c_55%,#0d1b2e_100%)]',
+        'dark:bg-[radial-gradient(circle_200px_at_0%_0%,rgba(47,111,181,0.24)_0%,transparent_66%),radial-gradient(circle_240px_at_100%_100%,rgba(74,135,201,0.18)_0%,transparent_68%),radial-gradient(115%_115%_at_50%_40%,var(--surface-raise)_0%,#12233c_58%,#0d1b2e_100%)]',
         'dark:shadow-[0_1px_2px_rgba(0,0,0,0.4),0_0_0_1px_#1e3555]',
         className,
       )}
     >
-      {/* Navy at the top left, a lighter blue at the bottom right. Same family,
-          so the header has depth without a second accent. */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -left-[70px] -top-[120px] -z-10 h-[300px] w-[300px] rounded-full bg-[rgba(11,58,112,0.30)] blur-[52px] dark:bg-[rgba(47,111,181,0.28)]"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -bottom-[160px] -right-[60px] -z-10 h-[360px] w-[360px] rounded-full bg-[rgba(102,153,214,0.38)] blur-[52px] dark:bg-[rgba(74,135,201,0.22)]"
-      />
       <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
         <div className="min-w-0">
           {eyebrow ? (

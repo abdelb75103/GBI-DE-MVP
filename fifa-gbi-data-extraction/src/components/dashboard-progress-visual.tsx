@@ -48,16 +48,16 @@ export function DashboardProgressVisual({
   const completionRate = totalPapers > 0 ? Math.round((completedPapers / totalPapers) * 100) : 0;
 
   const legend: LegendRow[] = [
-    { key: 'total', label: 'Total papers', value: totalPapers, swatch: 'var(--navy-600)' },
+    { key: 'total', label: 'Total papers', value: totalPapers, swatch: 'var(--viz-total)' },
     {
       key: 'completed',
       label: 'Completed, including tagged and flagged',
       value: completedPapers,
-      swatch: 'var(--state-positive)',
+      swatch: 'var(--viz-positive)',
     },
-    { key: 'tagged', label: 'Tagged for completion', value: taggedCompletedPapers, swatch: 'var(--state-attention)' },
-    { key: 'flagged', label: 'Flagged', value: flaggedPapers, swatch: 'var(--state-negative)' },
-    { key: 'yours', label: 'Your completed', value: userCompletedPapers, swatch: 'var(--navy-400)' },
+    { key: 'tagged', label: 'Tagged for completion', value: taggedCompletedPapers, swatch: 'var(--viz-attention)' },
+    { key: 'flagged', label: 'Flagged', value: flaggedPapers, swatch: 'var(--viz-negative)' },
+    { key: 'yours', label: 'Your completed', value: userCompletedPapers, swatch: 'var(--viz-user)' },
   ];
 
   return (
@@ -77,7 +77,7 @@ export function DashboardProgressVisual({
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="var(--state-positive)"
+            stroke="var(--viz-positive)"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={completedOffset}
@@ -89,7 +89,7 @@ export function DashboardProgressVisual({
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="var(--state-attention)"
+            stroke="var(--viz-attention)"
             strokeWidth={strokeWidth - 6}
             strokeDasharray={circumference}
             strokeDashoffset={taggedOffset}
@@ -101,7 +101,7 @@ export function DashboardProgressVisual({
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="var(--state-negative)"
+            stroke="var(--viz-negative)"
             strokeWidth={strokeWidth - 9}
             strokeDasharray={circumference}
             strokeDashoffset={flaggedOffset}
@@ -113,7 +113,7 @@ export function DashboardProgressVisual({
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="var(--navy-400)"
+            stroke="var(--viz-user)"
             strokeWidth={strokeWidth - 12}
             strokeDasharray={circumference}
             strokeDashoffset={userOffset}

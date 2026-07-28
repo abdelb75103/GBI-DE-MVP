@@ -1,12 +1,13 @@
 import { cn } from '@/components/ui/cn';
 import type { Tone } from '@/components/ui/tone';
 
+// Large fills use the viz ramp; see the note beside `--viz-*` in globals.css.
 const FILL: Record<Tone, string> = {
-  positive: 'bg-positive',
-  negative: 'bg-negative',
-  attention: 'bg-attention',
-  neutral: 'bg-n-400',
-  info: 'bg-navy-600',
+  positive: 'bg-viz-positive',
+  negative: 'bg-viz-negative',
+  attention: 'bg-viz-attention',
+  neutral: 'bg-viz-neutral',
+  info: 'bg-viz-total',
 };
 
 function clamp(value: number) {

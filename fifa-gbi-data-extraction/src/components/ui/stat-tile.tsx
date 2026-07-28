@@ -32,12 +32,14 @@ const SURFACE: Record<StatTone, string> = {
     'dark:bg-[linear-gradient(135deg,var(--surface-raise)_0%,var(--surface)_62%)]',
 };
 
+// Large fills use the viz ramp, so a tile's bar and the progress ring read as
+// the same colour and stay legible at a glance.
 const BAR: Record<StatTone, string> = {
-  total: 'bg-navy-600',
-  positive: 'bg-positive',
-  attention: 'bg-attention',
-  negative: 'bg-negative',
-  neutral: 'bg-n-400',
+  total: 'bg-viz-total',
+  positive: 'bg-viz-positive',
+  attention: 'bg-viz-attention',
+  negative: 'bg-viz-negative',
+  neutral: 'bg-viz-neutral',
 };
 
 export type StatTileProps = {

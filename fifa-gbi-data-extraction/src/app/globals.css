@@ -66,6 +66,18 @@
   --state-info-tint: var(--navy-50);
   --state-info-line: var(--navy-100);
 
+  /* --- Data-display fills -------------------------------------------------
+     The state colours above are tuned to carry text at AA. A progress ring or a
+     meter bar carries no text, and at a glance it needs to read as a colour, not
+     as a tint. These are the same hues with more chroma, for large fills only.
+     Never use them for text, borders or pills. */
+  --viz-total:     var(--navy-600);
+  --viz-user:      #4a87c9;
+  --viz-positive:  #0d9488;
+  --viz-attention: #e09600;
+  --viz-negative:  #d13a2c;
+  --viz-neutral:   var(--n-400);
+
   /* --- Surfaces & ink ---------------------------------------------------- */
   --page: var(--n-50);
   --surface: var(--n-0);
@@ -178,6 +190,14 @@ html[data-theme='dark'] {
   --state-info-tint: #12233c;
   --state-info-line: #1e3555;
 
+  /* Fills lift in dark so they keep the same presence against a dark surface. */
+  --viz-total: #3b82c9;
+  --viz-user: #8ab6e8;
+  --viz-positive: #2fbfa4;
+  --viz-attention: #e8ad2e;
+  --viz-negative: #e8635a;
+  --viz-neutral: #6b7d96;
+
   --e0: 0 0 0 1px var(--line);
   --e1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--line);
   --e2: 0 12px 32px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--line);
@@ -281,6 +301,13 @@ html[data-theme='dark'] {
   --color-info-ink: var(--state-info-ink);
   --color-info-tint: var(--state-info-tint);
   --color-info-line: var(--state-info-line);
+
+  --color-viz-total: var(--viz-total);
+  --color-viz-user: var(--viz-user);
+  --color-viz-positive: var(--viz-positive);
+  --color-viz-attention: var(--viz-attention);
+  --color-viz-negative: var(--viz-negative);
+  --color-viz-neutral: var(--viz-neutral);
 
   --radius-tag: var(--r-xs);
   --radius-chk: var(--r-sm);
