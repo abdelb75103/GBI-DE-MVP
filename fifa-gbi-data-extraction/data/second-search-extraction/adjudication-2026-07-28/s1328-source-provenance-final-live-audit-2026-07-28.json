@@ -1,0 +1,66 @@
+{
+  "artifactType": "S1328 source provenance correction final live audit",
+  "generatedAt": "2026-07-28T17:33:20.143Z",
+  "result": "PASS",
+  "failures": [],
+  "operations": [
+    "updated analysisSourceTreatment only",
+    "inserted exact external-report provenance note",
+    "cleared S1328 flag_reason only after treatment and provenance verification"
+  ],
+  "before": {
+    "status": "retrospective_substudy_analysis",
+    "assignment": "00000000-0000-0000-0000-000000000001",
+    "flagReason": "Retrospective Copa America protocol analysis; athlete-exposure/source cohort is internally inconsistent (567 players; 12 vs 14 teams)",
+    "analysisSourceTreatment": {
+      "role": "audit_only",
+      "version": "2026-07-27",
+      "sourceLinks": [],
+      "populationExclusions": [],
+      "includeInAnalysisExport": false
+    }
+  },
+  "after": {
+    "status": "retrospective_substudy_analysis",
+    "assignment": "00000000-0000-0000-0000-000000000001",
+    "flagReason": null,
+    "analysisSourceTreatment": {
+      "role": "audit_only",
+      "version": "2026-07-28",
+      "sourceLinks": [],
+      "populationExclusions": [],
+      "populationTreatments": [],
+      "includeInAnalysisExport": false,
+      "requireCompletePopulationMap": false
+    },
+    "exactProvenanceNoteCount": 1
+  },
+  "counts": {
+    "files": 1,
+    "notesBefore": 2,
+    "notesAfter": 3,
+    "extractions": 8,
+    "extractionFields": 40,
+    "populationGroups": 1,
+    "populationValues": 21,
+    "screeningRecords": 1,
+    "screeningVotes": 2
+  },
+  "protectedHashBefore": "59ae82a9c69bf2b4dc5835ada46be84d7d5c49fd989a7fad491e7938d7ddd9c3",
+  "protectedHashAfter": "59ae82a9c69bf2b4dc5835ada46be84d7d5c49fd989a7fad491e7938d7ddd9c3",
+  "checks": {
+    "paperIdentity": true,
+    "statusPreserved": true,
+    "assignmentPreserved": true,
+    "flagReasonCleared": true,
+    "treatmentExact": true,
+    "auditOnlyRole": true,
+    "analysisExportExcluded": true,
+    "noLivePaperSourceLinkInvented": true,
+    "provenanceNoteExactlyOnce": true,
+    "provenanceTitlePresent": true,
+    "provenanceUrlPresent": true,
+    "independentAnalysisUseDisclaimed": true,
+    "protectedStatePreserved": true
+  }
+}
