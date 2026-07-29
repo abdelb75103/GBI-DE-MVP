@@ -32,13 +32,13 @@ export function PageHead({
   return (
     <header
       className={cn(
-        'relative isolate overflow-hidden rounded-page px-7 py-6',
+        'relative isolate overflow-hidden rounded-page px-8 py-10',
         // Three layers, painted back to front: a navy blob anchored in the top
         // left corner, a lighter blue one in the bottom right, then the base
         // wash that lifts to near-white through the middle. Both blobs are
         // corner-anchored with a short falloff, so they stay tucked in rather
         // than spreading a haze across the card.
-        'bg-[radial-gradient(circle_200px_at_0%_0%,rgba(11,58,112,0.20)_0%,rgba(11,58,112,0.07)_38%,transparent_66%),radial-gradient(circle_240px_at_100%_100%,rgba(96,148,210,0.26)_0%,rgba(96,148,210,0.08)_38%,transparent_68%),radial-gradient(115%_115%_at_50%_40%,var(--n-0)_0%,var(--navy-50)_58%,var(--navy-100)_100%)]',
+        'bg-[radial-gradient(circle_240px_at_0%_0%,rgba(11,58,112,0.26)_0%,rgba(11,58,112,0.09)_38%,transparent_66%),radial-gradient(circle_280px_at_100%_100%,rgba(72,132,204,0.32)_0%,rgba(72,132,204,0.10)_38%,transparent_68%),radial-gradient(115%_115%_at_50%_40%,var(--n-0)_0%,var(--navy-50)_58%,var(--navy-100)_100%)]',
         'shadow-[0_1px_2px_rgba(11,58,112,0.06),0_0_0_1px_var(--navy-100)]',
         'dark:bg-[radial-gradient(circle_200px_at_0%_0%,rgba(47,111,181,0.24)_0%,transparent_66%),radial-gradient(circle_240px_at_100%_100%,rgba(74,135,201,0.18)_0%,transparent_68%),radial-gradient(115%_115%_at_50%_40%,var(--surface-raise)_0%,#12233c_58%,#0d1b2e_100%)]',
         'dark:shadow-[0_1px_2px_rgba(0,0,0,0.4),0_0_0_1px_#1e3555]',

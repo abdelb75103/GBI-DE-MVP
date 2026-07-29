@@ -229,11 +229,13 @@ export function DataExtractionDashboardClient({
         ) : null}
       </Card>
 
-      {/* The library carries a seven-column table, so the exports rail only earns
-          its place once there is genuinely room for both. */}
-      <div className="grid gap-6 2xl:grid-cols-[minmax(0,2.6fr)_minmax(300px,1fr)]" id="uploads">
-        {/* `min-w-0`: a grid item defaults to `min-width: auto`, so without this
-            the table's intrinsic width pushes the whole page sideways on a phone. */}
+      {/* The library carries a seven-column table with long titles in it, so it
+          takes the full width at every size and the exports sit underneath.
+          A side rail would only narrow the one thing on the page that needs
+          room. */}
+      <div className="space-y-6" id="uploads">
+        {/* `min-w-0`: a flow item can still be pushed wide by its content, so the
+            table keeps its own scroll container rather than moving the page. */}
         <Card flush className="min-w-0">
           <div className="px-5 pt-5">
             <PanelHead
@@ -259,7 +261,13 @@ export function DataExtractionDashboardClient({
           />
         </Card>
 
-        <aside className="min-w-0 space-y-6">
+        {/* `items-start`: the export launcher is three lines tall and the history
+            beside it is however long it is. Stretching the launcher to match
+            would leave most of it empty. */}
+        {/* `minmax(0,…)` on every track, single column included: a grid track is
+            `min-width: auto` by default, so a long checksum in the history would
+            push the page sideways on a phone. */}
+        <div className="grid min-w-0 items-start gap-6 grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
           <ExportControls paperIds={activePaperIds} />
 
           <Card>
@@ -308,7 +316,7 @@ export function DataExtractionDashboardClient({
               </ul>
             )}
           </Card>
-        </aside>
+        </div>
       </div>
     </div>
   );

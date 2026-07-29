@@ -12,24 +12,29 @@ import { cn } from '@/components/ui/cn';
 export type StatTone = 'total' | 'positive' | 'attention' | 'negative' | 'neutral';
 
 /**
- * `tokens.css` gives every state tint a dark value but leaves `--navy-50` and
- * `--n-50` light, because the navy ramp is also used for things that sit on the
- * always-navy page header. So the two tones that draw on those ramps carry their
- * own dark tint here rather than the ramp being changed underneath the header.
+ * The tint holds most of the tile and only lets go near the far corner. Fading
+ * it out at the midpoint left every tile reading as white with a stain on one
+ * edge, which is not the tinted look the system asked for.
+ *
+ * `tokens.css` gives every state tint a dark value but leaves the navy and
+ * neutral ramps light, because the navy ramp is also used for things that sit on
+ * the always-navy page header. So the two tones that draw on those ramps carry
+ * their own dark tint here rather than the ramp being changed underneath the
+ * header.
  */
 const SURFACE: Record<StatTone, string> = {
   total:
-    'bg-[linear-gradient(135deg,var(--navy-50)_0%,var(--surface)_62%)] shadow-[0_1px_2px_rgba(11,58,112,.06),0_0_0_1px_var(--navy-100)] ' +
-    'dark:bg-[linear-gradient(135deg,#12233c_0%,var(--surface)_62%)] dark:shadow-[0_1px_2px_rgba(0,0,0,.4),0_0_0_1px_#1e3555]',
+    'bg-[linear-gradient(135deg,var(--navy-100)_0%,var(--surface)_86%)] shadow-[0_1px_2px_rgba(11,58,112,.06),0_0_0_1px_var(--navy-100)] ' +
+    'dark:bg-[linear-gradient(135deg,#12233c_0%,var(--surface)_86%)] dark:shadow-[0_1px_2px_rgba(0,0,0,.4),0_0_0_1px_#1e3555]',
   positive:
-    'bg-[linear-gradient(135deg,var(--state-positive-tint)_0%,var(--surface)_62%)] shadow-[0_1px_2px_rgba(15,118,110,.07),0_0_0_1px_var(--state-positive-line)]',
+    'bg-[linear-gradient(135deg,var(--state-positive-tint)_0%,var(--surface)_86%)] shadow-[0_1px_2px_rgba(15,118,110,.07),0_0_0_1px_var(--state-positive-line)]',
   attention:
-    'bg-[linear-gradient(135deg,var(--state-attention-tint)_0%,var(--surface)_62%)] shadow-[0_1px_2px_rgba(201,138,0,.08),0_0_0_1px_var(--state-attention-line)]',
+    'bg-[linear-gradient(135deg,var(--state-attention-tint)_0%,var(--surface)_86%)] shadow-[0_1px_2px_rgba(201,138,0,.08),0_0_0_1px_var(--state-attention-line)]',
   negative:
-    'bg-[linear-gradient(135deg,var(--state-negative-tint)_0%,var(--surface)_62%)] shadow-[0_1px_2px_rgba(179,38,30,.07),0_0_0_1px_var(--state-negative-line)]',
+    'bg-[linear-gradient(135deg,var(--state-negative-tint)_0%,var(--surface)_86%)] shadow-[0_1px_2px_rgba(179,38,30,.07),0_0_0_1px_var(--state-negative-line)]',
   neutral:
-    'bg-[linear-gradient(135deg,var(--n-50)_0%,var(--surface)_62%)] shadow-e1 ' +
-    'dark:bg-[linear-gradient(135deg,var(--surface-raise)_0%,var(--surface)_62%)]',
+    'bg-[linear-gradient(135deg,var(--n-100)_0%,var(--surface)_86%)] shadow-e1 ' +
+    'dark:bg-[linear-gradient(135deg,var(--surface-raise)_0%,var(--surface)_86%)]',
 };
 
 // Large fills use the viz ramp, so a tile's bar and the progress ring read as

@@ -84,41 +84,42 @@ export function DashboardProgressVisual({
             strokeLinecap="round"
           />
 
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            fill="none"
-            stroke="var(--viz-attention)"
-            strokeWidth={strokeWidth - 6}
-            strokeDasharray={circumference}
-            strokeDashoffset={taggedOffset}
-            strokeLinecap="round"
-          />
-
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            fill="none"
-            stroke="var(--viz-negative)"
-            strokeWidth={strokeWidth - 9}
-            strokeDasharray={circumference}
-            strokeDashoffset={flaggedOffset}
-            strokeLinecap="round"
-          />
-
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            fill="none"
-            stroke="var(--viz-user)"
-            strokeWidth={strokeWidth - 12}
-            strokeDasharray={circumference}
-            strokeDashoffset={userOffset}
-            strokeLinecap="round"
-          />
+          {/* The inner arcs are narrower bands sitting inside the completed one,
+              so without this they butt straight up against it and each other,
+              and two adjacent hues at the same lightness stop reading as two
+              things. Each band is drawn twice: once in the surface colour, two
+              pixels wider, which cuts a hairline gap into whatever is beneath
+              it, then in its own colour. */}
+          {[
+            { stroke: 'var(--viz-attention)', width: strokeWidth - 6, offset: taggedOffset },
+            { stroke: 'var(--viz-negative)', width: strokeWidth - 11, offset: flaggedOffset },
+            { stroke: 'var(--viz-user)', width: strokeWidth - 16, offset: userOffset },
+          ].map((band) => (
+            <g key={band.stroke}>
+              <circle
+                cx={size / 2}
+                cy={size / 2}
+                r={radius}
+                fill="none"
+                stroke="var(--surface)"
+                strokeWidth={band.width + 4}
+                strokeDasharray={circumference}
+                strokeDashoffset={band.offset}
+                strokeLinecap="round"
+              />
+              <circle
+                cx={size / 2}
+                cy={size / 2}
+                r={radius}
+                fill="none"
+                stroke={band.stroke}
+                strokeWidth={band.width}
+                strokeDasharray={circumference}
+                strokeDashoffset={band.offset}
+                strokeLinecap="round"
+              />
+            </g>
+          ))}
         </svg>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center">

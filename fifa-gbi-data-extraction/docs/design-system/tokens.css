@@ -36,18 +36,18 @@
   /* Validated: CVD-safe across all pairs, WCAG AA as ink. */
   --state-positive:      #0f766e;  /* included, complete, extracted, resolved */
   --state-positive-ink:  #0f5c56;
-  --state-positive-tint: #eaf5f2;
-  --state-positive-line: #b9dcd6;
+  --state-positive-tint: #dbf1ea;
+  --state-positive-line: #a5d6cd;
 
   --state-negative:      #b3261e;  /* excluded, flagged, error, destructive */
   --state-negative-ink:  #b3261e;
-  --state-negative-tint: #fdeceb;
-  --state-negative-line: #f3c9c6;
+  --state-negative-tint: #fce1de;
+  --state-negative-line: #f0b8b3;
 
   --state-attention:      #c98a00; /* conflict, in progress, needs review */
   --state-attention-ink:  #8a5a00;
-  --state-attention-tint: #fdf4e3;
-  --state-attention-line: #eeddb4;
+  --state-attention-tint: #fdeece;
+  --state-attention-line: #edd398;
 
   --state-neutral:      var(--n-500);  /* pending, uploaded, archived */
   --state-neutral-ink:  var(--n-600);

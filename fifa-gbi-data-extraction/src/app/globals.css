@@ -43,18 +43,18 @@
   /* Validated: CVD-safe across all pairs, WCAG AA as ink. */
   --state-positive: #0f766e; /* included, complete, extracted, resolved */
   --state-positive-ink: #0f5c56;
-  --state-positive-tint: #eaf5f2;
-  --state-positive-line: #b9dcd6;
+  --state-positive-tint: #dbf1ea;
+  --state-positive-line: #a5d6cd;
 
   --state-negative: #b3261e; /* excluded, flagged, error, destructive */
   --state-negative-ink: #b3261e;
-  --state-negative-tint: #fdeceb;
-  --state-negative-line: #f3c9c6;
+  --state-negative-tint: #fce1de;
+  --state-negative-line: #f0b8b3;
 
   --state-attention: #c98a00; /* conflict, in progress, needs review */
   --state-attention-ink: #8a5a00;
-  --state-attention-tint: #fdf4e3;
-  --state-attention-line: #eeddb4;
+  --state-attention-tint: #fdeece;
+  --state-attention-line: #edd398;
 
   --state-neutral: var(--n-500); /* pending, uploaded, archived */
   --state-neutral-ink: var(--n-600);
@@ -70,12 +70,18 @@
      The state colours above are tuned to carry text at AA. A progress ring or a
      meter bar carries no text, and at a glance it needs to read as a colour, not
      as a tint. These are the same hues with more chroma, for large fills only.
-     Never use them for text, borders or pills. */
+     Never use them for text, borders or pills.
+
+     `positive` sits in the green half of the hue circle rather than on the teal
+     of `--state-positive`. On the progress ring it is stacked directly against
+     `user`, and a teal ring beside a blue one is a hue difference of about 20
+     degrees, which nobody can read at a glance. Green against blue is about 65,
+     which is legible. Text keeps the validated teal; only the fills move. */
   --viz-total:     var(--navy-600);
-  --viz-user:      #4a87c9;
-  --viz-positive:  #0d9488;
-  --viz-attention: #e09600;
-  --viz-negative:  #d13a2c;
+  --viz-user:      #2f7fdb;
+  --viz-positive:  #0d9c62;
+  --viz-attention: #ed9b00;
+  --viz-negative:  #d93524;
   --viz-neutral:   var(--n-400);
 
   /* --- Surfaces & ink ---------------------------------------------------- */
@@ -192,10 +198,10 @@ html[data-theme='dark'] {
 
   /* Fills lift in dark so they keep the same presence against a dark surface. */
   --viz-total: #3b82c9;
-  --viz-user: #8ab6e8;
-  --viz-positive: #2fbfa4;
-  --viz-attention: #e8ad2e;
-  --viz-negative: #e8635a;
+  --viz-user: #7db3f2;
+  --viz-positive: #2ec27e;
+  --viz-attention: #f0b32e;
+  --viz-negative: #ef6154;
   --viz-neutral: #6b7d96;
 
   --e0: 0 0 0 1px var(--line);
