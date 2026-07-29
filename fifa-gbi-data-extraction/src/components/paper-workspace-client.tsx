@@ -13,7 +13,7 @@ import { StatusSelect } from '@/components/status-select';
 import { formatDateTimeUTC } from '@/lib/format';
 import type { Paper, PaperNote, StoredFile } from '@/lib/types';
 import type { ExtractionTabsPanelProps } from '@/components/extraction-tabs-panel';
-import { Alert, Button, Card, Modal, PageHead, PanelHead, t } from '@/components/ui';
+import { Alert, Button, Card, Modal, PageHead, PanelHead, t, Tag } from '@/components/ui';
 
 type PaperWorkspaceClientProps = {
   paper: Paper;
@@ -81,9 +81,10 @@ export function PaperWorkspaceClient({ paper, file, notes, tabs, viewerUrl }: Pa
         eyebrow="Paper workspace"
         title={
           <span className="inline-flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center rounded-tag border border-white/25 bg-white/10 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-normal text-white">
-              {paper.assignedStudyId}
-            </span>
+            {/* White-on-white: this was written when `PageHead` was navy. The
+                header is a light card now, so the study ID uses the ordinary
+                mono tag, same as every other screen. */}
+            <Tag mono>{paper.assignedStudyId}</Tag>
             {paper.title}
             <StatusPill status={paper.status} />
           </span>

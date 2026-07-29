@@ -194,9 +194,10 @@ export default async function PaperWorkspace({
             eyebrow="Paper workspace"
             title={
               <span className="inline-flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center rounded-tag border border-white/25 bg-white/10 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-normal text-white">
-                  {paper.assignedStudyId}
-                </span>
+                {/* White-on-white: this was written when `PageHead` was navy.
+                    The header is a light card now, so the study ID uses the
+                    ordinary mono tag, as it does on every other screen. */}
+                <Tag mono>{paper.assignedStudyId}</Tag>
                 {paper.title}
                 <StatusPill status={paper.status} />
               </span>

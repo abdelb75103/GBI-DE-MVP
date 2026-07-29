@@ -203,12 +203,17 @@ export function FullTextScreeningWorkspaceClient({
           ? 'Exclude'
           : 'Not run';
   /**
-   * The AI panel is one tone whatever the AI concluded, because a recommendation
-   * is not a decision. Only a failed run breaks out of it, and that is a state
-   * of the pipeline rather than a view on the paper. Include and exclude are
-   * told apart by the icon and the word.
+   * The AI verdict carries the decision colours: green for include, red for
+   * exclude. A failed run is amber, since that is a state of the pipeline rather
+   * than a view on the paper, and a run with no verdict is neutral.
    */
-  const aiTone: Tone = record.aiStatus === 'failed' ? 'attention' : aiHasDecision ? 'info' : 'neutral';
+  const aiTone: Tone = record.aiStatus === 'failed'
+    ? 'attention'
+    : record.aiSuggestedDecision === 'include'
+      ? 'positive'
+      : record.aiSuggestedDecision === 'exclude'
+        ? 'negative'
+        : 'neutral';
 
   const totalReviewerVotes = reviewerDecisions.length;
   const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;

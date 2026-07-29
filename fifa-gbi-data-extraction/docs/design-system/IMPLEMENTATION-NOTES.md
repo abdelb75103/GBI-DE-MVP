@@ -17,11 +17,15 @@ did not cover:
 | `--viz-positive` moved into the green half of the hue circle | On the extraction progress ring it is stacked against `--viz-user`. Teal against blue is roughly 20 degrees of hue, which nobody reads at a glance; green against blue is about 65. `--state-positive` keeps its validated teal, because only the fills moved and no fill carries text. |
 | State tints and lines gained chroma; `StatTile` holds its tint to 86% | Releasing the tint at the midpoint made every tinted tile read as a white tile with a stain on one edge. Ink on the new tints still clears AA, worst pair `ink-soft` at 3.80, its large-text floor. |
 
-**AI recommendations take the info tone, not green and red.** A row that showed
-the AI verdict, both reviewer votes and the outcome in the same two colours gave
-no indication which one was binding. Include and exclude are told apart by icon
-and word. This is the one judgement call in Phase 2 most worth revisiting if it
-reads wrong in daily use.
+**AI recommendations carry the decision colours.** Green for include, red for
+exclude, amber for a failed run, neutral for no verdict. Phase 2 first shipped
+these in the info tone, on the reasoning that a recommendation is not a decision
+and that a row showing the AI verdict, both votes and the outcome in the same two
+colours says nothing about which is binding. Abdel overruled it on 2026-07-30:
+one blue pill for both verdicts is not scannable down a 386-row queue. The word
+"AI" and the reviewer columns beside it are what say who is talking. Applies to
+the full-text queue and reader, the title and abstract detail pane, the AI marks
+in a reference row, and the AI filter dots.
 
 **Amber means work waiting on you.** On the full-text queue, needing your vote
 and needing a conflict resolved are amber; waiting on another reviewer or on a
@@ -32,7 +36,8 @@ PDF is neutral. A queue that is merely slow should not read as one in trouble.
 Migrated, with two calls carried over from Phase 2 and one new disagreement.
 
 The AI mark in a reference row and the AI recommendation pill in the detail pane
-are navy whatever they say, matching the full-text screens.
+carry the decision colours, matching the full-text screens. See the AI note under
+Phase 2 for why that is not the info tone.
 
 **`flagged` is amber here and red in extraction.** On this screen flagging is one
 of the three things the `Decide` control does, and `Decide` fills amber when the

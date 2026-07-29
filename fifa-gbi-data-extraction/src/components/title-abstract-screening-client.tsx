@@ -646,11 +646,9 @@ export function TitleAbstractScreeningClient({
               <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => handleFilterChange('flagged')} dot="attention" />
               <FilterButton label="Missing abstract" count={counts.missingAbstract} active={filter === 'missing_abstract'} onClick={() => handleFilterChange('missing_abstract')} />
               <div className="my-3 border-t border-line" />
-              {/* The AI group takes the info dot rather than green and red. What
-                  the AI proposed is not what anybody decided. */}
-              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} dot="info" />
-              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} dot="info" />
-              <FilterButton label="AI systematic review" count={counts.aiSystematicReview} active={filter === 'ai_systematic_review'} onClick={() => handleFilterChange('ai_systematic_review')} dot="info" />
+              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} dot="positive" />
+              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} dot="negative" />
+              <FilterButton label="AI systematic review" count={counts.aiSystematicReview} active={filter === 'ai_systematic_review'} onClick={() => handleFilterChange('ai_systematic_review')} dot="attention" />
               <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => handleFilterChange('ai_not_run')} />
               <div className="my-3 border-t border-line" />
               <FilterButton label="Reserved offline" count={counts.reservedOffline} active={filter === 'reserved_offline'} onClick={() => handleFilterChange('reserved_offline')} />
@@ -950,9 +948,9 @@ function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
 }
 
 /**
- * One tone whatever the AI concluded, matching the full-text screens. A
- * recommendation is not a decision, and this card sits directly above the
- * control that records one.
+ * The AI verdict carries the decision colours, matching the full-text screens:
+ * green for include, red for exclude, amber for a failed run, neutral for no
+ * verdict.
  */
 function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
   const targetLabel = record.aiTargetTag === 'systematic_review' ? 'Systematic review' : null;
@@ -966,7 +964,13 @@ function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
         : record.aiSuggestedDecision === 'exclude'
           ? 'Exclude'
           : 'Not run';
-  const tone: Tone = record.aiStatus === 'failed' ? 'attention' : hasDecision ? 'info' : 'neutral';
+  const tone: Tone = record.aiStatus === 'failed'
+    ? 'attention'
+    : record.aiSuggestedDecision === 'include'
+      ? 'positive'
+      : record.aiSuggestedDecision === 'exclude'
+        ? 'negative'
+        : 'neutral';
 
   return (
     <Card className="bg-surface-sunk shadow-e0">
@@ -1271,10 +1275,10 @@ const getAiDecisionMark = (record: ScreeningRecord): DecisionMark => {
 };
 
 /**
- * Two marks per row: what a human decided and what the AI proposed. The human
- * mark takes the decision colour. The AI mark is navy whatever it says, so a
- * scan down the list never mistakes a suggestion for a vote; which way it went
- * is in the icon and in the accessible label.
+ * Two marks per row: what a human decided and what the AI proposed. Both take
+ * the decision colour, so a row can be scanned for agreement at a glance. The
+ * marks are ordered human first, AI second, and each carries an accessible label
+ * saying which it is.
  */
 function VoteMarks({
   decisions,
@@ -1316,10 +1320,7 @@ function VoteMarks({
             role="img"
             aria-label={entry.label}
             title={entry.label}
-            className={cn(
-              'inline-flex h-4 w-4 shrink-0',
-              entry.isAi ? 'text-navy-600' : DECISION_MARK_COLOUR[entry.decision],
-            )}
+            className={cn('inline-flex h-4 w-4 shrink-0', DECISION_MARK_COLOUR[entry.decision])}
           >
             <Glyph aria-hidden weight="fill" className="h-full w-full" />
           </span>

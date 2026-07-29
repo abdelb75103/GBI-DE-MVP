@@ -760,10 +760,10 @@ function StatusPill({ status }: { status: ScreeningWorkStatus }) {
 }
 
 /**
- * An AI recommendation is a suggestion, not a decision, so it takes the info
- * tone rather than the green and red a reviewer's vote earns. Include and
- * exclude are told apart by the icon and the word. Without this, a row showed
- * three green-and-red signals in a line and none of them said which one counted.
+ * The AI carries the decision colours: green for include, red for exclude. It is
+ * a suggestion rather than a decision, so the word "AI" and the reviewer columns
+ * beside it are what say who is talking. Requested directly, over an earlier
+ * attempt at the info tone, which made include and exclude too alike to scan.
  */
 function AiSuggestion({ record }: { record: ScreeningRecord }) {
   if (record.aiStatus === 'running') {
@@ -782,14 +782,14 @@ function AiSuggestion({ record }: { record: ScreeningRecord }) {
   }
   if (record.aiSuggestedDecision === 'include') {
     return (
-      <Pill tone="info" icon={<CheckCircle weight="fill" />}>
+      <Pill tone="positive" icon={<CheckCircle weight="fill" />}>
         AI include
       </Pill>
     );
   }
   if (record.aiSuggestedDecision === 'exclude') {
     return (
-      <Pill tone="info" icon={<XCircle weight="fill" />}>
+      <Pill tone="negative" icon={<XCircle weight="fill" />}>
         AI exclude
       </Pill>
     );
