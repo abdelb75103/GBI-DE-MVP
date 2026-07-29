@@ -6,17 +6,21 @@ import { cn } from '@/components/ui/cn';
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'dangerSoft';
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
+// The base sets the border *width* only. It used to set `border-transparent`
+// too, which beat every variant's border colour in the cascade regardless of
+// class order, so `secondary` and `dangerSoft` shipped with an invisible edge.
+// Each variant now names its own colour, transparent included.
 const BASE =
-  'relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-ctl border border-transparent text-[13px] font-semibold tracking-[-0.005em] ' +
+  'relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-ctl border text-[13px] font-semibold tracking-[-0.005em] ' +
   'transition-[background-color,border-color,color,transform] duration-[160ms] ease-gbi ' +
   'focus-visible:outline-none focus-visible:shadow-focus active:enabled:translate-y-px ' +
   'disabled:cursor-not-allowed';
 
 const VARIANT: Record<ButtonVariant, string> = {
-  primary: 'bg-navy-600 text-white hover:enabled:bg-navy-500',
+  primary: 'border-transparent bg-navy-600 text-white hover:enabled:bg-navy-500',
   secondary: 'border-line-strong bg-surface text-ink hover:enabled:border-navy-300 hover:enabled:bg-n-50',
-  ghost: 'bg-transparent text-ink-muted hover:enabled:bg-surface-sunk hover:enabled:text-ink',
-  danger: 'bg-negative text-white hover:enabled:bg-[#96201a]',
+  ghost: 'border-transparent bg-transparent text-ink-muted hover:enabled:bg-surface-sunk hover:enabled:text-ink',
+  danger: 'border-transparent bg-negative text-white hover:enabled:bg-[#96201a]',
   // An engaged destructive toggle (a paper is flagged), not a destructive action.
   dangerSoft: 'border-negative-line bg-negative-tint text-negative-ink hover:enabled:border-negative',
 };

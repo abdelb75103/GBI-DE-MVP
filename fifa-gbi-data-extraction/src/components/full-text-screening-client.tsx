@@ -1,9 +1,46 @@
 'use client';
 
+import {
+  ArrowCircleUpRight,
+  CheckCircle,
+  Clock,
+  FileArrowUp,
+  Files,
+  ListChecks,
+  MagnifyingGlass,
+  UploadSimple,
+  Warning,
+  XCircle,
+} from '@phosphor-icons/react';
+import type { Icon } from '@phosphor-icons/react';
 import { ChangeEvent, useCallback, useEffect, useRef, useState, useTransition } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import {
+  Alert,
+  Button,
+  buttonClasses,
+  Card,
+  cn,
+  EmptyState,
+  Field,
+  Input,
+  Meter,
+  PageHead,
+  PanelHead,
+  Pill,
+  RecordRow,
+  StatTile,
+  Select,
+  t,
+  Table,
+  Tag,
+  Td,
+  Th,
+  Tr,
+} from '@/components/ui';
+import type { StatTone, Tone } from '@/components/ui';
 import {
   getReviewerDecisions,
   getScreeningResolution,
@@ -30,21 +67,39 @@ type Props = {
   loadError: string | null;
 };
 
-type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
-
-type CardTone = 'purple' | 'indigo' | 'sky' | 'amber' | 'emerald' | 'rose';
-
-const CARD_TONES: Record<CardTone, { gradient: string; value: string }> = {
-  purple: { gradient: 'from-purple-500/20 via-violet-400/10 to-purple-400/20', value: 'text-purple-700' },
-  indigo: { gradient: 'from-indigo-500/20 via-sky-400/10 to-indigo-400/20', value: 'text-indigo-700' },
-  sky: { gradient: 'from-sky-500/20 via-cyan-400/10 to-indigo-300/20', value: 'text-sky-700' },
-  amber: { gradient: 'from-amber-400/25 via-orange-300/15 to-amber-300/20', value: 'text-amber-700' },
-  emerald: { gradient: 'from-emerald-500/20 via-teal-400/10 to-green-400/20', value: 'text-emerald-700' },
-  rose: { gradient: 'from-rose-500/20 via-orange-400/10 to-amber-400/20', value: 'text-rose-700' },
-};
+type Notice = { tone: 'positive' | 'negative' | 'info'; message: string } | null;
 
 const MAX_FILE_BYTES = 20 * 1024 * 1024;
 const cleanDisplayTitle = (title: string) => title.replace(/^Mock QA #\d+\s*-\s*/i, '');
+
+/**
+ * The seven queue states, each with the one tone it is allowed to carry.
+ *
+ * Amber is work waiting on this reviewer: a study needing their vote, a conflict
+ * needing a third decision. Neutral is waiting on somebody else or on a file, so
+ * a queue that is merely slow does not read as a queue that is in trouble. The
+ * same map feeds the row rail and the row's pill, so the two can never disagree.
+ */
+const STATUS_META: Record<ScreeningWorkStatus, { label: string; tone: Tone; icon: Icon }> = {
+  awaiting_pdf: { label: 'Upload full text', tone: 'neutral', icon: FileArrowUp },
+  needs_your_vote: { label: 'Needs my vote', tone: 'attention', icon: ListChecks },
+  awaiting_other_reviewer: { label: 'Awaiting other reviewer', tone: 'neutral', icon: Clock },
+  ready_for_extraction: { label: 'Ready for extraction', tone: 'positive', icon: CheckCircle },
+  excluded: { label: 'Excluded', tone: 'negative', icon: XCircle },
+  conflict: { label: 'Conflict', tone: 'attention', icon: Warning },
+  promoted: { label: 'Promoted', tone: 'info', icon: ArrowCircleUpRight },
+};
+
+const FILTER_OPTIONS: { value: FullTextQueueFilter; label: string }[] = [
+  { value: 'all', label: 'All records' },
+  { value: 'awaiting_pdf', label: 'Upload full text' },
+  { value: 'needs_your_vote', label: 'Needs my vote' },
+  { value: 'awaiting_other_reviewer', label: 'Awaiting other reviewer' },
+  { value: 'ready_for_extraction', label: 'Included' },
+  { value: 'excluded', label: 'Excluded' },
+  { value: 'conflict', label: 'Conflicts' },
+  { value: 'promoted', label: 'Promoted to extraction' },
+];
 
 export function FullTextScreeningClient({
   initialQueue,
@@ -133,7 +188,7 @@ export function FullTextScreeningClient({
         if (fileInputRef.current) fileInputRef.current.value = '';
         router.refresh();
         setNotice({
-          tone: failures.length > 0 ? 'error' : 'success',
+          tone: failures.length > 0 ? 'negative' : 'positive',
           message: failures.length > 0
             ? `Uploaded ${successCount}; ${failures.length} failed. ${failures.slice(0, 2).join(' | ')}`
             : `Uploaded ${successCount} PDF${successCount === 1 ? '' : 's'} to screening.`,
@@ -150,12 +205,12 @@ export function FullTextScreeningClient({
 
     startTransition(async () => {
       if (!file.name.toLowerCase().endsWith('.pdf')) {
-        setNotice({ tone: 'error', message: `${file.name}: not a PDF` });
+        setNotice({ tone: 'negative', message: `${file.name}: not a PDF` });
         event.target.value = '';
         return;
       }
       if (file.size > MAX_FILE_BYTES) {
-        setNotice({ tone: 'error', message: `${file.name}: exceeds 20 MB` });
+        setNotice({ tone: 'negative', message: `${file.name}: exceeds 20 MB` });
         event.target.value = '';
         return;
       }
@@ -166,225 +221,192 @@ export function FullTextScreeningClient({
       const payload = await response.json().catch(() => ({})) as { error?: string };
       event.target.value = '';
       if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'PDF attach failed' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'PDF attach failed' });
         return;
       }
       router.refresh();
-      setNotice({ tone: 'success', message: `Attached ${file.name} to the full-text record.` });
+      setNotice({ tone: 'positive', message: `Attached ${file.name} to the full-text record.` });
     });
   };
 
+  const rows = records.map((record, position) => ({
+    record,
+    href: buildFullTextReaderUrl(record.id, context, position),
+  }));
+
   return (
-    <div className="mx-auto w-full max-w-screen-2xl space-y-6">
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
-        <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="relative z-10 space-y-7">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl space-y-3">
-              <span className="inline-flex w-fit items-center rounded-full bg-gradient-to-br from-teal-100/90 via-emerald-50/80 to-teal-50/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-700 shadow-sm ring-1 ring-teal-200/50 backdrop-blur-sm">
-                Full-text screening
-              </span>
-              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">Full-text screening</h1>
-              <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
-                Vote on full-text PDFs, resolve conflicts, and promote included studies to extraction.
-              </p>
-            </div>
-            {isAdmin ? (
-              <div className="flex flex-col items-stretch gap-1.5 sm:items-end">
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="application/pdf"
-                  multiple
-                  onChange={handleFilesSelected}
-                  className="hidden"
-                  id="full-text-upload"
-                />
-                <label
-                  htmlFor="full-text-upload"
-                  className={`group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(11,58,112,0.55)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#082f5d] ${
-                    isUploadPending ? 'pointer-events-none opacity-70' : ''
-                  }`}
-                >
-                  {isUploadPending ? (
-                    <>
-                      <span aria-hidden className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                      Uploading…
-                    </>
-                  ) : (
-                    <>
-                      <UploadIcon />
-                      Upload full text
-                    </>
-                  )}
-                </label>
-                <p className="text-[11px] text-slate-500">PDF only · up to 20 MB each</p>
-              </div>
-            ) : null}
-          </div>
+    <div className="space-y-6">
+      <PageHeadWithUpload
+        isAdmin={isAdmin}
+        isUploadPending={isUploadPending}
+        fileInputRef={fileInputRef}
+        onFilesSelected={handleFilesSelected}
+      />
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            <QueueCard
-              label="Upload full text"
-              value={counts.awaitingPdf}
-              detail="Included at title/abstract"
-              tone="amber"
-              onClick={() => navigateQueue({ filter: 'awaiting_pdf', page: 1 })}
-            />
-            <QueueCard
-              label="Screen studies"
-              value={counts.needsYourVote}
-              detail={`${counts.noVotes} no votes · ${counts.oneVote} one vote`}
-              action="Continue screening"
-              tone="indigo"
-              onClick={() => navigateQueue({ filter: 'needs_your_vote', page: 1 })}
-            />
-            <QueueCard
-              label="Awaiting other reviewer"
-              value={counts.awaitingOther}
-              detail="You have already voted"
-              tone="sky"
-              onClick={() => navigateQueue({ filter: 'awaiting_other_reviewer', page: 1 })}
-            />
-            <QueueCard
-              label="Resolve conflicts"
-              value={counts.conflicts}
-              detail="Third decision is final"
-              action="Continue"
-              tone="amber"
-              onClick={() => navigateQueue({ filter: 'conflict', page: 1 })}
-            />
-            <QueueCard
-              label="Complete"
-              value={counts.complete}
-              detail="Included, excluded, or promoted"
-              tone="emerald"
-              onClick={() => navigateQueue({ filter: 'ready_for_extraction', page: 1 })}
-            />
-            <QueueCard
-              label="Total records"
-              value={counts.all}
-              detail="All full-text records"
-              tone="purple"
-              onClick={() => navigateQueue({ filter: 'all', page: 1 })}
-            />
-          </div>
+      {/* Tone is what the count means, never where the tile sits in the row.
+          Amber is work waiting on this reviewer; the two counts that wait on
+          somebody else stay neutral. */}
+      <div className="grid gap-3.5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">
+        <QueueTile
+          tone="attention"
+          label="Screen studies"
+          value={counts.needsYourVote}
+          meta={`${counts.noVotes} no votes · ${counts.oneVote} one vote`}
+          onClick={() => navigateQueue({ filter: 'needs_your_vote', page: 1 })}
+        />
+        <QueueTile
+          tone="attention"
+          label="Resolve conflicts"
+          value={counts.conflicts}
+          meta="A third decision is final"
+          onClick={() => navigateQueue({ filter: 'conflict', page: 1 })}
+        />
+        <QueueTile
+          tone="neutral"
+          label="Upload full text"
+          value={counts.awaitingPdf}
+          meta="Included at title and abstract"
+          onClick={() => navigateQueue({ filter: 'awaiting_pdf', page: 1 })}
+        />
+        <QueueTile
+          tone="neutral"
+          label="Awaiting other reviewer"
+          value={counts.awaitingOther}
+          meta="You have already voted"
+          onClick={() => navigateQueue({ filter: 'awaiting_other_reviewer', page: 1 })}
+        />
+        <QueueTile
+          tone="positive"
+          label="Complete"
+          value={counts.complete}
+          meta="Included, excluded, or promoted"
+          onClick={() => navigateQueue({ filter: 'ready_for_extraction', page: 1 })}
+        />
+        <QueueTile
+          tone="total"
+          label="Total records"
+          value={counts.all}
+          meta="Every full-text record"
+          onClick={() => navigateQueue({ filter: 'all', page: 1 })}
+        />
+      </div>
 
-          <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-4 shadow-sm ring-1 ring-slate-200/50 backdrop-blur">
-            <div className="flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Full-text progress</p>
-                <p className="mt-1 text-sm text-slate-600">
-                  <span className="font-semibold tabular-nums text-slate-800">{counts.complete}</span> of{' '}
-                  <span className="font-semibold tabular-nums text-slate-800">{counts.all}</span> full-text records have a final screening outcome.
-                </p>
-              </div>
-              <p className="text-2xl font-semibold tabular-nums text-teal-700">{progressPercent}%</p>
-            </div>
-            <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/60">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-teal-700 via-teal-500 to-emerald-400 transition-[width] duration-700 ease-out"
-                style={{ width: `${progressPercent}%` }}
-              />
-            </div>
-            <div className="mt-3 grid gap-2 text-xs text-slate-600 sm:grid-cols-3">
-              <span>{counts.needsYourVote} need your vote</span>
-              <span>{counts.awaitingPdf} need PDF upload</span>
-              <span>{counts.conflicts} conflicts</span>
-            </div>
-          </div>
+      <Card>
+        <PanelHead
+          title="Full-text progress"
+          description={`${counts.complete} of ${counts.all} records have a final screening outcome.`}
+          actions={<span className={`${t.title} ${t.num} text-positive-ink`}>{progressPercent}%</span>}
+        />
+        <Meter value={progressPercent} tone="positive" label="Full-text records with a final outcome" />
+        <div className="mt-3 grid gap-1.5 sm:grid-cols-3">
+          <p className={t.caption}>{counts.needsYourVote} need your vote</p>
+          <p className={t.caption}>{counts.awaitingPdf} need a PDF upload</p>
+          <p className={t.caption}>{counts.conflicts} in conflict</p>
         </div>
-      </section>
+      </Card>
 
-      {loadError ? <Notice tone="error" message={loadError} /> : null}
+      {loadError ? <Alert tone="negative">{loadError}</Alert> : null}
       {context.notice === 'filter_empty' ? (
-        <Notice tone="neutral" message={`No more papers in “${activeFilterLabel}”.`} />
+        <Alert tone="info">No more papers in “{activeFilterLabel}”.</Alert>
       ) : null}
-      {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
+      {notice ? <Alert tone={notice.tone}>{notice.message}</Alert> : null}
 
-      <section
-        aria-busy={isPending}
-        className="overflow-hidden rounded-3xl border border-slate-200/70 bg-white/90 shadow-xl ring-1 ring-slate-200/60 backdrop-blur"
-      >
-        <div className="border-b border-slate-200/70 bg-gradient-to-b from-white to-slate-50/40 px-5 py-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="grid min-w-0 flex-1 gap-3 lg:grid-cols-[240px_minmax(0,1fr)]">
-              <select
-                value={context.filter}
-                disabled={isPending}
-                onChange={(event) => navigateQueue({ filter: event.target.value as FullTextQueueFilter, page: 1 })}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 focus:border-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                <option value="all">All records</option>
-                <option value="awaiting_pdf">Upload full text</option>
-                <option value="needs_your_vote">Needs my vote</option>
-                <option value="awaiting_other_reviewer">Awaiting other reviewer</option>
-                <option value="ready_for_extraction">Included</option>
-                <option value="excluded">Excluded</option>
-                <option value="conflict">Conflicts</option>
-                <option value="promoted">Promoted to extraction</option>
-              </select>
-              <div className="relative">
-                <span aria-hidden className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  <SearchIcon />
-                </span>
-                <input
-                  value={searchInput}
-                  onChange={(event) => setSearchInput(event.target.value)}
-                  placeholder="Search title, study ID, author, DOI..."
-                  className="w-full rounded-full border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm shadow-sm transition placeholder:text-slate-400 hover:border-slate-300 focus:border-slate-400 focus:outline-none"
-                />
-              </div>
+      <Card flush aria-busy={isPending}>
+        <div className="border-b border-line px-5 py-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div className="grid min-w-0 flex-1 gap-3 sm:grid-cols-[220px_minmax(0,1fr)]">
+              <Field label="Queue">
+                {({ id }) => (
+                  <Select
+                    id={id}
+                    value={context.filter}
+                    disabled={isPending}
+                    onChange={(event) => navigateQueue({ filter: event.target.value as FullTextQueueFilter, page: 1 })}
+                  >
+                    {FILTER_OPTIONS.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </Select>
+                )}
+              </Field>
+              {/* The search box had no label at all before this. */}
+              <Field label="Search">
+                {({ id }) => (
+                  <span className="relative block">
+                    <MagnifyingGlass
+                      aria-hidden
+                      className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-soft"
+                    />
+                    <Input
+                      id={id}
+                      value={searchInput}
+                      onChange={(event) => setSearchInput(event.target.value)}
+                      placeholder="Title, study ID, author, DOI…"
+                      className="pl-8"
+                    />
+                  </span>
+                )}
+              </Field>
             </div>
-            <div
-              className={`inline-flex min-h-9 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
-                isPending
-                  ? 'border-sky-200 bg-sky-50 text-sky-700'
-                  : 'border-transparent bg-transparent text-slate-500'
-              }`}
-              aria-live="polite"
-            >
-              {isPending ? (
-                <>
-                  <span aria-hidden className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-sky-200 border-t-sky-600" />
-                  Updating…
-                </>
-              ) : (
-                'Queue ready'
-              )}
-            </div>
+            <p className={`${t.caption} pb-2`} aria-live="polite">
+              {isPending ? 'Updating…' : 'Queue ready'}
+            </p>
           </div>
         </div>
 
-        <div className={`overflow-x-auto transition-opacity duration-200 ${isPending ? 'opacity-75' : 'opacity-100'}`}>
-          <table className="w-full min-w-[860px] border-collapse text-left text-sm">
-            <thead className="bg-slate-50/60 text-[11px] uppercase tracking-[0.18em] text-slate-500">
-              <tr>
-                <th className="px-5 py-3 font-semibold">Study</th>
-                <th className="px-5 py-3 font-semibold">AI suggestion</th>
-                <th className="px-5 py-3 font-semibold">Reviewers</th>
-                <th className="px-5 py-3 font-semibold">Status</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200/60">
-              {records.map((record, position) => (
-                <ScreeningRow
+        <div className={cn('transition-opacity duration-[160ms] ease-gbi', isPending && 'opacity-70')}>
+          {/* Mobile card list. A four-column table on a phone is a horizontal
+              scroll nobody wins. */}
+          <div className="space-y-2.5 p-4 md:hidden">
+            {rows.length === 0 ? (
+              <QueueEmptyState filterLabel={activeFilterLabel} />
+            ) : (
+              rows.map(({ record, href }) => (
+                <QueueCardRow
                   key={record.id}
                   record={record}
+                  href={href}
                   currentReviewerId={currentReviewerId}
                   isAdmin={isAdmin}
                   isPending={isPending}
                   onAttachPdf={handleRecordPdfSelected}
-                  href={buildFullTextReaderUrl(record.id, context, position)}
                 />
-              ))}
-            </tbody>
-          </table>
-          {records.length === 0 ? (
-            <p className="p-10 text-center text-sm text-slate-500">No papers in “{activeFilterLabel}”.</p>
-          ) : null}
+              ))
+            )}
+          </div>
+
+          <div className="hidden md:block">
+            <div className="overflow-x-auto">
+              <Table className="min-w-[880px]">
+                <thead>
+                  <tr>
+                    <Th>Study</Th>
+                    <Th>AI suggestion</Th>
+                    <Th>Reviewers</Th>
+                    <Th>Status</Th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map(({ record, href }) => (
+                    <QueueTableRow
+                      key={record.id}
+                      record={record}
+                      href={href}
+                      currentReviewerId={currentReviewerId}
+                      isAdmin={isAdmin}
+                      isPending={isPending}
+                      onAttachPdf={handleRecordPdfSelected}
+                    />
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+            {rows.length === 0 ? <QueueEmptyState filterLabel={activeFilterLabel} /> : null}
+          </div>
         </div>
+
         {initialQueue ? (
           <QueuePagination
             queue={initialQueue}
@@ -392,8 +414,106 @@ export function FullTextScreeningClient({
             isPending={isPending}
           />
         ) : null}
-      </section>
+      </Card>
     </div>
+  );
+}
+
+function QueueEmptyState({ filterLabel }: { filterLabel: string }) {
+  return (
+    <EmptyState
+      icon={<Files />}
+      title="Nothing in this queue"
+      description={`No papers are currently in “${filterLabel}”. Try another queue or clear the search.`}
+    />
+  );
+}
+
+/**
+ * The page header, split out only because the upload control is a file input
+ * wearing a button, which needs a label element rather than a `Button`.
+ */
+function PageHeadWithUpload({
+  isAdmin,
+  isUploadPending,
+  fileInputRef,
+  onFilesSelected,
+}: {
+  isAdmin: boolean;
+  isUploadPending: boolean;
+  fileInputRef: React.RefObject<HTMLInputElement | null>;
+  onFilesSelected: (event: ChangeEvent<HTMLInputElement>) => void;
+}) {
+  return (
+    <PageHead
+      eyebrow="Full-text screening"
+      title="Your full-text queue"
+      description="Vote on full-text PDFs, resolve conflicts, and promote included studies to extraction."
+      actions={
+        isAdmin ? (
+          <div className="flex flex-col items-start gap-1.5">
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="application/pdf"
+              multiple
+              onChange={onFilesSelected}
+              className="sr-only"
+              id="full-text-upload"
+            />
+            <label
+              htmlFor="full-text-upload"
+              className={buttonClasses(
+                'primary',
+                'md',
+                cn('cursor-pointer', isUploadPending && 'pointer-events-none opacity-60'),
+              )}
+            >
+              {isUploadPending ? (
+                <>
+                  <span
+                    aria-hidden
+                    className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/35 border-t-white"
+                  />
+                  Uploading…
+                </>
+              ) : (
+                <>
+                  <UploadSimple aria-hidden weight="bold" className="h-4 w-4" />
+                  Upload full text
+                </>
+              )}
+            </label>
+            <p className={t.caption}>PDF only, up to 20 MB each</p>
+          </div>
+        ) : null
+      }
+    />
+  );
+}
+
+/** A stat tile that is also the filter for the count it shows. */
+function QueueTile({
+  tone,
+  label,
+  value,
+  meta,
+  onClick,
+}: {
+  tone: StatTone;
+  label: string;
+  value: number;
+  meta: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="rounded-card text-left transition-[box-shadow] duration-[160ms] ease-gbi hover:shadow-e2 focus-visible:outline-none focus-visible:shadow-focus"
+    >
+      <StatTile tone={tone} label={label} value={value} meta={meta} className="h-full" />
+    </button>
   );
 }
 
@@ -415,361 +535,327 @@ function QueuePagination({
   return (
     <nav
       aria-label="Full-text screening queue pagination"
-      className="flex flex-col gap-3 border-t border-slate-200/70 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+      className="flex flex-col gap-3 border-t border-line px-5 py-3 sm:flex-row sm:items-center sm:justify-between"
     >
-      <p className="text-sm text-slate-600" aria-live="polite">
+      <p className={`${t.caption} ${t.num}`} aria-live="polite">
         {queue.filteredTotal > 0
           ? `Showing ${queue.rangeStart}–${queue.rangeEnd} of ${queue.filteredTotal}`
           : 'Showing 0 of 0'}
       </p>
       <div className="flex flex-wrap items-center gap-1.5">
-        <button
-          type="button"
+        <Button
+          size="sm"
           disabled={queue.page === 1 || isPending}
           onClick={() => onPageChange(queue.page - 1)}
           aria-label="Previous queue page"
-          className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
         >
           Previous
-        </button>
+        </Button>
         {visiblePages.map((page) => (
-          <button
+          <Button
             key={page}
-            type="button"
+            size="sm"
+            variant={page === queue.page ? 'primary' : 'secondary'}
             onClick={() => onPageChange(page)}
             disabled={isPending}
             aria-label={`Queue page ${page}`}
             aria-current={page === queue.page ? 'page' : undefined}
-            className={`grid h-8 min-w-8 place-items-center rounded-full border px-2 text-sm font-semibold ${
-              page === queue.page
-                ? 'border-[#0b3a70] bg-[#0b3a70] text-white'
-                : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
-            } disabled:cursor-not-allowed disabled:opacity-50`}
+            className={`min-w-8 ${t.num}`}
           >
             {page}
-          </button>
+          </Button>
         ))}
-        <button
-          type="button"
+        <Button
+          size="sm"
           disabled={queue.page === queue.totalPages || isPending}
           onClick={() => onPageChange(queue.page + 1)}
           aria-label="Next queue page"
-          className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
         >
           Next
-        </button>
+        </Button>
       </div>
     </nav>
   );
 }
 
-const STATUS_ACCENT: Record<ScreeningWorkStatus, string> = {
-  awaiting_pdf: 'bg-amber-400',
-  needs_your_vote: 'bg-indigo-400',
-  awaiting_other_reviewer: 'bg-sky-300',
-  ready_for_extraction: 'bg-emerald-400',
-  excluded: 'bg-rose-400',
-  conflict: 'bg-amber-400',
-  promoted: 'bg-violet-400',
-};
+/** Everything a row needs, derived once so the table and the card agree. */
+function deriveRowModel(record: ScreeningRecord, currentReviewerId: string) {
+  const resolution = getScreeningResolution(record);
+  const reviewerDecisions = getReviewerDecisions(record);
+  const status = getScreeningWorkStatus(record, currentReviewerId);
+  const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #')
+    ? record.leadAuthor
+    : 'Author pending';
 
-function ScreeningRow({
-  record,
-  currentReviewerId,
-  isAdmin,
-  isPending,
-  onAttachPdf,
-  href,
-}: {
+  return {
+    resolution,
+    reviewerDecisions,
+    status,
+    authorLabel,
+    displayTitle: cleanDisplayTitle(record.title),
+    includeVotes: reviewerDecisions.filter((d) => d.decision === 'include').length,
+    excludeVotes: reviewerDecisions.filter((d) => d.decision === 'exclude').length,
+    awaitingPdf: isAwaitingFullTextPdf(record),
+    isMentalHealth: isMentalHealthScreeningRecord(record),
+  };
+}
+
+type RowProps = {
   record: ScreeningRecord;
+  href: string;
   currentReviewerId: string;
   isAdmin: boolean;
   isPending: boolean;
   onAttachPdf: (recordId: string, event: ChangeEvent<HTMLInputElement>) => void;
-  href: string;
-}) {
-  const resolution = getScreeningResolution(record);
-  const reviewerDecisions = getReviewerDecisions(record);
-  const status = getScreeningWorkStatus(record, currentReviewerId);
-  const authorLabel = record.leadAuthor && !record.leadAuthor.startsWith('Covidence #') ? record.leadAuthor : 'Author pending';
-  const displayTitle = cleanDisplayTitle(record.title);
-  const totalVotes = reviewerDecisions.length;
-  const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;
-  const excludeVotes = reviewerDecisions.filter((d) => d.decision === 'exclude').length;
-  const awaitingPdf = isAwaitingFullTextPdf(record);
-  const uploadInputId = `full-text-upload-${record.id}`;
-  const isMentalHealth = isMentalHealthScreeningRecord(record);
+};
+
+function QueueTableRow({ record, href, currentReviewerId, isAdmin, isPending, onAttachPdf }: RowProps) {
+  const model = deriveRowModel(record, currentReviewerId);
 
   return (
-    <tr className="group relative bg-white transition-colors duration-200 ease-out hover:bg-[#0b3a70]/[0.04]">
-      <td className="relative max-w-[440px] py-4 pl-5 pr-5 align-middle">
-        <span aria-hidden className={`absolute left-0 top-2 bottom-2 w-1 rounded-r-full ${STATUS_ACCENT[status]}`} />
-        <Link href={href} className="block pl-2">
+    <Tr className="group">
+      <Td className="relative max-w-[440px] pl-5">
+        <span
+          aria-hidden
+          className={cn('absolute inset-y-0 left-0 w-[3px]', RAIL[STATUS_META[model.status].tone])}
+        />
+        <Link
+          href={href}
+          className="block rounded-ctl focus-visible:outline-none focus-visible:shadow-focus"
+        >
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-bold tracking-wide text-[#0b3a70]">{record.assignedStudyId}</span>
-            <span className="text-xs text-slate-400">·</span>
-            <span className="text-xs text-slate-500">{authorLabel}</span>
-            {isMentalHealth ? <MentalHealthBadge /> : null}
+            <Tag mono>{record.assignedStudyId}</Tag>
+            <span className={t.caption}>{model.authorLabel}</span>
+            {model.isMentalHealth ? <Tag category="mental">Mental health</Tag> : null}
           </div>
-          <p className="mt-1 line-clamp-2 font-semibold leading-snug text-slate-900 transition group-hover:text-[#0b3a70]">{displayTitle}</p>
+          <p className="mt-1 line-clamp-2 text-[13px] font-semibold leading-snug text-ink group-hover:text-navy-600">
+            {model.displayTitle}
+          </p>
         </Link>
-      </td>
-      <td className="px-5 py-4 align-middle">
-        <AiBadge record={record} />
-      </td>
-      <td className="px-5 py-4 align-middle">
-        <div className="flex items-center gap-2.5">
-          <VoteSlots decisions={reviewerDecisions} />
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-[#0b3a70]">
-              {totalVotes}
-              <span className="text-slate-400">/2</span>
-            </span>
-            {totalVotes > 0 ? (
-              <span className="text-[11px] text-slate-500">
-                {includeVotes > 0 ? `${includeVotes} inc` : ''}
-                {includeVotes > 0 && excludeVotes > 0 ? ' · ' : ''}
-                {excludeVotes > 0 ? `${excludeVotes} exc` : ''}
-              </span>
-            ) : (
-              <span className="text-[11px] text-slate-400">No votes</span>
-            )}
-          </div>
-        </div>
-      </td>
-      <td className="px-5 py-4 align-middle">
-        <div className="space-y-2">
-          <StatusBadge status={status} resolution={resolution} />
+      </Td>
+      <Td>
+        <AiSuggestion record={record} />
+      </Td>
+      <Td>
+        <VoteReadout
+          decisions={model.reviewerDecisions}
+          includeVotes={model.includeVotes}
+          excludeVotes={model.excludeVotes}
+        />
+      </Td>
+      <Td>
+        <div className="flex flex-col items-start gap-1.5">
+          <StatusPill status={model.status} />
+          {model.resolution === 'conflict' ? (
+            <span className="text-[11px] font-semibold text-attention-ink">Resolve conflict</span>
+          ) : null}
           {record.promotedPaperId ? (
-            <Link
-              href={`/paper/${record.promotedPaperId}`}
-              className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-800 transition hover:border-emerald-300 hover:bg-emerald-100"
-            >
+            <Link href={`/paper/${record.promotedPaperId}`} className={buttonClasses('secondary', 'sm')}>
               Open extraction
             </Link>
           ) : null}
-          {isAdmin && awaitingPdf ? (
-            <div>
-              <input
-                id={uploadInputId}
-                type="file"
-                accept="application/pdf"
-                className="hidden"
-                disabled={isPending}
-                onChange={(event) => onAttachPdf(record.id, event)}
-              />
-              <label
-                htmlFor={uploadInputId}
-                className={`inline-flex cursor-pointer items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] font-semibold text-amber-800 transition hover:border-amber-300 hover:bg-amber-100 ${
-                  isPending ? 'pointer-events-none opacity-60' : ''
-                }`}
-              >
-                Attach PDF
-              </label>
-            </div>
+          {isAdmin && model.awaitingPdf ? (
+            <AttachPdfControl recordId={record.id} isPending={isPending} onAttachPdf={onAttachPdf} />
           ) : null}
         </div>
-      </td>
-    </tr>
+      </Td>
+    </Tr>
   );
 }
 
-function MentalHealthBadge() {
-  return (
-    <span className="inline-flex items-center rounded-full border border-fuchsia-200 bg-fuchsia-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-fuchsia-700">
-      Mental Health
-    </span>
-  );
-}
+function QueueCardRow({ record, href, currentReviewerId, isAdmin, isPending, onAttachPdf }: RowProps) {
+  const model = deriveRowModel(record, currentReviewerId);
 
-function QueueCard({
-  label,
-  value,
-  detail,
-  action,
-  tone,
-  onClick,
-}: {
-  label: string;
-  value: number;
-  detail: string;
-  action?: string;
-  tone: CardTone;
-  onClick: () => void;
-}) {
-  const toneClasses = CARD_TONES[tone];
   return (
-    <button
-      onClick={onClick}
-      className="group relative flex h-full min-h-[128px] flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-4 text-left shadow-md ring-1 ring-slate-200/60 backdrop-blur transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:ring-slate-300/70"
-    >
-      <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${toneClasses.gradient}`} aria-hidden />
-      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">{label}</p>
-      <div className="mt-2 flex items-baseline justify-between gap-2">
-        <p className={`text-2xl font-semibold tracking-tight tabular-nums ${toneClasses.value}`}>{value}</p>
+    <RecordRow tone={STATUS_META[model.status].tone}>
+      <div className="min-w-0 flex-1 space-y-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <Tag mono>{record.assignedStudyId}</Tag>
+          <StatusPill status={model.status} />
+          {model.isMentalHealth ? <Tag category="mental">Mental health</Tag> : null}
+        </div>
+        <Link
+          href={href}
+          className="block text-[13px] font-semibold leading-snug text-ink underline-offset-2 hover:text-navy-600 hover:underline focus-visible:outline-none focus-visible:shadow-focus"
+        >
+          {model.displayTitle}
+        </Link>
+        <p className={t.caption}>{model.authorLabel}</p>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <AiSuggestion record={record} />
+          <VoteReadout
+            decisions={model.reviewerDecisions}
+            includeVotes={model.includeVotes}
+            excludeVotes={model.excludeVotes}
+          />
+        </div>
+        {record.promotedPaperId || (isAdmin && model.awaitingPdf) ? (
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            {record.promotedPaperId ? (
+              <Link href={`/paper/${record.promotedPaperId}`} className={buttonClasses('secondary', 'sm')}>
+                Open extraction
+              </Link>
+            ) : null}
+            {isAdmin && model.awaitingPdf ? (
+              <AttachPdfControl recordId={record.id} isPending={isPending} onAttachPdf={onAttachPdf} />
+            ) : null}
+          </div>
+        ) : null}
       </div>
-      <p className="mt-1.5 text-[11px] leading-snug text-slate-600">{detail}</p>
-      {action ? <p className="mt-auto pt-2 text-[11px] font-semibold text-[#0b3a70]">{action} →</p> : null}
-    </button>
+    </RecordRow>
   );
 }
 
-function AiBadge({ record }: { record: ScreeningRecord }) {
+function AttachPdfControl({
+  recordId,
+  isPending,
+  onAttachPdf,
+}: {
+  recordId: string;
+  isPending: boolean;
+  onAttachPdf: (recordId: string, event: ChangeEvent<HTMLInputElement>) => void;
+}) {
+  const inputId = `full-text-upload-${recordId}`;
+  return (
+    <>
+      <input
+        id={inputId}
+        type="file"
+        accept="application/pdf"
+        className="sr-only"
+        disabled={isPending}
+        onChange={(event) => onAttachPdf(recordId, event)}
+      />
+      <label
+        htmlFor={inputId}
+        className={buttonClasses(
+          'secondary',
+          'sm',
+          cn('cursor-pointer', isPending && 'pointer-events-none opacity-60'),
+        )}
+      >
+        <FileArrowUp aria-hidden weight="bold" className="h-3.5 w-3.5" />
+        Attach PDF
+      </label>
+    </>
+  );
+}
+
+const RAIL: Record<Tone, string> = {
+  positive: 'bg-positive',
+  negative: 'bg-negative',
+  attention: 'bg-attention',
+  neutral: 'bg-n-300',
+  info: 'bg-navy-600',
+};
+
+function StatusPill({ status }: { status: ScreeningWorkStatus }) {
+  const meta = STATUS_META[status];
+  const Glyph = meta.icon;
+  return (
+    <Pill tone={meta.tone} icon={<Glyph weight="fill" />}>
+      {meta.label}
+    </Pill>
+  );
+}
+
+/**
+ * An AI recommendation is a suggestion, not a decision, so it takes the info
+ * tone rather than the green and red a reviewer's vote earns. Include and
+ * exclude are told apart by the icon and the word. Without this, a row showed
+ * three green-and-red signals in a line and none of them said which one counted.
+ */
+function AiSuggestion({ record }: { record: ScreeningRecord }) {
   if (record.aiStatus === 'running') {
-    return <IconPill tone="slate" icon="dot">AI running</IconPill>;
+    return (
+      <Pill tone="neutral" dot>
+        AI running
+      </Pill>
+    );
   }
   if (record.aiStatus === 'failed') {
-    return <IconPill tone="amber" icon="warn">AI failed</IconPill>;
+    return (
+      <Pill tone="attention" icon={<Warning weight="fill" />}>
+        AI failed
+      </Pill>
+    );
   }
   if (record.aiSuggestedDecision === 'include') {
-    return <IconPill tone="emerald" icon="check">AI include</IconPill>;
+    return (
+      <Pill tone="info" icon={<CheckCircle weight="fill" />}>
+        AI include
+      </Pill>
+    );
   }
   if (record.aiSuggestedDecision === 'exclude') {
-    return <IconPill tone="rose" icon="cross">AI exclude</IconPill>;
+    return (
+      <Pill tone="info" icon={<XCircle weight="fill" />}>
+        AI exclude
+      </Pill>
+    );
   }
-  return <IconPill tone="slate" icon="dash">Not run</IconPill>;
+  return <Tag>Not run</Tag>;
 }
 
-function StatusBadge({
-  status,
-  resolution,
+function VoteReadout({
+  decisions,
+  includeVotes,
+  excludeVotes,
 }: {
-  status: ScreeningWorkStatus;
-  resolution: ReturnType<typeof getScreeningResolution>;
+  decisions: ReadonlyArray<{ decision: ScreeningDecision }>;
+  includeVotes: number;
+  excludeVotes: number;
 }) {
-  const labels: Record<ScreeningWorkStatus, string> = {
-    awaiting_pdf: 'Upload full text',
-    needs_your_vote: 'Needs my vote',
-    awaiting_other_reviewer: 'Awaiting other reviewer',
-    ready_for_extraction: 'Ready for extraction',
-    excluded: 'Excluded',
-    conflict: 'Conflict',
-    promoted: 'Promoted',
-  };
-  const tones: Record<ScreeningWorkStatus, PillTone> = {
-    awaiting_pdf: 'amber',
-    needs_your_vote: 'indigo',
-    awaiting_other_reviewer: 'sky',
-    ready_for_extraction: 'emerald',
-    excluded: 'rose',
-    conflict: 'amber',
-    promoted: 'violet',
-  };
-  return (
-    <div className="space-y-1">
-      <Pill tone={tones[status]}>{labels[status]}</Pill>
-      {resolution === 'conflict' ? <p className="text-[11px] font-medium text-amber-700">Resolve conflict →</p> : null}
-    </div>
-  );
-}
-
-type PillTone = 'indigo' | 'slate' | 'emerald' | 'rose' | 'amber' | 'sky' | 'violet';
-
-const PILL_CLASSES: Record<PillTone, string> = {
-  indigo: 'border-indigo-200 bg-indigo-50 text-indigo-700',
-  slate: 'border-slate-200 bg-slate-50 text-slate-700',
-  emerald: 'border-emerald-200 bg-emerald-50 text-emerald-700',
-  rose: 'border-rose-200 bg-rose-50 text-rose-700',
-  amber: 'border-amber-200 bg-amber-50 text-amber-800',
-  sky: 'border-sky-200 bg-sky-50 text-sky-700',
-  violet: 'border-violet-200 bg-violet-50 text-violet-700',
-};
-
-function Pill({ tone, children }: { tone: PillTone; children: React.ReactNode }) {
-  return (
-    <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${PILL_CLASSES[tone]}`}>
-      {children}
-    </span>
-  );
-}
-
-const ICON_PILL_DOT_CLASSES: Record<PillTone, string> = {
-  indigo: 'bg-indigo-500',
-  slate: 'bg-slate-400',
-  emerald: 'bg-emerald-500',
-  rose: 'bg-rose-500',
-  amber: 'bg-amber-500',
-  sky: 'bg-sky-500',
-  violet: 'bg-violet-500',
-};
-
-function IconPill({ tone, icon, children }: { tone: PillTone; icon: 'check' | 'cross' | 'dot' | 'dash' | 'warn'; children: React.ReactNode }) {
-  const iconChar = icon === 'check' ? '✓' : icon === 'cross' ? '✕' : icon === 'warn' ? '!' : icon === 'dash' ? '–' : '';
-  return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-semibold ${PILL_CLASSES[tone]}`}>
-      {icon === 'dot' ? (
-        <span aria-hidden className={`inline-block h-1.5 w-1.5 animate-pulse rounded-full ${ICON_PILL_DOT_CLASSES[tone]}`} />
-      ) : (
-        <span aria-hidden className="text-[11px] leading-none">{iconChar}</span>
-      )}
-      {children}
-    </span>
-  );
-}
-
-function VoteSlots({ decisions }: { decisions: ReadonlyArray<{ decision: ScreeningDecision }> }) {
+  const totalVotes = decisions.length;
   const slots = [decisions[0]?.decision, decisions[1]?.decision];
+
   return (
-    <div className="flex items-center gap-1">
-      {slots.map((slot, i) => {
-        if (slot === 'include') {
+    <div className="flex items-center gap-2.5">
+      <div className="flex items-center gap-1">
+        {slots.map((slot, index) => {
+          if (slot === 'include') {
+            return (
+              <CheckCircle
+                key={index}
+                aria-hidden
+                weight="fill"
+                className="h-[18px] w-[18px] shrink-0 text-positive"
+              />
+            );
+          }
+          if (slot === 'exclude') {
+            return (
+              <XCircle
+                key={index}
+                aria-hidden
+                weight="fill"
+                className="h-[18px] w-[18px] shrink-0 text-negative"
+              />
+            );
+          }
           return (
             <span
-              key={i}
+              key={index}
               aria-hidden
-              className="grid h-5 w-5 place-items-center rounded-full bg-emerald-500 text-[10px] font-bold leading-none text-white shadow-sm shadow-emerald-500/40 ring-2 ring-emerald-100"
-            >
-              ✓
-            </span>
+              className="h-[18px] w-[18px] shrink-0 rounded-full border border-dashed border-line-strong"
+            />
           );
-        }
-        if (slot === 'exclude') {
-          return (
-            <span
-              key={i}
-              aria-hidden
-              className="grid h-5 w-5 place-items-center rounded-full bg-rose-500 text-[10px] font-bold leading-none text-white shadow-sm shadow-rose-500/40 ring-2 ring-rose-100"
-            >
-              ✕
-            </span>
-          );
-        }
-        return (
-          <span
-            key={i}
-            aria-hidden
-            className="h-5 w-5 rounded-full border-2 border-dashed border-slate-300 bg-white"
-          />
-        );
-      })}
+        })}
+      </div>
+      <div className="leading-tight">
+        <span className={`text-[13px] font-semibold text-ink ${t.num}`}>
+          {totalVotes}
+          <span className="text-ink-soft">/2</span>
+        </span>
+        <span className="sr-only"> reviewer votes recorded. </span>
+        <p className={t.caption}>
+          {totalVotes === 0
+            ? 'No votes'
+            : [includeVotes > 0 ? `${includeVotes} include` : null, excludeVotes > 0 ? `${excludeVotes} exclude` : null]
+                .filter(Boolean)
+                .join(' · ')}
+        </p>
+      </div>
     </div>
   );
-}
-
-function UploadIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M8 11V2.5" />
-      <path d="m4.5 6 3.5-3.5L11.5 6" />
-      <path d="M2.5 11.5v1A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
-    </svg>
-  );
-}
-
-function SearchIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <circle cx="7" cy="7" r="5" />
-      <path d="m13.5 13.5-3-3" />
-    </svg>
-  );
-}
-
-function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; message: string }) {
-  const classes = tone === 'error'
-    ? 'border-rose-200/70 bg-rose-50/80 text-rose-700'
-    : tone === 'success'
-      ? 'border-emerald-200/70 bg-emerald-50/80 text-emerald-700'
-      : 'border-slate-200/70 bg-slate-50/80 text-slate-700';
-  return <div className={`rounded-2xl border px-4 py-3 text-sm font-medium ${classes}`}>{message}</div>;
 }
