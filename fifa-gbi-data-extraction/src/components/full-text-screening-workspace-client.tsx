@@ -1,9 +1,42 @@
 'use client';
 
+import {
+  ArrowCircleUpRight,
+  ArrowLeft,
+  ArrowRight,
+  ArrowSquareOut,
+  CheckCircle,
+  CircleDashed,
+  FileArrowUp,
+  Flag,
+  NotePencil,
+  Sparkle,
+  Warning,
+  XCircle,
+} from '@phosphor-icons/react';
 import { ChangeEvent, FormEvent, useMemo, useState, useTransition } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import {
+  Alert,
+  Button,
+  buttonClasses,
+  ButtonLink,
+  Card,
+  cn,
+  Decide,
+  Field,
+  Input,
+  Meter,
+  PageHead,
+  Pill,
+  Segmented,
+  Select,
+  t,
+  Tag,
+  Textarea,
+} from '@/components/ui';
+import type { Tone } from '@/components/ui';
 import {
   EXCLUSION_REASONS,
   getReviewerDecisions,
@@ -35,7 +68,7 @@ type Props = {
   nextRecordUrl: string | null;
 };
 
-type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+type Notice = { tone: 'positive' | 'negative' | 'info'; message: string } | null;
 type DuplicateWarning = {
   target: 'full_text' | 'extraction';
   matchedStudyId: string | null;
@@ -169,27 +202,13 @@ export function FullTextScreeningWorkspaceClient({
         : record.aiSuggestedDecision === 'exclude'
           ? 'Exclude'
           : 'Not run';
-  const aiTone = record.aiSuggestedDecision === 'include'
-    ? 'emerald'
-    : record.aiSuggestedDecision === 'exclude'
-      ? 'rose'
-      : record.aiStatus === 'failed'
-        ? 'amber'
-        : 'slate';
-  const aiSectionBgClass = aiTone === 'emerald'
-    ? 'bg-emerald-50/40'
-    : aiTone === 'rose'
-      ? 'bg-rose-50/40'
-      : aiTone === 'amber'
-        ? 'bg-amber-50/40'
-        : 'bg-slate-50/40';
-  const aiAccentBarClass = aiTone === 'emerald'
-    ? 'bg-emerald-500'
-    : aiTone === 'rose'
-      ? 'bg-rose-500'
-      : aiTone === 'amber'
-        ? 'bg-amber-500'
-        : 'bg-slate-300';
+  /**
+   * The AI panel is one tone whatever the AI concluded, because a recommendation
+   * is not a decision. Only a failed run breaks out of it, and that is a state
+   * of the pipeline rather than a view on the paper. Include and exclude are
+   * told apart by the icon and the word.
+   */
+  const aiTone: Tone = record.aiStatus === 'failed' ? 'attention' : aiHasDecision ? 'info' : 'neutral';
 
   const totalReviewerVotes = reviewerDecisions.length;
   const includeVotes = reviewerDecisions.filter((d) => d.decision === 'include').length;
@@ -202,12 +221,9 @@ export function FullTextScreeningWorkspaceClient({
   const hasUnsavedReviewState =
     reviewFlagged !== getFullTextReviewFlagged(record) ||
     (editingNote ? reviewComment.trim() !== editingNote.body.trim() : reviewComment.trim().length > 0);
-  const reviewCardClasses = reviewFlagged
-    ? 'border-rose-200/80 bg-[linear-gradient(180deg,rgba(255,250,250,0.98),rgba(255,241,242,0.94))] shadow-rose-900/10'
-    : 'border-amber-200/80 bg-[linear-gradient(180deg,rgba(255,252,245,0.98),rgba(255,248,235,0.94))] shadow-amber-900/10';
-  const reviewAccentClasses = reviewFlagged
-    ? 'bg-rose-500'
-    : 'bg-amber-400';
+  // Notes are not a state, so the panel is a plain card. It only takes a colour
+  // once the full text has actually been flagged, which is a state.
+  const reviewCardClasses = reviewFlagged ? 'border border-negative-line bg-negative-tint' : '';
 
   const syncRecord = (nextRecord: ScreeningRecord) => {
     setRecord(nextRecord);
@@ -219,12 +235,12 @@ export function FullTextScreeningWorkspaceClient({
   const saveDecision = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!decision) {
-      setNotice({ tone: 'error', message: 'Choose Include or Exclude.' });
+      setNotice({ tone: 'negative', message: 'Choose Include or Exclude.' });
       return;
     }
     if (!canSubmitDecision) {
       setNotice({
-        tone: 'error',
+        tone: 'negative',
         message: activeDecisionAction === 'consensus_resolution'
           ? 'Conflict resolution is only available for conflicting reviewer decisions.'
           : 'This record already has two reviewer votes. Only an original reviewer can change their vote.',
@@ -232,11 +248,11 @@ export function FullTextScreeningWorkspaceClient({
       return;
     }
     if (decision === 'exclude' && !reason) {
-      setNotice({ tone: 'error', message: 'Choose an exclusion reason.' });
+      setNotice({ tone: 'negative', message: 'Choose an exclusion reason.' });
       return;
     }
     if (decision === 'exclude' && reason === 'Other' && !otherReason.trim()) {
-      setNotice({ tone: 'error', message: 'Add the other exclusion reason.' });
+      setNotice({ tone: 'negative', message: 'Add the other exclusion reason.' });
       return;
     }
 
@@ -259,11 +275,11 @@ export function FullTextScreeningWorkspaceClient({
         promotionError?: string;
       };
       if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'Failed to save decision' });
         return;
       }
       if (!payload.record) {
-        setNotice({ tone: 'error', message: 'Failed to save decision' });
+        setNotice({ tone: 'negative', message: 'Failed to save decision' });
         return;
       }
       syncRecord(payload.record);
@@ -309,7 +325,7 @@ export function FullTextScreeningWorkspaceClient({
         router.push(buildFullTextQueueUrl({ ...queueContext, notice: 'filter_empty' }));
       } catch (error) {
         setNotice({
-          tone: 'neutral',
+          tone: 'info',
           message: `${savedMessage} Next paper lookup failed: ${error instanceof Error ? error.message : 'unknown error'}. Use Back to queue.`,
         });
       }
@@ -322,12 +338,12 @@ export function FullTextScreeningWorkspaceClient({
 
     startTransition(async () => {
       if (!file.name.toLowerCase().endsWith('.pdf')) {
-        setNotice({ tone: 'error', message: `${file.name}: not a PDF` });
+        setNotice({ tone: 'negative', message: `${file.name}: not a PDF` });
         event.target.value = '';
         return;
       }
       if (file.size > MAX_FILE_BYTES) {
-        setNotice({ tone: 'error', message: `${file.name}: exceeds 20 MB` });
+        setNotice({ tone: 'negative', message: `${file.name}: exceeds 20 MB` });
         event.target.value = '';
         return;
       }
@@ -338,22 +354,22 @@ export function FullTextScreeningWorkspaceClient({
       const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
       event.target.value = '';
       if (!response.ok || !payload.record) {
-        setNotice({ tone: 'error', message: payload.error ?? 'PDF attach failed' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'PDF attach failed' });
         return;
       }
       syncRecord(payload.record);
-      setNotice({ tone: 'success', message: `Attached ${file.name} to this full-text record.` });
+      setNotice({ tone: 'positive', message: `Attached ${file.name} to this full-text record.` });
     });
   };
 
   const saveReviewState = () => {
     const trimmedComment = reviewComment.trim();
     if (trimmedComment.length > REVIEW_COMMENT_MAX_CHARS) {
-      setNotice({ tone: 'error', message: `Review comment must be ${REVIEW_COMMENT_MAX_CHARS} characters or fewer.` });
+      setNotice({ tone: 'negative', message: `Review comment must be ${REVIEW_COMMENT_MAX_CHARS} characters or fewer.` });
       return;
     }
     if (editingNoteId && !trimmedComment) {
-      setNotice({ tone: 'error', message: 'Edited note cannot be empty. Delete it instead.' });
+      setNotice({ tone: 'negative', message: 'Edited note cannot be empty. Delete it instead.' });
       return;
     }
 
@@ -371,11 +387,11 @@ export function FullTextScreeningWorkspaceClient({
       });
       const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
       if (!response.ok || !payload.record) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Failed to save review flag and comment.' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'Failed to save review flag and comment.' });
         return;
       }
       syncRecord(payload.record);
-      setNotice({ tone: 'success', message: editingNoteId ? 'Note updated.' : trimmedComment ? 'Note saved.' : 'Flag saved.' });
+      setNotice({ tone: 'positive', message: editingNoteId ? 'Note updated.' : trimmedComment ? 'Note saved.' : 'Flag saved.' });
     });
   };
 
@@ -403,540 +419,504 @@ export function FullTextScreeningWorkspaceClient({
       });
       const payload = await response.json().catch(() => ({})) as { record?: ScreeningRecord; error?: string };
       if (!response.ok || !payload.record) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Failed to delete note.' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'Failed to delete note.' });
         return;
       }
       syncRecord(payload.record);
-      setNotice({ tone: 'success', message: 'Note deleted.' });
+      setNotice({ tone: 'positive', message: 'Note deleted.' });
     });
   };
 
+
   return (
-    <div className={`mx-auto flex w-full max-w-screen-2xl flex-col gap-6 ${isMobile ? 'overflow-x-hidden' : ''}`}>
-      <section className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-7">
-        <div className="absolute -top-12 left-0 h-40 w-40 rounded-full bg-indigo-200/40 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-16 right-0 h-52 w-52 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-3 min-w-0 flex-1">
-            <span className="inline-flex items-center rounded-full bg-indigo-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
-              Full-text screening
-            </span>
-            <div className="max-w-xl">
-              <div className="flex items-center justify-between gap-3 text-xs font-semibold text-slate-600">
-                <span>Your screening progress</span>
-                <span className="tabular-nums text-slate-800">
-                  {reviewerProgress.completed}/{reviewerProgress.total} papers · {reviewerProgress.percent}%
-                </span>
-              </div>
-              <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100 ring-1 ring-slate-200/70">
-                <div
-                  className="h-full rounded-full bg-[#0b3a70] transition-[width] duration-500 ease-out"
-                  style={{ width: `${reviewerProgress.percent}%` }}
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
-                  {record.assignedStudyId}
-                </span>
-                {isMentalHealth ? <MentalHealthBadge /> : null}
-                <h1 className="text-2xl font-semibold text-slate-900 sm:text-3xl">{displayTitle}</h1>
-                <ResolutionBadge resolution={resolution} />
-              </div>
-              {[authorLabel, record.year].filter(Boolean).length > 0 ? (
-                <p className="text-sm text-slate-600">
-                  {[authorLabel, record.year].filter(Boolean).join(' · ')}
-                </p>
-              ) : null}
-            </div>
-          </div>
-          <div className="flex shrink-0 flex-wrap items-center gap-3">
-            <ReaderNavigationButton href={previousRecordUrl} direction="previous" />
-            <ReaderNavigationButton href={nextRecordUrl} direction="next" />
+    <div className={cn('flex w-full flex-col gap-6', isMobile && 'overflow-x-hidden')}>
+      <PageHead
+        eyebrow="Full-text screening"
+        title={displayTitle}
+        description={[authorLabel, record.year].filter(Boolean).join(' · ') || undefined}
+        actions={
+          <>
+            <ReaderNavigationLink href={previousRecordUrl} direction="previous" />
+            <ReaderNavigationLink href={nextRecordUrl} direction="next" />
             {record.promotedPaperId ? (
-              <Link
+              <ButtonLink
                 href={`/paper/${record.promotedPaperId}`}
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+                icon={<ArrowCircleUpRight weight="fill" />}
               >
                 Open extraction
-              </Link>
+              </ButtonLink>
             ) : null}
-            <Link
-              href={backToQueueUrl}
-              className="inline-flex whitespace-nowrap items-center justify-center gap-1.5 rounded-full border border-slate-200/70 bg-white/70 px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-            >
-              <span aria-hidden>←</span> Back to queue
-            </Link>
+            <ButtonLink href={backToQueueUrl} icon={<ArrowLeft weight="bold" />}>
+              Back to queue
+            </ButtonLink>
+          </>
+        }
+      >
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <Tag mono>{record.assignedStudyId}</Tag>
+            {isMentalHealth ? <Tag category="mental">Mental health</Tag> : null}
+            <ResolutionPill resolution={resolution} />
+          </div>
+          <div className="min-w-[240px] flex-1">
+            <div className="flex items-baseline justify-between gap-3">
+              <span className={t.label}>Your screening progress</span>
+              <span className={`text-xs font-semibold text-ink ${t.num}`}>
+                {reviewerProgress.completed}/{reviewerProgress.total} papers · {reviewerProgress.percent}%
+              </span>
+            </div>
+            <Meter
+              className="mt-2"
+              value={reviewerProgress.percent}
+              tone="info"
+              label="Your full-text screening progress"
+            />
           </div>
         </div>
-      </section>
+      </PageHead>
 
-      {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
+      {notice ? <Alert tone={notice.tone}>{notice.message}</Alert> : null}
 
-      <section className={`grid min-h-[calc(100vh-220px)] rounded-3xl border border-slate-200/70 bg-white shadow-xl ring-1 ring-slate-200/60 lg:grid-cols-[minmax(0,1fr)_400px] ${isMobile ? 'overflow-x-hidden' : 'overflow-hidden'}`}>
-        <div className="flex min-w-0 flex-col border-b border-slate-200/70 bg-slate-50/40 lg:border-b-0 lg:border-r">
-          <div className="flex items-center justify-between gap-3 px-5 pt-4 pb-3">
+      <Card
+        flush
+        className={cn(
+          'grid min-h-[calc(100vh-260px)] lg:grid-cols-[minmax(0,1fr)_400px]',
+          isMobile && 'overflow-x-hidden',
+        )}
+      >
+        <div className="flex min-w-0 flex-col border-b border-line bg-surface-sunk lg:border-b-0 lg:border-r">
+          <div className="flex items-center justify-between gap-3 px-5 pb-3 pt-4">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">PDF source</p>
-              <p className="mt-0.5 text-xs text-slate-500">Evidence workspace</p>
+              <p className={t.label}>PDF source</p>
+              <p className={`mt-0.5 ${t.caption}`}>Evidence workspace</p>
             </div>
             {!awaitingPdf ? (
               <a
                 href={pdfDirectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
+                className={buttonClassesForLink}
               >
+                <ArrowSquareOut aria-hidden weight="bold" className="h-4 w-4" />
                 Open PDF
               </a>
             ) : null}
           </div>
-          <div className={`flex min-h-0 flex-1 ${isMobile ? 'overflow-x-hidden px-0 pb-0' : 'px-3 pb-3'}`}>
-            <div className={`flex w-full bg-white ${isMobile ? 'min-h-[78dvh] overflow-x-hidden rounded-b-3xl' : 'min-h-[calc(100vh-300px)] overflow-hidden rounded-2xl shadow-sm ring-1 ring-slate-200/60'}`}>
+          <div className={cn('flex min-h-0 flex-1', isMobile ? 'overflow-x-hidden px-0 pb-0' : 'px-3 pb-3')}>
+            <div
+              className={cn(
+                'flex w-full bg-surface',
+                isMobile
+                  ? 'min-h-[78dvh] overflow-x-hidden'
+                  : 'min-h-[calc(100vh-340px)] overflow-hidden rounded-card shadow-e1',
+              )}
+            >
               {awaitingPdf ? (
                 <div className="grid w-full place-items-center p-8 text-center">
-                  <div className="max-w-md rounded-2xl border border-amber-200 bg-amber-50 p-6 text-amber-900">
-                    <p className="text-sm font-semibold">Full-text PDF required</p>
-                    <p className="mt-2 text-sm leading-6">
-                      This record came through title/abstract screening and is waiting for the full-text PDF before reviewer voting or AI review can begin.
-                    </p>
+                  <div className="max-w-md">
+                    <Alert tone="attention" title="Full-text PDF required">
+                      This record came through title and abstract screening and is waiting for the full-text
+                      PDF before reviewer voting or AI review can begin.
+                    </Alert>
                     {isAdmin ? (
-                      <div className="mt-4">
-                        <input id="workspace-pdf-upload" type="file" accept="application/pdf" className="hidden" disabled={isPending} onChange={attachPdf} />
+                      <div className="mt-4 flex justify-center">
+                        <input
+                          id="workspace-pdf-upload"
+                          type="file"
+                          accept="application/pdf"
+                          className="sr-only"
+                          disabled={isPending}
+                          onChange={attachPdf}
+                        />
                         <label
                           htmlFor="workspace-pdf-upload"
-                          className={`inline-flex cursor-pointer items-center rounded-full bg-[#0b3a70] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#092f5f] ${
-                            isPending ? 'pointer-events-none opacity-60' : ''
-                          }`}
+                          className={cn(uploadLabelClasses, isPending && 'pointer-events-none opacity-60')}
                         >
+                          <FileArrowUp aria-hidden weight="bold" className="h-4 w-4" />
                           {isPending ? 'Uploading…' : 'Upload full-text PDF'}
                         </label>
                       </div>
                     ) : null}
                   </div>
                 </div>
+              ) : isMobile ? (
+                <MobilePdfViewer src={pdfDirectUrl} title={`${record.assignedStudyId} full text PDF`} />
               ) : (
-                isMobile ? (
-                  <MobilePdfViewer
-                    src={pdfDirectUrl}
-                    title={`${record.assignedStudyId} full text PDF`}
-                  />
-                ) : (
-                  <iframe
-                    src={pdfUrl}
-                    className="h-full min-h-[calc(100vh-300px)] w-full flex-1 border-0 bg-white"
-                    title={`${record.assignedStudyId} full text PDF`}
-                    allow="fullscreen"
-                  />
-                )
+                <iframe
+                  src={pdfUrl}
+                  className="h-full min-h-[calc(100vh-340px)] w-full flex-1 border-0 bg-surface"
+                  title={`${record.assignedStudyId} full text PDF`}
+                  allow="fullscreen"
+                />
               )}
             </div>
           </div>
         </div>
 
-        <form onSubmit={saveDecision} className="relative flex min-w-0 flex-col justify-center bg-gradient-to-b from-indigo-50/70 via-violet-50/30 to-indigo-50/60">
-          <div aria-hidden className="pointer-events-none absolute -top-16 -right-10 h-48 w-48 rounded-full bg-violet-200/40 blur-3xl" />
-          <div aria-hidden className="pointer-events-none absolute bottom-0 -left-10 h-56 w-56 rounded-full bg-indigo-200/30 blur-3xl" />
-          <div className="relative z-10 px-6 pt-7 pb-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span aria-hidden className="inline-block h-2 w-2 rounded-full bg-indigo-500 ring-4 ring-indigo-100" />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-900/80">{decisionMode}</p>
-              </div>
+        {/* The decision rail. It is the only place on this screen that fills with
+            a decision colour, so what a reviewer concluded is never competing
+            with what the panel around it is made of. */}
+        <form onSubmit={saveDecision} className="flex min-w-0 flex-col gap-5 p-5">
+          <section>
+            <div className="flex items-baseline justify-between gap-3">
+              <h2 className={t.section}>{decisionMode}</h2>
               {currentReviewerVote ? (
-                <span className="text-[11px] font-semibold text-slate-500">You voted {currentReviewerVote.decision}</span>
+                <span className={t.caption}>You voted {currentReviewerVote.decision}</span>
               ) : null}
             </div>
 
             {firstTwoConflict ? (
-              <div className="mt-3 inline-flex rounded-full border border-slate-200 bg-slate-50 p-0.5 text-xs font-semibold">
-                <button
-                  type="button"
-                  disabled={isPending || !canChangeReviewerVote}
-                  onClick={() => setDecisionAction('reviewer_vote')}
-                  className={`rounded-full px-3 py-1 transition disabled:cursor-not-allowed disabled:opacity-40 ${
-                    activeDecisionAction === 'reviewer_vote'
-                      ? 'bg-white text-slate-900 shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  Change my vote
-                </button>
-                <button
-                  type="button"
-                  disabled={isPending}
-                  onClick={() => setDecisionAction('consensus_resolution')}
-                  className={`rounded-full px-3 py-1 transition ${
-                    activeDecisionAction === 'consensus_resolution'
-                      ? 'bg-white text-slate-900 shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  Resolve conflict
-                </button>
-              </div>
+              <Segmented
+                className="mt-3"
+                label="What this decision records"
+                value={activeDecisionAction}
+                onChange={setDecisionAction}
+                items={[
+                  { value: 'reviewer_vote', label: 'Change my vote', disabled: isPending || !canChangeReviewerVote },
+                  { value: 'consensus_resolution', label: 'Resolve conflict', disabled: isPending },
+                ]}
+              />
             ) : null}
 
-            <div className="mt-4 grid grid-cols-2 gap-2.5">
-              <button
-                type="button"
-                disabled={isPending}
-                onClick={() => setDecision('include')}
-                className={`group rounded-xl border px-4 py-3.5 text-sm font-semibold transition ${
-                  decision === 'include'
-                    ? 'border-emerald-400 bg-emerald-100/90 text-emerald-900 shadow-sm ring-1 ring-emerald-300/60'
-                    : 'border-emerald-200/70 bg-emerald-50/50 text-emerald-800 hover:border-emerald-300 hover:bg-emerald-100/60'
-                }`}
-              >
-                <span className="flex items-center justify-center gap-2">
-                  <span aria-hidden className="text-base leading-none">✓</span>
-                  Include
-                </span>
-              </button>
-              <button
-                type="button"
-                disabled={isPending}
-                onClick={() => setDecision('exclude')}
-                className={`group rounded-xl border px-4 py-3.5 text-sm font-semibold transition ${
-                  decision === 'exclude'
-                    ? 'border-rose-400 bg-rose-100/90 text-rose-900 shadow-sm ring-1 ring-rose-300/60'
-                    : 'border-rose-200/70 bg-rose-50/50 text-rose-800 hover:border-rose-300 hover:bg-rose-100/60'
-                }`}
-              >
-                <span className="flex items-center justify-center gap-2">
-                  <span aria-hidden className="text-base leading-none">✕</span>
-                  Exclude
-                </span>
-              </button>
-            </div>
+            <Decide
+              className="mt-4 grid w-full grid-cols-2 [&>button]:w-full"
+              label={decisionMode}
+              value={decision}
+              onChange={(kind) => setDecision(kind as ScreeningDecision)}
+              options={[
+                { kind: 'include', label: 'Include', disabled: isPending },
+                { kind: 'exclude', label: 'Exclude', disabled: isPending },
+              ]}
+            />
 
             {decision === 'exclude' ? (
-              <div className="mt-3 space-y-2">
-                <select
-                  disabled={isPending}
-                  value={reason}
-                  onChange={(event) => setReason(event.target.value as ExclusionReason)}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm focus:border-slate-400 focus:outline-none"
-                >
-                  <option value="">Select exclusion reason</option>
-                  {EXCLUSION_REASONS.map((option) => (
-                    <option key={option} value={option}>{option}</option>
-                  ))}
-                </select>
+              <div className="mt-3 space-y-3">
+                <Field label="Exclusion reason">
+                  {({ id }) => (
+                    <Select
+                      id={id}
+                      disabled={isPending}
+                      value={reason}
+                      onChange={(event) => setReason(event.target.value as ExclusionReason)}
+                    >
+                      <option value="">Select exclusion reason</option>
+                      {EXCLUSION_REASONS.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </Select>
+                  )}
+                </Field>
                 {reason === 'Other' ? (
-                  <input
-                    disabled={isPending}
-                    value={otherReason}
-                    onChange={(event) => setOtherReason(event.target.value)}
-                    placeholder="Other exclusion reason"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-slate-400 focus:outline-none"
-                  />
+                  <Field label="Other exclusion reason">
+                    {({ id }) => (
+                      <Input
+                        id={id}
+                        disabled={isPending}
+                        value={otherReason}
+                        onChange={(event) => setOtherReason(event.target.value)}
+                        placeholder="Describe the reason"
+                      />
+                    )}
+                  </Field>
                 ) : null}
               </div>
             ) : null}
 
             {!canSubmitDecision ? (
-              <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-900">
+              <Alert tone="attention" className="mt-3">
                 {awaitingPdf
                   ? 'Attach the full-text PDF before reviewer voting.'
-                  : 'Two reviewer votes already recorded. Only an original reviewer can change their vote, unless there is a conflict to resolve.'}
-              </p>
+                  : 'Two reviewer votes are already recorded. Only an original reviewer can change their vote, unless there is a conflict to resolve.'}
+              </Alert>
             ) : null}
 
-            <button
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              loading={isPending}
               disabled={isPending || !canSubmitDecision}
-              className="mt-4 w-full rounded-xl bg-[#0b3a70] px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#0b3a70]/20 transition hover:bg-[#092f5f] disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-4 w-full"
             >
-              {isPending
-                ? 'Saving…'
-                : activeDecisionAction === 'consensus_resolution'
-                  ? 'Save conflict resolution'
-                  : 'Save reviewer vote'}
-            </button>
+              {activeDecisionAction === 'consensus_resolution' ? 'Save conflict resolution' : 'Save reviewer vote'}
+            </Button>
 
             {activeDecisionAction === 'consensus_resolution' ? (
-              <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+              <p className={`mt-3 ${t.caption}`}>
                 Stored as the final conflict decision. The first two reviewer votes remain unchanged.
               </p>
             ) : null}
-          </div>
+          </section>
 
-          <div className={`relative z-10 mx-5 mt-2 overflow-hidden rounded-2xl px-5 py-5 backdrop-blur-sm ${aiSectionBgClass}`}>
-            <span className={`absolute left-0 top-0 h-full w-1 ${aiAccentBarClass}`} aria-hidden />
-            <div className="flex items-center justify-between">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">AI suggestion</p>
-              <AiStatusBadge tone={aiTone} label={aiDecisionLabel} hasDecision={aiHasDecision} />
+          <Card className="bg-surface-sunk shadow-e0">
+            <div className="flex items-center justify-between gap-3">
+              <p className={t.label}>
+                <Sparkle aria-hidden weight="fill" className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]" />
+                AI suggestion
+              </p>
+              <Pill
+                tone={aiTone}
+                dot={!aiHasDecision}
+                icon={
+                  aiHasDecision
+                    ? record.aiSuggestedDecision === 'include'
+                      ? <CheckCircle weight="fill" />
+                      : <XCircle weight="fill" />
+                    : undefined
+                }
+              >
+                {aiDecisionLabel}
+              </Pill>
             </div>
             {record.aiReason ? (
-              <p className="mt-3 text-sm leading-relaxed text-slate-700">{record.aiReason}</p>
+              <p className={`mt-3 ${t.body}`}>{record.aiReason}</p>
             ) : (
-              <p className="mt-3 text-sm leading-relaxed text-slate-500">No AI recommendation has been recorded yet.</p>
+              <p className={`mt-3 ${t.body} text-ink-soft`}>No AI recommendation has been recorded yet.</p>
             )}
-            <p className="mt-3 text-[11px] leading-relaxed text-slate-500">Advisory only. Final eligibility depends on reviewer votes.</p>
-          </div>
+            <p className={`mt-3 ${t.caption}`}>Advisory only. Final eligibility depends on reviewer votes.</p>
+          </Card>
 
-          <div className="relative z-10 px-6 pt-3 pb-2">
-            <div className="rounded-2xl border border-indigo-100/80 bg-white/70 p-4 shadow-sm shadow-indigo-900/5 backdrop-blur-sm">
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-900/60">Resolution</p>
-                  <div className="mt-2">
-                    <ResolutionBadge resolution={resolution} />
-                  </div>
-                  {extractionReturnReason ? (
-                    <p className="mt-2 max-w-[18rem] text-xs leading-relaxed text-slate-600">{extractionReturnReason}</p>
-                  ) : null}
+          <Card className="shadow-e0 ring-1 ring-line">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className={t.label}>Resolution</p>
+                <div className="mt-2">
+                  <ResolutionPill resolution={resolution} />
                 </div>
-                <div className="min-w-0 text-right">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-900/60">Reviewer votes</p>
-                  <div className="mt-2 flex items-center justify-end gap-2">
-                    <VoteSlots decisions={reviewerDecisions} />
-                    <span className="text-sm font-semibold text-[#0b3a70]">{totalReviewerVotes}<span className="text-slate-400">/2</span></span>
-                  </div>
-                  {totalReviewerVotes > 0 ? (
-                    <p className="mt-1 text-[11px] font-medium text-slate-500">
-                      {includeVotes > 0 ? `${includeVotes} include` : ''}
-                      {includeVotes > 0 && excludeVotes > 0 ? ' · ' : ''}
-                      {excludeVotes > 0 ? `${excludeVotes} exclude` : ''}
-                    </p>
-                  ) : null}
-                </div>
+                {extractionReturnReason ? (
+                  <p className={`mt-2 max-w-[18rem] ${t.caption}`}>{extractionReturnReason}</p>
+                ) : null}
               </div>
-              {firstTwoConflict ? (
-                <div className="mt-4 flex items-center gap-2 rounded-xl border border-amber-200/70 bg-amber-50/80 px-3 py-2">
-                  <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-amber-500" />
-                  <p className="text-[11px] font-semibold text-amber-900">Conflict — awaiting resolution</p>
+              <div className="min-w-0 text-right">
+                <p className={t.label}>Reviewer votes</p>
+                <div className="mt-2 flex items-center justify-end gap-2">
+                  <VoteSlots decisions={reviewerDecisions} />
+                  <span className={`text-[13px] font-semibold text-ink ${t.num}`}>
+                    {totalReviewerVotes}
+                    <span className="text-ink-soft">/2</span>
+                  </span>
                 </div>
-              ) : null}
+                {totalReviewerVotes > 0 ? (
+                  <p className={`mt-1 ${t.caption}`}>
+                    {[
+                      includeVotes > 0 ? `${includeVotes} include` : null,
+                      excludeVotes > 0 ? `${excludeVotes} exclude` : null,
+                    ]
+                      .filter(Boolean)
+                      .join(' · ')}
+                  </p>
+                ) : null}
+              </div>
             </div>
-          </div>
+            {firstTwoConflict ? (
+              <Alert tone="attention" className="mt-4">
+                Conflict, awaiting resolution.
+              </Alert>
+            ) : null}
+          </Card>
 
           {reviewerDecisions.length > 0 || exclusionReasonSummary ? (
-            <div className="relative z-10 px-6 pt-3 pb-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-900/70">Reviewer history</p>
-              <div className="mt-3 space-y-2">
+            <section>
+              <p className={t.label}>Reviewer history</p>
+              <ul className="mt-3 space-y-2">
                 {reviewerDecisions.map((item, index) => {
                   const isInclude = item.decision === 'include';
-                  const rowClasses = isInclude
-                    ? 'border-emerald-200/70 bg-emerald-50/60'
-                    : 'border-rose-200/70 bg-rose-50/60';
                   const initials = (item.reviewerName ?? 'Reviewer')
                     .split(/\s+/)
                     .filter(Boolean)
                     .slice(0, 2)
                     .map((part) => part[0]?.toUpperCase())
                     .join('') || 'R';
-                  const avatarClasses = isInclude
-                    ? 'bg-emerald-500/90 text-white'
-                    : 'bg-rose-500/90 text-white';
-                  const decisionPillClasses = isInclude
-                    ? 'border-emerald-300/80 bg-white text-emerald-700'
-                    : 'border-rose-300/80 bg-white text-rose-700';
                   return (
-                    <div key={`${item.reviewerProfileId}-${item.decidedAt}`} className={`flex items-start gap-3 rounded-xl border px-3 py-2.5 shadow-sm shadow-slate-900/[0.02] ${rowClasses}`}>
-                      <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-[11px] font-bold tracking-wide ${avatarClasses}`}>
+                    <li
+                      key={`${item.reviewerProfileId}-${item.decidedAt}`}
+                      className="relative flex items-start gap-3 overflow-hidden rounded-card bg-surface py-2.5 pl-[15px] pr-3 shadow-e1"
+                    >
+                      <span
+                        aria-hidden
+                        className={cn(
+                          'absolute inset-y-0 left-0 w-[3px]',
+                          isInclude ? 'bg-positive' : 'bg-negative',
+                        )}
+                      />
+                      <span
+                        aria-hidden
+                        className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-surface-sunk text-[11px] font-semibold tracking-wide text-ink-muted"
+                      >
                         {initials}
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="truncate text-sm font-semibold text-[#0b3a70]">{item.reviewerName ?? 'Reviewer'}</span>
-                          {firstTwoConflict && index === 2 ? (
-                            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800">Final</span>
-                          ) : null}
+                          <span className="truncate text-[13px] font-semibold text-ink">
+                            {item.reviewerName ?? 'Reviewer'}
+                          </span>
+                          {firstTwoConflict && index === 2 ? <Tag>Final</Tag> : null}
                         </div>
-                        {item.reason ? <p className="mt-1 truncate text-xs text-slate-600">{item.reason}</p> : null}
+                        {item.reason ? <p className={`mt-1 truncate ${t.caption}`}>{item.reason}</p> : null}
                       </div>
-                      <span className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${decisionPillClasses}`}>
+                      <Pill
+                        tone={isInclude ? 'positive' : 'negative'}
+                        icon={isInclude ? <CheckCircle weight="fill" /> : <XCircle weight="fill" />}
+                        className="shrink-0"
+                      >
                         {isInclude ? 'Include' : 'Exclude'}
-                      </span>
-                    </div>
+                      </Pill>
+                    </li>
                   );
                 })}
-              </div>
+              </ul>
               {exclusionReasonSummary ? (
-                <p className="mt-3 text-xs text-slate-500">Exclusion reasons: {exclusionReasonSummary}</p>
+                <p className={`mt-3 ${t.caption}`}>Exclusion reasons: {exclusionReasonSummary}</p>
               ) : null}
-            </div>
+            </section>
           ) : null}
 
-          <div className="relative z-10 px-6 pt-4 pb-7">
-            <div className={`relative overflow-hidden rounded-[24px] border p-4 shadow-md backdrop-blur-sm ${reviewCardClasses}`}>
-              <div aria-hidden className={`absolute left-0 top-5 h-8 w-1 rounded-r-full ${reviewAccentClasses}`} />
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 text-amber-700">
-                    <span aria-hidden className="text-xs leading-none">✎</span>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-800">Notes</p>
-                  </div>
-                  <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
-                    Save follow-up notes as separate entries, or flag this full text when it needs attention.
-                  </p>
-                </div>
-                <div className="shrink-0">
-                  <button
-                    type="button"
-                    disabled={isReviewPending}
-                    onClick={() => setReviewFlagged((current) => !current)}
-                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold shadow-sm transition ${
-                      reviewFlagged
-                        ? 'border-rose-300 bg-rose-500 text-white shadow-rose-500/25 hover:bg-rose-600'
-                        : 'border-slate-200 bg-white/90 text-slate-700 hover:border-rose-200 hover:text-rose-700'
-                    } disabled:cursor-not-allowed disabled:opacity-50`}
-                  >
-                    <span aria-hidden className="text-sm leading-none">⚑</span>
-                    {reviewFlagged ? 'Flagged' : 'Flag'}
-                  </button>
-                </div>
+          <Card className={cn('shadow-e0 ring-1 ring-line', reviewCardClasses)}>
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className={t.label}>
+                  <NotePencil aria-hidden weight="fill" className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]" />
+                  Notes
+                </p>
+                <p className={`mt-1.5 ${t.caption}`}>
+                  Save follow-up notes as separate entries, or flag this full text when it needs attention.
+                </p>
               </div>
+              <Button
+                variant={reviewFlagged ? 'dangerSoft' : 'secondary'}
+                size="sm"
+                disabled={isReviewPending}
+                aria-pressed={reviewFlagged}
+                onClick={() => setReviewFlagged((current) => !current)}
+                icon={<Flag weight={reviewFlagged ? 'fill' : 'regular'} />}
+                className="shrink-0"
+              >
+                {reviewFlagged ? 'Flagged' : 'Flag'}
+              </Button>
+            </div>
 
-              <div className="mt-3 rounded-2xl border border-slate-200/80 bg-white/90 p-2.5 shadow-inner shadow-slate-900/[0.03]">
-                <textarea
+            <Field
+              className="mt-3"
+              label={editingNote ? 'Edit saved note' : 'Add a new note'}
+              help={`${reviewComment.trim().length}/${REVIEW_COMMENT_MAX_CHARS}${editingNote ? ' · editing a saved note' : ''}`}
+            >
+              {({ id, describedBy }) => (
+                <Textarea
+                  id={id}
+                  aria-describedby={describedBy}
                   value={reviewComment}
                   disabled={isReviewPending}
                   onChange={(event) => setReviewComment(event.target.value)}
-                  rows={1}
+                  rows={2}
                   placeholder={editingNote ? 'Edit saved note' : 'Add a new note'}
-                  className="min-h-[44px] w-full resize-y rounded-[16px] border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-100 disabled:opacity-60"
-                  style={{ maxHeight: '180px' }}
+                  className="max-h-[180px]"
                 />
-              </div>
+              )}
+            </Field>
 
-              <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-                <div className="space-y-1">
-                  <p className="text-[11px] text-slate-500">
-                    {editingNote ? 'Editing saved note · ' : ''}
-                    {reviewComment.trim().length}/{REVIEW_COMMENT_MAX_CHARS}
-                  </p>
-                  {reviewUpdatedAt ? (
-                    <p className="text-[11px] leading-relaxed text-slate-500">
-                      {reviewUpdatedByName ? `${reviewUpdatedByName} · ` : ''}
-                      {new Date(reviewUpdatedAt).toLocaleString()}
-                    </p>
-                  ) : null}
-                </div>
-                <button
-                  type="button"
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+              {reviewUpdatedAt ? (
+                <p className={t.caption}>
+                  {reviewUpdatedByName ? `${reviewUpdatedByName} · ` : ''}
+                  {new Date(reviewUpdatedAt).toLocaleString()}
+                </p>
+              ) : (
+                <span />
+              )}
+              <div className="flex items-center gap-2">
+                {editingNote ? (
+                  <Button size="sm" disabled={isReviewPending} onClick={cancelReviewNoteEdit}>
+                    Cancel
+                  </Button>
+                ) : null}
+                <Button
+                  variant="primary"
+                  size="sm"
+                  loading={isReviewPending}
                   disabled={isReviewPending || !hasUnsavedReviewState}
                   onClick={saveReviewState}
-                  className="inline-flex items-center justify-center rounded-xl bg-[#1f6b57] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#1f6b57]/20 transition hover:bg-[#195847] disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {isReviewPending ? 'Saving…' : editingNote ? 'Update note' : reviewComment.trim() ? 'Save note' : 'Save flag'}
-                </button>
-                {editingNote ? (
-                  <button
-                    type="button"
-                    disabled={isReviewPending}
-                    onClick={cancelReviewNoteEdit}
-                    className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    Cancel
-                  </button>
-                ) : null}
-              </div>
-
-              <div className="mt-4 space-y-2">
-                {reviewNotes.length > 0 ? (
-                  reviewNotes.map((note) => (
-                    <div key={note.id} className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 text-sm shadow-sm shadow-slate-900/[0.03]">
-                      <p className="whitespace-pre-wrap leading-relaxed text-slate-800">{note.body}</p>
-                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-                        <p className="text-[11px] text-slate-500">
-                          {note.createdByName ? `${note.createdByName} · ` : ''}
-                          {new Date(note.updatedAt ?? note.createdAt).toLocaleString()}
-                        </p>
-                        <div className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            disabled={isReviewPending}
-                            onClick={() => editReviewNote(note)}
-                            className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
-                          >
-                            Edit
-                          </button>
-                          <button
-                            type="button"
-                            disabled={isReviewPending}
-                            onClick={() => deleteReviewNote(note)}
-                            className="rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-semibold text-rose-700 transition hover:border-rose-300 hover:bg-rose-100 disabled:cursor-not-allowed disabled:opacity-50"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <p className="rounded-2xl border border-dashed border-slate-200 bg-white/60 px-3 py-3 text-sm text-slate-500">No saved notes yet.</p>
-                )}
+                  {editingNote ? 'Update note' : reviewComment.trim() ? 'Save note' : 'Save flag'}
+                </Button>
               </div>
             </div>
-          </div>
+
+            <div className="mt-4 space-y-2">
+              {reviewNotes.length > 0 ? (
+                reviewNotes.map((note) => (
+                  <div key={note.id} className="rounded-card bg-surface-sunk p-3 shadow-e0">
+                    <p className={`whitespace-pre-wrap ${t.body}`}>{note.body}</p>
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                      <p className={t.caption}>
+                        {note.createdByName ? `${note.createdByName} · ` : ''}
+                        {new Date(note.updatedAt ?? note.createdAt).toLocaleString()}
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <Button size="sm" disabled={isReviewPending} onClick={() => editReviewNote(note)}>
+                          Edit
+                        </Button>
+                        <Button
+                          variant="dangerSoft"
+                          size="sm"
+                          disabled={isReviewPending}
+                          onClick={() => deleteReviewNote(note)}
+                        >
+                          Delete
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className={`rounded-card border border-dashed border-line px-3 py-3 ${t.caption}`}>
+                  No saved notes yet.
+                </p>
+              )}
+            </div>
+          </Card>
         </form>
-      </section>
+      </Card>
     </div>
   );
 }
 
-function MentalHealthBadge() {
-  return (
-    <span className="inline-flex items-center rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-fuchsia-700">
-      Mental Health
-    </span>
-  );
-}
+/**
+ * Both of these are anchors styled as buttons, so they keep `buttonClasses`
+ * rather than becoming `Button`s with an onClick.
+ */
+const buttonClassesForLink = buttonClasses('secondary', 'sm', 'no-underline');
+const uploadLabelClasses = buttonClasses('primary', 'md', 'cursor-pointer');
 
-type PillTone = 'indigo' | 'slate' | 'emerald' | 'rose' | 'amber' | 'sky';
-
-function ReaderNavigationButton({
-  href,
-  direction,
-}: {
-  href: string | null;
-  direction: 'previous' | 'next';
-}) {
+function ReaderNavigationLink({ href, direction }: { href: string | null; direction: 'previous' | 'next' }) {
   const isPrevious = direction === 'previous';
-  const content = (
-    <>
-      {isPrevious ? <span aria-hidden>←</span> : null}
-      {isPrevious ? 'Previous' : 'Next'}
-      {!isPrevious ? <span aria-hidden>→</span> : null}
-    </>
-  );
-  const className = 'inline-flex whitespace-nowrap items-center justify-center gap-1.5 rounded-full border border-slate-200/70 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition';
+  const label = isPrevious ? 'Previous' : 'Next';
+  const icon = isPrevious ? <ArrowLeft weight="bold" /> : <ArrowRight weight="bold" />;
 
+  // A missing neighbour is still shown, so the reader can see where they are in
+  // the queue, but it is inert and announced as such.
   if (!href) {
     return (
-      <span
-        aria-disabled="true"
-        className={`${className} cursor-not-allowed opacity-40`}
-      >
-        {content}
+      <span aria-disabled="true" className={buttonClasses('secondary', 'md', 'cursor-not-allowed opacity-45')}>
+        {isPrevious ? <span aria-hidden className="inline-flex h-[15px] w-[15px]">{icon}</span> : null}
+        {label}
+        {isPrevious ? null : <span aria-hidden className="inline-flex h-[15px] w-[15px]">{icon}</span>}
       </span>
     );
   }
 
-  return (
-    <Link href={href} className={`${className} hover:border-slate-300 hover:text-slate-900`}>
-      {content}
-    </Link>
-  );
-}
-
-const PILL_CLASSES: Record<PillTone, string> = {
-  indigo: 'border-indigo-200/70 bg-indigo-50/80 text-indigo-700',
-  slate: 'border-slate-200/70 bg-slate-50/80 text-slate-700',
-  emerald: 'border-emerald-200/70 bg-emerald-50/80 text-emerald-700',
-  rose: 'border-rose-200/70 bg-rose-50/80 text-rose-700',
-  amber: 'border-amber-200/70 bg-amber-50/80 text-amber-700',
-  sky: 'border-sky-200/70 bg-sky-50/80 text-sky-700',
-};
-
-function Pill({ tone, children }: { tone: PillTone; children: React.ReactNode }) {
-  return (
-    <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${PILL_CLASSES[tone]}`}>
-      {children}
-    </span>
+  return isPrevious ? (
+    <ButtonLink href={href} icon={icon}>
+      {label}
+    </ButtonLink>
+  ) : (
+    <ButtonLink href={href}>
+      {label}
+      <span aria-hidden className="inline-flex h-[15px] w-[15px] items-center justify-center [&>svg]:h-full [&>svg]:w-full">
+        {icon}
+      </span>
+    </ButtonLink>
   );
 }
 
@@ -944,34 +924,18 @@ function VoteSlots({ decisions }: { decisions: ReadonlyArray<{ decision: Screeni
   const slots = [decisions[0]?.decision, decisions[1]?.decision];
   return (
     <div className="flex items-center gap-1.5">
-      {slots.map((slot, i) => {
+      {slots.map((slot, index) => {
         if (slot === 'include') {
-          return (
-            <span
-              key={i}
-              aria-hidden
-              className="grid h-5 w-5 place-items-center rounded-full bg-emerald-500 text-[10px] font-bold leading-none text-white shadow-sm shadow-emerald-500/40 ring-2 ring-emerald-100"
-            >
-              ✓
-            </span>
-          );
+          return <CheckCircle key={index} aria-hidden weight="fill" className="h-5 w-5 shrink-0 text-positive" />;
         }
         if (slot === 'exclude') {
-          return (
-            <span
-              key={i}
-              aria-hidden
-              className="grid h-5 w-5 place-items-center rounded-full bg-rose-500 text-[10px] font-bold leading-none text-white shadow-sm shadow-rose-500/40 ring-2 ring-rose-100"
-            >
-              ✕
-            </span>
-          );
+          return <XCircle key={index} aria-hidden weight="fill" className="h-5 w-5 shrink-0 text-negative" />;
         }
         return (
           <span
-            key={i}
+            key={index}
             aria-hidden
-            className="h-5 w-5 rounded-full border-2 border-dashed border-slate-300 bg-white/50"
+            className="h-5 w-5 shrink-0 rounded-full border border-dashed border-line-strong"
           />
         );
       })}
@@ -979,42 +943,23 @@ function VoteSlots({ decisions }: { decisions: ReadonlyArray<{ decision: Screeni
   );
 }
 
-function AiStatusBadge({ tone, label, hasDecision }: { tone: 'emerald' | 'rose' | 'amber' | 'slate'; label: string; hasDecision: boolean }) {
-  const classes = tone === 'emerald'
-    ? 'border-emerald-300 bg-emerald-100 text-emerald-900'
-    : tone === 'rose'
-      ? 'border-rose-300 bg-rose-100 text-rose-900'
-      : tone === 'amber'
-        ? 'border-amber-300 bg-amber-100 text-amber-900'
-        : 'border-slate-200 bg-slate-100 text-slate-700';
-  return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${classes}`}>
-      {hasDecision ? (
-        <span aria-hidden className="text-sm leading-none">{tone === 'emerald' ? '✓' : '✕'}</span>
-      ) : null}
-      {label}
-    </span>
-  );
-}
+const RESOLUTION_META = {
+  awaiting_pdf: { label: 'Upload full text', tone: 'neutral', icon: FileArrowUp },
+  pending: { label: 'Pending', tone: 'neutral', icon: CircleDashed },
+  ready_for_extraction: { label: 'Ready for extraction', tone: 'positive', icon: CheckCircle },
+  excluded: { label: 'Excluded', tone: 'negative', icon: XCircle },
+  conflict: { label: 'Conflict', tone: 'attention', icon: Warning },
+  promoted: { label: 'Promoted', tone: 'info', icon: ArrowCircleUpRight },
+} as const satisfies Record<string, { label: string; tone: Tone; icon: typeof CheckCircle }>;
 
-function ResolutionBadge({ resolution }: { resolution: ReturnType<typeof getScreeningResolution> }) {
-  const labels = {
-    awaiting_pdf: 'Upload full text',
-    pending: 'Pending',
-    ready_for_extraction: 'Ready for extraction',
-    excluded: 'Excluded',
-    conflict: 'Conflict',
-    promoted: 'Promoted',
-  } as const;
-  const tones: Record<keyof typeof labels, PillTone> = {
-    awaiting_pdf: 'amber',
-    pending: 'slate',
-    ready_for_extraction: 'emerald',
-    excluded: 'rose',
-    conflict: 'amber',
-    promoted: 'sky',
-  };
-  return <Pill tone={tones[resolution]}>{labels[resolution]}</Pill>;
+function ResolutionPill({ resolution }: { resolution: ReturnType<typeof getScreeningResolution> }) {
+  const meta = RESOLUTION_META[resolution];
+  const Glyph = meta.icon;
+  return (
+    <Pill tone={meta.tone} icon={<Glyph weight="fill" />}>
+      {meta.label}
+    </Pill>
+  );
 }
 
 function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
@@ -1025,13 +970,4 @@ function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
   const study = warning.matchedStudyId ? `${warning.matchedStudyId}: ` : '';
   const extraCount = warnings.length > 1 ? ` (+${warnings.length - 1} more)` : '';
   return `Possible duplicate found in extraction: ${study}${warning.matchedTitle}${extraCount}. Please check before continuing.`;
-}
-
-function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; message: string }) {
-  const classes = tone === 'error'
-    ? 'border-rose-200/70 bg-rose-50/80 text-rose-700'
-    : tone === 'success'
-      ? 'border-emerald-200/70 bg-emerald-50/80 text-emerald-700'
-      : 'border-slate-200/70 bg-slate-50/80 text-slate-700';
-  return <div className={`rounded-2xl border px-4 py-3 text-sm font-medium ${classes}`}>{message}</div>;
 }

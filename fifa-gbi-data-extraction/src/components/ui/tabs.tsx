@@ -9,6 +9,12 @@ export type TabItem<T extends string = string> = {
   value: T;
   label: ReactNode;
   count?: number;
+  /**
+   * A view that exists but is not available to this reader right now, for
+   * instance changing your vote on a record you never voted on. It stays
+   * visible so the reader can see the option exists, and arrow keys skip it.
+   */
+  disabled?: boolean;
 };
 
 /**
@@ -30,11 +36,22 @@ function useTabKeys<T extends string>(items: TabItem<T>[], value: T, onChange: (
     const current = items.findIndex((item) => item.value === value);
     if (current < 0) return;
 
+    // Each step walks on until it lands on something selectable, so a disabled
+    // tab is passed over rather than trapping the arrow keys on it.
+    const step = (from: number, delta: number) => {
+      for (let i = 1; i <= items.length; i += 1) {
+        const candidate = (from + delta * i + items.length * i) % items.length;
+        if (!items[candidate].disabled) return candidate;
+      }
+      return null;
+    };
+    const firstEnabled = (order: number[]) => order.find((index) => !items[index].disabled) ?? null;
+
     let target: number | null = null;
-    if (event.key === prevKey) target = (current - 1 + items.length) % items.length;
-    else if (event.key === nextKey) target = (current + 1) % items.length;
-    else if (event.key === 'Home') target = 0;
-    else if (event.key === 'End') target = items.length - 1;
+    if (event.key === prevKey) target = step(current, -1);
+    else if (event.key === nextKey) target = step(current, 1);
+    else if (event.key === 'Home') target = firstEnabled(items.map((_, index) => index));
+    else if (event.key === 'End') target = firstEnabled(items.map((_, index) => items.length - 1 - index));
 
     if (target === null) return;
     event.preventDefault();
@@ -100,10 +117,12 @@ export function Tabs<T extends string>({
             aria-controls={panelId}
             // Roving tabindex: one stop for the whole set, then arrow keys.
             tabIndex={selected ? 0 : -1}
+            disabled={item.disabled}
             onClick={() => onChange(item.value)}
             className={cn(
               'relative text-[13px] font-medium transition-[color,background-color] duration-[160ms] ease-gbi',
               'focus-visible:outline-none focus-visible:shadow-focus',
+              'disabled:cursor-not-allowed disabled:opacity-45',
               vertical
                 ? cn(
                     'min-h-9 rounded-ctl px-3 py-2 text-left',
@@ -168,10 +187,12 @@ export function Segmented<T extends string>({
             aria-selected={selected}
             aria-controls={panelId}
             tabIndex={selected ? 0 : -1}
+            disabled={item.disabled}
             onClick={() => onChange(item.value)}
             className={cn(
               'min-h-[30px] rounded-md px-3 text-[13px] font-medium transition-[background-color,color] duration-[160ms] ease-gbi',
               'focus-visible:outline-none focus-visible:shadow-focus',
+              'disabled:cursor-not-allowed disabled:opacity-45',
               selected ? 'bg-surface font-semibold text-ink shadow-e1' : 'text-ink-muted hover:text-ink',
             )}
           >
