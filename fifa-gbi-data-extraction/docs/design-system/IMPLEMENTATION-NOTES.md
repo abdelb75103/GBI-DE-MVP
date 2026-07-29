@@ -2,7 +2,30 @@
 
 What the shipped code does that `README.md`, `tokens.css` and `components.css` do not say. The approved spec stays the authority; this file records where implementation needed a decision the spec did not cover.
 
-Written during the Phase 0 and Phase 1 migration.
+Written during the Phase 0 and Phase 1 migration, extended during Phase 2.
+
+## Phase 2: full-text screening
+
+The queue and the reader are migrated. What the two screens needed that the spec
+did not cover:
+
+| Change | Why |
+| --- | --- |
+| `Button` base no longer sets `border-transparent` | It beat every variant's border colour in the cascade regardless of class order, so `secondary` and `dangerSoft` shipped app-wide with an invisible edge. Each variant now names its own border colour. |
+| `TabItem` takes `disabled` | "Change my vote" has to stay visible to a reviewer who never voted, but must not be selectable. Arrow-key navigation steps over disabled items. |
+| `PageHead` heading is 24px below `sm` | The reader puts a whole study title in the heading slot. At 32px it filled a phone screen on its own. |
+| `--viz-positive` moved into the green half of the hue circle | On the extraction progress ring it is stacked against `--viz-user`. Teal against blue is roughly 20 degrees of hue, which nobody reads at a glance; green against blue is about 65. `--state-positive` keeps its validated teal, because only the fills moved and no fill carries text. |
+| State tints and lines gained chroma; `StatTile` holds its tint to 86% | Releasing the tint at the midpoint made every tinted tile read as a white tile with a stain on one edge. Ink on the new tints still clears AA, worst pair `ink-soft` at 3.80, its large-text floor. |
+
+**AI recommendations take the info tone, not green and red.** A row that showed
+the AI verdict, both reviewer votes and the outcome in the same two colours gave
+no indication which one was binding. Include and exclude are told apart by icon
+and word. This is the one judgement call in Phase 2 most worth revisiting if it
+reads wrong in daily use.
+
+**Amber means work waiting on you.** On the full-text queue, needing your vote
+and needing a conflict resolved are amber; waiting on another reviewer or on a
+PDF is neutral. A queue that is merely slow should not read as one in trouble.
 
 ## Additions to the system
 
