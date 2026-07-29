@@ -1,8 +1,42 @@
 'use client';
 
+import {
+  ArrowCircleUpRight,
+  CaretRight,
+  CheckCircle,
+  CircleDashed,
+  Files,
+  MagnifyingGlass,
+  SlidersHorizontal,
+  Sparkle,
+  UploadSimple,
+  Warning,
+  X,
+  XCircle,
+} from '@phosphor-icons/react';
 import { ChangeEvent, ReactNode, UIEvent, memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition } from 'react';
 
 import { FlagReasonModal } from '@/components/flag-reason-modal';
+import {
+  Alert,
+  Button,
+  buttonClasses,
+  Card,
+  cn,
+  Decide,
+  EmptyState,
+  Field,
+  Input,
+  Meter,
+  PageHead,
+  Pill,
+  Segmented,
+  StatTile,
+  t,
+  Tag,
+  Textarea,
+} from '@/components/ui';
+import type { Tone } from '@/components/ui';
 import {
   adjustTitleAbstractQueueCountsAfterDecision,
   getDefaultTitleAbstractDecisionAction,
@@ -44,7 +78,7 @@ type QueueFilter =
   | 'ai_not_run'
   | 'reserved_offline';
 
-type Notice = { tone: 'success' | 'error' | 'neutral'; message: string } | null;
+type Notice = { tone: 'positive' | 'negative' | 'info'; message: string } | null;
 type MobileDrawer = 'references' | 'filters' | null;
 type QueueCounts = {
   all: number;
@@ -286,7 +320,7 @@ export function TitleAbstractScreeningClient({
     const file = event.target.files?.[0];
     if (!file) return;
     if (file.size > MAX_REFERENCE_FILE_BYTES) {
-      setNotice({ tone: 'error', message: 'Reference file exceeds 25 MB.' });
+      setNotice({ tone: 'negative', message: 'Reference file exceeds 25 MB.' });
       return;
     }
 
@@ -303,7 +337,7 @@ export function TitleAbstractScreeningClient({
       };
       if (fileInputRef.current) fileInputRef.current.value = '';
       if (!response.ok) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Reference import failed' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'Reference import failed' });
         return;
       }
       await refreshRecords();
@@ -311,7 +345,7 @@ export function TitleAbstractScreeningClient({
       const skippedCount = payload.skipped?.length ?? 0;
       const failedCount = payload.failures?.length ?? 0;
       setNotice({
-        tone: failedCount > 0 ? 'error' : 'success',
+        tone: failedCount > 0 ? 'negative' : 'positive',
         message: `Imported ${insertedCount} of ${payload.totalParsed ?? insertedCount} references. ${skippedCount} duplicate${skippedCount === 1 ? '' : 's'} skipped${failedCount ? `; ${failedCount} failed` : ''}.`,
       });
       const firstInserted = payload.inserted?.[0];
@@ -323,7 +357,7 @@ export function TitleAbstractScreeningClient({
     if (!selected) return;
     const trimmedNote = nextNote.trim();
     if (nextDecision === 'flag' && !trimmedNote) {
-      setNotice({ tone: 'error', message: 'Add a reason before flagging this reference.' });
+      setNotice({ tone: 'negative', message: 'Add a reason before flagging this reference.' });
       return;
     }
 
@@ -342,7 +376,7 @@ export function TitleAbstractScreeningClient({
         duplicateWarnings?: DuplicateWarning[];
       };
       if (!response.ok || !payload.record) {
-        setNotice({ tone: 'error', message: payload.error ?? 'Failed to save decision.' });
+        setNotice({ tone: 'negative', message: payload.error ?? 'Failed to save decision.' });
         return;
       }
       const savedRecord = payload.record;
@@ -365,100 +399,95 @@ export function TitleAbstractScreeningClient({
       setDecisionAction('reviewer_vote');
       const duplicateMessage = formatDuplicateWarningMessage(payload.duplicateWarnings ?? []);
       setNotice({
-        tone: duplicateMessage ? 'neutral' : 'success',
+        tone: duplicateMessage ? 'info' : 'positive',
         message: duplicateMessage ? `Decision saved and advanced. ${duplicateMessage}` : 'Decision saved and advanced.',
       });
     });
   };
 
+
   return (
-    <div className="-mx-4 -my-8 flex w-[calc(100%+2rem)] max-w-none flex-col gap-6 md:mx-auto md:my-0 md:w-full md:max-w-screen-2xl">
-      <section className="relative hidden overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-xl ring-1 ring-slate-200/60 backdrop-blur sm:p-8 md:block lg:p-10">
-        <div className="pointer-events-none absolute -left-10 -top-16 h-56 w-56 rounded-full bg-indigo-300/30 blur-3xl" aria-hidden />
-        <div className="pointer-events-none absolute -bottom-14 -right-6 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl" aria-hidden />
-        <div className="relative z-10 flex flex-col gap-5">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl space-y-3">
-              <span className="inline-flex w-fit items-center rounded-full bg-gradient-to-br from-indigo-100/90 via-sky-50/80 to-indigo-50/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0b3a70] shadow-sm ring-1 ring-indigo-200/50 backdrop-blur-sm">
-                Title &amp; abstract screening
-              </span>
-              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
-                Title and abstract screening
-              </h1>
-              <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
-                Import references, vote, and promote eligible studies to full-text review.
-              </p>
-            </div>
-            {isAdmin ? (
-              <div className="flex flex-wrap items-center gap-2">
+    <div className="-mx-4 -my-8 flex w-[calc(100%+2rem)] max-w-none flex-col gap-6 md:mx-auto md:my-0 md:w-full">
+      {/* The hero is desktop only. On a phone the three-pane workspace takes the
+          whole viewport and a summary above it would push the queue off-screen. */}
+      <div className="hidden flex-col gap-6 md:flex">
+        <PageHead
+          eyebrow="Title and abstract screening"
+          title="Your screening queue"
+          description="Import references, vote, and promote eligible studies to full-text review."
+          actions={
+            isAdmin ? (
+              <>
                 <input
                   ref={fileInputRef}
                   type="file"
                   accept=".csv,.ris,.nbib,.txt"
                   onChange={handleImport}
-                  className="hidden"
+                  className="sr-only"
                   id="reference-import"
                 />
                 <label
                   htmlFor="reference-import"
-                  className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#0b3a70] px-5 py-2 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(11,58,112,0.55)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#082f5d] ${
-                    isPending ? 'pointer-events-none opacity-70' : ''
-                  }`}
+                  className={buttonClasses(
+                    'primary',
+                    'md',
+                    cn('cursor-pointer', isPending && 'pointer-events-none opacity-60'),
+                  )}
                 >
-                  <UploadIcon />
+                  <UploadSimple aria-hidden weight="bold" className="h-4 w-4" />
                   {isPending ? 'Working…' : 'Import references'}
                 </label>
-              </div>
-            ) : null}
-          </div>
+              </>
+            ) : null
+          }
+        />
 
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            <ScreeningStat label="Total records" value={counts.all} caption="All imported references" tone="navy" />
-            <ScreeningStat label="Needs my vote" value={counts.needsYourVote} caption="Awaiting your decision" tone="indigo" />
-            <ScreeningStat label="Conflicts" value={counts.resolver} caption="Need a resolver" tone="amber" />
-            <ScreeningStat label="Included" value={includedCount} caption="Sent to full-text screening" tone="emerald" />
-          </div>
-
-          <div className="rounded-2xl border border-slate-200/70 bg-white/75 p-3 shadow-sm ring-1 ring-slate-200/50 backdrop-blur sm:p-4">
-            <div className="grid gap-3 lg:grid-cols-2">
-              <ProgressTile
-                label="My progress"
-                percent={personalProgressPercent}
-                value={counts.myVotes}
-                total={counts.all}
-                caption="Records voted"
-                tone="navy"
-              />
-              <ProgressTile
-                label="Final outcomes"
-                percent={progressPercent}
-                value={completedCount}
-                total={counts.all}
-                caption="Records resolved"
-                tone="emerald"
-              />
-            </div>
-          </div>
+        {/* Amber is work waiting on this reviewer, as on the full-text queue. */}
+        <div className="grid gap-3.5 sm:grid-cols-2 xl:grid-cols-4">
+          <StatTile tone="total" label="Total records" value={counts.all} meta="All imported references" />
+          <StatTile
+            tone="attention"
+            label="Needs my vote"
+            value={counts.needsYourVote}
+            meta="Awaiting your decision"
+          />
+          <StatTile tone="attention" label="Conflicts" value={counts.resolver} meta="Need a resolver" />
+          <StatTile tone="positive" label="Included" value={includedCount} meta="Sent to full-text screening" />
         </div>
-      </section>
 
-      {loadError ? <Notice tone="error" message={loadError} /> : null}
-      {queueError ? <Notice tone="error" message={queueError} /> : null}
-      {notice ? <Notice tone={notice.tone} message={notice.message} /> : null}
+        <Card>
+          <div className="grid gap-5 lg:grid-cols-2">
+            <ProgressReadout
+              label="My progress"
+              percent={personalProgressPercent}
+              value={counts.myVotes}
+              total={counts.all}
+              caption="records voted"
+              tone="info"
+            />
+            <ProgressReadout
+              label="Final outcomes"
+              percent={progressPercent}
+              value={completedCount}
+              total={counts.all}
+              caption="records resolved"
+              tone="positive"
+            />
+          </div>
+        </Card>
+      </div>
 
-      <section className="relative grid h-[calc(100svh-4.25rem)] min-h-[520px] overflow-hidden border-y border-slate-200/70 bg-white/85 md:h-auto md:min-h-0 md:rounded-3xl md:border md:shadow-xl md:ring-1 md:ring-slate-200/60 md:backdrop-blur lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
+      {loadError ? <Alert tone="negative">{loadError}</Alert> : null}
+      {queueError ? <Alert tone="negative">{queueError}</Alert> : null}
+      {notice ? <Alert tone={notice.tone}>{notice.message}</Alert> : null}
+
+      <section className="relative grid h-[calc(100svh-4.25rem)] min-h-[520px] overflow-hidden border-y border-line bg-surface md:h-auto md:min-h-0 md:rounded-card md:border md:shadow-e1 lg:h-[calc(100vh-7rem)] lg:min-h-[560px] lg:grid-cols-[300px_minmax(0,1fr)_220px]">
         <div className="pointer-events-none absolute inset-x-0 top-3 z-20 flex items-start justify-between px-3 md:hidden">
-          <MobileDrawerButton
-            label="Open references"
-            onClick={() => setMobileDrawer('references')}
-          >
-            <ChevronRightIcon />
+          <MobileDrawerButton label="Open references" onClick={() => setMobileDrawer('references')}>
+            <CaretRight weight="bold" />
           </MobileDrawerButton>
-          <MobileDrawerButton
-            label="Open filters"
-            onClick={() => setMobileDrawer('filters')}
-          >
-            <MenuIcon />
+          <MobileDrawerButton label="Open filters" onClick={() => setMobileDrawer('filters')}>
+            <SlidersHorizontal weight="bold" />
           </MobileDrawerButton>
         </div>
 
@@ -466,43 +495,54 @@ export function TitleAbstractScreeningClient({
           <button
             type="button"
             aria-label="Close mobile panel"
-            className="absolute inset-0 z-40 bg-slate-950/45 backdrop-blur-sm md:hidden"
+            className="absolute inset-0 z-40 bg-[rgba(15,23,42,0.45)] md:hidden"
             onClick={() => setMobileDrawer(null)}
           />
         ) : null}
 
         <aside
           aria-label="References"
-          className={`absolute inset-y-0 left-0 z-50 flex h-full w-[86vw] max-w-[340px] min-w-0 flex-col border-r border-slate-200/70 bg-slate-50/95 shadow-2xl transition-transform duration-300 ease-out md:static md:z-auto md:h-auto md:max-h-[70vh] md:min-h-[420px] md:w-auto md:max-w-none md:translate-x-0 md:border-b md:border-r-0 md:bg-slate-50/60 md:shadow-none lg:max-h-none lg:min-h-0 lg:border-b-0 lg:border-r ${
-            mobileDrawer === 'references' ? 'translate-x-0' : '-translate-x-[calc(100%+1rem)]'
-          }`}
+          className={cn(
+            'absolute inset-y-0 left-0 z-50 flex h-full w-[86vw] min-w-0 max-w-[340px] flex-col border-r border-line bg-surface-sunk shadow-e2',
+            'transition-transform duration-[200ms] ease-gbi',
+            'md:static md:z-auto md:h-auto md:max-h-[70vh] md:min-h-[420px] md:w-auto md:max-w-none md:translate-x-0 md:border-b md:border-r-0 md:shadow-none',
+            'lg:max-h-none lg:min-h-0 lg:border-b-0 lg:border-r',
+            mobileDrawer === 'references' ? 'translate-x-0' : '-translate-x-[calc(100%+1rem)]',
+          )}
         >
-          <div className="border-b border-slate-200 px-4 py-4">
+          <div className="border-b border-line px-4 py-4">
             <div className="flex items-center justify-between gap-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">References</p>
+              <p className={t.label}>References</p>
               <div className="flex items-center gap-2">
-                <span className="rounded-full bg-slate-900 px-2 py-0.5 text-[11px] font-semibold text-white">{counts.all}</span>
-                <button
-                  type="button"
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm md:hidden"
+                <Tag>{counts.all}</Tag>
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="md:hidden"
                   aria-label="Close references"
                   onClick={() => setMobileDrawer(null)}
-                >
-                  <CloseIcon />
-                </button>
+                  icon={<X weight="bold" />}
+                />
               </div>
             </div>
-            <div className="relative mt-3">
-              <span aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
-                <SearchIcon />
-              </span>
-              <input
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-                placeholder="Search queue"
-                className="w-full rounded-full border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm shadow-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400"
-              />
-            </div>
+            {/* This search box had no label. */}
+            <Field className="mt-3" label="Search the queue" hideLabel>
+              {({ id }) => (
+                <span className="relative block">
+                  <MagnifyingGlass
+                    aria-hidden
+                    className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-soft"
+                  />
+                  <Input
+                    id={id}
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    placeholder="Search queue"
+                    className="pl-8"
+                  />
+                </span>
+              )}
+            </Field>
           </div>
 
           <div className="min-h-0 flex-1 overflow-y-auto" onScroll={handleQueueScroll}>
@@ -516,27 +556,29 @@ export function TitleAbstractScreeningClient({
               />
             ))}
             {records.length === 0 && !isLoadingQueue ? (
-              <p className="px-5 py-10 text-center text-sm text-slate-500">No references match this view.</p>
+              <EmptyState
+                icon={<Files />}
+                title="Nothing in this view"
+                description="No references match the current filter or search."
+              />
             ) : null}
             {records.length > 0 ? (
-              <div className="border-t border-slate-200 px-4 py-3 text-center text-xs font-medium text-slate-500">
+              <div className={`border-t border-line px-4 py-3 text-center ${t.caption} ${t.num}`}>
                 Showing {records.length} of {filteredTotal}
               </div>
             ) : null}
             {isLoadingQueue ? (
-              <div className="px-4 py-4 text-center text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+              <p className={`px-4 py-4 text-center ${t.label}`} aria-live="polite">
                 Loading references
-              </div>
+              </p>
             ) : null}
             {!hasMore && records.length > 0 ? (
-              <div className="px-4 pb-4 text-center text-[11px] font-medium text-slate-400">
-                End of this queue
-              </div>
+              <p className={`px-4 pb-4 text-center ${t.caption}`}>End of this queue</p>
             ) : null}
           </div>
         </aside>
 
-        <main className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden bg-white md:max-h-[75vh] md:min-h-[520px] lg:max-h-none lg:min-h-0">
+        <main className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden bg-surface md:max-h-[75vh] md:min-h-[520px] lg:max-h-none lg:min-h-0">
           {selected ? (
             <ReferenceDetail
               key={selected.id}
@@ -558,45 +600,59 @@ export function TitleAbstractScreeningClient({
               onSaveDecision={saveDecision}
             />
           ) : (
-            <div className="grid h-full place-items-center px-6 py-16 text-sm text-slate-500">
-              {records.length > 0 ? 'No more loaded references in this queue.' : 'Import references to begin screening.'}
+            <div className="grid h-full place-items-center">
+              <EmptyState
+                icon={<Files />}
+                title={records.length > 0 ? 'Nothing selected' : 'No references yet'}
+                description={
+                  records.length > 0
+                    ? 'No more loaded references in this queue. Pick one from the list, or change the filter.'
+                    : 'Import references to begin screening.'
+                }
+              />
             </div>
           )}
         </main>
 
         <aside
           aria-label="Filters"
-          className={`absolute inset-y-0 right-0 z-50 flex h-full w-[82vw] max-w-[300px] min-w-0 flex-col border-l border-slate-200/70 bg-slate-50/95 shadow-2xl transition-transform duration-300 ease-out md:static md:z-auto md:h-auto md:max-h-[60vh] md:min-h-[300px] md:w-auto md:max-w-none md:translate-x-0 md:border-l-0 md:border-t md:bg-slate-50/40 md:shadow-none lg:max-h-none lg:min-h-0 lg:border-l lg:border-t-0 ${
-            mobileDrawer === 'filters' ? 'translate-x-0' : 'translate-x-[calc(100%+1rem)]'
-          }`}
+          className={cn(
+            'absolute inset-y-0 right-0 z-50 flex h-full w-[82vw] min-w-0 max-w-[300px] flex-col border-l border-line bg-surface-sunk shadow-e2',
+            'transition-transform duration-[200ms] ease-gbi',
+            'md:static md:z-auto md:h-auto md:max-h-[60vh] md:min-h-[300px] md:w-auto md:max-w-none md:translate-x-0 md:border-l-0 md:border-t md:shadow-none',
+            'lg:max-h-none lg:min-h-0 lg:border-l lg:border-t-0',
+            mobileDrawer === 'filters' ? 'translate-x-0' : 'translate-x-[calc(100%+1rem)]',
+          )}
         >
-          <div className="flex items-center justify-between gap-3 border-b border-slate-200/70 px-5 py-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Filters</p>
-            <button
-              type="button"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm md:hidden"
+          <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-4">
+            <p className={t.label}>Filters</p>
+            <Button
+              size="icon"
+              variant="ghost"
+              className="md:hidden"
               aria-label="Close filters"
               onClick={() => setMobileDrawer(null)}
-            >
-              <CloseIcon />
-            </button>
+              icon={<X weight="bold" />}
+            />
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
             <div className="space-y-1">
               <FilterButton label="All records" count={counts.all} active={filter === 'all'} onClick={() => handleFilterChange('all')} />
-              <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => handleFilterChange('needs_your_vote')} accent="brand" />
+              <FilterButton label="Needs my vote" count={counts.needsYourVote} active={filter === 'needs_your_vote'} onClick={() => handleFilterChange('needs_your_vote')} dot="attention" />
               <FilterButton label="Awaiting AI" count={counts.awaitingOther} active={filter === 'awaiting_ai_recommendation' || filter === 'awaiting_other_reviewer'} onClick={() => handleFilterChange('awaiting_ai_recommendation')} />
-              <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => handleFilterChange('needs_resolver')} accent="amber" />
-              <FilterButton label="Included" count={includedCount} active={filter === 'included' || filter === 'ready_for_full_text' || filter === 'promoted_to_full_text'} onClick={() => handleFilterChange('included')} accent="emerald" />
-              <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => handleFilterChange('excluded')} accent="rose" />
-              <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => handleFilterChange('flagged')} accent="amber" />
+              <FilterButton label="Conflicts" count={counts.resolver} active={filter === 'needs_resolver'} onClick={() => handleFilterChange('needs_resolver')} dot="attention" />
+              <FilterButton label="Included" count={includedCount} active={filter === 'included' || filter === 'ready_for_full_text' || filter === 'promoted_to_full_text'} onClick={() => handleFilterChange('included')} dot="positive" />
+              <FilterButton label="Excluded" count={counts.excluded} active={filter === 'excluded'} onClick={() => handleFilterChange('excluded')} dot="negative" />
+              <FilterButton label="Flagged" count={counts.flagged} active={filter === 'flagged'} onClick={() => handleFilterChange('flagged')} dot="attention" />
               <FilterButton label="Missing abstract" count={counts.missingAbstract} active={filter === 'missing_abstract'} onClick={() => handleFilterChange('missing_abstract')} />
-              <div className="my-3 border-t border-slate-200" />
-              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} accent="emerald" />
-              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} accent="rose" />
-              <FilterButton label="AI systematic review" count={counts.aiSystematicReview} active={filter === 'ai_systematic_review'} onClick={() => handleFilterChange('ai_systematic_review')} accent="amber" />
+              <div className="my-3 border-t border-line" />
+              {/* The AI group takes the info dot rather than green and red. What
+                  the AI proposed is not what anybody decided. */}
+              <FilterButton label="AI include" count={counts.aiInclude} active={filter === 'ai_include'} onClick={() => handleFilterChange('ai_include')} dot="info" />
+              <FilterButton label="AI exclude" count={counts.aiExclude} active={filter === 'ai_exclude'} onClick={() => handleFilterChange('ai_exclude')} dot="info" />
+              <FilterButton label="AI systematic review" count={counts.aiSystematicReview} active={filter === 'ai_systematic_review'} onClick={() => handleFilterChange('ai_systematic_review')} dot="info" />
               <FilterButton label="AI not run" count={counts.aiNotRun} active={filter === 'ai_not_run'} onClick={() => handleFilterChange('ai_not_run')} />
-              <div className="my-3 border-t border-slate-200" />
+              <div className="my-3 border-t border-line" />
               <FilterButton label="Reserved offline" count={counts.reservedOffline} active={filter === 'reserved_offline'} onClick={() => handleFilterChange('reserved_offline')} />
             </div>
           </div>
@@ -620,6 +676,51 @@ export function TitleAbstractScreeningClient({
   );
 }
 
+/**
+ * Work status and resolution both describe where a reference has got to, so they
+ * read from one map. Amber is work waiting on this reviewer, neutral is waiting
+ * on the pipeline, and `promoted` takes the info tone the token layer reserves
+ * for it.
+ *
+ * `flagged` is amber here rather than the red it takes in extraction, because on
+ * this screen flagging is one of the three things the `Decide` control does, and
+ * that control fills amber when pressed. A pill contradicting the button that
+ * set it is worse than a tone that differs from another screen.
+ */
+const STATE_TONE = {
+  needs_your_vote: 'attention',
+  awaiting_ai_recommendation: 'neutral',
+  awaiting_other_reviewer: 'neutral',
+  flagged: 'attention',
+  ready_for_full_text: 'positive',
+  excluded: 'negative',
+  needs_resolver: 'attention',
+  promoted_to_full_text: 'info',
+  pending: 'neutral',
+} as const satisfies Record<TitleAbstractWorkStatus | TitleAbstractResolution, Tone>;
+
+const STATE_ICON = {
+  attention: Warning,
+  positive: CheckCircle,
+  negative: XCircle,
+  neutral: CircleDashed,
+  info: ArrowCircleUpRight,
+} as const satisfies Record<Tone, typeof CheckCircle>;
+
+const RAIL: Record<Tone, string> = {
+  positive: 'bg-positive',
+  negative: 'bg-negative',
+  attention: 'bg-attention',
+  neutral: 'bg-n-300',
+  info: 'bg-navy-600',
+};
+
+const DECISION_TONE: Record<TitleAbstractDecision, Tone> = {
+  include: 'positive',
+  exclude: 'negative',
+  flag: 'attention',
+};
+
 const ReferenceRow = memo(function ReferenceRow({
   record,
   active,
@@ -632,25 +733,35 @@ const ReferenceRow = memo(function ReferenceRow({
   onSelect: (id: string) => void;
 }) {
   const decisions = getTitleAbstractDecisions(record);
+  const tone = STATE_TONE[status];
   return (
     <button
       type="button"
       onClick={() => onSelect(record.id)}
-      className={`relative block w-full border-b border-slate-200 px-4 py-4 text-left transition ${
-        active ? 'bg-white shadow-[inset_3px_0_0_0_#0b3a70]' : 'bg-transparent hover:bg-white/70'
-      }`}
+      aria-current={active ? 'true' : undefined}
+      className={cn(
+        'relative block w-full border-b border-line px-4 py-4 pl-[19px] text-left',
+        'transition-colors duration-[160ms] ease-gbi focus-visible:outline-none focus-visible:shadow-focus',
+        active ? 'bg-surface' : 'bg-transparent hover:bg-surface',
+      )}
     >
+      {/* The rail carries the state on every row; on the selected row it turns
+          navy, because selection is not a state of the reference. */}
+      <span
+        aria-hidden
+        className={cn('absolute inset-y-0 left-0 w-[3px]', active ? 'bg-navy-600' : RAIL[tone])}
+      />
       <div className="flex items-center justify-between gap-3">
-        <span className="text-[11px] font-bold tracking-[0.08em] text-[#0b3a70]">{record.assignedStudyId}</span>
-        <StatusDot status={status} />
+        <Tag mono>{record.assignedStudyId}</Tag>
+        <span aria-hidden className={cn('h-2 w-2 shrink-0 rounded-full', RAIL[tone])} />
       </div>
-      <p className="mt-1.5 line-clamp-2 text-[0.95rem] font-semibold leading-snug text-slate-900">{record.title}</p>
-      <p className="mt-1.5 truncate text-xs text-slate-500">
+      <p className="mt-1.5 line-clamp-2 text-[13px] font-semibold leading-snug text-ink">{record.title}</p>
+      <p className={`mt-1.5 truncate ${t.caption}`}>
         {[record.leadAuthor, record.year, record.journal].filter(Boolean).join(' · ') || 'Citation details pending'}
       </p>
       <div className="mt-2.5 flex items-center gap-2">
         <VoteMarks decisions={decisions} record={record} />
-        <span className="text-[11px] font-medium text-slate-500">{STATUS_LABELS[status]}</span>
+        <span className={t.caption}>{STATUS_LABELS[status]}</span>
       </div>
     </button>
   );
@@ -709,26 +820,24 @@ function ReferenceDetail({
   }, [record.id, scrollVersion]);
 
   return (
-    <article ref={detailRef} className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-gradient-to-b from-slate-50/70 via-white to-white">
+    <article ref={detailRef} className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-surface">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-5 pb-7 pt-16 sm:px-8 sm:py-8 xl:px-10">
-        <header className="pb-2">
+        <header>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-[#0b3a70] px-3 py-1 text-xs font-bold tracking-wide text-white">{record.assignedStudyId}</span>
-            <ResolutionPill resolution={resolution}>{RESOLUTION_LABELS[resolution]}</ResolutionPill>
+            <Tag mono>{record.assignedStudyId}</Tag>
+            <StatePill state={resolution}>{RESOLUTION_LABELS[resolution]}</StatePill>
             {!record.abstract?.trim() ? (
-              <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800">
-                <span aria-hidden>!</span> Missing abstract
-              </span>
+              <Pill tone="attention" icon={<Warning weight="fill" />}>
+                Missing abstract
+              </Pill>
             ) : null}
             {linkedFullTextId ? (
-              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800">
-                Full text record created
-              </span>
+              <Pill tone="info" icon={<ArrowCircleUpRight weight="fill" />}>
+                Full-text record created
+              </Pill>
             ) : null}
           </div>
-          <h2 className="mt-3 break-words text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-[1.65rem]">
-            {record.title}
-          </h2>
+          <h2 className={`mt-3 break-words ${t.title}`}>{record.title}</h2>
         </header>
 
         <MetadataStrip
@@ -740,36 +849,34 @@ function ReferenceDetail({
           ]}
         />
 
-        <section className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 shadow-sm shadow-slate-900/[0.02]">
-          <SectionEyebrow>Abstract</SectionEyebrow>
+        <Card>
+          <p className={t.label}>Abstract</p>
           {abstractSections.length > 0 ? (
             <div className="mt-3 space-y-3">
               {abstractSections.map((section, index) => (
                 <div
                   key={`${section.heading ?? 'abstract'}-${index}`}
-                  className={`rounded-xl border px-4 py-3 ${
-                    section.heading
-                      ? 'border-slate-200/80 bg-slate-50/80'
-                      : 'border-slate-100 bg-white'
-                  }`}
+                  className={cn(
+                    'rounded-card px-4 py-3',
+                    section.heading ? 'bg-surface-sunk' : 'border border-line',
+                  )}
                 >
                   {section.heading ? (
-                    <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0b3a70]">
-                      {section.heading}
-                    </p>
+                    <p className={`mb-1.5 ${t.label} text-navy-600`}>{section.heading}</p>
                   ) : null}
-                  <p className="whitespace-pre-wrap break-words text-[0.95rem] leading-7 text-slate-800">
+                  <p className="whitespace-pre-wrap break-words text-[13px] leading-[1.7] text-ink-body">
                     {section.body}
                   </p>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="mt-3 whitespace-pre-wrap break-words text-[0.95rem] leading-7 text-slate-800">
-              No abstract was imported or found through the free metadata lookup. Screen from title and citation details, or retrieve metadata before final adjudication.
+            <p className="mt-3 whitespace-pre-wrap break-words text-[13px] leading-[1.7] text-ink-body">
+              No abstract was imported or found through the free metadata lookup. Screen from title and
+              citation details, or retrieve metadata before final adjudication.
             </p>
           )}
-        </section>
+        </Card>
 
         <AiRecommendationCard record={record} />
 
@@ -787,17 +894,19 @@ function ReferenceDetail({
           onSaveDecision={onSaveDecision}
         />
 
-        <section className="border-t border-slate-200/80 pt-5">
-          <SectionEyebrow>Reviewer notes</SectionEyebrow>
+        <section className="border-t border-line pt-5">
+          <p className={t.label}>Reviewer notes</p>
           <div className="mt-3 space-y-2">
-            {decisions.length > 0 ? decisions.map((entry) => (
-              <ReviewerNoteCard
-                key={`${entry.reviewerProfileId}-${entry.decidedAt}`}
-                entry={entry}
-                isCurrentReviewer={entry.reviewerProfileId === currentReviewerId}
-              />
-            )) : (
-              <p className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/60 px-4 py-6 text-center text-sm text-slate-500">
+            {decisions.length > 0 ? (
+              decisions.map((entry) => (
+                <ReviewerNoteCard
+                  key={`${entry.reviewerProfileId}-${entry.decidedAt}`}
+                  entry={entry}
+                  isCurrentReviewer={entry.reviewerProfileId === currentReviewerId}
+                />
+              ))
+            ) : (
+              <p className={`rounded-card border border-dashed border-line px-4 py-6 text-center ${t.caption}`}>
                 No reviewer decisions yet.
               </p>
             )}
@@ -805,15 +914,6 @@ function ReferenceDetail({
         </section>
       </div>
     </article>
-  );
-}
-
-function SectionEyebrow({ children }: { children: ReactNode }) {
-  return (
-    <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-      <span aria-hidden className="h-px w-5 bg-slate-300" />
-      {children}
-    </p>
   );
 }
 
@@ -831,7 +931,7 @@ function MobileDrawerButton({
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/80 bg-white/95 text-[#0b3a70] shadow-lg shadow-slate-900/10 ring-1 ring-white/80 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0b3a70]/30 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#0b3a70]/25"
+      className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-line-strong bg-surface text-navy-600 shadow-e2 transition-colors duration-[160ms] ease-gbi hover:border-navy-300 focus-visible:outline-none focus-visible:shadow-focus [&>svg]:h-[18px] [&>svg]:w-[18px]"
     >
       {children}
     </button>
@@ -849,8 +949,14 @@ function formatDuplicateWarningMessage(warnings: DuplicateWarning[]) {
   return `Possible duplicate found in ${location}: ${study}${warning.matchedTitle}${extraCount}. Please check before continuing.`;
 }
 
+/**
+ * One tone whatever the AI concluded, matching the full-text screens. A
+ * recommendation is not a decision, and this card sits directly above the
+ * control that records one.
+ */
 function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
   const targetLabel = record.aiTargetTag === 'systematic_review' ? 'Systematic review' : null;
+  const hasDecision = record.aiSuggestedDecision === 'include' || record.aiSuggestedDecision === 'exclude';
   const label = record.aiStatus === 'running'
     ? 'Running'
     : record.aiStatus === 'failed'
@@ -860,60 +966,51 @@ function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
         : record.aiSuggestedDecision === 'exclude'
           ? 'Exclude'
           : 'Not run';
-  const tone = record.aiSuggestedDecision === 'include'
-    ? 'emerald'
-    : record.aiSuggestedDecision === 'exclude'
-      ? 'rose'
-      : record.aiStatus === 'failed'
-        ? 'amber'
-        : 'slate';
-  const panelClasses = tone === 'emerald'
-    ? 'border-emerald-200 bg-emerald-50/50'
-    : tone === 'rose'
-      ? 'border-rose-200 bg-rose-50/50'
-      : tone === 'amber'
-        ? 'border-amber-200 bg-amber-50/50'
-        : 'border-slate-200 bg-slate-50/70';
-  const badgeClasses = tone === 'emerald'
-    ? 'border-emerald-300 bg-white text-emerald-800'
-    : tone === 'rose'
-      ? 'border-rose-300 bg-white text-rose-800'
-      : tone === 'amber'
-        ? 'border-amber-300 bg-white text-amber-800'
-        : 'border-slate-200 bg-white text-slate-600';
+  const tone: Tone = record.aiStatus === 'failed' ? 'attention' : hasDecision ? 'info' : 'neutral';
 
   return (
-    <section className={`rounded-2xl border px-5 py-4 ${panelClasses}`}>
+    <Card className="bg-surface-sunk shadow-e0">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">AI recommendation</p>
+        <p className={t.label}>
+          <Sparkle aria-hidden weight="fill" className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]" />
+          AI recommendation
+        </p>
         <div className="flex flex-wrap justify-end gap-2">
-          {targetLabel ? (
-            <span className="inline-flex items-center rounded-full border border-amber-300 bg-white px-2.5 py-1 text-xs font-semibold text-amber-800">
-              {targetLabel}
-            </span>
-          ) : null}
-          <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-semibold ${badgeClasses}`}>
+          {targetLabel ? <Tag category="system">{targetLabel}</Tag> : null}
+          <Pill
+            tone={tone}
+            dot={!hasDecision}
+            icon={
+              hasDecision
+                ? record.aiSuggestedDecision === 'include'
+                  ? <CheckCircle weight="fill" />
+                  : <XCircle weight="fill" />
+                : undefined
+            }
+          >
             {label}
-          </span>
+          </Pill>
         </div>
       </div>
       {record.aiReason ? (
-        <p className="mt-3 text-sm leading-6 text-slate-700">{record.aiReason}</p>
+        <p className={`mt-3 ${t.body}`}>{record.aiReason}</p>
       ) : (
-        <p className="mt-3 text-sm leading-6 text-slate-500">No local title/abstract AI recommendation has been recorded yet.</p>
+        <p className={`mt-3 ${t.body} text-ink-soft`}>
+          No local title and abstract AI recommendation has been recorded yet.
+        </p>
       )}
-    </section>
+    </Card>
   );
 }
 
 function MetadataStrip({ items }: { items: Array<{ label: string; value: string | null | undefined }> }) {
   return (
-    <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 sm:grid-cols-4">
+    <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-card bg-line sm:grid-cols-4">
       {items.map((item) => (
-        <div key={item.label} className="min-w-0 bg-white px-4 py-3">
-          <dt className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{item.label}</dt>
-          <dd className="mt-1 truncate text-sm font-medium text-slate-800" title={item.value ?? undefined}>
-            {item.value || <span className="text-slate-400">—</span>}
+        <div key={item.label} className="min-w-0 bg-surface px-4 py-3">
+          <dt className={t.label}>{item.label}</dt>
+          <dd className="mt-1 truncate text-[13px] font-medium text-ink" title={item.value ?? undefined}>
+            {item.value || <span className="text-ink-soft">—</span>}
           </dd>
         </div>
       ))}
@@ -947,130 +1044,67 @@ function DecisionPanel({
   onSaveDecision: (decision: TitleAbstractDecision) => void;
 }) {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-[#0b3a70]" />
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">Decision</p>
-        </div>
+    <Card>
+      <div className="flex items-baseline justify-between gap-3">
+        <h3 className={t.section}>Decision</h3>
         {currentReviewerVoteLabel ? (
-          <span className="text-[11px] font-medium text-slate-500">
-            You voted <span className="font-semibold text-slate-700 capitalize">{currentReviewerVoteLabel}</span>
+          <span className={t.caption}>
+            You voted <span className="font-semibold capitalize text-ink-body">{currentReviewerVoteLabel}</span>
           </span>
         ) : null}
       </div>
 
       {canResolve ? (
-        <div className="mt-3 inline-flex rounded-full border border-slate-200 bg-slate-50 p-0.5 text-xs font-semibold">
-          <button
-            type="button"
-            onClick={() => onChangeDecisionAction('reviewer_vote')}
-            className={`rounded-full px-3 py-1 transition ${
-              decisionAction === 'reviewer_vote' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            My vote
-          </button>
-          <button
-            type="button"
-            onClick={() => onChangeDecisionAction('resolver_decision')}
-            className={`rounded-full px-3 py-1 transition ${
-              decisionAction === 'resolver_decision' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            Resolve
-          </button>
-        </div>
+        <Segmented
+          className="mt-3"
+          label="What this decision records"
+          value={decisionAction}
+          onChange={onChangeDecisionAction}
+          items={[
+            { value: 'reviewer_vote', label: 'My vote' },
+            { value: 'resolver_decision', label: 'Resolve' },
+          ]}
+        />
       ) : null}
 
-      <div className="mt-3 grid grid-cols-3 gap-2">
-        <DecisionButton
-          tone="include"
-          active={decision === 'include'}
-          disabled={isPending}
-          onClick={() => {
-            onChangeDecision('include');
-            onSaveDecision('include');
-          }}
-          icon="✓"
-          label={isPending && decision === 'include' ? 'Saving...' : 'Include'}
-        />
-        <DecisionButton
-          tone="exclude"
-          active={decision === 'exclude'}
-          disabled={isPending}
-          onClick={() => {
-            onChangeDecision('exclude');
-            onSaveDecision('exclude');
-          }}
-          icon="✕"
-          label={isPending && decision === 'exclude' ? 'Saving...' : 'Exclude'}
-        />
-        <DecisionButton
-          tone="flag"
-          active={decision === 'flag'}
-          disabled={isPending}
-          onClick={() => {
-            onChangeDecision('flag');
+      {/* These three save on click, so `Decide` is doing the job of a submit
+          control here, not of a radio group. */}
+      <Decide
+        className="mt-3 grid w-full grid-cols-3 [&>button]:w-full"
+        label="Screening decision"
+        value={decision}
+        onChange={(kind) => {
+          const next = kind as TitleAbstractDecision;
+          onChangeDecision(next);
+          if (next === 'flag') {
             onRequestFlag();
-          }}
-          icon="!"
-          label={isPending && decision === 'flag' ? 'Saving...' : 'Flag'}
-        />
-      </div>
-
-      <textarea
-        value={note}
-        onChange={(event) => onChangeNote(event.target.value)}
-        placeholder="Optional reviewer note"
-        rows={2}
-        className="mt-3 w-full resize-none rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-slate-400"
+            return;
+          }
+          onSaveDecision(next);
+        }}
+        options={[
+          { kind: 'include', label: isPending && decision === 'include' ? 'Saving…' : 'Include', disabled: isPending },
+          { kind: 'exclude', label: isPending && decision === 'exclude' ? 'Saving…' : 'Exclude', disabled: isPending },
+          { kind: 'flag', label: isPending && decision === 'flag' ? 'Saving…' : 'Flag', disabled: isPending },
+        ]}
       />
 
-    </section>
+      {/* The note box had no label either. */}
+      <Field className="mt-3" label="Reviewer note" help="Optional. Saved with your decision.">
+        {({ id, describedBy }) => (
+          <Textarea
+            id={id}
+            aria-describedby={describedBy}
+            value={note}
+            onChange={(event) => onChangeNote(event.target.value)}
+            placeholder="Optional reviewer note"
+            rows={2}
+          />
+        )}
+      </Field>
+    </Card>
   );
 }
-
-function DecisionButton({
-  tone,
-  active,
-  onClick,
-  disabled,
-  icon,
-  label,
-}: {
-  tone: TitleAbstractDecision;
-  active: boolean;
-  onClick: () => void;
-  disabled?: boolean;
-  icon: string;
-  label: string;
-}) {
-  const palette = active ? DECISION_BUTTON_ACTIVE[tone] : DECISION_BUTTON_IDLE[tone];
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-      className={`flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60 ${palette}`}
-    >
-      <span aria-hidden className="text-sm leading-none">{icon}</span>
-      {label}
-    </button>
-  );
-}
-
-const DECISION_BUTTON_ACTIVE: Record<TitleAbstractDecision, string> = {
-  include: 'border-emerald-500 bg-emerald-100 text-emerald-900 shadow-sm',
-  exclude: 'border-rose-500 bg-rose-100 text-rose-900 shadow-sm',
-  flag: 'border-amber-500 bg-amber-100 text-amber-900 shadow-sm',
-};
-
-const DECISION_BUTTON_IDLE: Record<TitleAbstractDecision, string> = {
-  include: 'border-emerald-200/70 bg-emerald-50/50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-50',
-  exclude: 'border-rose-200/70 bg-rose-50/50 text-rose-700 hover:border-rose-300 hover:bg-rose-50',
-  flag: 'border-amber-200/70 bg-amber-50/50 text-amber-800 hover:border-amber-300 hover:bg-amber-50',
-};
 
 function ReviewerNoteCard({
   entry,
@@ -1079,10 +1113,8 @@ function ReviewerNoteCard({
   entry: ReturnType<typeof getTitleAbstractDecisions>[number];
   isCurrentReviewer: boolean;
 }) {
-  const tone = entry.decision;
-  const rowClasses = REVIEWER_ROW_CLASSES[tone];
-  const avatarClasses = REVIEWER_AVATAR_CLASSES[tone];
-  const pillClasses = REVIEWER_PILL_CLASSES[tone];
+  const tone = DECISION_TONE[entry.decision];
+  const Glyph = STATE_ICON[tone];
   const initials = (entry.reviewerName ?? 'Reviewer')
     .split(/\s+/)
     .filter(Boolean)
@@ -1090,104 +1122,122 @@ function ReviewerNoteCard({
     .map((part) => part[0]?.toUpperCase())
     .join('') || 'R';
   const isResolver = entry.action === 'resolver_decision';
+
   return (
-    <div className={`flex items-start gap-3 rounded-2xl border px-4 py-3 shadow-sm shadow-slate-900/[0.02] ${rowClasses}`}>
-      <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-[11px] font-bold tracking-wide ${avatarClasses}`}>
+    <div className="relative flex items-start gap-3 overflow-hidden rounded-card bg-surface py-3 pl-[19px] pr-4 shadow-e1">
+      {/* Whose vote it is is not a decision, so the avatar stays neutral and the
+          rail and the pill carry the colour. */}
+      <span aria-hidden className={cn('absolute inset-y-0 left-0 w-[3px]', RAIL[tone])} />
+      <span
+        aria-hidden
+        className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-surface-sunk text-[11px] font-semibold tracking-wide text-ink-muted"
+      >
         {initials}
       </span>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <span className="truncate text-sm font-semibold text-slate-900">{entry.reviewerName ?? 'Reviewer'}</span>
-          {isCurrentReviewer && !isResolver ? (
-            <span className="rounded-full bg-white/70 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#0b3a70]">Your vote</span>
-          ) : null}
-          {isResolver ? (
-            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800">Resolver</span>
-          ) : null}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="truncate text-[13px] font-semibold text-ink">{entry.reviewerName ?? 'Reviewer'}</span>
+          {isCurrentReviewer && !isResolver ? <Tag>Your vote</Tag> : null}
+          {isResolver ? <Tag>Resolver</Tag> : null}
         </div>
         {entry.note ? (
-          <p className="mt-1 break-words text-sm leading-6 text-slate-700">{entry.note}</p>
+          <p className={`mt-1 break-words ${t.body}`}>{entry.note}</p>
         ) : (
-          <p className="mt-1 text-xs text-slate-400">No note.</p>
+          <p className={`mt-1 ${t.caption}`}>No note.</p>
         )}
       </div>
-      <span className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[11px] font-semibold capitalize ${pillClasses}`}>
+      <Pill tone={tone} icon={<Glyph weight="fill" />} className="shrink-0 capitalize">
         {entry.decision}
-      </span>
+      </Pill>
     </div>
   );
 }
-
-const REVIEWER_ROW_CLASSES: Record<TitleAbstractDecision, string> = {
-  include: 'border-emerald-200/70 bg-emerald-50/60',
-  exclude: 'border-rose-200/70 bg-rose-50/60',
-  flag: 'border-amber-200/70 bg-amber-50/60',
-};
-
-const REVIEWER_AVATAR_CLASSES: Record<TitleAbstractDecision, string> = {
-  include: 'bg-emerald-500/90 text-white',
-  exclude: 'bg-rose-500/90 text-white',
-  flag: 'bg-amber-500/90 text-white',
-};
-
-const REVIEWER_PILL_CLASSES: Record<TitleAbstractDecision, string> = {
-  include: 'border-emerald-300/80 bg-white text-emerald-700',
-  exclude: 'border-rose-300/80 bg-white text-rose-700',
-  flag: 'border-amber-300/80 bg-white text-amber-800',
-};
 
 function FilterButton({
   label,
   count,
   active,
   onClick,
-  accent,
+  dot,
 }: {
   label: string;
   count: number;
   active: boolean;
   onClick: () => void;
-  accent?: 'brand' | 'emerald' | 'rose' | 'amber';
+  dot?: Tone;
 }) {
-  const dotClass = accent ? FILTER_DOT_CLASSES[accent] : 'bg-slate-300';
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 ease-out ${
-        active
-          ? 'bg-[#0b3a70] text-white shadow-[0_8px_22px_-12px_rgba(11,58,112,0.6)]'
-          : 'text-slate-600 hover:bg-white hover:text-[#0b3a70]'
-      }`}
+      aria-pressed={active}
+      className={cn(
+        'flex min-h-9 w-full items-center justify-between gap-2 rounded-ctl px-3 text-[13px] font-medium',
+        'transition-colors duration-[160ms] ease-gbi focus-visible:outline-none focus-visible:shadow-focus',
+        active ? 'bg-navy-600 font-semibold text-white' : 'text-ink-muted hover:bg-surface hover:text-ink',
+      )}
     >
       <span className="flex items-center gap-2">
-        <span aria-hidden className={`inline-block h-1.5 w-1.5 rounded-full ${active ? 'bg-white/80' : dotClass}`} />
+        <span
+          aria-hidden
+          className={cn('inline-block h-1.5 w-1.5 shrink-0 rounded-full', active ? 'bg-white/70' : dot ? RAIL[dot] : 'bg-n-300')}
+        />
         {label}
       </span>
-      <span className={`text-[11px] font-semibold ${active ? 'text-white/70' : 'text-slate-400'}`}>{count}</span>
+      <span className={cn('text-[11px] font-semibold', t.num, active ? 'text-white/70' : 'text-ink-soft')}>
+        {count}
+      </span>
     </button>
   );
 }
 
-const FILTER_DOT_CLASSES: Record<'brand' | 'emerald' | 'rose' | 'amber', string> = {
-  brand: 'bg-[#0b3a70]',
-  emerald: 'bg-emerald-500',
-  rose: 'bg-rose-500',
-  amber: 'bg-amber-500',
-};
+function StatePill({
+  state,
+  children,
+}: {
+  state: TitleAbstractWorkStatus | TitleAbstractResolution;
+  children: ReactNode;
+}) {
+  const tone = STATE_TONE[state];
+  const Glyph = STATE_ICON[tone];
+  return (
+    <Pill tone={tone} icon={<Glyph weight="fill" />}>
+      {children}
+    </Pill>
+  );
+}
 
-function StatusDot({ status }: { status: TitleAbstractWorkStatus }) {
-  const classes: Record<TitleAbstractWorkStatus, string> = {
-    needs_your_vote: 'bg-[#0b3a70]',
-    awaiting_ai_recommendation: 'bg-slate-300',
-    awaiting_other_reviewer: 'bg-slate-300',
-    flagged: 'bg-amber-500',
-    ready_for_full_text: 'bg-emerald-500',
-    excluded: 'bg-rose-500',
-    needs_resolver: 'bg-amber-500',
-    promoted_to_full_text: 'bg-emerald-500 ring-2 ring-emerald-100',
-  };
-  return <span aria-hidden className={`h-2 w-2 rounded-full ${classes[status]}`} />;
+function ProgressReadout({
+  label,
+  percent,
+  value,
+  total,
+  caption,
+  tone,
+}: {
+  label: string;
+  percent: number;
+  value: number;
+  total: number;
+  caption: string;
+  tone: Tone;
+}) {
+  return (
+    <div>
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className={t.label}>{label}</p>
+          <p className={`mt-2 text-[13px] text-ink-body ${t.num}`}>
+            <span className="font-semibold text-ink">{value}</span>
+            <span className="text-ink-soft"> / </span>
+            <span>{total}</span> {caption}
+          </p>
+        </div>
+        <p className={`shrink-0 ${t.title} ${t.num}`}>{percent}%</p>
+      </div>
+      <Meter className="mt-3" value={percent} tone={tone} label={`${label}: ${percent}%`} />
+    </div>
+  );
 }
 
 type DecisionMark = {
@@ -1220,6 +1270,12 @@ const getAiDecisionMark = (record: ScreeningRecord): DecisionMark => {
   };
 };
 
+/**
+ * Two marks per row: what a human decided and what the AI proposed. The human
+ * mark takes the decision colour. The AI mark is navy whatever it says, so a
+ * scan down the list never mistakes a suggestion for a vote; which way it went
+ * is in the icon and in the accessible label.
+ */
 function VoteMarks({
   decisions,
   record,
@@ -1228,13 +1284,14 @@ function VoteMarks({
   record: ScreeningRecord;
 }) {
   const humanDecision = decisions.find((entry) => entry.action !== 'resolver_decision') ?? null;
-  const slots: DecisionMark[] = [
+  const slots: Array<DecisionMark & { isAi: boolean }> = [
     {
       key: 'human',
       decision: humanDecision?.decision ?? null,
       label: humanDecision ? `Human ${humanDecision.decision}` : 'Human decision pending',
+      isAi: false,
     },
-    getAiDecisionMark(record),
+    { ...getAiDecisionMark(record), isAi: true },
   ];
 
   return (
@@ -1246,19 +1303,25 @@ function VoteMarks({
               key={entry.key}
               aria-label={entry.label}
               title={entry.label}
-              className="h-4 w-4 rounded-full border-2 border-dashed border-slate-300 bg-white"
+              className="h-4 w-4 shrink-0 rounded-full border border-dashed border-line-strong"
             />
           );
         }
-        const classes = VOTE_MARK_CLASSES[entry.decision];
+        const Glyph = entry.decision === 'include' ? CheckCircle : entry.decision === 'exclude' ? XCircle : Warning;
         return (
+          // The label lives on the wrapper: a Phosphor icon takes no `title`,
+          // and this mark is the only thing saying which way the vote went.
           <span
             key={entry.key}
+            role="img"
             aria-label={entry.label}
             title={entry.label}
-            className={`grid h-4 w-4 place-items-center rounded-full text-[9px] font-bold leading-none ${classes}`}
+            className={cn(
+              'inline-flex h-4 w-4 shrink-0',
+              entry.isAi ? 'text-navy-600' : DECISION_MARK_COLOUR[entry.decision],
+            )}
           >
-            {entry.decision === 'include' ? '✓' : entry.decision === 'exclude' ? '✕' : '!'}
+            <Glyph aria-hidden weight="fill" className="h-full w-full" />
           </span>
         );
       })}
@@ -1266,171 +1329,8 @@ function VoteMarks({
   );
 }
 
-const VOTE_MARK_CLASSES: Record<TitleAbstractDecision, string> = {
-  include: 'bg-emerald-500 text-white shadow-sm shadow-emerald-500/30 ring-1 ring-emerald-100',
-  exclude: 'bg-rose-500 text-white shadow-sm shadow-rose-500/30 ring-1 ring-rose-100',
-  flag: 'bg-amber-500 text-white shadow-sm shadow-amber-500/30 ring-1 ring-amber-100',
+const DECISION_MARK_COLOUR: Record<TitleAbstractDecision, string> = {
+  include: 'text-positive',
+  exclude: 'text-negative',
+  flag: 'text-attention',
 };
-
-function ResolutionPill({ resolution, children }: { resolution: TitleAbstractResolution; children: ReactNode }) {
-  const classes: Record<TitleAbstractResolution, string> = {
-    pending: 'border-slate-200 bg-slate-50 text-slate-600',
-    flagged: 'border-amber-200 bg-amber-50 text-amber-800',
-    ready_for_full_text: 'border-emerald-200 bg-emerald-50 text-emerald-700',
-    excluded: 'border-rose-200 bg-rose-50 text-rose-700',
-    needs_resolver: 'border-amber-200 bg-amber-50 text-amber-800',
-    promoted_to_full_text: 'border-emerald-300 bg-emerald-50 text-emerald-800',
-  };
-  return <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${classes[resolution]}`}>{children}</span>;
-}
-
-function Notice({ tone, message }: { tone: 'success' | 'error' | 'neutral'; message: string }) {
-  const classes = tone === 'error'
-    ? 'border-rose-200/70 bg-rose-50/80 text-rose-700'
-    : tone === 'success'
-      ? 'border-emerald-200/70 bg-emerald-50/80 text-emerald-700'
-      : 'border-slate-200/70 bg-slate-50/80 text-slate-700';
-  return <div className={`rounded-2xl border px-4 py-3 text-sm font-medium ${classes}`}>{message}</div>;
-}
-
-type ScreeningStatTone = 'navy' | 'indigo' | 'amber' | 'emerald';
-type ProgressTileTone = 'navy' | 'emerald';
-
-const SCREENING_STAT_TONES: Record<ScreeningStatTone, { value: string; gradient: string }> = {
-  navy: {
-    value: 'text-[#0b3a70]',
-    gradient: 'from-[#0b3a70]/12 via-sky-300/10 to-indigo-200/15',
-  },
-  indigo: {
-    value: 'text-indigo-700',
-    gradient: 'from-indigo-500/15 via-sky-300/10 to-indigo-200/15',
-  },
-  amber: {
-    value: 'text-amber-700',
-    gradient: 'from-amber-400/20 via-orange-300/10 to-amber-200/20',
-  },
-  emerald: {
-    value: 'text-emerald-700',
-    gradient: 'from-emerald-500/15 via-teal-300/10 to-emerald-200/20',
-  },
-};
-
-const PROGRESS_TILE_TONES: Record<ProgressTileTone, { value: string; bar: string; surface: string }> = {
-  navy: {
-    value: 'text-[#0b3a70]',
-    bar: 'bg-[#0b3a70]',
-    surface: 'bg-slate-50/80',
-  },
-  emerald: {
-    value: 'text-emerald-700',
-    bar: 'bg-emerald-500',
-    surface: 'bg-emerald-50/50',
-  },
-};
-
-function ProgressTile({
-  label,
-  percent,
-  value,
-  total,
-  caption,
-  tone,
-}: {
-  label: string;
-  percent: number;
-  value: number;
-  total: number;
-  caption: string;
-  tone: ProgressTileTone;
-}) {
-  const styles = PROGRESS_TILE_TONES[tone];
-  return (
-    <div className={`rounded-xl border border-slate-200/80 p-4 ${styles.surface}`}>
-      <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">{label}</p>
-          <p className="mt-2 text-sm font-medium text-slate-600">
-            <span className="font-semibold tabular-nums text-slate-900">{value}</span>
-            <span className="text-slate-400"> / </span>
-            <span className="tabular-nums">{total}</span> {caption.toLowerCase()}
-          </p>
-        </div>
-        <p className={`shrink-0 text-3xl font-semibold tracking-tight tabular-nums ${styles.value}`}>{percent}%</p>
-      </div>
-      <div className="mt-4 h-2 overflow-hidden rounded-full bg-white ring-1 ring-slate-200/70">
-        <div
-          className={`h-full rounded-full transition-[width] duration-700 ease-out ${styles.bar}`}
-          style={{ width: `${percent}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ScreeningStat({
-  label,
-  value,
-  caption,
-  tone,
-}: {
-  label: string;
-  value: number;
-  caption: string;
-  tone: ScreeningStatTone;
-}) {
-  const styles = SCREENING_STAT_TONES[tone];
-  return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-md ring-1 ring-slate-200/60 backdrop-blur transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg">
-      <div aria-hidden className={`pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br ${styles.gradient}`} />
-      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">{label}</p>
-      <p className={`mt-2 text-2xl font-semibold tracking-tight tabular-nums ${styles.value}`}>{value}</p>
-      <p className="mt-1.5 text-[11px] leading-snug text-slate-600">{caption}</p>
-    </div>
-  );
-}
-
-function UploadIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M8 11V2.5" />
-      <path d="m4.5 6 3.5-3.5L11.5 6" />
-      <path d="M2.5 11.5v1A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5v-1" />
-    </svg>
-  );
-}
-
-function SearchIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <circle cx="7" cy="7" r="5" />
-      <path d="m13.5 13.5-3-3" />
-    </svg>
-  );
-}
-
-function ChevronRightIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M6 3.5 10.5 8 6 12.5" />
-    </svg>
-  );
-}
-
-function MenuIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden>
-      <path d="M3 4h10" />
-      <path d="M3 8h10" />
-      <path d="M3 12h10" />
-    </svg>
-  );
-}
-
-function CloseIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden>
-      <path d="M4 4 12 12" />
-      <path d="M12 4 4 12" />
-    </svg>
-  );
-}
