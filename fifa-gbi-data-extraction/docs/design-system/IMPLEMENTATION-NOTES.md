@@ -27,6 +27,31 @@ reads wrong in daily use.
 and needing a conflict resolved are amber; waiting on another reviewer or on a
 PDF is neutral. A queue that is merely slow should not read as one in trouble.
 
+## Phase 3: title and abstract screening
+
+Migrated, with two calls carried over from Phase 2 and one new disagreement.
+
+The AI mark in a reference row and the AI recommendation pill in the detail pane
+are navy whatever they say, matching the full-text screens.
+
+**`flagged` is amber here and red in extraction.** On this screen flagging is one
+of the three things the `Decide` control does, and `Decide` fills amber when the
+flag option is pressed. A pill contradicting the button that set it is worse than
+a tone that differs from another screen. If this should be reconciled, the change
+belongs in `Decide`, not in the screens.
+
+**Selection is not a state.** A reference row's rail carries its state; the
+selected row's rail turns navy instead. Two separate signals were competing for
+the same three pixels.
+
+Not migrated: the offline screening packs at `/title-abstract-offline/[packId]`.
+
+## What is left
+
+The legacy compatibility shim at the bottom of `src/app/globals.css` can go once
+the remaining screens are migrated: `/dashboard` and its sub-routes,
+`/profiles/select`, `/overview`, `/settings/api`, and the offline packs.
+
 ## Additions to the system
 
 | Addition | Why |
