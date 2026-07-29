@@ -22,5 +22,6 @@ export type { TabItem } from '@/components/ui/tabs';
 export { numericCell, Table, TableWrap, Td, Th, Tr } from '@/components/ui/table';
 export { Tag } from '@/components/ui/tag';
 export { Toast, ToastViewport } from '@/components/ui/toast';
+export { TONE_PANEL } from '@/components/ui/tone';
 export type { Category, Tone } from '@/components/ui/tone';
 export { t } from '@/components/ui/type';

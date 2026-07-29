@@ -33,6 +33,7 @@ import {
   Segmented,
   Select,
   t,
+  TONE_PANEL,
   Tag,
   Textarea,
 } from '@/components/ui';
@@ -655,9 +656,13 @@ export function FullTextScreeningWorkspaceClient({
             ) : null}
           </section>
 
-          <Card className="bg-surface-sunk shadow-e0">
+          {/* The panel takes the tone of the verdict it is reporting. */}
+          <Card className={cn('shadow-e0', TONE_PANEL[aiTone])}>
             <div className="flex items-center justify-between gap-3">
-              <p className={t.label}>
+              {/* `ink-muted`, not the `t.label` default of `ink-soft`: on a tinted
+                  panel `ink-soft` is 3.8:1, under the 4.5 floor for text this
+                  small. */}
+              <p className={cn(t.label, 'text-ink-muted')}>
                 <Sparkle aria-hidden weight="fill" className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]" />
                 AI suggestion
               </p>
@@ -678,9 +683,11 @@ export function FullTextScreeningWorkspaceClient({
             {record.aiReason ? (
               <p className={`mt-3 ${t.body}`}>{record.aiReason}</p>
             ) : (
-              <p className={`mt-3 ${t.body} text-ink-soft`}>No AI recommendation has been recorded yet.</p>
+              <p className={`mt-3 ${t.body} text-ink-muted`}>No AI recommendation has been recorded yet.</p>
             )}
-            <p className={`mt-3 ${t.caption}`}>Advisory only. Final eligibility depends on reviewer votes.</p>
+            <p className={cn('mt-3', t.caption, 'text-ink-muted')}>
+              Advisory only. Final eligibility depends on reviewer votes.
+            </p>
           </Card>
 
           <Card className="shadow-e0 ring-1 ring-line">

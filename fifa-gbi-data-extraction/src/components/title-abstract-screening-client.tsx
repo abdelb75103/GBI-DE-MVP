@@ -34,6 +34,7 @@ import {
   StatTile,
   t,
   Tag,
+  TONE_PANEL,
   Textarea,
 } from '@/components/ui';
 import type { Tone } from '@/components/ui';
@@ -973,9 +974,11 @@ function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
         : 'neutral';
 
   return (
-    <Card className="bg-surface-sunk shadow-e0">
+    <Card className={cn('shadow-e0', TONE_PANEL[tone])}>
       <div className="flex items-center justify-between gap-3">
-        <p className={t.label}>
+        {/* `ink-muted`, not the `t.label` default of `ink-soft`: on a tinted panel
+            `ink-soft` is 3.8:1, under the 4.5 floor for text this small. */}
+        <p className={cn(t.label, 'text-ink-muted')}>
           <Sparkle aria-hidden weight="fill" className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]" />
           AI recommendation
         </p>
@@ -999,7 +1002,7 @@ function AiRecommendationCard({ record }: { record: ScreeningRecord }) {
       {record.aiReason ? (
         <p className={`mt-3 ${t.body}`}>{record.aiReason}</p>
       ) : (
-        <p className={`mt-3 ${t.body} text-ink-soft`}>
+        <p className={`mt-3 ${t.body} text-ink-muted`}>
           No local title and abstract AI recommendation has been recorded yet.
         </p>
       )}
