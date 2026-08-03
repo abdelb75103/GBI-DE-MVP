@@ -8,7 +8,7 @@ import {
   getTitleAbstractResolution,
   getTitleAbstractWorkStatus,
 } from '@/lib/screening/title-abstract-decisions';
-import { isProgressCompletedStatus } from '@/lib/status-groups';
+import { isDashboardCountExcludedStatus, isProgressCompletedStatus } from '@/lib/status-groups';
 import type { PaperStatus, ScreeningRecord } from '@/lib/types';
 
 export type WorkflowStageMetrics = {
@@ -126,7 +126,7 @@ export const getFullTextMetrics = (
 };
 
 export const getExtractionMetrics = (papers: ExtractionMetricPaper[]): WorkflowStageMetrics => {
-  const visiblePapers = papers.filter((paper) => paper.status !== 'archived');
+  const visiblePapers = papers.filter((paper) => !isDashboardCountExcludedStatus(paper.status));
   const completed = visiblePapers.filter((paper) => isProgressCompletedStatus(paper.status)).length;
   const active = visiblePapers.filter((paper) => paper.assignedTo && !isProgressCompletedStatus(paper.status)).length;
   const flagged = visiblePapers.filter((paper) => Boolean(paper.flagReason)).length;
