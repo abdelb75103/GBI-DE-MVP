@@ -256,8 +256,8 @@ These records came from the April 24 full-text screening decision report and wer
 | `#869` | `S642` | `uploaded` | *Medical Support for an All-Star Youth Soccer Team in Niigata* |
 
 Import files:
-- Manifest/results: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/covidence-new-inclusions-2026-04-27`
-- Source report: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-uploaded-23-full-text-screening-review.html`
+- Manifest/results: `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/tmp/covidence-new-inclusions-2026-04-27`
+- Source report: `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-uploaded-23-full-text-screening-review.html`
 
 Related already-live record:
 - `#361` Ostenberg 2000 was already present as `S216` with status `extracted`, so it was not re-imported.
@@ -322,4 +322,4 @@ Related already-live record:
 - Session 3 remaining manual queue:
   - `/Users/abdelbabiker/Downloads/covidence-unresolved-second-pass-2026-03-23/remaining-manual-4.csv`
 - Session summary:
-  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-pdf-retrieval-summary.md`
+  - `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-pdf-retrieval-summary.md`

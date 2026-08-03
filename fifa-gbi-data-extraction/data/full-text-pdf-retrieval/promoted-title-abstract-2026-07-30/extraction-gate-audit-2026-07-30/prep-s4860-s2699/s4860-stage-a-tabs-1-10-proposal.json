@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "mode": "local_only_proposal",
+  "studyId": "S4860",
+  "screeningRecordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+  "approvedBridge": "full-text-ai-one-human-bridge-2026-07-30-v1",
+  "eligibility": {
+    "classification": "primary_study",
+    "proposedPaperStatus": "processing",
+    "why": "The verified article is a retrospective analysis of prospectively collected, athletic-trainer surveillance. Soccer-specific concussion counts, athlete-exposures and rates are directly reported by sex."
+  },
+  "source": {
+    "file": "browser-recovery/files/S4860-official.pdf",
+    "sha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+    "pages": 8,
+    "citation": "Hacherl SL, Herman DC, Martin JR, et al. Sex Differences in Concussion Rates among Middle School Sex-comparable Sports. The Journal of Pediatrics: Clinical Practice. 2026;20:200200. doi:10.1016/j.jpedcp.2026.200200."
+  },
+  "stageA": {
+    "result": "pass_with_reviewer_caveats",
+    "populationRule": "Use the only directly reported football-specific split: Girls' soccer / Boys' soccer. Do not add a Total row, because the article does not print a pooled soccer row. Do not use the 11,213 all-sport athlete count as a soccer sample size.",
+    "populationLabels": ["Girls' soccer", "Boys' soccer"],
+    "structuredDualWrite": "For every populated value below, later apply must create matching newline-aligned extraction_fields and population_values rows. No live payload is created here.",
+    "fields": {
+      "studyDetails": {
+        "studyId": "S4860",
+        "leadAuthor": "Hacherl SL",
+        "title": "Sex Differences in Concussion Rates among Middle School Sex-comparable Sports",
+        "yearOfPublication": "2026",
+        "journal": "The Journal of Pediatrics: Clinical Practice",
+        "doi": "10.1016/j.jpedcp.2026.200200",
+        "studyDesign": "retrospective cohort [prospective data]"
+      },
+      "participantCharacteristics": {
+        "fifaDiscipline": "Association football (11-a-side)",
+        "country": "United States",
+        "levelOfPlay": "middle school",
+        "sex": "female\nmale",
+        "ageCategory": "middle school (grades 6-8)\nmiddle school (grades 6-8)",
+        "observationDuration": "2015-2022 school years"
+      },
+      "definitions": {
+        "injuryDefinition": "medical attention [clinically diagnosed sport-related concussion requiring removal from activity]",
+        "incidenceDefinition": "per 1000 athlete-exposures",
+        "mechanismReporting": "athletic trainers"
+      },
+      "exposure": {
+        "exposureMeasurementUnit": "athlete-exposures",
+        "totalExposure": "32294\n47592",
+        "matchExposure": "8966\n12228",
+        "trainingExposure": "23328\n35364"
+      },
+      "injuryOutcome": {
+        "injuryTotalCount": "31\n18",
+        "injuryMatchCount": "18\n14",
+        "injuryTrainingCount": "13\n4",
+        "injuryIncidenceOverall": "0.96\n0.38",
+        "injuryIncidenceMatch": "2.01\n1.14",
+        "injuryIncidenceTraining": "0.56\n0.11",
+        "injuryIncidenceCi95": "0.62-1.30\n0.20-0.55",
+        "injuryContact": "30\n17"
+      },
+      "illnessOutcome": {},
+      "injuryTissueType": {
+        "injuryTissueType_concussion_prevalence": "31\n18"
+      },
+      "injuryLocation": {},
+      "illnessRegion": {},
+      "illnessEtiology": {}
+    },
+    "evidence": [
+      {
+        "pdfPages": "1",
+        "supports": "Citation, prospective epidemiological design, Virginia 2015-2022, athletic-trainer collection, athlete-exposure denominator and soccer as an included sport."
+      },
+      {
+        "pdfPages": "2",
+        "supports": "Retrospective research using embedded certified athletic trainers, daily SportsWare documentation, daily attendance by sport, athlete-exposure definition, and the four-part clinically diagnosed concussion definition."
+      },
+      {
+        "pdfPages": "3, Table II",
+        "supports": "Direct soccer rows. Girls: training 13 / 23,328 AE / 0.56 (0.25-0.86), competition 18 / 8,966 AE / 2.01 (1.08-2.94), overall 31 / 32,294 AE / 0.96 (0.62-1.30). Boys: training 4 / 35,364 AE / 0.11 (0.00-0.22), competition 14 / 12,228 AE / 1.14 (0.55-1.74), overall 18 / 47,592 AE / 0.38 (0.20-0.55)."
+      },
+      {
+        "pdfPages": "4, Table III and Figure",
+        "supports": "Sex-comparison IRRs and a visual duplicate of Table II rates. These comparison estimates are reviewed but not mapped into a Tabs 1-10 field."
+      },
+      {
+        "pdfPages": "5, Table IV",
+        "supports": "Soccer mechanism rows. Girls: player 8, surface 5, equipment 1, ball 7, nonspecific 9, unknown 1. Boys: player 6, surface 1, equipment 0, ball 6, nonspecific 4, unknown 1. injuryContact is the transparent direct sum of the five explicitly contact-classified categories: 30 / 17. Unknown is intentionally excluded."
+      }
+    ],
+    "intentionalBlanks": {
+      "studyDetails": ["None"],
+      "participantCharacteristics": [
+        "meanAge: reported only for the whole mixed-sport cohort, not soccer-specific",
+        "sampleSizePlayers: no soccer-specific unique-player count",
+        "numberOfTeams: school counts are not football-team counts"
+      ],
+      "definitions": [
+        "illnessDefinition, burdenDefinition, severityDefinition, recurrenceDefinition: not reported"
+      ],
+      "exposure": [
+        "seasonLength, numberOfSeasons: no compatible direct numeric season field is reported for the soccer subgroup"
+      ],
+      "injuryOutcome": [
+        "injuryPlayersCompletedStudy, injuryTeamsCompletedStudy, all medical-attention/time-loss subcounts, all time-loss incidence fields, burden/time-loss/severity fields, most-common fields, onset fields, injuryNonContact, injuryCumulativeRepetitive, recurrence fields: not separately reported or not a clean schema mapping",
+        "The soccer cohort is concussion-specific, so no generic most-common diagnosis/type/location is echoed."
+      ],
+      "illnessOutcome": ["All fields: no illness outcome."],
+      "injuryTissueType": ["All fields other than concussion prevalence: no tissue/type table, severity, burden or subtype value."],
+      "injuryLocation": ["All fields: concussion is a diagnosis here; no body-location table or direct location result is reported."],
+      "illnessRegion": ["All fields: no illness outcome."],
+      "illnessEtiology": ["All fields: no illness outcome."]
+    },
+    "reviewerCaveats": [
+      "This is a football-specific subgroup within a multi-sport study. Retain only the soccer rows, not pooled multi-sport totals.",
+      "The source calls the study prospective but says the research was retrospective. The proposed design records both facts.",
+      "The paper has a missing 2020-2021 school-year sport period, so no unsupported numeric season count is staged.",
+      "Confirm the amendment gate and current paper assignment before any live apply."
+    ]
+  },
+  "proposedBacklog2Row": "| S4860 | processing | ⏲️ pending_review | Primary-study extraction staged locally | Verified 8-page open-access full paper. Soccer-only girls/boys rows from Table II: direct concussion counts, athlete-exposures, match/training rates and CIs; Table IV direct contact-mechanism sum. No soccer-specific player count, team count, season count, time loss, illness or location/tissue detail beyond concussion. Full-text screening remains pending the second human reviewer under the exact 2026-07-30 bridge amendment. |"
+}

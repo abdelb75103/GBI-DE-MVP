@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-07-30T16:57:35.483Z",
+  "passed": true,
+  "checks": {
+    "storageChecks": {
+      "S5553": {
+        "readable": true,
+        "hash": "b11a11f68fa80fb43b1c6f8c13c1e60b0707ef427e6037081d741cd9947d5f9c",
+        "matched": true
+      },
+      "S845": {
+        "readable": true,
+        "hash": "9c20b69fc67831357ff85c91775e16e3190e968460c699ffef61e5ca15b7a105",
+        "matched": true
+      }
+    },
+    "protectedIdentityUnchanged": {
+      "S5553": true,
+      "S845": true
+    },
+    "titleAbstractMetadataUnchanged": {
+      "S5553": true,
+      "S845": true
+    },
+    "noScreeningVotesCreated": true,
+    "s5553": {
+      "attached": true,
+      "aiCompleted": true,
+      "aiDecision": "include",
+      "aiCriteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "aiHashTraceable": true,
+      "manualFieldsUnchanged": true
+    },
+    "s845": {
+      "referenceStored": true,
+      "screeningPrimaryFileCleared": true,
+      "promotedPaperLinked": true,
+      "manualFieldsRestored": true,
+      "paperStatus": "american_data",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "paperPrimaryFileCleared": true,
+      "extractionBasis": true,
+      "invalidAnalysisSourceTreatmentRemoved": true,
+      "oneFileLinked": true,
+      "notePresent": true,
+      "exceptionMetadataPresent": true
+    },
+    "concurrentlyUpdatedOutOfScopeScreeningRows": []
+  }
+}

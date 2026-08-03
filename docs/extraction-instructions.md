@@ -67,7 +67,7 @@
 - Multiple populations/ages/tournaments: list each on its own line; maintain consistent line order for all related fields.
 - Ambiguous or missing data: leave blank and add a Note describing what you checked.
 - Poor scans or OCR issues: Flag with a note if you cannot reliably extract.
-- Translated non-English papers: use the cleaned extraction-ready PDF under `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/outputs/extraction-ready-translations/2026-05-07/pdfs` together with the original PDF. Check the matching paper audit before extracting table-derived values, especially for papers marked `needs_table_spot_check`.
+- Translated non-English papers: use the cleaned extraction-ready PDF under `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/outputs/extraction-ready-translations/2026-05-07/pdfs` together with the original PDF. Check the matching paper audit before extracting table-derived values, especially for papers marked `needs_table_spot_check`.
 
 ## Review Checklist (Quick)
 - AI‑assisted tabs: manually checked and corrected.
@@ -82,6 +82,6 @@
 - Where the Save button is located in each layout (Accordion/Focus/Full Screen).
 
 ## Exposure-Flagged Paper Reviews
-- When reviewing papers flagged for exposure/denominator issues, follow [NO_EXPOSURE_REVIEW_WORKFLOW.md](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/reports/NO_EXPOSURE_REVIEW_WORKFLOW.md).
+- When reviewing papers flagged for exposure/denominator issues, follow [NO_EXPOSURE_REVIEW_WORKFLOW.md](/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/reports/NO_EXPOSURE_REVIEW_WORKFLOW.md).
 - Use that workflow to decide whether the paper should remain `extracted`, be repaired using a defensible derived denominator, or be retagged to `no_exposure`.
 - Do not treat a paper as exposure-time usable just because the methods say exposure was collected. The paper must publish usable exposure totals, a time-based incidence/burden result, or enough reported information for a defensible derivation.

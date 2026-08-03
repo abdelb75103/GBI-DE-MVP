@@ -1,0 +1,212 @@
+{
+  "recordId": "2e1aa4ab-b932-4605-95cf-1a3a381f20da",
+  "covidenceId": null,
+  "studyId": "S3776",
+  "title": "Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance: 1517.",
+  "authors": "Avinash Chandran, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins",
+  "year": "2025",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3776.pdf",
+  "pdfSha256": "6f7d83ac9c7883d88933236f0d93d40e6f54a0d68f54f6ea5157094cc664a0d9",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 1,
+  "textCharCount": 7428,
+  "warnings": [],
+  "signals": {
+    "wrong_sport": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Rugby",
+        "snippet": "...ncidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships report..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Rugby",
+        "snippet": "...Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships reported) Rugby Union, characterized by high-impact collisions, has a high prevalence of sport-related injuries compared to other team sports. While elite -level injury surveillance reports are available in scientific literature, there is a paucity of research at the colleg..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...the collegiate level. Furthermore, li mited studies distinguish injuries during skills practice and strength & conditioning sessions (SC), which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...most injured anatomic locations during practice and SC, respectively. The leading injury type differed across the t ype of activity (game, concussion; practice, ankle sprain; SC, lower back pain). CONCLUSION: The injury incidence in Japanese male collegiate rugby was comparable to the elite level. Injury patterns during games, pract ice, and SC were distinctly different, suggesting the importance of activity classification in developing effective injury prevention strategies. 1519 Incidence And Burden Of Injury At..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "athlete exposures",
+        "snippet": "...legiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 9..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "exposure hours",
+        "snippet": "...which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...s: wheelchair tennis, wheelchair basketball, and amputee football. Injury data wer e collected daily via a Google Docs form from 337 athletes (68 women, 269 men) representing 18 African countries. The study reports univariate unadju sted incidences (injuries per 1000 athlete days with 95% confidence intervals), injury proportion (IP, %), and time lost from bo th competition and pre-competition periods. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...-competition periods. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compa..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the compe..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the competition period (11.9 vs. 6.4). The most common injuries were to the shoulder (1.8) and..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1,000 athlete exposures",
+        "snippet": "...al Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 9..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "7.8 per 1000 athlete days",
+        "snippet": "...ds. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the competition period..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN...."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: a..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Surveillance",
+        "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible C..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Sur..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...rts Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to da..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Surveillance",
+        "snippet": "...ury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ontent is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury in..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Prospective",
+        "snippet": "...orts differently during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM)..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Cohort",
+        "snippet": "...ntly during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time-loss",
+        "snippet": "...emands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number of days it took for an athlete to r..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Time loss",
+        "snippet": "...rded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number of days it took for an athlete to return to full participation. The injury burden was derived by multiplying a given injury's average time lo ss and the associated incidence. The Orchard Sports Injury Classification System was used..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...sions ( 67,639 AH). A total of 690 injuries were recorded (games, 251 [36.4%]; practice, 353 [51.2%]; SC, 86 [12.5%]). Injury incidence was 65.3 [95% CI, 57.5, 73.9]) for games, 4.1 [3.7, 4.6] for practices, and 1.3 [1.0, 1.6]) for SC per 1,000 AH. Average time loss was 40 days (game, 40 days; practice, 41 days; SC, 34 days), with an injury burden of 2,606.3 for games, 167.4 for practice, and 42.8 for SC. Injuries to the head (20%), ankle (20%) were most common during games, with ankle (19%) and thigh (29%) being the..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] 1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 95% Cred ible Intervals (Cred. Int.). Prevalences of the most reported specific injuries were expressed as frequencies (%s). RESULTS: During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in wom en’s sports. We determined the posterior mean overall rate to be 8.28 per 1, 000 AEs (95% Cred. Int.: 5.59, 13.18) in men’s sports and 6.99 per 1,000 AEs (95% Cred. Int.: 4.64, 11.38) in women’s sports. Estimated injury incidence was higher in competitions than practices in men’s (Posterior mean Ratio: 3.49; 95% Cred. Int.: 1.84, 6.09) and women’s (Posterior mean Ratio: 2.11; 95% Cred. Int.: 1.11, 3.68) sports. Among all men’s sports, overall injury incidence was highest in men’s football (Posterior mean= 12.14 per 1,000 AEs; 95% Cred. Int.: 8.09, 19.75), and among all women’s sport s, it was highest in women’s gymnastics (Posterior mean= 18.61 per 1,000 AEs; 95% Cred. Int.: 12.13, 29.93). Lateral ankle sprains and concussions were the most commonly reported injuries in b oth groups",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 95% Cred ible Intervals (Cred. Int.). Prevalences of the most reported specific injuries were expressed as frequencies (%s). RESULTS: During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in wom en’s sports. We determined the posterior mean overall rate to be 8.28 per 1, 000 AEs (95% Cred. Int.: 5.59, 13.18) in men’s sports and 6.99 per 1,000 AEs (95% Cred. Int.: 4.64, 11.38) in women’s sports. Estimated injury incidence was higher in competitions than practices in men’s (Posterior mean Ratio: 3.49; 95% Cred. Int.: 1.84, 6.09) and women’s (Posterior mean Ratio: 2.11; 95% Cred. Int.: 1.11, 3.68) sports. Among all men’s sports, overall injury incidence was highest in men’s football (Posterior mean= 12.14 per 1,000 AEs; 95% Cred. Int.: 8.09, 19.75), and among all women’s sport s, it was highest in women’s gymnastics (Posterior mean= 18.61 per 1,000 AEs; 95% Cred. Int.: 12.13, 29.93). Lateral ankle sprains and concussions were the most commonly reported injuries in b oth groups. CONCLUSIONS: Injury incidence during the study period remained consistent with historical patterns, with higher rates observed in contact/collision sports and during competitions relative to practices. Common injuries also aligned with previous observations in this population. As pan demic-related disruptions impacted sports differently during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships reported) Rugby Union, characterized by high-impact collisions, has a high prevalence of sport-related injuries compared to other team sports. While elite -level injury surveillance reports are available in scientific literature, there is a paucity of research at the collegiate level. Furthermore, li mited studies distinguish injuries during skills practice and strength & conditioning sessions (SC), which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury."
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3776.packet.json"
+}

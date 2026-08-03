@@ -9,11 +9,11 @@ The generated HTML pack contains live screening records. Do not commit it, put i
 From the app directory:
 
 ```bash
-cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
+cd /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction
 npm run title-abstract:offline-export -- \
   --reviewer-profile-id 00000000-0000-0000-0000-000000000001 \
   --limit 2000 \
-  --output /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/title-abstract-offline/gbi-title-abstract-offline.html \
+  --output /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/exports/title-abstract-offline/gbi-title-abstract-offline.html \
   --apply
 ```
 
@@ -37,11 +37,11 @@ Run the same command without `--apply` for a no-write eligibility count.
 To rebuild the phone HTML for an already reserved pack without changing the database:
 
 ```bash
-cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
+cd /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction
 npm run title-abstract:offline-export -- \
   --reviewer-profile-id 00000000-0000-0000-0000-000000000001 \
   --existing-pack-id <pack-id> \
-  --output /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/title-abstract-offline/gbi-title-abstract-offline.html
+  --output /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/exports/title-abstract-offline/gbi-title-abstract-offline.html
 ```
 
 ## Use On Phone
@@ -90,7 +90,7 @@ Phone browser storage is not a durable database. Export JSON backups periodicall
 First run a dry run:
 
 ```bash
-cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
+cd /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction
 npm run title-abstract:offline-import -- \
   --reviewer-profile-id 00000000-0000-0000-0000-000000000001 \
   --input /path/to/decisions.json
@@ -113,7 +113,7 @@ If an include import is interrupted after the vote is saved but before the full-
 After imported decisions are checked, release the remaining active reservations:
 
 ```bash
-cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
+cd /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction
 npm run title-abstract:offline-release -- \
   --reviewer-profile-id 00000000-0000-0000-0000-000000000001 \
   --pack-id <pack-id> \
@@ -143,7 +143,7 @@ The deployed app only needs the code and migration so the online queue hides act
 Before committing or deploying code changes, run:
 
 ```bash
-cd /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction
+cd /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction
 for f in tests/title-abstract-*.test.mjs; do node --experimental-strip-types "$f" || exit 1; done
 npm exec --yes tsx -- --test tests/title-abstract-*.test.mjs
 npm run lint

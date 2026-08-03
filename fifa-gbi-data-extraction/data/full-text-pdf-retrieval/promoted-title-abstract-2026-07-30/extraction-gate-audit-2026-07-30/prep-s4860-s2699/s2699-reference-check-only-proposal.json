@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "mode": "local_only_proposal",
+  "studyId": "S2699",
+  "screeningRecordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+  "approvedBridge": "full-text-ai-one-human-bridge-2026-07-30-v1",
+  "source": {
+    "file": "worker-b/files/S2699.pdf",
+    "sha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+    "pages": 18,
+    "citation": "Alimoradi M, Alghosi M, Iranmanesh M, et al. Epidemiology of Injury in Elite and Amateur Soccer Referees: A Systematic Review and Meta-analysis. Sports Medicine. 2025. doi:10.1007/s40279-025-02326-y."
+  },
+  "classification": {
+    "proposedPaperStatus": "systematic_review",
+    "rationale": "PDF p. 1 explicitly identifies a systematic review and meta-analysis. Methods pp. 2-4 describe a five-database search, independent screening and pooled analysis; it synthesises 17 underlying studies rather than reporting one primary referee cohort.",
+    "referenceCheckOnly": true,
+    "tabs1To10": "Do not create extractions, extraction_fields, population_groups or population_values. Do not transfer pooled meta-analysis counts, incidence, locations, types, mechanisms or severity into primary-study fields."
+  },
+  "minimalProposedLiveChange": {
+    "paper": {
+      "status": "systematic_review",
+      "flagReason": null,
+      "metadataPatch": {},
+      "whyNoPaperMetadataPatch": "The status plus note is sufficient. Do not invent a paper-level taxonomy when the approved bridge already confines its screening audit to metadata.extractionBridge20260730."
+    },
+    "paperNote": "Systematic review/meta-analysis retained for reference checking only. It synthesises 17 studies of soccer-referee injury epidemiology and is not a primary cohort for Tabs 1-10 extraction. Screen any candidate primary references independently before promotion; do not transfer its pooled estimates.",
+    "screening": "Preserve all vote, manual, promotion, resolver and resolution state. A later bridge apply may write only its namespaced metadata.extractionBridge20260730 reservation/completion audit object, after every current-row gate passes."
+  },
+  "sourceCoverage": [
+    "PDF p. 1: title, abstract, explicit systematic-review/meta-analysis design and 17-study scope.",
+    "PDF pp. 2-4: PRISMA/PERSiST methods, database search, independent selection and data extraction.",
+    "PDF pp. 5-12: included-study tables and pooled meta-analysis results reviewed only to confirm they are synthesis outputs, not a primary-cohort payload.",
+    "PDF pp. 13-16: discussion/conclusion reviewed; no primary-study extraction is supported."
+  ],
+  "proposedBacklog2Row": "| S2699 | systematic_review | ⏲️ pending_review | Reference-check only, no primary extraction | Verified 18-page systematic review/meta-analysis of 17 soccer-referee injury studies. Retain source for reference checking; do not create Tabs 1-10 or population rows and do not import pooled estimates. Full-text screening remains pending the second human reviewer under the exact 2026-07-30 bridge amendment. |",
+  "reviewerCaveats": [
+    "The review’s numeric totals and incidence estimates are heterogeneous pooled synthesis results, not a single eligible surveillance cohort.",
+    "The amendment explicitly names S2699 as systematic_review for reference checking and prohibits Tabs 1-10 extraction."
+  ]
+}

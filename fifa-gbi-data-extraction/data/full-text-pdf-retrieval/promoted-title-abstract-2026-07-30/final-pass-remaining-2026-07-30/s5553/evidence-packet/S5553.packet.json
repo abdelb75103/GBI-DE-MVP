@@ -1,0 +1,482 @@
+{
+  "recordId": "ad405aa3-ac09-47d1-98a6-da6113728980",
+  "covidenceId": null,
+  "studyId": "S5553",
+  "title": "Erstellung eines Verletzungsregisters im Profifusball - Studiendesign und Perspektiven",
+  "authors": null,
+  "year": null,
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/approved-live-files/S5553-corresponding-full-report.pdf",
+  "pdfSha256": "b11a11f68fa80fb43b1c6f8c13c1e60b0707ef427e6037081d741cd9947d5f9c",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 8,
+  "textCharCount": 38765,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...rs of match exposure. Incidence rates are reported with 95% CI. The study office used the REDCap system for data management and IBM SPSS Statistics, V.28.0, for data analysis. Equity, diversity, and inclusion statement Our study was on both male and female football players in Germany. The research team included eleven men, who are early career (two) and senor (nine) researchers. The authors’ disciplines include orthopedics, trauma, sports medicine, and biometric sciences. RESULTS In the first season of data collection, 33 m..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...cess ORCID iDs Lorenz Huber https://orcid.org/0009-0004-1394-1739 Dominik Szymski https://orcid.org/0000-0002-1739-8524 Micha Pietzonka https://orcid.org/0000-0002-5761-8149 REFERENCES 1 Hägglund M, Waldén M, Ekstrand J. Injuries among male and female elite football players. Scand J Med Sci Sports 2009;19:819–27. 2 Giza E, Mithöfer K, Farrell L, et al. Injuries in women’s professional soccer. Br J Sports Med 2005;39:212–6; . 3 Stubbe JH, van Beijsterveldt A- MMC, van der Knaap S, et al. Injuries in professional male soccer..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ka https://orcid.org/0000-0002-5761-8149 REFERENCES 1 Hägglund M, Waldén M, Ekstrand J. Injuries among male and female elite football players. Scand J Med Sci Sports 2009;19:819–27. 2 Giza E, Mithöfer K, Farrell L, et al. Injuries in women’s professional soccer. Br J Sports Med 2005;39:212–6; . 3 Stubbe JH, van Beijsterveldt A- MMC, van der Knaap S, et al. Injuries in professional male soccer players in the Netherlands: a prospective cohort study. J Athl Train 2015;50:211–6. 4 Horan D, Büttner F , Blake C, et..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...layers. Scand J Med Sci Sports 2009;19:819–27. 2 Giza E, Mithöfer K, Farrell L, et al. Injuries in women’s professional soccer. Br J Sports Med 2005;39:212–6; . 3 Stubbe JH, van Beijsterveldt A- MMC, van der Knaap S, et al. Injuries in professional male soccer players in the Netherlands: a prospective cohort study. J Athl Train 2015;50:211–6. 4 Horan D, Büttner F , Blake C, et al. Injury incidence rates in women’s football: a systematic review and meta- analysis of prospective injury surveillance studies. Br J..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...orts Med 2024;58:128–35. 8 Engebretsen L, Soligard T, Steffen K, et al. Sports injuries and illnesses during the London Summer Olympic Games 2012. Br J Sports Med 2013;47:407–14. 9 Theron N, Schwellnus M, Derman W, et al. Illness and injuries in elite football players--a prospective cohort study during the FIFA Confederations Cup 2009. Clin J Sport Med 2013;23:379–83. 10 Cavarretta E, D’angeli I, Giammarinaro M, et al. Cardiovascular effects of COVID- 19 lockdown in professional football players. Panminerva Med 2022;6..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...and injuries in elite football players--a prospective cohort study during the FIFA Confederations Cup 2009. Clin J Sport Med 2013;23:379–83. 10 Cavarretta E, D’angeli I, Giammarinaro M, et al. Cardiovascular effects of COVID- 19 lockdown in professional football players. Panminerva Med 2022;64:497–505. 11 O’Brien J, Young W, Finch CF . The delivery of injury prevention exercise programmes in professional youth soccer: Comparison to the FIFA 11. J Sci Med Sport 2017;20:26–31. 12 van Mechelen W, Hlobil H, Kemper HC. Inc..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...’angeli I, Giammarinaro M, et al. Cardiovascular effects of COVID- 19 lockdown in professional football players. Panminerva Med 2022;64:497–505. 11 O’Brien J, Young W, Finch CF . The delivery of injury prevention exercise programmes in professional youth soccer: Comparison to the FIFA 11. J Sci Med Sport 2017;20:26–31. 12 van Mechelen W, Hlobil H, Kemper HC. Incidence, severity, aetiology and prevention of sports injuries. A review of concepts. Sports Med 1992;14:82–99. 13 Harris PA, Taylor R, Thielke R, et a..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...JM, Mackay MJ, et al. Defining Return to Sport: A Systematic Review. Orthop J Sports Med 2021;9:23259671211009589. 17 Fuller CW, Ekstrand J, Junge A, et al. Consensus statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Scand J Med Sci Sports 2006;16:83–92. 18 Waldén M, Mountjoy M, McCall A, et al. Football- specific extension of the IOC consensus statement: methods for recording and reporting of epidemiological data on injury and illness in sport 2020. Br J..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "per 1000",
+        "snippet": ".... Team medical staff reported all time- loss injuries and illnesses using a standardised, pseudonymised protocol on an online platform. Data included diagnosis, injury mechanism and return- to- play data. Injury and illness match incidence was calculated per 1000 hours of match exposure. Results A total of 1514 players (963 men, 551 women) from 54 teams participated. During the first season, 1185 time- loss events were recorded (men: 503 injuries, 176 illnesses; women: 362 injuries, 144 illnesses). In men, the mos..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "match exposure",
+        "snippet": "...aff reported all time- loss injuries and illnesses using a standardised, pseudonymised protocol on an online platform. Data included diagnosis, injury mechanism and return- to- play data. Injury and illness match incidence was calculated per 1000 hours of match exposure. Results A total of 1514 players (963 men, 551 women) from 54 teams participated. During the first season, 1185 time- loss events were recorded (men: 503 injuries, 176 illnesses; women: 362 injuries, 144 illnesses). In men, the most affected areas were th..."
+      },
+      {
+        "page": 1,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...specific prevention and return- to- play strategies. INTRODUCTION Football is a sport with one of the highest incidences of injuries in male and female players, especially in professional athletes. 1 Hägglund et al reported an incidence of 28.1 injuries per 1000 hours of match exposure and 4.7 per 1000 hours of training exposure in male football.1 For female players, a rate of 16.1 during match and 3.8 during 1000 hours training exposure was reported in the same season report. In both sexes, muscle strains and..."
+      },
+      {
+        "page": 1,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "match exposure",
+        "snippet": "...on and return- to- play strategies. INTRODUCTION Football is a sport with one of the highest incidences of injuries in male and female players, especially in professional athletes. 1 Hägglund et al reported an incidence of 28.1 injuries per 1000 hours of match exposure and 4.7 per 1000 hours of training exposure in male football.1 For female players, a rate of 16.1 during match and 3.8 during 1000 hours training exposure was reported in the same season report. In both sexes, muscle strains and ligament sprains represe..."
+      },
+      {
+        "page": 1,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...strategies. INTRODUCTION Football is a sport with one of the highest incidences of injuries in male and female players, especially in professional athletes. 1 Hägglund et al reported an incidence of 28.1 injuries per 1000 hours of match exposure and 4.7 per 1000 hours of training exposure in male football.1 For female players, a rate of 16.1 during match and 3.8 during 1000 hours training exposure was reported in the same season report. In both sexes, muscle strains and ligament sprains represent the most commo..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "match exposure",
+        "snippet": "2 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access data are available for international competitions, their applicability to domestic league settings is restricted. Differences in match exposure, international duties and medical support structures limit the transferability of international injury data to national league settings and highlight the need for national registries.5–7 Besides the analysis of injuries, illnesses are also responsible for..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...or- tions between groups were compared with Fisher’s exact test and continuous variables with the t- test. Match expo- sure data were obtained directly from official match statistics for all players. Injury and illness match incidence rates were calculated per 1000 hours of match exposure. Incidence rates are reported with 95% CI. The study office used the REDCap system for data management and IBM SPSS Statistics, V.28.0, for data analysis. Equity, diversity, and inclusion statement Our study was on both male and fem..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "match exposure",
+        "snippet": "...groups were compared with Fisher’s exact test and continuous variables with the t- test. Match expo- sure data were obtained directly from official match statistics for all players. Injury and illness match incidence rates were calculated per 1000 hours of match exposure. Incidence rates are reported with 95% CI. The study office used the REDCap system for data management and IBM SPSS Statistics, V.28.0, for data analysis. Equity, diversity, and inclusion statement Our study was on both male and female football players in..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...profes- sional football, the knee was the most commonly affected region (22.4%), also followed by the ankle (19.5%) and thigh (18.1%) (figure 2). The most frequent injury in male professional football in Germany was ankle sprains with an incidence of 3.16 per 1000 hours match exposure and a mean time- loss of 7.3 days. The longest RTP period within the ten most frequent injuries in male players was demonstrated after collateral ligament ruptures in the knee, with 38.2 days, while an incidence of 1.14 per 1000 hours..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...The RTP durations in male athletes were comparable to data reported in the literature, 20 25 whereas female athletes showed significantly longer RTP Table 2 Most frequent injuries in male football Most frequent injuries (sorted) Cases per season Incidence per 1000 hours match exposure (95% CI) Return- to- play in days (mean±SD) Ankle sprain 47 3.16 (2.26 to 4.06) 7.3±59.4 Muscle strain dorsal thigh 27 1.82 (1.13 to 2.51) 10.3±12.0 Muscle fibre rupture dorsal thigh 21 1.41 (0.81 to 2.01) 26.6±15.2 Collateral ligament..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...ing high- risk injury patterns and enabling the development of targeted Figure 3 Injury mechanism by injury types in male (A) and female (B) football. Table 4 Most frequent illnesses in male football Most frequent illness (sorted) Cases per season Incidence per 1000 hour match exposure (95% CI) Return- to- play in days (mean±SD) Respiratory infection (without COVID- 19) 119 8.00 (6.56 to 9.44) 11.8±21.4 COVID- 19 infection 34 2.29 (1.52 to 3.05) 22.5±64.7 Gastrointestinal infection 19 1.28 (0.71 to 1.85) 23.8±42.8 Othe..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "match exposure",
+        "snippet": "...rganisational reasons and not related to injury or illness occurrence and is therefore unlikely to have substantially influenced the descriptive epidemiological findings. In addition, injuries and illnesses may cluster within teams due to shared training, match exposure and medical practices. As no cluster- adjusted analyses were performed, this should be considered when interpreting comparisons between groups. No external validation using media- based databases was performed, as such sources have been shown to reli- abl..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 1,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "28.1 \ninjuries per 1000 hours",
+        "snippet": "...esearch on sex- specific prevention and return- to- play strategies. INTRODUCTION Football is a sport with one of the highest incidences of injuries in male and female players, especially in professional athletes. 1 Hägglund et al reported an incidence of 28.1 injuries per 1000 hours of match exposure and 4.7 per 1000 hours of training exposure in male football.1 For female players, a rate of 16.1 during match and 3.8 during 1000 hours training exposure was reported in the same season report. In both sexes, muscle strains and ligame..."
+      },
+      {
+        "page": 1,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "4.7 per 1000 hours",
+        "snippet": "...lay strategies. INTRODUCTION Football is a sport with one of the highest incidences of injuries in male and female players, especially in professional athletes. 1 Hägglund et al reported an incidence of 28.1 injuries per 1000 hours of match exposure and 4.7 per 1000 hours of training exposure in male football.1 For female players, a rate of 16.1 during match and 3.8 during 1000 hours training exposure was reported in the same season report. In both sexes, muscle strains and ligament sprains represent the most common inju..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "3.16 \nper 1000 hours",
+        "snippet": "...emale profes- sional football, the knee was the most commonly affected region (22.4%), also followed by the ankle (19.5%) and thigh (18.1%) (figure 2). The most frequent injury in male professional football in Germany was ankle sprains with an incidence of 3.16 per 1000 hours match exposure and a mean time- loss of 7.3 days. The longest RTP period within the ten most frequent injuries in male players was demonstrated after collateral ligament ruptures in the knee, with 38.2 days, while an incidence of 1.14 per 1000 hours match..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1.14 per 1000 hours",
+        "snippet": "...e of 3.16 per 1000 hours match exposure and a mean time- loss of 7.3 days. The longest RTP period within the ten most frequent injuries in male players was demonstrated after collateral ligament ruptures in the knee, with 38.2 days, while an incidence of 1.14 per 1000 hours match expo- sure was reported for this injury type (table 2). In female professional football, ankle sprains also represented the most common injury, occurring at a rate of 2.56 per 1000 hours of match exposure and resulting in an average time- loss of 36...."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "2.56 per 1000 hours",
+        "snippet": "...ent ruptures in the knee, with 38.2 days, while an incidence of 1.14 per 1000 hours match expo- sure was reported for this injury type (table 2). In female professional football, ankle sprains also represented the most common injury, occurring at a rate of 2.56 per 1000 hours of match exposure and resulting in an average time- loss of 36.4 days. The following injury, the ACL rupture, also showed an incidence of 2.56 per 1000 hours of match exposure and the longest RTP times with 392.8 days (table 3). Injury mechanisms did not..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "2.56 per \n1000 hours",
+        "snippet": "...fessional football, ankle sprains also represented the most common injury, occurring at a rate of 2.56 per 1000 hours of match exposure and resulting in an average time- loss of 36.4 days. The following injury, the ACL rupture, also showed an incidence of 2.56 per 1000 hours of match exposure and the longest RTP times with 392.8 days (table 3). Injury mechanisms did not show significant sex differ - ences regarding direct contact, indirect contact and non- contact injuries. Due to their mechanical character - istics, head injur..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "8.00 per 1000 hours",
+        "snippet": "...ll time loss in male and female football, representing approxi- mately one- eighth of the overall time loss in both sexes. Most common illnesses in male football were respiratory infections (without COVID- 19) with 119 cases per season and an incidence of 8.00 per 1000 hours match expo- sure resulting in a time loss of mean 11.8 days. In female football, respiratory infections other than COVID- 19 were also the most common, with 85 cases per season and an incidence of 8.37 per 1000 hours match expo- sure. They resulted in an a..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "8.37 per 1000 hours",
+        "snippet": "...9 cases per season and an incidence of 8.00 per 1000 hours match expo- sure resulting in a time loss of mean 11.8 days. In female football, respiratory infections other than COVID- 19 were also the most common, with 85 cases per season and an incidence of 8.37 per 1000 hours match expo- sure. They resulted in an average time loss of 10.5 days. Across both registries, COVID- 19 infections were asso- ciated with longer RTP times than other respiratory infections. Detailed information on illness categories and absence durations i..."
+      }
+    ],
+    "review": [
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...an Beijsterveldt A- MMC, van der Knaap S, et al. Injuries in professional male soccer players in the Netherlands: a prospective cohort study. J Athl Train 2015;50:211–6. 4 Horan D, Büttner F , Blake C, et al. Injury incidence rates in women’s football: a systematic review and meta- analysis of prospective injury surveillance studies. Br J Sports Med 2023;57:471–80. 5 Ekstrand J, Hägglund M, Waldén M. Injury incidence and injury patterns in professional football: the UEFA injury study. Br J Sports Med 2011;45:553–8. 6 Ek..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...15 Ardern CL, Glasgow P , Schneiders A, et al. 2016 Consensus statement on return to sport from the First World Congress in Sports Physical Therapy, Bern. Br J Sports Med 2016;50:853–64. 16 Doege J, Ayres JM, Mackay MJ, et al. Defining Return to Sport: A Systematic Review. Orthop J Sports Med 2021;9:23259671211009589. 17 Fuller CW, Ekstrand J, Junge A, et al. Consensus statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Scand J Med Sci Sports 2006;16:83–92. 18 Waldén..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...ery, University Hospital Regensburg, Regensburg, BY, Germany 2FIFA Medical Centre of Excellence, University Hospital Regensburg, Regensburg, Germany 3Center for Clinical Studies, University Hospital Regensburg, Regensburg, Germany 4Department of Sports Injury Prevention, Verwaltungs- Berufsgenossenschaft, Hamburg, Germany 5Deutsche Fussball Liga GmbH (DFL), Frankfurt am Main, Germany Correspondence to Dr Lorenz Huber; lorenz1. huber@ ukr. de © Author(s) (or their employer(s)) 2026. Re- use permitted unde..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...dence to Dr Lorenz Huber; lorenz1. huber@ ukr. de © Author(s) (or their employer(s)) 2026. Re- use permitted under CC BY- NC. No commercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distri..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "illnesses",
+        "snippet": "...renz Huber; lorenz1. huber@ ukr. de © Author(s) (or their employer(s)) 2026. Re- use permitted under CC BY- NC. No commercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and ret..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...CC BY- NC. No commercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introdu..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "illness",
+        "snippet": "...No commercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the f..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "epidemiology",
+        "snippet": "...ercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and seco..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and second divisions of German professional football (men: 2022/2023, women: 2023/2024). Team medical staff reporte..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...nd return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and second divisions of German professional football (men: 2022/2023, women: 2023/2024). Team medical staff reported all time- loss injuries and illnesses using a standardised, pseudonymised protocol on an online platform. Data included diagnosis, injury mechanism and return- to- play data. Injury and illness match incidence was calculated per 1000 hours of match exposure. Results A total of 1..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...003 Open access data are available for international competitions, their applicability to domestic league settings is restricted. Differences in match exposure, international duties and medical support structures limit the transferability of international injury data to national league settings and highlight the need for national registries.5–7 Besides the analysis of injuries, illnesses are also responsible for a high number of time- loss incidents in football. 8 9 While the focus of scientific literature is ma..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "3Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access and hormonal contraception were implemented in the women’s registry. The injury reports were adapted according to the commonly used injury report protocol in football estab- lished by Fuller et al17 and the IOC Consensus Statement on methods for recording and reporting of epidemiolog- ical data on injury and illness in sport.18 Data pr..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "4 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access events were reported. These included 503 injuries and 176 illnesses in male football, and 362 injuries and 144 illnesses in female football. Player anthropometric char - acteristics are summarised in table 1. In male professional football, the most frequently injured body regions were the thigh (31.9%), a..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...s important gap by providing comprehensive data specific to the German professional football environment. Further studies in football often focus on seasonal reports or short- term observations. For instance, the Dutch cohort study by Stubbe et al reported injury patterns among professional male footballers, highlighting high rates of ankle and muscle injuries.3 Similarly, the women’s football review by Horan et al underlined a notable burden of ligamentous injuries.4 However, these seasonal reports often lack lo..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "6 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access times, especially when compared with the UEFA Women’s Elite Club Injury Study.7 Sex- specific differences in RTP may be confounded by injury severity and by structural differences in medical and rehabilitation support between men’s and women’s professional football, which may influence clinical decision- making and clearance..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "7Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access prevention strategies. For instance, the data support refinement of neuromuscular training programmes to address non- contact knee and thigh injuries, which are highly prevalent in both sexes. 6 7 26–28 Furthermore, understanding illness patterns—especially respiratory infections—can influence medical protocols for hygiene, rest management and RTP decisions, as required during the COVID- 19 pandemic..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries",
+        "snippet": "...doi:10.1136/bmjsem-2025-003003 Open access ORCID iDs Lorenz Huber https://orcid.org/0009-0004-1394-1739 Dominik Szymski https://orcid.org/0000-0002-1739-8524 Micha Pietzonka https://orcid.org/0000-0002-5761-8149 REFERENCES 1 Hägglund M, Waldén M, Ekstrand J. Injuries among male and female elite football players. Scand J Med Sci Sports 2009;19:819–27. 2 Giza E, Mithöfer K, Farrell L, et al. Injuries in women’s professional soccer. Br J Sports Med 2005;39:212–6; . 3 Stubbe JH, van Beijsterveldt A- MMC, van der Knaap S..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "prospective",
+        "snippet": ".... ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and second divisions of German professional football (men: 2022/2023, wome..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "prospective",
+        "snippet": "...This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and second divisions of German professional football (men: 2022/2023, women: 2023/2024). Team medical staff reported all time- loss injuries and illnesses using a standardised, pseudonymised protocol on an online p..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "prospective",
+        "snippet": "...study aimed to describe the epidemi- ology of injuries and illnesses in German professional male and female football based on nationwide prospec- tive registry data, and to compare injury patterns and time- loss characteristics between sexes. METHODS These prospective health registries capture all acute and chronic injuries as well as other medical reasons for absences (eg, illnesses) in the first two leagues of professional male and female football in Germany. The design, objectives and methodology of the registries a..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "prospective",
+        "snippet": "...ms receive anonymised summaries of their injury statistics. Objectives The objective of the present analysis was to provide a descriptive epidemiological assessment of time- loss injuries and illnesses in German professional male and female football using prospective registry data. Specifi- cally, the analysis focused on injury and illness incidence, anatomical distribution, injury types, mechanisms and return- to- play (RTP) durations, including comparisons between sexes. Data collection and documentation Registry dat..."
+      },
+      {
+        "page": 4,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...days. Across both registries, COVID- 19 infections were asso- ciated with longer RTP times than other respiratory infections. Detailed information on illness categories and absence durations is summarised in tables 4 (male) and 5 (female). DISCUSSION This prospective study on injuries and illnesses in male and female professional football in Germany establishes the first national health registries of this kind in profes- sional sports. During the first season, a total of 1185 time- loss incidents were recorded in both..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...:10.1136/bmjsem-2025-003003 Open access important gap by providing comprehensive data specific to the German professional football environment. Further studies in football often focus on seasonal reports or short- term observations. For instance, the Dutch cohort study by Stubbe et al reported injury patterns among professional male footballers, highlighting high rates of ankle and muscle injuries.3 Similarly, the women’s football review by Horan et al underlined a notable burden of ligamentous injuries.4 However,..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...y and by structural differences in medical and rehabilitation support between men’s and women’s professional football, which may influence clinical decision- making and clearance timing. Importantly, our inclusion of menstrual cycle tracking in the female cohort enables future studies to investigate hormonal injury correlations, an area previously under- represented in injury research. 7 10 These findings are further supported by recent biomechanical analyses of ACL injury mechanisms in female players 19 and met..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...9:819–27. 2 Giza E, Mithöfer K, Farrell L, et al. Injuries in women’s professional soccer. Br J Sports Med 2005;39:212–6; . 3 Stubbe JH, van Beijsterveldt A- MMC, van der Knaap S, et al. Injuries in professional male soccer players in the Netherlands: a prospective cohort study. J Athl Train 2015;50:211–6. 4 Horan D, Büttner F , Blake C, et al. Injury incidence rates in women’s football: a systematic review and meta- analysis of prospective injury surveillance studies. Br J Sports Med 2023;57:471–80. 5 Ekstrand J..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 1,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...s on injuries and illnesses in professional football across both sexes. ⇒ These registries identify sex- specific differences in injury types, locations and return- to- play dates. ⇒ The study highlights the underestimated role of illnesses as a cause of time loss in professional football. HOW THIS STUDY MIGHT AFFECT RESEARCH, PRACTICE OR POLICY ⇒ Evidence- based, sex- specific prevention strategies in professional football can be funded on the results of these long- term registries. ⇒ Supports the development of..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "time loss",
+        "snippet": "...r- specific identifier (Player ID). This allows longitudinal follow- up of individual players across multiple seasons and across different clubs within the participating professional leagues, enabling the analysis of repeated injuries and illness- related time loss over time. Each data entry form contains item fields for the exact diagnosis, the type of injury, contact behaviour (direct, indirect, non- contact), the circumstances of the event (match/training, minute of play, body movement, foul, etc), as well as di..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "injuries were defined",
+        "snippet": "...e and defined as the date of medical clearance for full participation in team training and match play. RTP data were reported by the team physicians during follow- up of each injury or illness, in accordance with established consensus defini- tions. Acute injuries were defined as those with sudden onset due to a specific precipitating event, while chronic injuries were defined as those developing gradually over time from repetitive stress or overuse.15 16 The data entry forms are identical for both the men’s and women’s regist..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "injuries were defined",
+        "snippet": "...RTP data were reported by the team physicians during follow- up of each injury or illness, in accordance with established consensus defini- tions. Acute injuries were defined as those with sudden onset due to a specific precipitating event, while chronic injuries were defined as those developing gradually over time from repetitive stress or overuse.15 16 The data entry forms are identical for both the men’s and women’s registries to ensure optimal comparability between the sexes. However, additional items on the menstrual cycl..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...without contact slightly more frequently in female athletes compared with their male counterparts (figure 3). Illnesses were responsible for 3188 days of overall time loss in male and female football, representing approxi- mately one- eighth of the overall time loss in both sexes. Most common illnesses in male football were respiratory infections (without COVID- 19) with 119 cases per season and an incidence of 8.00 per 1000 hours match expo- sure resulting in a time loss of mean 11.8 days. In female football, respir..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ing approxi- mately one- eighth of the overall time loss in both sexes. Most common illnesses in male football were respiratory infections (without COVID- 19) with 119 cases per season and an incidence of 8.00 per 1000 hours match expo- sure resulting in a time loss of mean 11.8 days. In female football, respiratory infections other than COVID- 19 were also the most common, with 85 cases per season and an incidence of 8.37 per 1000 hours match expo- sure. They resulted in an average time loss of 10.5 days. Across bot..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...expo- sure resulting in a time loss of mean 11.8 days. In female football, respiratory infections other than COVID- 19 were also the most common, with 85 cases per season and an incidence of 8.37 per 1000 hours match expo- sure. They resulted in an average time loss of 10.5 days. Across both registries, COVID- 19 infections were asso- ciated with longer RTP times than other respiratory infections. Detailed information on illness categories and absence durations is summarised in tables 4 (male) and 5 (female). DISCUSS..."
+      },
+      {
+        "page": 7,
+        "section": "Conclusion",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ide the first compre- hensive data on injuries and illnesses in German professional football across both sexes. The findings demonstrate sex- specific differences in injury patterns and RTP times and highlight the substantial contribu- tion of illnesses to time loss. The registries provide a foundation for longitudinal monitoring and future targeted prevention strategies. Acknowledgements We gratefully acknowledge the financial and organisational support provided by the Deutsche Fussball Liga GmbH (DFL) and the Verwal..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 1 Open access Original research National health registries in professional German football: development and first results from the men’s and women’s 1st and 2nd Bundesliga Lorenz Huber ,1,2 Dominik Szymski ,1,2 Werner Krutsch,1,2 Johannes Weber,1,2 Gunnar Huppertz,3 Florian Zeman,3 Michael Koller,3 Micha Pietzonka ,4 Christian Klein,4 Andreas Nagel,5 Volker Alt1,2 To cite: Huber L, Szymski D, Krutsch W, et al. National health registries in professional German football: development and first results from the men’s and women’s 1st and 2nd Bundesliga. BMJ Open Sport & Exercise Medicine 2026;12:e003003. doi:10.1136/ bmjsem-2025-003003 LH and DS are joint first authors. Accepted 19 March 2026 1Department of Trauma Surgery, University Hospital Regensburg, Regensburg, BY, Germany 2FIFA Medical Centre of Excellence, University Hospital Regensburg, Regensburg, Germany 3Center for Clinical Studies, University Hospital Regensburg, Regensburg, Germany 4Department of Sports Injury Prevention, Verwaltungs- Berufsgenossenschaft, Hamburg, Germany 5Deutsche Fussball Liga GmbH (DFL), Frankfurt am Main, Germany Correspondence to Dr Lorenz Huber; lorenz1. huber@ ukr. de © Author(s) (or their employer(s)) 2026. Re- use permitted under CC BY- NC. No commercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and second divisions of German professional football (men: 2022/2023, women: 2023/2024). Team medical staff reported all time- loss injuries and illnesses using a standardised, pseudonymised protocol on an online platform. Data included diagnosis, injury mechanism and return- to- play data. Injury and illness match incidence was calculated per 1000 hours of match exposure. Results A total of 1514 players (963 men, 551 women) from 54 teams participated. During the first season, 1185 time- loss events were recorded (men: 503 injuries, 176 illnesses; women: 362 injuries, 144 illnesses). In men, the most affected areas were the thigh, ankle and k\n\n[p. 2] 2 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access data are available for international competitions, their applicability to domestic league settings is restricted. Differences in match exposure, international duties and medical support structures limit the transferability of international injury data to national league settings and highlight the need for national registries.5–7 Besides the analysis of injuries, illnesses are also responsible for a high number of time- loss incidents in football. 8 9 While the focus of scientific literature is mainly on injury prevention, the research on illnesses in professional football is lacking evidence.10 The advantages of a longitudinal data surveillance are a detailed analysis of injury and illness priorities, as well as monitoring of rule changes and unexpected events on players’ health. A longitudinal registry on injuries and illnesses in football offers a holistic database on players’ health to identify players and situations at risk and to prevent time- loss injuries and illnesses of players.11 12 Therefore, this study aimed to describe the epidemi- ology of injuries and illnesses in German professional male and female football based on nationwide prospec- tive registry data, and to compare injury patterns and time- loss characteristics between sexes. METHODS These prospective health registries capture all acute and chronic injuries as well as other medical reasons for absences (eg, illnesses) in the first two leagues of professional male and female football in Germany. The design, objectives and methodology of the registries are explained to participating clubs and team physicians at the beginning of each season. At the end of each season, participating teams receive anonymised summaries of their injury statistics. Objectives The objective of the present analysis was to provide a descriptive epidemiological assessment of time- loss injuries and illnesses in German professional male and female football using prospective registry data. Specifi- cally, the analysis focused on injury and illness incidence, anatomical distribution, injury types, mechanisms and return- to- play (RTP) durations, including comparisons between sexes. Data collection and documentation Registry data are collected and managed using the Research Electronic Data Capture (REDCap) system,13 14 which is hosted locally at the data centre of the University Hospital Regensburg. Baseline data, as well \n\n[p. 3] 3Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access and hormonal contraception were implemented in the women’s registry. The injury reports were adapted according to the commonly used injury report protocol in football estab- lished by Fuller et al17 and the IOC Consensus Statement on methods for recording and reporting of epidemiolog- ical data on injury and illness in sport.18 Data protection Anthropometric and football- specific data are stored separately from injury data to prevent reverse identifi- cation of individuals. The data collection is performed using player codes accessible only to the respective team physicians. This pseudonymisation ensures that neither uninvolved parties nor other participating teams can trace data back to individual players. Data processing and analysis are conducted on aggregate data sets to ensure confidentiality. The registries are managed and anal- ysed at the University Hospital Regensburg under strict adherence to confidentiality agreements and medical confidentiality regulations. Legal considerations The study excludes vulnerable populations and ensures that personal data, such as names, anthropometric details and birthdates, are stored separately. All project staff handling data are bound by confidentiality and data protection laws. Data analysis is conducted exclu- sively by the study centre and clinical researchers bound by medical confidentiality. Results are published in a manner that ensures no identification of individuals or clubs is possible. No conflicts of interest are reported by study personnel involved in the registries’ execution. Statistical analysis and data assessment Categorical data are expressed as frequency counts (percentages) and continuous data as mean±SD. Propor- tions between groups were compared with Fisher’s exact test and continuous variables with the t- test. Match expo- sure data were obtained directly from official match statistics for all players. Injury and illness match incidence rates were calculated per 1000 hours of match exposure. Incidence rates are reported with 95% CI. The study office used the REDCap system for data management and IBM SPSS Statistics, V.28.0, for data analysis. Equity, diversity, and inclusion statement Our study was on both male and female football players in Germany. The research team included eleven men, who are early career (two) and senor (nine) researchers. The authors’ disciplines include orthopedics, tra\n\n[p. 4] 4 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access events were reported. These included 503 injuries and 176 illnesses in male football, and 362 injuries and 144 illnesses in female football. Player anthropometric char - acteristics are summarised in table 1. In male professional football, the most frequently injured body regions were the thigh (31.9%), ankle (17.3%) and knee (16.5%). In contrast, in female profes- sional football, the knee was the most commonly affected region (22.4%), also followed by the ankle (19.5%) and thigh (18.1%) (figure 2). The most frequent injury in male professional football in Germany was ankle sprains with an incidence of 3.16 per 1000 hours match exposure and a mean time- loss of 7.3 days. The longest RTP period within the ten most frequent injuries in male players was demonstrated after collateral ligament ruptures in the knee, with 38.2 days, while an incidence of 1.14 per 1000 hours match expo- sure was reported for this injury type (table 2). In female professional football, ankle sprains also represented the most common injury, occurring at a rate of 2.56 per 1000 hours of match exposure and resulting in an average time- loss of 36.4 days. The following injury, the ACL rupture, also showed an incidence of 2.56 per 1000 hours of match exposure and the longest RTP times with 392.8 days (table 3). Injury mechanisms did not show significant sex differ - ences regarding direct contact, indirect contact and non- contact injuries. Due to their mechanical character - istics, head injuries are predominantly caused by direct contact. Muscle injuries are typically non- contact injuries in both male and female athletes. Knee injuries are also largely classified as non- contact injuries; however, they tend to occur without contact slightly more frequently in female athletes compared with their male counterparts (figure 3). Illnesses were responsible for 3188 days of overall time loss in male and female football, representing approxi- mately one- eighth of the overall time loss in both sexes. Most common illnesses in male football were respiratory infections (without COVID- 19) with 119 cases per season and an incidence of 8.00 per 1000 hours match expo- sure resulting in a time loss of mean 11.8 days. In female football, respiratory infections other than COVID- 19 were also the most common, with 85 cases per season and an incidence of 8.37 per 1000 hour",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 1 Open access Original research National health registries in professional German football: development and first results from the men’s and women’s 1st and 2nd Bundesliga Lorenz Huber ,1,2 Dominik Szymski ,1,2 Werner Krutsch,1,2 Johannes Weber,1,2 Gunnar Huppertz,3 Florian Zeman,3 Michael Koller,3 Micha Pietzonka ,4 Christian Klein,4 Andreas Nagel,5 Volker Alt1,2 To cite: Huber L, Szymski D, Krutsch W, et al. National health registries in professional German football: development and first results from the men’s and women’s 1st and 2nd Bundesliga. BMJ Open Sport & Exercise Medicine 2026;12:e003003. doi:10.1136/ bmjsem-2025-003003 LH and DS are joint first authors. Accepted 19 March 2026 1Department of Trauma Surgery, University Hospital Regensburg, Regensburg, BY, Germany 2FIFA Medical Centre of Excellence, University Hospital Regensburg, Regensburg, Germany 3Center for Clinical Studies, University Hospital Regensburg, Regensburg, Germany 4Department of Sports Injury Prevention, Verwaltungs- Berufsgenossenschaft, Hamburg, Germany 5Deutsche Fussball Liga GmbH (DFL), Frankfurt am Main, Germany Correspondence to Dr Lorenz Huber; lorenz1. huber@ ukr. de © Author(s) (or their employer(s)) 2026. Re- use permitted under CC BY- NC. No commercial re- use. See rights and permissions. Published by BMJ Group. ABSTRACT Objectives Long- term, nationwide data on injuries and illnesses in professional football, particularly in women, remain limited. This study aimed to describe injury and illness epidemiology in German professional male and female football using prospective registry data, with a focus on incidence, distribution, and return- to- play times and on sex- specific differences. Methods Two prospective registries were introduced in the first and second divisions of German professional football (men: 2022/2023, women: 2023/2024). Team medical staff reported all time- loss injuries and illnesses using a standardised, pseudonymised protocol on an online platform. Data included diagnosis, injury mechanism and return- to- play data. Injury and illness match incidence was calculated per 1000 hours of match exposure. Results A total of 1514 players (963 men, 551 women) from 54 teams participated. During the first season, 1185 time- loss events were recorded (men: 503 injuries, 176 illnesses; women: 362 injuries, 144 illnesses). In men, the most affected areas were the thigh, ankle and knee, whereas in women, injuries predominantly affected the knee, followed by the ankle and thigh. Ankle sprains were the most frequent injury type in both sexes. ACL ruptures were associated with the longest return- to- play times, particularly in female players. Illnesses caused 3188 absence days in total, mainly due to respiratory infections. Conclusion The registries reveal clear sex- specific differences in injury distribution and time- loss in German professional football and demonstrate a substantial burden of illness- related absence. These nationwide data provide a foundation for longitudinal monitoring and future research on sex- specific prevention and return- to- play strategies. INTRODUCTION Football is a sport with one of the highest incidences of injuries in male and female players, especially in professional athletes. 1 Hägglund et al reported an incidence of 28.1 injuries per 1000 hours of match exposure and 4.7 per 1000 hours of training exposure in male football.1 For female players, a rate of 16.1 during match and 3.8 during 1000 hours training exposure was reported in the same season report. In both sexes, muscle strains and ligament sprains represent the most common injury types. 1 However, existing reports largely provide short- term, seasonal data, while longitudinal injury surveillance at the national league level remains limited. 1–4 Although comprehensive longitudinal WHAT IS ALREADY KNOWN ON THIS TOPIC ⇒ Injury surveillance in professional football "
+    },
+    {
+      "page": 2,
+      "text": "2 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access data are available for international competitions, their applicability to domestic league settings is restricted. Differences in match exposure, international duties and medical support structures limit the transferability of international injury data to national league settings and highlight the need for national registries.5–7 Besides the analysis of injuries, illnesses are also responsible for a high number of time- loss incidents in football. 8 9 While the focus of scientific literature is mainly on injury prevention, the research on illnesses in professional football is lacking evidence.10 The advantages of a longitudinal data surveillance are a detailed analysis of injury and illness priorities, as well as monitoring of rule changes and unexpected events on players’ health. A longitudinal registry on injuries and illnesses in football offers a holistic database on players’ health to identify players and situations at risk and to prevent time- loss injuries and illnesses of players.11 12 Therefore, this study aimed to describe the epidemi- ology of injuries and illnesses in German professional male and female football based on nationwide prospec- tive registry data, and to compare injury patterns and time- loss characteristics between sexes. METHODS These prospective health registries capture all acute and chronic injuries as well as other medical reasons for absences (eg, illnesses) in the first two leagues of professional male and female football in Germany. The design, objectives and methodology of the registries are explained to participating clubs and team physicians at the beginning of each season. At the end of each season, participating teams receive anonymised summaries of their injury statistics. Objectives The objective of the present analysis was to provide a descriptive epidemiological assessment of time- loss injuries and illnesses in German professional male and female football using prospective registry data. Specifi- cally, the analysis focused on injury and illness incidence, anatomical distribution, injury types, mechanisms and return- to- play (RTP) durations, including comparisons between sexes. Data collection and documentation Registry data are collected and managed using the Research Electronic Data Capture (REDCap) system,13 14 which is hosted locally at the data centre of the University Hospital Regensburg. Baseline data, as well as player- specific and season- specific master data, are curated by the data centre and study office. These data include age, anthropometric characteristics, playing position, league affiliation and season of participation. The data centre is responsible for data management, pseudonymisation, consistency checks and linkage of injury and illness reports across seasons. The data centre also generates and assigns a pseudonymised identifier (Player ID) to each player, which is then provided to the team physi- cians. In the event of a time- loss injury or illness affecting a team player, team physicians are responsible for submit- ting detailed reports, including both the initial injury/ illness information and subsequent RTP data. Injury and illness reports are submitted monthly via a secure, web- based data entry interface (figure 1). In cases of delayed or missing submissions, the study team issues regular reminders by email or telephone. Data entry remains possible at later stages. However, submissions are closed 1 month after the end of the respective season. Aggregated data are exported on a seasonal basis, and a comprehensive longitudinal dataset is compiled for statistical analysis conducted by the data centre and study office. Study data report protocols For the online data collection, special electronic data entry forms with predefined input options were created. For the most common injury regions (eg, head, knee, ankle/foot and muscle injuries), injury- specific elec- "
+    },
+    {
+      "page": 3,
+      "text": "3Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access and hormonal contraception were implemented in the women’s registry. The injury reports were adapted according to the commonly used injury report protocol in football estab- lished by Fuller et al17 and the IOC Consensus Statement on methods for recording and reporting of epidemiolog- ical data on injury and illness in sport.18 Data protection Anthropometric and football- specific data are stored separately from injury data to prevent reverse identifi- cation of individuals. The data collection is performed using player codes accessible only to the respective team physicians. This pseudonymisation ensures that neither uninvolved parties nor other participating teams can trace data back to individual players. Data processing and analysis are conducted on aggregate data sets to ensure confidentiality. The registries are managed and anal- ysed at the University Hospital Regensburg under strict adherence to confidentiality agreements and medical confidentiality regulations. Legal considerations The study excludes vulnerable populations and ensures that personal data, such as names, anthropometric details and birthdates, are stored separately. All project staff handling data are bound by confidentiality and data protection laws. Data analysis is conducted exclu- sively by the study centre and clinical researchers bound by medical confidentiality. Results are published in a manner that ensures no identification of individuals or clubs is possible. No conflicts of interest are reported by study personnel involved in the registries’ execution. Statistical analysis and data assessment Categorical data are expressed as frequency counts (percentages) and continuous data as mean±SD. Propor- tions between groups were compared with Fisher’s exact test and continuous variables with the t- test. Match expo- sure data were obtained directly from official match statistics for all players. Injury and illness match incidence rates were calculated per 1000 hours of match exposure. Incidence rates are reported with 95% CI. The study office used the REDCap system for data management and IBM SPSS Statistics, V.28.0, for data analysis. Equity, diversity, and inclusion statement Our study was on both male and female football players in Germany. The research team included eleven men, who are early career (two) and senor (nine) researchers. The authors’ disciplines include orthopedics, trauma, sports medicine, and biometric sciences. RESULTS In the first season of data collection, 33 male teams and 21 female teams participated in the registries. This corresponds to 91.7% of all eligible clubs in the first and second divisions of German professional male football and 80.8% of all eligible clubs in female professional football. In total, 54 professional teams comprising 1514 players were enrolled. Across both cohorts, 1185 time- loss Figure 1 Flow chart of study protocol. BMJ Open Sport & Exercise Medicine: first published as 10.1136/bmjsem-2025-003003 on 10 April 2026. Downloaded from https://bmjopensem.bmj.com on 30 April 2026 by guest. Protected by copyright, including for uses related to text and data mining, AI training, and similar technologies."
+    },
+    {
+      "page": 4,
+      "text": "4 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access events were reported. These included 503 injuries and 176 illnesses in male football, and 362 injuries and 144 illnesses in female football. Player anthropometric char - acteristics are summarised in table 1. In male professional football, the most frequently injured body regions were the thigh (31.9%), ankle (17.3%) and knee (16.5%). In contrast, in female profes- sional football, the knee was the most commonly affected region (22.4%), also followed by the ankle (19.5%) and thigh (18.1%) (figure 2). The most frequent injury in male professional football in Germany was ankle sprains with an incidence of 3.16 per 1000 hours match exposure and a mean time- loss of 7.3 days. The longest RTP period within the ten most frequent injuries in male players was demonstrated after collateral ligament ruptures in the knee, with 38.2 days, while an incidence of 1.14 per 1000 hours match expo- sure was reported for this injury type (table 2). In female professional football, ankle sprains also represented the most common injury, occurring at a rate of 2.56 per 1000 hours of match exposure and resulting in an average time- loss of 36.4 days. The following injury, the ACL rupture, also showed an incidence of 2.56 per 1000 hours of match exposure and the longest RTP times with 392.8 days (table 3). Injury mechanisms did not show significant sex differ - ences regarding direct contact, indirect contact and non- contact injuries. Due to their mechanical character - istics, head injuries are predominantly caused by direct contact. Muscle injuries are typically non- contact injuries in both male and female athletes. Knee injuries are also largely classified as non- contact injuries; however, they tend to occur without contact slightly more frequently in female athletes compared with their male counterparts (figure 3). Illnesses were responsible for 3188 days of overall time loss in male and female football, representing approxi- mately one- eighth of the overall time loss in both sexes. Most common illnesses in male football were respiratory infections (without COVID- 19) with 119 cases per season and an incidence of 8.00 per 1000 hours match expo- sure resulting in a time loss of mean 11.8 days. In female football, respiratory infections other than COVID- 19 were also the most common, with 85 cases per season and an incidence of 8.37 per 1000 hours match expo- sure. They resulted in an average time loss of 10.5 days. Across both registries, COVID- 19 infections were asso- ciated with longer RTP times than other respiratory infections. Detailed information on illness categories and absence durations is summarised in tables 4 (male) and 5 (female). DISCUSSION This prospective study on injuries and illnesses in male and female professional football in Germany establishes the first national health registries of this kind in profes- sional sports. During the first season, a total of 1185 time- loss incidents were recorded in both registries, providing key insights into common causes of absence among professional athletes. While ankle sprain was the most frequent injury for both sexes, in female football, injuries of the knee were predominant, while in male football, in particular, injuries of the thigh muscles were reported. The registries include all time- loss events—whether due to injury or illness—among all male and female profes- sional players, offering unique insights into sex- specific patterns and characteristics in football- related health issues. By employing this longitudinal approach, trends in injuries and illnesses can be identified, and targeted prevention strategies can be developed. 12 Moreover, the effects of rule changes or medical interventions on time- loss incidents can be systematically evaluated.19–21 While the UEFA Elite Club Injury Study provides an established framework for international injury surveil- lance across European eli"
+    },
+    {
+      "page": 8,
+      "text": "8 Huber L, et al. BMJ Open Sp Ex Med 2026;12:e003003. doi:10.1136/bmjsem-2025-003003 Open access ORCID iDs Lorenz Huber https://orcid.org/0009-0004-1394-1739 Dominik Szymski https://orcid.org/0000-0002-1739-8524 Micha Pietzonka https://orcid.org/0000-0002-5761-8149 REFERENCES 1 Hägglund M, Waldén M, Ekstrand J. Injuries among male and female elite football players. Scand J Med Sci Sports 2009;19:819–27. 2 Giza E, Mithöfer K, Farrell L, et al. Injuries in women’s professional soccer. Br J Sports Med 2005;39:212–6; . 3 Stubbe JH, van Beijsterveldt A- MMC, van der Knaap S, et al. Injuries in professional male soccer players in the Netherlands: a prospective cohort study. J Athl Train 2015;50:211–6. 4 Horan D, Büttner F , Blake C, et al. Injury incidence rates in women’s football: a systematic review and meta- analysis of prospective injury surveillance studies. Br J Sports Med 2023;57:471–80. 5 Ekstrand J, Hägglund M, Waldén M. Injury incidence and injury patterns in professional football: the UEFA injury study. Br J Sports Med 2011;45:553–8. 6 Ekstrand J, Bengtsson H, Waldén M, et al. Hamstring injury rates have increased during recent seasons and now constitute 24% of all injuries in men’s professional football: the UEFA Elite Club Injury Study from 2001/02 to 2021/22. Br J Sports Med 2022;57:292–8. 7 Hallén A, Tomás R, Ekstrand J, et al. UEFA Women’s Elite Club Injury Study: a prospective study on 1527 injuries over four consecutive seasons 2018/2019 to 2021/2022 reveals thigh muscle injuries to be most common and ACL injuries most burdensome. Br J Sports Med 2024;58:128–35. 8 Engebretsen L, Soligard T, Steffen K, et al. Sports injuries and illnesses during the London Summer Olympic Games 2012. Br J Sports Med 2013;47:407–14. 9 Theron N, Schwellnus M, Derman W, et al. Illness and injuries in elite football players--a prospective cohort study during the FIFA Confederations Cup 2009. Clin J Sport Med 2013;23:379–83. 10 Cavarretta E, D’angeli I, Giammarinaro M, et al. Cardiovascular effects of COVID- 19 lockdown in professional football players. Panminerva Med 2022;64:497–505. 11 O’Brien J, Young W, Finch CF . The delivery of injury prevention exercise programmes in professional youth soccer: Comparison to the FIFA 11. J Sci Med Sport 2017;20:26–31. 12 van Mechelen W, Hlobil H, Kemper HC. Incidence, severity, aetiology and prevention of sports injuries. A review of concepts. Sports Med 1992;14:82–99. 13 Harris PA, Taylor R, Thielke R, et al. Research electronic data capture (REDCap)--a metadata- driven methodology and workflow process for providing translational research informatics support. J Biomed Inform 2009;42:377–81. 14 Harris PA, Taylor R, Minor BL, et al. The REDCap consortium: Building an international community of software platform partners. J Biomed Inform 2019;95:103208. 15 Ardern CL, Glasgow P , Schneiders A, et al. 2016 Consensus statement on return to sport from the First World Congress in Sports Physical Therapy, Bern. Br J Sports Med 2016;50:853–64. 16 Doege J, Ayres JM, Mackay MJ, et al. Defining Return to Sport: A Systematic Review. Orthop J Sports Med 2021;9:23259671211009589. 17 Fuller CW, Ekstrand J, Junge A, et al. Consensus statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Scand J Med Sci Sports 2006;16:83–92. 18 Waldén M, Mountjoy M, McCall A, et al. Football- specific extension of the IOC consensus statement: methods for recording and reporting of epidemiological data on injury and illness in sport 2020. Br J Sports Med 2023;57:1341–50. 19 Beaudouin F , der Fünten K, Tröß T, et al. Time Trends of Head Injuries Over Multiple Seasons in Professional Male Football (Soccer). Sports Med Int Open 2019;03:E6–11. 20 Ekstrand J, Krutsch W, Spreco A, et al. Time before return to play for the most common injuries in professional football: a 16- year follow- up of the UEFA Elite Club Injury Study. Br J Sports Med 2020;54:421–6. 21 Meyer T, Mack D, Donde K, et al"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/s5553/evidence-packet/S5553.packet.json"
+}

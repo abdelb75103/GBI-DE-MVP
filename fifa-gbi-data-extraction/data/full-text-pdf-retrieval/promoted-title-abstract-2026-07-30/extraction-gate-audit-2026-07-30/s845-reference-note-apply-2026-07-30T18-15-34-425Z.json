@@ -1,0 +1,64 @@
+{
+  "artifactType": "Guarded S845 reference-only note repair",
+  "generatedAt": "2026-07-30T18:15:34.427Z",
+  "mode": "apply",
+  "passed": true,
+  "writeStatus": "applied",
+  "target": {
+    "screeningRecordId": "b72f7871-06f8-47da-8a20-6cfc8ba320fb",
+    "paperId": "ec094fd1-73a5-43f6-b7e6-5ce58d3e508a",
+    "paperFileId": "c35be44b-da3b-4bd8-bf53-cbc97fcca2d2",
+    "paperNoteId": "ceac4dbc-3272-47de-ba6d-ecdb8df8f585"
+  },
+  "beforeNote": {
+    "id": "ceac4dbc-3272-47de-ba6d-ecdb8df8f585",
+    "paper_id": "ec094fd1-73a5-43f6-b7e6-5ce58d3e508a",
+    "body": "User-approved American-data exception. Extract from the authoritative NCAA agency/source data.",
+    "created_at": "2026-07-30T17:06:05.741+00:00"
+  },
+  "afterNote": {
+    "id": "ceac4dbc-3272-47de-ba6d-ecdb8df8f585",
+    "paper_id": "ec094fd1-73a5-43f6-b7e6-5ce58d3e508a",
+    "body": "User-approved American-data exception. Extract from the authoritative NCAA agency/source data. The attached poster is supporting identity evidence only and is not the exact 2024 journal full text; it is not an extraction source.",
+    "created_at": "2026-07-30T17:06:05.741+00:00"
+  },
+  "referenceObject": {
+    "bucket": "papers",
+    "objectPath": "cd125487-de8a-49f5-9dad-0992f1482ba8/1785429904957-S845-S845-matching-reference-poster.pdf",
+    "expectedSha256": "9c20b69fc67831357ff85c91775e16e3190e968460c699ffef61e5ca15b7a105",
+    "downloadedSha256": "9c20b69fc67831357ff85c91775e16e3190e968460c699ffef61e5ca15b7a105",
+    "hashMatched": true
+  },
+  "protectedStateHashBefore": "1898831d795b0dd4d02f36dd1e0a88a5426a600121c1528d9cccdd6f70327c04",
+  "protectedStateHashAfter": "1898831d795b0dd4d02f36dd1e0a88a5426a600121c1528d9cccdd6f70327c04",
+  "protectedStateUnchanged": true,
+  "checks": {
+    "before": {
+      "screeningLinked": true,
+      "screeningPrimaryCleared": true,
+      "noHumanVoteFabrication": true,
+      "paperAmericanData": true,
+      "paperPrimaryCleared": true,
+      "referenceMetadata": true,
+      "extractionBasis": true,
+      "referenceFile": true,
+      "exactNote": true
+    },
+    "after": {
+      "screeningLinked": true,
+      "screeningPrimaryCleared": true,
+      "noHumanVoteFabrication": true,
+      "paperAmericanData": true,
+      "paperPrimaryCleared": true,
+      "referenceMetadata": true,
+      "extractionBasis": true,
+      "referenceFile": true,
+      "exactNote": true
+    }
+  },
+  "rollback": {
+    "recoverable": true,
+    "source": "beforeNote",
+    "action": "Guarded paper_notes update from EXPECTED_AFTER back to beforeNote.body. Execute only with explicit destructive-action approval."
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "recordId": "7df87db6-0820-4379-a2e7-86110035429d",
+  "covidenceId": null,
+  "studyId": "S5148",
+  "title": "Epidemiology and prevention of football-related injuries in youth male football players: development of the 'FUNBALL' programme (PhD Academy Award).",
+  "authors": "Obërtinca R",
+  "year": "2026",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S5148.pdf",
+  "pdfSha256": "ca664d143b59c4cad48f33056e005349685d1065393ad588a011ad110afa47fa",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 2,
+  "textCharCount": 10808,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "554 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 Epidemiology and prevention of football- related injuries in youth male football players: development of the ‘FUNBALL’ programme (PhD Academy Award) Rilind Obërtinca 1,2 PhD Academy Award To cite: Obërtinca R. Br J Sports Med 2026;60:554–555. 1Department of Physiotherapy, University ’Fehmi Agani’ in Gjakova, Gjakova, Kosovo 2Institute o..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...roup. WHAT DID I DO? The aims of my thesis were (1) to investigate the efficacy of existing multi- component ex ercise- based injury prevention programmes (IPPs); (2) to describe the development process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that occurred in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagemen..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...Award were included in the majority of exercises, 11 and the ball was included as often as possible. My third study 12 included a large- scale cluster - randomised controlled trial that investigated the efficacy of the ‘FUNBALL ’ programme in male youth football players. A total of 1027 players from Kosovo who were competing in the Under (U) 15, U17 and U19 age groups were randomised either into the intervention or control group. The intervention group (n=524 players) performed the 15–20 min ‘FUNBALL ’ programme in add..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...n the male players aged 13–19 years. We observed a higher injury incidence in the older age groups. WHAT IS THE MOST IMPORTANT PRACTICAL FINDING? Based on the third study, the ‘FUNBALL ’ programme reduced overall time- loss injury incidence in male youth football players and was most effective for thigh injuries. The programme contained more football- specific elements compared with existing IPPs, which may increase implementation of the ‘FUNBALL ’ programme. Acknowledgements I would lik e to acknowledge my PhD supervis..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...CID iD Rilind Obërtinca https://orcid.org/0000-0002-3468-8822 REFERENCES 1 Crossley KM, Patterson BE, Culvenor AG, et al. Making football safer for women: a systematic review and meta- analysis of injury prevention progr ammes in 11 773 female football (soccer) players. Br J Sports Med 2020;54:1089–98. 2 Lemes IR, Pinto RZ, Lage VN, et al. Do exercise- based prevention progr ammes reduce non- contact musculosk eletal injuries in football (soccer)? A systematic review and meta- analysis with 13 355 athlete..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...is of injury prevention progr ammes in 11 773 female football (soccer) players. Br J Sports Med 2020;54:1089–98. 2 Lemes IR, Pinto RZ, Lage VN, et al. Do exercise- based prevention progr ammes reduce non- contact musculosk eletal injuries in football (soccer)? A systematic review and meta- analysis with 13 355 athletes and more than 1 million exposure hours . Br J Sports Med 2021;55:1170–8. 3 v an Dyk N, Behan FP , Whiteley R. Including the Nordic hamstring exercise in injury prevention programmes halves..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": ".... Sports Med 2023;53:837–48. 7 IntHout J , Ioannidis JPA, Rovers MM, et al. Plea for routinely presenting prediction intervals in meta- analysis . BMJ Open 2016;6:e010247. 8 Obërtinca R, Meyer T, Aus der Fünten K. Injury prevention in youth football (soccer): a comprehensive description of the development process of the “FUNBALL ” programme. BMJ Open Sport Exerc Med 2024;10:e002260. 9 Minnig MC , Hawkinson L, Root HJ, et al. Barriers and facilitators to the adoption and implementation of evidence- based i..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...ot HJ, et al. Barriers and facilitators to the adoption and implementation of evidence- based injury prevention tr aining programmes: a narrative review. BMJ Open Sport Exerc Med 2022;8:e001374. 10 Owoeye OBA, VanderWey MJ, Pike I. Reducing Injuries in Soccer (Football): an Umbrella Review of Best Evidence Across the Epidemiological Framework for Prevention. Sports Med Open 2020;6:46. 11 Meha R, Obërtinca R, Aus der Fünten K, et al. A new injury prevention program “FUNBALL ” improves cognitive performance o..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...ta- analysis)6 examined the efficacy of multi- component exercise- based IPP s on reducing football- related injuries among footballers of all age groups. 15 studies (n=22 177 players) were included in the analysis. This systematic review reported incidence rate ratios (IRRs) with predic- tion intervals (PIs) in addition to 95% CIs. This approach is widely recommended for interpreting results from a random- effects meta- analysis of trials assessing treatment effects.4 7 My second study 8 was a viewpoint article..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...s the programme’s cut- off point for being either protective (<1) or indicative of increased injury risk (>1). Also, the results were mainly based on very low and low quality of evidence. According to my third study, the ‘FUNBALL ’ programme reduced the incidence rate for the overall number of time- loss injuries by 31% (IRR 0.69, 95% CI 0.55 to 0.87, p=0.002) when it was implemented for one football season. Thigh injury incidence was reduced by 38% (IRR 0.62, 95% CI 0.39 to 0.98, p=0.042); moderate injuries (time-..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "exposure hours",
+        "snippet": "...2020;54:1089–98. 2 Lemes IR, Pinto RZ, Lage VN, et al. Do exercise- based prevention progr ammes reduce non- contact musculosk eletal injuries in football (soccer)? A systematic review and meta- analysis with 13 355 athletes and more than 1 million exposure hours . Br J Sports Med 2021;55:1170–8. 3 v an Dyk N, Behan FP , Whiteley R. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta- analysis of 8459 athletes . Br J Sports..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "74 days lost per \n1000 hours",
+        "snippet": "...een 7 and 28 days) were reduced by 35% (IRR 0.65, 95% CI 0.44 to 0.97, p=0.035) and severe injuries (time- loss >28 days) were reduced by 49% (IRR 0.51, 95% CI 0.28 to 0.91, p=0.024). Injury burden was nearly halved in the intervention group (40 vs 74 days lost per 1000 hours). The key finding from my fourth study was a lower injury incidence in youth players compared with adult players. The most commonly injured body regions (thigh, knee and ankle) comprised 64% of all injuries in the male players aged 13–19 years. We observe..."
+      }
+    ],
+    "review": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...tionable. 4 Furthermore, adherence to and mainte- nance of IPPs is challenging, which may be due to a lack of football- specific exercises and/or player enjoyment.5 HOW DID I DO IT? A total of four articles were included in the thesis. My first study (a systematic review and meta- analysis)6 examined the efficacy of multi- component exercise- based IPP s on reducing football- related injuries among footballers of all age groups. 15 studies (n=22 177 players) were included in the analysis. This systematic review r..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...(a systematic review and meta- analysis)6 examined the efficacy of multi- component exercise- based IPP s on reducing football- related injuries among footballers of all age groups. 15 studies (n=22 177 players) were included in the analysis. This systematic review reported incidence rate ratios (IRRs) with predic- tion intervals (PIs) in addition to 95% CIs. This approach is widely recommended for interpreting results from a random- effects meta- analysis of trials assessing treatment effects.4 7 My second study..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...roval Not applicable . Provenance and peer review Not commissioned; externally peer reviewed. ORCID iD Rilind Obërtinca https://orcid.org/0000-0002-3468-8822 REFERENCES 1 Crossley KM, Patterson BE, Culvenor AG, et al. Making football safer for women: a systematic review and meta- analysis of injury prevention progr ammes in 11 773 female football (soccer) players. Br J Sports Med 2020;54:1089–98. 2 Lemes IR, Pinto RZ, Lage VN, et al. Do exercise- based prevention progr ammes reduce non- contact musculosk eletal inju..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...y prevention progr ammes in 11 773 female football (soccer) players. Br J Sports Med 2020;54:1089–98. 2 Lemes IR, Pinto RZ, Lage VN, et al. Do exercise- based prevention progr ammes reduce non- contact musculosk eletal injuries in football (soccer)? A systematic review and meta- analysis with 13 355 athletes and more than 1 million exposure hours . Br J Sports Med 2021;55:1170–8. 3 v an Dyk N, Behan FP , Whiteley R. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...analysis with 13 355 athletes and more than 1 million exposure hours . Br J Sports Med 2021;55:1170–8. 3 v an Dyk N, Behan FP , Whiteley R. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta- analysis of 8459 athletes . Br J Sports Med 2019;53:1362–70. 4 Impellizzeri FM, McCall A, van Smeden M. Why methods matter in a meta- analysis: a reappraisal showed inconclusive injury preventive effect of Nordic hamstring exercise. J Clin..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...compliance in semi- professional football . Scand J Med Sci Sports 2019;29:1941–51. 6 Obërtinca R, Hoxha I, Meha R, et al. Efficacy of Multi- Component Exercise- Based Injury Prevention Progr ams on Injury Risk Among Footballers of All Age Groups: A Systematic Review and Meta- analysis . Sports Med 2023;53:837–48. 7 IntHout J , Ioannidis JPA, Rovers MM, et al. Plea for routinely presenting prediction intervals in meta- analysis . BMJ Open 2016;6:e010247. 8 Obërtinca R, Meyer T, Aus der Fünten K. Injury preventio..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Epidemiology",
+        "snippet": "554 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 Epidemiology and prevention of football- related injuries in youth male football players: development of the ‘FUNBALL’ programme (PhD Academy Award) Rilind Obërtinca 1,2 PhD Academy Award To cite: Obërtinca R. Br J Sports Med 2026;60:554–555. 1Department of Physi..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "554 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 Epidemiology and prevention of football- related injuries in youth male football players: development of the ‘FUNBALL’ programme (PhD Academy Award) Rilind Obërtinca 1,2 PhD Academy Award To cite: Obërtinca R. Br J Sports Med 2026;60:554–555. 1Department of Physiotherapy, University ’Fehmi Agani’ in Gjakov..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...eptember 2025 © Author(s) (or their employer(s)) 2026. No commercial re- use . See rights and permissions. Published by BMJ Group. WHAT DID I DO? The aims of my thesis were (1) to investigate the efficacy of existing multi- component ex ercise- based injury prevention programmes (IPPs); (2) to describe the development process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...nent ex ercise- based injury prevention programmes (IPPs); (2) to describe the development process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that occurred in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagement in the sport. Several meta- analyses support the efficacy of exercise- based IPP to reduce the..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...based injury prevention programmes (IPPs); (2) to describe the development process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that occurred in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagement in the sport. Several meta- analyses support the efficacy of exercise- based IPP to reduce the risk of footb..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...opment process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that occurred in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagement in the sport. Several meta- analyses support the efficacy of exercise- based IPP to reduce the risk of football- related injuries by up to 51%. 1–3 However, their methodologic..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagement in the sport. Several meta- analyses support the efficacy of exercise- based IPP to reduce the risk of football- related injuries by up to 51%. 1–3 However, their methodological quality and the certainty of the findings are ques- tionable. 4 Furthermore, adherence to and mainte- nance of IPPs is challenging, which may be due to a lack of football- specific exercises and/or player..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...and/or player enjoyment.5 HOW DID I DO IT? A total of four articles were included in the thesis. My first study (a systematic review and meta- analysis)6 examined the efficacy of multi- component exercise- based IPP s on reducing football- related injuries among footballers of all age groups. 15 studies (n=22 177 players) were included in the analysis. This systematic review reported incidence rate ratios (IRRs) with predic- tion intervals (PIs) in addition to 95% CIs. This approach is widely recommended f..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...the control group (n=503 players) continued their regular training routine. Both groups were followed for one football season (August 2021–May 2022). My fourth study 13 was a secondary analysis of the data collected in the second study, which evaluated the epidemiology of football- related injuries in players of the control arm who were not exposed to the ‘FUNBALL ’ programme. WHAT DID I FIND? My first study indicated that the treatment effect associated with the use of multi- component ex ercise- based IPPs in foot..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "randomised controlled trial",
+        "snippet": "...essive levels of difficulty. The ‘FUNBALL ’ programme incorporated exercises that allow for competition between players. Cognitive challenges Figure 1 Summary of four PhD studies on injury prevention and epidemiology in male youth football players . RCT, randomised controlled trial and U, under. Protected by copyright, including for uses related to text and data mining, AI training, and similar technologies. . Francisco (UCSF) at University of California San on July 29, 2026 http://bjsm.bmj.com/Downloaded from 16 September 2025. 10.113..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "randomized controlled trial",
+        "snippet": "...nce Across the Epidemiological Framework for Prevention. Sports Med Open 2020;6:46. 11 Meha R, Obërtinca R, Aus der Fünten K, et al. A new injury prevention program “FUNBALL ” improves cognitive performance of young football (soccer) players: A cluster randomized controlled trial. Psychol Sport Exerc 2025;76:102743. 12 Obërtinca R, Meha R, Hoxha I, et al. Efficacy of a new injury prevention programme (FUNBALL) in young male football (soccer) players: a cluster- r andomised controlled trial. Br J Sports Med 2024;58:548–55. 13..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] 554 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 Epidemiology and prevention of football- related injuries in youth male football players: development of the ‘FUNBALL’ programme (PhD Academy Award) Rilind Obërtinca 1,2 PhD Academy Award To cite: Obërtinca R. Br J Sports Med 2026;60:554–555. 1Department of Physiotherapy, University ’Fehmi Agani’ in Gjakova, Gjakova, Kosovo 2Institute of Sports and Preventive Medicine, Saarland University, Saarbrücken, Germany Correspondence to Rilind Obërtinca; rilind. obertinca1@ gmail. com Accepted 2 September 2025 Published Online First 16 September 2025 © Author(s) (or their employer(s)) 2026. No commercial re- use . See rights and permissions. Published by BMJ Group. WHAT DID I DO? The aims of my thesis were (1) to investigate the efficacy of existing multi- component ex ercise- based injury prevention programmes (IPPs); (2) to describe the development process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that occurred in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagement in the sport. Several meta- analyses support the efficacy of exercise- based IPP to reduce the risk of football- related injuries by up to 51%. 1–3 However, their methodological quality and the certainty of the findings are ques- tionable. 4 Furthermore, adherence to and mainte- nance of IPPs is challenging, which may be due to a lack of football- specific exercises and/or player enjoyment.5 HOW DID I DO IT? A total of four articles were included in the thesis. My first study (a systematic review and meta- analysis)6 examined the efficacy of multi- component exercise- based IPP s on reducing football- related injuries among footballers of all age groups. 15 studies (n=22 177 players) were included in the analysis. This systematic review reported incidence rate ratios (IRRs) with predic- tion intervals (PIs) in addition to 95% CIs. This approach is widely recommended for interpreting results from a random- effects meta- analysis of trials assessing treatment effects.4 7 My second study 8 was a viewpoint article. It described the developmental process of the ‘FUNBALL ’ programme, including the rationale, end- user involvement (eg, coach and football feder- ation administrators) and the iterative design and pilotin\n\n[p. 2] 555 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 PhD Academy Award were included in the majority of exercises, 11 and the ball was included as often as possible. My third study 12 included a large- scale cluster - randomised controlled trial that investigated the efficacy of the ‘FUNBALL ’ programme in male youth football players. A total of 1027 players from Kosovo who were competing in the Under (U) 15, U17 and U19 age groups were randomised either into the intervention or control group. The intervention group (n=524 players) performed the 15–20 min ‘FUNBALL ’ programme in addition to their usual training at least two times per week, whereas the control group (n=503 players) continued their regular training routine. Both groups were followed for one football season (August 2021–May 2022). My fourth study 13 was a secondary analysis of the data collected in the second study, which evaluated the epidemiology of football- related injuries in players of the control arm who were not exposed to the ‘FUNBALL ’ programme. WHAT DID I FIND? My first study indicated that the treatment effect associated with the use of multi- component ex ercise- based IPPs in football is uncertain and inconclusive (figure 1). This conclusion was based on the observation that the PI values crossed ‘1’, which marks the programme’s cut- off point for being either protective (<1) or indicative of increased injury risk (>1). Also, the results were mainly based on very low and low quality of evidence. According to my third study, the ‘FUNBALL ’ programme reduced the incidence rate for the overall number of time- loss injuries by 31% (IRR 0.69, 95% CI 0.55 to 0.87, p=0.002) when it was implemented for one football season. Thigh injury incidence was reduced by 38% (IRR 0.62, 95% CI 0.39 to 0.98, p=0.042); moderate injuries (time- loss between 7 and 28 days) were reduced by 35% (IRR 0.65, 95% CI 0.44 to 0.97, p=0.035) and severe injuries (time- loss >28 days) were reduced by 49% (IRR 0.51, 95% CI 0.28 to 0.91, p=0.024). Injury burden was nearly halved in the intervention group (40 vs 74 days lost per 1000 hours). The key finding from my fourth study was a lower injury incidence in youth players compared with adult players. The most commonly injured body regions (thigh, knee and ankle) comprised 64% of all injuries in the male players aged 13–19 years. We observed a higher injury incidence in the older age groups. WHAT IS THE MOST IMPORTANT PRACTICAL FINDING",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "554 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 Epidemiology and prevention of football- related injuries in youth male football players: development of the ‘FUNBALL’ programme (PhD Academy Award) Rilind Obërtinca 1,2 PhD Academy Award To cite: Obërtinca R. Br J Sports Med 2026;60:554–555. 1Department of Physiotherapy, University ’Fehmi Agani’ in Gjakova, Gjakova, Kosovo 2Institute of Sports and Preventive Medicine, Saarland University, Saarbrücken, Germany Correspondence to Rilind Obërtinca; rilind. obertinca1@ gmail. com Accepted 2 September 2025 Published Online First 16 September 2025 © Author(s) (or their employer(s)) 2026. No commercial re- use . See rights and permissions. Published by BMJ Group. WHAT DID I DO? The aims of my thesis were (1) to investigate the efficacy of existing multi- component ex ercise- based injury prevention programmes (IPPs); (2) to describe the development process for the first IPP specifically designed for youth football players, called ‘FUNBALL ’; (3) to evaluate the efficacy of ‘FUNBALL ’ and (4) to describe the epidemiology of injuries that occurred in the control arm of study 3. WHY DID I DO IT? Injury prevention in football is essential for main- taining long- term engagement in the sport. Several meta- analyses support the efficacy of exercise- based IPP to reduce the risk of football- related injuries by up to 51%. 1–3 However, their methodological quality and the certainty of the findings are ques- tionable. 4 Furthermore, adherence to and mainte- nance of IPPs is challenging, which may be due to a lack of football- specific exercises and/or player enjoyment.5 HOW DID I DO IT? A total of four articles were included in the thesis. My first study (a systematic review and meta- analysis)6 examined the efficacy of multi- component exercise- based IPP s on reducing football- related injuries among footballers of all age groups. 15 studies (n=22 177 players) were included in the analysis. This systematic review reported incidence rate ratios (IRRs) with predic- tion intervals (PIs) in addition to 95% CIs. This approach is widely recommended for interpreting results from a random- effects meta- analysis of trials assessing treatment effects.4 7 My second study 8 was a viewpoint article. It described the developmental process of the ‘FUNBALL ’ programme, including the rationale, end- user involvement (eg, coach and football feder- ation administrators) and the iterative design and piloting steps. The ‘FUNBALL ’ programme was developed specifically for youth (aged 13–19 years) footballers with end- users, to be used after the usual warm- up. It aimed to address known implementa - tion barriers, such as a lack of football relevance, time and player/coach enjoyment. 9 This is achieved through the inclusion of ‘FUN’ activities to better address the barrier of player and coach engagement, particularly for youth age groups. The ‘FUNBALL ’ programme includes six mandatory exercise cate- gories and one optional category of games. Exer - cise categories were evidence- based,10 and each included two different exercises, which coaches were free to choose. All exercises were organised into progressive levels of difficulty. The ‘FUNBALL ’ programme incorporated exercises that allow for competition between players. Cognitive challenges Figure 1 Summary of four PhD studies on injury prevention and epidemiology in male youth football players . RCT, randomised controlled trial and U, under. Protected by copyright, including for uses related to text and data mining, AI training, and similar technologies. . Francisco (UCSF) at University of California San on July 29, 2026 http://bjsm.bmj.com/Downloaded from 16 September 2025. 10.1136/bjsports-2025-110557 on Br J Sports Med: first published as"
+    },
+    {
+      "page": 2,
+      "text": "555 Obërtinca R. Br J Sports Med 2026;60:554–555. doi:10.1136/bjsports-2025-110557 PhD Academy Award were included in the majority of exercises, 11 and the ball was included as often as possible. My third study 12 included a large- scale cluster - randomised controlled trial that investigated the efficacy of the ‘FUNBALL ’ programme in male youth football players. A total of 1027 players from Kosovo who were competing in the Under (U) 15, U17 and U19 age groups were randomised either into the intervention or control group. The intervention group (n=524 players) performed the 15–20 min ‘FUNBALL ’ programme in addition to their usual training at least two times per week, whereas the control group (n=503 players) continued their regular training routine. Both groups were followed for one football season (August 2021–May 2022). My fourth study 13 was a secondary analysis of the data collected in the second study, which evaluated the epidemiology of football- related injuries in players of the control arm who were not exposed to the ‘FUNBALL ’ programme. WHAT DID I FIND? My first study indicated that the treatment effect associated with the use of multi- component ex ercise- based IPPs in football is uncertain and inconclusive (figure 1). This conclusion was based on the observation that the PI values crossed ‘1’, which marks the programme’s cut- off point for being either protective (<1) or indicative of increased injury risk (>1). Also, the results were mainly based on very low and low quality of evidence. According to my third study, the ‘FUNBALL ’ programme reduced the incidence rate for the overall number of time- loss injuries by 31% (IRR 0.69, 95% CI 0.55 to 0.87, p=0.002) when it was implemented for one football season. Thigh injury incidence was reduced by 38% (IRR 0.62, 95% CI 0.39 to 0.98, p=0.042); moderate injuries (time- loss between 7 and 28 days) were reduced by 35% (IRR 0.65, 95% CI 0.44 to 0.97, p=0.035) and severe injuries (time- loss >28 days) were reduced by 49% (IRR 0.51, 95% CI 0.28 to 0.91, p=0.024). Injury burden was nearly halved in the intervention group (40 vs 74 days lost per 1000 hours). The key finding from my fourth study was a lower injury incidence in youth players compared with adult players. The most commonly injured body regions (thigh, knee and ankle) comprised 64% of all injuries in the male players aged 13–19 years. We observed a higher injury incidence in the older age groups. WHAT IS THE MOST IMPORTANT PRACTICAL FINDING? Based on the third study, the ‘FUNBALL ’ programme reduced overall time- loss injury incidence in male youth football players and was most effective for thigh injuries. The programme contained more football- specific elements compared with existing IPPs, which may increase implementation of the ‘FUNBALL ’ programme. Acknowledgements I would lik e to acknowledge my PhD supervisors, Dr Karen aus der Fünten and Prof Dr med Tim Meyer. I also thank all the players and their parents for participating in this project, as well as the study assistants, the Football Federation of Kosovo and representatives of the participating football clubs (board members, coaches and medical staff). Contributors RO completed this work as part of his PhD , which was supervised by Dr Karen aus der Fünten and Prof Dr med Tim Meyer. Other researchers collaborated in the studies, for which they are credited as co- authors . RO is the guarantor of the manuscript. Funding T he authors have not declared a specific grant for this research from any funding agency in the public, commercial or not- for - profit sectors . Competing interests None declared. P atient consent for publication Not applicable . Ethics approval Not applicable . Provenance and peer review Not commissioned; externally peer reviewed. ORCID iD Rilind Obërtinca https://orcid.org/0000-0002-3468-8822 REFERENCES 1 Crossley KM, Patterson BE, Culvenor AG, et al. Making football safer for women: a systematic review and meta- analysis of injury p"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/ai-review/evidence-packets/S5148.packet.json"
+}

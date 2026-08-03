@@ -34,9 +34,9 @@ Pull missing PDFs from Covidence without changing anything in Covidence, save th
 ## Concrete Paths Used In This Run
 
 - Reference CSV:
-  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/review_603597_included_csv_20260312035153.csv`
+  - `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/review_603597_included_csv_20260312035153.csv`
 - Existing local PDF library:
-  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Full Text - Data Extraaction`
+  - `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Full Text - Data Extraaction`
 - Reconciliation/output root:
   - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-03-11`
 - Clean final downloaded PDF folder:
@@ -44,7 +44,7 @@ Pull missing PDFs from Covidence without changing anything in Covidence, save th
 - Final download manifest:
   - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-03-11/files-final-3/covidence-download-manifest.csv`
 - Live import results:
-  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/covidence-import-results.csv`
+  - `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/covidence-import-results.csv`
 
 ## Reconciliation Counts
 
@@ -193,7 +193,7 @@ Important caveat for count comparisons:
 Concrete files for the April 7 pass:
 
 - Reference CSV:
-  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/review_603597_included_csv_20260408005101.csv`
+  - `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/review_603597_included_csv_20260408005101.csv`
 - Reconciliation/output root:
   - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-04-07`
 - Final combined manifest:
@@ -201,7 +201,7 @@ Concrete files for the April 7 pass:
 - Unresolved queue:
   - `/Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-04-07/unresolved.csv`
 - Live import results:
-  - `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/covidence-import-results.csv`
+  - `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/covidence-import-results.csv`
 
 ## April 15-16, 2026 Full Text Review Upload Update
 
@@ -233,7 +233,7 @@ Current residue after the second pass:
 
 Follow-up source of truth for this residue:
 
-- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-pdf-followup-todo.md`
+- `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-pdf-followup-todo.md`
 
 Practical next steps from this point:
 
@@ -254,8 +254,8 @@ Practical next steps from this point:
 
 Context:
 
-- Source decision report: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-uploaded-23-full-text-screening-review.html`
-- Import manifest/results directory: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/tmp/covidence-new-inclusions-2026-04-27`
+- Source decision report: `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-uploaded-23-full-text-screening-review.html`
+- Import manifest/results directory: `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/tmp/covidence-new-inclusions-2026-04-27`
 - PDF source directory: `/Users/abdelbabiker/Desktop/refifagbioriginalsearch`
 - Workflow: used the Covidence PDF import script with a small manifest generated from the April 24 full-text decision report. No new Covidence browser download was needed because all target PDFs were already present locally.
 - Result: `14` new live website papers created, each with `primary_file_id` set and a PDF attached.

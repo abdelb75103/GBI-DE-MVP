@@ -39,7 +39,7 @@ Authoritative output folder:
 
 Repo mirror:
 
-- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/exports/non-english-translations`
+- `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/exports/non-english-translations`
 
 Current translation status from the April 27 manifest:
 
@@ -85,7 +85,7 @@ Upload audit files:
 
 Repo backlog/log copy:
 
-- `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/research/non-english-covidence-upload-log-2026-04-30.md`
+- `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/research/non-english-covidence-upload-log-2026-04-30.md`
 
 Upload outcome:
 

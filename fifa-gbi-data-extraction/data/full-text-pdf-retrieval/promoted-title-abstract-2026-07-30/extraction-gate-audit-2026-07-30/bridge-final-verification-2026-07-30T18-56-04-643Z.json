@@ -1,0 +1,443 @@
+{
+  "artifactType": "Exact-six bridge extraction final verification",
+  "generatedAt": "2026-07-30T18:56:04.638Z",
+  "version": "full-text-ai-one-human-bridge-2026-07-30-v1",
+  "passed": true,
+  "snapshotPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/extraction-gate-audit-2026-07-30/blocked-gate-snapshot-2026-07-30T18-16-12-749Z.json",
+  "payloadPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/extraction-gate-audit-2026-07-30/bridge-extraction-payload-2026-07-30.json",
+  "screening": {
+    "votesUnchanged": true,
+    "checks": [
+      {
+        "studyId": "S3931",
+        "target": true,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 1,
+        "excludeVotes": 0,
+        "pendingSecondHuman": true
+      },
+      {
+        "studyId": "S4987",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S4111",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S3776",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S3661",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S4859",
+        "target": true,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 1,
+        "excludeVotes": 0,
+        "pendingSecondHuman": true
+      },
+      {
+        "studyId": "S907",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S4724",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S2699",
+        "target": true,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 1,
+        "excludeVotes": 0,
+        "pendingSecondHuman": true
+      },
+      {
+        "studyId": "S3098",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1564",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1148",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1503",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 0,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S5148",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1521",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 0,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S3493",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S925",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S3713",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S683",
+        "target": true,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 1,
+        "excludeVotes": 0,
+        "pendingSecondHuman": true
+      },
+      {
+        "studyId": "S4860",
+        "target": true,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 1,
+        "excludeVotes": 0,
+        "pendingSecondHuman": true
+      },
+      {
+        "studyId": "S845",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 0,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S4023",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1795",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S3592",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1666",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S1582",
+        "target": false,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 0,
+        "excludeVotes": 1,
+        "pendingSecondHuman": null
+      },
+      {
+        "studyId": "S2761",
+        "target": true,
+        "protectedRowUnchanged": true,
+        "bridgeCompleted": true,
+        "includeVotes": 1,
+        "excludeVotes": 0,
+        "pendingSecondHuman": true
+      }
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S683",
+      "paperId": "f6a4ee4e-6aa6-48fe-88f3-5f498373dd61",
+      "status": "processing",
+      "assignmentMatched": true,
+      "bridgeVersionMatched": true,
+      "referenceCheckingOnly": false,
+      "oneFile": true,
+      "primaryLinkMatched": true,
+      "expectedSha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+      "downloadedSha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+      "fileHashMatched": true,
+      "storageError": null
+    },
+    {
+      "studyId": "S2699",
+      "paperId": "fbb8eb29-4240-4243-b903-8b3afbaec787",
+      "status": "systematic_review",
+      "assignmentMatched": true,
+      "bridgeVersionMatched": true,
+      "referenceCheckingOnly": true,
+      "oneFile": true,
+      "primaryLinkMatched": true,
+      "expectedSha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "downloadedSha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "fileHashMatched": true,
+      "storageError": null
+    },
+    {
+      "studyId": "S2761",
+      "paperId": "d4d0195b-4fd9-4627-be16-e71f941e8383",
+      "status": "processing",
+      "assignmentMatched": true,
+      "bridgeVersionMatched": true,
+      "referenceCheckingOnly": false,
+      "oneFile": true,
+      "primaryLinkMatched": true,
+      "expectedSha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+      "downloadedSha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+      "fileHashMatched": true,
+      "storageError": null
+    },
+    {
+      "studyId": "S3931",
+      "paperId": "2749bb05-7248-4f09-a623-0b6233a3fb65",
+      "status": "processing",
+      "assignmentMatched": true,
+      "bridgeVersionMatched": true,
+      "referenceCheckingOnly": false,
+      "oneFile": true,
+      "primaryLinkMatched": true,
+      "expectedSha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+      "downloadedSha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+      "fileHashMatched": true,
+      "storageError": null
+    },
+    {
+      "studyId": "S4859",
+      "paperId": "fb35eba6-5b27-4730-8d45-cb82797f6b77",
+      "status": "processing",
+      "assignmentMatched": true,
+      "bridgeVersionMatched": true,
+      "referenceCheckingOnly": false,
+      "oneFile": true,
+      "primaryLinkMatched": true,
+      "expectedSha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+      "downloadedSha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+      "fileHashMatched": true,
+      "storageError": null
+    },
+    {
+      "studyId": "S4860",
+      "paperId": "cc446a34-2afa-41b7-bbec-c0bcb150a001",
+      "status": "processing",
+      "assignmentMatched": true,
+      "bridgeVersionMatched": true,
+      "referenceCheckingOnly": false,
+      "oneFile": true,
+      "primaryLinkMatched": true,
+      "expectedSha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "downloadedSha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "fileHashMatched": true,
+      "storageError": null
+    }
+  ],
+  "extractions": [
+    {
+      "studyId": "S683",
+      "status": "processing",
+      "tenTabs": true,
+      "fieldCount": 68,
+      "expectedFieldCount": 68,
+      "fieldsMatched": true,
+      "populationLabelsMatched": true,
+      "populationDualWriteMatched": true,
+      "populationHashMatched": true,
+      "oneEvidenceNote": true,
+      "extractionBridgeApplied": true
+    },
+    {
+      "studyId": "S2761",
+      "status": "processing",
+      "tenTabs": true,
+      "fieldCount": 78,
+      "expectedFieldCount": 78,
+      "fieldsMatched": true,
+      "populationLabelsMatched": true,
+      "populationDualWriteMatched": true,
+      "populationHashMatched": true,
+      "oneEvidenceNote": true,
+      "extractionBridgeApplied": true
+    },
+    {
+      "studyId": "S3931",
+      "status": "processing",
+      "tenTabs": true,
+      "fieldCount": 41,
+      "expectedFieldCount": 41,
+      "fieldsMatched": true,
+      "populationLabelsMatched": true,
+      "populationDualWriteMatched": true,
+      "populationHashMatched": true,
+      "oneEvidenceNote": true,
+      "extractionBridgeApplied": true
+    },
+    {
+      "studyId": "S4859",
+      "status": "processing",
+      "tenTabs": true,
+      "fieldCount": 51,
+      "expectedFieldCount": 51,
+      "fieldsMatched": true,
+      "populationLabelsMatched": true,
+      "populationDualWriteMatched": true,
+      "populationHashMatched": true,
+      "oneEvidenceNote": true,
+      "extractionBridgeApplied": true
+    },
+    {
+      "studyId": "S4860",
+      "status": "processing",
+      "tenTabs": true,
+      "fieldCount": 38,
+      "expectedFieldCount": 38,
+      "fieldsMatched": true,
+      "populationLabelsMatched": true,
+      "populationDualWriteMatched": true,
+      "populationHashMatched": true,
+      "oneEvidenceNote": true,
+      "extractionBridgeApplied": true
+    }
+  ],
+  "systematicReview": {
+    "status": "systematic_review",
+    "referenceCheckingOnly": true,
+    "zeroExtractionRows": true,
+    "zeroPopulationGroups": true,
+    "zeroPopulationValues": true,
+    "oneReferenceNote": true
+  },
+  "s845": {
+    "paperUnchanged": true,
+    "status": "american_data",
+    "primaryFileCleared": true,
+    "oneReferenceFile": true,
+    "zeroExtractionRows": true,
+    "zeroPopulationRows": true,
+    "warningNote": true
+  },
+  "backlog": {
+    "S683": true,
+    "S2699": true,
+    "S2761": true,
+    "S3931": true,
+    "S4859": true,
+    "S4860": true
+  },
+  "outOfScopeRecent": {
+    "papers": [],
+    "paperFiles": [],
+    "extractions": [],
+    "extractionFields": [],
+    "populationGroups": [],
+    "populationValues": [],
+    "paperNotes": []
+  }
+}

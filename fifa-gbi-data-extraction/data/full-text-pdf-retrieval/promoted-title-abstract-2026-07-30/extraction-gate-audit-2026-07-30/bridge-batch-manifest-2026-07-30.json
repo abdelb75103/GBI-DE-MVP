@@ -1,0 +1,161 @@
+{
+  "artifactType": "Resumable exact-six promotion and extraction manifest",
+  "version": "full-text-ai-one-human-bridge-2026-07-30-v1",
+  "date": "2026-07-30",
+  "status": "complete_pending_human_reviews",
+  "eligibility": {
+    "exactStudyIds": [
+      "S683",
+      "S2699",
+      "S2761",
+      "S3931",
+      "S4859",
+      "S4860"
+    ],
+    "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+    "humanGate": "exactly_one_authoritative_relational_include",
+    "secondHumanState": "pending",
+    "preWriteSnapshot": "blocked-gate-snapshot-2026-07-30T18-16-12-749Z.json"
+  },
+  "records": [
+    {
+      "studyId": "S683",
+      "screeningRecordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+      "paperId": "f6a4ee4e-6aa6-48fe-88f3-5f498373dd61",
+      "paperFileId": "07104d8f-5dff-434d-9c6d-39a73bf7db4b",
+      "sha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+      "promotion": "verified",
+      "paperStatus": "processing",
+      "extraction": {
+        "status": "complete_pending_review",
+        "tabs": 10,
+        "fields": 68,
+        "populationGroups": 4,
+        "populationValues": 26
+      },
+      "backlog": "Batch 036 pending_review"
+    },
+    {
+      "studyId": "S2699",
+      "screeningRecordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+      "paperId": "fbb8eb29-4240-4243-b903-8b3afbaec787",
+      "paperFileId": "39eb2ac4-46f6-464e-ae6f-48c8222d6088",
+      "sha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "promotion": "verified",
+      "paperStatus": "systematic_review",
+      "extraction": {
+        "status": "reference_check_only",
+        "tabs": 0,
+        "fields": 0,
+        "populationGroups": 0,
+        "populationValues": 0
+      },
+      "backlog": "Batch 037 pending_review"
+    },
+    {
+      "studyId": "S2761",
+      "screeningRecordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+      "paperId": "d4d0195b-4fd9-4627-be16-e71f941e8383",
+      "paperFileId": "690a9c53-0280-45c4-bbe3-8fb2425a4de2",
+      "sha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+      "promotion": "verified",
+      "paperStatus": "processing",
+      "extraction": {
+        "status": "complete_pending_review",
+        "tabs": 10,
+        "fields": 78,
+        "populationGroups": 5,
+        "populationValues": 56
+      },
+      "backlog": "Batch 036 pending_review"
+    },
+    {
+      "studyId": "S3931",
+      "screeningRecordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+      "paperId": "2749bb05-7248-4f09-a623-0b6233a3fb65",
+      "paperFileId": "7741d52d-aa53-4956-b4e3-c3f1fcaa4e03",
+      "sha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+      "promotion": "verified",
+      "paperStatus": "processing",
+      "extraction": {
+        "status": "complete_pending_review",
+        "tabs": 10,
+        "fields": 41,
+        "populationGroups": 2,
+        "populationValues": 39
+      },
+      "backlog": "Batch 036 pending_review"
+    },
+    {
+      "studyId": "S4859",
+      "screeningRecordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+      "paperId": "fb35eba6-5b27-4730-8d45-cb82797f6b77",
+      "paperFileId": "866dd7cd-96b9-4ae9-99a1-a04a9a00618e",
+      "sha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+      "promotion": "verified",
+      "paperStatus": "processing",
+      "extraction": {
+        "status": "complete_pending_review",
+        "tabs": 10,
+        "fields": 51,
+        "populationGroups": 1,
+        "populationValues": 30
+      },
+      "backlog": "Batch 036 pending_review"
+    },
+    {
+      "studyId": "S4860",
+      "screeningRecordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+      "paperId": "cc446a34-2afa-41b7-bbec-c0bcb150a001",
+      "paperFileId": "c08c8ead-2e18-4260-ae93-2b9be817d0e3",
+      "sha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "promotion": "verified",
+      "paperStatus": "processing",
+      "extraction": {
+        "status": "complete_pending_review",
+        "tabs": 10,
+        "fields": 38,
+        "populationGroups": 2,
+        "populationValues": 30
+      },
+      "backlog": "Batch 036 pending_review"
+    }
+  ],
+  "totals": {
+    "promotedPapers": 6,
+    "primaryExtractions": 5,
+    "tabRows": 50,
+    "fieldRows": 276,
+    "populationGroups": 14,
+    "populationValues": 181,
+    "referenceOnlySystematicReviews": 1
+  },
+  "verification": {
+    "status": "passed",
+    "audit": "bridge-final-verification-2026-07-30T18-56-04-643Z.json",
+    "votesUnchanged": true,
+    "protectedScreeningStateUnchanged": true,
+    "fileHashesMatched": true,
+    "populationDualWriteMatched": true,
+    "backlogMembershipMatched": true,
+    "s845ReferenceOnlyContractPreserved": true,
+    "outOfScopeWritesDetected": 0,
+    "acceptanceReview": "PASS, fresh independent sol_xhigh review, no remaining P0/P1/P2 findings"
+  },
+  "applyAudits": {
+    "promotion": "bridge-apply-2026-07-30T18-41-37-593Z.json",
+    "promotionJournal": "bridge-apply-2026-07-30T18-41-37-593Z.ndjson",
+    "extraction": "extraction-apply-2026-07-30T18-51-35-703Z.json",
+    "extractionJournal": "extraction-apply-2026-07-30T18-51-35-703Z.ndjson"
+  },
+  "errors": [],
+  "manualNextSteps": [
+    "Abdel reviews Backlog 2 Batches 036 and 037.",
+    "A second authoritative human completes full-text screening through the supported vote path.",
+    "Any later screening conflict is handled through the normal resolver workflow."
+  ],
+  "rollback": {
+    "screeningAuditMetadata": "Recover from the pre-write snapshot using exact current-state guards.",
+    "insertedRows": "All inserted IDs are recorded. Extraction, population and note IDs are deterministic; promotion paper/file IDs are preserved in bridge reservation metadata and the apply audit. Deletion is destructive and requires explicit approval."
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "batch": "promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30",
+  "worker_scope": ["S1503", "S1521"],
+  "run_date": "2026-07-30",
+  "mode": "read-only, public lawful-source retrieval only",
+  "pdf_candidates_downloaded": [],
+  "records": [
+    {
+      "studyId": "S1503",
+      "nctId": "NCT06203379",
+      "officialTitle": "Effects of Preseason Neuromuscular Training Improves , Youth, Male Soccer Players",
+      "registry_identity_verified": true,
+      "registry_status": "COMPLETED",
+      "registry_results_posted": false,
+      "registry_document_section_present": false,
+      "registry_publication_links": [],
+      "lawful_provenance_urls": [
+        "https://clinicaltrials.gov/study/NCT06203379",
+        "https://clinicaltrials.gov/api/v2/studies/NCT06203379",
+        "https://api.crossref.org/works?query=NCT06203379&rows=20",
+        "https://api.openalex.org/works?search=NCT06203379&per-page=20",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=NCT06203379&format=json&pageSize=20"
+      ],
+      "index_searches": {
+        "exact_nct": {
+          "Crossref": "zero returned works",
+          "OpenAlex": "zero returned works",
+          "Europe_PMC": "zero hits"
+        },
+        "exact_title": {
+          "Europe_PMC": "zero hits",
+          "Crossref_and_OpenAlex": "no exact title match returned"
+        }
+      },
+      "rejected_near_match": {
+        "doi": "10.1519/jsc.0000000000004394",
+        "title": "Preseason Integrative Neuromuscular Training Improves Selected Measures of Physical Fitness in Highly Trained, Youth, Male Soccer Players",
+        "why_rejected": [
+          "The Crossref record was published online on 2022-11-30, before this registry record's actual 2024-01-14 study start.",
+          "Its listed authors are Hammami, Negra, Nebigh, Ramirez-Campillo, Moran and Chaabene, whereas the registered responsible investigator is Hazal Genc at Istanbul Medipol University Hospital.",
+          "Its abstract reports 24 participants, whereas NCT06203379 reports actual enrolment of 41.",
+          "The exact NCT identifier search did not retrieve it."
+        ],
+        "downloaded": false
+      },
+      "failure_evidence": [
+        "The official public registry response has neither a document section nor results submitted or posted.",
+        "The official registry response has no linked publication references.",
+        "No lawful full-text results paper was identified through the exact identifier or exact-title searches."
+      ],
+      "outcome": "unresolved_no_verified_pdf",
+      "confidence": "high",
+      "next_step": "Monitor the ClinicalTrials.gov record for posted results or a linked publication. For earlier access, contact the responsible investigator or sponsor and request the results publication, citing NCT06203379."
+    },
+    {
+      "studyId": "S1521",
+      "nctId": "NCT06473883",
+      "officialTitle": "Effects of Vestibulo-oculomotor and Neuromuscular Training on the Incidence of Concussions and Musculoskeletal Injuries in Competitive Female Football Players",
+      "registry_identity_verified": true,
+      "registry_status": "UNKNOWN",
+      "registry_results_posted": false,
+      "registry_document_section_present": false,
+      "lawful_provenance_urls": [
+        "https://clinicaltrials.gov/study/NCT06473883",
+        "https://clinicaltrials.gov/api/v2/studies/NCT06473883",
+        "https://ctv.veeva.com/study/the-impact-of-eye-and-body-training-on-the-injury-rate-of-concussions-in-female-soccer-players",
+        "https://api.crossref.org/works?query=NCT06473883&rows=20",
+        "https://api.openalex.org/works?search=NCT06473883&per-page=20",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=NCT06473883&format=json&pageSize=20"
+      ],
+      "index_searches": {
+        "exact_nct": {
+          "Crossref": "zero returned works",
+          "OpenAlex": "zero returned works",
+          "Europe_PMC": "zero hits"
+        },
+        "exact_title": {
+          "Europe_PMC": "zero hits",
+          "Crossref_and_OpenAlex": "no exact title match returned"
+        }
+      },
+      "registry_reference_not_accepted_as_results_paper": {
+        "citation": "Attwood MJ, Roberts SP, Trewartha G, England ME, Stokes KA. Efficacy of a movement control injury prevention programme in adult men's community rugby union: a cluster randomised controlled trial. Br J Sports Med. 2018;52(6):368-374. doi: 10.1136/bjsports-2017-098005.",
+        "why_rejected": "The registry classifies it as a RESULT, but it is an adult men's community rugby study published in 2018. It does not match this female Swiss football trial or its 2024 registry posting, so it was not downloaded or substituted."
+      },
+      "failure_evidence": [
+        "The official public registry response has neither a document section nor results submitted or posted.",
+        "The record remains UNKNOWN in the current registry API response, and public mirrors describe it as not yet enrolling.",
+        "No lawful full-text results paper was identified through the exact identifier or exact-title searches."
+      ],
+      "outcome": "unresolved_no_verified_pdf",
+      "confidence": "high",
+      "next_step": "Monitor the ClinicalTrials.gov record for a status/results update or linked publication. If a results paper is needed sooner, contact BrainCare Medical Group using the public registry contact details and cite NCT06473883."
+    }
+  ],
+  "validation": {
+    "pdf_signature_checks": "Not applicable: no candidate PDF was downloaded after source and identity validation.",
+    "content_identity_checks": "The two saved ClinicalTrials.gov API records match their assigned NCT identifiers and official titles. Near-title and misclassified linked items were rejected before download."
+  }
+}

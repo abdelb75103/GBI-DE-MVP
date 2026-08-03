@@ -1,0 +1,101 @@
+[
+  {
+    "studyId": "S1666",
+    "recordId": "f7e9c521-f4db-4932-8ca6-70006c65c700",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://mdpi-res.com/d_attachment/jcm/jcm-13-01456/article_deploy/jcm-13-01456.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S1666.pdf",
+    "sha256": "492ef4f09b65f5d224e9a8da21110e7badd71b9d294fd2e08f5e383a90987f4c",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher_open_access_cc_by", "documentType": "full_paper", "pages": 11, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF page 1 gives the exact title and Dawid Koźlenia authorship.", "PDF abstract reports 89 young amateur athletes, body posture, FMS and injury frequency.", "PDF citation gives DOI 10.3390/jcm13051456."], "failureEvidence": [], "provenanceUrls": ["https://mdpi-res.com/d_attachment/jcm/jcm-13-01456/article_deploy/jcm-13-01456.pdf", "https://doi.org/10.3390/jcm13051456"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S1795",
+    "recordId": "cd1d0285-b33b-4c15-b8b4-31936a1225b2",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": null,
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": false, "legalAccess": false, "legalAccessType": null, "documentType": null, "pages": null, "titleMatch": false, "authorMatch": false, "doiMatch": false, "contentMatch": false, "identityEvidence": [], "failureEvidence": ["DOI 10.1097/JSM.0000000000001211 is a shared 2024 AMSSM proceedings DOI, so it cannot identify this record by itself.", "A public ICPSR-hosted proceedings copy indexes the exact title, submitting author Alexander Porter, PHQ-9 methods, 282 athletes and concussion results, but its redistribution/licence authority was not established; it was not downloaded or accepted."], "provenanceUrls": ["https://doi.org/10.1097/JSM.0000000000001211", "https://bibliography.icpsr.umich.edu/bibliography/citations/data/174505/fileDownload", "https://digitalscholar.lsuhsc.edu/som_facpubs/3074/"], "confidence": "high"},
+    "error": "No authorised PDF route verified. S1795 requires PDF-level exact title, Porter authorship and matching study content, not shared DOI evidence.",
+    "manualNextStep": "Retrieve the 2024 Clinical Journal of Sport Medicine AMSSM proceedings through an authorised publisher or institutional-library route, then validate the exact abstract title, Porter authorship and PHQ-9/282-athlete concussion content in the PDF."
+  },
+  {
+    "studyId": "S2699",
+    "recordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://research.edgehill.ac.uk/ws/portalfiles/portal/102114531/s40279-025-02326-y.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S2699.pdf",
+    "sha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "institutional_repository_open_access_cc_by", "documentType": "full_paper", "pages": 18, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF metadata and page 1 give the exact title, Mohammad Alimoradi authorship and DOI 10.1007/s40279-025-02326-y.", "Abstract identifies a systematic review and meta-analysis of injury epidemiology in elite and amateur soccer referees."], "failureEvidence": [], "provenanceUrls": ["https://research.edgehill.ac.uk/ws/portalfiles/portal/102114531/s40279-025-02326-y.pdf", "https://knowledge.lancashire.ac.uk/id/eprint/57155/", "https://doi.org/10.1007/s40279-025-02326-y"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S2761",
+    "recordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://bmcsportsscimedrehabil.biomedcentral.com/counter/pdf/10.1186/s13102-025-01262-8.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S2761.pdf",
+    "sha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher_open_access", "documentType": "full_paper", "pages": 15, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF page 1 gives the exact title and Ahmet Bayrak authorship.", "Abstract reports a five-season professional football injury study, 169 players and Functional Movement Screen assessment.", "Publisher PDF gives DOI 10.1186/s13102-025-01262-8."], "failureEvidence": [], "provenanceUrls": ["https://bmcsportsscimedrehabil.biomedcentral.com/counter/pdf/10.1186/s13102-025-01262-8.pdf", "https://pmc.ncbi.nlm.nih.gov/articles/PMC12306137/", "https://doi.org/10.1186/s13102-025-01262-8"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S3098",
+    "recordId": "6271dfdd-9fdf-4ddc-a2e6-e6353a85e83d",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": null,
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": false, "legalAccess": false, "legalAccessType": null, "documentType": null, "pages": null, "titleMatch": false, "authorMatch": false, "doiMatch": false, "contentMatch": false, "identityEvidence": [], "failureEvidence": ["The publisher’s public issue-contents PDF is a two-page table of contents only, despite listing the target title and Selçuk TARAKCI; it is not the article PDF.", "No authorised article-level PDF was located from the DOI or publisher results in this pass."], "provenanceUrls": ["https://www.turkiyeklinikleri.com/upload/issuecontent/sporbilimleri17-1-25.pdf", "https://avesis.yeniyuzyil.edu.tr/yayin/d4f69851-de22-44cd-b0da-df844886d79a/akutkronik-is-yuku-orani-kosu-dengesizligi-ve-profesyonel-futbolcularda-sakatlik-paradoksu-tanimlayici-arastirma", "https://doi.org/10.5336/sportsci.2024-104874"], "confidence": "high"},
+    "error": "Located only issue contents, not a citable full paper or abstract.",
+    "manualNextStep": "Use an authorised Türkiye Klinikleri subscription or interlibrary route to retrieve the article-level PDF, then confirm Turkish title, TARAKCI authorship and workload/running-imbalance methods."
+  },
+  {
+    "studyId": "S3493",
+    "recordId": "88288e79-5075-4281-8061-4291013bd16e",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": null,
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": false, "legalAccess": false, "legalAccessType": null, "documentType": null, "pages": null, "titleMatch": false, "authorMatch": false, "doiMatch": false, "contentMatch": false, "identityEvidence": [], "failureEvidence": ["The official RBFF landing page identifies the exact title, Wellington Danilo Soares authorship, 2024 issue and pages 132-138, but its advertised PDF link returned HTTP 404 from both view and standard download endpoints.", "No alternative authorised full PDF was found."], "provenanceUrls": ["https://www.rbff.com.br/index.php/rbff/article/view/1400", "https://www.rbff.com.br/index.php/rbff/article/view/1400/1066", "https://www.rbff.com.br/index.php/rbff/article/download/1400/1066"], "confidence": "high"},
+    "error": "Official PDF link is presently unavailable (HTTP 404).",
+    "manualNextStep": "Ask RBFF to repair the PDF galley or obtain the PDF through an authorised library/archive route, then confirm authors, title and 31-player knee-injury study content."
+  },
+  {
+    "studyId": "S3592",
+    "recordId": "f569367d-f4cb-4fdd-a276-3f02b1ee6aab",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": null,
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": false, "legalAccess": false, "legalAccessType": null, "documentType": null, "pages": null, "titleMatch": false, "authorMatch": false, "doiMatch": false, "contentMatch": false, "identityEvidence": [], "failureEvidence": ["Bibliographic sources identify this as a 2025 Medicine & Science in Sports & Exercise conference abstract, 57(10S):645, but no authorised PDF was found.", "The provided DOI resolves to a proceedings-style abstract identifier rather than a uniquely retrievable full article."], "provenanceUrls": ["https://doi.org/10.1249/01.mss.0001160372.12141.14", "https://eurekamag.com/research/103/845/103845017.php", "https://theecnl.com/sports/2025/11/1/cahp-test.aspx?path=wsoc"], "confidence": "medium"},
+    "error": "No authorised abstract-PDF route located.",
+    "manualNextStep": "Retrieve the MSSE 2025 volume 57 issue 10 supplement through an authorised LWW or library route, then validate Gupta authorship and the exact abstract title/content."
+  },
+  {
+    "studyId": "S3661",
+    "recordId": "2f3cad0c-47a0-431e-bf26-c888a800d677",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://www.germanjournalsportsmedicine.com/fileadmin/content/archiv_2025/Issue_3/DtschZSportmed_CORR_Abstracts_SMHS_2025-3.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S3661.pdf",
+    "sha256": "ed61161130b4215d50c4a6a94dd7fbc6e891332d3c05d4a8eb9975e6f26989fd",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher_public_conference_abstracts", "documentType": "conference_abstract", "pages": 58, "titleMatch": true, "authorMatch": true, "doiMatch": false, "contentMatch": true, "identityEvidence": ["Official German Journal of Sports Medicine conference-abstract PDF contains the exact title and Poureghbali, Engel, Stoll, Cassel and Mayer authorship.", "Abstract states it assesses annual prevalence and incidence of illness and injury and training days lost among adolescent athletes."], "failureEvidence": ["No DOI was supplied in the queue or located in the conference abstract."], "provenanceUrls": ["https://www.germanjournalsportsmedicine.com/fileadmin/content/archiv_2025/Issue_3/DtschZSportmed_CORR_Abstracts_SMHS_2025-3.pdf", "https://www.sports-medicine-health-summit.de/_Resources/Persistent/4536dc919769f02b4355a8fd0f2926dffb033426/SMHS25_Kongressprogramm.pdf"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S3713",
+    "recordId": "a1d3abb9-e358-429f-81d7-27750611659b",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": null,
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": false, "legalAccess": false, "legalAccessType": null, "documentType": null, "pages": null, "titleMatch": false, "authorMatch": false, "doiMatch": false, "contentMatch": false, "identityEvidence": [], "failureEvidence": ["The DOI was searched but no authorised PDF or authoritative abstract page containing this exact title and Tannor authorship was located.", "The DOI pattern indicates a Medicine & Science in Sports & Exercise proceedings abstract, but this is insufficient to accept a document."], "provenanceUrls": ["https://doi.org/10.1249/01.mss.0001158736.15512.b7"], "confidence": "medium"},
+    "error": "No authorised PDF route or PDF-level identity evidence located.",
+    "manualNextStep": "Retrieve the relevant MSSE conference-abstract supplement through an authorised LWW or library route, then validate the exact title, Tannor authorship and Accra 2023 Paralympic Games injury content."
+  }
+]

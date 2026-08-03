@@ -73,7 +73,8 @@ export const finalizeTitleAbstractRecommendation = async (supabase, recordId, op
 
   const resolution = getTitleAbstractSupabaseResolution(record);
   const finalEntry = getFinalDecisionEntry(record, resolution);
-  const finalProfileId = finalEntry?.reviewerProfileId ?? record.manual_decided_by ?? record.created_by ?? null;
+  const finalProfileId = record.manual_decided_by ?? finalEntry?.reviewerProfileId ?? record.created_by ?? null;
+  const finalDecidedAt = record.manual_decided_at ?? finalEntry?.decidedAt ?? null;
   const manualDecision = getManualDecision(resolution);
   const metadata = {
     ...getMetadata(record),
@@ -87,10 +88,11 @@ export const finalizeTitleAbstractRecommendation = async (supabase, recordId, op
       manual_decision: manualDecision,
       manual_reason: manualDecision === 'exclude' ? getExclusionReason(record) : null,
       manual_decided_by: finalProfileId,
-      manual_decided_at: finalEntry ? new Date().toISOString() : null,
+      manual_decided_at: finalDecidedAt,
       updated_at: new Date().toISOString(),
     })
     .eq('id', record.id)
+    .eq('updated_at', record.updated_at)
     .select('*')
     .single();
 
@@ -129,7 +131,10 @@ export const finalizeTitleAbstractRecommendation = async (supabase, recordId, op
         },
         updated_at: now,
       })
-      .eq('id', updated.id);
+      .eq('id', updated.id)
+      .eq('updated_at', updated.updated_at)
+      .select('id')
+      .single();
 
     if (linkedError) throw new Error(`Failed to link existing full-text placeholder for ${updated.assigned_study_id}: ${linkedError.message}`);
     return { resolution: 'promoted_to_full_text', promoted: false, fullTextRecordId: existingFullTextRecord.id };
@@ -180,7 +185,10 @@ export const finalizeTitleAbstractRecommendation = async (supabase, recordId, op
       },
       updated_at: now,
     })
-    .eq('id', updated.id);
+    .eq('id', updated.id)
+    .eq('updated_at', updated.updated_at)
+    .select('id')
+    .single();
 
   if (promotedError) throw new Error(`Failed to mark ${updated.assigned_study_id} as promoted: ${promotedError.message}`);
   if (!options.quiet) console.log(`promoted ${updated.assigned_study_id} to full-text screening`);

@@ -1,0 +1,575 @@
+{
+  "recordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+  "covidenceId": null,
+  "studyId": "S4859",
+  "title": "Athletic ability discrepancy, risk-taking, and recovery quality as predictors of match-related injuries in adolescent soccer players.",
+  "authors": "Naderi A",
+  "year": "2026",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4859.pdf",
+  "pdfSha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 9,
+  "textCharCount": 47678,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Athletic ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ng, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessments of mental fatigue, recovery quality, perceived match load, perceived injury risk, risk-taking b..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...screpancies, and interventions promoting realistic self-assessment, behavioural regulation, and structured recovery in youth injury prevention. Keywords Injury risk factors, Injury prevention, Psychological factors, Sports psychology, Y outh sports injuries Soccer is one of the most popular youth sports worldwide, but its high-intensity demands—including rapid directional changes, sprinting, and physical collisions—place adolescent players at significant risk for both acute and overuse injuries1,2. Injury rates are s..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...uries1,2. Injury rates are substantially higher in matches than training: approximately 14.43 injuries per 1,000 h in male youth and 14.97 in females, which is nearly five times the training-related incidence3. Although emergency department visits for youth soccer injuries in the U.S. increased by 111% between 1990 and 20144, this rise likely reflects increased participation and awareness rather than greater per-exposure risk. These findings highlight the need for evidence-based, context-specific prevention strategie..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...gaps in literature. First, no prospective investigation has examined the Athletic Ability Discrepancy Score—quantified as the divergence between self- and coach ratings of athletic ability—as an independent predictor of match-related injuries in adolescent soccer players. Second, existing research has failed to simultaneously model the interplay among recovery quality, risk-taking behaviors, and other self- rating discrepancies within an integrated predictive framework. Third, the majority of prior studies focused..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...vestigates the combined influence of psychological (mental fatigue, perceived injury risk, risk-taking behaviors, Athletic Ability Discrepancy Score) and physiological (match load, recovery quality) factors on match-related injury risk among adolescent male soccer players aged 14–17 years. We hypothesize that: (1) a more positive Athletic Ability Discrepancy Score (indicating players rate themselves more favorably than their coach), (2) poorer recovery quality, (3) greater engagement in risk-taking behaviors, (4) el..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...re-match assessments and systematic injury surveillance during competitive play, this investigation advances beyond prior cross-sectional work to establish temporal relationships and enhance causal inference regarding modifiable injury risk factors in youth soccer. Methods Study design and setting This prospective cohort study investigated psychological and physical risk factors for sports injuries among adolescent soccer players from local clubs in the cities of markazi province, Iran. Baseline psychological, behavi..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...ral relationships and enhance causal inference regarding modifiable injury risk factors in youth soccer. Methods Study design and setting This prospective cohort study investigated psychological and physical risk factors for sports injuries among adolescent soccer players from local clubs in the cities of markazi province, Iran. Baseline psychological, behavioral, and demographic data were collected using standardized questionnaires, and injuries along with match exposure were systematically recorded over 20 official..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Baseline measurements To establish baseline data, a comprehensive questionnaire was administered to adolescent soccer players, structured into three key sections: demographic information, soccer training profile, and history of previous injuries. The researcher conducted individual interviews to complete the questionnaire, which included questions about participants’ age,..."
+      },
+      {
+        "page": 4,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...y analyses were conducted by re-running the models using complete-case data to confirm the robustness of findings. All statistical analyses were performed using IBM SPSS Statistics Version 26, with statistical significance set at α = 0.05. Results During 20 soccer matches, 19 out of 40 players (47.5%) experienced a total of 26 injuries, with an overall incidence of 24.9 injuries per 1,000 h of match exposure (Fig. 1). The injuries occurred in various body locations, including the thigh (30.77%), lower leg/Achilles te..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "..., statistically significant (p < 0.05) (Table 2). Discussion This study aimed to investigate how training load, recovery quality, mental fatigue, perceived injury risk, risk-taking behaviors, and estimated athletic ability affect injury risk among adolescent soccer players. The main findings demonstrated that poorer recovery quality, greater engagement in risk-taking behaviors, and overestimation of athletic ability were each significantly associated with increased odds of sustaining a match- related injury in this co..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...effective recovery strategies in youth sports injury prevention. Contrary to studies in adults suggesting mental fatigue (MF) increases injury risk 17–21, our findings did not identify MF as a significant predictor of match-related injuries among adolescent soccer players. This discrepancy suggests that MF , while impactful in adult populations, may not exert a direct influence on injury risk in younger athletes. Given adolescents’ exposure to multiple stressors such as academic demands, future longitudinal studies..."
+      },
+      {
+        "page": 7,
+        "section": "Conclusion",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ctive records. Conclusion This study found that overestimation of athletic ability, engagement in risk-taking behaviors, and poorer recovery quality were each significantly associated with increased odds of match-related injury in this cohort of adolescent soccer players. Unlike findings in adults, mental fatigue and perceived injury risk were not significant predictors in this young group, and match load alone did not predict match-related injury either. These results suggest the need for a comprehensive prevention..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "29. Schwebel, D. C., Banaszek, M. M. & McDaniel, M. Brief report: Behavioral risk factors for youth soccer (football) injury. J. Pediatr. Psychol. 32, 411–416 (2007). 30. Morrongiello, B. A. & Rennie, H. Why do boys engage in more risk taking than girls? The role of attributions, beliefs, and risk appraisals. J. Pediatr. Psychol. 23, 33–43 (1998). 31. Thomas,..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "match exposure",
+        "snippet": "...al risk factors for sports injuries among adolescent soccer players from local clubs in the cities of markazi province, Iran. Baseline psychological, behavioral, and demographic data were collected using standardized questionnaires, and injuries along with match exposure were systematically recorded over 20 official matches to identify predictors of match-related injuries. Participants Forty adolescent soccer players were recruited from four local clubs in markazi province, Iran during the 2023– 2024 seasons. The inclusion c..."
+      },
+      {
+        "page": 3,
+        "section": "Statistical analysis",
+        "eligibleEvidenceSection": true,
+        "match": "per 1000",
+        "snippet": "...d systematic injury surveillance throughout the study period. Statistical analysis Descriptive statistics were used to summarize participant characteristics. Exposure time (in hours) over 20 official matches was calculated to determine injury incidence rates per 1000 match hours using the formula: Injury Rate = (Number of Injuries/Number of Exposure Hours) × 1000. To account for repeated measures and correlated observations within players across multiple matches, we employed Generalized Estimating Equations (GEE) with..."
+      },
+      {
+        "page": 3,
+        "section": "Statistical analysis",
+        "eligibleEvidenceSection": true,
+        "match": "Exposure Hours",
+        "snippet": "...scriptive statistics were used to summarize participant characteristics. Exposure time (in hours) over 20 official matches was calculated to determine injury incidence rates per 1000 match hours using the formula: Injury Rate = (Number of Injuries/Number of Exposure Hours) × 1000. To account for repeated measures and correlated observations within players across multiple matches, we employed Generalized Estimating Equations (GEE) with a binary logistic regression structure. GEE was selected because it provides population-ave..."
+      },
+      {
+        "page": 4,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "match exposure",
+        "snippet": "...were performed using IBM SPSS Statistics Version 26, with statistical significance set at α = 0.05. Results During 20 soccer matches, 19 out of 40 players (47.5%) experienced a total of 26 injuries, with an overall incidence of 24.9 injuries per 1,000 h of match exposure (Fig. 1). The injuries occurred in various body locations, including the thigh (30.77%), lower leg/Achilles tendon (19.23%), knee (15.38%), ankle (15.38%), foot/toe (7.69%), wrist (3.85%), forearm (3.85%), and head/face (3.85%). In terms of severity, 61.5%..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "match exposure",
+        "snippet": "...sustaining a match- related injury in this cohort of adolescent soccer players. Among adolescent soccer players aged 14–17, 47.5% sustained new injuries, with an average of 0.65 injuries per player and an overall match injury incidence of 24.9 per 1,000 h of match exposure. This incidence is more than that reported in a systematic review by Robles-Palazón, et al.3, who found an average of 14.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandorino, et al40. also..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...ng adolescent growth periods (e.g., apophysitis, biomechanical changes). Fourth, surveillance focused exclusively on match-related injuries. While intentional—to isolate risk factors under high-pressure conditions (5× higher injury risk than training) 3—our incidence rate (6.52/1,000 h) cannot be generalized to full-season patterns, as 60–80% of youth injuries occur during training2. Fifth, only internal match load (session-RPE) was measured; external load metrics (GPS-derived distance, accelerations) were unavailable, poten..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "24.9 injuries per 1,000 match hours",
+        "snippet": "...All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.48, 95% CI: 1.10–1.99, p = 0.01), lower recovery quality (OR = 0.75, 95%..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "14.43 \ninjuries per 1,000 h",
+        "snippet": "...high-intensity demands—including rapid directional changes, sprinting, and physical collisions—place adolescent players at significant risk for both acute and overuse injuries1,2. Injury rates are substantially higher in matches than training: approximately 14.43 injuries per 1,000 h in male youth and 14.97 in females, which is nearly five times the training-related incidence3. Although emergency department visits for youth soccer injuries in the U.S. increased by 111% between 1990 and 20144, this rise likely reflects increased particip..."
+      },
+      {
+        "page": 3,
+        "section": "Statistical analysis",
+        "eligibleEvidenceSection": true,
+        "match": "1000 match hours",
+        "snippet": "...stematic injury surveillance throughout the study period. Statistical analysis Descriptive statistics were used to summarize participant characteristics. Exposure time (in hours) over 20 official matches was calculated to determine injury incidence rates per 1000 match hours using the formula: Injury Rate = (Number of Injuries/Number of Exposure Hours) × 1000. To account for repeated measures and correlated observations within players across multiple matches, we employed Generalized Estimating Equations (GEE) with a binary log..."
+      },
+      {
+        "page": 4,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "24.9 injuries per 1,000 h",
+        "snippet": "...ngs. All statistical analyses were performed using IBM SPSS Statistics Version 26, with statistical significance set at α = 0.05. Results During 20 soccer matches, 19 out of 40 players (47.5%) experienced a total of 26 injuries, with an overall incidence of 24.9 injuries per 1,000 h of match exposure (Fig. 1). The injuries occurred in various body locations, including the thigh (30.77%), lower leg/Achilles tendon (19.23%), knee (15.38%), ankle (15.38%), foot/toe (7.69%), wrist (3.85%), forearm (3.85%), and head/face (3.85%). In terms o..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "24.9 per 1,000 h",
+        "snippet": "...h increased odds of sustaining a match- related injury in this cohort of adolescent soccer players. Among adolescent soccer players aged 14–17, 47.5% sustained new injuries, with an average of 0.65 injuries per player and an overall match injury incidence of 24.9 per 1,000 h of match exposure. This incidence is more than that reported in a systematic review by Robles-Palazón, et al.3, who found an average of 14.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandori..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "14.43 injuries per \n1,000 match hours",
+        "snippet": "...ained new injuries, with an average of 0.65 injuries per player and an overall match injury incidence of 24.9 per 1,000 h of match exposure. This incidence is more than that reported in a systematic review by Robles-Palazón, et al.3, who found an average of 14.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandorino, et al40. also reported a wide range (2.84 to 47.7 per 1,000 h) in elite adolescent players, and Faude, et al 2. reported rates of 15–20 per 1,000 match hours in older ad..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "47.7 per 1,000 h",
+        "snippet": "...hat reported in a systematic review by Robles-Palazón, et al.3, who found an average of 14.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandorino, et al40. also reported a wide range (2.84 to 47.7 per 1,000 h) in elite adolescent players, and Faude, et al 2. reported rates of 15–20 per 1,000 match hours in older adolescents. Such differences may reflect variation in competition level (elite vs. non-elite), age, and methodology. The lower injury incidence in our..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "20 per 1,000 match hours",
+        "snippet": "...4.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandorino, et al40. also reported a wide range (2.84 to 47.7 per 1,000 h) in elite adolescent players, and Faude, et al 2. reported rates of 15–20 per 1,000 match hours in older adolescents. Such differences may reflect variation in competition level (elite vs. non-elite), age, and methodology. The lower injury incidence in our study may be due to the non- elite competition level, lower match intensity, and differences in e..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "6.52/1,000 h",
+        "snippet": "...owth periods (e.g., apophysitis, biomechanical changes). Fourth, surveillance focused exclusively on match-related injuries. While intentional—to isolate risk factors under high-pressure conditions (5× higher injury risk than training) 3—our incidence rate (6.52/1,000 h) cannot be generalized to full-season patterns, as 60–80% of youth injuries occur during training2. Fifth, only internal match load (session-RPE) was measured; external load metrics (GPS-derived distance, accelerations) were unavailable, potentially obscuri..."
+      }
+    ],
+    "review": [
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...soccer players. Among adolescent soccer players aged 14–17, 47.5% sustained new injuries, with an average of 0.65 injuries per player and an overall match injury incidence of 24.9 per 1,000 h of match exposure. This incidence is more than that reported in a systematic review by Robles-Palazón, et al.3, who found an average of 14.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandorino, et al40. also reported a wide range (2.84 to 47.7 per 1,000 h) in elite adolesce..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": ".... Faude, O., Rößler, R. & Junge, A. Football injuries in children and adolescent players: Are there clues for prevention?. Sports Med. 43, 819–837 (2013). 3. Robles-Palazón, F . J. et al. Epidemiology of injuries in male and female youth football players: a systematic review and meta- analysis. J. sport health Sci. 11, 681–695 (2022). 4. Smith, N. A., Chounthirath, T. & Xiang, H. Soccer-related injuries treated in emergency departments: 1990–2014. Pediatrics, 138, 1-8 (2016). 5. Van Mechelen, W ., Hlobil, H. & Kemper, H. C. In..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...and concurrent relations among temperament, ability estimation, and injury proneness. Child Dev. 70, 700–712 (1999). 10. Eckard, T. G., Padua, D. A., Hearn, D. W ., Pexa, B. S. & Frank, B. S. The relationship between training load and injury in athletes: A systematic review. Sports Med. 48, 1929–1961 (2018). 11. Gabbett, T. J. & Domrow, N. Relationships between training load, injury, and fitness in sub-elite collision sport athletes. J. Sports Sci. 25, 1507–1519. https://doi.org/10.1080/02640410701215066 (2007). 12. Timoteo,..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...sciences= J. canadien des. Sci. du sport. 17, 338–345 (1992). 32. Foster, C. et al. A new approach to monitoring exercise training. J. Strength Cond. Res. 15, 109–115 (2001). 33. Habay, J. et al. Mental fatigue and sport-specific psychomotor performance: a systematic review. Sports Med. 51, 1527–1548 (2021). 34. Deroche, T., Stephan, Y ., Woodman, T. & Le Scanff, C. Psychological mediators of the sport injury—perceived risk relationship. Risk Anal. 32, 113–121 (2012). 35. Lafollie, D. Detection of high-risk personalities in r..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "literature review",
+        "snippet": "...rts Health 16, 1038–1049. h t t p s : / / d o i . o r g / 1 0 . 1 1 7 7 / 1 9 4 1 7 3 8 1 2 3 1 2 2 3 4 7 5 (2024). 40. Mandorino, M., Figueiredo, A. J., Gjaka, M. & Tessitore, A. Injury incidence and risk factors in youth soccer players: A systematic literature review. Part I: Epidemiological analysis. Biology sport 40, 3–25 (2023). 41. Ruf, L. et al. Injury incidence, severity, and burden in elite youth soccer players–A 3-year prospective study. J. Sci. Med. Sport 25, 737–742 (2022). 42. Anderson, L., Triplett-Mcbride,..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...orts Physiol. Perform. 13, 1182–1189 (2018). 45. Steinberg, L. A social neuroscience perspective on adolescent risk-taking. In Biosocial theories of crime 435–463 (Routledge, 2017). 46. Turner, C., McClure, R. & Pirozzo, S. Injury and risk-taking behavior—a systematic review. Accid. Anal. Prev. 36, 93–101 (2004). Acknowledgements We would like to thank the adolescent soccer players who participated in this study, as well as the soccer team physiotherapists for their assistance in tracking injuries. Author contributions Aynollah..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Athletic ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional l..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessments of mental fatigue, recovery quality, perceived match load, percei..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessments of mental fatigue, recovery quality, perceived match load, perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...ated assessments of mental fatigue, recovery quality, perceived match load, perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 matc..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...e the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.4..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...tic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.48, 95% CI: 1...."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...usculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.48, 95% CI: 1.10–1.99, p = 0.01), lower recovery q..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...a. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.48, 95% CI: 1.10–1.99, p = 0.01), lower recovery quality (OR = 0.75, 95% CI: 0.57–0.99, p = 0.04), and greater risk-taking behaviors (OR = 1.54, 95% CI: 1.03–2.32, p = 0.04). Mental fatigue, ma..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...rceived exertion and compromising movement quality10,22. Adolescents face heightened MF exposure through academic demands, digital media consumption, and social pressures23; yet surprisingly few prospective studies have examined MF’s direct association with injury incidence in this population. Psychological constructs further modulate injury risk. Perceived injury risk—rooted in Health Belief Model and Protection Motivation Theory frameworks—reflects an individual’s subjective assessment of injury likelihood and may..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Baseline measurements To establish baseline data, a comprehensive questionnaire was administered to adolescent soccer players, structured into three key sections: demographic information, soccer training profile, and history of previous injuries. The researcher conducted individual interviews to complete the questionnaire, which included questions about participants’ age, height, weight, soccer experience, duration of training sessions, and session frequency. Additionally, a self-reported injury hi..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "injury risk in youth athletes9,27. All six predictor variables were entered simultaneously into a single multivariable GEE model. Univariate analyses were not conducted prior to multivariable modeling, as all variables were theoretically justified and no data-driv..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "100-unit increase was associated with a 12% increase in injury risk (OR = 1.12, 95% CI: 0.98–1.29), which was not statistically significant (p = 0.06). Perceived risk level demonstrated a negligible difference (5.02%), and each unit increase in perceived risk was associated with a non-significant 7% increase in injury..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "linked to elevated injury risk in elite adult male volleyball players. Considering adolescents face distinct recovery challenges—such as ongoing growth, school-related stress, and social pressures—these results highlight the critical role of effective recovery strategies in youth sp..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "observation, reliance on coach-rated discrepancy calculations, and self-reported injury history (player and parent/guardian) rather than verified medical records, which may introduce recall bias—though dual reporting likely enhanced accuracy. Future studies should employ a priori power calculations, incorporate maturation metrics, expand surv..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "29. Schwebel, D. C., Banaszek, M. M. & McDaniel, M. Brief report: Behavioral risk factors for youth soccer (football) injury. J. Pediatr. Psychol. 32, 411–416 (2007). 30. Morrongiello, B. A. & Rennie, H. Why do boys engage in more risk taking than girls? The role of attributions, beliefs, and risk appraisals. J. Pediatr. Psychol. 23, 33–43 (1998). 31. Thomas, S., Reading, J. &..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "Athletic ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessment..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "Athletic ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessments of me..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...omuscular coordination17–21, while simultaneously elevating perceived exertion and compromising movement quality10,22. Adolescents face heightened MF exposure through academic demands, digital media consumption, and social pressures23; yet surprisingly few prospective studies have examined MF’s direct association with injury incidence in this population. Psychological constructs further modulate injury risk. Perceived injury risk—rooted in Health Belief Model and Protection Motivation Theory frameworks—reflects an indivi..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cross-sectional",
+        "snippet": "...reckless behaviors8,9, while others paradoxically link underestimation to elevated risk via compromised self-confidence and movement hesitation 27. These inconsistencies likely stem from methodological limitations in prior work, which predominantly employed cross-sectional designs and failed to differentiate between self-ratings and external evaluations. Most notably, Kontos’ seminal 2004 study examined ability estimation primarily in children under 14 years using retrospective injury reporting—limiting causal inference and..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...ns in prior work, which predominantly employed cross-sectional designs and failed to differentiate between self-ratings and external evaluations. Most notably, Kontos’ seminal 2004 study examined ability estimation primarily in children under 14 years using retrospective injury reporting—limiting causal inference and developmental applicability to adolescent populations27. This study addresses three critical gaps in literature. First, no prospective investigation has examined the Athletic Ability Discrepancy Score—quantifie..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...dy examined ability estimation primarily in children under 14 years using retrospective injury reporting—limiting causal inference and developmental applicability to adolescent populations27. This study addresses three critical gaps in literature. First, no prospective investigation has examined the Athletic Ability Discrepancy Score—quantified as the divergence between self- and coach ratings of athletic ability—as an independent predictor of match-related injuries in adolescent soccer players. Second, existing research..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cross-sectional",
+        "snippet": "...ultaneously model the interplay among recovery quality, risk-taking behaviors, and other self- rating discrepancies within an integrated predictive framework. Third, the majority of prior studies focused exclusively on physiological determinants or employed cross-sectional designs ill-suited for establishing temporal precedence between risk factors and injury outcomes. Accordingly, this prospective cohort study investigates the combined influence of psychological (mental fatigue, perceived injury risk, risk-taking behaviors,..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...ated predictive framework. Third, the majority of prior studies focused exclusively on physiological determinants or employed cross-sectional designs ill-suited for establishing temporal precedence between risk factors and injury outcomes. Accordingly, this prospective cohort study investigates the combined influence of psychological (mental fatigue, perceived injury risk, risk-taking behaviors, Athletic Ability Discrepancy Score) and physiological (match load, recovery quality) factors on match-related injury risk among..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...risk was associated with a non-significant 7% increase in injury risk (OR = 1.07, 95% CI: 0.83–1.38, p = 0.61), suggesting that abstract risk perception—unanchored by prior injury experience—failed to translate into protective behavioral regulation in this cohort. Conversely, risk-taking behaviors showed a significant difference, with a 15.02% increase, and a 54% increase in injury risk per unit increase (OR = 1.54, 95% CI: 1.03–2.32), statistically significant (p < 0.05) (Table 2). Discussion This study aimed to in..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...exposure to injury consequences, adolescents may lack the experiential foundation necessary to accurately calibrate perceived risk—a process that typically requires direct or vicarious learning from injury events 24,28. Consequently, perceived risk in this cohort may reflect abstract cognition rather than grounded risk appraisal, explaining its dissociation from actual injury outcomes. This interpretation aligns with developmental psychology literature indicating that risk perception matures through experiential le..."
+      },
+      {
+        "page": 7,
+        "section": "Conclusion",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...jury data through objective records. Conclusion This study found that overestimation of athletic ability, engagement in risk-taking behaviors, and poorer recovery quality were each significantly associated with increased odds of match-related injury in this cohort of adolescent soccer players. Unlike findings in adults, mental fatigue and perceived injury risk were not significant predictors in this young group, and match load alone did not predict match-related injury either. These results suggest the need for a co..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...epidemiological study of injuries to professional football players: Developing the UEFA model. Br. J. Sports Med. 39, 340–346 (2005). 39. Naderi, A., Alizadeh, N., Calmeiro, L. & Degens, H. Predictors of running-related injury among recreational runners: A prospective cohort study of the role of perfectionism, mental toughness, and passion in running. Sports Health 16, 1038–1049. h t t p s : / / d o i . o r g / 1 0 . 1 1 7 7 / 1 9 4 1 7 3 8 1 2 3 1 2 2 3 4 7 5 (2024). 40. Mandorino, M., Figueiredo, A. J., Gjaka, M...."
+      }
+    ],
+    "definition": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...al fatigue, recovery quality, perceived match load, perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46...."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "medical attention",
+        "snippet": "...recovery quality, perceived match load, perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries were defined",
+        "snippet": "...lected over the course of 20 subsequent official matches. The total follow-up period spanned approximately six months. The recorded data included injury type, location, mechanism (classified as contact or non-contact; acute or overuse), and injury severity. Injuries were defined as any musculoskeletal complaint sustained during a match, irrespective of medical attention or time lost, based on the definition by Fuller, et al.36. Non-contact injuries were those occurring without physical interaction with another player or object. Tim..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "medical attention",
+        "snippet": "...oximately six months. The recorded data included injury type, location, mechanism (classified as contact or non-contact; acute or overuse), and injury severity. Injuries were defined as any musculoskeletal complaint sustained during a match, irrespective of medical attention or time lost, based on the definition by Fuller, et al.36. Non-contact injuries were those occurring without physical interaction with another player or object. Time- loss injuries referred to those preventing full participation in subsequent matches or trai..."
+      },
+      {
+        "page": 4,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "time loss",
+        "snippet": "...various body locations, including the thigh (30.77%), lower leg/Achilles tendon (19.23%), knee (15.38%), ankle (15.38%), foot/toe (7.69%), wrist (3.85%), forearm (3.85%), and head/face (3.85%). In terms of severity, 61.5% were minimal injuries (0–3 days of time loss), 23.1% were mild (4–7 days), 11.5% were moderate (8–28 days), and 3.8% caused more than 28 days of time loss. The injuries were predominantly contusions (46.15%), followed by sprains (30.77%), strains (15.38%), fractures (3.85%), and concussions (3.85%), w..."
+      },
+      {
+        "page": 4,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "time loss",
+        "snippet": "...(15.38%), foot/toe (7.69%), wrist (3.85%), forearm (3.85%), and head/face (3.85%). In terms of severity, 61.5% were minimal injuries (0–3 days of time loss), 23.1% were mild (4–7 days), 11.5% were moderate (8–28 days), and 3.8% caused more than 28 days of time loss. The injuries were predominantly contusions (46.15%), followed by sprains (30.77%), strains (15.38%), fractures (3.85%), and concussions (3.85%), with no dislocations recorded. Of the injuries, 69.2% were contact injuries, 30.8% were non-contact, and 11.5%..."
+      },
+      {
+        "page": 5,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ay be due to the non- elite competition level, lower match intensity, and differences in exposure measurement methods. These factors should be considered when comparing injury rates across studies. Of the 26 injuries recorded, 61.5% were minimal (1–3 days of time loss), followed by mild (23.1%), moderate (11.5%), and severe (3.8%). These results align with Robles-Palazón, et al 3. and Faude, et al. 2, both of whom noted a predominance of minor injuries. Injury location data revealed that the most commonly affected sites..."
+      }
+    ],
+    "source_provenance": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapist",
+        "snippet": "...verity was classified into four categories: minimal (0–3 days), mild (4–7 days), moderate (8–28 days), and severe (more than 28 days), based on the time taken to return to full team activities. Injured players remained classified as such until cleared by a physiotherapist. To capture overuse injuries, the study utilized four items from the Oslo Sports Trauma Research Centre Overuse Injury Questionnaire37. Injuries were anatomically categorized into 17 distinct locations following the system developed by Fuller, et al. 36, co..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...Injury Questionnaire37. Injuries were anatomically categorized into 17 distinct locations following the system developed by Fuller, et al. 36, consistent with the UEFA Injury Model 38. After each match, injury data were submitted electronically by the club physiotherapists to the researcher for analysis, ensuring comprehensive and systematic injury surveillance throughout the study period. Statistical analysis Descriptive statistics were used to summarize participant characteristics. Exposure time (in hours) over 20 official..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...e important limitations. Strengths: (1) Longitudinal design with repeated pre-match assessments established temporal precedence between predictors and injuries—a critical advantage over cross-sectional approaches; (2) Systematic injury surveillance by club physiotherapists across 20 official matches using UEFA-compatible protocols; (3) Novel prospective validation of the Athletic Ability Discrepancy Score (self-rating minus coach rating) as an independent predictor of match-related injury risk in adolescents. This study has s..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...Turner, C., McClure, R. & Pirozzo, S. Injury and risk-taking behavior—a systematic review. Accid. Anal. Prev. 36, 93–101 (2004). Acknowledgements We would like to thank the adolescent soccer players who participated in this study, as well as the soccer team physiotherapists for their assistance in tracking injuries. Author contributions Aynollah Naderi took the lead in conceptualization, methodology, project administration, and writing – original draft. He also contributed equally to writing – review and editing. Vahid Reza Koh..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Athletic ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessments of mental fatigue, recovery quality, perceived match load, perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.48, 95% CI: 1.10–1.99, p = 0.01), lower recovery quality (OR = 0.75, 95% CI: 0.57–0.99, p = 0.04), and greater risk-taking behaviors (OR = 1.54, 95% CI: 1.03–2.32, p = 0.04). Mental fatigue, match load, and perceived injury risk were not significant predictors (P > 0.05). These findings highlight the need for psychological screening, particularly for other self-rating discrepancies, and interventions promoting realistic self-assessment, behavioural regulation, and structured recovery in youth injury prevention. Keywords Injury risk factors, Injury prevention, Psychological factors, Sports psychology, Y outh sports injuries Soccer is one of the most popular youth sports worldwide, but its high-intensity demands—including rapid directional changes, sprinting, and physical collisions—place adolescent players at significant risk for both acute and overuse injuries1,2. Injury rates are substantially higher in matches than training: approximately 14.43 injuries per 1,000 h in male youth and 14.97 in females, which is nearly five times the training-related incidence3. Although emergency department visits for youth soccer injuries in the U.S. increased by 111% between 1990 and 20144, this rise likely reflects increased participation and awareness rather than greater per-exposure risk. These findings highlight the need for \n\n[p. 2] high-volume training and frequent competition, such as soccer12,14. Despite robust evidence in adult populations, research examining these relationships among adolescents remains limited, despite their unique vulnerability to developmental stressors including growth-related biomechanical changes, academic pressures, and evolving psychosocial dynamics. While internal load metrics like session- Rating of Perceived Exertion offer practical monitoring tools15, and recovery quality can be quantified through instruments such as the Total Quality of Recovery (TQR) scale12,14,16,, their predictive utility within adolescent cohorts requires further validation. Mental fatigue (MF)—a psychobiological state induced by prolonged cognitive exertion—represents an underexplored yet potentially critical risk factor. MF impairs reaction time, postural stability, and neuromuscular coordination17–21, while simultaneously elevating perceived exertion and compromising movement quality10,22. Adolescents face heightened MF exposure through academic demands, digital media consumption, and social pressures23; yet surprisingly few prospective studies have examined MF’s direct association with injury incidence in this population. Psychological constructs further modulate injury risk. Perceived injury risk—rooted in Health Belief Model and Protection Motivation Theory frameworks—reflects an individual’s subjective assessment of injury likelihood and may influence precautionary behaviors24–26. Paradoxically, while elevated perceived risk theoretically promotes protective behaviors 27, its relationship with actual injury outcomes remains inconsistent, potentially confounded by prior injury history, personality traits (e.g., neuroticism), and cognitive biases 24,28. Similarly, risk-taking behaviors—often amplified during adolescence by sensation-seeking tendencies, peer influence, and overconfidence—significantly elevate injury susceptibility9,27,29. Adolescents prone to risk-taking frequently underestimate injury probability, attributing adverse outcomes to “bad luck” rather than behavioral choices30, creating a dangerous perceptual gap between action and consequence. Critically, the estimation of athletic ability—the subjective evaluation of one’s physical and technical capabilities—serves as a pivotal psychological mediator influencing both risk perception and behavioral choices9,27. Prior research presents contradictory findings: some studies associate ability overestimation with inc\n\n[p. 3] Baseline measurements To establish baseline data, a comprehensive questionnaire was administered to adolescent soccer players, structured into three key sections: demographic information, soccer training profile, and history of previous injuries. The researcher conducted individual interviews to complete the questionnaire, which included questions about participants’ age, height, weight, soccer experience, duration of training sessions, and session frequency. Additionally, a self-reported injury history questionnaire was completed collaboratively by both the adolescent players and their parents/guardians to document participants’ previous soccer-related injuries and their locations. This information was also used to confirm that all players were injury-free at the time of study enrollment. A second structured questionnaire, administered via a separate online link, was used to assess various psychological and behavioral variables including mental fatigue, Total Quality Recovery (TQR), Perceived Match Load (session-RPE), perceived sports ability, injury risk perception, and risk-taking behaviors. Perceived match load was calculated after each match by multiplying the session duration (in minutes) by the perceived match intensity, measured using the Borg 6–20 Rating of Perceived Exertion (RPE) scale, where higher values indicate greater workload32. Recovery quality was evaluated using the TQR scale, comprising two components: TQR Perceived, a subjective rating ranging from 6 (very poor recovery) to 20 (very good recovery), modeled after the Borg RPE scale; and TQR Action, an objective score based on factors such as nutrition, sleep, rest, and emotional support, with a maximum total score of 2016. Mental fatigue was assessed using a Visual Analog Scale (V AS), on which participants rated their fatigue level from 0 (“Not at all”) to 10 (“Completely fatigued”), following the protocol described by Habay, et al. 33. Perceived injury risk was measured through an adapted three-item scale, where players rated their perceived chance of injury during a match (1 = no chance, 5 = certain), susceptibility to injury (1 = not susceptible, 5 = very susceptible), and estimated likelihood of injury occurrence (1 = < 10%, 5 = 100%)24,34. Risk-taking behaviors were assessed using a three-item scale, evaluating agreement with statements regarding irresponsible behavior, cautiousness (reverse-scored), and peers’ attitudes towards risk-taking during matches. Responses were recorded\n\n[p. 4] injury risk in youth athletes9,27. All six predictor variables were entered simultaneously into a single multivariable GEE model. Univariate analyses were not conducted prior to multivariable modeling, as all variables were theoretically justified and no data-driven variable selection methods (e.g., stepwise selection) were employed to avoid bias and overfitting. Model assumptions were tested and met: (1) independence between clusters was assumed as players were recruited from different clubs; (2) an exchangeable correlation structure was specified, appropriate for equally correlated repeated observations within players; (3) sample size (40 players, 668 observations) exceeded the minimum recommendation for GEE (> 30 clusters), though power limitations for detecting small effects are acknowledged; and (4) multicollinearity was not a concern, as all Variance Inflation Factor (VIF) values were below 2.539. Odds ratios (ORs) with 95% confidence intervals (CIs) were computed, where OR > 1 indicated increased risk and OR < 1 indicated reduced risk per unit change in the predictor. Missing data were minimal (< 2%) and handled using pairwise deletion under the assumption of missing at random. No loss to follow-up occurred during the study period. Sensitivity analyses were conducted by re-running the models using complete-case data to confirm the robustness of findings. All statistical analyses were performed using IBM SPSS Statistics Version 26, with statistical significance set at α = 0.05. Results During 20 soccer matches, 19 out of 40 players (47.5%) experienced a total of 26 injuries, with an overall incidence of 24.9 injuries per 1,000 h of match exposure (Fig. 1). The injuries occurred in various body locations, including the thigh (30.77%), lower leg/Achilles tendon (19.23%), knee (15.38%), ankle (15.38%), foot/toe (7.69%), wrist (3.85%), forearm (3.85%), and head/face (3.85%). In terms of severity, 61.5% were minimal injuries (0–3 days of time loss), 23.1% were mild (4–7 days), 11.5% were moderate (8–28 days), and 3.8% caused more than 28 days of time loss. The injuries were predominantly contusions (46.15%), followed by sprains (30.77%), strains (15.38%), fractures (3.85%), and concussions (3.85%), with no dislocations recorded. Of the injuries, 69.2% were contact injuries, 30.8% were non-contact, and 11.5% were overuse injuries, with 88.5% classified as acute. The demographic characteristics of the participants are summa",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Athletic ability discrepancy, risk- taking, and recovery quality as predictors of match-related injuries in adolescent soccer players Aynollah Naderi 1, Vahid Reza Kohe 2 & Luis Calmeiro 3 This prospective cohort study aimed to identify predictors of match-related injuries in 40 male adolescent soccer players (mean age 15.25 ± 0.87 years) across 20 regional league matches during the 2023–2024 season. Prior to each match, players completed validated assessments of mental fatigue, recovery quality, perceived match load, perceived injury risk, risk-taking behaviors, and athletic ability, with self- and coach ratings calculated to determine the Athletic Ability Discrepancy Score. All musculoskeletal injuries, regardless of time loss or medical attention, were documented by physiotherapists based on Fuller and Ekstrand’s criteria. Results revealed that 47.5% of players sustained at least one injury (26 injuries total), with a rate of 24.9 injuries per 1,000 match hours. Contusions (46.2%) and sprains (30.8%) were most common. Multivariate GEE analysis identified three significant injury predictors: a higher Athletic Ability Discrepancy Score (OR = 1.48, 95% CI: 1.10–1.99, p = 0.01), lower recovery quality (OR = 0.75, 95% CI: 0.57–0.99, p = 0.04), and greater risk-taking behaviors (OR = 1.54, 95% CI: 1.03–2.32, p = 0.04). Mental fatigue, match load, and perceived injury risk were not significant predictors (P > 0.05). These findings highlight the need for psychological screening, particularly for other self-rating discrepancies, and interventions promoting realistic self-assessment, behavioural regulation, and structured recovery in youth injury prevention. Keywords Injury risk factors, Injury prevention, Psychological factors, Sports psychology, Y outh sports injuries Soccer is one of the most popular youth sports worldwide, but its high-intensity demands—including rapid directional changes, sprinting, and physical collisions—place adolescent players at significant risk for both acute and overuse injuries1,2. Injury rates are substantially higher in matches than training: approximately 14.43 injuries per 1,000 h in male youth and 14.97 in females, which is nearly five times the training-related incidence3. Although emergency department visits for youth soccer injuries in the U.S. increased by 111% between 1990 and 20144, this rise likely reflects increased participation and awareness rather than greater per-exposure risk. These findings highlight the need for evidence-based, context-specific prevention strategies to protect adolescent athletes and support their continued participation in sport. Contemporary injury prevention frameworks offer complementary foundations for multifactorial risk assessment. Van Mechelen’s Sequence of Prevention model provides systematic steps for identifying injury patterns to inform interventions5, while Van Tiggelen, et al6. extended this by emphasizing behavioral compliance and risk-taking as mediators of intervention efficacy. The Biopsychosocial model further broadens the lens, integrating biological, psychological, and social dimensions of injury etiology 7. Together, these frameworks support a holistic perspective in which physiological stressors interact dynamically with cognitive and behavioral factors—a perspective particularly relevant during adolescence, a period marked by identity formation, peer influence, and frequent mismatches between self-perception and objective performance8,9. Training load and recovery quality represent well-established physiological predictors of injury risk 10–12. When cumulative demands exceed an athlete’s adaptive capacity—whether physiological or psychological— injury susceptibility rises substantially 10,13. This imbalance proves especially consequential in sports featuring 1Corrective Exercise and Sports Rehabilitation Lab, Department of Physical Education and Sport Sciences, Shahrood University of Technology, P .O.B: 3619995161, Shahrood, Semnan, Iran. 2Dep"
+    },
+    {
+      "page": 2,
+      "text": "high-volume training and frequent competition, such as soccer12,14. Despite robust evidence in adult populations, research examining these relationships among adolescents remains limited, despite their unique vulnerability to developmental stressors including growth-related biomechanical changes, academic pressures, and evolving psychosocial dynamics. While internal load metrics like session- Rating of Perceived Exertion offer practical monitoring tools15, and recovery quality can be quantified through instruments such as the Total Quality of Recovery (TQR) scale12,14,16,, their predictive utility within adolescent cohorts requires further validation. Mental fatigue (MF)—a psychobiological state induced by prolonged cognitive exertion—represents an underexplored yet potentially critical risk factor. MF impairs reaction time, postural stability, and neuromuscular coordination17–21, while simultaneously elevating perceived exertion and compromising movement quality10,22. Adolescents face heightened MF exposure through academic demands, digital media consumption, and social pressures23; yet surprisingly few prospective studies have examined MF’s direct association with injury incidence in this population. Psychological constructs further modulate injury risk. Perceived injury risk—rooted in Health Belief Model and Protection Motivation Theory frameworks—reflects an individual’s subjective assessment of injury likelihood and may influence precautionary behaviors24–26. Paradoxically, while elevated perceived risk theoretically promotes protective behaviors 27, its relationship with actual injury outcomes remains inconsistent, potentially confounded by prior injury history, personality traits (e.g., neuroticism), and cognitive biases 24,28. Similarly, risk-taking behaviors—often amplified during adolescence by sensation-seeking tendencies, peer influence, and overconfidence—significantly elevate injury susceptibility9,27,29. Adolescents prone to risk-taking frequently underestimate injury probability, attributing adverse outcomes to “bad luck” rather than behavioral choices30, creating a dangerous perceptual gap between action and consequence. Critically, the estimation of athletic ability—the subjective evaluation of one’s physical and technical capabilities—serves as a pivotal psychological mediator influencing both risk perception and behavioral choices9,27. Prior research presents contradictory findings: some studies associate ability overestimation with increased injury risk through reckless behaviors8,9, while others paradoxically link underestimation to elevated risk via compromised self-confidence and movement hesitation 27. These inconsistencies likely stem from methodological limitations in prior work, which predominantly employed cross-sectional designs and failed to differentiate between self-ratings and external evaluations. Most notably, Kontos’ seminal 2004 study examined ability estimation primarily in children under 14 years using retrospective injury reporting—limiting causal inference and developmental applicability to adolescent populations27. This study addresses three critical gaps in literature. First, no prospective investigation has examined the Athletic Ability Discrepancy Score—quantified as the divergence between self- and coach ratings of athletic ability—as an independent predictor of match-related injuries in adolescent soccer players. Second, existing research has failed to simultaneously model the interplay among recovery quality, risk-taking behaviors, and other self- rating discrepancies within an integrated predictive framework. Third, the majority of prior studies focused exclusively on physiological determinants or employed cross-sectional designs ill-suited for establishing temporal precedence between risk factors and injury outcomes. Accordingly, this prospective cohort study investigates the combined influence of psychological (mental fatigue, perceived injury risk, risk-taking behaviors, Ath"
+    },
+    {
+      "page": 3,
+      "text": "Baseline measurements To establish baseline data, a comprehensive questionnaire was administered to adolescent soccer players, structured into three key sections: demographic information, soccer training profile, and history of previous injuries. The researcher conducted individual interviews to complete the questionnaire, which included questions about participants’ age, height, weight, soccer experience, duration of training sessions, and session frequency. Additionally, a self-reported injury history questionnaire was completed collaboratively by both the adolescent players and their parents/guardians to document participants’ previous soccer-related injuries and their locations. This information was also used to confirm that all players were injury-free at the time of study enrollment. A second structured questionnaire, administered via a separate online link, was used to assess various psychological and behavioral variables including mental fatigue, Total Quality Recovery (TQR), Perceived Match Load (session-RPE), perceived sports ability, injury risk perception, and risk-taking behaviors. Perceived match load was calculated after each match by multiplying the session duration (in minutes) by the perceived match intensity, measured using the Borg 6–20 Rating of Perceived Exertion (RPE) scale, where higher values indicate greater workload32. Recovery quality was evaluated using the TQR scale, comprising two components: TQR Perceived, a subjective rating ranging from 6 (very poor recovery) to 20 (very good recovery), modeled after the Borg RPE scale; and TQR Action, an objective score based on factors such as nutrition, sleep, rest, and emotional support, with a maximum total score of 2016. Mental fatigue was assessed using a Visual Analog Scale (V AS), on which participants rated their fatigue level from 0 (“Not at all”) to 10 (“Completely fatigued”), following the protocol described by Habay, et al. 33. Perceived injury risk was measured through an adapted three-item scale, where players rated their perceived chance of injury during a match (1 = no chance, 5 = certain), susceptibility to injury (1 = not susceptible, 5 = very susceptible), and estimated likelihood of injury occurrence (1 = < 10%, 5 = 100%)24,34. Risk-taking behaviors were assessed using a three-item scale, evaluating agreement with statements regarding irresponsible behavior, cautiousness (reverse-scored), and peers’ attitudes towards risk-taking during matches. Responses were recorded on a five-point Likert scale from 1 (strongly disagree) to 5 (strongly agree), with final scores averaged35. Athletic ability was evaluated through both player self-ratings and coach ratings using a five-point Likert scale (1 = very low to 5 = very high) relative to same-age peers. The Athletic Ability Discrepancy Score was computed as Self-rating minus Coach rating of athletic ability. A positive score indicates the player rated themselves higher than the coach (potential overestimation), while a negative score indicates the player rated themselves lower (potential underestimation)27. Notably, a positive mean discrepancy score across the sample reflects a systematic tendency among adolescent athletes to rate their athletic abilities more favorably than their coach, rather than indicating universal overestimation of objective ability. To ensure data integrity and minimize peer influence, data collection was conducted individually in a private, controlled setting. Psychological and behavioral variables—including mental fatigue, recovery, perceived ability, injury risk perception, and risk-taking behaviors —were assessed before each match, while perceived match load was recorded immediately after match completion. This protocol ensured accurate and unbiased baseline data for subsequent injury risk analyses. Follow-up survey Participants were recruited prior to the start of the 2023–2024 competitive season. Following initial screening and baseline assessments (conducted during "
+    },
+    {
+      "page": 5,
+      "text": "100-unit increase was associated with a 12% increase in injury risk (OR = 1.12, 95% CI: 0.98–1.29), which was not statistically significant (p = 0.06). Perceived risk level demonstrated a negligible difference (5.02%), and each unit increase in perceived risk was associated with a non-significant 7% increase in injury risk (OR = 1.07, 95% CI: 0.83–1.38, p = 0.61), suggesting that abstract risk perception—unanchored by prior injury experience—failed to translate into protective behavioral regulation in this cohort. Conversely, risk-taking behaviors showed a significant difference, with a 15.02% increase, and a 54% increase in injury risk per unit increase (OR = 1.54, 95% CI: 1.03–2.32), statistically significant (p < 0.05) (Table 2). Discussion This study aimed to investigate how training load, recovery quality, mental fatigue, perceived injury risk, risk-taking behaviors, and estimated athletic ability affect injury risk among adolescent soccer players. The main findings demonstrated that poorer recovery quality, greater engagement in risk-taking behaviors, and overestimation of athletic ability were each significantly associated with increased odds of sustaining a match- related injury in this cohort of adolescent soccer players. Among adolescent soccer players aged 14–17, 47.5% sustained new injuries, with an average of 0.65 injuries per player and an overall match injury incidence of 24.9 per 1,000 h of match exposure. This incidence is more than that reported in a systematic review by Robles-Palazón, et al.3, who found an average of 14.43 injuries per 1,000 match hours in male and female youth (≤ 19 years old) soccer players. In another review, Mandorino, et al40. also reported a wide range (2.84 to 47.7 per 1,000 h) in elite adolescent players, and Faude, et al 2. reported rates of 15–20 per 1,000 match hours in older adolescents. Such differences may reflect variation in competition level (elite vs. non-elite), age, and methodology. The lower injury incidence in our study may be due to the non- elite competition level, lower match intensity, and differences in exposure measurement methods. These factors should be considered when comparing injury rates across studies. Of the 26 injuries recorded, 61.5% were minimal (1–3 days of time loss), followed by mild (23.1%), moderate (11.5%), and severe (3.8%). These results align with Robles-Palazón, et al 3. and Faude, et al. 2, both of whom noted a predominance of minor injuries. Injury location data revealed that the most commonly affected sites were the thigh (30.77%), lower leg/Achilles tendon (19.23%), knee (15.38%), and ankle (15.38%), consistent with prior studies2,3,41. There was no significant difference in match load between injured and uninjured players, nor was there a clear association with injury risk. This contrasts with studies in adult populations 11,42,43, which found strong correlations between training loads and injury. The discrepancy may arise from age-related physiological differences, variations in measurement (e.g., subjective vs. objective load indicators), and our focus solely on match load rather than total load (training + matches) in our study than previous studies Gabbett and Domrow11and Anderson, et al. 42. These findings support the need for age-appropriate load management strategies that account for the developmental and contextual demands of adolescent athletes. Adolescent soccer players who remained injury-free reported significantly higher Total Quality Recovery (TQR) scores following both training sessions and games compared to those who sustained injuries. A one-point increase in the TQR score was associated with a 25% reduction in injury risk. These findings are consistent with Timoteo, et al 12. and Debien, et al. 44, which showed that lower recovery levels and declining TQR scores are Variable Non injured Injured t p-value Binary logistic regression generalized estimating equations B S. E Wald OR p-value Mental Fatigue 3.19 ± 1.95 3.54 ± "
+    },
+    {
+      "page": 7,
+      "text": "observation, reliance on coach-rated discrepancy calculations, and self-reported injury history (player and parent/guardian) rather than verified medical records, which may introduce recall bias—though dual reporting likely enhanced accuracy. Future studies should employ a priori power calculations, incorporate maturation metrics, expand surveillance to training contexts, and, where feasible, verify injury data through objective records. Conclusion This study found that overestimation of athletic ability, engagement in risk-taking behaviors, and poorer recovery quality were each significantly associated with increased odds of match-related injury in this cohort of adolescent soccer players. Unlike findings in adults, mental fatigue and perceived injury risk were not significant predictors in this young group, and match load alone did not predict match-related injury either. These results suggest the need for a comprehensive prevention approach that promotes realistic self-assessment, safe behaviors, and effective recovery strategies. Collaboration among coaches, trainers, and sports psychologists is essential to protect young athletes’ health and improve injury prevention. Future research should involve larger samples, longer follow-ups, and broader load monitoring to better understand match-related injury risk in youth soccer. Data availability All data generated or analyzed during this study are included in this published article. Received: 1 February 2026; Accepted: 16 April 2026 References 1. Krustrup, P . et al. Recreational football as a health promoting activity: A topical review. Scand. J. Med. Sci. Sports 20, 1–13 (2010). 2. Faude, O., Rößler, R. & Junge, A. Football injuries in children and adolescent players: Are there clues for prevention?. Sports Med. 43, 819–837 (2013). 3. Robles-Palazón, F . J. et al. Epidemiology of injuries in male and female youth football players: a systematic review and meta- analysis. J. sport health Sci. 11, 681–695 (2022). 4. Smith, N. A., Chounthirath, T. & Xiang, H. Soccer-related injuries treated in emergency departments: 1990–2014. Pediatrics, 138, 1-8 (2016). 5. Van Mechelen, W ., Hlobil, H. & Kemper, H. C. Incidence, severity, aetiology and prevention of sports injuries: A review of concepts. Sports Med. 14, 82–99 (1992). 6. Van Tiggelen, D., Wickes, S., Stevens, V ., Roosen, P . & Witvrouw, E. Effective prevention of sports injuries: A model integrating efficacy, efficiency, compliance and risk-taking behaviour. Br. J. Sports Med. 42, 648–652 (2008). 7. Wiese-Bjornstal, D. M. Psychology and socioculture affect injury risk, response, and recovery in high ‐intensity athletes: A consensus statement. Scand. J. Med. Sci. Sports 20, 103–111 (2010). 8. Bandura, A. Self-efficacy: The exercise of control (Macmillan, 1997). 9. Schwebel, D. C. & Plumert, J. M. Longitudinal and concurrent relations among temperament, ability estimation, and injury proneness. Child Dev. 70, 700–712 (1999). 10. Eckard, T. G., Padua, D. A., Hearn, D. W ., Pexa, B. S. & Frank, B. S. The relationship between training load and injury in athletes: A systematic review. Sports Med. 48, 1929–1961 (2018). 11. Gabbett, T. J. & Domrow, N. Relationships between training load, injury, and fitness in sub-elite collision sport athletes. J. Sports Sci. 25, 1507–1519. https://doi.org/10.1080/02640410701215066 (2007). 12. Timoteo, T. F . et al. Influence of workload and recovery on injuries in elite male volleyball players. J. Strength Cond. Res. 35, 791–796 (2021). 13. Windt, J. & Gabbett, T. J. How do training and competition workloads relate to injury? The workload—injury aetiology model. Br. J. Sports Med. 51, 428–435 (2017). 14. Mandorino, M., Figueiredo, A. J., Condello, G. & Tessitore, A. The influence of maturity on recovery and perceived exertion, and its relationship with illnesses and non-contact injuries in young soccer players. Biol. Sport. 39, 839–848 (2022). 15. Gabbett, T. J. The training—injury prevention parado"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S4859.packet.json"
+}

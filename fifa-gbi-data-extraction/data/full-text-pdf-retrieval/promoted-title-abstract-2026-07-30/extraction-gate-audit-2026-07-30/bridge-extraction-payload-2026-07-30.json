@@ -1,0 +1,430 @@
+{
+  "version": "full-text-ai-one-human-bridge-2026-07-30-v1",
+  "generatedAt": "2026-07-30T18:45:00.000Z",
+  "papers": [
+    {
+      "studyId": "S683",
+      "populationLabels": [
+        "Futsal - all seasons",
+        "Futsal - 2015",
+        "Futsal - 2016",
+        "Futsal - 2017"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S683",
+          "leadAuthor": "Bittencourt NFN",
+          "title": "Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club.",
+          "yearOfPublication": "2024",
+          "journal": "Journal of Bodywork & Movement Therapies",
+          "doi": "10.1016/j.jbmt.2024.04.042",
+          "studyDesign": "prospective cohort [prospective data]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Futsal",
+          "country": "Brazil",
+          "levelOfPlay": "elite youth",
+          "sex": "male",
+          "ageCategory": "Youth",
+          "meanAge": null,
+          "sampleSizePlayers": "286",
+          "numberOfTeams": null,
+          "observationDuration": "2015-2017 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [new musculoskeletal complaint from training or competition]",
+          "illnessDefinition": null,
+          "incidenceDefinition": "per 1,000 exposure hours [training and competition]",
+          "burdenDefinition": null,
+          "severityDefinition": null,
+          "recurrenceDefinition": null,
+          "mechanismReporting": "Medical Staff [sports physician diagnosis]"
+        },
+        "exposure": {
+          "seasonLength": null,
+          "numberOfSeasons": "3",
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": null,
+          "matchExposure": null,
+          "trainingExposure": null
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "11\n3\n7\n1",
+          "injuryPlayersCompletedStudy": null,
+          "injuryTeamsCompletedStudy": null,
+          "injuryMedicalAttentionCount": "11\n3\n7\n1",
+          "injuryTimeLossCount": null,
+          "injuryMatchCount": null,
+          "injuryMatchMedicalAttentionCount": null,
+          "injuryMatchTimeLossCount": null,
+          "injuryTrainingCount": null,
+          "injuryTrainingMedicalAttentionCount": null,
+          "injuryTrainingTimeLossCount": null,
+          "injuryIncidenceOverall": "\n1.9\n4.4\n0.6",
+          "injuryIncidenceMatch": null,
+          "injuryIncidenceTraining": null,
+          "injuryIncidenceTimeLossOverall": null,
+          "injuryIncidenceTimeLossMatch": null,
+          "injuryIncidenceTimeLossTraining": null,
+          "injuryIncidenceCi95": null,
+          "injuryTimeLossTotal": null,
+          "injuryTimeLossMedian": null,
+          "injuryTimeLossMean": null,
+          "injuryBurden": null,
+          "injuryBurdenCi95": null,
+          "injuryMostCommonDiagnosis": "adductor tendinopathy [futsal subgroup]",
+          "injuryMostCommonType": "tendinopathy",
+          "injuryMostCommonLocation": null,
+          "injuryMostCommonSeverity": null,
+          "injuryModeRepetitiveGradual": null,
+          "injuryModeRepetitiveSudden": null,
+          "injuryModeAcuteSudden": null,
+          "injuryContact": null,
+          "injuryNonContact": null,
+          "injuryCumulativeRepetitive": null,
+          "injuryDurationMedian": null,
+          "injuryDurationMean": null,
+          "injuryRecurrentTotal": null,
+          "injuryRecurrenceRate": null
+        },
+        "illnessOutcome": {},
+        "injuryTissueType": {
+          "injuryTissueType_tendinopathy_prevalence": "11\n3\n7\n1",
+          "injuryTissueType_tendinopathy_incidence": "\n1.9\n4.4\n0.6"
+        },
+        "injuryLocation": {},
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Male youth futsal subgroup extracted across Futsal - all seasons / 2015 / 2016 / 2017. Direct lower-limb-trauma counts are 3, 7 and 1, with the all-seasons count 11 recorded as the transparent sum of disjoint season rows. Published futsal incidence is 1.9, 4.4 and 0.6 per 1,000 total exposure hours. Whole-club exposure totals, age, sex distribution and all-sport locations were not assigned to the futsal subgroup.",
+      "source": {
+        "sha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+        "screeningRecordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+        "document": "Publisher version of record, 5 article pages plus repository cover sheet"
+      }
+    },
+    {
+      "studyId": "S2761",
+      "populationLabels": [
+        "Total",
+        "Goalkeeper",
+        "Defenders",
+        "Midfielders",
+        "Forwards"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S2761",
+          "leadAuthor": "Bayrak A",
+          "title": "Exploring injury profiles in professional football: evidence from a five-year study and the role of the functional movement screen",
+          "yearOfPublication": "2025",
+          "journal": "BMC Sports Science, Medicine and Rehabilitation",
+          "doi": "10.1186/s13102-025-01262-8",
+          "studyDesign": "prospective cohort [prospective data]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Türkiye",
+          "levelOfPlay": "professional",
+          "sex": null,
+          "ageCategory": "Senior",
+          "meanAge": null,
+          "sampleSizePlayers": "169\n17\n51\n67\n34",
+          "numberOfTeams": "1",
+          "observationDuration": "2016-2017 to 2020-2021 seasons"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [>72 h; prevented training or match participation]",
+          "illnessDefinition": null,
+          "incidenceDefinition": "per 1,000 exposure hours [training, match and combined]",
+          "burdenDefinition": null,
+          "severityDefinition": "minimal (1-3 days); minor (4-7 days); moderate (8-28 days); severe/major (>28 days) [injury to full team-training return and match-selection readiness]",
+          "recurrenceDefinition": null,
+          "mechanismReporting": "Medical Staff [club sports physicians/relevant doctors; sports physiotherapist documentation]"
+        },
+        "exposure": {
+          "seasonLength": null,
+          "numberOfSeasons": "5",
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": null,
+          "matchExposure": null,
+          "trainingExposure": null
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": null,
+          "injuryPlayersCompletedStudy": null,
+          "injuryTeamsCompletedStudy": null,
+          "injuryMedicalAttentionCount": null,
+          "injuryTimeLossCount": null,
+          "injuryMatchCount": null,
+          "injuryMatchMedicalAttentionCount": null,
+          "injuryMatchTimeLossCount": null,
+          "injuryTrainingCount": null,
+          "injuryTrainingMedicalAttentionCount": null,
+          "injuryTrainingTimeLossCount": null,
+          "injuryIncidenceOverall": "8.9",
+          "injuryIncidenceMatch": "15.47",
+          "injuryIncidenceTraining": "7.76",
+          "injuryIncidenceTimeLossOverall": null,
+          "injuryIncidenceTimeLossMatch": null,
+          "injuryIncidenceTimeLossTraining": null,
+          "injuryIncidenceCi95": "8.72-9.0",
+          "injuryTimeLossTotal": "4457",
+          "injuryTimeLossMedian": null,
+          "injuryTimeLossMean": null,
+          "injuryBurden": null,
+          "injuryBurdenCi95": null,
+          "injuryMostCommonDiagnosis": "hamstring muscle injury",
+          "injuryMostCommonType": "muscle injury",
+          "injuryMostCommonLocation": "thigh",
+          "injuryMostCommonSeverity": "minor [<8 days, authors' reported grouping]",
+          "injuryModeRepetitiveGradual": null,
+          "injuryModeRepetitiveSudden": null,
+          "injuryModeAcuteSudden": null,
+          "injuryContact": null,
+          "injuryNonContact": "121",
+          "injuryCumulativeRepetitive": null,
+          "injuryDurationMedian": null,
+          "injuryDurationMean": null,
+          "injuryRecurrentTotal": null,
+          "injuryRecurrenceRate": null
+        },
+        "illnessOutcome": {
+          "illnessTimeLossTotal": "116"
+        },
+        "injuryTissueType": {},
+        "injuryLocation": {
+          "injuryLocation_abdomen_prevalence": "2\n0\n1\n1\n0",
+          "injuryLocation_groin_prevalence": "33\n0\n11\n16\n6",
+          "injuryLocation_groin_incidence": "1.20 (0.77-1.63)",
+          "injuryLocation_thigh_prevalence": "81\n6\n26\n35\n14",
+          "injuryLocation_thigh_incidence": "2.36 (1.76-2.96)",
+          "injuryLocation_knee_prevalence": "35\n5\n13\n11\n6",
+          "injuryLocation_knee_incidence": "1.28 (0.84-1.72)",
+          "injuryLocation_lower_leg_prevalence": "29\n4\n11\n11\n3",
+          "injuryLocation_lower_leg_incidence": "0.88 (0.51-1.25)",
+          "injuryLocation_ankle_incidence": "0.80 (0.45-1.15)",
+          "injuryLocation_shoulder_prevalence": "2\n1\n0\n0\n1"
+        },
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Prospective five-season Turkish Super League surveillance extracted as Total / Goalkeeper / Defenders / Midfielders / Forwards. Conflicting source injury totals of 224, 229 and 227 were not reconciled, so total injury count remains blank. The repeated abstract/Results incidence of 8.9 per 1,000 combined hours is retained with its reported 8.72-9.0 CI, while the conflicting Discussion value of 8.49 remains a review caveat. Injury time loss 4,457 is a transparent sum of direct components, although the paper alternates between sessions and days.",
+      "source": {
+        "sha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+        "screeningRecordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+        "document": "Open-access full primary paper, 15 pages"
+      }
+    },
+    {
+      "studyId": "S3931",
+      "populationLabels": [
+        "D + LCS group",
+        "NHE group"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3931",
+          "leadAuthor": "Ferrini M",
+          "title": "Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players",
+          "yearOfPublication": "2026",
+          "journal": "Medicina",
+          "doi": "10.3390/medicina62010140",
+          "studyDesign": "randomised controlled trial [prospective injury data]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "levelOfPlay": "elite academy within a professional club development programme",
+          "sex": "male\nmale",
+          "ageCategory": "Youth\nYouth",
+          "meanAge": "13.7 ± 0.8\n",
+          "sampleSizePlayers": "12\n11",
+          "numberOfTeams": "1\n",
+          "observationDuration": "12-week monitoring period\n"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [posterior-thigh injury during training or competition causing absence from subsequent football activities]",
+          "incidenceDefinition": "per 1,000 player-hours [training and matches]",
+          "mechanismReporting": "team medical staff"
+        },
+        "exposure": {
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": "922.8\n831.6",
+          "matchExposure": "198\n179.3",
+          "trainingExposure": "724.8\n652.3"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "0\n1",
+          "injuryPlayersCompletedStudy": "12\n11",
+          "injuryTeamsCompletedStudy": "1\n",
+          "injuryTrainingCount": "0\n1",
+          "injuryIncidenceOverall": "0.0\n1.20",
+          "injuryTimeLossTotal": "0\n18"
+        },
+        "illnessOutcome": {},
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "0\n1",
+          "injuryTissueType_muscle_injury_incidence": "0.0\n1.20",
+          "injuryTissueType_muscle_injury_severityTotalDays": "0\n18"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "0\n1",
+          "injuryLocation_thigh_incidence": "0.0\n1.20",
+          "injuryLocation_side_right_prevalence": "0\n1"
+        },
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Local-only Stage A proposal, S3931. Source sweep: full PDF, Methods §§2.1-2.8, Tables 1-4, Results, Discussion and limitations. Population order is D + LCS / NHE, following direct Table 4 columns. Table 4, not the internally reversed narrative sentence, supplies 922.8/831.6 total hours, 724.8/652.3 training hours, 198/179.3 match hours, 0/1 injuries and 0.0/1.20 per-1,000-h rates. The single NHE training injury was a right semimembranosus 2B strain at the myotendinous junction with 18 days' time loss. No illness, recurrence, contact/onset, CI, burden or broader injury-mix values were reported.",
+      "source": {
+        "sha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+        "screeningRecordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+        "document": "data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S3931-mdpi.pdf"
+      }
+    },
+    {
+      "studyId": "S4859",
+      "populationLabels": [
+        "Total"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4859",
+          "leadAuthor": "Naderi A",
+          "title": "Athletic ability discrepancy, risk-taking, and recovery quality as predictors of match-related injuries in adolescent soccer players",
+          "yearOfPublication": "2026",
+          "journal": "Scientific Reports",
+          "doi": "10.1038/s41598-026-49793-5",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Iran (Markazi province)",
+          "levelOfPlay": "non-elite regional league",
+          "sex": "male",
+          "ageCategory": "Youth (14-17 years)",
+          "meanAge": "15.25 ± 0.87",
+          "sampleSizePlayers": "40",
+          "numberOfTeams": "4 local clubs",
+          "observationDuration": "2023-2024 season; 20 official matches; approximately 6 months"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint [any musculoskeletal complaint sustained during a match, irrespective of medical attention or time loss]",
+          "incidenceDefinition": "per 1,000 match-hours",
+          "severityDefinition": "minimal 0-3 days; mild 4-7; moderate 8-28; severe >28 days",
+          "mechanismReporting": "club physiotherapists"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "26",
+          "injuryPlayersCompletedStudy": "40",
+          "injuryTeamsCompletedStudy": "4",
+          "injuryMatchCount": "26",
+          "injuryIncidenceOverall": "24.9",
+          "injuryIncidenceMatch": "24.9",
+          "injuryMostCommonType": "contusion",
+          "injuryMostCommonLocation": "thigh",
+          "injuryMostCommonSeverity": "minimal (0-3 days)",
+          "injuryContact": "18",
+          "injuryNonContact": "8"
+        },
+        "illnessOutcome": {},
+        "injuryTissueType": {
+          "injuryTissueType_joint_sprain_prevalence": "8",
+          "injuryTissueType_bone_fracture_prevalence": "1",
+          "injuryTissueType_concussion_prevalence": "1"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "1",
+          "injuryLocation_forearm_prevalence": "1",
+          "injuryLocation_wrist_prevalence": "1",
+          "injuryLocation_thigh_prevalence": "8",
+          "injuryLocation_knee_prevalence": "4",
+          "injuryLocation_lower_leg_prevalence": "5",
+          "injuryLocation_ankle_prevalence": "4",
+          "injuryLocation_foot_prevalence": "2"
+        },
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Local-only Stage A proposal, S4859. Source sweep: full PDF, Abstract, Methods, Table 1, Table 2, Figure 1, Results, Discussion, Strengths and limitations. The study is match-only prospective surveillance in 40 male regional-league youth players. Locations and contact/non-contact counts are percentage-derived from the directly printed stable numerator of 26 injuries: thigh 8, lower leg/Achilles 5, knee 4, ankle 4, foot/toe 2, forearm 1, wrist 1, head/face 1; contact 18 and non-contact 8. The source states 24.9 injuries/1,000 match-hours in Abstract, Results and Discussion, but 6.52/1,000 h in Strength and limitations. The payload preserves 24.9 as the repeatedly reported source rate, does not calculate exposure, and requires human adjudication of the contradiction.",
+      "source": {
+        "sha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+        "screeningRecordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+        "document": "data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4859.pdf"
+      }
+    },
+    {
+      "studyId": "S4860",
+      "populationLabels": [
+        "Girls' soccer",
+        "Boys' soccer"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4860",
+          "leadAuthor": "Hacherl SL",
+          "title": "Sex Differences in Concussion Rates among Middle School Sex-comparable Sports",
+          "yearOfPublication": "2026",
+          "journal": "The Journal of Pediatrics: Clinical Practice",
+          "doi": "10.1016/j.jpedcp.2026.200200",
+          "studyDesign": "retrospective cohort [prospective data]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "United States",
+          "levelOfPlay": "middle school",
+          "sex": "female\nmale",
+          "ageCategory": "middle school (grades 6-8)\nmiddle school (grades 6-8)",
+          "observationDuration": "2015-2022 school years"
+        },
+        "definitions": {
+          "injuryDefinition": "medical attention [clinically diagnosed sport-related concussion requiring removal from activity]",
+          "incidenceDefinition": "per 1000 athlete-exposures",
+          "mechanismReporting": "athletic trainers"
+        },
+        "exposure": {
+          "exposureMeasurementUnit": "athlete-exposures",
+          "totalExposure": "32294\n47592",
+          "matchExposure": "8966\n12228",
+          "trainingExposure": "23328\n35364"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "31\n18",
+          "injuryMatchCount": "18\n14",
+          "injuryTrainingCount": "13\n4",
+          "injuryIncidenceOverall": "0.96\n0.38",
+          "injuryIncidenceMatch": "2.01\n1.14",
+          "injuryIncidenceTraining": "0.56\n0.11",
+          "injuryIncidenceCi95": "0.62-1.30\n0.20-0.55",
+          "injuryContact": "30\n17"
+        },
+        "illnessOutcome": {},
+        "injuryTissueType": {
+          "injuryTissueType_concussion_prevalence": "31\n18"
+        },
+        "injuryLocation": {},
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Soccer-only girls and boys subgroups extracted from the multi-sport study. Direct Table II concussion counts, athlete-exposures, training/competition/overall rates and confidence intervals are retained. Contact totals of 30 girls and 17 boys are transparent sums of the five explicitly contact-classified Table IV categories; unknown mechanism is excluded. No soccer-specific player, team, season, time-loss, illness, location or tissue values were inferred.",
+      "source": {
+        "sha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+        "screeningRecordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+        "document": "Hacherl SL, Herman DC, Martin JR, et al. Sex Differences in Concussion Rates among Middle School Sex-comparable Sports. The Journal of Pediatrics: Clinical Practice. 2026;20:200200. doi:10.1016/j.jpedcp.2026.200200."
+      }
+    }
+  ],
+  "systematicReview": {
+    "studyId": "S2699",
+    "note": "Systematic review/meta-analysis retained for reference checking only. It synthesises 17 studies of soccer-referee injury epidemiology and is not a primary cohort for Tabs 1-10 extraction. Screen any candidate primary references independently before promotion; do not transfer its pooled estimates.",
+    "source": {
+      "sha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "screeningRecordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+      "document": "Alimoradi M, Alghosi M, Iranmanesh M, et al. Epidemiology of Injury in Elite and Amateur Soccer Referees: A Systematic Review and Meta-analysis. Sports Medicine. 2025. doi:10.1007/s40279-025-02326-y."
+    }
+  }
+}

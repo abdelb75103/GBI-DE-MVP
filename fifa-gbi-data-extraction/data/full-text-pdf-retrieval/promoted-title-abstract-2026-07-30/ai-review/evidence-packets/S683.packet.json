@@ -1,0 +1,331 @@
+{
+  "recordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+  "covidenceId": null,
+  "studyId": "S683",
+  "title": "Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club.",
+  "authors": "Bittencourt Natalia Fn",
+  "year": "2024",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S683.pdf",
+  "pdfSha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 5,
+  "textCharCount": 30960,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "futsal",
+        "snippet": "...rospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6 sports (volleyball, basketball, judo, gymnastics, tennis and futsal). The mean age was 14.1 (11.2; 17.0) years, mean height was 1.75 (1.55; 1.95) meters and mean body mass was 59.4 (42.0; 76.4) kilograms. The diagnosis of lower limb tendinopathy (LLT) was made by an experienced sports physician based on a detailed history a..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...1. Introduction Lower limb tendinopathy (LLT) incidence has been documented in elite and youth athletes, especially involved in jumping and running sports ( Bisseling et al., 2007 ; Francis et al., 2019 ; Simpson et al., 2016 ). Basketball, gymnastics, soccer, tennis and judo athletes have a high incidence of LLT according to some studies ( Abrams et al., 2012 ; Bode et al., 2017 ; Hagglund et al., 2011 ; McCarthy et al., 2013 ; Thomas and Thomas 2019 ). Athletes with LLT complain of local tendon pain, related..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "futsal",
+        "snippet": "...ipants gave informed consent. This study was reported in accordance with \"the strengthening the reporting of observational studies in epidemiology (STROBE)\" guidelines ( von Elm et al., 2008 ). Data collection involved volleyball, tennis, judo, gymnastic, futsal and basketball athletes. The female volleyball team trained separately from the male volleyball team and both had their individual injury and training records. Athletes of tennis, judo and gymnastic, males and fe - males trained together, composing the sam..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "futsal",
+        "snippet": "...m trained separately from the male volleyball team and both had their individual injury and training records. Athletes of tennis, judo and gymnastic, males and fe - males trained together, composing the same data base of each sport modality. Basketball and futsal teams had only male athletes. Therefore, based on the records of each sport team, we were able to analyze the incidence, separately, of female and male athletes only in volleyball. Inclusion criteria were regular participation in training sessions and com..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "futsal",
+        "snippet": "....75 (1.55; 1.95) meters and mean body mass of 59.4 (42.0; 76.4) kilograms were invited and participated in this study. Data from six sports were analyzed: volleyball (n = 480), basketball (n = 324), judo(n = 221), gymnastics (n = 167), tennis (n = 75) and futsal (n = 286). Table 1 shows the population characteristics, exposure and incidence data per season. A total of 747 injuries of which 100 new LLT were recorded in the sport club in the 2015 – 2017 seasons. The mean relative frequency of LLT was 13.4% of the t..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Futsal",
+        "snippet": "...419 Female(n) 113 113 132 Exposure(hrs) 11.366 11.366 11.586 Absolute total n of injuries. 243 251 253 Absolute n of LLT 29 48 23 LLT Incidence Basketball 2.4 6.8 4.4 Men ’ s volleyball 4.7 8.8 3.7 Women ’ s volleyball 3.1 2.0 1.0 Tennis 1.6 0.8 0.0 Futsal 1.9 4.4 0.6 Judo 2.6 5.1 3.8 Artistic gymnastics 1.1 0.5 0.5 Overall LLT Incidence a 2.5 4.2 2.1 95% CI 1.6; 3.5 3.0; 5.4 1.2; 2.3 LLT frequency 12% 19% 10% a Injury incidence expressed as number of injuries/1000 h of total exposure (95% confidence i..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Futsal",
+        "snippet": "...16 (71%) Achilles tendinopathy n(%) 4 (14%) 2 (4%) 3 (13%) LL Tendinopathy (per sport) Basketball n(%) 5 (17%) 14 (29%) 9 (39%) Female volleyball n(%) 6 (21%) 4 (8%) 1 (4%) Male volleyball n(%) 9 (31%) 17 (35%) 8 (35%) Tennis n(%) 2 (7%) 1 (2%) 0 (0%) Futsal n(%) 3 (10%) 7 (15%) 1 (4%) Judo n(%) 2 (7%) 4 (8%) 3 (13%) Artistic gymnastics n(%) 2 (7%) 1 (2%) 1 (4%) Total LLTendinopathy n(%) 29 (100%) 48 (100%) 23 (100%) N.FN. Bittencourt et al...."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "futsal",
+        "snippet": "...ar to our study, since they prospectively reported tendon pain for 3 years and the mean age was 13.3 years old. On the other hand, Florit et al. (2019) reported a higher frequency (of 22%) of LLT in Spanish basketball, football, handball, roller hockey and futsal athletes. As they reported LLT frequency combining youth and professional level athletes, this could explain the percentage difference from our study. Regarding type of sports, Florit et al. (2019) had similar results to ours, since jumping athletes had a..."
+      },
+      {
+        "page": 5,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...youth athletes: a cohort study. Phys. Ther. Sport 53, 60 – 66. https://doi.org/10.1016/j. ptsp.2021.11.006 . Bode, G., Hammer, T., Karvouniaris, N., Feucht, M., Konstantinidis, L., Südkamp, N., Hirschmüller, A., 2017. Patellar tendinopathy in young elite soccer- clinical and sonographical analysis of a German elite soccer Academy. BMC Musculoskelet Disord 18, 344. https://doi.org/10.1186/s12891-017-1690-2 . Cassel, M., Baur, H., Hirschmüller, A., Carlsohn, A., Fr ¨ohlich, K., Mayer, F., 2015. Prevalence of Achil..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "exposure hours",
+        "snippet": "...rs and mean body mass was 59.4 (42.0; 76.4) kilograms. The diagnosis of lower limb tendinopathy (LLT) was made by an experienced sports physician based on a detailed history and clinical exam. The incidence of LLT was determined by number of injuries/total exposure hours x 1000. Results: In total, 100 LLT were recorded during the 3 seasons. The most frequent type of LLT was patellar (79%), adductor (12%) and Achilles (9%). The frequency of patellar tendinopathy was higher in male ’ s volleyball, basketball and female volle..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "exposure hours",
+        "snippet": "...rticipation in training sessions and competitions in 3-season period. Youth players who trained also with adult professional team were excluded. Questionnaires of training load and matches were completed by the team coaches to register the total number of exposure hours. Exposure in hours was defined as any practice or competition in which an athlete is exposed to the possibility of an sport injury. Injury definition consisted of any new musculoskeletal complaint that occurred as a result of training or competition that..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...rformed the diagnosis of LLT. Only new LLT were registered in the follow-up period and previous symptoms were collected during the physician consultation. Descriptive statistics were used to characterize the sample and report LLT frequency per season. LLT incidence rate was determined using the following formula: number of injuries/total exposure hours × 1000; 95% confidence intervals (CIs) for the incidence rates were then calculated. 3. Results In total, 1553 Brazilian youth athletes, 1.195 males and 358 females (mea..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "exposure hours",
+        "snippet": "...nd previous symptoms were collected during the physician consultation. Descriptive statistics were used to characterize the sample and report LLT frequency per season. LLT incidence rate was determined using the following formula: number of injuries/total exposure hours × 1000; 95% confidence intervals (CIs) for the incidence rates were then calculated. 3. Results In total, 1553 Brazilian youth athletes, 1.195 males and 358 females (mean age of 14.1 (11.2; 17.0) years, mean height of 1.75 (1.55; 1.95) meters and mean b..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "2.5/1000h",
+        "snippet": "...e frequency of patellar tendinopathy was higher in male ’ s volleyball, basketball and female volleyball (41%, 25%, 13%, respectively) and the frequency of Achilles tendinopathy was higher in basketball and female volleyball (33%,22%). The LLT incidence was 2.5/1000h in 2015, 4.2/1000h in 2016 and 2.1/1000h in 2017. Conclusion: Lower limb tendinopathies are relatively common in youth elite athletes. In 3-season, the most frequent type was patellar tendinopathy. A higher LLT incidence was observed in male volleyball ath..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "4.2/1000h",
+        "snippet": "...llar tendinopathy was higher in male ’ s volleyball, basketball and female volleyball (41%, 25%, 13%, respectively) and the frequency of Achilles tendinopathy was higher in basketball and female volleyball (33%,22%). The LLT incidence was 2.5/1000h in 2015, 4.2/1000h in 2016 and 2.1/1000h in 2017. Conclusion: Lower limb tendinopathies are relatively common in youth elite athletes. In 3-season, the most frequent type was patellar tendinopathy. A higher LLT incidence was observed in male volleyball athletes when compare..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "2.1/1000h",
+        "snippet": "...igher in male ’ s volleyball, basketball and female volleyball (41%, 25%, 13%, respectively) and the frequency of Achilles tendinopathy was higher in basketball and female volleyball (33%,22%). The LLT incidence was 2.5/1000h in 2015, 4.2/1000h in 2016 and 2.1/1000h in 2017. Conclusion: Lower limb tendinopathies are relatively common in youth elite athletes. In 3-season, the most frequent type was patellar tendinopathy. A higher LLT incidence was observed in male volleyball athletes when compared to female volleyball..."
+      }
+    ],
+    "review": [
+      {
+        "page": 5,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...Multidisciplinary sports club over 8 seasons. J. Sports Sci. Med. 18, 780 – 788 . Francis, P., Whatman, C., Sheerin, K., Hume, P., Johnson, M.I., 2019. The proportion of lower limb running injuries by gender, anatomical location and specific pathology: a systematic review. J. Sports Sci. Med. 18, 21 – 31 . Fuller, C., Ekstrand, J., Junge, A., Andersen, T.E., Bahr, R., Dvorak, J., H ¨agglund, M., McCrory, P., Meeuwisse, W.H., 2006. Consensus statement on injury definitions and data collection procedures in studies of footbal..."
+      },
+      {
+        "page": 5,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...al database of cases and controls. Clin. J. Sport Med. 27, 468 – 474. https://doi.org/10.1097/ JSM.0000000000000397 . Ogbonmwan, I., Kumar, B., Paton, B., 2018. New lower-limb gait biomechanical characteristics in individuals with Achilles tendinopathy: a systematic review update. Gait Posture 62, 146 – 156. https://doi.org/10.1016/j.gaitpost.2018.03.010 . Orchard, J., Cook, J., Halpin, N., 2004. Stress-shielding as a cause of insertional tendinopathy: the operative technique of limited adductor tenotomy supports this theor..."
+      },
+      {
+        "page": 5,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...nopathy Symposium (ISTS) Vancouver 2012. Br. J. Sports Med. 47, 536 – 544. https://doi.org/ 10.1136/bjsports-2013-092329 . Simpson, M., Rio, E., Cook, J., 2016. At what age do children and adolescents develop lower limb tendon pathology or tendinopathy? A systematic review and meta- analysis. Sports Med. 46, 545 – 557. https://doi.org/10.1007/s40279-015-0438-0 . Taunton, J., Ryan, M., Clement, D., 2002. A retrospective case-control analysis of 2002 running injuries. Br. J. Sports Med. 36, 95 – 101. https://doi.org/10.1136/..."
+      },
+      {
+        "page": 5,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...https://doi.org/10.1007/s40279-015-0438-0 . Taunton, J., Ryan, M., Clement, D., 2002. A retrospective case-control analysis of 2002 running injuries. Br. J. Sports Med. 36, 95 – 101. https://doi.org/10.1136/ bjsm.36.2.95 . Thomas, R., Thomas, B., 2019. A systematic review of injuries in gymnastics. Phys Sportsmed 47, 96 – 121. https://doi.org/10.1080/00913847.2018.1527646 . Van Mechelen, W., 1997. The severity of sports injuries. Sports Med. 24, 176 – 180. https://doi.org/10.2165/00007256-199724030-00006 . Vilamitjana, J.,..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "University of Groningen Incidence of lower limb tendinopathy Bittencourt, Natália FN; Vaz, Rodrigo; Garcia, Leandro; Zwerver, Johannes; Mendonça, Luciana D. Published in: Journal of bodywork and movement therapies DOI: 10.1016/j.jbmt.2024.04.042 IMPORTANT NOTE: You are advised to consult the..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "...ublisher's PDF, also known as Version of record Publication date: 2024 Link to publication in University of Groningen/UMCG research database Citation for published version (APA): Bittencourt, N. FN., Vaz, R., Garcia, L., Zwerver, J., & Mendonça, L. D. (2024). Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club. Journal of bodywork and movement therapies, 40, 461-464. https://doi.org/10.1016/j.jbmt.2024.04.042 Copyright Other than for strictly personal use, it..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 Available online 20 April 2024 1360-8592/© 2024 Published by Elsevier Ltd. Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club Nat ´alia FN. Bittencourt a , b , Rodrigo Vaz c , Leandro Garcia a , Johannes Zwerver d , e , Luciana D. Mendonça f , * a Sports Physical Therapy De..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...e Netherlands f Physical Therapy Department, School of Physical Education, Physiotherapy and Occupational Therapy, Universidade Federal de Minas Gerais, Brazil ARTICLE INFO Handling editor: Dr Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed d..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Epidemiology",
+        "snippet": "...lands f Physical Therapy Department, School of Physical Education, Physiotherapy and Occupational Therapy, Universidade Federal de Minas Gerais, Brazil ARTICLE INFO Handling editor: Dr Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 20..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...Universidade Federal de Minas Gerais, Brazil ARTICLE INFO Handling editor: Dr Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "epidemiological",
+        "snippet": "...Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6 sports (volleyball, basketball, judo, gymnastics, tennis and futsal). The mean age was..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "....1 (11.2; 17.0) years, mean height was 1.75 (1.55; 1.95) meters and mean body mass was 59.4 (42.0; 76.4) kilograms. The diagnosis of lower limb tendinopathy (LLT) was made by an experienced sports physician based on a detailed history and clinical exam. The incidence of LLT was determined by number of injuries/total exposure hours x 1000. Results: In total, 100 LLT were recorded during the 3 seasons. The most frequent type of LLT was patellar (79%), adductor (12%) and Achilles (9%). The frequency of patellar tendinopat..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 462 included on athlete ’ s routine. According to the injury prevention model of Van Mechelen ( Van Mechelen 1997 ), the first step to properly develop prevention programs for sport injury is to determine injuries profile (incidence and severity) in a specific population. The incidence and prevalence of LLT among s..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 463 affected. Moreover, we found that the incidence of tendinopathies was lower in the 2017 season despite the increased hours of exposure. The LLT incidence was highest in male volleyball players with a relatively high average over the three years. These results can support preventive actions planning bas..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...l of Bodywork & Movement Therapies 40 (2024) 461–464 464 and Achilles tendinopathies over 3-seasons when compared to other sports. This information could guide preventive and rehabilitative strategies in the sport-team routine aiming to reduce tendinopathy incidence and treatment optimization. CRediT authorship contribution statement Nat ´alia FN. Bittencourt: Writing – review & editing, Writing – original draft, Supervision, Methodology, Data curation, Conceptuali - zation. Rodrigo Vaz: Visualization, Methodology, Da..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...Publication date: 2024 Link to publication in University of Groningen/UMCG research database Citation for published version (APA): Bittencourt, N. FN., Vaz, R., Garcia, L., Zwerver, J., & Mendonça, L. D. (2024). Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club. Journal of bodywork and movement therapies, 40, 461-464. https://doi.org/10.1016/j.jbmt.2024.04.042 Copyright Other than for strictly personal use, it is not permitted to download or to forward/distri..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 Available online 20 April 2024 1360-8592/© 2024 Published by Elsevier Ltd. Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club Nat ´alia FN. Bittencourt a , b , Rodrigo Vaz c , Leandro Garcia a , Johannes Zwerver d , e , Luciana D. Mendonça f , * a Sports Physical Therapy Department, Minas Tenis Club, Brazil b Centro Univ..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Prospective",
+        "snippet": "...g editor: Dr Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6 sports (volleyball, basketball, judo, gymnastics, tennis and futsal). T..."
+      },
+      {
+        "page": 2,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "prospective",
+        "snippet": "...on Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6 sports (volleyball, basketball, judo, gymnastics, tennis and futsal). The mean age was 14.1 (11.2; 17.0) years, mean h..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...panhol Junior et al., 2015 ). However, such data are lacking for youth elite Brazilian population. Therefore, the aim of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. 2. Methods In this prospective cohort study, sport exposure and injury data were collected during 2015, 2106 and 2017 seasons in one traditional sport club in Brazil. This study was approved by the University ’ s Ethics in Research Committee (report number 2.870.428). All participants g..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...r et al., 2015 ). However, such data are lacking for youth elite Brazilian population. Therefore, the aim of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. 2. Methods In this prospective cohort study, sport exposure and injury data were collected during 2015, 2106 and 2017 seasons in one traditional sport club in Brazil. This study was approved by the University ’ s Ethics in Research Committee (report number 2.870.428). All participants gave in..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...sketball and female volleyball (33%,22%, respectively). 4. Discussion This study aimed to investigate lower limb tendinopathy (LLT) incidence in Brazilian youth elite athletes over 3 seasons (2015 – 2017). Overall, 13.4% of all injuries in this Brazilian cohort of young athletes were LLT. The most frequent LLT was patellar tendinopathy (79%), followed by adductor (12%) and Achilles (9%). Thus, patellar tendin - opathy was the most frequent type of LLT and this study also showed that basketball and male volleyball..."
+      },
+      {
+        "page": 5,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...ball. Br. J. Sports Med. 41, e8. https://doi.org/10.1136/bjsm.2006.032565 . Bittencourt, N.F.N., Oliveira, R., Vaz, R.P., Silva-Scattone, R., Mendonça, L.M., 2022. Preventive effect of tailored exercises on patellar tendinopathy in elite youth athletes: a cohort study. Phys. Ther. Sport 53, 60 – 66. https://doi.org/10.1016/j. ptsp.2021.11.006 . Bode, G., Hammer, T., Karvouniaris, N., Feucht, M., Konstantinidis, L., Südkamp, N., Hirschmüller, A., 2017. Patellar tendinopathy in young elite soccer- clinical and sono..."
+      }
+    ],
+    "source_provenance": [
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "...sion criteria were regular participation in training sessions and competitions in 3-season period. Youth players who trained also with adult professional team were excluded. Questionnaires of training load and matches were completed by the team coaches to register the total number of exposure hours. Exposure in hours was defined as any practice or competition in which an athlete is exposed to the possibility of an sport injury. Injury definition consisted of any new musculoskeletal complaint that occurred as a resu..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] University of Groningen Incidence of lower limb tendinopathy Bittencourt, Natália FN; Vaz, Rodrigo; Garcia, Leandro; Zwerver, Johannes; Mendonça, Luciana D. Published in: Journal of bodywork and movement therapies DOI: 10.1016/j.jbmt.2024.04.042 IMPORTANT NOTE: You are advised to consult the publisher's version (publisher's PDF) if you wish to cite from it. Please check the document version below. Document Version Publisher's PDF, also known as Version of record Publication date: 2024 Link to publication in University of Groningen/UMCG research database Citation for published version (APA): Bittencourt, N. FN., Vaz, R., Garcia, L., Zwerver, J., & Mendonça, L. D. (2024). Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club. Journal of bodywork and movement therapies, 40, 461-464. https://doi.org/10.1016/j.jbmt.2024.04.042 Copyright Other than for strictly personal use, it is not permitted to download or to forward/distribute the text or part of it without the consent of the author(s) and/or copyright holder(s), unless the work is under an open content license (like Creative Commons). The publication may also be distributed here under the terms of Article 25fa of the Dutch Copyright Act, indicated by the “Taverne” license. More information can be found on the University of Groningen website: https://www.rug.nl/library/open-access/self-archiving-pure/taverne- amendment. Take-down policy If you believe that this document breaches copyright please contact us providing details, and we will remove access to the work immediately and investigate your claim. Downloaded from the University of Groningen/UMCG research database (Pure): http://www.rug.nl/research/portal. For technical reasons the number of authors shown on this cover page is limited to 10 maximum. Download date: 30-07-2026\n\n[p. 2] Journal of Bodywork & Movement Therapies 40 (2024) 461–464 Available online 20 April 2024 1360-8592/© 2024 Published by Elsevier Ltd. Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club Nat ´alia FN. Bittencourt a , b , Rodrigo Vaz c , Leandro Garcia a , Johannes Zwerver d , e , Luciana D. Mendonça f , * a Sports Physical Therapy Department, Minas Tenis Club, Brazil b Centro Universit ´ario Uni-BH, Brazil c Medical Department, Minas Tenis Club, Brazil d University of Groningen, University Medical Center Groningen - Department of Human Movement Sciences, Hanzeplein, 1 9713, GZ, Groningen, the Netherlands e Sports Valley, Gelderse Vallei Hospital, Willy Brandtlaan 10, 6716 RP, Ede, the Netherlands f Physical Therapy Department, School of Physical Education, Physiotherapy and Occupational Therapy, Universidade Federal de Minas Gerais, Brazil ARTICLE INFO Handling editor: Dr Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6 sports (volleyball, basketball, judo, gymnastics, tennis and futsal). The mean age was 14.1 (11.2; 17.0) years, mean height was 1.75 (1.55; 1.95) meters and mean body mass was 59.4 (42.0; 76.4) kilograms. The diagnosis of lower limb tendinopathy (LLT) was made by an experienced sports physician based on a detailed history and clinical exam. The incidence of LLT was determined by number of injuries/total exposure hours x 1000. Results: In total, 100 LLT were recorded during the 3 seasons. The most frequent type of LLT was patellar (79%), adductor (12%) and Achilles (9%). The frequency of patellar tendinopathy was higher in male ’ s volleyball, basketball and female volleyball (41%, 25%, 13%, respectively) and the frequency of Achilles tendinopathy was higher in basketball and female volleyball (33%,22%). The LLT incidence was 2.5/1000h in 2015, 4.2/1000h in 2016 and 2.1/1000h in 2017. Conclusion: Lower limb tendinopathies are relatively common in youth elite athletes. In 3-season, the most frequent type was patellar tendinopathy. A higher LLT incidence was observed in male volleyball athletes when comp\n\n[p. 3] Journal of Bodywork & Movement Therapies 40 (2024) 461–464 462 included on athlete ’ s routine. According to the injury prevention model of Van Mechelen ( Van Mechelen 1997 ), the first step to properly develop prevention programs for sport injury is to determine injuries profile (incidence and severity) in a specific population. The incidence and prevalence of LLT among specific sports pop - ulations have been established in different countries ( Hespanhol Junior et al., 2015 ). However, such data are lacking for youth elite Brazilian population. Therefore, the aim of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. 2. Methods In this prospective cohort study, sport exposure and injury data were collected during 2015, 2106 and 2017 seasons in one traditional sport club in Brazil. This study was approved by the University ’ s Ethics in Research Committee (report number 2.870.428). All participants gave informed consent. This study was reported in accordance with \"the strengthening the reporting of observational studies in epidemiology (STROBE)\" guidelines ( von Elm et al., 2008 ). Data collection involved volleyball, tennis, judo, gymnastic, futsal and basketball athletes. The female volleyball team trained separately from the male volleyball team and both had their individual injury and training records. Athletes of tennis, judo and gymnastic, males and fe - males trained together, composing the same data base of each sport modality. Basketball and futsal teams had only male athletes. Therefore, based on the records of each sport team, we were able to analyze the incidence, separately, of female and male athletes only in volleyball. Inclusion criteria were regular participation in training sessions and competitions in 3-season period. Youth players who trained also with adult professional team were excluded. Questionnaires of training load and matches were completed by the team coaches to register the total number of exposure hours. Exposure in hours was defined as any practice or competition in which an athlete is exposed to the possibility of an sport injury. Injury definition consisted of any new musculoskeletal complaint that occurred as a result of training or competition that required medical assistance. All injuries were recorded on a standardized database using the model proposed by Fuller et al. (2006) and were securely stored in an injury registry containing standardized data for a\n\n[p. 4] Journal of Bodywork & Movement Therapies 40 (2024) 461–464 463 affected. Moreover, we found that the incidence of tendinopathies was lower in the 2017 season despite the increased hours of exposure. The LLT incidence was highest in male volleyball players with a relatively high average over the three years. These results can support preventive actions planning based on LLT characteristics of each sport modality. Our results are comparable to Cassel et al. (2015) , who reported a prevalence of 13% of patellar tendinopathy and 1% of Achilles tendon pain in German youth athletes from several sports ( Cassel et al., 2015 ). Despite not reporting the overall frequency LLT tendinopathies in German athletes, a positive side is that the methodology is relatively similar to our study, since they prospectively reported tendon pain for 3 years and the mean age was 13.3 years old. On the other hand, Florit et al. (2019) reported a higher frequency (of 22%) of LLT in Spanish basketball, football, handball, roller hockey and futsal athletes. As they reported LLT frequency combining youth and professional level athletes, this could explain the percentage difference from our study. Regarding type of sports, Florit et al. (2019) had similar results to ours, since jumping athletes had a higher incidence compared to others involved in sport with less jumping demand. Moreover, the tendons most affected in Florit et al. (2019) study were the patellar (11.7%) and Achilles (10.3%). Overall, our results indicated patellar tendinopathy as the most frequent type and that male volleyball athletes had an increased incidence when compared to female athletes, which is in accordance with the literature ( Morton et al., 2017 ). Regarding patellar tendinopathy per sports, our results showed a higher prevalence compared to the literature. Cook et al. (2014) found a prevalence of patellar tendinopathy of 7% out of 134 basketball players aged between 14 and 18 years-old ( Longo et al., 2011 ). Our study indicated 25% frequency of patellar tendinopathy in youth basketball athletes. Additionally, investigations on patellar tendons of Norwegian elite junior volleyball players (age 15 to 19 years-old) diagnosed jum - per ’ s knee in 21% per year for boys and 5% for girls ( Visnes and Bahr 2013 ). The present study indicated a prevalence of 41% in volleyball players. It seems that the frequency of patellar tendinopathy in our Brazilian youth volleyball and basketball players is similar to older a",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "University of Groningen Incidence of lower limb tendinopathy Bittencourt, Natália FN; Vaz, Rodrigo; Garcia, Leandro; Zwerver, Johannes; Mendonça, Luciana D. Published in: Journal of bodywork and movement therapies DOI: 10.1016/j.jbmt.2024.04.042 IMPORTANT NOTE: You are advised to consult the publisher's version (publisher's PDF) if you wish to cite from it. Please check the document version below. Document Version Publisher's PDF, also known as Version of record Publication date: 2024 Link to publication in University of Groningen/UMCG research database Citation for published version (APA): Bittencourt, N. FN., Vaz, R., Garcia, L., Zwerver, J., & Mendonça, L. D. (2024). Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club. Journal of bodywork and movement therapies, 40, 461-464. https://doi.org/10.1016/j.jbmt.2024.04.042 Copyright Other than for strictly personal use, it is not permitted to download or to forward/distribute the text or part of it without the consent of the author(s) and/or copyright holder(s), unless the work is under an open content license (like Creative Commons). The publication may also be distributed here under the terms of Article 25fa of the Dutch Copyright Act, indicated by the “Taverne” license. More information can be found on the University of Groningen website: https://www.rug.nl/library/open-access/self-archiving-pure/taverne- amendment. Take-down policy If you believe that this document breaches copyright please contact us providing details, and we will remove access to the work immediately and investigate your claim. Downloaded from the University of Groningen/UMCG research database (Pure): http://www.rug.nl/research/portal. For technical reasons the number of authors shown on this cover page is limited to 10 maximum. Download date: 30-07-2026"
+    },
+    {
+      "page": 2,
+      "text": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 Available online 20 April 2024 1360-8592/© 2024 Published by Elsevier Ltd. Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club Nat ´alia FN. Bittencourt a , b , Rodrigo Vaz c , Leandro Garcia a , Johannes Zwerver d , e , Luciana D. Mendonça f , * a Sports Physical Therapy Department, Minas Tenis Club, Brazil b Centro Universit ´ario Uni-BH, Brazil c Medical Department, Minas Tenis Club, Brazil d University of Groningen, University Medical Center Groningen - Department of Human Movement Sciences, Hanzeplein, 1 9713, GZ, Groningen, the Netherlands e Sports Valley, Gelderse Vallei Hospital, Willy Brandtlaan 10, 6716 RP, Ede, the Netherlands f Physical Therapy Department, School of Physical Education, Physiotherapy and Occupational Therapy, Universidade Federal de Minas Gerais, Brazil ARTICLE INFO Handling editor: Dr Jerrilyn Cambron Keywords: tendon Tendinopathy Athletic injury Epidemiology ABSTRACT Introduction: The purpose of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. Design: Prospective epidemiological study. Methods: A prospective study was performed during 2015, 2016 and 2017 seasons, with a total of 1553 Brazilian youth athletes (1.195 male and 358 female) out of 6 sports (volleyball, basketball, judo, gymnastics, tennis and futsal). The mean age was 14.1 (11.2; 17.0) years, mean height was 1.75 (1.55; 1.95) meters and mean body mass was 59.4 (42.0; 76.4) kilograms. The diagnosis of lower limb tendinopathy (LLT) was made by an experienced sports physician based on a detailed history and clinical exam. The incidence of LLT was determined by number of injuries/total exposure hours x 1000. Results: In total, 100 LLT were recorded during the 3 seasons. The most frequent type of LLT was patellar (79%), adductor (12%) and Achilles (9%). The frequency of patellar tendinopathy was higher in male ’ s volleyball, basketball and female volleyball (41%, 25%, 13%, respectively) and the frequency of Achilles tendinopathy was higher in basketball and female volleyball (33%,22%). The LLT incidence was 2.5/1000h in 2015, 4.2/1000h in 2016 and 2.1/1000h in 2017. Conclusion: Lower limb tendinopathies are relatively common in youth elite athletes. In 3-season, the most frequent type was patellar tendinopathy. A higher LLT incidence was observed in male volleyball athletes when compared to female volleyball athletes. Basketball athletes presented a higher frequency of patellar, adductor and Achilles tendinopathies in 3-seasons when compared to other sports. 1. Introduction Lower limb tendinopathy (LLT) incidence has been documented in elite and youth athletes, especially involved in jumping and running sports ( Bisseling et al., 2007 ; Francis et al., 2019 ; Simpson et al., 2016 ). Basketball, gymnastics, soccer, tennis and judo athletes have a high incidence of LLT according to some studies ( Abrams et al., 2012 ; Bode et al., 2017 ; Hagglund et al., 2011 ; McCarthy et al., 2013 ; Thomas and Thomas 2019 ). Athletes with LLT complain of local tendon pain, related to increased load as in jumping and running ( Longo et al., 2011 ; Taunton et al., 2002 ), which diminish substantially on removal of those activities ( Longo et al., 2011 ; Taunton et al., 2002 ; Cook and Purdam 2014 ; Rudavsky & Cook, 2014 ). Among many other etiologic determinants, the main risk factor for LLT is tendon overload due to the amount of jumping and deceleration maneuvers ( Longo et al., 2011 ; Bahr and Bahr 2014 ). The increased incidence may be partially explained by the young athletes ’ early specialization in sports ( Simpson et al., 2016 ; Hall et al., 2015 ; Visnes and Bahr 2013 ). Management of tendinopathy sometimes remains a challenge and consequently, LLT can lead to long-standing symptoms with impairment of athletic performance and even disruption of a career ( Longo e"
+    },
+    {
+      "page": 3,
+      "text": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 462 included on athlete ’ s routine. According to the injury prevention model of Van Mechelen ( Van Mechelen 1997 ), the first step to properly develop prevention programs for sport injury is to determine injuries profile (incidence and severity) in a specific population. The incidence and prevalence of LLT among specific sports pop - ulations have been established in different countries ( Hespanhol Junior et al., 2015 ). However, such data are lacking for youth elite Brazilian population. Therefore, the aim of this study was to investigate lower limb tendinopathy incidence over 3 seasons in Brazilian youth elite athletes. 2. Methods In this prospective cohort study, sport exposure and injury data were collected during 2015, 2106 and 2017 seasons in one traditional sport club in Brazil. This study was approved by the University ’ s Ethics in Research Committee (report number 2.870.428). All participants gave informed consent. This study was reported in accordance with \"the strengthening the reporting of observational studies in epidemiology (STROBE)\" guidelines ( von Elm et al., 2008 ). Data collection involved volleyball, tennis, judo, gymnastic, futsal and basketball athletes. The female volleyball team trained separately from the male volleyball team and both had their individual injury and training records. Athletes of tennis, judo and gymnastic, males and fe - males trained together, composing the same data base of each sport modality. Basketball and futsal teams had only male athletes. Therefore, based on the records of each sport team, we were able to analyze the incidence, separately, of female and male athletes only in volleyball. Inclusion criteria were regular participation in training sessions and competitions in 3-season period. Youth players who trained also with adult professional team were excluded. Questionnaires of training load and matches were completed by the team coaches to register the total number of exposure hours. Exposure in hours was defined as any practice or competition in which an athlete is exposed to the possibility of an sport injury. Injury definition consisted of any new musculoskeletal complaint that occurred as a result of training or competition that required medical assistance. All injuries were recorded on a standardized database using the model proposed by Fuller et al. (2006) and were securely stored in an injury registry containing standardized data for all injuries among all athletes at the sports club. The LLT diagnoses were based on a detailed history and clinical exam, including the following criteria: 1) localized tendon pain on jumping and/or landing for quadriceps and patellar tendinopathy, running and jumping for hamstrings, anserine and Achilles tendinopathy, changing directions and running for adductor and gluteal tendinopathy; 2) localized pain during tendon palpation; and 3) localized pain reproduced with tendon loading tests ( Florit et al., 2019 ). For the present study one physician (R.V), with 15 years-experience in sport medicine, performed the diagnosis of LLT. Only new LLT were registered in the follow-up period and previous symptoms were collected during the physician consultation. Descriptive statistics were used to characterize the sample and report LLT frequency per season. LLT incidence rate was determined using the following formula: number of injuries/total exposure hours × 1000; 95% confidence intervals (CIs) for the incidence rates were then calculated. 3. Results In total, 1553 Brazilian youth athletes, 1.195 males and 358 females (mean age of 14.1 (11.2; 17.0) years, mean height of 1.75 (1.55; 1.95) meters and mean body mass of 59.4 (42.0; 76.4) kilograms were invited and participated in this study. Data from six sports were analyzed: volleyball (n = 480), basketball (n = 324), judo(n = 221), gymnastics (n = 167), tennis (n = 75) and futsal (n = 286). Table 1 shows the population characteristics,"
+    },
+    {
+      "page": 5,
+      "text": "Journal of Bodywork & Movement Therapies 40 (2024) 461–464 464 and Achilles tendinopathies over 3-seasons when compared to other sports. This information could guide preventive and rehabilitative strategies in the sport-team routine aiming to reduce tendinopathy incidence and treatment optimization. CRediT authorship contribution statement Nat ´alia FN. Bittencourt: Writing – review & editing, Writing – original draft, Supervision, Methodology, Data curation, Conceptuali - zation. Rodrigo Vaz: Visualization, Methodology, Data curation, Conceptualization. Leandro Garcia: Writing – review & editing, Visu - alization, Validation. Johannes Zwerver: Writing – original draft, Validation, Supervision, Methodology, Formal analysis, Conceptualiza - tion. Luciana D. Mendonça: Writing – review & editing, Writing – original draft, Validation, Methodology, Data curation, Conceptualization. Declaration of competing Interest None Acknowledgments The authors gratefully acknowledge Minas T ˆenis Clube to support this study and the athletes who participated. Funding Statement This work has been partially supported by grants from the Conselho Nacional de Desenvolvimento Científico e Tecnol ´ogico (CNPq - Brazil; 422986/2018-6) and the Fundaç ˜ao de Amparo `a Pesquisa do Estado de Minas Gerais (FAPEMIG - Brazil; APQ-01125-17). References Abrams, G., Renstrom, P., Safran, M., 2012. Epidemiology of musculoskeletal injury in the tennis player. Br. J. Sports Med. 46, 492 – 498. https://doi.org/10.1136/bjsports- 2012-091164 . Bahr, M., Bahr, R., 2014. Jump frequency may contribute to risk of jumper ’ s knee: a study of interindividual and sex differences in a total of 11.943 jumps video recorded during training and matches in young elite volleyball players. Br. J. Sports Med. 48, 1322 – 1326. https://doi.org/10.1136/bjsports-2014-093593 . Bisseling, R., Hof, A., Bredeweg, S., Zwerver, J., Mulder, T., 2007. Relationship between landing strategy and patellar tendinopathy in volleyball. Br. J. Sports Med. 41, e8. https://doi.org/10.1136/bjsm.2006.032565 . Bittencourt, N.F.N., Oliveira, R., Vaz, R.P., Silva-Scattone, R., Mendonça, L.M., 2022. Preventive effect of tailored exercises on patellar tendinopathy in elite youth athletes: a cohort study. Phys. Ther. Sport 53, 60 – 66. https://doi.org/10.1016/j. ptsp.2021.11.006 . Bode, G., Hammer, T., Karvouniaris, N., Feucht, M., Konstantinidis, L., Südkamp, N., Hirschmüller, A., 2017. Patellar tendinopathy in young elite soccer- clinical and sonographical analysis of a German elite soccer Academy. BMC Musculoskelet Disord 18, 344. https://doi.org/10.1186/s12891-017-1690-2 . Cassel, M., Baur, H., Hirschmüller, A., Carlsohn, A., Fr ¨ohlich, K., Mayer, F., 2015. Prevalence of Achilles and patellar tendinopathy and their association to intratendinous changes in adolescent athletes. Scand. J. Med. Sci. Sports 25, 310 – 318. https://doi.org/10.1111/sms.12318 . Cook, J., Purdam, C., 2014. The challenge of managing tendinopathy in competing athletes. Br. J. Sports Med. 48, 506 – 509. https://doi.org/10.1136/bjsports-2012- 092078 . Dupr ´e, T., Funken, J., Müller, R., Mortensen, K., Lysdal, F., Braun, M., Krahl, H., Potthast, W., 2018. Does inside passing contribute to the high incidence of groin injuries in soccer? A biomechanical analysis. J. Sports Sci. 36, 1827 – 1835. https:// doi.org/10.1080/02640414.2017.1423193 . Ekstrand, J., Lundqvist, D., Davidson, M., D ’ Hooghe, M., Pensgaard, A., 2019. Communication quality between the medical team and the head coach/manager is associated with injury burden and player availability in elite football clubs. Br. J. Sports Med. 53, 304 – 308. https://doi.org/10.1136/bjsports-2018-099411 . Florit, D., Pedret, C., Casals, M., Malliaras, P., Sugimoto, D., Rodas, G., 2019. Incidence of tendinopathy in team sports in a Multidisciplinary sports club over 8 seasons. J. Sports Sci. Med. 18, 780 – 788 . Francis, P., Whatman, C., Sheerin, K., Hume, P., Johnson, M.I., 2019. The proportio"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S683.packet.json"
+}

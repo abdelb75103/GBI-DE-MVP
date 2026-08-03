@@ -1,0 +1,348 @@
+{
+  "recordId": "f7e9c521-f4db-4932-8ca6-70006c65c700",
+  "covidenceId": null,
+  "studyId": "S1666",
+  "title": "The Impact of Interaction between Body Posture and Movement Pattern Quality on Injuries in Amateur Athletes",
+  "authors": "Kozlenia D.",
+  "year": "2024",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S1666.pdf",
+  "pdfSha256": "492ef4f09b65f5d224e9a8da21110e7badd71b9d294fd2e08f5e383a90987f4c",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 11,
+  "textCharCount": 43454,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...changes in the musculoskeletal system specific to a particular sports discipline [16,19–21]. Even amateur athletes exhibit changes in the formation of anterior–posterior spinal curves [22–25]. Findings from other studies indicate pelvic asymmetry in female soccer players [23], and asymmetry in shoulder blades, wais t triangles, shoulder lines, and spines in young track and field athletes [24,26] and tennis players [27]. The impact of hyperkyphosis on lowering the shoulder and indirectly on subacromial impingement s..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...the past 12 months, while women (n = 48) displayed a body height of 1.67 ± 0.06 cm, a body weight of 58.96 ± 7.75 kg, and BMI 20.91 ± 2.13 kg/m2, where 41.06% of women had been injured. Participants were involved in regular participation in sports such as soccer, futsal, hand- ball, basketball, and rugby. To maintain test integrity, individuals who were currently injured (n = 9) during study commencement were excluded. All subjects were obligated to provide written consent and received comprehensive information abo..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "futsal",
+        "snippet": "...t 12 months, while women (n = 48) displayed a body height of 1.67 ± 0.06 cm, a body weight of 58.96 ± 7.75 kg, and BMI 20.91 ± 2.13 kg/m2, where 41.06% of women had been injured. Participants were involved in regular participation in sports such as soccer, futsal, hand- ball, basketball, and rugby. To maintain test integrity, individuals who were currently injured (n = 9) during study commencement were excluded. All subjects were obligated to provide written consent and received comprehensive information about the s..."
+      },
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ewicz, E. Negative effects of physical activity and sports participation. Hygeia Public Health 2015, 50, 41–46. 8. Lehance, C.; Binet, J.; Bury, T.; Croisier, J.L. Muscular strength, functional performances and injury risk in professional and junior elite soccer players. Scand. J. Med. Sci. Sports 2009, 19, 243–251. https://doi.org/10.1111/j.1600-0838.2008.00780.x. 9. Schneiders, A.G.; Davidsson, A.; Horman, E.; Sullivan, S.J. Functional movement screen normative values in a young, active population. Int. J. Sport..."
+      },
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...mateur Athletes and Its Potential Relation with Recurrent Low Back Pain. Int. J. Environ. Res. Public Health 2021, 18, 8262. https://doi.org/10.3390/ ijerph18168262. 23. Żuk, B.; Sutkowski, M.; Paśko, S.; Grudniewski, T. Posture correctness of young female soccer players. Sci. Rep. 2019, 9, 11179. https://doi.org/10.1038/s41598-019-47619-1. 24. Grabara, M.; Hadzik, A. The body posture in young athletes compared to their peers. Med. Sport 2009, 25, 115–124. 25. Förster, R.; Penka, G.; Bösl, T.; Schöffl, V. Form and..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...er Elb. Surg. 2014, 23 , e300–e307. https://doi.org/10.1016/j.jse.2014.04.010. 29. Theodorou, E.; Christou, M.; Apostolidis, A.; Tryfonidis, M.; Zaras, N.; Hadjicharalambous, M. The Effect of Spinal Asymmetries on Physical Fitness Parameters in Young Elite Soccer Players. Symmetry 2022, 14 , 2497. https://doi.org/10.3390/sym14122497. 30. Liu, T. Impact of posture and recovery methods on sports injuries. Rev. Bras. Med. Do Esporte 2022, 28, 719–722. 31. Kuo, Y.L.; Chung, C.H.; Huang, T.W.; Tsao, C.H.; Chang, S.Y.; P..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Football Players",
+        "snippet": "...retrospective cohort study. BMJ Open 2019, 9 , e023604. https://doi.org/10.1136/ bmjopen-2018-023604. 32. Snodgrass, S.J.; Ryan, K.E.; Miller, A.; James, D.; Callister, R. Relationship between Posture and Non-Contact Lower Limb Injury in Young Male Amateur Football Players: A Prospective Cohort Study. Int. J. Environ. Res. Public Health 2021, 18 , 6424. https://doi.org/10.3390/ ijerph18126424. 33. Izadi, M.R.; Yousefpour Dehaghani, A.R.; Naji, M.; Jafari, B. Correlation between Functional-Movement Screening Test with Height..."
+      }
+    ],
+    "wrong_sport": [
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...isplayed a body height of 1.67 ± 0.06 cm, a body weight of 58.96 ± 7.75 kg, and BMI 20.91 ± 2.13 kg/m2, where 41.06% of women had been injured. Participants were involved in regular participation in sports such as soccer, futsal, hand- ball, basketball, and rugby. To maintain test integrity, individuals who were currently injured (n = 9) during study commencement were excluded. All subjects were obligated to provide written consent and received comprehensive information about the study ’s objectives, methodology, a..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...ive accuracy of the Functional Movement Screen (FMS) test, revealing a nearly 6-fold higher injury risk for those with lower-quality movement patterns and a 15-fold increase for individuals with previous injuries. Similar trends were observed in studies of rugby players [48] and athletes [49]. The study by Koźlenia and Domaradzki [37], with a 73% prediction accuracy, aligns with these findings. However, some studies question the accuracy of injury predic- tion using the FMS test [50]. Holistic approaches encompassi..."
+      },
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...sports injuries in a 15-year survey of a Level I emergency trauma department reveal different severe injury types in the 6 most common team sports. Sport. Sportschaden 2018, 32, 111–119. 3. Pote, L.; Robinson, B.; Christie, C. Injuries in high school level rugby union: How do coaches manage injuries? Hum. Mov. 2020, 22, 50–56. 4. Asperti, A.M.; Fernandes, T.L.; Pedrinelli, A.; Hernandez, A.J. Sports injuries among amateur athletes at a brazilian university. Acta Ortop. Bras. 2017, 25, 93–98. https://doi.org/10.159..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Rugby",
+        "snippet": "...een the functional movement screen and injury devel- opment in college athletes. Int. J. Sports Phys. Ther. 2015, 10, 21–28. 48. Duke, S.R.; Martin, S.E.; Gaul, C.A. Preseason Functional Movement Screen Predicts Risk of Time-Loss Injury in Experienced Male Rugby Union Athletes. J. Strength Cond. Res. 2017, 31, 2740–2747. 49. Chorba, R.S.; Chorba, D.J.; Bouillon, L.E.; Overmyer, C.A.; Landis, J.A. Use of a functional movement screening tool to deter- mine injury risk in female collegiate athletes. N. Am. J. Sports P..."
+      }
+    ],
+    "review": [
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...n Functional Move- ment Screen? N. Am. J. Sports Phys. Ther. NAJSPT 2007, 2, 147–158. 16. de Carvalho Borges, S.C.; Mendonça, C.R.; Ferreira Silva, R.M.; De Vitta, A.; Noll, M. Prevalence and Risk Factors of Musculo- skeletal Disorders in Basketball Players: Systematic Review and MetaAnalysis. Healthcare 2023, 11, 1190. https://doi.org/10.3390/ healthcare11081190. 17. Grabara, M.; Bieniec, A. Functional Movement Patterns, Spinal Posture and Prevalence of Musculoskeletal Symptoms among Elite Ice Hockey Players: A Cross Sectional..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...ki, J.; Widuchowski, W. Injuries and musculoskeletal damage in sports. Med. Sport. 2005, 9, 281–292. 39. Bonazza, N.A.; Smuin, D.; Onks, C.A.; Silvis, M.L.; Dhawan, A. Reliability, Validity, and Injury Predictive Value of the Func- tional Movement Screen: A Systematic Review and Meta-analysis. Am. J. Sports Med. 2017, 45 , 725–732. https://doi.org/10.1177/0363546516641937. 40. Mrozkowiak, M. Standardization of the diagnosis of body posture using photogrammetric methods MORA 4G HD. Fizjoterapia Polska 2021, 1, 2–40. 41. Tieppo..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Meta-analysis",
+        "snippet": ".... Injuries and musculoskeletal damage in sports. Med. Sport. 2005, 9, 281–292. 39. Bonazza, N.A.; Smuin, D.; Onks, C.A.; Silvis, M.L.; Dhawan, A. Reliability, Validity, and Injury Predictive Value of the Func- tional Movement Screen: A Systematic Review and Meta-analysis. Am. J. Sports Med. 2017, 45 , 725–732. https://doi.org/10.1177/0363546516641937. 40. Mrozkowiak, M. Standardization of the diagnosis of body posture using photogrammetric methods MORA 4G HD. Fizjoterapia Polska 2021, 1, 2–40. 41. Tieppo, E.; Barddal, J.P..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries",
+        "snippet": "J. Clin. Med. 2024, 13, 1456. https://doi.org/10.3390/jcm13051456 www.mdpi.com/journal/jcm Article The Impact of Interaction between Body Posture and Movement Pattern Quality on Injuries in Amateur Athletes Dawid Koźlenia * and Katarzyna Kochan-Jacheć Faculty of Physical Education and Sport, Wroclaw University of Health and Sport Sciences, I.J. Paderewskiego 35, 51-612 Wroclaw, Poland; katarzyna.kochan-jachec@awf.wroc.pl * Correspondence:..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...rewskiego 35, 51-612 Wroclaw, Poland; katarzyna.kochan-jachec@awf.wroc.pl * Correspondence: dawid.kozlenia@awf.wroc.pl Abstract: Background: this study aimed to examine the impact of interaction between body posture and the quality of movement patterns on injury frequencies in amateur athletes. Methods: The study sample consisted of 89 young amateur athl etes. Movement pattern quality was assessed by the Functional Movement Screen (FMS), test and body posture in the frontal plane was assessed by the moire method f..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...ovement pattern quality was assessed by the Functional Movement Screen (FMS), test and body posture in the frontal plane was assessed by the moire method for the parameters Shoulder Sl ope Angle, Lower Scapula Protrusion Difference, and Pelvic Tilt Angle. Injury data were collected through co mpletion of the Injury History Ques- tionnaire for the past 12 months. Results: Using cluster analysis, participants were allocated into a either category with good (BPg) body posture or poor (BPp), and using FMS cutoff points..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...l Movement Screen (FMS), test and body posture in the frontal plane was assessed by the moire method for the parameters Shoulder Sl ope Angle, Lower Scapula Protrusion Difference, and Pelvic Tilt Angle. Injury data were collected through co mpletion of the Injury History Ques- tionnaire for the past 12 months. Results: Using cluster analysis, participants were allocated into a either category with good (BPg) body posture or poor (BPp), and using FMS cutoff points (14), either a category of good movement pattern qual..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...o a either category with good (BPg) body posture or poor (BPp), and using FMS cutoff points (14), either a category of good movement pattern quality (MPg) or poor (MPp). Two-way ANOVA was per- formed, and the Bonferroni post-hoc test revealed a reduction in injuries among participants from the MPg-BPg group compared to the other three groups (p < 0.05). However, no interaction between factors was revealed. No statistically significant differences were observed among the remaining three groups in the case of injury pre..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...n injuries among participants from the MPg-BPg group compared to the other three groups (p < 0.05). However, no interaction between factors was revealed. No statistically significant differences were observed among the remaining three groups in the case of injury prevalence (p > 0.05). Conclusions: A combination of proper body posture and high-quality movement patterns is associated with a lower frequency of injuries, with- out direct interaction between chosen factors, wh ich suggests that they impact injury risk in..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prevalence",
+        "snippet": "...ies among participants from the MPg-BPg group compared to the other three groups (p < 0.05). However, no interaction between factors was revealed. No statistically significant differences were observed among the remaining three groups in the case of injury prevalence (p > 0.05). Conclusions: A combination of proper body posture and high-quality movement patterns is associated with a lower frequency of injuries, with- out direct interaction between chosen factors, wh ich suggests that they impact injury risk inde- pendent..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...No statistically significant differences were observed among the remaining three groups in the case of injury prevalence (p > 0.05). Conclusions: A combination of proper body posture and high-quality movement patterns is associated with a lower frequency of injuries, with- out direct interaction between chosen factors, wh ich suggests that they impact injury risk inde- pendently. Practicing suitable BP and ensuring high-quality MPs should be regarded as a strategy in injury prevention. Keywords: injury; amateur athlete..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "J. Clin. Med. 2024, 13, 1456 2 of 11 injuries typically arise when there is an over load on the musculoskeletal structures that surpasses their capacity for regeneration or adaptation [11]. Numerous factors can influ- ence musculoskeletal load, thereby increasing the risk of injury. The vast majority of..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...13, 1456 3 of 11 chain, while allowing for the integration of individually tailored preventive exercises into training. Therefore, the aim of this study was to examine the impact of interaction between body posture and the quality of movement patterns on injury frequencies in amateur ath- letes. Specifically, we aimed to (1) compare the potential effects of movement patterns and body posture on the risk of injury and (2) assess the interaction effect between body pos- ture and the quality of movement patterns and i..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...f discomfort. Each of these ta sks was executed thrice. In instances of uni- lateral trials, the lower score was factored into the final assessment. Consequently, the highest achievable score amounted to 21 points. Research indicates a notable escalation in injury risk when scores fall at or below 14 points [15]. Body posture. The torso frontal plane was measured using the projection moire phe- nomenon by a Mora 4G-HD device (CQ Elek tronik System, Czernica, Poland). The method and device have been confirmed to be re..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "J. Clin. Med. 2024, 13, 1456 5 of 11 (cutoff = 14) [l5]. The dependent variable was the number of injuries during the year before examination. Because of large skewness, the transformation of the variable was conducted with one of the power transformation meth ods using the Yeo–Johnson algorithm [41]. Two-way ANOVA was used to conduct the analysis. The main eff..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "J. Clin. Med. 2024, 13, 1456 6 of 11 of BP ((F) = 7.46, p = 0.008). Both factors had a medium effect on the number of injuries, which was confirmed by eta squared partial ( η2p = 0.073, η2p = 0.081, respectively). How- ever, there was no significant interaction effect ((F) = 1.82, p = 0.180, η2p = 0.021, small effect size). Mean values and 95%CI of the four groups are presented in..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...n. Med. 2024, 13, 1456 7 of 11 as in combat sports [21]. Male and female volleyball players at the university level exhibit significant asymmetry in rotation strength between their dominant and non-dominant arms [46]. These could be considered intrinsi c injury risk factors due to overuse injury being associated with higher efforts in one body area, whereas other areas could be weak. In terms of movement patterns, Garrison et al. [47] demonstrated the predictive accuracy of the Functional Movement Screen (FMS) te..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "J. Clin. Med. 2024, 13, 1456 8 of 11 their independent influence on injury risk; however, there was no difference between groups, with one factor being good and the second one being poor, which showed a com- parable meaning of this factor in injury risk, whereas both factors scoring on a good level provided lower injury risk. Our..."
+      },
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "J. Clin. Med. 2024, 13, 1456 9 of 11 References 1. Meeuwisse, W.H.; Tyreman, H.; Hagel, B.; Emery, C. A dynamic model of etiology in sport injury: The recursive nature of risk and causation. Clin. J. Sport Med. 2007, 17, 215–219. 2. Krutsch, W.; Krutsch, V.; Hilber, F.; Pfeifer, C.; Baumann, F.; We ber, J.; Schmitz, P.; Kerschbaum, M.; Nerlich, M.; Angele, P. 11.361 sports injuries in a 15-year sur..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...M.; Zaras, N.; Hadjicharalambous, M. The Effect of Spinal Asymmetries on Physical Fitness Parameters in Young Elite Soccer Players. Symmetry 2022, 14 , 2497. https://doi.org/10.3390/sym14122497. 30. Liu, T. Impact of posture and recovery methods on sports injuries. Rev. Bras. Med. Do Esporte 2022, 28, 719–722. 31. Kuo, Y.L.; Chung, C.H.; Huang, T.W.; Tsao, C.H.; Chang, S.Y.; Peng, C.K.; Shen, C.H. Association between spinal curvature disorders and injury: A nationwide population based retrospective cohort study. BMJ..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "J. Clin. Med. 2024, 13, 1456 11 of 11 55. Lisman, P.; O’Connor, F.G.; Deuster, P.A.; Knapik, J.J. Functional movement screen and aerobic fitness predict injuries in mili- tary training. Med. Sci. Sports Exerc. 2013, 45, 636–643. 56. Jin, D.; Ma, Q. Effects of Body Posture and Different Exercise Intensity on Athletes’ Limb Injury. Comput. Math. Methods Med. 2022, 2022, 5103017. https://doi.org/10.1155/2022/5103017...."
+      }
+    ],
+    "design": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Retrospective",
+        "snippet": "...reduces lower limb flexibility [29]. To the best of our knowledge, there are few studies analyzing the impact of postural dysfunctions on injury frequency [30,31]. Snodgrass et al. demonstrated a relationship be- tween lower limb injuries and kyphosis [32]. Retrospective studies involving over 20,000 individuals with abnormal spinal shapes suggest that they are significantly more suscep- tible to injuries than individuals with correct body posture [31]. Results from several stud- ies confirm that postural dysfunctions may co..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...was no difference between groups, with one factor being good and the second one being poor, which showed a com- parable meaning of this factor in injury risk, whereas both factors scoring on a good level provided lower injury risk. Our study was limited to retrospective data, and therefore, future studies should also consider a prospective approach. Extending the study sample to include a wider range of ages as well into specific subpopulations of professional athletes, additionally in terms of potential sex differences,..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...nd one being poor, which showed a com- parable meaning of this factor in injury risk, whereas both factors scoring on a good level provided lower injury risk. Our study was limited to retrospective data, and therefore, future studies should also consider a prospective approach. Extending the study sample to include a wider range of ages as well into specific subpopulations of professional athletes, additionally in terms of potential sex differences, would indicate the study’s finding’s utility in more universal settings..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...urther avenues of re- search. Our findings encourage the initiation of future studies aimed at addressing body posture abnormalities and low-quality movement patterns through targeted training pro- grams and verifying the effectiveness of these approaches in prospective terms. 5. Conclusions Our results reveal a unique observation due to the lack of previous studies that con- sider movement pattern quality and body posture in one model of assessment in the in- jury risk context. Despite high-quality movement patterns and g..."
+      },
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...er termination among Finnish top-level athletes. Eur. J. Sport Sci. 2012, 12, 274–282. 6. Grygorowicz, M.; Micha łowska, M.; Jurga, P.; Piontek, T.; Jakubowska, H.; Kotwicki, T. Thirty percent of female footballers terminate their careers due to injury: A retrospective study among polish former players. J. Sport Rehabil. 2019, 28, 109–114. 7. Złotkowska, R.; Skiba, M.; Mroczek, A.; Bilewicz-Wyrozumska, T.; Król, K.; Lar, K.; Zbrojkiewicz, E. Negative effects of physical activity and sports participation. Hygeia Public Hea..."
+      },
+      {
+        "page": 9,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Cross Sectional",
+        "snippet": "...stematic Review and MetaAnalysis. Healthcare 2023, 11, 1190. https://doi.org/10.3390/ healthcare11081190. 17. Grabara, M.; Bieniec, A. Functional Movement Patterns, Spinal Posture and Prevalence of Musculoskeletal Symptoms among Elite Ice Hockey Players: A Cross Sectional Study. J. Hum. Kinet. 2023, 87, 59–70. https://doi.org/10.5114/jhk/161548. 18. Mitchell, U.H.; Johnson, A.W.; Adamson, B. Relationship between functional movement screen scores, core strength, posture, and body mass index in school children in Moldova. J. S..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...very methods on sports injuries. Rev. Bras. Med. Do Esporte 2022, 28, 719–722. 31. Kuo, Y.L.; Chung, C.H.; Huang, T.W.; Tsao, C.H.; Chang, S.Y.; Peng, C.K.; Shen, C.H. Association between spinal curvature disorders and injury: A nationwide population based retrospective cohort study. BMJ Open 2019, 9 , e023604. https://doi.org/10.1136/ bmjopen-2018-023604. 32. Snodgrass, S.J.; Ryan, K.E.; Miller, A.; James, D.; Callister, R. Relationship between Posture and Non-Contact Lower Limb Injury in Young Male Amateur Football Play..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...n sports injuries. Rev. Bras. Med. Do Esporte 2022, 28, 719–722. 31. Kuo, Y.L.; Chung, C.H.; Huang, T.W.; Tsao, C.H.; Chang, S.Y.; Peng, C.K.; Shen, C.H. Association between spinal curvature disorders and injury: A nationwide population based retrospective cohort study. BMJ Open 2019, 9 , e023604. https://doi.org/10.1136/ bmjopen-2018-023604. 32. Snodgrass, S.J.; Ryan, K.E.; Miller, A.; James, D.; Callister, R. Relationship between Posture and Non-Contact Lower Limb Injury in Young Male Amateur Football Players: A..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Time-Loss",
+        "snippet": "...n, M.R.; Benenson, J. Association between the functional movement screen and injury devel- opment in college athletes. Int. J. Sports Phys. Ther. 2015, 10, 21–28. 48. Duke, S.R.; Martin, S.E.; Gaul, C.A. Preseason Functional Movement Screen Predicts Risk of Time-Loss Injury in Experienced Male Rugby Union Athletes. J. Strength Cond. Res. 2017, 31, 2740–2747. 49. Chorba, R.S.; Chorba, D.J.; Bouillon, L.E.; Overmyer, C.A.; Landis, J.A. Use of a functional movement screening tool to deter- mine injury risk in female colle..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] J. Clin. Med. 2024, 13, 1456. https://doi.org/10.3390/jcm13051456 www.mdpi.com/journal/jcm Article The Impact of Interaction between Body Posture and Movement Pattern Quality on Injuries in Amateur Athletes Dawid Koźlenia * and Katarzyna Kochan-Jacheć Faculty of Physical Education and Sport, Wroclaw University of Health and Sport Sciences, I.J. Paderewskiego 35, 51-612 Wroclaw, Poland; katarzyna.kochan-jachec@awf.wroc.pl * Correspondence: dawid.kozlenia@awf.wroc.pl Abstract: Background: this study aimed to examine the impact of interaction between body posture and the quality of movement patterns on injury frequencies in amateur athletes. Methods: The study sample consisted of 89 young amateur athl etes. Movement pattern quality was assessed by the Functional Movement Screen (FMS), test and body posture in the frontal plane was assessed by the moire method for the parameters Shoulder Sl ope Angle, Lower Scapula Protrusion Difference, and Pelvic Tilt Angle. Injury data were collected through co mpletion of the Injury History Ques- tionnaire for the past 12 months. Results: Using cluster analysis, participants were allocated into a either category with good (BPg) body posture or poor (BPp), and using FMS cutoff points (14), either a category of good movement pattern quality (MPg) or poor (MPp). Two-way ANOVA was per- formed, and the Bonferroni post-hoc test revealed a reduction in injuries among participants from the MPg-BPg group compared to the other three groups (p < 0.05). However, no interaction between factors was revealed. No statistically significant differences were observed among the remaining three groups in the case of injury prevalence (p > 0.05). Conclusions: A combination of proper body posture and high-quality movement patterns is associated with a lower frequency of injuries, with- out direct interaction between chosen factors, wh ich suggests that they impact injury risk inde- pendently. Practicing suitable BP and ensuring high-quality MPs should be regarded as a strategy in injury prevention. Keywords: injury; amateur athletes; movement pattern quality; body posture; asymmetry 1. Introduction Professional or amateur sports or recreational activity is inherently associated with a risk of musculoskeletal injury [1,2]. The occu rrence of injuries is prevalent among indi- viduals engaged in physical activity regardless of age and sex [3,4]. In sports, injuries are the most common reasons for abandoning or discontinuing a sports career [5]. In \n\n[p. 2] J. Clin. Med. 2024, 13, 1456 2 of 11 injuries typically arise when there is an over load on the musculoskeletal structures that surpasses their capacity for regeneration or adaptation [11]. Numerous factors can influ- ence musculoskeletal load, thereby increasing the risk of injury. The vast majority of inju- ries result from a combination of these factors, making it challenging to pinpoint a single specific mechanism leading to injury. Intrinsic risk factors can be described as are non- modifiable (such as age or previous injury), while others are modifiable such as strength, range of motion, and motor control [1]. These modifiable intrinsic risk factors are reflected in movement pattern quality and body posture [12–14]. While focusing on specific areas of injury risk, these factors provide valuable insights into the state and function of the musculoskeletal system. Therefore, assessing these indicated factors and implementing appropriate preventive measures can effectiv ely address underlying issues and reduce the risk of injury [15,16] Numerous studies have analyzed the relati onship between injuries and Functional Movement Screen (FMS) test results, indica ting movement dysfunct ions [12,13]. High- quality movement patterns guarantee the safe ty of movement and motor efficiency, re- sulting from the correct construction and function of the body. Movement patterns allow for inferences about functional asymmetry. However, this asymmetry could be related to the static posture of the body [17]. Theoretically, correct body posture, both in terms of frontal plane symmetry and the absence of spinal defects, ensures that muscles and joints function properly, enabling the display of the correct movement patterns [17]. Body pos- ture is therefore one of the factors allowing for functional stabilization, which can be cru- cial in physical activity. However, the relationship between body posture and movement patterns is still unexplored, and existing results are inconclusive [17,18]. Current research unequivocally indicates that training loads can lead to structural changes in the musculoskeletal system specific to a particular sports discipline [16,19–21]. Even amateur athletes exhibit changes in the formation of anterior–posterior spinal curves [22–25]. Findings from other studies indicate pelvic asymmetry in female soccer players [23], and asymmetry in shoulder blades, wais t triangles, shoulder lines, and spines in young track and field athletes [24,26] and te\n\n[p. 3] J. Clin. Med. 2024, 13, 1456 3 of 11 chain, while allowing for the integration of individually tailored preventive exercises into training. Therefore, the aim of this study was to examine the impact of interaction between body posture and the quality of movement patterns on injury frequencies in amateur ath- letes. Specifically, we aimed to (1) compare the potential effects of movement patterns and body posture on the risk of injury and (2) assess the interaction effect between body pos- ture and the quality of movement patterns and injury frequencies. Based on provided ob- servations, we hypothesized that body posture significantly contributes to explaining the risk of injuries, especially when considered in conjunction with the quality of movement patterns. The chosen factors could interact and therefore effectively identify increased in- jury occurrence. 2. Materials and Methods 2.1. Participants This study involved a sample of 89 active young adults aged 19–23 years with a min- imum of 4 years of sports experience and engaged in training at least three times per week. Among these, men (n = 41) exhibited a body height of 1.82 ± 0.05 cm, body weight of 79.42 ± 8.2 kg, and BMI 23.90 ± 2.00 kg/m 2, and 36.59% of men had been injured in the past 12 months, while women (n = 48) displayed a body height of 1.67 ± 0.06 cm, a body weight of 58.96 ± 7.75 kg, and BMI 20.91 ± 2.13 kg/m2, where 41.06% of women had been injured. Participants were involved in regular participation in sports such as soccer, futsal, hand- ball, basketball, and rugby. To maintain test integrity, individuals who were currently injured (n = 9) during study commencement were excluded. All subjects were obligated to provide written consent and received comprehensive information about the study ’s objectives, methodology, and participation re quirements. Participants were allowed to withdraw from the research at any point without the need for explanation. 2.2. Handling and Imputation of Missing Data There were no missing data in the anthropometrical measurements, FMS assessment, and injury questionnaire, but there were mi ssing data in body posture measurements ( n = 7). It was necessary to keep the same number of participants, and the statistical methods used in the study, cluster analysis and analysis of variance, require there to be no missing data. All measurements were preprocessed by applying multiple imputations. The pro- pensity for a data point to be missing was completely random, al\n\n[p. 4] J. Clin. Med. 2024, 13, 1456 4 of 11 repeated survey. IHQ reliability was assessed using the alpha Cronbach coefficient, which indicated high reliability at a level of 0.836 [35]. Movement pattern quality. The FMS test was employed to evaluate movement pat- tern quality, involving seven tasks: deep sq uat (DS), hurdle step (HS), in-line lunge (IN- L), shoulder mobility (SM), active straight leg raise (ASLR), trunk stability pushup (TSPU), and rotary stability (RS) using original FMS kit (Perform Better, Cranston, RI, USA). The reliability of the test was confirmed [39]. The FMS test assesses the functional state of the locomotor system in terms of motor control, mobility, and stability. Each motor task was rated on a scale of zero to three, following cl ear guidelines outlined for each test [12,13]. Subjects received three points for performing the movement correctly, two points for vis- ible compensation, and one point if the subject could not perform the movement. The FMS evaluation incorporated three supplementary tasks beyond the primary assessment to de- tect any signs of discomfort. Each of these ta sks was executed thrice. In instances of uni- lateral trials, the lower score was factored into the final assessment. Consequently, the highest achievable score amounted to 21 points. Research indicates a notable escalation in injury risk when scores fall at or below 14 points [15]. Body posture. The torso frontal plane was measured using the projection moire phe- nomenon by a Mora 4G-HD device (CQ Elek tronik System, Czernica, Poland). The method and device have been confirmed to be reliable and standardized in the procedure described by Mrozowiak [40], which was intr oduced. The subject was positioned with their back to the front of the camera 2.6 m away. The subject was instructed to maintain their habitual position, keeping eyes and ears in line horizontally, arms relaxed at the side of the body, and feet parallel to the platform. The participant’s picture was captured by a dedicated optical system and presented on the computer screen using the lens. The result was a picture in the form of contour lines with the so-called striae of moire. The distorted lines were recorded in the computer memory and processed by a numerical algorithm into a contour map of the surface. The parameters were calculated, and absolute values were considered in terms of distance from median plane of the body and were analyzed comprehensively.",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "J. Clin. Med. 2024, 13, 1456. https://doi.org/10.3390/jcm13051456 www.mdpi.com/journal/jcm Article The Impact of Interaction between Body Posture and Movement Pattern Quality on Injuries in Amateur Athletes Dawid Koźlenia * and Katarzyna Kochan-Jacheć Faculty of Physical Education and Sport, Wroclaw University of Health and Sport Sciences, I.J. Paderewskiego 35, 51-612 Wroclaw, Poland; katarzyna.kochan-jachec@awf.wroc.pl * Correspondence: dawid.kozlenia@awf.wroc.pl Abstract: Background: this study aimed to examine the impact of interaction between body posture and the quality of movement patterns on injury frequencies in amateur athletes. Methods: The study sample consisted of 89 young amateur athl etes. Movement pattern quality was assessed by the Functional Movement Screen (FMS), test and body posture in the frontal plane was assessed by the moire method for the parameters Shoulder Sl ope Angle, Lower Scapula Protrusion Difference, and Pelvic Tilt Angle. Injury data were collected through co mpletion of the Injury History Ques- tionnaire for the past 12 months. Results: Using cluster analysis, participants were allocated into a either category with good (BPg) body posture or poor (BPp), and using FMS cutoff points (14), either a category of good movement pattern quality (MPg) or poor (MPp). Two-way ANOVA was per- formed, and the Bonferroni post-hoc test revealed a reduction in injuries among participants from the MPg-BPg group compared to the other three groups (p < 0.05). However, no interaction between factors was revealed. No statistically significant differences were observed among the remaining three groups in the case of injury prevalence (p > 0.05). Conclusions: A combination of proper body posture and high-quality movement patterns is associated with a lower frequency of injuries, with- out direct interaction between chosen factors, wh ich suggests that they impact injury risk inde- pendently. Practicing suitable BP and ensuring high-quality MPs should be regarded as a strategy in injury prevention. Keywords: injury; amateur athletes; movement pattern quality; body posture; asymmetry 1. Introduction Professional or amateur sports or recreational activity is inherently associated with a risk of musculoskeletal injury [1,2]. The occu rrence of injuries is prevalent among indi- viduals engaged in physical activity regardless of age and sex [3,4]. In sports, injuries are the most common reasons for abandoning or discontinuing a sports career [5]. In amateur or recreational sports, injury can lead to discouraging physical exertion, or fearing its ini- tiation. They occur in both experienced and amateur individuals, with the greatest risk affecting the youth and young adults [6,7]. It has been demonstrated that specific types of injuries are associated with different physical activity type and sport disciplines , and most of them temporarily exclude ath- letes from training and competitive activities, leading to a reduction in their physical po- tential [8]. However less research has been conducted on injury rates among amateur ath- letes for whom sports are not a source of liv elihood but still an important part of their lifestyle [9]. Identifying factors associated with injuries is crucial for the implementation of effec- tive prevention methods. Analyses are conducted concerning extrinsic (overuse effort, too high loads, weather, or low-quality equipment) and intrinsic (sex or age-specific condi- tions, low muscle strength, or overweight) ri sk factors for injuries [10]. Musculoskeletal Citation: Koźlenia, D.; Kochan-Jacheć, K. The Impact of Interaction between Body Posture and Movement Pattern Quality on Injuries in Amateur Athletes. J. Clin. Med. 2024, 13, 1456. https://doi.org/10.3390/jcm13051456 Academic Editor: Rubén Barakat Received: 24 January 2024 Revised: 15 February 2024 Accepted: 28 February 2024 Published: 2 March 2024 Copyright: © 2024 by the authors. Li- censee MDPI, Basel, Switzerland. This article is an "
+    },
+    {
+      "page": 2,
+      "text": "J. Clin. Med. 2024, 13, 1456 2 of 11 injuries typically arise when there is an over load on the musculoskeletal structures that surpasses their capacity for regeneration or adaptation [11]. Numerous factors can influ- ence musculoskeletal load, thereby increasing the risk of injury. The vast majority of inju- ries result from a combination of these factors, making it challenging to pinpoint a single specific mechanism leading to injury. Intrinsic risk factors can be described as are non- modifiable (such as age or previous injury), while others are modifiable such as strength, range of motion, and motor control [1]. These modifiable intrinsic risk factors are reflected in movement pattern quality and body posture [12–14]. While focusing on specific areas of injury risk, these factors provide valuable insights into the state and function of the musculoskeletal system. Therefore, assessing these indicated factors and implementing appropriate preventive measures can effectiv ely address underlying issues and reduce the risk of injury [15,16] Numerous studies have analyzed the relati onship between injuries and Functional Movement Screen (FMS) test results, indica ting movement dysfunct ions [12,13]. High- quality movement patterns guarantee the safe ty of movement and motor efficiency, re- sulting from the correct construction and function of the body. Movement patterns allow for inferences about functional asymmetry. However, this asymmetry could be related to the static posture of the body [17]. Theoretically, correct body posture, both in terms of frontal plane symmetry and the absence of spinal defects, ensures that muscles and joints function properly, enabling the display of the correct movement patterns [17]. Body pos- ture is therefore one of the factors allowing for functional stabilization, which can be cru- cial in physical activity. However, the relationship between body posture and movement patterns is still unexplored, and existing results are inconclusive [17,18]. Current research unequivocally indicates that training loads can lead to structural changes in the musculoskeletal system specific to a particular sports discipline [16,19–21]. Even amateur athletes exhibit changes in the formation of anterior–posterior spinal curves [22–25]. Findings from other studies indicate pelvic asymmetry in female soccer players [23], and asymmetry in shoulder blades, wais t triangles, shoulder lines, and spines in young track and field athletes [24,26] and tennis players [27]. The impact of hyperkyphosis on lowering the shoulder and indirectly on subacromial impingement syndrome in foot- ball players has also been identified [28]. Another study of athletes in the same sport showed that kyphotic and lordotic posture may negatively affect neuromuscular explo- siveness performance, while lateral spine curvature reduces lower limb flexibility [29]. To the best of our knowledge, there are few studies analyzing the impact of postural dysfunctions on injury frequency [30,31]. Snodgrass et al. demonstrated a relationship be- tween lower limb injuries and kyphosis [32]. Retrospective studies involving over 20,000 individuals with abnormal spinal shapes suggest that they are significantly more suscep- tible to injuries than individuals with correct body posture [31]. Results from several stud- ies confirm that postural dysfunctions may contribute to functional disorders manifesting at various levels of the biokinetic chain, potentially hindering the execution of proper movement patterns. Such relationships were observed in hockey players, showing a cor- relation between the magnitude of anterior–posterior spinal curves and FMS results [17], as well as in military personnel regarding postural irregularities in the sagittal and frontal planes [33]. However, studies conducted on 8–11-year-old children [18] and young women with hyperlordosis [34] did not confirm such relationships, which indicated the need for further exploration. There is a l"
+    },
+    {
+      "page": 3,
+      "text": "J. Clin. Med. 2024, 13, 1456 3 of 11 chain, while allowing for the integration of individually tailored preventive exercises into training. Therefore, the aim of this study was to examine the impact of interaction between body posture and the quality of movement patterns on injury frequencies in amateur ath- letes. Specifically, we aimed to (1) compare the potential effects of movement patterns and body posture on the risk of injury and (2) assess the interaction effect between body pos- ture and the quality of movement patterns and injury frequencies. Based on provided ob- servations, we hypothesized that body posture significantly contributes to explaining the risk of injuries, especially when considered in conjunction with the quality of movement patterns. The chosen factors could interact and therefore effectively identify increased in- jury occurrence. 2. Materials and Methods 2.1. Participants This study involved a sample of 89 active young adults aged 19–23 years with a min- imum of 4 years of sports experience and engaged in training at least three times per week. Among these, men (n = 41) exhibited a body height of 1.82 ± 0.05 cm, body weight of 79.42 ± 8.2 kg, and BMI 23.90 ± 2.00 kg/m 2, and 36.59% of men had been injured in the past 12 months, while women (n = 48) displayed a body height of 1.67 ± 0.06 cm, a body weight of 58.96 ± 7.75 kg, and BMI 20.91 ± 2.13 kg/m2, where 41.06% of women had been injured. Participants were involved in regular participation in sports such as soccer, futsal, hand- ball, basketball, and rugby. To maintain test integrity, individuals who were currently injured (n = 9) during study commencement were excluded. All subjects were obligated to provide written consent and received comprehensive information about the study ’s objectives, methodology, and participation re quirements. Participants were allowed to withdraw from the research at any point without the need for explanation. 2.2. Handling and Imputation of Missing Data There were no missing data in the anthropometrical measurements, FMS assessment, and injury questionnaire, but there were mi ssing data in body posture measurements ( n = 7). It was necessary to keep the same number of participants, and the statistical methods used in the study, cluster analysis and analysis of variance, require there to be no missing data. All measurements were preprocessed by applying multiple imputations. The pro- pensity for a data point to be missing was completely random, also known as missing completely at random [35]. There was no relationship between whether a data point was missing and any other values in the data se t. Imputation was conducted in R language using RStudio software v. 2023.06.0+421 (RStudio Team (2023)) [36]. 2.3. Measurements Body measurements. Body height and weight were measured with a SECA 764 de- vice (SECA GMBH & CO, Hamburg, Germany), and based on the received parameters, the body mass index (BMI) was calculated: BMI = body weight [kg]/body height [m2]. Injury. The study gathered injury data from participants using the Injury History Questionnaire (IHQ). This is a reliable tool used in research [37]. The survey was admin- istered under supervision, with the researcher available to address any uncertainties or doubts that participants may have had while completing the questionnaire. Injury was defined as the occurrence of complaints during physical activity resulting in pain and dis- comfort in the locomotor system and causing temporary limitations or a complete inabil- ity to continue physical activity [38]. The questions required answers about a number of injury experiences in specific body areas (head and neck, trunk, and left and right upper and lower limbs). The total number of injuries were collected in a specified time frame (within the past 12 months). The evaluation of IHQ reliability occurred seven days after participants completed the IHQ. A random sample of 56 individuals underwent a"
+    },
+    {
+      "page": 7,
+      "text": "J. Clin. Med. 2024, 13, 1456 7 of 11 as in combat sports [21]. Male and female volleyball players at the university level exhibit significant asymmetry in rotation strength between their dominant and non-dominant arms [46]. These could be considered intrinsi c injury risk factors due to overuse injury being associated with higher efforts in one body area, whereas other areas could be weak. In terms of movement patterns, Garrison et al. [47] demonstrated the predictive accuracy of the Functional Movement Screen (FMS) test, revealing a nearly 6-fold higher injury risk for those with lower-quality movement patterns and a 15-fold increase for individuals with previous injuries. Similar trends were observed in studies of rugby players [48] and athletes [49]. The study by Koźlenia and Domaradzki [37], with a 73% prediction accuracy, aligns with these findings. However, some studies question the accuracy of injury predic- tion using the FMS test [50]. Holistic approaches encompassing various factors are essen- tial. Considering the common influence of movement patterns and body posture on inju- ries is crucial, as demonstrated by our finding that participants with high-quality move- ment patterns and proper body posture are less likely to be injured. Recognizing the in- terplay between movement patterns and body posture in particular could enhance injury prediction. However, attempts to predict injuries based on these factors individually or simultaneously have yielded mixed results. Many sports, characterized by specific body postures and enforced patterns, expose practitioners to training adaptations that can impact body posture, particularly altering the spinal curvature [17]. While noticeable developmental changes in posture may not occur in mature individuals, scientific studies suggest that years of practicing such sports can lead to postural changes. The resulting abnormal body posture and associated muscle tension often manifest as pain, commonly reported in areas like the head, shoulder girdle, and spine. Moreover, these issues can contribute to degenerative spine diseases and even heart arrhythmias [51]. Identifying postural abnormalities and their causes becomes cru- cial for understanding the etiology of pain and joint mobility restriction injuries, and de- veloping corrective exercise strategies [52]. St udies on the use of specific sports to coun- teract postural disorders indicate that even in adult athletes, positive and lasting changes can be achieved through body posture re-education. For instance, a study by Kaplan [53] demonstrated positive effects on asymmetrical posture after 12 weeks of football training among basketball players. Ma łek et al. [54] found that triathlon training contributes to maintaining normal postural muscle length, increased spine and chest mobility, and im- proved overall body posture. Notably, individuals who had previously trained in sports involving asymmetrical movements and later took up triathlon training showed im- proved deep stabilizers, highlighting the potential benefits of varied physical activities on postural health. There is a need to remember that injury is multifactor phenomenon, and therefore, there is a need to consider other factors [55]. In our study, we analyzed also body posture parameters, which remain relati vely unexplored in the case of injury risk. A previous study considers body posture as a possible fact or of injury risk [56]. However, not many studies have provided such analysis, which ma kes it difficult to discuss our study with other results. Research suggests a connection between injuries and forward trunk lean in taekwondo athletes, as well as kyphosis [30,32]. Individuals with an abnormal spinal shape are more prone to injuri es [31]. Asymmetry in skeletal muscle mass increases the risk of injury in physically active individuals [57]. Postural dysfunctions may contribute to functional impairments and hinder the ex ecution of proper movement patterns [33"
+    },
+    {
+      "page": 8,
+      "text": "J. Clin. Med. 2024, 13, 1456 8 of 11 their independent influence on injury risk; however, there was no difference between groups, with one factor being good and the second one being poor, which showed a com- parable meaning of this factor in injury risk, whereas both factors scoring on a good level provided lower injury risk. Our study was limited to retrospective data, and therefore, future studies should also consider a prospective approach. Extending the study sample to include a wider range of ages as well into specific subpopulations of professional athletes, additionally in terms of potential sex differences, would indicate the study’s finding’s utility in more universal settings. Caution is warranted considering the influence of other intrinsic and extrinsic factors on injury risk. Future studies should broaden their analysis to include additional potential factors that may impact injury mechanisms. On the other hand, to date, there is lack of data considering movement pattern quality assessment combined with body pos- ture as injury risk factors, despite these factors being treated as a base expression of the human body’s state and function. We also recommend considering other parameters de- scribing body posture to verify its usefulness in injury risk evaluation and validate the cutoff point showing increased injury risk [10,15]. Our approach expands on current knowledge considering intrinsic injury risk factors and indicates further avenues of re- search. Our findings encourage the initiation of future studies aimed at addressing body posture abnormalities and low-quality movement patterns through targeted training pro- grams and verifying the effectiveness of these approaches in prospective terms. 5. Conclusions Our results reveal a unique observation due to the lack of previous studies that con- sider movement pattern quality and body posture in one model of assessment in the in- jury risk context. Despite high-quality movement patterns and good body posture being associated with decreased injury occurrence, surprisingly, the factors affected injury in- dependently due to a lack of interaction between them. Therefore, our hypothesis was partially confirmed. Maintaining proper body posture and consistently executing high- quality movement patterns have been related to a reduced incidence of injuries. Conse- quently, prioritizing the development of appropriate body posture and promoting con- sistent adherence to high-quali ty movement patterns should be recognized as a funda- mental strategy in injury prevention. Practi tioners should introduce methods associated with improving movement pattern quality as well providing correcting strategies for maintaining appropriate body posture. Due to the lack of interaction between movement patterns and body posture, independent methods of development should be provided. Author Contributions: Conceptualization: D.K.; methodology: D.K. an d K.K.-J.; software: K.K.-J.; validation: D.K. and K.K.-J.; formal analysis: K.K.-J.; investigation: D.K.; resources: D.K.; data cura- tion: D.K. and K.K.-J.; writing—original draft pr eparation: D.K. and K.K.-J.; writing—review and editing: D.K.; visualization: D.K.; supervision: K.K.-J.; project administration: D.K. All authors have read and agreed to the published version of the manuscript. Funding: This research received no external funding. Institutional Review Board Statement: The study was conducted in ac cordance with the Declara- tion of Helsinki and approved by the Senate Research Ethics Committee at the Wroclaw University of Health and Sport Sciences (Poland, consent no. 16/2018 approval date: 01.10.2018). Informed Consent Statement: Informed consent was obtained from all subjects involved in the study. Data Availability Statement: The data presented in this study are available upon request from the corresponding author. Conflicts of Interest: The authors declare no conflicts of interest."
+    },
+    {
+      "page": 9,
+      "text": "J. Clin. Med. 2024, 13, 1456 9 of 11 References 1. Meeuwisse, W.H.; Tyreman, H.; Hagel, B.; Emery, C. A dynamic model of etiology in sport injury: The recursive nature of risk and causation. Clin. J. Sport Med. 2007, 17, 215–219. 2. Krutsch, W.; Krutsch, V.; Hilber, F.; Pfeifer, C.; Baumann, F.; We ber, J.; Schmitz, P.; Kerschbaum, M.; Nerlich, M.; Angele, P. 11.361 sports injuries in a 15-year survey of a Level I emergency trauma department reveal different severe injury types in the 6 most common team sports. Sport. Sportschaden 2018, 32, 111–119. 3. Pote, L.; Robinson, B.; Christie, C. Injuries in high school level rugby union: How do coaches manage injuries? Hum. Mov. 2020, 22, 50–56. 4. Asperti, A.M.; Fernandes, T.L.; Pedrinelli, A.; Hernandez, A.J. Sports injuries among amateur athletes at a brazilian university. Acta Ortop. Bras. 2017, 25, 93–98. https://doi.org/10.1590/1413-785220172502165651. 5. Ristolainen, L.; Kettunen, J.A.; Kujala, U.M.; Heinonen, A. Sport injuries as the main cause of sport career termination among Finnish top-level athletes. Eur. J. Sport Sci. 2012, 12, 274–282. 6. Grygorowicz, M.; Micha łowska, M.; Jurga, P.; Piontek, T.; Jakubowska, H.; Kotwicki, T. Thirty percent of female footballers terminate their careers due to injury: A retrospective study among polish former players. J. Sport Rehabil. 2019, 28, 109–114. 7. Złotkowska, R.; Skiba, M.; Mroczek, A.; Bilewicz-Wyrozumska, T.; Król, K.; Lar, K.; Zbrojkiewicz, E. Negative effects of physical activity and sports participation. Hygeia Public Health 2015, 50, 41–46. 8. Lehance, C.; Binet, J.; Bury, T.; Croisier, J.L. Muscular strength, functional performances and injury risk in professional and junior elite soccer players. Scand. J. Med. Sci. Sports 2009, 19, 243–251. https://doi.org/10.1111/j.1600-0838.2008.00780.x. 9. Schneiders, A.G.; Davidsson, A.; Horman, E.; Sullivan, S.J. Functional movement screen normative values in a young, active population. Int. J. Sports Phys. Ther. 2011, 6, 75–82. 10. Havenetidis, K.; Paxinos, T.; Kardaris, D.; Bissas, A. Prognostic potential of body composition indices in detecting risk of mus- culoskeletal injury in army officer cadet profiles. Physician Sportsmed. 2017, 45, 114–119. 11. Saragiotto, B.T.; Di Pierro, C.; Lopes, A.D. Risk factors and injury prevention in elite athletes: A descriptive study of the opinions of physical therapists, doctors and trainers. Braz. J. Phys. Ther. 2014, 18 , 137–143. https://doi.org/10.1590/s1413- 35552012005000147. 12. Cook, G.; Burton, L.; Hoogenboom, B. Pre-participation screening: The use of fundamental movements as an assessment of function—Part 1. N. Am. J. Sports Phys. Ther. 2006, 1, 62–72. 13. Cook, G.; Burton, L.; Hoogenboom, B. Pre-participation screening: The use of fundamental movements as an assessment of function—Part 2. N. Am. J. Sports Phys. Ther. 2006, 1, 132–139. 14. Carini, F.; Mazzola, M.; Fici, C.; Palmeri, S.; Messina, M.; Damiani, P.; Tomasello, G. Posture and posturology, anatomical and physiological profiles: Overview and current state of art. Acta Bio-Medica Atenei Parm. 2017, 88 , 11–16. https://doi.org/10.23750/abm.v88i1.5309. 15. Kiesel, K.; Plisky, P.J.; Voight, M.L. Can Serious Injury in Professional Football be Predicted by a Preseason Functional Move- ment Screen? N. Am. J. Sports Phys. Ther. NAJSPT 2007, 2, 147–158. 16. de Carvalho Borges, S.C.; Mendonça, C.R.; Ferreira Silva, R.M.; De Vitta, A.; Noll, M. Prevalence and Risk Factors of Musculo- skeletal Disorders in Basketball Players: Systematic Review and MetaAnalysis. Healthcare 2023, 11, 1190. https://doi.org/10.3390/ healthcare11081190. 17. Grabara, M.; Bieniec, A. Functional Movement Patterns, Spinal Posture and Prevalence of Musculoskeletal Symptoms among Elite Ice Hockey Players: A Cross Sectional Study. J. Hum. Kinet. 2023, 87, 59–70. https://doi.org/10.5114/jhk/161548. 18. Mitchell, U.H.; Johnson, A.W.; Adamson, B. Relationship between functional movement screen scores, core strength"
+    },
+    {
+      "page": 10,
+      "text": "J. Clin. Med. 2024, 13, 1456 10 of 11 27. Oyama, S.; Myers, J.B.; Wassinger, C.A.; Ricci, R.D.; Lephart, S.M. Asymmetric resting scapular posture in healthy overhead athletes. J. Athl. Train. 2008, 43, 565–570. https://doi.org/10.4085/1062-6050-43.6.565. 28. Otoshi, K.; Takegami, M.; Sekiguchi, M.; Onishi, Y.; Yamazaki, S.; Otani, K.; Konno, S. Association between kyphosis and sub- acromial impingement syndrome: LOHAS study. J. Shoulder Elb. Surg. 2014, 23 , e300–e307. https://doi.org/10.1016/j.jse.2014.04.010. 29. Theodorou, E.; Christou, M.; Apostolidis, A.; Tryfonidis, M.; Zaras, N.; Hadjicharalambous, M. The Effect of Spinal Asymmetries on Physical Fitness Parameters in Young Elite Soccer Players. Symmetry 2022, 14 , 2497. https://doi.org/10.3390/sym14122497. 30. Liu, T. Impact of posture and recovery methods on sports injuries. Rev. Bras. Med. Do Esporte 2022, 28, 719–722. 31. Kuo, Y.L.; Chung, C.H.; Huang, T.W.; Tsao, C.H.; Chang, S.Y.; Peng, C.K.; Shen, C.H. Association between spinal curvature disorders and injury: A nationwide population based retrospective cohort study. BMJ Open 2019, 9 , e023604. https://doi.org/10.1136/ bmjopen-2018-023604. 32. Snodgrass, S.J.; Ryan, K.E.; Miller, A.; James, D.; Callister, R. Relationship between Posture and Non-Contact Lower Limb Injury in Young Male Amateur Football Players: A Prospective Cohort Study. Int. J. Environ. Res. Public Health 2021, 18 , 6424. https://doi.org/10.3390/ ijerph18126424. 33. Izadi, M.R.; Yousefpour Dehaghani, A.R.; Naji, M.; Jafari, B. Correlation between Functional-Movement Screening Test with Height Abnormalities and Upper Limb Function of Military Personnel. J. Police Med. 2023, 12, e10. 34. Fallahasady, E.; Rahmanloo, N.; Seidi, F.; Rajabi, R.; Bayattork, M. The relationship between core muscle endurance and func- tional movement screen scores in females with lumbar hyperlordosis: A cross-sectional study. BMC Sports Sci. Med. Rehabil. 2022, 14, 182. https://doi.org/10.1186/s13102-022-00567-2. 35. Aron, A.; Aron, E.N.; Coups, E.J. Statistics for Psychology, 6th ed.; Pearson International Edition: London, UK, 2012. 36. Austin, P.C.; White, I.R.; Lee, D.S.; van Buuren, S. Missing Data in Clinical Research: A Tutorial on Multiple Imputation. Can. J. Cardiol. 2021, 37, 1322–1331. 37. Koźlenia, D.; Domaradzki, J. Prediction and injury risk based on movement patterns and flexibility in a 6-month prospective study among physically active adults. PeerJ 2021, 9, e11399. 38. Widuchowski, J.; Widuchowski, W. Injuries and musculoskeletal damage in sports. Med. Sport. 2005, 9, 281–292. 39. Bonazza, N.A.; Smuin, D.; Onks, C.A.; Silvis, M.L.; Dhawan, A. Reliability, Validity, and Injury Predictive Value of the Func- tional Movement Screen: A Systematic Review and Meta-analysis. Am. J. Sports Med. 2017, 45 , 725–732. https://doi.org/10.1177/0363546516641937. 40. Mrozkowiak, M. Standardization of the diagnosis of body posture using photogrammetric methods MORA 4G HD. Fizjoterapia Polska 2021, 1, 2–40. 41. Tieppo, E.; Barddal, J.P.; Nievola, J.C. Improving Data Stream Classification using Incremental Yeo-Johnson Power Transfor- mation. In Proceedings of the 2022 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Prague, Czech Republic, 9–12 October 2022; IEEE: Piscataway, NJ, USA; pp. 3286–3292. 42. Prieto-González, P.; Martínez-Castillo, J.L.; Fernández-Galván, L.M.; Casado, A.; Soporki, S.; Sánchez-Infante, J. Epidemiology of Sports-Related Injuries and Associated Risk Factors in Adolescent Athletes: An Injury Surveillance. Int. J. Environ. Res. Public Health 2021, 18, 4857. https://doi.org/10.3390/ijerph18094857. 43. Marar, M.; McIlvain, N.M.; Fields, S.K.; Comstock, R.D. Epidemiology of concussions among United States high school athletes in 20 sports. Am. J. Sports Med. 2012, 40, 747–755. 44. Gao, Y.; Cai, W.; Gao, L.; Wang, J.; Liang, J.; Kwok, H.; Jia, C.; Li, L. Physical activity-related injuries among university students: A multicentre cross-s"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S1666.packet.json"
+}

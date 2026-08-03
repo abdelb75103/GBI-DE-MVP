@@ -24,7 +24,7 @@ ET.register_namespace("r", R_NS)
 DESKTOP = Path("/Users/abdelbabiker/Desktop")
 PPT_PATH = DESKTOP / "Isokinetic V5BI 2026.pptx"
 PATCH_BACKUP_PATH = DESKTOP / "Isokinetic V5BI 2026.before-overall-remotion-split.pptx"
-PRESENTATION_DIR = Path("/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation")
+PRESENTATION_DIR = Path("/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/isokinetic presentation")
 REMOTION_OUT_DIR = PRESENTATION_DIR / "out"
 
 OVERALL_VIDEO = REMOTION_OUT_DIR / "PapersTimelineOverallSlide.mp4"

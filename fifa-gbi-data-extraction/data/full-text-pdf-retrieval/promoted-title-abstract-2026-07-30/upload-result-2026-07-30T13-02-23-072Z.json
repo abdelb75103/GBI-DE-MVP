@@ -1,0 +1,269 @@
+{
+  "scope": "Serial guarded PDF uploads for exact 27-record promoted full-text scope",
+  "generatedAt": "2026-07-30T13:02:23.072Z",
+  "snapshotPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/pre-write-snapshot-2026-07-30T13-01-10-685Z.json",
+  "manifestPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/retrieval-manifest-2026-07-30T12-59-48-974Z.json",
+  "journalPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/upload-journal-2026-07-30T13-02-09-255Z.ndjson",
+  "results": [
+    {
+      "studyId": "S683",
+      "recordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://pure.rug.nl/ws/portalfiles/portal/1101886271/1-s2.0-S1360859224002304-main.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S683.pdf",
+      "documentType": "full_paper",
+      "objectPath": "fb19fd14-4d4b-4afd-b65c-7e645b9b01c7/1785416529411-S683-S683.pdf",
+      "sha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+      "size": 572854,
+      "pages": 5,
+      "identityHash": "05444dededbf7e058e85a64bf216a6e1438e579d0a40d7767a00b7d7fa563240"
+    },
+    {
+      "studyId": "S845",
+      "recordId": "b72f7871-06f8-47da-8a20-6cfc8ba320fb",
+      "status": "unresolved",
+      "reason": "No legally accessible PDF located."
+    },
+    {
+      "studyId": "S907",
+      "recordId": "3ecdc6c8-dbc1-4001-b653-0ce47bfcdaa2",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://europepmc.org/articles/PMC11195861?pdf=render",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S907-europepmc.pdf",
+      "documentType": "full_paper",
+      "objectPath": "c22353b0-46bc-4461-b982-805e5e4ff3da/1785416530586-S907-S907-europepmc.pdf",
+      "sha256": "bf9f81be776ef8a61c5d2babddd6e63a0d835cbd7c9e2e98073ff3dcbafdac80",
+      "size": 425101,
+      "pages": 5,
+      "identityHash": "9e5d59566cf4811f9e423b820d4dcc349190208368c8604d539c2fb999273a53"
+    },
+    {
+      "studyId": "S925",
+      "recordId": "9d1e52c6-323b-4355-bfc5-9db38e9e4974",
+      "status": "unresolved",
+      "reason": "Official PDF route blocked automated retrieval (HTTP 403)."
+    },
+    {
+      "studyId": "S1148",
+      "recordId": "78fa6b57-9cf4-43f2-8921-ea65166e38a7",
+      "status": "unresolved",
+      "reason": "Exact journal item not available as a lawful downloadable PDF."
+    },
+    {
+      "studyId": "S1503",
+      "recordId": "7ba55d44-0ad9-4714-b7cb-d1a1d6825e45",
+      "status": "unresolved",
+      "reason": "No publication or downloadable PDF linked from the trial registry."
+    },
+    {
+      "studyId": "S1521",
+      "recordId": "87521ed2-7811-477a-b93f-fc85f1253e4c",
+      "status": "unresolved",
+      "reason": "No publication or downloadable PDF linked from the trial registry."
+    },
+    {
+      "studyId": "S1564",
+      "recordId": "69fcb6b9-313e-4197-9e81-d6039158f29a",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://europepmc.org/articles/PMC10918355?pdf=render",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S1564.pdf",
+      "documentType": "full_paper",
+      "objectPath": "35b12ce0-2ceb-4e60-b571-6ca60139816b/1785416531305-S1564-S1564.pdf",
+      "sha256": "c0d255365c36193c4a85d85a32aa5242e4b94d5147024fe1d2b1b505dcdec10d",
+      "size": 654290,
+      "pages": 6,
+      "identityHash": "2290ef186761e89ed4cea59003cc8034e456231bc886feeb665cbf19b7d6d39a"
+    },
+    {
+      "studyId": "S1582",
+      "recordId": "f95440e8-a1b2-4576-9bb5-ca52bed63b59",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://annals.edu.sg/download/32935/?tmstv=1727406163",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S1582.pdf",
+      "documentType": "letter",
+      "objectPath": "79b64ad2-2142-4642-93e0-bb476f46c50f/1785416532072-S1582-S1582.pdf",
+      "sha256": "04e33d44878b8c578772c6d93a46dce84e2ce1f29952e7b8da8314f631bd518d",
+      "size": 155876,
+      "pages": 3,
+      "identityHash": "84becdcac30eed52e06dbcc4915c130afafb9ef026fb1c0cbf2f5f14e1b69195"
+    },
+    {
+      "studyId": "S1666",
+      "recordId": "f7e9c521-f4db-4932-8ca6-70006c65c700",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://mdpi-res.com/d_attachment/jcm/jcm-13-01456/article_deploy/jcm-13-01456.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S1666.pdf",
+      "documentType": "full_paper",
+      "objectPath": "8bd63fed-9273-43ee-8a60-f66b596e5205/1785416532749-S1666-S1666.pdf",
+      "sha256": "492ef4f09b65f5d224e9a8da21110e7badd71b9d294fd2e08f5e383a90987f4c",
+      "size": 420272,
+      "pages": 11,
+      "identityHash": "eb5d17f2b03b4d63517cb379eca832677ab2534260c9499c7ca8ec393ce19644"
+    },
+    {
+      "studyId": "S1795",
+      "recordId": "cd1d0285-b33b-4c15-b8b4-31936a1225b2",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://bibliography.icpsr.umich.edu/bibliography/citations/data/174505/fileDownload",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/browser-recovery/files/S1795-icpsr-proceedings.pdf",
+      "documentType": "conference_abstract",
+      "objectPath": "01d1f817-f538-49a0-a37c-f90280bc81aa/1785416533832-S1795-S1795-icpsr-proceedings.pdf",
+      "sha256": "fa8b06e0d47d081831296a312844dd6d93972895270e80174d298377fbfe958b",
+      "size": 598274,
+      "pages": 69,
+      "identityHash": "7a5264d5230f221452b6fd0250305f65d9f495d5c7a19769ef6316b50d010450"
+    },
+    {
+      "studyId": "S2699",
+      "recordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://research.edgehill.ac.uk/ws/portalfiles/portal/102114531/s40279-025-02326-y.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S2699.pdf",
+      "documentType": "full_paper",
+      "objectPath": "1d4c3986-3d05-4e53-92f2-25530c668761/1785416535271-S2699-S2699.pdf",
+      "sha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "size": 874146,
+      "pages": 18,
+      "identityHash": "8b590c8f8fd76bf46013a79e8d08fc3c6dc0f22344ad56110aa3f43854d21ec4"
+    },
+    {
+      "studyId": "S2761",
+      "recordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://bmcsportsscimedrehabil.biomedcentral.com/counter/pdf/10.1186/s13102-025-01262-8.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S2761.pdf",
+      "documentType": "full_paper",
+      "objectPath": "8e059583-75db-407c-a9a7-69444dab5804/1785416536257-S2761-S2761.pdf",
+      "sha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+      "size": 2170224,
+      "pages": 15,
+      "identityHash": "a0ef52f3d201b64dd4cf6c2573320713afe62c9f36555bf54beb1b6bee4b0a18"
+    },
+    {
+      "studyId": "S3098",
+      "recordId": "6271dfdd-9fdf-4ddc-a2e6-e6353a85e83d",
+      "status": "unresolved",
+      "reason": "Located only issue contents, not a citable full paper or abstract."
+    },
+    {
+      "studyId": "S3493",
+      "recordId": "88288e79-5075-4281-8061-4291013bd16e",
+      "status": "unresolved",
+      "reason": "Official PDF link is presently unavailable (HTTP 404)."
+    },
+    {
+      "studyId": "S3592",
+      "recordId": "f569367d-f4cb-4fdd-a276-3f02b1ee6aab",
+      "status": "unresolved",
+      "reason": "No authorised abstract-PDF route located."
+    },
+    {
+      "studyId": "S3661",
+      "recordId": "2f3cad0c-47a0-431e-bf26-c888a800d677",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www.germanjournalsportsmedicine.com/fileadmin/content/archiv_2025/Issue_3/DtschZSportmed_CORR_Abstracts_SMHS_2025-3.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S3661.pdf",
+      "documentType": "conference_abstract",
+      "objectPath": "0caa17bb-307a-48fd-a1e6-d5ca5edd395b/1785416537401-S3661-S3661.pdf",
+      "sha256": "ed61161130b4215d50c4a6a94dd7fbc6e891332d3c05d4a8eb9975e6f26989fd",
+      "size": 2118057,
+      "pages": 58,
+      "identityHash": "bc5a84cca6721f2cc361179a367aeb05b2508c0ed143d36a576d74768c6afd85"
+    },
+    {
+      "studyId": "S3713",
+      "recordId": "a1d3abb9-e358-429f-81d7-27750611659b",
+      "status": "unresolved",
+      "reason": "No authorised PDF route or PDF-level identity evidence located."
+    },
+    {
+      "studyId": "S3776",
+      "recordId": "2e1aa4ab-b932-4605-95cf-1a3a381f20da",
+      "status": "unresolved",
+      "reason": "No lawfully retrievable PDF obtained from the official conference-supplement route."
+    },
+    {
+      "studyId": "S3931",
+      "recordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://mdpi-res.com/d_attachment/medicina/medicina-62-00140/article_deploy/medicina-62-00140.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S3931-mdpi.pdf",
+      "documentType": "full_paper",
+      "objectPath": "556350fc-bcbe-4dba-966f-75e3502863af/1785416538797-S3931-S3931-mdpi.pdf",
+      "sha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+      "size": 342704,
+      "pages": 14,
+      "identityHash": "89e9067ad5181dad69f8b6a2abedf6a60a635551185025a16f3e9e185d98eb6e"
+    },
+    {
+      "studyId": "S4023",
+      "recordId": "c0899a85-4feb-41de-8fb8-74eb13fe0659",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1810653/pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4023.pdf",
+      "documentType": "full_paper",
+      "objectPath": "df203436-b73d-43a0-8ffa-eb4b991ed576/1785416539437-S4023-S4023.pdf",
+      "sha256": "ddab10aef8faa49c304997dca921d97a6e07e8e5ababca230afc97735d6abccf",
+      "size": 1782937,
+      "pages": 11,
+      "identityHash": "26b78fff9e614bd3711f7bdf2a23ed5ca5d0749ec66594f1a344fb6f55eb9f48"
+    },
+    {
+      "studyId": "S4111",
+      "recordId": "27d9106c-e105-4749-9dcf-57b19ad03caf",
+      "status": "unresolved",
+      "reason": "Publisher exposes abstract metadata only; no lawful open PDF found."
+    },
+    {
+      "studyId": "S4724",
+      "recordId": "5d729e3d-b97f-44c7-996e-bad4f4d0b8ba",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://mdpi-res.com/d_attachment/life/life-15-00701/article_deploy/life-15-00701.pdf?version=1745653683",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4724.pdf",
+      "documentType": "full_paper",
+      "objectPath": "cff1fb4f-c81f-471a-89ea-3f18b7c3741a/1785416540564-S4724-S4724.pdf",
+      "sha256": "4a39443268617d695c4e46f2e0f439fd415f50e1a0d5e5008551a30c812d3add",
+      "size": 203136,
+      "pages": 10,
+      "identityHash": "a915eb57d563e9a8d2a1add9a61b614ebb654f238f58c334635e1bf370c74652"
+    },
+    {
+      "studyId": "S4859",
+      "recordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www.nature.com/articles/s41598-026-49793-5.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4859.pdf",
+      "documentType": "full_paper",
+      "objectPath": "df8476e9-4b80-4ff4-91e5-60997ea08568/1785416541345-S4859-S4859.pdf",
+      "sha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+      "size": 1414090,
+      "pages": 9,
+      "identityHash": "a0bdc0dbb64ea5410fc9fdf6414604abce942a0638e0897a48dff3b863b18fd4"
+    },
+    {
+      "studyId": "S4860",
+      "recordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12966903.1/PMC12966903.1.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/browser-recovery/files/S4860-official.pdf",
+      "documentType": "full_paper",
+      "objectPath": "cdd89600-3f6d-4808-bfc7-bab4f18e2184/1785416542428-S4860-S4860-official.pdf",
+      "sha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "size": 627682,
+      "pages": 8,
+      "identityHash": "e28a1096a20fef69590a8860eefeaaf7116881c8762f9aa0f3ddb429b4110ce1"
+    },
+    {
+      "studyId": "S4987",
+      "recordId": "20174957-a3f6-4f6e-b66d-b36f1b7c851b",
+      "status": "unresolved",
+      "reason": "No lawful open PDF located."
+    },
+    {
+      "studyId": "S5148",
+      "recordId": "7df87db6-0820-4379-a2e7-86110035429d",
+      "status": "unresolved",
+      "reason": "No lawfully retrievable PDF obtained for the indexed abstract pages."
+    }
+  ]
+}

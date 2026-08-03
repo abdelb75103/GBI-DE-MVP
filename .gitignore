@@ -78,6 +78,7 @@ clear-test-data.mjs
 # PDF and CSV files (source data)
 *.pdf
 **/*.pdf
+**/*.tar.gz
 *.csv
 **/*.csv
 

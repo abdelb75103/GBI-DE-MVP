@@ -1,0 +1,161 @@
+{
+  "scope": "Serial guarded AI-only writes for exact attached promoted full-text records",
+  "generatedAt": "2026-07-30T13:21:36.645Z",
+  "recommendationsPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/coordinator-reviewed-rendered-v2/full-text-ai-recommendations.normalized.json",
+  "results": [
+    {
+      "studyId": "S683",
+      "recordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+      "status": "already_ai_applied_verified",
+      "decision": "include",
+      "reason": "Prospective club surveillance reports lower-limb tendinopathy outcomes for a separable elite youth futsal subgroup, with published incidence results per 1,000 exposure hours.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+      "aiReviewedAt": "2026-07-30T13:19:55.44+00:00"
+    },
+    {
+      "studyId": "S907",
+      "recordId": "3ecdc6c8-dbc1-4001-b653-0ce47bfcdaa2",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "Although soccer is separately reported, the injury counts come from the National Electronic Injury Surveillance System emergency-department database, not prospective surveillance reported from participating football teams or their clinical staff.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "bf9f81be776ef8a61c5d2babddd6e63a0d835cbd7c9e2e98073ff3dcbafdac80",
+      "aiReviewedAt": "2026-07-30T13:21:34.136+00:00"
+    },
+    {
+      "studyId": "S1564",
+      "recordId": "69fcb6b9-313e-4197-9e81-d6039158f29a",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The separable Olympic soccer results concern external medical-facility visits and use organising-committee, EMR and treating-hospital records, rather than prospective team/competition injury surveillance. Athlete headcounts do not supply an eligible exposure denominator.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "c0d255365c36193c4a85d85a32aa5242e4b94d5147024fe1d2b1b505dcdec10d",
+      "aiReviewedAt": "2026-07-30T13:21:34.677+00:00"
+    },
+    {
+      "studyId": "S1582",
+      "recordId": "f95440e8-a1b2-4576-9bb5-ca52bed63b59",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The PDF is explicitly a letter to the editor, which the full-text criteria exclude regardless of the paper's references to football.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "04e33d44878b8c578772c6d93a46dce84e2ce1f29952e7b8da8314f631bd518d",
+      "aiReviewedAt": "2026-07-30T13:21:35.016+00:00"
+    },
+    {
+      "studyId": "S1666",
+      "recordId": "f7e9c521-f4db-4932-8ca6-70006c65c700",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "Soccer and futsal participants are pooled with handball, basketball and rugby athletes, without a separable football outcome. The study also obtains past-12-month injury histories and reports no eligible exposure denominator.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "492ef4f09b65f5d224e9a8da21110e7badd71b9d294fd2e08f5e383a90987f4c",
+      "aiReviewedAt": "2026-07-30T13:21:35.328+00:00"
+    },
+    {
+      "studyId": "S1795",
+      "recordId": "cd1d0285-b33b-4c15-b8b4-31936a1225b2",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The supplied file is a Clin J Sport Med abstracts/proceedings PDF and the record is a conference abstract, not a usable full report.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "fa8b06e0d47d081831296a312844dd6d93972895270e80174d298377fbfe958b",
+      "aiReviewedAt": "2026-07-30T13:21:35.51+00:00"
+    },
+    {
+      "studyId": "S2699",
+      "recordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+      "status": "ai_applied_verified",
+      "decision": "include",
+      "reason": "This paper explicitly declares itself a systematic review and meta-analysis of injury epidemiology in elite and amateur soccer referees, includes 17 relevant studies, and can surface extraction-relevant primary surveillance studies.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "aiReviewedAt": "2026-07-30T13:21:35.702+00:00"
+    },
+    {
+      "studyId": "S2761",
+      "recordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+      "status": "ai_applied_verified",
+      "decision": "include",
+      "reason": "A prospective five-season cohort of Turkish Super League football players used club medical surveillance and publishes training, match and combined injury rates per 1,000 hours.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+      "aiReviewedAt": "2026-07-30T13:21:35.891+00:00"
+    },
+    {
+      "studyId": "S3661",
+      "recordId": "2f3cad0c-47a0-431e-bf26-c888a800d677",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The supplied file is a conference abstracts compilation and this record is a single abstract (NR. 60), not a usable full report.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "ed61161130b4215d50c4a6a94dd7fbc6e891332d3c05d4a8eb9975e6f26989fd",
+      "aiReviewedAt": "2026-07-30T13:21:36.129+00:00"
+    },
+    {
+      "studyId": "S3931",
+      "recordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+      "status": "ai_applied_verified",
+      "decision": "include",
+      "reason": "The randomised in-season study prospectively monitored actual hamstring injuries in elite academy footballers, using team medical surveillance and GPS-quantified training and match exposure with direct group exposure totals.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+      "aiReviewedAt": "2026-07-30T13:21:36.239+00:00"
+    },
+    {
+      "studyId": "S4023",
+      "recordId": "c0899a85-4feb-41de-8fb8-74eb13fe0659",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The separable soccer findings come from a cross-sectional motor-function and health-history assessment, not prospective or repeated injury surveillance. It reports no eligible exposure denominator.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "ddab10aef8faa49c304997dca921d97a6e07e8e5ababca230afc97735d6abccf",
+      "aiReviewedAt": "2026-07-30T13:21:36.325+00:00"
+    },
+    {
+      "studyId": "S4724",
+      "recordId": "5d729e3d-b97f-44c7-996e-bad4f4d0b8ba",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The study explicitly concerns recreational sports activities. Its additional use of publicly available secondary data and injury counts without an eligible exposure denominator further confirms ineligibility.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "4a39443268617d695c4e46f2e0f439fd415f50e1a0d5e5008551a30c812d3add",
+      "aiReviewedAt": "2026-07-30T13:21:36.413+00:00"
+    },
+    {
+      "studyId": "S4859",
+      "recordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+      "status": "ai_applied_verified",
+      "decision": "include",
+      "reason": "This prospective cohort follows adolescent male soccer players across 20 regional-league matches, uses physiotherapist injury surveillance, and reports an actual match-exposure incidence rate.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+      "aiReviewedAt": "2026-07-30T13:21:36.492+00:00"
+    },
+    {
+      "studyId": "S4860",
+      "recordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+      "status": "ai_applied_verified",
+      "decision": "include",
+      "reason": "This is a retrospective analysis of prospectively collected middle-school surveillance: athletic trainers were embedded at events, collected injury and athlete-exposure data, and report separable soccer concussion rates per 1,000 athlete-exposures.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "aiReviewedAt": "2026-07-30T13:21:36.571+00:00"
+    }
+  ]
+}

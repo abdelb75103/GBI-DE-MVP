@@ -1,0 +1,962 @@
+{
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "generatedAt": "2026-07-30T15:30:47.172196+00:00",
+  "recordCount": 5,
+  "packets": [
+    {
+      "recordId": "6271dfdd-9fdf-4ddc-a2e6-e6353a85e83d",
+      "covidenceId": null,
+      "studyId": "S3098",
+      "title": "Akut: Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma.",
+      "authors": "Selçuk Tarakcı, Kaan Kaya, Gülhan Erdem Subak",
+      "year": "2025",
+      "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3098.pdf",
+      "pdfSha256": "9bb23cef9ad04afb6324e2c58364c3eb1b3c507f0d100fe5c419d68a5f823c9d",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "status": "text_extracted",
+      "pageCount": 9,
+      "textCharCount": 43859,
+      "warnings": [],
+      "signals": {
+        "football": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "football players",
+            "snippet": "...performans; sakatlık riski ABS TRACT Objective: This research explores the relationships between the training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League participated in this study on a voluntary basis. Data on acute:chronic workload ratio and running asymmetry were collected u..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "football players",
+            "snippet": "...e training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League participated in this study on a voluntary basis. Data on acute:chronic workload ratio and running asymmetry were collected using Global Positioning System (GPS) tracking. The GPS-tracked metrics in- cluded total distance, dis..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "football players",
+            "snippet": "...m/s (r=0.63), total acceleration-deceleration distance (r=0.68), and high metabolic power distance (r=0.60). Conclusion: This study suggests that the acute:chronic workload ratio may not be a reliable indicator for injury risk or performance parameters in football players. However, more specific parameters, such as running asymmetry, may have significant impacts on in- jury risk. Running asymmetry, particularly in high-intensity sports like foot- ball, can be an important indicator for predicting injury risk and optimizing p..."
+          },
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...ng position and playing half in the 2013-14 Spanish La Liga season. J Hum Kinet. 2019;66:213-22. [Crossref] [pubMed] [pMC] Dellal A, Chamari K, Wong Dp, Ahmaidi S, Keller D, Barros R, et al. Compa-4. rison of physical and technical performance in European soccer match-play: FA premier League and La Liga. European Journal of Sport Science. 2011;11(1):51-9. [Crossref] UEFA [Internet]. Fixtures&results. [Cited: April 19, 2020] Available from: [Link] 5. Di Salvo V, Baron R, Tschan H, Calderon Montero FJ, Bachl N, p..."
+          },
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...2011;11(1):51-9. [Crossref] UEFA [Internet]. Fixtures&results. [Cited: April 19, 2020] Available from: [Link] 5. Di Salvo V, Baron R, Tschan H, Calderon Montero FJ, Bachl N, pigozzi F. per-6. formance characteristics according to playing position in elite soccer. Int J Sports Med. 2007;28(3):222-7. [Crossref] [pubMed] Ekstrand J, Waldén M, Hägglund M. Hamstring injuries have increased by 4% 7. annually in men’s professional football, since 2001: a 13-year longitudinal analysis of the UEFA Elite Club injury stud..."
+          },
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "..., Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury pattern recognition-narrative review and new concept. Br J Sports Med. 2016;50(21):1309-14. [Crossref] [pubMed] Caldbeck p, Dos’Santos T. How do soccer players sprint from a tactical con-9. text? Observations of an English premier League soccer team. J Sports Sci. 2022;40(23):2669-80. [Crossref] [pubMed] KAYNAKLAR"
+          },
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...cation to injury pattern recognition-narrative review and new concept. Br J Sports Med. 2016;50(21):1309-14. [Crossref] [pubMed] Caldbeck p, Dos’Santos T. How do soccer players sprint from a tactical con-9. text? Observations of an English premier League soccer team. J Sports Sci. 2022;40(23):2669-80. [Crossref] [pubMed] KAYNAKLAR"
+          },
+          {
+            "page": 9,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...ns for random intermittent multi-direc- tional sports. Sports Med. 2022;52(10):2321-54. [Crossref] [pubMed] [pMC] Malone S, Owen A, Newton M, Mendes B, Collins KD, Gabbett TJ. The 11. acute:chonic workload ratio in relation to injury risk in professional soccer. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season pr..."
+          }
+        ],
+        "wrong_sport": [
+          {
+            "page": 9,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "rugby",
+            "snippet": "...1-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket fast bowlers. Br J Sports M..."
+          },
+          {
+            "page": 9,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Gaelic football",
+            "snippet": "...y risk in elite cricket fast bowlers. Br J Sports Med. 2014;48(8):708-12. [Crossref] [pubMed] Malone S, Roe M, Doran DA, Gabbett TJ, Collins K. High chronic training 14. loads and exposure to bouts of maximal velocity running reduce injury risk in elite Gaelic football. J Sci Med Sport. 2017;20(3):250-4. [Crossref] [pub- Med] Murray NB, Gabbett TJ, Townshend AD, Hulin BT, McLellan C p. Individual 15. and combined effects of acute and chronic running loads on injury risk in elite Australian footballers. Scand J Med Sci..."
+          }
+        ],
+        "review": [
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "narrative review",
+            "snippet": "...ports Med. 2016;50(12):731-7. [Crossref] [pubMed] Bittencourt NFN, Meeuwisse WH, Mendonça LD, Nettel-Aguirre A, Ocarino 8. JM, Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury pattern recognition-narrative review and new concept. Br J Sports Med. 2016;50(21):1309-14. [Crossref] [pubMed] Caldbeck p, Dos’Santos T. How do soccer players sprint from a tactical con-9. text? Observations of an English premier League soccer team. J Sports Sci. 2022;40(23):2669-80. [Cro..."
+          }
+        ],
+        "injury_illness": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 19 Akut:Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma Acute:Chronic Workload Ratio, Running Imbalance and Injury Paradox for Professional Footballers: A Descriptive Research Selçuk TARAKCIa, Kaan KAYAb, Gülhan Erdem SUBAKc aİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye bİstanbul Esenyurt Ü..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...ejik bilgiler sunmaktadır. Anah tar Ke li me ler: Futbol; koşu dengesizliği; antrenman yükü; performans; sakatlık riski ABS TRACT Objective: This research explores the relationships between the training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League par..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...nce of accelerations-decelerations over 2 m/s (r=0.63), total acceleration-deceleration distance (r=0.68), and high metabolic power distance (r=0.60). Conclusion: This study suggests that the acute:chronic workload ratio may not be a reliable indicator for injury risk or performance parameters in football players. However, more specific parameters, such as running asymmetry, may have significant impacts on in- jury risk. Running asymmetry, particularly in high-intensity sports like foot- ball, can be an important in..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...arameters in football players. However, more specific parameters, such as running asymmetry, may have significant impacts on in- jury risk. Running asymmetry, particularly in high-intensity sports like foot- ball, can be an important indicator for predicting injury risk and optimizing performance. These findings provide valuable strategic insights for sports scientists, coaches, and healthcare professionals in terms of adjusting train- ing programs and minimizing injury risks. Keywords: Football; running imbalanc..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...ll, can be an important indicator for predicting injury risk and optimizing performance. These findings provide valuable strategic insights for sports scientists, coaches, and healthcare professionals in terms of adjusting train- ing programs and minimizing injury risks. Keywords: Football; running imbalance; training load; performance; injury risk ORİJİNAL ARAŞTIRMA ORIGINAL RESEARCH DOI: 10.5336/sportsci.2024-104874 Correspondence: Selçuk TARAKCI İstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yükseko..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...These findings provide valuable strategic insights for sports scientists, coaches, and healthcare professionals in terms of adjusting train- ing programs and minimizing injury risks. Keywords: Football; running imbalance; training load; performance; injury risk ORİJİNAL ARAŞTIRMA ORIGINAL RESEARCH DOI: 10.5336/sportsci.2024-104874 Correspondence: Selçuk TARAKCI İstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye E-mail: selcuktarakci@esenyurt.edu.t..."
+          },
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injuries",
+            "snippet": "...5. Di Salvo V, Baron R, Tschan H, Calderon Montero FJ, Bachl N, pigozzi F. per-6. formance characteristics according to playing position in elite soccer. Int J Sports Med. 2007;28(3):222-7. [Crossref] [pubMed] Ekstrand J, Waldén M, Hägglund M. Hamstring injuries have increased by 4% 7. annually in men’s professional football, since 2001: a 13-year longitudinal analysis of the UEFA Elite Club injury study. Br J Sports Med. 2016;50(12):731-7. [Crossref] [pubMed] Bittencourt NFN, Meeuwisse WH, Mendonça LD, Nettel-..."
+          },
+          {
+            "page": 8,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...lite soccer. Int J Sports Med. 2007;28(3):222-7. [Crossref] [pubMed] Ekstrand J, Waldén M, Hägglund M. Hamstring injuries have increased by 4% 7. annually in men’s professional football, since 2001: a 13-year longitudinal analysis of the UEFA Elite Club injury study. Br J Sports Med. 2016;50(12):731-7. [Crossref] [pubMed] Bittencourt NFN, Meeuwisse WH, Mendonça LD, Nettel-Aguirre A, Ocarino 8. JM, Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury patter..."
+          },
+          {
+            "page": 9,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...on: a review with implications for random intermittent multi-direc- tional sports. Sports Med. 2022;52(10):2321-54. [Crossref] [pubMed] [pMC] Malone S, Owen A, Newton M, Mendes B, Collins KD, Gabbett TJ. The 11. acute:chonic workload ratio in relation to injury risk in professional soccer. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match re..."
+          }
+        ],
+        "design": [
+          {
+            "page": 9,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "prospective",
+            "snippet": "...er. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket..."
+          },
+          {
+            "page": 9,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "cohort",
+            "snippet": "...ed Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket fast..."
+          }
+        ]
+      },
+      "firstPagesExcerpt": "[p. 1] Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 19 Akut:Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma Acute:Chronic Workload Ratio, Running Imbalance and Injury Paradox for Professional Footballers: A Descriptive Research Selçuk TARAKCIa, Kaan KAYAb, Gülhan Erdem SUBAKc aİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye bİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Spor Yöneticiliği Bölümü, İstanbul, Türkiye cIğdır Üniversitesi Spor Bilimleri Fakültesi, Beden Eğitimi ve Spor Öğretmenliği Bölümü, Beden Eğitimi ve Spor Öğretimi-Eğitimi AD, Iğdır, Türkiye ÖZET Amaç: Bu ara ştırma, Türkiye Süper Ligi’nde mücadele eden pro- fesyonel futbolcular ın temass ız sakatl ık geçirdikleri güne kadar olan an- trenman yükleri ile akut:kronik iş yükü oranı ve koşu dengesizliği değerleri arasındaki ilişkileri incelemektedir. Gereç ve Yöntemler: Araştırmaya Tür- kiye Süper Ligi’nde mücadele eden 14 profesyonel futbolcu gönüllü olarak katılmıştır. Katılımcılardan elde edilen akut:kronik i ş yükü oran ı ve ko şu dengesizliği verileri Küresel Konumlama Sistemi [Global Positioning System (GPS)] kullan ılarak elde edilmi ştir. GPS kullan ılarak elde edilen veriler arasında; toplam mesafe, 20-25 km/s hız aralığında toplam mesafe, 25 km/s üzerinde toplam mesafe, antrenman ve maçlarda geçirdikleri top- lam süre, oyuncu yükleri, yüksek metabolik güç mesafesi, belirli hızlarda iv- melenme ve yava şlama mesafeleri ve ula ştıkları maksimal sürat de ğerleri bulunmaktadır. Bulgular: Akut:kronik iş yükü oranı ile incelenen paramet- reler arasında anlamlı bir korelasyon olmad ığını, ancak ko şu dengesizliği değeri ile bazı antrenman ve performans parametreleri arasında anlamlı ko- relasyonlar olduğunu göstermiştir. Özellikle, ko şu dengesizliği ile toplam süre (r=0,56), toplam mesafe (r=0,61), oyuncu yükü (r=0,73), 2 m/s’den hızlı ivmelenme-yava şlama mesafesi (r=0,63), toplam ivmelenme-yava ş- lama mesafesi (r=0,68) ve yüksek metabolik güç mesafesi (r=0,60) arasında pozitif yönlü anlaml ı korelasyonlar bulunmu ştur. Sonuç: Bu ara ştırma, akut:kronik iş yükü oranının futbolcularda sakatlık riski ya da performans parametreleri için güvenilir bir gösterge olmayabileceğini, ancak koşu den- gesizliği gibi daha spesifik parametrelerin sakatlık riski üzerinde anlamlı et- kiler yaratabileceğini öne sürmektedir. Ko şu dengesizliği, özellikle futbol gi\n\n[p. 2] 20 Futbol, dünya genel inde en yayg ın ve popüler spor dallarından birisidir.1 Modern futbol daha yük- sek şiddette, daha hızlı oyun kriterleriyle oynanmakta ve fiziksel açıdan önceki yıllara göre daha agresif bir şekilde oynanan b ir oyun hal ini aldığı görülmekte- dir.2 2019 y ılında yapılan bir çalışmada İspanya La Liga sev iyesi için b ir müsabakada oyuncu ba şına düşen ortalama ko şu mesafes i 9.268±960 m olarak bildirilmiştir.3 Bunu destekleyici başka bir çalışmada aynı kıtada farklı ülkelerde oynanan müsabakalarda daha uzun koşu mesafeleri tespit edilmiş olsa da, fut- bolun yap ısı gere ği oyun tarz ındaki takt iksel de ği- şikliklerin ve oyun içindeki kısa ama 20 km/s g ibi daha yoğun ve hızlı koşuların sergilenmesi, koşu me- safelerinin uzunlu ğunu etkileyebileceği belirtilmiş- tir.4 Modern futbolda oyunun f iziksel talepler i Avrupa Futbol Federasyonları Birliği (UEFA) inter- net sayfası verilerine göre tak ımlar müsabaka süre- leri içerisinde 107.000-127.000 metre aras ında mesafe kat ett ikleri görülmekted ir.5 İfade edilen fi- ziksel performansın yanında teknik çabalar açısından bakıldığında, profesyonel futbolcular taraf ından ko- şulan mesafelerin yalnızca %1,2’si ile %2,4’lük bö- lümünde koşuların topla yapıldığı açıklanmıştır.6 Bu veriler, performansı optimize etmek ve sakatlık olu- şum riskini azaltmak için oyuncuların kas-iskelet ya- pılarına ve ba ğ dokusuna b inen yükün artt ığını göstermektedir. Maçlardaki fiziksel taleplerdeki artı- şın bir sonucu olarak, profesyonel futbolcularda sa- katlanma r iskini artt ırabileceği ve hatta olu şan sakatlıkların da son y ıllarda artış gösterdiği anlaşıl- maktadır.7 Bu nedenle, antrenman ve müsabakalar arasındaki doz-tepki ilişkisini anlamak için iç yük ve dış yük aras ındaki ilişkileri iyi b ilmek ve anal iz etmek önemli hale gelmektedir. Sakatlıkların olu şumu çok say ıda parametrey i (performans, iş yükü, fizyoloji, uyku, yorgunluk, to- parlanma, psikoloji, yaşam tarzı) içeren karmaşık bir olgudur.8 Sporcularda antrenman yükü ile sakatl ık arasındaki ilişki, son dönemlerde ara ştırma ve uy- gulama alanlar ında giderek daha fazla ilgi görmeye başlayan ara ştırma konusu olmaktad ır. Maç s ıra- sında meydana gelen h ızlanmalar ve yava şlamalar farklı fizyolojik ve biyomekanik talepler içerir.9 Ör- neğin, hızlanma yüksek oranda kas kasılması ve me- tabolik stres içerir, buna kar şın yava şlama yüksek oranda kas-iskelet sistemi yüklenmesi, yüksek yara- lanma riski (örn. ön çapraz bağ yaralanmaları) \n\n[p. 3] 212121 antrenman programlarını optimize etmek ve sakatlık risklerini azaltmak için önemlidir. Futbolcular ın antrenman ve maç s ırasında maruz kaldıkları fiziksel yüklerin değerlendirilmesi, performans ve sa ğlık yönetiminde kritik bir rol oy- namaktadır. Kat edilen toplam mesafe, oyuncu yükü (oyuncunun maruz kaldığı fiziksel yük), yüksek hız- larda koşu ve sprint mesafeleri, hızlanma ve yava ş- lama sayıları gibi parametreler, oyuncuların fiziksel performansını ve antrenman yoğunluğunu anlamada kullanılan temel ölçütlerd ir. Özell ikle, yüksek h ız- larda kat ed ilen mesafeler ve h ızlı ivmelenme-ya- vaşlama sayıları, oyuncular ın ani ve yo ğun fiziksel taleplere nasıl yanıt verdiklerini göstermektedir. Bu parametreler in sürekl i olarak izlenmes i ve anal iz edilmesi, oyuncular ın performans ını optimize etme ve sakatl ık risklerini minimize etme stratej ilerinin geliştirilmesine katkı sağlamaktadır. Bu araştırmanın amacı, Türkiye Süper Ligi’nde mücadele eden profesyonel futbolcuların temassız sa- katlık geçirdikleri güne kadar olan antrenman yükleri ile AKİYO ve koşu dengesizliği değerleri arasındaki ilişkileri incelemektir. Bu amaç do ğrultusunda, pro- fesyonel futbolcularda daha önce sakatlıkla ilişkilen- dirilmeyen GPS s istemi içerisinde yer alan “ko şu dengesizliği” parametresinin de değerlendirilmesiyle birlikte literatürde bu konudaki eksikliğe katkıda bu- lunabileceği dü şünülmektedir. AK İYO de ğeri ile oyuncuların toplam mesafeler i, spr int mesafeler i, oyuncu yükleri, yüksek metabolik güç mesafeleri, iv- melenme ve yavaşlama değerleri arasında anlamlı bir korelasyon olup olmadığı ve koşu dengesizliği değeri ile aynı parametreler arasında anlamlı bir korelasyon olup olmadığını test etmeyi amaçlamaktadır. Bu ça- lışmanın önemi ise, AKİYO ve koşu dengesizliği de- ğerlerinin futbolcular ın antrenman yükler i ve sakatlık riskleri üzerindeki potansiyel etkilerini an- lamaya katkı sağlamasında yatmaktadır. Araştırma- mız ayn ı zamanda bu alandak i yap ılacak olan literatür çal ışmalarına katkı olarak profesyonel fut- bolcuların antrenman yükü takibinde sadece perfor- mans parametreler inin de ğil “ko şu denges izliği” parametresinin de kullanılmasının önemini ortaya ko- yacağı düşünülmektedir. AKİYO’nun sakatl ık riski ile ilişkisi üzerine yapılan çalışmaların sonuçları tu- tarsız olabilmektedir. Bu nedenle, AK İYO’nun an- trenman yükü ve performans parametreler i üzer in- deki etkilerini daha iyi anlamak için ek çal ışmalara ihtiyaç olduğu düşünül\n\n[p. 4] sakatlık geç irmeyen futbolcular, temasl ı/darbeye bağlı sakatlık geçiren futbolcular, müsabakalarda 60 dk ve altında oynayan futbolcular dâhil edilmemiştir. Araştırma Hels inki Deklarasyonu prens ipleri göz önünde bulundurularak gerçekleştirilmiş ve bu araş- tırma, İstanbul Esenyurt Üniversitesi Etik Kurulu ta- rafından 11 Temmuz 2023 tarih ve 2023/06-15 no’lu toplantısı sonucunda verilen sayılı onay alınarak ger- çekleştirilmiştir. Katılımcılardan ayrıca yazılı onam formları imzalı şekilde alınmış ve çalışmanın amacı, süreci ve olası riskleri hakkında sözlü ve yazılı olarak detaylı bilgilendirme yapılmıştır. Katılımcıların mah- remiyetine saygı gösterilerek, kişisel veriler anonim olarak anal iz edilmiş ve sadece bu ara ştırma içeri- sinde kullanılmıştır. VERİ TOpLAMA Bu ara ştırma kapsam ında, kat ılımcıların ko şu dengesizliği verileri 2022-2023 Türk iye Süper Ligi sezonu süres ince GPS s istemi kullan ılarak toplan- mıştır. 10 Hz GPS c ihazlar ının mesafe ve h ız öl- çümler inde hem geçerl i hem de güven ilir oldu ğu daha önceki araştırmalarda göster ilmektedir.21,22 Bu cihazlar üret ici firma tarafından özel olarak gel işti- rilen yelekler in cep kısımlarına yerleştirilmektedir. Bu cepler kat ılımcıların s ırt k ısmında yer almakta ve iki scapula kem iğinin tam ortasına denk gelecek şekilde yerle ştirilmekted ir. C ihazlar 81 mm uzun- luğa, 43,5 mm genişliğe ve 54 gr ağırlığa sahiptirler. Katılımcılar sezon boyunca ayn ı cihazı düzenli ola- rak kullanmaktad ırlar ve bu düzenl i kullanım, olası ölçüm hatalar ını minimize etmekted ir.23 Üretici fir- manın talimatları doğrultusunda GPS c ihazları, her maç ve antrenmandan 15 dk önce aktif hale getirile- rek gerekli uydu bağlantısının en iyi duruma getiril- mesi ve doğru verilerin elde edilmesi sağlanmıştır.24 Maçlardan ve müsabakalardan elde ed ilen ver iler düzenli olarak bulut sistemi üzerinden düzenli taki- binin yap ılabilmesi amac ıyla Excel’e (M icrosoft, ABD) aktarılmış ve eksik ya da hatalı verilerin ayık- lanmas ı için gerekl i kontrollerden geç irilmiştir. Toplanan ver iler aras ında; oyuncular ın antrenman ve maç s ırasında kat ett iği toplam mesafe, 20-25 km/s h ız aral ığında kat ett ikleri toplam mesafe, 25 km/s üzer indeki hızda kat ett ikleri toplam mesafe, antrenman ve maçlarda geçirdikleri toplam süre, an- trenman ve maç s ırasında maruz kald ıkları fiziksel yük (oyuncu yükü), yüksek metabolik güç mesafesi, belirli b ir h ızda ivmelenme ve yava şlama to",
+      "selectedPageText": [
+        {
+          "page": 1,
+          "text": "Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 19 Akut:Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma Acute:Chronic Workload Ratio, Running Imbalance and Injury Paradox for Professional Footballers: A Descriptive Research Selçuk TARAKCIa, Kaan KAYAb, Gülhan Erdem SUBAKc aİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye bİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Spor Yöneticiliği Bölümü, İstanbul, Türkiye cIğdır Üniversitesi Spor Bilimleri Fakültesi, Beden Eğitimi ve Spor Öğretmenliği Bölümü, Beden Eğitimi ve Spor Öğretimi-Eğitimi AD, Iğdır, Türkiye ÖZET Amaç: Bu ara ştırma, Türkiye Süper Ligi’nde mücadele eden pro- fesyonel futbolcular ın temass ız sakatl ık geçirdikleri güne kadar olan an- trenman yükleri ile akut:kronik iş yükü oranı ve koşu dengesizliği değerleri arasındaki ilişkileri incelemektedir. Gereç ve Yöntemler: Araştırmaya Tür- kiye Süper Ligi’nde mücadele eden 14 profesyonel futbolcu gönüllü olarak katılmıştır. Katılımcılardan elde edilen akut:kronik i ş yükü oran ı ve ko şu dengesizliği verileri Küresel Konumlama Sistemi [Global Positioning System (GPS)] kullan ılarak elde edilmi ştir. GPS kullan ılarak elde edilen veriler arasında; toplam mesafe, 20-25 km/s hız aralığında toplam mesafe, 25 km/s üzerinde toplam mesafe, antrenman ve maçlarda geçirdikleri top- lam süre, oyuncu yükleri, yüksek metabolik güç mesafesi, belirli hızlarda iv- melenme ve yava şlama mesafeleri ve ula ştıkları maksimal sürat de ğerleri bulunmaktadır. Bulgular: Akut:kronik iş yükü oranı ile incelenen paramet- reler arasında anlamlı bir korelasyon olmad ığını, ancak ko şu dengesizliği değeri ile bazı antrenman ve performans parametreleri arasında anlamlı ko- relasyonlar olduğunu göstermiştir. Özellikle, ko şu dengesizliği ile toplam süre (r=0,56), toplam mesafe (r=0,61), oyuncu yükü (r=0,73), 2 m/s’den hızlı ivmelenme-yava şlama mesafesi (r=0,63), toplam ivmelenme-yava ş- lama mesafesi (r=0,68) ve yüksek metabolik güç mesafesi (r=0,60) arasında pozitif yönlü anlaml ı korelasyonlar bulunmu ştur. Sonuç: Bu ara ştırma, akut:kronik iş yükü oranının futbolcularda sakatlık riski ya da performans parametreleri için güvenilir bir gösterge olmayabileceğini, ancak koşu den- gesizliği gibi daha spesifik parametrelerin sakatlık riski üzerinde anlamlı et- kiler yaratabileceğini öne sürmektedir. Ko şu dengesizliği, özellikle futbol gibi yüksek tempolu sporlarda sakatlık riskini tahmin etmek ve performansı optimize etmek için önemli bir gösterge olabilir. Bu sonuçlar, spor bilimci- ler, antrenörler ve sağlık profesyonelleri için oyuncuların antrenman prog- ramlarının düzenlenmesi ve sakatl ık riskinin azalt ılmas ı açısından önemli stratejik bilgiler sunmaktadır. Anah tar Ke li me ler: Futbol; koşu dengesizliği; antrenman yükü; performans; sakatlık riski ABS TRACT Objective: This research explores the relationships between the training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League participated in this study on a voluntary basis. Data on acute:chronic workload ratio and running asymmetry were collected using Global Positioning System (GPS) tracking. The GPS-tracked metrics in- cluded total distance, distance covered within the speed range of 20-25 km/h, distance covered above 25 km/h, total time spent in training and matches, player load, high metabolic power distance, acceleration and deceleration distances at specific speeds, and maximum speed achieved. Results: The findings revealed no significant correlation between the acute:chronic work- load ratio and the examined parameters. However, significant correlations were found between running asymmetry and certa"
+        },
+        {
+          "page": 8,
+          "text": "SONUÇ Bu araştırma, futbolcular ın temassız sakatlık geçir- dikleri güne kadar olan antrenman ver ileriyle AKİ- YO’nun sakatlık riski veya performans parametreleri üzerinde anlaml ı bir korelasyon göstermed iğini or- taya koymuştur. AKİYO’nun sakatlık riski ile ilişkili olduğuna dair yaygın kabul gören görüşlere rağmen, bu çal ışmada AK İYO’nun oyuncular ın antrenman yükleri ile doğrudan ilişkili olmadığı ve dolay ısıyla güvenilir bir sakatlık göstergesi olarak tek başına ye- terli olmayabileceği gözlenmiştir. Buna karşın, çalış- mada ko şu denges izliği ile bel irli antrenman ve performans parametreler i arasında anlaml ı korelas- yonlar tespit edilmiştir. Özellikle, koşu dengesizliği ile toplam süre, toplam mesafe, oyuncu yükü, h ızlı ivmelenme ve yava şlama mesafes i gibi performans ölçütleri arasında güçlü poz itif yönlü ilişkiler tespit edilmiştir. Bu bulgular, as imetrik koşu desenlerinin oyuncuların kas-iskelet s isteminde yaratt ığı denge- sizliklerin antrenman yüklerini artırabileceğini ve bu durumun performans düşüşlerine ve sakatlık riskinin artmasına yol açab ileceğini göstermekted ir. Ko şu dengesizliği, futbolcular ın maruz kald ığı f iziksel yükü do ğrudan etk ileyen b ir parametre olarak öne çıkmakta ve bu alanda d ikkatle izlenmesi gereken önemli bir gösterge olarak değerlendirilmektedir. Bu sonuçlar, spor b ilimciler, antrenörler ve sa ğlık pro- fesyonelleri için oyuncuların antrenman programla- rının düzenlenmes i ve sakatl ık riskinin azalt ılması açısından önemli stratejik bilgiler sunmaktadır. Ay- rıca, sakatl ık riskini daha do ğru tahm in etmek için AKİYO ve koşu dengesizliği gibi parametrelerin bir- likte ele alınması, antrenman yükleri ile sakatlık riski arasındaki ilişkinin daha kapsamlı anlaşılmasına katkı sağlayabilir. Finansal Kaynak Bu çalışma sırasında, yapılan araştırma konusu ile ilgili do ğru- dan bağlantısı bulunan herhangi bir ilaç firmasından, tıbbi alet, gereç ve malzeme sağlayan ve/veya üreten bir firma veya herhangi bir ticari firmadan, çalışmanın değerlendirme sürecinde, çalışma ile ilgili verilecek karar ı olumsuz etkileyebilecek maddi ve/veya manevi herhangi bir destek alınmamıştır. Çıkar Çatışması Bu çalışma ile ilgili olarak yazarlar ın ve/veya aile bireylerinin çıkar çat ışması potansiyeli olabilecek bilimsel ve t ıbbi komite üyeliği veya üyeleri ile ilişkisi, danışmanlık, bilirkişilik, herhangi bir firmada çal ışma durumu, hissedarl ık ve benzer durumlar ı yoktur. Yazar Katkıları Fikir/Kavram: Selçuk Tarakcı; Tasarım: Selçuk Tarakcı, Kaan Kaya; Denetleme/Danışmanlık: Selçuk Tarakcı, Gülhan Erdem Subak; Veri Toplama ve/veya İşleme: Selçuk Tarakcı, Kaan Kaya, Gülhan Erdem Subak; Analiz ve/veya Yorum: Gülhan Erdem Subak, Selçuk Tarakc ı, Kaan Kaya; Kaynak Taramas ı:Kaan Kaya, Selçuk Tarakcı; Makalenin Yazımı: Selçuk Tarakcı, Kaan Kaya; Eleştirel İnceleme: Selçuk Tarakcı, Gülhan Erdem Subak; Kaynaklar ve Fon Sa ğlama: Selçuk Tarakcı, Kaan Kaya; Mal- zemeler:Selçuk Tarakcı. Selçuk TARAKÇI ve ark. Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 26 Kaya K, Gürol B. Futbolda dar alan oyunları değişkenlerinin incelenmesi [Re-1. view of small-sided games variables in football]. Sportive. 2021;4(2):117-31. [Crossref] Bush M, Barnes C, Archer DT, Hogg B, Bradley pS. Evolution of match per-2. formance parameters for various playing positions in the English premier Lea- gue. Hum Mov Sci. 2015;39:1-11. [Crossref] [pubMed] Rivilla-García J, Calvo LC, Jiménez-Rubio S, paredes-Hernández V, Muñoz 3. A, van den Tillaar R, et al. Characteristics of very high intensity runs of soc- cer players in relation to their playing position and playing half in the 2013-14 Spanish La Liga season. J Hum Kinet. 2019;66:213-22. [Crossref] [pubMed] [pMC] Dellal A, Chamari K, Wong Dp, Ahmaidi S, Keller D, Barros R, et al. Compa-4. rison of physical and technical performance in European soccer match-play: FA premier League and La Liga. European Journal of Sport Science. 2011;11(1):51-9. [Crossref] UEFA [Internet]. F"
+        },
+        {
+          "page": 9,
+          "text": "Selçuk TARAKÇI ve ark. Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 27 Harper DJ, McBurnie AJ, Santos TD, Eriksrud O, Evans M, Cohen DD, et al. 10. Biomechanical and neuromuscular performance requirements of horizontal deceleration: a review with implications for random intermittent multi-direc- tional sports. Sports Med. 2022;52(10):2321-54. [Crossref] [pubMed] [pMC] Malone S, Owen A, Newton M, Mendes B, Collins KD, Gabbett TJ. The 11. acute:chonic workload ratio in relation to injury risk in professional soccer. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket fast bowlers. Br J Sports Med. 2014;48(8):708-12. [Crossref] [pubMed] Malone S, Roe M, Doran DA, Gabbett TJ, Collins K. High chronic training 14. loads and exposure to bouts of maximal velocity running reduce injury risk in elite Gaelic football. J Sci Med Sport. 2017;20(3):250-4. [Crossref] [pub- Med] Murray NB, Gabbett TJ, Townshend AD, Hulin BT, McLellan C p. Individual 15. and combined effects of acute and chronic running loads on injury risk in elite Australian footballers. Scand J Med Sci Sports. 2017;27(9):990-8. [Crossref] [pubMed] Weiss KJ, Allen SV, McGuigan MR, Whatman CS. The relationship between 16. training load and injury in men’s professional basketball. Int J Sports physiol perform. 2017;12(9):1238-42. [Crossref] [pubMed] Saba DJ. Validation of running symmetry using trunk mounted accelerometry: 17. Clinical trial and case study. Virginia polytechnic Institute: Virginia Tech; 2016. [Link] Staab W, Hottowitz R, Sohns C, Sohns JM, Gilbert F, Menke J, et al. Acce-18. lerometer and gyroscope based gait analysis using spectral analysis of pati- ents with osteoarthritis of the knee. J phys Ther Sci. 2014;26(7):997-1002. [Crossref] [pubMed] [pMC] Kim MK, Lee YS. Kinematic analysis of the lower extremities of subjects with 19. flat feet at different gait speeds. J phys Ther Sci. 2013;25(5):531-3. [Crossref] [pubMed] [pMC] Vogt L, Banzer W, Bayer I, Schmidtbleicher D, Kerschbaumer F. Overground 20. and walkway ambulation with unilateral hip osteoarthritis: comparison of step length asymmetries and reproducibility of treadmill mounted force plate rea- dings. physiother Theory pract. 2006;22(2):73-82. [Crossref] [pubMed] Crang zL, Duthie G, Cole MH, Weakley J, Hewitt A, Johnston RD. The inter-21. device reliability of global navigation satellite systems during team sport mo- vement across multiple days. J Sci Med Sport. 2022;25(4):340-4. [Crossref] [pubMed] Scott TJ, Black CR, Quinn J, Coutts AJ. Validity and reliability of the session-22. RpE method for quantifying training in Australian football: a comparison of the CR10 and CR100 scales. J Strength Cond Res. 2013;27(1):270-6. [Cros- sref] [pubMed] Asian-Clemente JA, Rabano-Munoz A, Requena B, Santalla A, Suarez-Ar-23. rones L. The influence of the floater position on the load of soccer players during a 4 vs 4 + 2 game. Kinesiology. 2022;54(1):82-91. [Crossref] Duffield R, Reid M, Baker J, Spratford W. Accuracy and reliability of GpS de-24. vices for measurement of movement patterns in confined spaces for court- based sports. J Sci Med Sport. 2010;13(5):523-5. [Crossref] [pubMed] Impellizzeri FM, Tenan MS, Kempton T, Novak A, Coutts AJ. Acute:chronic 25. workload ratio: conceptual issues and fundamental pitfalls. Int J Sports physiol perform. 2020;15(6):907-13. [Crossref] [pubMed] Impellizzeri FM, Woodcock S, Coutts AJ, Fanchini M, McCall A, Vigotsky A. 26. Acute to random chronic workload ratio is ‘as’ associated with injury as acute to actual "
+        }
+      ],
+      "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3098.packet.json"
+    },
+    {
+      "recordId": "88288e79-5075-4281-8061-4291013bd16e",
+      "covidenceId": null,
+      "studyId": "S3493",
+      "title": "LESÕES NA REGIÃO DO JOELHO EM JOGADORES DE FUTEBOL.",
+      "authors": "Wellington Danilo Soares, Iasmym Souza Bastos, Karen Cangussu Coelho, Jomar Luiz Santos de Almeida",
+      "year": "2024",
+      "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3493.pdf",
+      "pdfSha256": "6d4b90db244bb08b48429bd112d1d8f7f891ec7893afc373153c12e7faa00ec2",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "status": "text_extracted",
+      "pageCount": 6,
+      "textCharCount": 23732,
+      "warnings": [],
+      "signals": {
+        "football": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "football players",
+            "snippet": "...o forgo any and all claims against Cengage Learning or its licensors for your use of the machine generated PDF functionality and any output derived therefrom. Download Document LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players. Authors:Wellington Danilo Soares, Iasmym Souza Bastos, Karen Cangussu Coelho and Jomar Luiz Santos de Almeida Date:Jan-April 2024 From:Revista Brasileira de Futsal e Futebol(Vol. 16, Issue 64) Publisher:Instituto Brasileiro de Pesquisa e Ensino em Fisiolog..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Futsal",
+            "snippet": "...LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players. Authors:Wellington Danilo Soares, Iasmym Souza Bastos, Karen Cangussu Coelho and Jomar Luiz Santos de Almeida Date:Jan-April 2024 From:Revista Brasileira de Futsal e Futebol(Vol. 16, Issue 64) Publisher:Instituto Brasileiro de Pesquisa e Ensino em Fisiologia do Exercicio. IBPEFEX Document Type:Article Length:3,051 words Abstract: Introducao: O futebol e um esporte de equipe constituido por dois grupos de 11 jogadores..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "football players",
+            "snippet": "...s of 45 minutes. It is a modality of high physical and tactical performance, characterized by excessive physical contact, sudden changes in position, short and non- continuous movements. Objective: To identify the most prevalent injuries in the knee region in football players in the city of Montes Claros-MG. Materiais e Methods: This study is characterized by its descriptive nature, with a quantitative and cross-sectional approach. The studied population will consist of 31 football players, randomly selected, belonging to a footba..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "football players",
+            "snippet": "...prevalent injuries in the knee region in football players in the city of Montes Claros-MG. Materiais e Methods: This study is characterized by its descriptive nature, with a quantitative and cross-sectional approach. The studied population will consist of 31 football players, randomly selected, belonging to a football team of the city of Montes Claros-MG. They will be evaluated using the Lysholm Knee Scoring Scale questionnaire, which was developed and validated by Lysholm in 1982, translated by Peccin in 2006. Results: The highe..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "football players",
+            "snippet": "...ost injured position was attacker and defensive midfielder (19.4%), and the most preserved position was goalkeeper (3.2%) and center forward (6.5%). Discussion: According to the exposed table, it can be concluded that the highest incidence of knee injuries in football players is ligament rupture, a pathology that refers to the injuries found in the present study. Conclusion: Through this study, it was possible to observe that the main knee injury in players is ligament rupture. Key words: Athletes. Football. Knee. Lesion. Rupture...."
+          },
+          {
+            "page": 4,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...asileira de Medicina do Esporte. Vol. 19. Num. 2. 2013. p. 112-115. 2-Bezuglov, E.N.; Tikhonova, ?.?.; Chubarovskiy, P.V.; Repetyuk, A.D.; Khaitin, V.Y.; Lazarev, A.M.; Usmanova, E.M. Conservative treatment of Osgood-Schlatter disease among young professional soccer players. International orthopaedics. Vol. 44. Num. 9. 2020. p. 1737- 1743. 3-Borges, C.A.; Andrade, G.F.; Santos, I.R.D.D.S.; Andrade. M.F.A.; Santos, M.A.; Ribeiro, V.S.M. Incidencia de lesoes em jogadores de futebol do time profissional de Vitoria da Conqui..."
+          },
+          {
+            "page": 4,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Futsal",
+            "snippet": "...cs. Vol. 44. Num. 9. 2020. p. 1737- 1743. 3-Borges, C.A.; Andrade, G.F.; Santos, I.R.D.D.S.; Andrade. M.F.A.; Santos, M.A.; Ribeiro, V.S.M. Incidencia de lesoes em jogadores de futebol do time profissional de Vitoria da Conquista, Bahia. Revista Brasileira de Futsal e Futebol. Sao Paulo. Vol. 10. Num. 37. 2018. p. 215-220. 4-Coelho, M. M. Prevalencia de lesoes em atletas de futebol profissional em duas equipes catarinense. Universidade do sul de Santa Catarina. Palhoca-SC. 2011. 5-FIFA. Fifa grande contagem 2006: 270 mil..."
+          },
+          {
+            "page": 6,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "football players",
+            "snippet": "...GHT 2024 Instituto Brasileiro de Pesquisa e Ensino em Fisiologia do Exercicio. IBPEFEX http://www.rbff.com.br/index.php/rbff Source Citation Soares, Wellington Danilo, et al. \"LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players.\" Revista Brasileira de Futsal e Futebol, vol. 16, no. 64, Jan.-Apr. 2024, pp. 132+. Gale Academic OneFile, link.gale.com/apps/doc/A793260136/AONE?u=dublin&sid=bookmark-AONE. Accessed 30 July 2026. Gale Document Number: GALE|A793260136"
+          }
+        ],
+        "review": [
+          {
+            "page": 5,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "systematic review",
+            "snippet": ".... Ortopedia e traumatologia: principios e pratica. Artmed. Porto Alegre. 5a edicao. 2017. 9-Lopez-Valenciano, A.; Ruiz-Perez, I.; Garcia-Gomez, A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. British Journal of Sports Medicine. Spain. Vol. 54. Num. 12. 2020. p. 711-718. 10-Netto, D.C.; Arliani, G.G.; Thiele, E.S.; Cat, M.N.L.; Cohen, M.; Pagura, J.R. Avaliacao prospectiva das lesoes esportivas ocorridas durante as partidas do Ca..."
+          },
+          {
+            "page": 5,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "meta-analysis",
+            "snippet": "...logia: principios e pratica. Artmed. Porto Alegre. 5a edicao. 2017. 9-Lopez-Valenciano, A.; Ruiz-Perez, I.; Garcia-Gomez, A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. British Journal of Sports Medicine. Spain. Vol. 54. Num. 12. 2020. p. 711-718. 10-Netto, D.C.; Arliani, G.G.; Thiele, E.S.; Cat, M.N.L.; Cohen, M.; Pagura, J.R. Avaliacao prospectiva das lesoes esportivas ocorridas durante as partidas do Campeonato Brasileir..."
+          }
+        ],
+        "injury_illness": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injuries",
+            "snippet": "...d PDF functionality you agree to forgo any and all claims against Cengage Learning or its licensors for your use of the machine generated PDF functionality and any output derived therefrom. Download Document LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players. Authors:Wellington Danilo Soares, Iasmym Souza Bastos, Karen Cangussu Coelho and Jomar Luiz Santos de Almeida Date:Jan-April 2024 From:Revista Brasileira de Futsal e Futebol(Vol. 16, Issue 64) Publisher:Instituto Bras..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "injuries",
+            "snippet": "...of 11 players during two halves of 45 minutes. It is a modality of high physical and tactical performance, characterized by excessive physical contact, sudden changes in position, short and non- continuous movements. Objective: To identify the most prevalent injuries in the knee region in football players in the city of Montes Claros-MG. Materiais e Methods: This study is characterized by its descriptive nature, with a quantitative and cross-sectional approach. The studied population will consist of 31 football players, r..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "injuries",
+            "snippet": "...selected, belonging to a football team of the city of Montes Claros-MG. They will be evaluated using the Lysholm Knee Scoring Scale questionnaire, which was developed and validated by Lysholm in 1982, translated by Peccin in 2006. Results: The highest rate of injuries was rupture of the anterior cruciate ligament, totaling 12.9% of acquired pathologies. It was also observed that the other most prevalent injuries were meniscus tear, hamstring injury and patellar tendinopathy (9.7%). The most injured position was attacker an..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "injuries",
+            "snippet": "...which was developed and validated by Lysholm in 1982, translated by Peccin in 2006. Results: The highest rate of injuries was rupture of the anterior cruciate ligament, totaling 12.9% of acquired pathologies. It was also observed that the other most prevalent injuries were meniscus tear, hamstring injury and patellar tendinopathy (9.7%). The most injured position was attacker and defensive midfielder (19.4%), and the most preserved position was goalkeeper (3.2%) and center forward (6.5%). Discussion: According to the expos..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "injury",
+            "snippet": "...sholm in 1982, translated by Peccin in 2006. Results: The highest rate of injuries was rupture of the anterior cruciate ligament, totaling 12.9% of acquired pathologies. It was also observed that the other most prevalent injuries were meniscus tear, hamstring injury and patellar tendinopathy (9.7%). The most injured position was attacker and defensive midfielder (19.4%), and the most preserved position was goalkeeper (3.2%) and center forward (6.5%). Discussion: According to the exposed table, it can be concluded that th..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "incidence",
+            "snippet": "...lar tendinopathy (9.7%). The most injured position was attacker and defensive midfielder (19.4%), and the most preserved position was goalkeeper (3.2%) and center forward (6.5%). Discussion: According to the exposed table, it can be concluded that the highest incidence of knee injuries in football players is ligament rupture, a pathology that refers to the injuries found in the present study. Conclusion: Through this study, it was possible to observe that the main knee injury in players is ligament rupture. Key words: Athle..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "injuries",
+            "snippet": "...9.7%). The most injured position was attacker and defensive midfielder (19.4%), and the most preserved position was goalkeeper (3.2%) and center forward (6.5%). Discussion: According to the exposed table, it can be concluded that the highest incidence of knee injuries in football players is ligament rupture, a pathology that refers to the injuries found in the present study. Conclusion: Through this study, it was possible to observe that the main knee injury in players is ligament rupture. Key words: Athletes. Football. Kn..."
+          },
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "injuries",
+            "snippet": "...nd the most preserved position was goalkeeper (3.2%) and center forward (6.5%). Discussion: According to the exposed table, it can be concluded that the highest incidence of knee injuries in football players is ligament rupture, a pathology that refers to the injuries found in the present study. Conclusion: Through this study, it was possible to observe that the main knee injury in players is ligament rupture. Key words: Athletes. Football. Knee. Lesion. Rupture. Full Text: INTRODUCAO O futebol e um esporte de equipe cons..."
+          },
+          {
+            "page": 5,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Epidemiology",
+            "snippet": "...ert, S.K.; Filho, T.E.P.B.; Xavier, R.; Junior, A.G.P. Ortopedia e traumatologia: principios e pratica. Artmed. Porto Alegre. 5a edicao. 2017. 9-Lopez-Valenciano, A.; Ruiz-Perez, I.; Garcia-Gomez, A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. British Journal of Sports Medicine. Spain. Vol. 54. Num. 12. 2020. p. 711-718. 10-Netto, D.C.; Arliani, G.G.; Thiele, E.S.; Cat, M.N.L.; Cohen, M.; Pagura, J.R. Avaliacao prospectiva..."
+          },
+          {
+            "page": 6,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injuries",
+            "snippet": "...al 31 100,0% Copyright: COPYRIGHT 2024 Instituto Brasileiro de Pesquisa e Ensino em Fisiologia do Exercicio. IBPEFEX http://www.rbff.com.br/index.php/rbff Source Citation Soares, Wellington Danilo, et al. \"LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players.\" Revista Brasileira de Futsal e Futebol, vol. 16, no. 64, Jan.-Apr. 2024, pp. 132+. Gale Academic OneFile, link.gale.com/apps/doc/A793260136/AONE?u=dublin&sid=bookmark-AONE. Accessed 30 July 2026. Gale Document Number:..."
+          }
+        ],
+        "design": [
+          {
+            "page": 1,
+            "section": "Abstract",
+            "eligibleEvidenceSection": true,
+            "match": "cross-sectional",
+            "snippet": "...short and non- continuous movements. Objective: To identify the most prevalent injuries in the knee region in football players in the city of Montes Claros-MG. Materiais e Methods: This study is characterized by its descriptive nature, with a quantitative and cross-sectional approach. The studied population will consist of 31 football players, randomly selected, belonging to a football team of the city of Montes Claros-MG. They will be evaluated using the Lysholm Knee Scoring Scale questionnaire, which was developed and validated..."
+          }
+        ]
+      },
+      "firstPagesExcerpt": "[p. 1] Disclaimer: This is a machine generated PDF of selected content from our products. This functionality is provided solely for your convenience and is in no way intended to replace original scanned PDF. Neither Cengage Learning nor its licensors make any representations or warranties with respect to the machine generated PDF. The PDF is automatically generated \"AS IS\" and \"AS AVAILABLE\" and are not retained in our systems. CENGAGE LEARNING AND ITS LICENSORS SPECIFICALLY DISCLAIM ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION, ANY WARRANTIES FOR AVAILABILITY, ACCURACY, TIMELINESS, COMPLETENESS, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Your use of the machine generated PDF is subject to all use restrictions contained in The Cengage Learning Subscription and License Agreement and/or the Gale Academic OneFile Terms and Conditions and by using the machine generated PDF functionality you agree to forgo any and all claims against Cengage Learning or its licensors for your use of the machine generated PDF functionality and any output derived therefrom. Download Document LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players. Authors:Wellington Danilo Soares, Iasmym Souza Bastos, Karen Cangussu Coelho and Jomar Luiz Santos de Almeida Date:Jan-April 2024 From:Revista Brasileira de Futsal e Futebol(Vol. 16, Issue 64) Publisher:Instituto Brasileiro de Pesquisa e Ensino em Fisiologia do Exercicio. IBPEFEX Document Type:Article Length:3,051 words Abstract: Introducao: O futebol e um esporte de equipe constituido por dois grupos de 11 jogadores durante dois tempos de 45 minutos. e uma modalidade de alto rendimento fisico e tatico, caracterizando-se pelo excessivo contato fisico, mudancas bruscas de posicao, movimentos curtos e nao continuos. Objetivo: Identificar as lesoes mais prevalentes na regiao do joelho em jogadores de futebol na cidade de Montes Claros-MG. Materiais e Metodos: Este estudo caracteriza-se por natureza descritiva, tendo abordagem quantitativa e transversal. A populacao estudada sera formada de 31 atletas de futebol, selecionados de forma aleatoria, pertencentes a uma equipe de futebol da cidade de Montes Claros-MG. Serao avaliados atraves do questionario Lysholm Knee Scoring Scale que foi desenvolvido e validado por Lysholm em 1982, traducao por Peccin em 2006. Resultados: O maior indice de lesoes foi a ruptura do ligamento cruzado anterior, totalizando \n\n[p. 2] Este esporte apresenta altos niveis de lesoes, principalmente em jogadores profissionais (Almeida e colaboradores, 2013). Um jogador de futebol pode percorrer 10km aproximadamente, e nesse percurso ele efetua movimentos bruscos a cada 6 segundos, o que propicia a lesoes (Oliveira e colaboradores, 2017). Estudos epidemiologicos demonstram uma media de 16 a 28 lesoes a cada 1000 horas de jogo (Netto e colaboradores, 2019. A lesao com maior incidencia ocasionadas por praticantes do esporte e estiramento muscular, tendo prevalencia nos membros inferiores. Nota-se tambem, que os jogadores que mais sofrem lesoes sao aqueles que jogam na posicao de meio campo (Silva e colaboradores, 2019). O futebol profissional exige que o atleta esteja em excelentes condicoes fisicas, o que torna a fisioterapia esportiva uma das areas mais promissoras da fisioterapia, sendo componente da medicina esportiva, ela e aplicada em lesoes provenientes do esporte, com o intuito de tratar o atleta lesionado e elaborar prevencoes, para assim ter uma melhora significativa no desempenho fisico dos jogadores e diminuir os riscos de novas lesoes (Silva e colaboradores, 2019). As articulacoes mais requisitadas no futebol sao as do joelho, por isso ela possui um alto indice de lesoes. Dentre essas lesoes as mais comuns sao: tendinites, ruptura de meniscos, entorses, luxacoes e subluxacoes, fraturas osseas, ruptura ligamentar, osteoartrite e estiramentos de tendoes (Silva, 2018). O sistema muscular do joelho tem como funcao proteger os ossos e os ligamentos. Existe um grande complexo de musculos nesta articulacao, que sao eles: tensor da fascia lata, reto da coxa, isquiotibiais, biceps femoral, semimembranoso e semitendinoso, gracil, popliteo e o gastrocnemio. Foi possivel comprovar em outro estudo que os treinamentos para os jogos aumentam significantemente os indices de lesoes no joelho (Bezuglov e colaboradores, 2020). Vale ressaltar que dentre essas patologias a mais comum e uma das mais graves e a ruptura do ligamento cruzado, que geralmente provoca lesao meniscal devido a sua correlacao (Silva, 2018). A tendinite patelar tambem e uma patologia muito recorrente, pois sao causadas por excesso de treinos e execucao errada de tecnicas de jogo (Hebert e colaboradores, 2017). Alem dos prejuizos economicos, a queda da performance esportiva e tambem uma consequencia dessas lesoes e do afastamento resultante delas. O conhecimento dos principais fatores de risco associados a essas lesoes possibilit\n\n[p. 3] que 64 pontos. Sendo possivel verificar possiveis instabilidades e disfuncoes. Apos a autorizacao para realizacao da pesquisa pela coordenacao da equipe pesquisada, foi realizada uma reuniao com os jogadores e comissao tecnica, no qual foram apresentadas a justificativa e metodologia do estudo, e todos que aceitaram participar da pesquisa de forma voluntaria assinou o Termo de Consentimento Livre e Esclarecido - TCLE. Os dados foram coletados entre os meses de marco e abril de 2023, no centro de treinamento do time, de forma individual e em uma sala reservada para este fim, preservando a identidade do avaliado e sigilo dos dados coletados. Todas as avaliacoes foram feitas pelos proprios pesquisadores. Os dados foram planilhados no Statistical Package for the Social Sciences - SPSS, versao 25.0 para Windows e foram realizados os testes devidos. RESULTADOS Observa-se que a pesquisa teve como maioria de participantes jogadores que jogam nas posicoes de volante e atacante (19,4%). Participaram do estudo 31 jogadores com idade entre 18 a 44 anos (25,87 [+ or -] 5,4). Os resultados encontrados seguem expostos nas tabelas abaixo: A maioria dos jogadores avaliados possuiam o tipo de pe plano, totalizando 51,6%. Nessa tabela foi possivel verificar que o joelho do tipo fisiologico teve grande superioridade em vista dos outros tipos. A maior prevalencia de lesao foi a ruptura ligamentar do cruzado anterior (12,9%) e a subsequentes foram ruptura do menisco, lesao de isquiotibial e tendinopatia patelar (9,7% cada uma). A posicao dos jogadores com maior incidencia de lesoes foi atacante, volante, meio de campo e lateral. Foi possivel verificar que todos os jogadores avaliados na posicao de lateral direito e esquerdo apresentaram a mesma lesao de ruptura do menisco e ruptura de LCA. Foi possivel observar que houve um empate na classificacao funcional pois 35,5% foram excelentes e 35,5% foram bons. O com menos indice foi a classificacao ruim com 9,6%. DISCUSSaO O estudo buscou averiguar as principais lesoes que acometem os jogadores de futebol na cidade de Montes Claros-MG. Nossos resultados demonstraram que a maior prevalencia de lesao no joelho nos jogadores pesquisado foi a ruptura do ligamento cruzado anterior. Corroborando com nossos achados, foi identificado que uma das principais estruturas afetadas nesse esporte sao os ligamentos, e isso se justifica devido ao alto nivel de recrutamento das mesmas para melhor desempenho no jogo (Silva, 2018). Em um estudo foi cons\n\n[p. 4] Uma pesquisa relatou que os meniscos sao estruturas bastante afetadas no joelho, e que e pouco provavel a ocorrencia de ruptura dos dois meniscos e a porcao mais comprometida do menisco e a do corno posterior do menisco. Esse estudo demonstrou que a media de idade de jogadores de futebol lesionados foi de 25,87 anos o que nao foi muito diferente do nosso estudo exposto, e 9,7% das lesoes prevalentes foi a ruptura do menisco e os mais atingidos foram as posicoes de laterais esquerdo (20,0) e direito (25,0) e zagueiro (33,3). Os maiores fatores contribuintes para o alto indice de ruptura do ligamento cruzado anterior sao altas pressoes expostas durante os jogos, saltos e aterrissagens e manter a estabilidade articular apos o chute, ou seja, os jogadores mais afetados sao aqueles que jogam em posicoes de defesa. De acordo com o nosso estudo, foi possivel comprovar essa afirmacao pois 12,9% das lesoes da nossa amostra foram apenas de ruptura do ligamento cruzado anterior, e a posicao que mais foi afetada por tal patologia foi a do lateral direito (50,0% dos pesquisados dessa posicao). Nossos resultados demonstraram ainda algumas lesoes patelares, e ele foi constatado em um achado que a anatomia do joelho valgo influencia diretamente para essa lesao. Entretanto, na nossa pesquisa obtivemos uma variante anatomica de joelho bem expressiva correlacionados a lesao patelar variando entre joelhos valgos, varos e fisiologicos. A posicao dos jogadores com maior incidencia de lesoes foi atacante, volante, meio de campo e lateral. Ha uma maior incidencia de lesoes em atletas de meio campo e atacante (Silva, 2019). Quanto a incidencia de meio campo o levantamento bibliografico permite associar o meio campista como posicao predominante dentre os demais estudos analisados, sendo o percentual mais elevado de 66,67% (Borges e colaboradores, 2018), seguido de 53% (Coelho, 2011). Por fim, a classificacao funcional coletada na sua maioria foi classificada como excelentes e bons. Tal classificacao vai de encontro com um achado onde pode-se observar que o resultado do questionario de Lysholm e positivo, uma vez que os praticantes categorizaram a funcao do joelho na sua pesquisa em muito bom (65%) e (17%) em bom, sendo assim (82%) dos participantes avaliados possuem resultados positivos quando se fala na funcionalidade da articulacao do joelho (Pereira Junior, 2017). O estudo apresenta limitacao inerente as pesquisas com desenho transversal, pela i",
+      "selectedPageText": [
+        {
+          "page": 1,
+          "text": "Disclaimer: This is a machine generated PDF of selected content from our products. This functionality is provided solely for your convenience and is in no way intended to replace original scanned PDF. Neither Cengage Learning nor its licensors make any representations or warranties with respect to the machine generated PDF. The PDF is automatically generated \"AS IS\" and \"AS AVAILABLE\" and are not retained in our systems. CENGAGE LEARNING AND ITS LICENSORS SPECIFICALLY DISCLAIM ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION, ANY WARRANTIES FOR AVAILABILITY, ACCURACY, TIMELINESS, COMPLETENESS, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Your use of the machine generated PDF is subject to all use restrictions contained in The Cengage Learning Subscription and License Agreement and/or the Gale Academic OneFile Terms and Conditions and by using the machine generated PDF functionality you agree to forgo any and all claims against Cengage Learning or its licensors for your use of the machine generated PDF functionality and any output derived therefrom. Download Document LESOES NA REGIAO DO JOELHO EM JOGADORES DE FUTEBOL /Injuries in the knee region in football players. Authors:Wellington Danilo Soares, Iasmym Souza Bastos, Karen Cangussu Coelho and Jomar Luiz Santos de Almeida Date:Jan-April 2024 From:Revista Brasileira de Futsal e Futebol(Vol. 16, Issue 64) Publisher:Instituto Brasileiro de Pesquisa e Ensino em Fisiologia do Exercicio. IBPEFEX Document Type:Article Length:3,051 words Abstract: Introducao: O futebol e um esporte de equipe constituido por dois grupos de 11 jogadores durante dois tempos de 45 minutos. e uma modalidade de alto rendimento fisico e tatico, caracterizando-se pelo excessivo contato fisico, mudancas bruscas de posicao, movimentos curtos e nao continuos. Objetivo: Identificar as lesoes mais prevalentes na regiao do joelho em jogadores de futebol na cidade de Montes Claros-MG. Materiais e Metodos: Este estudo caracteriza-se por natureza descritiva, tendo abordagem quantitativa e transversal. A populacao estudada sera formada de 31 atletas de futebol, selecionados de forma aleatoria, pertencentes a uma equipe de futebol da cidade de Montes Claros-MG. Serao avaliados atraves do questionario Lysholm Knee Scoring Scale que foi desenvolvido e validado por Lysholm em 1982, traducao por Peccin em 2006. Resultados: O maior indice de lesoes foi a ruptura do ligamento cruzado anterior, totalizando 12,9% das patologias adquiridas. Observou-se tambem que as outras lesoes mais prevalentes foram ruptura de menisco, lesao do isquiotibial e tendinopatia patelar (9,7%). A posicao mais lesada foi atacante e volante (19,4%), e o mais preservado foi a posicao de goleiro (3,2%) e centro avante (6,5%). Discussao: De acordo com a tabela exposta pode-se concluir que a maior incidencia de lesao no joelho em jogadores de futebol e a ruptura ligamentar, patologia essa que se refere a lesoes encontradas no presente estudo. Conclusao: Atraves deste estudo foi possivel observar que a principal lesao no joelho em jogadores e a ruptura ligamentar. Palavras-chave: Atletas. Futebol. Joelho. Lesao. Ruptura. Introduction: Football is a team sport consisting of two groups of 11 players during two halves of 45 minutes. It is a modality of high physical and tactical performance, characterized by excessive physical contact, sudden changes in position, short and non- continuous movements. Objective: To identify the most prevalent injuries in the knee region in football players in the city of Montes Claros-MG. Materiais e Methods: This study is characterized by its descriptive nature, with a quantitative and cross-sectional approach. The studied population will consist of 31 football players, randomly selected, belonging to a football team of the city of Montes Claros-MG. They will be evaluated using the Lysholm Knee Scoring Scale questionnaire, which was developed and validated by Lysholm in 1982, t"
+        },
+        {
+          "page": 5,
+          "text": "2007. 6-Fonseca, P.H.S.; Marins, J.C.B.; Silva, A.T. Validacao de equacoes antropometricas que estimam a densidade corporal em atletas profissionais de futebol. Revista Brasileira de Medicina do Esporte. Vol. 13. Num. 3. 2007. 7-Frade, V.M.C. Periodizacao tatica: Fundamentos e perspectivas. Conexoes. Vol. 13. Num. 1. 2015. p. 180-204. 8-Hebert, S.K.; Filho, T.E.P.B.; Xavier, R.; Junior, A.G.P. Ortopedia e traumatologia: principios e pratica. Artmed. Porto Alegre. 5a edicao. 2017. 9-Lopez-Valenciano, A.; Ruiz-Perez, I.; Garcia-Gomez, A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. British Journal of Sports Medicine. Spain. Vol. 54. Num. 12. 2020. p. 711-718. 10-Netto, D.C.; Arliani, G.G.; Thiele, E.S.; Cat, M.N.L.; Cohen, M.; Pagura, J.R. Avaliacao prospectiva das lesoes esportivas ocorridas durante as partidas do Campeonato Brasileiro de Futebol em 2016. Revista Brasileira de Ortopedia. Vol. 54. Num. 3. 2019. p. 329-334. 11-Nigri, P.Z.; Peccin, M.S.; Almeida, G.J.M.; Cohen, M. Traducao, Validacao e Adaptacao Cultural da Escala de Vida Diaria. Acta ortop. bras. Vol. 15. Num. 2. 2007. 12-Oliveira, G.R.; Vale, E.G.S.; Oliveira, F.B.O.; Junior, O.L.D.; Doria, C. Introduzindo a historia da fisioterapia na evolucao do futebol brasileiro e europeu. Revista Fisioterapia Brasil. Vol. 18, Num. 3. 2017. p. 260-266. 13-Pereira Junior, A.A.; Silva, S.N. Avaliacao da Funcionalidade do Joelho em Atletas de Futebol. Revista Observatorio Del Deporte. Santiago. Vol.3. Num.2. 2017. p.30-41. 14-Silva, W.M.; Bernaldino, E.S.; Fileni, C.H.P.; Camargo, L.B.; Lima, B.N.; Martins, G.C.; Santos, L.J.A.M.; Passos, R.P.; Junior, G.B.V.; Silio, L.F. Incidencia de lesoes musculoesqueleticas em jogadores de futebol profissional no Brasil. Revista CPAQV - Centro de Pesquisas Avancadas Em Qualidade de Vida. Vol. 11. Num. 3. 2019. p. 1-13. 15-Silva, M. C. Principais Lesoes do joelho no futebol masculino: uma revisao integrativa da literatura. Facol-PE. 2018. Recebido para publicacao em 21/07/2023 Aceito em 04/08/2023 Wellington Danilo Soares (1), Iasmym Souza Bastos (2), Karen Cangussu Coelho (2) Jomar Luiz Santos de Almeida (3) (1) - Doutor em ciencias da saude pela Universidade Estadual de Montes Claros - Unimontes, docente no curso de Psicologia das Faculdades Unidas do Norte de Minas - Funorte, Montes Claros-MG, Brasil. (2) - Academica do curso de Fisioterapia do Instituto de Ciencias da Saude - ICS, Montes Claros-MG, Brasil. (3) - Fisioterapeuta especialista em fisioterapia desportiva e cardiovascular pela Universidade de Nova Iguacu, Mestre em avaliacao das atividades fisicas pela Universidade Tras-os-Montes e Alto Douro/ Portugal - validado na Universidade Federal do Rio Grande do Norte; Docente do curso de fisioterapia das Faculdades Unidas do Norte de Minas. E-mail dos autores: wdansoa@yahoo.com.br iasmymsbastos@gmail.com karen.coelho@soufunorte.com.br jomar_fisio@hotmail.com Autor para correspondencia: Wellington Danilo Soares."
+        }
+      ],
+      "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3493.packet.json"
+    },
+    {
+      "recordId": "f569367d-f4cb-4fdd-a276-3f02b1ee6aab",
+      "covidenceId": null,
+      "studyId": "S3592",
+      "title": "Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes: 1961.",
+      "authors": "Sakar Gupta, Kristin Haraldsdottir, Jennifer Sanfilippo, Ian Staresinic, Scott Anderson, Jack Behrendt, Quinn Steiner, Andrew Watson",
+      "year": "2025",
+      "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3592.pdf",
+      "pdfSha256": "0785b09e6a8a0d2a8d23d6f5f7f27594f3cdb8a62661b111081471de77d67b55",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "status": "text_extracted",
+      "pageCount": 1,
+      "textCharCount": 7108,
+      "warnings": [],
+      "signals": {
+        "football": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...ionships reported) PURPOSE: The factors influencing mental health and quality of life (QOL) in elite youth athletes are not well -defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. M..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...rs influencing mental health and quality of life (QOL) in elite youth athletes are not well -defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determ..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...01), and AI (b=-0.22+/-0.092, p=0.016), but not gender (b=1.8+/-1.1, p=0.10), and not racial minority group (b=-1.5+/-1.0, p=0.16). Of the included covariates, sleep had the greatest relative importance (38 -56%) in all models. CONCLUSION: Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were ind ependently associated with greater symptoms of anxiety and depression. Similarly, older age, prior injury, reduced sleep, and higher AI were associated with reduced total Q OL. Prior..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "soccer",
+            "snippet": "...prospective data exists regard ing the impact of injuries based on the severity of injury in collegiate athletes. PURPOSE: To evaluate the relationship between injury severity and mental and physical QOL in NCAA Division I athletes. METHODS: 345 football, soccer, cross country, tennis, and golf athletes (45.0% female) completed an online Veterans Rand 12 (VR -12) survey at the start and end of their 2021-2022 and 2022-2023 seasons. Mental and physical QOL was assessed via VR -12 mental and physical composite scores..."
+          }
+        ],
+        "injury_illness": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "prevalence",
+            "snippet": "...s. Classification performance metrics were calculated and compared to previous literature. An exploratory factor analysis was conducted to inve stigate covariance between Step 2 questionnaires and explain observed false negative rates (FNRs). RESULTS: The prevalence of a flagged APSQ was 24.7%. FNRs were calculated as PHQ9=0% GAD7= 7.7%, ASSQ=52.9%, AUDIT -C=61.2%, CAGE- AID=37.5%, BEDA-Q=63.16%, PTSD=11.1%, congruent with previous findings. Exploratory factor analysis showed that GAD -7 and PHQ-9 were grouped under the..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determined independent predictors of mental health and QOL, with age, gender, prior week sleep, in..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...ry, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determined independent predictors of mental health and QOL, with age, gender, prior week sleep, injury, AI, and racial minority group as covariates. RESULTS: Compared to males, female youth athletes, on average had significantly worse symptoms o f anxiety (4.1 [3.6-4.7] v 6.2 [5.7-6.6], p<0.001) and depression (3.8 [3.3-4.4] v 5.6 [5.1-6.1], p<0.001), and s..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...9 -83] v 79 [77-80], p=0.02), respectively. Independent predictors of anxiety were greater age (estimate (b)=0.28 +/-0.072, p<0.001), female gender (b=-1.7+/-0.40, p<0.001), less sleep (b=-0.88+/-0.16, p<0.001), lower AI (b=0.11+/- 0.034, p=0.002), and prior injury (b=1.2+/-0.37, p=0.001), but not racial minority group (b=0.35+/-0.39, p=0.37). Independent predictors of depression included greater age (b=0.29+/-0.070, p<0.001), female gender (b=-1.4+/-0.41, p<0.001), less sleep (b=-1.2+/-0.16, p<0.001), prior injury (b=..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...ior injury (b=1.2+/-0.37, p=0.001), but not racial minority group (b=0.35+/-0.39, p=0.37). Independent predictors of depression included greater age (b=0.29+/-0.070, p<0.001), female gender (b=-1.4+/-0.41, p<0.001), less sleep (b=-1.2+/-0.16, p<0.001), prior injury (b=0.88+/-0.37, p=0.019), and identifying as part of a racial minority group (b=0.81+/-0.40, p=0.004), but not AI (b=0.049+/-0.035, p=0.16). Independent predictors of QOL were age (b= -0.60+/- 0.19, p=0.001), sleep (b=2.6+/-0.43, p<0.001), prior injury (b=-3..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...prior injury (b=0.88+/-0.37, p=0.019), and identifying as part of a racial minority group (b=0.81+/-0.40, p=0.004), but not AI (b=0.049+/-0.035, p=0.16). Independent predictors of QOL were age (b= -0.60+/- 0.19, p=0.001), sleep (b=2.6+/-0.43, p<0.001), prior injury (b=-3.7+/-0.98, p<0.001), and AI (b=-0.22+/-0.092, p=0.016), but not gender (b=1.8+/-1.1, p=0.10), and not racial minority group (b=-1.5+/-1.0, p=0.16). Of the included covariates, sleep had the greatest relative importance (38 -56%) in all models. CONCLUSI..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...der (b=1.8+/-1.1, p=0.10), and not racial minority group (b=-1.5+/-1.0, p=0.16). Of the included covariates, sleep had the greatest relative importance (38 -56%) in all models. CONCLUSION: Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were ind ependently associated with greater symptoms of anxiety and depression. Similarly, older age, prior injury, reduced sleep, and higher AI were associated with reduced total Q OL. Prior week sleep had the greatest influence on mental h..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...relative importance (38 -56%) in all models. CONCLUSION: Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were ind ependently associated with greater symptoms of anxiety and depression. Similarly, older age, prior injury, reduced sleep, and higher AI were associated with reduced total Q OL. Prior week sleep had the greatest influence on mental health and QOL. 1962 Associations Between Injury Severity And Impact On Quality Of Life In Ncaa Division I Athletes Daisy L. Lan..."
+          }
+        ],
+        "design": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "prospective",
+            "snippet": "...sdottir, Scott A. Anderson, Andrew M. Watson. University of Wisconsin - Madison, Madison, WI. Email: langdaisy12@gmail.com (No relevant relationships reported) Prior work in youth athletes suggests that injury can impair quality of life (QOL), but little prospective data exists regard ing the impact of injuries based on the severity of injury in collegiate athletes. PURPOSE: To evaluate the relationship between injury severity and mental and physical QOL in NCAA Division I athletes. METHODS: 345 football, soccer, cro..."
+          }
+        ]
+      },
+      "firstPagesExcerpt": "[p. 1] 1960 Does The Sport Mental Health Assessment Tool-1 Accurately Triage Olympic And Paralympic Athletes? Travis Anderson, Jessica D. Bartley, Karen Cogan, Angel Brutus, Ashley N. Triplett, Amber T. Donaldson, FACSM, Jonathan T. Finnoff, FACSM, Eric G. Post, William M. Adams, FACSM. United States Olympic & Paralympic Committee, Colorado Springs, CO. (Sponsor: Gregory D. Myer, FACSM) Email: travis.anderson@usopc.org (No relevant relationships reported) PURPOSE: To assess previous sample representation limitations and provide classification performance metrics to evaluate the accuracy of the Athlete P sychological Strain Questionnaire (APSQ) in triaging athletes to Step 2 of the Sport Mental Health Assessment Tool (SMHAT -1). METHODS: Prior to the Paris 2024 Olympic and Paralympic Games, Team USA athletes (n= 911, age: 27.3±6.1 years, 52.1% female, 26.1% Par alympic) completed the SMHAT-1 as part of a mandatory pre-Games health screening. Athletes completed both the APSQ (Step 1) and all Step 2 questionnaires, regardless of their APSQ score. Step 2 questionnaires included the Patient Health Questionnaire -9 (PHQ-9), Generalized Anxiety Disorder-7 (GAD-7), Athlete Sleep Screening Questionnaire (ASSQ), CAGE-AID for drug use, Alcohol Use Disorders Identification Test-Concise (AUDIT-C), Brief Eating Disorder in Athletes Questionnaire (BEDA -Q), and Post-Traumatic Stress Disorder (PTSD). All questionnaires were scored and marked as “flag” or “no flag” according to established t hresholds. Classification performance metrics were calculated and compared to previous literature. An exploratory factor analysis was conducted to inve stigate covariance between Step 2 questionnaires and explain observed false negative rates (FNRs). RESULTS: The prevalence of a flagged APSQ was 24.7%. FNRs were calculated as PHQ9=0% GAD7= 7.7%, ASSQ=52.9%, AUDIT -C=61.2%, CAGE- AID=37.5%, BEDA-Q=63.16%, PTSD=11.1%, congruent with previous findings. Exploratory factor analysis showed that GAD -7 and PHQ-9 were grouped under the first factor, while CAGE-AID was grouped under the second factor. The other questionnaires did not fit distinctly into either factor, suggesting the S MAHT is assessing a broad spectrum of mental health factors, which would be difficult for a single gene ric screening tool to triage adequately. CONCLUSIONS: While the SMHAT-1 remains an essential tool for athlete mental health screening, the high FNRs indicate limitations in using the APSQ as an initial triage instrumen",
+      "selectedPageText": [
+        {
+          "page": 1,
+          "text": "1960 Does The Sport Mental Health Assessment Tool-1 Accurately Triage Olympic And Paralympic Athletes? Travis Anderson, Jessica D. Bartley, Karen Cogan, Angel Brutus, Ashley N. Triplett, Amber T. Donaldson, FACSM, Jonathan T. Finnoff, FACSM, Eric G. Post, William M. Adams, FACSM. United States Olympic & Paralympic Committee, Colorado Springs, CO. (Sponsor: Gregory D. Myer, FACSM) Email: travis.anderson@usopc.org (No relevant relationships reported) PURPOSE: To assess previous sample representation limitations and provide classification performance metrics to evaluate the accuracy of the Athlete P sychological Strain Questionnaire (APSQ) in triaging athletes to Step 2 of the Sport Mental Health Assessment Tool (SMHAT -1). METHODS: Prior to the Paris 2024 Olympic and Paralympic Games, Team USA athletes (n= 911, age: 27.3±6.1 years, 52.1% female, 26.1% Par alympic) completed the SMHAT-1 as part of a mandatory pre-Games health screening. Athletes completed both the APSQ (Step 1) and all Step 2 questionnaires, regardless of their APSQ score. Step 2 questionnaires included the Patient Health Questionnaire -9 (PHQ-9), Generalized Anxiety Disorder-7 (GAD-7), Athlete Sleep Screening Questionnaire (ASSQ), CAGE-AID for drug use, Alcohol Use Disorders Identification Test-Concise (AUDIT-C), Brief Eating Disorder in Athletes Questionnaire (BEDA -Q), and Post-Traumatic Stress Disorder (PTSD). All questionnaires were scored and marked as “flag” or “no flag” according to established t hresholds. Classification performance metrics were calculated and compared to previous literature. An exploratory factor analysis was conducted to inve stigate covariance between Step 2 questionnaires and explain observed false negative rates (FNRs). RESULTS: The prevalence of a flagged APSQ was 24.7%. FNRs were calculated as PHQ9=0% GAD7= 7.7%, ASSQ=52.9%, AUDIT -C=61.2%, CAGE- AID=37.5%, BEDA-Q=63.16%, PTSD=11.1%, congruent with previous findings. Exploratory factor analysis showed that GAD -7 and PHQ-9 were grouped under the first factor, while CAGE-AID was grouped under the second factor. The other questionnaires did not fit distinctly into either factor, suggesting the S MAHT is assessing a broad spectrum of mental health factors, which would be difficult for a single gene ric screening tool to triage adequately. CONCLUSIONS: While the SMHAT-1 remains an essential tool for athlete mental health screening, the high FNRs indicate limitations in using the APSQ as an initial triage instrument. The APSQ may be better suited as a Step 2 assessment. A bespoke Step 1 screening tool that captures the diverse spectrum of mental health concerns in athletes should be considered to enhance the tool’s effectiveness and potentially increase its adoption across al l levels of sport. Supported by: This work was funded in part by a grant from the International Olympic Committee. 1961 Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes Sakar Gupta1, Kristin Haraldsdottir2, Jennifer Sanfilippo2, Ian Staresinic2, Scott Anderson2, Jack Behrendt2, Quinn Steiner2, Andrew Watson2. 1University of Wisconsin School of Medicine and Public Health, Madison, WI. 2University of Wisconsin Department of Orthopedics and Rehabilitation, Madison, WI. Email: sakarsgupta@gmail.com (No relevant relationships reported) PURPOSE: The factors influencing mental health and quality of life (QOL) in elite youth athletes are not well -defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determined independent predictors of mental health and QOL, with age, gender, prior week sleep, injury, AI, and racial minority gro"
+        }
+      ],
+      "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3592.packet.json"
+    },
+    {
+      "recordId": "a1d3abb9-e358-429f-81d7-27750611659b",
+      "covidenceId": null,
+      "studyId": "S3713",
+      "title": "Incidence And Burden Of Injury At The Accra 2023 First African Paralympic Games: 1519.",
+      "authors": "Abena Tannor, Leslie Ajavon, Bella Bello Bitugu, Benedict Okoe-Quao",
+      "year": "2025",
+      "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3713.pdf",
+      "pdfSha256": "fe1c391cbbd6d6faddccb9049034b4b4ac574807748dee24055372ba6b401dcc",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "status": "text_extracted",
+      "pageCount": 2,
+      "textCharCount": 14523,
+      "warnings": [],
+      "signals": {
+        "wrong_sport": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Rugby",
+            "snippet": "...ncidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships report..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Rugby",
+            "snippet": "...Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships reported) Rugby Union, characterized by high-impact collisions, has a high prevalence of sport-related injuries compared to other team sports. While elite -level injury surveillance reports are available in scientific literature, there is a paucity of research at the colleg..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "rugby",
+            "snippet": "...the collegiate level. Furthermore, li mited studies distinguish injuries during skills practice and strength & conditioning sessions (SC), which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "rugby",
+            "snippet": "...most injured anatomic locations during practice and SC, respectively. The leading injury type differed across the t ype of activity (game, concussion; practice, ankle sprain; SC, lower back pain). CONCLUSION: The injury incidence in Japanese male collegiate rugby was comparable to the elite level. Injury patterns during games, pract ice, and SC were distinctly different, suggesting the importance of activity classification in developing effective injury prevention strategies. 1519 Incidence And Burden Of Injury At..."
+          },
+          {
+            "page": 2,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "American Football",
+            "snippet": "...ual cycles. PURPOSE: To quantify and compare injury incidence rates (IR) between NCAA Division I fall and spring sports during the tran sition into championship and non- championship seasons. METHODS: Injury data collected from ten Olympic sports (excluding American Football) were analyzed retrospectively alongside participa tion and seasonal transition dates from institutional records. Injuries in the first two weeks of each season were described using frequency, proportion, and IR based on 1000 athlete - days. Relative and IR..."
+          }
+        ],
+        "denominator": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "athlete exposures",
+            "snippet": "...legiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 9..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "exposure hours",
+            "snippet": "...which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "per 1000",
+            "snippet": "...s: wheelchair tennis, wheelchair basketball, and amputee football. Injury data wer e collected daily via a Google Docs form from 337 athletes (68 women, 269 men) representing 18 African countries. The study reports univariate unadju sted incidences (injuries per 1000 athlete days with 95% confidence intervals), injury proportion (IP, %), and time lost from bo th competition and pre-competition periods. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "incidence rate",
+            "snippet": "...-competition periods. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compa..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "per 1000",
+            "snippet": "...RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the compe..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "incidence rate",
+            "snippet": "...and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the competition period (11.9 vs. 6.4). The most common injuries were to the shoulder (1.8) and..."
+          },
+          {
+            "page": 2,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "incidence rate",
+            "snippet": "loss (days) from training and competition. CONCLUSIONS: The injury patterns observed at the Accra 2023 First African Paralympic Games differ from those typically seen at the Paralympic Game s, particularly in terms of the overall incidence rate. While the types of injuries and affected body parts show some similariti es, there was a lower incidence rate at the Accra Games. These findings provide valuable epidemiological data to inform injury prevention strategies for para sports in A frica, especia..."
+          },
+          {
+            "page": 2,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "incidence rate",
+            "snippet": "...ed at the Accra 2023 First African Paralympic Games differ from those typically seen at the Paralympic Game s, particularly in terms of the overall incidence rate. While the types of injuries and affected body parts show some similariti es, there was a lower incidence rate at the Accra Games. These findings provide valuable epidemiological data to inform injury prevention strategies for para sports in A frica, especially in low to middle- income countries. Further research is needed to understand the underlying factors contrib..."
+          }
+        ],
+        "denominator_numeric": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "1,000 athlete exposures",
+            "snippet": "...al Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 9..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "7.8 per 1000 athlete days",
+            "snippet": "...ds. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the competition period..."
+          }
+        ],
+        "injury_illness": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN...."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Incidence",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: a..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Surveillance",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible C..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Sur..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "...rts Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to da..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Surveillance",
+            "snippet": "...ury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...ontent is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury in..."
+          },
+          {
+            "page": 2,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "loss (days) from training and competition. CONCLUSIONS: The injury patterns observed at the Accra 2023 First African Paralympic Games differ from those typically seen at the Paralympic Game s, particularly in terms of the overall incidence rate. While the types of injuries and affected body parts show some similariti es, th..."
+          }
+        ],
+        "design": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Prospective",
+            "snippet": "...orts differently during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM)..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Cohort",
+            "snippet": "...ntly during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email..."
+          }
+        ],
+        "definition": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "time-loss",
+            "snippet": "...emands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number of days it took for an athlete to r..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Time loss",
+            "snippet": "...rded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number of days it took for an athlete to return to full participation. The injury burden was derived by multiplying a given injury's average time lo ss and the associated incidence. The Orchard Sports Injury Classification System was used..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "time loss",
+            "snippet": "...sions ( 67,639 AH). A total of 690 injuries were recorded (games, 251 [36.4%]; practice, 353 [51.2%]; SC, 86 [12.5%]). Injury incidence was 65.3 [95% CI, 57.5, 73.9]) for games, 4.1 [3.7, 4.6] for practices, and 1.3 [1.0, 1.6]) for SC per 1,000 AH. Average time loss was 40 days (game, 40 days; practice, 41 days; SC, 34 days), with an injury burden of 2,606.3 for games, 167.4 for practice, and 42.8 for SC. Injuries to the head (20%), ankle (20%) were most common during games, with ankle (19%) and thigh (29%) being the..."
+          }
+        ]
+      },
+      "firstPagesExcerpt": "[p. 1] 1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 95% Cred ible Intervals (Cred. Int.). Prevalences of the most reported specific injuries were expressed as frequencies (%s). RESULTS: During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in wom en’s sports. We determined the posterior mean overall rate to be 8.28 per 1, 000 AEs (95% Cred. Int.: 5.59, 13.18) in men’s sports and 6.99 per 1,000 AEs (95% Cred. Int.: 4.64, 11.38) in women’s sports. Estimated injury incidence was higher in competitions than practices in men’s (Posterior mean Ratio: 3.49; 95% Cred. Int.: 1.84, 6.09) and women’s (Posterior mean Ratio: 2.11; 95% Cred. Int.: 1.11, 3.68) sports. Among all men’s sports, overall injury incidence was highest in men’s football (Posterior mean= 12.14 per 1,000 AEs; 95% Cred. Int.: 8.09, 19.75), and among all women’s sport s, it was highest in women’s gymnastics (Posterior mean= 18.61 per 1,000 AEs; 95% Cred. Int.: 12.13, 29.93). Lateral ankle sprains and concussions were the most commonly reported injuries in b oth groups\n\n[p. 2] loss (days) from training and competition. CONCLUSIONS: The injury patterns observed at the Accra 2023 First African Paralympic Games differ from those typically seen at the Paralympic Game s, particularly in terms of the overall incidence rate. While the types of injuries and affected body parts show some similariti es, there was a lower incidence rate at the Accra Games. These findings provide valuable epidemiological data to inform injury prevention strategies for para sports in A frica, especially in low to middle- income countries. Further research is needed to understand the underlying factors contributing to these differences and to develop targeted interventions to reduce injury rates. 1520 Injury Incidence Rate During Seasonal Transitions In NCAA Fall And Spring Sports Paul Mentele1, Ernest Rimer1, Jennifer Daily1, Kevin Addison2, Lana Eagleton2, Caroline Pusey2, Andreas Stamatis, FACSM1. 1UofL Health, Louisville, KY. 2University of Louisville, Louisville, KY. (No relevant relationships reported) In the NCAA, fall and spring sports are defined by the semester of the ir championship season, but they also have a non-championship season during the opposite semester. Transitioning into the championship and non-championship seasons involves an acute increase in physical activity associated with a greater injury rate. No study has examined the injury risk associated with the timing of transition periods related to fall versus spring sport annual cycles. PURPOSE: To quantify and compare injury incidence rates (IR) between NCAA Division I fall and spring sports during the tran sition into championship and non- championship seasons. METHODS: Injury data collected from ten Olympic sports (excluding American Football) were analyzed retrospectively alongside participa tion and seasonal transition dates from institutional records. Injuries in the first two weeks of each season were described using frequency, proportion, and IR based on 1000 athlete - days. Relative and IR risks with 95% confidence intervals were calculated to compare seasonal transition periods. RESULTS: Fall sports experienced a more significant IR when transitioning into the championship season (IR = 14.86, 95% CI [12.13,17.19]) compared to t he non- championship season (IR = 7.10, 95% CI [5.17, 9.04]) (RR = 2.09, 95% CI [1.51, 2.91]). For spring sports, IR entering the ch ampionship season (IR = 6.48, 95% CI [5.25, 7.71]) was not significantly different from the transition to the non -champ",
+      "selectedPageText": [
+        {
+          "page": 1,
+          "text": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 95% Cred ible Intervals (Cred. Int.). Prevalences of the most reported specific injuries were expressed as frequencies (%s). RESULTS: During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in wom en’s sports. We determined the posterior mean overall rate to be 8.28 per 1, 000 AEs (95% Cred. Int.: 5.59, 13.18) in men’s sports and 6.99 per 1,000 AEs (95% Cred. Int.: 4.64, 11.38) in women’s sports. Estimated injury incidence was higher in competitions than practices in men’s (Posterior mean Ratio: 3.49; 95% Cred. Int.: 1.84, 6.09) and women’s (Posterior mean Ratio: 2.11; 95% Cred. Int.: 1.11, 3.68) sports. Among all men’s sports, overall injury incidence was highest in men’s football (Posterior mean= 12.14 per 1,000 AEs; 95% Cred. Int.: 8.09, 19.75), and among all women’s sport s, it was highest in women’s gymnastics (Posterior mean= 18.61 per 1,000 AEs; 95% Cred. Int.: 12.13, 29.93). Lateral ankle sprains and concussions were the most commonly reported injuries in b oth groups. CONCLUSIONS: Injury incidence during the study period remained consistent with historical patterns, with higher rates observed in contact/collision sports and during competitions relative to practices. Common injuries also aligned with previous observations in this population. As pan demic-related disruptions impacted sports differently during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships reported) Rugby Union, characterized by high-impact collisions, has a high prevalence of sport-related injuries compared to other team sports. While elite -level injury surveillance reports are available in scientific literature, there is a paucity of research at the collegiate level. Furthermore, li mited studies distinguish injuries during skills practice and strength & conditioning sessions (SC), which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury."
+        }
+      ],
+      "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3713.packet.json"
+    },
+    {
+      "recordId": "2e1aa4ab-b932-4605-95cf-1a3a381f20da",
+      "covidenceId": null,
+      "studyId": "S3776",
+      "title": "Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance: 1517.",
+      "authors": "Avinash Chandran, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins",
+      "year": "2025",
+      "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3776.pdf",
+      "pdfSha256": "6f7d83ac9c7883d88933236f0d93d40e6f54a0d68f54f6ea5157094cc664a0d9",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "status": "text_extracted",
+      "pageCount": 1,
+      "textCharCount": 7428,
+      "warnings": [],
+      "signals": {
+        "wrong_sport": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Rugby",
+            "snippet": "...ncidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships report..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Rugby",
+            "snippet": "...Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships reported) Rugby Union, characterized by high-impact collisions, has a high prevalence of sport-related injuries compared to other team sports. While elite -level injury surveillance reports are available in scientific literature, there is a paucity of research at the colleg..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "rugby",
+            "snippet": "...the collegiate level. Furthermore, li mited studies distinguish injuries during skills practice and strength & conditioning sessions (SC), which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "rugby",
+            "snippet": "...most injured anatomic locations during practice and SC, respectively. The leading injury type differed across the t ype of activity (game, concussion; practice, ankle sprain; SC, lower back pain). CONCLUSION: The injury incidence in Japanese male collegiate rugby was comparable to the elite level. Injury patterns during games, pract ice, and SC were distinctly different, suggesting the importance of activity classification in developing effective injury prevention strategies. 1519 Incidence And Burden Of Injury At..."
+          }
+        ],
+        "denominator": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "athlete exposures",
+            "snippet": "...legiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 9..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "exposure hours",
+            "snippet": "...which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "per 1000",
+            "snippet": "...s: wheelchair tennis, wheelchair basketball, and amputee football. Injury data wer e collected daily via a Google Docs form from 337 athletes (68 women, 269 men) representing 18 African countries. The study reports univariate unadju sted incidences (injuries per 1000 athlete days with 95% confidence intervals), injury proportion (IP, %), and time lost from bo th competition and pre-competition periods. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "incidence rate",
+            "snippet": "...-competition periods. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compa..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "per 1000",
+            "snippet": "...RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the compe..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "incidence rate",
+            "snippet": "...and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the competition period (11.9 vs. 6.4). The most common injuries were to the shoulder (1.8) and..."
+          }
+        ],
+        "denominator_numeric": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "1,000 athlete exposures",
+            "snippet": "...al Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 9..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "7.8 per 1000 athlete days",
+            "snippet": "...ds. RESULTS: A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days. There were 34 injuries reported in 33 athletes, resulting in an injury proportion of 9.8% and an incidence rate of 7.8 per 1000 athlete days (95% CI: 7.7 to 7.9). Wheelchair tennis had the highest incidence rate at 18.5, followed by wheelchair basketball at 5.3, and amputee football at 5.1. The incidence of injur ies was higher during the pre-competition period compared to the competition period..."
+          }
+        ],
+        "injury_illness": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN...."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Incidence",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: a..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Surveillance",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible C..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Sur..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Injury",
+            "snippet": "...rts Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to da..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Surveillance",
+            "snippet": "...ury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "injury",
+            "snippet": "...ontent is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury in..."
+          }
+        ],
+        "design": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Prospective",
+            "snippet": "...orts differently during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM)..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Cohort",
+            "snippet": "...ntly during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email..."
+          }
+        ],
+        "definition": [
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "time-loss",
+            "snippet": "...emands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury. METHODS: Certified athletic trainers recorded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number of days it took for an athlete to r..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "Time loss",
+            "snippet": "...rded practice and game exposure hours (athlete hours; AH) and time-loss injuries for three seasons (2021-2023). Injury incidence per 1,000 AH with 95% confidence intervals [95% CI] were calculated. Activity types were classified into game, prac tice, or SC. Time loss was defined as the number of days it took for an athlete to return to full participation. The injury burden was derived by multiplying a given injury's average time lo ss and the associated incidence. The Orchard Sports Injury Classification System was used..."
+          },
+          {
+            "page": 1,
+            "section": "Unknown",
+            "eligibleEvidenceSection": false,
+            "match": "time loss",
+            "snippet": "...sions ( 67,639 AH). A total of 690 injuries were recorded (games, 251 [36.4%]; practice, 353 [51.2%]; SC, 86 [12.5%]). Injury incidence was 65.3 [95% CI, 57.5, 73.9]) for games, 4.1 [3.7, 4.6] for practices, and 1.3 [1.0, 1.6]) for SC per 1,000 AH. Average time loss was 40 days (game, 40 days; practice, 41 days; SC, 34 days), with an injury burden of 2,606.3 for games, 167.4 for practice, and 42.8 for SC. Injuries to the head (20%), ankle (20%) were most common during games, with ankle (19%) and thigh (29%) being the..."
+          }
+        ]
+      },
+      "firstPagesExcerpt": "[p. 1] 1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 95% Cred ible Intervals (Cred. Int.). Prevalences of the most reported specific injuries were expressed as frequencies (%s). RESULTS: During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in wom en’s sports. We determined the posterior mean overall rate to be 8.28 per 1, 000 AEs (95% Cred. Int.: 5.59, 13.18) in men’s sports and 6.99 per 1,000 AEs (95% Cred. Int.: 4.64, 11.38) in women’s sports. Estimated injury incidence was higher in competitions than practices in men’s (Posterior mean Ratio: 3.49; 95% Cred. Int.: 1.84, 6.09) and women’s (Posterior mean Ratio: 2.11; 95% Cred. Int.: 1.11, 3.68) sports. Among all men’s sports, overall injury incidence was highest in men’s football (Posterior mean= 12.14 per 1,000 AEs; 95% Cred. Int.: 8.09, 19.75), and among all women’s sport s, it was highest in women’s gymnastics (Posterior mean= 18.61 per 1,000 AEs; 95% Cred. Int.: 12.13, 29.93). Lateral ankle sprains and concussions were the most commonly reported injuries in b oth groups",
+      "selectedPageText": [
+        {
+          "page": 1,
+          "text": "1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance Avinash Chandran, FACSM, Adrian J. Boltz, Neel Rao, Kody R. Campbell, Christy L. Collins. Datalys Center for Sports Injury Research and Prevention, Indianapolis, IN. Email: avinashc@datalyscenter.org Disclosures: A. Chandran: Enter Name of Ineligible Company with Whom You Have a Financial Relationship; NCAA. Enter the Nature of the Financial Relationship; The NCAA Injury Surveillance Program was funded by the NCAA. The Datalys Center is an independent organization that manages the NCAA ISP and abstract content is solely the responsibility of authors. PURPOSE: The COVID-19 pandemic resulted in unprecedented disruptions to daily life, and also had significant impacts on sport participation at all levels including at the collegiate level. We aimed to describe injury incidence in National Collegiate Athletic Association men's and women's sports during the 2019/20-2020/21 seasons. METHODS: Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20 -2020/21 were analyzed. Injury incidence (rates per 1,000 athlete exposures (AEs)) was examined overall and by sport, event type (practices/competitions) and division. B ayesian Negative Binomial models were used to estimate injury rates, with estimated incidence and differential incidence presented in terms of posterior means and 95% Cred ible Intervals (Cred. Int.). Prevalences of the most reported specific injuries were expressed as frequencies (%s). RESULTS: During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in wom en’s sports. We determined the posterior mean overall rate to be 8.28 per 1, 000 AEs (95% Cred. Int.: 5.59, 13.18) in men’s sports and 6.99 per 1,000 AEs (95% Cred. Int.: 4.64, 11.38) in women’s sports. Estimated injury incidence was higher in competitions than practices in men’s (Posterior mean Ratio: 3.49; 95% Cred. Int.: 1.84, 6.09) and women’s (Posterior mean Ratio: 2.11; 95% Cred. Int.: 1.11, 3.68) sports. Among all men’s sports, overall injury incidence was highest in men’s football (Posterior mean= 12.14 per 1,000 AEs; 95% Cred. Int.: 8.09, 19.75), and among all women’s sport s, it was highest in women’s gymnastics (Posterior mean= 18.61 per 1,000 AEs; 95% Cred. Int.: 12.13, 29.93). Lateral ankle sprains and concussions were the most commonly reported injuries in b oth groups. CONCLUSIONS: Injury incidence during the study period remained consistent with historical patterns, with higher rates observed in contact/collision sports and during competitions relative to practices. Common injuries also aligned with previous observations in this population. As pan demic-related disruptions impacted sports differently during this period, future efforts may examine injury incidence in juxtaposition to specific scheduling di sruptions to identify potential patterns. Supported by: The NCAA Injury Surveillance Program is funded by the NCAA. 1518 Three-year Prospective Cohort Injury Surveillance And Injury Risk In College Men’s Rugby Team Kenichiro Tsuru1, Norikazu Hirose2, Yuri Hosokawa, FACSM2. 1Teikyo University, Hachioji, Tokyo, Japan. 2Waseda University, Tokorozawa, Saitama, Japan. (Sponsor: William M Adams, FACSM) Email: tsuru.ken1ro@gmail.com (No relevant relationships reported) Rugby Union, characterized by high-impact collisions, has a high prevalence of sport-related injuries compared to other team sports. While elite -level injury surveillance reports are available in scientific literature, there is a paucity of research at the collegiate level. Furthermore, li mited studies distinguish injuries during skills practice and strength & conditioning sessions (SC), which have vastly different ph ysical demands. PURPOSE: To describe the injury incidence in a male Japanese collegiate rugby union and explore injury incidence by types of activity and injury."
+        }
+      ],
+      "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3776.packet.json"
+    }
+  ]
+}

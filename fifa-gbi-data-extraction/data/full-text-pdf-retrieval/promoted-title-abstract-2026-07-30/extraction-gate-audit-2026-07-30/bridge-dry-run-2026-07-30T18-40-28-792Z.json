@@ -1,0 +1,123 @@
+{
+  "artifactType": "Versioned exact-cohort AI plus one-human extraction bridge",
+  "version": "full-text-ai-one-human-bridge-2026-07-30-v1",
+  "mode": "dry_run",
+  "generatedAt": "2026-07-30T18:40:28.794Z",
+  "snapshotPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/extraction-gate-audit-2026-07-30/blocked-gate-snapshot-2026-07-30T18-16-12-749Z.json",
+  "targets": [
+    {
+      "studyId": "S683",
+      "screeningRecordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+      "protectedBeforeHash": "5bbc483ff06d099d8b2e501ff960e57d3347fcdf6848b113fd9c47b96e6ed296",
+      "votesBeforeHash": "19fd1ff7f0475cc2e034593cd93859f135f54bec5d7e5c7e6eceb0a66f401122",
+      "storageSha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+      "duplicateBaseline": {
+        "papersCount": 845,
+        "filesCount": 845,
+        "papersHash": "e3f552ddee8a696c386d57dd60007dfe8a6d6df9c85bafe12d262cbc7e0b0957",
+        "filesHash": "12e945e8df47533e37941befc9a89b92bf6435ca8fb3eec106dec052be0cd734"
+      },
+      "paperId": null,
+      "fileId": null,
+      "steps": [
+        "validated_for_apply"
+      ]
+    },
+    {
+      "studyId": "S2699",
+      "screeningRecordId": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+      "protectedBeforeHash": "b6b8f79d32a8ba112102d3e75688e1c22ec376ec97152508ccefd37261133d51",
+      "votesBeforeHash": "10e660b33e4e706e7fc65b4669cfe444b12b19b40dc675404d711b19463f8ab1",
+      "storageSha256": "78cfebc4af85a62dd2f6d97e86c2d4c49c1aed7bdab093bfc4d334e6f278a49d",
+      "duplicateBaseline": {
+        "papersCount": 845,
+        "filesCount": 845,
+        "papersHash": "e3f552ddee8a696c386d57dd60007dfe8a6d6df9c85bafe12d262cbc7e0b0957",
+        "filesHash": "12e945e8df47533e37941befc9a89b92bf6435ca8fb3eec106dec052be0cd734"
+      },
+      "paperId": null,
+      "fileId": null,
+      "steps": [
+        "validated_for_apply"
+      ]
+    },
+    {
+      "studyId": "S2761",
+      "screeningRecordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+      "protectedBeforeHash": "dbcc83a18a72ab7ecab454101fe36ac3cfdb0f275450a6740c4c92f254992664",
+      "votesBeforeHash": "2089d9f029631a23f73fde979d6f9ceb0d587082b6de3224ee0abe88bd1d7b15",
+      "storageSha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+      "duplicateBaseline": {
+        "papersCount": 845,
+        "filesCount": 845,
+        "papersHash": "e3f552ddee8a696c386d57dd60007dfe8a6d6df9c85bafe12d262cbc7e0b0957",
+        "filesHash": "12e945e8df47533e37941befc9a89b92bf6435ca8fb3eec106dec052be0cd734"
+      },
+      "paperId": null,
+      "fileId": null,
+      "steps": [
+        "validated_for_apply"
+      ]
+    },
+    {
+      "studyId": "S3931",
+      "screeningRecordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+      "protectedBeforeHash": "7e6070a4d29a5ce36a4da1dc86c13c6145344e5f626e45a3518df6f20abe9e16",
+      "votesBeforeHash": "e719476ccb78ac6f0067f2f7312c2060013881f25bb7c985511011da12388580",
+      "storageSha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+      "duplicateBaseline": {
+        "papersCount": 845,
+        "filesCount": 845,
+        "papersHash": "e3f552ddee8a696c386d57dd60007dfe8a6d6df9c85bafe12d262cbc7e0b0957",
+        "filesHash": "12e945e8df47533e37941befc9a89b92bf6435ca8fb3eec106dec052be0cd734"
+      },
+      "paperId": null,
+      "fileId": null,
+      "steps": [
+        "validated_for_apply"
+      ]
+    },
+    {
+      "studyId": "S4859",
+      "screeningRecordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+      "protectedBeforeHash": "e485ea5de3fa4170cac903407a073c68d1548f025224fade3d1a758cd96a0f41",
+      "votesBeforeHash": "96276e6b834d717a57a4765b5249c28c3805d6834e63514ded38b4e74e96477b",
+      "storageSha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+      "duplicateBaseline": {
+        "papersCount": 845,
+        "filesCount": 845,
+        "papersHash": "e3f552ddee8a696c386d57dd60007dfe8a6d6df9c85bafe12d262cbc7e0b0957",
+        "filesHash": "12e945e8df47533e37941befc9a89b92bf6435ca8fb3eec106dec052be0cd734"
+      },
+      "paperId": null,
+      "fileId": null,
+      "steps": [
+        "validated_for_apply"
+      ]
+    },
+    {
+      "studyId": "S4860",
+      "screeningRecordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+      "protectedBeforeHash": "2b469573d634f3c6f5b31da8173f3b3d4e8bb590309dd5edd493532ec3d1a49a",
+      "votesBeforeHash": "a7fdd47f53a6f52d8e9df2d7e6d9ea2ae8968ca29672406170b29ff97894b95b",
+      "storageSha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "duplicateBaseline": {
+        "papersCount": 845,
+        "filesCount": 845,
+        "papersHash": "e3f552ddee8a696c386d57dd60007dfe8a6d6df9c85bafe12d262cbc7e0b0957",
+        "filesHash": "12e945e8df47533e37941befc9a89b92bf6435ca8fb3eec106dec052be0cd734"
+      },
+      "paperId": null,
+      "fileId": null,
+      "steps": [
+        "validated_for_apply"
+      ]
+    }
+  ],
+  "passed": true,
+  "failure": null,
+  "rollback": {
+    "screeningAuditMetadata": "Recoverable from the approved snapshot with exact updated_at guards.",
+    "insertedRows": "Created paper/file rows are recoverable but deletion is destructive and requires explicit approval."
+  }
+}

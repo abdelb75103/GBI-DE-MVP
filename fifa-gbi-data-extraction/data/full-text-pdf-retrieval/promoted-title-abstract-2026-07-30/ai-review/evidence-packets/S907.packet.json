@@ -1,0 +1,251 @@
+{
+  "recordId": "3ecdc6c8-dbc1-4001-b653-0ce47bfcdaa2",
+  "covidenceId": null,
+  "studyId": "S907",
+  "title": "Has Sustained Time Away From Sports Due to the COVID-19 Pandemic Led to Increased Sport-Related Soft Tissue Injuries?",
+  "authors": "Yang Daniel",
+  "year": "2024",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S907-europepmc.pdf",
+  "pdfSha256": "bf9f81be776ef8a61c5d2babddd6e63a0d835cbd7c9e2e98073ff3dcbafdac80",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 5,
+  "textCharCount": 23654,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ssion’s National Electronic Injury Surveillance System database was queried to identify 13- to 18-year-old patients who sustained a sprain/strain type injury in 2019 or 2021 to an extremity, and involved sporting equipment for basketball, baseball/softball, soccer, and football. The control group was established as patients who sustained injury in 2019, and the post-COVID-19 group was established as those in 2021. Quantity of injuries sustained in these 2 groups were compared and analyzed by subgroup. Results: There..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...by sports were similar in both time periods. There was a significant decrease in basketball- related injuries by 21% (P ≤ 0.01, relative risk ratio [rrr] = 0.7979) and a significant increase in football-related injuries by 14% (P = 0.01, rrr = 1.1404) and in soccer injuries by 14.2% (P = 0.03, rrr = 1.1422). Conclusion: There is significant heterogeneity in injury rates by sports, with no conclusive increase in injuries, contrary to expectations. Clinical Relevance: This study suggests that the relationship between dec..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...cape of sports injuries in the context of potential deconditioning during the COVID-19 lockdown period. 3 While limited, previous studies have demonstrated a relationship between deconditioning and pediatric sport injuries. One study of female high school soccer players did demonstrate a 19.7% difference in injury rates between a preseason engaged cohort and a cohort that did not participate in preseason training. Another study demonstrated a 61% reduction of injury in linemen after engaging in preseason training..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...ed an athletic injury in 2019 and 2021. To be included, patients must have been 13 to 18 years old at time of injury, have sustained a sprain/strain type injury to an upper or lower extremity involving sporting equipment for basketball, baseball/softball, soccer, football, or volleyball (Appendix Table A1, available in the online version of this article). These 5 sports were chosen as they cover all 3 school sport seasons. 11 Furthermore, these sports represent the 5 most popular team sports for high school stude..."
+      },
+      {
+        "page": 2,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...255,108) was comprised of 18,681 (7.32%) baseball/softball injuries (95% CI: 13,295-24,068), 110,296 (43.2%) basketball injuries (weighted count 95% CI: 80,720-139,851), 61,405 (24.1%) football injuries (weighted count 95% CI: 43,524-79,587), 40,797 (16%) soccer injuries (weighted count 95% CI: 25,883-55,711), and 23,939 (9.5%) volleyball injuries (weighted count 95% CI: 15,848-32,029) (Figure 1). On analysis, there was a significant difference in the total number of sport-related sprains/strains in 2019 versus 2..."
+      },
+      {
+        "page": 2,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "Soccer",
+        "snippet": "..., with more injuries in 2019 (n = 151,067) than in 2021 (n = 104,041) (Table 1). On subanalysis, the overall population’s changes to each sport’s injuries by year was upheld for male athletes (P < 0.01), Baseball/ So/g332ball 7% Basketball 43% Football 24% Soccer 16% Volleyball 10% Figure 1. Total distribution of injury with percentage of total, segregated by sport."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...asketball-related soft tissue injuries by 21% between 2019 and 2021 (P = <0.01, rrr = 0.7979, 95% CI: 0.7295-0.8727). There was also a significant increase by 14% in football-related injuries (P = 0.01, rrr = 1.1404, 95% CI: 1.0274- 1.2657) and 14.2% among soccer injuries (P = 0.03, rrr = 1.1422, 95% CI: 1.0142-1.2837). Of note, there was a statistically significant 6.7% proportional decrease in basketball injuries in the male population relative to the pre-COVID year, with additional statistically insignificant i..."
+      },
+      {
+        "page": 3,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...y rooms could have lead to a reduction of presentations and unduly influenced the number of patients in our 2021 cohort. 11 Injured patients who previously Table 1. Weighted count of all injuries by sport and year (95% CI) Year Baseball Basketball Football Soccer Volleyball Total 2019 11,184 (7976-14,391) 73,459 (55,122-91,796) 36,886 (26,205-47,567) 24,407 (15,112-33,703) 13,336 (8654-18,018) 15,972 (116,529-202,014) 2021 8189 (5565-10,812) 45,841 (32,729-58,954) 26,642 (18,161-35,123) 18,589 (12,430-24,749..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...iform in relation to their prepandemic proportions. This picture is also possibly obscured by region-specific changes to reduce COVID- 19 exposures that could unduly influence injury rates; eg, game rule changes such as allowing more substitutions during a soccer match, or abbreviated seasons for a “partial” return to play, which would both reduce potential opportunity for injury. Major strengths of this study include the nationally representative survey and the novelty of an epidemiologic study of deconditioning..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...variability between each state. As far as the authors could determine, the majority of institutions fell into 1 of 3 categories: those who did not suspend fall sports (football and volleyball) play, those who shifted fall and winter sport (basketball and soccer) seasons several months back, usually to early 2021, and those who did not resume play for any sports until the spring 2021 season. This heterogeneity complicates the picture when considering the window of return to play, especially since existing literat..."
+      }
+    ],
+    "wrong_sport": [
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...ect on the general population sample. Finally, subanalysis of our female cohort failed to reach statistical significance. We hypothesize that this is due to similar reasons as to the overall decrease in injuries, in addition to the lack of participation in American football. conclusion COVID-19-related sports shutdowns represent possibly the largest longitudinal period of organized athletic discontinuity in the United States. This represents a unique opportunity to study deconditioning in high school student-athletes at the p..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "507 SPORTS HEALTH vol. 16 • no. 4 A marked decrease in sport-related injuries was observed in 2020, which has been attributed to the COVID-19 lockdown and the subsequent recommendations to suspend recreational and school-related activities such as organized sports. 2,7,16,18 While important in controlling transmission of the virus..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries",
+        "snippet": "...of fitness, or in other words underwent “deconditioning.” In 1198541 SPHXXX10.1177/19417381231198541Yang et al.Sports health research-article2023 Has Sustained Time Away From Sports Due to the COVID-19 Pandemic Led to Increased Sport-Related Soft Tissue Injuries? Daniel Yang, MS,† Kevin Orellana, BS,† Julianna Lee, BA,† Alex Stevens, BS,† Divya Talwar, PhD,† and Theodore Ganley, MD†* Background: A decrease in sport-related injuries was observed in 2020, which has been attributed to COVID-19 and recommendations to..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...Sports Due to the COVID-19 Pandemic Led to Increased Sport-Related Soft Tissue Injuries? Daniel Yang, MS,† Kevin Orellana, BS,† Julianna Lee, BA,† Alex Stevens, BS,† Divya Talwar, PhD,† and Theodore Ganley, MD†* Background: A decrease in sport-related injuries was observed in 2020, which has been attributed to COVID-19 and recommendations to suspend organized sports. In adult populations, increased injury rates have been noted in athletes returning to play after an extended period of reduced play, attributable to..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...† Alex Stevens, BS,† Divya Talwar, PhD,† and Theodore Ganley, MD†* Background: A decrease in sport-related injuries was observed in 2020, which has been attributed to COVID-19 and recommendations to suspend organized sports. In adult populations, increased injury rates have been noted in athletes returning to play after an extended period of reduced play, attributable to deconditioning. There is growing literature surrounding concern over increased injury risk after return to sport after the COVID-19 shutdowns. Hypo..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...to suspend organized sports. In adult populations, increased injury rates have been noted in athletes returning to play after an extended period of reduced play, attributable to deconditioning. There is growing literature surrounding concern over increased injury risk after return to sport after the COVID-19 shutdowns. Hypothesis: Like adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning,” such as during the COVID-19 shutdown. Study Design: Descriptive epidemiol..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...f reduced play, attributable to deconditioning. There is growing literature surrounding concern over increased injury risk after return to sport after the COVID-19 shutdowns. Hypothesis: Like adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning,” such as during the COVID-19 shutdown. Study Design: Descriptive epidemiology study. Level of Evidence: Level 4. Methods: The Consumer Product Safety Commission’s National Electronic Injury Surveillance System database was q..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...ed injury risk after return to sport after the COVID-19 shutdowns. Hypothesis: Like adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning,” such as during the COVID-19 shutdown. Study Design: Descriptive epidemiology study. Level of Evidence: Level 4. Methods: The Consumer Product Safety Commission’s National Electronic Injury Surveillance System database was queried to identify 13- to 18-year-old patients who sustained a sprain/strain type injury in 2019 or 2021 to an e..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...nce an increase in sport-related injuries after periods of “deconditioning,” such as during the COVID-19 shutdown. Study Design: Descriptive epidemiology study. Level of Evidence: Level 4. Methods: The Consumer Product Safety Commission’s National Electronic Injury Surveillance System database was queried to identify 13- to 18-year-old patients who sustained a sprain/strain type injury in 2019 or 2021 to an extremity, and involved sporting equipment for basketball, baseball/softball, soccer, and football. The control..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Jul • Aug 2024Yang et al. 508 adult, professional athlete populations, increased injury rates have been noted with return to play after an extended period of limited-to-no play. 1,10,17 These findings have been corroborated in the literature by both physicians and athlete-patients, who have speculatively attributed these injuries to decondit..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "SPORTS HEALTH vol. 16 • no. 4 509 but not for female athletes (P = 0.49) (Tables 2 and 3). In both time periods, there were more injuries in boys than in girls (Tables 2 and 3). For both sexes, the largest proportion of injuries occurred due to basketball and the proportions of injuries due to different sports were similar in both time periods (Figure 2). On logistic regression, there was a..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ts medicine provider, circumventing the emergency room. Next, we theorize that another cause of this decrease could be general hesitancy to return to play and subsequently increase exposure to COVID-19. Similarly, this indeterminate picture of soft tissue injury rates could also be related to the reduced number of student-athletes signing up to play, as previously involved students aged out of high school leagues, and new students were unable to be recruited for the last few years. Another potential cause is inc..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ly to early 2021, and those who did not resume play for any sports until the spring 2021 season. This heterogeneity complicates the picture when considering the window of return to play, especially since existing literature demonstrating acute soft tissue injury in athletes has only correlated injuries with the immediate postresumption weeks. Still, emerging literature demonstrated increased injuries across an entire sports season after resumption of play from COVID-19. 1,5,10 Next, this study was also conducted t..."
+      }
+    ],
+    "design": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...n period. 3 While limited, previous studies have demonstrated a relationship between deconditioning and pediatric sport injuries. One study of female high school soccer players did demonstrate a 19.7% difference in injury rates between a preseason engaged cohort and a cohort that did not participate in preseason training. Another study demonstrated a 61% reduction of injury in linemen after engaging in preseason training. Given the current literature, we hypothesize that, similar to adults, pediatric patients exp..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...hile limited, previous studies have demonstrated a relationship between deconditioning and pediatric sport injuries. One study of female high school soccer players did demonstrate a 19.7% difference in injury rates between a preseason engaged cohort and a cohort that did not participate in preseason training. Another study demonstrated a 61% reduction of injury in linemen after engaging in preseason training. Given the current literature, we hypothesize that, similar to adults, pediatric patients experience an in..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...used to perform statistical analysis using survey data estimates. All weights and strata were assigned per NEISS specifications, and all numbers herein were derived from the nationally representative NEISS estimate unless explicitly stated otherwise. Each cohort age, sex, and race distributions were individually tabulated, 95% CIs for each weighted count were generated, and subanalysis was conducted to further illustrate distributions based on sex. Injury proportions for each sport in each year were calculated an..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...eation and sports,” but a proportionally nonsignificant decrease in reported injuries at home and at school; however, overall injuries fell in all locations. There was no difference between number of injuries in the pre-COVID-19 and post-COVID-19 lockdown cohort in terms of sex, upper or lower extremity, or race. discussion There is significant interest in injury prevention in the pediatric population, especially in the time period after COVID-19-related lockdowns. However, the emerging literature surrounding inju..."
+      },
+      {
+        "page": 3,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...ients have shied away from emergency department services to avoid unnecessary exposure to the virus, and persistent hesitancy to visit emergency rooms could have lead to a reduction of presentations and unduly influenced the number of patients in our 2021 cohort. 11 Injured patients who previously Table 1. Weighted count of all injuries by sport and year (95% CI) Year Baseball Basketball Football Soccer Volleyball Total 2019 11,184 (7976-14,391) 73,459 (55,122-91,796) 36,886 (26,205-47,567) 24,407 (15,112-33,703..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...l 2019Baseball/So/g332ball 2021 Basketball 2019Basketb all 2021 Football 201 9 Football 202 1 Socce r 201 9 Soccer 2021 Volleyball 2019 Voll eyball 2021 Figure 2. Proportion of injuries attributable to each sport per year, segregated by sex, and as a whole cohort."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...n recruitment could conceivably decrease the total number of participants in the following year, thus also decreasing the number of potential sport-related injuries while having no effect on the general population sample. Finally, subanalysis of our female cohort failed to reach statistical significance. We hypothesize that this is due to similar reasons as to the overall decrease in injuries, in addition to the lack of participation in American football. conclusion COVID-19-related sports shutdowns represent possi..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] 507 SPORTS HEALTH vol. 16 • no. 4 A marked decrease in sport-related injuries was observed in 2020, which has been attributed to the COVID-19 lockdown and the subsequent recommendations to suspend recreational and school-related activities such as organized sports. 2,7,16,18 While important in controlling transmission of the virus, this lockdown period led to an extended period in which athletes had significant barriers to their participation in sports practice and thus had a decrease in training time. Consequently, many athletes likely experienced a decline in their level of fitness, or in other words underwent “deconditioning.” In 1198541 SPHXXX10.1177/19417381231198541Yang et al.Sports health research-article2023 Has Sustained Time Away From Sports Due to the COVID-19 Pandemic Led to Increased Sport-Related Soft Tissue Injuries? Daniel Yang, MS,† Kevin Orellana, BS,† Julianna Lee, BA,† Alex Stevens, BS,† Divya Talwar, PhD,† and Theodore Ganley, MD†* Background: A decrease in sport-related injuries was observed in 2020, which has been attributed to COVID-19 and recommendations to suspend organized sports. In adult populations, increased injury rates have been noted in athletes returning to play after an extended period of reduced play, attributable to deconditioning. There is growing literature surrounding concern over increased injury risk after return to sport after the COVID-19 shutdowns. Hypothesis: Like adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning,” such as during the COVID-19 shutdown. Study Design: Descriptive epidemiology study. Level of Evidence: Level 4. Methods: The Consumer Product Safety Commission’s National Electronic Injury Surveillance System database was queried to identify 13- to 18-year-old patients who sustained a sprain/strain type injury in 2019 or 2021 to an extremity, and involved sporting equipment for basketball, baseball/softball, soccer, and football. The control group was established as patients who sustained injury in 2019, and the post-COVID-19 group was established as those in 2021. Quantity of injuries sustained in these 2 groups were compared and analyzed by subgroup. Results: There was a significant difference in the total number of sport-related sprains/strains in 2019 versus 2021 (P = 0.01), with more injuries in 2019 (n = 151,067) than in 2021 (n = 104,041). There were more injuries in boys than in girls. Proportion of injuries by sports were similar in\n\n[p. 2] Jul • Aug 2024Yang et al. 508 adult, professional athlete populations, increased injury rates have been noted with return to play after an extended period of limited-to-no play. 1,10,17 These findings have been corroborated in the literature by both physicians and athlete-patients, who have speculatively attributed these injuries to deconditioning due to lack of training, as well as a relative sudden increase in workload related to resumption of sports and irregularity of training. 7 This attribution is supported by existing literature in exercise physiology, which has shown that large, sudden increases in exercise load are a significant contributor to injury. 6,14,15 There is growing literature surrounding deconditioning in the pediatric population, as well as concern regarding the increased risk and prevention of sports injuries related to returning to sport after the COVID-19 lockdown. 4,8,19 Given that 57.4% of 9th to 12th grade American students reportedly participated in at least 1 school or community sport team in 2019, it is imperative to describe and characterize the shifting landscape of sports injuries in the context of potential deconditioning during the COVID-19 lockdown period. 3 While limited, previous studies have demonstrated a relationship between deconditioning and pediatric sport injuries. One study of female high school soccer players did demonstrate a 19.7% difference in injury rates between a preseason engaged cohort and a cohort that did not participate in preseason training. Another study demonstrated a 61% reduction of injury in linemen after engaging in preseason training. Given the current literature, we hypothesize that, similar to adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning” or prolonged time away from organized training. We hope to contribute to the conversation by providing concrete data to further inform patient education and physician counseling. Methods The Consumer Product Safety Commission’s National Electronic Injury Surveillance System (NEISS) is a “statistically valid injury surveillance system” that uses a “nationally representative probability sample of the United States and its territories” derived from emergency department visits associated with any consumer product. The NEISS database was queried to identify patients who experienced an athletic injury in 2019 and 2021. To be included, patients must have been 13 to 18 years old at time of injury, ha\n\n[p. 3] SPORTS HEALTH vol. 16 • no. 4 509 but not for female athletes (P = 0.49) (Tables 2 and 3). In both time periods, there were more injuries in boys than in girls (Tables 2 and 3). For both sexes, the largest proportion of injuries occurred due to basketball and the proportions of injuries due to different sports were similar in both time periods (Figure 2). On logistic regression, there was a statistically significant decrease in basketball-related soft tissue injuries by 21% between 2019 and 2021 (P = <0.01, rrr = 0.7979, 95% CI: 0.7295-0.8727). There was also a significant increase by 14% in football-related injuries (P = 0.01, rrr = 1.1404, 95% CI: 1.0274- 1.2657) and 14.2% among soccer injuries (P = 0.03, rrr = 1.1422, 95% CI: 1.0142-1.2837). Of note, there was a statistically significant 6.7% proportional decrease in basketball injuries in the male population relative to the pre-COVID year, with additional statistically insignificant increases in proportion of injuries for the male subpopulation in other sports. There were statistically insignificant increases in proportion of injuries in the female subpopulation in football and volleyball, with decreases in the other sports (Figure 2). There were proportionally nonsignificant increases in our injuries of interest at “places of recreation and sports,” but a proportionally nonsignificant decrease in reported injuries at home and at school; however, overall injuries fell in all locations. There was no difference between number of injuries in the pre-COVID-19 and post-COVID-19 lockdown cohort in terms of sex, upper or lower extremity, or race. discussion There is significant interest in injury prevention in the pediatric population, especially in the time period after COVID-19-related lockdowns. However, the emerging literature surrounding injury risk in a pediatric population when returning to play from a COVID-19 suspension period has largely taken the increased risk of injury as a forgone conclusion and has focused efforts on preventative methods. 8,19 In this study, we found a statistically significant decrease in the total number of sprains and strains in basketball-related injuries, and a heterogeneous picture of changes in sprain and strain injury proportions in our other examined high school sports, despite the extended halt on organized youth athletics during 2020. This finding is surprising based on the expectation that patients were training less and thus “deconditioned” during the lockdown. The\n\n[p. 4] Jul • Aug 2024Yang et al. 510 would have visited an emergency room could have presented directly to a primary care, orthopedic, or sports medicine provider, circumventing the emergency room. Next, we theorize that another cause of this decrease could be general hesitancy to return to play and subsequently increase exposure to COVID-19. Similarly, this indeterminate picture of soft tissue injury rates could also be related to the reduced number of student-athletes signing up to play, as previously involved students aged out of high school leagues, and new students were unable to be recruited for the last few years. Another potential cause is increased restrictions such as more stringent player caps or reduced training days and games to increase social distancing capacity, thereby reducing the number of potential exposures to soft tissue injury. 9,12,13 Finally, another explanation could be that this population maintained fitness through unstructured, recreational play, thereby reducing deconditioning. We expected injury proportion of each sport to largely remain static, which was reflected in our results, with the exception of basketball. Because initial restrictions were generally applied universally across our 5 chosen sports, and resumption of play was not necessarily targeted at specific sports at the high school level, we expected these proportions to remain uniform in relation to their prepandemic proportions. This picture is also possibly obscured by region-specific changes to reduce COVID- 19 exposures that could unduly influence injury rates; eg, game rule changes such as allowing more substitutions during a soccer match, or abbreviated seasons for a “partial” return to play, which would both reduce potential opportunity for injury. Major strengths of this study include the nationally representative survey and the novelty of an epidemiologic study of deconditioning in an otherwise well known pediatric community. To the best of the authors’ knowledge, there are no studies that look at the most popular sports in the United States in aggregate to provide a more generalized picture of athletic fitness, and the influences of an extended period of reduced organized play. This study has major limitations. First, this study operates with the broad understanding that suspension of play happened in almost all states in 2020. However, state-specific variation in Table 3. Weighted count of all injuries by sport and year for fe",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "507 SPORTS HEALTH vol. 16 • no. 4 A marked decrease in sport-related injuries was observed in 2020, which has been attributed to the COVID-19 lockdown and the subsequent recommendations to suspend recreational and school-related activities such as organized sports. 2,7,16,18 While important in controlling transmission of the virus, this lockdown period led to an extended period in which athletes had significant barriers to their participation in sports practice and thus had a decrease in training time. Consequently, many athletes likely experienced a decline in their level of fitness, or in other words underwent “deconditioning.” In 1198541 SPHXXX10.1177/19417381231198541Yang et al.Sports health research-article2023 Has Sustained Time Away From Sports Due to the COVID-19 Pandemic Led to Increased Sport-Related Soft Tissue Injuries? Daniel Yang, MS,† Kevin Orellana, BS,† Julianna Lee, BA,† Alex Stevens, BS,† Divya Talwar, PhD,† and Theodore Ganley, MD†* Background: A decrease in sport-related injuries was observed in 2020, which has been attributed to COVID-19 and recommendations to suspend organized sports. In adult populations, increased injury rates have been noted in athletes returning to play after an extended period of reduced play, attributable to deconditioning. There is growing literature surrounding concern over increased injury risk after return to sport after the COVID-19 shutdowns. Hypothesis: Like adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning,” such as during the COVID-19 shutdown. Study Design: Descriptive epidemiology study. Level of Evidence: Level 4. Methods: The Consumer Product Safety Commission’s National Electronic Injury Surveillance System database was queried to identify 13- to 18-year-old patients who sustained a sprain/strain type injury in 2019 or 2021 to an extremity, and involved sporting equipment for basketball, baseball/softball, soccer, and football. The control group was established as patients who sustained injury in 2019, and the post-COVID-19 group was established as those in 2021. Quantity of injuries sustained in these 2 groups were compared and analyzed by subgroup. Results: There was a significant difference in the total number of sport-related sprains/strains in 2019 versus 2021 (P = 0.01), with more injuries in 2019 (n = 151,067) than in 2021 (n = 104,041). There were more injuries in boys than in girls. Proportion of injuries by sports were similar in both time periods. There was a significant decrease in basketball- related injuries by 21% (P ≤ 0.01, relative risk ratio [rrr] = 0.7979) and a significant increase in football-related injuries by 14% (P = 0.01, rrr = 1.1404) and in soccer injuries by 14.2% (P = 0.03, rrr = 1.1422). Conclusion: There is significant heterogeneity in injury rates by sports, with no conclusive increase in injuries, contrary to expectations. Clinical Relevance: This study suggests that the relationship between deconditioning and injury may be less clear in the child-athlete, and gives recommendations for return to sport after extended breaks. Strength-of-Recommendation Taxonomy (SORT): Level 2c. Keywords: COVID; deconditioning; NEISS; pediatric; public health From †Department of Orthopaedics, The Children’s Hospital of Philadelphia, Philadelphia, Pennsylvania *Address correspondence to Theodore Ganley, MD, Department of Orthopaedics, The Children’s Hospital of Philadelphia, 3401 Civic Center Blvd., Philadelphia, PA 19104 (email: Ganley@chop.edu). The following authors declared potential conflicts of interest: T.G. has received grant support from Vericel, education payments from Paladin Technology Solutions, Arthrex, and Surgical Inc, and personal fees from Arthrex. DOI: 10.1177/19417381231198541 © 2023 The Author(s)"
+    },
+    {
+      "page": 2,
+      "text": "Jul • Aug 2024Yang et al. 508 adult, professional athlete populations, increased injury rates have been noted with return to play after an extended period of limited-to-no play. 1,10,17 These findings have been corroborated in the literature by both physicians and athlete-patients, who have speculatively attributed these injuries to deconditioning due to lack of training, as well as a relative sudden increase in workload related to resumption of sports and irregularity of training. 7 This attribution is supported by existing literature in exercise physiology, which has shown that large, sudden increases in exercise load are a significant contributor to injury. 6,14,15 There is growing literature surrounding deconditioning in the pediatric population, as well as concern regarding the increased risk and prevention of sports injuries related to returning to sport after the COVID-19 lockdown. 4,8,19 Given that 57.4% of 9th to 12th grade American students reportedly participated in at least 1 school or community sport team in 2019, it is imperative to describe and characterize the shifting landscape of sports injuries in the context of potential deconditioning during the COVID-19 lockdown period. 3 While limited, previous studies have demonstrated a relationship between deconditioning and pediatric sport injuries. One study of female high school soccer players did demonstrate a 19.7% difference in injury rates between a preseason engaged cohort and a cohort that did not participate in preseason training. Another study demonstrated a 61% reduction of injury in linemen after engaging in preseason training. Given the current literature, we hypothesize that, similar to adults, pediatric patients experience an increase in sport-related injuries after periods of “deconditioning” or prolonged time away from organized training. We hope to contribute to the conversation by providing concrete data to further inform patient education and physician counseling. Methods The Consumer Product Safety Commission’s National Electronic Injury Surveillance System (NEISS) is a “statistically valid injury surveillance system” that uses a “nationally representative probability sample of the United States and its territories” derived from emergency department visits associated with any consumer product. The NEISS database was queried to identify patients who experienced an athletic injury in 2019 and 2021. To be included, patients must have been 13 to 18 years old at time of injury, have sustained a sprain/strain type injury to an upper or lower extremity involving sporting equipment for basketball, baseball/softball, soccer, football, or volleyball (Appendix Table A1, available in the online version of this article). These 5 sports were chosen as they cover all 3 school sport seasons. 11 Furthermore, these sports represent the 5 most popular team sports for high school students, exclusive of sports with minimal interpersonal contact such as cross-country and track and field. 11 Data regarding location of injury, occurrence, race, sex, age, and involved extremity were also collected. The control group was established as patients who sustained an injury in 2019, and the post-COVID-19 experimental group was established as patients who sustained an injury in 2021. Injuries were then classified by review of their descriptive narrative, and Stata Version 16.0 (Stata Corp) was used to perform statistical analysis using survey data estimates. All weights and strata were assigned per NEISS specifications, and all numbers herein were derived from the nationally representative NEISS estimate unless explicitly stated otherwise. Each cohort age, sex, and race distributions were individually tabulated, 95% CIs for each weighted count were generated, and subanalysis was conducted to further illustrate distributions based on sex. Injury proportions for each sport in each year were calculated and years were compared using Pearson’s chi squared tests. Subanalysis was condu"
+    },
+    {
+      "page": 5,
+      "text": "SPORTS HEALTH vol. 16 • no. 4 511 institutional policy for sport-halts exist, and state-specific subanalysis could not be completed due to lack of data. Readily available information regarding resumption of play at the high school level is scarce. However, review of collegiate sports demonstrates significant variability between each state. As far as the authors could determine, the majority of institutions fell into 1 of 3 categories: those who did not suspend fall sports (football and volleyball) play, those who shifted fall and winter sport (basketball and soccer) seasons several months back, usually to early 2021, and those who did not resume play for any sports until the spring 2021 season. This heterogeneity complicates the picture when considering the window of return to play, especially since existing literature demonstrating acute soft tissue injury in athletes has only correlated injuries with the immediate postresumption weeks. Still, emerging literature demonstrated increased injuries across an entire sports season after resumption of play from COVID-19. 1,5,10 Next, this study was also conducted through the usage of the NEISS database, which, as a nationally representative survey, enables the assumption that the number of Americans remains relatively static from year to year. This resource collects cases from emergency room presentations, which naturally would exclude subclinical injuries, as well as injuries that presented at urgent care, primary care, specialty care, and school-associated nursing offices. While useful for comparisons of our population between years, this assumption is necessarily less robust in a limited population of student-athletes. As discussed, another possibility is that the lack of play in 2020 led to decreased recruitment. Given that our examined sports are all longitudinal enterprises with participation potentially spanning multiple years, the break in recruitment could conceivably decrease the total number of participants in the following year, thus also decreasing the number of potential sport-related injuries while having no effect on the general population sample. Finally, subanalysis of our female cohort failed to reach statistical significance. We hypothesize that this is due to similar reasons as to the overall decrease in injuries, in addition to the lack of participation in American football. conclusion COVID-19-related sports shutdowns represent possibly the largest longitudinal period of organized athletic discontinuity in the United States. This represents a unique opportunity to study deconditioning in high school student-athletes at the population level. This study does not demonstrate an overall increase in pediatric sport injuries after the COVID-19 lockdown, though there are several factors that may have played a role, including unorganized play and regionally based restrictions. clinical RecoMMendations We recommend measured, patient-centric evaluation of readiness for return to play for child-athletes after prolonged break from play, with consideration to potential pediatric- specific protective factors. RefeRences 1. Baker HP, Pirkle S, Cahill M, Reddy M, Portney D, Athiviraham A. The injury rate in National Football League players increased following cancellation of preseason games because of COVID-19. Arthrosc Sports Med Rehabil. 2021;3(4):e1147-e1154. 2. Bram JT, Johnson MA, Magee LC, et al. Where have all the fractures gone? The epidemiology of pediatric fractures during the COVID-19 pandemic. J Pediatric Orthop. 2020;40(8):373-379. 3. Center for Disease Control. Trends in the Prevalence of Physical Activity and Sedentary Behaviors National YRBS: 1991-2019. https://www.cdc.gov/ healthyyouth/data/yrbs/factsheets/2019_physical_trend_yrbs.htm. Accessed June 27, 2022. 4. Dayton JD, Ford K, Carroll SJ, Flynn PA, Kourtidou S, Holzer RJ. The deconditioning effect of the COVID-19 pandemic on unaffected healthy children. Pediatric Cardiol. 2021;42(3):554-559. 5. Friedman A"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S907.packet.json"
+}

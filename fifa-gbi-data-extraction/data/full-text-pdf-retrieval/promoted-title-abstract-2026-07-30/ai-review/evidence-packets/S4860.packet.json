@@ -1,0 +1,363 @@
+{
+  "recordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+  "covidenceId": null,
+  "studyId": "S4860",
+  "title": "Sex Differences in Concussion Rates among Middle School Sex-comparable Sports.",
+  "authors": "Hacherl SL",
+  "year": "2026",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/browser-recovery/files/S4860-official.pdf",
+  "pdfSha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 8,
+  "textCharCount": 43244,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...h Care Ini- tiatives for Underserved Students project in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating in sex-comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and event-type differences (competition vs practice), and injury proportion ratios for injury mechanisms. Results A total of 11,213 athletes (girls, n =..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...han twice as likely as boys to sustain an SRC overall (IRR, 2.26). In 3 of the 4 sex-comparable MS sports, girls had higher SRC rates in competition and practice than boys: softball/ baseball (competition/practice IRR, 4.19/2.35), basketball (3.77/2.74), and soccer (1.75/4.92). No sex differences were observed in track and field or in the proportional distribution of SRC mechanisms. Conclusions Among early adolescents participating in sex-comparable MS sports, girls were more than twice as likely as boys to sustain a..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...Between the 2015 and 2019 school years, 9 MS were included in the study. This number increased to 16 MS in 2019 and 17 MS in 2020. Children who participate d in at least 1 of the following MS sports were included in the study: baseball, basketball, soccer, track and field, and softball. Owing to COVID-19, there were no sports (girls’ soccer, softball, and boys’ baseball, track and field) during the spring 2020 season or the 2020-2021 school year; therefore, no injury data were gathered during these..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...eased to 16 MS in 2019 and 17 MS in 2020. Children who participate d in at least 1 of the following MS sports were included in the study: baseball, basketball, soccer, track and field, and softball. Owing to COVID-19, there were no sports (girls’ soccer, softball, and boys’ baseball, track and field) during the spring 2020 season or the 2020-2021 school year; therefore, no injury data were gathered during these periods. The Institutional Review Board of George Mason University (#717033-9) grante..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...e sport following similar rules, but they played on separate teams for males and females. 4,7,12 Sex-comparable sports that were included in our study were MS (i) girls’ softball and boys’ baseball, (ii) girls’ and boys’ basketball, (iii) girls’ and boys’ soccer, (iv) and girls’ and boys’ track and field. 4,7,12 AE. An AE in this study was defined as one athlete partici- pating in one school-sponsored event (practice or competi- tion) where there is a possibility of injury, regardless of the duration of participati..."
+      },
+      {
+        "page": 3,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "..., 0.16 (0.11-0.21). Overall, girls accounted for 68% (n = 66) of all SRC and had a higher rate than boys (girls IR, 0.41/1000 AE; 95% CI, 0.31-0.51; vs boys IR, 0.18/1000 AE; 95% CI, 0.12- 0.25). The sport with the highest SRC incidence for both sexes was soccer (girls, 0.96/1000 AE; 95% CI, 0.62-1.30; boys, 0.38/1000 AE; 95% CI, 0.20-0.55). Table II provides information regarding SRC frequencies, proportions, AEs, and rates by sex, sport, and event type. Sex Differences in SRC Rates MS girls were overall 2.26 tim..."
+      },
+      {
+        "page": 3,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...more likely to sustain SRCs than their male counterparts (IRR, 2.26; 95% CI, 1.78-2.88). Moreover, girls had significantly higher SRC rates compared with boys in 3 of the 4 sex-comparable sports: basketball (IRR, 3.32), softball/baseball (IRR, 3.04), and soccer (IRR, 2.54). There was no sex difference in the overall rate of SRC in track and field (IRR, 0.71). Differential rates for com- parable sports by sex are shown in Table III. Sex Differences by Event Type In this study, both girls (n = 37 [56%]) and boys (n..."
+      },
+      {
+        "page": 3,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...in Table III. Sex Differences by Event Type In this study, both girls (n = 37 [56%]) and boys (n = 19 [61%]) sustained most of the SRCs during competition (n = 56 [58%]) (Table II). The sport with the highest competition-related SRC rate for both sexes was soccer (girls, 2.01/1000 AE; 95% CI, 1.08-2.94; boys, 1.14/1000 AE; 95% CI, 0.20-0.55). When examined across all sex- comparable MS sports, there was no significant difference in the competition-related SRC rates between girls and boys. However, significant diff..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Overall Sex Differences in MS SRC Early adolescent girls in this study had significantly higher SRC rates than boys in 3 of 4 sex-comparable MS sports (basketball, softball/baseball, and soccer), aligning with prior findings in older high school and collegiate cohorts.3–5,9,12,27–29 However, our findings differ from Beachy and Rauh’s study of MS athletes, which reported overall higher SRC rates among boys, a difference likely owing to their inclusio..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "vs 0.33/1000 AEs) and girls’ basketball 2.2 times higher than boys’ basketball (0.40/1000 AEs vs 0.18/1000 AEs). 6 Sex differences in MS contact sport SRC rates were also evident by event type. In soccer, the girls’ competition SRC rate (2.01/1000 AEs) was 1.76 times higher than the boys’ (1.14/1000 AEs), and the girls’ practice SRC rate (0.56/1000 AEs) was more than 5 times higher than the boys’ (0.11/1000 AEs). In basketball, girls’ competition SRC rat..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...SK, Comstock RD. Epidemiology of con- cussions among United States high school athletes in 20 sports. Am J Sports Med 2012;40:747-55. https://doi.org/10.1177/0363546511435626 8. Bretzin AC, Covassin T, Wiebe DJ, Stewart W. Association of sex with adolescent soccer concussion incidence and characteristics. JAMA Netw Open 2021;4:e218191. https://doi.org/10.1001/jamanetwor- kopen.2021.8191 9. Zuckerman SL, Kerr ZY, Yengo-Kahn A, Wasserman E, Covassin T, Solomon GS. Epidemiology of sports-related concussion in NCAA ath-..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Athlete exposure",
+        "snippet": "...et al. AJPM Am J Prev Med 2017;53(6):914–918. 2950-5410/ª 2026 The Author(s). Published by Elsevier Inc. This is an open access article under the CC BY license (http://creativecommons. org/licenses/by/4.0/). https://doi.org/10.1016/j.jpedcp.2026.200200 AE Athlete exposure AT Athletic trainer IR Injury rate IRR Injury rate ratio MS Middle school SRC Sports-related concussion 1 ORIGINAL ARTICLES"
+      }
+    ],
+    "review": [
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...and sport-specific changes. SRC Sex Differences in Contact Sports MS girls involved in contact sports, specifically soccer (0.96/1000 AEs) and basketball (0.54/1000 AEs), demon- strated the highest SRC rates in this study. These findings are consistent with a systematic review and meta-analysis by Ernst et al, which identified soccer and basketball as the high school girls’ sports with the highest SRC rates (0.72 and 0.43/1000 AEs, respectively).31 In our MS cohort, the SRC rate for girls’ soccer was 2.5 times higher than for boys’..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...nges. SRC Sex Differences in Contact Sports MS girls involved in contact sports, specifically soccer (0.96/1000 AEs) and basketball (0.54/1000 AEs), demon- strated the highest SRC rates in this study. These findings are consistent with a systematic review and meta-analysis by Ernst et al, which identified soccer and basketball as the high school girls’ sports with the highest SRC rates (0.72 and 0.43/1000 AEs, respectively).31 In our MS cohort, the SRC rate for girls’ soccer was 2.5 times higher than for boys’ soccer (0.96/1000..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...legiate Athletic Association Injury Surveillance Program from 2004– 2005 through 2008–2009. J Athl Train 2016;51:189-94. https://doi.org/ 10.4085/1062-6050-51.3.05 13. Dave U, Kinderknecht J, Cheng J, Santiago K, Jivanelli B, Ling DI. Sys- tematic review and meta-analysis of sex-based differences for concussion incidence in soccer. Phys Sportsmed 2022;50:11-9. https://doi.org/10. 1080/00913847.2020.1868955 14. Moser RS, Davis GA, Schatz P. The age variable in childhood concussion management: a systematic review. Arch Clin N..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...matic review and meta-analysis of sex-based differences for concussion incidence in soccer. Phys Sportsmed 2022;50:11-9. https://doi.org/10. 1080/00913847.2020.1868955 14. Moser RS, Davis GA, Schatz P. The age variable in childhood concussion management: a systematic review. Arch Clin Neuropsychol 2018;33:417- 26. https://doi.org/10.1093/arclin/acx070 15. Mollayeva T, El-Khechen-Richandi G, Colantonio A. Sex & gender con- siderations in concussion research. Concussion 2018;3:CNC51. https:// doi.org/10.2217/cnc-2017-0015 16. Dav..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "31. Ernst L, Farley J, Milne N. Incidence and risk factors for sport-related concussion in female youth athletes participating in contact and collision invasion sports: a systematic review. Sports Med 2024;55:393-418. https://doi.org/10.1007/s40279-024-02133-x 32. Sundaram V, Ramachandran AK, Singh U, Pearce AJ. Sex-based differences in concussion incidence and its underlying injury mechanism in team bat/ stick sports: a systematic review and..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...: a systematic review. Sports Med 2024;55:393-418. https://doi.org/10.1007/s40279-024-02133-x 32. Sundaram V, Ramachandran AK, Singh U, Pearce AJ. Sex-based differences in concussion incidence and its underlying injury mechanism in team bat/ stick sports: a systematic review and meta-analysis. Int J Sports Sci Coaching 2023;18:1735-53. https://doi.org/10.1177/17479541221131650 33. Hootman JM, Dick R, Agel J. Epidemiology of collegiate injuries for 15 sports: summary and recommendations for injury prevention initiatives. J Athl..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...Sports Med 2024;55:393-418. https://doi.org/10.1007/s40279-024-02133-x 32. Sundaram V, Ramachandran AK, Singh U, Pearce AJ. Sex-based differences in concussion incidence and its underlying injury mechanism in team bat/ stick sports: a systematic review and meta-analysis. Int J Sports Sci Coaching 2023;18:1735-53. https://doi.org/10.1177/17479541221131650 33. Hootman JM, Dick R, Agel J. Epidemiology of collegiate injuries for 15 sports: summary and recommendations for injury prevention initiatives. J Athl Train 2007;42:311-..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...onway F, Todaro SM, Brostrand K, Womack J, et al. Bigger necks are not enough: an examination of neck circumference in incoming college athletes. J Prim Prevent 2020;41: 421-9. https://doi.org/10.1007/s10935-020-00600-5 36. Merritt VC, Padgett CR, Jak AJ. A systematic review of sex differences in concussion outcome: what do we know? Clin Neuropsychol 2019;33: 1016-43. https://doi.org/10.1080/13854046.2018.1508616 37. Walshe A, Daly E, Ryan L. Epidemiology of sport-related concussion rates in female contact/collision sport: a sys..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiological",
+        "snippet": "..., Sanja Avramovic, PhD 2,7 , and Shane V. Caswell, PhD, ATC 2,4 Objective To investigate sex differences in sports-related concussion (SRC) rates among early adolescents participating in sex-comparable middle school (MS) sports. Study design This prospective epidemiological study was conducted as part of the Advancing Health Care Ini- tiatives for Underserved Students project in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating in sex-comparable..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ating in sex-comparable middle school (MS) sports. Study design This prospective epidemiological study was conducted as part of the Advancing Health Care Ini- tiatives for Underserved Students project in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating in sex-comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and eve..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ct in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating in sex-comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and event-type differences (competition vs practice), and injury proportion ratios for injury mechanisms. Results A total of 11,213 athletes (girls, n = 5647; boys, n = 5566) contributed 329,269 AEs, duri..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...thletes participating in sex-comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and event-type differences (competition vs practice), and injury proportion ratios for injury mechanisms. Results A total of 11,213 athletes (girls, n = 5647; boys, n = 5566) contributed 329,269 AEs, during which 97 SRCs were diagnosed (0.29/1000 AE). Girls were more than twice as likely as boys to sustain an SRC overall..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and event-type differences (competition vs practice), and injury proportion ratios for injury mechanisms. Results A total of 11,213 athletes (girls, n = 5647; boys, n = 5566) contributed 329,269 AEs, during which 97 SRCs were diagnosed (0.29/1000 AE). Girls were more than twice as likely as boys to sustain an SRC overall (IRR, 2.26). In 3 of the 4 s..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ate, female-specific concussion prevention and clinical care strategies. (J Pediatr: Clin Pract 2026;20:200200). N early 30 million school-age children participate in organized sports each year in the US. 1 Sports-related concussions (SRCs) are a prevalent injury, with estimates indicating that between 1.1 and 1.9 million US children suffer a sports- or recreation-related concussion annually. 2 Numerous studies have documented the incidence of SRCs among high school and collegiate athletes. Many report female athlete..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...sports each year in the US. 1 Sports-related concussions (SRCs) are a prevalent injury, with estimates indicating that between 1.1 and 1.9 million US children suffer a sports- or recreation-related concussion annually. 2 Numerous studies have documented the incidence of SRCs among high school and collegiate athletes. Many report female athletes to have higher SRC rates than males in comparable sports at both high school and collegiate levels. 3–12 These sex differences in SRC rates have been attributed to variations in..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...to variations in a range of factors, including biomechanical, hormonal, cognitive, psychological, and sociocultural influences. 4,13 Although substantial evidence exists regarding SRC in older adolescents and young adults, research on sex differences in SRC incidence among middle school (MS)-aged children (ages 10-13) remains limited, despite this age group representing the largest segment of organized sports participants in the US. 1 Presently, it remains uncertain whether the sex differences observed in older athletes..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...he study: baseball, basketball, soccer, track and field, and softball. Owing to COVID-19, there were no sports (girls’ soccer, softball, and boys’ baseball, track and field) during the spring 2020 season or the 2020-2021 school year; therefore, no injury data were gathered during these periods. The Institutional Review Board of George Mason University (#717033-9) granted approval for this study and waived the requirement for informed consent and assent, because the research was retrospective. Pr..."
+      },
+      {
+        "page": 3,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...by practice (n = 41 [42%]; IR, 0.16 (0.11-0.21). Overall, girls accounted for 68% (n = 66) of all SRC and had a higher rate than boys (girls IR, 0.41/1000 AE; 95% CI, 0.31-0.51; vs boys IR, 0.18/1000 AE; 95% CI, 0.12- 0.25). The sport with the highest SRC incidence for both sexes was soccer (girls, 0.96/1000 AE; 95% CI, 0.62-1.30; boys, 0.38/1000 AE; 95% CI, 0.20-0.55). Table II provides information regarding SRC frequencies, proportions, AEs, and rates by sex, sport, and event type. Sex Differences in SRC Rates MS..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...’s study of MS athletes, which reported overall higher SRC rates among boys, a difference likely owing to their inclusion of football, a mainly male colli- sion sport.30 Examining SRC mechanisms is important for understand- ing emerging sex-specific patterns. Injury proportion ratios showed no significant sex differences in mechanism distribu- tions among MS girls and boys. Player and ball contact ac- counted for the majority of SRCs in both MS girls and boys, whereas surface, equipment, and nonspecific mecha- nisms were..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...) 0 (0) 3 (100) Soccer 6 (33) 1 (6) 0 (0) 6 (33) 4 (22) 1 (5.6) 18 (100) Track and field 0 (0) 1 (100) 0 (0) 0 (0) 0 (0) 0 (0) 1 (100) Overall 29 (30) 12 (12) 3 (3) 31 (32) 18 (19) 3 (3) 97 (100) IPR (95% CI) 0.89 (0.69-1.09) — — — — — —, not applicable; IPR, injury proportion ratio. Values are number (%) and IPRs. IPRs excluded because of SRC counts <10. June 2026 ORIGINAL ARTICLES Sex Differences in Concussion Rates among Middle School Sex-comparable Sports 5"
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...the likeli- hood of unexpected impacts leading to SRC. 37,38 Reporting patterns likewise differ by sex: girls are more likely to disclose symptoms to teachers or school nurses, whereas boys more often report to coaches and may normalize “playing through” injuries, resulting in under-reporting. 39,40 Addi- tionally, variations in coaching expertise, rule enforcement, and availability or use of protective equipment across girls’ sports may further contribute to the higher SRC rates observed among MS girls compared wi..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...rts Concussion Research Collaborative. Sports- and recreation-related concussions in US youth. Pediatrics 2016;138:e20154635. https://doi.org/10.1542/peds.2015-4635 3. Lincoln AE, Caswell SV, Almquist JL, Dunn RE, Norris JB, Hinton RY. Trends in concussion incidence in high school sports: a prospective 11- year study. Am J Sports Med 2011;39:958-63. https://doi.org/10.1177/ 0363546510392326 4. Bretzin AC, Covassin T, Fox ME, Petit KM, Savage JL, Walker LF, et al. Sex differences in the clinical incidence of concussions..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "31. Ernst L, Farley J, Milne N. Incidence and risk factors for sport-related concussion in female youth athletes participating in contact and collision invasion sports: a systematic review. Sports Med 2024;55:393-418. https://doi.org/10.1007/s40279-024-02133-x 32. Sundaram V, Ramachandran AK, Singh..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...hD, ATC 2,6 , Sanja Avramovic, PhD 2,7 , and Shane V. Caswell, PhD, ATC 2,4 Objective To investigate sex differences in sports-related concussion (SRC) rates among early adolescents participating in sex-comparable middle school (MS) sports. Study design This prospective epidemiological study was conducted as part of the Advancing Health Care Ini- tiatives for Underserved Students project in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating i..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "retrospective",
+        "snippet": "...efore, no injury data were gathered during these periods. The Institutional Review Board of George Mason University (#717033-9) granted approval for this study and waived the requirement for informed consent and assent, because the research was retrospective. Procedures As part of the ACHIEVES (Advancing Health Care Initiatives for Underserved Students) Project, certified athletic trainers (ATs) were embedded in MSs. ATs were present at all school-sponsored sports events and collected athlete expo- sure (AE) a..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...ates in this study. These findings are consistent with a systematic review and meta-analysis by Ernst et al, which identified soccer and basketball as the high school girls’ sports with the highest SRC rates (0.72 and 0.43/1000 AEs, respectively).31 In our MS cohort, the SRC rate for girls’ soccer was 2.5 times higher than for boys’ soccer (0.96/1000 AEs vs 0.39/1000 AEs), and for girls’ basketball, it was 2.7 times higher than for boys’ basketball (0.54/1000 AEs vs 0.20/1000 AEs). Similar sex differences have been docum..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...college athletes, these results should be interpreted cautiously, as only 3 SRC cases occurred in MS track and field, substantially limiting our ability to detect sex differences. 5,6,20 Socioecological Contributors to Sex Differences in MS SRC In this MS cohort, early adolescent girls demonstrated signif- icantly higher SRC rates than boys overall and during both competition and practice in soccer, basketball, and softball/ baseball. Although similar sex differences have been docu- mented in older athletic populat..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...ve. Sports- and recreation-related concussions in US youth. Pediatrics 2016;138:e20154635. https://doi.org/10.1542/peds.2015-4635 3. Lincoln AE, Caswell SV, Almquist JL, Dunn RE, Norris JB, Hinton RY. Trends in concussion incidence in high school sports: a prospective 11- year study. Am J Sports Med 2011;39:958-63. https://doi.org/10.1177/ 0363546510392326 4. Bretzin AC, Covassin T, Fox ME, Petit KM, Savage JL, Walker LF, et al. Sex differences in the clinical incidence of concussions, missed school days, and time loss..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...rospective 11- year study. Am J Sports Med 2011;39:958-63. https://doi.org/10.1177/ 0363546510392326 4. Bretzin AC, Covassin T, Fox ME, Petit KM, Savage JL, Walker LF, et al. Sex differences in the clinical incidence of concussions, missed school days, and time loss in high school student-athletes: part 1. Am J Sports Med 2018;46:2263-9. https://doi.org/10.1177/0363546518778251 5. Kerr ZY, Chandran A, Nedimyer AK, Arakkal A, Pierpoint LA, Zuckerman SL. Concussion incidence and trends in 20 high school sports. Pediatri..."
+      },
+      {
+        "page": 7,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ex-differences in head injuries and concussions among colle- giate soccer players: NCAA ISS, 2004–2009. Inj Epidemiol 2017;4. https://doi.org/10.1186/s40621-017-0127-6 12. Covassin T, Moran R, Elbin RJ. Sex differences in reported concussion injury rates and time loss from participation: an update of the national collegiate Athletic Association Injury Surveillance Program from 2004– 2005 through 2008–2009. J Athl Train 2016;51:189-94. https://doi.org/ 10.4085/1062-6050-51.3.05 13. Dave U, Kinderknecht J, Cheng J, Santiag..."
+      }
+    ],
+    "source_provenance": [
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Register",
+        "snippet": "...280.23 41. Wallace J, Covassin T, Beidler E. Sex differences in high school athletes’ knowledge of sport-related concussion symptoms and reporting behaviors. J Athletic Train 2017;52:682-8. https://doi.org/10.4085/1062-6050-52.3.06 42. Wallace J, Beidler E, Register-Mihalik JK, Hibbler T, Bretzin A, DeMedal S, et al. Examining concussion nondisclosure in collegiate ath- letes using a health disparities framework and consideration of social de- terminants of health. J Athletic Train 2022;57:16-24. 43. Kerr ZY, Register-M..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Register",
+        "snippet": "..., Register-Mihalik JK, Hibbler T, Bretzin A, DeMedal S, et al. Examining concussion nondisclosure in collegiate ath- letes using a health disparities framework and consideration of social de- terminants of health. J Athletic Train 2022;57:16-24. 43. Kerr ZY, Register-Mihalik JK, Marshall SW, Evenson KR, Mihalik JP, Guskiewicz KM. Disclosure and non-disclosure of concussion and concussion symptoms in athletes: review and application of the socio- ecological framework. Brain Inj 2014;28:1009-21. https://doi.org/10. 3109/..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Sex Differences in Concussion Rates among Middle School Sex-comparable Sports Samantha L. Hacherl, PhD, ATC 1,2 , Daniel C. Herman, MD, PhD 2,3 , Joel R. Martin, PhD 2,4,5 , Patricia M. Kelshaw, PhD, ATC 2,6 , Sanja Avramovic, PhD 2,7 , and Shane V. Caswell, PhD, ATC 2,4 Objective To investigate sex differences in sports-related concussion (SRC) rates among early adolescents participating in sex-comparable middle school (MS) sports. Study design This prospective epidemiological study was conducted as part of the Advancing Health Care Ini- tiatives for Underserved Students project in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating in sex-comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and event-type differences (competition vs practice), and injury proportion ratios for injury mechanisms. Results A total of 11,213 athletes (girls, n = 5647; boys, n = 5566) contributed 329,269 AEs, during which 97 SRCs were diagnosed (0.29/1000 AE). Girls were more than twice as likely as boys to sustain an SRC overall (IRR, 2.26). In 3 of the 4 sex-comparable MS sports, girls had higher SRC rates in competition and practice than boys: softball/ baseball (competition/practice IRR, 4.19/2.35), basketball (3.77/2.74), and soccer (1.75/4.92). No sex differences were observed in track and field or in the proportional distribution of SRC mechanisms. Conclusions Among early adolescents participating in sex-comparable MS sports, girls were more than twice as likely as boys to sustain a SRC. The magnitude of the sex difference in SRC rates observed among MS athletes exceeded that previously reported in high school and collegiate populations. These findings demonstrate that sex-based differences in SRC risk are evident by early adolescence and highlight the need for developmentally appropriate, female-specific concussion prevention and clinical care strategies. (J Pediatr: Clin Pract 2026;20:200200). N early 30 million school-age children participate in organized sports each year in the US. 1 Sports-related concussions (SRCs) are a prevalent injury, with estimates indicating that between 1.1 and 1.9 million US children suffer a sports- or recreation-related concussion annually. 2 Numerous studies have documented the incidence of SRCs among high school and collegiate athletes. Ma\n\n[p. 2] Methods Setting and Participants Data were gathered among students (6th-8th grades) participating in sports at their respective MSs within a large, sociocultu rally diverse (70.1% minority; 40.9% economicall y disadvantaged) public school district in Vir- ginia between the 2015 and 2022 school years (Table I). 17 Between the 2015 and 2019 school years, 9 MS were included in the study. This number increased to 16 MS in 2019 and 17 MS in 2020. Children who participate d in at least 1 of the following MS sports were included in the study: baseball, basketball, soccer, track and field, and softball. Owing to COVID-19, there were no sports (girls’ soccer, softball, and boys’ baseball, track and field) during the spring 2020 season or the 2020-2021 school year; therefore, no injury data were gathered during these periods. The Institutional Review Board of George Mason University (#717033-9) granted approval for this study and waived the requirement for informed consent and assent, because the research was retrospective. Procedures As part of the ACHIEVES (Advancing Health Care Initiatives for Underserved Students) Project, certified athletic trainers (ATs) were embedded in MSs. ATs were present at all school-sponsored sports events and collected athlete expo- sure (AE) and injury data. All injury data were collected using the SportsWare electronic injury tracking software (version VI.99.4.1, Computer Sports Medicine, Stoughton, MA) as a part of daily clinical practice. ATs completed all initial sport-related injury documentation on the day of injury and could return to entries to update them as needed. Daily attendance was recorded by sport for all events and was used to calculate AE values. 18 Operational Definitions SRC. Consistent with prior epidemiological reports and in- ternational consensus among athletic populations, a report- able SRC was defined as an injury that (1) occurred as a result of participation in a school-sponsored sport-related event, (2) required the athlete to be removed from activity af- ter exhibiting signs, symptoms, or behaviors consistent with an SRC, (3) required care from an AT or physician, and (4) was clinically diagnosed as a SRC. 19–21 In Virginia, licensed ATs are permitted to diagnose and manage concussions in accordance with the Code of Virginia and guidelines estab- lished by the Virginia Board of Education. 22,23 Throughout the study, concussion policies and care protocols aligned with published consensus statements and Vi\n\n[p. 3] Results A total of 11,213 athletes (girls, n = 5647 [50.4%], aged 12.4 ± 1.0 year; boys, n = 5566 [49.6%], aged 12.6 ± 1.0 years) participated in the eight sex-comparable MS sports (329,269 AEs) during the study period. A total of 97 SRCs were diagnosed for an overall SRC rate of 0.29/1000 AEs (95% CI, 0.24-0.35), with most occurring during competi- tion (n = 56, 58%; IR, 0.71/1000 AE; 95% CI, 0.52-0.89) fol- lowed by practice (n = 41 [42%]; IR, 0.16 (0.11-0.21). Overall, girls accounted for 68% (n = 66) of all SRC and had a higher rate than boys (girls IR, 0.41/1000 AE; 95% CI, 0.31-0.51; vs boys IR, 0.18/1000 AE; 95% CI, 0.12- 0.25). The sport with the highest SRC incidence for both sexes was soccer (girls, 0.96/1000 AE; 95% CI, 0.62-1.30; boys, 0.38/1000 AE; 95% CI, 0.20-0.55). Table II provides information regarding SRC frequencies, proportions, AEs, and rates by sex, sport, and event type. Sex Differences in SRC Rates MS girls were overall 2.26 times more likely to sustain SRCs than their male counterparts (IRR, 2.26; 95% CI, 1.78-2.88). Moreover, girls had significantly higher SRC rates compared with boys in 3 of the 4 sex-comparable sports: basketball (IRR, 3.32), softball/baseball (IRR, 3.04), and soccer (IRR, 2.54). There was no sex difference in the overall rate of SRC in track and field (IRR, 0.71). Differential rates for com- parable sports by sex are shown in Table III. Sex Differences by Event Type In this study, both girls (n = 37 [56%]) and boys (n = 19 [61%]) sustained most of the SRCs during competition (n = 56 [58%]) (Table II). The sport with the highest competition-related SRC rate for both sexes was soccer (girls, 2.01/1000 AE; 95% CI, 1.08-2.94; boys, 1.14/1000 AE; 95% CI, 0.20-0.55). When examined across all sex- comparable MS sports, there was no significant difference in the competition-related SRC rates between girls and boys. However, significant differences in competition- related SRC rates were noted for individual sex-comparable sports: softball/baseball (IRR, 4.19), basketball (IRR, 3.77), and soccer (IRR, 1.75) (Table III). Our practice-related SRC findings revealed a notable difference between girls and boys. Girls were 2.57 times more likely to experience an SRC during practice than boys in sex-comparable MS sports (IRR, 2.57). The sport with the highest practice- related SRC rate for girls was soccer (0.56/1000 AE; 95% CI, 0.14-0.53), whereas for boys it was basketball (0.12/ 1000 AE; 95% CI, 0.01-0.23). Significant diff\n\n[p. 4] Overall Sex Differences in MS SRC Early adolescent girls in this study had significantly higher SRC rates than boys in 3 of 4 sex-comparable MS sports (basketball, softball/baseball, and soccer), aligning with prior findings in older high school and collegiate cohorts.3–5,9,12,27–29 However, our findings differ from Beachy and Rauh’s study of MS athletes, which reported overall higher SRC rates among boys, a difference likely owing to their inclusion of football, a mainly male colli- sion sport.30 Examining SRC mechanisms is important for understand- ing emerging sex-specific patterns. Injury proportion ratios showed no significant sex differences in mechanism distribu- tions among MS girls and boys. Player and ball contact ac- counted for the majority of SRCs in both MS girls and boys, whereas surface, equipment, and nonspecific mecha- nisms were less common causes. This pattern contrasts with research at the high school level, where boys more frequently sustained SRCs from player contact and girls more often from ball or equipment-related mechanisms.5,6 Thus, suggesting that the divergence of SRC mechanisms observed in older athletes may emerge after MS, potentially reflecting later biopsychosocial and sport-specific changes. SRC Sex Differences in Contact Sports MS girls involved in contact sports, specifically soccer (0.96/1000 AEs) and basketball (0.54/1000 AEs), demon- strated the highest SRC rates in this study. These findings are consistent with a systematic review and meta-analysis by Ernst et al, which identified soccer and basketball as the high school girls’ sports with the highest SRC rates (0.72 and 0.43/1000 AEs, respectively).31 In our MS cohort, the SRC rate for girls’ soccer was 2.5 times higher than for boys’ soccer (0.96/1000 AEs vs 0.39/1000 AEs), and for girls’ basketball, it was 2.7 times higher than for boys’ basketball (0.54/1000 AEs vs 0.20/1000 AEs). Similar sex differences have been documented in high school sports. Kerr et al reported girls’ soccer and basket- ball SRC rates were approximately 2.3 times higher than those of boys’ (0.82/1000 AEs vs 0.36/1000 AEs and 0.48/1000 AEs vs 0.21/1000 AEs, respectively).5 Lincoln et al similarly reported that girls’ soccer rates were nearly double those of boys’ (0.35/1000 AEs vs 0.17/1000 AEs), and basketball rates were 1.6 times higher (0.16/1000 AEs vs 0.10/1000 AEs).3 Recent national data from Chan- dran et al support this trend, showing SRC rates fo",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Sex Differences in Concussion Rates among Middle School Sex-comparable Sports Samantha L. Hacherl, PhD, ATC 1,2 , Daniel C. Herman, MD, PhD 2,3 , Joel R. Martin, PhD 2,4,5 , Patricia M. Kelshaw, PhD, ATC 2,6 , Sanja Avramovic, PhD 2,7 , and Shane V. Caswell, PhD, ATC 2,4 Objective To investigate sex differences in sports-related concussion (SRC) rates among early adolescents participating in sex-comparable middle school (MS) sports. Study design This prospective epidemiological study was conducted as part of the Advancing Health Care Ini- tiatives for Underserved Students project in Virginia from 2015 to 2022. Athletic trainers collected injury and athlete exposure (AE) data from athletes MS athletes participating in sex-comparable sports, including baseball/softball, basketball, soccer, and track and field. Outcomes included SRC injury rates (IR)/1000 AE, IR ratios (IRRs) for overall sex and event-type differences (competition vs practice), and injury proportion ratios for injury mechanisms. Results A total of 11,213 athletes (girls, n = 5647; boys, n = 5566) contributed 329,269 AEs, during which 97 SRCs were diagnosed (0.29/1000 AE). Girls were more than twice as likely as boys to sustain an SRC overall (IRR, 2.26). In 3 of the 4 sex-comparable MS sports, girls had higher SRC rates in competition and practice than boys: softball/ baseball (competition/practice IRR, 4.19/2.35), basketball (3.77/2.74), and soccer (1.75/4.92). No sex differences were observed in track and field or in the proportional distribution of SRC mechanisms. Conclusions Among early adolescents participating in sex-comparable MS sports, girls were more than twice as likely as boys to sustain a SRC. The magnitude of the sex difference in SRC rates observed among MS athletes exceeded that previously reported in high school and collegiate populations. These findings demonstrate that sex-based differences in SRC risk are evident by early adolescence and highlight the need for developmentally appropriate, female-specific concussion prevention and clinical care strategies. (J Pediatr: Clin Pract 2026;20:200200). N early 30 million school-age children participate in organized sports each year in the US. 1 Sports-related concussions (SRCs) are a prevalent injury, with estimates indicating that between 1.1 and 1.9 million US children suffer a sports- or recreation-related concussion annually. 2 Numerous studies have documented the incidence of SRCs among high school and collegiate athletes. Many report female athletes to have higher SRC rates than males in comparable sports at both high school and collegiate levels. 3–12 These sex differences in SRC rates have been attributed to variations in a range of factors, including biomechanical, hormonal, cognitive, psychological, and sociocultural influences. 4,13 Although substantial evidence exists regarding SRC in older adolescents and young adults, research on sex differences in SRC incidence among middle school (MS)-aged children (ages 10-13) remains limited, despite this age group representing the largest segment of organized sports participants in the US. 1 Presently, it remains uncertain whether the sex differences observed in older athletes apply to early adolescents. Closing this knowledge gap is critical, because the significant physical, cognitive, and psychosocial changes that occur alongside emerging sex differences during early adolescence may require tailored preventive strategies and care considerations. 14,15 Recognizing this gap, the Concussion in Sport Group, in its most recent consensus statement, called for greater representation of both younger and female athletes in SRC research. 16 Therefore, the purpose of this study was to investigate potential sex differences in SRC rates among early adolescent children participating in sex-comparable MS sports. Building on previous research, we hypothesized that MS girls would have significantly higher concussion rates than their male counterparts. From the 1 "
+    },
+    {
+      "page": 2,
+      "text": "Methods Setting and Participants Data were gathered among students (6th-8th grades) participating in sports at their respective MSs within a large, sociocultu rally diverse (70.1% minority; 40.9% economicall y disadvantaged) public school district in Vir- ginia between the 2015 and 2022 school years (Table I). 17 Between the 2015 and 2019 school years, 9 MS were included in the study. This number increased to 16 MS in 2019 and 17 MS in 2020. Children who participate d in at least 1 of the following MS sports were included in the study: baseball, basketball, soccer, track and field, and softball. Owing to COVID-19, there were no sports (girls’ soccer, softball, and boys’ baseball, track and field) during the spring 2020 season or the 2020-2021 school year; therefore, no injury data were gathered during these periods. The Institutional Review Board of George Mason University (#717033-9) granted approval for this study and waived the requirement for informed consent and assent, because the research was retrospective. Procedures As part of the ACHIEVES (Advancing Health Care Initiatives for Underserved Students) Project, certified athletic trainers (ATs) were embedded in MSs. ATs were present at all school-sponsored sports events and collected athlete expo- sure (AE) and injury data. All injury data were collected using the SportsWare electronic injury tracking software (version VI.99.4.1, Computer Sports Medicine, Stoughton, MA) as a part of daily clinical practice. ATs completed all initial sport-related injury documentation on the day of injury and could return to entries to update them as needed. Daily attendance was recorded by sport for all events and was used to calculate AE values. 18 Operational Definitions SRC. Consistent with prior epidemiological reports and in- ternational consensus among athletic populations, a report- able SRC was defined as an injury that (1) occurred as a result of participation in a school-sponsored sport-related event, (2) required the athlete to be removed from activity af- ter exhibiting signs, symptoms, or behaviors consistent with an SRC, (3) required care from an AT or physician, and (4) was clinically diagnosed as a SRC. 19–21 In Virginia, licensed ATs are permitted to diagnose and manage concussions in accordance with the Code of Virginia and guidelines estab- lished by the Virginia Board of Education. 22,23 Throughout the study, concussion policies and care protocols aligned with published consensus statements and Virginia legisla- tion. 22–25 All MS ATs underwent annual training to ensure alignment of clinical care with current policy, legislation, and best practice. Additionally, ATs also routinely partici- pated in quality assurance protocols to ensure consistent and accurate data collection. Sex-comparable MS Sports. Consistent with prior methods, sex-comparable MS sports were those in which both male and female athletes competed in the same sport following similar rules, but they played on separate teams for males and females. 4,7,12 Sex-comparable sports that were included in our study were MS (i) girls’ softball and boys’ baseball, (ii) girls’ and boys’ basketball, (iii) girls’ and boys’ soccer, (iv) and girls’ and boys’ track and field. 4,7,12 AE. An AE in this study was defined as one athlete partici- pating in one school-sponsored event (practice or competi- tion) where there is a possibility of injury, regardless of the duration of participation. 18 Event Type. The type of school-sponsored event where the SRC occurred was classified as practice or competition. SRC Mechanism. The primary physical event that caused the SRC, was classified as either direct contact with a ball, player, surface, field equipment, or nonspecific contact. Nonspecific contact was defined as a confirmed direct con- tact mechanism that was not clearly specified by the injured athlete or eyewitness report. A mechanism was classified as unknown when the injured athlete and witnesses were unable to specify "
+    },
+    {
+      "page": 4,
+      "text": "Overall Sex Differences in MS SRC Early adolescent girls in this study had significantly higher SRC rates than boys in 3 of 4 sex-comparable MS sports (basketball, softball/baseball, and soccer), aligning with prior findings in older high school and collegiate cohorts.3–5,9,12,27–29 However, our findings differ from Beachy and Rauh’s study of MS athletes, which reported overall higher SRC rates among boys, a difference likely owing to their inclusion of football, a mainly male colli- sion sport.30 Examining SRC mechanisms is important for understand- ing emerging sex-specific patterns. Injury proportion ratios showed no significant sex differences in mechanism distribu- tions among MS girls and boys. Player and ball contact ac- counted for the majority of SRCs in both MS girls and boys, whereas surface, equipment, and nonspecific mecha- nisms were less common causes. This pattern contrasts with research at the high school level, where boys more frequently sustained SRCs from player contact and girls more often from ball or equipment-related mechanisms.5,6 Thus, suggesting that the divergence of SRC mechanisms observed in older athletes may emerge after MS, potentially reflecting later biopsychosocial and sport-specific changes. SRC Sex Differences in Contact Sports MS girls involved in contact sports, specifically soccer (0.96/1000 AEs) and basketball (0.54/1000 AEs), demon- strated the highest SRC rates in this study. These findings are consistent with a systematic review and meta-analysis by Ernst et al, which identified soccer and basketball as the high school girls’ sports with the highest SRC rates (0.72 and 0.43/1000 AEs, respectively).31 In our MS cohort, the SRC rate for girls’ soccer was 2.5 times higher than for boys’ soccer (0.96/1000 AEs vs 0.39/1000 AEs), and for girls’ basketball, it was 2.7 times higher than for boys’ basketball (0.54/1000 AEs vs 0.20/1000 AEs). Similar sex differences have been documented in high school sports. Kerr et al reported girls’ soccer and basket- ball SRC rates were approximately 2.3 times higher than those of boys’ (0.82/1000 AEs vs 0.36/1000 AEs and 0.48/1000 AEs vs 0.21/1000 AEs, respectively).5 Lincoln et al similarly reported that girls’ soccer rates were nearly double those of boys’ (0.35/1000 AEs vs 0.17/1000 AEs), and basketball rates were 1.6 times higher (0.16/1000 AEs vs 0.10/1000 AEs).3 Recent national data from Chan- dran et al support this trend, showing SRC rates for girls’ soccer 1.8 times higher than boys’ soccer (0.61/1000 AEs Figure. Comparison of competition and practice SRC rates in MS girls and boys participating in sex-comparable sports, with girls’ sports events as the reference group. Differential rates are expressed as IRRs, which compare girls’ sports with boys’ sports, along with 95% CIs. The size of the point estimate marker is proportional to total AEs by sport and event type. The dashed vertical line represents a null value of 1.00. Effect estimates with horizontal bars (95% CIs) that do not touch the vertical line are statistically significant. Table III. IRRs for SRC by sex-comparable sport and event type Sex- comparable sport IRRs (95% CI) Competition Practice Overall Basketball 3.77 (2.38-5.98)* 2.74 (1.68-4.47)* 3.32 (2.37-4.65)* Softball/baseball 4.19 (1.75-10.08)* 2.35 (1.05-5.22)* 3.04 (1.68-5.49)* Soccer 1.75 (1.24-2.48)* 4.92 (3.06-7.92)* 2.54 (1.92-3.36)* Track and field — 0.71 (0.18-2.84) 1.42 (0.46-4.41) Overall 2.07 (0.67-6.42) 2.57 (1.89-3.49)* 2.26 (1.78-2.88)* —, not applicable. Girls’ sports events were referent groups for IRR calculations (ie, Readers should interpret sex comparisons within each column; for example, the Basketball competition values represent the IRRs comparing male and female basketball athletes). *Statistically significant differential rates. THE JOURNAL OF PEDIATRICS: CLINICAL PRACTICE Volume 20 4 Hacherl et al"
+    },
+    {
+      "page": 7,
+      "text": "other authors, they declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. funding This work was funded in part through CDC Cooperative Agreement # NU17CE010060, CDC Block Grant # NB01PW000078, and HRSA Block Grant # B0454582 in part- nership with the Virginia Department of Health. Submitted for publication Jul 7, 2025; last revision received Jan 5, 2026; accepted Jan 7, 2026. Reprint requests: Shane V. Caswell, PhD, George Mason University, 10890 George Mason Circle, Katherine G. Johnson Hall 201 Manassas, VA 20110. E-mail: scaswell@gmu.edu References 1. Maternal and Child Health Bureau (MCHB). 2022–2023 National Sur- vey of Children’s Health (NSCH). Data Resource Center for Child and Adolescent Health; Health Resources and Services Administration. 2023. Accessed October 13, 2025. https://mchb.hrsa.gov/data-research/ national-survey-childrens-health 2. Bryan MA, Rowhani-Rahbar A, Comstock RD, Rivara F, on behalf of the Seattle Sports Concussion Research Collaborative. Sports- and recreation-related concussions in US youth. Pediatrics 2016;138:e20154635. https://doi.org/10.1542/peds.2015-4635 3. Lincoln AE, Caswell SV, Almquist JL, Dunn RE, Norris JB, Hinton RY. Trends in concussion incidence in high school sports: a prospective 11- year study. Am J Sports Med 2011;39:958-63. https://doi.org/10.1177/ 0363546510392326 4. Bretzin AC, Covassin T, Fox ME, Petit KM, Savage JL, Walker LF, et al. Sex differences in the clinical incidence of concussions, missed school days, and time loss in high school student-athletes: part 1. Am J Sports Med 2018;46:2263-9. https://doi.org/10.1177/0363546518778251 5. Kerr ZY, Chandran A, Nedimyer AK, Arakkal A, Pierpoint LA, Zuckerman SL. Concussion incidence and trends in 20 high school sports. Pediatrics 2019;144:e20192180. https://doi.org/10.1542/peds.2019-2180 6. Chandran A, Boltz AJ, Baker J, Anderson M, Rao N, Collins CL. Concus- sion in high school sports: findings from injury surveillance. Pediatr Res 2025;98:1718-25. https://doi.org/10.1038/s41390-025-03863-y 7. Marar M, McIlvain NM, Fields SK, Comstock RD. Epidemiology of con- cussions among United States high school athletes in 20 sports. Am J Sports Med 2012;40:747-55. https://doi.org/10.1177/0363546511435626 8. Bretzin AC, Covassin T, Wiebe DJ, Stewart W. Association of sex with adolescent soccer concussion incidence and characteristics. JAMA Netw Open 2021;4:e218191. https://doi.org/10.1001/jamanetwor- kopen.2021.8191 9. Zuckerman SL, Kerr ZY, Yengo-Kahn A, Wasserman E, Covassin T, Solomon GS. Epidemiology of sports-related concussion in NCAA ath- letes from 2009-2010 to 2013-2014: incidence, recurrence, and mecha- nisms. Am J Sports Med 2015;43:2654-62. https://doi.org/10.1177/ 0363546515599634 10. Covassin T, Swanik CB, Sachs ML. Sex differences and the incidence of concussions among collegiate athletes. J Athl Train 2003;38:238-44. 11. Chandran A, Barron M, Westerman B, DiPietro L. Multifactorial exam- ination of sex-differences in head injuries and concussions among colle- giate soccer players: NCAA ISS, 2004–2009. Inj Epidemiol 2017;4. https://doi.org/10.1186/s40621-017-0127-6 12. Covassin T, Moran R, Elbin RJ. Sex differences in reported concussion injury rates and time loss from participation: an update of the national collegiate Athletic Association Injury Surveillance Program from 2004– 2005 through 2008–2009. J Athl Train 2016;51:189-94. https://doi.org/ 10.4085/1062-6050-51.3.05 13. Dave U, Kinderknecht J, Cheng J, Santiago K, Jivanelli B, Ling DI. Sys- tematic review and meta-analysis of sex-based differences for concussion incidence in soccer. Phys Sportsmed 2022;50:11-9. https://doi.org/10. 1080/00913847.2020.1868955 14. Moser RS, Davis GA, Schatz P. The age variable in childhood concussion management: a systematic review. Arch Clin Neuropsychol 2018;33:417- 26. https://doi.org/10.1093/arclin/acx070 15. Mollayeva T, El-"
+    },
+    {
+      "page": 8,
+      "text": "31. Ernst L, Farley J, Milne N. Incidence and risk factors for sport-related concussion in female youth athletes participating in contact and collision invasion sports: a systematic review. Sports Med 2024;55:393-418. https://doi.org/10.1007/s40279-024-02133-x 32. Sundaram V, Ramachandran AK, Singh U, Pearce AJ. Sex-based differences in concussion incidence and its underlying injury mechanism in team bat/ stick sports: a systematic review and meta-analysis. Int J Sports Sci Coaching 2023;18:1735-53. https://doi.org/10.1177/17479541221131650 33. Hootman JM, Dick R, Agel J. Epidemiology of collegiate injuries for 15 sports: summary and recommendations for injury prevention initiatives. J Athl Train 2007;42:311-9. 34. McGroar ty NK, Brown SM, Mulcahey MK. Sport-rel ated concussio n in female athletes: a systematic review. Orthopaed ic J Sports Med 2020;8:2325 967120932306 . https://doi.org /10.1177/2325 967120932 306 35. Esopenko C, De Souza N, Conway F, Todaro SM, Brostrand K, Womack J, et al. Bigger necks are not enough: an examination of neck circumference in incoming college athletes. J Prim Prevent 2020;41: 421-9. https://doi.org/10.1007/s10935-020-00600-5 36. Merritt VC, Padgett CR, Jak AJ. A systematic review of sex differences in concussion outcome: what do we know? Clin Neuropsychol 2019;33: 1016-43. https://doi.org/10.1080/13854046.2018.1508616 37. Walshe A, Daly E, Ryan L. Epidemiology of sport-related concussion rates in female contact/collision sport: a systematic review. BMJ Open Sport Exerc Med 2022;8:e001346. https://doi.org/10.1136/bmjsem- 2022-001346 38. Ingram V, Fielding M, Dunne LAM, Piantella S, Weakley J, Johnston RD, et al. The incidence of sports-related concussion in children and adoles- cents: a systematic review and meta-analysis. Sports Med Open 2025;11: 36. https://doi.org/10.1186/s40798-025-00834-9 39. Wicklund A, Coatsworth JD. Concussion disclosure in middle and high school youth: who gets the message and are they trained to receive it? J Concussion 2020;4:2059700220924499. https://doi.org/10.1177/205970 0220924499 40. Prosak OL, Hajdu KS, Amedy A, Anesi TJ, Williams K, Jo J, et al. Sex dif- ferences in resource allocation and access to care after sport-related concussion. J Athletic Train 2023;59:785-92. https://doi.org/10.4085/ 1062-6050-0280.23 41. Wallace J, Covassin T, Beidler E. Sex differences in high school athletes’ knowledge of sport-related concussion symptoms and reporting behaviors. J Athletic Train 2017;52:682-8. https://doi.org/10.4085/1062-6050-52.3.06 42. Wallace J, Beidler E, Register-Mihalik JK, Hibbler T, Bretzin A, DeMedal S, et al. Examining concussion nondisclosure in collegiate ath- letes using a health disparities framework and consideration of social de- terminants of health. J Athletic Train 2022;57:16-24. 43. Kerr ZY, Register-Mihalik JK, Marshall SW, Evenson KR, Mihalik JP, Guskiewicz KM. Disclosure and non-disclosure of concussion and concussion symptoms in athletes: review and application of the socio- ecological framework. Brain Inj 2014;28:1009-21. https://doi.org/10. 3109/02699052.2014.904049 44. Sarmiento K, Miller GF, Jones SE. Sports-related concussions and adverse health behaviors among middle and high school students. Am J Sports Med 2023;51:503-10. https://doi.org/10.1177/03635465221141440 45. Drattell JD. Concussion as a public health crisis: multilevel approaches for improving athlete care-seeking. Health Promotion Pract 202515248399251363166. https://doi.org/10.1177/15248399251363166 THE JOURNAL OF PEDIATRICS: CLINICAL PRACTICE Volume 20 8 Hacherl et al"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S4860.packet.json"
+}

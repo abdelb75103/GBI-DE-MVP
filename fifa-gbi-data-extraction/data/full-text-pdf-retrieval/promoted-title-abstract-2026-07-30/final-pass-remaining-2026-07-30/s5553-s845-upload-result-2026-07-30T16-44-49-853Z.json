@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-07-30T16:44:51.584Z",
+  "apply": false,
+  "snapshotPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/pre-write-snapshot-s5553-s845.json",
+  "journalPath": null,
+  "results": [
+    {
+      "studyId": "S5553",
+      "status": "dry_run_passed",
+      "sha256": "b11a11f68fa80fb43b1c6f8c13c1e60b0707ef427e6037081d741cd9947d5f9c"
+    },
+    {
+      "studyId": "S845",
+      "status": "dry_run_passed",
+      "sha256": "9c20b69fc67831357ff85c91775e16e3190e968460c699ffef61e5ca15b7a105"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ description: Use when extracting, reviewing, applying, QA-checking, or batch-pro
 
 # GBI Live Extraction
 
-Default project path: `/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction`.
+Default project path: `/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction`.
 
 When local scripts are explicitly requested, run them from `fifa-gbi-data-extraction/`. Track general review state in `docs/review-backlog.md`; track second-search extraction in `docs/second-search-extraction-review-backlog-2026-07-03.md` (Backlog 2).
 

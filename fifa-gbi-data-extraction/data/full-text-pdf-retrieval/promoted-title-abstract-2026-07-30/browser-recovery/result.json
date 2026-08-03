@@ -1,0 +1,74 @@
+{
+  "scope": "Coordinator browser and official-repository recovery overrides for the exact promoted full-text scope",
+  "generatedAt": "2026-07-30T13:58:00.000Z",
+  "records": [
+    {
+      "studyId": "S1795",
+      "recordId": "cd1d0285-b33b-4c15-b8b4-31936a1225b2",
+      "retrievalStatus": "accepted",
+      "sourceUrl": "https://bibliography.icpsr.umich.edu/bibliography/citations/data/174505/fileDownload",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/browser-recovery/files/S1795-icpsr-proceedings.pdf",
+      "sha256": "fa8b06e0d47d081831296a312844dd6d93972895270e80174d298377fbfe958b",
+      "validation": {
+        "pdfSignature": true,
+        "identityVerified": true,
+        "legalAccess": true,
+        "legalAccessType": "public University of Michigan ICPSR institutional full-text route for private scholarly screening",
+        "documentType": "conference_abstract",
+        "pages": 69,
+        "titleMatch": true,
+        "authorMatch": true,
+        "doiMatch": false,
+        "contentMatch": true,
+        "identityEvidence": [
+          "The publicly served Clinical Journal of Sport Medicine 2024 AMSSM proceedings PDF contains the exact title on journal page 202.",
+          "The abstract names Alexander Porter, DO, as submitting author and Lin Shen, DO, as co-author.",
+          "The abstract reports PHQ-9 screening, 282 tracked athletes, 15 concussions and 17,878 athlete exposures, matching the target record.",
+          "The shared proceedings DOI was not used as identity evidence."
+        ],
+        "failureEvidence": [],
+        "provenanceUrls": [
+          "https://bibliography.icpsr.umich.edu/bibliography/citations/data/174505/fileDownload",
+          "https://doi.org/10.1097/JSM.0000000000001211"
+        ],
+        "confidence": "high"
+      },
+      "error": null,
+      "manualNextStep": null
+    },
+    {
+      "studyId": "S4860",
+      "recordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+      "retrievalStatus": "accepted",
+      "sourceUrl": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12966903.1/PMC12966903.1.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/browser-recovery/files/S4860-official.pdf",
+      "sha256": "e836af2f8cf99ae578206c8768eadb34e67c424b6fd63c2717fe67f840826cd2",
+      "validation": {
+        "pdfSignature": true,
+        "identityVerified": true,
+        "legalAccess": true,
+        "legalAccessType": "NCBI PMC Open Access Dataset, CC BY version of record",
+        "documentType": "full_paper",
+        "pages": 8,
+        "titleMatch": true,
+        "authorMatch": true,
+        "doiMatch": true,
+        "contentMatch": true,
+        "identityEvidence": [
+          "NCBI OA API identifies PMC12966903 as CC BY and the versioned public bucket provides the exact article PDF.",
+          "PDF metadata and page 1 give the exact title and Samantha L. Hacherl as lead author.",
+          "Page 1 gives DOI 10.1016/j.jpedcp.2026.200200 and the study methods and results match the target record."
+        ],
+        "failureEvidence": [],
+        "provenanceUrls": [
+          "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC12966903",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12966903/",
+          "https://pmc-oa-opendata.s3.amazonaws.com/PMC12966903.1/PMC12966903.1.pdf"
+        ],
+        "confidence": "high"
+      },
+      "error": null,
+      "manualNextStep": null
+    }
+  ]
+}

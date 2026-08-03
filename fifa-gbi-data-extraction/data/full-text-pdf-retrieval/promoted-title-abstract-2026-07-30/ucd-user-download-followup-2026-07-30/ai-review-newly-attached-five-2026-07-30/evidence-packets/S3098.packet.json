@@ -1,0 +1,197 @@
+{
+  "recordId": "6271dfdd-9fdf-4ddc-a2e6-e6353a85e83d",
+  "covidenceId": null,
+  "studyId": "S3098",
+  "title": "Akut: Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma.",
+  "authors": "Selçuk Tarakcı, Kaan Kaya, Gülhan Erdem Subak",
+  "year": "2025",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3098.pdf",
+  "pdfSha256": "9bb23cef9ad04afb6324e2c58364c3eb1b3c507f0d100fe5c419d68a5f823c9d",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 9,
+  "textCharCount": 43859,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...performans; sakatlık riski ABS TRACT Objective: This research explores the relationships between the training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League participated in this study on a voluntary basis. Data on acute:chronic workload ratio and running asymmetry were collected u..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...e training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League participated in this study on a voluntary basis. Data on acute:chronic workload ratio and running asymmetry were collected using Global Positioning System (GPS) tracking. The GPS-tracked metrics in- cluded total distance, dis..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...m/s (r=0.63), total acceleration-deceleration distance (r=0.68), and high metabolic power distance (r=0.60). Conclusion: This study suggests that the acute:chronic workload ratio may not be a reliable indicator for injury risk or performance parameters in football players. However, more specific parameters, such as running asymmetry, may have significant impacts on in- jury risk. Running asymmetry, particularly in high-intensity sports like foot- ball, can be an important indicator for predicting injury risk and optimizing p..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ng position and playing half in the 2013-14 Spanish La Liga season. J Hum Kinet. 2019;66:213-22. [Crossref] [pubMed] [pMC] Dellal A, Chamari K, Wong Dp, Ahmaidi S, Keller D, Barros R, et al. Compa-4. rison of physical and technical performance in European soccer match-play: FA premier League and La Liga. European Journal of Sport Science. 2011;11(1):51-9. [Crossref] UEFA [Internet]. Fixtures&results. [Cited: April 19, 2020] Available from: [Link] 5. Di Salvo V, Baron R, Tschan H, Calderon Montero FJ, Bachl N, p..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...2011;11(1):51-9. [Crossref] UEFA [Internet]. Fixtures&results. [Cited: April 19, 2020] Available from: [Link] 5. Di Salvo V, Baron R, Tschan H, Calderon Montero FJ, Bachl N, pigozzi F. per-6. formance characteristics according to playing position in elite soccer. Int J Sports Med. 2007;28(3):222-7. [Crossref] [pubMed] Ekstrand J, Waldén M, Hägglund M. Hamstring injuries have increased by 4% 7. annually in men’s professional football, since 2001: a 13-year longitudinal analysis of the UEFA Elite Club injury stud..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "..., Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury pattern recognition-narrative review and new concept. Br J Sports Med. 2016;50(21):1309-14. [Crossref] [pubMed] Caldbeck p, Dos’Santos T. How do soccer players sprint from a tactical con-9. text? Observations of an English premier League soccer team. J Sports Sci. 2022;40(23):2669-80. [Crossref] [pubMed] KAYNAKLAR"
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...cation to injury pattern recognition-narrative review and new concept. Br J Sports Med. 2016;50(21):1309-14. [Crossref] [pubMed] Caldbeck p, Dos’Santos T. How do soccer players sprint from a tactical con-9. text? Observations of an English premier League soccer team. J Sports Sci. 2022;40(23):2669-80. [Crossref] [pubMed] KAYNAKLAR"
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ns for random intermittent multi-direc- tional sports. Sports Med. 2022;52(10):2321-54. [Crossref] [pubMed] [pMC] Malone S, Owen A, Newton M, Mendes B, Collins KD, Gabbett TJ. The 11. acute:chonic workload ratio in relation to injury risk in professional soccer. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season pr..."
+      }
+    ],
+    "wrong_sport": [
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...1-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket fast bowlers. Br J Sports M..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Gaelic football",
+        "snippet": "...y risk in elite cricket fast bowlers. Br J Sports Med. 2014;48(8):708-12. [Crossref] [pubMed] Malone S, Roe M, Doran DA, Gabbett TJ, Collins K. High chronic training 14. loads and exposure to bouts of maximal velocity running reduce injury risk in elite Gaelic football. J Sci Med Sport. 2017;20(3):250-4. [Crossref] [pub- Med] Murray NB, Gabbett TJ, Townshend AD, Hulin BT, McLellan C p. Individual 15. and combined effects of acute and chronic running loads on injury risk in elite Australian footballers. Scand J Med Sci..."
+      }
+    ],
+    "review": [
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "narrative review",
+        "snippet": "...ports Med. 2016;50(12):731-7. [Crossref] [pubMed] Bittencourt NFN, Meeuwisse WH, Mendonça LD, Nettel-Aguirre A, Ocarino 8. JM, Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury pattern recognition-narrative review and new concept. Br J Sports Med. 2016;50(21):1309-14. [Crossref] [pubMed] Caldbeck p, Dos’Santos T. How do soccer players sprint from a tactical con-9. text? Observations of an English premier League soccer team. J Sports Sci. 2022;40(23):2669-80. [Cro..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 19 Akut:Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma Acute:Chronic Workload Ratio, Running Imbalance and Injury Paradox for Professional Footballers: A Descriptive Research Selçuk TARAKCIa, Kaan KAYAb, Gülhan Erdem SUBAKc aİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye bİstanbul Esenyurt Ü..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ejik bilgiler sunmaktadır. Anah tar Ke li me ler: Futbol; koşu dengesizliği; antrenman yükü; performans; sakatlık riski ABS TRACT Objective: This research explores the relationships between the training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League par..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...nce of accelerations-decelerations over 2 m/s (r=0.63), total acceleration-deceleration distance (r=0.68), and high metabolic power distance (r=0.60). Conclusion: This study suggests that the acute:chronic workload ratio may not be a reliable indicator for injury risk or performance parameters in football players. However, more specific parameters, such as running asymmetry, may have significant impacts on in- jury risk. Running asymmetry, particularly in high-intensity sports like foot- ball, can be an important in..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...arameters in football players. However, more specific parameters, such as running asymmetry, may have significant impacts on in- jury risk. Running asymmetry, particularly in high-intensity sports like foot- ball, can be an important indicator for predicting injury risk and optimizing performance. These findings provide valuable strategic insights for sports scientists, coaches, and healthcare professionals in terms of adjusting train- ing programs and minimizing injury risks. Keywords: Football; running imbalanc..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ll, can be an important indicator for predicting injury risk and optimizing performance. These findings provide valuable strategic insights for sports scientists, coaches, and healthcare professionals in terms of adjusting train- ing programs and minimizing injury risks. Keywords: Football; running imbalance; training load; performance; injury risk ORİJİNAL ARAŞTIRMA ORIGINAL RESEARCH DOI: 10.5336/sportsci.2024-104874 Correspondence: Selçuk TARAKCI İstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yükseko..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...These findings provide valuable strategic insights for sports scientists, coaches, and healthcare professionals in terms of adjusting train- ing programs and minimizing injury risks. Keywords: Football; running imbalance; training load; performance; injury risk ORİJİNAL ARAŞTIRMA ORIGINAL RESEARCH DOI: 10.5336/sportsci.2024-104874 Correspondence: Selçuk TARAKCI İstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye E-mail: selcuktarakci@esenyurt.edu.t..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...5. Di Salvo V, Baron R, Tschan H, Calderon Montero FJ, Bachl N, pigozzi F. per-6. formance characteristics according to playing position in elite soccer. Int J Sports Med. 2007;28(3):222-7. [Crossref] [pubMed] Ekstrand J, Waldén M, Hägglund M. Hamstring injuries have increased by 4% 7. annually in men’s professional football, since 2001: a 13-year longitudinal analysis of the UEFA Elite Club injury study. Br J Sports Med. 2016;50(12):731-7. [Crossref] [pubMed] Bittencourt NFN, Meeuwisse WH, Mendonça LD, Nettel-..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...lite soccer. Int J Sports Med. 2007;28(3):222-7. [Crossref] [pubMed] Ekstrand J, Waldén M, Hägglund M. Hamstring injuries have increased by 4% 7. annually in men’s professional football, since 2001: a 13-year longitudinal analysis of the UEFA Elite Club injury study. Br J Sports Med. 2016;50(12):731-7. [Crossref] [pubMed] Bittencourt NFN, Meeuwisse WH, Mendonça LD, Nettel-Aguirre A, Ocarino 8. JM, Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury patter..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...on: a review with implications for random intermittent multi-direc- tional sports. Sports Med. 2022;52(10):2321-54. [Crossref] [pubMed] [pMC] Malone S, Owen A, Newton M, Mendes B, Collins KD, Gabbett TJ. The 11. acute:chonic workload ratio in relation to injury risk in professional soccer. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match re..."
+      }
+    ],
+    "design": [
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...er. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...ed Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket fast..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 19 Akut:Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma Acute:Chronic Workload Ratio, Running Imbalance and Injury Paradox for Professional Footballers: A Descriptive Research Selçuk TARAKCIa, Kaan KAYAb, Gülhan Erdem SUBAKc aİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye bİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Spor Yöneticiliği Bölümü, İstanbul, Türkiye cIğdır Üniversitesi Spor Bilimleri Fakültesi, Beden Eğitimi ve Spor Öğretmenliği Bölümü, Beden Eğitimi ve Spor Öğretimi-Eğitimi AD, Iğdır, Türkiye ÖZET Amaç: Bu ara ştırma, Türkiye Süper Ligi’nde mücadele eden pro- fesyonel futbolcular ın temass ız sakatl ık geçirdikleri güne kadar olan an- trenman yükleri ile akut:kronik iş yükü oranı ve koşu dengesizliği değerleri arasındaki ilişkileri incelemektedir. Gereç ve Yöntemler: Araştırmaya Tür- kiye Süper Ligi’nde mücadele eden 14 profesyonel futbolcu gönüllü olarak katılmıştır. Katılımcılardan elde edilen akut:kronik i ş yükü oran ı ve ko şu dengesizliği verileri Küresel Konumlama Sistemi [Global Positioning System (GPS)] kullan ılarak elde edilmi ştir. GPS kullan ılarak elde edilen veriler arasında; toplam mesafe, 20-25 km/s hız aralığında toplam mesafe, 25 km/s üzerinde toplam mesafe, antrenman ve maçlarda geçirdikleri top- lam süre, oyuncu yükleri, yüksek metabolik güç mesafesi, belirli hızlarda iv- melenme ve yava şlama mesafeleri ve ula ştıkları maksimal sürat de ğerleri bulunmaktadır. Bulgular: Akut:kronik iş yükü oranı ile incelenen paramet- reler arasında anlamlı bir korelasyon olmad ığını, ancak ko şu dengesizliği değeri ile bazı antrenman ve performans parametreleri arasında anlamlı ko- relasyonlar olduğunu göstermiştir. Özellikle, ko şu dengesizliği ile toplam süre (r=0,56), toplam mesafe (r=0,61), oyuncu yükü (r=0,73), 2 m/s’den hızlı ivmelenme-yava şlama mesafesi (r=0,63), toplam ivmelenme-yava ş- lama mesafesi (r=0,68) ve yüksek metabolik güç mesafesi (r=0,60) arasında pozitif yönlü anlaml ı korelasyonlar bulunmu ştur. Sonuç: Bu ara ştırma, akut:kronik iş yükü oranının futbolcularda sakatlık riski ya da performans parametreleri için güvenilir bir gösterge olmayabileceğini, ancak koşu den- gesizliği gibi daha spesifik parametrelerin sakatlık riski üzerinde anlamlı et- kiler yaratabileceğini öne sürmektedir. Ko şu dengesizliği, özellikle futbol gi\n\n[p. 2] 20 Futbol, dünya genel inde en yayg ın ve popüler spor dallarından birisidir.1 Modern futbol daha yük- sek şiddette, daha hızlı oyun kriterleriyle oynanmakta ve fiziksel açıdan önceki yıllara göre daha agresif bir şekilde oynanan b ir oyun hal ini aldığı görülmekte- dir.2 2019 y ılında yapılan bir çalışmada İspanya La Liga sev iyesi için b ir müsabakada oyuncu ba şına düşen ortalama ko şu mesafes i 9.268±960 m olarak bildirilmiştir.3 Bunu destekleyici başka bir çalışmada aynı kıtada farklı ülkelerde oynanan müsabakalarda daha uzun koşu mesafeleri tespit edilmiş olsa da, fut- bolun yap ısı gere ği oyun tarz ındaki takt iksel de ği- şikliklerin ve oyun içindeki kısa ama 20 km/s g ibi daha yoğun ve hızlı koşuların sergilenmesi, koşu me- safelerinin uzunlu ğunu etkileyebileceği belirtilmiş- tir.4 Modern futbolda oyunun f iziksel talepler i Avrupa Futbol Federasyonları Birliği (UEFA) inter- net sayfası verilerine göre tak ımlar müsabaka süre- leri içerisinde 107.000-127.000 metre aras ında mesafe kat ett ikleri görülmekted ir.5 İfade edilen fi- ziksel performansın yanında teknik çabalar açısından bakıldığında, profesyonel futbolcular taraf ından ko- şulan mesafelerin yalnızca %1,2’si ile %2,4’lük bö- lümünde koşuların topla yapıldığı açıklanmıştır.6 Bu veriler, performansı optimize etmek ve sakatlık olu- şum riskini azaltmak için oyuncuların kas-iskelet ya- pılarına ve ba ğ dokusuna b inen yükün artt ığını göstermektedir. Maçlardaki fiziksel taleplerdeki artı- şın bir sonucu olarak, profesyonel futbolcularda sa- katlanma r iskini artt ırabileceği ve hatta olu şan sakatlıkların da son y ıllarda artış gösterdiği anlaşıl- maktadır.7 Bu nedenle, antrenman ve müsabakalar arasındaki doz-tepki ilişkisini anlamak için iç yük ve dış yük aras ındaki ilişkileri iyi b ilmek ve anal iz etmek önemli hale gelmektedir. Sakatlıkların olu şumu çok say ıda parametrey i (performans, iş yükü, fizyoloji, uyku, yorgunluk, to- parlanma, psikoloji, yaşam tarzı) içeren karmaşık bir olgudur.8 Sporcularda antrenman yükü ile sakatl ık arasındaki ilişki, son dönemlerde ara ştırma ve uy- gulama alanlar ında giderek daha fazla ilgi görmeye başlayan ara ştırma konusu olmaktad ır. Maç s ıra- sında meydana gelen h ızlanmalar ve yava şlamalar farklı fizyolojik ve biyomekanik talepler içerir.9 Ör- neğin, hızlanma yüksek oranda kas kasılması ve me- tabolik stres içerir, buna kar şın yava şlama yüksek oranda kas-iskelet sistemi yüklenmesi, yüksek yara- lanma riski (örn. ön çapraz bağ yaralanmaları) \n\n[p. 3] 212121 antrenman programlarını optimize etmek ve sakatlık risklerini azaltmak için önemlidir. Futbolcular ın antrenman ve maç s ırasında maruz kaldıkları fiziksel yüklerin değerlendirilmesi, performans ve sa ğlık yönetiminde kritik bir rol oy- namaktadır. Kat edilen toplam mesafe, oyuncu yükü (oyuncunun maruz kaldığı fiziksel yük), yüksek hız- larda koşu ve sprint mesafeleri, hızlanma ve yava ş- lama sayıları gibi parametreler, oyuncuların fiziksel performansını ve antrenman yoğunluğunu anlamada kullanılan temel ölçütlerd ir. Özell ikle, yüksek h ız- larda kat ed ilen mesafeler ve h ızlı ivmelenme-ya- vaşlama sayıları, oyuncular ın ani ve yo ğun fiziksel taleplere nasıl yanıt verdiklerini göstermektedir. Bu parametreler in sürekl i olarak izlenmes i ve anal iz edilmesi, oyuncular ın performans ını optimize etme ve sakatl ık risklerini minimize etme stratej ilerinin geliştirilmesine katkı sağlamaktadır. Bu araştırmanın amacı, Türkiye Süper Ligi’nde mücadele eden profesyonel futbolcuların temassız sa- katlık geçirdikleri güne kadar olan antrenman yükleri ile AKİYO ve koşu dengesizliği değerleri arasındaki ilişkileri incelemektir. Bu amaç do ğrultusunda, pro- fesyonel futbolcularda daha önce sakatlıkla ilişkilen- dirilmeyen GPS s istemi içerisinde yer alan “ko şu dengesizliği” parametresinin de değerlendirilmesiyle birlikte literatürde bu konudaki eksikliğe katkıda bu- lunabileceği dü şünülmektedir. AK İYO de ğeri ile oyuncuların toplam mesafeler i, spr int mesafeler i, oyuncu yükleri, yüksek metabolik güç mesafeleri, iv- melenme ve yavaşlama değerleri arasında anlamlı bir korelasyon olup olmadığı ve koşu dengesizliği değeri ile aynı parametreler arasında anlamlı bir korelasyon olup olmadığını test etmeyi amaçlamaktadır. Bu ça- lışmanın önemi ise, AKİYO ve koşu dengesizliği de- ğerlerinin futbolcular ın antrenman yükler i ve sakatlık riskleri üzerindeki potansiyel etkilerini an- lamaya katkı sağlamasında yatmaktadır. Araştırma- mız ayn ı zamanda bu alandak i yap ılacak olan literatür çal ışmalarına katkı olarak profesyonel fut- bolcuların antrenman yükü takibinde sadece perfor- mans parametreler inin de ğil “ko şu denges izliği” parametresinin de kullanılmasının önemini ortaya ko- yacağı düşünülmektedir. AKİYO’nun sakatl ık riski ile ilişkisi üzerine yapılan çalışmaların sonuçları tu- tarsız olabilmektedir. Bu nedenle, AK İYO’nun an- trenman yükü ve performans parametreler i üzer in- deki etkilerini daha iyi anlamak için ek çal ışmalara ihtiyaç olduğu düşünül\n\n[p. 4] sakatlık geç irmeyen futbolcular, temasl ı/darbeye bağlı sakatlık geçiren futbolcular, müsabakalarda 60 dk ve altında oynayan futbolcular dâhil edilmemiştir. Araştırma Hels inki Deklarasyonu prens ipleri göz önünde bulundurularak gerçekleştirilmiş ve bu araş- tırma, İstanbul Esenyurt Üniversitesi Etik Kurulu ta- rafından 11 Temmuz 2023 tarih ve 2023/06-15 no’lu toplantısı sonucunda verilen sayılı onay alınarak ger- çekleştirilmiştir. Katılımcılardan ayrıca yazılı onam formları imzalı şekilde alınmış ve çalışmanın amacı, süreci ve olası riskleri hakkında sözlü ve yazılı olarak detaylı bilgilendirme yapılmıştır. Katılımcıların mah- remiyetine saygı gösterilerek, kişisel veriler anonim olarak anal iz edilmiş ve sadece bu ara ştırma içeri- sinde kullanılmıştır. VERİ TOpLAMA Bu ara ştırma kapsam ında, kat ılımcıların ko şu dengesizliği verileri 2022-2023 Türk iye Süper Ligi sezonu süres ince GPS s istemi kullan ılarak toplan- mıştır. 10 Hz GPS c ihazlar ının mesafe ve h ız öl- çümler inde hem geçerl i hem de güven ilir oldu ğu daha önceki araştırmalarda göster ilmektedir.21,22 Bu cihazlar üret ici firma tarafından özel olarak gel işti- rilen yelekler in cep kısımlarına yerleştirilmektedir. Bu cepler kat ılımcıların s ırt k ısmında yer almakta ve iki scapula kem iğinin tam ortasına denk gelecek şekilde yerle ştirilmekted ir. C ihazlar 81 mm uzun- luğa, 43,5 mm genişliğe ve 54 gr ağırlığa sahiptirler. Katılımcılar sezon boyunca ayn ı cihazı düzenli ola- rak kullanmaktad ırlar ve bu düzenl i kullanım, olası ölçüm hatalar ını minimize etmekted ir.23 Üretici fir- manın talimatları doğrultusunda GPS c ihazları, her maç ve antrenmandan 15 dk önce aktif hale getirile- rek gerekli uydu bağlantısının en iyi duruma getiril- mesi ve doğru verilerin elde edilmesi sağlanmıştır.24 Maçlardan ve müsabakalardan elde ed ilen ver iler düzenli olarak bulut sistemi üzerinden düzenli taki- binin yap ılabilmesi amac ıyla Excel’e (M icrosoft, ABD) aktarılmış ve eksik ya da hatalı verilerin ayık- lanmas ı için gerekl i kontrollerden geç irilmiştir. Toplanan ver iler aras ında; oyuncular ın antrenman ve maç s ırasında kat ett iği toplam mesafe, 20-25 km/s h ız aral ığında kat ett ikleri toplam mesafe, 25 km/s üzer indeki hızda kat ett ikleri toplam mesafe, antrenman ve maçlarda geçirdikleri toplam süre, an- trenman ve maç s ırasında maruz kald ıkları fiziksel yük (oyuncu yükü), yüksek metabolik güç mesafesi, belirli b ir h ızda ivmelenme ve yava şlama to",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 19 Akut:Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma Acute:Chronic Workload Ratio, Running Imbalance and Injury Paradox for Professional Footballers: A Descriptive Research Selçuk TARAKCIa, Kaan KAYAb, Gülhan Erdem SUBAKc aİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Antrenörlük Eğitimi Bölümü, İstanbul, Türkiye bİstanbul Esenyurt Üniversitesi Beden Eğitimi ve Spor Yüksekokulu, Spor Yöneticiliği Bölümü, İstanbul, Türkiye cIğdır Üniversitesi Spor Bilimleri Fakültesi, Beden Eğitimi ve Spor Öğretmenliği Bölümü, Beden Eğitimi ve Spor Öğretimi-Eğitimi AD, Iğdır, Türkiye ÖZET Amaç: Bu ara ştırma, Türkiye Süper Ligi’nde mücadele eden pro- fesyonel futbolcular ın temass ız sakatl ık geçirdikleri güne kadar olan an- trenman yükleri ile akut:kronik iş yükü oranı ve koşu dengesizliği değerleri arasındaki ilişkileri incelemektedir. Gereç ve Yöntemler: Araştırmaya Tür- kiye Süper Ligi’nde mücadele eden 14 profesyonel futbolcu gönüllü olarak katılmıştır. Katılımcılardan elde edilen akut:kronik i ş yükü oran ı ve ko şu dengesizliği verileri Küresel Konumlama Sistemi [Global Positioning System (GPS)] kullan ılarak elde edilmi ştir. GPS kullan ılarak elde edilen veriler arasında; toplam mesafe, 20-25 km/s hız aralığında toplam mesafe, 25 km/s üzerinde toplam mesafe, antrenman ve maçlarda geçirdikleri top- lam süre, oyuncu yükleri, yüksek metabolik güç mesafesi, belirli hızlarda iv- melenme ve yava şlama mesafeleri ve ula ştıkları maksimal sürat de ğerleri bulunmaktadır. Bulgular: Akut:kronik iş yükü oranı ile incelenen paramet- reler arasında anlamlı bir korelasyon olmad ığını, ancak ko şu dengesizliği değeri ile bazı antrenman ve performans parametreleri arasında anlamlı ko- relasyonlar olduğunu göstermiştir. Özellikle, ko şu dengesizliği ile toplam süre (r=0,56), toplam mesafe (r=0,61), oyuncu yükü (r=0,73), 2 m/s’den hızlı ivmelenme-yava şlama mesafesi (r=0,63), toplam ivmelenme-yava ş- lama mesafesi (r=0,68) ve yüksek metabolik güç mesafesi (r=0,60) arasında pozitif yönlü anlaml ı korelasyonlar bulunmu ştur. Sonuç: Bu ara ştırma, akut:kronik iş yükü oranının futbolcularda sakatlık riski ya da performans parametreleri için güvenilir bir gösterge olmayabileceğini, ancak koşu den- gesizliği gibi daha spesifik parametrelerin sakatlık riski üzerinde anlamlı et- kiler yaratabileceğini öne sürmektedir. Ko şu dengesizliği, özellikle futbol gibi yüksek tempolu sporlarda sakatlık riskini tahmin etmek ve performansı optimize etmek için önemli bir gösterge olabilir. Bu sonuçlar, spor bilimci- ler, antrenörler ve sağlık profesyonelleri için oyuncuların antrenman prog- ramlarının düzenlenmesi ve sakatl ık riskinin azalt ılmas ı açısından önemli stratejik bilgiler sunmaktadır. Anah tar Ke li me ler: Futbol; koşu dengesizliği; antrenman yükü; performans; sakatlık riski ABS TRACT Objective: This research explores the relationships between the training loads until the day of non-contact injury occurrence and the acute:chronic workload ratio as well as running imbalance values among professional football players competing in the Turkish Super League. Ma- terial and Methods: Fourteen professional football players from the Turk- ish Super League participated in this study on a voluntary basis. Data on acute:chronic workload ratio and running asymmetry were collected using Global Positioning System (GPS) tracking. The GPS-tracked metrics in- cluded total distance, distance covered within the speed range of 20-25 km/h, distance covered above 25 km/h, total time spent in training and matches, player load, high metabolic power distance, acceleration and deceleration distances at specific speeds, and maximum speed achieved. Results: The findings revealed no significant correlation between the acute:chronic work- load ratio and the examined parameters. However, significant correlations were found between running asymmetry and certa"
+    },
+    {
+      "page": 8,
+      "text": "SONUÇ Bu araştırma, futbolcular ın temassız sakatlık geçir- dikleri güne kadar olan antrenman ver ileriyle AKİ- YO’nun sakatlık riski veya performans parametreleri üzerinde anlaml ı bir korelasyon göstermed iğini or- taya koymuştur. AKİYO’nun sakatlık riski ile ilişkili olduğuna dair yaygın kabul gören görüşlere rağmen, bu çal ışmada AK İYO’nun oyuncular ın antrenman yükleri ile doğrudan ilişkili olmadığı ve dolay ısıyla güvenilir bir sakatlık göstergesi olarak tek başına ye- terli olmayabileceği gözlenmiştir. Buna karşın, çalış- mada ko şu denges izliği ile bel irli antrenman ve performans parametreler i arasında anlaml ı korelas- yonlar tespit edilmiştir. Özellikle, koşu dengesizliği ile toplam süre, toplam mesafe, oyuncu yükü, h ızlı ivmelenme ve yava şlama mesafes i gibi performans ölçütleri arasında güçlü poz itif yönlü ilişkiler tespit edilmiştir. Bu bulgular, as imetrik koşu desenlerinin oyuncuların kas-iskelet s isteminde yaratt ığı denge- sizliklerin antrenman yüklerini artırabileceğini ve bu durumun performans düşüşlerine ve sakatlık riskinin artmasına yol açab ileceğini göstermekted ir. Ko şu dengesizliği, futbolcular ın maruz kald ığı f iziksel yükü do ğrudan etk ileyen b ir parametre olarak öne çıkmakta ve bu alanda d ikkatle izlenmesi gereken önemli bir gösterge olarak değerlendirilmektedir. Bu sonuçlar, spor b ilimciler, antrenörler ve sa ğlık pro- fesyonelleri için oyuncuların antrenman programla- rının düzenlenmes i ve sakatl ık riskinin azalt ılması açısından önemli stratejik bilgiler sunmaktadır. Ay- rıca, sakatl ık riskini daha do ğru tahm in etmek için AKİYO ve koşu dengesizliği gibi parametrelerin bir- likte ele alınması, antrenman yükleri ile sakatlık riski arasındaki ilişkinin daha kapsamlı anlaşılmasına katkı sağlayabilir. Finansal Kaynak Bu çalışma sırasında, yapılan araştırma konusu ile ilgili do ğru- dan bağlantısı bulunan herhangi bir ilaç firmasından, tıbbi alet, gereç ve malzeme sağlayan ve/veya üreten bir firma veya herhangi bir ticari firmadan, çalışmanın değerlendirme sürecinde, çalışma ile ilgili verilecek karar ı olumsuz etkileyebilecek maddi ve/veya manevi herhangi bir destek alınmamıştır. Çıkar Çatışması Bu çalışma ile ilgili olarak yazarlar ın ve/veya aile bireylerinin çıkar çat ışması potansiyeli olabilecek bilimsel ve t ıbbi komite üyeliği veya üyeleri ile ilişkisi, danışmanlık, bilirkişilik, herhangi bir firmada çal ışma durumu, hissedarl ık ve benzer durumlar ı yoktur. Yazar Katkıları Fikir/Kavram: Selçuk Tarakcı; Tasarım: Selçuk Tarakcı, Kaan Kaya; Denetleme/Danışmanlık: Selçuk Tarakcı, Gülhan Erdem Subak; Veri Toplama ve/veya İşleme: Selçuk Tarakcı, Kaan Kaya, Gülhan Erdem Subak; Analiz ve/veya Yorum: Gülhan Erdem Subak, Selçuk Tarakc ı, Kaan Kaya; Kaynak Taramas ı:Kaan Kaya, Selçuk Tarakcı; Makalenin Yazımı: Selçuk Tarakcı, Kaan Kaya; Eleştirel İnceleme: Selçuk Tarakcı, Gülhan Erdem Subak; Kaynaklar ve Fon Sa ğlama: Selçuk Tarakcı, Kaan Kaya; Mal- zemeler:Selçuk Tarakcı. Selçuk TARAKÇI ve ark. Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 26 Kaya K, Gürol B. Futbolda dar alan oyunları değişkenlerinin incelenmesi [Re-1. view of small-sided games variables in football]. Sportive. 2021;4(2):117-31. [Crossref] Bush M, Barnes C, Archer DT, Hogg B, Bradley pS. Evolution of match per-2. formance parameters for various playing positions in the English premier Lea- gue. Hum Mov Sci. 2015;39:1-11. [Crossref] [pubMed] Rivilla-García J, Calvo LC, Jiménez-Rubio S, paredes-Hernández V, Muñoz 3. A, van den Tillaar R, et al. Characteristics of very high intensity runs of soc- cer players in relation to their playing position and playing half in the 2013-14 Spanish La Liga season. J Hum Kinet. 2019;66:213-22. [Crossref] [pubMed] [pMC] Dellal A, Chamari K, Wong Dp, Ahmaidi S, Keller D, Barros R, et al. Compa-4. rison of physical and technical performance in European soccer match-play: FA premier League and La Liga. European Journal of Sport Science. 2011;11(1):51-9. [Crossref] UEFA [Internet]. F"
+    },
+    {
+      "page": 9,
+      "text": "Selçuk TARAKÇI ve ark. Turkiye Klinikleri J Sports Sci. 2025;17(1):19-27 27 Harper DJ, McBurnie AJ, Santos TD, Eriksrud O, Evans M, Cohen DD, et al. 10. Biomechanical and neuromuscular performance requirements of horizontal deceleration: a review with implications for random intermittent multi-direc- tional sports. Sports Med. 2022;52(10):2321-54. [Crossref] [pubMed] [pMC] Malone S, Owen A, Newton M, Mendes B, Collins KD, Gabbett TJ. The 11. acute:chonic workload ratio in relation to injury risk in professional soccer. J Sci Med Sport. 2017;20(6):561-5. [Crossref] [pubMed] Hulin BT, Gabbett TJ, Caputi p, Lawson DW, Sampson JA. Low chronic work-12. load and the acute:chronic workload ratio are more predictive of injury than between-match recovery time: a two-season prospective cohort study in elite rugby league players. Br J Sports Med. 2016;50(16):1008-12. [Crossref] [pub- Med] Hulin BT, Gabbett TJ, Blanch p, Chapman p, Bailey D, Orchard JW. Spikes 13. in acute workload are associated with increased injury risk in elite cricket fast bowlers. Br J Sports Med. 2014;48(8):708-12. [Crossref] [pubMed] Malone S, Roe M, Doran DA, Gabbett TJ, Collins K. High chronic training 14. loads and exposure to bouts of maximal velocity running reduce injury risk in elite Gaelic football. J Sci Med Sport. 2017;20(3):250-4. [Crossref] [pub- Med] Murray NB, Gabbett TJ, Townshend AD, Hulin BT, McLellan C p. Individual 15. and combined effects of acute and chronic running loads on injury risk in elite Australian footballers. Scand J Med Sci Sports. 2017;27(9):990-8. [Crossref] [pubMed] Weiss KJ, Allen SV, McGuigan MR, Whatman CS. The relationship between 16. training load and injury in men’s professional basketball. Int J Sports physiol perform. 2017;12(9):1238-42. [Crossref] [pubMed] Saba DJ. Validation of running symmetry using trunk mounted accelerometry: 17. Clinical trial and case study. Virginia polytechnic Institute: Virginia Tech; 2016. [Link] Staab W, Hottowitz R, Sohns C, Sohns JM, Gilbert F, Menke J, et al. Acce-18. lerometer and gyroscope based gait analysis using spectral analysis of pati- ents with osteoarthritis of the knee. J phys Ther Sci. 2014;26(7):997-1002. [Crossref] [pubMed] [pMC] Kim MK, Lee YS. Kinematic analysis of the lower extremities of subjects with 19. flat feet at different gait speeds. J phys Ther Sci. 2013;25(5):531-3. [Crossref] [pubMed] [pMC] Vogt L, Banzer W, Bayer I, Schmidtbleicher D, Kerschbaumer F. Overground 20. and walkway ambulation with unilateral hip osteoarthritis: comparison of step length asymmetries and reproducibility of treadmill mounted force plate rea- dings. physiother Theory pract. 2006;22(2):73-82. [Crossref] [pubMed] Crang zL, Duthie G, Cole MH, Weakley J, Hewitt A, Johnston RD. The inter-21. device reliability of global navigation satellite systems during team sport mo- vement across multiple days. J Sci Med Sport. 2022;25(4):340-4. [Crossref] [pubMed] Scott TJ, Black CR, Quinn J, Coutts AJ. Validity and reliability of the session-22. RpE method for quantifying training in Australian football: a comparison of the CR10 and CR100 scales. J Strength Cond Res. 2013;27(1):270-6. [Cros- sref] [pubMed] Asian-Clemente JA, Rabano-Munoz A, Requena B, Santalla A, Suarez-Ar-23. rones L. The influence of the floater position on the load of soccer players during a 4 vs 4 + 2 game. Kinesiology. 2022;54(1):82-91. [Crossref] Duffield R, Reid M, Baker J, Spratford W. Accuracy and reliability of GpS de-24. vices for measurement of movement patterns in confined spaces for court- based sports. J Sci Med Sport. 2010;13(5):523-5. [Crossref] [pubMed] Impellizzeri FM, Tenan MS, Kempton T, Novak A, Coutts AJ. Acute:chronic 25. workload ratio: conceptual issues and fundamental pitfalls. Int J Sports physiol perform. 2020;15(6):907-13. [Crossref] [pubMed] Impellizzeri FM, Woodcock S, Coutts AJ, Fanchini M, McCall A, Vigotsky A. 26. Acute to random chronic workload ratio is ‘as’ associated with injury as acute to actual "
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3098.packet.json"
+}

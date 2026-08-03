@@ -22,7 +22,7 @@ MAIN_PPT = DESKTOP / "Isokinetic V5BI 2026.pptx"
 BACKUP_PPT = DESKTOP / "Isokinetic V5BI 2026 Backup.pptx"
 STILLS_PPT = DESKTOP / "Isokinetic V5BI 2026 Stills Backup.pptx"
 THANK_YOU_STILL = (
-    Path("/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/out")
+    Path("/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/isokinetic presentation/out")
     / "ThankYouSlide-4k-v2.png"
 )
 

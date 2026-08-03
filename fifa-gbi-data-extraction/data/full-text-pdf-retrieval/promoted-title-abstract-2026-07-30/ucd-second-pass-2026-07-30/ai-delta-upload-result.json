@@ -1,0 +1,72 @@
+{
+  "scope": "Five newly uploaded and verified UCD second-pass records only",
+  "generatedAt": "2026-07-30T14:51:31.295Z",
+  "sourcePath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/upload-result-2026-07-30T14-39-19-454Z.json",
+  "results": [
+    {
+      "studyId": "S925",
+      "recordId": "9d1e52c6-323b-4355-bfc5-9db38e9e4974",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://thejns.org/focus/downloadpdf/view/journals/neurosurg-focus/57/1/article-pE3.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S925.pdf",
+      "documentType": "full_paper",
+      "objectPath": "7bb43e56-16c4-4c35-8620-775d358357d9/1785422344541-S925-S925.pdf",
+      "sha256": "01e33240cb9a3aab32e13b713d852b6bee9cc5b5fdc1dd90418e3c1dc4c5b068",
+      "size": 2735997,
+      "pages": 9,
+      "identityHash": "d7ff5c3642f7e021a26f2b7b98dc9261e8a28c0d2f6429ee5d0726e0f00fc43b"
+    },
+    {
+      "studyId": "S1148",
+      "recordId": "78fa6b57-9cf4-43f2-8921-ea65166e38a7",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://bjsm-bmj-com.ucd.idm.oclc.org/content/bjsports/58/2/112.full.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S1148.pdf",
+      "documentType": "editorial",
+      "objectPath": "f8a034d4-3b62-451b-8629-97f42f4c441f/1785422347837-S1148-S1148.pdf",
+      "sha256": "50d60331ce6292b754372c1a2a4c51ce2b39ee0dab48601cf1d3983f1b7624de",
+      "size": 517113,
+      "pages": 2,
+      "identityHash": "333443acd0046d12fb7bcd7ae339b209d8237562de7f302ac988ee6c9d13468d"
+    },
+    {
+      "studyId": "S4111",
+      "recordId": "27d9106c-e105-4749-9dcf-57b19ad03caf",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://onlinelibrary-wiley-com.ucd.idm.oclc.org/doi/pdfdirect/10.1002/pmrj.70023",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S4111.pdf",
+      "documentType": "full_paper",
+      "objectPath": "bde19c01-53dc-4663-8972-f273753231f0/1785422353150-S4111-S4111.pdf",
+      "sha256": "aa84977142bcd60e08663dba43711eb0a9b676a571e39df74f3063bc104bd46f",
+      "size": 343942,
+      "pages": 11,
+      "identityHash": "eab4ab16e88a29734f1243240572e27cb70ef716134855ffdd85224d504fc7c5"
+    },
+    {
+      "studyId": "S4987",
+      "recordId": "20174957-a3f6-4f6e-b66d-b36f1b7c851b",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://esskajournals-onlinelibrary-wiley-com.ucd.idm.oclc.org/doi/pdfdirect/10.1002/ksa.70329",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S4987.pdf",
+      "documentType": "full_paper",
+      "objectPath": "d6171ebd-440f-4c14-91ef-896231affe1b/1785422355989-S4987-S4987.pdf",
+      "sha256": "ffa28da69cba5bc248321d2896960e948da62309030d7982cb96e285facf1577",
+      "size": 1713919,
+      "pages": 12,
+      "identityHash": "7f3a002bbe967b4e6049c1ed72e6db907afc09036cce9c9673248d46b7113af6"
+    },
+    {
+      "studyId": "S5148",
+      "recordId": "7df87db6-0820-4379-a2e7-86110035429d",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://bjsm-bmj-com.ucd.idm.oclc.org/content/bjsports/60/7/554.full.pdf",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S5148.pdf",
+      "documentType": "editorial",
+      "objectPath": "57c6ebec-c336-4397-af70-8960284e6de3/1785422358388-S5148-S5148.pdf",
+      "sha256": "ca664d143b59c4cad48f33056e005349685d1065393ad588a011ad110afa47fa",
+      "size": 829093,
+      "pages": 2,
+      "identityHash": "c748759aadb7a01ffc533f573ebd356a1fef70e58caa03a4a8a45e99719bb739"
+    }
+  ]
+}

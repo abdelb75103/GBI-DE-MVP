@@ -1,0 +1,122 @@
+{
+  "recordId": "f569367d-f4cb-4fdd-a276-3f02b1ee6aab",
+  "covidenceId": null,
+  "studyId": "S3592",
+  "title": "Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes: 1961.",
+  "authors": "Sakar Gupta, Kristin Haraldsdottir, Jennifer Sanfilippo, Ian Staresinic, Scott Anderson, Jack Behrendt, Quinn Steiner, Andrew Watson",
+  "year": "2025",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3592.pdf",
+  "pdfSha256": "0785b09e6a8a0d2a8d23d6f5f7f27594f3cdb8a62661b111081471de77d67b55",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 1,
+  "textCharCount": 7108,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ionships reported) PURPOSE: The factors influencing mental health and quality of life (QOL) in elite youth athletes are not well -defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. M..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...rs influencing mental health and quality of life (QOL) in elite youth athletes are not well -defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determ..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...01), and AI (b=-0.22+/-0.092, p=0.016), but not gender (b=1.8+/-1.1, p=0.10), and not racial minority group (b=-1.5+/-1.0, p=0.16). Of the included covariates, sleep had the greatest relative importance (38 -56%) in all models. CONCLUSION: Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were ind ependently associated with greater symptoms of anxiety and depression. Similarly, older age, prior injury, reduced sleep, and higher AI were associated with reduced total Q OL. Prior..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...prospective data exists regard ing the impact of injuries based on the severity of injury in collegiate athletes. PURPOSE: To evaluate the relationship between injury severity and mental and physical QOL in NCAA Division I athletes. METHODS: 345 football, soccer, cross country, tennis, and golf athletes (45.0% female) completed an online Veterans Rand 12 (VR -12) survey at the start and end of their 2021-2022 and 2022-2023 seasons. Mental and physical QOL was assessed via VR -12 mental and physical composite scores..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prevalence",
+        "snippet": "...s. Classification performance metrics were calculated and compared to previous literature. An exploratory factor analysis was conducted to inve stigate covariance between Step 2 questionnaires and explain observed false negative rates (FNRs). RESULTS: The prevalence of a flagged APSQ was 24.7%. FNRs were calculated as PHQ9=0% GAD7= 7.7%, ASSQ=52.9%, AUDIT -C=61.2%, CAGE- AID=37.5%, BEDA-Q=63.16%, PTSD=11.1%, congruent with previous findings. Exploratory factor analysis showed that GAD -7 and PHQ-9 were grouped under the..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determined independent predictors of mental health and QOL, with age, gender, prior week sleep, in..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ry, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determined independent predictors of mental health and QOL, with age, gender, prior week sleep, injury, AI, and racial minority group as covariates. RESULTS: Compared to males, female youth athletes, on average had significantly worse symptoms o f anxiety (4.1 [3.6-4.7] v 6.2 [5.7-6.6], p<0.001) and depression (3.8 [3.3-4.4] v 5.6 [5.1-6.1], p<0.001), and s..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...9 -83] v 79 [77-80], p=0.02), respectively. Independent predictors of anxiety were greater age (estimate (b)=0.28 +/-0.072, p<0.001), female gender (b=-1.7+/-0.40, p<0.001), less sleep (b=-0.88+/-0.16, p<0.001), lower AI (b=0.11+/- 0.034, p=0.002), and prior injury (b=1.2+/-0.37, p=0.001), but not racial minority group (b=0.35+/-0.39, p=0.37). Independent predictors of depression included greater age (b=0.29+/-0.070, p<0.001), female gender (b=-1.4+/-0.41, p<0.001), less sleep (b=-1.2+/-0.16, p<0.001), prior injury (b=..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ior injury (b=1.2+/-0.37, p=0.001), but not racial minority group (b=0.35+/-0.39, p=0.37). Independent predictors of depression included greater age (b=0.29+/-0.070, p<0.001), female gender (b=-1.4+/-0.41, p<0.001), less sleep (b=-1.2+/-0.16, p<0.001), prior injury (b=0.88+/-0.37, p=0.019), and identifying as part of a racial minority group (b=0.81+/-0.40, p=0.004), but not AI (b=0.049+/-0.035, p=0.16). Independent predictors of QOL were age (b= -0.60+/- 0.19, p=0.001), sleep (b=2.6+/-0.43, p<0.001), prior injury (b=-3..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...prior injury (b=0.88+/-0.37, p=0.019), and identifying as part of a racial minority group (b=0.81+/-0.40, p=0.004), but not AI (b=0.049+/-0.035, p=0.16). Independent predictors of QOL were age (b= -0.60+/- 0.19, p=0.001), sleep (b=2.6+/-0.43, p<0.001), prior injury (b=-3.7+/-0.98, p<0.001), and AI (b=-0.22+/-0.092, p=0.016), but not gender (b=1.8+/-1.1, p=0.10), and not racial minority group (b=-1.5+/-1.0, p=0.16). Of the included covariates, sleep had the greatest relative importance (38 -56%) in all models. CONCLUSI..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...der (b=1.8+/-1.1, p=0.10), and not racial minority group (b=-1.5+/-1.0, p=0.16). Of the included covariates, sleep had the greatest relative importance (38 -56%) in all models. CONCLUSION: Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were ind ependently associated with greater symptoms of anxiety and depression. Similarly, older age, prior injury, reduced sleep, and higher AI were associated with reduced total Q OL. Prior week sleep had the greatest influence on mental h..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...relative importance (38 -56%) in all models. CONCLUSION: Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were ind ependently associated with greater symptoms of anxiety and depression. Similarly, older age, prior injury, reduced sleep, and higher AI were associated with reduced total Q OL. Prior week sleep had the greatest influence on mental health and QOL. 1962 Associations Between Injury Severity And Impact On Quality Of Life In Ncaa Division I Athletes Daisy L. Lan..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...sdottir, Scott A. Anderson, Andrew M. Watson. University of Wisconsin - Madison, Madison, WI. Email: langdaisy12@gmail.com (No relevant relationships reported) Prior work in youth athletes suggests that injury can impair quality of life (QOL), but little prospective data exists regard ing the impact of injuries based on the severity of injury in collegiate athletes. PURPOSE: To evaluate the relationship between injury severity and mental and physical QOL in NCAA Division I athletes. METHODS: 345 football, soccer, cro..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] 1960 Does The Sport Mental Health Assessment Tool-1 Accurately Triage Olympic And Paralympic Athletes? Travis Anderson, Jessica D. Bartley, Karen Cogan, Angel Brutus, Ashley N. Triplett, Amber T. Donaldson, FACSM, Jonathan T. Finnoff, FACSM, Eric G. Post, William M. Adams, FACSM. United States Olympic & Paralympic Committee, Colorado Springs, CO. (Sponsor: Gregory D. Myer, FACSM) Email: travis.anderson@usopc.org (No relevant relationships reported) PURPOSE: To assess previous sample representation limitations and provide classification performance metrics to evaluate the accuracy of the Athlete P sychological Strain Questionnaire (APSQ) in triaging athletes to Step 2 of the Sport Mental Health Assessment Tool (SMHAT -1). METHODS: Prior to the Paris 2024 Olympic and Paralympic Games, Team USA athletes (n= 911, age: 27.3±6.1 years, 52.1% female, 26.1% Par alympic) completed the SMHAT-1 as part of a mandatory pre-Games health screening. Athletes completed both the APSQ (Step 1) and all Step 2 questionnaires, regardless of their APSQ score. Step 2 questionnaires included the Patient Health Questionnaire -9 (PHQ-9), Generalized Anxiety Disorder-7 (GAD-7), Athlete Sleep Screening Questionnaire (ASSQ), CAGE-AID for drug use, Alcohol Use Disorders Identification Test-Concise (AUDIT-C), Brief Eating Disorder in Athletes Questionnaire (BEDA -Q), and Post-Traumatic Stress Disorder (PTSD). All questionnaires were scored and marked as “flag” or “no flag” according to established t hresholds. Classification performance metrics were calculated and compared to previous literature. An exploratory factor analysis was conducted to inve stigate covariance between Step 2 questionnaires and explain observed false negative rates (FNRs). RESULTS: The prevalence of a flagged APSQ was 24.7%. FNRs were calculated as PHQ9=0% GAD7= 7.7%, ASSQ=52.9%, AUDIT -C=61.2%, CAGE- AID=37.5%, BEDA-Q=63.16%, PTSD=11.1%, congruent with previous findings. Exploratory factor analysis showed that GAD -7 and PHQ-9 were grouped under the first factor, while CAGE-AID was grouped under the second factor. The other questionnaires did not fit distinctly into either factor, suggesting the S MAHT is assessing a broad spectrum of mental health factors, which would be difficult for a single gene ric screening tool to triage adequately. CONCLUSIONS: While the SMHAT-1 remains an essential tool for athlete mental health screening, the high FNRs indicate limitations in using the APSQ as an initial triage instrumen",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "1960 Does The Sport Mental Health Assessment Tool-1 Accurately Triage Olympic And Paralympic Athletes? Travis Anderson, Jessica D. Bartley, Karen Cogan, Angel Brutus, Ashley N. Triplett, Amber T. Donaldson, FACSM, Jonathan T. Finnoff, FACSM, Eric G. Post, William M. Adams, FACSM. United States Olympic & Paralympic Committee, Colorado Springs, CO. (Sponsor: Gregory D. Myer, FACSM) Email: travis.anderson@usopc.org (No relevant relationships reported) PURPOSE: To assess previous sample representation limitations and provide classification performance metrics to evaluate the accuracy of the Athlete P sychological Strain Questionnaire (APSQ) in triaging athletes to Step 2 of the Sport Mental Health Assessment Tool (SMHAT -1). METHODS: Prior to the Paris 2024 Olympic and Paralympic Games, Team USA athletes (n= 911, age: 27.3±6.1 years, 52.1% female, 26.1% Par alympic) completed the SMHAT-1 as part of a mandatory pre-Games health screening. Athletes completed both the APSQ (Step 1) and all Step 2 questionnaires, regardless of their APSQ score. Step 2 questionnaires included the Patient Health Questionnaire -9 (PHQ-9), Generalized Anxiety Disorder-7 (GAD-7), Athlete Sleep Screening Questionnaire (ASSQ), CAGE-AID for drug use, Alcohol Use Disorders Identification Test-Concise (AUDIT-C), Brief Eating Disorder in Athletes Questionnaire (BEDA -Q), and Post-Traumatic Stress Disorder (PTSD). All questionnaires were scored and marked as “flag” or “no flag” according to established t hresholds. Classification performance metrics were calculated and compared to previous literature. An exploratory factor analysis was conducted to inve stigate covariance between Step 2 questionnaires and explain observed false negative rates (FNRs). RESULTS: The prevalence of a flagged APSQ was 24.7%. FNRs were calculated as PHQ9=0% GAD7= 7.7%, ASSQ=52.9%, AUDIT -C=61.2%, CAGE- AID=37.5%, BEDA-Q=63.16%, PTSD=11.1%, congruent with previous findings. Exploratory factor analysis showed that GAD -7 and PHQ-9 were grouped under the first factor, while CAGE-AID was grouped under the second factor. The other questionnaires did not fit distinctly into either factor, suggesting the S MAHT is assessing a broad spectrum of mental health factors, which would be difficult for a single gene ric screening tool to triage adequately. CONCLUSIONS: While the SMHAT-1 remains an essential tool for athlete mental health screening, the high FNRs indicate limitations in using the APSQ as an initial triage instrument. The APSQ may be better suited as a Step 2 assessment. A bespoke Step 1 screening tool that captures the diverse spectrum of mental health concerns in athletes should be considered to enhance the tool’s effectiveness and potentially increase its adoption across al l levels of sport. Supported by: This work was funded in part by a grant from the International Olympic Committee. 1961 Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes Sakar Gupta1, Kristin Haraldsdottir2, Jennifer Sanfilippo2, Ian Staresinic2, Scott Anderson2, Jack Behrendt2, Quinn Steiner2, Andrew Watson2. 1University of Wisconsin School of Medicine and Public Health, Madison, WI. 2University of Wisconsin Department of Orthopedics and Rehabilitation, Madison, WI. Email: sakarsgupta@gmail.com (No relevant relationships reported) PURPOSE: The factors influencing mental health and quality of life (QOL) in elite youth athletes are not well -defined. The purpose of this study is to identify independent risk factors for anxiety, depression, and QOL in elite adolescent soccer athletes. METHODS: 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD -7), depression (PHQ-9), and QOL (PedsQL). Wilcoxon Rank Sum tests compared outcomes between males and females. Multivariable regress ion models determined independent predictors of mental health and QOL, with age, gender, prior week sleep, injury, AI, and racial minority gro"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/ai-review-newly-attached-five-2026-07-30/evidence-packets/S3592.packet.json"
+}

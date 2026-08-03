@@ -1,0 +1,100 @@
+{
+  "scope": "Every and only the four live full-text records awaiting a PDF on 2026-07-30",
+  "generatedAt": "2026-07-30T16:25:00Z",
+  "liveSnapshot": "pre-write-snapshot-2026-07-30T16-17-24-892Z.json",
+  "counts": {
+    "total": 4,
+    "correspondingFullReportFound": 1,
+    "unresolved": 3,
+    "liveUploadsPerformed": 0,
+    "aiRecommendationsPreparedOrApplied": 0
+  },
+  "records": [
+    {
+      "studyId": "S5553",
+      "recordId": "ad405aa3-ac09-47d1-98a6-da6113728980",
+      "recordTitle": "Erstellung eines Verletzungsregisters im Profifusball - Studiendesign und Perspektiven",
+      "recordDoi": "10.1016/j.orthtr.2024.03.009",
+      "retrievalStatus": "corresponding_full_report_found",
+      "documentType": "later open-access full report of the registry described in the 2024 conference abstract",
+      "sourceUrl": "https://epub.uni-regensburg.de/79387/1/e003003.full.pdf",
+      "repositoryPage": "https://epub.uni-regensburg.de/79387/",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/coordinator-candidates/S5553-corresponding-full-report.pdf",
+      "pdfSha256": "b11a11f68fa80fb43b1c6f8c13c1e60b0707ef427e6037081d741cd9947d5f9c",
+      "pageCount": 8,
+      "fullReportTitle": "National health registries in professional German football: development and first results from the men's and women's 1st and 2nd Bundesliga",
+      "fullReportDoi": "10.1136/bmjsem-2025-003003",
+      "originalConferenceAbstractEvidencePath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/outputs/s5553-title-abstract-include-promotion-2026-07-30/attempts/2026-07-30T15-21-10-866Z-pid86992-63c7975d/apply-result.json",
+      "validationEvidence": [
+        "Real readable PDF, version 1.7, eight pages.",
+        "All five conference-record authors recur in the full report: Szymski, Krutsch, Huber, Weber and Alt.",
+        "Both sources describe the same prospective Bundesliga registry introduced for men in 2022/2023 with DFL and VBG support.",
+        "The conference record reports 503 injuries and 176 illnesses in the first male season. The full report reproduces those exact male counts and expands the registry with the women's cohort.",
+        "The full report describes the same monthly physician reporting, standardised forms, time-loss definition and longitudinal registry design.",
+        "The University of Regensburg repository labels the published version open access under CC BY-NC 4.0."
+      ],
+      "supportingConferenceProgramme": {
+        "path": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/coordinator-candidates/S5553-gots2024-program.pdf",
+        "sha256": "164960685918f6349a6c18e805b318ad18ce21af3534bb75c6174ed683d13678",
+        "classification": "programme schedule only, supporting provenance but not eligible for upload as full text"
+      },
+      "uploadStatus": "not_uploaded_newly_authorised_scope_requires_explicit_live_upload_instruction",
+      "aiStatus": "not_run_until_pdf_upload_is_authorised",
+      "manualNextStep": "Approve attaching this corresponding full report to S5553 and applying its criteria-v8 AI recommendation."
+    },
+    {
+      "studyId": "S845",
+      "recordId": "b72f7871-06f8-47da-8a20-6cfc8ba320fb",
+      "recordTitle": "Epidemiology of Hamstring Tears in National Collegiate Athletic Association Athletes: Findings From the National Collegiate Athletic Association Injury Surveillance Program Between 2014/2015 and 2018/2019.",
+      "recordDoi": "10.1097/JSM.0000000000001240",
+      "retrievalStatus": "unresolved_paywalled",
+      "sourceUrls": [
+        "https://pubmed.ncbi.nlm.nih.gov/38896546/",
+        "https://journals.lww.com/10.1097/JSM.0000000000001240",
+        "https://www-ovid-com.ucd.idm.oclc.org/jnls/cjsportsmed/abstract/10.1097/jsm.0000000000001240~epidemiology-of-hamstring-tears-in-national-collegiate?redirectionsource=fulltextview"
+      ],
+      "failureEvidence": [
+        "Crossref, OpenAlex and Europe PMC expose bibliographic metadata but no lawful open-access or repository PDF.",
+        "The UCD-proxied Ovid route resolved the exact title, authors, journal, pages and DOI but exposed abstract content only, with no PDF or full-text tab.",
+        "A 2022 open-access poster reports the same underlying dataset but is a different conference publication with a different title, DOI and author list. It was rejected as a substitute for the 2024 journal article.",
+        "Citation-only and newsletter PDFs were rejected."
+      ],
+      "uploadStatus": "not_uploaded_no_valid_pdf",
+      "aiStatus": "not_run_no_adequate_full_text",
+      "manualNextStep": "Complete any further institutional access step in the browser tab left open, or obtain the accepted manuscript from an author/library document-delivery request."
+    },
+    {
+      "studyId": "S1503",
+      "recordId": "7ba55d44-0ad9-4714-b7cb-d1a1d6825e45",
+      "recordTitle": "Effects of Preseason Neuromuscular Training Improves , Youth, Male Soccer Players",
+      "registryId": "NCT06203379",
+      "retrievalStatus": "unresolved_no_results_document",
+      "sourceUrl": "https://clinicaltrials.gov/study/NCT06203379",
+      "failureEvidence": [
+        "ClinicalTrials.gov marks the trial completed but states that no results are posted.",
+        "The official registry record exposes no study documents or linked result publications.",
+        "Exact registry-ID searches in Crossref, OpenAlex and Europe PMC returned no result publication.",
+        "A near-title paper was rejected because it predates the trial and has different authors, country and enrolment."
+      ],
+      "uploadStatus": "not_uploaded_no_valid_pdf",
+      "aiStatus": "not_run_no_adequate_full_text",
+      "manualNextStep": "Monitor NCT06203379 for posted results or a linked publication; otherwise request results from the responsible party."
+    },
+    {
+      "studyId": "S1521",
+      "recordId": "87521ed2-7811-477a-b93f-fc85f1253e4c",
+      "recordTitle": "Effects of Vestibulo-oculomotor and Neuromuscular Training on the Incidence of Concussions and Musculoskeletal Injuries in Competitive Female Football Players",
+      "registryId": "NCT06473883",
+      "retrievalStatus": "unresolved_no_results_document",
+      "sourceUrl": "https://clinicaltrials.gov/study/NCT06473883",
+      "failureEvidence": [
+        "The official registry response contains no posted results or study documents.",
+        "Exact registry-ID searches returned no result publication.",
+        "A registry-linked item labelled RESULT was inspected and rejected as an unrelated 2018 adult men's rugby paper."
+      ],
+      "uploadStatus": "not_uploaded_no_valid_pdf",
+      "aiStatus": "not_run_no_adequate_full_text",
+      "manualNextStep": "Monitor NCT06473883 for posted results or a linked publication; otherwise request results from the study sponsor."
+    }
+  ]
+}

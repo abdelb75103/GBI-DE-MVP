@@ -1,0 +1,570 @@
+{
+  "recordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+  "covidenceId": null,
+  "studyId": "S3931",
+  "title": "Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players.",
+  "authors": "Ferrini M",
+  "year": "2026",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S3931-mdpi.pdf",
+  "pdfSha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 14,
+  "textCharCount": 59242,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Football Players",
+        "snippet": "...nd. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license. Article Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players Manuele Ferrini 1 , José Asian-Clemente 1,2, * , Gabriele Bagattini 1 and Luis Suarez-Arrones 1,2,3 1 Department of Sport Sciences, Universidad Pablo de Olavide, 41013 Sevilla, Spain; manuele.ferrini@gmail.com (M.F.); g.bagattini@me.com (G.B.); ljsuamor@up..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...Correspondence: jasicle@upo.es Abstract Background and Objectives: This study compared the effects of two posterior-chain strength training strategies on eccentric hamstring strength, jump and sprint performance, and hamstring injury incidence in elite youth soccer players. Materials and Methods : Twenty- three players were randomly allocated to either a Nordic Hamstring Exercise Group (NHEG; n = 11) or a Deadlift + Leg Curl Slides Group (D + LCSG; n = 12). Both groups completed a 9-week in-season resistance training pr..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...G; n = 11) or a Deadlift + Leg Curl Slides Group (D + LCSG; n = 12). Both groups completed a 9-week in-season resistance training program consisting of one strength-oriented session (MD-4) and one power-oriented session (MD-2) per week, in addition to regular soccer training. Pre- and post-intervention assessments included eccentric hamstring strength (NordBord), countermovement jump (CMJ), and 10 m and 30 m linear sprint performance. Results: Eccentric hamstring strength increased significantly only in the NHEG (p ≤ 0.0..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...ed a low incidence of hamstring injuries per 1000 h of exposure with no statistically protective effect associated with the use of the NHE. Keywords: eccentric hamstring strength; hamstring injury prevention; posterior-chain training; strength training; youth soccer players 1. Introduction Strength training is widely recognized as a fundamental component of modern football preparation [1], contributing to the development of neuromuscular qualities essential for high-intensity actions such as sprinting, jumping, shooting,..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...ularly relevant population for investigation. HSIs remain the most common type of muscle injury in this population as well [10]. During adolescence, rapid changes in hormone release, body size, body composition [ 11], and neuromuscular control [12] make young football players particularly predisposed to this type of injury, which further underscores the importance of prevention at this stage [13]. Considering that injuries during adolescence may compromise the development and progression of young players, HSIs in youth players war..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...ning, in addition to eccentric-focused exercises, receiving the strongest consensus [ 16]. Other approaches, such as programs incorporating strength, balance, and stability exercises, have also been suggested to be effective in mitigating injury risk in adult football players [4,17,18]. Among youth athletes, exercise-based injury prevention programs have been shown to reduce injury rates by up to 46% [ 15]. Such programs typically combine multiple exercise modalities [ 19–21]. Among the different strategies adopted, the Nordic Ham..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...of eccentric hamstring strength gains to sprint and jump performance. For this reason, the aim of the present study was to compare the effects of a single strength-training protocol applied using two distinct posterior-chain approaches in elite academy youth football players. Specifically, one approach incorporated the traditional NHE, while the other employed alternative posterior-chain exercises. A further objective was to describe and compare the occurrence of hamstring injuries during the intervention period under both traini..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...he NHE group, these gains would not translate into superior sprint and jump performance, and (b) the incidence of HSIs would not differ significantly between intervention groups. 2. Materials and Methods 2.1. Participants Twenty-three healthy elite male youth soccer players (mean age 13.7 ± 0.8 years) competing at the elite academy level within a professional club development program participated in this study. Players were randomly assigned to two groups using stratified randomization based on baseline eccentric hamstri..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...andled independently to minimize any potential perception of coercion. 2.2. Procedure During the in-season period, both groups completed a comparable 9-week training program consisting of two weekly resistance training sessions in addition to regular on-field soccer practice (see Table 1). All resistance sessions were conducted in the gym under the supervision of at least two experienced performance coaches, who ensured correct exercise execution. The program was structured as a circuit, with recovery periods of 90–120 s..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...quantified using GPS tracking data (Wimu Pro, Realtrack Systems, Almeria, Spain). The observation period lasted 12 weeks, including two additional weeks after the tests to monitor the occurrence of any further injuries. During these two additional weeks, the football players continued with their regular training routine. 2.8. Statistical Analysis Data are presented as mean ± standard deviation (SD). Statistical analyses were performed using SPSS 2020 (Inc., Chicago, IL, USA). The Shapiro–Wilk test was first applied to confirm the..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "Medicina 2026, 62, 140 8 of 14 4. Discussion This study examined the effects of a 9-week posterior-chain strength-training program using two different approaches (the NHE and alternative posterior-chain exercises) in elite youth football players. A key finding was that inclusion of the NHE led to a modest, exercise-specific, increase in bilateral NHE strength; however, this improvement did not translate into enhanced sprint or jump performance. Both groups exhibited similar adapta- tions in response..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...+ LCSG), this corresponds to an incidence rate of approximately 1.2 injuries per 1000 exposure hours in the NHEG and 0.0 injuries per 1000 exposure hours in the D + LCSG. The incidence observed in the NHEG was slightly higher than that reported in elite youth football players (~0.58 per https://doi.org/10.3390/medicina62010140"
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Medicina 2026, 62, 140 10 of 14 1000 h) [68] but remains within the broader range described in adult soccer populations (0.3–1.9 per 1000 h) [ 69]. Conversely, the absence of injuries in the D + LCSG resulted in an incidence below the values typically observed in the literature. However, these between-group differences must be interpreted cautiously due to the very..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...rating markers of fatigue and assessments of biological maturation are warranted. 5. Conclusions In conclusion, the findings indicate that neither of the two implemented strength- training protocols produced improvements in jump or sprint performance in young soccer players by the end of the season, showing improvements only in bilateral eccentric ham- string strength assessed using the NHE, reflecting a task-specific adaptation, in the group that included the NHE in their routines. Over the study period, a low number of..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...tball: The UEFA Elite Club Injury Study from 2001/02 to 2021/22. Br. J. Sports Med. 2023, 57, 292–298. [CrossRef] 10. Raya-González, J.; de Ste Croix, M.; Read, P .; Castillo, D. A Longitudinal Investigation of Muscle Injuries in an Elite Spanish Male Academy Soccer Club: A Hamstring Injuries Approach. Appl. Sci. 2020, 10, 1610. [CrossRef] 11. Vänttinen, T.; Blomqvist, M.; Nyman, K.; Häkkinen, K. Changes in Body Composition, Hormonal Status, and Physical Fitness in 11-, 13-, and 15-Year-Old Finnish Regional Youth Soccer..."
+      },
+      {
+        "page": 13,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "Medicina 2026, 62, 140 13 of 14 32. Sancese, A.; Taylor, L.; Walsh, G.; Byrd, E.; Delextrat, A. Effects of sprint versus strength training on risk factors for hamstring injury in football players. J. Sports Med. Phys. Fit. 2023, 63, 580–587. [CrossRef] 33. Crawford, S.K.; Hickey, J.; Vlisides, J.; Chambers, J.S.; Mosiman, S.J.; Heiderscheit, B.C. The effects of hip- vs. knee-dominant hamstring exercise on biceps femoris morphology, strength, and sprin..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Medicina 2026, 62, 140 14 of 14 56. Siddle, J.; Weaver, K.; Greig, M.; Harper, D.; Brogden, C.M. A low-volume Nordic hamstring curl programme improves change of direction ability, despite no architectural, strength or speed adaptations in elite youth soccer players. Res. Sports Med. 2024, 32, 49–60. [CrossRef] 57. Franke Rde, A.; Rodrigues, R.; Lopez, P .; Nakamura, F.Y.; Baroni, B.M. Dose–Response Relationship for Strength Gains from Nordic Hamstring Exercise: A Systematic Review, Meta-Analysis, and Meta-Regres..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "per 1000",
+        "snippet": "...d improvements in sprint or jump performance. However, given the small sample size and low number of injury events, these trends cannot be attributed with certainty to the implemented protocols, and both programs reported a low incidence of hamstring injuries per 1000 h of exposure with no statistically protective effect associated with the use of the NHE. Keywords: eccentric hamstring strength; hamstring injury prevention; posterior-chain training; strength training; youth soccer players 1. Introduction Strength training..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...esent analysis. A record- able hamstring injury was defined as any posterior thigh injury incurred during training or competition that resulted in absence from subsequent football activities [ 51]. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training [ 51]. Similarly, training and match exposure (official and friendly games) were quantified using GPS tracking data (Wimu Pro, Realtrack Systems, Almeria, Spain). The observation period lasted 12 weeks, including two addi..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "player-hours",
+        "snippet": "...lysis. A record- able hamstring injury was defined as any posterior thigh injury incurred during training or competition that resulted in absence from subsequent football activities [ 51]. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training [ 51]. Similarly, training and match exposure (official and friendly games) were quantified using GPS tracking data (Wimu Pro, Realtrack Systems, Almeria, Spain). The observation period lasted 12 weeks, including two additional weeks..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "match exposure",
+        "snippet": "...high injury incurred during training or competition that resulted in absence from subsequent football activities [ 51]. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training [ 51]. Similarly, training and match exposure (official and friendly games) were quantified using GPS tracking data (Wimu Pro, Realtrack Systems, Almeria, Spain). The observation period lasted 12 weeks, including two additional weeks after the tests to monitor the occurrence of any further injuries. Duri..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "match exposures",
+        "snippet": "...mstring exercise; and CMJ: counter movement jump. Over the 12-week monitoring period, the NHE group accumulated a total exposure of 831.6 h (range from 814.0 to 849.2), while the D + LCS group accumulated 922.8 h (range from 909.6 to 936.0). Mean training and match exposures were 652.3 h (range from 636.9 to 667.7) and 179.3 h (range from 175.9 to 183.7), respectively, for the NHE group, and 724.8 h (range from 714 to 735.6) and 198.0 h (range from 194.4 to 201.6), respectively, for the D + LCS group (Table 4). Over the course of..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...into enhanced sprint or jump performance. Both groups exhibited similar adapta- tions in response to the training program, with no significant between-group differences in any performance variable. Both programs reported a low incidence of hamstring injuries per 1000 h of exposure, with no statistically significant protective effect associated with the use of the NHE. These findings should be interpreted in the context of a relatively short, late-season intervention period, which may have limited the magnitude of observab..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...exercises. With regard to injury outcomes, only one hamstring injury was recorded during the study period, occurring in a player from the NHE group. Based on the accumulated exposure (922.8 h for the NHEG vs. 831.6 h for the D + LCSG), this corresponds to an incidence rate of approximately 1.2 injuries per 1000 exposure hours in the NHEG and 0.0 injuries per 1000 exposure hours in the D + LCSG. The incidence observed in the NHEG was slightly higher than that reported in elite youth football players (~0.58 per https://doi.org/10..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...nly one hamstring injury was recorded during the study period, occurring in a player from the NHE group. Based on the accumulated exposure (922.8 h for the NHEG vs. 831.6 h for the D + LCSG), this corresponds to an incidence rate of approximately 1.2 injuries per 1000 exposure hours in the NHEG and 0.0 injuries per 1000 exposure hours in the D + LCSG. The incidence observed in the NHEG was slightly higher than that reported in elite youth football players (~0.58 per https://doi.org/10.3390/medicina62010140"
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "Medicina 2026, 62, 140 10 of 14 1000 h) [68] but remains within the broader range described in adult soccer populations (0.3–1.9 per 1000 h) [ 69]. Conversely, the absence of injuries in the D + LCSG resulted in an incidence below the values typically observed in the literature. However, these between-group differences must be interpreted cautiously due to the very small sample size (n = 12), w..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Exposure Hours",
+        "snippet": "...ns. J. Sport Rehabil. 2020, 29, 801–807. [CrossRef] 69. Diemer, W.M.; Winters, M.; Tol, J.L.; Pas, H.I.M.F.L.; Moen, M.H. Incidence of Acute Hamstring Injuries in Soccer: A Systematic Review of 13 Studies Involving more than 3800 Athletes with 2 Million Sport Exposure Hours. J. Orthop. Sports Phys. Ther. 2021, 51, 27–36. [CrossRef] 70. Biz, C.; Nicoletti, P .; Baldin, G.; Bragazzi, N.L.; Crimì, A.; Ruggieri, P . Hamstring Strain Injury (HSI) Prevention in Professional and Semi-Professional Football Teams: A Systematic Review and..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1000 player-hours",
+        "snippet": "...t analysis. A record- able hamstring injury was defined as any posterior thigh injury incurred during training or competition that resulted in absence from subsequent football activities [ 51]. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training [ 51]. Similarly, training and match exposure (official and friendly games) were quantified using GPS tracking data (Wimu Pro, Realtrack Systems, Almeria, Spain). The observation period lasted 12 weeks, including two additional weeks..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1.2 injuries per 1000 exposure hours",
+        "snippet": "...y outcomes, only one hamstring injury was recorded during the study period, occurring in a player from the NHE group. Based on the accumulated exposure (922.8 h for the NHEG vs. 831.6 h for the D + LCSG), this corresponds to an incidence rate of approximately 1.2 injuries per 1000 exposure hours in the NHEG and 0.0 injuries per 1000 exposure hours in the D + LCSG. The incidence observed in the NHEG was slightly higher than that reported in elite youth football players (~0.58 per https://doi.org/10.3390/medicina62010140"
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "0.0 injuries per 1000 exposure hours",
+        "snippet": "...ring the study period, occurring in a player from the NHE group. Based on the accumulated exposure (922.8 h for the NHEG vs. 831.6 h for the D + LCSG), this corresponds to an incidence rate of approximately 1.2 injuries per 1000 exposure hours in the NHEG and 0.0 injuries per 1000 exposure hours in the D + LCSG. The incidence observed in the NHEG was slightly higher than that reported in elite youth football players (~0.58 per https://doi.org/10.3390/medicina62010140"
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1.9 per 1000 h",
+        "snippet": "Medicina 2026, 62, 140 10 of 14 1000 h) [68] but remains within the broader range described in adult soccer populations (0.3–1.9 per 1000 h) [ 69]. Conversely, the absence of injuries in the D + LCSG resulted in an incidence below the values typically observed in the literature. However, these between-group differences must be interpreted cautiously due to the very small sample size (n = 12), whi..."
+      }
+    ],
+    "review": [
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...ance of Strength and Power on Key Performance Indicators in Elite Youth Soccer.J. Strength Cond. Res. 2020, 34, 2006–2014. [CrossRef] 3. Stergiou, M.; Calvo, A.L.; Forelli, F. Effectiveness of Neuromuscular Training in Preventing Lower Limb Soccer Injuries: A Systematic Review and Meta-Analysis. J. Clin. Med. 2025, 14, 1714. [CrossRef] [PubMed] 4. Beato, M.; Maroto-Izquierdo, S.; Turner, A.N.; Bishop, C. Implementing Strength Training Strategies for Injury Prevention in Soccer: Scientific Rationale and Methodological Recommendation..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Meta-Analysis",
+        "snippet": "...ower on Key Performance Indicators in Elite Youth Soccer.J. Strength Cond. Res. 2020, 34, 2006–2014. [CrossRef] 3. Stergiou, M.; Calvo, A.L.; Forelli, F. Effectiveness of Neuromuscular Training in Preventing Lower Limb Soccer Injuries: A Systematic Review and Meta-Analysis. J. Clin. Med. 2025, 14, 1714. [CrossRef] [PubMed] 4. Beato, M.; Maroto-Izquierdo, S.; Turner, A.N.; Bishop, C. Implementing Strength Training Strategies for Injury Prevention in Soccer: Scientific Rationale and Methodological Recommendations. Int. J. Sports..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...logical Recommendations. Int. J. Sports Physiol. Perform 2021, 16, 456–461. [CrossRef] 5. López-Valenciano, A.; Ruiz-Pérez, I.; Garcia-Gómez, J.A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: A systematic review and meta-analysis. Br. J. Sports Med. 2020, 54, 711–718. [CrossRef] [PubMed] 6. Ekstrand, J.; Waldén, M.; Hägglund, M. Hamstring injuries have increased by 4% annually in men’s professional football, since 2001: A 13-year longitudinal analysis of the UEFA Eli..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...s. Int. J. Sports Physiol. Perform 2021, 16, 456–461. [CrossRef] 5. López-Valenciano, A.; Ruiz-Pérez, I.; Garcia-Gómez, J.A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: A systematic review and meta-analysis. Br. J. Sports Med. 2020, 54, 711–718. [CrossRef] [PubMed] 6. Ekstrand, J.; Waldén, M.; Hägglund, M. Hamstring injuries have increased by 4% annually in men’s professional football, since 2001: A 13-year longitudinal analysis of the UEFA Elite Club injury stu..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "literature review",
+        "snippet": "...cal maturity on static and dynamic postural control among male youth soccer players. Gait Posture 2019, 68, 18–22. [CrossRef] 13. Mandorino, M.; Figueiredo, A.J.; Gjaka, M.; Tessitore, A. Injury incidence and risk factors in youth soccer players: A systematic literature review. Part I: Epidemiological analysis. Biol. Sport 2023, 40, 3–25. [CrossRef] 14. Bangert, Y.; Jaber, A.; Trefzer, R.; Zietzschmann, S.; Koch, K.A.; Kern, R.; Spielmann, J.; Renkawitz, T.; Weishorn, J. The Impact of Injury on Career Progression in Elite Youth Foo..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...Injury on Career Progression in Elite Youth Football—Findings at 10 Years. J. Clin. Med. 2024, 13, 1915. [CrossRef] 15. Hanlon, C.; Krzak, J.J.; Prodoehl, J.; Hall, K.D. Effect of Injury Prevention Programs on Lower Extremity Performance in Youth Athletes: A Systematic Review. Sports Health A Multidiscip. Approach 2020, 12, 12–22. [CrossRef] 16. McCall, A.; Pruna, R.; Van der Horst, N.; Coutts, A.J.; Impellizzeri, F.M.; The EFP-Group; Azzalin, A.; Beck, A.; Belli, A.; Buchheit, M.; et al. Exercise-Based Strategies to Prevent Muscl..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...ractitioners Belonging to 18 Teams from the Big-5 European Leagues. Sports Med. 2020, 50, 1667–1681. [CrossRef] 17. Pérez-Gómez, J.; Adsuar, J.C.; Alcaraz, P .E.; Carlos-Vivas, J. Physical exercises for preventing injuries among adult male football players: A systematic review. J. Sport Health Sci. 2022, 11, 115–122. [CrossRef] 18. Brunner, R.; Friesenbichler, B.; Casartelli, N.C.; Bizzini, M.; Maffiuletti, N.A.; Niedermann, K. Effectiveness of multicomponent lower extremity injury prevention programmes in team-sport athletes: An u..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...Trial. J. Sports Sci. Med. 2014, 13, 321–328. [PubMed] 22. Al Attar, W.S.A.; Soomro, N.; Sinclair, P .J.; Pappas, E.; Sanders, R.H. Effect of Injury Prevention Programs that Include the Nordic Hamstring Exercise on Hamstring Injury Rates in Soccer Players: A Systematic Review and Meta-Analysis. Sports Med. 2017, 47, 907–916. [CrossRef] 23. van Dyk, N.; Behan, F.P .; Whiteley, R. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: A systematic review and meta-analysis of 84..."
+      },
+      {
+        "page": 13,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...loyd, R.S.; Oliver, J.L. The Youth Physical Development Model. Strength Cond. J. 2012, 34, 61–72. [CrossRef] 55. Medeiros, D.M.; Marchiori, C.; Baroni, B.M. Effect of Nordic Hamstring Exercise Training on Knee Flexors Eccentric Strength and Fascicle Length: A Systematic Review and Meta-Analysis. J. Sport Rehabil. 2021, 30, 482–491. [CrossRef] https://doi.org/10.3390/medicina62010140"
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...rength or speed adaptations in elite youth soccer players. Res. Sports Med. 2024, 32, 49–60. [CrossRef] 57. Franke Rde, A.; Rodrigues, R.; Lopez, P .; Nakamura, F.Y.; Baroni, B.M. Dose–Response Relationship for Strength Gains from Nordic Hamstring Exercise: A Systematic Review, Meta-Analysis, and Meta-Regression. J. Strength Cond. Res. 2025, 39, 1088–1104. [CrossRef] [PubMed] 58. Amundsen, R.; Heimland, J.S.; Thorarinsdottir, S.; Møller, M.; Bahr, R. Effects of High and Low Training Volume with the Nordic Hamstring Exercise on Hams..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license. Article Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players Manuele Ferrini 1 , José Asian-Clemente 1,2, * , Gabriele Bagattini 1 and Luis Suarez-Arrones 1,2,3 1 Department of Sport Sciences, Universidad Pablo de Olavide, 41013 Sevilla, Spain; manuele.ferrini@gmail.com (M.F..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "...ee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license. Article Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players Manuele Ferrini 1 , José Asian-Clemente 1,2, * , Gabriele Bagattini 1 and Luis Suarez-Arrones 1,2,3 1 Department of Sport Sciences, Universidad Pablo de Olavide, 41013 Sevilla, Spain; manuele.ferrini@gmail.com (M.F.); g.baga..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...gano, 6900 Lugano, Switzerland * Correspondence: jasicle@upo.es Abstract Background and Objectives: This study compared the effects of two posterior-chain strength training strategies on eccentric hamstring strength, jump and sprint performance, and hamstring injury incidence in elite youth soccer players. Materials and Methods : Twenty- three players were randomly allocated to either a Nordic Hamstring Exercise Group (NHEG; n = 11) or a Deadlift + Leg Curl Slides Group (D + LCSG; n = 12). Both groups completed a 9-week..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...900 Lugano, Switzerland * Correspondence: jasicle@upo.es Abstract Background and Objectives: This study compared the effects of two posterior-chain strength training strategies on eccentric hamstring strength, jump and sprint performance, and hamstring injury incidence in elite youth soccer players. Materials and Methods : Twenty- three players were randomly allocated to either a Nordic Hamstring Exercise Group (NHEG; n = 11) or a Deadlift + Leg Curl Slides Group (D + LCSG; n = 12). Both groups completed a 9-week in-season..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...ements in jump or sprint performance (p > 0.05). No significant changes were observed in the D + LCSG for any variable (p > 0.05), and no between-group differences were found across all performance outcomes. During the 12-week monitoring period, one hamstring injury was recorded, occurring in the NHEG. Conclusions: These findings suggest that, while the NHE elicited greater exercise-specific eccentric strength gains, neither posterior-chain strategy produced improvements in sprint or jump performance. However, given the..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": ".... Conclusions: These findings suggest that, while the NHE elicited greater exercise-specific eccentric strength gains, neither posterior-chain strategy produced improvements in sprint or jump performance. However, given the small sample size and low number of injury events, these trends cannot be attributed with certainty to the implemented protocols, and both programs reported a low incidence of hamstring injuries per 1000 h of exposure with no statistically protective effect associated with the use of the NHE. Keywords..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...posterior-chain strategy produced improvements in sprint or jump performance. However, given the small sample size and low number of injury events, these trends cannot be attributed with certainty to the implemented protocols, and both programs reported a low incidence of hamstring injuries per 1000 h of exposure with no statistically protective effect associated with the use of the NHE. Keywords: eccentric hamstring strength; hamstring injury prevention; posterior-chain training; strength training; youth soccer players 1...."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...y produced improvements in sprint or jump performance. However, given the small sample size and low number of injury events, these trends cannot be attributed with certainty to the implemented protocols, and both programs reported a low incidence of hamstring injuries per 1000 h of exposure with no statistically protective effect associated with the use of the NHE. Keywords: eccentric hamstring strength; hamstring injury prevention; posterior-chain training; strength training; youth soccer players 1. Introduction Strength..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Medicina 2026, 62, 140 2 of 14 represent a major concern in football at both amateur and elite levels, with significant implications for player health, team performance, and long-term career outcomes [5]. Of football-related injuries, hamstring strain injuries (HSIs) are among the most prevalent and recurrent injuries in men’s professional football [6]. HSIs account for a significant number of absence days, with substantial consequences for clubs, both financially and in terms of competit..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Medicina 2026, 62, 140 3 of 14 benefits than the NHE for HSI prevention, targeting the biceps femoris muscle more proportionally [33]. Nevertheless, as these studies did not track actual injury incidence, their findings on preventive impact remain limited. Overall, the existing limitations in the current literature highlight the need for high-quality studies that track the impact of exercise strategies on injury incidence over longer follow-up perio..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...included in the study, participants were required to attend at least 85% of both resistance training and team practice sessions. The following participants were excluded from the study: four who were absent during training or testing, three who had sustained injuries prior to the intervention, and three who incurred an injury during the intervention period. All statistical analyses were conducted using data from the 23 players who met the inclusion criteria and completed both pre- and post-intervention testing. Players ex..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...s resisted the forward fall while maintaining a straight line from shoulders to knees. Knee position was recorded to en- sure reproducibility, and the highest bilateral average force value was used for analysis, consistent with previous articles [49,50]. 2.7. Injury Data Collection and External Load During the entire intervention period, injury data were recorded by the team’s med- ical staff, who were not informed of players’ group allocation; however, only hamstring injuries sustained in training or matches were includ..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...) and 179.3 h (range from 175.9 to 183.7), respectively, for the NHE group, and 724.8 h (range from 714 to 735.6) and 198.0 h (range from 194.4 to 201.6), respectively, for the D + LCS group (Table 4). Over the course of the intervention period, one hamstring injury was documented. This injury occurred during a training session and involved a player from the NHE group (Table 4); it was classified as a 2B strain of the right semimembranosus muscle at the myotendinous junction [53], resulting in 18 days of time loss. Table..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...is improvement did not translate into enhanced sprint or jump performance. Both groups exhibited similar adapta- tions in response to the training program, with no significant between-group differences in any performance variable. Both programs reported a low incidence of hamstring injuries per 1000 h of exposure, with no statistically significant protective effect associated with the use of the NHE. These findings should be interpreted in the context of a relatively short, late-season intervention period, which may have li..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ptimize CMJ adaptations during the later stages of the season, practitioners could consider slightly reducing the overall training load to alleviate fatigue, and incorporating higher volumes of explosive, high-velocity, or plyometric exercises. With regard to injury outcomes, only one hamstring injury was recorded during the study period, occurring in a player from the NHE group. Based on the accumulated exposure (922.8 h for the NHEG vs. 831.6 h for the D + LCSG), this corresponds to an incidence rate of approximately 1..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Medicina 2026, 62, 140 10 of 14 1000 h) [68] but remains within the broader range described in adult soccer populations (0.3–1.9 per 1000 h) [ 69]. Conversely, the absence of injuries in the D + LCSG resulted in an incidence below the values typically observed in the literature. However, these between-group differences must be interpreted cautiously due to the very small sample size (n = 12), which substantially limits the ability to detec..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...the end of the season, showing improvements only in bilateral eccentric ham- string strength assessed using the NHE, reflecting a task-specific adaptation, in the group that included the NHE in their routines. Over the study period, a low number of hamstring injuries was observed in both groups; therefore, injury-related findings should be inter- preted cautiously. Within the limits of the present study, both protocols were associated with a low occurrence of hamstring injuries, and the inclusion of the NHE did not appear..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Medicina 2026, 62, 140 12 of 14 9. Ekstrand, J.; Bengtsson, H.; Waldén, M.; Davison, M.; Khan, K.M.; Hägglund, M. Hamstring injury rates have increased during recent seasons and now constitute 24% of all injuries in men’s professional football: The UEFA Elite Club Injury Study from 2001/02 to 2021/22. Br. J. Sports Med. 2023, 57, 292–298. [CrossRef] 10. Raya-González, J.; de Ste Croix, M..."
+      },
+      {
+        "page": 13,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Medicina 2026, 62, 140 13 of 14 32. Sancese, A.; Taylor, L.; Walsh, G.; Byrd, E.; Delextrat, A. Effects of sprint versus strength training on risk factors for hamstring injury in football players. J. Sports Med. Phys. Fit. 2023, 63, 580–587. [CrossRef] 33. Crawford, S.K.; Hickey, J.; Vlisides, J.; Chambers, J.S.; Mosiman, S.J.; Heiderscheit, B.C. The effects of hip- vs. knee-dominant hamstring exercise on biceps femoris morphology,..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...Effect of Nordic Hamstring Exercise Intervention Volume on Eccentric Strength and Muscle Architecture Adaptations: A Systematic Review and Meta-analyses. Sports Med. 2020, 50, 83–99. [CrossRef] 60. Bahr, R.; Thorborg, K.; Ekstrand, J. Evidence-based hamstring injury prevention is not adopted by the majority of Champions League or Norwegian Premier League football teams: The Nordic Hamstring survey. Br. J. Sports Med. 2015, 49, 1466–1471. [CrossRef] 61. Lahti, J.; Huuhka, T.; Romero, V .; Bezodis, I.; Morin, J.B.; Häkkine..."
+      }
+    ],
+    "design": [
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "weekly",
+        "snippet": "...ks, two center backs, three midfielders, two wingers, and two strikers, while the D + LCSG included two fullbacks, two center backs, three midfielders, three wingers, and two strikers. All players maintained their habitual training routine, consisting of four weekly team practice sessions and one official match (~6 h in total). To be included in the study, participants were required to attend at least 85% of both resistance training and team practice sessions. The following participants were excluded from the study: four..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...ted both pre- and post-intervention testing. Players excluded prior to or during the intervention were not in- cluded in any analyses, and no missing data handling or imputation was required. Formal ethical approval was not required, as the study involved the retrospective analysis of fully anonymized data routinely collected as part of regular training, performance testing, and medical monitoring activities. Nevertheless, the study was conducted in accordance with the Declaration of Helsinki. The training intervention implemen..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "weekly",
+        "snippet": "...involved in the consent process, and participation decisions were handled independently to minimize any potential perception of coercion. 2.2. Procedure During the in-season period, both groups completed a comparable 9-week training program consisting of two weekly resistance training sessions in addition to regular on-field soccer practice (see Table 1). All resistance sessions were conducted in the gym under the supervision of at least two experienced performance coaches, who ensured correct exercise execution. The pr..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "weekly",
+        "snippet": "...esistance sessions were conducted in the gym under the supervision of at least two experienced performance coaches, who ensured correct exercise execution. The program was structured as a circuit, with recovery periods of 90–120 s between exercises. The first weekly session, aimed at strength development, was scheduled four days before match day (MD-4) immediately after soccer training and lasted approximately 30–40 min. The second session, focused on power development, was scheduled two days before match day (MD-2) befo..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "weekly",
+        "snippet": "...nce between the intended and actual training stimulus [43]. The main difference between groups was the hamstring- targeted exercise performed during the strength session. The NHEG performed two sets of six repetitions of the NHE, while the D + LCSG alternated weekly between the Romanian Deadlift (2 × 6 rep at 80% 1RM) and the Leg Curl Slide (2 × 6 rep using body weight). All players were familiar with this type of training and with the specific exercises prior to the intervention. The same training structure had previous..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "....A.-C. and L.S.-A. All authors have read and agreed to the published version of the manuscript. Funding: This research received no external funding. Institutional Review Board Statement: Ethical review and approval were waived for this study due to it being a retrospective, anonymous study. Informed Consent Statement: Informed consent was obtained from all subjects involved in the study. Data Availability Statement: The data presented in this study are available on request from the corresponding author. Conflicts of Interest: T..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "randomised controlled trial",
+        "snippet": "...in team-sport athletes: An umbrella review. Br. J. Sports Med. 2019, 53, 282–288. [CrossRef] [PubMed] 19. Rahlf, A.L.; Zech, A. Comparison of 10 vs. 20 min neuromuscular training for the prevention of lower extremity injuries in male youth football: A cluster randomised controlled trial. J. Sports Sci. 2020, 38, 2177–2185. [CrossRef] [PubMed] 20. Obërtinca, R.; Meha, R.; Hoxha, I.; Shabani, B.; Meyer, T.; Aus der Fünten, K. Efficacy of a new injury prevention programme (FUNBALL) in young male football (soccer) players: A cluster-randomised c..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "randomised controlled trial",
+        "snippet": "...rolled trial. J. Sports Sci. 2020, 38, 2177–2185. [CrossRef] [PubMed] 20. Obërtinca, R.; Meha, R.; Hoxha, I.; Shabani, B.; Meyer, T.; Aus der Fünten, K. Efficacy of a new injury prevention programme (FUNBALL) in young male football (soccer) players: A cluster-randomised controlled trial. Br. J. Sports Med. 2024, 58, 548–555. [CrossRef] 21. Owoeye, O.B.A.; Akinbo, S.R.A.; Tella, B.A.; Olawale, O.A. Efficacy of the FIFA 11+ Warm-Up Programme in Male Youth Football: A Cluster Randomised Controlled Trial. J. Sports Sci. Med. 2014, 13, 321–328. [..."
+      },
+      {
+        "page": 13,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "randomized controlled trial",
+        "snippet": "...mized intervention trial protocol. BMC Sports Sci. Med. Rehabil. 2023, 15, 72. [CrossRef] 34. Ishøi, L.; Hölmich, P .; Aagaard, P .; Thorborg, K.; Bandholm, T.; Serner, A. Effects of the Nordic Hamstring exercise on sprint capacity in male football players: A randomized controlled trial. J. Sports Sci. 2018, 36, 1663–1672. [CrossRef] [PubMed] 35. Higashihara, A.; Nagano, Y.; Ono, T.; Fukubayashi, T. Differences in hamstring activation characteristics between the acceleration and maximum-speed phases of sprinting. J. Sports Sci. 2018, 36, 131..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Prospective",
+        "snippet": "...ns and evolutionary trends. PeerJ 2022, 10, e14082. [CrossRef] 68. Raya-González, J.; Suárez-Arrones, L.; Navandar, A.; Balsalobre-Fernández, C.; Sáez de Villarreal, E. Injury Profile of Elite Male Young Soccer Players in a Spanish Professional Soccer Club: A Prospective Study During 4 Consecutive Seasons. J. Sport Rehabil. 2020, 29, 801–807. [CrossRef] 69. Diemer, W.M.; Winters, M.; Tol, J.L.; Pas, H.I.M.F.L.; Moen, M.H. Incidence of Acute Hamstring Injuries in Soccer: A Systematic Review of 13 Studies Involving more than 38..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury was defined",
+        "snippet": "...intervention period, injury data were recorded by the team’s med- ical staff, who were not informed of players’ group allocation; however, only hamstring injuries sustained in training or matches were included in the present analysis. A record- able hamstring injury was defined as any posterior thigh injury incurred during training or competition that resulted in absence from subsequent football activities [ 51]. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training [ 51]. Simil..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...hamstring injury was documented. This injury occurred during a training session and involved a player from the NHE group (Table 4); it was classified as a 2B strain of the right semimembranosus muscle at the myotendinous junction [53], resulting in 18 days of time loss. Table 4. Comparison of injury data collection between groups. D + LCS Group (n = 12) NHE Group (n = 11) Total Exposure (h) 922.8 ± 13.2 831.6 ± 17.6 Trainings exposure (h) 724.8 ± 10.8 652.3 ± 15.4 Matches exposure (h) 198 ± 3.6 179.3 ± 4.4 Hamstring injurie..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Academic Editor: Fiorenzo Moscatelli Received: 15 December 2025 Revised: 4 January 2026 Accepted: 8 January 2026 Published: 9 January 2026 Copyright: © 2026 by the authors. Published by MDPI on behalf of the Lithuanian University of Health Sciences. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license. Article Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players Manuele Ferrini 1 , José Asian-Clemente 1,2, * , Gabriele Bagattini 1 and Luis Suarez-Arrones 1,2,3 1 Department of Sport Sciences, Universidad Pablo de Olavide, 41013 Sevilla, Spain; manuele.ferrini@gmail.com (M.F.); g.bagattini@me.com (G.B.); ljsuamor@upo.es (L.S.-A.) 2 FSI Lab, Football Science Institute, 18016 Granada, Spain 3 Performance and Health Department, FC Lugano, 6900 Lugano, Switzerland * Correspondence: jasicle@upo.es Abstract Background and Objectives: This study compared the effects of two posterior-chain strength training strategies on eccentric hamstring strength, jump and sprint performance, and hamstring injury incidence in elite youth soccer players. Materials and Methods : Twenty- three players were randomly allocated to either a Nordic Hamstring Exercise Group (NHEG; n = 11) or a Deadlift + Leg Curl Slides Group (D + LCSG; n = 12). Both groups completed a 9-week in-season resistance training program consisting of one strength-oriented session (MD-4) and one power-oriented session (MD-2) per week, in addition to regular soccer training. Pre- and post-intervention assessments included eccentric hamstring strength (NordBord), countermovement jump (CMJ), and 10 m and 30 m linear sprint performance. Results: Eccentric hamstring strength increased significantly only in the NHEG (p ≤ 0.05), though this improvement did not transfer to enhancements in jump or sprint performance (p > 0.05). No significant changes were observed in the D + LCSG for any variable (p > 0.05), and no between-group differences were found across all performance outcomes. During the 12-week monitoring period, one hamstring injury was recorded, occurring in the NHEG. Conclusions: These findings suggest that, while the NHE elicited greater exercise-specific eccentric strength gains, neither posterior-chain strategy produced improvements in sprint or jump performance. However, given the small sample size and low number of i\n\n[p. 2] Medicina 2026, 62, 140 2 of 14 represent a major concern in football at both amateur and elite levels, with significant implications for player health, team performance, and long-term career outcomes [5]. Of football-related injuries, hamstring strain injuries (HSIs) are among the most prevalent and recurrent injuries in men’s professional football [6]. HSIs account for a significant number of absence days, with substantial consequences for clubs, both financially and in terms of competitive performance [7,8]. The incidence of HSIs in men’s professional football has increased, from 12% in the 2001/2002 season to 24% in the 2021/2022 season, currently accounting for approximately 25% of all injuries [9]. Although the incidence of hamstring strain injuries is lower among youth players than in adults, youth football represents a particularly relevant population for investigation. HSIs remain the most common type of muscle injury in this population as well [10]. During adolescence, rapid changes in hormone release, body size, body composition [ 11], and neuromuscular control [12] make young football players particularly predisposed to this type of injury, which further underscores the importance of prevention at this stage [13]. Considering that injuries during adolescence may compromise the development and progression of young players, HSIs in youth players warrant particular attention [14]. Focusing on these injuries through preventive strategies is essential, not only to reduce injury risk but also to support sustained performance and resilience throughout a player’s career [15]. Currently, several methods have been proposed as potential strategies to reduce the risk of HSIs, with sprinting and high-speed running, in addition to eccentric-focused exercises, receiving the strongest consensus [ 16]. Other approaches, such as programs incorporating strength, balance, and stability exercises, have also been suggested to be effective in mitigating injury risk in adult football players [4,17,18]. Among youth athletes, exercise-based injury prevention programs have been shown to reduce injury rates by up to 46% [ 15]. Such programs typically combine multiple exercise modalities [ 19–21]. Among the different strategies adopted, the Nordic Hamstring Exercise (NHE) has gained prominence as an effective, evidence-based strategy for reducing hamstring injury risk [22]. Although several systematic reviews and meta-analyses report substantial reductions in HSI incidence \n\n[p. 3] Medicina 2026, 62, 140 3 of 14 benefits than the NHE for HSI prevention, targeting the biceps femoris muscle more proportionally [33]. Nevertheless, as these studies did not track actual injury incidence, their findings on preventive impact remain limited. Overall, the existing limitations in the current literature highlight the need for high-quality studies that track the impact of exercise strategies on injury incidence over longer follow-up periods. Beyond injury prevention, sprint performance represents a key performance deter- minant in football and is a primary mechanism underlying hamstring strain injuries. The NHE has been widely implemented not only for its proposed protective effects, but also based on the assumption that increases in eccentric knee flexor strength may transfer to improved sprint performance [ 24,34]. Therefore, examining whether posterior-chain strength strategies translate into meaningful sprint adaptations is central to evaluating both the performance relevance and the preventive rationale of these interventions. Al- though this concept is theoretically appealing, particularly given the sprinting demands of football, certain aspects must be considered when comparing the NHE and sprinting. On the one hand, the NHE is a slow and linear movement performed from a kneeling position, whereas sprinting is a high-velocity, hip-dominant action involving substantial contributions from the gluteal muscles and proximal hamstrings [35]. Some authors have reported that the patterns of muscle activation between these two movements differ sub- stantially [36]. These factors may explain why some studies found an inverse relationship between NHE strength and sprint times [37,38], while others showed no association [39–41]. For this reason, the transfer of strength gains from the NHE to sprint performance remains far from assured [39]. Current literature does not clearly establish whether the NHE provides advantages over alternative posterior-chain strength-training strategies, particularly with respect to injury outcomes and the transfer of eccentric hamstring strength gains to sprint and jump performance. For this reason, the aim of the present study was to compare the effects of a single strength-training protocol applied using two distinct posterior-chain approaches in elite academy youth football players. Specifically, one approach incorporated the traditional NHE, while the other employed alternative posterior-chain exercises. A further ob\n\n[p. 4] Medicina 2026, 62, 140 4 of 14 height: 167.3 ± 6.1 cm, body mass: 54.0 ± 4.6 kg). All outfield playing positions were represented in both groups in a balanced manner. The NHEG included two fullbacks, two center backs, three midfielders, two wingers, and two strikers, while the D + LCSG included two fullbacks, two center backs, three midfielders, three wingers, and two strikers. All players maintained their habitual training routine, consisting of four weekly team practice sessions and one official match (~6 h in total). To be included in the study, participants were required to attend at least 85% of both resistance training and team practice sessions. The following participants were excluded from the study: four who were absent during training or testing, three who had sustained injuries prior to the intervention, and three who incurred an injury during the intervention period. All statistical analyses were conducted using data from the 23 players who met the inclusion criteria and completed both pre- and post-intervention testing. Players excluded prior to or during the intervention were not in- cluded in any analyses, and no missing data handling or imputation was required. Formal ethical approval was not required, as the study involved the retrospective analysis of fully anonymized data routinely collected as part of regular training, performance testing, and medical monitoring activities. Nevertheless, the study was conducted in accordance with the Declaration of Helsinki. The training intervention implemented in the study was fully integrated into the players’ normal training routine and did not involve procedures beyond standard practice or additional risk to participants. All data were anonymized prior to analysis, and no identifiable personal or sensitive information was used. Written informed consent was obtained from all participants and/or their legal guardians before data collec- tion. Participation in the study was voluntary, and players were informed that declining participation or withdrawing at any time would not result in any negative consequences regarding team selection, playing time, or access to training and medical support. The coaching and performance staff were not involved in the consent process, and participation decisions were handled independently to minimize any potential perception of coercion. 2.2. Procedure During the in-season period, both groups completed a comparable 9-week training prog",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Academic Editor: Fiorenzo Moscatelli Received: 15 December 2025 Revised: 4 January 2026 Accepted: 8 January 2026 Published: 9 January 2026 Copyright: © 2026 by the authors. Published by MDPI on behalf of the Lithuanian University of Health Sciences. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license. Article Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players Manuele Ferrini 1 , José Asian-Clemente 1,2, * , Gabriele Bagattini 1 and Luis Suarez-Arrones 1,2,3 1 Department of Sport Sciences, Universidad Pablo de Olavide, 41013 Sevilla, Spain; manuele.ferrini@gmail.com (M.F.); g.bagattini@me.com (G.B.); ljsuamor@upo.es (L.S.-A.) 2 FSI Lab, Football Science Institute, 18016 Granada, Spain 3 Performance and Health Department, FC Lugano, 6900 Lugano, Switzerland * Correspondence: jasicle@upo.es Abstract Background and Objectives: This study compared the effects of two posterior-chain strength training strategies on eccentric hamstring strength, jump and sprint performance, and hamstring injury incidence in elite youth soccer players. Materials and Methods : Twenty- three players were randomly allocated to either a Nordic Hamstring Exercise Group (NHEG; n = 11) or a Deadlift + Leg Curl Slides Group (D + LCSG; n = 12). Both groups completed a 9-week in-season resistance training program consisting of one strength-oriented session (MD-4) and one power-oriented session (MD-2) per week, in addition to regular soccer training. Pre- and post-intervention assessments included eccentric hamstring strength (NordBord), countermovement jump (CMJ), and 10 m and 30 m linear sprint performance. Results: Eccentric hamstring strength increased significantly only in the NHEG (p ≤ 0.05), though this improvement did not transfer to enhancements in jump or sprint performance (p > 0.05). No significant changes were observed in the D + LCSG for any variable (p > 0.05), and no between-group differences were found across all performance outcomes. During the 12-week monitoring period, one hamstring injury was recorded, occurring in the NHEG. Conclusions: These findings suggest that, while the NHE elicited greater exercise-specific eccentric strength gains, neither posterior-chain strategy produced improvements in sprint or jump performance. However, given the small sample size and low number of injury events, these trends cannot be attributed with certainty to the implemented protocols, and both programs reported a low incidence of hamstring injuries per 1000 h of exposure with no statistically protective effect associated with the use of the NHE. Keywords: eccentric hamstring strength; hamstring injury prevention; posterior-chain training; strength training; youth soccer players 1. Introduction Strength training is widely recognized as a fundamental component of modern football preparation [1], contributing to the development of neuromuscular qualities essential for high-intensity actions such as sprinting, jumping, shooting, and changes in direction [2]. In addition to performance enhancement, strength training may improve neuromuscular control and load tolerance, thereby minimizing the risk of lower-limb injuries [3]. Strength training thus contributes not only to improving performance but also to enhancing resilience and player availability [4]. The latter aspect is particularly important given that injuries Medicina 2026, 62, 140 https://doi.org/10.3390/medicina62010140"
+    },
+    {
+      "page": 4,
+      "text": "Medicina 2026, 62, 140 4 of 14 height: 167.3 ± 6.1 cm, body mass: 54.0 ± 4.6 kg). All outfield playing positions were represented in both groups in a balanced manner. The NHEG included two fullbacks, two center backs, three midfielders, two wingers, and two strikers, while the D + LCSG included two fullbacks, two center backs, three midfielders, three wingers, and two strikers. All players maintained their habitual training routine, consisting of four weekly team practice sessions and one official match (~6 h in total). To be included in the study, participants were required to attend at least 85% of both resistance training and team practice sessions. The following participants were excluded from the study: four who were absent during training or testing, three who had sustained injuries prior to the intervention, and three who incurred an injury during the intervention period. All statistical analyses were conducted using data from the 23 players who met the inclusion criteria and completed both pre- and post-intervention testing. Players excluded prior to or during the intervention were not in- cluded in any analyses, and no missing data handling or imputation was required. Formal ethical approval was not required, as the study involved the retrospective analysis of fully anonymized data routinely collected as part of regular training, performance testing, and medical monitoring activities. Nevertheless, the study was conducted in accordance with the Declaration of Helsinki. The training intervention implemented in the study was fully integrated into the players’ normal training routine and did not involve procedures beyond standard practice or additional risk to participants. All data were anonymized prior to analysis, and no identifiable personal or sensitive information was used. Written informed consent was obtained from all participants and/or their legal guardians before data collec- tion. Participation in the study was voluntary, and players were informed that declining participation or withdrawing at any time would not result in any negative consequences regarding team selection, playing time, or access to training and medical support. The coaching and performance staff were not involved in the consent process, and participation decisions were handled independently to minimize any potential perception of coercion. 2.2. Procedure During the in-season period, both groups completed a comparable 9-week training program consisting of two weekly resistance training sessions in addition to regular on-field soccer practice (see Table 1). All resistance sessions were conducted in the gym under the supervision of at least two experienced performance coaches, who ensured correct exercise execution. The program was structured as a circuit, with recovery periods of 90–120 s between exercises. The first weekly session, aimed at strength development, was scheduled four days before match day (MD-4) immediately after soccer training and lasted approximately 30–40 min. The second session, focused on power development, was scheduled two days before match day (MD-2) before soccer training, with a duration of 25–30 min. In both training sessions, exercise intensity was autoregulated, with participants adjusting loads according to the prescribed number of repetitions and their perception of form, following the principle described by previous authors [ 43]. Where applicable, players were instructed to select a load that allowed them to complete the prescribed sets and repetitions while maintaining approximately two repetitions in reserve. This approach has demonstrated high effectiveness due to an appropriate balance between the intended and actual training stimulus [43]. The main difference between groups was the hamstring- targeted exercise performed during the strength session. The NHEG performed two sets of six repetitions of the NHE, while the D + LCSG alternated weekly between the Romanian Deadlift (2 × 6 rep at 80% 1RM) and the Leg"
+    },
+    {
+      "page": 6,
+      "text": "Medicina 2026, 62, 140 6 of 14 2.6. NordBord T est Eccentric hamstring strength was assessed using the NHE on a NordBord device (Vald Performance, Newstead, Australia). Players performed the NHE in a kneeling position with their feet secured to the hooks, which allowed measurement of the vertical force exerted and simultaneous recording of force values for both legs. After a standardized warm-up (3 × 3 repetitions at approximately 70%, 80%, and 90% of perceived maximal effort), they performed three maximal-effort repetitions following established protocols [48]. Hands remained crossed over the chest, and participants resisted the forward fall while maintaining a straight line from shoulders to knees. Knee position was recorded to en- sure reproducibility, and the highest bilateral average force value was used for analysis, consistent with previous articles [49,50]. 2.7. Injury Data Collection and External Load During the entire intervention period, injury data were recorded by the team’s med- ical staff, who were not informed of players’ group allocation; however, only hamstring injuries sustained in training or matches were included in the present analysis. A record- able hamstring injury was defined as any posterior thigh injury incurred during training or competition that resulted in absence from subsequent football activities [ 51]. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training [ 51]. Similarly, training and match exposure (official and friendly games) were quantified using GPS tracking data (Wimu Pro, Realtrack Systems, Almeria, Spain). The observation period lasted 12 weeks, including two additional weeks after the tests to monitor the occurrence of any further injuries. During these two additional weeks, the football players continued with their regular training routine. 2.8. Statistical Analysis Data are presented as mean ± standard deviation (SD). Statistical analyses were performed using SPSS 2020 (Inc., Chicago, IL, USA). The Shapiro–Wilk test was first applied to confirm the normal distribution of the data. Within-group changes from pre- to post-training were evaluated using paired t-tests. Pretest values were included as covariates to analyze between-group changes from pre- to post-training. Data were further analyzed using a 2 (NHEG vs. D + LCSG) × 2 (pre vs. post) factorial ANOVA, with Bonferroni adjustments applied for post hoc comparisons. Statistical significance was set at p < 0.05. Effect sizes (ES) were calculated to quantify the magnitude of changes, and Cohen’s thresholds were interpreted as trivial (0.0–0.19), small (0.2–0.59), moderate (0.6–1.1), large (1.2–1.9), and very large (>2.0) [52]. 3. Results The responses of each group to the different variables examined during the interven- tion are presented in Table 2. NHEG showed a statistically significant increase in bilateral eccentric hamstring strength during the NHE (p ≤ 0.05; small ES). The remaining variables assessed (CMJ, 10 m sprint and 30 m sprint) showed no statistically significant differences in the post-test compared to the pre-test values (p > 0.05; from trivial to small ES). Similarly, the D + LCS group showed no significant differences between the two assessments for any of the variables analyzed (p > 0.05, from trivial to small ES). https://doi.org/10.3390/medicina62010140"
+    },
+    {
+      "page": 7,
+      "text": "Medicina 2026, 62, 140 7 of 14 Table 2. Changes in different performance variables after the training intervention (mean ± SD). Variables Pre Intervention Post Intervention Change Mean (%) ES (95%CI) p Value D + LCS Group (n = 12) NHEes (N) 270.5 ± 40.9 281.4 ± 39.6 4.2 ± 6.9 0.24 ( −0.15; 0.63) 0.20 CMJ (cm) 40.4 ± 3.7 39.7 ± 3.8 −1.9 ± 7.2 −0.19 (0.85; 0.47) 0.54 Sprint 10 m (s) 1.77 ± 0.07 1.78 ± 0.06 0.4 ± 0.7 0.08 ( −0.08; 0.24) 0.27 Sprint 30 m (s) 4.30 ± 0.17 4.31 ± 0.18 0.1 ± 0.7 0.02 ( −0.13; 0.17) 0.91 NHE Group (n = 11) NHEes (N) 274.5 ± 52.4 290.0 ± 44.9 6.3 ± 5.8 0.27 (0.02; 0.53) 0.04 CMJ (cm) 38.2 ± 4.9 38.2 ± 3.3 0.3 ± 9.0 −0.01 (−0.62; 0.60) 0.98 Sprint 10 m (s) 1.83 ± 0.07 1.84 ± 0.06 0.3 ± 2.4 0.08 ( −0.49; 0.65) 0.77 Sprint 30 m (s) 4.46 ± 0.17 4.45 ± 0.18 −0.4 ± 1.9 −0.09 (−0.53; 0.35) 0.67 ES: Effect size; NHEes: eccentric strength during Nordic hamstring exercise; and CMJ: counter movement jump. The between-group comparison is presented in Table 3. The results indicated that the intervention did not produce significant differences between groups in any of the performance variables (all p > 0.05). Table 3. Comparison of performance variables after training protocol across groups. Variables Difference in Means 95% CI [LB, UB] p Value D + LCS Group (n = 12) vs. NHE Group (n = 11) NHEes (N) 0.1 [ −0.3; 0.5] 0.65 CMJ (cm) 0.2 [ −0.7; 1.0] 0.71 Sprint 10 m (s) 0.0 [ −0.6; 0.5] 0.97 Sprint 30 m (s) −0.1 [ −0.5; 0.3] 0.62 LB: lower bound; UB: upper bound; NHEes: eccentric strength during Nordic hamstring exercise; and CMJ: counter movement jump. Over the 12-week monitoring period, the NHE group accumulated a total exposure of 831.6 h (range from 814.0 to 849.2), while the D + LCS group accumulated 922.8 h (range from 909.6 to 936.0). Mean training and match exposures were 652.3 h (range from 636.9 to 667.7) and 179.3 h (range from 175.9 to 183.7), respectively, for the NHE group, and 724.8 h (range from 714 to 735.6) and 198.0 h (range from 194.4 to 201.6), respectively, for the D + LCS group (Table 4). Over the course of the intervention period, one hamstring injury was documented. This injury occurred during a training session and involved a player from the NHE group (Table 4); it was classified as a 2B strain of the right semimembranosus muscle at the myotendinous junction [53], resulting in 18 days of time loss. Table 4. Comparison of injury data collection between groups. D + LCS Group (n = 12) NHE Group (n = 11) Total Exposure (h) 922.8 ± 13.2 831.6 ± 17.6 Trainings exposure (h) 724.8 ± 10.8 652.3 ± 15.4 Matches exposure (h) 198 ± 3.6 179.3 ± 4.4 Hamstring injuries 0 1 Total Hamstring injury rate/1000 h 0.0 1.20 Overall, the primary outcome was a small increase in eccentric hamstring strength in the NHE group, with no meaningful changes in sprint or jump performance in either group. No between-group differences were observed for performance outcomes, and hamstring injury incidence remained low across both training strategies, with only one injury in the NHE group. https://doi.org/10.3390/medicina62010140"
+    },
+    {
+      "page": 9,
+      "text": "Medicina 2026, 62, 140 9 of 14 potential for increased fatigue, time constraints, and delayed-onset muscle soreness, factors often cited as barriers to consistent exercise adherence [ 60]. Furthermore, as previously discussed, the degree of transferability between the training exercise and the test used to assess performance is a key determinant of observable improvements. The limited transfer between the NHE, Romanian Deadlift, and Leg Curl Slide, and the movement patterns involved in sprinting and the CMJ, may explain the absence of performance gains after the 9-week training period. In agreement with these findings, previous studies have also reported weak or absent associations between NHE-induced strength gains and sprint performance outcome [39–41]. The limited biomechanical and neuromuscular similarity between the slow, knee-dominant NHE and the high-velocity, hip-dominant demands of sprinting [35,36] likely accounts for the lack of improvement observed in the sprint test. Similarly, exercises such as the Romanian Deadlift and Leg Curl Slide, while effective for strengthening the posterior chain, have shown little to no transfer to sprint or jump performance in previous research [ 44], likely due to their limited movement specificity and contraction velocity relative to these explosive tasks. Based on these considerations and previous literature, it could be suggested that to improve sprint performance, strength training protocols for young players should include exercises with greater transferability, such as resisted sprint training [61], hip thrusts [62], exercises involving faster contraction modes [63], or simply a greater volume of sprint-specific training [64]. Similarly, the absence of improvements in CMJ performance could be explained by a combination of factors rather than by exercise specificity alone. Although both training protocols included multi-joint movements such as the back squat, which share certain me- chanical characteristics with vertical jumping, the overall training stimulus may not have been sufficient to elicit meaningful adaptations in explosive performance [65]. Although the NHE group showed significant improvements in eccentric hamstring strength, previous research has reported weak associations between hamstring-oriented strength gains and jump performance outcomes [58]. The D + LCS group did not report any increases in ham- string strength. Consequently, the adaptations induced by these protocols may have had limited transfer to CMJ performance due to the different neuromuscular and biomechanical demands involved [66]. Likewise, although some plyometric and power-oriented exercises were included in the program, their total volume may not have provided an adequate stimulus to enhance rapid force production or stretch–shortening cycle efficiency, while the relatively low contraction velocity typical of traditional strength exercises may have further constrained improvements in vertical jump ability [63]. Although a previous study using a similar training protocol reported significant improvements in CMJ performance, it is important to note that this intervention was conducted earlier in the season, when players were likely experiencing lower cumulative fatigue and greater responsiveness to training stimuli. Previous authors have also reported that CMJ-based improvements tend to be smaller in the later stages of the season compared with the beginning, suggesting that seasonal timing and accumulated load may partially explain the lack of CMJ gains ob- served in the present study [67]. From a practical standpoint, to optimize CMJ adaptations during the later stages of the season, practitioners could consider slightly reducing the overall training load to alleviate fatigue, and incorporating higher volumes of explosive, high-velocity, or plyometric exercises. With regard to injury outcomes, only one hamstring injury was recorded during the study period, occurring in a player from the NHE group."
+    },
+    {
+      "page": 11,
+      "text": "Medicina 2026, 62, 140 11 of 14 individual variability in training responses. For this reason, future studies incorporating markers of fatigue and assessments of biological maturation are warranted. 5. Conclusions In conclusion, the findings indicate that neither of the two implemented strength- training protocols produced improvements in jump or sprint performance in young soccer players by the end of the season, showing improvements only in bilateral eccentric ham- string strength assessed using the NHE, reflecting a task-specific adaptation, in the group that included the NHE in their routines. Over the study period, a low number of hamstring injuries was observed in both groups; therefore, injury-related findings should be inter- preted cautiously. Within the limits of the present study, both protocols were associated with a low occurrence of hamstring injuries, and the inclusion of the NHE did not appear to confer additional benefits compared with alternative posterior-chain exercises. Accordingly, performance and medical staff may consider integrating the NHE, Romanian deadlifts, or leg curl slides into soccer training programs as part of a comprehensive injury-prevention framework, while including supplementary exercises specifically designed to enhance sprint and jump performance. Author Contributions: Conceptualization, M.F. and L.S.-A.; methodology, M.F. and L.S.-A.; software, M.F., J.A.-C. and G.B.; validation, M.F., J.A.-C. and G.B.; formal analysis, L.S.-A. and M.F.; investi- gation, M.F. and L.S.-A.; resources, M.F. and G.B.; data curation, M.F. and J.A.-C.; writing—original draft preparation, M.F.; writing—review and editing, M.F., J.A.-C. and L.S.-A.; visualization, J.A.-C. and L.S.-A.; and supervision, J.A.-C. and L.S.-A. All authors have read and agreed to the published version of the manuscript. Funding: This research received no external funding. Institutional Review Board Statement: Ethical review and approval were waived for this study due to it being a retrospective, anonymous study. Informed Consent Statement: Informed consent was obtained from all subjects involved in the study. Data Availability Statement: The data presented in this study are available on request from the corresponding author. Conflicts of Interest: The authors declare no conflicts of interest. References 1. Silva, J.R.; Nassis, G.P .; Rebelo, A. Strength training in soccer with a specific focus on highly trained players.Sports Med. Open. 2015, 1, 17. [CrossRef] 2. Wing, C.E.; Turner, A.N.; Bishop, C.J. Importance of Strength and Power on Key Performance Indicators in Elite Youth Soccer.J. Strength Cond. Res. 2020, 34, 2006–2014. [CrossRef] 3. Stergiou, M.; Calvo, A.L.; Forelli, F. Effectiveness of Neuromuscular Training in Preventing Lower Limb Soccer Injuries: A Systematic Review and Meta-Analysis. J. Clin. Med. 2025, 14, 1714. [CrossRef] [PubMed] 4. Beato, M.; Maroto-Izquierdo, S.; Turner, A.N.; Bishop, C. Implementing Strength Training Strategies for Injury Prevention in Soccer: Scientific Rationale and Methodological Recommendations. Int. J. Sports Physiol. Perform 2021, 16, 456–461. [CrossRef] 5. López-Valenciano, A.; Ruiz-Pérez, I.; Garcia-Gómez, J.A.; Vera-Garcia, F.J.; De Ste Croix, M.; Myer, G.D.; Ayala, F. Epidemiology of injuries in professional football: A systematic review and meta-analysis. Br. J. Sports Med. 2020, 54, 711–718. [CrossRef] [PubMed] 6. Ekstrand, J.; Waldén, M.; Hägglund, M. Hamstring injuries have increased by 4% annually in men’s professional football, since 2001: A 13-year longitudinal analysis of the UEFA Elite Club injury study. Br. J. Sports Med. 2016, 50, 731–737. [CrossRef] 7. Hägglund, M.; Waldén, M.; Magnusson, H.; Kristenson, K.; Bengtsson, H.; Ekstrand, J. Injuries affect team performance negatively in professional football: An 11-year follow-up of the UEFA Champions League injury study. Br. J. Sports Med. 2013, 47, 738–742. [CrossRef] [PubMed] 8. Eliakim, E.; Morgulev, E.; Lidor, R.; Meckel, Y"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S3931.packet.json"
+}

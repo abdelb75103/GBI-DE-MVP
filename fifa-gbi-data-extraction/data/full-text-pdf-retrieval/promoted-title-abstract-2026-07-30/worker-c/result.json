@@ -1,0 +1,101 @@
+[
+  {
+    "studyId": "S3776",
+    "recordId": "2e1aa4ab-b932-4605-95cf-1a3a381f20da",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://journals.lww.com/acsm-msse/Fulltext/2025/10001/Injury_Incidence_In_NCAA_Sports_During_The_Covid_19.1517.aspx",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": false, "legalAccessType": "publisher landing page only", "documentType": "conference_abstract", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["Publisher DOI route identifies Chandran et al., Medicine & Science in Sports & Exercise 57(10S):470, DOI 10.1249/01.mss.0001158728.83087.5c.", "ResearchGate metadata independently classifies the item as a one-page conference abstract."], "failureEvidence": ["Official LWW route returned HTTP 403 to a direct retrieval request, so no PDF was accepted."], "provenanceUrls": ["https://journals.lww.com/acsm-msse/Fulltext/2025/10001/Injury_Incidence_In_NCAA_Sports_During_The_Covid_19.1517.aspx", "https://doi.org/10.1249/01.mss.0001158728.83087.5c"], "confidence": "high"},
+    "error": "No lawfully retrievable PDF obtained from the official conference-supplement route.",
+    "manualNextStep": "Use institutional access to the LWW October 2025 MSSE conference supplement and save only the matching abstract page if it renders as PDF."
+  },
+  {
+    "studyId": "S3931",
+    "recordId": "06602261-8794-42a8-9344-2cf6f443bb59",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://mdpi-res.com/d_attachment/medicina/medicina-62-00140/article_deploy/medicina-62-00140.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S3931-mdpi.pdf",
+    "sha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher open access", "documentType": "full_paper", "pages": 14, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF metadata title exactly matches the queue title.", "First page names Manuele Ferrini and co-authors.", "PDF text contains DOI 10.3390/medicina62010140 and the described 23-player posterior-chain intervention."], "failureEvidence": [], "provenanceUrls": ["https://www.mdpi.com/1648-9144/62/1/140", "https://mdpi-res.com/d_attachment/medicina/medicina-62-00140/article_deploy/medicina-62-00140.pdf", "https://doi.org/10.3390/medicina62010140"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S4023",
+    "recordId": "c0899a85-4feb-41de-8fb8-74eb13fe0659",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1810653/pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4023.pdf",
+    "sha256": "ddab10aef8faa49c304997dca921d97a6e07e8e5ababca230afc97735d6abccf",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher CC BY open access", "documentType": "full_paper", "pages": 11, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF metadata title exactly matches the queue title.", "Front page gives DOI 10.3389/fpubh.2026.1810653 and corresponding author Zelong Miao.", "Publisher PDF labels the work Original Research and reports the Chinese young-athlete motor-function assessment."], "failureEvidence": [], "provenanceUrls": ["https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1810653/full", "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1810653/pdf", "https://doi.org/10.3389/fpubh.2026.1810653"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S4111",
+    "recordId": "27d9106c-e105-4749-9dcf-57b19ad03caf",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://onlinelibrary.wiley.com/doi/abs/10.1002/pmrj.70023",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": false, "legalAccessType": "publisher abstract page, subscription full text", "documentType": "full_paper", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["Wiley metadata gives the exact title, Jarrett L. Mitton as lead author, DOI 10.1002/pmrj.70023, and PM&R 18(4):370-380.", "Publisher abstract matches the 2,243 NCAA-game cohort stated in the queue."], "failureEvidence": ["No open full-text PDF was identified in publisher, PubMed, OpenAlex-style metadata search, or lawful repository routes."], "provenanceUrls": ["https://onlinelibrary.wiley.com/doi/abs/10.1002/pmrj.70023", "https://doi.org/10.1002/pmrj.70023"], "confidence": "high"},
+    "error": "Publisher exposes abstract metadata only; no lawful open PDF found.",
+    "manualNextStep": "Use an entitled Wiley/library session or request an author copy from Jarrett L. Mitton, then validate DOI and pages 370-380."
+  },
+  {
+    "studyId": "S4724",
+    "recordId": "5d729e3d-b97f-44c7-996e-bad4f4d0b8ba",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://mdpi-res.com/d_attachment/life/life-15-00701/article_deploy/life-15-00701.pdf?version=1745653683",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4724.pdf",
+    "sha256": "4a39443268617d695c4e46f2e0f439fd415f50e1a0d5e5008551a30c812d3add",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher CC BY open access", "documentType": "full_paper", "pages": 10, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF metadata title exactly matches the queue title.", "First page names Byeong Seok Min and Nara Jang.", "PDF text contains DOI 10.3390/life15050701 and the 3,182-participant Korean sports-safety survey."], "failureEvidence": [], "provenanceUrls": ["https://www.mdpi.com/2075-1729/15/5/701", "https://mdpi-res.com/d_attachment/life/life-15-00701/article_deploy/life-15-00701.pdf?version=1745653683", "https://doi.org/10.3390/life15050701"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S4859",
+    "recordId": "322717ea-99c3-40c2-868d-6f5ba58592da",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://www.nature.com/articles/s41598-026-49793-5.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4859.pdf",
+    "sha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher open access, CC BY-NC-ND", "documentType": "full_paper", "pages": 9, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["Front-page title exactly matches the queue title.", "First page names Aynollah Naderi, Vahid Reza Kohe, and Luis Calmeiro.", "PDF text contains DOI 10.1038/s41598-026-49793-5 and the 40-player, 20-match prospective cohort."], "failureEvidence": [], "provenanceUrls": ["https://www.nature.com/articles/s41598-026-49793-5", "https://www.nature.com/articles/s41598-026-49793-5.pdf", "https://doi.org/10.1038/s41598-026-49793-5"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S4860",
+    "recordId": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S2950541026000013",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": true, "legalAccessType": "publisher open access, PDF retrieval blocked", "documentType": "full_paper", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["ScienceDirect and PubMed identify the exact title, DOI 10.1016/j.jpedcp.2026.200200, and Samantha L. Hacherl as lead author.", "PubMed identifies PMCID PMC12966903 and labels the work open access."], "failureEvidence": ["ScienceDirect official PDF endpoint returned HTTP 403.", "PMC canonical PDF endpoint returned an HTML proof-of-work challenge rather than PDF bytes, and was rejected."], "provenanceUrls": ["https://www.sciencedirect.com/science/article/pii/S2950541026000013", "https://pubmed.ncbi.nlm.nih.gov/41800067/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC12966903/", "https://doi.org/10.1016/j.jpedcp.2026.200200"], "confidence": "high"},
+    "error": "Open article confirmed, but no PDF bytes were retrievable without solving the publisher/PMC browser challenge.",
+    "manualNextStep": "Use a normal browser session to download the open-access PDF from ScienceDirect or PMC, then confirm the file begins %PDF and contains the DOI."
+  },
+  {
+    "studyId": "S4987",
+    "recordId": "20174957-a3f6-4f6e-b66d-b36f1b7c851b",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/41696965/",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": false, "legalAccessType": "publisher/PubMed abstract metadata only", "documentType": "full_paper", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["PubMed gives the exact title, DOI 10.1002/ksa.70329, PMID 41696965, and Niels Christian Kaldau as lead author.", "PubMed abstract matches the Danish National Patient Registry 2000-2018 study reported in the queue."], "failureEvidence": ["No lawful open full-text PDF was identified in publisher, PubMed, regional research portal, or repository metadata routes."], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/41696965/", "https://research.regionh.dk/da/publications/acl-denmark-a-nationwide-register-questionnaire-study-from-2000-t/", "https://doi.org/10.1002/ksa.70329"], "confidence": "high"},
+    "error": "No lawful open PDF located.",
+    "manualNextStep": "Use an entitled Wiley/library session or request the accepted manuscript from the authors, then match DOI 10.1002/ksa.70329."
+  },
+  {
+    "studyId": "S5148",
+    "recordId": "7df87db6-0820-4379-a2e7-86110035429d",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40957665/",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": false, "legalAccessType": "publisher abstract record only", "documentType": "conference_abstract", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["PubMed identifies the exact title, Rilind Obërtinca, DOI 10.1136/bjsports-2025-110557, and Br J Sports Med 60(7):554-555.", "The DOI and PhD Academy Award designation identify this as a conference-abstract-style record, not a complete trial report."], "failureEvidence": ["Official BJSM HighWire PDF route for the cited pages returned HTTP 403 to direct retrieval.", "No alternative lawful PDF was found."], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/40957665/", "https://bjsm.bmj.com/content/bjsports/60/7/554.full.pdf", "https://doi.org/10.1136/bjsports-2025-110557"], "confidence": "high"},
+    "error": "No lawfully retrievable PDF obtained for the indexed abstract pages.",
+    "manualNextStep": "Use browser or institutional access to BJSM 60(7):554-555, retrieve only the matching PDF pages, and confirm DOI/title before acceptance."
+  }
+]

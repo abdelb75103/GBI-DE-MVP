@@ -1,0 +1,255 @@
+{
+  "artifactType": "local_only_stage_a_extraction_proposal",
+  "generatedFor": "S2761 only",
+  "date": "2026-07-30",
+  "writePolicy": "proposal only; no live writes; additive-only if later authorised",
+  "studyId": "S2761",
+  "screeningRecordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+  "paperId": null,
+  "promotionPrecondition": {
+    "currentResolution": "pending",
+    "supportedPromotion": false,
+    "requiredBeforeConversion": [
+      "Second authoritative human full-text include or an approved versioned cohort-scoped gate amendment",
+      "Fresh current-state read of the promoted paper, assignment, file, extraction fields and population groups",
+      "Confirmation that every proposed target is blank before additive apply",
+      "Reviewer confirmation of the internally inconsistent injury count and overall incidence values"
+    ]
+  },
+  "source": {
+    "localPdf": "../../worker-b/files/S2761.pdf",
+    "sha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+    "liveScreeningObjectPath": "8e059583-75db-407c-a9a7-69444dab5804/1785416536257-S2761-S2761.pdf",
+    "verification": "Latest blocked-gate snapshot: readable application/pdf and downloaded SHA-256 matched.",
+    "document": "Open-access full primary paper, 15 pages"
+  },
+  "populationLabels": [
+    "Total",
+    "Goalkeeper",
+    "Defenders",
+    "Midfielders",
+    "Forwards"
+  ],
+  "populationLayoutRationale": "Table 4 supplies the strongest directly usable structured split: player position, with n=17, 51, 67 and 34. Global study and outcome values remain on the Total line. Table 4 location counts are dual-written in the same Total / Goalkeeper / Defenders / Midfielders / Forwards order. Pooled Total location counts are transparent sums of all four direct position rows.",
+  "fields": {
+    "studyDetails": {
+      "studyId": "S2761",
+      "leadAuthor": "Bayrak A",
+      "title": "Exploring injury profiles in professional football: evidence from a five-year study and the role of the functional movement screen",
+      "yearOfPublication": "2025",
+      "journal": "BMC Sports Science, Medicine and Rehabilitation",
+      "doi": "10.1186/s13102-025-01262-8",
+      "studyDesign": "prospective cohort [prospective data]"
+    },
+    "participantCharacteristics": {
+      "fifaDiscipline": "Association football (11-a-side)",
+      "country": "Türkiye",
+      "levelOfPlay": "professional",
+      "sex": null,
+      "ageCategory": "Senior",
+      "meanAge": null,
+      "sampleSizePlayers": "169\n17\n51\n67\n34",
+      "numberOfTeams": "1",
+      "observationDuration": "2016-2017 to 2020-2021 seasons"
+    },
+    "definitions": {
+      "injuryDefinition": "time loss [>72 h; prevented training or match participation]",
+      "illnessDefinition": null,
+      "incidenceDefinition": "per 1,000 exposure hours [training, match and combined]",
+      "burdenDefinition": null,
+      "severityDefinition": "minimal (1-3 days); minor (4-7 days); moderate (8-28 days); severe/major (>28 days) [injury to full team-training return and match-selection readiness]",
+      "recurrenceDefinition": null,
+      "mechanismReporting": "Medical Staff [club sports physicians/relevant doctors; sports physiotherapist documentation]"
+    },
+    "exposure": {
+      "seasonLength": null,
+      "numberOfSeasons": "5",
+      "exposureMeasurementUnit": "hours",
+      "totalExposure": null,
+      "matchExposure": null,
+      "trainingExposure": null
+    },
+    "injuryOutcome": {
+      "injuryTotalCount": null,
+      "injuryPlayersCompletedStudy": null,
+      "injuryTeamsCompletedStudy": null,
+      "injuryMedicalAttentionCount": null,
+      "injuryTimeLossCount": null,
+      "injuryMatchCount": null,
+      "injuryMatchMedicalAttentionCount": null,
+      "injuryMatchTimeLossCount": null,
+      "injuryTrainingCount": null,
+      "injuryTrainingMedicalAttentionCount": null,
+      "injuryTrainingTimeLossCount": null,
+      "injuryIncidenceOverall": "8.9",
+      "injuryIncidenceMatch": "15.47",
+      "injuryIncidenceTraining": "7.76",
+      "injuryIncidenceTimeLossOverall": null,
+      "injuryIncidenceTimeLossMatch": null,
+      "injuryIncidenceTimeLossTraining": null,
+      "injuryIncidenceCi95": "8.72-9.0",
+      "injuryTimeLossTotal": "4457",
+      "injuryTimeLossMedian": null,
+      "injuryTimeLossMean": null,
+      "injuryBurden": null,
+      "injuryBurdenCi95": null,
+      "injuryMostCommonDiagnosis": "hamstring muscle injury",
+      "injuryMostCommonType": "muscle injury",
+      "injuryMostCommonLocation": "thigh",
+      "injuryMostCommonSeverity": "minor [<8 days, authors' reported grouping]",
+      "injuryModeRepetitiveGradual": null,
+      "injuryModeRepetitiveSudden": null,
+      "injuryModeAcuteSudden": null,
+      "injuryContact": null,
+      "injuryNonContact": "121",
+      "injuryCumulativeRepetitive": null,
+      "injuryDurationMedian": null,
+      "injuryDurationMean": null,
+      "injuryRecurrentTotal": null,
+      "injuryRecurrenceRate": null
+    },
+    "illnessOutcome": {
+      "illnessTimeLossTotal": "116"
+    },
+    "injuryTissueType": {},
+    "injuryLocation": {
+      "injuryLocation_abdomen_prevalence": "2\n0\n1\n1\n0",
+      "injuryLocation_groin_prevalence": "33\n0\n11\n16\n6",
+      "injuryLocation_groin_incidence": "1.20 (0.77-1.63)",
+      "injuryLocation_thigh_prevalence": "81\n6\n26\n35\n14",
+      "injuryLocation_thigh_incidence": "2.36 (1.76-2.96)",
+      "injuryLocation_knee_prevalence": "35\n5\n13\n11\n6",
+      "injuryLocation_knee_incidence": "1.28 (0.84-1.72)",
+      "injuryLocation_lower_leg_prevalence": "29\n4\n11\n11\n3",
+      "injuryLocation_lower_leg_incidence": "0.88 (0.51-1.25)",
+      "injuryLocation_ankle_incidence": "0.80 (0.45-1.15)",
+      "injuryLocation_shoulder_prevalence": "2\n1\n0\n0\n1"
+    },
+    "illnessRegion": {},
+    "illnessEtiology": {}
+  },
+  "fieldEvidence": {
+    "studyDetails": {
+      "sourceQuote": "Exploring injury profiles in professional football: evidence from a five-year study and the role of the functional movement screen; https://doi.org/10.1186/s13102-025-01262-8; Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217.",
+      "pageHint": "PDF p. 1",
+      "supports": ["leadAuthor", "title", "yearOfPublication", "journal", "doi"]
+    },
+    "designAndParticipants": {
+      "sourceQuote": "Our study is based on data collected from professional football players from a football team in the Turkish Super League during the 2016-2017, 2017-2018, 2018-2019, 2019-2020, and 2020-2021 seasons. This was a prospective cohort study. A total of 169 players were included in the study.",
+      "pageHint": "PDF p. 3, Methods - Participants",
+      "supports": ["studyDetails.studyDesign", "participantCharacteristics.fifaDiscipline", "participantCharacteristics.country", "participantCharacteristics.levelOfPlay", "participantCharacteristics.ageCategory", "participantCharacteristics.sampleSizePlayers", "participantCharacteristics.numberOfTeams", "participantCharacteristics.observationDuration", "exposure.numberOfSeasons"]
+    },
+    "positionSample": {
+      "sourceQuote": "Goalkeeper (n = 17), Defenders (n = 51), Midfielders (n = 67), Forwards (n = 34)",
+      "pageHint": "PDF p. 8, Results Table 4",
+      "supports": ["participantCharacteristics.sampleSizePlayers", "injuryLocation.*_prevalence"]
+    },
+    "definitionAndReporter": {
+      "sourceQuote": "Only injuries that prevented players from participating in training/match for over 72 h were recorded. These injuries were diagnosed by the club's sports physicians and/or relevant medical doctors, documented by a sports physiotherapist, and recorded immediately after the incident using a standard injury form.",
+      "pageHint": "PDF p. 4, Methods - Injury identification",
+      "supports": ["definitions.injuryDefinition", "definitions.mechanismReporting"]
+    },
+    "severity": {
+      "sourceQuote": "Injuries were categorized as minimal (1-3 days of absence), minor (4-7 days of absence), moderate (8-28 days of absence), or severe/major (> 28 days of absence). The Results say 104 lasted less than 8 days and were classified as minor injuries, while 61 were moderate and 61 severe.",
+      "pageHint": "PDF p. 4, Methods - Injury identification; PDF p. 7, Results",
+      "supports": ["definitions.severityDefinition", "injuryOutcome.injuryMostCommonSeverity"]
+    },
+    "incidence": {
+      "sourceQuote": "Over the five seasons, players experienced: 7.76 injuries per 1,000 training hours (95% CI: 7.59-7.93), 15.47 injuries per 1,000 match hours (95% CI: 15.23-15.71), 8.9 injuries per 1,000 combined training and match hours (95% CI: 8.72-9.0).",
+      "pageHint": "PDF p. 7, Results",
+      "supports": ["definitions.incidenceDefinition", "exposure.exposureMeasurementUnit", "injuryOutcome.injuryIncidenceOverall", "injuryOutcome.injuryIncidenceMatch", "injuryOutcome.injuryIncidenceTraining", "injuryOutcome.injuryIncidenceCi95"]
+    },
+    "timeLossAndIllness": {
+      "sourceQuote": "players missed a total of 4,573 training sessions due to injuries and illnesses... 116 days missed due to illness, 550 days missed due to contact injuries, and 3,907 days missed due to non-contact injuries.",
+      "pageHint": "PDF p. 6, Results",
+      "supports": ["injuryOutcome.injuryTimeLossTotal", "illnessOutcome.illnessTimeLossTotal"]
+    },
+    "nonContact": {
+      "sourceQuote": "In our study, 61 of the 121 non-contact injuries (50.4%) occurred during matches, while 60 (49.6%) occurred during training.",
+      "pageHint": "PDF p. 10, Discussion - Contact vs. non-contact injury status",
+      "supports": ["injuryOutcome.injuryNonContact"]
+    },
+    "headlineLocation": {
+      "sourceQuote": "Over the five seasons, players sustained 224 injuries, with the thigh region being the most frequently injured area. The hamstring muscles were the most commonly affected anatomical structures...",
+      "pageHint": "PDF p. 6, Results",
+      "supports": ["injuryOutcome.injuryMostCommonDiagnosis", "injuryOutcome.injuryMostCommonType", "injuryOutcome.injuryMostCommonLocation"]
+    },
+    "locationRates": {
+      "sourceQuote": "The highest incidence was observed in hamstring injuries, with 2.36 injuries per 1,000 h (95% CI: 1.76-2.96). Knee injuries followed with 1.28 ... Groin ... 1.20 ... calf ... 0.88 ... both ankle and quadriceps ... 0.80...",
+      "pageHint": "PDF p. 7, Results",
+      "supports": ["injuryLocation_thigh_incidence", "injuryLocation_knee_incidence", "injuryLocation_groin_incidence", "injuryLocation_lower_leg_incidence", "injuryLocation_ankle_incidence"]
+    },
+    "positionTable": {
+      "sourceQuote": "Table 4 Distribution of injury types by player position",
+      "pageHint": "PDF p. 8, Results Table 4",
+      "supports": ["injuryLocation_abdomen_prevalence", "injuryLocation_groin_prevalence", "injuryLocation_thigh_prevalence", "injuryLocation_knee_prevalence", "injuryLocation_lower_leg_prevalence", "injuryLocation_shoulder_prevalence"]
+    }
+  },
+  "derivations": [
+    {
+      "field": "injuryOutcome.injuryTimeLossTotal",
+      "value": "4457",
+      "method": "550 contact-related + 3,907 non-contact-related missed training sessions",
+      "basis": "Direct components on PDF p. 6.",
+      "permitted": true,
+      "reason": "Transparent sum of direct, disjoint injury time-loss components. It is not derived from a rate."
+    },
+    {
+      "fieldFamily": "injuryLocation.*_prevalence",
+      "method": "Sum direct Table 4 position counts into Total, retaining each source position line.",
+      "basis": "PDF p. 8, Table 4.",
+      "permitted": true,
+      "examples": [
+        "thigh Total 81 = quadriceps + hamstring + tensor fascia latae across positions; lines 6, 26, 35, 14",
+        "groin Total 33 = groin + osteitis pubis across positions; lines 0, 11, 16, 6",
+        "lower leg Total 29 = tibia + calf muscle + Achilles across positions; lines 4, 11, 11, 3"
+      ],
+      "reason": "These are transparent aggregations of adjacent source rows into one schema parent. They are not rate-to-count calculations."
+    }
+  ],
+  "mappingNotes": {
+    "injuryLocation_groin_prevalence": "Aggregates direct Table 4 Groin and Osteitis Pubis rows into the schema's groin parent.",
+    "injuryLocation_thigh_prevalence": "Aggregates direct Quadriceps, Hamstring and Tensor Fascia Latae rows into the schema's thigh parent.",
+    "injuryLocation_lower_leg_prevalence": "Aggregates direct Tibia, Calf Muscle and Achilles rows into the schema's lower-leg parent.",
+    "injuryLocation_thigh_incidence": "The reported 2.36 rate is hamstring-specific, stored in the available thigh parent field with its source specificity preserved here and in the Backlog note.",
+    "injuryLocation_lower_leg_incidence": "The reported 0.88 rate is calf-specific, stored in the available lower-leg parent field with source specificity preserved.",
+    "injuryLocation_ankle_incidence": "The reported 0.80 rate is directly ankle-specific. No count is staged because Table 4 gives a combined Foot-Ankle count."
+  },
+  "intentionallyBlank": {
+    "participantCharacteristics": [
+      "sex: the paper does not directly state participant sex; do not infer it from the league name.",
+      "meanAge: Table 2 reports injured/non-injured comparison means, not a cohort-wide mean.",
+      "injuryPlayersCompletedStudy: p. 3 both says 169 were included and describes exclusions for players who did not complete a season; no unambiguous completion total is printed."
+    ],
+    "exposure": [
+      "seasonLength, totalExposure, matchExposure and trainingExposure: rates are reported, but raw exposure totals and season length are not printed. No count-to-exposure back-calculation."
+    ],
+    "injuryOutcome": [
+      "injuryTotalCount: source conflict, 224 on p. 6, 229 on p. 7, and Table 4 position-row sum 227. No value is staged.",
+      "medical-attention and time-loss event counts: no separate compatible event totals are printed.",
+      "match/training total event counts: p. 10 has only non-contact match/training counts, not all-injury totals.",
+      "burden, recurrence, onset and contact-injury counts: no compatible direct values.",
+      "time-loss total uses the source's contact/non-contact components, but the paper alternates between training sessions and days; preserve the unit caveat."
+    ],
+    "illnessOutcome": [
+      "Only the directly reported 116 missed units due to illness is staged. No illness count, definition, system, aetiology, incidence, burden, severity or mechanism is reported."
+    ],
+    "injuryTissueType": [
+      "The source provides location/diagnosis labels rather than a clean tissue-type table. Do not force hamstring, quadriceps, calf, meniscus, ACL or chondromalacia labels into broad tissue rows without compatible counts."
+    ],
+    "injuryLocation": [
+      "Vertebral column/spinal region is not mapped because the schema separates thoracic and lumbosacral and the source does not do so.",
+      "Pelvis is not mapped because it is not a clean hip field; Foot-Ankle is not mapped to separate foot or ankle count fields.",
+      "No direct overall lower-limb, upper-limb or trunk count/rate is staged; reported percentages and source categories do not establish compatible structured totals."
+    ],
+    "illnessRegion": ["No illness-system data reported."],
+    "illnessEtiology": ["No illness-aetiology data reported."]
+  },
+  "caveats": [
+    "The primary injury count is internally inconsistent: 224 (p. 6), 229 (p. 7), and 227 when Table 4 position rows are summed. It is intentionally blank and is a reviewer-attention item.",
+    "The overall incidence is 8.9 per 1,000 combined hours in the abstract and Results (p. 1 and p. 7), but the Discussion says 8.49 (p. 9). This proposal uses the repeated abstract/Results value, preserves the 8.72-9.0 CI, and does not calculate a replacement.",
+    "The reported 4,573 and component values are described inconsistently as training sessions and days. The staged 4,457 injury time-loss value is a permitted component sum, not a claim that the source cleanly distinguishes units.",
+    "Table 4 is position-stratified and was used only for directly mappable location-count families. It should not be used to derive exposure, incidence or a reconciled overall injury count."
+  ],
+  "proposedBacklogNote": "Stage A local proposal only, no extraction write. Proposed layout: Total / Goalkeeper / Defenders / Midfielders / Forwards, using Table 4 n=17/51/67/34 and directly mappable position-stratified location counts. Core surveillance is prospective over five Turkish Super League seasons. Reviewer attention: injury count conflicts (224, 229, and Table 4 sum 227); leave total injury count blank. Overall incidence is 8.9 per 1,000 combined hours in abstract/Results but 8.49 in Discussion; stage 8.9 with CI 8.72-9.0 and preserve discrepancy. Raw exposure totals are not reported. Injury time-loss total 4,457 is a permitted 550 + 3,907 component sum, but the paper alternates sessions/days. Await supported promotion and fresh additive-state check."
+}

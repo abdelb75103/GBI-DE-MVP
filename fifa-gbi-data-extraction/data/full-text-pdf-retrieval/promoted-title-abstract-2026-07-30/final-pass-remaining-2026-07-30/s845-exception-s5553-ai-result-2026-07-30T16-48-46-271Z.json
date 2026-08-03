@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-07-30T16:48:47.521Z",
+  "apply": true,
+  "recommendationPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/s5553/rendered/s5553-full-text-ai-recommendation.normalized.json",
+  "journalPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/final-pass-remaining-2026-07-30/s845-exception-s5553-ai-journal-2026-07-30T16-48-46-271Z.ndjson",
+  "results": [
+    {
+      "studyId": "S5553",
+      "status": "ai_applied_verified",
+      "decision": "include",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "b11a11f68fa80fb43b1c6f8c13c1e60b0707ef427e6037081d741cd9947d5f9c",
+      "rowUpdatedAt": "2026-07-30T16:48:46.556+00:00"
+    },
+    {
+      "studyId": "S845",
+      "status": "promoted_american_data_verified",
+      "screeningRecordId": "b72f7871-06f8-47da-8a20-6cfc8ba320fb",
+      "paperId": "ec094fd1-73a5-43f6-b7e6-5ce58d3e508a",
+      "paperFileId": "c35be44b-da3b-4bd8-bf53-cbc97fcca2d2",
+      "pdfSha256": "9c20b69fc67831357ff85c91775e16e3190e968460c699ffef61e5ca15b7a105",
+      "paperStatus": "american_data",
+      "assignedTo": "00000000-0000-0000-0000-000000000001",
+      "note": "User-approved American-data exception. Extract from the authoritative NCAA agency/source data. The attached open-access 2022 poster is supporting identity evidence for the same NCAA ISP 2014/15–2018/19 dataset and exact headline counts/rates; it is not the exact 2024 journal full text.",
+      "screeningUpdatedAt": "2026-07-30T16:48:46.834+00:00"
+    }
+  ]
+}

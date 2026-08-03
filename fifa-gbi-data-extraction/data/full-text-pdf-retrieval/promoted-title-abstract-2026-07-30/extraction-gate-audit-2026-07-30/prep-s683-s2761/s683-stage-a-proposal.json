@@ -1,0 +1,211 @@
+{
+  "artifactType": "local_only_stage_a_extraction_proposal",
+  "generatedFor": "S683 only",
+  "date": "2026-07-30",
+  "writePolicy": "proposal only; no live writes; additive-only if later authorised",
+  "studyId": "S683",
+  "screeningRecordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+  "paperId": null,
+  "promotionPrecondition": {
+    "currentResolution": "pending",
+    "supportedPromotion": false,
+    "requiredBeforeConversion": [
+      "Second authoritative human full-text include or an approved versioned cohort-scoped gate amendment",
+      "Fresh current-state read of the promoted paper, assignment, file, extraction fields and population groups",
+      "Confirmation that every proposed target is blank before additive apply"
+    ]
+  },
+  "source": {
+    "localPdf": "../../worker-a/files/S683.pdf",
+    "sha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+    "liveScreeningObjectPath": "fb19fd14-4d4b-4afd-b65c-7e645b9b01c7/1785416529411-S683-S683.pdf",
+    "verification": "Latest blocked-gate snapshot: readable application/pdf and downloaded SHA-256 matched.",
+    "document": "Publisher version of record, 5 article pages plus repository cover sheet"
+  },
+  "populationLabels": [
+    "Futsal - all seasons",
+    "Futsal - 2015",
+    "Futsal - 2016",
+    "Futsal - 2017"
+  ],
+  "populationLayoutRationale": "The project-relevant cohort is the directly separable futsal subgroup. The source reports futsal lower-limb-tendinopathy counts and rates by season, so the proposal retains an all-seasons row plus the three reported seasons. Shared participant fields occupy the first row only; no futsal-specific exposure total is claimed.",
+  "fields": {
+    "studyDetails": {
+      "studyId": "S683",
+      "leadAuthor": "Bittencourt NFN",
+      "title": "Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club.",
+      "yearOfPublication": "2024",
+      "journal": "Journal of Bodywork & Movement Therapies",
+      "doi": "10.1016/j.jbmt.2024.04.042",
+      "studyDesign": "prospective cohort [prospective data]"
+    },
+    "participantCharacteristics": {
+      "fifaDiscipline": "Futsal",
+      "country": "Brazil",
+      "levelOfPlay": "elite youth",
+      "sex": "male",
+      "ageCategory": "Youth",
+      "meanAge": null,
+      "sampleSizePlayers": "286",
+      "numberOfTeams": null,
+      "observationDuration": "2015-2017 seasons"
+    },
+    "definitions": {
+      "injuryDefinition": "medical attention [new musculoskeletal complaint from training or competition]",
+      "illnessDefinition": null,
+      "incidenceDefinition": "per 1,000 exposure hours [training and competition]",
+      "burdenDefinition": null,
+      "severityDefinition": null,
+      "recurrenceDefinition": null,
+      "mechanismReporting": "Medical Staff [sports physician diagnosis]"
+    },
+    "exposure": {
+      "seasonLength": null,
+      "numberOfSeasons": "3",
+      "exposureMeasurementUnit": "hours",
+      "totalExposure": null,
+      "matchExposure": null,
+      "trainingExposure": null
+    },
+    "injuryOutcome": {
+      "injuryTotalCount": "11\n3\n7\n1",
+      "injuryPlayersCompletedStudy": null,
+      "injuryTeamsCompletedStudy": null,
+      "injuryMedicalAttentionCount": "11\n3\n7\n1",
+      "injuryTimeLossCount": null,
+      "injuryMatchCount": null,
+      "injuryMatchMedicalAttentionCount": null,
+      "injuryMatchTimeLossCount": null,
+      "injuryTrainingCount": null,
+      "injuryTrainingMedicalAttentionCount": null,
+      "injuryTrainingTimeLossCount": null,
+      "injuryIncidenceOverall": "\n1.9\n4.4\n0.6",
+      "injuryIncidenceMatch": null,
+      "injuryIncidenceTraining": null,
+      "injuryIncidenceTimeLossOverall": null,
+      "injuryIncidenceTimeLossMatch": null,
+      "injuryIncidenceTimeLossTraining": null,
+      "injuryIncidenceCi95": null,
+      "injuryTimeLossTotal": null,
+      "injuryTimeLossMedian": null,
+      "injuryTimeLossMean": null,
+      "injuryBurden": null,
+      "injuryBurdenCi95": null,
+      "injuryMostCommonDiagnosis": "adductor tendinopathy [futsal subgroup]",
+      "injuryMostCommonType": "tendinopathy",
+      "injuryMostCommonLocation": null,
+      "injuryMostCommonSeverity": null,
+      "injuryModeRepetitiveGradual": null,
+      "injuryModeRepetitiveSudden": null,
+      "injuryModeAcuteSudden": null,
+      "injuryContact": null,
+      "injuryNonContact": null,
+      "injuryCumulativeRepetitive": null,
+      "injuryDurationMedian": null,
+      "injuryDurationMean": null,
+      "injuryRecurrentTotal": null,
+      "injuryRecurrenceRate": null
+    },
+    "illnessOutcome": {},
+    "injuryTissueType": {
+      "injuryTissueType_tendinopathy_prevalence": "11\n3\n7\n1",
+      "injuryTissueType_tendinopathy_incidence": "\n1.9\n4.4\n0.6"
+    },
+    "injuryLocation": {},
+    "illnessRegion": {},
+    "illnessEtiology": {}
+  },
+  "fieldEvidence": {
+    "studyDetails": {
+      "sourceQuote": "Incidence of lower limb tendinopathy: A 3-year prospective study of a youth elite athletes in a Brazilian sport club.",
+      "pageHint": "Article PDF p. 1 (journal p. 461)",
+      "supports": ["leadAuthor", "title", "yearOfPublication", "journal", "doi"]
+    },
+    "studyDesign": {
+      "sourceQuote": "In this prospective cohort study, sport exposure and injury data were collected during 2015, 2106 and 2017 seasons in one traditional sport club in Brazil.",
+      "pageHint": "Article PDF p. 2 (journal p. 462), Methods",
+      "supports": ["studyDetails.studyDesign", "participantCharacteristics.country", "participantCharacteristics.observationDuration", "exposure.numberOfSeasons"]
+    },
+    "futsalPopulation": {
+      "sourceQuote": "Basketball and futsal teams had only male athletes. Futsal (n = 286).",
+      "pageHint": "Article PDF p. 2 (journal p. 462), Methods and Results",
+      "supports": ["participantCharacteristics.fifaDiscipline", "participantCharacteristics.sex", "participantCharacteristics.ageCategory", "participantCharacteristics.sampleSizePlayers"]
+    },
+    "injuryAndReporting": {
+      "sourceQuote": "Injury definition consisted of any new musculoskeletal complaint that occurred as a result of training or competition that required medical assistance. The LLT diagnoses were based on a detailed history and clinical exam; one physician (R.V) performed the diagnosis of LLT.",
+      "pageHint": "Article PDF p. 2 (journal p. 462), Methods",
+      "supports": ["definitions.injuryDefinition", "definitions.mechanismReporting"]
+    },
+    "denominator": {
+      "sourceQuote": "Exposure in hours was defined as any practice or competition in which an athlete is exposed to the possibility of an sport injury. LLT incidence rate was determined using the following formula: number of injuries/total exposure hours × 1000.",
+      "pageHint": "Article PDF p. 2 (journal p. 462), Methods",
+      "supports": ["definitions.incidenceDefinition", "exposure.exposureMeasurementUnit"]
+    },
+    "futsalRates": {
+      "sourceQuote": "Futsal 1.9 4.4 0.6. Table 1 footnote: Injury incidence expressed as number of injuries/1000 h of total exposure (95% confidence interval).",
+      "pageHint": "Article PDF p. 2 (journal p. 462), Results Table 1",
+      "supports": ["injuryOutcome.injuryIncidenceOverall", "injuryTissueType.injuryTissueType_tendinopathy_incidence"]
+    },
+    "futsalCounts": {
+      "sourceQuote": "Futsal n(%) 3 (10%) 7 (15%) 1 (4%). Table 2 is titled Frequency of LLT by location and sport.",
+      "pageHint": "Article PDF p. 2 (journal p. 462), Results Table 2",
+      "supports": ["injuryOutcome.injuryTotalCount", "injuryOutcome.injuryMedicalAttentionCount", "injuryTissueType.injuryTissueType_tendinopathy_prevalence"]
+    },
+    "futsalType": {
+      "sourceQuote": "Futsal 6% 42% 11% for patellar, adductor and Achilles tendinopathy respectively; the discussion states that adductor tendinopathy was more frequent in futsal.",
+      "pageHint": "Article PDF p. 3 (journal p. 463), Table 3 and Discussion",
+      "supports": ["injuryOutcome.injuryMostCommonDiagnosis", "injuryOutcome.injuryMostCommonType"]
+    }
+  },
+  "derivations": [
+    {
+      "field": "injuryOutcome.injuryTotalCount",
+      "value": "11",
+      "method": "3 + 7 + 1",
+      "basis": "Direct futsal counts in Table 2 for 2015, 2016 and 2017.",
+      "permitted": true,
+      "reason": "Transparent sum of disjoint, directly reported season rows. No rate, count-to-exposure, or other back-calculation."
+    },
+    {
+      "field": "injuryOutcome.injuryMedicalAttentionCount",
+      "value": "11\n3\n7\n1",
+      "method": "Repeated only because every reportable injury in this study required medical assistance.",
+      "basis": "Methods injury definition.",
+      "permitted": true,
+      "reason": "The schema directs repeating the total when the study's primary definition is medical attention and no separate category is reported."
+    }
+  ],
+  "intentionallyBlank": {
+    "participantCharacteristics": [
+      "meanAge: 14.1 (11.2; 17.0) is all-sport, not futsal-specific.",
+      "numberOfTeams: one sport club is reported, but no futsal-specific team count is printed."
+    ],
+    "definitions": [
+      "illnessDefinition, burdenDefinition, severityDefinition and recurrenceDefinition: not reported for the futsal subgroup."
+    ],
+    "exposure": [
+      "seasonLength: not reported.",
+      "totalExposure, matchExposure and trainingExposure: Table 1 exposure totals cover all six sports, not futsal. They must not be copied to the futsal rows or back-calculated from rates."
+    ],
+    "injuryOutcome": [
+      "No futsal-specific match/training counts or rates, time-loss counts, severity, burden, recurrence, onset or contact values.",
+      "No futsal-specific confidence intervals are printed.",
+      "injuryMostCommonLocation: Table 3 gives type percentages rather than a compatible futsal-specific anatomical count/rate."
+    ],
+    "illnessOutcome": ["Illness was not studied."],
+    "injuryTissueType": [
+      "Only the direct tendinopathy family is staged. No other tissue family is reported for this all-tendinopathy outcome cohort."
+    ],
+    "injuryLocation": [
+      "Table 2 locations are all-sport totals and cannot be assigned to futsal. Table 3 percentages do not provide a defensible stable numerator for derived futsal location counts."
+    ],
+    "illnessRegion": ["Illness was not studied."],
+    "illnessEtiology": ["Illness was not studied."]
+  },
+  "caveats": [
+    "The evidence is intentionally restricted to futsal. Do not import whole-club counts, sex distribution, age, or exposure into futsal rows.",
+    "The article's all-sport exposure is useful for its own Table 1, but it is not a futsal denominator. The futsal rates are directly published and can be stored without deriving exposure.",
+    "The all-seasons futsal count is a transparent permitted sum. It is not a paper-printed total and is marked as derived."
+  ],
+  "proposedBacklogNote": "Stage A local proposal only, no extraction write. Extract the directly separable male youth futsal subgroup on Total / 2015 / 2016 / 2017 lines. Futsal LLT counts are 3, 7 and 1; all-seasons 11 is a permitted sum. Published futsal incidence is 1.9, 4.4 and 0.6 per 1,000 total exposure hours. Do not copy the whole-club exposure totals, age or all-sport location table into futsal fields. Await a supported promotion and fresh additive-state check."
+}

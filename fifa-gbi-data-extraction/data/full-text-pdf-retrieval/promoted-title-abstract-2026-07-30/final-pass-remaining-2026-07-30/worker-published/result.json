@@ -1,0 +1,143 @@
+{
+  "generatedAt": "2026-07-30",
+  "scope": {
+    "worker": "published",
+    "mode": "read-only lawful-open-access retrieval",
+    "liveSystemsChanged": false,
+    "covidenceChanged": false,
+    "uploadsPerformed": false
+  },
+  "records": [
+    {
+      "studyId": "S845",
+      "recordId": "b72f7871-06f8-47da-8a20-6cfc8ba320fb",
+      "title": "Epidemiology of Hamstring Tears in National Collegiate Athletic Association Athletes: Findings From the National Collegiate Athletic Association Injury Surveillance Program Between 2014/2015 and 2018/2019",
+      "authors": [
+        "Adrian J Boltz",
+        "Nicholas Hooper",
+        "James Satalich",
+        "Seth Cheatham",
+        "Robert O'Connell",
+        "Neel Rao",
+        "Reagan E Garcia",
+        "Christy L Collins",
+        "Avinash Chandran"
+      ],
+      "year": 2024,
+      "journal": "Clinical Journal of Sport Medicine",
+      "doi": "10.1097/JSM.0000000000001240",
+      "pmid": "38896546",
+      "outcome": "not_retrieved",
+      "contentClassification": "full journal paper, but no lawful open-access copy located",
+      "confidence": "high",
+      "validation": {
+        "identityConfirmedBy": [
+          "Crossref title and DOI",
+          "PubMed PMID 38896546 title, authors, journal and DOI"
+        ],
+        "openAccessChecks": [
+          {
+            "service": "OpenAlex",
+            "result": "is_oa=false; oa_status=closed; oa_url=null; any_repository_has_fulltext=false; no PDF URL"
+          },
+          {
+            "service": "Europe PMC",
+            "result": "PMCID absent; isOpenAccess=N; fullTextUrlList absent"
+          },
+          {
+            "service": "Crossref",
+            "result": "publisher landing page only, with no PDF link or licence"
+          }
+        ],
+        "publisherEndpointCheck": "Ordinary LWW article endpoint returned HTTP 403 Cloudflare challenge, not a PDF. This was not bypassed."
+      },
+      "lawfulProvenanceUrls": [
+        "https://api.crossref.org/works/10.1097%2FJSM.0000000000001240",
+        "https://api.openalex.org/works/https://doi.org/10.1097/JSM.0000000000001240",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1097%2FJSM.0000000000001240&format=json",
+        "https://pubmed.ncbi.nlm.nih.gov/38896546/",
+        "https://doi.org/10.1097/JSM.0000000000001240"
+      ],
+      "downloadedFiles": [],
+      "nextStep": "Obtain the publisher PDF through a licensed library or request an author copy. Do not substitute the 2022 open-access poster (DOI 10.1177/2325967121S00751), which is a distinct conference abstract rather than this 2024 article."
+    },
+    {
+      "studyId": "S5553",
+      "recordId": "ad405aa3-ac09-47d1-98a6-da6113728980",
+      "title": "Erstellung eines Verletzungsregisters im Profifußball – Studiendesign und Perspektiven",
+      "authors": [
+        "D. Szymski",
+        "W. Krutsch",
+        "L. Huber",
+        "J. Weber",
+        "V. Alt"
+      ],
+      "year": 2024,
+      "journal": "Sports Orthopaedics and Traumatology",
+      "doi": "10.1016/j.orthtr.2024.03.009",
+      "publisherPii": "S0949328X24000267",
+      "outcome": "not_retrieved",
+      "contentClassification": "conference-associated abstract/proceedings item, not a full research paper",
+      "confidence": "high",
+      "classificationEvidence": "The official GOTS 2024 programme places the exact title in an 'Abstract-Sitzungen' session, presented by Lorenz Huber. GOTS states that accepted presentation abstracts were published in Sports Orthopaedics and Traumatology. This supports treating the DOI record as a conference abstract/proceedings item despite Crossref's generic journal-article type.",
+      "validation": {
+        "identityConfirmedBy": [
+          "Crossref exact title, authors, June 2024 date and DOI",
+          "OpenAlex exact title, year and DOI",
+          "conference-hosted programme PDF exact title and presenter"
+        ],
+        "openAccessChecks": [
+          {
+            "service": "OpenAlex",
+            "result": "is_oa=false; oa_status=closed; oa_url=null; any_repository_has_fulltext=false; no PDF URL"
+          },
+          {
+            "service": "Europe PMC",
+            "result": "no matching record returned"
+          },
+          {
+            "service": "Crossref",
+            "result": "Elsevier text-mining XML/plain links only, not public PDF links; reported licences are TDM licences, not an open-access reuse licence"
+          }
+        ],
+        "publisherEndpointCheck": "Normal ScienceDirect PDF endpoint returned HTTP 403 Cloudflare challenge, not a PDF. This was not bypassed."
+      },
+      "lawfulProvenanceUrls": [
+        "https://api.crossref.org/works/10.1016%2Fj.orthtr.2024.03.009",
+        "https://api.openalex.org/works/https://doi.org/10.1016/j.orthtr.2024.03.009",
+        "https://doi.org/10.1016/j.orthtr.2024.03.009",
+        "https://linkinghub.elsevier.com/retrieve/pii/S0949328X24000267",
+        "https://pdf-program.abstractserver.com/?congress=gots2024",
+        "https://gots.org/18301-2/"
+      ],
+      "downloadedFiles": [
+        {
+          "path": "files/S5553-GOTS-2024-abstract-programme.pdf",
+          "sha256": "164960685918f6349a6c18e805b318ad18ce21af3534bb75c6174ed683d13678",
+          "bytes": 386764,
+          "pdfSignature": "PDF document, version 1.7",
+          "pages": 16,
+          "contentValidation": "Text extraction contains the exact title, immediately under an Abstract-Sitzungen heading, and names Lorenz Huber as presenter. It is an official conference programme, not a study full text."
+        },
+        {
+          "path": "files/S5553-GOTS-2024-programme.pdf",
+          "sha256": "0f8373d91cd5a5c5febc1b8a29f68485d227f58ad32934dc3e458e1996ed4616",
+          "bytes": 7697838,
+          "pdfSignature": "PDF document, version 1.4",
+          "pages": 15,
+          "contentValidation": "Official GOTS programme download. It confirms the 2024 congress context but does not expose the exact presentation title in its text layer, so it is supporting event evidence only, not identity evidence."
+        }
+      ],
+      "nextStep": "If the abstract text itself is required, obtain it through institutional Elsevier/Sports Orthopaedics and Traumatology access or request it from the authors. It should not be treated as a substitute full paper."
+    }
+  ],
+  "summary": {
+    "exactFullTextPdfsRetrieved": 0,
+    "lawfulEvidencePdfsRetrieved": 2,
+    "fullTextEligibleFiles": [],
+    "excludedCandidateTypes": [
+      "conference programme",
+      "conference abstract/proceedings item"
+    ]
+  }
+}

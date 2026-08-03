@@ -24,7 +24,7 @@ DESKTOP = Path("/Users/abdelbabiker/Desktop")
 MAIN_PPT = DESKTOP / "Isokinetic V5BI 2026.pptx"
 BACKUP_PPT = DESKTOP / "Isokinetic V5BI 2026 Backup.pptx"
 STILLS_PPT = DESKTOP / "Isokinetic V5BI 2026 Stills Backup.pptx"
-OUT_DIR = Path("/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/isokinetic presentation/out")
+OUT_DIR = Path("/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/isokinetic presentation/out")
 
 ELIGIBILITY_VIDEO = OUT_DIR / "GBIEligibilitySlide-updated-tv.mp4"
 SURV_VIDEO = OUT_DIR / "ProblemFramingSurveillanceSlide-tv.mp4"

@@ -1,0 +1,72 @@
+{
+  "scope": "Five newly uploaded and verified user-download follow-up records only",
+  "generatedAt": "2026-07-30T15:35:34.433Z",
+  "sourcePath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/upload-result-2026-07-30T15-27-46-466Z.json",
+  "results": [
+    {
+      "studyId": "S3098",
+      "recordId": "6271dfdd-9fdf-4ddc-a2e6-e6353a85e83d",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www.turkiyeklinikleri.com/pdf/?pdf=b7835a7b4c4f6d57ad95deede4a998a0",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3098.pdf",
+      "documentType": "full_paper",
+      "objectPath": "10bfffd2-63a3-4643-aca1-dc22cbfd5929/1785425253371-S3098-S3098.pdf",
+      "sha256": "9bb23cef9ad04afb6324e2c58364c3eb1b3c507f0d100fe5c419d68a5f823c9d",
+      "size": 345765,
+      "pages": 9,
+      "identityHash": "28bd98772ab665ba3745fcf7cca423ed6b5748c54327ea964f50bfbf3de4f9b9"
+    },
+    {
+      "studyId": "S3493",
+      "recordId": "88288e79-5075-4281-8061-4291013bd16e",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://go-gale-com.ucd.idm.oclc.org/ps/i.do?p=AONE&u=dublin&id=GALE%7CA793260136&v=2.1&it=r&sid=summon",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3493.pdf",
+      "documentType": "full_paper",
+      "objectPath": "f835157f-5cff-4321-b556-8a2f6c9758c2/1785425254892-S3493-S3493.pdf",
+      "sha256": "6d4b90db244bb08b48429bd112d1d8f7f891ec7893afc373153c12e7faa00ec2",
+      "size": 195288,
+      "pages": 6,
+      "identityHash": "dff44239a826ff6df69920497cf89438e253973dccc4ce6693c99a43b94fe830"
+    },
+    {
+      "studyId": "S3592",
+      "recordId": "f569367d-f4cb-4fdd-a276-3f02b1ee6aab",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www-ovid-com.ucd.idm.oclc.org/jnls/acsm-msse/pdf/10.1249/01.mss.0001160372.12141.14~risk-factors-for-mental-health-and-quality-of-life-in-elite",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3592.pdf",
+      "documentType": "conference_abstract",
+      "objectPath": "7574f185-83e0-4499-9f7c-e3546d20f1e8/1785425255875-S3592-S3592.pdf",
+      "sha256": "0785b09e6a8a0d2a8d23d6f5f7f27594f3cdb8a62661b111081471de77d67b55",
+      "size": 749620,
+      "pages": 1,
+      "identityHash": "3bafb9f63a85f6ceaf070588b551fbee19d30c62cd3cbf69e2553e5c443dcbd4"
+    },
+    {
+      "studyId": "S3713",
+      "recordId": "a1d3abb9-e358-429f-81d7-27750611659b",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www-ovid-com.ucd.idm.oclc.org/jnls/acsm-msse/pdf/10.1249/01.mss.0001158736.15512.b7~incidence-and-burden-of-injury-at-the-accra-2023-first",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3713.pdf",
+      "documentType": "conference_abstract",
+      "objectPath": "efce9317-5a7f-466a-aef2-6c32fcb743a5/1785425257962-S3713-S3713.pdf",
+      "sha256": "fe1c391cbbd6d6faddccb9049034b4b4ac574807748dee24055372ba6b401dcc",
+      "size": 875854,
+      "pages": 2,
+      "identityHash": "97a9ae56b8d9245856b5494235169c9c6cd7259e318f64fc5534113db462cd8b"
+    },
+    {
+      "studyId": "S3776",
+      "recordId": "2e1aa4ab-b932-4605-95cf-1a3a381f20da",
+      "status": "uploaded_verified",
+      "sourceUrl": "https://www-ovid-com.ucd.idm.oclc.org/jnls/acsm-msse/pdf/10.1249/01.mss.0001158728.83087.5c~injury-incidence-in-ncaa-sports-during-the-covid-19-pandemic",
+      "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-user-download-followup-2026-07-30/files/S3776.pdf",
+      "documentType": "conference_abstract",
+      "objectPath": "e457b0a0-4ebd-4ca6-b667-a3f475cb7c4f/1785425259675-S3776-S3776.pdf",
+      "sha256": "6f7d83ac9c7883d88933236f0d93d40e6f54a0d68f54f6ea5157094cc664a0d9",
+      "size": 849116,
+      "pages": 1,
+      "identityHash": "13e9723c611d064284455c92cd61d4826a8c2d07325753bcb5a43d5f9335cc51"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "scope": "Local-only Stage A source-to-payload proposals for the 2026-07-30 promoted second-search cohort, S3931 and S4859",
+  "preparedAt": "2026-07-30",
+  "mode": "local_only_no_supabase_or_backlog_writes",
+  "model": "Codex GPT-5.6, manual source extraction; no Gemini",
+  "applyCompatibility": {
+    "script": "fifa-gbi-data-extraction/scripts/apply-second-search-extraction-json.mjs",
+    "shape": "Top-level papers[].studyId, populationLabels, fields, note. Additional proposal and evidence keys are ignored by the current writer.",
+    "semantics": "Additive-only proposal. studyId is included as the app-assigned value, but the writer restores it from papers.assigned_study_id at apply time. No overwrite flag is proposed."
+  },
+  "stageA": {
+    "result": "pass_with_reviewer_attention",
+    "sourceFiles": [
+      {
+        "studyId": "S3931",
+        "path": "data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S3931-mdpi.pdf",
+        "sha256": "33ae166edb411e72e8e30b9031dc375b94b49769c95edc12860f386b83d6f47f",
+        "verified": "Matches the live screening-record SHA-256 checked before this proposal."
+      },
+      {
+        "studyId": "S4859",
+        "path": "data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4859.pdf",
+        "sha256": "fa8d7878664ad14cd5f036b64fad853c57668aa81a583ece64bb4aec3e327415",
+        "verified": "Matches the live screening-record SHA-256 checked before this proposal."
+      }
+    ],
+    "populationRule": "S3931 uses the two direct randomised arms, D + LCS then NHE. S4859 has one pooled male-youth cohort. Shared fields occupy the first population line only; arm-specific values retain exact line order.",
+    "structuredDualWrite": "The current writer derives population_values from the staged injury and participant/exposure fields. Every proposed structured prevalence, incidence, or severity field is also present in its matching extraction_fields payload.",
+    "blockers": [],
+    "needsReviewerAttention": [
+      "S4859 reports 24.9 injuries per 1,000 match-hours in its abstract, results and discussion, but 6.52 per 1,000 h in its limitations. The proposal stages the repeatedly reported 24.9 as a source value, not as a correction. No exposure has been back-calculated and the conflict must remain visible to human review.",
+      "S3931 is a short, selected hamstring-injury trial. Its analysis is arm-level, but the source text also contains an inconsistent narrative reversal of arm exposures. The proposal follows the direct Table 4 arm columns, not the conflicting prose sentence."
+    ]
+  },
+  "papers": [
+    {
+      "studyId": "S3931",
+      "populationLabels": [
+        "D + LCS group",
+        "NHE group"
+      ],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S3931",
+          "leadAuthor": "Ferrini M",
+          "title": "Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players",
+          "yearOfPublication": "2026",
+          "journal": "Medicina",
+          "doi": "10.3390/medicina62010140",
+          "studyDesign": "randomised controlled trial [prospective injury data]"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "levelOfPlay": "elite academy within a professional club development programme",
+          "sex": "male\nmale",
+          "ageCategory": "Youth\nYouth",
+          "meanAge": "13.7 ± 0.8\n",
+          "sampleSizePlayers": "12\n11",
+          "numberOfTeams": "1\n",
+          "observationDuration": "12-week monitoring period\n"
+        },
+        "definitions": {
+          "injuryDefinition": "time loss [posterior-thigh injury during training or competition causing absence from subsequent football activities]",
+          "incidenceDefinition": "per 1,000 player-hours [training and matches]",
+          "mechanismReporting": "team medical staff"
+        },
+        "exposure": {
+          "exposureMeasurementUnit": "hours",
+          "totalExposure": "922.8\n831.6",
+          "matchExposure": "198\n179.3",
+          "trainingExposure": "724.8\n652.3"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "0\n1",
+          "injuryPlayersCompletedStudy": "12\n11",
+          "injuryTeamsCompletedStudy": "1\n",
+          "injuryTrainingCount": "0\n1",
+          "injuryIncidenceOverall": "0.0\n1.20",
+          "injuryTimeLossTotal": "0\n18"
+        },
+        "illnessOutcome": {},
+        "injuryTissueType": {
+          "injuryTissueType_muscle_injury_prevalence": "0\n1",
+          "injuryTissueType_muscle_injury_incidence": "0.0\n1.20",
+          "injuryTissueType_muscle_injury_severityTotalDays": "0\n18"
+        },
+        "injuryLocation": {
+          "injuryLocation_thigh_prevalence": "0\n1",
+          "injuryLocation_thigh_incidence": "0.0\n1.20",
+          "injuryLocation_side_right_prevalence": "0\n1"
+        },
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Local-only Stage A proposal, S3931. Source sweep: full PDF, Methods §§2.1-2.8, Tables 1-4, Results, Discussion and limitations. Population order is D + LCS / NHE, following direct Table 4 columns. Table 4, not the internally reversed narrative sentence, supplies 922.8/831.6 total hours, 724.8/652.3 training hours, 198/179.3 match hours, 0/1 injuries and 0.0/1.20 per-1,000-h rates. The single NHE training injury was a right semimembranosus 2B strain at the myotendinous junction with 18 days' time loss. No illness, recurrence, contact/onset, CI, burden or broader injury-mix values were reported.",
+      "evidence": {
+        "studyDetails": [
+          {
+            "fields": ["leadAuthor", "title", "yearOfPublication", "journal", "doi"],
+            "sourceQuote": "Comparison of Two Posterior Chain Strength Training Protocols on Performance and Injury Incidence in Elite Youth Football Players ... Medicina 2026, 62, 140 ... https://doi.org/10.3390/medicina62010140",
+            "pageHint": "PDF p. 1 (journal p. 1)"
+          },
+          {
+            "fields": ["studyDesign"],
+            "sourceQuote": "Players were randomly assigned to two groups using stratified randomization based on baseline eccentric hamstring strength.",
+            "pageHint": "PDF p. 3 (Methods §2.1)"
+          }
+        ],
+        "participantCharacteristics": [
+          {
+            "fields": ["levelOfPlay", "sex", "meanAge", "sampleSizePlayers"],
+            "sourceQuote": "Twenty-three healthy elite male youth soccer players (mean age 13.7 ± 0.8 years) competing at the elite academy level within a professional club development program participated in this study ... NHEG; n = 11 ... D + LCSG; n = 12.",
+            "pageHint": "PDF pp. 3-4 (Methods §2.1)"
+          },
+          {
+            "fields": ["numberOfTeams", "observationDuration"],
+            "sourceQuote": "The observation period lasted 12 weeks, including two additional weeks after the tests to monitor the occurrence of any further injuries.",
+            "pageHint": "PDF p. 6 (Methods §2.7)"
+          }
+        ],
+        "definitionsAndExposure": [
+          {
+            "fields": ["injuryDefinition", "incidenceDefinition", "mechanismReporting", "exposureMeasurementUnit"],
+            "sourceQuote": "During the entire intervention period, injury data were recorded by the team's medical staff ... A recordable hamstring injury was defined as any posterior thigh injury incurred during training or competition that resulted in absence from subsequent football activities. Injury incidence was reported as absolute counts and as rates per 1000 player-hours for matches and training. Similarly, training and match exposure ... were quantified using GPS tracking data.",
+            "pageHint": "PDF p. 6 (Methods §2.7)"
+          },
+          {
+            "fields": ["totalExposure", "trainingExposure", "matchExposure"],
+            "sourceQuote": "Table 4. Comparison of injury data collection between groups. D + LCS Group (n = 12): Total Exposure 922.8 ± 13.2; Trainings exposure 724.8 ± 10.8; Matches exposure 198 ± 3.6. NHE Group (n = 11): Total Exposure 831.6 ± 17.6; Trainings exposure 652.3 ± 15.4; Matches exposure 179.3 ± 4.4.",
+            "pageHint": "PDF p. 7 (Table 4)"
+          }
+        ],
+        "injuryOutcomeAndStructured": [
+          {
+            "fields": ["injuryTotalCount", "injuryTrainingCount", "injuryIncidenceOverall", "injuryTissueType_muscle_injury_prevalence", "injuryTissueType_muscle_injury_incidence", "injuryLocation_thigh_prevalence", "injuryLocation_thigh_incidence"],
+            "sourceQuote": "Table 4 ... Hamstring injuries: 0 [D + LCS], 1 [NHE]. Total Hamstring injury rate/1000 h: 0.0 [D + LCS], 1.20 [NHE].",
+            "pageHint": "PDF p. 7 (Table 4)"
+          },
+          {
+            "fields": ["injuryTimeLossTotal", "injuryTissueType_muscle_injury_severityTotalDays", "injuryLocation_side_right_prevalence"],
+            "sourceQuote": "This injury occurred during a training session and involved a player from the NHE group ... it was classified as a 2B strain of the right semimembranosus muscle at the myotendinous junction ... resulting in 18 days of time loss.",
+            "pageHint": "PDF p. 7 (Results, immediately before Table 4)"
+          }
+        ]
+      },
+      "intentionallyBlank": {
+        "studyAndParticipants": [
+          "country: the source does not identify the club's country; do not infer it from affiliations.",
+          "seasonLength and numberOfSeasons: the source gives an in-season 12-week observation period, not a complete season length or number of competition seasons."
+        ],
+        "definitionsAndExposure": [
+          "illnessDefinition, burdenDefinition, severityDefinition and recurrenceDefinition: no illness, burden, formal severity-class, or recurrence definition is reported.",
+          "No match-only or training-only injury rate is staged: Table 4 reports a total-hamstring rate, not activity-specific rates."
+        ],
+        "outcomesAndStructured": [
+          "Medical-attention counts, match injury counts, match/training time-loss counts, CIs, burden, recurrence and contact/onset are not reported separately.",
+          "Most-common diagnosis/type/location fields are intentionally blank because this is a specific hamstring-injury analysis, not a broader injury mix.",
+          "No parent tissue/location totals are staged because only the directly mappable muscle injury and thigh/right-side values are known for the one injury.",
+          "illnessOutcome, illnessRegion and illnessEtiology are empty because the study did not report illness surveillance."
+        ]
+      },
+      "caveats": [
+        "The p. 7 Results prose reverses the arm labels for total exposure: it says NHE 831.6 h and D + LCS 922.8 h, which agrees with Table 4, but the later Discussion reverses those labels. This proposal follows Table 4's explicit arm columns.",
+        "The study reports retrospective analysis of routine anonymous data, but prospective injury collection during the intervention. The staged design retains both facts in the label."
+      ]
+    },
+    {
+      "studyId": "S4859",
+      "populationLabels": ["Total"],
+      "fields": {
+        "studyDetails": {
+          "studyId": "S4859",
+          "leadAuthor": "Naderi A",
+          "title": "Athletic ability discrepancy, risk-taking, and recovery quality as predictors of match-related injuries in adolescent soccer players",
+          "yearOfPublication": "2026",
+          "journal": "Scientific Reports",
+          "doi": "10.1038/s41598-026-49793-5",
+          "studyDesign": "prospective cohort"
+        },
+        "participantCharacteristics": {
+          "fifaDiscipline": "Association football (11-a-side)",
+          "country": "Iran (Markazi province)",
+          "levelOfPlay": "non-elite regional league",
+          "sex": "male",
+          "ageCategory": "Youth (14-17 years)",
+          "meanAge": "15.25 ± 0.87",
+          "sampleSizePlayers": "40",
+          "numberOfTeams": "4 local clubs",
+          "observationDuration": "2023-2024 season; 20 official matches; approximately 6 months"
+        },
+        "definitions": {
+          "injuryDefinition": "physical complaint [any musculoskeletal complaint sustained during a match, irrespective of medical attention or time loss]",
+          "incidenceDefinition": "per 1,000 match-hours",
+          "severityDefinition": "minimal 0-3 days; mild 4-7; moderate 8-28; severe >28 days",
+          "mechanismReporting": "club physiotherapists"
+        },
+        "exposure": {
+          "numberOfSeasons": "1",
+          "exposureMeasurementUnit": "hours"
+        },
+        "injuryOutcome": {
+          "injuryTotalCount": "26",
+          "injuryPlayersCompletedStudy": "40",
+          "injuryTeamsCompletedStudy": "4",
+          "injuryMatchCount": "26",
+          "injuryIncidenceOverall": "24.9",
+          "injuryIncidenceMatch": "24.9",
+          "injuryMostCommonType": "contusion",
+          "injuryMostCommonLocation": "thigh",
+          "injuryMostCommonSeverity": "minimal (0-3 days)",
+          "injuryContact": "18",
+          "injuryNonContact": "8"
+        },
+        "illnessOutcome": {},
+        "injuryTissueType": {
+          "injuryTissueType_joint_sprain_prevalence": "8",
+          "injuryTissueType_bone_fracture_prevalence": "1",
+          "injuryTissueType_concussion_prevalence": "1"
+        },
+        "injuryLocation": {
+          "injuryLocation_head_prevalence": "1",
+          "injuryLocation_forearm_prevalence": "1",
+          "injuryLocation_wrist_prevalence": "1",
+          "injuryLocation_thigh_prevalence": "8",
+          "injuryLocation_knee_prevalence": "4",
+          "injuryLocation_lower_leg_prevalence": "5",
+          "injuryLocation_ankle_prevalence": "4",
+          "injuryLocation_foot_prevalence": "2"
+        },
+        "illnessRegion": {},
+        "illnessEtiology": {}
+      },
+      "note": "Local-only Stage A proposal, S4859. Source sweep: full PDF, Abstract, Methods, Table 1, Table 2, Figure 1, Results, Discussion, Strengths and limitations. The study is match-only prospective surveillance in 40 male regional-league youth players. Locations and contact/non-contact counts are percentage-derived from the directly printed stable numerator of 26 injuries: thigh 8, lower leg/Achilles 5, knee 4, ankle 4, foot/toe 2, forearm 1, wrist 1, head/face 1; contact 18 and non-contact 8. The source states 24.9 injuries/1,000 match-hours in Abstract, Results and Discussion, but 6.52/1,000 h in Strength and limitations. The payload preserves 24.9 as the repeatedly reported source rate, does not calculate exposure, and requires human adjudication of the contradiction.",
+      "evidence": {
+        "studyDetails": [
+          {
+            "fields": ["leadAuthor", "title", "yearOfPublication", "journal", "doi"],
+            "sourceQuote": "Athletic ability discrepancy, risk-taking, and recovery quality as predictors of match-related injuries in adolescent soccer players ... Aynollah Naderi ... Scientific Reports (2026) 16:19149 ... https://doi.org/10.1038/s41598-026-49793-5",
+            "pageHint": "PDF p. 1"
+          },
+          {
+            "fields": ["studyDesign", "country"],
+            "sourceQuote": "This prospective cohort study investigated psychological and physical risk factors for sports injuries among adolescent soccer players from local clubs in the cities of markazi province, Iran.",
+            "pageHint": "PDF p. 2 (Methods, Study design and setting)"
+          }
+        ],
+        "participantCharacteristics": [
+          {
+            "fields": ["sampleSizePlayers", "numberOfTeams", "sex", "observationDuration"],
+            "sourceQuote": "Forty adolescent soccer players were recruited from four local clubs in markazi province, Iran during the 2023-2024 seasons.",
+            "pageHint": "PDF p. 2 (Methods, Participants)"
+          },
+          {
+            "fields": ["ageCategory", "meanAge"],
+            "sourceQuote": "participants ranged in age from 14 to 17 years (M = 15.25, SD = 0.87)",
+            "pageHint": "PDF p. 4 (Results and Table 1)"
+          },
+          {
+            "fields": ["levelOfPlay"],
+            "sourceQuote": "Additional constraints include restriction to male non-elite players, single-season observation",
+            "pageHint": "PDF p. 6 (Strength and limitations)"
+          }
+        ],
+        "definitionsAndExposure": [
+          {
+            "fields": ["injuryDefinition", "severityDefinition", "mechanismReporting"],
+            "sourceQuote": "Injuries were defined as any musculoskeletal complaint sustained during a match, irrespective of medical attention or time lost ... Severity was classified into four categories: minimal (0-3 days), mild (4-7 days), moderate (8-28 days), and severe (more than 28 days) ... After each match, injury data were submitted electronically by the club physiotherapists.",
+            "pageHint": "PDF pp. 2-3 (Methods, Follow-up survey)"
+          },
+          {
+            "fields": ["incidenceDefinition", "exposureMeasurementUnit"],
+            "sourceQuote": "Exposure time (in hours) over 20 official matches was calculated to determine injury incidence rates per 1000 match hours using the formula: Injury Rate = (Number of Injuries/Number of Exposure Hours) × 1000.",
+            "pageHint": "PDF p. 3 (Methods, Statistical analysis)"
+          }
+        ],
+        "injuryOutcome": [
+          {
+            "fields": ["injuryTotalCount", "injuryMatchCount", "injuryIncidenceOverall", "injuryIncidenceMatch"],
+            "sourceQuote": "During 20 soccer matches, 19 out of 40 players (47.5%) experienced a total of 26 injuries, with an overall incidence of 24.9 injuries per 1,000 h of match exposure.",
+            "pageHint": "PDF p. 4 (Results)"
+          },
+          {
+            "fields": ["injuryMostCommonType", "injuryMostCommonLocation", "injuryMostCommonSeverity", "injuryContact", "injuryNonContact"],
+            "sourceQuote": "The injuries were predominantly contusions (46.15%), followed by sprains (30.77%), strains (15.38%), fractures (3.85%), and concussions (3.85%) ... 61.5% were minimal ... Of the injuries, 69.2% were contact injuries, 30.8% were non-contact.",
+            "pageHint": "PDF p. 4 (Results)"
+          }
+        ],
+        "structuredRows": [
+          {
+            "fields": ["injuryTissueType_joint_sprain_prevalence", "injuryTissueType_bone_fracture_prevalence", "injuryTissueType_concussion_prevalence"],
+            "sourceQuote": "sprains (30.77%), strains (15.38%), fractures (3.85%), and concussions (3.85%)" ,
+            "pageHint": "PDF p. 4 (Results)",
+            "derivation": "Percentage-to-count exception: 30.77%, 3.85% and 3.85% of the explicitly reported 26 injuries yield 8, 1 and 1 respectively."
+          },
+          {
+            "fields": ["injuryLocation_head_prevalence", "injuryLocation_forearm_prevalence", "injuryLocation_wrist_prevalence", "injuryLocation_thigh_prevalence", "injuryLocation_knee_prevalence", "injuryLocation_lower_leg_prevalence", "injuryLocation_ankle_prevalence", "injuryLocation_foot_prevalence"],
+            "sourceQuote": "thigh (30.77%), lower leg/Achilles tendon (19.23%), knee (15.38%), ankle (15.38%), foot/toe (7.69%), wrist (3.85%), forearm (3.85%), and head/face (3.85%).",
+            "pageHint": "PDF p. 4 (Results)",
+            "derivation": "Percentage-to-count exception using n=26: 8, 5, 4, 4, 2, 1, 1 and 1. Head/face maps to head; lower leg/Achilles tendon maps to lower leg."
+          }
+        ]
+      },
+      "intentionallyBlank": {
+        "exposure": [
+          "seasonLength: no duration in weeks is reported.",
+          "totalExposure and matchExposure: the paper says exposure hours were calculated but prints no numeric total. No exposure is back-calculated from either disputed rate or the injury count.",
+          "trainingExposure: surveillance is match-only."
+        ],
+        "outcomes": [
+          "Medical-attention and time-loss injury totals, time-loss days, burden, recurrence and rate CIs are not reported as exact compatible totals.",
+          "Acute and overuse percentages are reported, but the source does not explicitly use the schema's acute-sudden or repetitive-gradual wording. Those onset fields remain blank rather than forcing an equivalence.",
+          "The source calls generic contusions and strains but does not establish the schema's superficial-contusion or muscle-injury tissue definitions. These tissue rows remain blank; contusion is retained only as most-common type."
+        ],
+        "families": [
+          "No location/tissue-specific incidence, burden, severity days or CIs are reported, so only defensible count rows are staged.",
+          "illnessOutcome, illnessRegion and illnessEtiology are empty because illness surveillance is not reported."
+        ]
+      },
+      "caveats": [
+        "Rate conflict: 24.9/1,000 match-hours appears in Abstract (PDF p. 1), Results (PDF p. 4) and Discussion (PDF p. 5); 6.52/1,000 h appears in Strength and limitations (PDF p. 6). Both are direct source statements. No correction is inferred.",
+        "The 668 GEE observations and its 642 non-injury plus 26 injury events are analytic observations, not an exposure denominator. They are not staged as exposure.",
+        "All percentage-derived counts use the source's exact total of 26 and are labelled in the note for reviewer visibility."
+      ]
+    }
+  ]
+}

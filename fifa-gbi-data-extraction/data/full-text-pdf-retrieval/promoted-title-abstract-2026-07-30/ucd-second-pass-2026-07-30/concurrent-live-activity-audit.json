@@ -1,0 +1,262 @@
+{
+  "scope": "Concurrent live activity observed between the original workflow snapshot and the UCD second-pass AI snapshot",
+  "generatedAt": "2026-07-30T14:55:58.001Z",
+  "sourcePaths": {
+    "originalSnapshot": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/pre-write-snapshot-2026-07-30T13-01-10-685Z.json",
+    "freshSnapshot": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/pre-write-snapshot-2026-07-30T14-51-10-895Z.json",
+    "originalBaselineVerification": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/final-verification-2026-07-30T14-52-06-229Z.json",
+    "deltaVerification": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/final-verification-2026-07-30T14-52-34-331Z.json"
+  },
+  "conclusions": {
+    "originalBaselineVerificationPassed": false,
+    "originalBaselineGlobalChecks": {
+      "exactTargetCount": true,
+      "outOfScopeScreeningRecordStampsUnchanged": false,
+      "screeningVotesGloballyUnchanged": false,
+      "papersUnchanged": true
+    },
+    "deltaVerificationPassed": true,
+    "deltaGlobalChecks": {
+      "exactTargetCount": true,
+      "outOfScopeScreeningRecordStampsUnchanged": true,
+      "screeningVotesGloballyUnchanged": true,
+      "papersUnchanged": true
+    },
+    "addedGlobalVoteCount": 14,
+    "addedTargetVoteCount": 14,
+    "changedOutOfScopeScreeningRecordCount": 4,
+    "workflowMutationBoundary": "The upload and AI apply paths update only exact mapped screening_records IDs and do not insert or update screening_votes. The passing fresh-snapshot verification proves no vote or out-of-scope stamp changes occurred during the five-record AI delta."
+  },
+  "changedOutOfScopeScreeningRecords": [
+    {
+      "id": "2a1de3a5-6f77-4637-8e14-acba03b3ebb6",
+      "before": {
+        "id": "2a1de3a5-6f77-4637-8e14-acba03b3ebb6",
+        "assigned_study_id": "S5553",
+        "stage": "title_abstract",
+        "updated_at": "2026-05-30T20:00:50.805+00:00"
+      },
+      "after": {
+        "id": "2a1de3a5-6f77-4637-8e14-acba03b3ebb6",
+        "assigned_study_id": "S5553",
+        "stage": "title_abstract",
+        "updated_at": "2026-07-30T14:25:11.962+00:00"
+      }
+    },
+    {
+      "id": "7d0c324b-7192-4ec9-8fe5-22af43889a4d",
+      "before": {
+        "id": "7d0c324b-7192-4ec9-8fe5-22af43889a4d",
+        "assigned_study_id": "S4931",
+        "stage": "title_abstract",
+        "updated_at": "2026-05-29T17:33:01.261219+00:00"
+      },
+      "after": {
+        "id": "7d0c324b-7192-4ec9-8fe5-22af43889a4d",
+        "assigned_study_id": "S4931",
+        "stage": "title_abstract",
+        "updated_at": "2026-07-30T14:42:52.073+00:00"
+      }
+    },
+    {
+      "id": "d6af5458-8028-4890-a853-6b8d49589483",
+      "before": {
+        "id": "d6af5458-8028-4890-a853-6b8d49589483",
+        "assigned_study_id": "S4923",
+        "stage": "title_abstract",
+        "updated_at": "2026-05-29T17:33:01.261219+00:00"
+      },
+      "after": {
+        "id": "d6af5458-8028-4890-a853-6b8d49589483",
+        "assigned_study_id": "S4923",
+        "stage": "title_abstract",
+        "updated_at": "2026-07-30T14:42:51.895+00:00"
+      }
+    },
+    {
+      "id": "eed711fe-c013-47ac-a38c-35e466aab0e1",
+      "before": {
+        "id": "eed711fe-c013-47ac-a38c-35e466aab0e1",
+        "assigned_study_id": "S4795",
+        "stage": "title_abstract",
+        "updated_at": "2026-05-29T17:33:01.261219+00:00"
+      },
+      "after": {
+        "id": "eed711fe-c013-47ac-a38c-35e466aab0e1",
+        "assigned_study_id": "S4795",
+        "stage": "title_abstract",
+        "updated_at": "2026-07-30T14:42:51.807+00:00"
+      }
+    }
+  ],
+  "addedTargetVotes": [
+    {
+      "id": "38983310-0d3c-499d-98c8-776acf92614a",
+      "screening_record_id": "06602261-8794-42a8-9344-2cf6f443bb59",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "include",
+      "reason": null,
+      "decided_at": "2026-07-30T14:44:09.871051+00:00",
+      "updated_at": "2026-07-30T14:44:09.871051+00:00"
+    },
+    {
+      "id": "170adfd6-ff60-4f42-b400-d9e9629133e9",
+      "screening_record_id": "2f3cad0c-47a0-431e-bf26-c888a800d677",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "Abstract",
+      "decided_at": "2026-07-30T14:44:24.093986+00:00",
+      "updated_at": "2026-07-30T14:44:24.093986+00:00"
+    },
+    {
+      "id": "b1e1dc0a-042d-4a4a-8380-c01adadd4cf5",
+      "screening_record_id": "322717ea-99c3-40c2-868d-6f5ba58592da",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "include",
+      "reason": null,
+      "decided_at": "2026-07-30T14:41:43.486535+00:00",
+      "updated_at": "2026-07-30T14:41:43.486535+00:00"
+    },
+    {
+      "id": "51d3e7ff-a234-4fd6-9043-419e72f14502",
+      "screening_record_id": "3ecdc6c8-dbc1-4001-b653-0ce47bfcdaa2",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "Wrong study design",
+      "decided_at": "2026-07-30T14:50:06.668354+00:00",
+      "updated_at": "2026-07-30T14:50:06.668354+00:00"
+    },
+    {
+      "id": "6bb8a0ac-576a-4b03-b59d-b8ef1a38edff",
+      "screening_record_id": "5d729e3d-b97f-44c7-996e-bad4f4d0b8ba",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "Non-competitive or recreational-only context",
+      "decided_at": "2026-07-30T14:42:40.618877+00:00",
+      "updated_at": "2026-07-30T14:42:40.618877+00:00"
+    },
+    {
+      "id": "6f48aa31-dd9f-4484-bda8-5c915079bc9e",
+      "screening_record_id": "6134679b-1b27-4949-bbe4-521e1721a4b0",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "include",
+      "reason": null,
+      "decided_at": "2026-07-30T14:44:50.821536+00:00",
+      "updated_at": "2026-07-30T14:44:50.821536+00:00"
+    },
+    {
+      "id": "59c6abd1-eaa1-4391-a0b8-e7a9998f1f50",
+      "screening_record_id": "69fcb6b9-313e-4197-9e81-d6039158f29a",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "Wrong study design",
+      "decided_at": "2026-07-30T14:48:38.567522+00:00",
+      "updated_at": "2026-07-30T14:48:38.567522+00:00"
+    },
+    {
+      "id": "f928768d-a191-4327-9a8a-d231d8f84a5d",
+      "screening_record_id": "a37a4044-663d-4061-acb6-91583fbbcbea",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "include",
+      "reason": null,
+      "decided_at": "2026-07-30T14:50:24.134948+00:00",
+      "updated_at": "2026-07-30T14:50:24.134948+00:00"
+    },
+    {
+      "id": "d54b93d9-9db3-482e-8bb4-cb7871f9621b",
+      "screening_record_id": "ac08d44e-ae23-49cf-8caa-b40c0c46dd6a",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "include",
+      "reason": null,
+      "decided_at": "2026-07-30T14:39:54.688823+00:00",
+      "updated_at": "2026-07-30T14:39:54.688823+00:00"
+    },
+    {
+      "id": "597a94b0-399b-4458-9915-65fd01f9dbad",
+      "screening_record_id": "c0899a85-4feb-41de-8fb8-74eb13fe0659",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "No exposure reported (no usable denominator)",
+      "decided_at": "2026-07-30T14:43:42.735584+00:00",
+      "updated_at": "2026-07-30T14:43:42.735584+00:00"
+    },
+    {
+      "id": "93d943a1-99e0-4bd4-a24a-15951fc755e7",
+      "screening_record_id": "cd1d0285-b33b-4c15-b8b4-31936a1225b2",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "Abstract",
+      "decided_at": "2026-07-30T14:45:09.411255+00:00",
+      "updated_at": "2026-07-30T14:45:09.411255+00:00"
+    },
+    {
+      "id": "015d0a28-c6a9-4342-a546-5cacf10d7aca",
+      "screening_record_id": "f7e9c521-f4db-4932-8ca6-70006c65c700",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "No football-specific subgroup data",
+      "decided_at": "2026-07-30T14:45:47.455297+00:00",
+      "updated_at": "2026-07-30T14:45:47.455297+00:00"
+    },
+    {
+      "id": "a69d6b5c-cc61-4436-90a0-532ebc107f57",
+      "screening_record_id": "f95440e8-a1b2-4576-9bb5-ca52bed63b59",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "exclude",
+      "reason": "Wrong study design",
+      "decided_at": "2026-07-30T14:46:35.003579+00:00",
+      "updated_at": "2026-07-30T14:46:35.003579+00:00"
+    },
+    {
+      "id": "5a9dfed4-9a44-44c0-952c-fc480fbe891a",
+      "screening_record_id": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+      "vote_order": 1,
+      "vote_role": "reviewer_vote",
+      "reviewer_profile_id": "00000000-0000-0000-0000-000000000001",
+      "reviewer_name": "AbdelRahman Babiker",
+      "decision": "include",
+      "reason": null,
+      "decided_at": "2026-07-30T14:44:39.293117+00:00",
+      "updated_at": "2026-07-30T14:44:39.293117+00:00"
+    }
+  ]
+}

@@ -133,6 +133,6 @@ All other unresolved non-foreign papers now look better classified as paywalled,
 
 ## Related Documents
 
-- [Covidence cleanup snapshot](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-cleanup.md)
-- [March retrieval summary](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-pdf-retrieval-summary.md)
-- [Manual follow-up residue](/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/docs/covidence-pdf-followup-todo.md)
+- [Covidence cleanup snapshot](/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-cleanup.md)
+- [March retrieval summary](/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-pdf-retrieval-summary.md)
+- [Manual follow-up residue](/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/docs/covidence-pdf-followup-todo.md)

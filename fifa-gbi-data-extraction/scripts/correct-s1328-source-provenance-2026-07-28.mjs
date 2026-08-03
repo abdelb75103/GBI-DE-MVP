@@ -4,14 +4,14 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 
 const require = createRequire(
-  '/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/package.json',
+  '/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/package.json',
 );
 const { createClient } = require('@supabase/supabase-js');
 
 const APP_ROOT = path.resolve(import.meta.dirname, '..');
 const ENV_PATH = fs.existsSync(path.join(APP_ROOT, '.env.local'))
   ? path.join(APP_ROOT, '.env.local')
-  : '/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/.env.local';
+  : '/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/.env.local';
 const OUT_DIR = path.join(
   APP_ROOT,
   'data',

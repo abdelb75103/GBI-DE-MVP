@@ -5,7 +5,7 @@ import process from 'node:process';
 import { createRequire } from 'node:module';
 
 const APP_DIR = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const CANONICAL_APP_DIR = '/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction';
+const CANONICAL_APP_DIR = '/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction';
 const require = createRequire(path.join(CANONICAL_APP_DIR, 'package.json'));
 const { createClient } = require('@supabase/supabase-js');
 

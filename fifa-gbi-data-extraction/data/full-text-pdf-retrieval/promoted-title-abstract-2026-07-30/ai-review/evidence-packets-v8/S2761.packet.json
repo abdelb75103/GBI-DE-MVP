@@ -1,0 +1,631 @@
+{
+  "recordId": "fc18d42e-8672-4495-8ff1-0f2e6f7eea5b",
+  "covidenceId": null,
+  "studyId": "S2761",
+  "title": "Exploring injury profiles in professional football: evidence from a five-year study and the role of the functional movement screen.",
+  "authors": "Bayrak Ahmet",
+  "year": "2025",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-b/files/S2761.pdf",
+  "pdfSha256": "6435ff92affb8b580dfee3505485c75eb274512567f5b5450fde4ed0c1df597f",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 15,
+  "textCharCount": 75140,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...f FMS across multiple seasons in professional football.Addi - tionally, studies are needed to shed light on topics such as changes in FMS scores along with the evolving sports season and the impact of age. This study aimed to reveal the injury profiles of football players over a 5-year period by examining injury types, severities, and the number of training sessions missed, and to lay the groundwork for future injury prevention studies. Furthermore, injury risk predictions will be generated using pre-season FMS tests, and..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 • To evaluate the long-term predictive value of the Functional Movement Screen (FMS) and determine whether FMS is a reliable tool for injury prediction in professional football players. • To address contextual factors influencing injury risk (match schedule, UEFA competition participation, training load variations) and contribute to injury management strategies. • To fill existing gaps in the literature and provide new findings for..."
+      },
+      {
+        "page": 3,
+        "section": "Participants",
+        "eligibleEvidenceSection": true,
+        "match": "football players",
+        "snippet": "...bute to injury management strategies. • To fill existing gaps in the literature and provide new findings for the development of long-term injury profiling and prediction methods. Method Participants Our study is based on data collected from professional football players from a football team in the Turkish Super League during the 2016–2017, 2017–2018, 2018–2019, 2019–2020, and 2020–2021 seasons. This was a prospec - tive cohort study in which the players’ injury status and functional movement analysis results were tracked..."
+      },
+      {
+        "page": 3,
+        "section": "Participants",
+        "eligibleEvidenceSection": true,
+        "match": "football players",
+        "snippet": "...d not complete an entire season were excluded: 2 players in the 2016–2017 season, 2 players in the 2017–2018 season, 10 players in the 2018–2019 season, 8 players in the 2019– 2020 season, and 6 players in the 2020–2021 season (In this study, the excluded football players participated in the FMS test at the beginning of the season but were transferred to other teams shortly thereafter. They were not included in the study due to their exposure to differ - ent training loads in their new teams and, more impor - tantly, the in..."
+      },
+      {
+        "page": 3,
+        "section": "Participants",
+        "eligibleEvidenceSection": true,
+        "match": "football players",
+        "snippet": "...the study due to their exposure to differ - ent training loads in their new teams and, more impor - tantly, the inability to track their injury status) (Fig. 1). In order to ensure standardization in study outcomes and the integrity of the collected data, football players who did not remain with the club for a full season and those who joined during the mid-season were not included in the study. Consent forms were obtained from all football players for the tests to be conducted at the beginning of the season and for the r..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...Medicine and Rehabilitation (2025) 17:217 that players’ age, weight, height, and body mass index fol- lowed a normal distribution, whereas their FMS scores and asymmetry values did not (p < 0.005) (Table 1). The demographic characteristics of the football players included in this study are presented in Table 2. The age, body mass, height and body mass index of players who sustained injuries were similar to those of players who did not (p > 0.05). Independent t-test was performed for normally distrib - uted demogr..."
+      },
+      {
+        "page": 9,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...of injury risk, and other unmeasured factors may also play a significant role. Additionally, players experienced variations in the number, type, and severity of injuries across seasons, highlighting the dynamic nature of injury patterns among professional football players. Injury types also vary by player position, with certain injuries appearing to be position-specific. Long-term monitoring of a football team provided unique insights into how variables such as match schedules, UEFA participation, national cup victo- ries,..."
+      },
+      {
+        "page": 9,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...e in minor musculoskeletal injuries among the players, as their bodies may not have had sufficient time to adapt to the new intensity and demands imposed by the revised training program. In the literature, general injury incidence for profes - sional male football players is reported as 8.1 injuries per 1,000 h of exposure. Studies examining various leagues worldwide report injury rates ranging from 12 to 35.5 injuries per 1,000 match hours and 1.5 to 7.6 injuries per 1,000 training hours [ 37]. Our findings align with th..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...the development of targeted prevention programs and resource allocation [ 42]. In this study, 88% of injuries were identified as lower extremity injuries, which aligns with previous studies reporting lower extremity injury rates between 81% and 92% among football players [ 30, 43]. This high rate of lower extremity injuries is consis - tent with findings in the literature. Over the five seasons, players sustained 224 injuries, with the thigh region being the most frequently injured area. The hamstring muscles were the most..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...ll players in the English Premier League assessed players using the FMS pre-season, tracking non-contact injuries throughout the season, and found no significant predic - tive capability for non-contact injuries [ 51]. Similarly, a study of 573 Australian football players determined that FMS scores were ineffective in predicting non-contact injuries [48]. A separate study involving 439 young Aus - tralian football players also concluded that FMS scores were not adequate for predicting noncontact injuries [52]. In a study o..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...n a single team limits the generalizability of the findings. Future studies should consider a multi-team approach to account for variations in training, play style, and medical support across different clubs. Our study focused solely on male professional football players, which limits the applicabil - ity of our findings to female athletes. Given the physi - ological and biomechanical differences between genders, further research is needed to explore injury profiles and the predictive value of FMS in women’s football. Concl..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...17–9. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s m . 2 4 . 2 . 1 1 7. 2. Fransson D, Vigh-Larsen JF, Fatouros IG, Krustrup P , Mohr M. Fatigue responses in various muscle groups in well-trained competitive male players after a simulated soccer game. J Hum Kinetics. 2018;61:85–97. h t t p s : / / d o i . o r g / 1 0 . 1 5 1 5 / h u k i n - 2 0 1 7 - 0 1 2 9. 3. Ekstrand J, Lundqvist D, Davison M, D’Hooghe M, Pensgaard AM. (2019). Communication quality between the medical team and the head..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "Page 14 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 31. Hägglund M, Waldén M, Bahr R, Ekstrand J. (2005). Methods for epidemiologi- cal study of injuries to professional football players: developing the UEFA model. British Journal of Sports Medicine.2005;39:340–346. 32. Fuller CW, Ekstrand J, Junge A, Andersen TE, Bahr R, Dvorak J. Futbol Yaralanmaları Çalışmalarında Yaralanma Tanımları ve veri Toplama prosedürl- eri Hakkında Fikir birliği..."
+      }
+    ],
+    "wrong_sport": [
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...njuries. Other studies have found more robust links between FMS scores and injury risk. For example, research involv- ing 527 male athletes indicated that the FMS is an effec - tive tool for assessing injury susceptibility [ 60]. Similarly, in a study of 68 rugby players over a season, FMS was found to predict non-contact muscle injuries [ 61]. These studies suggest that the FMS may have predictive util - ity in certain athlete populations and sports contexts, although its effectiveness appears to vary based on fac..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...99. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . h e l i y o n . 2 0 2 4 . e 2 8 2 9 9. 61. Tondelli E, Bittencourt N, Villalba F, Zabaloy S. Association between functional movement screening TM scores and non-contact injuries in amateur rugby players. Mov Sport Sciences-Science Motricité. 2024;1:9–15. h t t p s : / / d o i . o r g / 1 0 . 1 0 5 1 / s m / 2 0 2 3 0 2 2. 62. Krill MK, Borchers JR, Hoffman JT, Krill ML, Hewett TE. Analysis of football inju- ries by position group in divisi..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...ers. J Athl Train. 2022;57:696–703. h t t p s : / / d o i . o r g / 1 0 . 4 0 8 5 / 1 0 6 2 - 6 0 5 0 - 0 3 4 6 . 2 1. 64. Campa F, Piras A, Raffi M, Toselli S. Functional movement patterns and body composition of high-level volleyball, soccer, and rugby players. J Sport Reha- bilitation. 2019;28:740–5. h t t p s : / / d o i . o r g / 1 0 . 1 1 2 3 / j s r . 2 0 1 8 - 0 0 8 7. 65. Moore E, Chalmers S, Milanese S, Fuller JT. Factors influencing the relationship between the functional movement screen..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...l professional team player sidelined for one month is approximately €500,000. Therefore, quantifying injury cases in profes - sional football is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lo..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...ore, quantifying injury cases in profes - sional football is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost playtime are crucial [ 4, 8]. Determining the level of injury risk is of great im..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost playtime are crucial [ 4, 8]. Determining the level of injury risk is of great importance in football, a sport with such a high injury rat..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "number of matches",
+        "snippet": "...nt coincided with a period of fewer matches. Specifically, during the 2018–2019 sea - son, the highest number of injuries occurred, despite fewer matches being played compared to other seasons. Similarly, in the 2019–2020 season, there was a nota - bly low number of matches, yet injury counts remained high relative to other seasons. This suggests a possible disconnect between match frequency and injury inci - dence, highlighting that factors other than the number of matches may contribute significantly to injury risk (Fig. 2..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...metry 1.00 0.997 Injury Status Age 1.20 0.835 Heigh 1.46 0.686 Weight BMI 1.68 1.38 0.597 0.723 FMS Score 1.02 0.983 Asymmetry 1.02 0.983 Missing Training Status Age 1.18 0.848 Height 1.44 0.692 Weight BMI 1.64 1.32 0.609 0.738 Fig. 6 Illustrates injury rates per 1000 h over five seasons and highlights that in the 2018–2019 season the highest number of injuries per 1000 h were sustained in competitions"
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "per 1000",
+        "snippet": "...e 1.02 0.983 Asymmetry 1.02 0.983 Missing Training Status Age 1.18 0.848 Height 1.44 0.692 Weight BMI 1.64 1.32 0.609 0.738 Fig. 6 Illustrates injury rates per 1000 h over five seasons and highlights that in the 2018–2019 season the highest number of injuries per 1000 h were sustained in competitions"
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...h of total match and training exposure were recorded across different injury types [45]. The highest incidence was observed in hamstring injuries, with 2.36 injuries per 1,000 h (95% CI: 1.76– 2.96). In a study conducted on La Liga football players, the incidence rate of hamstring injuries was reported as 3.34 injuries per 1,000 h [ 46]. Similarly, in a study involv- ing 143 professional football players in Kosovo, the total hamstring injury incidence was found to be 1.17 injuries per 1,000 h (95% CI: 0.84–1.57) [ 47]...."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...rogram review. Clin J Sport Med. 2020;30:216–23. h t t p s : / / d o i . o r g / 1 0 . 1 0 9 7 / j s m . 0 0 0 0 0 0 0 0 0 0 0 0 0 5 7 4. 63. Hall EC, Larruskain J, Gil SM, Lekue JA, Baumert P , Rienzi E, et al. Playing position and the injury incidence rate in male academy soccer players. J Athl Train. 2022;57:696–703. h t t p s : / / d o i . o r g / 1 0 . 4 0 8 5 / 1 0 6 2 - 6 0 5 0 - 0 3 4 6 . 2 1. 64. Campa F, Piras A, Raffi M, Toselli S. Functional movement patterns and body composition of high-le..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "7.76 injuries per 1,000 training hours",
+        "snippet": "...lyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results Over the five seasons, the injury incidence was 7.76 injuries per 1,000 training hours (95% CI: 7.59–7.93), 15.47 injuries per 1,000 match hours (95% CI: 15.23–15.71), and 8.9 injuries per 1,000 combined hours (95% CI: 8.72- 9.0). Injury data, including severity, type, and training or match absence, were meticulously recorded and analyzed. Th..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "15.47 \ninjuries per 1,000 match hours",
+        "snippet": "...composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results Over the five seasons, the injury incidence was 7.76 injuries per 1,000 training hours (95% CI: 7.59–7.93), 15.47 injuries per 1,000 match hours (95% CI: 15.23–15.71), and 8.9 injuries per 1,000 combined hours (95% CI: 8.72- 9.0). Injury data, including severity, type, and training or match absence, were meticulously recorded and analyzed. The study established an injury profile for players over fiv..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "8.9 per 1,000 h",
+        "snippet": "...hat FMS was ineffective in predicting injuries, either within individual seasons or across the entire period. This suggests that the FMS may not be a reliable tool for forecasting injury risk in high-performance football. Conclusion The injury frequency was 8.9 per 1,000 h of exposure, with 26% of injuries classified as severe, leading to over 28 missed training days per injury. Given that the FMS test battery alone did not reliably predict injury risk, we recommend its use in combination with other multifactorial screening m..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "14.4 \ninjuries per 1000  h",
+        "snippet": "...t of a top-level professional team player sidelined for one month is approximately €500,000. Therefore, quantifying injury cases in profes - sional football is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "43.5 per 1000 h",
+        "snippet": "...herefore, quantifying injury cases in profes - sional football is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost playtime are crucial [ 4, 8]. Determining the level of injury risk is of great impo..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "11.2 per 1000 h",
+        "snippet": "...ball is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost playtime are crucial [ 4, 8]. Determining the level of injury risk is of great importance in football, a sport with such a high injury rate...."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "2.36 injuries per 1,000  h",
+        "snippet": "...r severe injury risk and extended time away from training (Fig. 4). In addition, the injury rates per 1,000 h of total match and training exposure were recorded across different injury types. The highest incidence was observed in ham- string injuries, with 2.36 injuries per 1,000 h (95% CI: Fig. 3 Number of missed training days due to injuries over five seasons Fig. 2 Number of injuries and matches over five seasons"
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1.28 injuries per \n1,000  h",
+        "snippet": "Page 7 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 1.76–2.96). Knee injuries followed with 1.28 injuries per 1,000 h (95% CI: 0.84–1.72), while groin injuries were reported at 1.20 injuries per 1,000 h (95% CI: 0.77–1.63). The calf injury rate was 0.88 injuries per 1,000 h (95% CI: 0.51–1.25). Additionally, both ankle and quadriceps inju - ries were recorded at 0.80 inju..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "1,000 training hours",
+        "snippet": "Page 8 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 1,000 training hours. Conversely, the lowest injury rate was recorded in the 2017–2018 season, with: 9.6 injuries per 1,000 match hours and 5.5 injuries per 1,000 training hours. This distribution highlights the variability in injury rates by season, particularly with increas..."
+      },
+      {
+        "page": 9,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "1,000 training hours",
+        "snippet": "...physical screening, including external and contextual ele- ments, play a significant role in the occurrence of injury. Injury incidence The incidence of injuries per 1,000 h of training and matches was calculated as 8.49 injuries, with 7.76 inju - ries per 1,000 training hours and 15.47 injuries per 1,000 match hours. The highest injury incidence was observed during the 2018–2019 season, with 12.6 injuries per 1,000 combined hours of training and matches, 10.8 inju- ries per 1,000 training hours, and 23.6 injuries per 1,000 mat..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "2.36 injuries per 1,000  h",
+        "snippet": "...he hamstring as the most frequently injured area (36%) [ 45]. In addition, the injury rates per 1,000 h of total match and training exposure were recorded across different injury types [45]. The highest incidence was observed in hamstring injuries, with 2.36 injuries per 1,000 h (95% CI: 1.76– 2.96). In a study conducted on La Liga football players, the incidence rate of hamstring injuries was reported as 3.34 injuries per 1,000 h [ 46]. Similarly, in a study involv- ing 143 professional football players in Kosovo, the total hamst..."
+      },
+      {
+        "page": 12,
+        "section": "Conclusion",
+        "eligibleEvidenceSection": false,
+        "match": "8.9 injuries per \n1,000 h",
+        "snippet": "...s to female athletes. Given the physi - ological and biomechanical differences between genders, further research is needed to explore injury profiles and the predictive value of FMS in women’s football. Conclusion The results indicate an injury frequency of 8.9 injuries per 1,000 h of exposure in a professional men’s football team, with approximately 26% of injuries classified as major/ severe, leading to over 28 days of absence from training or matches. The significant number of severe injuries leading to over 28 days of missed trai..."
+      }
+    ],
+    "review": [
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...f 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 [26]. Many studies have attempted to control for the effect of a previous injury history, as it is widely recog - nized as a strong risk factor for future injuries [ 22]. A meta-analysis of 24 studies concluded that FMS scores are insufficient as a standalone test battery for injury pre- diction [26]. For instance, a study of 84 youth academy football players in the English Premier League assessed players using the FMS pre-season, tracking..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...ce, a study of 237 elite young Australian foot - ball players found that while FMS scores alone could not reliably predict injuries, players with two or more asym - metrical findings had a lower-level predictive capacity for injuries [ 28] [59]. conducted a systematic review and concluded that there is moderate-to-low evidence that asymmetry is a risk factor for sports injuries. Other studies have found more robust links between FMS scores and injury risk. For example, research involv- ing 527 male athletes indicated that the..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...ed 2019;53:304–308. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 4 1 1 4. Pérez-Gómez J, Adsuar JC, Alcaraz PE, Carlos-Vivas J. Physical exercises for preventing injuries among adult male football players: A systematic review. J Sport Health Sci. 2022;11:115–22. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . j s h s . 2 0 2 0 . 1 1 . 0 0 3. 5. Ekstrand J. Keeping your top players on the pitch: the key to football medi- cine at a professional level. Br J Sports Med...."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 3 - 0 9 2 7 7 1. 6. López-Valenciano A, Ruiz-Pérez I, Garcia-Gómez A, Vera-Garcia FJ, De Ste Croix M, Myer GD, Ayala F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. Br J Sports Med. 2020;bjs- ports–2018–099577. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 5 7 7. 7. Aus der Fünten K, Tröß T, Hadji A, Beaudouin F, Steendahl IB, Meyer T. Epidemiology of f..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 3 - 0 9 2 7 7 1. 6. López-Valenciano A, Ruiz-Pérez I, Garcia-Gómez A, Vera-Garcia FJ, De Ste Croix M, Myer GD, Ayala F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. Br J Sports Med. 2020;bjs- ports–2018–099577. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 5 7 7. 7. Aus der Fünten K, Tröß T, Hadji A, Beaudouin F, Steendahl IB, Meyer T. Epidemiology of football injuries o..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "narrative review",
+        "snippet": "...1 0 . 1 1 3 6 / b j s m . 2 0 0 5 . 0 1 8 3 4 1. 14. Bittencourt NF, Meeuwisse WH, Mendonça LD, Nettel-Aguirre A, Ocarino JM, Fonseca ST. Complex systems approach for sports injuries: moving from risk factor identification to injury pattern recognition—narrative review and new concept. Br J Sports Med. 2016;50:1309–14. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 5 - 0 9 5 8 5 0. 15. Cook G, Burton L, Fields K, Kiesel K. The functional movement screen. Dan- ville, VA: Athletic Testi..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "...t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . h e l i y o n . 2 0 2 3 . e 1 6 4 5 4. 26. Moran RW, Schneiders AG, Mason J, Sullivan SJ. Do functional movement screen (FMS) composite scores predict subsequent injury? A systematic review with meta-analysis. Br J Sports Med. 2017;51:1661–9. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 6 - 0 9 6 9 3 8. 27. Vehrs PR, Uvacsek M, Johnson AW. Assessment of dysfunctional move- ments and asymmetries in children and adolescents u..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "narrative review",
+        "snippet": "...t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 6 - 0 9 6 9 3 8. 27. Vehrs PR, Uvacsek M, Johnson AW. Assessment of dysfunctional move- ments and asymmetries in children and adolescents using the functional movement Screen—A narrative review. Int J Environ Res Public Health. 2021;18:12501. h t t p s : / / d o i . o r g / 1 0 . 3 3 9 0 / i j e r p h 1 8 2 3 1 2 5 0 1. 28. Hoover DL, Killian CB, Tinius RA, Bellar DM, Wilkinson SG, Esslinger FT, et al. Predictive validity of a functional..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...yball players: a prospective cohort study. Sci Rep. 2022;12:20207. h t t p s : / / d o i . o r g / 1 0 . 1 0 3 8 / s 4 1 5 9 8 - 0 2 2 - 2 4 5 0 8 - 8. 59. Helme M, Tee J, Emmond S, Low C. Does lower-limb asymmetry increase injury risk in sport? A systematic review. Phys Ther Sport. 2021;49:204–13. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . p t s p . 2 0 2 1 . 0 3 . 0 0 1. 60. Wei W, Zhang WX, Tang L, Ren HF, Zhu LG, Wang Y, et al. The application of modified functional movement screen as predictor o..."
+      },
+      {
+        "page": 15,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "literature review",
+        "snippet": "Page 15 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 70. Tong JWK, Kong PW. Association between foot type and lower extremity injuries: systematic literature review with Meta-analysis. J Orthop Sports Phys Therapy. 2013;43:700–14. h t t p s : / / d o i . o r g / 1 0 . 2 5 1 9 / j o s p t . 2 0 1 3 . 4 2 2 5. 71. Anam K, Setiowati A, Indardi N, Irawan FA, Pavlović R, Susanto N, et al. Functional movement screen..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...(2025) 17:217 https://doi.org/10.1186/s13102-025-01262-8 BMC Sports Science, Medicine and Rehabilitation *Correspondence: Ahmet Bayrak fztahmet@gmail.com 1Faculty of Health Science, Department of Physical Therapy and Rehabilitation, Selcuk University, Injury prediction and prediction, Konya, Türkiye Abstract Objective This study aimed to examine the injury profile of a professional football team over five consecutive seasons and assess the predictive value of the Functional Movement Screen (FMS), offering insig..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...bilitation *Correspondence: Ahmet Bayrak fztahmet@gmail.com 1Faculty of Health Science, Department of Physical Therapy and Rehabilitation, Selcuk University, Injury prediction and prediction, Konya, Türkiye Abstract Objective This study aimed to examine the injury profile of a professional football team over five consecutive seasons and assess the predictive value of the Functional Movement Screen (FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 pl..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...prediction, Konya, Türkiye Abstract Objective This study aimed to examine the injury profile of a professional football team over five consecutive seasons and assess the predictive value of the Functional Movement Screen (FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 players between the 2016–2017 and 2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were us..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Injury",
+        "snippet": "...to examine the injury profile of a professional football team over five consecutive seasons and assess the predictive value of the Functional Movement Screen (FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 players between the 2016–2017 and 2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were used to analyze these factors. The relationship between preseaso..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...ional Movement Screen (FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 players between the 2016–2017 and 2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were used to analyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regressio..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...(FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 players between the 2016–2017 and 2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were used to analyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results O..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were used to analyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results Over the five seasons, the injury incidence was 7.76 injuries per 1,000 training hours (95% CI: 7.59–7.93), 15.47 injuries per 1,000 match hours (95% CI: 1..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...tics were used to analyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results Over the five seasons, the injury incidence was 7.76 injuries per 1,000 training hours (95% CI: 7.59–7.93), 15.47 injuries per 1,000 match hours (95% CI: 15.23–15.71), and 8.9 injuries per 1,000 combined hours (95% CI: 8.72- 9.0). Injury data, including severity, type, and training or match..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Page 2 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Introductıon Sports injuries can diminish an individual’s participation in sports activities and reduce their performance level, potentially ending a sports career [ 1]. Complex contact sports such as football, which demand high physical, technical, and tactical skills [ 2], signific..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Page 3 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 • To evaluate the long-term predictive value of the Functional Movement Screen (FMS) and determine whether FMS is a reliable tool for injury prediction in professional football players. • To address contextual factors influencing injury risk (match schedule, UEFA competition participation, training load variations) and contribute to injury management strategies. • To fill existing gaps in..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "Page 4 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Injury identification Throughout the season, all injuries sustained by the play - ers were recorded. These injuries were diagnosed by the club’s sports physicians and/or relevant medical doctors from the associated hospitals. Only injuries that pre - vented player..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...whereas their FMS scores and asymmetry values did not (p < 0.005) (Table 1). The demographic characteristics of the football players included in this study are presented in Table 2. The age, body mass, height and body mass index of players who sustained injuries were similar to those of players who did not (p > 0.05). Independent t-test was performed for normally distrib - uted demographic data. In the injury cases, comparisons between injured and uninjured players based on pre - season FMS scores revealed the foll..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Page 6 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Over the five seasons, players missed a total of 4,573 training sessions due to injuries and illnesses (train - ing losses lasting less than 72 h were excluded). The breakdown of missed training sessions is as follows: 116 days missed due to illness, 550 days missed due to con - tact injuries, and 3,907 days missed due to non-contact injuries..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Page 7 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 1.76–2.96). Knee injuries followed with 1.28 injuries per 1,000 h (95% CI: 0.84–1.72), while groin injuries were reported at 1.20 injuries per 1,000 h (95% CI: 0.77–1.63). The calf injury rate was 0.88 injuries per 1,000 h (95% CI: 0.51–1.25). Additionally, both ankle and quadric..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Page 8 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 1,000 training hours. Conversely, the lowest injury rate was recorded in the 2017–2018 season, with: 9.6 injuries per 1,000 match hours and 5.5 injuries per 1,000 training hours. This distribution highlights the variability in injury rates by season, particularly with increased risk during competitive mat..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Page 9 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 showed an R² of 0.004 and an overall cut-off p-value of 0.702, indicating that there was no significant relation - ship between these variables and injury status, as the p-values for both predictors were above the significance threshold of 0.05. In the Logistic Regression Analysis of demographic data; Age ( p = 0.029) (p < 0.05). This sug - gests that age has a significant effect on the probability of inj..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "Page 10 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Injury distribution by position The study also examined the distribution of injuries by playing position over the five seasons. Goalkeepers are most frequently affected by lumbar spine injuries, with a high incidence of lumbar disc herniation. Spinal inju - ries..."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Page 11 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 [26]. Many studies have attempted to control for the effect of a previous injury history, as it is widely recog - nized as a strong risk factor for future injuries [ 22]. A meta-analysis of 24 studies concluded that FMS scores are insufficient as a standalone test battery for injury pre- diction [26]. For instance, a study of 84 youth a..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Page 12 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 A similar pattern was observed in dance, where FMS was found to be inadequate for injury prediction. In that study, the FMS was noted for assessing proper movement but was not sensitive to the movement patterns critical in dance [72]. This insight may be extended to football, a sport that also involves diverse movement patterns, sug - gesting..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...7. h t t p s : / / d o i . o r g / 1 0 . 1 5 1 5 / h u k i n - 2 0 1 7 - 0 1 2 9. 3. Ekstrand J, Lundqvist D, Davison M, D’Hooghe M, Pensgaard AM. (2019). Communication quality between the medical team and the head coach/ manager is associated with injury burden and player availability in elite football clubs. Br J Sports Med 2019;53:304–308. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 4 1 1 4. Pérez-Gómez J, Adsuar JC, Alcaraz PE, Carlos-Vivas J. Physical e..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Page 14 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 31. Hägglund M, Waldén M, Bahr R, Ekstrand J. (2005). Methods for epidemiologi- cal study of injuries to professional football players: developing the UEFA model. British Journal of Sports Medicine.2005;39:340–346. 32. Fuller CW, Ekstrand J, Junge A, Andersen TE, Bahr R, Dvorak J. Futbol Yaralanmaları Çalışmalarında Yaralanma Tanımları ve veri Toplama prose..."
+      },
+      {
+        "page": 15,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Page 15 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 70. Tong JWK, Kong PW. Association between foot type and lower extremity injuries: systematic literature review with Meta-analysis. J Orthop Sports Phys Therapy. 2013;43:700–14. h t t p s : / / d o i . o r g / 1 0 . 2 5 1 9 / j o s p t . 2 0 1 3 . 4 2 2 5. 71. Anam K, Setiowati A, Indardi N, Irawan FA, Pavlović R, Susanto N, et a..."
+      }
+    ],
+    "design": [
+      {
+        "page": 3,
+        "section": "Participants",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...on methods. Method Participants Our study is based on data collected from professional football players from a football team in the Turkish Super League during the 2016–2017, 2017–2018, 2018–2019, 2019–2020, and 2020–2021 seasons. This was a prospec - tive cohort study in which the players’ injury status and functional movement analysis results were tracked to assess injury prediction. Injury risks were determined using pre-season FMS tests, and the accuracy of the injury analyses was evaluated at the end of each..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...nts. In addition to mapping the injury profile in football, this study used FMS assessments at the start of each sea - son to predict injuries, with players tracked over time to test the consistency of these predictions. Unlike many studies focusing on the retrospective identification of past injuries via FMS, this study’s prospective approach strengthens its findings. Another strength of this study was the detailed injury documentation provided by the club’s medical team. However, the limitations include focusing on a..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...dy used FMS assessments at the start of each sea - son to predict injuries, with players tracked over time to test the consistency of these predictions. Unlike many studies focusing on the retrospective identification of past injuries via FMS, this study’s prospective approach strengthens its findings. Another strength of this study was the detailed injury documentation provided by the club’s medical team. However, the limitations include focusing on a single team and the lack of female par - ticipants. Despite the lac..."
+      },
+      {
+        "page": 12,
+        "section": "Conclusion",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...atches. The significant number of severe injuries leading to over 28 days of missed training highlights the need for enhanced rehabilitation and prevention strate - gies to mitigate long-term absences. Both injury fre - quency and severity were high in this cohort. Our study aimed to explore injury profiles over five seasons and assess the FMS’s predictive value in a professional foot - ball setting. Despite a thorough investigation, FMS scores did not predict injuries, suggesting the need for a mul - tifaceted appr..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...99577. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 5 7 7. 7. Aus der Fünten K, Tröß T, Hadji A, Beaudouin F, Steendahl IB, Meyer T. Epidemiology of football injuries of the German bundesliga: a media-based, prospective analysis over 7 consecutive seasons. Sports Medicine-Open. 2023;9:20. h t t p s : / / d o i . o r g / 1 0 . 1 1 8 6 / s 4 0 7 9 8 - 0 2 3 - 0 0 5 6 3 - x. 8. Eirale C, Tol JL, Farooq A, Smiley F, Chalabi H. Low injury rate strongly cor- relates with..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...nd Tendons. 2016;6:124 – 30. h t t p s : / / d o i . o r g / 1 0 . 1 1 1 3 8 / m l t j / 2 0 1 6 . 6 . 1 . 1 2 4 10. Henry T, Evans K, Snodgrass SJ, Miller A, Callister R. Risk factors for noncontact ankle injuries in amateur male soccer players: a prospective cohort study. Clin J Sport Med. 2016;26:251–8. h t t p s : / / d o i . o r g / 1 0 . 1 0 9 7 / j s m . 0 0 0 0 0 0 0 0 0 0 0 0 0 2 4 0. 11. Kirkendall DT, Junge A, Dvorak J. Prevention of football injuries. Asian J Sports Med. 2010;1:81–92. h..."
+      },
+      {
+        "page": 13,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...2016;6:124 – 30. h t t p s : / / d o i . o r g / 1 0 . 1 1 1 3 8 / m l t j / 2 0 1 6 . 6 . 1 . 1 2 4 10. Henry T, Evans K, Snodgrass SJ, Miller A, Callister R. Risk factors for noncontact ankle injuries in amateur male soccer players: a prospective cohort study. Clin J Sport Med. 2016;26:251–8. h t t p s : / / d o i . o r g / 1 0 . 1 0 9 7 / j s m . 0 0 0 0 0 0 0 0 0 0 0 0 0 2 4 0. 11. Kirkendall DT, Junge A, Dvorak J. Prevention of football injuries. Asian J Sports Med. 2010;1:81–92. h t t p..."
+      },
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...h t t p s : / / d o i . o r g / 1 0 . 1 2 9 6 5 / j e r . 1 6 3 2 5 4 8 . 2 7 4. 35. Mosler AB, Weir A, Eirale C, Farooq A, Thorborg K, Whiteley RJ, et al. Epidemiol- ogy of time loss groin injuries in a men’s professional football league: a 2-year prospective study of 17 clubs and 606 players. Br J Sports Med. 2016;52:292– 7. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 6 - 0 9 7 2 7 7. 36. Cook G, Movement. Functional movement systems: screening, assessment, corrective str..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 14,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...er players in a Swedish first league. J Exerc Rehabilitation. 2016;12:83–9. h t t p s : / / d o i . o r g / 1 0 . 1 2 9 6 5 / j e r . 1 6 3 2 5 4 8 . 2 7 4. 35. Mosler AB, Weir A, Eirale C, Farooq A, Thorborg K, Whiteley RJ, et al. Epidemiol- ogy of time loss groin injuries in a men’s professional football league: a 2-year prospective study of 17 clubs and 606 players. Br J Sports Med. 2016;52:292– 7. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 6 - 0 9 7 2 7 7. 36. Cook G,..."
+      }
+    ],
+    "source_provenance": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...and extrinsic factors. In football, although it is difficult to control some extrinsic factors, such as contact injuries, specific predictable intrinsic factors that lead to non- contact injuries can be identified [ 9, 10]. Coaches, sports physicians, and physiotherapists must implement injury prevention programs to support the health and continu - ous development of athlete [11]. To create injury preven- tion programs, it is necessary to accurately determine injury profiles specific to a sport. However, interventions relat..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapist",
+        "snippet": "...(1–3 days of absence), minor (4–7 days of absence), moderate (8–28 days of absence), or severe/major (> 28 days of absence) [31]. Diagnoses made by the sports physician or a rel - evant specialist on the medical team were further docu - mented by a sports physiotherapist, who was also part of the health team. Each injury was recorded immediately after the incident using a standard injury form, which included the type of injury, injury location, duration of absence from training due to the injury, and timing of the injury..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapist",
+        "snippet": "...was recorded as the final score. Scores from all seven subtests were combined to yield a composite score of 21. FMS was conducted using standard FMS test kits (Functional Movement Sys - tems Inc., Virginia, USA). FMS tests were administered by a certified physiotherapist who had received FMS training. Prior to the tests, the club informed the play - ers about the testing process. To eliminate the effects of fatigue, players did not participate in training the day before the tests, which were conducted during the pre- seaso..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] RESEARCH Open Access © The Author(s) 2025. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit h t t p : / / c r e a t i v e c o m m o n s . o r g / l i c e n s e s / b y - n c - n d / 4 . 0 /. Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 https://doi.org/10.1186/s13102-025-01262-8 BMC Sports Science, Medicine and Rehabilitation *Correspondence: Ahmet Bayrak fztahmet@gmail.com 1Faculty of Health Science, Department of Physical Therapy and Rehabilitation, Selcuk University, Injury prediction and prediction, Konya, Türkiye Abstract Objective This study aimed to examine the injury profile of a professional football team over five consecutive seasons and assess the predictive value of the Functional Movement Screen (FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 players between the 2016–2017 and 2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were used to analyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results Over the five seasons, the injury incidence was 7.76 injuries per 1,000 training hours (95% CI: 7.59–7.93), 15.47 injuries per 1,000 match hours (95% CI: 15.23–15.71), and 8.9 injuries per 1,000 combined hours (95% CI: 8.72- 9.0). Injury data, including severity, type, and training or match absence, were meticulous\n\n[p. 2] Page 2 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Introductıon Sports injuries can diminish an individual’s participation in sports activities and reduce their performance level, potentially ending a sports career [ 1]. Complex contact sports such as football, which demand high physical, technical, and tactical skills [ 2], significantly increase the risk of injury [ 3, 4]. Some injuries in football are devas - tating for players and can jeopardize their sports careers. Moreover, injuries entail substantial financial costs. It is estimated that the average cost of a top-level professional team player sidelined for one month is approximately €500,000. Therefore, quantifying injury cases in profes - sional football is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost playtime are crucial [ 4, 8]. Determining the level of injury risk is of great importance in football, a sport with such a high injury rate. Sports injuries are associated with both intrinsic and extrinsic factors. In football, although it is difficult to control some extrinsic factors, such as contact injuries, specific predictable intrinsic factors that lead to non- contact injuries can be identified [ 9, 10]. Coaches, sports physicians, and physiotherapists must implement injury prevention programs to support the health and continu - ous development of athlete [11]. To create injury preven- tion programs, it is necessary to accurately determine injury profiles specific to a sport. However, interventions related to the prevention of non-contact muscular inju - ries have been found to be inadequate [ 12]. There is a pressing need for further research to establish injury pro- files in various sports. Identifying the most common and severe injuries, as well as understanding where (anatomi - cally) and when (during matches or training sessions) they typically occur, will enable coaches, physiothera - pists, and physicians to prioritize specific measures to prevent or reduce the risk of such injuries [6]. Despite the complexity and multifactorial nature of injury mechanisms, there are various intrinsic risk fac - tors that may potentially increa\n\n[p. 3] Page 3 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 • To evaluate the long-term predictive value of the Functional Movement Screen (FMS) and determine whether FMS is a reliable tool for injury prediction in professional football players. • To address contextual factors influencing injury risk (match schedule, UEFA competition participation, training load variations) and contribute to injury management strategies. • To fill existing gaps in the literature and provide new findings for the development of long-term injury profiling and prediction methods. Method Participants Our study is based on data collected from professional football players from a football team in the Turkish Super League during the 2016–2017, 2017–2018, 2018–2019, 2019–2020, and 2020–2021 seasons. This was a prospec - tive cohort study in which the players’ injury status and functional movement analysis results were tracked to assess injury prediction. Injury risks were determined using pre-season FMS tests, and the accuracy of the injury analyses was evaluated at the end of each season. Players who remained with the team for the full season were included in the study, whereas those who left the team mid-season were excluded. A total of 169 players were included in the study, with 33 players in the 2016–2017 season, 33 players in the 2017–2018 season, 31 players in the 2018–2019 sea - son, 35 players in the 2019–2020 season, and 37 players in the 2020–2021 season. However, players who did not complete an entire season were excluded: 2 players in the 2016–2017 season, 2 players in the 2017–2018 season, 10 players in the 2018–2019 season, 8 players in the 2019– 2020 season, and 6 players in the 2020–2021 season (In this study, the excluded football players participated in the FMS test at the beginning of the season but were transferred to other teams shortly thereafter. They were not included in the study due to their exposure to differ - ent training loads in their new teams and, more impor - tantly, the inability to track their injury status) (Fig. 1). In order to ensure standardization in study outcomes and the integrity of the collected data, football players who did not remain with the club for a full season and those who joined during the mid-season were not included in the study. Consent forms were obtained from all football players for the tests to be conducted at the beginning of the season and for the recording of injury data. Fig. 1 Participants dia\n\n[p. 4] Page 4 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Injury identification Throughout the season, all injuries sustained by the play - ers were recorded. These injuries were diagnosed by the club’s sports physicians and/or relevant medical doctors from the associated hospitals. Only injuries that pre - vented players from participating in training/match for over 72 h (injuries resulting in 3 days or less of missed training/match were not considered) were recorded [30]. Injuries were categorized as minimal (1–3 days of absence), minor (4–7 days of absence), moderate (8–28 days of absence), or severe/major (> 28 days of absence) [31]. Diagnoses made by the sports physician or a rel - evant specialist on the medical team were further docu - mented by a sports physiotherapist, who was also part of the health team. Each injury was recorded immediately after the incident using a standard injury form, which included the type of injury, injury location, duration of absence from training due to the injury, and timing of the injury. Injury data in the sports club were recorded daily using a standardized form, and an Excel database was created. These records were archived at the end of each season. In this study, the definition of injury severity was based on the recommendations of the International Consensus Group on Injury, defined as the number of days from the date of injury to the player’s full return to team training and readiness for match selection [32]. Injury follow-up period The risk and type of injury may vary throughout the football season [ 33]; therefore, the study period should encompass the entire season or multiple seasons, includ - ing both the pre-season and competitive season [ 31, 34]. In this study, players were followed over five full sea - sons (2016–2021). Of the 169 players observed during the 2016–2017, 2017–2018, 2018–2019, 2019–2020, and 2020–2021 seasons, 133 players missed training due to injuries. Calculation of injury incidence The incidence of injuries per 1,000 training and match hours were calculated using the following formula: 1000 Incidence = (Total hours of exposure to training and matches Number of injuries ) ×1000 [35]. Injury risk assessment / functional movement screen FMS tests were administered at the start of the season following the players’ holiday period. During the FMS testing, each player was recorded from two different angles. All assessments were cond",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "RESEARCH Open Access © The Author(s) 2025. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit h t t p : / / c r e a t i v e c o m m o n s . o r g / l i c e n s e s / b y - n c - n d / 4 . 0 /. Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 https://doi.org/10.1186/s13102-025-01262-8 BMC Sports Science, Medicine and Rehabilitation *Correspondence: Ahmet Bayrak fztahmet@gmail.com 1Faculty of Health Science, Department of Physical Therapy and Rehabilitation, Selcuk University, Injury prediction and prediction, Konya, Türkiye Abstract Objective This study aimed to examine the injury profile of a professional football team over five consecutive seasons and assess the predictive value of the Functional Movement Screen (FMS), offering insights to optimize injury prevention strategies in professional football. Design Injury data for 169 players between the 2016–2017 and 2020–2021 seasons were recorded, including the number of missed training sessions, injury severity, and injury types. Descriptive statistics were used to analyze these factors. The relationship between preseason FMS composite scores, asymmetry findings, and injury profiles was assessed using Variance Inflation Factor (VIF) and Logistic Regression Analysis. Results Over the five seasons, the injury incidence was 7.76 injuries per 1,000 training hours (95% CI: 7.59–7.93), 15.47 injuries per 1,000 match hours (95% CI: 15.23–15.71), and 8.9 injuries per 1,000 combined hours (95% CI: 8.72- 9.0). Injury data, including severity, type, and training or match absence, were meticulously recorded and analyzed. The study established an injury profile for players over five consecutive seasons but found that FMS was ineffective in predicting injuries, either within individual seasons or across the entire period. This suggests that the FMS may not be a reliable tool for forecasting injury risk in high-performance football. Conclusion The injury frequency was 8.9 per 1,000 h of exposure, with 26% of injuries classified as severe, leading to over 28 missed training days per injury. Given that the FMS test battery alone did not reliably predict injury risk, we recommend its use in combination with other multifactorial screening methods to enhance the accuracy of injury risk assessment. Hamstring injuries were the most common, while goalkeepers primarily experienced back issues. Factors such as age, height, and body mass may influence injury risk. These findings underscore the need for multifaceted injury prevention programs that consider a wider range of risk factors beyond FMS scores, including age, height, and body mass, to effectively manage and reduce the risk of injuries in professional football. Additionally, these insights can assist technical staff in managing training absences and planning player availability more effectively. Keywords Football injury, Functional movement screen, Sports injury profile, Injury prediction Exploring injury profiles in professional football: evidence from a five-year study and the role of the functional movement screen Ahmet"
+    },
+    {
+      "page": 2,
+      "text": "Page 2 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Introductıon Sports injuries can diminish an individual’s participation in sports activities and reduce their performance level, potentially ending a sports career [ 1]. Complex contact sports such as football, which demand high physical, technical, and tactical skills [ 2], significantly increase the risk of injury [ 3, 4]. Some injuries in football are devas - tating for players and can jeopardize their sports careers. Moreover, injuries entail substantial financial costs. It is estimated that the average cost of a top-level professional team player sidelined for one month is approximately €500,000. Therefore, quantifying injury cases in profes - sional football is critical [ 5, 6]. In professional football, the injury incidence is reported to vary from 4.8 to 14.4 injuries per 1000 h of football play, with injuries during matches ranging from 22.7 to 43.5 per 1000 h and during training sessions from 2.8 to 11.2 per 1000 h [ 7]. Because lower numbers of injuries are associated with team suc - cess, minimizing injuries and reducing lost playtime are crucial [ 4, 8]. Determining the level of injury risk is of great importance in football, a sport with such a high injury rate. Sports injuries are associated with both intrinsic and extrinsic factors. In football, although it is difficult to control some extrinsic factors, such as contact injuries, specific predictable intrinsic factors that lead to non- contact injuries can be identified [ 9, 10]. Coaches, sports physicians, and physiotherapists must implement injury prevention programs to support the health and continu - ous development of athlete [11]. To create injury preven- tion programs, it is necessary to accurately determine injury profiles specific to a sport. However, interventions related to the prevention of non-contact muscular inju - ries have been found to be inadequate [ 12]. There is a pressing need for further research to establish injury pro- files in various sports. Identifying the most common and severe injuries, as well as understanding where (anatomi - cally) and when (during matches or training sessions) they typically occur, will enable coaches, physiothera - pists, and physicians to prioritize specific measures to prevent or reduce the risk of such injuries [6]. Despite the complexity and multifactorial nature of injury mechanisms, there are various intrinsic risk fac - tors that may potentially increase the risk of injury (e.g., previous injury history, joint instability, muscle strength imbalances, and anatomical asymmetries, etc.) [ 13, 14]. Musculoskeletal screening tests are designed to identify these risk factors so that medical professionals can imple- ment appropriate training strategies (prehabilitation) aimed at reducing injury cases. One of the most well- known injury prediction tools, the Functional Movement Screen (FMS), was developed by Cook et al. in 1997 [ 15]. The FMS is a battery of seven tests that evaluate funda - mental movement patterns to identify dysfunctional, asymmetric, and painful movements that may contrib - ute to future injuries [ 16– 18]. During the FMS test, the presence or absence of pain and the number of asym - metries observed can be determined, with a composite score of ≤ 14 indicating an increased risk of injury [ 19]. In the literature, FMS tests are conducted at the begin - ning of the season and used as a method for injury risk analysis [ 20, 21]. However, discussions continue regard - ing the accuracy of the FMS in predicting injuries. While some studies support a relationship between FMS scores and injury [ 22– 25], suggesting that lower FMS scores reflect poor neuromuscular control, limited joint mobil - ity, or asymmetrical movement patterns—which may increase mechanical load on certain joints and soft tis - sues and thus elevate the risk of overuse or acute injuries [16– 18] other studies argue that FMS cannot be reliably used"
+    },
+    {
+      "page": 3,
+      "text": "Page 3 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 • To evaluate the long-term predictive value of the Functional Movement Screen (FMS) and determine whether FMS is a reliable tool for injury prediction in professional football players. • To address contextual factors influencing injury risk (match schedule, UEFA competition participation, training load variations) and contribute to injury management strategies. • To fill existing gaps in the literature and provide new findings for the development of long-term injury profiling and prediction methods. Method Participants Our study is based on data collected from professional football players from a football team in the Turkish Super League during the 2016–2017, 2017–2018, 2018–2019, 2019–2020, and 2020–2021 seasons. This was a prospec - tive cohort study in which the players’ injury status and functional movement analysis results were tracked to assess injury prediction. Injury risks were determined using pre-season FMS tests, and the accuracy of the injury analyses was evaluated at the end of each season. Players who remained with the team for the full season were included in the study, whereas those who left the team mid-season were excluded. A total of 169 players were included in the study, with 33 players in the 2016–2017 season, 33 players in the 2017–2018 season, 31 players in the 2018–2019 sea - son, 35 players in the 2019–2020 season, and 37 players in the 2020–2021 season. However, players who did not complete an entire season were excluded: 2 players in the 2016–2017 season, 2 players in the 2017–2018 season, 10 players in the 2018–2019 season, 8 players in the 2019– 2020 season, and 6 players in the 2020–2021 season (In this study, the excluded football players participated in the FMS test at the beginning of the season but were transferred to other teams shortly thereafter. They were not included in the study due to their exposure to differ - ent training loads in their new teams and, more impor - tantly, the inability to track their injury status) (Fig. 1). In order to ensure standardization in study outcomes and the integrity of the collected data, football players who did not remain with the club for a full season and those who joined during the mid-season were not included in the study. Consent forms were obtained from all football players for the tests to be conducted at the beginning of the season and for the recording of injury data. Fig. 1 Participants diagram flow"
+    },
+    {
+      "page": 4,
+      "text": "Page 4 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Injury identification Throughout the season, all injuries sustained by the play - ers were recorded. These injuries were diagnosed by the club’s sports physicians and/or relevant medical doctors from the associated hospitals. Only injuries that pre - vented players from participating in training/match for over 72 h (injuries resulting in 3 days or less of missed training/match were not considered) were recorded [30]. Injuries were categorized as minimal (1–3 days of absence), minor (4–7 days of absence), moderate (8–28 days of absence), or severe/major (> 28 days of absence) [31]. Diagnoses made by the sports physician or a rel - evant specialist on the medical team were further docu - mented by a sports physiotherapist, who was also part of the health team. Each injury was recorded immediately after the incident using a standard injury form, which included the type of injury, injury location, duration of absence from training due to the injury, and timing of the injury. Injury data in the sports club were recorded daily using a standardized form, and an Excel database was created. These records were archived at the end of each season. In this study, the definition of injury severity was based on the recommendations of the International Consensus Group on Injury, defined as the number of days from the date of injury to the player’s full return to team training and readiness for match selection [32]. Injury follow-up period The risk and type of injury may vary throughout the football season [ 33]; therefore, the study period should encompass the entire season or multiple seasons, includ - ing both the pre-season and competitive season [ 31, 34]. In this study, players were followed over five full sea - sons (2016–2021). Of the 169 players observed during the 2016–2017, 2017–2018, 2018–2019, 2019–2020, and 2020–2021 seasons, 133 players missed training due to injuries. Calculation of injury incidence The incidence of injuries per 1,000 training and match hours were calculated using the following formula: 1000 Incidence = (Total hours of exposure to training and matches Number of injuries ) ×1000 [35]. Injury risk assessment / functional movement screen FMS tests were administered at the start of the season following the players’ holiday period. During the FMS testing, each player was recorded from two different angles. All assessments were conducted at the facilities of the respective sports clubs. Before testing, the play - ers completed a standardized warm-up led by the club’s fitness trainer. The FMS consists of seven subtests: deep squat, hurdle step, in-line lunge, shoulder mobility, trunk stability push-up, active straight leg raise, and rotary sta - bility [36]. Five of the subtests (hurdle step, in-line lunge, shoulder mobility, active straight leg raise, and rotary sta- bility) were performed on both sides of the body, and any asymmetries observed between sides were recorded as asymmetric findings. To calculate the FMS composite score, each of the seven tests was scored on a scale of 0 to 3. A score of 0 indicates the presence of pain during movement; a score of 1 is given if the individual is unable to perform the movement; a score of 2 is assigned if the individual completes the movement but with some form of com - pensation; and a score of 3 is awarded if the movement is performed correctly [ 36]. For tests completed on both sides of the body, the lowest score was recorded as the final score. Scores from all seven subtests were combined to yield a composite score of 21. FMS was conducted using standard FMS test kits (Functional Movement Sys - tems Inc., Virginia, USA). FMS tests were administered by a certified physiotherapist who had received FMS training. Prior to the tests, the club informed the play - ers about the testing process. To eliminate the effects of fatigue, players did not participate in training the day before the tests,"
+    },
+    {
+      "page": 11,
+      "text": "Page 11 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 [26]. Many studies have attempted to control for the effect of a previous injury history, as it is widely recog - nized as a strong risk factor for future injuries [ 22]. A meta-analysis of 24 studies concluded that FMS scores are insufficient as a standalone test battery for injury pre- diction [26]. For instance, a study of 84 youth academy football players in the English Premier League assessed players using the FMS pre-season, tracking non-contact injuries throughout the season, and found no significant predic - tive capability for non-contact injuries [ 51]. Similarly, a study of 573 Australian football players determined that FMS scores were ineffective in predicting non-contact injuries [48]. A separate study involving 439 young Aus - tralian football players also concluded that FMS scores were not adequate for predicting noncontact injuries [52]. In a study of 124 high school football players, FMS was again deemed insufficient as a sole predictor of injuries [53]. Furthermore [ 29], found that even when the FMS composite cutoff score was lowered to 14, 13, or 12, it failed to reliably predict injuries. A machine learning study tracking FMS scores strongly indicated that the FMS is ineffective at predicting injuries in average ado - lescent populations. Additionally, FMS scores could not differentiate between injured and non-injured subjects in both athletic and non-athletic youths [ 54]. In Japa - nese collegiate football, a study following 75 players for one season also concluded that the FMS lacks sufficient sensitivity and specificity to predict injuries [ 55]. These findings suggest that while FMS may provide valuable information on movement quality, it is not a reliable tool for injury prediction, especially for non-contact inju - ries in football. Our results are consistent with previous studies indicating that FMS is not a reliable predictor of injury risk, aligning with existing research that questions its effectiveness in forecasting injuries. On the other hand, several studies in the literature sup- port the effectiveness of FMS in predicting injuries. For example, a study involving 65 young football players aged 12–13 found that the FMS test battery was effective in predicting injury risk in youth athletes [ 56]. This study differs from ours due to its focus on young athletes and the inclusion of players with a prior injury history. Simi - larly, FMS has been shown to be an effective predictor of injuries in female combat sports athletes [ 57]. A study of 131 young volleyball players also found that FMS had the necessary sensitivity to predict injury risk [58]. The relationship between the asymmetries identified in the FMS tests and injury prediction is also debated. For instance, a study of 237 elite young Australian foot - ball players found that while FMS scores alone could not reliably predict injuries, players with two or more asym - metrical findings had a lower-level predictive capacity for injuries [ 28] [59]. conducted a systematic review and concluded that there is moderate-to-low evidence that asymmetry is a risk factor for sports injuries. Other studies have found more robust links between FMS scores and injury risk. For example, research involv- ing 527 male athletes indicated that the FMS is an effec - tive tool for assessing injury susceptibility [ 60]. Similarly, in a study of 68 rugby players over a season, FMS was found to predict non-contact muscle injuries [ 61]. These studies suggest that the FMS may have predictive util - ity in certain athlete populations and sports contexts, although its effectiveness appears to vary based on fac - tors such as age, sport type, and the presence of prior injuries. Given the conflicting results regarding FMS, it appears that outcomes vary across different sports, potentially due to differences in injury profiles and biomechani - cal stresses unique to each sport. For inst"
+    },
+    {
+      "page": 12,
+      "text": "Page 12 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 A similar pattern was observed in dance, where FMS was found to be inadequate for injury prediction. In that study, the FMS was noted for assessing proper movement but was not sensitive to the movement patterns critical in dance [72]. This insight may be extended to football, a sport that also involves diverse movement patterns, sug - gesting that sport-specific assessments could better cap - ture injury risk factors in dynamic environments. In addition to mapping the injury profile in football, this study used FMS assessments at the start of each sea - son to predict injuries, with players tracked over time to test the consistency of these predictions. Unlike many studies focusing on the retrospective identification of past injuries via FMS, this study’s prospective approach strengthens its findings. Another strength of this study was the detailed injury documentation provided by the club’s medical team. However, the limitations include focusing on a single team and the lack of female par - ticipants. Despite the lack of significant predictive value of FMS scores, this finding aligns with recent literature questioning the utility of FMS in professional football set- tings. Future research could explore alternative screening tools tailored to football’s dynamic demands. While our study adds to the growing body of evidence questioning the utility of FMS as a standalone tool for injury predic - tion in football, it does not diminish the value of FMS as part of a comprehensive athlete assessment toolkit. It underscores the necessity for multifactorial assessment approaches that incorporate dynamic and sport-specific movement analyses. Limitations While our study benefits from standardized training loads and medical staff within a single team, this approach may limit the generalizability of our findings. Future studies should consider including multiple teams from different leagues to explore the potential variability in injury pro - files and FMS predictive value across different playing styles and training regimens. The exclusive use of FMS in our study limits the breadth of our injury risk assessment. The inclusion of additional functional tests, such as the Y Balance Test and the Lower Extremity Functional Test, could offer a more holistic view of an athlete’s injury risk factors. Future research should consider incorporating a multi-test approach to injury prediction to potentially uncover additional or more nuanced risk factors not cap - tured by FMS alone. The study’s focus on a single team limits the generalizability of the findings. Future studies should consider a multi-team approach to account for variations in training, play style, and medical support across different clubs. Our study focused solely on male professional football players, which limits the applicabil - ity of our findings to female athletes. Given the physi - ological and biomechanical differences between genders, further research is needed to explore injury profiles and the predictive value of FMS in women’s football. Conclusion The results indicate an injury frequency of 8.9 injuries per 1,000 h of exposure in a professional men’s football team, with approximately 26% of injuries classified as major/ severe, leading to over 28 days of absence from training or matches. The significant number of severe injuries leading to over 28 days of missed training highlights the need for enhanced rehabilitation and prevention strate - gies to mitigate long-term absences. Both injury fre - quency and severity were high in this cohort. Our study aimed to explore injury profiles over five seasons and assess the FMS’s predictive value in a professional foot - ball setting. Despite a thorough investigation, FMS scores did not predict injuries, suggesting the need for a mul - tifaceted approach to injury risk assessment beyond the scope of FMS alone.Throughout the study, hamstring injuries"
+    },
+    {
+      "page": 13,
+      "text": "Page 13 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 Author contributions A.B. conceptualized and designed the study, collected and analyzed the data, interpreted the findings, and wrote the main manuscript text. All figures, tables, and supplementary materials were prepared by A.B. The manuscript was reviewed and finalized by A.B.All contributions to the study and manuscript preparation were made by AB. Funding No funding was received for this study. Data availability Data supporting the findings of this study have been provided within the manuscript and supplementary information files. Declarations Ethics approval and consent to participate Ethical approval for this study was obtained from the Ethics Committee of Selçuk University, Faculty of Sports Sciences (decision dated 28.11.2024 and numbered 885482). Permission to use the study for scientific publication was also granted by the relevant club. Informed consent forms were obtained from all players who participated in the study. This study was conducted in accordance with the principles of the Declaration of Helsinki. Consent for publication Not applicable. Competing interests The authors declare no competing interests. Received: 6 January 2025 / Accepted: 8 July 2025 References 1. Ekstrand J, Roos H, Tropp H. Normal course of events amongst Swedish soc- cer players: an 8-year follow-up study. Br J Sports Med. 1990;24:117–9. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s m . 2 4 . 2 . 1 1 7. 2. Fransson D, Vigh-Larsen JF, Fatouros IG, Krustrup P , Mohr M. Fatigue responses in various muscle groups in well-trained competitive male players after a simulated soccer game. J Hum Kinetics. 2018;61:85–97. h t t p s : / / d o i . o r g / 1 0 . 1 5 1 5 / h u k i n - 2 0 1 7 - 0 1 2 9. 3. Ekstrand J, Lundqvist D, Davison M, D’Hooghe M, Pensgaard AM. (2019). Communication quality between the medical team and the head coach/ manager is associated with injury burden and player availability in elite football clubs. Br J Sports Med 2019;53:304–308. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 4 1 1 4. Pérez-Gómez J, Adsuar JC, Alcaraz PE, Carlos-Vivas J. Physical exercises for preventing injuries among adult male football players: A systematic review. J Sport Health Sci. 2022;11:115–22. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . j s h s . 2 0 2 0 . 1 1 . 0 0 3. 5. Ekstrand J. Keeping your top players on the pitch: the key to football medi- cine at a professional level. Br J Sports Med. 2013;47:723–4. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 3 - 0 9 2 7 7 1. 6. López-Valenciano A, Ruiz-Pérez I, Garcia-Gómez A, Vera-Garcia FJ, De Ste Croix M, Myer GD, Ayala F. Epidemiology of injuries in professional football: a systematic review and meta-analysis. Br J Sports Med. 2020;bjs- ports–2018–099577. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 8 - 0 9 9 5 7 7. 7. Aus der Fünten K, Tröß T, Hadji A, Beaudouin F, Steendahl IB, Meyer T. Epidemiology of football injuries of the German bundesliga: a media-based, prospective analysis over 7 consecutive seasons. Sports Medicine-Open. 2023;9:20. h t t p s : / / d o i . o r g / 1 0 . 1 1 8 6 / s 4 0 7 9 8 - 0 2 3 - 0 0 5 6 3 - x. 8. Eirale C, Tol JL, Farooq A, Smiley F, Chalabi H. Low injury rate strongly cor- relates with team success in Qatari professional football. Br J Sports Med. 2013;47:807–8. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 2 - 0 9 1 0 4 0. 9. Pangrazio O, Forriol F. (2016). Epidemiology of soccer players traumatic injuries during the 2015 America Cup. Muscles, Ligaments and Tendons. 2016;6:124 – 30. h t t p s : / / d o i . o r g / 1 0 . 1 1 1 3 8 / m l t j / 2 0 1 6 . 6 . 1 . 1 2 4 10. Henry T, Evans K, Snodgrass SJ, Miller A, Callister R. Risk factors for noncontact ankle injuries in amateur male soccer players: a prospective cohort study. Clin J Sport Med. 2016;26:25"
+    },
+    {
+      "page": 14,
+      "text": "Page 14 of 15 Bayrak BMC Sports Science, Medicine and Rehabilitation (2025) 17:217 31. Hägglund M, Waldén M, Bahr R, Ekstrand J. (2005). Methods for epidemiologi- cal study of injuries to professional football players: developing the UEFA model. British Journal of Sports Medicine.2005;39:340–346. 32. Fuller CW, Ekstrand J, Junge A, Andersen TE, Bahr R, Dvorak J. Futbol Yaralanmaları Çalışmalarında Yaralanma Tanımları ve veri Toplama prosedürl- eri Hakkında Fikir birliği bildirisi. Scand J Med Sci Sports. 2006;16:83–92. h t t p s : / / d o i . o r g / 1 0 . 1 1 1 1 / j . 1 6 0 0 - 0 8 3 8 . 2 0 0 6 . 0 0 5 2 8 . x. 33. Woods C, Hawkins R, Hulse M, Hodson A. The football association medical research programme: an audit of injuries in professional football-analysis of preseason injuries. Br J Sports Med. 2002;36:436–41. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s m . 3 6 . 6 . 4 3 6. 34. Nilsson T, Östenberg AH, Alricsson M. Injury profile among elite male youth soccer players in a Swedish first league. J Exerc Rehabilitation. 2016;12:83–9. h t t p s : / / d o i . o r g / 1 0 . 1 2 9 6 5 / j e r . 1 6 3 2 5 4 8 . 2 7 4. 35. Mosler AB, Weir A, Eirale C, Farooq A, Thorborg K, Whiteley RJ, et al. Epidemiol- ogy of time loss groin injuries in a men’s professional football league: a 2-year prospective study of 17 clubs and 606 players. Br J Sports Med. 2016;52:292– 7. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s p o r t s - 2 0 1 6 - 0 9 7 2 7 7. 36. Cook G, Movement. Functional movement systems: screening, assessment, corrective strategies. On Target Publication; 2010. 37. Smpokos E, Mourikis C, Theos C, Linardakis M. The injury profile of profes- sional football players: a three-season prospective cohort study. Arch Hell Med. 2020;37(4):471–9. 38. Plais N, Salzmann SN, Shue J, Sanchez CD, Urraza FJ, Girardi FP . Spine injuries in soccer. Curr Sports Med Rep. 2019;18:367–73. h t t p s : / / d o i . o r g / 1 0 . 1 2 4 9 / j s r . 0 0 0 0 0 0 0 0 0 0 0 0 0 6 3 8. 39. Perez-Arroniz M, Calleja-González J, Zabala-Lili J, Zubillaga A. The soccer goalkeeper profile: bibliographic review. Phys Sportsmed. 2023;51:193–202. h t t p s : / / d o i . o r g / 1 0 . 1 0 8 0 / 0 0 9 1 3 8 4 7 . 2 0 2 2 . 2 0 4 0 8 8 9 40. Torrontegui-Duarte M, Gijon-Nogueron G, Perez-Frias JC, Morales-Asencio JM, Luque-Suarez A. Incidence of injuries among professional football players in Spain during three consecutive seasons: A longitudinal, retrospective study. Phys Ther Sport. 2020;41:87–93. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . p t s p . 2 0 1 9 . 1 1 . 0 0 8. 41. Yáñez S, Yáñez C, Martínez M, Núñez M, De la Fuente C. Lesiones deportivas Del plantel profesional de fútbol Santiago Wanderers Durante Las tempo- radas 2017, 2018 y 2019. Arch De La Sociedad Chil De Med Del Deporte. 2021;66:92–103. h t t p s : / / d o i . o r g / 1 0 . 5 9 8 5 6 / a r c h . s o c . c h i l . m e d . d e p o r t e . v 6 6 i 1 . 1 6. 42. Lu D, McCall A, Jones M, Kovalchik S, Steinweg J, Gelis L, et al. Injury epidemi- ology in Australian male professional soccer. J Sci Med Sport. 2020;23:574–9. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . j s a m s . 2 0 2 0 . 0 1 . 0 0 6. 43. Ekstrand J, Hägglund M, Waldén M. Injury incidence and injury patterns in professional football: the UEFA injury study. Br J Sports Med. 2011;45:553–8. h t t p s : / / d o i . o r g / 1 0 . 1 1 3 6 / b j s m . 2 0 0 9 . 0 6 0 5 8 2. 44. Ekstrand J. Epidemiology of football injuries. Sci Sports. 2008;23:73–7. h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . s c i s p o . 2 0 0 7 . 1 0 . 0 1 2. 45. Raya-González J, Suárez-Arrones L, Navandar A, Balsalobre-Fernández C, de Villarreal ES. Injury profile of elite male young soccer players in a Spanish professional soccer club: a prospective study during 4 consecutive seasons. J Sport Rehabilitation. 2019;29:801–7. h t t p s : / / d o i . o r g / 1 0 . 1 1 2 3 / j s r . 2 0 1 9 - 0 1 1 3. 46. Moreno-Perez V, Sotos-Martínez V, L"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets-v8/S2761.packet.json"
+}

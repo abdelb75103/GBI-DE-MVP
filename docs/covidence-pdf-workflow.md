@@ -6,8 +6,8 @@ This workflow is local-only and read-only with respect to Covidence.
 
 ```bash
 node scripts/covidence-pdf-workflow.mjs prepare \
-  --references /Users/abdelbabiker/Downloads/GBI-DE-MVP-main/review_603597_included_csv_20260312035153.csv \
-  --existing "/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/Full Text - Data Extraaction" \
+  --references /Users/abdelbabiker/Desktop/GBI-DE-MVP-main/review_603597_included_csv_20260312035153.csv \
+  --existing "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Full Text - Data Extraaction" \
   --output /Users/abdelbabiker/Downloads/covidence-missing-pdfs-2026-03-11
 ```
 

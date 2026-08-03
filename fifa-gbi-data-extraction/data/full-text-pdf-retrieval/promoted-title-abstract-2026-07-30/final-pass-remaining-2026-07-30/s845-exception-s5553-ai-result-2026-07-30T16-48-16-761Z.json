@@ -1,0 +1,10 @@
+{
+  "apply": false,
+  "checks": {
+    "s5553RecommendationMapped": true,
+    "s5553PdfTraceable": true,
+    "s845ReferencePdfTraceable": true,
+    "s845NoExistingPaper": true,
+    "s845ExceptionNoteExplicit": true
+  }
+}

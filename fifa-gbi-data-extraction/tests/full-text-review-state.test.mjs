@@ -13,9 +13,16 @@ const workspaceSource = readFileSync(
   'utf8',
 );
 
-test('full-text review state route persists the flag in metadata and the comment in screening notes', () => {
+test('full-text review state route persists the flag and structured review notes in metadata', () => {
   assert.match(reviewRouteSource, /fullTextReviewFlagged/);
   assert.match(reviewRouteSource, /fullTextReviewUpdatedByName/);
-  assert.match(reviewRouteSource, /notes:\s*parsed\.data\.comment\?\.trim\(\)\s*\|\|\s*null/);
-  assert.match(workspaceSource, /Save flag and comment/);
+  assert.match(reviewRouteSource, /const FULL_TEXT_REVIEW_NOTES_KEY = 'fullTextReviewNotes'/);
+  assert.match(reviewRouteSource, /noteAction:\s*z\.enum\(\['none', 'add', 'edit', 'delete'\]\)/);
+  assert.match(reviewRouteSource, /\[FULL_TEXT_REVIEW_NOTES_KEY\]:\s*reviewNotes/);
+  assert.match(reviewRouteSource, /const updates = notesUpdate === undefined \? \{\} : \{ notes: notesUpdate \}/);
+  assert.doesNotMatch(reviewRouteSource, /notes:\s*parsed\.data\.comment\?\.trim\(\)\s*\|\|\s*null/);
+  assert.match(
+    workspaceSource,
+    /\{editingNote \? 'Update note' : reviewComment\.trim\(\) \? 'Save note' : 'Save flag'\}/,
+  );
 });

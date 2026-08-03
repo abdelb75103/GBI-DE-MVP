@@ -1,0 +1,490 @@
+{
+  "recordId": "27d9106c-e105-4749-9dcf-57b19ad03caf",
+  "covidenceId": null,
+  "studyId": "S4111",
+  "title": "Adductor-related groin injury: Prevalence and etiology during NCAA football games on artificial and natural grass surfaces.",
+  "authors": "Mitton JL",
+  "year": "2026",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S4111.pdf",
+  "pdfSha256": "aa84977142bcd60e08663dba43711eb0a9b676a571e39df74f3063bc104bd46f",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 11,
+  "textCharCount": 55568,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ductor extension, and/or eccentric adductor failure from reactive ground forces.8–11 The earliest reported groin adductor strain was described in Irish bowling. 12 Other adductor strains/groin injuries have a reported incidence of 5% to 23% observed mainly in soccer, ice hockey, and a few other sports. 13 In American football, this prevalence of groin strain/injuries has ranged from 0.4% to 12%; however, there are distinct differences in the injury tracking and reporting techniques used, potentially due to the limited av..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...oi: 10.1519/JSC. 0b013e3181a3c6c4 2. Netter FH. Lower limb. Netter Atlas of Human Anatomy: Classic Regional Approach. 8th ed. Elsevier; 2023:T8.5-T8.7. 3. Arner JW, Disantis A, Bradley JP, Zuckerbraun BS, Mauro CS. Management of hip and groin pain in American football players. Ann Jt. 2017;2(12):78. doi: 10.21037/aoj.2017.11.05 4. Fitzgerald CF, Jensen RL. A comparison of the National Football League’ s annual National Football League combine 1999 –2000 to 2015 –2016. J Strength Cond Res . 2020;34(3):771-781. doi: 10.1519/JSC.0000..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...ies in National Collegiate Ath- letic Association men ’ s football: 2014-2015 through 2018-2019. J Athl Train . 2021;56(7):643-650. doi: 10.4085/1062-6050- 447-20 20. Hölmich P, Larsen K, Krogsgaard K, Gluud C. Exercise program for prevention of groin pain in football players: a cluster- randomized trial: exercise program for prevention of groin pain in football players. Scand J Med Sci Sports . 2010;20(6):814- 821. doi:10.1111/j.1600-0838.2009.00998.x 21. Tyler TF, Nicholas SJ, Campbell RJ, McHugh MP. The association of hip stren..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...J Athl Train . 2021;56(7):643-650. doi: 10.4085/1062-6050- 447-20 20. Hölmich P, Larsen K, Krogsgaard K, Gluud C. Exercise program for prevention of groin pain in football players: a cluster- randomized trial: exercise program for prevention of groin pain in football players. Scand J Med Sci Sports . 2010;20(6):814- 821. doi:10.1111/j.1600-0838.2009.00998.x 21. Tyler TF, Nicholas SJ, Campbell RJ, McHugh MP. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey pla..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...speed and agility performance of college football players on field turf and natural grass. J Strength Cond Res . 2010;24(10):2613-2617. doi: 10.1519/JSC.0b013e3181eccdf8 51. Modric T, Esco M, Perkovic S, et al. Artificial turf increases the physical demand of soccer by heightening match running 378 ADDUCTOR-RELATED GROIN INJURY 19341563, 2026, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/pmrj.70023 by University College Dublin Libr, Wiley Online Library on [30/07/2026]. See the Terms and Conditions (ht..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...sda) . 2013;28(5):330-358. doi:10.1152/physiol.00019.2013 62. Thorarinsdottir S, Isaksen Johansen S, Ruud Askim Elvestad T, et al. The effect of an 8-week low- or high-volume protocol of the adductor strengthening programme on hip adduction strength in female football players-a randomized trial. Scand J Med Sci Sports. 2025;35(3):e70039. doi:10.1111/sms.70039 63. Estévez-Rodr íguez JL, Rivilla-Garc ía J, Jiménez-Rubio S. Is it possible to improve performance in competition after an adduc- tor longus injury in professional football..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...players-a randomized trial. Scand J Med Sci Sports. 2025;35(3):e70039. doi:10.1111/sms.70039 63. Estévez-Rodr íguez JL, Rivilla-Garc ía J, Jiménez-Rubio S. Is it possible to improve performance in competition after an adduc- tor longus injury in professional football players? J Sport Reha- bil. 2024;33(8):663-667. doi: 10.1123/jsr.2024-0028 64. Bahr R, Krosshaug T. Understanding injury mechanisms: a key component of preventing injuries in sport. Br J Sports Med . 2005;39(6):324-329. doi:10.1136/bjsm.2005.018341 65. Loughran GJ, V..."
+      }
+    ],
+    "wrong_sport": [
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...e from reactive ground forces.8–11 The earliest reported groin adductor strain was described in Irish bowling. 12 Other adductor strains/groin injuries have a reported incidence of 5% to 23% observed mainly in soccer, ice hockey, and a few other sports. 13 In American football, this prevalence of groin strain/injuries has ranged from 0.4% to 12%; however, there are distinct differences in the injury tracking and reporting techniques used, potentially due to the limited available data specifically reporting adductor injuries coming..."
+      },
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...specifically on the adductor-related groin injuries. PURPOSE With the potential impact of groin trauma on an athlete ’ s physical and mental health, further research is war- ranted. Therefore, based on (1) the excessive physical demands placed on the body by American football, (2) the multiple array of movements performed by the groin, and (3) the potential long-term reduction in qual- ity of life, the purpose of this study will be to quantify the long-term prevalence and etiology of groin injuries during game-related National Col..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...s. 55–59 The majority of groin injuries among athletes wearing molded/hybrid cleats is likely a function of this cleat style being the most popular, mak- ing up 62% of the distribution in this study and 49% in another investigation examining >4000 injuries to American football athletes. 7 The key point to this study remains that, regardless of statistical findings, when based on a typical 10 –12 game college football season, the incidence of groin trauma as well as the influence of playing surface are minimal. This is substantiated..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...4-1517. doi: 10.1519/JSC. 0b013e3181a3c6c4 2. Netter FH. Lower limb. Netter Atlas of Human Anatomy: Classic Regional Approach. 8th ed. Elsevier; 2023:T8.5-T8.7. 3. Arner JW, Disantis A, Bradley JP, Zuckerbraun BS, Mauro CS. Management of hip and groin pain in American football players. Ann Jt. 2017;2(12):78. doi: 10.21037/aoj.2017.11.05 4. Fitzgerald CF, Jensen RL. A comparison of the National Football League’ s annual National Football League combine 1999 –2000 to 2015 –2016. J Strength Cond Res . 2020;34(3):771-781. doi: 10.1519/..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...CD, Mirzayan R, Sekiya JK, eds. Surgical Techniques in Sports Medicine . 1st ed. Lippincott Williams & Wilkins; 2006:583. 6. Iacovelli JN, Yang J, Thomas G, Wu H, Schiltz T, Foster DT. The effect of field condition and shoe type on lower extremity injuries in American football. Br J Sports Med . 2013;47(12):789- 793. doi: 10.1136/bjsports-2012-092113 7. Meyers MC. Incidence, mechanisms, and severity of game- related high school football injuries across artificial turf systems of various infill weights. Orthop J Sports Med . 2019;7(..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...3546521990780 17. Kerbel YE, Smith CM, Prodromo JP, Nzeogu MI, Mulcahey MK. Epidemiology of hip and groin injuries in collegiate athletes in the United States. Orthop J Sports Med . 2018;6(5): 232596711877167. doi: 10.1177/2325967118771676 18. Saal JA. Common American football injuries. Sports Med. 1991; 12(2):132-147. doi:10.2165/00007256-199112020-00005 19. Chandran A, Morris SN, Powell JR, Boltz AJ, Robison HJ, Collins CL. Epidemiology of injuries in National Collegiate Ath- letic Association men ’ s football: 2014-2015 through..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...etition. A 16-season prospective study. Orthop J Sports Med . 2023;11(7_suppl3):2325967123S00085. doi: 10.1177/2325967123S00085 55. Burke AA, Guthrie BM, Magee M, Miller AD. Revisiting the assessment of strength, power, and change of direction in colle- giate American football athletes. J Strength Cond Res . 2023; 37(8):1623-1627. doi:10.1519/jsc.0000000000004441 56. Fullagar HHK, McCunn R, Murray A. Updated review of the applied physiology of American college football: physical demands, strength and conditioning, nutrition, and in..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "American football",
+        "snippet": "...n college football: physical demands, strength and conditioning, nutrition, and injury charac- teristics of America ’ s favorite game. Int J Sports Physiol Per- form. 2017;12(10):1396-1403. doi:10.1123/ijspp.2016-0783 57. Hoffman JR. The applied physiology of American football. Int J Sports Physiol Perform . 2008;3(3):387-392. doi: 10.1123/ijspp.3. 3.387 58. Krill MK, Borchers JR, Hoffman JT, Krill ML, Hewett TE. Analysis of football injuries by position group in division I college football: a 5-year program review. Clin J Sport Me..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "number of games",
+        "snippet": "...mechanism and situation, player position, skill position, cleat design, field conditions, environmental conditions, imaging and surgical proce- dures, and turf age. Injury incidence rates were calculated using injuries per 10 games = [(number of injuries /C4 number of games) /C2 10]. Results: Of the 2243 games documented, 1061 (47.3%) were played on artifi- cial turf and 1182 games (52.7%) on natural grass. In sum, of 9360 total inju- ries, 111 (1.2%) adductor-related groin injuries were recorded with 48 (43.2%) occurring on art..."
+      },
+      {
+        "page": 4,
+        "section": "Statistical analysis",
+        "eligibleEvidenceSection": true,
+        "match": "incidence rate",
+        "snippet": "...NY) software, with 95% confidence intervals (95% CIs) determined as described else- where. 43 Because most universities play approxi- mately 10 to 12 games each season, exposure to injury was defined in terms of team games, as previ- ously recommended. Injury incidence rate was expressed as injuries per 10 team games and calcu- lated as [( number of injuries /C4 number of team games ) /C2 10] as previously reported. 7,41 Data were then subjected to multivariate analyses of variance (MANOVAs) and Wilks λ criteria using general li..."
+      },
+      {
+        "page": 4,
+        "section": "Results",
+        "eligibleEvidenceSection": true,
+        "match": "incidence rate",
+        "snippet": "...stantial injuries n (%) 9 (50.0) 9 (50.0) 18 (16.2) IIR (95% CI) 0.08 (0.04 –0.16) 0.08 (0.04 –0.14) 0.08 Severe injuries n (%) 1 (25.0) 3 (75.0) 4 (3.6) IIR (95% CI) 0.01 (0.00 –0.05) 0.03 (0.01 –0.07) 0.02 Abbreviations: CI, confidence interval; IIR, injury incidence rate [(number of injuries /C4 number of team games) /C2 10]. aWilks’ λ injury severity ( F2,108 = 0.511; p = .602; η2 p ¼ :009). bMinor injury, 0 –6 days of injury time loss; substantial injury, 7 –21 days of injury time loss; severe injury, ≥22 days of injury tim..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...ation/plant 12 0.11 0.06 –0.20 6 0.05 0.02 –0.11 Sprinting/running 16 0.15 0.09 –0.24 27 0.23 0.16 –0.33 Catching/blocking pass 1 0.01 0.00 –0.05 1 0.01 0.00 –0.05 Overuse 7 0.07 0.03 –0.14 3 0.03 0.01 –0.07 Abbreviations: CI, confidence interval; IIR, injury incidence rate [(number of injuries /C4 number of team games) /C2 10]. aWilks’ λ injury classification ( F2,108 = 0.377; p = .687; η2 p ¼ :007), injury category ( F1,109 = 0.850; p = .430; η2 p ¼ :015), primary type of injury ( F4,106 = 0.293; p = .830; η2 p ¼ :008), injury..."
+      },
+      {
+        "page": 6,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "....14 –0.30 Defensive line 4 0.04 0.01 –0.10 10 0.08 0.05 –0.16 Linebacker 7 0.07 0.03 –0.14 3 0.03 0.01 –0.07 Secondary 11 0.10 0.06 –0.18 11 0.09 0.05 –0.17 Special teams 9 0.08 0.04 –0.16 17 0.14 0.09 –0.23 Abbreviations: CI, confidence interval; IIR, injury incidence rate [(number of injuries /C4 number of team games) /C2 10]. PAT/FG, point after touchdown/field goal. aWilks’ λ injury situation ( F7,103 = 1.355; p = .212; η2 p ¼ 119), player position ( F2,108 = 0.144; p = .866; ηp 2 = .003), skill position ( F7,103 = 0.511; p..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...3 –0.12 12 0.10 0.06 –0.18 Turf age New 7 0.07 0.03 –0.14 12 0.10 0.06 –0.18 1–3 y 25 0.24 0.16 –0.35 30 0.25 0.18 –0.36 4–7 y 13 0.12 0.07 –0.21 11 0.09 0.05 –0.17 ≥ 8 y 3 0.03 0.01 –0.08 10 0.08 0.05 –0.16 Abbreviations: CI, confidence interval; IIR, injury incidence rate [(number of injuries /C4 number of team games) /C2 10]. aWilks’ λ cleat design ( F4,106 = 1.565; p = .218; η2 p ¼ :002), field conditions ( F2,108 = 2.869; p = .061; η2 p = .050), temperature ( F2,108 = 0.669; p = .516; η2 p ¼ :003), imaging and surgical proc..."
+      }
+    ],
+    "review": [
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...G, Gallaspy JB. Hamstring, quadriceps, and groin reha- bilitation. In: Andrews JR, Harrelson GL, Wilk KE, eds. Physical Rehabilitation of the Injured Athlete . 3rd ed. Saunders; 2004: 436-443. 10. Farrell SG, Hatem M, Bharam S. Acute adductor muscle injury: a systematic review on diagnostic imaging, treatment, and pre- vention. Am J Sports Med . 2023;51(13):3591-3603. doi: 10.1177/ 03635465221140923 11. Obrock BR, Bankhead CP, Richter D. Hip and thigh contusions and strains. In: DeLee J, Drez D, Miller MD, Thompson SR, eds. DeLee,..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...ed. Elsevier; 2020:1043-1052. 12. McWilliams CA. Clinical department: hernia of the adductor longus muscle, with operation. Med Rec. 1901;59(12):468. 13. Esteve E, Rathleff MS, Bagur-Calafat C, Urrútia G, Thorborg K. Prevention of groin injuries in sports: a systematic review with MITTON ET AL . 377 19341563, 2026, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/pmrj.70023 by University College Dublin Libr, Wiley Online Library on [30/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "meta-analysis of randomised controlled trials. Br J Sports Med . 2015;49(12):785-791. doi:10.1136/bjsports-2014-094162 14. Culpepper MI, Niemann KM. High school football injuries in Bir- mingham Alabama. South Med J . 1983;76(7):873-875. doi: 10. 1097/00007611-198307000-00..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Answer questions and earn CME credit . ORIGINAL ARTICLE Adductor-related groin injury: Prevalence and etiology during NCAA football games on artificial and natural grass surfaces Jarrett L. Mitton MPH 1 | Michael C. Meyers PhD 2 | Irene van Woerden PhD 3 | Ryan P. Lindsay PhD 3 | James C. Sterling MD 4 | Shad K. Robinson MPE-AA 2 1Center of Ex..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Prevalence",
+        "snippet": "Answer questions and earn CME credit . ORIGINAL ARTICLE Adductor-related groin injury: Prevalence and etiology during NCAA football games on artificial and natural grass surfaces Jarrett L. Mitton MPH 1 | Michael C. Meyers PhD 2 | Irene van Woerden PhD 3 | Ryan P. Lindsay PhD 3 | James C. Sterling MD 4 | Shad K. Robinson MPE-AA 2 1Center of Excellence for..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...ndence Jarrett L. Mitton, Center of Excellence for Sport Science and Coach Education, Department of Exercise and Sport Science, East Tennessee State University, Johnson City, TN, USA Email: mitton@etsu.edu; mitton.jarrett@ gmail.com Abstract Background: Groin injuries can be detrimental to an athlete ’ s health and per- formance. Prior studies evaluating musculoskeletal injuries on artificial turf ver- sus natural grass have resulted in equivocal findings; however, few studies have compared the occurrence of groin trauma b..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...Sport Science, East Tennessee State University, Johnson City, TN, USA Email: mitton@etsu.edu; mitton.jarrett@ gmail.com Abstract Background: Groin injuries can be detrimental to an athlete ’ s health and per- formance. Prior studies evaluating musculoskeletal injuries on artificial turf ver- sus natural grass have resulted in equivocal findings; however, few studies have compared the occurrence of groin trauma between the two surfaces. Objective: To quantify the incidence and etiology of groin trauma during col- lege footb..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...- formance. Prior studies evaluating musculoskeletal injuries on artificial turf ver- sus natural grass have resulted in equivocal findings; however, few studies have compared the occurrence of groin trauma between the two surfaces. Objective: To quantify the incidence and etiology of groin trauma during col- lege football games across artificial and natural grass surfaces. Design: Prospective Cohort. Setting: University. Participants: Athletic trainers from 41 Football Bowl Subdivision universities evaluated injuries susta..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...the incidence and etiology of groin trauma during col- lege football games across artificial and natural grass surfaces. Design: Prospective Cohort. Setting: University. Participants: Athletic trainers from 41 Football Bowl Subdivision universities evaluated injuries sustained by collegiate football athletes while competing on artificial or natural grass surfaces. The universities were selected based on the availability of both playing surfaces during the competitive season, consistent sport skill level, and the presence..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...full-time certified athletic trainer. Artificial surfaces included in the study were limited to heavyweight infill systems (≥9.0 lbs/ft 2) to minimize infill system weight influences on trauma. Interventions: Not applicable. Main Outcome Measure(s): Adductor injury severity, classification, category, primary type, mechanism and situation, player position, skill position, cleat design, field conditions, environmental conditions, imaging and surgical proce- dures, and turf age. Injury incidence rates were calculated using..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Injury",
+        "snippet": "...le. Main Outcome Measure(s): Adductor injury severity, classification, category, primary type, mechanism and situation, player position, skill position, cleat design, field conditions, environmental conditions, imaging and surgical proce- dures, and turf age. Injury incidence rates were calculated using injuries per 10 games = [(number of injuries /C4 number of games) /C2 10]. Results: Of the 2243 games documented, 1061 (47.3%) were played on artifi- cial turf and 1182 games (52.7%) on natural grass. In sum, of 9360 tota..."
+      },
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "INTRODUCTION Groin injuries are a common issue and concern among athletes, particularly those participating in sports that require sudden changes in direction, kicking, or high accelerating intensity movements. These injuries can be difficult to diagnose and treat as well as rehabilitat..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "and skill level of the athlete, where the injury occurred, weather and field conditions, injury cate- gory, time of injury, injury classification, injury time loss, position played at the time of injury, injury situa- tion, injury mechanism, personnel determining the injury, injury site location, principal..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ns (no precipitation/dry field, rain, snow, sleet, no precipi- tation/wet field, adverse conditions combined) and envi- ronmental temperature (cold days ≤59 /C14 F, moderate days 60 –79/C14 F, hot days ≥80/C14 F) were obtained before game time and whenever an injury occurred; these data were obtained by the ATCs and/or through the local air- port climatic data. 7,41,42 Additionally, in-season and postseason imaging and surgical procedures (com- puted tomography, magnetic resonance imaging, and radiography) were documente..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "occurred during acts of sprinting or running on both sur- faces. In regard to injury classification, there was no meaningful influence of player position or game situa- tion on cases of recurrent trauma. As shown in Table 3, MANOVAs indicated no significant difference between playing surface by injury situation ( F7,103 = 1.355; p = .212), pl..."
+      },
+      {
+        "page": 6,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "prevalence",
+        "snippet": "incidences of imaging were observed on natural grass involving seven magnetic resonance imaging scans and two radiographic procedures. DISCUSSION The purpose of this prospective cohort study was to quantify the prevalence and etiology of game-related adductor trauma on artificial turf and natural grass. It was hypothesized that college football athletes would not experience any difference in surface-related groin trauma while competing on either surface. In contrast to popular..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "these findings. 55–59 The majority of groin injuries among athletes wearing molded/hybrid cleats is likely a function of this cleat style being the most popular, mak- ing up 62% of the distribution in this study and 49% in another investigation examining >4000 injuries to American football athletes. 7 The key p..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "influence of precompetition workloads 65,66; previous injury history, prior exposure to surface type during dif- ferent games, and associated medical procedures 67,68; quality of field maintenance 64,65; differences in postural or joint integrity, musculoskeletal structure, and biome- chanics of player movement 64,69;..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "meta-analysis of randomised controlled trials. Br J Sports Med . 2015;49(12):785-791. doi:10.1136/bjsports-2014-094162 14. Culpepper MI, Niemann KM. High school football injuries in Bir- mingham Alabama. South Med J . 1983;76(7):873-875. doi: 10. 1097/00007611-198307000-00014 15. Zemper ED. Injury rates in a national sample of college football teams: a 2-year prospective study. Phys Sportsmed . 1989; 17(11):100-113. doi:10.1080/009138..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "performance compared with natural grass. J Strength Cond Res . 2023;37(11):2222-2228. doi:10.1519/JSC.0000000000004539 52. Skovron ML, Levy IM, Agel J. Living with artificial grass: a knowl- edge update: part 2: epidemiology. Am J Sports Med . 1990; 18(5):510-513. doi:10.1177/036354659001800511 53. Sagendorf AT, Meyers MC, Sterling JC, Robinson SK, Mitton JL. Prevalence of game-related hip pointers between high school and collegiate football athletes: 794. Med Sci Sports Exerc ...."
+      },
+      {
+        "page": 11,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "How to cite this article: Mitton JL, Meyers MC, van Woerden I, Lindsay RP, Sterling JC, Robinson SK. Adductor-related groin injury: Prevalence and etiology during NCAA football games on artificial and natural grass surfaces. PM&R. 2026;18(4):370‐380. doi: 10.1002/pmrj. 70023 This journal-based CME activity is designated for 1.0 AMA PRA Category 1 Credit TM.E f f e c t i v e January 2024,..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Prospective",
+        "snippet": "...vocal findings; however, few studies have compared the occurrence of groin trauma between the two surfaces. Objective: To quantify the incidence and etiology of groin trauma during col- lege football games across artificial and natural grass surfaces. Design: Prospective Cohort. Setting: University. Participants: Athletic trainers from 41 Football Bowl Subdivision universities evaluated injuries sustained by collegiate football athletes while competing on artificial or natural grass surfaces. The universities were selected ba..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Cohort",
+        "snippet": "...gs; however, few studies have compared the occurrence of groin trauma between the two surfaces. Objective: To quantify the incidence and etiology of groin trauma during col- lege football games across artificial and natural grass surfaces. Design: Prospective Cohort. Setting: University. Participants: Athletic trainers from 41 Football Bowl Subdivision universities evaluated injuries sustained by collegiate football athletes while competing on artificial or natural grass surfaces. The universities were selected based on..."
+      },
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...r main entities for groin pain: (1) adductor-related — the most common, (2) iliopsoas related, (3) inguinal related groin— no inguinal hernia present, and (4) pubic related— pubic symphysis bone and surrounding tissue tenderness. Based on these criteria, this prospective data analysis and subsequent discussion concentrates more specifically on the adductor-related groin injuries. PURPOSE With the potential impact of groin trauma on an athlete ’ s physical and mental health, further research is war- ranted. Therefore, based on..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "prospective",
+        "snippet": "...ss fields were used across the same geographical regions, with similar surface quality and environmental influences. All teams had the opportunity to practice on either artificial turf or natural grass during the competi- tive season. 7,29 Procedures For this prospective cohort study, a two-sided single- page injury surveillance form was used based on criteria recommended and established in the literature. 29,32 –34 The form included the following: athletic identification number, athletic trainer, date of injury, athlete weig..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...re used across the same geographical regions, with similar surface quality and environmental influences. All teams had the opportunity to practice on either artificial turf or natural grass during the competi- tive season. 7,29 Procedures For this prospective cohort study, a two-sided single- page injury surveillance form was used based on criteria recommended and established in the literature. 29,32 –34 The form included the following: athletic identification number, athletic trainer, date of injury, athlete weight, uni..."
+      },
+      {
+        "page": 6,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "incidences of imaging were observed on natural grass involving seven magnetic resonance imaging scans and two radiographic procedures. DISCUSSION The purpose of this prospective cohort study was to quantify the prevalence and etiology of game-related adductor trauma on artificial turf and natural grass. It was hypothesized that college football athletes would not experience any difference in surface-related groin trauma while competi..."
+      },
+      {
+        "page": 6,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "incidences of imaging were observed on natural grass involving seven magnetic resonance imaging scans and two radiographic procedures. DISCUSSION The purpose of this prospective cohort study was to quantify the prevalence and etiology of game-related adductor trauma on artificial turf and natural grass. It was hypothesized that college football athletes would not experience any difference in surface-related groin trauma while competing on e..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...n data on long-term quality of life dif- ferences following trauma between the two surface groups was beyond the scope of this study. Key strengths of the study were the opportunity to follow a large number of FBS universities during the 16-year period, using prospective, validated methods that reduced fluctuations often observed in single- season injury patterns and individual team effect, 76,77 as well as minimized the over- and underestimation of sport trauma observed in publicly obtained data- bases. 71,73,78 In addition,..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...orts-2014-094162 14. Culpepper MI, Niemann KM. High school football injuries in Bir- mingham Alabama. South Med J . 1983;76(7):873-875. doi: 10. 1097/00007611-198307000-00014 15. Zemper ED. Injury rates in a national sample of college football teams: a 2-year prospective study. Phys Sportsmed . 1989; 17(11):100-113. doi:10.1080/00913847.1989.11709915 16. Meyers MC. Surface-related high school football game injuries on pad and no-pad fields. Am J Sports Med . 2021;49(9):2489- 2497. doi:10.1177/0363546521990780 17. Kerbel YE, S..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...794. Med Sci Sports Exerc . 2024;56(10S):279-280. doi: 10.1249/01.mss. 0001054932.16886.07 54. Sterling JC, Robinson S, Meyers MC. Paper 60: effect of mouth- guard type on severity of concussion during game-related col- lege football competition. A 16-season prospective study. Orthop J Sports Med . 2023;11(7_suppl3):2325967123S00085. doi: 10.1177/2325967123S00085 55. Burke AA, Guthrie BM, Magee M, Miller AD. Revisiting the assessment of strength, power, and change of direction in colle- giate American football athletes. J St..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ding an observation period longer than previous investigations. 18,19 Prior literature indicates a greater reinjury risk with increasing competitive levels. 8,11,20,21 More severe inju- ries such as adductor-related avulsion fractures 22 can cause significant time loss with an average return to play of 4.8 months, even up to 8 months in various sports.23 There are public health concerns from groin related injuries as well. Over one third of National Bas- ketball Association players report groin pain following retirement, an..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ne the date of recovery and functional return to play. 29,38 Completed injury surveillance forms containing minor trauma were emailed to the author within 7 working days after a game and were processed before the next game. More serious injuries with extended time loss were submitted upon diagnostic completion. A follow-up telephone visit was used to obtain any additional information pertaining to any changes or additions in diagnosis, treatment, or time to return to play. To avoid the potential for on- the-field detection..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury was defined",
+        "snippet": "...th total data collected restricted to the ATCs and data compilation and analysis limited to the pri- mary investigators. Definitions The definition of injury was based on a combination of functional outcome, observation, and treat- ment. 29,30,34 A reportable injury was defined as any game-related football trauma reported or treated by the ATC or physician that resulted in an athlete miss- ing all or part of a game. 16,32 Injury severity was based on the number of days absent from practice or game competition (time loss). As previou..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ble injury was defined as any game-related football trauma reported or treated by the ATC or physician that resulted in an athlete miss- ing all or part of a game. 16,32 Injury severity was based on the number of days absent from practice or game competition (time loss). As previously described, any trauma that required 0 to 6 days of time loss was considered a minor injury . An injury that required 7 to 21 days of time loss resulting in the athlete being unable to return to play at the same competitive level was considered..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...d by the ATC or physician that resulted in an athlete miss- ing all or part of a game. 16,32 Injury severity was based on the number of days absent from practice or game competition (time loss). As previously described, any trauma that required 0 to 6 days of time loss was considered a minor injury . An injury that required 7 to 21 days of time loss resulting in the athlete being unable to return to play at the same competitive level was considered a substantial injury . Any trauma that required 22 or more days of time loss..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...ame. 16,32 Injury severity was based on the number of days absent from practice or game competition (time loss). As previously described, any trauma that required 0 to 6 days of time loss was considered a minor injury . An injury that required 7 to 21 days of time loss resulting in the athlete being unable to return to play at the same competitive level was considered a substantial injury . Any trauma that required 22 or more days of time loss was considered a severe injury . 29 Regarding stage of injury , acute trauma was..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...time loss was considered a minor injury . An injury that required 7 to 21 days of time loss resulting in the athlete being unable to return to play at the same competitive level was considered a substantial injury . Any trauma that required 22 or more days of time loss was considered a severe injury . 29 Regarding stage of injury , acute trauma was delineated from recurrent acute injury according to criteria previously published, 29: Acute trauma was linked to an incident that specifically occurred during a competitive game..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury was defined",
+        "snippet": "...s, apophysitis), ligament sprain or tear, cartilage tear, muscle-tendon strain or tear, hyperextension, neu- ral injury (burner, brachial plexus), subluxation or dislo- cation, and fracture (standard, epiphyseal, avulsion, stress, osteochondral). Mechanism of injury was defined as that occurring while a player was blocked above or below the waist, tackled above or below the waist, blocking, tackling, impacting with the playing surface, stepped on, fallen on or kicked, sprinting or running with no player contact, catching/blocking a..."
+      },
+      {
+        "page": 4,
+        "section": "Statistical analysis",
+        "eligibleEvidenceSection": true,
+        "match": "injury was defined",
+        "snippet": "...y distributions were computed using IBM SPSS Statistics (version 28.0; Armonk, NY) software, with 95% confidence intervals (95% CIs) determined as described else- where. 43 Because most universities play approxi- mately 10 to 12 games each season, exposure to injury was defined in terms of team games, as previ- ously recommended. Injury incidence rate was expressed as injuries per 10 team games and calcu- lated as [( number of injuries /C4 number of team games ) /C2 10] as previously reported. 7,41 Data were then subjected to multiv..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Answer questions and earn CME credit . ORIGINAL ARTICLE Adductor-related groin injury: Prevalence and etiology during NCAA football games on artificial and natural grass surfaces Jarrett L. Mitton MPH 1 | Michael C. Meyers PhD 2 | Irene van Woerden PhD 3 | Ryan P. Lindsay PhD 3 | James C. Sterling MD 4 | Shad K. Robinson MPE-AA 2 1Center of Excellence for Sport Science and Coach Education, Department of Exercise and Sport Science, East Tennessee State University, Johnson City, Tennessee, USA 2Department of Human Performance and Sport Studies, Idaho State University, Pocatello, Idaho, USA 3Department of Community and Public Health, Idaho State University, Pocatello, Idaho, USA 4Baylor, Scott & White, Sports and Physical Medicine Center, Dallas, Texas, USA Correspondence Jarrett L. Mitton, Center of Excellence for Sport Science and Coach Education, Department of Exercise and Sport Science, East Tennessee State University, Johnson City, TN, USA Email: mitton@etsu.edu; mitton.jarrett@ gmail.com Abstract Background: Groin injuries can be detrimental to an athlete ’ s health and per- formance. Prior studies evaluating musculoskeletal injuries on artificial turf ver- sus natural grass have resulted in equivocal findings; however, few studies have compared the occurrence of groin trauma between the two surfaces. Objective: To quantify the incidence and etiology of groin trauma during col- lege football games across artificial and natural grass surfaces. Design: Prospective Cohort. Setting: University. Participants: Athletic trainers from 41 Football Bowl Subdivision universities evaluated injuries sustained by collegiate football athletes while competing on artificial or natural grass surfaces. The universities were selected based on the availability of both playing surfaces during the competitive season, consistent sport skill level, and the presence of a full-time certified athletic trainer. Artificial surfaces included in the study were limited to heavyweight infill systems (≥9.0 lbs/ft 2) to minimize infill system weight influences on trauma. Interventions: Not applicable. Main Outcome Measure(s): Adductor injury severity, classification, category, primary type, mechanism and situation, player position, skill position, cleat design, field conditions, environmental conditions, imaging and surgical proce- dures, and turf age. Injury incidence rates were calculated using injuries per 10 games = [(number of injuries /C4 number of games) /C2 10]. Results: Of the 22\n\n[p. 2] INTRODUCTION Groin injuries are a common issue and concern among athletes, particularly those participating in sports that require sudden changes in direction, kicking, or high accelerating intensity movements. These injuries can be difficult to diagnose and treat as well as rehabilitate. Large muscle groups play a part in a joint ’ s stability. 1,2 Today’ s collegiate athletes may be predisposed to inju- ries related to increased size, mass, acceleration, and torque thereby leading to forces five times greater than their body weight. 3–7 The groin or medial thigh musculature components are both directly and indirectly an essential component to hip stability. 2 Commonly reported injury mechanisms include forced adduction, twisting, adductor extension, and/or eccentric adductor failure from reactive ground forces.8–11 The earliest reported groin adductor strain was described in Irish bowling. 12 Other adductor strains/groin injuries have a reported incidence of 5% to 23% observed mainly in soccer, ice hockey, and a few other sports. 13 In American football, this prevalence of groin strain/injuries has ranged from 0.4% to 12%; however, there are distinct differences in the injury tracking and reporting techniques used, potentially due to the limited available data specifically reporting adductor injuries coming from investigations before 1992 or after 2018. 7,14–19 These differences may partly explain the large variability in reported injury preva- lence and this investigation aims to improve our under- standing of adductor trauma at the collegiate level of play by providing an observation period longer than previous investigations. 18,19 Prior literature indicates a greater reinjury risk with increasing competitive levels. 8,11,20,21 More severe inju- ries such as adductor-related avulsion fractures 22 can cause significant time loss with an average return to play of 4.8 months, even up to 8 months in various sports.23 There are public health concerns from groin related injuries as well. Over one third of National Bas- ketball Association players report groin pain following retirement, and 47% have related anxiety, depression, lower physical activity levels, and decreased quality of life. 24 Across a variety of sports, males in higher level collision activities may be predisposed to higher levels of hip osteoarthritis, which in turn may lead to increased rates of surgical treatment procedures. 25–27 The most current classification for groin-related inju- ri\n\n[p. 3] and skill level of the athlete, where the injury occurred, weather and field conditions, injury cate- gory, time of injury, injury classification, injury time loss, position played at the time of injury, injury situa- tion, injury mechanism, personnel determining the injury, injury site location, principal body part, primary type of injury, grade of injury, injury because of illegal action thoracoabdominal diagnosis, surgical interven- tion and time, and musculoskeletal location of injury. 7 Outcomes of interest included injury severity, injury classification, injury category, primary type of injury, mechanism of injury, injury situation, player position, skill position, cleat design, field conditions, tempera- ture, imaging and surgery, and age of playing surface. Following an open invitation to all FBS universities that met the criteria for inclusion, interested head ATCs for each university were approached because of their daily interaction with the athletes and coaches during and after sport trauma and their expertise in injury rec- ognition. 29,30 Prior to the football season, the respective ATCs were provided with an overview of the purpose and procedures of the study, copies of the injury sur- veillance form, and detailed instructions for comple- tion to avoid the potential for performance and detection biases. 31,35 Communication was main- tained to discuss potential concerns and ensure accuracy of collection, comprehensiveness of infor- mation, and ease of application. 36 The protocol was approved by the institutional review board at the uni- versity in which the study was based, and the study was conducted in accordance with the guidelines for the use of human subjects as stipulated by the Ameri- can College of Sports Medicine. 37 All regular-season, postseason playoff champion- ships, and bowl games were included. Injury data was recorded following game completion and submitted in a timely manner (the vast majority of forms were com- pleted within 1 week), with additional support from ATC notes to avoid lapse of memory leading to inac- curacy or response distortion. 29,35 All game-related injuries were evaluated by the attending head ATC and team physicians on site and subsequently in the physician’ s office when further follow-up and treatment were deemed necessary. Any sport trauma that occurred toward the end of the competition schedule was monitored beyond the player ’ s specific season to determine the date of recovery and functional return\n\n[p. 4] touchdown, field goal, kickoff, punting, punt return, or fumble recovery. 16,29 To optimize cell size and enhance interpretation, the 23 player positions were condensed and analyzed by offense, defense, and special teams and by specific player skill position (quarterback, backfield, offensive line, tight end, receiver, defensive line, linebacker, sec- ondary).29,39 Each team ’ s ATC documented the type of cleat design (7-studded and 12-studded cleats, molded or hybrid cleats, edge or blade-style cleats, turf or elas- tomeric short rubber cleats) and the age of the playing surface.40 Environmental factors such as field conditions (no precipitation/dry field, rain, snow, sleet, no precipi- tation/wet field, adverse conditions combined) and envi- ronmental temperature (cold days ≤59 /C14 F, moderate days 60 –79/C14 F, hot days ≥80/C14 F) were obtained before game time and whenever an injury occurred; these data were obtained by the ATCs and/or through the local air- port climatic data. 7,41,42 Additionally, in-season and postseason imaging and surgical procedures (com- puted tomography, magnetic resonance imaging, and radiography) were documented. Age of playing surface was defined as new fields, 1- to 3-year-old fields, and 4- to 7-year-old fields. Fields 8 or more years of age were condensed due to the expiration of the manufac- turer warranty. Statistical analysis Data were grouped by playing surface (artificial turf, natural grass) and tabular frequency distributions were computed using IBM SPSS Statistics (version 28.0; Armonk, NY) software, with 95% confidence intervals (95% CIs) determined as described else- where. 43 Because most universities play approxi- mately 10 to 12 games each season, exposure to injury was defined in terms of team games, as previ- ously recommended. Injury incidence rate was expressed as injuries per 10 team games and calcu- lated as [( number of injuries /C4 number of team games ) /C2 10] as previously reported. 7,41 Data were then subjected to multivariate analyses of variance (MANOVAs) and Wilks λ criteria using general linear model procedures. 44 Effect sizes were reported in the context of the multivariate model using partial eta squared ( η2 p) and classified as small (η2 p ≥ 0:01), medium ( η2 p ≥ 0:06), and large ( η2 p ≥ 0:14) according to criteria previously established. 45,46 When significant main effects were observed, univariate post hoc procedures were performed. An experiment-wis",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Answer questions and earn CME credit . ORIGINAL ARTICLE Adductor-related groin injury: Prevalence and etiology during NCAA football games on artificial and natural grass surfaces Jarrett L. Mitton MPH 1 | Michael C. Meyers PhD 2 | Irene van Woerden PhD 3 | Ryan P. Lindsay PhD 3 | James C. Sterling MD 4 | Shad K. Robinson MPE-AA 2 1Center of Excellence for Sport Science and Coach Education, Department of Exercise and Sport Science, East Tennessee State University, Johnson City, Tennessee, USA 2Department of Human Performance and Sport Studies, Idaho State University, Pocatello, Idaho, USA 3Department of Community and Public Health, Idaho State University, Pocatello, Idaho, USA 4Baylor, Scott & White, Sports and Physical Medicine Center, Dallas, Texas, USA Correspondence Jarrett L. Mitton, Center of Excellence for Sport Science and Coach Education, Department of Exercise and Sport Science, East Tennessee State University, Johnson City, TN, USA Email: mitton@etsu.edu; mitton.jarrett@ gmail.com Abstract Background: Groin injuries can be detrimental to an athlete ’ s health and per- formance. Prior studies evaluating musculoskeletal injuries on artificial turf ver- sus natural grass have resulted in equivocal findings; however, few studies have compared the occurrence of groin trauma between the two surfaces. Objective: To quantify the incidence and etiology of groin trauma during col- lege football games across artificial and natural grass surfaces. Design: Prospective Cohort. Setting: University. Participants: Athletic trainers from 41 Football Bowl Subdivision universities evaluated injuries sustained by collegiate football athletes while competing on artificial or natural grass surfaces. The universities were selected based on the availability of both playing surfaces during the competitive season, consistent sport skill level, and the presence of a full-time certified athletic trainer. Artificial surfaces included in the study were limited to heavyweight infill systems (≥9.0 lbs/ft 2) to minimize infill system weight influences on trauma. Interventions: Not applicable. Main Outcome Measure(s): Adductor injury severity, classification, category, primary type, mechanism and situation, player position, skill position, cleat design, field conditions, environmental conditions, imaging and surgical proce- dures, and turf age. Injury incidence rates were calculated using injuries per 10 games = [(number of injuries /C4 number of games) /C2 10]. Results: Of the 2243 games documented, 1061 (47.3%) were played on artifi- cial turf and 1182 games (52.7%) on natural grass. In sum, of 9360 total inju- ries, 111 (1.2%) adductor-related groin injuries were recorded with 48 (43.2%) occurring on artificial turf, and 63 (56.8%) on natural grass. Multivariate ana- lyses of variance indicated no significant surface effect by any outcomes of interest. Cases occurred most frequently as minor muscle strains (87%), during defensive play (41%) and noncontact sprinting (39%). Conclusion: Regarding adductor-related groin trauma, heavyweight artificial turf is as safe as natural grass. Focus should be placed on early detection and understanding long-term health outcomes rather than surface influence. An athlete who sustains such an injury may benefit from engaging in a structured resistance training program that progresses from general lower-body develop- ment in the days after injury to adductor-specific training in the weeks following. The results of this study are generalizable only to this level of competition. Received: 15 September 2024 Revised: 15 June 2025 Accepted: 26 June 2025 DOI: 10.1002/pmrj.70023 370 © 2025 American Academy of Physical Medicine and Rehabilitation. PM&R. 2026;18:370–380.http://www.pmrjournal.org"
+    },
+    {
+      "page": 2,
+      "text": "INTRODUCTION Groin injuries are a common issue and concern among athletes, particularly those participating in sports that require sudden changes in direction, kicking, or high accelerating intensity movements. These injuries can be difficult to diagnose and treat as well as rehabilitate. Large muscle groups play a part in a joint ’ s stability. 1,2 Today’ s collegiate athletes may be predisposed to inju- ries related to increased size, mass, acceleration, and torque thereby leading to forces five times greater than their body weight. 3–7 The groin or medial thigh musculature components are both directly and indirectly an essential component to hip stability. 2 Commonly reported injury mechanisms include forced adduction, twisting, adductor extension, and/or eccentric adductor failure from reactive ground forces.8–11 The earliest reported groin adductor strain was described in Irish bowling. 12 Other adductor strains/groin injuries have a reported incidence of 5% to 23% observed mainly in soccer, ice hockey, and a few other sports. 13 In American football, this prevalence of groin strain/injuries has ranged from 0.4% to 12%; however, there are distinct differences in the injury tracking and reporting techniques used, potentially due to the limited available data specifically reporting adductor injuries coming from investigations before 1992 or after 2018. 7,14–19 These differences may partly explain the large variability in reported injury preva- lence and this investigation aims to improve our under- standing of adductor trauma at the collegiate level of play by providing an observation period longer than previous investigations. 18,19 Prior literature indicates a greater reinjury risk with increasing competitive levels. 8,11,20,21 More severe inju- ries such as adductor-related avulsion fractures 22 can cause significant time loss with an average return to play of 4.8 months, even up to 8 months in various sports.23 There are public health concerns from groin related injuries as well. Over one third of National Bas- ketball Association players report groin pain following retirement, and 47% have related anxiety, depression, lower physical activity levels, and decreased quality of life. 24 Across a variety of sports, males in higher level collision activities may be predisposed to higher levels of hip osteoarthritis, which in turn may lead to increased rates of surgical treatment procedures. 25–27 The most current classification for groin-related inju- ries was provided by the Doha consensus agree- ment.28 The classification system defined four main entities for groin pain: (1) adductor-related — the most common, (2) iliopsoas related, (3) inguinal related groin— no inguinal hernia present, and (4) pubic related— pubic symphysis bone and surrounding tissue tenderness. Based on these criteria, this prospective data analysis and subsequent discussion concentrates more specifically on the adductor-related groin injuries. PURPOSE With the potential impact of groin trauma on an athlete ’ s physical and mental health, further research is war- ranted. Therefore, based on (1) the excessive physical demands placed on the body by American football, (2) the multiple array of movements performed by the groin, and (3) the potential long-term reduction in qual- ity of life, the purpose of this study will be to quantify the long-term prevalence and etiology of groin injuries during game-related National Collegiate Athletic Asso- ciation (NCAA) football competition across artificial and natural grass surfaces. It was hypothesized that college football athletes would not experience any difference in surface-related groin trauma while competing on either artificial or natural grass surfaces. METHODS Population A total of 41 universities competing in the Football Bowl Subdivision (FBS) were evaluated for game-related groin injuries sustained on either an artificial turf infill system or natural grass surface over the course of 16 competitive se"
+    },
+    {
+      "page": 3,
+      "text": "and skill level of the athlete, where the injury occurred, weather and field conditions, injury cate- gory, time of injury, injury classification, injury time loss, position played at the time of injury, injury situa- tion, injury mechanism, personnel determining the injury, injury site location, principal body part, primary type of injury, grade of injury, injury because of illegal action thoracoabdominal diagnosis, surgical interven- tion and time, and musculoskeletal location of injury. 7 Outcomes of interest included injury severity, injury classification, injury category, primary type of injury, mechanism of injury, injury situation, player position, skill position, cleat design, field conditions, tempera- ture, imaging and surgery, and age of playing surface. Following an open invitation to all FBS universities that met the criteria for inclusion, interested head ATCs for each university were approached because of their daily interaction with the athletes and coaches during and after sport trauma and their expertise in injury rec- ognition. 29,30 Prior to the football season, the respective ATCs were provided with an overview of the purpose and procedures of the study, copies of the injury sur- veillance form, and detailed instructions for comple- tion to avoid the potential for performance and detection biases. 31,35 Communication was main- tained to discuss potential concerns and ensure accuracy of collection, comprehensiveness of infor- mation, and ease of application. 36 The protocol was approved by the institutional review board at the uni- versity in which the study was based, and the study was conducted in accordance with the guidelines for the use of human subjects as stipulated by the Ameri- can College of Sports Medicine. 37 All regular-season, postseason playoff champion- ships, and bowl games were included. Injury data was recorded following game completion and submitted in a timely manner (the vast majority of forms were com- pleted within 1 week), with additional support from ATC notes to avoid lapse of memory leading to inac- curacy or response distortion. 29,35 All game-related injuries were evaluated by the attending head ATC and team physicians on site and subsequently in the physician’ s office when further follow-up and treatment were deemed necessary. Any sport trauma that occurred toward the end of the competition schedule was monitored beyond the player ’ s specific season to determine the date of recovery and functional return to play. 29,38 Completed injury surveillance forms containing minor trauma were emailed to the author within 7 working days after a game and were processed before the next game. More serious injuries with extended time loss were submitted upon diagnostic completion. A follow-up telephone visit was used to obtain any additional information pertaining to any changes or additions in diagnosis, treatment, or time to return to play. To avoid the potential for on- the-field detection bias, 31 a single-blind outcome approach was maintained throughout the study period, with total data collected restricted to the ATCs and data compilation and analysis limited to the pri- mary investigators. Definitions The definition of injury was based on a combination of functional outcome, observation, and treat- ment. 29,30,34 A reportable injury was defined as any game-related football trauma reported or treated by the ATC or physician that resulted in an athlete miss- ing all or part of a game. 16,32 Injury severity was based on the number of days absent from practice or game competition (time loss). As previously described, any trauma that required 0 to 6 days of time loss was considered a minor injury . An injury that required 7 to 21 days of time loss resulting in the athlete being unable to return to play at the same competitive level was considered a substantial injury . Any trauma that required 22 or more days of time loss was considered a severe injury . 29 Regarding stage of injury , ac"
+    },
+    {
+      "page": 4,
+      "text": "touchdown, field goal, kickoff, punting, punt return, or fumble recovery. 16,29 To optimize cell size and enhance interpretation, the 23 player positions were condensed and analyzed by offense, defense, and special teams and by specific player skill position (quarterback, backfield, offensive line, tight end, receiver, defensive line, linebacker, sec- ondary).29,39 Each team ’ s ATC documented the type of cleat design (7-studded and 12-studded cleats, molded or hybrid cleats, edge or blade-style cleats, turf or elas- tomeric short rubber cleats) and the age of the playing surface.40 Environmental factors such as field conditions (no precipitation/dry field, rain, snow, sleet, no precipi- tation/wet field, adverse conditions combined) and envi- ronmental temperature (cold days ≤59 /C14 F, moderate days 60 –79/C14 F, hot days ≥80/C14 F) were obtained before game time and whenever an injury occurred; these data were obtained by the ATCs and/or through the local air- port climatic data. 7,41,42 Additionally, in-season and postseason imaging and surgical procedures (com- puted tomography, magnetic resonance imaging, and radiography) were documented. Age of playing surface was defined as new fields, 1- to 3-year-old fields, and 4- to 7-year-old fields. Fields 8 or more years of age were condensed due to the expiration of the manufac- turer warranty. Statistical analysis Data were grouped by playing surface (artificial turf, natural grass) and tabular frequency distributions were computed using IBM SPSS Statistics (version 28.0; Armonk, NY) software, with 95% confidence intervals (95% CIs) determined as described else- where. 43 Because most universities play approxi- mately 10 to 12 games each season, exposure to injury was defined in terms of team games, as previ- ously recommended. Injury incidence rate was expressed as injuries per 10 team games and calcu- lated as [( number of injuries /C4 number of team games ) /C2 10] as previously reported. 7,41 Data were then subjected to multivariate analyses of variance (MANOVAs) and Wilks λ criteria using general linear model procedures. 44 Effect sizes were reported in the context of the multivariate model using partial eta squared ( η2 p) and classified as small (η2 p ≥ 0:01), medium ( η2 p ≥ 0:06), and large ( η2 p ≥ 0:14) according to criteria previously established. 45,46 When significant main effects were observed, univariate post hoc procedures were performed. An experiment-wise type I error rate of .05 was established a priori , and least squared means procedures were required because of the uneven number of observations on which to compare differences between variables. RESULTS In sum, following 16 seasons of play, 2243 total games were documented with 1061 games (47.3%) played on a three-layer heavyweight artificial turf infill system and 1182 games (52.7%) played on natural grass. Of the 9360 total injuries, 4714 lower extremity injuries occurred across both surfaces. Of these, 111 adductor- related groin injuries were documented with 48 (43.2%) occurring on artificial turf, and 63 (56.8%) on natural grass. These 111 injuries comprised 1.2% of all injuries and 2.4% of lower extremity trauma. Surface type had a very small to moderate effect on any outcome of inter- est ( η 2 p ¼ :002 – 0:119). All groin trauma was attributed to standard play, with no injuries as a result of foul play or illegal action. As shown in Table 1, MANOVA indicated no signifi- cant surface effect by injury severity ( F2,108 = 0.511; p = .602). The majority of groin trauma involved minor injuries on both surfaces. MANOVAs also indicated no significant surface effect by injury classification (F 2,108 = 0.377; p = .687), injury category ( F1,109 = 0.850; p = .430), primary type of injury ( F4,106 = 0.293; p = .830), or injury mechanism ( F11,99 = 0.641; p = .776) (Table 2). The majority of adductor-related groin cases were acute and primarily occurred during shoe-surface noncontact play. The primary type of"
+    },
+    {
+      "page": 7,
+      "text": "these findings. 55–59 The majority of groin injuries among athletes wearing molded/hybrid cleats is likely a function of this cleat style being the most popular, mak- ing up 62% of the distribution in this study and 49% in another investigation examining >4000 injuries to American football athletes. 7 The key point to this study remains that, regardless of statistical findings, when based on a typical 10 –12 game college football season, the incidence of groin trauma as well as the influence of playing surface are minimal. This is substantiated by a single groin injury occurring every 1.8 seasons on natu- ral grass and a single groin injury occurring every 2.4 seasons on artificial turf. Regarding the implications of this study for perspec- tives in public health, the minimal difference in trauma across outcomes of interest indicates the need to shift focus to early detection and understanding long-term health outcomes following groin trauma. 24,60 The detri- mental effects that high-impact collisions have to the adductor-related groin area, that is, hip arthritis, depres- sion in American sports, highlight the importance of early detection to minimize the severity of progressive debilita- tion. 24–26,61 Following groin trauma, as stressed in recent studies, an athlete who engages in general lower body resistance exercise in the days following an acute injury can progress to adductor-specific training as part of a regular strength and conditioning program and effec- tively return to preinjury levels of performance. 62,63 Limitations There were potential limitations to the study that may have influenced the incidence of adductor-related groin injuries. These included the inability to control the inher- ent random variation in injury typically observed in high-collision team sports 16; the strength, conditioning, and body composition status of the athletes 38,64; the TABLE 4 Adductor-related college football groin injuries on artificial turf and natural grass by cleat design, environmental factors, imaging and surgical procedures, and turf age. a Surface type Artificial turf ( n = 1061) Natural grass ( n = 1182) N IIR 95% CI N IIR 95% CI Cleat design 7-stud removable cleats 3 0.03 0.01 –0.08 9 0.08 0.04 –0.14 12-stud removable cleats 3 0.03 0.01 –0.08 4 0.03 0.01 –0.09 Edge/blade-style cleats 4 0.04 0.01 –0.10 6 0.05 0.02 –0.11 Molded/hybrid cleats 28 0.26 0.18 –0.38 41 0.35 0.26 –0.47 Turf/elastomeric short rubber 10 0.09 0.05 –0.17 3 0.03 0.01 –0.07 Field conditions No precipitation/dry field 41 0.39 0.29 –0.52 57 0.48 0.37 –0.62 Rain/snow/sleet 5 0.05 0.02 –0.11 3 0.03 0.01 –0.07 No precipitation/wet field 2 0.02 0.01 –0.07 3 0.03 0.01 –0.07 Adverse conditions combined 7 0.07 0.03 –0.14 6 0.05 0.02 –0.11 Temperature Cold days ( ≤59/C14 F) 19 0.18 0.11 –0.28 14 0.12 0.07 –0.20 Moderate days (60–79/C14 F) 20 0.19 0.12 –0.29 30 0.25 0.18 –0.36 Hot days ( ≥80/C14 F) 9 0.08 0.04 –0.16 19 0.16 0.10 –0.25 Imaging and surgery Magnetic resonance imaging 5 0.05 0.02 –0.11 7 0.06 0.03 –0.12 Radiography 1 0.01 0.00 –0.05 2 0.02 0.00 –0.06 Surgery, in or postseason 0 0.00 0.00 –0.04 3 0.03 0.01 –0.07 Total procedures combined 6 0.06 0.03 –0.12 12 0.10 0.06 –0.18 Turf age New 7 0.07 0.03 –0.14 12 0.10 0.06 –0.18 1–3 y 25 0.24 0.16 –0.35 30 0.25 0.18 –0.36 4–7 y 13 0.12 0.07 –0.21 11 0.09 0.05 –0.17 ≥ 8 y 3 0.03 0.01 –0.08 10 0.08 0.05 –0.16 Abbreviations: CI, confidence interval; IIR, injury incidence rate [(number of injuries /C4 number of team games) /C2 10]. aWilks’ λ cleat design ( F4,106 = 1.565; p = .218; η2 p ¼ :002), field conditions ( F2,108 = 2.869; p = .061; η2 p = .050), temperature ( F2,108 = 0.669; p = .516; η2 p ¼ :003), imaging and surgical procedures ( F2,108 = 0.415; p = .662; η2 p = .008), turf age ( F3,107 = 1.873; p = .139; η2 p ¼ :050). 376 ADDUCTOR-RELATED GROIN INJURY 19341563, 2026, 4, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/pmrj.70023 by University College Dublin Libr, Wiley Online Library on ["
+    },
+    {
+      "page": 8,
+      "text": "influence of precompetition workloads 65,66; previous injury history, prior exposure to surface type during dif- ferent games, and associated medical procedures 67,68; quality of field maintenance 64,65; differences in postural or joint integrity, musculoskeletal structure, and biome- chanics of player movement 64,69; actual versus average time to exposure to injury 70; sports skill level, intensity of play, and fatigue level at time of injury 71;a na t h l e t e’ s avoidance in seeking help following injury 35,72;u n r e - ported congenital or developmental factors predisposing an athlete to additional injury 38,64; unforeseen mis- hap32,38; simply for an acute injury to go unre- ported16,32,73; or a concomitant undiagnosed other type of groin injury. 28 Although prior injury may have had an effect on an acute injury, athletes were cleared for return to play based on criteria previously established. 74 Any variability in field quality could have been confounded by weather conditions as the season progressed. 75 Finally, opportunity to obtain data on long-term quality of life dif- ferences following trauma between the two surface groups was beyond the scope of this study. Key strengths of the study were the opportunity to follow a large number of FBS universities during the 16-year period, using prospective, validated methods that reduced fluctuations often observed in single- season injury patterns and individual team effect, 76,77 as well as minimized the over- and underestimation of sport trauma observed in publicly obtained data- bases. 71,73,78 In addition, the combined method of assessing functional outcome, direct observation, and treatment records as well as the daily interac- tions of ATCs in direct communication with athletes in this study minimized the potential for transfer bias and unreported injuries throughout the season. 29,70 In totality, these efforts enhanced the ability to iden- tify adductor-related groin injury incidence and possi- ble differences between artificial and natural grass fields. The influence of risk factors other than an artificial turf versus natural grass field cannot be overlooked. Because of inherent challenges of collecting data on multiple indices and on numerous teams and players over an extended period of time, the degree of influ- ence from these risk factors remains a limitation that can only be acknowledged at this time 16,70 However, the prospective cohort multivariate design enhanced sample size, controlled for seasonal and team varia- tion, and allowed for greater insight into the subtle dif- ferences in adductor-related groin injuries at the collegiate level of play. CONCLUSION In collegiate football, heavyweight artificial turf was found to be as safe as natural grass with respect to adductor-related groin injuries. The hypothesis that surface type would not affect groin injury rates was sup- ported, with no meaningful difference in injury incidence between artificial and natural grass surfaces. Further research is warranted to elucidate the link between groin trauma and long-term adverse health outcomes and to determine if these results are generalizable to other levels of football competition. DISCLOSURE This research was partially funded by FieldTurf, USA. ORCID Jarrett L. Mitton https://orcid.org/0009-0000-5152- 999X Michael C. Meyers https://orcid.org/0000-0003-3108- 7279 Irene van Woerden https://orcid.org/0000-0001- 6339-5335 REFERENCES 1. Hrysomallis C. Hip adductors ’ strength, flexibility, and injury risk. J Strength Cond Res . 2009;23(5):1514-1517. doi: 10.1519/JSC. 0b013e3181a3c6c4 2. Netter FH. Lower limb. Netter Atlas of Human Anatomy: Classic Regional Approach. 8th ed. Elsevier; 2023:T8.5-T8.7. 3. Arner JW, Disantis A, Bradley JP, Zuckerbraun BS, Mauro CS. Management of hip and groin pain in American football players. Ann Jt. 2017;2(12):78. doi: 10.21037/aoj.2017.11.05 4. Fitzgerald CF, Jensen RL. A comparison of the National Football League’ s annual National "
+    },
+    {
+      "page": 9,
+      "text": "meta-analysis of randomised controlled trials. Br J Sports Med . 2015;49(12):785-791. doi:10.1136/bjsports-2014-094162 14. Culpepper MI, Niemann KM. High school football injuries in Bir- mingham Alabama. South Med J . 1983;76(7):873-875. doi: 10. 1097/00007611-198307000-00014 15. Zemper ED. Injury rates in a national sample of college football teams: a 2-year prospective study. Phys Sportsmed . 1989; 17(11):100-113. doi:10.1080/00913847.1989.11709915 16. Meyers MC. Surface-related high school football game injuries on pad and no-pad fields. Am J Sports Med . 2021;49(9):2489- 2497. doi:10.1177/0363546521990780 17. Kerbel YE, Smith CM, Prodromo JP, Nzeogu MI, Mulcahey MK. Epidemiology of hip and groin injuries in collegiate athletes in the United States. Orthop J Sports Med . 2018;6(5): 232596711877167. doi: 10.1177/2325967118771676 18. Saal JA. Common American football injuries. Sports Med. 1991; 12(2):132-147. doi:10.2165/00007256-199112020-00005 19. Chandran A, Morris SN, Powell JR, Boltz AJ, Robison HJ, Collins CL. Epidemiology of injuries in National Collegiate Ath- letic Association men ’ s football: 2014-2015 through 2018-2019. J Athl Train . 2021;56(7):643-650. doi: 10.4085/1062-6050- 447-20 20. Hölmich P, Larsen K, Krogsgaard K, Gluud C. Exercise program for prevention of groin pain in football players: a cluster- randomized trial: exercise program for prevention of groin pain in football players. Scand J Med Sci Sports . 2010;20(6):814- 821. doi:10.1111/j.1600-0838.2009.00998.x 21. Tyler TF, Nicholas SJ, Campbell RJ, McHugh MP. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med . 2001;29(2):124-128. doi: 10. 1177/03635465010290020301 22. Schilders E, Mitchell AWM, Johnson R, Dimitrakopoulou A, Kartsonaki C, Lee JC. Proximal adductor avulsions are rarely isolated but usually involve injury to the PLAC and pectineus: descriptive MRI findings in 145 athletes. Knee Surg Sports Trau- matol Arthrosc . 2021;29(8):2424-2436. doi: 10.1007/s00167- 020-06180-5 23. Bharam S, Feghhi DP, Porter DA, Bhagat PV. Proximal adductor avulsion injuries: outcomes of surgical reattachment in athletes. Orthop J Sports Med . 2018;6(7):232596711878489. doi: 10. 1177/2325967118784898 24. Ekhtiari S, Khan M, Burrus T, et al. Hip and groin injuries in pro- fessional basketball players: impact on playing career and qual- ity of life after retirement. Sports Health . 2019;11(3):218-222. doi:10.1177/1941738119838274 25. Chaganti RK, Lane NE. Risk factors for incident osteoarthritis of the hip and knee. Curr Rev Musculoskelet Med . 2011;4(3):99- 104. doi:10.1007/s12178-011-9088-5 26. Vigdorchik JM, Nepple JJ, Eftekhary N, Leunig M, Clohisy JC. What is the association of elite sporting activities with the devel- opment of hip osteoarthritis? Am J Sports Med . 2017;45(4):961- 964. doi:10.1177/0363546516656359 27. Kolber MJ, Hanney WJ, Cheatham SW, Salamh PA. Risk factors for hip osteoarthritis: insight for the strength and conditioning professional. Strength Cond J . 2017;39(3):35-41. doi: 10.1519/ SSC.0000000000000222 28. Weir A, Brukner P, Delahunt E, et al. Doha agreement meeting on terminology and definitions in groin pain in athletes. Br J Sports Med . 2015;49(12):768-774. doi: 10.1136/bjsports-2015- 094869 29. Meyers MC. Incidence, mechanisms, and severity of game- related college football injuries on FieldTurf versus natural grass: a 3-year prospective study. Am J Sports Med . 2010;38(4):687- 697. doi:10.1177/0363546509352464 30. DeLee JC, Farney WC. Incidence of injury in Texas high school football. Am J Sports Med . 1992;20(5):575-580. doi: 10.1177/ 036354659202000515 31. Rudicel S. How to avoid bias. Am J Sports Med . 1988;16- (1_suppl):S-48-S-52. doi:10.1177/03635465880160S111 32. Kerr ZY, Dompier TP, Snook EM, et al. National Collegiate Ath- letic Association injury surveillance system: review of methods for 2004 –2005 through 2013 –2014 data collec"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/ai-review/evidence-packets/S4111.packet.json"
+}

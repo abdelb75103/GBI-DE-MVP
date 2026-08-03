@@ -1,0 +1,187 @@
+# FIFA GBI Full-Text Screening Recommendations
+
+- Criteria version: `fifa-gbi-full-text-v8-2026-06-23`
+- Generated: `2026-07-30T15:32:18Z`
+- Records: 5
+
+## Summary Table
+
+| ID | Title | Recommendation | Exclusion reason | Confidence |
+|---|---|---:|---|---:|
+| S3098 | Akut: Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma. | Exclude | No usable denominator | 0.96 |
+| S3493 | LESÕES NA REGIÃO DO JOELHO EM JOGADORES DE FUTEBOL. | Exclude | Ineligible retrospective or cross-sectional design | 0.99 |
+| S3592 | Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes: 1961. | Exclude | Ineligible publication type | 0.99 |
+| S3713 | Incidence And Burden Of Injury At The Accra 2023 First African Paralympic Games: 1519. | Exclude | Ineligible publication type | 0.99 |
+| S3776 | Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance: 1517. | Exclude | Ineligible publication type | 0.99 |
+
+## Record Notes
+
+### S3098
+
+**Title:** Akut: Kronik İş Yükü Oranı, Koşu Dengesizliği ve Profesyonel Futbolcularda Sakatlık Paradoksu: Tanımlayıcı Araştırma.
+
+**Recommendation:** Exclude
+
+**Criteria:** I-DES-01, I-POP-01, I-SET-01, I-OUT-01, E-DEN-01
+
+**Exclusion reason:** No usable denominator
+
+**Study design:** Prospective cohort correlation study restricted to players who sustained a non-contact injury.
+
+**Data collection timing:** GPS load data were recorded after each training session and match; the analysis used values from the six weeks before each selected player's injury. The Methods name the 2022/2023 season, whereas Participants name 2023/2024.
+
+**Population / discipline / context:** Fourteen professional association-football players from the Turkish Super League who sustained a non-contact injury.; Association football.; Turkish Super League professional season.
+
+**Data source:** GPS-derived training and match-load metrics. The paper does not identify a cohort-wide injury surveillance or reporting source beyond the selected injured players.
+
+**Outcome / definition:** Non-contact injury is the health outcome, but the paper reports associations among selected injury cases rather than cohort-wide injury frequency or incidence.; Non-contact injury is named, but no operational, time-loss, or accepted surveillance case definition is stated.
+
+**Denominator:** unusable; Table 1 reports n=14 and selected-player summary load measures, including mean total duration of 59.0193 minutes and mean distance of 4,642.463 m. These are not a cohort-wide at-risk exposure total or a complete derivation frame.
+
+**Derivation basis:** 
+
+**Evidence:** Bu çalışma, Türkiye Süper Ligi’nde mücadele eden profesyonel futbolcuların temassız sakatlık geçirdikleri güne kadar olan antrenman yükleri ile AKİYO ve koşu dengesizliği değerleri arasındaki ilişkileri incelemeyi amaçlayan prospektif bir kohort çalışmasıdır. | Araştırmaya, 2023-2024 futbol sezonunda Türkiye Süper Ligi’nde mücadele eden ve sezon boyunca temassız sakatlık yaşayan 14 profesyonel futbolcu ... dâhil edilmiştir. | Bu araştırma kapsamında oyuncuların sakatlık oluşum tarihinden 6 hafta geriye giderek alınan değerler üzerinden hesaplamalar yapılmıştır. | Toplam süre (dk) 14 59,0193 ... Toplam mesafe (m) 14 4642,463.
+
+**Sources:** S3098.pdf p. 3, Methods—Research Design; S3098.pdf p. 3, Methods—Participants; S3098.pdf p. 4, Methods—Acute:Chronic Workload Ratio and Running Imbalance Calculations; S3098.pdf p. 5, Results—Table 1
+
+**Confidence:** 0.96
+
+**Tags:** primary_study, association_football, professional_players, selected_injury_cases, denominator_unusable
+
+**Audit notes:** Readable nine-page Turkish/English full paper with no packet extraction warnings. The paper calls the design prospective, but analyses only 14 players who sustained non-contact injury and supplies no unconditioned at-risk denominator. The 2022/2023 versus 2023/2024 season discrepancy is recorded as an additional uncertainty. PDF SHA-256 matches retrieval-manifest.json. Local recommendation only, with no live AI or human screening change.
+
+### S3493
+
+**Title:** LESÕES NA REGIÃO DO JOELHO EM JOGADORES DE FUTEBOL.
+
+**Recommendation:** Exclude
+
+**Criteria:** E-DES-01, E-DEN-01
+
+**Exclusion reason:** Ineligible retrospective or cross-sectional design
+
+**Study design:** Descriptive, quantitative, comparative cross-sectional study.
+
+**Data collection timing:** Individual data collection in March and April 2023 at the team's training centre; it is a one-time cross-sectional assessment, not prospective season-long surveillance.
+
+**Population / discipline / context:** Thirty-one male football players aged 18 years or older, randomly selected from one team in Montes Claros-MG.; Association football.; One football team in Montes Claros-MG; competition level is not reported.
+
+**Data source:** Researcher-built assessment form collecting anamnesis and sports history, physical examination, and the Lysholm Knee Scoring Scale questionnaire.
+
+**Outcome / definition:** Prevalent knee pathologies and knee function are reported, but not as prospective injury surveillance.; No prospective surveillance case definition is given; injuries are reported as historical/prevalent pathologies alongside knee-symptom and function assessment.
+
+**Denominator:** unusable; Thirty-one sampled players and a table of 25 recorded pathology entries, without time exposure, athlete-exposures, match-exposures, a time-based rate, or derivation inputs.
+
+**Derivation basis:** 
+
+**Evidence:** Trata de uma pesquisa descritiva, com abordagem quantitativa, comparativa e corte transversal. | A amostra foi constituída por 31 atletas de futebol, sexo masculino, com idade igual ou superior a 18 anos, selecionados de forma aleatória, todos jogadores inscritos em uma equipe de futebol da cidade de Montes Claro-MG. | Os dados foram coletados entre os meses de março e abril de 2023, no centro de treinamento do time, de forma individual e em uma sala reservada para este fim. | A maior prevalência de lesão foi a ruptura ligamentar do cruzado anterior (12,9%).
+
+**Sources:** S3493.pdf p. 2, Materials and Methods; S3493.pdf p. 2, Materials and Methods; S3493.pdf p. 3, Materials and Methods; S3493.pdf p. 3, Results
+
+**Confidence:** 0.99
+
+**Tags:** primary_study, association_football, cross_sectional, questionnaire, denominator_unusable
+
+**Audit notes:** Readable six-page Portuguese full paper, supplied as a machine-generated Gale PDF, with no packet extraction warnings. Its self-declared cross-sectional design is sufficient for E-DES-01 irrespective of the additional absent exposure denominator. PDF SHA-256 matches retrieval-manifest.json. Local recommendation only, with no live AI or human screening change.
+
+### S3592
+
+**Title:** Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes: 1961.
+
+**Recommendation:** Exclude
+
+**Criteria:** E-PUB-01
+
+**Exclusion reason:** Ineligible publication type
+
+**Study design:** Conference abstract 1961 reporting a cross-sectional survey and multivariable regression analysis.
+
+**Data collection timing:** A one-time athlete survey; collection dates are not reported in the abstract.
+
+**Population / discipline / context:** 668 elite youth soccer athletes aged 13 to 18 years.; Association football (soccer).; Elite adolescent soccer; league, season and tournament context are not reported.
+
+**Data source:** Self-completed survey covering sleep, athletic identity, prior injury, GAD-7, PHQ-9 and PedsQL.
+
+**Outcome / definition:** Anxiety, depression and quality-of-life scores are quantitatively reported, but only in a conference abstract.; The abstract names GAD-7, PHQ-9 and PedsQL but does not provide a full-report operational protocol or scoring details.
+
+**Denominator:** unusable; 668 completed surveys, a participant count rather than a permitted exposure denominator.
+
+**Derivation basis:** 
+
+**Evidence:** 1961 Risk Factors For Mental Health And Quality Of Life In Elite Adolescent Athletes. | 668 youth soccer athletes (13-18 years old) completed a survey on sleep, athletic identity (AI), prior injury, anxiety (GAD-7), depression (PHQ-9), and QOL (PedsQL). | Among elite youth soccer athletes, greater age, female gender, prior injury, and less sleep were independently associated with greater symptoms of anxiety and depression.
+
+**Sources:** S3592.pdf p. 1, numbered supplement abstract 1961; S3592.pdf p. 1, abstract 1961—Methods; S3592.pdf p. 1, abstract 1961—Conclusion
+
+**Confidence:** 0.99
+
+**Tags:** conference_abstract, association_football, youth_players, mental_health, not_full_paper
+
+**Audit notes:** Readable one-page English conference-supplement page with no packet extraction warnings. The target is explicitly numbered abstract 1961 and is bounded by abstracts 1960 and 1962, not a standalone full report. retrieval-manifest.json independently classifies the document as conference_abstract. PDF SHA-256 matches retrieval-manifest.json. Local recommendation only, with no live AI or human screening change.
+
+### S3713
+
+**Title:** Incidence And Burden Of Injury At The Accra 2023 First African Paralympic Games: 1519.
+
+**Recommendation:** Exclude
+
+**Criteria:** E-PUB-01
+
+**Exclusion reason:** Ineligible publication type
+
+**Study design:** Conference abstract 1519 reporting daily injury surveillance during a 13-day para-sport Games period.
+
+**Data collection timing:** Daily data collection during a 3-day pre-competition and 10-day competition period at the Accra 2023 First African Paralympic Games.
+
+**Population / discipline / context:** 337 para athletes from 18 African countries across wheelchair tennis, wheelchair basketball and amputee football.; Amputee football is an eligible para-football discipline within a mixed three-sport abstract, but the target is not a full report.; Accra 2023 First African Paralympic Games.
+
+**Data source:** Daily injury data collected through a Google Docs form; the abstract does not identify the reporter or give a full ascertainment protocol.
+
+**Outcome / definition:** Injury counts, injury proportion, time loss and incidence are reported, but only in the conference abstract.; The abstract does not provide a complete operational injury definition.
+
+**Denominator:** direct_time; 4,381 athlete-days across the three monitored sports, with an overall incidence rate of 7.8 injuries per 1,000 athlete-days. Amputee football is reported with a rate of 5.1, without a separate full-report dataset.
+
+**Derivation basis:** 
+
+**Evidence:** 1519 Incidence And Burden Of Injury At The Accra 2023 First African Paralympic Games. | The study monitored three sports disciplines: wheelchair tennis, wheelchair basketball, and amputee football. | A total of 337 athletes were monitored over the 3-day pre-competition and 10-day competition periods, totaling 4381 athlete days.
+
+**Sources:** S3713.pdf p. 1, numbered supplement abstract 1519; S3713.pdf p. 1, abstract 1519—Methods; S3713.pdf p. 1, abstract 1519—Results
+
+**Confidence:** 0.99
+
+**Tags:** conference_abstract_bundle, para_football, amputee_football, mixed_sport, not_full_paper
+
+**Audit notes:** Readable two-page English conference-supplement bundle with no packet extraction warnings. The file starts with adjacent abstract 1517, contains target abstract 1519 on page 1, and continues its conclusion on page 2 before abstract 1520. It is not a full paper. retrieval-manifest.json independently classifies the document as conference_abstract. PDF SHA-256 matches retrieval-manifest.json. Local recommendation only, with no live AI or human screening change.
+
+### S3776
+
+**Title:** Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance: 1517.
+
+**Recommendation:** Exclude
+
+**Criteria:** E-PUB-01
+
+**Exclusion reason:** Ineligible publication type
+
+**Study design:** Conference abstract 1517 reporting an analysis of NCAA Injury Surveillance Program data.
+
+**Data collection timing:** Athletic-trainer reports to the NCAA Injury Surveillance Program during the 2019/20 and 2020/21 seasons.
+
+**Population / discipline / context:** Mixed NCAA men's and women's sport participants; no separable association-football cohort is reported in the abstract.; Mixed NCAA sports. The abstract's men's 'football' category is not a separable association-football dataset.; NCAA practices and competitions during COVID-19-affected 2019/20 to 2020/21 seasons.
+
+**Data source:** NCAA Injury Surveillance Program reports submitted by athletic trainers.
+
+**Outcome / definition:** Injury incidence and specific injury frequencies are reported across mixed NCAA sports, rather than for a separable association-football group.; The abstract does not provide a complete report-level injury case definition.
+
+**Denominator:** athlete_exposures; 2,053,724 athlete-exposures in men's sports and 1,197,045 athlete-exposures in women's sports, with no association-football-specific denominator in the abstract.
+
+**Derivation basis:** 
+
+**Evidence:** 1517 Injury Incidence In NCAA Sports During The Covid-19 Pandemic: Findings From Injury Surveillance. | Injuries reported to the NCAA Injury Surveillance Program (ISP) by athletic trainers during 2019/20-2020/21 were analyzed. | During 2019/20-2020/21, the NCAA ISP recorded 15,780 injuries and 2,053,724 AEs in men’s sports, and 7,685 injuries and 1,197,045 AEs in women’s sports.
+
+**Sources:** S3776.pdf p. 1, numbered supplement abstract 1517; S3776.pdf p. 1, abstract 1517—Methods; S3776.pdf p. 1, abstract 1517—Results
+
+**Confidence:** 0.99
+
+**Tags:** conference_abstract_bundle, mixed_sport, ncaa_injury_surveillance, not_full_paper
+
+**Audit notes:** Readable one-page English conference-supplement bundle with no packet extraction warnings. The target is numbered abstract 1517, followed on the same page by adjacent numbered abstracts, rather than a standalone full paper. retrieval-manifest.json independently classifies the document as conference_abstract. PDF SHA-256 matches retrieval-manifest.json. Local recommendation only, with no live AI or human screening change.

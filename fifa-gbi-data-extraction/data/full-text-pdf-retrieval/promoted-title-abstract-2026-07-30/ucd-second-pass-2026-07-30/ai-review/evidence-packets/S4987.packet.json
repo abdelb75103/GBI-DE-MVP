@@ -1,0 +1,492 @@
+{
+  "recordId": "20174957-a3f6-4f6e-b66d-b36f1b7c851b",
+  "covidenceId": null,
+  "studyId": "S4987",
+  "title": "ACL Denmark: A nationwide register-questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction.",
+  "authors": "Kaldau NC",
+  "year": "2026",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S4987.pdf",
+  "pdfSha256": "ffa28da69cba5bc248321d2896960e948da62309030d7982cb96e285facf1577",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 12,
+  "textCharCount": 50705,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...national patient register. Scand J Public Health. 2011;39(7):30 –3. 19. Magaña ‐Ramírez M, Gallardo ‐Gómez D, Álvarez ‐Barbosa F, Corral‐Pernía JA. What exercise programme is the most appropriate to mitigate anterior cruciate ligament injury risk in football (soccer) players? A systematic review and network meta‐analysis. J Sci Med Sport. 2024;27(4):234 –42. 20. Mansournia MA, Collins GS, Nielsen RO, Nazemipour M, Jewell NP, Altman DG, et al. A CHecklist for statistical Assessment of Medical Papers (the CHAMP statement):..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...NACOX pro- spective cohort study. Knee Surg Sports Traumatol Arthrosc. 2024;33(5):1709–20. 35. Silvers ‐Granelli HJ, Bizzini M, Arundale A, Mandelbaum BR, Snyder‐Mackler L. Does the FIFA 11+ injury prevention program reduce the incidence of ACL injury in male soccer players? Clin Orthop Relat Res. 2017;475(10):2447 –55. 36. Stojanovi ć E, Faude O, Niki ć M, Scanlan AT, Radovanovi ć D, Jakovljević V. The incidence rate of ACL injuries and ankle sprains in basketball players: a systematic review and meta ‐ analysis. Scand..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence rate",
+        "snippet": "...mail.com Funding information Hvidovre Hospital; Badminton World Federation; Amager ‐Hvidovre Hospital Abstract Purpose: T o describe the epidemiology of adult anterior cruciate ligament (ACL) ruptures in Denmark from 2000 to 2018, focusing on: (1) overall ACL incidence rate (IR) per 100,000 inhabitants per year, (2) sports ‐speciﬁc ACL IR per 100,000 athletes per year and (3) ACL reconstruction (ACLR) IR per 100,000 inhabitants per year. Methods: This registry study utilized prospectively collected data from the Danish National..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence rate",
+        "snippet": "...Reconstruction Register; DNPR, The Danish National Patient Register; EQ. 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...ister study INTRODUCTION An anterior cruciate ligament (ACL) rupture is a severe injury [ 3], which may lead to early ‐onset osteoarthritis and impose signi ﬁcant socioeconomic burdens on both the a ﬀected individuals and society [ 9, 17, 21 ]. In Sweden, the incidence rate (IR) of cruciate ligament (CL) injuries was reported as 78 per 100,000 in- dividuals per year, with 36% of CL ‐injured patients undergoing surgery between 2002 and 2009 [ 27]. However, in the United States, the incidence of ACL ruptures has declined, while th..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...ury date prior to 2000 or after 2018, missing injury date or age <18 years at the time of injury. The participants can be represented in all three groups, and therefore, the numbers cannot be summed. ACL, anterior cruciate ligament; CL, cruciate ligament; IR, incidence rate; PCL, posterior cruciate ligament. ACL DENMARK: STABLE RATES, MORE SURGERY | 3 14337347, 0, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70329 by University College Dublin Libr, Wiley Online Library on [30/07/2026]. See the T..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...aum BR, Snyder‐Mackler L. Does the FIFA 11+ injury prevention program reduce the incidence of ACL injury in male soccer players? Clin Orthop Relat Res. 2017;475(10):2447 –55. 36. Stojanovi ć E, Faude O, Niki ć M, Scanlan AT, Radovanovi ć D, Jakovljević V. The incidence rate of ACL injuries and ankle sprains in basketball players: a systematic review and meta ‐ analysis. Scand J Med Sci Sports. 2023;33(6):790 –813. 37. Sundhedsvæsenets Kvalitetsinstitut. Danish Knee Reconstruction Registry. Annual report 2025 [Internet]. Copenhag..."
+      }
+    ],
+    "denominator_numeric": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "40,691\ncompleted questionnaires",
+        "snippet": "...on ﬁgures from the National Olympic Committee and Sports Confederation of Denmark. ACLR IRs were calcu- lated using procedure codes from DNPR, with annual Danish population data as denominators. Results: Between 2000 and 2018, 90,608 patients were identi ﬁed: 40,691 completed questionnaires. Overall adjusted ACL IR remained stable between 107/100,000 (con ﬁdence interval [CI]: 104 –111) in 2000 and 106/ 100,000 (CI: 103 –109) in 2018, increasing among females from 81/100,000 (CI: 78 –85) to 90/100,000 (CI: 87 –94) and decreasing among males from..."
+      }
+    ],
+    "review": [
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...he International Knee Documentation Committee Subjective Knee evaluation form: normative data. Am J Sports Med. 2006;34(1): 128–35. 3. Ardern CL, Webster KE, T aylor NF, Feller JA. Return to sport following anterior cruciate ligament reconstruction surgery: a systematic review and meta ‐analysis of the state of play. Br J Sports Med. 2011;45(7):596 –606. 4. Arimaa A, Salminen T, Knifsund J, Kytö V, Lankinen P, Laaksonen I. Anterior cruciate ligament reconstruction and concomitant procedures in Finland between 2004 and 2018 based on..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...:912 –21. 17. Lien ‐Iversen T, Morgan DB, Jensen C, Risberg MA, Engebretsen L, Viberg B. Does surgery reduce knee osteo- arthritis, meniscal injury and subsequent complications com- pared with non ‐surgery after ACL rupture with at least 10 years follow‐up? A systematic review and meta ‐analysis. Br J Sports Med. 2020;54(10):592 –8. 18. Lynge E, Sandegaard JL, Rebolj M. The Danish national patient register. Scand J Public Health. 2011;39(7):30 –3. 19. Magaña ‐Ramírez M, Gallardo ‐Gómez D, Álvarez ‐Barbosa F, Corral‐Pernía JA. What..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...gister. Scand J Public Health. 2011;39(7):30 –3. 19. Magaña ‐Ramírez M, Gallardo ‐Gómez D, Álvarez ‐Barbosa F, Corral‐Pernía JA. What exercise programme is the most appropriate to mitigate anterior cruciate ligament injury risk in football (soccer) players? A systematic review and network meta‐analysis. J Sci Med Sport. 2024;27(4):234 –42. 20. Mansournia MA, Collins GS, Nielsen RO, Nazemipour M, Jewell NP, Altman DG, et al. A CHecklist for statistical Assessment of Medical Papers (the CHAMP statement): ex- planation and elaboration..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...us conservative interventions for treating anterior cruciate ligament injuries. Cochrane Database Syst Rev. 2016; 4(4):CD011166. 24. Montalvo AM, Schneider DK, Webster KE, Yut L, Galloway MT, Heidt RS, et al. Anterior cruciate ligament injury risk in sport: a systematic review and meta ‐analysis of injury incidence by sex and sport classi ﬁcation. J Athl Train. 2019;54(5):472 –82. 25. Naderi A, Shaabani F, Keikha M, Degens H. Is an exercise ‐ based injury ‐prevention program e ﬀective in team handball players? A systematic review a..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...a systematic review and meta ‐analysis of injury incidence by sex and sport classi ﬁcation. J Athl Train. 2019;54(5):472 –82. 25. Naderi A, Shaabani F, Keikha M, Degens H. Is an exercise ‐ based injury ‐prevention program e ﬀective in team handball players? A systematic review and meta ‐analysis. J Athl Train. 2024;59(8):845–56. 26. Nicholls M, Aspelund T, Ingvarsson T, Briem K. Nationwide study highlights a second peak in ACL tears for women in their early forties. Knee Surg Sports Traumatol Arthrosc. 2018;26(2): 648–54. 27. Norde..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...ce the incidence of ACL injury in male soccer players? Clin Orthop Relat Res. 2017;475(10):2447 –55. 36. Stojanovi ć E, Faude O, Niki ć M, Scanlan AT, Radovanovi ć D, Jakovljević V. The incidence rate of ACL injuries and ankle sprains in basketball players: a systematic review and meta ‐ analysis. Scand J Med Sci Sports. 2023;33(6):790 –813. 37. Sundhedsvæsenets Kvalitetsinstitut. Danish Knee Reconstruction Registry. Annual report 2025 [Internet]. Copenhagen: Sundheds- væsenets Kvalitetsinstitut; 2025 [cited 2025 Dec 19]. 38. Zbroj..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "Received: 5 October 2025 | Accepted: 22 January 2026 DOI: 10.1002/ksa.70329 KNEE ACL Denmark: A nationwide register ‐questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction Niels Christian Kaldau 1 | Kristoﬀer Weisskirchner Barfod 1,2 | Matilde Winther ‐Jensen3 | Per Hølmich 1 1Sports Orthopedic Research Center Copenhagen, Department of Orthopedic Surgery, Copenhagen University Hospital,..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "epidemiology",
+        "snippet": "...rk Correspondence Niels Christian Kaldau, Hvidovre Hospital, Kettegaards Allé 30, 2650 Hvidovre, Denmark. Email: nckaldau@gmail.com Funding information Hvidovre Hospital; Badminton World Federation; Amager ‐Hvidovre Hospital Abstract Purpose: T o describe the epidemiology of adult anterior cruciate ligament (ACL) ruptures in Denmark from 2000 to 2018, focusing on: (1) overall ACL incidence rate (IR) per 100,000 inhabitants per year, (2) sports ‐speciﬁc ACL IR per 100,000 athletes per year and (3) ACL reconstruction (ACLR) IR p..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...mail.com Funding information Hvidovre Hospital; Badminton World Federation; Amager ‐Hvidovre Hospital Abstract Purpose: T o describe the epidemiology of adult anterior cruciate ligament (ACL) ruptures in Denmark from 2000 to 2018, focusing on: (1) overall ACL incidence rate (IR) per 100,000 inhabitants per year, (2) sports ‐speciﬁc ACL IR per 100,000 athletes per year and (3) ACL reconstruction (ACLR) IR per 100,000 inhabitants per year. Methods: This registry study utilized prospectively collected data from the Danish Nati..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...istry (DNPR). Two ACL IRs were calculated: unadjusted IR based on registry data and adjusted IR corrected using patient self ‐reports to account for diagnostic misclassi ﬁcation. Sports ‐ speciﬁc ACL IRs (2012 –2018) were estimated by combining self ‐reported injury data with sports participation ﬁgures from the National Olympic Committee and Sports Confederation of Denmark. ACLR IRs were calcu- lated using procedure codes from DNPR, with annual Danish population data as denominators. Results: Between 2000 and 2018, 90,6..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...000 (CI: 129 –140) to 122/100,000 (CI: 117 –127). ACLR IR rose from 36/100,000 (CI: 34 –38) to 43/100,000 (CI: 41 –45), with increases in both sexes, particularly among younger (18 –25 years) and older (>45 years) adults. Football was the leading cause of ACL injury overall and in men; women had more injuries in skiing and handball. The highest sports ‐ speciﬁc ACL IR was in female handball players, peaking at 2880/100,000 athletes in 2017. Females showed higher IRs in pivoting sports, while males had higher rates in gym..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injuries",
+        "snippet": "...–127). ACLR IR rose from 36/100,000 (CI: 34 –38) to 43/100,000 (CI: 41 –45), with increases in both sexes, particularly among younger (18 –25 years) and older (>45 years) adults. Football was the leading cause of ACL injury overall and in men; women had more injuries in skiing and handball. The highest sports ‐ speciﬁc ACL IR was in female handball players, peaking at 2880/100,000 athletes in 2017. Females showed higher IRs in pivoting sports, while males had higher rates in gymnastics. Conclusions: While overall ACL IRs..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "incidence",
+        "snippet": "...Reconstruction Register; DNPR, The Danish National Patient Register; EQ. 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "injury",
+        "snippet": "...PR, The Danish National Patient Register; EQ. 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Level of Evidence: Level II. KEYWORDS ACL injury, ACL reconstruction rates, epidemiology, incidence rates, register study INTRODUCTION An anterior cruciate ligament (ACL) rupture is a severe injury [ 3], which may lead to early ‐onset osteoarthritis and impose signi ﬁcant socioeconomic burdens on both the a..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Validation of sports ‐related injury codes has shown ACL injury with the ICD ‐code S835E to have a positive predictive value of 96% [ 10]. DIF register All organized sport in Denmark is part of the Sports Confederation of Denmark (DIF), and since 2012, active athletes of the di ﬀerent sports are..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...e tools hosted at The Capital Region of Denmark. RED- Cap is a secure, web ‐based software platform designed to support data capture for research studies. The questionnaire consisted of three parts: (1) a general questionnaire collecting information about the injury and injury mechanism, (2) a questionnaire about return to sport and (3) the patient ‐reported outcome measures (PROMs): European Quality of Life —5 Domains (EQ. 5D), International Knee Documentation Committee (IKDC) and Knee injury and Osteoarthritis Outcome..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "reported numbers of ACL injuries in a given sport in the Q ‐cohort (ACL ‐SPORT Q‐cohort ) and (2) the re- gistered annual number of participants in the rele- vant sports from the DIF ( nathletes in sport ). Only registered members of sports clubs were counted. The numbers were available from..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...creased (p = 0.02) from 81 (CI: 78 –85) to 90 (CI: 87 –94), whereas males had a decrease in IR ( p = 0.06) from 134 (CI: 129 –140) in 2000 to 122 (CI: 117 –127) in 2018 (Figure 2). Figure 3 illustrates the IR of di ﬀerent age groups over time and shows a peak incidence in the late teens and early 20s (18 –25 years of age), a decrease in IR in athletes from 26 to 45 years and an increase in the oldest athletes (46 years and above). The ACLR IR increased from 36 (CI: 34 –38) in 2000 to 43 (CI: 41 –45) in 2018 (Figure 2 and Su..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Among respondents, football was the leading cause of injury, followed by skiing and handball (T able 2). This was also the case among men, while women had the most ACL injuries in skiing, followed by handball and football. The lowest mean age at injury was observed in pivoting sports such as football, handball, and ba..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "TABLE 2 Injury activity, demographic characteristics and treatment patterns among patients with cruciate ligament injury in Denmark from 2000 to 2018. Total Male Female Age (mean, SD) ACL ‐R No/unknown ACL ‐R Injury activity —— — — Football 5877 (31.8) 4738 (80.6) 1139 (19...."
+      },
+      {
+        "page": 9,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...r ACL IR than previ- ously reported in the only other nationwide study in the literature, with a steady IR of 107/100,000 per year in 2000 and 106/100,000 per year in 2018 [ 27]. The ret- rospective national registry study from Sweden re- ported 78/100,000 CL injuries per year, including both ACL and PCL injuries, and patients diagnosed with chronic knee instability were included [ 27]. T o account for misdiagnosed ACL injuries, we used a question- naire that directly asked patients whether they had an ACL injury. We obser..."
+      },
+      {
+        "page": 10,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "numbers of ACL injuries in male gymnasts [ 24]. It is concerning that skiing is the cause of so many ACL injuries in Denmark, among women with 70% of all ACL injuries in skiing. It warrants higher focus on prevention strategies for women in sport in general and particularly in skiin..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...procedures in Finland between 2004 and 2018 based on national registers. Acta Orthop. 2023;94:45 –50. 5. Beard DJ, Davies L, Cook JA, Stokes J, Leal J, Fletcher H, et al. Rehabilitation versus surgical reconstruction for non ‐acute anterior cruciate ligament injury (ACL SNNAP): a pragmatic randomised controlled trial. Lancet. 2022;400(10532):605 –15. 6. Buller LT, Best MJ, Baraga MG, Kaplan LD. Trends in anterior cruciate ligament reconstruction in the United States. Orthop J Sports Med. 2015;3(1):1 –8. 7. Campbell RJ,..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "32. Roos EM, Lohmander LS. The Knee injury and Osteoarthritis Outcome Score (KOOS): from joint injury to osteoarthritis. Health Qual Life Outcomes. 2003;1(1):64. 33. Sanders TL, Maradit Kremers H, Bryan AJ, Larson DR, Dahm DL, Levy BA, et al. Incidence of anterior cruciate ligament tears and reconstru..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": ".... 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...ital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...n; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+      },
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...re system and thus investigate the epidemiology and treatment of ACL injuries in Denmark. Since the number of athletes in organized sports is registered by the dif- ferent sports organizations, it is possible to estimate IR in di ﬀerent sports in a nationwide cohort. This has pre- viously only been done on smaller populations [ 24, 30]. The purpose of the study was to describe the epi- demiology of all adult ACL ‐ruptures in Denmark from 2000 to 2018, with focus on (1) the overall ACL IR as numbers per 100,000 inhabitant..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...udy period, as shown in the United States and stable reconstruction rates considering the emerging literature on non ‐operative treatment of ACL injuries. MATERIALS AND METHODS This was a registry study from the DNPR with pro- spectively collected data on the cohort of interest. The study conformed to the Helsinki declaration, and ethical approval was not necessary since no intervention was performed. Approval to collect data was granted by the Danish Data Protection Agency (P ‐2020‐304). Two cohorts were formed: 1. The..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...est. The study conformed to the Helsinki declaration, and ethical approval was not necessary since no intervention was performed. Approval to collect data was granted by the Danish Data Protection Agency (P ‐2020‐304). Two cohorts were formed: 1. The registry cohort (R ‐cohort) with all patients identiﬁed in the DNPR. 2. The questionnaire cohort (Q ‐cohort) with patients from the R‐cohort who responded to a questionnaire. Written consent from the participants in the Q‐cohort was obtained. T o estimate ACL and ACLR IR, th..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "cohort",
+        "snippet": "...udy conformed to the Helsinki declaration, and ethical approval was not necessary since no intervention was performed. Approval to collect data was granted by the Danish Data Protection Agency (P ‐2020‐304). Two cohorts were formed: 1. The registry cohort (R ‐cohort) with all patients identiﬁed in the DNPR. 2. The questionnaire cohort (Q ‐cohort) with patients from the R‐cohort who responded to a questionnaire. Written consent from the participants in the Q‐cohort was obtained. T o estimate ACL and ACLR IR, the following..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...re typically orga- nized in clubs and therefore registered, making it pos- sible to estimate sport ‐speciﬁc IRs when the injury activity is known. Sports chosen for analysis in this study were the ones reported with the highest rates in the DKRR. The register cohort (R ‐cohort) Patients aged 18 years and above at the time of reg- istration in DNPR with the ICD ‐codes S835 (lesion of the CL) and M235 (chronic instability of the knee) from 2000 to 2018 constitute the register cohort. The term nR‐cohort is used synonymously..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...n clusters of 10,000 each day, after an initial start with 5000 invitations. After inviting 25,000, it was noticed that a question regarding primary sport and a possible post injury knee replacement was missing. The two questions were added to the rest of the cohort. The 25,000 who had already received the questionnaire were additionally contacted up to three times via personal e‐mail in the 3 weeks after their primary invitation and encouraged to ﬁll out the missing data. Calculation of ACL IR Two types of ACL IR were c..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "reported numbers of ACL injuries in a given sport in the Q ‐cohort (ACL ‐SPORT Q‐cohort ) and (2) the re- gistered annual number of participants in the rele- vant sports from the DIF ( nathletes in sport ). Only registered members of sports clubs were counted. The numbers were available from 2012 to 2018, which is why the IR..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...in ACLR IRs (Supporting Information S1: Appendix B). TABLE 1 Characteristics of adult patients with diagnosed and self ‐reported cruciate ligament injury in Denmark from 2000 and 2018. Total Female Male p for diﬀerence between males and females Questionnaire cohort (responders) 22,627 11,180 11,447 Type of injury ACL injury 17,183 (76.0) 8576 (76.8) 8607 (75.2) <0.001 PCL injury 71 (0.3) 23 (0.2) 48 (0.4) Bilateral ACL injury 1242 (5.5) 506 (4.5) 736 (6.4) Not aware of injury type 4121 (18.2) 2066 (18.5) 2055 (18.0) ACL..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...RE 3 Annual age ‐speciﬁc incidence rates of ACL injury over time from 2000 to 2018. The incident rates are presented unadjusted (blue) based solely on data from the Danish National Patient Register and adjusted using a correction factor from the questionnaire cohort aiming to adjust for misdiagnosed ACL injuries. ACL, anterior cruciate ligament. ACL DENMARK: STABLE RATES, MORE SURGERY | 7 14337347, 0, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70329 by University College Dublin Libr, W..."
+      },
+      {
+        "page": 9,
+        "section": "Discussion",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": ".... In a ret- rospective study of magnetic resonance imaging (MRI) scans in Iceland from 2006 to 2011, an ACL injury IR of 75.1/100,000 per year was reported [ 26]. This may have been underestimated due to the exclusion of MRI scans with unclear descriptions. A retrospective cohort study from the United States, involving 1841 patients, described an ACL injury IR of 68.6/100,000 per year [33]. That study included only patients with newly diagnosed ACL injuries that were clinically or MRI ‐ conﬁrmed as complete ruptures. In contras..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "randomised controlled trial",
+        "snippet": "...004 and 2018 based on national registers. Acta Orthop. 2023;94:45 –50. 5. Beard DJ, Davies L, Cook JA, Stokes J, Leal J, Fletcher H, et al. Rehabilitation versus surgical reconstruction for non ‐acute anterior cruciate ligament injury (ACL SNNAP): a pragmatic randomised controlled trial. Lancet. 2022;400(10532):605 –15. 6. Buller LT, Best MJ, Baraga MG, Kaplan LD. Trends in anterior cruciate ligament reconstruction in the United States. Orthop J Sports Med. 2015;3(1):1 –8. 7. Campbell RJ, An V, Molnar R, Sivakumar BS, Symes M. Rising rates o..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...population‐based study. Am J Sports Med. 2016;44(6):1502 –7. 34. Selin AS, Gau ﬃ n H, Hedevik H, Fältström A, Kvist J. More knee reinjuries after ACL reconstruction compared to nonsurgical treatment of the ACL. A 2 ‐year follow ‐up of the NACOX pro- spective cohort study. Knee Surg Sports Traumatol Arthrosc. 2024;33(5):1709–20. 35. Silvers ‐Granelli HJ, Bizzini M, Arundale A, Mandelbaum BR, Snyder‐Mackler L. Does the FIFA 11+ injury prevention program reduce the incidence of ACL injury in male soccer players? Clin Ortho..."
+      }
+    ],
+    "source_provenance": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "Received: 5 October 2025 | Accepted: 22 January 2026 DOI: 10.1002/ksa.70329 KNEE ACL Denmark: A nationwide register ‐questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction Niels Christian Kaldau 1 | Kristoﬀer Weisskirchner Barfod 1,2 | Matilde Winther ‐Jensen3 | Per Hølmich 1 1Sports Orthopedic Research Center Copenhag..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Register",
+        "snippet": "...ruciate ligament; ACLR, ACL reconstruction; Cf, correction factor; CL, cruciate ligament; CRS, The Civil Registration System; DIF, The National Olympic Committee and Sports Confederation of Denmark (Danmarks Idrætsforbund); DKRR, The Danish ACL Reconstruction Register; DNPR, The Danish National Patient Register; EQ. 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, K..."
+      },
+      {
+        "page": 1,
+        "section": "Abstract",
+        "eligibleEvidenceSection": true,
+        "match": "Register",
+        "snippet": "...Cf, correction factor; CL, cruciate ligament; CRS, The Civil Registration System; DIF, The National Olympic Committee and Sports Confederation of Denmark (Danmarks Idrætsforbund); DKRR, The Danish ACL Reconstruction Register; DNPR, The Danish National Patient Register; EQ. 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score;..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "Level of Evidence: Level II. KEYWORDS ACL injury, ACL reconstruction rates, epidemiology, incidence rates, register study INTRODUCTION An anterior cruciate ligament (ACL) rupture is a severe injury [ 3], which may lead to early ‐onset osteoarthritis and impose signi ﬁcant socioeconomic burdens on both the a ﬀected individuals and society [ 9, 17, 21 ]. In Sweden, the incid..."
+      },
+      {
+        "page": 2,
+        "section": "Introduction",
+        "eligibleEvidenceSection": false,
+        "match": "Register",
+        "snippet": "...impor- tance of monitoring the development of ACL ‐ and ACLR IR. Since 2005, the Danish Knee Reconstruction Registry (DKRR) has registered patients undergoing ACLR, but there is no registration of patients treated non‐operatively. The Danish National Patient Register (DNPR) registers all patients with a diagnosis of ACL rupture. It is therefore possible to identify all patients with an ACL rupture diagnosed in the Danish health care system and thus investigate the epidemiology and treatment of ACL injuries in Denmark. Sin..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "register",
+        "snippet": "...atients from the R‐cohort who responded to a questionnaire. Written consent from the participants in the Q‐cohort was obtained. T o estimate ACL and ACLR IR, the following reg- isters were used: The Civil Registration System (CRS), the DNPR and numbers from a register of active athletes in vari- ous sports in the National Olympic Committee and Sports Confederation of Denmark (DIF). CRS cohort All Danish residents are given a unique personal identiﬁcation (ID) number at birth or immigration via the CRS [29]. This ID is used..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "register",
+        "snippet": "...erm n CRS is used synonymously with the Danish population alive at the time of assessment. The DNPR The DNPR was used to identify the cohort of in- dividuals with ACL injury in Denmark between 2000 and 2018, the R ‐cohort. Since 1977, it has been mandatory to register hospital contacts in the DNPR, and since 1995, pro- cedures and treatments have been registered as well [18]. Since 1995, diagnoses have been coded using the International Classi ﬁcation of Diseases, 10th edition (ICD10). 2 | ACL DENMARK: STABLE RATES, MORE S..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "Validation of sports ‐related injury codes has shown ACL injury with the ICD ‐code S835E to have a positive predictive value of 96% [ 10]. DIF register All organized sport in Denmark is part of the Sports Confederation of Denmark (DIF), and since 2012, active athletes of the di ﬀerent sports are registered, divided by sport, sex and age. In Denmark, most sports are played in organized settings, except for ac..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapist",
+        "snippet": "...meetings among the au- thors. The questionnaires were then tested on 10 pa- tients, and written feedback was obtained regarding the understanding of the questionnaire. Relevant adjust- ments were made, and the questionnaire was ﬁnally tested by 10 medical or physiotherapist research stu- dents regarding understanding, relevance, and time. D u et ot h e e‐boks system capacity, the invitations were sent out in clusters of 10,000 each day, after an initial start with 5000 invitations. After inviting 25,000, it was noticed that a qu..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Register",
+        "snippet": "...CLR IR: KNGE41, KNGE41B, KNGE41C, KNGE41D, KNGE41E, KNGE45, KNGE45B, KNGE45C, KNGE45D, KNGE45E. The data from DNPR (R ‐cohort) were used as the nominator and the annual numbers of inhabitants as the denominator (CRS cohort), which was retrieved from the Civil Register. The number of individuals 18 years old or above from the background population alive each year during the study period was identiﬁed. Access to register Registered data were accessed through an encrypted connection to the research environment hosted by Stati..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "relying on the register data from the DNPR (Figure 2). The overall IR was constant in the period and between 107 (CI: 104 –111) in 2000 and 106 (CI: 103 –109) in 2018 (Figure 2). The females' IR signi ﬁcantly increased (p = 0.02) from 81 (CI: 78 –85) to 90 (CI: 87 –94), whereas male..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Register",
+        "snippet": "...s of ACL injury and ACLR in Denmark from 2000 to 2018, strati ﬁed by sex. The values are estimated with 95% CI from questionnaire and DNPR data (ACLR only from DNPR). ACL, anterior cruciate ligament; ACLR, ACL reconstruction; DNPR, The Danish National Patient Register. 18−25 26−35 36−45 46−55 55+ 2000 2005 2010 2015 2000 2005 2010 2015 2000 2005 2010 2015 2000 2005 2010 2015 2000 2005 2010 2015 0 100 200 300 400 Ye a r Incidence per 100.000 individuals Corrected Corrected Not corrected FIGURE 3 Annual age ‐speciﬁc incidenc..."
+      },
+      {
+        "page": 11,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "...hmander LS. Treatment for acute anterior cruciate ligament tear: ﬁve year outcome of randomised trial. Br J Sports Med. 2015;49(10):700. 10. Gadeberg MN, Cramer A, Hölmich P, Barfod KW. Validity of sports‐related diagnosis codes in the Danish national patient register. Dan Med J. 2021;68(3):1 –6. 11. Harris PA, T aylor R, Minor BL, Elliott V, Fernandez M, O'Neal L, et al. The REDCap consortium: building an international com- munity of software platform partners. J Biomed Inform. 2019; 95:103208. 12. Harris PA, T aylor R, T..."
+      },
+      {
+        "page": 12,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "register",
+        "snippet": "...08(8):354 –8. SUPPORTING INFORMATION Additional supporting information can be found online in the Supporting Information section at the end of this article. How to cite this article: Kaldau NC, Barfod KW, Winther‐Jensen M, Hølmich P. ACL Denmark: a nationwide register ‐questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction. Knee Surg Sports Traumatol Arthrosc. 2026;1 –12. https://doi.org/10.1002/ksa.70329 12 | ACL DENMARK: STABLE RATES, MORE SURGERY 14337347, 0, Downl..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Received: 5 October 2025 | Accepted: 22 January 2026 DOI: 10.1002/ksa.70329 KNEE ACL Denmark: A nationwide register ‐questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction Niels Christian Kaldau 1 | Kristoﬀer Weisskirchner Barfod 1,2 | Matilde Winther ‐Jensen3 | Per Hølmich 1 1Sports Orthopedic Research Center Copenhagen, Department of Orthopedic Surgery, Copenhagen University Hospital, Amager‐Hvidovre Hospital, Hvidovre, Denmark 2Section for Sports Traumatology, Department of Orthopedic Surgery, Copenhagen University Hospital —Bispebjerg and Frederiksberg, Copenhagen, Denmark 3Center for Clinical Research and Prevention, Frederiksberg Hospital, Frederiksberg, Denmark Correspondence Niels Christian Kaldau, Hvidovre Hospital, Kettegaards Allé 30, 2650 Hvidovre, Denmark. Email: nckaldau@gmail.com Funding information Hvidovre Hospital; Badminton World Federation; Amager ‐Hvidovre Hospital Abstract Purpose: T o describe the epidemiology of adult anterior cruciate ligament (ACL) ruptures in Denmark from 2000 to 2018, focusing on: (1) overall ACL incidence rate (IR) per 100,000 inhabitants per year, (2) sports ‐speciﬁc ACL IR per 100,000 athletes per year and (3) ACL reconstruction (ACLR) IR per 100,000 inhabitants per year. Methods: This registry study utilized prospectively collected data from the Danish National Patient Registry (DNPR). Two ACL IRs were calculated: unadjusted IR based on registry data and adjusted IR corrected using patient self ‐reports to account for diagnostic misclassi ﬁcation. Sports ‐ speciﬁc ACL IRs (2012 –2018) were estimated by combining self ‐reported injury data with sports participation ﬁgures from the National Olympic Committee and Sports Confederation of Denmark. ACLR IRs were calcu- lated using procedure codes from DNPR, with annual Danish population data as denominators. Results: Between 2000 and 2018, 90,608 patients were identi ﬁed: 40,691 completed questionnaires. Overall adjusted ACL IR remained stable between 107/100,000 (con ﬁdence interval [CI]: 104 –111) in 2000 and 106/ 100,000 (CI: 103 –109) in 2018, increasing among females from 81/100,000 (CI: 78 –85) to 90/100,000 (CI: 87 –94) and decreasing among males from 134/100,000 (CI: 129 –140) to 122/100,000 (CI: 117 –127). ACLR IR rose from 36/100,000 (CI: 34 –38) to 43/100,000 (CI: 41 –45), with increases in both sexes, particularly among younger (18 –25 years) and older (>45 years) adults. Football was the leading c\n\n[p. 2] Level of Evidence: Level II. KEYWORDS ACL injury, ACL reconstruction rates, epidemiology, incidence rates, register study INTRODUCTION An anterior cruciate ligament (ACL) rupture is a severe injury [ 3], which may lead to early ‐onset osteoarthritis and impose signi ﬁcant socioeconomic burdens on both the a ﬀected individuals and society [ 9, 17, 21 ]. In Sweden, the incidence rate (IR) of cruciate ligament (CL) injuries was reported as 78 per 100,000 in- dividuals per year, with 36% of CL ‐injured patients undergoing surgery between 2002 and 2009 [ 27]. However, in the United States, the incidence of ACL ruptures has declined, while the rate of surgical reconstruction has risen to 75% [ 33]. Similarly, the United Kingdom has seen a 12 ‐fold increase in ACL reconstructions (ACLRs) between 1997 and 2017 [ 1]. The economic burden of ACLR can be higher than that of non ‐operative treatment of ACL injuries, and emerging evidence suggests non ‐operative treatment can be a successful option for patients whose demands for stability in sport or daily life do not exceed the sta- bility of their knee [ 5, 16 ]. This highlights the impor- tance of monitoring the development of ACL ‐ and ACLR IR. Since 2005, the Danish Knee Reconstruction Registry (DKRR) has registered patients undergoing ACLR, but there is no registration of patients treated non‐operatively. The Danish National Patient Register (DNPR) registers all patients with a diagnosis of ACL rupture. It is therefore possible to identify all patients with an ACL rupture diagnosed in the Danish health care system and thus investigate the epidemiology and treatment of ACL injuries in Denmark. Since the number of athletes in organized sports is registered by the dif- ferent sports organizations, it is possible to estimate IR in di ﬀerent sports in a nationwide cohort. This has pre- viously only been done on smaller populations [ 24, 30]. The purpose of the study was to describe the epi- demiology of all adult ACL ‐ruptures in Denmark from 2000 to 2018, with focus on (1) the overall ACL IR as numbers per 100,000 inhabitants per year, (2) the sports‐speciﬁc ACL IR as numbers per 100,000 ath- letes per year and (3) the ACLR IR as numbers per 100,000 inhabitants per year. Herein to report sex, age at injury, injury activity, operative/non ‐operative treat- ment and pre ‐injury level of sport. The a priori hypothesis was a reduction in ACL IR in the study period, as shown in the United States and stable reconstruction r\n\n[p. 3] Validation of sports ‐related injury codes has shown ACL injury with the ICD ‐code S835E to have a positive predictive value of 96% [ 10]. DIF register All organized sport in Denmark is part of the Sports Confederation of Denmark (DIF), and since 2012, active athletes of the di ﬀerent sports are registered, divided by sport, sex and age. In Denmark, most sports are played in organized settings, except for activities like skiing, running, cycling, and swimming, where many recreational athletes are not members of a club or federation. However, to our knowledge, athletes participating in handball, football, basketball, volleyball, badminton, tennis and gymnastics are typically orga- nized in clubs and therefore registered, making it pos- sible to estimate sport ‐speciﬁc IRs when the injury activity is known. Sports chosen for analysis in this study were the ones reported with the highest rates in the DKRR. The register cohort (R ‐cohort) Patients aged 18 years and above at the time of reg- istration in DNPR with the ICD ‐codes S835 (lesion of the CL) and M235 (chronic instability of the knee) from 2000 to 2018 constitute the register cohort. The term nR‐cohort is used synonymously with the total number of patients registered in the R ‐cohort. Individuals could have been diagnosed with the above diagnosis more than once in the period; however, they appear only once in the R ‐cohort. Q‐cohort On 20 December 2021, all patients in the R ‐cohort who were still alive and registered as residing in Denmark were invited to answer a questionnaire through a per- sonal e‐mail sent through the national public digital mail solution, e‐boks. Patients who answered the ques- tionnaire constitute the Q ‐cohort (Figure 1). Based on the self ‐reported answers, patients with an injury date before 2000, who did not recall the injury date or had an injury date before the age of 18, were excluded and did not contribute data for analysis of IRs in the de ﬁned time period. The Q ‐cohort was divided into subgroups according to the patient's con ﬁrmation of diagnosis (Figure 1): patients with an ACL injury, patients with a bilateral ACL injury, patients with a posterior cruciate ligament (PCL) injury, patients with CL injury without speciﬁcation, patients without a CL injury and patients not certain about having a CL ‐injury. The patients who had a bilateral injury or re ‐injury were instructed to answer the questionnaire regarding their primary injury. Patients reporting an ACL injury \n\n[p. 4] REDCap (Research Electronic Data Capture) [ 11, 12]. If no response was registered, a reminder was auto- matically sent after 3 weeks via e‐boks. This was repeated up to three times. Study data were collected and managed using REDCap electronic data capture tools hosted at The Capital Region of Denmark. RED- Cap is a secure, web ‐based software platform designed to support data capture for research studies. The questionnaire consisted of three parts: (1) a general questionnaire collecting information about the injury and injury mechanism, (2) a questionnaire about return to sport and (3) the patient ‐reported outcome measures (PROMs): European Quality of Life —5 Domains (EQ. 5D), International Knee Documentation Committee (IKDC) and Knee injury and Osteoarthritis Outcome Score (KOOS) [ 2, 31, 32 ]. The present paper presents data from the general questionnaire, including type of CL injury, site of injury (left/right), operative or non‐operative treatment, supervised physiotherapy, sport at time of injury, primary sport if any, and preinjury level of sport or activity (Supporting Information S1: Appendix A). The questionnaires were designed through repeated consensus meetings among the au- thors. The questionnaires were then tested on 10 pa- tients, and written feedback was obtained regarding the understanding of the questionnaire. Relevant adjust- ments were made, and the questionnaire was ﬁnally tested by 10 medical or physiotherapist research stu- dents regarding understanding, relevance, and time. D u et ot h e e‐boks system capacity, the invitations were sent out in clusters of 10,000 each day, after an initial start with 5000 invitations. After inviting 25,000, it was noticed that a question regarding primary sport and a possible post injury knee replacement was missing. The two questions were added to the rest of the cohort. The 25,000 who had already received the questionnaire were additionally contacted up to three times via personal e‐mail in the 3 weeks after their primary invitation and encouraged to ﬁll out the missing data. Calculation of ACL IR Two types of ACL IR were calculated: (1) the unadjusted ACL IR based solely on register data and (2) the adjusted ACL IR based on both the self ‐reported patient answers and the register data. If not further speciﬁed, the ACL IR in the results is the adjusted ACL IR. The unadjusted ACL IR First, the IR of patients diagnosed with CL injury or chronic instability was cal",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Received: 5 October 2025 | Accepted: 22 January 2026 DOI: 10.1002/ksa.70329 KNEE ACL Denmark: A nationwide register ‐questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction Niels Christian Kaldau 1 | Kristoﬀer Weisskirchner Barfod 1,2 | Matilde Winther ‐Jensen3 | Per Hølmich 1 1Sports Orthopedic Research Center Copenhagen, Department of Orthopedic Surgery, Copenhagen University Hospital, Amager‐Hvidovre Hospital, Hvidovre, Denmark 2Section for Sports Traumatology, Department of Orthopedic Surgery, Copenhagen University Hospital —Bispebjerg and Frederiksberg, Copenhagen, Denmark 3Center for Clinical Research and Prevention, Frederiksberg Hospital, Frederiksberg, Denmark Correspondence Niels Christian Kaldau, Hvidovre Hospital, Kettegaards Allé 30, 2650 Hvidovre, Denmark. Email: nckaldau@gmail.com Funding information Hvidovre Hospital; Badminton World Federation; Amager ‐Hvidovre Hospital Abstract Purpose: T o describe the epidemiology of adult anterior cruciate ligament (ACL) ruptures in Denmark from 2000 to 2018, focusing on: (1) overall ACL incidence rate (IR) per 100,000 inhabitants per year, (2) sports ‐speciﬁc ACL IR per 100,000 athletes per year and (3) ACL reconstruction (ACLR) IR per 100,000 inhabitants per year. Methods: This registry study utilized prospectively collected data from the Danish National Patient Registry (DNPR). Two ACL IRs were calculated: unadjusted IR based on registry data and adjusted IR corrected using patient self ‐reports to account for diagnostic misclassi ﬁcation. Sports ‐ speciﬁc ACL IRs (2012 –2018) were estimated by combining self ‐reported injury data with sports participation ﬁgures from the National Olympic Committee and Sports Confederation of Denmark. ACLR IRs were calcu- lated using procedure codes from DNPR, with annual Danish population data as denominators. Results: Between 2000 and 2018, 90,608 patients were identi ﬁed: 40,691 completed questionnaires. Overall adjusted ACL IR remained stable between 107/100,000 (con ﬁdence interval [CI]: 104 –111) in 2000 and 106/ 100,000 (CI: 103 –109) in 2018, increasing among females from 81/100,000 (CI: 78 –85) to 90/100,000 (CI: 87 –94) and decreasing among males from 134/100,000 (CI: 129 –140) to 122/100,000 (CI: 117 –127). ACLR IR rose from 36/100,000 (CI: 34 –38) to 43/100,000 (CI: 41 –45), with increases in both sexes, particularly among younger (18 –25 years) and older (>45 years) adults. Football was the leading cause of ACL injury overall and in men; women had more injuries in skiing and handball. The highest sports ‐ speciﬁc ACL IR was in female handball players, peaking at 2880/100,000 athletes in 2017. Females showed higher IRs in pivoting sports, while males had higher rates in gymnastics. Conclusions: While overall ACL IRs remained stable, an increase among females and a decline in males were found. ACLR rates have risen in both sexes. Female handball players had by far the highest ACL IR. Knee Surg Sports Traumatol Arthrosc . 2026;1 –12. wileyonlinelibrary.com/journal/ksa | 1 © 2026 European Society of Sports Traumatology, Knee Surgery and Arthroscopy. Abbreviations: ACL, anterior cruciate ligament; ACLR, ACL reconstruction; Cf, correction factor; CL, cruciate ligament; CRS, The Civil Registration System; DIF, The National Olympic Committee and Sports Confederation of Denmark (Danmarks Idrætsforbund); DKRR, The Danish ACL Reconstruction Register; DNPR, The Danish National Patient Register; EQ. 5D, European Quality of Life —5 Domains; E ‐boks, the national public digital mail solution; ICD, International Classi ﬁcation Code; IKDC, International Knee Documentation Committee; IR, incidence rate; KOOS, Knee injury and Osteoarthritis Outcome Score; Q ‐cohort, questionnaire cohort; REDCap, Research Electronic Data Capture; R ‐cohort, registry cohort."
+    },
+    {
+      "page": 2,
+      "text": "Level of Evidence: Level II. KEYWORDS ACL injury, ACL reconstruction rates, epidemiology, incidence rates, register study INTRODUCTION An anterior cruciate ligament (ACL) rupture is a severe injury [ 3], which may lead to early ‐onset osteoarthritis and impose signi ﬁcant socioeconomic burdens on both the a ﬀected individuals and society [ 9, 17, 21 ]. In Sweden, the incidence rate (IR) of cruciate ligament (CL) injuries was reported as 78 per 100,000 in- dividuals per year, with 36% of CL ‐injured patients undergoing surgery between 2002 and 2009 [ 27]. However, in the United States, the incidence of ACL ruptures has declined, while the rate of surgical reconstruction has risen to 75% [ 33]. Similarly, the United Kingdom has seen a 12 ‐fold increase in ACL reconstructions (ACLRs) between 1997 and 2017 [ 1]. The economic burden of ACLR can be higher than that of non ‐operative treatment of ACL injuries, and emerging evidence suggests non ‐operative treatment can be a successful option for patients whose demands for stability in sport or daily life do not exceed the sta- bility of their knee [ 5, 16 ]. This highlights the impor- tance of monitoring the development of ACL ‐ and ACLR IR. Since 2005, the Danish Knee Reconstruction Registry (DKRR) has registered patients undergoing ACLR, but there is no registration of patients treated non‐operatively. The Danish National Patient Register (DNPR) registers all patients with a diagnosis of ACL rupture. It is therefore possible to identify all patients with an ACL rupture diagnosed in the Danish health care system and thus investigate the epidemiology and treatment of ACL injuries in Denmark. Since the number of athletes in organized sports is registered by the dif- ferent sports organizations, it is possible to estimate IR in di ﬀerent sports in a nationwide cohort. This has pre- viously only been done on smaller populations [ 24, 30]. The purpose of the study was to describe the epi- demiology of all adult ACL ‐ruptures in Denmark from 2000 to 2018, with focus on (1) the overall ACL IR as numbers per 100,000 inhabitants per year, (2) the sports‐speciﬁc ACL IR as numbers per 100,000 ath- letes per year and (3) the ACLR IR as numbers per 100,000 inhabitants per year. Herein to report sex, age at injury, injury activity, operative/non ‐operative treat- ment and pre ‐injury level of sport. The a priori hypothesis was a reduction in ACL IR in the study period, as shown in the United States and stable reconstruction rates considering the emerging literature on non ‐operative treatment of ACL injuries. MATERIALS AND METHODS This was a registry study from the DNPR with pro- spectively collected data on the cohort of interest. The study conformed to the Helsinki declaration, and ethical approval was not necessary since no intervention was performed. Approval to collect data was granted by the Danish Data Protection Agency (P ‐2020‐304). Two cohorts were formed: 1. The registry cohort (R ‐cohort) with all patients identiﬁed in the DNPR. 2. The questionnaire cohort (Q ‐cohort) with patients from the R‐cohort who responded to a questionnaire. Written consent from the participants in the Q‐cohort was obtained. T o estimate ACL and ACLR IR, the following reg- isters were used: The Civil Registration System (CRS), the DNPR and numbers from a register of active athletes in vari- ous sports in the National Olympic Committee and Sports Confederation of Denmark (DIF). CRS cohort All Danish residents are given a unique personal identiﬁcation (ID) number at birth or immigration via the CRS [29]. This ID is used in all contacts with the health care system as well as other authorities. This ID was used to link information across registers. Thus, in- dividuals alive during 2000 –2018 were identi ﬁed using the CRS, and their sex and birth date were collected. The term n CRS is used synonymously with the Danish population alive at the time of assessment. The DNPR The DNPR was used to identify the cohort of i"
+    },
+    {
+      "page": 11,
+      "text": "ORCID Niels Christian Kaldau https://orcid.org/0000-0001- 9754-7480 Kristoﬀer Weisskirchner Barfod https://orcid.org/ 0000-0003-2620-5891 Matilde Winther ‐Jensen https://orcid.org/0000-0002- 4447-6292 Per Hølmich https://orcid.org/0000-0003-2098-0272 REFERENCES 1. Abram SGF, Price AJ, Judge A, Beard DJ. Anterior cruciate ligament (ACL) reconstruction and meniscal repair rates have both increased in the past 20 years in England: hospital sta- tistics from 1997 to 2017. Br J Sports Med. 2020;54(5):286 –91. 2. Anderson AF, Irrgang JJ, Kocher MS, Mann BJ, Harrast JJ. The International Knee Documentation Committee Subjective Knee evaluation form: normative data. Am J Sports Med. 2006;34(1): 128–35. 3. Ardern CL, Webster KE, T aylor NF, Feller JA. Return to sport following anterior cruciate ligament reconstruction surgery: a systematic review and meta ‐analysis of the state of play. Br J Sports Med. 2011;45(7):596 –606. 4. Arimaa A, Salminen T, Knifsund J, Kytö V, Lankinen P, Laaksonen I. Anterior cruciate ligament reconstruction and concomitant procedures in Finland between 2004 and 2018 based on national registers. Acta Orthop. 2023;94:45 –50. 5. Beard DJ, Davies L, Cook JA, Stokes J, Leal J, Fletcher H, et al. Rehabilitation versus surgical reconstruction for non ‐acute anterior cruciate ligament injury (ACL SNNAP): a pragmatic randomised controlled trial. Lancet. 2022;400(10532):605 –15. 6. Buller LT, Best MJ, Baraga MG, Kaplan LD. Trends in anterior cruciate ligament reconstruction in the United States. Orthop J Sports Med. 2015;3(1):1 –8. 7. Campbell RJ, An V, Molnar R, Sivakumar BS, Symes M. Rising rates of anterior cruciate ligament reconstruction in Australian adults: an analysis of Australian Medicare Bene ﬁts Schedule database. Knee Surg Sports Traumatol Arthrosc. 2025;33(4): 1222–9. 8. Dewig DR, Boltz AJ, Mo ﬃ t RE, Rao N, Collins CL, Chandran A. Epidemiology of anterior cruciate ligament tears in National Collegiate Athletic Association athletes: 2014/2015 ‐2018/2019. Med Sci Sports Exerc. 2024;56(1):29 –36. 9. Frobell RB, Roos HP, Roos EM, Roemer FW, Ranstam J, Lohmander LS. Treatment for acute anterior cruciate ligament tear: ﬁve year outcome of randomised trial. Br J Sports Med. 2015;49(10):700. 10. Gadeberg MN, Cramer A, Hölmich P, Barfod KW. Validity of sports‐related diagnosis codes in the Danish national patient register. Dan Med J. 2021;68(3):1 –6. 11. Harris PA, T aylor R, Minor BL, Elliott V, Fernandez M, O'Neal L, et al. The REDCap consortium: building an international com- munity of software platform partners. J Biomed Inform. 2019; 95:103208. 12. Harris PA, T aylor R, Thielke R, Payne J, Gonzalez N, Conde JG. Research Electronic Data Capture (REDCap) —a metadata‐driven methodology and work ﬂow process for pro- viding translational research informatics support. J Biomed Inf. 2009;42(2):377–81. 13. Herzog MM, Marshall SW, Lund JL, Pate V, Mack CD, Spang JT. Trends in Incidence of ACL reconstruction and concomitant procedures among commercially insured individuals in the United States, 2002‐2014. Sports Health. 2018;10(6):523–31. 14. Janssen KW, Orchard JW, Driscoll TR, van Mechelen W. High incidence and costs for anterior cruciate ligament reconstruc- tions performed in Australia from 2003 ‐2004 to 2007 ‐2008: time for an anterior cruciate ligament register by Scandinavian model? Scand J Med Sci Sports. 2012;22(4):495 –501. 15. Jia Z, Greven J, Hildebrand F, Kobbe P, Eschweiler J. Con- servative treatment versus surgical reconstruction for ACL rupture: a systemic review. J Orthop. 2024;57:8 –16. 16. Keays SL, Mellifont DB, Keays AC, Stuelcken MC, Lovell DI, Sayers MGL. Long ‐term return to sports after anterior cruciate ligament injury reconstruction vs no reconstruction —a com- parison of 2 case series. Am J Sports Med. 2022;50(4):912 –21. 17. Lien ‐Iversen T, Morgan DB, Jensen C, Risberg MA, Engebretsen L, Viberg B. Does surgery reduce knee osteo- arthritis, meniscal injury and subsequent complications com-"
+    },
+    {
+      "page": 12,
+      "text": "32. Roos EM, Lohmander LS. The Knee injury and Osteoarthritis Outcome Score (KOOS): from joint injury to osteoarthritis. Health Qual Life Outcomes. 2003;1(1):64. 33. Sanders TL, Maradit Kremers H, Bryan AJ, Larson DR, Dahm DL, Levy BA, et al. Incidence of anterior cruciate ligament tears and reconstruction: a 21 ‐year population‐based study. Am J Sports Med. 2016;44(6):1502 –7. 34. Selin AS, Gau ﬃ n H, Hedevik H, Fältström A, Kvist J. More knee reinjuries after ACL reconstruction compared to nonsurgical treatment of the ACL. A 2 ‐year follow ‐up of the NACOX pro- spective cohort study. Knee Surg Sports Traumatol Arthrosc. 2024;33(5):1709–20. 35. Silvers ‐Granelli HJ, Bizzini M, Arundale A, Mandelbaum BR, Snyder‐Mackler L. Does the FIFA 11+ injury prevention program reduce the incidence of ACL injury in male soccer players? Clin Orthop Relat Res. 2017;475(10):2447 –55. 36. Stojanovi ć E, Faude O, Niki ć M, Scanlan AT, Radovanovi ć D, Jakovljević V. The incidence rate of ACL injuries and ankle sprains in basketball players: a systematic review and meta ‐ analysis. Scand J Med Sci Sports. 2023;33(6):790 –813. 37. Sundhedsvæsenets Kvalitetsinstitut. Danish Knee Reconstruction Registry. Annual report 2025 [Internet]. Copenhagen: Sundheds- væsenets Kvalitetsinstitut; 2025 [cited 2025 Dec 19]. 38. Zbrojkiewicz D, Vertullo C, Grayson JE. Increasing rates of anterior cruciate ligament reconstruction in young Australians, 2000‐2015. Med J Aust. 2018;208(8):354 –8. SUPPORTING INFORMATION Additional supporting information can be found online in the Supporting Information section at the end of this article. How to cite this article: Kaldau NC, Barfod KW, Winther‐Jensen M, Hølmich P. ACL Denmark: a nationwide register ‐questionnaire study from 2000 to 2018 reporting stable ACL incidence rates but rising rates of reconstruction. Knee Surg Sports Traumatol Arthrosc. 2026;1 –12. https://doi.org/10.1002/ksa.70329 12 | ACL DENMARK: STABLE RATES, MORE SURGERY 14337347, 0, Downloaded from https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.70329 by University College Dublin Libr, Wiley Online Library on [30/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/ai-review/evidence-packets/S4987.packet.json"
+}

@@ -1,0 +1,179 @@
+{
+  "recordId": "f95440e8-a1b2-4576-9bb5-ca52bed63b59",
+  "covidenceId": null,
+  "studyId": "S1582",
+  "title": "Evolving landscape of sports injuries and recommendations on injury preventions: A retrospective analysis in Singapore",
+  "authors": "Chee J.",
+  "year": "2024",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S1582.pdf",
+  "pdfSha256": "04e33d44878b8c578772c6d93a46dce84e2ce1f29952e7b8da8314f631bd518d",
+  "criteriaVersion": "fifa-gbi-full-text-v6-2026-06-21",
+  "status": "text_extracted",
+  "pageCount": 3,
+  "textCharCount": 12601,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...orts. Successful programmes, such as the Fédération Internationale de Football Association (FIFA) 11+ programme, emphasise plyometrics, strengthening, flexibility, agility and feedback. 9 These programmes have demonstrated success in reducing the risk of soccer-related injuries and should be advocated through targeted online infomercials by health agencies to promote awareness and risk reduction. For shoulder injuries, warm-up routines that emphasise internal rotation range of motion, external rotator muscle..."
+      },
+      {
+        "page": 3,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...izumi K, et al. Injury trend analysis in the Japan national swim team from 2002 to 2016: effect of the lumbar injury prevention project. BMJ Open Sport & Exerc Med 2019;5:e000615. 9. Junge A, Lamprecht M, Stamm H, et al. Countrywide campaign to prevent soccer injuries in Swiss amateur players. Am J Sports Med 2011;39:57-63. 10. Andersson SH, Bahr R, Clarsen B, et al. Preventing overuse shoulder injuries among throwing athletes: a cluster-randomised controlled trial in 660 elite handball players. Br J Sports M..."
+      }
+    ],
+    "review": [
+      {
+        "page": 3,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Systematic Review",
+        "snippet": "...92:1875-83. 5. Colman V, Persyn U, Winters W. Biomechanical Analysis of Low Back Pain in Breaststroke Swimmers. International SportMed Journal 2000;1:1. 6. Montalvo AM, Schneider DK, Webster KE, et al. Anterior Cruciate Ligament Injury Risk in Sport: A Systematic Review and Meta-Analysis of Injury Incidence by Sex and Sport Classification. J Athl Train 2019;54:472-82. 7. Rynecki ND, Siracuse BL, Ippolito JA, et al. Injuries sustained during high intensity interval training: are modern fitness trends contributing to in..."
+      },
+      {
+        "page": 3,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Meta-Analysis",
+        "snippet": "..., Persyn U, Winters W. Biomechanical Analysis of Low Back Pain in Breaststroke Swimmers. International SportMed Journal 2000;1:1. 6. Montalvo AM, Schneider DK, Webster KE, et al. Anterior Cruciate Ligament Injury Risk in Sport: A Systematic Review and Meta-Analysis of Injury Incidence by Sex and Sport Classification. J Athl Train 2019;54:472-82. 7. Rynecki ND, Siracuse BL, Ippolito JA, et al. Injuries sustained during high intensity interval training: are modern fitness trends contributing to increased injury rates..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg 585 LETTER TO THE EDITOR Ann Acad Med Singap 2024;53:585-7 https://doi.org/10.47102/annals-acadmedsg.2024240 related to the evolving landscape of sports injuries in Singapore (Table 1). First, there was a notable increase in injuries associated with individual sports such as climbing, gym workouts and cycling from March 2020 to February 2021, compared to the previous year. In contrast, injuries resulting from te..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...9 September 2024 | annals.edu.sg 585 LETTER TO THE EDITOR Ann Acad Med Singap 2024;53:585-7 https://doi.org/10.47102/annals-acadmedsg.2024240 related to the evolving landscape of sports injuries in Singapore (Table 1). First, there was a notable increase in injuries associated with individual sports such as climbing, gym workouts and cycling from March 2020 to February 2021, compared to the previous year. In contrast, injuries resulting from team sports such as football decreased significantly during the same peri..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...ndscape of sports injuries in Singapore (Table 1). First, there was a notable increase in injuries associated with individual sports such as climbing, gym workouts and cycling from March 2020 to February 2021, compared to the previous year. In contrast, injuries resulting from team sports such as football decreased significantly during the same period. This shift likely reflects changes in sports participation patterns due to pandemic-related restrictions, which limited team sports activities and led to a rise i..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ecreased significantly during the same period. This shift likely reflects changes in sports participation patterns due to pandemic-related restrictions, which limited team sports activities and led to a rise in individual sports participation. In terms of injury type, the study found a significant increase in back injuries, particularly among individuals who engaged in gym workouts and swimming. Multivariate analysis revealed that gym and swimming activities were associated with higher risks of back injuries, w..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...ely reflects changes in sports participation patterns due to pandemic-related restrictions, which limited team sports activities and led to a rise in individual sports participation. In terms of injury type, the study found a significant increase in back injuries, particularly among individuals who engaged in gym workouts and swimming. Multivariate analysis revealed that gym and swimming activities were associated with higher risks of back injuries, whereas football had a lower risk. The increase in back injuries..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...s of injury type, the study found a significant increase in back injuries, particularly among individuals who engaged in gym workouts and swimming. Multivariate analysis revealed that gym and swimming activities were associated with higher risks of back injuries, whereas football had a lower risk. The increase in back injuries among gym-goers may be attributed to the use of weight- training machines, which can restrict the range of motion and reduce the engagement of stabilising back muscles, potentially leading..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...injuries, particularly among individuals who engaged in gym workouts and swimming. Multivariate analysis revealed that gym and swimming activities were associated with higher risks of back injuries, whereas football had a lower risk. The increase in back injuries among gym-goers may be attributed to the use of weight- training machines, which can restrict the range of motion and reduce the engagement of stabilising back muscles, potentially leading to injury. 4 Similarly, certain swimming techniques, such as hyp..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...hereas football had a lower risk. The increase in back injuries among gym-goers may be attributed to the use of weight- training machines, which can restrict the range of motion and reduce the engagement of stabilising back muscles, potentially leading to injury. 4 Similarly, certain swimming techniques, such as hyperextension of the spine or poor body balance may contribute to the increased risk of back injuries.5 Additionally, the study observed a decrease in anterior cruciate ligament (ACL) injuries, particul..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg Trends of sports injuries and preventive measures—Jade Chee et al. 586 Table 1. Multivariate analysis of sports associated with back, anterior cruciate ligament (ACL) and shoulder labral injuries. Injury of interest, no. (%) Other injuries, no. (%) Risk, mean (95% confidence int..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg Trends of sports injuries and preventive measures—Jade Chee et al. 587 Studies have shown that such exercises can reduce the incidence of back injuries in sports such as swimming and gym workouts. 8 Healthcare professionals, including gym instructors, physicians and physiotherapis..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "weekly",
+        "snippet": "...ports being particularly associated with higher risks. Dear Editor, Sports have become increasingly integral to the daily lives of Singaporeans. According to the National Sport and Exercise Participation Survey, the percentage of Singaporeans exercising weekly rose from 54% in 2015 to 73% in 2023. 1 While this surge in sports activities brings numerous health benefits, it also results in a corresponding increase in sports-related injuries, which incur significant healthcare costs. Countries worldwide estimate..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...ne, National University of Singapore, 10 Medical Dr, Singapore 117597. Email: e0474171@u.nus.edu This article was first published online on 13 September 2024 at annals.edu.sg. Evolving landscape of sports injuries and recommendations on injury preventions: A retrospective analysis in Singapore Jade Chee*1 MMed (FM) (S’pore), Francis Jia Yi Fong*2 MBBS, Mingchang Wang1 FCFP (S), Lee Yee Han Dave1 FRCS (Tr&Ortho)"
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...gym workouts or climbing activities could also benefit from such practices. Strengthening the rotator cuff and scapular muscles can enhance shoulder joint stability, reducing the likelihood of shoulder injuries. 10 Our study’s strengths lie in its large cohort size, rigorous methodology and focus on first- visit presentations, providing a comprehensive overview of the demographics of sports injuries. However, the study’s scope was limited to a single tertiary centre, and future multicentre cohort studies woul..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...in its large cohort size, rigorous methodology and focus on first- visit presentations, providing a comprehensive overview of the demographics of sports injuries. However, the study’s scope was limited to a single tertiary centre, and future multicentre cohort studies would enhance the overall understanding of the demographic landscape of sports injuries in Singapore. Additionally, the study could have been strengthened by collecting information on patients’ demographics and the specific mechanisms of injury..."
+      }
+    ],
+    "source_provenance": [
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...ports injuries and preventive measures—Jade Chee et al. 587 Studies have shown that such exercises can reduce the incidence of back injuries in sports such as swimming and gym workouts. 8 Healthcare professionals, including gym instructors, physicians and physiotherapists should consider incorporating trunk stabilisation exercises into rehabilitation routines for patients with lumbar injuries. Additionally, improper exercise execution is a common cause of back injuries in gym workouts, highlighting the importance of corr..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "physiotherapists",
+        "snippet": "...fessionals can better anticipate future trends, implement effective public health interventions, and reduce the prevalence of sports injuries and associated healthcare costs. Hospitals and allied health services, such as sports medicine practitioners and physiotherapists, should be prepared to handle the changing demographic of patients presenting with sports injuries. Declaration No funding was received for this study. All authors have no affiliations or financial involvement with any commercial organisation with a dire..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg 585 LETTER TO THE EDITOR Ann Acad Med Singap 2024;53:585-7 https://doi.org/10.47102/annals-acadmedsg.2024240 related to the evolving landscape of sports injuries in Singapore (Table 1). First, there was a notable increase in injuries associated with individual sports such as climbing, gym workouts and cycling from March 2020 to February 2021, compared to the previous year. In contrast, injuries resulting from team sports such as football decreased significantly during the same period. This shift likely reflects changes in sports participation patterns due to pandemic-related restrictions, which limited team sports activities and led to a rise in individual sports participation. In terms of injury type, the study found a significant increase in back injuries, particularly among individuals who engaged in gym workouts and swimming. Multivariate analysis revealed that gym and swimming activities were associated with higher risks of back injuries, whereas football had a lower risk. The increase in back injuries among gym-goers may be attributed to the use of weight- training machines, which can restrict the range of motion and reduce the engagement of stabilising back muscles, potentially leading to injury. 4 Similarly, certain swimming techniques, such as hyperextension of the spine or poor body balance may contribute to the increased risk of back injuries.5 Additionally, the study observed a decrease in anterior cruciate ligament (ACL) injuries, particularly in non-contact ball sports and martial arts. This decline may be linked to the reduction in team sports participation during the pandemic. However, multivariate analysis identified team-based ball sports, especially football and basketball, as being associated with higher risks of ACL injuries. The mechanisms underlying ACL injuries in these sports often involve high-impact rotational landing, valgus loading forces on the knees, and external rotation of the knee, all of which are common in non-contact team-ball sports.6 Shoulder labral injuries also saw a significant increase, with gym workouts and climbing sports being particularly associated with higher risks. Dear Editor, Sports have become increasingly integral to the daily lives of Singaporeans. According to the National Sport and Exercise Participation Survey, the percentage of Singaporeans exercising weekly rose from 54% in 2015 to 73% in 2023. 1 While this surge in sports activities b\n\n[p. 2] Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg Trends of sports injuries and preventive measures—Jade Chee et al. 586 Table 1. Multivariate analysis of sports associated with back, anterior cruciate ligament (ACL) and shoulder labral injuries. Injury of interest, no. (%) Other injuries, no. (%) Risk, mean (95% confidence interval) P value Sports associated with higher risk of back injury Gym 30 (13.6) 190 (86.4) 5.95 (3.60–9.83) <0.01 Other sports 38 (2.6) 1432 (97.4) Swimming 5 (31.3) 11 (68.8) 11.62 (3.92–34.46) <0.01 Other sports 63 (3.8) 1611 (96.2) Sports associated with lower risk of back injury Football 3 (1.2) 244 (98.8) 0.26 (0.08–0.84) 0.01 Other sports 65 (4.5) 1378 (95.5) Sports associated with higher risk of ACL injury Football 75 (30.4) 172 (69.6) 3.29 (2.40–4.51) <0.01 Other sports 169 (11.7) 1274 (88.3) Basketball 44 (27.0) 119 (73.0) 2.45 (1.68–3.57) <0.01 Other sports 200 (13.1) 1327 (86.9) Other ball sports 38 (21.0) 143 (79.0) 1.68 (1.14–2.47) 0.01 Other sports 206 (13.7) 1303 (86.3) Martial arts 24 (29.6) 57 (70.4) 2.65 (1.62–4.37) <0.01 Other sports 220 (13.7) 1389 (86.3) Sports associated with lower risk of ACL injury Gym 12 (5.5) 208 (94.5) 0.31 (0.17–0.56) <0.01 Other sports 232 (15.8) 1238 (84.2) Running 17 (6.4) 353 (95.4) 0.23 (0.14–0.39) <0.01 Other sports 227 (17.2) 1093 (82.8) Cycling 1 (2.8) 35 (97.2) 0.17 (0.02–1.22) 0.05 Other sports 243 (14.7) 1411 (85.3) Sports associated with higher risk of shoulder labral injury Gym 31 (14.1) 189 (85.9) 3.19 (2.04–4.98) <0.01 Other sports 72 (4.9) 1398 (95.1) Climbing 8 (26.7) 22 (73.3) 5.99 (2.60–13.81) <0.01 Other sports 95 (5.7) 1565 (94.3) P values in bold are statistically significant These injuries are often caused by unfavourable positions during common gym exercises or repetitive upper-limb movements on vertical terrain, as seen in climbing. The rise in shoulder labral injuries may be attributed to the growing popularity of high-intensity fitness trends such as high-intensity interval training, which have been linked to increased knee, ankle and shoulder injuries, especially among amateurs lacking sufficient flexibility, mobility, core strength and muscle conditioning to perform these exercises safely. 7 Based on these findings, we propose several preventive measures targeting specific injuries. For back injuries, core strength and trunk stabilisation exercises involving the transverse abdominal and lumbar multifidus muscles should be emphasised.\n\n[p. 3] Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg Trends of sports injuries and preventive measures—Jade Chee et al. 587 Studies have shown that such exercises can reduce the incidence of back injuries in sports such as swimming and gym workouts. 8 Healthcare professionals, including gym instructors, physicians and physiotherapists should consider incorporating trunk stabilisation exercises into rehabilitation routines for patients with lumbar injuries. Additionally, improper exercise execution is a common cause of back injuries in gym workouts, highlighting the importance of correcting form and technique to prevent injuries, particularly among beginners. For the prevention of ACL injuries, there is strong evidence supporting the effectiveness of injury prevention programmes, especially in non-contact ball sports. Successful programmes, such as the Fédération Internationale de Football Association (FIFA) 11+ programme, emphasise plyometrics, strengthening, flexibility, agility and feedback. 9 These programmes have demonstrated success in reducing the risk of soccer-related injuries and should be advocated through targeted online infomercials by health agencies to promote awareness and risk reduction. For shoulder injuries, warm-up routines that emphasise internal rotation range of motion, external rotator muscle strength and scapular muscle strength have been shown to reduce the likelihood of injuries. While these measures have primarily been studied in athletes participating in overhead sports, we suggest that individuals engaged in gym workouts or climbing activities could also benefit from such practices. Strengthening the rotator cuff and scapular muscles can enhance shoulder joint stability, reducing the likelihood of shoulder injuries. 10 Our study’s strengths lie in its large cohort size, rigorous methodology and focus on first- visit presentations, providing a comprehensive overview of the demographics of sports injuries. However, the study’s scope was limited to a single tertiary centre, and future multicentre cohort studies would enhance the overall understanding of the demographic landscape of sports injuries in Singapore. Additionally, the study could have been strengthened by collecting information on patients’ demographics and the specific mechanisms of injury, which would provide a better understanding of how certain injuries are commonly obtained, allowing for more targeted interventions. This study highlights the evolving land",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg 585 LETTER TO THE EDITOR Ann Acad Med Singap 2024;53:585-7 https://doi.org/10.47102/annals-acadmedsg.2024240 related to the evolving landscape of sports injuries in Singapore (Table 1). First, there was a notable increase in injuries associated with individual sports such as climbing, gym workouts and cycling from March 2020 to February 2021, compared to the previous year. In contrast, injuries resulting from team sports such as football decreased significantly during the same period. This shift likely reflects changes in sports participation patterns due to pandemic-related restrictions, which limited team sports activities and led to a rise in individual sports participation. In terms of injury type, the study found a significant increase in back injuries, particularly among individuals who engaged in gym workouts and swimming. Multivariate analysis revealed that gym and swimming activities were associated with higher risks of back injuries, whereas football had a lower risk. The increase in back injuries among gym-goers may be attributed to the use of weight- training machines, which can restrict the range of motion and reduce the engagement of stabilising back muscles, potentially leading to injury. 4 Similarly, certain swimming techniques, such as hyperextension of the spine or poor body balance may contribute to the increased risk of back injuries.5 Additionally, the study observed a decrease in anterior cruciate ligament (ACL) injuries, particularly in non-contact ball sports and martial arts. This decline may be linked to the reduction in team sports participation during the pandemic. However, multivariate analysis identified team-based ball sports, especially football and basketball, as being associated with higher risks of ACL injuries. The mechanisms underlying ACL injuries in these sports often involve high-impact rotational landing, valgus loading forces on the knees, and external rotation of the knee, all of which are common in non-contact team-ball sports.6 Shoulder labral injuries also saw a significant increase, with gym workouts and climbing sports being particularly associated with higher risks. Dear Editor, Sports have become increasingly integral to the daily lives of Singaporeans. According to the National Sport and Exercise Participation Survey, the percentage of Singaporeans exercising weekly rose from 54% in 2015 to 73% in 2023. 1 While this surge in sports activities brings numerous health benefits, it also results in a corresponding increase in sports-related injuries, which incur significant healthcare costs. Countries worldwide estimate spending between USD 1.58 billion and 2.4 billion dollars annually on the treatment of these injuries. 2 In light of these trends, evidence-based injury prevention strategies are essential. Continuous monitoring of injury patterns is necessary for developing effective prevention measures, ultimately reducing the prevalence and economic burden of sports injuries. The recent COVID-19 pandemic has notably shifted exercise routines, with many individuals turning to home-based exercises and outdoor activities such as running and cycling. 3 This change in exercise habits has altered the landscape of sports injuries, presenting an opportunity to explore how specific injury patterns correlate with different sports and to identify commonly associated injuries within popular sports. Our study, conducted at the National University Hospital, Singapore, retrospectively analysed patients presenting with sports-related injuries for the first time between March 2019 and February 2021. The study aimed to provide insight into recent changes in injury patterns among paediatric and adult patients, thereby guiding healthcare resource allocation and enhancing the understanding of sports injuries. Ethical approval was obtained from the National Healthcare Group Domain Specific Review Board (DSRB Reference Number: 2022/00230). "
+    },
+    {
+      "page": 3,
+      "text": "Ann Acad Med Singap Vol 53 No 9 September 2024 | annals.edu.sg Trends of sports injuries and preventive measures—Jade Chee et al. 587 Studies have shown that such exercises can reduce the incidence of back injuries in sports such as swimming and gym workouts. 8 Healthcare professionals, including gym instructors, physicians and physiotherapists should consider incorporating trunk stabilisation exercises into rehabilitation routines for patients with lumbar injuries. Additionally, improper exercise execution is a common cause of back injuries in gym workouts, highlighting the importance of correcting form and technique to prevent injuries, particularly among beginners. For the prevention of ACL injuries, there is strong evidence supporting the effectiveness of injury prevention programmes, especially in non-contact ball sports. Successful programmes, such as the Fédération Internationale de Football Association (FIFA) 11+ programme, emphasise plyometrics, strengthening, flexibility, agility and feedback. 9 These programmes have demonstrated success in reducing the risk of soccer-related injuries and should be advocated through targeted online infomercials by health agencies to promote awareness and risk reduction. For shoulder injuries, warm-up routines that emphasise internal rotation range of motion, external rotator muscle strength and scapular muscle strength have been shown to reduce the likelihood of injuries. While these measures have primarily been studied in athletes participating in overhead sports, we suggest that individuals engaged in gym workouts or climbing activities could also benefit from such practices. Strengthening the rotator cuff and scapular muscles can enhance shoulder joint stability, reducing the likelihood of shoulder injuries. 10 Our study’s strengths lie in its large cohort size, rigorous methodology and focus on first- visit presentations, providing a comprehensive overview of the demographics of sports injuries. However, the study’s scope was limited to a single tertiary centre, and future multicentre cohort studies would enhance the overall understanding of the demographic landscape of sports injuries in Singapore. Additionally, the study could have been strengthened by collecting information on patients’ demographics and the specific mechanisms of injury, which would provide a better understanding of how certain injuries are commonly obtained, allowing for more targeted interventions. This study highlights the evolving landscape of sports injuries in Singapore, emphasising the importance of continuous monitoring and the implementation of targeted injury prevention strategies. By understanding these shifts, authorities and healthcare professionals can better anticipate future trends, implement effective public health interventions, and reduce the prevalence of sports injuries and associated healthcare costs. Hospitals and allied health services, such as sports medicine practitioners and physiotherapists, should be prepared to handle the changing demographic of patients presenting with sports injuries. Declaration No funding was received for this study. All authors have no affiliations or financial involvement with any commercial organisation with a direct financial interest in the subject or materials discussed in the manuscript. Keywords: epidemiology, injury, orthopaedics, public health, sports medicine REFERENCES 1. SportDexSG. National Sport & Exercise Participation Survey 2023. https://www.sportdexsg.gov.sg/. Accessed 26 August 2024. 2. Rutherford Jr GW, Marcy N, Mills A. Hazard screening report. US Consumer Product Safety Commission 2004. 3. Hammami A, Harrabi B, Mohr M, et al. Physical activity and coronavirus disease 2019 (COVID-19): specific recommendations for home-based physical training. Managing Sport and Leisure 2020;27:26-31. 4. Colado JC, Pablos C, Chulvi-Medrano I, et al. The progression of paraspinal muscle recruitment intensity in localized and global strength training exercis"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets/S1582.packet.json"
+}

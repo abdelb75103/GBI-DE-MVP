@@ -1,0 +1,287 @@
+{
+  "recordId": "5d729e3d-b97f-44c7-996e-bad4f4d0b8ba",
+  "covidenceId": null,
+  "studyId": "S4724",
+  "title": "Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method.",
+  "authors": "Min BS",
+  "year": "2025",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-c/files/S4724.pdf",
+  "pdfSha256": "4a39443268617d695c4e46f2e0f439fd415f50e1a0d5e5008551a30c812d3add",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 10,
+  "textCharCount": 33819,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...program. Furthermore, the association rule method was applied via Python 3.13.3 to analyze the patterns of injury sites and types. First, by investigating the prevalence of injuries in recreational sports, it was found that the injury frequency was highest in soccer, followed by cycling, hiking, and badminton. Second, in soccer, it was found that when ankle injuries, which have a high injury frequency, occur, knee, toe, and sprain injuries also occur together (Lift: 1.843). Additionally, in cycling, when knee injuries oc..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ia Python 3.13.3 to analyze the patterns of injury sites and types. First, by investigating the prevalence of injuries in recreational sports, it was found that the injury frequency was highest in soccer, followed by cycling, hiking, and badminton. Second, in soccer, it was found that when ankle injuries, which have a high injury frequency, occur, knee, toe, and sprain injuries also occur together (Lift: 1.843). Additionally, in cycling, when knee injuries occur, toe, sprain, and strain (bruise) injuries also occur toget..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Life 2025, 15, 701 5 of 10 3. Results 3.1. Status of Injuries from Participation in Sports Activities by Leisure Sport Table 3 shows the prevalence of injuries related to participation in leisure activities among South Koreans. The results showed that soccer (439 injuries, 18.2%) led to the highest number of injuries in sports participation, followed by cycling (305 injuries, 12.6%) and hiking (289 injuries, 12.0%). On the other hand, although not shown in the table below, the recreational sports with the lowest..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...with the lowest number of injuries were paragliding (3, 0.1%) and kendo (3, 0.1%). Table 3. Injury status by participation in recreational sports in South Korea (top 10 sports). Rank Sport Injury Frequency Injury Rate Rank Sport Injury Frequency Injury Rate 1 Soccer 439 18.2 6 Bowling 125 5.2 2 Cycling 305 12.6 7 Bodybuilding 124 5.1 3 Hiking 289 12.0 8 Skiing/snowboarding 103 4.3 4 Badminton 175 7.2 9 Golf 96 4.0 5 Basketball 125 5.2 10 Foot volleyball 81 3.4 3.2. Injury Site Patterns by Participation in Recreational Sp..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...applied the association rule method to identify the patterns of injury sites by participation in recreational sports. The minimum support was set to 0.001 and the minimum confidence to 0.100. Furthermore, injury site patterns for the three most common sports, soccer, cycling, and mountain biking, were identified. 3.2.1. Patterns of Injury Sites by Participation in Soccer as a Leisure Sport Table 4 shows the injuries caused by participation in soccer as a leisure sport in South Korea. The results showed that the most comm..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...al sports. The minimum support was set to 0.001 and the minimum confidence to 0.100. Furthermore, injury site patterns for the three most common sports, soccer, cycling, and mountain biking, were identified. 3.2.1. Patterns of Injury Sites by Participation in Soccer as a Leisure Sport Table 4 shows the injuries caused by participation in soccer as a leisure sport in South Korea. The results showed that the most common injury site was the ankle (25.0%), followed by the knee (11.0%) and shin (6.7%). To analyze the patterns..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...100. Furthermore, injury site patterns for the three most common sports, soccer, cycling, and mountain biking, were identified. 3.2.1. Patterns of Injury Sites by Participation in Soccer as a Leisure Sport Table 4 shows the injuries caused by participation in soccer as a leisure sport in South Korea. The results showed that the most common injury site was the ankle (25.0%), followed by the knee (11.0%) and shin (6.7%). To analyze the patterns of injury site and type by participation in soccer, the association rule was ap..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...s caused by participation in soccer as a leisure sport in South Korea. The results showed that the most common injury site was the ankle (25.0%), followed by the knee (11.0%) and shin (6.7%). To analyze the patterns of injury site and type by participation in soccer, the association rule was applied. Since the main objective of this study was to identify the injury patterns by site and type, the three most common injury sites (ankle, knee, and shin) in soccer were selected and analyzed. The results for the patterns by in..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Life 2025, 15, 701 6 of 10 Table 5. Analysis of injury site and type patterns by participation in soccer (top 3 in improvement). Antecedents Consequents Support Confidence Lift Top 3 ankle injuries_improvement Knee, toe, sprain Ankle 0.021 0.909 1.843 Knee, toe, strain (bruise) Ankle 0.017 0.888 1.802 Knee, abrasion (scratch), toe Ankle 0.015 0.875 1.774 Top 3 k..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...common sports. To address this issue, the association rule method was applied, and the resulting discussion and recommendations are presented below. First, by investigating the prevalence of injuries in recreational sports, the injury frequency was highest in soccer, followed by cycling, hiking, and badminton. Soccer and cycling are among the sports with the highest rates of injuries, both in recreational and elite sports. In fact, a study examining injuries among athletes who participated in the 2012 London Olympics fou..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...ite and type of injuries could be used as a basis for developing programs on warm-up exercises and treatment to proactively prevent injuries. 5. Conclusions The findings of this study highlight the prevalence and patterns of injuries in recre- ational sports. Soccer exhibited the highest injury frequency, followed by cycling, hiking, and badminton. The most commonly affected body parts were the ankle in soccer, the ankle, knee, and palm in hiking, and the knee, ankle, and palm in cycling. These results pro- vide essentia..."
+      },
+      {
+        "page": 10,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...n Summer Olympic Games 2012. Br. J. Sports Med. 2013, 47, 407–414. [CrossRef] [PubMed] 16. Alhazmi, M.; Alhazmi, E.; Alghamdi, W.A.; Zalah, M.; Uddin, S.; Rizvi, M.R.; Ahmad, F. Effectiveness of FIFA injury prevention programs in reducing ankle injuries among football players: A systematic review. PeerJ 2025, 13, e18910. [CrossRef] 17. França, C.; Saldanha, C.; Martins, F.; de Maio Nascimento, M.; Marques, A.; Ihle, A.; Gouveia, É.R.; Palmer-Green, D.; Vanhegan, I.; Renström, P .A.; et al. Lower body strength and body composition..."
+      }
+    ],
+    "wrong_sport": [
+      {
+        "page": 10,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "Rugby",
+        "snippet": "...almer-Green, D.; Vanhegan, I.; Renström, P .A.; et al. Lower body strength and body composition in female football. Sci. Rep. 2025, 15, 9200. [CrossRef] [PubMed] 18. Koh, J.-O. Incidence and Prevalence of Sports related Injuries based on Soccer, Baseball, and Rugby: A Qualitative Systematic Review of the Evidence. J. Sport Leis. Stud. 2023, 95, 243–255. [CrossRef] 19. Farnan, D.; Mahony, N.; Wilson, F.; Gissane, C. A 3-month prospective study of injuries in amateur rugby and soccer.Physiother. Pract. Res. 2013, 34, 103–..."
+      },
+      {
+        "page": 10,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "rugby",
+        "snippet": "...s related Injuries based on Soccer, Baseball, and Rugby: A Qualitative Systematic Review of the Evidence. J. Sport Leis. Stud. 2023, 95, 243–255. [CrossRef] 19. Farnan, D.; Mahony, N.; Wilson, F.; Gissane, C. A 3-month prospective study of injuries in amateur rugby and soccer.Physiother. Pract. Res. 2013, 34, 103–112. [CrossRef] 20. Lee, I.; Jeong, H.S.; Lee, S.Y. Injury profiles in Korean youth soccer. Int. J. Environ. Res. Public Health 2020, 17, 5125. [CrossRef] 21. Dierks, T.A.; Manal, K.T.; Hamill, J.; Davis, I.S...."
+      }
+    ],
+    "public_source": [
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "publicly available",
+        "snippet": "...nts. Category N % Gender Male 1614 50.7 Female 1568 49.3 Age 20s 616 19.4 30s 656 20.6 40s 795 25.0 50s 785 24.7 60s and older 246 10.3 It is important to note that this study did not involve the primary collection of data by the authors. Instead, it utilized publicly available secondary data provided by the Korea Sports Safety Foundation. As such, the figure of 3182 respondents represents a refined dataset selected according to the foundation’s internal criteria. Details regarding the original number of individuals contacted or the..."
+      }
+    ],
+    "review": [
+      {
+        "page": 10,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...es 2012. Br. J. Sports Med. 2013, 47, 407–414. [CrossRef] [PubMed] 16. Alhazmi, M.; Alhazmi, E.; Alghamdi, W.A.; Zalah, M.; Uddin, S.; Rizvi, M.R.; Ahmad, F. Effectiveness of FIFA injury prevention programs in reducing ankle injuries among football players: A systematic review. PeerJ 2025, 13, e18910. [CrossRef] 17. França, C.; Saldanha, C.; Martins, F.; de Maio Nascimento, M.; Marques, A.; Ihle, A.; Gouveia, É.R.; Palmer-Green, D.; Vanhegan, I.; Renström, P .A.; et al. Lower body strength and body composition in female football. S..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "Academic Editor: Ines Drenjanˇ cevi´ c Received: 31 March 2025 Revised: 25 April 2025 Accepted: 25 April 2025 Published: 26 April 2025 Citation: Min, B.S.; Jang, N. Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method. Life 2025, 15, 701. https://doi.org/10.3390/ life15050701 Copyright: © 2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an o..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Prevalence",
+        "snippet": "Academic Editor: Ines Drenjanˇ cevi´ c Received: 31 March 2025 Revised: 25 April 2025 Accepted: 25 April 2025 Published: 26 April 2025 Citation: Min, B.S.; Jang, N. Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method. Life 2025, 15, 701. https://doi.org/10.3390/ life15050701 Copyright: © 2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...y the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/ licenses/by/4.0/). Article Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method Byeong Seok Min 1 and Nara Jang 2,* 1 Sociology of Sport, Sunmoon University, Asan 31460, Chungcheongnam-do, Republic of Korea; mbs1208@hanmail.net..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Prevalence",
+        "snippet": "...uthors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/ licenses/by/4.0/). Article Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method Byeong Seok Min 1 and Nara Jang 2,* 1 Sociology of Sport, Sunmoon University, Asan 31460, Chungcheongnam-do, Republic of Korea; mbs1208@hanmail.net 2 Departmen..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prevalence",
+        "snippet": "...niversity, Asan 31460, Chungcheongnam-do, Republic of Korea; mbs1208@hanmail.net 2 Department of Physical Education, Korea National Sport University, Seoul 05541, Republic of Korea * Correspondence: nara7888@naver.com Abstract: This study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. This study utilized data from the “survey of safety accidents” conducted by the Korea Sports Safety Foundation and finally, 3182 recre- ational sports participants who experienc..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...nam-do, Republic of Korea; mbs1208@hanmail.net 2 Department of Physical Education, Korea National Sport University, Seoul 05541, Republic of Korea * Correspondence: nara7888@naver.com Abstract: This study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. This study utilized data from the “survey of safety accidents” conducted by the Korea Sports Safety Foundation and finally, 3182 recre- ational sports participants who experienced injuries were selected for th..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...d patterns of sports injuries in recreational sports activities in South Korea. This study utilized data from the “survey of safety accidents” conducted by the Korea Sports Safety Foundation and finally, 3182 recre- ational sports participants who experienced injuries were selected for the study. For data processing, data related to recreational sports injuries were first collected and organized using Excel 2015, and frequency analysis was conducted using the SPSS 25.0 program. Furthermore, the association rule method was..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...ized data from the “survey of safety accidents” conducted by the Korea Sports Safety Foundation and finally, 3182 recre- ational sports participants who experienced injuries were selected for the study. For data processing, data related to recreational sports injuries were first collected and organized using Excel 2015, and frequency analysis was conducted using the SPSS 25.0 program. Furthermore, the association rule method was applied via Python 3.13.3 to analyze the patterns of injury sites and types. First, by investig..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...al sports, and efforts are being made to increase participation in recreational sports [4]. In recreational sports, ensuring sports safety is of paramount importance, as it is crucial for continued participation. Sports safety refers to minimizing the risk of injury to participants, and a sports injury is defined as “a condition in which an athlete who sustains an injury during competition or training is medically evaluated by a doctor or trainer and is deemed unable to participate in sports for more than one day” [5]. T..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prevalence",
+        "snippet": "Life 2025, 15, 701 3 of 10 Therefore, this study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. Specifically, the frequency of injury by sport was calculated by participation in recreational sports activities in South Korea. Furthermore, the injury patterns of the top thre..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Life 2025, 15, 701 4 of 10 where was the injury site?” and “What type of injury did you sustain at the reported site?” Based on the responses, injury sites were classified into 38 distinct categories, and injury types were categorized into 13 different types. The detailed results are presented in Table 2...."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries",
+        "snippet": "Life 2025, 15, 701 5 of 10 3. Results 3.1. Status of Injuries from Participation in Sports Activities by Leisure Sport Table 3 shows the prevalence of injuries related to participation in leisure activities among South Koreans. The results showed that soccer (439 injuries, 18.2%) led to the highest number of injuries in..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "Life 2025, 15, 701 6 of 10 Table 5. Analysis of injury site and type patterns by participation in soccer (top 3 in improvement). Antecedents Consequents Support Confidence Lift Top 3 ankle injuries_improvement Knee, toe, sprain Ankle 0.021 0.909 1.843 Knee, toe, strain (bruise) Ankle 0.017 0.888 1.802 Knee, abras..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...sprain, finger Ankle 0.013 1.000 2.990 Top 3 palm injuries_improvement Elbow, abrasion (scratch), calf Palm 0.019 0.666 3.080 Wrist, abrasion (scratch), sprain Palm 0.019 0.666 3.080 Elbow, abrasion (scratch), sprain Palm 0.032 0.600 2.772 3.2.3. Patterns of Injury Sites by Participation in Hiking as a Leisure Sport Table 8 shows the injuries caused by participation in hiking as a leisure sport in South Korea. The results showed that the most common injury site was the ankle (15.2%), followed by the knee (8.1%) and palm..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "...ratch), hips, strain (bruise) Palm 0.021 0.500 3.736 Laceration (tear), ankle, sprain Palm 0.021 0.500 3.736 4. Discussion Recreational sports participants are increasingly concerned about sports safety [14]. In particular, the importance of preventing sports injuries has been emphasized, as such injuries can limit the ability to continue engaging in leisure activities. Therefore, in addition to identifying the prevalence of injuries by recreational sports activity, this study also examined patterns in the injury site and..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injuries",
+        "snippet": "Life 2025, 15, 701 9 of 10 uneven trails were the most common patterns in hiking. In hiking, most injuries were not caused by opponents but by the external environment and their own movement. In the future, it would be more meaningful to look at injuries in hiking by age. When looking at the characteristics of the sports with the highest rates of injury in recreat..."
+      },
+      {
+        "page": 10,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...e, M.-S. The Relationship among Recreational Sports Participants’ Resilience, Andropause Symptoms and Suicidal Ideation in Middle-Aged Men. Korean J. Phys. Educ. 2024, 63, 309–328. 5. Dick, R.; Agel, J.; Marshall, S.W. National collegiate athletic association injury surveillance system commentaries: Introduction and methods. J. Athl. T rain. 2007, 42, 173. [PubMed] 6. Nam, Y.-S. Improvement Plan of Sports Safety Consciousness. Korean Soc. Sport Policy 2021, 19, 143–158. [CrossRef] 7. Oh, H.; Lim, H.; Jeon, M. Analysis of..."
+      }
+    ],
+    "design": [
+      {
+        "page": 10,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "..., J.-O. Incidence and Prevalence of Sports related Injuries based on Soccer, Baseball, and Rugby: A Qualitative Systematic Review of the Evidence. J. Sport Leis. Stud. 2023, 95, 243–255. [CrossRef] 19. Farnan, D.; Mahony, N.; Wilson, F.; Gissane, C. A 3-month prospective study of injuries in amateur rugby and soccer.Physiother. Pract. Res. 2013, 34, 103–112. [CrossRef] 20. Lee, I.; Jeong, H.S.; Lee, S.Y. Injury profiles in Korean youth soccer. Int. J. Environ. Res. Public Health 2020, 17, 5125. [CrossRef] 21. Dierks, T.A.; Ma..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] Academic Editor: Ines Drenjanˇ cevi´ c Received: 31 March 2025 Revised: 25 April 2025 Accepted: 25 April 2025 Published: 26 April 2025 Citation: Min, B.S.; Jang, N. Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method. Life 2025, 15, 701. https://doi.org/10.3390/ life15050701 Copyright: © 2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/ licenses/by/4.0/). Article Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method Byeong Seok Min 1 and Nara Jang 2,* 1 Sociology of Sport, Sunmoon University, Asan 31460, Chungcheongnam-do, Republic of Korea; mbs1208@hanmail.net 2 Department of Physical Education, Korea National Sport University, Seoul 05541, Republic of Korea * Correspondence: nara7888@naver.com Abstract: This study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. This study utilized data from the “survey of safety accidents” conducted by the Korea Sports Safety Foundation and finally, 3182 recre- ational sports participants who experienced injuries were selected for the study. For data processing, data related to recreational sports injuries were first collected and organized using Excel 2015, and frequency analysis was conducted using the SPSS 25.0 program. Furthermore, the association rule method was applied via Python 3.13.3 to analyze the patterns of injury sites and types. First, by investigating the prevalence of injuries in recreational sports, it was found that the injury frequency was highest in soccer, followed by cycling, hiking, and badminton. Second, in soccer, it was found that when ankle injuries, which have a high injury frequency, occur, knee, toe, and sprain injuries also occur together (Lift: 1.843). Additionally, in cycling, when knee injuries occur, toe, sprain, and strain (bruise) injuries also occur together (Lift: 2.420). In mountain biking, when ankle injuries, which have a high injury frequency, occur, cuts, sprains, stab wounds (cuts), sprains, and strains (bruises) also occur together (Lift: 1.808). The current survey on recreational sports injuries is expected to be used as basic data to prevent injuries in advance for participants\n\n[p. 2] Life 2025, 15, 701 2 of 10 the most important contributors to their quality of life and self-esteem. As a result, many scholars and researchers have emphasized the importance of participation in recreational sports, and efforts are being made to increase participation in recreational sports [4]. In recreational sports, ensuring sports safety is of paramount importance, as it is crucial for continued participation. Sports safety refers to minimizing the risk of injury to participants, and a sports injury is defined as “a condition in which an athlete who sustains an injury during competition or training is medically evaluated by a doctor or trainer and is deemed unable to participate in sports for more than one day” [5]. Therefore, even in recreational sports, efforts to prevent injuries are essential. To prevent sports injuries, it is crucial to identify potential injuries in advance. Since each sport is associated with a distinct set of injuries that affect different parts of the body, identifying the most common injuries beforehand can aid in the planning of preventive measures. Furthermore, as noted by [6], the causes of sports injuries are often difficult to pinpoint due to the variety of situations in which they occur; however, identifying risk factors is necessary for preventing injuries proactively. As such, research on injuries in recreational sports is needed. Most previous studies have focused on injuries in professional or elite sports [ 7,8]. However, with the growth of recreational sports, more individuals are becoming involved and expressing interest in these activities, which in turn increases the significance of safety measures in recreational sports. Additionally, due to the interconnection between the development of recreational sports and the advancement of professional elite sports, as well as the enhancement of public quality of life and health through recreational sports, research on injuries in recreational sports has become a critical area of study [ 9]. Consequently, many scholars have emphasized the necessity of developing strategies and programs to prevent sports injuries and ensure safety. In efforts to improve sports safety and reduce injuries, various studies have been conducted on the development of sports safety manuals, surveys on sports safety, and sports injuries by sport. However, most of these studies provide only basic information through frequency analysis. In reality, it remains challenging to identify patterns regar\n\n[p. 3] Life 2025, 15, 701 3 of 10 Therefore, this study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. Specifically, the frequency of injury by sport was calculated by participation in recreational sports activities in South Korea. Furthermore, the injury patterns of the top three sports with the most frequent injuries were identified in terms of injury site and type. This can be used as basic information for performing pre-stretching or taping to prevent injuries by checking injury information for recreational sports and identifying common injury areas by sport. 2. Research Method 2.1. Data Collection and Subjects This study aimed to investigate the prevalence and patterns of injuries associated with participation in recreational sports. For this purpose, secondary data from the Survey of Safety Accidents conducted by the Korea Sports Safety Foundation, a nationally accredited institution, were utilized. Specifically, the study employed data from the Awareness Survey, one of the two components of the overall survey (the other being the In-depth Survey). The Awareness Survey targeted South Korean adults aged 19 years or older who were capable of expressing their subjective opinions. Participants were selected through a stratified sampling method based on demographic variables such as region, gender, and age, ensuring a representative distribution of the national population. The final analytical sample consisted of 3,182 individuals who had experienced injuries while participating in recreational sports. Responses deemed insincere—such as missing values or extreme outliers—were excluded during the data cleaning process. Of the respondents, 1614 were male (50.7%) and 1568 were female (49.3%). The distribution by age group was as follows: 20 s (n = 616, 19.4%), 30 s (n = 656, 20.6%), 40 s (n = 795, 25.0%), 50 s (n = 785, 24.7%), and 60 years or older (n = 246, 10.3%), with individuals in their 40 s comprising the largest proportion (Table 1). Table 1. Demographic characteristics of the study participants. Category N % Gender Male 1614 50.7 Female 1568 49.3 Age 20s 616 19.4 30s 656 20.6 40s 795 25.0 50s 785 24.7 60s and older 246 10.3 It is important to note that this study did not involve the primary collection of data by the authors. Instead, it utilized publicly available secondary data provided by the Korea Sports Safety Foundation. As such, the figure of 3182 respondents represents a refined data\n\n[p. 4] Life 2025, 15, 701 4 of 10 where was the injury site?” and “What type of injury did you sustain at the reported site?” Based on the responses, injury sites were classified into 38 distinct categories, and injury types were categorized into 13 different types. The detailed results are presented in Table 2. Table 2. Injury site and responses from the injury survey. Item 1. Please Tell Me About Any Injuries You Have Had in the Past Year. First, Where Was the Injury Site? No. Response No. Response No. Response No. Response No. Response 1 Scalp 9 Cheekbone/cheek 17 Upper arm 25 Hip joint 33 Ankle 2 Eye 10 Head 18 Elbow 26 Hip 34 Sole 3 Nose 11 Neck (cervical) 19 Lower arm 27 Thigh (femur) 35 Instep 4 Mouth 12 Chest 20 Wrist 28 Groin 36 Toe 5 Teeth 13 Stomach 21 Palm 29 Knee 37 Toenail 6 Ear 14 Back 22 Back of hand 30 Shin 38 Other 7 Forehead 15 Lower back 23 Finger 31 Calf 8 Chin 16 Shoulder 24 Nail 32 Achilles tendon Item 2. What Type of Injury Did You Have in the Injury Site? No. Response No. Response No. Response No. Response No. Response 1 Sprain 4 Laceration (tear) 7 Bleeding 10 Pain 13 Other 2 Fracture 5 Cut 8 Strain (bruise) 11 Inflammation (festering) 3 Dislocation (falling off) 6 Abrasion (scratch) 9 Stab (cut) 12 Rupture (burst) 2.3. Data Processing Methods For data processing, data related to recreational sports injuries were first collected and organized using Excel 2015, and frequency analysis was conducted using the SPSS 25.0 program. Furthermore, the association rule method was applied via Python 3.13.3 to analyze the patterns of injury sites and types. Specifically, the association rule method applied the Apriori algorithm, which organized a set of frequent items based on their minimum support and derived rules from within the frequent items. The association rule calculated the support, confidence, and improvement indices, and it should be noted up front that the minimum support was set low to account for the responded characteristics. In association rule mining, the minimum thresholds for “support” and “confidence” usually depend on the characteristics of the dataset, the research objectives, and the problem being analyzed. These values are often compared relatively within the dataset itself [13]. Only patterns with an improvement of at least 1.00 on items that satisfied the minimum support (0.01) and minimum confidence (0.20) were finally adopted. This was a criterion for discovering association rules among ma",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "Academic Editor: Ines Drenjanˇ cevi´ c Received: 31 March 2025 Revised: 25 April 2025 Accepted: 25 April 2025 Published: 26 April 2025 Citation: Min, B.S.; Jang, N. Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method. Life 2025, 15, 701. https://doi.org/10.3390/ life15050701 Copyright: © 2025 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/ licenses/by/4.0/). Article Analysis of Sports Injury Prevalence and Patterns in Recreational Sports Activities in South Korea: Applying the Association Rule Method Byeong Seok Min 1 and Nara Jang 2,* 1 Sociology of Sport, Sunmoon University, Asan 31460, Chungcheongnam-do, Republic of Korea; mbs1208@hanmail.net 2 Department of Physical Education, Korea National Sport University, Seoul 05541, Republic of Korea * Correspondence: nara7888@naver.com Abstract: This study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. This study utilized data from the “survey of safety accidents” conducted by the Korea Sports Safety Foundation and finally, 3182 recre- ational sports participants who experienced injuries were selected for the study. For data processing, data related to recreational sports injuries were first collected and organized using Excel 2015, and frequency analysis was conducted using the SPSS 25.0 program. Furthermore, the association rule method was applied via Python 3.13.3 to analyze the patterns of injury sites and types. First, by investigating the prevalence of injuries in recreational sports, it was found that the injury frequency was highest in soccer, followed by cycling, hiking, and badminton. Second, in soccer, it was found that when ankle injuries, which have a high injury frequency, occur, knee, toe, and sprain injuries also occur together (Lift: 1.843). Additionally, in cycling, when knee injuries occur, toe, sprain, and strain (bruise) injuries also occur together (Lift: 2.420). In mountain biking, when ankle injuries, which have a high injury frequency, occur, cuts, sprains, stab wounds (cuts), sprains, and strains (bruises) also occur together (Lift: 1.808). The current survey on recreational sports injuries is expected to be used as basic data to prevent injuries in advance for participants in recreational sports, and it is expected that this will allow them to participate in sports by recognizing common injury sites before participating in sports. Keywords: sports injury; association rule method; recreational sports 1. Introduction In modern society, recreational sports are increasingly recognized as a significant factor in improving the quality of life [1]. As urbanization and technological advancements make lives busier and more stressful around the world, recreational sports are becoming an important way to promote not only physical health but also mental well-being [2]. Recre- ational sports are more than just a hobby; they play an essential role in helping individuals form and maintain social relationships, boost self-confidence, and effectively manage stress. Therefore, recreational sports have been emphasized as an essential component of leading a healthy and happy life, as well as balancing the overall life of a modern person. In South Korea, the amount of time modern people spend on leisure is changing, and in fact, the national statistics site (kosis.kr/index) of Statistics Korea reports an increase in the amount of time spent on leisure in 2023 compared to the past [3]. With much leisure time, people are engaged in a variety of activities, and participation in sports is one of Life 2025, 15, 701 https://doi.org/10.3390/life15050701"
+    },
+    {
+      "page": 3,
+      "text": "Life 2025, 15, 701 3 of 10 Therefore, this study aims to identify the prevalence and patterns of sports injuries in recreational sports activities in South Korea. Specifically, the frequency of injury by sport was calculated by participation in recreational sports activities in South Korea. Furthermore, the injury patterns of the top three sports with the most frequent injuries were identified in terms of injury site and type. This can be used as basic information for performing pre-stretching or taping to prevent injuries by checking injury information for recreational sports and identifying common injury areas by sport. 2. Research Method 2.1. Data Collection and Subjects This study aimed to investigate the prevalence and patterns of injuries associated with participation in recreational sports. For this purpose, secondary data from the Survey of Safety Accidents conducted by the Korea Sports Safety Foundation, a nationally accredited institution, were utilized. Specifically, the study employed data from the Awareness Survey, one of the two components of the overall survey (the other being the In-depth Survey). The Awareness Survey targeted South Korean adults aged 19 years or older who were capable of expressing their subjective opinions. Participants were selected through a stratified sampling method based on demographic variables such as region, gender, and age, ensuring a representative distribution of the national population. The final analytical sample consisted of 3,182 individuals who had experienced injuries while participating in recreational sports. Responses deemed insincere—such as missing values or extreme outliers—were excluded during the data cleaning process. Of the respondents, 1614 were male (50.7%) and 1568 were female (49.3%). The distribution by age group was as follows: 20 s (n = 616, 19.4%), 30 s (n = 656, 20.6%), 40 s (n = 795, 25.0%), 50 s (n = 785, 24.7%), and 60 years or older (n = 246, 10.3%), with individuals in their 40 s comprising the largest proportion (Table 1). Table 1. Demographic characteristics of the study participants. Category N % Gender Male 1614 50.7 Female 1568 49.3 Age 20s 616 19.4 30s 656 20.6 40s 795 25.0 50s 785 24.7 60s and older 246 10.3 It is important to note that this study did not involve the primary collection of data by the authors. Instead, it utilized publicly available secondary data provided by the Korea Sports Safety Foundation. As such, the figure of 3182 respondents represents a refined dataset selected according to the foundation’s internal criteria. Details regarding the original number of individuals contacted or the overall response rate were not disclosed in the public dataset. The data used in this study were obtained from the Korea Sports Safety Foundation’s official website (https://www.sportsafety.or.kr/front/main.do (accessed on 20 December 2023)). 2.2. Selection and Content of Survey Variables In this study, variables related to sport-specific injuries were selected from the Survey of Safety Accidents conducted by the Korea Sports Safety Foundation. Specifically, the survey items used were “Please describe all injuries you experienced in the past year. First,"
+    },
+    {
+      "page": 5,
+      "text": "Life 2025, 15, 701 5 of 10 3. Results 3.1. Status of Injuries from Participation in Sports Activities by Leisure Sport Table 3 shows the prevalence of injuries related to participation in leisure activities among South Koreans. The results showed that soccer (439 injuries, 18.2%) led to the highest number of injuries in sports participation, followed by cycling (305 injuries, 12.6%) and hiking (289 injuries, 12.0%). On the other hand, although not shown in the table below, the recreational sports with the lowest number of injuries were paragliding (3, 0.1%) and kendo (3, 0.1%). Table 3. Injury status by participation in recreational sports in South Korea (top 10 sports). Rank Sport Injury Frequency Injury Rate Rank Sport Injury Frequency Injury Rate 1 Soccer 439 18.2 6 Bowling 125 5.2 2 Cycling 305 12.6 7 Bodybuilding 124 5.1 3 Hiking 289 12.0 8 Skiing/snowboarding 103 4.3 4 Badminton 175 7.2 9 Golf 96 4.0 5 Basketball 125 5.2 10 Foot volleyball 81 3.4 3.2. Injury Site Patterns by Participation in Recreational Sports This study applied the association rule method to identify the patterns of injury sites by participation in recreational sports. The minimum support was set to 0.001 and the minimum confidence to 0.100. Furthermore, injury site patterns for the three most common sports, soccer, cycling, and mountain biking, were identified. 3.2.1. Patterns of Injury Sites by Participation in Soccer as a Leisure Sport Table 4 shows the injuries caused by participation in soccer as a leisure sport in South Korea. The results showed that the most common injury site was the ankle (25.0%), followed by the knee (11.0%) and shin (6.7%). To analyze the patterns of injury site and type by participation in soccer, the association rule was applied. Since the main objective of this study was to identify the injury patterns by site and type, the three most common injury sites (ankle, knee, and shin) in soccer were selected and analyzed. The results for the patterns by injury site only showed the top three with the highest improvement. The results showed that ankle injuries had the highest improvement in injury patterns for knees, toes, and sprains. In the knee, the highest injury patterns were for toes, ankles, and sprains, while in the shin, the highest improvement was for toes, sprains, and calves (Table 5). Table 4. Analysis of injury site frequency by participation in soccer (top 5). Rank Site Frequency % 1 Ankle 250 25.0 2 Knee 110 11.0 3 Shin 67 6.7 4 Calf 50 5.0 4 Toe 50 5.0"
+    },
+    {
+      "page": 10,
+      "text": "Life 2025, 15, 701 10 of 10 Data Availability Statement: The datasets used and/or analyzed during the current study are available from the corresponding author upon reasonable request. Conflicts of Interest: The authors declare no conflicts of interest. References 1. Bae, Y.-J. The Mediation Effect of Occupational Self-efficacy on the Relationship between Grit and Job Satisfaction of Office Workers Participating in Recreational Sports: With a Focus on Production Workers.J. Coach. Dev. 2024, 26, 13–23. 2. Bae, J.-Y. Senior Recreational Sports and Active. J. Leis. Stud. 2024, 22, 153–179. 3. Kim, S.-H.; Jo, D.-W. Analysis of Changes in Leisure Time and Exercise Time based on the Adolescents’ gender.Korean Soc. Sports Sci. 2024, 33, 687–700. 4. Lee, M.-S. The Relationship among Recreational Sports Participants’ Resilience, Andropause Symptoms and Suicidal Ideation in Middle-Aged Men. Korean J. Phys. Educ. 2024, 63, 309–328. 5. Dick, R.; Agel, J.; Marshall, S.W. National collegiate athletic association injury surveillance system commentaries: Introduction and methods. J. Athl. T rain. 2007, 42, 173. [PubMed] 6. Nam, Y.-S. Improvement Plan of Sports Safety Consciousness. Korean Soc. Sport Policy 2021, 19, 143–158. [CrossRef] 7. Oh, H.; Lim, H.; Jeon, M. Analysis of Sports Injury in Lower Extremities of High School Taekwondo Athletes. Appl. Sci. 2021, 11, 11690. [CrossRef] 8. Cheon, W.; Park, J. Sports Injury Status Survey by Gender and Career of the Taekwondo Poomsae Athletes.Int. J. Martial Arts 2022, 7, 1–9. [CrossRef] 9. Carson, R.; Ingersoll, C.D.; Mangum, L.C. Injury Frequencies in College Recreational Sports: 2013–2014 Through 2018–2019. Int. J. Athl. Ther. T rain. 2025, 1, 1–6. [CrossRef] 10. Agrawal, R.; Imielinski, T.; Swami, A. Mining Association Rules between Sets of Items in Large Databases. In Proceedings of the ACM SIGMOD Conference on Management of Data, Washington, DC, USA, 25–28 May 1993; pp. 207–216. 11. Jeon, M. Analysis of point deduction patterns in Taekwondo using association rule learning. Int. J. Perform. Anal. Sport 2019, 19, 323–330. [CrossRef] 12. Oh, H.-R. Analysis of Takewondo players’ anxiety patterns according to game situationby applying the association rules.Korean Soc. Sports Sci. 2020, 29, 1159–1168. 13. Chon, Y.-K. A Study on the analysis of Restaurant Customers’ Behavior Patterns using Association Rules.Korean Hotel. Restaur. Assoc. 2003, 12, 1–22. 14. Oh, S.-E.; Lee, S.-B.; Kang, M.-S. Exploration of Sports Injury Patterns among Participants in Life Sports and Professional Sports Using Association Rule Mining. Korean J. Phys. Educ. 2023, 62, 557–570. 15. Engebretsen, L.; Soligard, T.; Steffen, K.; Alonso, J.M.; Aubry, M.; Budgett, R.; Renström, P .A.; Jegathesan, M.; Meeuwisse, W.H.; Mountjoy, M.; et al. Sports injuries and illnesses during the London Summer Olympic Games 2012. Br. J. Sports Med. 2013, 47, 407–414. [CrossRef] [PubMed] 16. Alhazmi, M.; Alhazmi, E.; Alghamdi, W.A.; Zalah, M.; Uddin, S.; Rizvi, M.R.; Ahmad, F. Effectiveness of FIFA injury prevention programs in reducing ankle injuries among football players: A systematic review. PeerJ 2025, 13, e18910. [CrossRef] 17. França, C.; Saldanha, C.; Martins, F.; de Maio Nascimento, M.; Marques, A.; Ihle, A.; Gouveia, É.R.; Palmer-Green, D.; Vanhegan, I.; Renström, P .A.; et al. Lower body strength and body composition in female football. Sci. Rep. 2025, 15, 9200. [CrossRef] [PubMed] 18. Koh, J.-O. Incidence and Prevalence of Sports related Injuries based on Soccer, Baseball, and Rugby: A Qualitative Systematic Review of the Evidence. J. Sport Leis. Stud. 2023, 95, 243–255. [CrossRef] 19. Farnan, D.; Mahony, N.; Wilson, F.; Gissane, C. A 3-month prospective study of injuries in amateur rugby and soccer.Physiother. Pract. Res. 2013, 34, 103–112. [CrossRef] 20. Lee, I.; Jeong, H.S.; Lee, S.Y. Injury profiles in Korean youth soccer. Int. J. Environ. Res. Public Health 2020, 17, 5125. [CrossRef] 21. Dierks, T.A.; Manal, K.T.; Hamill, J.; Davi"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ai-review/evidence-packets-v8/S4724.packet.json"
+}

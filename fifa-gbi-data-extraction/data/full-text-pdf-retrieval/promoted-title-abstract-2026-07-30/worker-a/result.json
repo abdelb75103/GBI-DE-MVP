@@ -1,0 +1,101 @@
+[
+  {
+    "studyId": "S683",
+    "recordId": "a37a4044-663d-4061-acb6-91583fbbcbea",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://pure.rug.nl/ws/portalfiles/portal/1101886271/1-s2.0-S1360859224002304-main.pdf",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S683.pdf",
+    "sha256": "924a293491d65ac6ba1672c18887a0e825796a031c0576a661ee194d43cc6b67",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "institutional repository, publisher version of record", "documentType": "full_paper", "pages": 5, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["Repository cover sheet names the exact title, five authors, journal and DOI.", "PDF body is the cited Journal of Bodywork & Movement Therapies article."], "failureEvidence": [], "provenanceUrls": ["https://research.rug.nl/en/publications/incidence-of-lower-limb-tendinopathy-a-3-year-prospective-study-o/", "https://pure.rug.nl/ws/portalfiles/portal/1101886271/1-s2.0-S1360859224002304-main.pdf"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S845",
+    "recordId": "b72f7871-06f8-47da-8a20-6cfc8ba320fb",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://doi.org/10.1097/JSM.0000000000001240",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": false, "legalAccessType": null, "documentType": "full_paper", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["PubMed PMID 38896546 identifies the exact Boltz et al. article and DOI."], "failureEvidence": ["PubMed lists no PMCID.", "Publisher access requires subscription or purchase and no lawful repository PDF was found."], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/38896546/", "https://doi.org/10.1097/JSM.0000000000001240"], "confidence": "high"},
+    "error": "No legally accessible PDF located.",
+    "manualNextStep": "Use an institutional library entitlement or request the paper from the corresponding author."
+  },
+  {
+    "studyId": "S907",
+    "recordId": "3ecdc6c8-dbc1-4001-b653-0ce47bfcdaa2",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://europepmc.org/articles/PMC11195861?pdf=render",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S907-europepmc.pdf",
+    "sha256": "bf9f81be776ef8a61c5d2babddd6e63a0d835cbd7c9e2e98073ff3dcbafdac80",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "PubMed Central open-access copy via Europe PMC", "documentType": "full_paper", "pages": 5, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF masthead gives the exact title, Yang as lead author and DOI 10.1177/19417381231198541.", "PubMed identifies PMCID PMC11195861 for the exact record."], "failureEvidence": [], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/37768038/", "https://europepmc.org/articles/PMC11195861?pdf=render"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S925",
+    "recordId": "9d1e52c6-323b-4355-bfc5-9db38e9e4974",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://thejns.org/downloadpdf/view/journals/neurosurg-focus/57/1/article-pE3.pdf",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": true, "legalAccessType": "official publisher PDF route", "documentType": "full_paper", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PubMed PMID 38950434 identifies the exact Bretzin et al. article and DOI.", "The official JNS PDF route exposes the matching title and DOI in publisher search indexing."], "failureEvidence": ["Official JNS PDF URL returned HTTP 403 from this environment, so no local PDF could be signature-validated."], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/38950434/", "https://thejns.org/downloadpdf/view/journals/neurosurg-focus/57/1/article-pE3.pdf"], "confidence": "high"},
+    "error": "Official PDF route blocked automated retrieval (HTTP 403).",
+    "manualNextStep": "Download the official JNS PDF in a normal browser or through library access, then validate its DOI and page count."
+  },
+  {
+    "studyId": "S1148",
+    "recordId": "78fa6b57-9cf4-43f2-8921-ea65166e38a7",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://doi.org/10.1136/bjsports-2023-106702",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": false, "legalAccessType": null, "documentType": "conference_abstract", "pages": null, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": false, "identityEvidence": ["PubMed PMID 37236774 identifies the exact Monasterio PhD Academy Award item, DOI and pages 112-113.", "The university repository indexes the exact DOI as a British Journal of Sports Medicine note."], "failureEvidence": ["No lawful PDF of the exact two-page BJSM item was available.", "A repository thesis PDF exists, but it is a 2022 thesis rather than the requested DOI-bearing journal item and was rejected as a mismatch."], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/37236774/", "https://ekoizpen-zientifikoa.ehu.eus/documentos/64be32f23bbfc602eae59116", "https://addi.ehu.es/bitstream/handle/10810/59474/TESIS_MONASTERIO_CUENCA_XABIER.pdf?sequence=1"], "confidence": "high"},
+    "error": "Exact journal item not available as a lawful downloadable PDF.",
+    "manualNextStep": "Obtain the two-page BJSM item through institutional access or ask the author, do not substitute the thesis without adjudication."
+  },
+  {
+    "studyId": "S1503",
+    "recordId": "7ba55d44-0ad9-4714-b7cb-d1a1d6825e45",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://clinicaltrials.gov/study/NCT06203379",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": true, "legalAccessType": "public trial registry", "documentType": "trial_registry_record", "pages": null, "titleMatch": true, "authorMatch": false, "doiMatch": false, "contentMatch": true, "identityEvidence": ["ClinicalTrials.gov NCT06203379 has the exact official title and sponsor shown in the queue."], "failureEvidence": ["Registry reports no results posted and no attached full-text PDF."], "provenanceUrls": ["https://clinicaltrials.gov/study/NCT06203379"], "confidence": "high"},
+    "error": "No publication or downloadable PDF linked from the trial registry.",
+    "manualNextStep": "Monitor NCT06203379 for results or identify a later associated publication before full-text screening."
+  },
+  {
+    "studyId": "S1521",
+    "recordId": "87521ed2-7811-477a-b93f-fc85f1253e4c",
+    "retrievalStatus": "unresolved",
+    "sourceUrl": "https://clinicaltrials.gov/study/NCT06473883",
+    "localPath": null,
+    "sha256": null,
+    "validation": {"pdfSignature": false, "identityVerified": true, "legalAccess": true, "legalAccessType": "public trial registry", "documentType": "trial_registry_record", "pages": null, "titleMatch": true, "authorMatch": false, "doiMatch": false, "contentMatch": true, "identityEvidence": ["ClinicalTrials.gov NCT06473883 has the matching female-football injury-prevention study description."], "failureEvidence": ["The record is not yet recruiting and no results publication or PDF was found."], "provenanceUrls": ["https://clinicaltrials.gov/study/NCT06473883", "https://ctv.veeva.com/study/the-impact-of-eye-and-body-training-on-the-injury-rate-of-concussions-in-female-soccer-players"], "confidence": "high"},
+    "error": "No publication or downloadable PDF linked from the trial registry.",
+    "manualNextStep": "Monitor NCT06473883 for results or identify a later associated publication before full-text screening."
+  },
+  {
+    "studyId": "S1564",
+    "recordId": "69fcb6b9-313e-4197-9e81-d6039158f29a",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://europepmc.org/articles/PMC10918355?pdf=render",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S1564.pdf",
+    "sha256": "c0d255365c36193c4a85d85a32aa5242e4b94d5147024fe1d2b1b505dcdec10d",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "PubMed Central open-access copy via Europe PMC", "documentType": "full_paper", "pages": 6, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["PDF title page gives exact title, Sakanashi as lead author, journal, pages and DOI 10.1016/j.smhs.2024.01.003.", "PubMed identifies PMCID PMC10918355 for the exact record."], "failureEvidence": [], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/38463667/", "https://europepmc.org/articles/PMC10918355?pdf=render"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  },
+  {
+    "studyId": "S1582",
+    "recordId": "f95440e8-a1b2-4576-9bb5-ca52bed63b59",
+    "retrievalStatus": "accepted",
+    "sourceUrl": "https://annals.edu.sg/download/32935/?tmstv=1727406163",
+    "localPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/worker-a/files/S1582.pdf",
+    "sha256": "04e33d44878b8c578772c6d93a46dce84e2ce1f29952e7b8da8314f631bd518d",
+    "validation": {"pdfSignature": true, "identityVerified": true, "legalAccess": true, "legalAccessType": "official open-access publisher PDF, CC BY-NC-SA 4.0", "documentType": "letter", "pages": 3, "titleMatch": true, "authorMatch": true, "doiMatch": true, "contentMatch": true, "identityEvidence": ["Official PDF labels the item Letter to the Editor and gives exact title, Chee and Fong authors, pages 585-587 and DOI.", "PDF states the Annals is open access under CC BY-NC-SA 4.0."], "failureEvidence": [], "provenanceUrls": ["https://pubmed.ncbi.nlm.nih.gov/39373378/", "https://annals.edu.sg/download/32935/?tmstv=1727406163"], "confidence": "high"},
+    "error": null,
+    "manualNextStep": null
+  }
+]

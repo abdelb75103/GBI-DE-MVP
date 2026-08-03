@@ -1,0 +1,62 @@
+{
+  "scope": "Serial guarded AI-only writes for exact attached promoted full-text records",
+  "generatedAt": "2026-07-30T14:51:45.704Z",
+  "recommendationsPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/ai-review/recommendations.json",
+  "results": [
+    {
+      "studyId": "S925",
+      "recordId": "9d1e52c6-323b-4355-bfc5-9db38e9e4974",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The statewide, season-long surveillance contains separable high-school soccer concussion findings and a mappable clinical definition, but it calculates incidence only from athletic participant counts per 100 player-seasons. It reports no time exposure, athlete-exposures, match-exposures, valid published time rate, or defensible derivation inputs.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "01e33240cb9a3aab32e13b713d852b6bee9cc5b5fdc1dd90418e3c1dc4c5b068",
+      "aiReviewedAt": "2026-07-30T14:51:44.86+00:00"
+    },
+    {
+      "studyId": "S1148",
+      "recordId": "78fa6b57-9cf4-43f2-8921-ea65166e38a7",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "This two-page BJSM PhD Academy Award item is an editorial-style thesis summary, not a report of one primary study or a declared eligible systematic review. It describes a thesis and cites the underlying articles rather than supplying a study-specific methods-and-results report for extraction.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "50d60331ce6292b754372c1a2a4c51ce2b39ee0dab48601cf1d3983f1b7624de",
+      "aiReviewedAt": "2026-07-30T14:51:45.181+00:00"
+    },
+    {
+      "studyId": "S4111",
+      "recordId": "27d9106c-e105-4749-9dcf-57b19ad03caf",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "Despite the word 'football' in the title, the cohort is NCAA Football Bowl Subdivision American football. The paper's comparison with soccer occurs only in the Introduction and does not supply a separable association-football dataset.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "aa84977142bcd60e08663dba43711eb0a9b676a571e39df74f3063bc104bd46f",
+      "aiReviewedAt": "2026-07-30T14:51:45.376+00:00"
+    },
+    {
+      "studyId": "S4987",
+      "recordId": "20174957-a3f6-4f6e-b66d-b36f1b7c851b",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "The source is the Danish National Patient Registry, supplemented by a retrospective questionnaire of registered patients and population/athlete registry figures. It does not report prospectively collected injury outcomes from current participating football teams or their clinical staff. Its sport-specific metric is per 100,000 registered athletes, not an eligible exposure denominator.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "ffa28da69cba5bc248321d2896960e948da62309030d7982cb96e285facf1577",
+      "aiReviewedAt": "2026-07-30T14:51:45.492+00:00"
+    },
+    {
+      "studyId": "S5148",
+      "recordId": "7df87db6-0820-4379-a2e7-86110035429d",
+      "status": "ai_applied_verified",
+      "decision": "exclude",
+      "reason": "This two-page BJSM PhD Academy Award item summarises four thesis articles, including an underlying trial and secondary analysis, rather than reporting a single study's full methods and results. It is neither the underlying primary paper nor a declared eligible systematic/scoping/umbrella review or meta-analysis in its own right.",
+      "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+      "model": "gpt-5.6-terra (xhigh) via Codex sub-agent",
+      "pdfSha256": "ca664d143b59c4cad48f33056e005349685d1065393ad588a011ad110afa47fa",
+      "aiReviewedAt": "2026-07-30T14:51:45.579+00:00"
+    }
+  ]
+}

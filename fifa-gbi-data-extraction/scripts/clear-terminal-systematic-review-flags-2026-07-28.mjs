@@ -25,7 +25,7 @@ const { createClient } = (() => {
     return require('@supabase/supabase-js');
   } catch (localError) {
     const canonicalPackage = path.join(
-      '/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction',
+      '/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction',
       'node_modules',
       '@supabase',
       'supabase-js',
@@ -50,7 +50,7 @@ const parseEnv = (contents) => Object.fromEntries(
 
 const localEnvPath = path.join(APP_DIR, '.env.local');
 const canonicalEnvPath =
-  '/Users/abdelbabiker/Downloads/GBI-DE-MVP-main/fifa-gbi-data-extraction/.env.local';
+  '/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/.env.local';
 const envPath = fs.existsSync(localEnvPath) ? localEnvPath : canonicalEnvPath;
 const env = parseEnv(fs.readFileSync(envPath, 'utf8'));
 if (!env.NEXT_PUBLIC_SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) {

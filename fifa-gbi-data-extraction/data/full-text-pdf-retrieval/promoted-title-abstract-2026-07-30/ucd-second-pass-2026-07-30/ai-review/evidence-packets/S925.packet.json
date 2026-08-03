@@ -1,0 +1,333 @@
+{
+  "recordId": "9d1e52c6-323b-4355-bfc5-9db38e9e4974",
+  "covidenceId": null,
+  "studyId": "S925",
+  "title": "Avenues for prevention using the epidemiology of sport-related concussion from a large high school surveillance study.",
+  "authors": "Bretzin Abigail C",
+  "year": "2024",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S925.pdf",
+  "pdfSha256": "01e33240cb9a3aab32e13b713d852b6bee9cc5b5fdc1dd90418e3c1dc4c5b068",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 9,
+  "textCharCount": 44007,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...er 100 player-seasons, and 0.93 (95% CI 0.91–0.95) per 100 player-seasons in girls’ sports. Boys’ sports with the highest clinical incidence included football, ice hockey, and wrestling. Girls’ sports with the highest clinical incidence included basketball, soccer, lacrosse, competitive cheer, and gymnastics. Girls consistently had higher SRC rates relative to boys for baseball/softball, basketball, and soccer (CIR range 1.65 [95% CI 1.41–1.93] to 3.32 [95% CI 2.67–4.16]). Girls had lower SRC in lacrosse in 2015/2016..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...football, ice hockey, and wrestling. Girls’ sports with the highest clinical incidence included basketball, soccer, lacrosse, competitive cheer, and gymnastics. Girls consistently had higher SRC rates relative to boys for baseball/softball, basketball, and soccer (CIR range 1.65 [95% CI 1.41–1.93] to 3.32 [95% CI 2.67–4.16]). Girls had lower SRC in lacrosse in 2015/2016 (CIR 0.63, 95% CI 0.40–0.97); no difference in 2016/2017– 2020/2021, but had higher clinical incidence in 2021/2022 (CIR 1.69, 95% CI 1.18–2.44) rela..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...-to-person contact (n = 2368, 33.4%). There were significant associations between boys’ versus girls’ sports and mechanism of injury within baseball/softball (χ2 = 12.71, p = 0.005); basketball (χ2 = 36.47, p < 0.001); lacrosse (χ2 = 185.15, p < 0.001); and soccer (χ2 = 122.70, p < 0.001). CONCLUSIONS These findings can help understand the potential impact of interventions aimed at preventing or reduc - ing SRC. Including girls’ sports within this study extends research for a largely underrepresented group. https://th..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ed trends in SRCs across multiple sports at the high school level. Lincoln and col - leagues4 examined high school boys’ and girls’ sports be- tween the 1997/1998 and 2007/2008 seasons, with football exhibiting the highest incidence rate followed by girls’ soccer, boys’ wrestling, and girls’ basketball. Over the 11- year period, the incidence of SRCs increased by 4.2-fold, with an average annual increase of 15.5%.4 Another study examining high school trends in SRCs found a 2.3-fold increase in cases between 2004/20..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...e the safety of adolescents. Prior studies indicate that high school girls participat - ing in sports comparable to those played by boys have a 2-times-higher SRC injury rate. 3,8 Notably, research - ers consistently found a higher SRC injury rate in girls’ soccer, basketball, and softball versus comparable boys’ sports.3,8–11 Additionally, research indicates that SRCs constituted a higher proportion of all high school injuries among girls compared to boys.10 Recent evidence suggests that boys and girls exhibit dif..."
+      },
+      {
+        "page": 2,
+        "section": "Methods",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...r football, baseball, ice hockey, and wrestling; girls participating in competitive cheer, gymnastics, field hockey, softball, volleyball, and sideline cheer; and boys and girls participating in basketball, bowling, cross-coun- try, golf, lacrosse, skiing, soccer, swimming and diving, track and field, tennis, and water polo. Operational Definition of SRC MHSAA defines an SRC as a head injury result - ing from a sanctioned in-season practice, scrimmage, or game. Athletes must be withheld from activity after ex - hib..."
+      },
+      {
+        "page": 3,
+        "section": "Statistical analysis",
+        "eligibleEvidenceSection": true,
+        "match": "soccer",
+        "snippet": "...os (CIRs) and 95% CIs to compare clinical incidence of SRC between boys’ and girls’ teams in com- parable sports, but only among sports that had more than 50 SRCs across all academic years in the study period (i.e., baseball/softball, basketball, lacrosse, soccer, swim and dive, track and field), determining significance if 95% CIs excluded 1.00. We reported the frequencies of mechanism of injury overall for boys’ and girls’ teams and within indi- vidual sports for 2016/2017 through 2022/2023 because the first yea..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 4 sports, 11-player football (n = 10,656 [41.82%]) accounted for the largest percentage of confirmed SRCs, followed by basketball (n = 3664 [14.38%]) and soccer (n = 3404 [13.36%]). In girls’ sports, we observed the highest per - centages of SRCs in basketball (n = 2401 [28.10%]), soccer (n = 2024 [23.69%]), and volleyball (n = 1326 [15.52%]). We observed the highest percentage of SRCs in 11-player football (n =..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Soccer",
+        "snippet": "...tice (n = 5,539) Competition (n = 5,448) Practice (n = 3,097) No. % No. % No. % No. % No. % No. % Football, 11-player 6926 65.00 3730 35.00 6908 65.08 3707 34.92 18 43.90 23 56.10 Basketball 2658 72.54 1006 27.46 819 64.85 444 35.15 1839 76.59 562 23.41 Soccer 2924 85.90 480 14.10 1184 85.80 196 14.20 1740 85.97 284 14.03 Wrestling 858 53.66 741 46.34 815 54.12 691 45.88 43 46.24 50 53.76 Volleyball 740 55.81 586 44.19 0 0.00 0 0.00 740 55.81 586 44.19 Competitive cheer 135 14.66 786 85.34 0 0.00 0 0.00 135 14.66 7..."
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...% were uncertain (n = 408). There were significant associations for mechanism of injury between boys’ and girls’ teams (Fig. 2) within baseball/softball (χ2 = 12.71, p = 0.005); basketball (χ2 = 36.47 , p < 0.001 ); la- crosse (χ2 = 185.15, p < 0.001); and soccer (χ2 = 122.70, p < 0.001). There were no significant associations in swim and dive (χ2 = 1.88, p = 0.60) or track and field (χ2 = 6.01, p = 0.11). Discussion The findings from this large epidemiology study of high school SRC across a statewide surveillance..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...rved clinical incidence in - creasing in 2021/2022 and 2022/2023. Our results point to specific sports with the highest observed clinical inci - dence for boys (i.e., 11-player football, 8-player football, ice hockey, wrestling) and girls (i.e., basketball, soccer, lacrosse, competitive cheer, gymnastics). Additionally, girls consistently had higher SRC rates relative to boys for baseball/softball, basketball, and soccer, whereas lacrosse presented conflicting results depending on the year of the study period. We..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ractice Overall, we observed that a higher percentage of all SRCs occurred during competition events, which aligns with previous research.5,18,36 Our descriptive data revealed unique within-sport patterns; more than 80% of SRC in ice hockey, lacrosse, and soccer occurred in competition events. In contrast, other sports (i.e., competitive cheer - leading, swimming and diving), exhibited a higher per - centage of SRCs occurring during practice sessions. This phenomenon may potentially be attributed to the training a..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...all: implications for regulating contact practices. Am J Sports Med. 2013; 41(12): 2877-2884. 21. Pfaller AY, Brooks MA, Hetzel S, McGuine TA. Effect of a new rule limiting full contact practice on the incidence of sport-related concussion in high school football players. Am J Sports Med. 2019; 47(10): 2294-2299. 22. Kimmerly G. Participation data published for the abbreviated 2019-20 school year. Michigan High School Athletic Asso - ciation. April 26, 2021. Accessed May 17, 2024. https: //www. mhsaa.com/topics/mhsaa-news/p..."
+      }
+    ],
+    "denominator": [
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence rate",
+        "snippet": "...lation. Numerous researchers examined trends in SRCs across multiple sports at the high school level. Lincoln and col - leagues4 examined high school boys’ and girls’ sports be- tween the 1997/1998 and 2007/2008 seasons, with football exhibiting the highest incidence rate followed by girls’ soccer, boys’ wrestling, and girls’ basketball. Over the 11- year period, the incidence of SRCs increased by 4.2-fold, with an average annual increase of 15.5%.4 Another study examining high school trends in SRCs found a 2.3-fold increa..."
+      }
+    ],
+    "review": [
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 9 incidence of concussion in youth sports: a systematic review and meta-analysis. Br J Sports Med. 2016; 50(5): 292-297. 17. Broglio SP, Eckner JT, Martini D, Sosnoff JJ, Kutcher JS, Randolph C. Cumulative head impact burden in high school football. J Neurotrauma. 2011; 28(10): 2069-2078. 18. Bretzin AC, Tomczyk CP, W..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "meta-analysis",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 9 incidence of concussion in youth sports: a systematic review and meta-analysis. Br J Sports Med. 2016; 50(5): 292-297. 17. Broglio SP, Eckner JT, Martini D, Sosnoff JJ, Kutcher JS, Randolph C. Cumulative head impact burden in high school football. J Neurotrauma. 2011; 28(10): 2069-2078. 18. Bretzin AC, Tomczyk CP, Wiebe DJ, Covassin T..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "scoping review",
+        "snippet": "...: //thesportjournal.org/article/concussions-in-cheerleaders- reported-from-a-countywide-concussion-injury-surveillance- system/ 30. Waltzman D, Sarmiento K. What the research says about concussion risk factors and prevention strategies for youth sports: a scoping review of six commonly played sports. J Safety Res. 2019; 68: 157-172. 31. Musko PA, Demetriades AK. Are sex differences in colle- giate and high school sports-related concussion reflected in the guidelines? A scoping review. Brain Sci. 2023; 13(9): 1310. 32. Hube..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "scoping review",
+        "snippet": "...ention strategies for youth sports: a scoping review of six commonly played sports. J Safety Res. 2019; 68: 157-172. 31. Musko PA, Demetriades AK. Are sex differences in colle- giate and high school sports-related concussion reflected in the guidelines? A scoping review. Brain Sci. 2023; 13(9): 1310. 32. Huber CM, Patton DA, McDonald CC, et al. Sport- and gen- der-based differences in head impact exposure and mecha - nism in high school sports. Orthop J Sports Med . 2021; 9(3): 2325967120984423. 33. Vomer R, Johnston K, Lau..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...ck sig- nifies the first increase in high school sports participation since 2017/2018.1 Considering the disruption caused by the pandemic, and overall changes in sports participation, it becomes crucial to analyze trends in sport-related concus- sion (SRC) injury rates. SRC is a public health concern, particularly in younger, at-risk athletic populations, given that approximately 1.9 million SRCs are reported annu - ally among children and adolescents. 2 Research suggests that boys’ football, ice hockey, and lacros..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...arly in younger, at-risk athletic populations, given that approximately 1.9 million SRCs are reported annu - ally among children and adolescents. 2 Research suggests that boys’ football, ice hockey, and lacrosse, and girls’ soc- ABBREVIATIONS CIR = clinical incidence ratio; HIRS = Head Injury Reporting System; MHSAA = Michigan High School Athletic Association; SRC = sport-related concussion. SUBMITTED March 1, 2024. ACCEPTED April 29, 2024. INCLUDE WHEN CITING DOI: 10.3171/2024.4.FOCUS24153. Avenues for prevention using..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...etic populations, given that approximately 1.9 million SRCs are reported annu - ally among children and adolescents. 2 Research suggests that boys’ football, ice hockey, and lacrosse, and girls’ soc- ABBREVIATIONS CIR = clinical incidence ratio; HIRS = Head Injury Reporting System; MHSAA = Michigan High School Athletic Association; SRC = sport-related concussion. SUBMITTED March 1, 2024. ACCEPTED April 29, 2024. INCLUDE WHEN CITING DOI: 10.3171/2024.4.FOCUS24153. Avenues for prevention using the epidemiology of spo..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...o; HIRS = Head Injury Reporting System; MHSAA = Michigan High School Athletic Association; SRC = sport-related concussion. SUBMITTED March 1, 2024. ACCEPTED April 29, 2024. INCLUDE WHEN CITING DOI: 10.3171/2024.4.FOCUS24153. Avenues for prevention using the epidemiology of sport-related concussion from a large high school surveillance study Abigail C. Bretzin, PhD, ATC,1 Alyssa M. Pollard-McGrandy, PhD, ATC,2 E. Reid Davis, MS, LLPC,2 Douglas J. Wiebe, PhD,1,3 and Tracey Covassin, PhD2 Departments of 1Emergency Medicine..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "surveillance",
+        "snippet": "...Athletic Association; SRC = sport-related concussion. SUBMITTED March 1, 2024. ACCEPTED April 29, 2024. INCLUDE WHEN CITING DOI: 10.3171/2024.4.FOCUS24153. Avenues for prevention using the epidemiology of sport-related concussion from a large high school surveillance study Abigail C. Bretzin, PhD, ATC,1 Alyssa M. Pollard-McGrandy, PhD, ATC,2 E. Reid Davis, MS, LLPC,2 Douglas J. Wiebe, PhD,1,3 and Tracey Covassin, PhD2 Departments of 1Emergency Medicine and 3Epidemiology, University of Michigan, Ann Arbor; and 2Department..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Epidemiology",
+        "snippet": ".... Reid Davis, MS, LLPC,2 Douglas J. Wiebe, PhD,1,3 and Tracey Covassin, PhD2 Departments of 1Emergency Medicine and 3Epidemiology, University of Michigan, Ann Arbor; and 2Department of Kinesiology, Michigan State University, East Lansing, Michigan OBJECTIVE Epidemiology provides fundamental opportunities to protect student-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...ogy, University of Michigan, Ann Arbor; and 2Department of Kinesiology, Michigan State University, East Lansing, Michigan OBJECTIVE Epidemiology provides fundamental opportunities to protect student-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and SRC mechanisms. METHODS This was a retrospective cohort study performed using a statewide high school head injury surveillance..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...E Epidemiology provides fundamental opportunities to protect student-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and SRC mechanisms. METHODS This was a retrospective cohort study performed using a statewide high school head injury surveillance sys- tem of high school student-athletes (n = 2,182,128; boys, n = 1,267,389; girls, n = 914,739). Exposures of interest include..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 2 cer and basketball have the highest SRC rates at the high school level.3–5 Basic epidemiology and investigations to identify patterns are essential to identify the preventive ef- fect that could be achieved if countermeasures were used to safeguard the health of this vulnerable population. Numerous researchers examined trends in SRCs across multipl..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...entry, the MHSAA staff review follow-up reports on a weekly basis. MHSAA staff email each school that sub - mitted an initial report every 2–3 weeks to remind them to submit a final follow-up report. At the end of each sports season, schools with no head injury reports are mandated to report this absence in the HIRS. Follow-up procedures persisted throughout each season for schools that either had not reported any concussions or had reported zero concussions until data were obtained from no fewer than 99% of MH..."
+      },
+      {
+        "page": 4,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Incidence",
+        "snippet": "...eyball (n = 1326 [15.52%]). We observed the highest percentage of SRCs in 11-player football (n = 10,615 [62.67%]) in boys’ sports (Table 2). Across all sports, SRC most frequently occurred in com- petition (n = 16,846 [66.11%]) (Table 3). Overall Clinical Incidence The combined clinical incidence of SRC for all boys’ and girls’ sports was 1.17 (95% CI 1.15–1.18) per 100 player-seasons across all years. We observed a decrease in the trend in SRCs’ overall clinical incidence, and in boys’ and girls’ sports overall fro..."
+      },
+      {
+        "page": 5,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...11 39.29 17 60.71 Golf 3 27.27 8 72.73 1 20.00 4 80.00 2 33.33 4 66.67 Water polo 5 55.56 4 44.44 1 100.00 0 0.00 4 50.00 4 50.00 Field hockey 4 80.00 1 20.00 0 0.00 0 0.00 4 80.00 1 20.00 Bowling 0 0.00 3 100.00 0 0.00 3 100.00 0 0.00 0 0.00 FIG. 1. Clinical incidence and 95% CIs of SRC each academic year across all sports. Values on the y-axis represent the academic year; values on the x-axis represent the clinical incidence per 100 player-seasons. Unauthenticated | Downloaded 07/30/26 02:21 PM UTC"
+      },
+      {
+        "page": 6,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 6 2.64) per 100 player-seasons. In competitive cheer, we ob- served the highest clinical incidence in 2016/2017 at 2.25 (95% CI 1.91–2.63) and then most recently in 2022/2023 at 2.12 (95% CI 1.77–2.52) per 100 player-seasons. Girls’ Relative to Boys’ Sports Girls consistently had higher SRC rates relative to boys for softball relative to baseball, baske..."
+      },
+      {
+        "page": 7,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 7 total SRCs, resulting in an overall clinical incidence of SRC of 1.17 per 100 player-seasons for combined boys’ and girls’ sports across all years; however, we observed a decrease in the trend in SRC overall clinical incidence, and in boys’ and girls’ sports overall from 2015/2016 to 2020/2021, and then we o..."
+      },
+      {
+        "page": 8,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...ntrasting with the more controlled environ- ment of structured competitions. In addition, high school competitive cheerleading often features fewer competi - tions throughout the year compared to other sports, which illustrates the benefit that more nuanced epidemiology methods to measure at-risk time during athletic activity may have in future research. Separately, in swimming and diving, the proximity of participants sharing lanes during practices or the repetitive dive routines may contribute to an increased risk of..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 9 incidence of concussion in youth sports: a systematic review and meta-analysis. Br J Sports Med. 2016; 50(5): 292-297. 17. Broglio SP, Eckner JT, Martini D, Sosnoff JJ, Kutcher JS, Randolph C. Cumulative head impact burden in high school football. J Neurotrauma. 20..."
+      }
+    ],
+    "design": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "retrospective",
+        "snippet": "...to protect student-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and SRC mechanisms. METHODS This was a retrospective cohort study performed using a statewide high school head injury surveillance sys- tem of high school student-athletes (n = 2,182,128; boys, n = 1,267,389; girls, n = 914,739). Exposures of interest included study year and boys and girls in comparable sports..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "cohort",
+        "snippet": "...udent-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and SRC mechanisms. METHODS This was a retrospective cohort study performed using a statewide high school head injury surveillance sys- tem of high school student-athletes (n = 2,182,128; boys, n = 1,267,389; girls, n = 914,739). Exposures of interest included study year and boys and girls in comparable sports. Clini..."
+      },
+      {
+        "page": 3,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "weekly",
+        "snippet": "...eurosurg Focus Volume 57 • July 2024 3 MHSAA staff continuously monitor HIRS data for er- rors and missing data and are the only individuals allowed to modify SRC reports. To ensure completeness of data entry, the MHSAA staff review follow-up reports on a weekly basis. MHSAA staff email each school that sub - mitted an initial report every 2–3 weeks to remind them to submit a final follow-up report. At the end of each sports season, schools with no head injury reports are mandated to report this absence in the HIR..."
+      },
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...A, Pierpoint LA, Zuckerman SL. Concussion incidence and trends in 20 high school sports. Pediatrics. 2019; 144(5): e20192180. 4. Lincoln AE, Caswell SV , Almquist JL, Dunn RE, Norris JB, Hinton RY. Trends in concussion incidence in high school sports: a prospective 11-year study. Am J Sports Med. 2011; 39(5): 958-963. 5. O’Connor KL, Baker MM, Dalton SL, Dompier TP, Broglio SP, Kerr ZY. Epidemiology of sport-related concussions in high school athletes: National Athletic Treatment, Injury and Outcomes Network (NATI..."
+      },
+      {
+        "page": 9,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "prospective",
+        "snippet": "...Br J Sports Med. 2022; 56: 981-987. 26. Currie DW, Fields SK, Patterson MJ, Comstock RD. Cheer- leading injuries in United States high schools. Pediatrics . 2016; 137(1): 10. 27. Shields BJ, Smith GA. Cheerleading-related injuries in the United States: a prospective surveillance study. J Athl Train. 2009; 44(6): 567-577. 28. Xu AL, Suresh KV , Lee RJ. Progress in cheerleading safety: update on the epidemiology of cheerleading injuries present - ing to US emergency departments, 2010-2019. Orthop J Sports Med. 2021; 9(..."
+      }
+    ],
+    "definition": [
+      {
+        "page": 8,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "time loss",
+        "snippet": "...cussion epidemiology in youth sports: sports study of a statewide high school sports program. Sports Health . 2021; 13(1): 18-24. 8. Bretzin AC, Covassin T, Fox ME, et al. Sex differences in the clinical incidence of concussions, missed school days, and time loss in high school student-athletes: part 1. Am J Sports Med. 2018; 46(9): 2263-2269. 9. Gessel LM, Fields SK, Collins CL, Dick RW, Comstock RD. Concussions among United States high school and collegiate athletes. J Athl Train. 2007; 42(4): 495-503. 10. Mara..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] NEUROSURGICAL FOCUS Neurosurg Focus 57(1):E3, 2024 I n the 2022/2023 season, more than 7.8 million students engaged in high school sports, marking a notable rise of 240,000 from the preceding year.1 This uptick sig- nifies the first increase in high school sports participation since 2017/2018.1 Considering the disruption caused by the pandemic, and overall changes in sports participation, it becomes crucial to analyze trends in sport-related concus- sion (SRC) injury rates. SRC is a public health concern, particularly in younger, at-risk athletic populations, given that approximately 1.9 million SRCs are reported annu - ally among children and adolescents. 2 Research suggests that boys’ football, ice hockey, and lacrosse, and girls’ soc- ABBREVIATIONS CIR = clinical incidence ratio; HIRS = Head Injury Reporting System; MHSAA = Michigan High School Athletic Association; SRC = sport-related concussion. SUBMITTED March 1, 2024. ACCEPTED April 29, 2024. INCLUDE WHEN CITING DOI: 10.3171/2024.4.FOCUS24153. Avenues for prevention using the epidemiology of sport-related concussion from a large high school surveillance study Abigail C. Bretzin, PhD, ATC,1 Alyssa M. Pollard-McGrandy, PhD, ATC,2 E. Reid Davis, MS, LLPC,2 Douglas J. Wiebe, PhD,1,3 and Tracey Covassin, PhD2 Departments of 1Emergency Medicine and 3Epidemiology, University of Michigan, Ann Arbor; and 2Department of Kinesiology, Michigan State University, East Lansing, Michigan OBJECTIVE Epidemiology provides fundamental opportunities to protect student-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and SRC mechanisms. METHODS This was a retrospective cohort study performed using a statewide high school head injury surveillance sys- tem of high school student-athletes (n = 2,182,128; boys, n = 1,267,389; girls, n = 914,739). Exposures of interest included study year and boys and girls in comparable sports. Clinical incidence was calculated by dividing SRC counts in each sport by the number of participants per 100 player-seasons and presented with 95% CIs. The 2019/2020 and 2020/2021 data were included in the analysis, however caution is warranted due to the COVID-19 pandemic. Clinical incidence ratios (CIRs) were estimated for sex-comparable sports, and significance was determined if 95% CIs excluded 1.00. The authors compared mechanism of injury in boys’\n\n[p. 2] Bretzin et al. Neurosurg Focus Volume 57 • July 2024 2 cer and basketball have the highest SRC rates at the high school level.3–5 Basic epidemiology and investigations to identify patterns are essential to identify the preventive ef- fect that could be achieved if countermeasures were used to safeguard the health of this vulnerable population. Numerous researchers examined trends in SRCs across multiple sports at the high school level. Lincoln and col - leagues4 examined high school boys’ and girls’ sports be- tween the 1997/1998 and 2007/2008 seasons, with football exhibiting the highest incidence rate followed by girls’ soccer, boys’ wrestling, and girls’ basketball. Over the 11- year period, the incidence of SRCs increased by 4.2-fold, with an average annual increase of 15.5%.4 Another study examining high school trends in SRCs found a 2.3-fold increase in cases between 2004/2005 and 2014/2015.6 In contrast, Chun and colleagues7 examined trends in Hawai- ian high school SRCs and reported no significant trends over the 6-year study period (2011–2017). Due to these inconsistent findings and increasing participation rates,1 it is crucial to analyze trends in high school SRCs to guide prevention efforts and ensure the safety of adolescents. Prior studies indicate that high school girls participat - ing in sports comparable to those played by boys have a 2-times-higher SRC injury rate. 3,8 Notably, research - ers consistently found a higher SRC injury rate in girls’ soccer, basketball, and softball versus comparable boys’ sports.3,8–11 Additionally, research indicates that SRCs constituted a higher proportion of all high school injuries among girls compared to boys.10 Recent evidence suggests that boys and girls exhibit differences in mechanism of SRC in comparable activities. 12 Girls more often incur their SRCs due to player-to–playing surface or player-to- equipment contact, whereas boys sustained the majority of their SRCs due to player-to-player contact.10,12,13 How- ever, with the global pandemic as well as decreasing and increasing sports participation over the past decade, it is important to continuously examine and document trends in SRCs between boys’ and girls’ high school sports. Beginning in the 2015/2016 season, the Michigan High School Athletic Association (MHSAA) requires all high schools to report all head injuries incurred during an MHSAA-sponsored practice or competition into their Head Injury Reporting System (HIRS).8 The data derived fro\n\n[p. 3] Bretzin et al. Neurosurg Focus Volume 57 • July 2024 3 MHSAA staff continuously monitor HIRS data for er- rors and missing data and are the only individuals allowed to modify SRC reports. To ensure completeness of data entry, the MHSAA staff review follow-up reports on a weekly basis. MHSAA staff email each school that sub - mitted an initial report every 2–3 weeks to remind them to submit a final follow-up report. At the end of each sports season, schools with no head injury reports are mandated to report this absence in the HIRS. Follow-up procedures persisted throughout each season for schools that either had not reported any concussions or had reported zero concussions until data were obtained from no fewer than 99% of MHSAA member high schools. Statistical Analysis Descriptive data included frequencies and percentages of the number of athletic participants and the practice and competition SRCs for each sport for each academic year. We calculated the clinical incidence of SRC, dividing the number of SRCs by the number of athletic participants multiplied by 100 player-seasons, and presented data as 95% CIs. We conducted clinical incidence analyses over- all, and for boys’ and girls’ sports separately, and stratified by each academic year and also independently for each sport. We included data from 2019/2020 and 2020/2021; however, due to the COVID-19 pandemic we counsel cau- tion regarding interpretations. We calculated the overall clinical incidence among all sports, and for boys’ and girls’ sports with and without academic years impacted by the COVID-19 pandemic. To determine trends across academ- ic years, we also report the slope of each clinical incidence value within each sport and the associated p values, deter- mining significance at p < 0.05. We then calculated clinical incidence ratios (CIRs) and 95% CIs to compare clinical incidence of SRC between boys’ and girls’ teams in com- parable sports, but only among sports that had more than 50 SRCs across all academic years in the study period (i.e., baseball/softball, basketball, lacrosse, soccer, swim and dive, track and field), determining significance if 95% CIs excluded 1.00. We reported the frequencies of mechanism of injury overall for boys’ and girls’ teams and within indi- vidual sports for 2016/2017 through 2022/2023 because the first year of data collection combined contact with a sur - face and contact with an object into the same mechanism. We determined significant associations between\n\n[p. 4] Bretzin et al. Neurosurg Focus Volume 57 • July 2024 4 sports, 11-player football (n = 10,656 [41.82%]) accounted for the largest percentage of confirmed SRCs, followed by basketball (n = 3664 [14.38%]) and soccer (n = 3404 [13.36%]). In girls’ sports, we observed the highest per - centages of SRCs in basketball (n = 2401 [28.10%]), soccer (n = 2024 [23.69%]), and volleyball (n = 1326 [15.52%]). We observed the highest percentage of SRCs in 11-player football (n = 10,615 [62.67%]) in boys’ sports (Table 2). Across all sports, SRC most frequently occurred in com- petition (n = 16,846 [66.11%]) (Table 3). Overall Clinical Incidence The combined clinical incidence of SRC for all boys’ and girls’ sports was 1.17 (95% CI 1.15–1.18) per 100 player-seasons across all years. We observed a decrease in the trend in SRCs’ overall clinical incidence, and in boys’ and girls’ sports overall from 2015/2016 to 2020/2021, and then we observed clinical incidence increasing in 2021/2022 and 2022/2023 (Fig. 1). To account for the in- fluence of the COVID-19 pandemic on athletic participa- tion, by removing just the 2019/2020 academic year the clinical incidence was 1.19 (95% CI 1.18–1.21), and by removing 2019/2020 and 2020/2021 it was 1.27 (95% CI 1.26–1.28). In boys’ sports, the overall clinical incidence was 1.34 (95% CI 1.32–1.36) per 100 player-seasons in all years; 1.34 (95% CI 1.32–1.36) per 100 player-seasons by removing 2019/2020; and 1.44 (95% CI 1.41–1.46) per 100 player-seasons by removing 2019/2020 and 2020/2021, re- spectively. In girls’ sports, the overall clinical incidence was 0.93 (95% CI 0.91–0.95) per 100 player-seasons in all years; 0.98 (95% CI 0.96–1.00) by removing 2019/2020; and 1.04 (95% CI1.02–1.07) per 100 player-seasons by re- moving 2019/2020 and 2020/2021, respectively. Clinical Incidence in Individual Boys’ Sports We present the clinical incidence for each boys’ sport by academic year in Supplemental Fig. 1 . We observed the highest clinical incidence in 11-player football, which was lowest at 2.08 (95% CI 0.92–2.24) in 2019/2020 and highest at 4.94 (95 CI 6.03–6.57) per 100 player-seasons in 2015/2016. Similarly, in ice hockey, we observed the highest clinical incidence in 2015/2016 at 3.76 (95% CI 3.14–4.46) and lowest in 2019/2020 at 0.90 (95% CI 0.60– 1.29) per 100 player-seasons. In wrestling, we observed the highest clinical incidence in 2015/2016 at 2.55 (95% CI 2.25–2.89) and lowest in 2020/2021 at 0.84",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "NEUROSURGICAL FOCUS Neurosurg Focus 57(1):E3, 2024 I n the 2022/2023 season, more than 7.8 million students engaged in high school sports, marking a notable rise of 240,000 from the preceding year.1 This uptick sig- nifies the first increase in high school sports participation since 2017/2018.1 Considering the disruption caused by the pandemic, and overall changes in sports participation, it becomes crucial to analyze trends in sport-related concus- sion (SRC) injury rates. SRC is a public health concern, particularly in younger, at-risk athletic populations, given that approximately 1.9 million SRCs are reported annu - ally among children and adolescents. 2 Research suggests that boys’ football, ice hockey, and lacrosse, and girls’ soc- ABBREVIATIONS CIR = clinical incidence ratio; HIRS = Head Injury Reporting System; MHSAA = Michigan High School Athletic Association; SRC = sport-related concussion. SUBMITTED March 1, 2024. ACCEPTED April 29, 2024. INCLUDE WHEN CITING DOI: 10.3171/2024.4.FOCUS24153. Avenues for prevention using the epidemiology of sport-related concussion from a large high school surveillance study Abigail C. Bretzin, PhD, ATC,1 Alyssa M. Pollard-McGrandy, PhD, ATC,2 E. Reid Davis, MS, LLPC,2 Douglas J. Wiebe, PhD,1,3 and Tracey Covassin, PhD2 Departments of 1Emergency Medicine and 3Epidemiology, University of Michigan, Ann Arbor; and 2Department of Kinesiology, Michigan State University, East Lansing, Michigan OBJECTIVE Epidemiology provides fundamental opportunities to protect student-athlete health. The goal of this study was to describe the epidemiology of sport-related concussion (SRC) across 8 years (2015/2016–2022/2023) and com - pare boys’ and girls’ sports for SRC incidence and SRC mechanisms. METHODS This was a retrospective cohort study performed using a statewide high school head injury surveillance sys- tem of high school student-athletes (n = 2,182,128; boys, n = 1,267,389; girls, n = 914,739). Exposures of interest included study year and boys and girls in comparable sports. Clinical incidence was calculated by dividing SRC counts in each sport by the number of participants per 100 player-seasons and presented with 95% CIs. The 2019/2020 and 2020/2021 data were included in the analysis, however caution is warranted due to the COVID-19 pandemic. Clinical incidence ratios (CIRs) were estimated for sex-comparable sports, and significance was determined if 95% CIs excluded 1.00. The authors compared mechanism of injury in boys’ and girls’ comparable sports with chi-square analyses (p < 0.05). RESULTS Among 25,482 total SRCs, the overall clinical incidence of SRC for all boys and girls was 1.17 (95% CI 1.15–1.18) per 100 player-seasons across all years. Across all years, the overall clinical incidence in boys’ sports was 1.34 (95% CI 1.32–1.36) per 100 player-seasons, and 0.93 (95% CI 0.91–0.95) per 100 player-seasons in girls’ sports. Boys’ sports with the highest clinical incidence included football, ice hockey, and wrestling. Girls’ sports with the highest clinical incidence included basketball, soccer, lacrosse, competitive cheer, and gymnastics. Girls consistently had higher SRC rates relative to boys for baseball/softball, basketball, and soccer (CIR range 1.65 [95% CI 1.41–1.93] to 3.32 [95% CI 2.67–4.16]). Girls had lower SRC in lacrosse in 2015/2016 (CIR 0.63, 95% CI 0.40–0.97); no difference in 2016/2017– 2020/2021, but had higher clinical incidence in 2021/2022 (CIR 1.69, 95% CI 1.18–2.44) relative to boys. In boys the most common mechanism of SRC occurred from person-to-person contact (n = 8752, 62.8%), whereas girls commonly sustained SRC from person-to-object contact (n = 2369, 33.4%) and from person-to-person contact (n = 2368, 33.4%). There were significant associations between boys’ versus girls’ sports and mechanism of injury within baseball/softball (χ2 = 12.71, p = 0.005); basketball (χ2 = 36.47, p < 0.001); lacrosse (χ2 = 185.15, p < 0.001); and soccer (χ2 = 122.70, p < 0.001). "
+    },
+    {
+      "page": 2,
+      "text": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 2 cer and basketball have the highest SRC rates at the high school level.3–5 Basic epidemiology and investigations to identify patterns are essential to identify the preventive ef- fect that could be achieved if countermeasures were used to safeguard the health of this vulnerable population. Numerous researchers examined trends in SRCs across multiple sports at the high school level. Lincoln and col - leagues4 examined high school boys’ and girls’ sports be- tween the 1997/1998 and 2007/2008 seasons, with football exhibiting the highest incidence rate followed by girls’ soccer, boys’ wrestling, and girls’ basketball. Over the 11- year period, the incidence of SRCs increased by 4.2-fold, with an average annual increase of 15.5%.4 Another study examining high school trends in SRCs found a 2.3-fold increase in cases between 2004/2005 and 2014/2015.6 In contrast, Chun and colleagues7 examined trends in Hawai- ian high school SRCs and reported no significant trends over the 6-year study period (2011–2017). Due to these inconsistent findings and increasing participation rates,1 it is crucial to analyze trends in high school SRCs to guide prevention efforts and ensure the safety of adolescents. Prior studies indicate that high school girls participat - ing in sports comparable to those played by boys have a 2-times-higher SRC injury rate. 3,8 Notably, research - ers consistently found a higher SRC injury rate in girls’ soccer, basketball, and softball versus comparable boys’ sports.3,8–11 Additionally, research indicates that SRCs constituted a higher proportion of all high school injuries among girls compared to boys.10 Recent evidence suggests that boys and girls exhibit differences in mechanism of SRC in comparable activities. 12 Girls more often incur their SRCs due to player-to–playing surface or player-to- equipment contact, whereas boys sustained the majority of their SRCs due to player-to-player contact.10,12,13 How- ever, with the global pandemic as well as decreasing and increasing sports participation over the past decade, it is important to continuously examine and document trends in SRCs between boys’ and girls’ high school sports. Beginning in the 2015/2016 season, the Michigan High School Athletic Association (MHSAA) requires all high schools to report all head injuries incurred during an MHSAA-sponsored practice or competition into their Head Injury Reporting System (HIRS).8 The data derived from this surveillance system established SRC prevalence, the number of SRCs relative to the number of participat - ing student-athletes in a given sport, and with continued surveillance enables researchers to gain valuable insight into patterns of head injuries across all high school sports in the state of Michigan. Therefore, the current study de- scribes the epidemiology of SRCs among 33 high school sports across 8 years (2015/2016–2022/2023). Our objec- tives were to 1) determine SRC clinical incidence across high school sports; 2) compare SRC clinical incidence between boys and girls in comparable sports; 3) describe trends in SRC clinical incidence across the study period; and 4) determine common mechanisms of injury within boys’ and girls’ sports. Based on previous literature, we hypothesized that we will observe higher SRC clinical incidence in girls relative to boys in comparable sports, that clinical incidence will remain stable across study years, and that there will be significant differences in SRC mechanisms between boys and girls in comparable sports. Comprehending the epidemiology of SRCs among adolescent athletes is imperative for developing effective, focused primary prevention initiatives in this population. Methods Schools and Participants Data were collected for a total of 8 years spanning the 2015/2016 to 2022/2023 academic years. MHSAA mem- ber schools remained consistent, with approximately 750 high schools reporting head injuries to the surveillance syst"
+    },
+    {
+      "page": 3,
+      "text": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 3 MHSAA staff continuously monitor HIRS data for er- rors and missing data and are the only individuals allowed to modify SRC reports. To ensure completeness of data entry, the MHSAA staff review follow-up reports on a weekly basis. MHSAA staff email each school that sub - mitted an initial report every 2–3 weeks to remind them to submit a final follow-up report. At the end of each sports season, schools with no head injury reports are mandated to report this absence in the HIRS. Follow-up procedures persisted throughout each season for schools that either had not reported any concussions or had reported zero concussions until data were obtained from no fewer than 99% of MHSAA member high schools. Statistical Analysis Descriptive data included frequencies and percentages of the number of athletic participants and the practice and competition SRCs for each sport for each academic year. We calculated the clinical incidence of SRC, dividing the number of SRCs by the number of athletic participants multiplied by 100 player-seasons, and presented data as 95% CIs. We conducted clinical incidence analyses over- all, and for boys’ and girls’ sports separately, and stratified by each academic year and also independently for each sport. We included data from 2019/2020 and 2020/2021; however, due to the COVID-19 pandemic we counsel cau- tion regarding interpretations. We calculated the overall clinical incidence among all sports, and for boys’ and girls’ sports with and without academic years impacted by the COVID-19 pandemic. To determine trends across academ- ic years, we also report the slope of each clinical incidence value within each sport and the associated p values, deter- mining significance at p < 0.05. We then calculated clinical incidence ratios (CIRs) and 95% CIs to compare clinical incidence of SRC between boys’ and girls’ teams in com- parable sports, but only among sports that had more than 50 SRCs across all academic years in the study period (i.e., baseball/softball, basketball, lacrosse, soccer, swim and dive, track and field), determining significance if 95% CIs excluded 1.00. We reported the frequencies of mechanism of injury overall for boys’ and girls’ teams and within indi- vidual sports for 2016/2017 through 2022/2023 because the first year of data collection combined contact with a sur - face and contact with an object into the same mechanism. We determined significant associations between boys’ and girls’ teams for comparable sports with more than 50 SRC cases by using chi-square analyses (p < 0.05). All analyses were completed in Stata version 17 (StataCorp). Results There were a total 2,182,128 athletic participants (male: n = 1,267,389 [50.08%]) and 25,482 SRCs (male: n = 16,937 [66.47%]) during the study (Table 1). For all TABLE 1. Athletic participation and SRCs across athletic seasons from 2015/2016 through 2022/2023 Overall (n = 2,182,128) Boys (n = 1,267,389) Girls (n = 914,739) No. % No. % No. % Athletic participants 2015–2016 284,227 13.03 165,418 13.05 118,809 12.99 2016–2017 283,661 13.00 164,388 12.97 119,273 13.04 2017–2018 284,907 13.06 164,318 12.97 120,589 13.18 2018–2019 281,992 12.92 162,426 12.82 119,566 13.07 2019–2020 274,189 12.57 158,237 12.49 115,952 12.68 2020–2021 243,912 11.18 142,197 11.22 101,715 11.12 2021–2022 261,168 11.97 152,513 12.03 108,655 11.88 2022–2023 268,072 12.28 157,892 12.46 110,180 12.04 SRCs* 2015–2016 4,452 17.47 3,003 17.73 1,449 16.96 2016–2017 4,048 15.89 2,624 15.49 1,424 16.66 2017–2018 3,421 13.43 2,287 13.5 1,134 13.27 2018–2019 3,586 14.07 2,293 13.54 1,293 15.13 2019–2020 2,734 10.73 2,038 12.03 696 8.15 2020–2021 1,574 6.18 1,003 5.92 571 6.68 2021–2022 2,593 10.18 1,644 9.71 949 11.11 2022–2023 3,074 12.06 2,045 12.07 1,029 12.04 SRC sport level* Middle school 137 0.54 92 0.54 45 0.53 Freshman 2,684 10.53 2,007 11.85 677 7.92 Junior varsity 8,076 31.69 5,368 31.69 2,708 31.69 Varsity 14,585 57.24 9,4"
+    },
+    {
+      "page": 8,
+      "text": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 8 SRC in Competition Versus Practice Overall, we observed that a higher percentage of all SRCs occurred during competition events, which aligns with previous research.5,18,36 Our descriptive data revealed unique within-sport patterns; more than 80% of SRC in ice hockey, lacrosse, and soccer occurred in competition events. In contrast, other sports (i.e., competitive cheer - leading, swimming and diving), exhibited a higher per - centage of SRCs occurring during practice sessions. This phenomenon may potentially be attributed to the training and practice protocols in competitive cheerleading and swimming and diving, in which repetitive movements or specific drills might heighten the risk of SRC during prac- tice sessions, contrasting with the more controlled environ- ment of structured competitions. In addition, high school competitive cheerleading often features fewer competi - tions throughout the year compared to other sports, which illustrates the benefit that more nuanced epidemiology methods to measure at-risk time during athletic activity may have in future research. Separately, in swimming and diving, the proximity of participants sharing lanes during practices or the repetitive dive routines may contribute to an increased risk of SRC occurrences, thus highlighting the need for unique sport-specific contexts in future SRC prevention initiatives. Limitations Limitations of our study include de-identified data; thus, we could not cluster by school or team in our clinical incidence analyses, which may influence the findings of this study. Second, our findings are limited to the clinical incidence of concussion based on total athlete participa - tion numbers within each sport, whereas future research may benefit from identifying an appropriate measure of exposure time. Finally, the sample was limited to student- athletes participating in school-sanctioned high school sports across Michigan. These factors could potentially limit the generalizability of findings to a broader national or international context, given that regional variations in sports culture, healthcare access, and policy could impact injury reporting and management as well as prevention strategies. Conclusions The findings of this large SRC epidemiology study le- veraging a statewide surveillance system offer continued insights into the clinical incidence of SRC among high school athletes. With a large and increasing number of adolescents participating in high school–sanctioned sports nationally, there is a pressing need for ongoing research to identify opportunities for targeted primary prevention of SRC. Our study identified 25,482 total SRCs, with an overall clinical incidence of 1.17 per 100 player-seasons across all years. Moreover, our study highlighted sport- specific SRC mechanisms, and identified mechanism dif- ferences between boys and girls in comparable activities, emphasizing the importance of tailored prevention strate- gies. Additionally, although competition settings generally comprised a higher percentage of SRCs, certain sports like competitive cheerleading and swimming and diving ex - hibited higher percentages during practice sessions. These insights underscore the need for continued research and targeted interventions to mitigate SRC risks in high school sports settings. This research gives us valuable insights into SRCs in high school sports, guiding efforts to keep young athletes safe. References 1. High school sports participation continues rebound toward pre-pandemic levels. NFHS. September 21, 2023. Accessed May 17, 2024. https: //www.nfhs.org/articles/high-school- sports-participation-continues-rebound-toward-pre- pandemic-levels/ 2. Bryan MA, Rowhani-Rahbar A, Comstock RD, Rivara F. Sports- and recreation-related concussions in US youth. Pedi - atrics. 2016; 138(1): e20154635. 3. Kerr ZY, Chandran A, Nedimyer AK, Arakkal A, Pierpoint LA, Zuckerman SL. Concussion incidence and tre"
+    },
+    {
+      "page": 9,
+      "text": "Bretzin et al. Neurosurg Focus Volume 57 • July 2024 9 incidence of concussion in youth sports: a systematic review and meta-analysis. Br J Sports Med. 2016; 50(5): 292-297. 17. Broglio SP, Eckner JT, Martini D, Sosnoff JJ, Kutcher JS, Randolph C. Cumulative head impact burden in high school football. J Neurotrauma. 2011; 28(10): 2069-2078. 18. Bretzin AC, Tomczyk CP, Wiebe DJ, Covassin T. Avenues for sport-related concussion prevention in high school football: effect of limiting collision practices. J Athl Train. 2022; 57(8): 733-740. 19. Broglio SP, Williams RM, O’Connor KL, Goldstick J. Foot- ball players’ head-impact exposure after limiting of full- contact practices. J Athl Train. 2016; 51(7): 511-518. 20. Broglio SP, Martini D, Kasper L, Eckner JT, Kutcher JS. Estimation of head impact exposure in high school football: implications for regulating contact practices. Am J Sports Med. 2013; 41(12): 2877-2884. 21. Pfaller AY, Brooks MA, Hetzel S, McGuine TA. Effect of a new rule limiting full contact practice on the incidence of sport-related concussion in high school football players. Am J Sports Med. 2019; 47(10): 2294-2299. 22. Kimmerly G. Participation data published for the abbreviated 2019-20 school year. Michigan High School Athletic Asso - ciation. April 26, 2021. Accessed May 17, 2024. https: //www. mhsaa.com/topics/mhsaa-news/participation-data-published- abbreviated-2019-20-school-year 23. Murray M. Poll: nearly half of parents would discourage football due to concussions. NBC News. February 2, 2018. Accessed May 17, 2024. https: //www.nbcnews.com/politics/ first-read/poll-nearly-half-parents-would-discourage-football- due-concussions-n843836 24. Participation trends. Project Play: Aspen Institute. Accessed May 17, 2024. https: //projectplay.org/state-of-play-2023/ participation#: ~: text=Sports%20participation%20is%20 increasing%20for,of%20boys%20regularly%20played%20 sports 25. D’Lauro C, Jones ER, Swope LM, Anderson MN, Broglio S, Schmidt JD. Under-representation of female athletes in research informing influential concussion consensus and position statements: an evidence review and synthesis. Br J Sports Med. 2022; 56: 981-987. 26. Currie DW, Fields SK, Patterson MJ, Comstock RD. Cheer- leading injuries in United States high schools. Pediatrics . 2016; 137(1): 10. 27. Shields BJ, Smith GA. Cheerleading-related injuries in the United States: a prospective surveillance study. J Athl Train. 2009; 44(6): 567-577. 28. Xu AL, Suresh KV , Lee RJ. Progress in cheerleading safety: update on the epidemiology of cheerleading injuries present - ing to US emergency departments, 2010-2019. Orthop J Sports Med. 2021; 9(10): 23259671211038895. 29. Gude L, Hotz G. Concussions in cheerleaders reported from a countywide concussion injury surveillance system. The Sport Journal. November 15, 2019. Accessed May 17, 2024. https: //thesportjournal.org/article/concussions-in-cheerleaders- reported-from-a-countywide-concussion-injury-surveillance- system/ 30. Waltzman D, Sarmiento K. What the research says about concussion risk factors and prevention strategies for youth sports: a scoping review of six commonly played sports. J Safety Res. 2019; 68: 157-172. 31. Musko PA, Demetriades AK. Are sex differences in colle- giate and high school sports-related concussion reflected in the guidelines? A scoping review. Brain Sci. 2023; 13(9): 1310. 32. Huber CM, Patton DA, McDonald CC, et al. Sport- and gen- der-based differences in head impact exposure and mecha - nism in high school sports. Orthop J Sports Med . 2021; 9(3): 2325967120984423. 33. Vomer R, Johnston K, Lau BC, Bytomski J. Brain health con- siderations in the modern lacrosse athlete. J Cartil Jt Preserv . 2022; 2(4): 100083. 34. Ling DI, Cheng J, Santiago K, et al. Women are at higher risk for concussions due to ball or equipment contact in soccer and lacrosse. Clin Orthop Relat Res. 2020; 478(7): 1469-1479. 35. Herman DC, Caswell SV , Kelshaw PM, Vincent HK, Lincoln AE. Associat"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/ai-review/evidence-packets/S925.packet.json"
+}

@@ -1,0 +1,147 @@
+{
+  "recordId": "78fa6b57-9cf4-43f2-8921-ea65166e38a7",
+  "covidenceId": null,
+  "studyId": "S1148",
+  "title": "Injuries in athletic club players: growth and maturation as potential risk factors (PhD Academy Award).",
+  "authors": "Monasterio Xabier",
+  "year": "2024",
+  "pdfPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/files/S1148.pdf",
+  "pdfSha256": "50d60331ce6292b754372c1a2a4c51ce2b39ee0dab48601cf1d3983f1b7624de",
+  "criteriaVersion": "fifa-gbi-full-text-v8-2026-06-23",
+  "status": "text_extracted",
+  "pageCount": 2,
+  "textCharCount": 8741,
+  "warnings": [],
+  "signals": {
+    "football": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Association Football",
+        "snippet": "...lysed injury, anthropometric and skeletal age data from routine monitoring of players at Athletic Club, whose professional male team plays in Spanish La Liga (1997–2022). Injury classification was based on the consensus of the International Federation of Association Football 4 and practitioner’s experience. Individual exposure was recorded since the season of 2011–2012, which allowed us to describe injury incidence (number of injuries/exposure) and injury burden (number of days lost/exposure) for each injury in each category..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...injury burden values. 2. Growth and maturation were associated with injury risk of Athletic Club male academy foot- ball players. i. Skeletal relative maturity status (early, on- time, late) was associated with different in - jury patterns in U14 male football players. Specifically, early maturers showed a high- er overall, muscle and joint/ligament injury burden. 5 ii. The occurrence 6 and impact 7 of specific injuries varied according to maturity status (pre- PHV , circa- PHV , post- PHV or adult). Growth- rela..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...h, maturation and musculoskeletal conditions in adolescents: a systematic review. Br J Sports Med 2018;52:1246–52. 4 Fuller CW , Ekstrand J, Junge A, et al. Consensus statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Br J Sports Med 2006;40:193–201. 5 Monasterio X, Bidaurrazaga- Letona I, Larruskain J, et al. Relative Skeletal maturity status affects injury burden in U14 elite Academy football players. Scand J Med Sci Sports 2022;32:1400–9. 6 Monast..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "football players",
+        "snippet": "...itions and data collection procedures in studies of football (soccer) injuries. Br J Sports Med 2006;40:193–201. 5 Monasterio X, Bidaurrazaga- Letona I, Larruskain J, et al. Relative Skeletal maturity status affects injury burden in U14 elite Academy football players. Scand J Med Sci Sports 2022;32:1400–9. 6 Monasterio X, Gil SM, Bidaurrazaga- Letona I, et al. Injuries according to the percentage of adult height in an elite soccer Academy. J Sci Med Sport 2021;24:218–23. 7 Monasterio X, Gil SM, Bidaurrazaga-..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...ative Skeletal maturity status affects injury burden in U14 elite Academy football players. Scand J Med Sci Sports 2022;32:1400–9. 6 Monasterio X, Gil SM, Bidaurrazaga- Letona I, et al. Injuries according to the percentage of adult height in an elite soccer Academy. J Sci Med Sport 2021;24:218–23. 7 Monasterio X, Gil SM, Bidaurrazaga- Letona I, et al. The burden of injuries according to maturity status and timing: a two- decade study with 110 growth curves in an elite football Academy. Eur J Sport Sci..."
+      },
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "soccer",
+        "snippet": "...to maturity status and timing: a two- decade study with 110 growth curves in an elite football Academy. Eur J Sport Sci 2023;23:267–77. 8 Monasterio X, Gil S, Bidaurrazaga- Letona I, et al. Peak height velocity affects injury burden in circa- PHV soccer players . Int J Sports Med 2023;44:292–7. Protected by copyright, including for uses related to text and data mining, AI training, and similar technologies. . Library - Veterinary Medicine at UNIVERSITY COLLEGE DUBLIN on July 30, 2026 http://bjsm.bmj.com/Do..."
+      }
+    ],
+    "review": [
+      {
+        "page": 2,
+        "section": "References",
+        "eligibleEvidenceSection": false,
+        "match": "systematic review",
+        "snippet": "...fulli N , Longo UG, Gougoulias N, et al. Long- term health outcomes of youth sports injuries . Br J Sports Med 2010;44:21–5. 3 Sw ain M, Kamper SJ, Maher CG, et al. Relationship between growth, maturation and musculoskeletal conditions in adolescents: a systematic review. Br J Sports Med 2018;52:1246–52. 4 Fuller CW , Ekstrand J, Junge A, et al. Consensus statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Br J Sports Med 2006;40:193–201. 5 Monasterio X, Bidaurraz..."
+      }
+    ],
+    "injury_illness": [
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries",
+        "snippet": "112 Monasterio X. Br J Sports Med 2024;58:112–113. doi:10.1136/bjsports-2023-106702 Injuries in athletic club players: growth and maturation as potential risk factors (PhD Academy Award) Xabier Monasterio 1,2 PhD Academy Award To cite: Monasterio X. Br J Sports Med 2024;58:112–113. 1Department of Physiology, Faculty of Medicine and Nursing,..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "epidemiology",
+        "snippet": "...sterio@ ehu. eus Accepted 15 May 2023 Published Online First 26 May 2023 © Author(s) (or their employer(s)) 2024. No commercial re- use . See rights and permissions. Published by BMJ. WHAT DID I DO? The main aims of this thesis were to describe the epidemiology of adolescent footballers, to describe how growth and maturation are associated with injury risk in academy male players and to study the accuracy of methods to estimate somatic maturity status. WHY DID I DO? Injuries occurring during youth can negatively..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...employer(s)) 2024. No commercial re- use . See rights and permissions. Published by BMJ. WHAT DID I DO? The main aims of this thesis were to describe the epidemiology of adolescent footballers, to describe how growth and maturation are associated with injury risk in academy male players and to study the accuracy of methods to estimate somatic maturity status. WHY DID I DO? Injuries occurring during youth can negatively affect academy progression 1 and result in long- term health consequences.2 Growth and matu..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injuries",
+        "snippet": "...this thesis were to describe the epidemiology of adolescent footballers, to describe how growth and maturation are associated with injury risk in academy male players and to study the accuracy of methods to estimate somatic maturity status. WHY DID I DO? Injuries occurring during youth can negatively affect academy progression 1 and result in long- term health consequences.2 Growth and maturation represent two potential non- modifiable intrinsic risk factors that are unique to adolescent footballers. The liter-..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...two potential non- modifiable intrinsic risk factors that are unique to adolescent footballers. The liter- ature published on this topic is, however, contradic- tory and findings in earlier studies are inconsistent. 3 HOW DID I DO IT? This thesis analysed injury, anthropometric and skeletal age data from routine monitoring of players at Athletic Club, whose professional male team plays in Spanish La Liga (1997–2022). Injury classification was based on the consensus of the International Federation of Association..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "Injury",
+        "snippet": "...y and findings in earlier studies are inconsistent. 3 HOW DID I DO IT? This thesis analysed injury, anthropometric and skeletal age data from routine monitoring of players at Athletic Club, whose professional male team plays in Spanish La Liga (1997–2022). Injury classification was based on the consensus of the International Federation of Association Football 4 and practitioner’s experience. Individual exposure was recorded since the season of 2011–2012, which allowed us to describe injury incidence (number of i..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "...sh La Liga (1997–2022). Injury classification was based on the consensus of the International Federation of Association Football 4 and practitioner’s experience. Individual exposure was recorded since the season of 2011–2012, which allowed us to describe injury incidence (number of injuries/exposure) and injury burden (number of days lost/exposure) for each injury in each category. Further, hand- wrist X - rays allow ed us to compare injury burden between relative skeletal maturity status groups (early, on-..."
+      },
+      {
+        "page": 1,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "incidence",
+        "snippet": "...iga (1997–2022). Injury classification was based on the consensus of the International Federation of Association Football 4 and practitioner’s experience. Individual exposure was recorded since the season of 2011–2012, which allowed us to describe injury incidence (number of injuries/exposure) and injury burden (number of days lost/exposure) for each injury in each category. Further, hand- wrist X - rays allow ed us to compare injury burden between relative skeletal maturity status groups (early, on- time, late..."
+      },
+      {
+        "page": 2,
+        "section": "Unknown",
+        "eligibleEvidenceSection": false,
+        "match": "injury",
+        "snippet": "113 Monasterio X. Br J Sports Med 2024;58:112–113. doi:10.1136/bjsports-2023-106702 PhD Academy Award iv. Players with a fast PHV (≥10.84 cm/year) showed a higher growth- related injury burden in circa- PHV .8 5. V isual assessment of the individual growth curves by an ex- perienced assessor was the method with the highest accura- cy to classify players as pre- PHV , circa- PHV or post- PHV . Maturity offset prediction equations misclas..."
+      }
+    ]
+  },
+  "firstPagesExcerpt": "[p. 1] 112 Monasterio X. Br J Sports Med 2024;58:112–113. doi:10.1136/bjsports-2023-106702 Injuries in athletic club players: growth and maturation as potential risk factors (PhD Academy Award) Xabier Monasterio 1,2 PhD Academy Award To cite: Monasterio X. Br J Sports Med 2024;58:112–113. 1Department of Physiology, Faculty of Medicine and Nursing, University of the Basque Country (UPV/EHU), Leioa, Biscay, Spain 2Medical Services, Athletic Club, Lezama, Biscay, Spain Correspondence to Xabier Monasterio, Physiology, University of the Basque Country School of Medicine and Dentistry, Lejona, 48940, Spain; xabier. monasterio@ ehu. eus Accepted 15 May 2023 Published Online First 26 May 2023 © Author(s) (or their employer(s)) 2024. No commercial re- use . See rights and permissions. Published by BMJ. WHAT DID I DO? The main aims of this thesis were to describe the epidemiology of adolescent footballers, to describe how growth and maturation are associated with injury risk in academy male players and to study the accuracy of methods to estimate somatic maturity status. WHY DID I DO? Injuries occurring during youth can negatively affect academy progression 1 and result in long- term health consequences.2 Growth and maturation represent two potential non- modifiable intrinsic risk factors that are unique to adolescent footballers. The liter- ature published on this topic is, however, contradic- tory and findings in earlier studies are inconsistent. 3 HOW DID I DO IT? This thesis analysed injury, anthropometric and skeletal age data from routine monitoring of players at Athletic Club, whose professional male team plays in Spanish La Liga (1997–2022). Injury classification was based on the consensus of the International Federation of Association Football 4 and practitioner’s experience. Individual exposure was recorded since the season of 2011–2012, which allowed us to describe injury incidence (number of injuries/exposure) and injury burden (number of days lost/exposure) for each injury in each category. Further, hand- wrist X - rays allow ed us to compare injury burden between relative skeletal maturity status groups (early, on- time, late maturer) in men under 14 players. Longitudinal height data allowed to calculate peak height velocity (PHV), age at PHV , adult stature and growth rate for each player. These metrics were used to classify players according to their maturity status (pre- PHV , circa- PHV and post- PHV), timing (early , on- time, late) ( figure 1) and growt\n\n[p. 2] 113 Monasterio X. Br J Sports Med 2024;58:112–113. doi:10.1136/bjsports-2023-106702 PhD Academy Award iv. Players with a fast PHV (≥10.84 cm/year) showed a higher growth- related injury burden in circa- PHV .8 5. V isual assessment of the individual growth curves by an ex- perienced assessor was the method with the highest accura- cy to classify players as pre- PHV , circa- PHV or post- PHV . Maturity offset prediction equations misclassified a great proportion of the players, while PAH% provides a reasona- bly valid alternative. WHAT IS THE MOST IMPORTANT CLINICAL IMPACT? Our results highlighted the importance of monitoring growth and maturity in elite male academy footballers. Further, visual assessment of the growth curve by an experienced assessor appears the best method to predict player’s maturity status, highlighting the importance of longitudinal height records and education on interpreting growth curves. Twitter Xabier Monasterio @Xabi_b94 Acknowledgements T he author would like to gratefully acknowledge the entire team of supervisors and coauthors. A special thanks to Susana Gil, Iraia Bidaurrazaga and Jon Larruskain for their generous and valuable supervision. Contributors T he PhD was supervised by Susana M. Gil, Iraia Bidaurrazaga- Letona and Jon Larruskain. Coauthors include Jose A. Lekue, Gontzal Diaz- Beitia, Juan M. Santisteban, Imanol Martin- Garetxana, Eder Bikandi, Dae- Jin Lee , Lore Zumeta- Olask oaga, Sean P . Cumming, Sean Williams, Robert M. Malina and David M. Johnson. Funding T his work was supported by the University of the Basque Country (UPV/ EHU) under grant PPG17/34 and the Basque Government under Grants PRE_ 2021_2_0029 and EP_2022_1_0004). Disclaimer T hese organisations have no roles in the collection of data, analysis, interpretation and publication of the paper. Competing interests None declared. P atient consent for publication Consent obtained from parent(s)/guardian(s). Ethics appr oval T his study involves human participants and was approved by Ethics Committee of the University of The Basque Country (CEISH/340/2015). Participants gave informed consent to participate in the study before taking part. Provenance and peer review Not commissioned; externally peer reviewed. ORCID iD Xabier Monasterio http://orcid.org/0000-0001-9409-0059 REFERENCES 1 Larruskain J , Lekue JA, Martin- Garetxana I, et al. Injuries are negatively associated with Player progression in an elite football Academy. Sci Med Foot 2022;6(4):405–14. 2",
+  "selectedPageText": [
+    {
+      "page": 1,
+      "text": "112 Monasterio X. Br J Sports Med 2024;58:112–113. doi:10.1136/bjsports-2023-106702 Injuries in athletic club players: growth and maturation as potential risk factors (PhD Academy Award) Xabier Monasterio 1,2 PhD Academy Award To cite: Monasterio X. Br J Sports Med 2024;58:112–113. 1Department of Physiology, Faculty of Medicine and Nursing, University of the Basque Country (UPV/EHU), Leioa, Biscay, Spain 2Medical Services, Athletic Club, Lezama, Biscay, Spain Correspondence to Xabier Monasterio, Physiology, University of the Basque Country School of Medicine and Dentistry, Lejona, 48940, Spain; xabier. monasterio@ ehu. eus Accepted 15 May 2023 Published Online First 26 May 2023 © Author(s) (or their employer(s)) 2024. No commercial re- use . See rights and permissions. Published by BMJ. WHAT DID I DO? The main aims of this thesis were to describe the epidemiology of adolescent footballers, to describe how growth and maturation are associated with injury risk in academy male players and to study the accuracy of methods to estimate somatic maturity status. WHY DID I DO? Injuries occurring during youth can negatively affect academy progression 1 and result in long- term health consequences.2 Growth and maturation represent two potential non- modifiable intrinsic risk factors that are unique to adolescent footballers. The liter- ature published on this topic is, however, contradic- tory and findings in earlier studies are inconsistent. 3 HOW DID I DO IT? This thesis analysed injury, anthropometric and skeletal age data from routine monitoring of players at Athletic Club, whose professional male team plays in Spanish La Liga (1997–2022). Injury classification was based on the consensus of the International Federation of Association Football 4 and practitioner’s experience. Individual exposure was recorded since the season of 2011–2012, which allowed us to describe injury incidence (number of injuries/exposure) and injury burden (number of days lost/exposure) for each injury in each category. Further, hand- wrist X - rays allow ed us to compare injury burden between relative skeletal maturity status groups (early, on- time, late maturer) in men under 14 players. Longitudinal height data allowed to calculate peak height velocity (PHV), age at PHV , adult stature and growth rate for each player. These metrics were used to classify players according to their maturity status (pre- PHV , circa- PHV and post- PHV), timing (early , on- time, late) ( figure 1) and growth rate (fast, average, slow) and describe the association of these variables with injury risk. In addition, maturity status assessment based on longi- tudinal height recording was used as a reference to study the accuracy by different maturity esti- mation methods (visual assessment of incomplete growth curves, maturity offset and ratio equations, percentage of predicted adult height (PAH%)). WHAT DID I FIND? 1. Injury patterns differed according to age- group category and genre. Knee joint/ligament injuries (in women’s teams) and growth- related injuries (in U15 and younger) showed the largest injury burden values. 2. Growth and maturation were associated with injury risk of Athletic Club male academy foot- ball players. i. Skeletal relative maturity status (early, on- time, late) was associated with different in - jury patterns in U14 male football players. Specifically, early maturers showed a high- er overall, muscle and joint/ligament injury burden. 5 ii. The occurrence 6 and impact 7 of specific injuries varied according to maturity status (pre- PHV , circa- PHV , post- PHV or adult). Growth- related injuries peaked in circa- PHV , while muscle and joint/ligament in- juries were more burdensome in post- PHV and specially, adult players. Distal injuries (eg, Sever’s disease) had a higher impact in pre- PHV , while proximal injuries (eg, spon- dylolysis) peaked in post- PHV . iii. In pre- PHV period, growth- related and knee joint/ligament injuries had lower bur- den in l"
+    },
+    {
+      "page": 2,
+      "text": "113 Monasterio X. Br J Sports Med 2024;58:112–113. doi:10.1136/bjsports-2023-106702 PhD Academy Award iv. Players with a fast PHV (≥10.84 cm/year) showed a higher growth- related injury burden in circa- PHV .8 5. V isual assessment of the individual growth curves by an ex- perienced assessor was the method with the highest accura- cy to classify players as pre- PHV , circa- PHV or post- PHV . Maturity offset prediction equations misclassified a great proportion of the players, while PAH% provides a reasona- bly valid alternative. WHAT IS THE MOST IMPORTANT CLINICAL IMPACT? Our results highlighted the importance of monitoring growth and maturity in elite male academy footballers. Further, visual assessment of the growth curve by an experienced assessor appears the best method to predict player’s maturity status, highlighting the importance of longitudinal height records and education on interpreting growth curves. Twitter Xabier Monasterio @Xabi_b94 Acknowledgements T he author would like to gratefully acknowledge the entire team of supervisors and coauthors. A special thanks to Susana Gil, Iraia Bidaurrazaga and Jon Larruskain for their generous and valuable supervision. Contributors T he PhD was supervised by Susana M. Gil, Iraia Bidaurrazaga- Letona and Jon Larruskain. Coauthors include Jose A. Lekue, Gontzal Diaz- Beitia, Juan M. Santisteban, Imanol Martin- Garetxana, Eder Bikandi, Dae- Jin Lee , Lore Zumeta- Olask oaga, Sean P . Cumming, Sean Williams, Robert M. Malina and David M. Johnson. Funding T his work was supported by the University of the Basque Country (UPV/ EHU) under grant PPG17/34 and the Basque Government under Grants PRE_ 2021_2_0029 and EP_2022_1_0004). Disclaimer T hese organisations have no roles in the collection of data, analysis, interpretation and publication of the paper. Competing interests None declared. P atient consent for publication Consent obtained from parent(s)/guardian(s). Ethics appr oval T his study involves human participants and was approved by Ethics Committee of the University of The Basque Country (CEISH/340/2015). Participants gave informed consent to participate in the study before taking part. Provenance and peer review Not commissioned; externally peer reviewed. ORCID iD Xabier Monasterio http://orcid.org/0000-0001-9409-0059 REFERENCES 1 Larruskain J , Lekue JA, Martin- Garetxana I, et al. Injuries are negatively associated with Player progression in an elite football Academy. Sci Med Foot 2022;6(4):405–14. 2 Maffulli N , Longo UG, Gougoulias N, et al. Long- term health outcomes of youth sports injuries . Br J Sports Med 2010;44:21–5. 3 Sw ain M, Kamper SJ, Maher CG, et al. Relationship between growth, maturation and musculoskeletal conditions in adolescents: a systematic review. Br J Sports Med 2018;52:1246–52. 4 Fuller CW , Ekstrand J, Junge A, et al. Consensus statement on injury definitions and data collection procedures in studies of football (soccer) injuries. Br J Sports Med 2006;40:193–201. 5 Monasterio X, Bidaurrazaga- Letona I, Larruskain J, et al. Relative Skeletal maturity status affects injury burden in U14 elite Academy football players. Scand J Med Sci Sports 2022;32:1400–9. 6 Monasterio X, Gil SM, Bidaurrazaga- Letona I, et al. Injuries according to the percentage of adult height in an elite soccer Academy. J Sci Med Sport 2021;24:218–23. 7 Monasterio X, Gil SM, Bidaurrazaga- Letona I, et al. The burden of injuries according to maturity status and timing: a two- decade study with 110 growth curves in an elite football Academy. Eur J Sport Sci 2023;23:267–77. 8 Monasterio X, Gil S, Bidaurrazaga- Letona I, et al. Peak height velocity affects injury burden in circa- PHV soccer players . Int J Sports Med 2023;44:292–7. Protected by copyright, including for uses related to text and data mining, AI training, and similar technologies. . Library - Veterinary Medicine at UNIVERSITY COLLEGE DUBLIN on July 30, 2026 http://bjsm.bmj.com/Downloaded from 26 May 2023. 10.1136/bjs"
+    }
+  ],
+  "packetPath": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/full-text-pdf-retrieval/promoted-title-abstract-2026-07-30/ucd-second-pass-2026-07-30/ai-review/evidence-packets/S1148.packet.json"
+}
