@@ -13,10 +13,19 @@ const GLOBAL_TABS = new Set(['studyDetails', 'participantCharacteristics', 'defi
 const TABLE_EDITOR_TABS = new Set(['injuryTissueType', 'injuryLocation', 'illnessRegion', 'illnessEtiology']);
 const DEFAULT_OUTPUT_PREFIX = 'all-studies-export';
 
+// Statuses that never belong in an analysis export:
+//   systematic_review - held for reference checking only; re-reports primary studies counted separately.
+//   archived, no_exposure - do not meet the inclusion criteria.
+// The papers stay in the database as an audit trail. Pass --allow-status <status> to override.
+const DEFAULT_EXCLUDED_STATUSES = ['systematic_review', 'archived', 'no_exposure'];
+
 function parseArgs(argv) {
   const includeStatuses = [];
-  const excludeStatuses = [];
+  const excludeStatuses = [...DEFAULT_EXCLUDED_STATUSES];
+  const allowStatuses = [];
   let outputPrefix = DEFAULT_OUTPUT_PREFIX;
+  let scope = 'analysis';
+  let keepEmpty = false;
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
@@ -33,17 +42,111 @@ function parseArgs(argv) {
       continue;
     }
 
+    if (arg === '--allow-status') {
+      allowStatuses.push(argv[index + 1]);
+      index += 1;
+      continue;
+    }
+
+    if (arg === '--scope') {
+      scope = argv[index + 1] === 'source' ? 'source' : 'analysis';
+      index += 1;
+      continue;
+    }
+
+    if (arg === '--keep-empty') {
+      keepEmpty = true;
+      continue;
+    }
+
     if (arg === '--output-prefix') {
       outputPrefix = argv[index + 1] || DEFAULT_OUTPUT_PREFIX;
       index += 1;
     }
   }
 
+  const allowed = new Set(allowStatuses.filter(Boolean));
+
   return {
     includeStatuses: includeStatuses.filter(Boolean),
-    excludeStatuses: excludeStatuses.filter(Boolean),
+    excludeStatuses: excludeStatuses.filter(Boolean).filter((status) => !allowed.has(status)),
     outputPrefix,
+    scope,
+    keepEmpty,
   };
+}
+
+// Mirrors src/lib/analysis-source-policy.ts: only the parts the export needs.
+function readAnalysisTreatment(metadata) {
+  const raw = metadata?.analysisSourceTreatment;
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
+    return { role: 'standalone', includeInAnalysisExport: true, populationTreatments: [] };
+  }
+  return {
+    role: typeof raw.role === 'string' ? raw.role : 'standalone',
+    includeInAnalysisExport: raw.includeInAnalysisExport !== false,
+    populationTreatments: Array.isArray(raw.populationTreatments) ? raw.populationTreatments : [],
+  };
+}
+
+// Mirrors isSecondSearchPaper in src/lib/data-extraction-batch-filter.ts.
+function searchBatchLabel(metadata) {
+  const meta = metadata ?? {};
+  const isSecond =
+    meta.searchBatch === 'second' ||
+    (typeof meta.searchBatchLabel === 'string' && meta.searchBatchLabel.includes('Second search'));
+  if (isSecond) return '2nd search';
+  if (meta.searchBatch === 'first') return '1st search';
+  return typeof meta.searchBatchLabel === 'string' && meta.searchBatchLabel ? meta.searchBatchLabel : '';
+}
+
+function formatNotes(noteRows) {
+  return noteRows
+    .slice()
+    .sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)))
+    .map((note) => {
+      const date = String(note.created_at ?? '').slice(0, 10);
+      const body = String(note.body ?? '').replace(/\r?\n/g, ' ').trim();
+      return date ? `[${date}] ${body}` : body;
+    })
+    .filter(Boolean)
+    .join(' || ');
+}
+
+// Paper is dropped from the analysis export, with the reason recorded in the audit file.
+function paperExclusionReason(paper, treatment, hasExtractionData, keepEmpty) {
+  const metadata = paper.metadata ?? {};
+  if (!treatment.includeInAnalysisExport) {
+    return `analysis_source_treatment:${treatment.role}`;
+  }
+  if (metadata.attachedReferenceOnly === true) return 'attached_reference_only';
+  if (metadata.referenceCheckingOnly === true) return 'reference_checking_only';
+  if (paper.dedupe_review_status === 'duplicate') return 'dedupe_review_status:duplicate';
+  if (!keepEmpty && !hasExtractionData) return 'no_extraction_data';
+  return null;
+}
+
+// Granular subgroup rows are kept in the export, but flagged: their numbers are already
+// counted inside another row on the same paper, so summing every row double-counts.
+// Also guards against stale population metadata drifting out of sync with the live groups.
+function granularPopulationPositions(paper, treatment, groups) {
+  const granular = new Set();
+  const groupsByPosition = new Map(groups.map((group) => [group.position, group]));
+
+  for (const row of treatment.populationTreatments) {
+    if (!Number.isInteger(row.populationPosition)) continue;
+    const group = groupsByPosition.get(row.populationPosition);
+    if (!group || group.label !== row.expectedLabel) {
+      throw new Error(
+        `${paper.assigned_study_id}: population treatment no longer matches position ${row.populationPosition} (${row.expectedLabel})`,
+      );
+    }
+    if (row.includeInAnalysisExport === false) {
+      granular.add(row.populationPosition);
+    }
+  }
+
+  return granular;
 }
 
 function loadEnvFile(filePath) {
@@ -223,7 +326,9 @@ async function fetchAllRows(supabase, table, select, orderColumn) {
 }
 
 async function main() {
-  const { includeStatuses, excludeStatuses, outputPrefix } = parseArgs(process.argv.slice(2));
+  const { includeStatuses, excludeStatuses, outputPrefix, scope, keepEmpty } = parseArgs(
+    process.argv.slice(2),
+  );
   const env = loadEnvFile(envPath);
   const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
@@ -237,11 +342,11 @@ async function main() {
     auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
   });
 
-  const [papers, extractions, extractionFields, populationGroups, populationValues] = await Promise.all([
+  const [papers, extractions, extractionFields, populationGroups, populationValues, paperNotes] = await Promise.all([
     fetchAllRows(
       supabase,
       'papers',
-      'id,assigned_study_id,title,status,uploaded_at',
+      'id,assigned_study_id,title,status,uploaded_at,metadata,dedupe_review_status',
       'assigned_study_id',
     ),
     fetchAllRows(supabase, 'extractions', 'id,paper_id,tab,model,updated_at', 'updated_at'),
@@ -258,6 +363,7 @@ async function main() {
       'id,population_group_id,paper_id,field_id,value,metric,unit',
       'paper_id',
     ),
+    fetchAllRows(supabase, 'paper_notes', 'id,paper_id,body,created_at', 'created_at'),
   ]);
 
   const fieldsByExtraction = new Map();
@@ -307,31 +413,106 @@ async function main() {
     }
   }
 
-  const headers = ['paper_id', 'paper_title', 'status', 'population_label', ...orderedFields.map((field) => field.id)];
+  const notesByPaper = new Map();
+  for (const note of paperNotes) {
+    const bucket = notesByPaper.get(note.paper_id) ?? [];
+    bucket.push(note);
+    notesByPaper.set(note.paper_id, bucket);
+  }
+
+  const papersWithExtractionData = new Set();
+  for (const extraction of extractions) {
+    for (const field of fieldsByExtraction.get(extraction.id) ?? []) {
+      if (field.value != null && String(field.value).trim() !== '') {
+        papersWithExtractionData.add(extraction.paper_id);
+      }
+    }
+  }
+  for (const value of populationValues) {
+    if (value.value != null && String(value.value).trim() !== '') {
+      papersWithExtractionData.add(value.paper_id);
+    }
+  }
+
+  const headers = [
+    'paper_id',
+    'paper_title',
+    'status',
+    'population_label',
+    ...orderedFields.map((field) => field.id),
+    'population_analysis_flag',
+    'search_batch',
+    'notes',
+  ];
   const lines = [headers.map(csvEscape).join(',')];
   const includedStatusSet = new Set(includeStatuses);
   const excludedStatusSet = new Set(excludeStatuses);
-  const selectedPapers =
-    includedStatusSet.size || excludedStatusSet.size
-      ? papers.filter((paper) => {
-          if (includedStatusSet.size > 0 && !includedStatusSet.has(paper.status)) {
-            return false;
-          }
-          if (excludedStatusSet.has(paper.status)) {
-            return false;
-          }
-          return true;
-        })
-      : papers;
+  // Status filtering runs inside the main loop so every dropped paper reaches the audit file.
+  const statusExclusionReason = (paper) => {
+    if (includedStatusSet.size > 0 && !includedStatusSet.has(paper.status)) {
+      return `status_not_in_include_list:${paper.status}`;
+    }
+    if (excludedStatusSet.has(paper.status)) {
+      if (paper.status === 'systematic_review') return 'systematic_review:reference_checking_only';
+      if (paper.status === 'archived' || paper.status === 'no_exposure') {
+        return `${paper.status}:does_not_meet_inclusion_criteria`;
+      }
+      return `status_excluded:${paper.status}`;
+    }
+    return null;
+  };
+  const selectedPapers = papers;
+
+  const excludedAudit = [];
+  const granularAudit = [];
+  let exportedPapers = 0;
+  let granularPopulationRows = 0;
 
   for (const paper of selectedPapers) {
+    const treatment = readAnalysisTreatment(paper.metadata);
+
+    {
+      const reason =
+        statusExclusionReason(paper) ??
+        (scope === 'analysis'
+          ? paperExclusionReason(paper, treatment, papersWithExtractionData.has(paper.id), keepEmpty)
+          : null);
+      if (reason) {
+        excludedAudit.push({
+          studyId: paper.assigned_study_id || paper.id,
+          title: paper.title ?? '',
+          status: paper.status ?? '',
+          scopeLevel: 'paper',
+          populationLabel: '',
+          reason,
+        });
+        continue;
+      }
+    }
+
     const extractionRows = extractionsByPaper.get(paper.id) ?? [];
     const groupRows = groupsByPaper.get(paper.id) ?? [];
     const valueRows = valuesByPaper.get(paper.id) ?? [];
     const fieldMap = buildFieldMap(extractionRows);
     const groups = resolveGroups(paper, extractionRows, groupRows, valueRows);
+    const granularPositions =
+      scope === 'analysis' ? granularPopulationPositions(paper, treatment, groups) : new Set();
+    const notes = formatNotes(notesByPaper.get(paper.id) ?? []);
+    const batchLabel = searchBatchLabel(paper.metadata);
+    exportedPapers += 1;
 
     for (const group of groups) {
+      const isGranular = granularPositions.has(group.position);
+      if (isGranular) {
+        granularPopulationRows += 1;
+        granularAudit.push({
+          studyId: paper.assigned_study_id || paper.id,
+          title: paper.title ?? '',
+          status: paper.status ?? '',
+          populationLabel: group.label ?? '',
+          position: group.position,
+        });
+      }
       const groupValues = new Map((group.values ?? []).map((entry) => [entry.fieldId, entry.value]));
       const row = [
         paper.assigned_study_id || paper.id,
@@ -352,6 +533,7 @@ async function main() {
         row.push(value ?? '');
       }
 
+      row.push(isGranular ? 'granular_subset' : '', batchLabel, notes);
       lines.push(row.map(csvEscape).join(','));
     }
   }
@@ -361,9 +543,39 @@ async function main() {
   const outputPath = path.join(outputDir, `${outputPrefix}-${stamp}.csv`);
   fs.writeFileSync(outputPath, `\uFEFF${lines.join('\r\n')}`);
 
-  console.log(`papers=${selectedPapers.length}`);
+  const auditHeaders = ['study_id', 'title', 'status', 'level', 'population_label', 'reason'];
+  const auditLines = [auditHeaders.map(csvEscape).join(',')];
+  for (const entry of excludedAudit) {
+    auditLines.push(
+      [entry.studyId, entry.title, entry.status, entry.scopeLevel, entry.populationLabel, entry.reason]
+        .map(csvEscape)
+        .join(','),
+    );
+  }
+  const auditPath = path.join(outputDir, `${outputPrefix}-excluded-${stamp}.csv`);
+  fs.writeFileSync(auditPath, `\uFEFF${auditLines.join('\r\n')}`);
+
+  const granularHeaders = ['study_id', 'title', 'status', 'population_position', 'population_label'];
+  const granularLines = [granularHeaders.map(csvEscape).join(',')];
+  for (const entry of granularAudit) {
+    granularLines.push(
+      [entry.studyId, entry.title, entry.status, entry.position, entry.populationLabel]
+        .map(csvEscape)
+        .join(','),
+    );
+  }
+  const granularPath = path.join(outputDir, `${outputPrefix}-granular-subset-rows-${stamp}.csv`);
+  fs.writeFileSync(granularPath, `\uFEFF${granularLines.join('\r\n')}`);
+
+  console.log(`scope=${scope}`);
+  console.log(`papers_considered=${selectedPapers.length}`);
+  console.log(`papers_exported=${exportedPapers}`);
+  console.log(`papers_excluded=${excludedAudit.length}`);
+  console.log(`population_rows_kept_but_flagged_granular=${granularPopulationRows}`);
   console.log(`rows=${lines.length - 1}`);
   console.log(`output=${outputPath}`);
+  console.log(`excluded_audit=${auditPath}`);
+  console.log(`granular_rows_audit=${granularPath}`);
 }
 
 main().catch((error) => {

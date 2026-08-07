@@ -27,7 +27,13 @@ export const ACTIVE_STATUSES: PaperStatus[] = ['uploaded', 'processing', 'flagge
 
 export const COMPLETED_STATUSES: PaperStatus[] = ['extracted'];
 
-export const DASHBOARD_COUNT_EXCLUDED_STATUSES: PaperStatus[] = ['archived', 'uefa_master_extraction'];
+// Archived and no_exposure papers do not meet the inclusion criteria, so they must not count
+// toward extraction totals or progress. They stay in the table as an audit trail.
+export const DASHBOARD_COUNT_EXCLUDED_STATUSES: PaperStatus[] = [
+  'archived',
+  'no_exposure',
+  'uefa_master_extraction',
+];
 
 const PROGRESS_COMPLETE_STATUSES: PaperStatus[] = [
   ...COMPLETED_STATUSES,
