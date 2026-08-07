@@ -7,7 +7,6 @@ import {
 import type { ScreeningRecord } from '../types.ts';
 
 export const FULL_TEXT_QUEUE_PAGE_SIZE = 20;
-export const FULL_TEXT_SCREENING_REVIEW_TOTAL = 386;
 
 export const FULL_TEXT_QUEUE_FILTERS = [
   'all',
@@ -200,7 +199,9 @@ export const getFullTextReviewerProgress = (
   const completed = records.filter((record) =>
     getReviewerDecisions(record).some((decision) => decision.reviewerProfileId === reviewerProfileId)
   ).length;
-  const total = FULL_TEXT_SCREENING_REVIEW_TOTAL;
+  // Count the same records the numerator is drawn from. A fixed denominator goes stale as
+  // later searches add full-text records, which is how this once reported 411/386 = 106%.
+  const total = records.length;
 
   return {
     completed,

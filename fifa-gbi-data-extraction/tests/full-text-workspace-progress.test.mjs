@@ -16,25 +16,37 @@ test('full-text workspace shows reviewer queue progress', () => {
   assert.match(pageSource, /reviewerProgress=\{reviewerProgress\}/);
   assert.match(clientSource, /Your screening progress/);
   assert.match(clientSource, /\{reviewerProgress\.completed\}\/\{reviewerProgress\.total\} papers · \{reviewerProgress\.percent\}%/);
-  assert.match(clientSource, /width: `\$\{reviewerProgress\.percent\}%`/);
+  assert.match(clientSource, /<Meter[\s\S]{0,120}value=\{reviewerProgress\.percent\}/);
 });
 
-test('full-text reviewer progress uses the fixed 386-paper denominator', async () => {
+test('full-text reviewer progress counts the records it was given', async () => {
   const jiti = createJiti(import.meta.url);
-  const {
-    FULL_TEXT_SCREENING_REVIEW_TOTAL,
-    getFullTextReviewerProgress,
-  } = await jiti.import('../src/lib/screening/full-text-queue.ts');
-  const metadata = {
-    fullTextDecisions: [
-      { reviewerProfileId: 'reviewer-1', decision: 'include', decidedAt: '2026-06-19T00:00:00Z' },
-    ],
-  };
+  const { getFullTextReviewerProgress } = await jiti.import('../src/lib/screening/full-text-queue.ts');
+  const voted = (reviewerProfileId) => ({
+    metadata: {
+      fullTextDecisions: [
+        { reviewerProfileId, decision: 'include', decidedAt: '2026-06-19T00:00:00Z' },
+      ],
+    },
+  });
 
-  assert.equal(FULL_TEXT_SCREENING_REVIEW_TOTAL, 386);
-  assert.deepEqual(getFullTextReviewerProgress([{ metadata }, { metadata: {} }], 'reviewer-1'), {
+  assert.deepEqual(getFullTextReviewerProgress([voted('reviewer-1'), { metadata: {} }], 'reviewer-1'), {
     completed: 1,
-    total: 386,
+    total: 2,
+    percent: 50,
+  });
+
+  // The denominator must grow with the queue. A fixed total once reported 411/386 = 106%.
+  const queue = [...Array(414)].map((_, index) => (index < 411 ? voted('reviewer-1') : { metadata: {} }));
+  assert.deepEqual(getFullTextReviewerProgress(queue, 'reviewer-1'), {
+    completed: 411,
+    total: 414,
+    percent: 99,
+  });
+
+  assert.deepEqual(getFullTextReviewerProgress([], 'reviewer-1'), {
+    completed: 0,
+    total: 0,
     percent: 0,
   });
 });
