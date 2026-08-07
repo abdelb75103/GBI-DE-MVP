@@ -14,7 +14,9 @@ const requestSchema = z.object({
   comment: z.string().trim().max(REVIEW_COMMENT_MAX_CHARS).optional().nullable(),
   noteAction: z.enum(['none', 'add', 'edit', 'delete']).optional(),
   noteId: z.string().optional().nullable(),
-  updatedAt: z.string().datetime().optional().nullable(),
+  // Supabase returns timestamptz with a numeric offset (`2026-08-07T14:06:30.485308+00:00`),
+  // and the client posts that value straight back, so the offset form must be accepted.
+  updatedAt: z.string().datetime({ offset: true }).optional().nullable(),
 });
 
 type FullTextReviewNote = {
