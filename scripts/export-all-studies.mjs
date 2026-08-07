@@ -16,8 +16,17 @@ const DEFAULT_OUTPUT_PREFIX = 'all-studies-export';
 // Statuses that never belong in an analysis export:
 //   systematic_review - held for reference checking only; re-reports primary studies counted separately.
 //   archived, no_exposure - do not meet the inclusion criteria.
+//   mental_health, referee - outside the analysis scope; kept for the descriptive breakdown only.
+//   american_data - excluded by analytical decision, not by anything in the paper's own metadata.
 // The papers stay in the database as an audit trail. Pass --allow-status <status> to override.
-const DEFAULT_EXCLUDED_STATUSES = ['systematic_review', 'archived', 'no_exposure'];
+const DEFAULT_EXCLUDED_STATUSES = [
+  'systematic_review',
+  'archived',
+  'no_exposure',
+  'mental_health',
+  'referee',
+  'american_data',
+];
 
 function parseArgs(argv) {
   const includeStatuses = [];
@@ -457,6 +466,10 @@ async function main() {
       if (paper.status === 'archived' || paper.status === 'no_exposure') {
         return `${paper.status}:does_not_meet_inclusion_criteria`;
       }
+      if (paper.status === 'mental_health' || paper.status === 'referee') {
+        return `${paper.status}:outside_analysis_scope`;
+      }
+      if (paper.status === 'american_data') return 'american_data:analytical_decision';
       return `status_excluded:${paper.status}`;
     }
     return null;
