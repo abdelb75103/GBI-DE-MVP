@@ -1,0 +1,17 @@
+{
+  "python": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "dependencies": "Python standard library only",
+  "tests": {
+    "command": "python3 -B -m unittest discover -s analysis/standardisation-tools -p '*test.py'",
+    "passed": 64
+  },
+  "model_fitted": false,
+  "random_seed": "not applicable: deterministic data transformation",
+  "source_checks": {
+    "raw_v004_sha256_unchanged": true,
+    "corrected_frozen_source_sha256_unchanged": true,
+    "source_context_rows": 646,
+    "unique_source_context_keys": 646
+  }
+}

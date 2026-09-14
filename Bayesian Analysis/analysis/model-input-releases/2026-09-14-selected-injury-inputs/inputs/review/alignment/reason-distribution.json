@@ -1,0 +1,318 @@
+{
+  "pass": true,
+  "rows": 3211,
+  "unique_observation_ids": 3211,
+  "pairs": 120,
+  "csv_sha256": "05d955c703d19e456808366bf000fe8c1844771a622a37adad4412a94639e243",
+  "counts": [
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "count_hour",
+      "n": 26
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "descriptive_only",
+      "n": 50
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "none",
+      "n": 81
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "rate_ci",
+      "n": 1
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "main",
+      "metric_usability": "descriptive_only",
+      "n": 13
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "main",
+      "metric_usability": "none",
+      "n": 21
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "sensitivity",
+      "metric_usability": "descriptive_only",
+      "n": 31
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "sensitivity",
+      "metric_usability": "none",
+      "n": 406
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "sensitivity",
+      "metric_usability": "rate_ci",
+      "n": 8
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "main",
+      "metric_usability": "approximate_count_hour_sensitivity",
+      "n": 7
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "main",
+      "metric_usability": "count_hour",
+      "n": 21
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "main",
+      "metric_usability": "descriptive_only",
+      "n": 132
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "sensitivity",
+      "metric_usability": "count_hour",
+      "n": 162
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "sensitivity",
+      "metric_usability": "descriptive_only",
+      "n": 2188
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "sensitivity",
+      "metric_usability": "rate_ci",
+      "n": 64
+    }
+  ],
+  "same_outcome_numeric_parent_rows_reviewed": 30,
+  "same_outcome_numeric_parent_rows_supported": 30,
+  "matched_parent_alias_rows_canonicalised": 344,
+  "targeted_scope_corrections": {
+    "S755_records": 16,
+    "S604_records": 2,
+    "S1299_records": 4,
+    "S482_records": 3
+  },
+  "prefit_gate_counts": {
+    "screening_inclusion_status_requires_confirmation": 1
+  },
+  "s1229_age_rows_held": 12,
+  "reason_counts": [
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The study uses a sole time-loss definition, which applies to this reported detailed rate; no conflicting source-context flag is retained.",
+      "n": 1372
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route.",
+      "n": 767
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The detailed rate is retained, but the saved title/definition does not establish a time-loss numerator for this restricted outcome.",
+      "n": 144
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The saved extraction has an aligned count and player-hour denominator.",
+      "n": 120
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The saved source context flags a numerator, days or denominator mismatch for this metric.",
+      "n": 99
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route.",
+      "n": 64
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The saved extraction has a rate with a reported confidence interval.",
+      "n": 54
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. The detailed rate is retained, but the saved title/definition does not establish a time-loss numerator for this restricted outcome.",
+      "n": 52
+    },
+    {
+      "reason": "Saved source audit identifies a separate time-loss result; the threshold remains in the approved sensitivity route unless explicitly stated. The detailed rate is retained, but the saved title/definition does not establish a time-loss numerator for this restricted outcome.",
+      "n": 51
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The study uses a sole time-loss definition, which applies to this reported detailed rate; no conflicting source-context flag is retained.",
+      "n": 48
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route.",
+      "n": 45
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The parent rate equals a category rate and the source title/definition identifies a restricted outcome. Do not label the parent as all injuries.",
+      "n": 40
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The saved extraction does not identify an exposure unit.",
+      "n": 35
+    },
+    {
+      "reason": "Saved primary-source audit identifies a separate time-loss result, but no approved minimum-day threshold is recorded. The detailed rate is retained, but the saved title/definition does not establish a time-loss numerator for this restricted outcome.",
+      "n": 35
+    },
+    {
+      "reason": "Saved source audit identifies a separate time-loss result; the threshold remains in the approved sensitivity route unless explicitly stated. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route.",
+      "n": 32
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. The saved source context flags a numerator, days or denominator mismatch for this metric.",
+      "n": 28
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. The saved extraction has an aligned count and player-hour denominator.",
+      "n": 26
+    },
+    {
+      "reason": "The frozen master retains a direct observed injury count and player-hour denominator for this source-confirmed restricted outcome. The matching-pair audit establishes that the generic parent and descriptor aliases are the same clinical target; the parent preserves the count/hour information. The time-loss threshold route is retained from the source definition.",
+      "n": 25
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The outcome does not have the required player-hour denominator for this analysis.",
+      "n": 22
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The saved source context flags a numerator, days or denominator mismatch for this metric.",
+      "n": 18
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The matching parent value does not prove this detailed metric has a time-loss numerator and denominator.",
+      "n": 14
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The saved extraction has an aligned count and player-hour denominator.",
+      "n": 12
+    },
+    {
+      "reason": "Saved primary-source audit identifies a positive-day time-loss subset with matching player-hours. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route. The saved primary-source audit supplies an exact or directly reported time-loss count and matching player-hours. Saved S1229 audit: the exact positive-day age counts are retained, but age-specific hours remain source-only and do not reconcile with the pooled overall/training player-hour denominators. Hold the age quantitative metric pending a separately verified age denominator.",
+      "n": 12
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The matching parent value does not prove this detailed metric has a time-loss numerator and denominator.",
+      "n": 12
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The saved extraction has an aligned count and player-hour denominator. Saved source context does not establish that the stored hours are cohort player-hour totals; exposure construction requires source verification.",
+      "n": 9
+    },
+    {
+      "reason": "The saved S755 source note states that this main field combines disjoint time-loss hamstring strain and groin injury outcomes within the same arm. It is not a hamstring-only metric. Component thigh and groin observations remain separate clinical targets. The threshold route is retained.",
+      "n": 8
+    },
+    {
+      "reason": "Saved source audit identifies a separate time-loss result; the threshold remains in the approved sensitivity route unless explicitly stated. The study uses a sole time-loss definition, which applies to this reported detailed rate; no conflicting source-context flag is retained.",
+      "n": 7
+    },
+    {
+      "reason": "Saved source audit identifies a separate time-loss result; the threshold remains in the approved sensitivity route unless explicitly stated. The observed count and crude same-setting rate support a separately recorded approximate reverse exposure for sensitivity only. It is not an exact count/hour likelihood and does not make the row model-eligible. Saved primary-source audit defines a recordable injury as preventing competition or normal training for at least one day, excluding the injury day.",
+      "n": 7
+    },
+    {
+      "reason": "Saved primary-source audit identifies a separate time-loss result, but no approved minimum-day threshold is recorded. The saved extraction has an aligned count and player-hour denominator.",
+      "n": 5
+    },
+    {
+      "reason": "The parent is the same source-confirmed restricted outcome as the descriptor aliases, and its reported burden is source-aligned. Any direct days-lost numerator and player-hours are retained in provenance; the owner numerical route treats burden as descriptive because no days-lost likelihood is specified.",
+      "n": 5
+    },
+    {
+      "reason": "The saved primary extraction explicitly states that only non-contact injuries were analysed. This is a restricted non-contact outcome, not all injuries. The retained threshold route and metric alignment are unchanged.",
+      "n": 4
+    },
+    {
+      "reason": "Saved source audit identifies a separate time-loss result; the threshold remains in the approved sensitivity route unless explicitly stated. The saved source context flags a numerator, days or denominator mismatch for this metric.",
+      "n": 4
+    },
+    {
+      "reason": "Saved primary-source audit identifies a positive-day time-loss subset with matching player-hours. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route. The saved primary-source audit supplies an exact or directly reported time-loss count and matching player-hours.",
+      "n": 3
+    },
+    {
+      "reason": "Saved primary-source audit identifies a separate time-loss result, but no approved minimum-day threshold is recorded. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route. The saved primary-source audit supplies an exact or directly reported time-loss count and matching player-hours.",
+      "n": 3
+    },
+    {
+      "reason": "The source incidence definition limits monitoring to non-contact injuries during congested windows. This is a restricted non-contact outcome, not all injuries. The retained threshold route and metric alignment are unchanged.",
+      "n": 3
+    },
+    {
+      "reason": "Saved primary-source audit identifies a separate time-loss result, but no approved minimum-day threshold is recorded. The saved source context flags a numerator, days or denominator mismatch for this metric.",
+      "n": 3
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. The parent rate equals a category rate and the source title/definition identifies a restricted outcome. Do not label the parent as all injuries.",
+      "n": 3
+    },
+    {
+      "reason": "Saved primary-source audit identifies a positive-day time-loss subset with matching player-hours. The saved extraction has an aligned count and player-hour denominator.",
+      "n": 2
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The parent rate equals a category rate. Equality alone does not establish whether the parent is all injury or restricted scope.",
+      "n": 2
+    },
+    {
+      "reason": "Saved source audit identifies a separate time-loss result; the threshold remains in the approved sensitivity route unless explicitly stated. The saved extraction has an aligned count and player-hour denominator.",
+      "n": 2
+    },
+    {
+      "reason": "The extraction contains a time-loss-labelled count of 1,633, but the saved source context identifies a medical-attention definition and a head/neck scope. No saved primary-source evidence links that count and rate to a separate time-loss subset. Hold pending source verification; this does not assert that no time-loss field was extracted.",
+      "n": 2
+    },
+    {
+      "reason": "The saved S604 source note restricts this metric to acute traumatic injuries during official matches. It is not an all-injury metric. The explicit seven-day time-loss threshold remains in the main route.",
+      "n": 2
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The saved extraction has an aligned count and player-hour denominator. Source note: no clean season-level match injury count is printed, so a defensible match-only incidence cannot be calculated.",
+      "n": 2
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. The saved extraction has a rate with a reported confidence interval.",
+      "n": 1
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The parent rate equals a category rate and the source title/definition identifies a restricted outcome. Do not label the parent as all injuries.",
+      "n": 1
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. The saved extraction has an aligned count and player-hour denominator. Saved source context reports 620 injuries, 3,583 player-hours and a reported rate of 8.34 per 1,000, whereas 620/3,583\u00d71,000 is 173.04. The retained denominator and reported rate do not describe one defensible metric.",
+      "n": 1
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route. Formal full-text inclusion still requires a second human include; this pre-fit screening gate must be satisfied before model fitting.",
+      "n": 1
+    },
+    {
+      "reason": "The cached primary source explicitly reports 611 time-loss injuries among the 783 analysed injuries and 143,573 football hours. The Methods exclude 10 non-football injuries before analysis; there is no basis to subtract 10 from the 611 time-loss subset. The resulting crude count rate is 4.2557 per 1,000 h. The printed 4.2 (95% CI 3.4 to 5.1) is a GLMM estimate with team as a random effect, so it is not a crude rate mismatch. The time-loss wording has no approved minimum-day threshold, so this incidence row remains threshold sensitivity. Imputed days-lost burden remains a separate hold.",
+      "n": 1
+    },
+    {
+      "reason": "The saved source wording does not identify a separable time-loss outcome. The saved source audit records an unresolved numerator, denominator or rate mismatch.",
+      "n": 1
+    },
+    {
+      "reason": "The source labels the outcome time loss, but its threshold is unconfirmed. The approved protocol routes this to threshold sensitivity, not a global hold. A source-extracted rate is retained, but no count/hour pair or confidence interval is available for the numerical model route. The saved source correction verifies 312 observed match injuries and 12,507 player-hours; the rounded 24.9 rate is consistent. The count is source-verified in this alignment record, without altering the frozen master.",
+      "n": 1
+    },
+    {
+      "reason": "The saved source wording gives a time-loss restriction or threshold. The saved extraction does not identify an exposure unit.",
+      "n": 1
+    }
+  ]
+}

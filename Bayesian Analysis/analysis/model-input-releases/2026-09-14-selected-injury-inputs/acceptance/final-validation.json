@@ -1,0 +1,34 @@
+{
+  "pass": true,
+  "observations": 3211,
+  "partitions": {
+    "hold_for_specific_evidence_gap": 835,
+    "sensitivity": 666,
+    "descriptive_only": 1506,
+    "main": 47,
+    "duplicate_representation": 157
+  },
+  "numeric_changes_for_manual_review": [
+    {
+      "observation_id": "521:incidence:match:main",
+      "field": "injury_count",
+      "before": "",
+      "after": "312"
+    }
+  ],
+  "release_hashes": {
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/README.md": "ccf641c5a6cde9c520c1d2a50bffb827f21391bf8a0a146f4035b9ecdab4328f",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/analysis-source-context.csv": "480b27eb37ddc34f080f7f03c2d1880c9610df3463676b55d79e014c45f360f8",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/coverage-by-target.csv": "de40fcd35230c160fb0053094e769b3a363ed78199bee88dc0664d260d0fe7f3",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/execution-checks.json": "d68798585c6cc1b34f8c5a76981f26413243f10ae69973987baeba856b2a185f",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-all-reviewed-observations.csv": "2adf0455ee2685a2375fdf704859ec18b3501794287daea8519e7a53a30b7f43",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-descriptive-only.csv": "9d2b1275738a4e9de2c8091081246213b0963182511fd38af296bdfa475e1861",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-duplicate-representations.csv": "a3712736ef19ea0a8364e34ff7c037e588a171690e32d6c57ab0e616637bbf74",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-held-records.csv": "585636b9c6a7578f316d64d0332bbac13f023520bb0c84b026545ecea5328334",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-main-analysis.csv": "9d662b1873f7941dc288873181398475fb8666fafc48f7bb6183610411816f84",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-sensitivity-additions.csv": "b3e95f99aeb7b9fc89539a083ab410ad10ce6a36b8851d443de34823e8c583ff",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/replay-checks.json": "b3b58ee162227bd95685063385820d831ef85331978de085ecb707bbdf9d68dc",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/validation.json": "110a64867c004c907343d86f7b4233f4326d1b9759f265dd2020ab590bdbb0e2"
+  },
+  "master_sha256": "1353d42d080cc37283f0ede483d6d796eb99adfc496c9ae0f7d1da2340dd43d7"
+}

@@ -1,0 +1,12 @@
+{
+  "csv_byte_identical": {
+    "injury-held-records.csv": true,
+    "injury-descriptive-only.csv": true,
+    "injury-main-analysis.csv": true,
+    "injury-sensitivity-additions.csv": true,
+    "injury-duplicate-representations.csv": true,
+    "coverage-by-target.csv": true,
+    "injury-all-reviewed-observations.csv": true
+  },
+  "metadata_note": "validation.json input paths differ for frozen-copy replay; source byte hashes match."
+}

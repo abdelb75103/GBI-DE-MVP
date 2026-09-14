@@ -1,0 +1,21 @@
+{
+  "review": "injury-rule-review-2026-09-14",
+  "status": "human_adjudicated_with_refinements",
+  "rules_kept": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6"
+  ],
+  "refinements": {
+    "R2": "Injury-specific papers were often extracted into overall injury fields and also location/type. Equal metrics trigger title/definition verification. Reclassify supported restricted outcomes and avoid duplicate representations; equality alone is not proof.",
+    "R3": "Prefer verified non-overlapping exhaustive granular strata such as men and women over their duplicated parent. Recompute crude totals from matched counts and exposures, never average rates. Retain parent totals for validation and audit.",
+    "R6": "Derive the missing rate, count or exposure when the other two align. Reverse calculations using rounded reported rates retain approximation/rounding provenance; they are not automatically exact integer event counts."
+  },
+  "unclear_time_loss_threshold": "sensitivity",
+  "estimated_attendance_exposure": "sensitivity",
+  "exposure_exception": "Retain and highlight estimated exposure methods. Standard matches x90minutes x11players per team is acceptable for now; report paper counts and actual method.",
+  "requested_followup": "Show exposure estimation inventory and what sensitivity analyses do, compare, and imply for inclusion. Prepare complete analysis data after checks; do not fit a model or promote unchecked candidates."
+}

@@ -1,0 +1,15 @@
+{
+  "release_id": "2026-09-14-inclusive-injury-analysis",
+  "status": "frozen_eligibility_complete_model_specification_pending",
+  "files": {
+    "README.md": "74765bce94f22830dc2d491f08553f2e65cf68bcfc9c6fde3581a4a529b0816f",
+    "acceptance/REVIEW.md": "58e7edb07389ac6a7c50df4f515bac61bed3304e5d10d75ed1414c0d89700080",
+    "acceptance/check_inclusive.py": "52c284125447adbb36d3727ee55a3e9af71857d229c0b4dcdae432aa9493ee3d",
+    "acceptance/verification.json": "f023c29e830b2596678a6fb0cc07f20c0bd3781d30007a0060890cc18fc773eb",
+    "injury-analysis.csv": "37c7487ac85798a8bb62644647b532b314edcee43e12b8810cffa17c98f26205",
+    "previous_ANALYSIS_WORKING_CURRENT.json": "8f7eddc689b591e9a1be7200430910cc2b4809622b747fe188973de797895912",
+    "previous_MODEL_INPUT_CURRENT.json": "c4d1e4b4614303ef73245b09a06f49fd635910d075e28a795e93b3efe30cfeb2",
+    "recipe/build_inclusive_injury.py": "d834d218956cf02cb61c4e7697f44c3dc9f0673eff10acbf6d65a44288619d1b",
+    "summary.json": "e1d680f8f2befac5833cfdba358521119bb82863888e75c3ddcf2dd6b8ee74dc"
+  }
+}

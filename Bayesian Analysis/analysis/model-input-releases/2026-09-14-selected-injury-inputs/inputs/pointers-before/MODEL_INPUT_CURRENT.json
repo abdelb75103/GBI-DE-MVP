@@ -1,0 +1,9 @@
+{
+  "release_id": "2026-09-14-injury-candidates",
+  "status": "candidate_snapshot_pending_eligibility_and_dependence_review",
+  "release_path": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-injury-candidates",
+  "incidence_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-injury-candidates/injury-incidence-candidates.csv",
+  "burden_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-injury-candidates/injury-burden-candidates.csv",
+  "candidate_papers": 285,
+  "model_fitting_authorised": false
+}

@@ -1,0 +1,12 @@
+{
+  "release_id": "2026-09-14-authoritative-injury-analysis",
+  "status": "frozen_eligible_only_model_specification_pending",
+  "analysis_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-authoritative-injury-analysis/injury-analysis.csv",
+  "audit_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-inclusive-injury-analysis/injury-analysis.csv",
+  "observations": 2219,
+  "papers": 220,
+  "incidence": 1892,
+  "burden": 327,
+  "freeze_sha256": "1ffa2e5fba6530497c25c82c2e1fe4035773c5b285083eaba3c24dc50ef91550",
+  "model_fitted": false
+}

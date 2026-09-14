@@ -1,0 +1,17 @@
+{
+  "release_id": "2026-09-14-selected-injury-inputs",
+  "status": "frozen_reviewed_inputs_model_specification_pending",
+  "release_path": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs",
+  "all_observations_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-all-reviewed-observations.csv",
+  "main_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-main-analysis.csv",
+  "sensitivity_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-sensitivity-additions.csv",
+  "descriptive_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-descriptive-only.csv",
+  "held_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-held-records.csv",
+  "duplicate_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-duplicate-representations.csv",
+  "source_context_csv": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-selected-injury-inputs/analysis-source-context.csv",
+  "observations": 3211,
+  "selected_observations": 713,
+  "selected_papers": 193,
+  "model_fitting_authorised": false,
+  "freeze_sha256": "6f2e6d5345fb5cd8f56dfe85f1103a2c77c5dcd805c33935a339819b58286f51"
+}

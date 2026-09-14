@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "simultaneous_selected_parent_child_same_target": [],
+  "csv_replay_byte_identical": {
+    "coverage-by-target.csv": true,
+    "injury-all-reviewed-observations.csv": true,
+    "injury-descriptive-only.csv": true,
+    "injury-duplicate-representations.csv": true,
+    "injury-held-records.csv": true,
+    "injury-main-analysis.csv": true,
+    "injury-sensitivity-additions.csv": true
+  },
+  "copied_recipe_tests_passed": 7,
+  "original_30_sampling_information_cases": {
+    "sensitivity": 22,
+    "duplicate_representation": 2,
+    "main": 6
+  },
+  "numeric_changes": [
+    {
+      "observation_id": "521:incidence:match:main",
+      "field": "injury_count",
+      "before": "",
+      "after": "312"
+    }
+  ],
+  "release_file_count": 37,
+  "release_hash_manifest_sha256": "96f402d06a0a0cd28178731e9ae81a7c50f7527c899fc3ea53a07599a2c49ed6"
+}

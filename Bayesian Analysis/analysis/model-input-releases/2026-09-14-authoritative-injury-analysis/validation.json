@@ -1,0 +1,10 @@
+{
+  "rows": 2219,
+  "papers": 220,
+  "incidence": 1892,
+  "burden": 327,
+  "columns": 1012,
+  "all_selected_cells_equal_audit_source": true,
+  "audit_source_sha256": "37c7487ac85798a8bb62644647b532b314edcee43e12b8810cffa17c98f26205",
+  "csv_sha256": "ed246b7ac836ed059a10e29039d931df1c2292016b9d79107c24d377c890b26c"
+}

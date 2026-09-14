@@ -1,0 +1,9 @@
+{
+  "521:incidence:match:main": {
+    "injury_count_before": "",
+    "injury_count": "312",
+    "source_count_field": "injuryTotalCount",
+    "reason": "The source audit establishes a match-only time-loss study. Its 312 total injuries are its match numerator; no reverse count calculation is used.",
+    "evidence": "Corrected standardised.csv sourceDataRow521 injuryTotalCount312; matchExposure12507; Time loss definition limited to match injuries; sourceNotes registered PDF pp1-6, correction2026-09-06. Count/exposure gives24.946 per1000h, consistent with printed24.9. Source CSV SHA fcdfb98a8a44709e8f903121a22973f4c243100a922a1721ad0620b3a580b6d9."
+  }
+}

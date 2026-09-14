@@ -1,0 +1,23 @@
+{
+  "status": "human_approved",
+  "paper_ids": [
+    "S176",
+    "S330",
+    "S417",
+    "S2147",
+    "S223",
+    "S300",
+    "S443",
+    "S4562"
+  ],
+  "scope": "Exposure construction accepted for main-analysis consideration; retain estimation/imputation method flags for sensitivity checks. This supersedes sensitivity-only exposure handling for these papers.",
+  "limits": "Does not approve unknown time-loss thresholds, conflicting metrics, overlapping populations or imputed days-lost burden. S2147 exposure approval is distinct from burden-day eligibility.",
+  "user_wording": "s176 is fine; s330 is fine; s417 is fine; s2147 is fine; s223 and 300 are fine; the 5 candidate papers are also fine",
+  "five_candidate_papers": [
+    "S223",
+    "S300",
+    "S417",
+    "S443",
+    "S4562"
+  ]
+}

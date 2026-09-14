@@ -1,0 +1,15 @@
+{
+  "unique_observation_ids": true,
+  "every_working_master_observation_has_one_selection": true,
+  "selection_values_are_contract_values": true,
+  "every_duplicate_has_a_link": true,
+  "alignment_hash_matches_validation": true,
+  "every_selected_observation_is_alignment_supported": true,
+  "unresolved_groups_do_not_receive_blanket_holds": true,
+  "overall_match_training_targets_are_distinct": true,
+  "s604_overall_and_match_are_not_independent_inputs": true,
+  "historical_studies_have_exact_links": true,
+  "parent_duplicates_have_complete_aligned_child_target_coverage": true,
+  "matched_pair_representations_preserve_quantitative_coverage": true,
+  "nested_subset_duplicates_have_target_matched_anchor": true
+}

@@ -1,0 +1,25 @@
+{
+  "status": "accepted_bounded_reviewed_input_partition",
+  "date": "2026-09-14",
+  "release": "analysis/model-input-releases/2026-09-14-selected-injury-inputs",
+  "observations": 3211,
+  "dispositions": {
+    "hold_for_specific_evidence_gap": 835,
+    "sensitivity": 666,
+    "descriptive_only": 1506,
+    "main": 47,
+    "duplicate_representation": 157
+  },
+  "reviewed_release_file_count": 37,
+  "release_hash_manifest": "final-file-hashes.json",
+  "release_hash_manifest_sha256": "96f402d06a0a0cd28178731e9ae81a7c50f7527c899fc3ea53a07599a2c49ed6",
+  "review_sha256": "47960d877cc0183f331e55831ff931202cc255a3cebee9de132a57928c9fcc6c",
+  "validation_sha256": "ba0a18dfe8fc54cf590badaa6a817c664a7195fe30a3b21b83b8f9dccd6702d3",
+  "scientific_checks_sha256": "00de4b0b1f62c5e335b97e434bb6fc0aabb7bec2d8b5858af8777b4cab4c36fb",
+  "source_context_check_sha256": "2c9135ebbf588580b39f15ae6613e9d722a1ffb6a7222c6ed6a60b955b50162b",
+  "model_fitted": false,
+  "model_eligibility_certified": false,
+  "screening_eligibility_certified": false,
+  "full_new_pdf_audit": false,
+  "additive_metadata_allowed": "Acceptance copy and freeze metadata may be added; changing a reviewed file invalidates this hash-bound acceptance."
+}

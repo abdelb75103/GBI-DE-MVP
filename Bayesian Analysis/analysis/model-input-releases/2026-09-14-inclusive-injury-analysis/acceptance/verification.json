@@ -1,0 +1,19 @@
+{
+  "status": "technical_checks_passed",
+  "retained_rows": 3211,
+  "retained_papers": 285,
+  "eligible_rows": 2219,
+  "eligible_papers": 220,
+  "original_cells_checked": 398164,
+  "source_context_cells_checked": 2793570,
+  "original_blank_cells_preserved": 147154,
+  "original_literal_zero_cells_preserved": 384,
+  "byte_identical_csv_and_summary_replay": true,
+  "hashes": {
+    "analysis/standardisation-tools/build_inclusive_injury.py": "d834d218956cf02cb61c4e7697f44c3dc9f0673eff10acbf6d65a44288619d1b",
+    "analysis/model-input-releases/2026-09-14-inclusive-injury-analysis/injury-analysis.csv": "37c7487ac85798a8bb62644647b532b314edcee43e12b8810cffa17c98f26205",
+    "analysis/model-input-releases/2026-09-14-inclusive-injury-analysis/summary.json": "e1d680f8f2befac5833cfdba358521119bb82863888e75c3ddcf2dd6b8ee74dc",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/injury-all-reviewed-observations.csv": "2adf0455ee2685a2375fdf704859ec18b3501794287daea8519e7a53a30b7f43",
+    "analysis/model-input-releases/2026-09-14-selected-injury-inputs/analysis-source-context.csv": "480b27eb37ddc34f080f7f03c2d1880c9610df3463676b55d79e014c45f360f8"
+  }
+}

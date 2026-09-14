@@ -1,0 +1,45 @@
+{
+  "status": "overlap_representation_selection_with_final_alignment_guard_pending_model_selection",
+  "date": "2026-09-14",
+  "input": {
+    "master": "analysis/model-input-releases/2026-09-14-adjudicated-analysis/injury-analysis-master.csv",
+    "master_sha256": "1353d42d080cc37283f0ede483d6d796eb99adfc496c9ae0f7d1da2340dd43d7",
+    "scope_map": "protocol-v2/injury-rule-review-2026-09-14/scope-overlap/population-overlap-decisions.csv",
+    "scope_map_sha256": "004415fe983219afe9ff663330941b2490242d85f9d8d201423d88ebf664ef39",
+    "historical_ledger": "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/fifa-gbi-data-extraction/data/source-family-overlap-audit/2026-07-27/source-family-decision-ledger-2026-07-27.json",
+    "historical_ledger_sha256": "cd27b10db03e1f3ae079bd78353863cb40ab54ed37902ad628b8e4c84c8e3982",
+    "alignment_decisions": "protocol-v2/final-input-verification-2026-09-14/alignment/alignment-decisions.csv",
+    "alignment_decisions_sha256": "05d955c703d19e456808366bf000fe8c1844771a622a37adad4412a94639e243",
+    "alignment_validation": "protocol-v2/final-input-verification-2026-09-14/alignment/validation.json",
+    "alignment_validation_sha256": "23299e10edd8052a9c679317016807e707d040562cee840490c5bb450ac93648",
+    "matching_pair_review": "protocol-v2/final-input-verification-2026-09-14/alignment/matching-overall-category-adjudication.csv",
+    "matching_pair_review_sha256": "edf8f11f9e2ee3c8a0da5a3a8b17484e64c36145a51fa094e8931873711d7731"
+  },
+  "observations": 3211,
+  "selection_counts": {
+    "duplicate": 157,
+    "hold": 835,
+    "select": 2219
+  },
+  "verified_named_numerical_partition_source_rows": 51,
+  "unresolved_parent_granular_groups": 12,
+  "unresolved_parent_granular_observations": 418,
+  "unresolved_group_selection_counts": {
+    "select": 140,
+    "hold": 270,
+    "duplicate": 8
+  },
+  "historical_family_studies_in_working_master": 28,
+  "matched_pair_parent_duplicates": 35,
+  "quantitative_matched_pair_coverage_links": 54,
+  "quantitative_matched_pair_coverage_parents": 37,
+  "key_rules": [
+    "Numerical equality of observed outcome rates is not evidence of independence or a restricted outcome scope.",
+    "A parent is suppressed only when every named child has the same final target and is alignment-supported, with a compatible quantitative route when the parent is quantitative.",
+    "A matching descriptor-rich alias cannot replace a source count/hour or days/hour representation unless it has compatible quantitative coverage.",
+    "Overall combined, match and training remain separate analysis targets and must not enter the same pooled likelihood as interchangeable components.",
+    "A no-overlap finding is limited to available evidence and does not prove cross-paper independence."
+  ],
+  "model_fitted": false,
+  "source_files_modified": false
+}

@@ -1,0 +1,111 @@
+{
+  "pass": true,
+  "rows": 3211,
+  "unique_observation_ids": 3211,
+  "pairs": 120,
+  "csv_sha256": "05d955c703d19e456808366bf000fe8c1844771a622a37adad4412a94639e243",
+  "counts": [
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "count_hour",
+      "n": 26
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "descriptive_only",
+      "n": 50
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "none",
+      "n": 81
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "hold",
+      "metric_usability": "rate_ci",
+      "n": 1
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "main",
+      "metric_usability": "descriptive_only",
+      "n": 13
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "main",
+      "metric_usability": "none",
+      "n": 21
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "sensitivity",
+      "metric_usability": "descriptive_only",
+      "n": 31
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "sensitivity",
+      "metric_usability": "none",
+      "n": 406
+    },
+    {
+      "metric_alignment_status": "hold",
+      "threshold_route": "sensitivity",
+      "metric_usability": "rate_ci",
+      "n": 8
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "main",
+      "metric_usability": "approximate_count_hour_sensitivity",
+      "n": 7
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "main",
+      "metric_usability": "count_hour",
+      "n": 21
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "main",
+      "metric_usability": "descriptive_only",
+      "n": 132
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "sensitivity",
+      "metric_usability": "count_hour",
+      "n": 162
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "sensitivity",
+      "metric_usability": "descriptive_only",
+      "n": 2188
+    },
+    {
+      "metric_alignment_status": "supported",
+      "threshold_route": "sensitivity",
+      "metric_usability": "rate_ci",
+      "n": 64
+    }
+  ],
+  "same_outcome_numeric_parent_rows_reviewed": 30,
+  "same_outcome_numeric_parent_rows_supported": 30,
+  "matched_parent_alias_rows_canonicalised": 344,
+  "targeted_scope_corrections": {
+    "S755_records": 16,
+    "S604_records": 2,
+    "S1299_records": 4,
+    "S482_records": 3
+  },
+  "prefit_gate_counts": {
+    "screening_inclusion_status_requires_confirmation": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rule": "Source-defined time-loss injury with compatible player-hours; alternative thresholds and rate-only evidence remain eligible.",
+  "csv": "injury-analysis.csv",
+  "rows": 3211,
+  "papers": 285,
+  "source_population_rows": 646,
+  "columns": 1012,
+  "eligible_rows": 2219,
+  "eligible_papers": 220,
+  "eligible_source_population_rows": 455,
+  "metrics_all": {
+    "incidence": 2670,
+    "burden": 541
+  },
+  "metrics_eligible": {
+    "incidence": 1892,
+    "burden": 327
+  },
+  "eligible_model_input_kinds": {
+    "count_and_exposure": 534,
+    "reported_rate_without_reported_sampling_uncertainty": 1506,
+    "reported_rate_and_interval": 45,
+    "observed_count_and_approximate_inferred_exposure": 122,
+    "days_and_exposure": 12
+  },
+  "alternative_definition_review_rows": 156,
+  "alternative_definition_review_papers": 16,
+  "seven_day_or_longer_definition_rows": 8,
+  "no_rows_dropped": true,
+  "numeric_values_changed": false,
+  "model_fitted": false,
+  "source_hashes": {
+    "injury-all-reviewed-observations.csv": "2adf0455ee2685a2375fdf704859ec18b3501794287daea8519e7a53a30b7f43",
+    "analysis-source-context.csv": "480b27eb37ddc34f080f7f03c2d1880c9610df3463676b55d79e014c45f360f8"
+  },
+  "csv_sha256": "37c7487ac85798a8bb62644647b532b314edcee43e12b8810cffa17c98f26205"
+}

@@ -1,0 +1,6 @@
+{
+  "rows": 646,
+  "common_source_cells_compared": 562020,
+  "mismatches": 0,
+  "join_key": "sourceDataRow; 1-based data-row number in frozen candidate standardised.csv"
+}

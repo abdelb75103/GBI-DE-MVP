@@ -1,0 +1,39 @@
+{
+  "status": "selection_build_complete_model_specification_pending",
+  "observations": 3211,
+  "dispositions": {
+    "hold_for_specific_evidence_gap": 835,
+    "sensitivity": 666,
+    "descriptive_only": 1506,
+    "main": 47,
+    "duplicate_representation": 157
+  },
+  "papers_by_disposition": {
+    "descriptive_only": 119,
+    "duplicate_representation": 25,
+    "hold_for_specific_evidence_gap": 117,
+    "main": 11,
+    "sensitivity": 182
+  },
+  "sampling_routes": {
+    "count_and_exposure": 767,
+    "descriptive_rate_without_usable_sampling_information": 2208,
+    "reported_rate_and_interval": 61,
+    "observed_count_and_approximate_inferred_exposure": 136,
+    "days_and_exposure": 39
+  },
+  "selected_sampling_routes": {
+    "count_and_exposure": 534,
+    "reported_rate_and_interval": 45,
+    "observed_count_and_approximate_inferred_exposure": 122,
+    "days_and_exposure": 12
+  },
+  "input_hashes": {
+    "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/analysis/model-input-releases/2026-09-14-adjudicated-analysis/injury-analysis-master.csv": "1353d42d080cc37283f0ede483d6d796eb99adfc496c9ae0f7d1da2340dd43d7",
+    "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/protocol-v2/final-input-verification-2026-09-14/alignment/alignment-decisions.csv": "05d955c703d19e456808366bf000fe8c1844771a622a37adad4412a94639e243",
+    "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/protocol-v2/final-input-verification-2026-09-14/overlap/observation-selection.csv": "8f1772264febdd8ad39ed278a703c55a7fc420fe7122b5ad75aeba109d732ff3",
+    "/Users/abdelbabiker/Desktop/GBI-DE-MVP-main/Bayesian Analysis/protocol-v2/final-input-verification-2026-09-14/owner-metric-corrections.json": "4a5dc04ac298681ff19355f497c92cc5d3623640b44a80b59264e4a9becc2199"
+  },
+  "model_fitted": false,
+  "independence_limit": "Separate target keys are not independent observations of one overall injury outcome. Model construction must respect cohort and target dependence."
+}
